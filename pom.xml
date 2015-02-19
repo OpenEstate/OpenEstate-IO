@@ -17,6 +17,78 @@
     <project.releaseDir>${basedir}/release</project.releaseDir>
   </properties>
 
+  <modules>
+    <module>Core</module>
+    <module>OpenImmo</module>
+    <module>OpenImmo-Examples</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Core</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-OpenImmo</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>annotations</artifactId>
+        <version>3.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.10</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.3.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jvnet.jaxb2_commons</groupId>
+        <artifactId>jaxb2-basics-runtime</artifactId>
+        <version>0.9.3</version>
+      </dependency>
+      <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>1.1.6</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.10</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.7.10</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <build>
     <plugins>
 
@@ -96,70 +168,6 @@
 
     </plugins>
   </build>
-
-  <modules>
-    <module>Core</module>
-  </modules>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.openestate.io</groupId>
-        <artifactId>OpenEstate-IO-Core</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>annotations</artifactId>
-        <version>3.0.0</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-codec</groupId>
-        <artifactId>commons-codec</artifactId>
-        <version>1.10</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>2.4</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-lang3</artifactId>
-        <version>3.3.2</version>
-      </dependency>
-      <dependency>
-        <groupId>org.jvnet.jaxb2_commons</groupId>
-        <artifactId>jaxb2-basics-runtime</artifactId>
-        <version>0.9.3</version>
-      </dependency>
-      <dependency>
-        <groupId>jaxen</groupId>
-        <artifactId>jaxen</artifactId>
-        <version>1.1.6</version>
-      </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-      </dependency>
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>1.2.17</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.10</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.10</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <organization>
     <name>OpenEstate</name>

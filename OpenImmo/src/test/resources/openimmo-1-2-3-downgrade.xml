@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo>
+  <uebertragung version="1.2.3"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <kontaktperson>
+        <email_feedback>test@test.org</email_feedback>
+      </kontaktperson>
+      <ausstattung>
+        <bad DUSCHE="true" BIDET="false"/>
+        <kueche EBK="true" PANTRY="true" />
+        <boden MARMOR="true" KUNSTSTOFF="true" />
+        <befeuerung OEL="true" PELLET="false" />
+        <ausricht_balkon_terrasse NORDOST="true"/>
+        <dachform KRUEPPELWALMDACH="true" PYRAMIDENDACH="true" />
+      </ausstattung>
+      <flaechen>
+        <anzahl_balkone>1</anzahl_balkone>
+        <anzahl_terrassen>2</anzahl_terrassen>
+      </flaechen>
+    </immobilie>
+    <immobilie>
+      <kontaktperson>
+        <email_feedback>test@test.org</email_feedback>
+      </kontaktperson>
+      <ausstattung>
+        <bad PISSOIR="true" WANNE="false"/>
+        <kueche OFFEN="true" PANTRY="true" />
+        <boden PARKETT="true" TERRAKOTTA="true" />
+        <befeuerung ERDWAERME="true" PELLET="true" />
+        <ausricht_balkon_terrasse SUEDWEST="true"/>
+        <dachform FLACHDACH="true" MANSARDDACH="true" />
+      </ausstattung>
+      <flaechen>
+        <anzahl_balkon_terrassen />
+        <anzahl_balkone>1</anzahl_balkone>
+        <anzahl_terrassen>2</anzahl_terrassen>
+      </flaechen>
+    </immobilie>
+    <immobilie>
+      <ausstattung>
+        <bad FENSTER="true" PISSOIR="true" BIDET="true"/>
+        <kueche OFFEN="true" PANTRY="false" EBK="false" />
+        <boden MARMOR="true" TERRAKOTTA="true" />
+        <befeuerung PELLET="true" />
+        <ausricht_balkon_terrasse NORDWEST="false"/>
+        <dachform FLACHDACH="true" PYRAMIDENDACH="true" />
+      </ausstattung>
+      <flaechen>
+        <anzahl_balkon_terrassen>5</anzahl_balkon_terrassen>
+        <anzahl_balkone>1</anzahl_balkone>
+        <anzahl_terrassen>2</anzahl_terrassen>
+      </flaechen>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <courtage_hinweis>some text</courtage_hinweis>
+        <nettorendite_soll>123.45</nettorendite_soll>
+        <nettorendite_ist>234.56</nettorendite_ist>
+        <user_defined_extend>
+          <feld>
+            <name>test1</name>
+            <wert>test2</wert>
+          </feld>
+        </user_defined_extend>
+      </preise>
+      <ausstattung>
+        <energietyp PASSIVHAUS="true" />
+        <bibliothek>true</bibliothek>
+        <dachboden>true</dachboden>
+        <gaestewc>true</gaestewc>
+        <kabelkanaele>true</kabelkanaele>
+        <seniorengerecht>true</seniorengerecht>
+        <user_defined_extend>
+          <feld>
+            <name>test3</name>
+            <wert>test4</wert>
+          </feld>
+        </user_defined_extend>
+      </ausstattung>
+      <zustand_angaben>
+        <letztemodernisierung>some text</letztemodernisierung>
+        <verkaufstatus stand="RESERVIERT" />
+      </zustand_angaben>
+      <freitexte>
+        <user_defined_extend>
+          <feld>
+            <name>test5</name>
+            <wert>test6</wert>
+          </feld>
+        </user_defined_extend>
+      </freitexte>
+      <anhaenge>
+        <user_defined_extend>
+          <feld>
+            <name>test7</name>
+            <wert>test8</wert>
+          </feld>
+        </user_defined_extend>
+      </anhaenge>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="APARTMENTHAUS" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="BURG" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="HERRENHAUS" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="FINCA" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="RUSTICO" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <parken />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <parken parken_typ="STELLPLATZ" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <sonstige sonstige_typ="KRANKENHAUS" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <wohnung wohnungtyp="APARTMENT" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <wohnung wohnungtyp="FERIENWOHNUNG" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <wohnung wohnungtyp="GALERIE" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <zinshaus_renditeobjekt zins_typ="PFLEGEHEIM" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <zinshaus_renditeobjekt zins_typ="SANATORIUM" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <zinshaus_renditeobjekt zins_typ="SENIORENHEIM" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <zinshaus_renditeobjekt zins_typ="BETREUTES-WOHNEN" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+  </anbieter>
+</openimmo>

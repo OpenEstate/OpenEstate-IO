@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo>
+  <uebertragung version="1.2.7"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <preise>
+        <summemietenetto summemieteust="123">456</summemietenetto>
+      </preise>
+      <ausstattung>
+        <befeuerung FLUESSIGGAS="true" GAS="true"/>
+      </ausstattung>
+      <zustand_angaben>
+        <energiepass>
+          <epart>BEDARF</epart>
+          <gueltig_bis>03-2018</gueltig_bis>
+          <endenergiebedarf>123</endenergiebedarf>
+          <gebaeudeart>nichtwohn</gebaeudeart>
+          <jahrgang>2014</jahrgang>
+          <waermewert>345</waermewert>
+          <wertklasse>A</wertklasse>
+          <stromwert>234</stromwert>
+          <baujahr>1985</baujahr>
+          <ausstelldatum>2014-05-05</ausstelldatum>
+          <primaerenergietraeger>some text</primaerenergietraeger>
+          <epasstext>some other text</epasstext>
+        </energiepass>
+        <energiepass>
+          <epart>VERBRAUCH</epart>
+          <gueltig_bis>05-2020</gueltig_bis>
+          <energieverbrauchkennwert>456</energieverbrauchkennwert>
+          <mitwarmwasser>true</mitwarmwasser>
+        </energiepass>
+      </zustand_angaben>
+      <freitexte>
+        <objekt_text>text</objekt_text>
+      </freitexte>
+      <anhaenge>
+        <anhang gruppe="BILD"/>
+        <anhang gruppe="EPASS-SKALA"/>
+      </anhaenge>
+      <verwaltung_techn>
+        <aktion aktionart="REFERENZ"/>
+      </verwaltung_techn>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <summemietenetto>789</summemietenetto>
+      </preise>
+      <ausstattung>
+        <befeuerung FLUESSIGGAS="false" HOLZ="false" KOHLE="false" OEL="true"/>
+      </ausstattung>
+      <zustand_angaben>
+        <energiepass>
+          <epart>VERBRAUCH</epart>
+          <gueltig_bis>05-2020</gueltig_bis>
+          <energieverbrauchkennwert>456</energieverbrauchkennwert>
+          <mitwarmwasser>true</mitwarmwasser>
+        </energiepass>
+        <energiepass>
+          <epart>BEDARF</epart>
+          <gueltig_bis>03-2018</gueltig_bis>
+          <endenergiebedarf>123</endenergiebedarf>
+        </energiepass>
+      </zustand_angaben>
+      <freitexte>
+        <objekt_text>text 1</objekt_text>
+        <objekt_text>text 2</objekt_text>
+      </freitexte>
+      <anhaenge>
+        <anhang gruppe="ANBOBJURL"/>
+        <anhang gruppe="TITELBILD"/>
+      </anhaenge>
+      <verwaltung_techn>
+        <aktion aktionart="CHANGE"/>
+      </verwaltung_techn>
+    </immobilie>
+  </anbieter>
+  <anbieter>
+    <firma>second agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <preise>
+        <summemietenetto>987</summemietenetto>
+      </preise>
+      <ausstattung>
+        <befeuerung HOLZ="true" PELLET="true"/>
+      </ausstattung>
+      <zustand_angaben>
+        <energiepass>
+          <epart>VERBRAUCH</epart>
+          <gueltig_bis>05-2020</gueltig_bis>
+          <energieverbrauchkennwert>456</energieverbrauchkennwert>
+          <mitwarmwasser>true</mitwarmwasser>
+        </energiepass>
+        <energiepass>
+          <epart>BEDARF</epart>
+          <gueltig_bis>03-2018</gueltig_bis>
+          <endenergiebedarf>123</endenergiebedarf>
+        </energiepass>
+      </zustand_angaben>
+      <freitexte>
+        <objekt_text>text 1</objekt_text>
+        <objekt_text>text 2</objekt_text>
+      </freitexte>
+      <anhaenge>
+        <anhang gruppe="TITELBILD"/>
+        <anhang gruppe="GRUNDRISS"/>
+      </anhaenge>
+      <verwaltung_techn>
+        <aktion aktionart="CHANGE"/>
+      </verwaltung_techn>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <summemietenetto summemieteust="654">321</summemietenetto>
+      </preise>
+      <ausstattung>
+        <befeuerung SOLAR="true"/>
+      </ausstattung>
+      <zustand_angaben>
+        <energiepass>
+          <epart>BEDARF</epart>
+          <gueltig_bis>03-2018</gueltig_bis>
+          <endenergiebedarf>123</endenergiebedarf>
+        </energiepass>
+        <energiepass>
+          <epart>VERBRAUCH</epart>
+          <gueltig_bis>05-2020</gueltig_bis>
+          <energieverbrauchkennwert>456</energieverbrauchkennwert>
+          <mitwarmwasser>true</mitwarmwasser>
+        </energiepass>
+      </zustand_angaben>
+      <freitexte>
+        <objekt_text>text</objekt_text>
+      </freitexte>
+      <anhaenge>
+        <anhang gruppe="EPASS-SKALA"/>
+        <anhang gruppe="ANBOBJURL"/>
+      </anhaenge>
+      <verwaltung_techn>
+        <aktion aktionart="REFERENZ"/>
+      </verwaltung_techn>
+    </immobilie>
+  </anbieter>
+</openimmo>

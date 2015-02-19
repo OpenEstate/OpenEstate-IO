@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo>
+  <uebertragung version="1.2.3"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <anhaenge>
+        <anhang location="INTERN">
+          <daten>
+            <pfad>image.jpg</pfad>
+          </daten>
+        </anhang>
+        <anhang location="EXTERN">
+          <daten>
+            <pfad>http://test.org/image.jpg</pfad>
+          </daten>
+        </anhang>
+        <anhang location="EXTERN">
+          <daten>
+            <pfad>HTTPS://test.org/image.jpg</pfad>
+          </daten>
+        </anhang>
+        <anhang location="EXTERN">
+          <daten>
+            <pfad>FTp://test.org/image.jpg</pfad>
+          </daten>
+        </anhang>
+        <anhang>
+          <daten>
+            <pfad> ftps://test.org/image.jpg </pfad>
+          </daten>
+        </anhang>
+      </anhaenge>
+    </immobilie>
+    <immobilie>
+      <flaechen>
+        <anzahl_balkon_terrassen>123</anzahl_balkon_terrassen>
+      </flaechen>
+    </immobilie>
+    <immobilie>
+      <flaechen>
+        <anzahl_balkon_terrassen>123</anzahl_balkon_terrassen>
+        <anzahl_balkone>456</anzahl_balkone>
+      </flaechen>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <sonstige sonstige_typ="GARAGEN" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <sonstige sonstige_typ="PARKFLACHE" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <sonstige sonstige_typ="SONSTIGE" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+  </anbieter>
+</openimmo>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo xmlns="http://www.openimmo.de">
+  <uebertragung version="1.2.0" senderversion="1.2.3" regi_id="123" modus="NEW" />
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <lizenzkennung>123</lizenzkennung>
+    <impressum_strukt>
+      <firmenname>some text</firmenname>
+    </impressum_strukt>
+    <immobilie>
+      <geo>
+        <anzahl_etagen>3</anzahl_etagen>
+        <karten_makro>true</karten_makro>
+        <karten_mikro>false</karten_mikro>
+        <virtuelletour>true</virtuelletour>
+        <luftbildern>false</luftbildern>
+        <user_defined_extend>
+          <feld>
+            <name>test1</name>
+            <wert>test2</wert>
+          </feld>
+        </user_defined_extend>
+      </geo>
+      <preise>
+        <heizkosten_enthalten>false</heizkosten_enthalten>
+        <mieteinnahmen_ist periode="MONAT">100</mieteinnahmen_ist>
+        <mieteinnahmen_soll periode="MONAT">1000</mieteinnahmen_soll>
+        <user_defined_extend>
+          <feld>
+            <name>test1</name>
+            <wert>test2</wert>
+          </feld>
+        </user_defined_extend>
+      </preise>
+      <bieterverfahren>
+        <hoechstgebot_zeigen>true</hoechstgebot_zeigen>
+        <mindestpreis>123</mindestpreis>
+        <user_defined_extend>
+          <feld>
+            <name>test1</name>
+            <wert>test2</wert>
+          </feld>
+        </user_defined_extend>
+      </bieterverfahren>
+      <ausstattung>
+        <befeuerung FERN="true" OEL="false" />
+        <dvbt>true</dvbt>
+        <breitband_zugang art="DSL" speed="6000" />
+        <umts_empfang>false</umts_empfang>
+        <abstellraum>true</abstellraum>
+        <fahrradraum>false</fahrradraum>
+        <rolladen>false</rolladen>
+        <user_defined_extend>
+          <feld>
+            <name>test1</name>
+            <wert>test2</wert>
+          </feld>
+        </user_defined_extend>
+      </ausstattung>
+      <bewertung>
+        <feld>
+          <name>some string</name>
+          <wert>some string</wert>
+          <typ>some string</typ>
+          <modus>some string</modus>
+        </feld>
+      </bewertung>
+    </immobilie>
+    <immobilie>
+      <ausstattung>
+        <befeuerung BLOCK="true" GAS="true" />
+      </ausstattung>
+    </immobilie>
+    <immobilie>
+      <ausstattung>
+        <befeuerung WASSER-ELEKTRO="true" ELEKTRO="true" />
+      </ausstattung>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="KRANKENHAUS" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="PFLEGEHEIM" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="SANATORIUM" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="SENIORENHEIM" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="BETREUTES-WOHNEN" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <zustand_angaben>
+        <energiepass>
+          <art>VERBRAUCH</art>
+          <skala type="ZAHL">123</skala>
+        </energiepass>
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <zustand_angaben>
+        <energiepass>
+          <art>BEDARF</art>
+          <skala type="ZAHL">456</skala>
+          <energiebedarf>456</energiebedarf>
+        </energiepass>
+      </zustand_angaben>
+    </immobilie>
+  </anbieter>
+</openimmo>

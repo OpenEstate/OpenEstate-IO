@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo>
+  <uebertragung version="1.2.6"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <preise>
+        <summemietenetto sonstigemieteust="123">456</summemietenetto>
+      </preise>
+      <zustand_angaben>
+        <energiepass>
+          <epart>VERBRAUCH</epart>
+          <gueltig_bis>03-2015</gueltig_bis>
+          <energieverbrauchkennwert>123</energieverbrauchkennwert>
+          <mitwarmwasser>true</mitwarmwasser>
+        </energiepass>
+        <user_defined_simplefield feldname="epass_waermewert">345</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_stromwert">234</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_wertklasse">A</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_baujahr">1985</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_ausstelldatum">2014-05-05</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_jahrgang">2014</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_gebaeudeart">nichtwohn</user_defined_simplefield>
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <summemietenetto>789</summemietenetto>
+      </preise>
+      <zustand_angaben>
+        <energiepass>
+          <epart>VERBRAUCH</epart>
+          <gueltig_bis>03-2015</gueltig_bis>
+          <energieverbrauchkennwert>123</energieverbrauchkennwert>
+          <mitwarmwasser>true</mitwarmwasser>
+        </energiepass>
+        <user_defined_simplefield feldname="epass_waermewert">345</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_stromwert">234</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_wertklasse">A</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_baujahr">1985</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_ausstelldatum">2009-05-05</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_jahrgang">2008</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_gebaeudeart">wohn</user_defined_simplefield>
+      </zustand_angaben>
+    </immobilie>
+  </anbieter>
+  <anbieter>
+    <firma>second agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <preise>
+        <summemietenetto>987</summemietenetto>
+      </preise>
+      <zustand_angaben>
+        <user_defined_simplefield feldname="epass_waermewert">345</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_stromwert">234</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_wertklasse">A</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_baujahr">1985</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_ausstelldatum">2009-05-05</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_jahrgang">2008</user_defined_simplefield>
+        <user_defined_simplefield feldname="epass_gebaeudeart">wohn</user_defined_simplefield>
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <summemietenetto sonstigemieteust="654">321</summemietenetto>
+      </preise>
+    </immobilie>
+  </anbieter>
+</openimmo>

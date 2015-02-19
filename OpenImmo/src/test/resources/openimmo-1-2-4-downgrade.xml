@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo>
+  <uebertragung version="1.2.4"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <anhaenge>
+        <anhang gruppe="QRCODE" />
+        <anhang gruppe="FILM" />
+        <anhang gruppe="FILMLINK" />
+        <anhang location="REMOTE" />
+        <anhang>
+          <check ctype="MD5">123456</check>
+        </anhang>
+      </anhaenge>
+    </immobilie>
+    <immobilie>
+      <ausstattung>
+        <wintergarten>true</wintergarten>
+        <energietyp NEUBAUSTANDARD="true" KFW55="true" />
+      </ausstattung>
+      <zustand_angaben>
+        <bebaubar_nach bebaubar_attr="LAENDERSPEZIFISCH" />
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <ausstattung>
+        <wintergarten>false</wintergarten>
+        <energietyp PASSIVHAUS="true" KFW70="true" />
+      </ausstattung>
+      <zustand_angaben>
+        <bebaubar_nach bebaubar_attr="BAULAND" />
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <grundstueck grundst_typ="SEELIEGENSCHAFT" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <grundstueck grundst_typ="SONDERNUTZUNG" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <land_und_forstwirtschaft land_typ="JAGDREVIER" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <land_und_forstwirtschaft land_typ="LANDWIRTSCHAFTLICHE_BETRIEBE" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <parken parken_typ="EINZELGARAGE" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <parken parken_typ="PARKHAUS" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <parken parken_typ="TIEFGARAGENSTELLPLATZ" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <parken parken_typ="PARKPLATZ_STROM" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <parken parken_typ="CARPORT" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <wohnung wohnungtyp="ROHDACHBODEN" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <wohnung wohnungtyp="DACHGESCHOSS" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <provision_teilen wert="text">some text</provision_teilen>
+        <kaution_text>some more text</kaution_text>
+        <richtpreis>123.45</richtpreis>
+      </preise>
+    </immobilie>
+  </anbieter>
+</openimmo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo_feedback>
+  <version>1.2.5</version>
+  <sender>
+    <name>immoabc</name>
+    <datum>2011-11-11</datum>
+    <makler_id>446544</makler_id>
+  </sender>
+  <objekt>
+    <ort>Berlin</ort>
+    <land>DEU</land>
+    <stadtbezirk>Mitte</stadtbezirk>
+    <anzahl_zimmer>5</anzahl_zimmer>
+    <flaeche>120</flaeche>
+  </objekt>
+</openimmo_feedback>
