@@ -1,5 +1,5 @@
-OpenEstate-IO (not released yet)
-================================
+OpenEstate-IO 1.0-SNAPSHOT
+==========================
 
 *OpenEstate-IO* provided a set of Java libraries to read and write real 
 estate data in different common formats. These libraries are used within
