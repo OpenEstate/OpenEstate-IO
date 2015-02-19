@@ -31,6 +31,9 @@ Dependencies
 -   [jaxb2-basics-runtime 0.9.1](https://github.com/highsource/jaxb2-basics)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
 -   [SLF4J 1.7.7](http://www.slf4j.org/)
+-   [log4j 1.2.17](http://logging.apache.org/log4j/1.2/)
+    (optional, may be replaced by another logging system
+    [via SLF4J](http://www.slf4j.org/manual.html))
 
 
 Changelog

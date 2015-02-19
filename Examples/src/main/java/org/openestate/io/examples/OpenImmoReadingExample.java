@@ -14,27 +14,31 @@
  * limitations under the License.
  */
 
-package org.openestate.io.immoxml.examples;
+package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.openestate.io.immoxml.ImmoXmlDocument;
-import org.openestate.io.immoxml.ImmoXmlUtils;
-import org.openestate.io.immoxml.xml.Anbieter;
-import org.openestate.io.immoxml.xml.Immobilie;
-import org.openestate.io.immoxml.xml.Immoxml;
+import org.openestate.io.openimmo.OpenImmoDocument;
+import org.openestate.io.openimmo.OpenImmoFeedbackDocument;
+import org.openestate.io.openimmo.OpenImmoTransferDocument;
+import org.openestate.io.openimmo.OpenImmoUtils;
+import org.openestate.io.openimmo.xml.Anbieter;
+import org.openestate.io.openimmo.xml.Immobilie;
+import org.openestate.io.openimmo.xml.Objekt;
+import org.openestate.io.openimmo.xml.Openimmo;
+import org.openestate.io.openimmo.xml.OpenimmoFeedback;
 import org.xml.sax.SAXException;
 
 /**
  * Example for XML reading.
  * <p>
- * This example illustrates how to read an ImmoXML document from a file.
+ * This example illustrates how to read an OpenImmo document from a file.
  *
  * @author Andreas Rudolph
  */
-public class ImmoXmlReadingExample
+public class OpenImmoReadingExample
 {
   /**
    * Start the example application.
@@ -46,7 +50,7 @@ public class ImmoXmlReadingExample
   {
     if (args.length<1)
     {
-      System.out.println( "Please provide at least one ImmoXML file as argument!" );
+      System.out.println( "Please provide at least one OpenImmo file as argument!" );
       System.exit( 1 );
     }
     for (String arg : args)
@@ -65,8 +69,8 @@ public class ImmoXmlReadingExample
   }
 
   /**
-   * Read an ImmoXML file into a {@link ImmoXmlDocument} and prints some of
-   * their content to console.
+   * Read an OpenImmo file into a {@link TransferDocument} or
+   * {@link FeedbackDocument} and prints some of their content to console.
    *
    * @param xmlFile
    * the XML file to read
@@ -91,21 +95,32 @@ public class ImmoXmlReadingExample
       System.out.println( "> The provided file is invalid!" );
       return;
     }
-    ImmoXmlDocument doc = ImmoXmlUtils.createDocument( xmlFile );
+    OpenImmoDocument doc = OpenImmoUtils.createDocument( xmlFile );
     if (doc==null)
     {
       System.out.println( "> provided XML is not supported" );
     }
-    else
+    else if (doc.isFeedback())
+    {
+      System.out.println( "> is feedback XML in version "
+        + doc.getDocumentVersion().toReadableVersion() );
+      read( (OpenImmoFeedbackDocument) doc );
+    }
+    else if (doc.isTransfer())
     {
       System.out.println( "> is transfer XML in version "
         + doc.getDocumentVersion().toReadableVersion() );
-      read((ImmoXmlDocument) doc );
+      read( (OpenImmoTransferDocument) doc );
+    }
+    else
+    {
+      System.out.println( "> unsupported type of XML document: "
+        + doc.getClass().getName() );
     }
   }
 
   /**
-   * Print the content of a {@link ImmoXmlDocument} to console.
+   * Print the content of a {@link FeedbackDocument} to console.
    *
    * @param doc
    * the document to process
@@ -113,12 +128,32 @@ public class ImmoXmlReadingExample
    * @throws JAXBException
    * if XML conversion into Java objects failed
    */
-  protected static void read( ImmoXmlDocument doc ) throws JAXBException
+  protected static void read( OpenImmoFeedbackDocument doc ) throws JAXBException
   {
-    Immoxml immoxml = doc.toObject();
+    OpenimmoFeedback feedback = doc.toObject();
+    for (Objekt objekt : feedback.getObjekt())
+    {
+      System.out.println( "> feedback for object "
+        + "'" + objekt.getOobjId() + "' "
+        + "with title '" + objekt.getBezeichnung() + "'" );
+    }
+  }
+
+  /**
+   * Print the content of a {@link TransferDocument} to console.
+   *
+   * @param doc
+   * the document to process
+   *
+   * @throws JAXBException
+   * if XML conversion into Java objects failed
+   */
+  protected static void read( OpenImmoTransferDocument doc ) throws JAXBException
+  {
+    Openimmo openimmo = doc.toObject();
 
     // process agencies in the document
-    for (Anbieter anbieter : immoxml.getAnbieter())
+    for (Anbieter anbieter : openimmo.getAnbieter())
     {
       System.out.println( "> transfer for agency "
         + "'" + anbieter.getAnbieternr() + "'" );

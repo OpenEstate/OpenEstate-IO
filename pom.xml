@@ -20,9 +20,8 @@
   <modules>
     <module>Core</module>
     <module>ImmoXML</module>
-    <module>ImmoXML-Examples</module>
     <module>OpenImmo</module>
-    <module>OpenImmo-Examples</module>
+    <module>Examples</module>
   </modules>
 
   <dependencyManagement>
@@ -144,12 +143,20 @@
           </links>
           <groups>
             <group>
-              <title>core library</title>
+              <title>core classes</title>
               <packages>org.openestate.io</packages>
+            </group>
+            <group>
+              <title>ImmoXml</title>
+              <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
             </group>
             <group>
               <title>OpenImmo</title>
               <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
+            </group>
+            <group>
+              <title>example classes</title>
+              <packages>org.openestate.io.example:org.openestate.io.example.*</packages>
             </group>
           </groups>
         </configuration>

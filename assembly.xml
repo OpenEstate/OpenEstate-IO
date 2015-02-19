@@ -46,14 +46,14 @@
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
-      <directory>${basedir}/ImmoXml/release</directory>
+      <directory>${basedir}/Examples/release</directory>
       <outputDirectory>lib</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
-      <directory>${basedir}/ImmoXml-Examples/release</directory>
+      <directory>${basedir}/ImmoXML/release</directory>
       <outputDirectory>lib</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
@@ -61,13 +61,6 @@
     </fileSet>
     <fileSet>
       <directory>${basedir}/OpenImmo/release</directory>
-      <outputDirectory>lib</outputDirectory>
-      <directoryMode>0755</directoryMode>
-      <fileMode>0644</fileMode>
-      <filtered>false</filtered>
-    </fileSet>
-    <fileSet>
-      <directory>${basedir}/OpenImmo-Examples/release</directory>
       <outputDirectory>lib</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>

@@ -14,42 +14,39 @@
  * limitations under the License.
  */
 
-package org.openestate.io.openimmo.examples;
+package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
-import java.util.Calendar;
 import java.util.Locale;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.openimmo.OpenImmoTransferDocument;
-import org.openestate.io.openimmo.OpenImmoUtils;
-import org.openestate.io.openimmo.OpenImmoVersion;
-import org.openestate.io.openimmo.xml.Aktion;
-import org.openestate.io.openimmo.xml.Anbieter;
-import org.openestate.io.openimmo.xml.Haus;
-import org.openestate.io.openimmo.xml.Immobilie;
-import org.openestate.io.openimmo.xml.ObjectFactory;
-import org.openestate.io.openimmo.xml.Openimmo;
-import org.openestate.io.openimmo.xml.Uebertragung;
+import org.openestate.io.immoxml.ImmoXmlUtils;
+import org.openestate.io.immoxml.ImmoXmlDocument;
+import org.openestate.io.immoxml.xml.Aktion;
+import org.openestate.io.immoxml.xml.Anbieter;
+import org.openestate.io.immoxml.xml.Haus;
+import org.openestate.io.immoxml.xml.Immobilie;
+import org.openestate.io.immoxml.xml.Immoxml;
+import org.openestate.io.immoxml.xml.ObjectFactory;
+import org.openestate.io.immoxml.xml.Uebertragung;
 
 /**
  * Example for XML writing.
  * <p>
- * This example illustrates the programatic creation of an OpenImmo document,
- * how the document is written into XML and how the document is downgraded to
- * earlier OpenImmo versions.
+ * This example illustrates the programatic creation of an ImmoXML document,
+ * and how the document is written into XML.
  *
  * @author Andreas Rudolph
  */
-public class OpenImmoWritingExample
+public class ImmoXmlWritingExample
 {
-  private final static ObjectFactory FACTORY = OpenImmoUtils.getFactory();
+  private final static ObjectFactory FACTORY = ImmoXmlUtils.getFactory();
   private final static boolean PRETTY_PRINT = true;
 
   /**
@@ -60,16 +57,16 @@ public class OpenImmoWritingExample
    */
   public static void main( String[] args )
   {
-    // create an OpenImmo object with some example data
-    Openimmo openimmo = FACTORY.createOpenimmo();
-    openimmo.setUebertragung( createUebertragung() );
-    openimmo.getAnbieter().add( createAnbieter() );
+    // create an ImmoXML object with some example data
+    Immoxml immoxml = FACTORY.createImmoxml();
+    immoxml.setUebertragung( createUebertragung() );
+    immoxml.getAnbieter().add( createAnbieter() );
 
-    // convert OpenImmo object into a XML document
-    OpenImmoTransferDocument doc = null;
+    // convert ImmoXML object into a XML document
+    ImmoXmlDocument doc = null;
     try
     {
-      doc = OpenImmoTransferDocument.newDocument( openimmo );
+      doc = ImmoXmlDocument.newDocument( immoxml );
     }
     catch (Exception ex)
     {
@@ -81,7 +78,7 @@ public class OpenImmoWritingExample
     // write XML document into a java.io.File
     try
     {
-      write( doc, File.createTempFile( "openimmo-", ".xml" ) );
+      write( doc, File.createTempFile( "immoxml-", ".xml" ) );
     }
     catch (IOException ex)
     {
@@ -98,16 +95,6 @@ public class OpenImmoWritingExample
 
     // write XML document into a string and send it to the console
     writeToConsole( doc );
-
-    // downgrade XML document to an earlier OpenImmo version
-    // and write it to the console
-    doc.downgrade( OpenImmoVersion.V1_2_3 );
-    writeToConsole( doc );
-
-    // downgrade XML document to the first OpenImmo version
-    // and write it to the console
-    doc.downgrade( OpenImmoVersion.V1_1 );
-    writeToConsole( doc );
   }
 
   /**
@@ -122,7 +109,7 @@ public class OpenImmoWritingExample
     Anbieter anbieter = FACTORY.createAnbieter();
     anbieter.setAnbieternr( "123456" );
     anbieter.setFirma( "Agency Name" );
-    anbieter.setOpenimmoAnid( "123456");
+    anbieter.setImmoxmlAnid( "123456");
 
     // add some real estates to the agency
     anbieter.getImmobilie().add( createImmobilie() );
@@ -173,13 +160,10 @@ public class OpenImmoWritingExample
     // add some informations about prices
     immobilie.setPreise( FACTORY.createPreise() );
     immobilie.getPreise().setHeizkosten( 456.0 );
-    immobilie.getPreise().setKaufpreis( FACTORY.createKaufpreis() );
-    immobilie.getPreise().getKaufpreis().setAufAnfrage( false );
-    immobilie.getPreise().getKaufpreis().setValue( 123456.79 );
+    immobilie.getPreise().setKaufpreis( 123456.79 );
 
     // add some informations about features
     immobilie.setAusstattung( FACTORY.createAusstattung() );
-    immobilie.getAusstattung().setGaestewc( true );
     immobilie.getAusstattung().setGartennutzung( true );
     immobilie.getAusstattung().setHeizungsart( FACTORY.createHeizungsart() );
     immobilie.getAusstattung().getHeizungsart().setZENTRAL( true );
@@ -193,7 +177,7 @@ public class OpenImmoWritingExample
     // set the contact person
     immobilie.setKontaktperson( FACTORY.createKontaktperson() );
     immobilie.getKontaktperson().setName( "Max Mustermann" );
-    immobilie.getKontaktperson().setEmailFeedback( "max@mustermann.org" );
+    immobilie.getKontaktperson().setEmailDirekt( "max@mustermann.org" );
     immobilie.getKontaktperson().setTelDurchw( "030/123456789" );
     immobilie.getKontaktperson().setPlz( RandomStringUtils.randomNumeric( 5 ) );
     immobilie.getKontaktperson().setOrt( "Berlin" );
@@ -214,17 +198,14 @@ public class OpenImmoWritingExample
     // create an example transfer
     Uebertragung uebertragung = FACTORY.createUebertragung();
     uebertragung.setArt( Uebertragung.Art.OFFLINE );
-    uebertragung.setModus( Uebertragung.Modus.NEW );
     uebertragung.setSendersoftware( "OpenEstate.org" );
-    uebertragung.setSenderversion( "1.0-SNAPSHOT" );
     uebertragung.setTechnEmail( "info@openestate.org" );
-    uebertragung.setTimestamp( Calendar.getInstance() );
     uebertragung.setUmfang( Uebertragung.Umfang.VOLL );
     return uebertragung;
   }
 
   /**
-   * Write a {@link TransferDocument} into a {@link File}.
+   * Write a {@link ImmoXmlDocument} into a {@link File}.
    *
    * @param doc
    * the document to write
@@ -232,7 +213,7 @@ public class OpenImmoWritingExample
    * @param file
    * the file, where the document is written to
    */
-  protected static void write( OpenImmoTransferDocument doc, File file )
+  protected static void write( ImmoXmlDocument doc, File file )
   {
     System.out.println( "writing document with version " + doc.getDocumentVersion() );
     try
@@ -249,7 +230,7 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link TransferDocument} into an {@link OutputStream}.
+   * Write a {@link ImmoXmlDocument} into an {@link OutputStream}.
    *
    * @param doc
    * the document to write
@@ -257,7 +238,7 @@ public class OpenImmoWritingExample
    * @param output
    * the stream, where the document is written to
    */
-  protected static void write( OpenImmoTransferDocument doc, OutputStream output )
+  protected static void write( ImmoXmlDocument doc, OutputStream output )
   {
     System.out.println( "writing document with version " + doc.getDocumentVersion() );
     try
@@ -274,7 +255,7 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link TransferDocument} into an {@link Writer}.
+   * Write a {@link ImmoXmlDocument} into an {@link Writer}.
    *
    * @param doc
    * the document to write
@@ -282,7 +263,7 @@ public class OpenImmoWritingExample
    * @param output
    * the writer, where the document is written to
    */
-  protected static void write( OpenImmoTransferDocument doc, Writer output )
+  protected static void write( ImmoXmlDocument doc, Writer output )
   {
     System.out.println( "writing document with version " + doc.getDocumentVersion() );
     try
@@ -299,13 +280,13 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link TransferDocument} into a {@link String} and print the
+   * Write a {@link ImmoXmlDocument} into a {@link String} and print the
    * results to the console.
    *
    * @param doc
    * the document to write
    */
-  protected static void writeToConsole( OpenImmoTransferDocument doc )
+  protected static void writeToConsole( ImmoXmlDocument doc )
   {
     System.out.println( "writing document with version " + doc.getDocumentVersion() );
     try
