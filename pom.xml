@@ -24,6 +24,7 @@
     <module>Examples</module>
     <module>ImmobiliareIT</module>
     <module>ImmoXML</module>
+    <module>Kyero</module>
     <module>OpenImmo</module>
     <module>Trovit</module>
     <module>WisIT</module>
@@ -55,6 +56,11 @@
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Kyero</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -193,6 +199,10 @@
             <group>
               <title>ImmoXML</title>
               <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
+            </group>
+            <group>
+              <title>Kyero</title>
+              <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
             </group>
             <group>
               <title>OpenImmo</title>

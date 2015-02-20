@@ -1,0 +1,298 @@
+<xs:schema xmlns:xi="http://www.w3.org/2003/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
+
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="kyero" type="kyeroType" />
+        <xs:element name="agent" minOccurs="0">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="id" type="xs:integer" minOccurs="0" />
+              <xs:element name="name" type="xs:string" minOccurs="0" />
+              <xs:element name="email" type="xs:string" minOccurs="0" />
+              <xs:element name="tel" type="xs:string" minOccurs="0" />
+              <xs:element name="fax" type="xs:string" minOccurs="0" />
+              <xs:element name="mob" type="xs:string" minOccurs="0" />
+              <xs:element name="addr1" type="xs:string" minOccurs="0" />
+              <xs:element name="addr2" type="xs:string" minOccurs="0" />
+              <xs:element name="town" type="xs:string" minOccurs="0" />
+              <xs:element name="region" type="xs:string" minOccurs="0" />
+              <xs:element name="postcode" type="xs:string" minOccurs="0" />
+              <xs:element name="country" type="xs:string" minOccurs="0" />
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="property" type="propertyType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="kyeroType">
+    <xs:all>
+      <xs:element name="feed_version">
+        <xs:simpleType>
+          <xs:restriction base="xs:string"> 
+            <xs:minLength value="1"/>
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="feed_generated" type="dateType" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="propertyType">
+    <xs:all>
+      <xs:element name="id" type="idType" />
+      <xs:element name="date" type="dateType" />
+      <xs:element name="ref" type="refType"/>
+      <xs:element name="price" type="priceType"/>
+      <xs:element name="currency" type="currencyType" minOccurs="0" />
+      <xs:element name="price_freq" type="priceFreqType" />
+      <xs:element name="part_ownership" type="boolType" minOccurs="0"/>
+      <xs:element name="leasehold" type="boolType" minOccurs="0" />
+      <xs:element name="new_build" type="boolType" minOccurs="0" />
+      <xs:element name="type" type="typeDataType" />
+      <xs:element name="town" type="requiredType" />
+      <xs:element name="province" type="requiredType" />
+      <xs:element name="location" type="gpsLocationType" minOccurs="0" />
+      <xs:element name="location_detail" type="locationType" minOccurs="0" />
+      <xs:element name="beds" type="xs:nonNegativeInteger" nillable="true" minOccurs="0"/>
+      <xs:element name="baths" type="xs:nonNegativeInteger" nillable="true" minOccurs="0" />
+      <xs:element name="pool" type="boolType" minOccurs="0" />
+      <xs:element name="surface_area" type="surfaceType" minOccurs="0" />  
+      <xs:element name="energy_rating" type="energyRatingType" minOccurs="0" />
+      <xs:element name="url" type="urlType" minOccurs="0" />
+      <xs:element name="desc" type="langType" minOccurs="0" />
+      <xs:element name="features" type="featuresType" />
+      <xs:element name="images" type="imagesType" minOccurs="0" />
+      <xs:element name="notes" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:string"> 
+      <xs:minLength value="1"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="requiredType">
+    <xs:restriction base="xs:string"> 
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dateType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])\s(0[0-9]|1[0-9]|2[01234]):(0[0-9]|[1-5][0-9]):(0[0-9]|[1-5][0-9])"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="refType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="currencyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EUR"/>
+      <xs:enumeration value="GBP"/>
+      <xs:enumeration value="USD"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="priceType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]+|x)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="priceFreqType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sale"/>
+      <xs:enumeration value="week"/>
+      <xs:enumeration value="month"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="boolType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="langType">
+    <xs:all>
+      <xs:element name="ar" type="xs:string" minOccurs="0"/>
+      <xs:element name="bg" type="xs:string" minOccurs="0"/>
+      <xs:element name="ca" type="xs:string" minOccurs="0"/>
+      <xs:element name="cs" type="xs:string" minOccurs="0"/>
+      <xs:element name="de" type="xs:string" minOccurs="0"/>
+      <xs:element name="da" type="xs:string" minOccurs="0"/>
+      <xs:element name="el" type="xs:string" minOccurs="0"/>
+      <xs:element name="en" type="xs:string" minOccurs="0"/>
+      <xs:element name="es" type="xs:string" minOccurs="0"/>
+      <xs:element name="et" type="xs:string" minOccurs="0"/>
+      <xs:element name="fa" type="xs:string" minOccurs="0"/>
+      <xs:element name="fi" type="xs:string" minOccurs="0"/>
+      <xs:element name="fr" type="xs:string" minOccurs="0"/>
+      <xs:element name="he" type="xs:string" minOccurs="0"/>
+      <xs:element name="hi" type="xs:string" minOccurs="0"/>
+      <xs:element name="hu" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="it" type="xs:string" minOccurs="0"/>
+      <xs:element name="ja" type="xs:string" minOccurs="0"/>
+      <xs:element name="ko" type="xs:string" minOccurs="0"/>
+      <xs:element name="lt" type="xs:string" minOccurs="0"/>
+      <xs:element name="lv" type="xs:string" minOccurs="0"/>
+      <xs:element name="nl" type="xs:string" minOccurs="0"/>
+      <xs:element name="no" type="xs:string" minOccurs="0"/>
+      <xs:element name="pl" type="xs:string" minOccurs="0"/>
+      <xs:element name="pt" type="xs:string" minOccurs="0"/>
+      <xs:element name="ro" type="xs:string" minOccurs="0"/>
+      <xs:element name="ru" type="xs:string" minOccurs="0"/>
+      <xs:element name="sk" type="xs:string" minOccurs="0"/>
+      <xs:element name="sl" type="xs:string" minOccurs="0"/>
+      <xs:element name="sv" type="xs:string" minOccurs="0"/>
+      <xs:element name="th" type="xs:string" minOccurs="0"/>
+      <xs:element name="tr" type="xs:string" minOccurs="0"/>
+      <xs:element name="uk" type="xs:string" minOccurs="0"/>
+      <xs:element name="vi" type="xs:string" minOccurs="0"/>
+      <xs:element name="zh" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="typeDataType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([a-zA-Z&amp;\s\(\)/\-]+)" />
+      <xs:minLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="locationType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="gpsLocationType">
+    <xs:all>
+      <xs:element name="longitude"  type="xs:decimal"/>
+      <xs:element name="latitude"  type="xs:decimal"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="surfaceType">
+    <xs:all>
+      <xs:element name="built" type="xs:integer" minOccurs="0" />
+      <xs:element name="plot" type="xs:integer" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="energyRatingMarkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A"/>
+      <xs:enumeration value="B"/>
+      <xs:enumeration value="C"/>
+      <xs:enumeration value="D"/>
+      <xs:enumeration value="E"/>
+      <xs:enumeration value="F"/>
+      <xs:enumeration value="G"/>
+      <xs:enumeration value="X"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="energyRatingType">
+    <xs:all>
+      <xs:element name="consumption" type="energyRatingMarkType" minOccurs="0" />
+      <xs:element name="emissions" type="energyRatingMarkType" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="urlType">
+    <xs:all>
+      <xs:element name="ar" type="urlDataType" minOccurs="0"/>
+      <xs:element name="bg" type="urlDataType" minOccurs="0"/>
+      <xs:element name="ca" type="urlDataType" minOccurs="0"/>
+      <xs:element name="cs" type="urlDataType" minOccurs="0"/>
+      <xs:element name="de" type="urlDataType" minOccurs="0"/>
+      <xs:element name="da" type="urlDataType" minOccurs="0"/>
+      <xs:element name="el" type="urlDataType" minOccurs="0"/>
+      <xs:element name="en" type="urlDataType" minOccurs="0"/>
+      <xs:element name="es" type="urlDataType" minOccurs="0"/>
+      <xs:element name="et" type="urlDataType" minOccurs="0"/>
+      <xs:element name="fa" type="urlDataType" minOccurs="0"/>
+      <xs:element name="fi" type="urlDataType" minOccurs="0"/>
+      <xs:element name="fr" type="urlDataType" minOccurs="0"/>
+      <xs:element name="he" type="urlDataType" minOccurs="0"/>
+      <xs:element name="hi" type="urlDataType" minOccurs="0"/>
+      <xs:element name="hu" type="urlDataType" minOccurs="0"/>
+      <xs:element name="id" type="urlDataType" minOccurs="0"/>
+      <xs:element name="it" type="urlDataType" minOccurs="0"/>
+      <xs:element name="ja" type="urlDataType" minOccurs="0"/>
+      <xs:element name="ko" type="urlDataType" minOccurs="0"/>
+      <xs:element name="lt" type="urlDataType" minOccurs="0"/>
+      <xs:element name="lv" type="urlDataType" minOccurs="0"/>
+      <xs:element name="nl" type="urlDataType" minOccurs="0"/>
+      <xs:element name="no" type="urlDataType" minOccurs="0"/>
+      <xs:element name="pl" type="urlDataType" minOccurs="0"/>
+      <xs:element name="pt" type="urlDataType" minOccurs="0"/>
+      <xs:element name="ro" type="urlDataType" minOccurs="0"/>
+      <xs:element name="ru" type="urlDataType" minOccurs="0"/>
+      <xs:element name="sk" type="urlDataType" minOccurs="0"/>
+      <xs:element name="sl" type="urlDataType" minOccurs="0"/>
+      <xs:element name="sv" type="urlDataType" minOccurs="0"/>
+      <xs:element name="th" type="urlDataType" minOccurs="0"/>
+      <xs:element name="tr" type="urlDataType" minOccurs="0"/>
+      <xs:element name="uk" type="urlDataType" minOccurs="0"/>
+      <xs:element name="vi" type="urlDataType" minOccurs="0"/>
+      <xs:element name="zh" type="urlDataType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="urlDataType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="http://(.*)" />
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="imagesType">
+    <xs:sequence>
+      <xs:element name="image" minOccurs="0" maxOccurs="50">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="url" type="imageUrlType" minOccurs="0" />
+            <xs:element name="title" type="langType" minOccurs="0" />
+          </xs:all>
+          <xs:attribute name="id" type="imageAttributeType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="featuresType">
+    <xs:sequence>
+      <xs:element name="feature" type="xs:string" minOccurs="1" maxOccurs="50">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="imageUrlType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(http|ftp)://(.*)\.(gif|jpe?g|png|GIF|JPE?G|PNG)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="imageAttributeType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
