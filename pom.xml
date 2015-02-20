@@ -20,6 +20,7 @@
   <modules>
     <module>Core</module>
     <module>CasaIT</module>
+    <module>DaftIE</module>
     <module>Examples</module>
     <module>ImmoXML</module>
     <module>OpenImmo</module>
@@ -27,27 +28,34 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- internal dependencies -->
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-CasaIT</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-DaftIE</artifactId>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-Core</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
 
+      <!-- external dependencies -->
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
@@ -155,6 +163,10 @@
             <group>
               <title>casa.it</title>
               <packages>org.openestate.io.casa_it:org.openestate.io.casa_it.*</packages>
+            </group>
+            <group>
+              <title>daft.ie</title>
+              <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
             </group>
             <group>
               <title>ImmoXml</title>
