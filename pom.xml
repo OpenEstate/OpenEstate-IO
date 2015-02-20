@@ -26,6 +26,7 @@
     <module>ImmoXML</module>
     <module>OpenImmo</module>
     <module>Trovit</module>
+    <module>WisIT</module>
   </modules>
 
   <dependencyManagement>
@@ -64,6 +65,11 @@
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-Trovit</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-WisIT</artifactId>
         <version>${project.version}</version>
       </dependency>
 
@@ -195,6 +201,10 @@
             <group>
               <title>Trovit</title>
               <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
+            </group>
+            <group>
+              <title>wohnen-in-suedtirol.it</title>
+              <packages>org.openestate.io.wis_it:org.openestate.io.wis_it.*</packages>
             </group>
             <group>
               <title>example classes</title>

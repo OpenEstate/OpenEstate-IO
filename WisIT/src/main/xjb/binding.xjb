@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               jaxb:extensionBindingPrefixes="xjc"
+               version="2.0">
+
+  <jaxb:globalBindings>
+
+    <jaxb:javaType  name="java.lang.Integer" xmlType="xsd:nonNegativeInteger"
+      parseMethod="org.openestate.io.wis_it.WisItUtils.parseInteger"
+      printMethod="org.openestate.io.wis_it.WisItUtils.printNonNegativeInteger" />
+
+    <jaxb:javaType  name="java.lang.Integer" xmlType="xsd:positiveInteger"
+      parseMethod="org.openestate.io.wis_it.WisItUtils.parseInteger"
+      printMethod="org.openestate.io.wis_it.WisItUtils.printPositiveInteger" />
+
+  </jaxb:globalBindings>
+
+  <jaxb:bindings schemaLocation="../xsd/wis.xsd" node="/xsd:schema">
+
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.openestate.io.wis_it.xml">
+        <jaxb:javadoc><![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.</body>]]></jaxb:javadoc>
+      </jaxb:package>
+    </jaxb:schemaBindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='dateTimeType']">
+      <jaxb:javaType  name="java.util.Calendar"
+        parseMethod="org.openestate.io.wis_it.WisItUtils.parseDateTime"
+        printMethod="org.openestate.io.wis_it.WisItUtils.printDateTime" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='decimalType']">
+      <jaxb:javaType  name="java.lang.Double"
+        parseMethod="org.openestate.io.wis_it.WisItUtils.parseDecimal"
+        printMethod="org.openestate.io.wis_it.WisItUtils.printDecimal" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='yesNoType']">
+      <jaxb:javaType  name="java.lang.Boolean"
+        parseMethod="org.openestate.io.wis_it.WisItUtils.parseYesNo"
+        printMethod="org.openestate.io.wis_it.WisItUtils.printYesNo" />
+    </jaxb:bindings>
+
+  </jaxb:bindings>
+
+</jaxb:bindings>

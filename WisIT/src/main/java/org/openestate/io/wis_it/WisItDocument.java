@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-package org.openestate.io.trovit;
+package org.openestate.io.wis_it;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.BaseDocument;
 import org.openestate.io.core.DocumentUtils;
-import org.openestate.io.trovit.xml.Trovit;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openestate.io.wis_it.xml.WIS;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -30,39 +28,39 @@ import org.w3c.dom.Element;
  *
  * @author Andreas Rudolph
  */
-public class TrovitDocument extends BaseDocument<Trovit>
+public class WisItDocument extends BaseDocument<WIS>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( TrovitDocument.class );
+  //private final static Logger LOGGER = LoggerFactory.getLogger( WisItDocument.class );
 
-  public TrovitDocument( Document document )
+  public WisItDocument( Document document )
   {
     super( document );
     if (!isTransferDocument( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
-    this.setTextWrittenAsCDATA( true );
+    setTextWrittenAsCDATA( true );
   }
 
   public static boolean isTransferDocument( Document doc )
   {
     Element root = DocumentUtils.getRootElement( doc );
-    return "trovit".equals( root.getTagName() );
+    return "WIS".equals( root.getTagName() );
   }
 
-  public static TrovitDocument newDocument() throws ParserConfigurationException, JAXBException
+  public static WisItDocument newDocument() throws ParserConfigurationException, JAXBException
   {
-    return newDocument( TrovitUtils.getFactory().createTrovit());
+    return newDocument(WisItUtils.getFactory().createWIS());
   }
 
-  public static TrovitDocument newDocument( Trovit trovit ) throws ParserConfigurationException, JAXBException
+  public static WisItDocument newDocument( WIS trovit ) throws ParserConfigurationException, JAXBException
   {
     Document document = DocumentUtils.newDocument();
-    TrovitUtils.createMarshaller( "UTF-8", true ).marshal( trovit, document );
-    return new TrovitDocument( document );
+    WisItUtils.createMarshaller( "UTF-8", true ).marshal( trovit, document );
+    return new WisItDocument( document );
   }
 
   @Override
-  public Trovit toObject() throws JAXBException
+  public WIS toObject() throws JAXBException
   {
-    return (Trovit) TrovitUtils.createUnmarshaller().unmarshal( this.getDocument() );
+    return (WIS) WisItUtils.createUnmarshaller().unmarshal( this.getDocument() );
   }
 }

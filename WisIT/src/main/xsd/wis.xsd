@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xsd:element name="WIS">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="BENUTZER" minOccurs="1" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="KDNR" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="OBJEKTE" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ANZAHL" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+              <xsd:element name="OBJEKT" type="ObjectType" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="ObjectType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="LOESCHEN" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="GUELTIGBIS" type="dateTimeType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="IMMOBILIENART" type="propertyType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ORT" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="FRAKTION" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="MIETEKAUF" type="marketingType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="PREIS" type="decimalType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="AUFANFRAGE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="NUTZFLAECHE" type="decimalType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="FLAECHEART" type="areaType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="FOERDERBAR" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="KONVENTIONIERT" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="KUBATUR" type="decimalType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ZUSTAND" type="conditionType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ZIMMER" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="STOCKWERKE" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="STOCKWERK" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="AUFZUG" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="GARAGE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ABSTELLPLATZ" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="GRUENFLAECHE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="KELLER" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="TERRASSE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="LOGGIA" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BALKON" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="DACHBODEN" type="yesNoType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="HEIZUNG" type="heatingType" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="KLIMAHAUS" type="energyStandard" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="UEBERGABEZEITPUNKT" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BAUJAHR" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="INFODE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="INFOIT" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD3" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD4" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD5" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD6" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD7" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD8" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD9" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="BILD10" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="DOWNLOAD1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="DOWNLOAD2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="DOWNLOAD3" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="areaType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="netto"/>
+      <xsd:enumeration value="brutto"/>
+      <xsd:enumeration value="verkauf"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="conditionType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="neu"/>
+      <xsd:enumeration value="gebraucht"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="dateTimeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[0-9]{4}\-[0-9]{2}\-[0-9]{2} [0-9]{2}\-[0-9]{2}\-[0-9]{2}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="decimalType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:fractionDigits value="2"/>
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="energyStandard">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="A"/>
+      <xsd:enumeration value="B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="heatingType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="zentral"/>
+      <xsd:enumeration value="autonom"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="marketingType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="miete"/>
+      <xsd:enumeration value="kauf"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="propertyType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="bauernhof"/>
+      <xsd:enumeration value="baugrund"/>
+      <xsd:enumeration value="buero"/>
+      <xsd:enumeration value="einfamilienhaus"/>
+      <xsd:enumeration value="garage"/>
+      <xsd:enumeration value="gastgewerbeobjekt"/>
+      <xsd:enumeration value="geschaeft"/>
+      <xsd:enumeration value="gewerbehalle"/>
+      <xsd:enumeration value="kulturgrund"/>
+      <xsd:enumeration value="reihenhaus"/>
+      <xsd:enumeration value="wald"/>
+      <xsd:enumeration value="wohnung"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="yesNoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ja"/>
+      <xsd:enumeration value="nein"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>
