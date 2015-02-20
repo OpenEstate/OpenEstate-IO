@@ -43,7 +43,7 @@ import org.openestate.io.openimmo.xml.Uebertragung;
  * <p>
  * This example illustrates the programatic creation of an OpenImmo document,
  * how the document is written into XML and how the document is downgraded to
- * earlier OpenImmo versions.
+ * earlier versions.
  *
  * @author Andreas Rudolph
  */
@@ -99,12 +99,12 @@ public class OpenImmoWritingExample
     // write XML document into a string and send it to the console
     writeToConsole( doc );
 
-    // downgrade XML document to an earlier OpenImmo version
+    // downgrade XML document to an earlier version
     // and write it to the console
     doc.downgrade( OpenImmoVersion.V1_2_3 );
     writeToConsole( doc );
 
-    // downgrade XML document to the first OpenImmo version
+    // downgrade XML document to the first version
     // and write it to the console
     doc.downgrade( OpenImmoVersion.V1_1 );
     writeToConsole( doc );
