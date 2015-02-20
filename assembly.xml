@@ -69,6 +69,13 @@
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
+      <directory>${basedir}/ImmobiliareIT/release</directory>
+      <outputDirectory>lib</outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
+    <fileSet>
       <directory>${basedir}/ImmoXML/release</directory>
       <outputDirectory>lib</outputDirectory>
       <directoryMode>0755</directoryMode>
