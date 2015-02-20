@@ -100,6 +100,48 @@
         </configuration>
       </plugin>
 
+      <!-- dependency -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.10</version>
+        <executions>
+          <execution>
+            <id>copy-dependency-sources</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>false</overWriteSnapshots>
+              <overWriteIfNewer>true</overWriteIfNewer>
+              <includeScope>runtime</includeScope>
+              <excludeGroupIds>${project.groupId},com.google.code.findbugs</excludeGroupIds>
+              <classifier>sources</classifier>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>copy-dependency-javadocs</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>false</overWriteSnapshots>
+              <overWriteIfNewer>true</overWriteIfNewer>
+              <includeScope>runtime</includeScope>
+              <excludeGroupIds>${project.groupId},com.google.code.findbugs</excludeGroupIds>
+              <classifier>javadoc</classifier>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- compiler -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

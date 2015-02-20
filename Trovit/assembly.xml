@@ -4,11 +4,12 @@
           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
 
   <id>release</id>
-  <baseDirectory>{$artifactId}</baseDirectory>
+  <baseDirectory>${project.artifactId}-${project.version}-release</baseDirectory>
   <includeBaseDirectory>false</includeBaseDirectory>
   <formats>
     <format>dir</format>
   </formats>
+
   <dependencySets>
     <dependencySet>
       <outputDirectory></outputDirectory>
@@ -31,5 +32,15 @@
       </excludes>
     </dependencySet>
   </dependencySets>
+
+  <fileSets>
+    <fileSet>
+      <directory>${basedir}/target/3rdparty</directory>
+      <outputDirectory>3rdparty</outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
+  </fileSets>
 
 </assembly>
