@@ -25,6 +25,7 @@
     <module>ImmobiliareIT</module>
     <module>ImmoXML</module>
     <module>OpenImmo</module>
+    <module>Trovit</module>
   </modules>
 
   <dependencyManagement>
@@ -58,6 +59,11 @@
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-OpenImmo</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Trovit</artifactId>
         <version>${project.version}</version>
       </dependency>
 
@@ -185,6 +191,10 @@
             <group>
               <title>OpenImmo</title>
               <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
+            </group>
+            <group>
+              <title>Trovit</title>
+              <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
             </group>
             <group>
               <title>example classes</title>
