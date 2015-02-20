@@ -38,6 +38,15 @@
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
+
+    <!-- assemble modules -->
+    <fileSet>
+      <directory>${basedir}/CasaIT/release</directory>
+      <outputDirectory>lib</outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
     <fileSet>
       <directory>${basedir}/Core/release</directory>
       <outputDirectory>lib</outputDirectory>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               jaxb:extensionBindingPrefixes="xjc"
+               version="2.0">
+
+  <jaxb:bindings schemaLocation="../xsd/schema.xsd" node="/xsd:schema">
+
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.openestate.io.casa_it.xml">
+        <jaxb:javadoc><![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="http://casa.it/">casa.it</a>.</body>]]></jaxb:javadoc>
+      </jaxb:package>
+    </jaxb:schemaBindings>
+
+  </jaxb:bindings>
+
+</jaxb:bindings>

@@ -35,8 +35,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.openestate.io.core.DocumentUtils;
 import org.openestate.io.immoxml.xml.ObjectFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -48,7 +46,7 @@ import org.xml.sax.SAXException;
  */
 public class ImmoXmlUtils
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlUtils.class );
+  //private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlUtils.class );
   public final static String PACKAGE = "org.openestate.io.immoxml.xml";
   public final static ImmoXmlVersion VERSION = ImmoXmlVersion.V1_1;
   public final static String NAMESPACE = "http://www.immoxml.de";

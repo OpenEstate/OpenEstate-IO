@@ -224,7 +224,7 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link TransferDocument} into a {@link File}.
+   * Write a {@link OpenImmoTransferDocument} into a {@link File}.
    *
    * @param doc
    * the document to write
@@ -249,7 +249,7 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link TransferDocument} into an {@link OutputStream}.
+   * Write a {@link OpenImmoTransferDocument} into an {@link OutputStream}.
    *
    * @param doc
    * the document to write
@@ -274,7 +274,7 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link TransferDocument} into an {@link Writer}.
+   * Write a {@link OpenImmoTransferDocument} into an {@link Writer}.
    *
    * @param doc
    * the document to write
@@ -299,7 +299,7 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link TransferDocument} into a {@link String} and print the
+   * Write a {@link OpenImmoTransferDocument} into a {@link String} and print the
    * results to the console.
    *
    * @param doc

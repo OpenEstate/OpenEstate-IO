@@ -19,13 +19,19 @@
 
   <modules>
     <module>Core</module>
+    <module>CasaIT</module>
+    <module>Examples</module>
     <module>ImmoXML</module>
     <module>OpenImmo</module>
-    <module>Examples</module>
   </modules>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-CasaIT</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-Core</artifactId>
@@ -144,7 +150,11 @@
           <groups>
             <group>
               <title>core classes</title>
-              <packages>org.openestate.io</packages>
+              <packages>org.openestate.io.core</packages>
+            </group>
+            <group>
+              <title>casa.it</title>
+              <packages>org.openestate.io.casa_it:org.openestate.io.casa_it.*</packages>
             </group>
             <group>
               <title>ImmoXml</title>
@@ -156,7 +166,7 @@
             </group>
             <group>
               <title>example classes</title>
-              <packages>org.openestate.io.example:org.openestate.io.example.*</packages>
+              <packages>org.openestate.io.examples:org.openestate.io.examples.*</packages>
             </group>
           </groups>
         </configuration>
