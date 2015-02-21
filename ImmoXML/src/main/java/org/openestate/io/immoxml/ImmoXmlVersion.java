@@ -21,6 +21,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.Converter;
 import org.openestate.io.core.Version;
 import org.openestate.io.immoxml.converters.ImmoXML_1_1;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ImmoXmlVersion.
@@ -32,15 +34,16 @@ public enum ImmoXmlVersion implements Version
   /**
    * ImmoXML 1.1
    */
-  V1_1( "1.1", new ImmoXML_1_1() );
+  V1_1( "1.1", ImmoXML_1_1.class );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlVersion.class );
   private final String readableVersion;
-  private final Converter converter;
+  private final Class converterClass;
 
-  private ImmoXmlVersion( String readableVersion, Converter converter )
+  private ImmoXmlVersion( String readableVersion, Class converterClass )
   {
     this.readableVersion = readableVersion;
-    this.converter = converter;
+    this.converterClass = converterClass;
   }
 
   public static ImmoXmlVersion detectFromString( String version )
@@ -62,7 +65,16 @@ public enum ImmoXmlVersion implements Version
   @Override
   public Converter getConverter()
   {
-    return this.converter;
+    try
+    {
+      return (Converter) this.converterClass.newInstance();
+    }
+    catch (Exception ex)
+    {
+      LOGGER.error( "Can't create converter!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      return null;
+    }
   }
 
   @Override

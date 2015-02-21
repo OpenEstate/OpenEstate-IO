@@ -49,6 +49,7 @@ public class WisItUtils
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger( WisItUtils.class );
   public final static String PACKAGE = "org.openestate.io.wis_it.xml";
+  public final static String NAMESPACE = StringUtils.EMPTY;
   private final static ObjectFactory FACTORY = new ObjectFactory();
   private static JAXBContext JAXB = null;
 

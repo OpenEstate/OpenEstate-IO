@@ -21,6 +21,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.Converter;
 import org.openestate.io.core.Version;
 import org.openestate.io.immobiliare_it.converters.ImmobiliareIt_2_5;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * DaftIEVersion.
@@ -32,25 +34,25 @@ public enum ImmobiliareItVersion implements Version
   /**
    * Immobiliare-XML 2.5
    */
-  V2_5( "2.5", new ImmobiliareIt_2_5() );
+  V2_5( "2.5", ImmobiliareIt_2_5.class );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItVersion.class );
   private final String readableVersion;
-  private final Converter converter;
+  private final Class converterClass;
 
-  private ImmobiliareItVersion( String readableVersion, Converter converter )
+  private ImmobiliareItVersion( String readableVersion, Class converterClass )
   {
     this.readableVersion = readableVersion;
-    this.converter = converter;
+    this.converterClass = converterClass;
   }
 
   public static ImmobiliareItVersion detectFromString( String version )
   {
     if (version!=null)
     {
-      String[] values = StringUtils.split( version, "/" );
       for (ImmobiliareItVersion v : ImmobiliareItVersion.values())
       {
-        if (v.toReadableVersion().equalsIgnoreCase( values[0] ))
+        if (v.toReadableVersion().equalsIgnoreCase( version ))
         {
           return v;
         }
@@ -62,7 +64,16 @@ public enum ImmobiliareItVersion implements Version
   @Override
   public Converter getConverter()
   {
-    return this.converter;
+    try
+    {
+      return (Converter) this.converterClass.newInstance();
+    }
+    catch (Exception ex)
+    {
+      LOGGER.error( "Can't create converter!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      return null;
+    }
   }
 
   @Override

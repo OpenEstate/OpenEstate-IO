@@ -51,7 +51,7 @@ import org.xml.sax.SAXException;
  */
 public class ImmobiliareItUtils
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItUtils.class );
   public final static String PACKAGE = "org.openestate.io.immobiliare_it.xml";
   public final static String NAMESPACE = "http://feed.immobiliare.it";
   public final static ImmobiliareItVersion VERSION = ImmobiliareItVersion.V2_5;

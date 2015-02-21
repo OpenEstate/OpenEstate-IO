@@ -53,6 +53,7 @@ public class TrovitUtils
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger( TrovitUtils.class );
   public final static String PACKAGE = "org.openestate.io.trovit.xml";
+  public final static String NAMESPACE = StringUtils.EMPTY;
   private final static ObjectFactory FACTORY = new ObjectFactory();
   private static JAXBContext JAXB = null;
 

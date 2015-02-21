@@ -49,6 +49,7 @@ public class OpenImmoUtils
   //private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoUtils.class );
   public final static String PACKAGE = "org.openestate.io.openimmo.xml";
   public final static OpenImmoVersion VERSION = OpenImmoVersion.V1_2_7;
+  public final static String NAMESPACE = StringUtils.EMPTY;
   public final static String OLD_NAMESPACE = "http://www.openimmo.de";
   private final static ObjectFactory FACTORY = new ObjectFactory();
   private static JAXBContext JAXB = null;

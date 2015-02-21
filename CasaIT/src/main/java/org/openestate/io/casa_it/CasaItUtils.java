@@ -25,6 +25,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.casa_it.xml.ObjectFactory;
 import org.openestate.io.core.DocumentUtils;
 import org.w3c.dom.Document;
@@ -40,6 +41,7 @@ public class CasaItUtils
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger(CasaITUtils.class );
   public final static String PACKAGE = "org.openestate.io.casa_it.xml";
+  public final static String NAMESPACE = StringUtils.EMPTY;
   private final static ObjectFactory FACTORY = new ObjectFactory();
   private static JAXBContext JAXB = null;
 

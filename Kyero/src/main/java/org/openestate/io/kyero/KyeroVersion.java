@@ -22,6 +22,8 @@ import org.openestate.io.core.Converter;
 import org.openestate.io.core.Version;
 import org.openestate.io.kyero.converters.Kyero_2_1;
 import org.openestate.io.kyero.converters.Kyero_3;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * KyeroVersion.
@@ -33,22 +35,23 @@ public enum KyeroVersion implements Version
   /**
    * Kyero v2.1
    */
-  V2_1( "2.1", "2_1", new Kyero_2_1() ),
+  V2_1( "2.1", "2_1", Kyero_2_1.class),
 
   /**
    * Kyero v3
    */
-  V3( "3", "3", new Kyero_3() );
+  V3( "3", "3", Kyero_3.class );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( KyeroVersion.class );
   private final String readableVersion;
   private final String xmlVersion;
-  private final Converter converter;
+  private final Class converterClass;
 
-  private KyeroVersion( String readableVersion, String xmlVersion, Converter converter )
+  private KyeroVersion( String readableVersion, String xmlVersion, Class converterClass )
   {
     this.readableVersion = readableVersion;
     this.xmlVersion = xmlVersion;
-    this.converter = converter;
+    this.converterClass = converterClass;
   }
 
   public static KyeroVersion detectFromString( String version )
@@ -80,7 +83,16 @@ public enum KyeroVersion implements Version
   @Override
   public Converter getConverter()
   {
-    return this.converter;
+    try
+    {
+      return (Converter) this.converterClass.newInstance();
+    }
+    catch (Exception ex)
+    {
+      LOGGER.error( "Can't create converter!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      return null;
+    }
   }
 
   @Override

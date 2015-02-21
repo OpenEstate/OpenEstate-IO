@@ -21,6 +21,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.Converter;
 import org.openestate.io.core.Version;
 import org.openestate.io.daft_ie.converters.DaftIe_2_7;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * DaftIEVersion.
@@ -32,25 +34,25 @@ public enum DaftIeVersion implements Version
   /**
    * Daft-XML 2.7
    */
-  V2_7( "2.7", new DaftIe_2_7() );
+  V2_7( "2.7", DaftIe_2_7.class );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( DaftIeVersion.class );
   private final String readableVersion;
-  private final Converter converter;
+  private final Class converterClass;
 
-  private DaftIeVersion( String readableVersion, Converter converter )
+  private DaftIeVersion( String readableVersion, Class converterClass )
   {
     this.readableVersion = readableVersion;
-    this.converter = converter;
+    this.converterClass = converterClass;
   }
 
   public static DaftIeVersion detectFromString( String version )
   {
     if (version!=null)
     {
-      String[] values = StringUtils.split( version, "/" );
       for (DaftIeVersion v : DaftIeVersion.values())
       {
-        if (v.toReadableVersion().equalsIgnoreCase( values[0] ))
+        if (v.toReadableVersion().equalsIgnoreCase( version ))
         {
           return v;
         }
@@ -62,7 +64,16 @@ public enum DaftIeVersion implements Version
   @Override
   public Converter getConverter()
   {
-    return this.converter;
+    try
+    {
+      return (Converter) this.converterClass.newInstance();
+    }
+    catch (Exception ex)
+    {
+      LOGGER.error( "Can't create converter!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      return null;
+    }
   }
 
   @Override

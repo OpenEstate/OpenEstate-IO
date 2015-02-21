@@ -29,6 +29,8 @@ import org.openestate.io.openimmo.converters.OpenImmo_1_2_4;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_5;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_6;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_7;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * OpenImmoVersion.
@@ -40,55 +42,56 @@ public enum OpenImmoVersion implements Version
   /**
    * OpenImmo 1.1
    */
-  V1_1( "1.1", new OpenImmo_1_1() ),
+  V1_1( "1.1", OpenImmo_1_1.class),
 
   /**
    * OpenImmo 1.2.0
    */
-  V1_2_0( "1.2.0", new OpenImmo_1_2_0() ),
+  V1_2_0( "1.2.0", OpenImmo_1_2_0.class ),
 
   /**
    * OpenImmo 1.2.1
    */
-  V1_2_1( "1.2.1", new OpenImmo_1_2_1() ),
+  V1_2_1( "1.2.1", OpenImmo_1_2_1.class ),
 
   /**
    * OpenImmo 1.2.2
    */
-  V1_2_2( "1.2.2", new OpenImmo_1_2_2() ),
+  V1_2_2( "1.2.2", OpenImmo_1_2_2.class ),
 
   /**
    * OpenImmo 1.2.3
    */
-  V1_2_3( "1.2.3", new OpenImmo_1_2_3() ),
+  V1_2_3( "1.2.3", OpenImmo_1_2_3.class ),
 
   /**
    * OpenImmo 1.2.4
    */
-  V1_2_4( "1.2.4", new OpenImmo_1_2_4() ),
+  V1_2_4( "1.2.4", OpenImmo_1_2_4.class ),
 
   /**
    * OpenImmo 1.2.5
    */
-  V1_2_5( "1.2.5", new OpenImmo_1_2_5() ),
+  V1_2_5( "1.2.5", OpenImmo_1_2_5.class ),
 
   /**
    * OpenImmo 1.2.6
    */
-  V1_2_6( "1.2.6", new OpenImmo_1_2_6() ),
+  V1_2_6( "1.2.6", OpenImmo_1_2_6.class ),
 
   /**
    * OpenImmo 1.2.7
    */
-  V1_2_7( "1.2.7", new OpenImmo_1_2_7() );
+  V1_2_7( "1.2.7", OpenImmo_1_2_7.class );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoVersion.class );
   private final String readableVersion;
-  private final Converter converter;
+  private final Class converterClass;
 
-  private OpenImmoVersion( String readableVersion, Converter converter )
+  private OpenImmoVersion( String readableVersion, Class converterClass )
   {
     this.readableVersion = readableVersion;
-    this.converter = converter;
+    this.converterClass = converterClass;
   }
 
   public static OpenImmoVersion detectFromString( String version )
@@ -110,7 +113,16 @@ public enum OpenImmoVersion implements Version
   @Override
   public Converter getConverter()
   {
-    return this.converter;
+    try
+    {
+      return (Converter) this.converterClass.newInstance();
+    }
+    catch (Exception ex)
+    {
+      LOGGER.error( "Can't create converter!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      return null;
+    }
   }
 
   @Override

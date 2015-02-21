@@ -46,7 +46,7 @@ import org.xml.sax.SAXException;
  */
 public class ImmoXmlUtils
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlUtils.class );
+  //private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlUtils.class );
   public final static String PACKAGE = "org.openestate.io.immoxml.xml";
   public final static ImmoXmlVersion VERSION = ImmoXmlVersion.V1_1;
   public final static String NAMESPACE = "http://www.immoxml.de";

@@ -50,8 +50,9 @@ import org.xml.sax.SAXException;
  */
 public class DaftIeUtils
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( DaftIeUtils.class );
   public final static String PACKAGE = "org.openestate.io.daft_ie.xml";
+  public final static String NAMESPACE = StringUtils.EMPTY;
   public final static DaftIeVersion VERSION = DaftIeVersion.V2_7;
   public final static Locale DEFAULT_LOCALE = Locale.ENGLISH;
   private final static ObjectFactory FACTORY = new ObjectFactory();
