@@ -17,7 +17,6 @@
 package org.openestate.io.daft_ie;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.Converter;
 import org.openestate.io.core.Version;
 import org.openestate.io.daft_ie.converters.DaftIe_2_7;

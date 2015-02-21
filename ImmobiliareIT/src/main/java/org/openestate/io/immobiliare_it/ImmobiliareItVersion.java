@@ -17,7 +17,6 @@
 package org.openestate.io.immobiliare_it;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.Converter;
 import org.openestate.io.core.Version;
 import org.openestate.io.immobiliare_it.converters.ImmobiliareIt_2_5;
