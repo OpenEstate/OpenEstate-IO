@@ -83,6 +83,13 @@
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
+      <directory>${basedir}/IS24-XML/release</directory>
+      <outputDirectory>lib</outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
+    <fileSet>
       <directory>${basedir}/Kyero/release</directory>
       <outputDirectory>lib</outputDirectory>
       <directoryMode>0755</directoryMode>
