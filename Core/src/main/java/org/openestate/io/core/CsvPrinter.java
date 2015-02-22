@@ -106,7 +106,7 @@ public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable,
     StringBuilder out = new StringBuilder();
     while (m.find())
     {
-      out.append( m.group() );
+      out.append( StringUtils.trimToEmpty( m.group() ) );
       if (!m.hitEnd()) out.append( lineBreak );
     }
     return out.toString();
