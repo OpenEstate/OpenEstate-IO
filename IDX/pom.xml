@@ -3,11 +3,11 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  <name>OpenEstate-IO-Examples</name>
+  <name>OpenEstate-IO-IDX</name>
   <version>1.0-SNAPSHOT</version>
   <url>http://www.openestate.org</url>
   <groupId>org.openestate.io</groupId>
-  <artifactId>OpenEstate-IO-Examples</artifactId>
+  <artifactId>OpenEstate-IO-IDX</artifactId>
   <packaging>jar</packaging>
   <modelVersion>4.0.0</modelVersion>
 
@@ -32,63 +32,38 @@
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openestate.io</groupId>
+      <artifactId>OpenEstate-IO-Core</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-CasaIT</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-DaftIE</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IDX</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Kyero</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Trovit</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-WisIT</artifactId>
+      <artifactId>slf4j-api</artifactId>
       <scope>compile</scope>
     </dependency>
 
@@ -96,6 +71,16 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
       <scope>test</scope>
     </dependency>
 

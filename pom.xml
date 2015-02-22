@@ -22,6 +22,7 @@
     <module>CasaIT</module>
     <module>DaftIE</module>
     <module>Examples</module>
+    <module>IDX</module>
     <module>ImmobiliareIT</module>
     <module>ImmoXML</module>
     <module>IS24-XML</module>
@@ -47,6 +48,11 @@
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-DaftIE</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-IDX</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -202,6 +208,10 @@
             <group>
               <title>daft.ie</title>
               <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
+            </group>
+            <group>
+              <title>IDX</title>
+              <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
             </group>
             <group>
               <title>immobiliare.it</title>
