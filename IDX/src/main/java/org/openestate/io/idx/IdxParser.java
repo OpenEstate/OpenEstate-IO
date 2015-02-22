@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.core.CsvParser;
 
 /**
@@ -56,8 +57,10 @@ public class IdxParser extends CsvParser<IdxRecord>
   }
 
   @Override
-  protected IdxRecord newRecord()
+  protected IdxRecord newRecord( CSVRecord record )
   {
-    return new IdxRecord();
+    IdxRecord idxRecord = new IdxRecord();
+    idxRecord.parse( record );
+    return idxRecord;
   }
 }

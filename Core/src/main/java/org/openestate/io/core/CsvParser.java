@@ -76,7 +76,7 @@ public abstract class CsvParser<Record extends CsvRecord> implements Closeable
     return this.parser.isClosed();
   }
 
-  protected abstract Record newRecord();
+  protected abstract Record newRecord( CSVRecord record );
 
   public final Record next()
   {
@@ -84,8 +84,6 @@ public abstract class CsvParser<Record extends CsvRecord> implements Closeable
     {
       this.iterator = this.parser.iterator();
     }
-    Record record = this.newRecord();
-    record.parse( this.iterator.next() );
-    return record;
+    return this.newRecord( this.iterator.next() );
   }
 }

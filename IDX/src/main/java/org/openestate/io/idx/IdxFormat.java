@@ -37,7 +37,7 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
 
   public IdxFormat()
   {
-    super( CSVFormat.newFormat( '#' ).withRecordSeparator( "\\r\\n" ) );
+    super( CSVFormat.newFormat( '#' ).withRecordSeparator( "\\r\\n" ).withNullString( "" ) );
   }
 
   public static DateFormat getDateFormat()

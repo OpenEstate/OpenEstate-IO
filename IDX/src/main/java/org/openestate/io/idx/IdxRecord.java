@@ -790,45 +790,42 @@ public class IdxRecord extends CsvRecord
 
   public Double getCarryingCapacityCrane()
   {
-    String value = this.get( FIELD_CARRYING_CAPACITY_CRANE );
-    if (value==null) return null;
     try
     {
-      return Double.parseDouble( value );
+      return this.getAsDouble( FIELD_CARRYING_CAPACITY_CRANE );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read carrying capacity for the crane from '" + value + "'!" );
+      LOGGER.warn( "Can't read carrying capacity for the crane "
+        + "from '" + this.get( FIELD_CARRYING_CAPACITY_CRANE ) + "'!" );
       return null;
     }
   }
 
   public Double getCarryingCapacityElevator()
   {
-    String value = this.get( FIELD_CARRYING_CAPACITY_ELEVATOR );
-    if (value==null) return null;
     try
     {
-      return Double.parseDouble( value );
+      return this.getAsDouble( FIELD_CARRYING_CAPACITY_ELEVATOR );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read carrying capacity for the elevator from '" + value + "'!" );
+      LOGGER.warn( "Can't read carrying capacity for the elevator "
+        + "from '" + this.get( FIELD_CARRYING_CAPACITY_ELEVATOR ) + "'!" );
       return null;
     }
   }
 
   public Double getCeilingHeight()
   {
-    String value = this.get( FIELD_CEILING_HEIGHT );
-    if (value==null) return null;
     try
     {
-      return Double.parseDouble( value );
+      return this.getAsDouble( FIELD_CEILING_HEIGHT );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read ceiling height from '" + value + "'!" );
+      LOGGER.warn( "Can't read ceiling height "
+        + "from '" + this.get( FIELD_CEILING_HEIGHT ) + "'!" );
       return null;
     }
   }
@@ -859,15 +856,14 @@ public class IdxRecord extends CsvRecord
 
   public Long getDeliveryId()
   {
-    String value = this.get( FIELD_DELIVERY_ID );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_DELIVERY_ID );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read delivery id from '" + value + "'!" );
+      LOGGER.warn( "Can't read delivery id "
+        + "from '" + this.get( FIELD_DELIVERY_ID ) + "'!" );
       return null;
     }
   }
@@ -879,90 +875,84 @@ public class IdxRecord extends CsvRecord
 
   public Integer getDistanceKindergarten()
   {
-    String value = this.get( FIELD_DISTANCE_KINDERGARTEN );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_DISTANCE_KINDERGARTEN );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to kindergarten from '" + value + "'!" );
+      LOGGER.warn( "Can't read distance to kindergarten "
+        + "from '" + this.get( FIELD_DISTANCE_KINDERGARTEN ) + "'!" );
       return null;
     }
   }
 
   public Integer getDistanceMotorway()
   {
-    String value = this.get( FIELD_DISTANCE_MOTORWAY );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_DISTANCE_MOTORWAY );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to motorway from '" + value + "'!" );
+      LOGGER.warn( "Can't read distance to motorway "
+        + "from '" + this.get( FIELD_DISTANCE_MOTORWAY ) + "'!" );
       return null;
     }
   }
 
   public Integer getDistancePublicTransport()
   {
-    String value = this.get( FIELD_DISTANCE_PUBLIC_TRANSPORT );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_DISTANCE_PUBLIC_TRANSPORT );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to public transport from '" + value + "'!" );
+      LOGGER.warn( "Can't read distance to public transport "
+        + "from '" + this.get( FIELD_DISTANCE_PUBLIC_TRANSPORT ) + "'!" );
       return null;
     }
   }
 
   public Integer getDistanceSchool1()
   {
-    String value = this.get( FIELD_DISTANCE_SCHOOL1 );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_DISTANCE_SCHOOL1 );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to primary school from '" + value + "'!" );
+      LOGGER.warn( "Can't read distance to primary school "
+        + "from '" + this.get( FIELD_DISTANCE_SCHOOL1 ) + "'!" );
       return null;
     }
   }
 
   public Integer getDistanceSchool2()
   {
-    String value = this.get( FIELD_DISTANCE_SCHOOL2 );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_DISTANCE_SCHOOL2 );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to secondary school from '" + value + "'!" );
+      LOGGER.warn( "Can't read distance to secondary school "
+        + "from '" + this.get( FIELD_DISTANCE_SCHOOL2 ) + "'!" );
       return null;
     }
   }
 
   public Integer getDistanceShop()
   {
-    String value = this.get( FIELD_DISTANCE_SHOP );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_DISTANCE_SHOP );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to shopping from '" + value + "'!" );
+      LOGGER.warn( "Can't read distance to shopping "
+        + "from '" + this.get( FIELD_DISTANCE_SHOP ) + "'!" );
       return null;
     }
   }
@@ -978,15 +968,14 @@ public class IdxRecord extends CsvRecord
 
   public Integer getFloor()
   {
-    String value = this.get( FIELD_FLOOR );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_FLOOR );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read floor from '" + value + "'!" );
+      LOGGER.warn( "Can't read floor "
+        + "from '" + this.get( FIELD_FLOOR ) + "'!" );
       return null;
     }
   }
@@ -998,15 +987,14 @@ public class IdxRecord extends CsvRecord
 
   public Double getHallHeight()
   {
-    String value = this.get( FIELD_HALL_HEIGHT );
-    if (value==null) return null;
     try
     {
-      return Double.parseDouble( value );
+      return this.getAsDouble( FIELD_HALL_HEIGHT );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read hall height from '" + value + "'!" );
+      LOGGER.warn( "Can't read hall height "
+        + "from '" + this.get( FIELD_HALL_HEIGHT ) + "'!" );
       return null;
     }
   }
@@ -1030,15 +1018,14 @@ public class IdxRecord extends CsvRecord
 
   public Double getMaximalFloorLoading()
   {
-    String value = this.get( FIELD_MAXIMAL_FLOOR_LOADING );
-    if (value==null) return null;
     try
     {
-      return Double.parseDouble( value );
+      return this.getAsDouble( FIELD_MAXIMAL_FLOOR_LOADING );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read maximal floor loading from '" + value + "'!" );
+      LOGGER.warn( "Can't read maximal floor loading "
+        + "from '" + this.get( FIELD_MAXIMAL_FLOOR_LOADING ) + "'!" );
       return null;
     }
   }
@@ -1054,45 +1041,42 @@ public class IdxRecord extends CsvRecord
 
   public Float getNumberOfApartments()
   {
-    String value = this.get( FIELD_NUMBER_OF_APARTMENTS );
-    if (value==null) return null;
     try
     {
-      return Float.parseFloat( value );
+      return this.getAsFloat( FIELD_NUMBER_OF_APARTMENTS );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read number of apartments from '" + value + "'!" );
+      LOGGER.warn( "Can't read number of apartments "
+        + "from '" + this.get( FIELD_NUMBER_OF_APARTMENTS ) + "'!" );
       return null;
     }
   }
 
   public Integer getNumberOfFloors()
   {
-    String value = this.get( FIELD_NUMBER_OF_FLOORS );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_NUMBER_OF_FLOORS );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read number of floors from '" + value + "'!" );
+      LOGGER.warn( "Can't read number of floors "
+        + "from '" + this.get( FIELD_NUMBER_OF_FLOORS ) + "'!" );
       return null;
     }
   }
 
   public Float getNumberOfRooms()
   {
-    String value = this.get( FIELD_NUMBER_OF_ROOMS );
-    if (value==null) return null;
     try
     {
-      return Float.parseFloat( value );
+      return this.getAsFloat( FIELD_NUMBER_OF_ROOMS );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read number of rooms from '" + value + "'!" );
+      LOGGER.warn( "Can't read number of rooms "
+        + "from '" + this.get( FIELD_NUMBER_OF_ROOMS ) + "'!" );
       return null;
     }
   }
@@ -1256,15 +1240,14 @@ public class IdxRecord extends CsvRecord
 
   public Long getPublishingId()
   {
-    String value = this.get( FIELD_PUBLISHING_ID );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_PUBLISHING_ID );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read publishing id from '" + value + "'!" );
+      LOGGER.warn( "Can't read publishing id "
+        + "from '" + this.get( FIELD_PUBLISHING_ID ) + "'!" );
       return null;
     }
   }
@@ -1314,45 +1297,42 @@ public class IdxRecord extends CsvRecord
 
   public Long getRentExtra()
   {
-    String value = this.get( FIELD_RENT_EXTRA );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_RENT_EXTRA );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read extra rent from '" + value + "'!" );
+      LOGGER.warn( "Can't read extra rent "
+        + "from '" + this.get( FIELD_RENT_EXTRA ) + "'!" );
       return null;
     }
   }
 
   public Long getRentNet()
   {
-    String value = this.get( FIELD_RENT_NET );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_RENT_NET );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read net rent from '" + value + "'!" );
+      LOGGER.warn( "Can't read net rent "
+        + "from '" + this.get( FIELD_RENT_NET ) + "'!" );
       return null;
     }
   }
 
   public Long getSellingPrice()
   {
-    String value = this.get( FIELD_SELLING_PRICE );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_SELLING_PRICE );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read selling price from '" + value + "'!" );
+      LOGGER.warn( "Can't read selling price "
+        + "from '" + this.get( FIELD_SELLING_PRICE ) + "'!" );
       return null;
     }
   }
@@ -1384,45 +1364,42 @@ public class IdxRecord extends CsvRecord
 
   public Long getSurfaceLiving()
   {
-    String value = this.get( FIELD_SURFACE_LIVING );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_SURFACE_LIVING );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read living surface from '" + value + "'!" );
+      LOGGER.warn( "Can't read living surface "
+        + "from '" + this.get( FIELD_SURFACE_LIVING ) + "'!" );
       return null;
     }
   }
 
   public Long getSurfaceProperty()
   {
-    String value = this.get( FIELD_SURFACE_PROPERTY );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_SURFACE_PROPERTY );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read property surface from '" + value + "'!" );
+      LOGGER.warn( "Can't read property surface "
+        + "from '" + this.get( FIELD_SURFACE_PROPERTY ) + "'!" );
       return null;
     }
   }
 
   public Long getSurfaceUsable()
   {
-    String value = this.get( FIELD_SURFACE_USABLE );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_SURFACE_USABLE );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read usable surface from '" + value + "'!" );
+      LOGGER.warn( "Can't read usable surface "
+        + "from '" + this.get( FIELD_SURFACE_USABLE ) + "'!" );
       return null;
     }
   }
@@ -1459,45 +1436,42 @@ public class IdxRecord extends CsvRecord
 
   public Long getVolume()
   {
-    String value = this.get( FIELD_VOLUME );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).longValue();
+      return this.getAsLong( FIELD_VOLUME );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read volume from '" + value + "'!" );
+      LOGGER.warn( "Can't read volume "
+        + "from '" + this.get( FIELD_VOLUME ) + "'!" );
       return null;
     }
   }
 
   public Integer getYearBuilt()
   {
-    String value = this.get( FIELD_YEAR_BUILT );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_YEAR_BUILT );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read build year from '" + value + "'!" );
+      LOGGER.warn( "Can't read build year "
+        + "from '" + this.get( FIELD_YEAR_BUILT ) + "'!" );
       return null;
     }
   }
 
   public Integer getYearRenovated()
   {
-    String value = this.get( FIELD_YEAR_RENOVATED );
-    if (value==null) return null;
     try
     {
-      return Double.valueOf( value ).intValue();
+      return this.getAsInteger( FIELD_YEAR_RENOVATED );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read renovation year from '" + value + "'!" );
+      LOGGER.warn( "Can't read renovation year "
+        + "from '" + this.get( FIELD_YEAR_RENOVATED ) + "'!" );
       return null;
     }
   }
