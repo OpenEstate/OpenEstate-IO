@@ -1747,8 +1747,9 @@ public class IdxRecord extends CsvRecord
 
   public void setAgencyCountry( String value )
   {
+    value = StringUtils.trimToEmpty( value );
     this.set( FIELD_AGENCY_COUNTRY,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 2 ) );
+      (value.length()==2)? value.toUpperCase(): null );
   }
 
   public void setAgencyEmail( String value )
@@ -2172,8 +2173,9 @@ public class IdxRecord extends CsvRecord
 
   public void setObjectCountry( String value )
   {
+    value = StringUtils.trimToEmpty( value );
     this.set( FIELD_OBJECT_COUNTRY,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 2 ) );
+      (value.length()==2)? value.toUpperCase(): null );
   }
 
   public void setObjectDescription( String value )
@@ -2190,8 +2192,9 @@ public class IdxRecord extends CsvRecord
 
   public void setObjectState( String value )
   {
+    value = StringUtils.trimToEmpty( value );
     this.set( FIELD_OBJECT_STATE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 2 ) );
+      (value.length()==2)? value.toUpperCase(): null );
   }
 
   public void setObjectStreet( String value )

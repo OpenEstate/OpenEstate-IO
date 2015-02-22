@@ -53,6 +53,6 @@ public enum GrossPremium
 
   public String print()
   {
-    return this.name();
+    return this.value;
   }
 }
