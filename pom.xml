@@ -25,6 +25,7 @@
     <module>IDX</module>
     <module>ImmobiliareIT</module>
     <module>ImmoXML</module>
+    <module>IS24-CSV</module>
     <module>IS24-XML</module>
     <module>Kyero</module>
     <module>OpenImmo</module>
@@ -63,6 +64,11 @@
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -220,6 +226,10 @@
             <group>
               <title>ImmoXML</title>
               <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
+            </group>
+            <group>
+              <title>IS24-CSV</title>
+              <packages>org.openestate.io.is24_csv:org.openestate.io.is24_csv.*</packages>
             </group>
             <group>
               <title>IS24-XML</title>
