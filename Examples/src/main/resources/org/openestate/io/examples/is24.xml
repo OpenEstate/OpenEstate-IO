@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Diese sind nur Beispiele, die pro Immobilientyp eine  mögliche Maximalbesetzung  von Attributen bzw. Elementen des jeweiligen Objekts vorstellen.
+Siehe XSD für weitere Beschreibungsmöglichkeiten bzw. Vermarktungsarten.
+ -->
+<IS24ImmobilienTransfer xmlns="http://www.immobilienscout24.de/immobilientransfer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.immobilienscout24.de/immobilientransfer is24immotransfer.xsd" EmailBeiFehler="schnittstellen@is24.de" ErstellerSoftware="SUPER-Makler" ErstellerSoftwareVersion="HOUSE-OF-CREAKTIV">
+  <Anbieter ScoutKundenID="IS24_Patricia">
+    <WohnungMiete Importmodus="importieren" AnbieterObjektID="(0) WHG-MIETE" GruppierungsID="1" Ueberschrift="(0) WHG-MIETE" Wohnflaeche="70" Nutzflaeche="87" Zimmer="3.0" Aufzug="true" BalkonTerrasse="true" Provisionspflichtig="true" Provision="2,2 MM" Provisionshinweis="-" Waehrung="EUR" AnzahlBadezimmer="1" AnzahlGaragenStellplaetze="1" AnzahlSchlafzimmer="1" Ausstattungsqualitaet="Gehoben" Barrierefrei="true" Baujahr="1988" BetreutesWohnen="false" Einbaukueche="false" Etage="2" Etagenzahl="5" Foerderung="false" FreiAb="Mitte 2009" GaesteWC="false" GartenBenutzung="false" Haustiere="erlaubt" WohnungKategorie="Etagenwohnung" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2001" Keller="true" Objektzustand="Gepflegt" Parkplatz="Carport" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="true">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>ruhige, schön geschnittene, helle Wohung in attraktivem Haus, Aufzug, Parkdeck und Grünfläche</Objektbeschreibung>
+      <Lage>zentral Nähe Hauptbahnhof</Lage>
+      <Ausstattung>vollständig gefließt, kompl. einger. offene EBK (Cerankochfeld,Spülmaschine), Wannenbad/WC, S/W-Balkon, KabelTV, Waschmaschine auf Wunsch vorhanden</Ausstattung>
+      <SonstigeAngaben>Fahrradkeller und Trockenboden vorhanden</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="video" Titel="Video" Dateityp=".MPG" Abspieldauer="22" Dateiname="video1.mgg"/>
+      <Mietpreise Kaltmiete="3456.00" Heizkosten="55.50" Nebenkosten="85.00" Kaution="3 MM" StellplatzMiete="45.00" HeizkostenInWarmmieteEnthalten="false"/>
+      <BefeuerungsArt>
+        <Solarheizung/>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Energieverbrauchskennwert" Energieverbrauchskennwert="73.4" WarmwasserEnthalten="true"/>
+    </WohnungMiete>
+    <WohnungKauf Importmodus="aktualisieren" ScoutObjektID="47996534" AnbieterObjektID="(1) WHG-KAUF" GruppierungsID="1" Ueberschrift="(1) WHG-MIETE" Wohnflaeche="70" Nutzflaeche="87" Zimmer="3.0" Aufzug="true" BalkonTerrasse="true" Vermietet="true" AlsFerienwohnungGeeignet="false" Provision="2,2 MM" Provisionshinweis="-" Waehrung="EUR" AnzahlBadezimmer="1" AnzahlGaragenStellplaetze="1" AnzahlSchlafzimmer="1" Ausstattungsqualitaet="Gehoben" Barrierefrei="true" Baujahr="1988" BetreutesWohnen="false" Denkmalschutzobjekt="false" Einbaukueche="false" Etage="2" Etagenzahl="5" FreiAb="Mitte 2009" GaesteWC="false" GartenBenutzung="false" WohnungKategorie="Etagenwohnung" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2001" Keller="true" Objektzustand="Gepflegt" Parkplatz="Carport" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="true">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>ruhige, schön geschnittene, helle Wohung in attraktivem Haus, Aufzug, Parkdeck und Grünfläche</Objektbeschreibung>
+      <Lage>zentral Nähe Hauptbahnhof</Lage>
+      <Ausstattung>vollständig gefließt, kompl. einger. offene EBK (Cerankochfeld,Spülmaschine), Wannenbad/WC, S/W-Balkon, KabelTV, Waschmaschine auf Wunsch vorhanden</Ausstattung>
+      <SonstigeAngaben>Fahrradkeller und Trockenboden vorhanden</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="bild" Titel="Bild" Dateityp=".JPG" Dateiname="bild1.jpg"/>
+      <Kaufpreise Kaufpreis="24578383.00" MieteinnahmenProMonat="3455" StellplatzKaufpreis="435353" Wohngeld="300.50"/>
+      <BefeuerungsArt>
+        <Solarheizung/>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Energieverbrauchskennwert" Energieverbrauchskennwert="73.4" WarmwasserEnthalten="true"/>
+    </WohnungKauf>
+    <HausMiete Importmodus="importieren" AnbieterObjektID="(2) HAUS-MIETE" GruppierungsID="2" Ueberschrift="(2) HAUS-MIETE" Wohnflaeche="345.34" Zimmer="4" Provisionspflichtig="true" Provision="2,2 MM" Provisionshinweis="gemaess RDM" Waehrung="EUR" AnzahlBadezimmer="3" AnzahlGaragenStellplaetze="2" AnzahlSchlafzimmer="3" Ausstattungsqualitaet="Luxus" Barrierefrei="true" Baujahr="1802" BetreutesWohnen="true" Einbaukueche="false" Etagenzahl="2" FreiAb="sofort" GaesteWC="true" GrundstuecksFlaeche="600" HausKategorie="BurgSchloss" Haustiere="erlaubt" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2007" Keller="true" Nutzflaeche="500" Objektzustand="Gepflegt" Parkplatz="AussenStellplatz" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="true">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>attraktives Haus, Aufzug und weite Grünflächen</Objektbeschreibung>
+      <Lage>Am Waldesrand</Lage>
+      <Ausstattung>vollständig gefließt, kompl. einger. offene EBK (Cerankochfeld,Spülmaschine), Wannenbad/WC, S/W-Balkon, KabelTV, Waschmaschine auf Wunsch vorhanden</Ausstattung>
+      <SonstigeAngaben>Burgverliess vorhanden</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="bild" Titel="Bild" Dateityp=".JPG" Dateiname="bild1.jpg"/>
+      <Mietpreise Kaltmiete="4657" Warmmiete="8000" Heizkosten="1500" Kaution="2MM" Nebenkosten="1000" StellplatzMiete="200" HeizkostenInWarmmieteEnthalten="true"/>
+      <BefeuerungsArt>
+        <Kohle/>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Endenergiebedarf" Energieverbrauchskennwert="99.9"/>
+    </HausMiete>
+    <HausKauf Importmodus="ignorieren" AnbieterObjektID="(3) HAUS-KAUF" GruppierungsID="2" Ueberschrift="(3) HAUS-KAUF" Wohnflaeche="345.34" Zimmer="4" Provisionspflichtig="true" Provision="2,2 MM" Provisionshinweis="gemaess RDM" Waehrung="EUR" AnzahlBadezimmer="3" AnzahlGaragenStellplaetze="2" AnzahlSchlafzimmer="3" Ausstattungsqualitaet="Luxus" Barrierefrei="true" Baujahr="1802" Etagenzahl="2" FreiAb="sofort" GaesteWC="true" GrundstuecksFlaeche="600" HausKategorie="BurgSchloss" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2007" Keller="true" AlsFerienwohnungGeeignet="true" Bauphase="HausFertigGestellt" Denkmalschutzobjekt="true" MitEinliegerwohnung="false" Vermietet="false" Nutzflaeche="500" Objektzustand="Gepflegt" Parkplatz="AussenStellplatz" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="true">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>attraktives Haus, Aufzug und weite Grünflächen</Objektbeschreibung>
+      <Lage>Am Waldesrand</Lage>
+      <Ausstattung>vollständig gefließt, kompl. einger. offene EBK (Cerankochfeld,Spülmaschine), Wannenbad/WC, S/W-Balkon, KabelTV, Waschmaschine auf Wunsch vorhanden</Ausstattung>
+      <SonstigeAngaben>Burgverliess vorhanden</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="bild" Titel="Bild" Dateityp=".JPG" Dateiname="bild1.jpg"/>
+      <Kaufpreise Kaufpreis="1908345" MieteinnahmenProMonat="5000" StellplatzKaufpreis="50000" Wohngeld="300"/>
+      <BefeuerungsArt>
+        <Kohle/>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Endenergiebedarf" Energieverbrauchskennwert="99.9"/>
+    </HausKauf>
+    <WAZ Importmodus="importieren" AnbieterObjektID="(4) WAZ" GruppierungsID="3" Ueberschrift="(4) WAZ" WazKategorie="Appartment" Wohnflaeche="345.23" Zimmer="3" FreiAb="2005-03-23" AnzahlGaragenStellplaetze="1" AnzahlPersonen="4" Aufzug="true" BalkonTerrasse="true" Barrierefrei="true" Etage="1" Etagenzahl="5" FreiBis="2009-12-31" GaesteWC="false" GartenBenutzung="true" Geschlecht="keineEinschraenkung" Haustiere="nachVereinbarung" Heizungsart="Etagenheizung" Kaution="2,2MM" Keller="false" Maximalmietdauer="365" Midestmietdauer="30" Mobilar="false" Objektzustand="Renovierungsbeduerftig" Parkplatz="AussenStellplatz" Parkplatzmiete="20" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" RaucherOk="false" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>ruhige, schön geschnittene, helle Wohung in attraktivem Haus, Aufzug, Parkdeck und Grünfläche</Objektbeschreibung>
+      <Lage>zentral Nähe Hauptbahnhof</Lage>
+      <Ausstattung>vollständig gefließt, kompl. einger. offene EBK (Cerankochfeld,Spülmaschine), Wannenbad/WC, S/W-Balkon, KabelTV, Waschmaschine auf Wunsch vorhanden</Ausstattung>
+      <SonstigeAngaben>Fahrradkeller und Trockenboden vorhanden</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <Pauschalmiete MietePauschal="345" MietePro="Tag"/>
+      <BefeuerungsArt>
+        <Kohle/>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Endenergiebedarf" Energieverbrauchskennwert="99.9"/>
+    </WAZ>
+    <BueroPraxis Importmodus="importieren" AnbieterObjektID="(7) BUERO-MIETE" GruppierungsID="4" Objektkategorie2="Buerohaus" Ueberschrift="(7) BUERO" Gesamtflaeche="63340" BueroPraxisFlaeche="45566" AnzahlParkflaechen="20" Ausstattungsqualitaet="Normal" Barrierefrei="true" Baujahr="1965" Bodenbelag="Laminat" DatenVerkabelung="ja" Denkmalschutzobjekt="false" Etagen="5" FahrzeitBAB="30" FahrzeitBHf="5" FahrzeitFlughafen="60" FreiAb="sofort" FusswegOeNV="5" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2005" Kantine="false" Keller="false" Klimaanlage="nachVereinbarung" KuecheVorhanden="false" Nebenflaeche="400" Objektzustand="Saniert" Personenaufzug="true" Starkstrom="true" TeilbarAb="10000" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Bürokomplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe Hauptbahnhof</Lage>
+      <Ausstattung>Alle Räume verfügen über großzügige Fensterflächen sowie elektrische Außenjalousien. Neben Teppichboden sind Bodentanks mit Telefonverkabelung, Stromversorgung und zentraler DV-Verkabelung vorhanden. Selbstverständlich verfügen die Büroetagen über mehrere getrennte WC-Anlagen sowie Teeküchen und Putzräume.</Ausstattung>
+      <SonstigeAngaben>Eine Umgestaltung der angebotenen Fläche nach individuellen Mieterwünschen ist möglich. Auch die Herstellung von Großraumbüros ist dank der flexiblen Bauweise realisierbar.</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <BefeuerungsArt>
+        <Kohle/>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Endenergiebedarf" Energieverbrauchskennwert="99.9"/>
+      <Vermarktung>
+        <Miete Kaltmiete="45463" Kaution="2 MM" Pro="Monat"/>
+      </Vermarktung>
+    </BueroPraxis>
+    <Einzelhandel Importmodus="importieren" AnbieterObjektID="(8) EZH" GruppierungsID="5" Objektkategorie2="FactoryOutlet" Ueberschrift="(8) EZH-MIETE" Gesamtflaeche="5674" Verkaufsflaeche="5373" AnzahlParkflaechen="20" Ausstattungsqualitaet="Normal" Baujahr="1965" Bodenbelag="Laminat" Denkmalschutzobjekt="false" Etagen="5" FahrzeitBAB="1" FahrzeitBHf="5" FahrzeitFlughafen="60" FreiAb="sofort" FusswegOeNV="5" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2005" Keller="false" Deckenlast="45.12" Lageart="BLage" Rampe="true" Schaufensterfront="55.3" Zulieferung="DirekterZugang" Nebenflaeche="400" Objektzustand="Saniert" Personenaufzug="true" TeilbarAb="10000" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Komplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>für jede Form der Anlieferung geeignet</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <BefeuerungsArt>
+        <Pelletheizung/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Endenergiebedarf" Energieverbrauchskennwert="99.9"/>
+      <Vermarktung>
+        <Miete Kaltmiete="5463" Kaution="2 MM" Pro="Monat"/>
+      </Vermarktung>
+      <Lastenaufzug Tragkraft="500"/>
+    </Einzelhandel>
+    <Gastronomie Importmodus="importieren" AnbieterObjektID="(9) GASTOMONIE-MIETE" GruppierungsID="6" Objektkategorie2="Barbetrieb" Ueberschrift="(9) GASTOMONIE-MIETE" Gesamtflaeche="45676" GastraumFlaeche="3344" AnzahlBetten="1" AnzahlParkflaechen="20" Ausstattungsqualitaet="Normal" Baujahr="1977" Denkmalschutzobjekt="false" Etagen="1" FahrzeitBAB="1" FahrzeitBHf="5" FahrzeitFlughafen="60" FreiAb="sofort" FusswegOeNV="5" GastraumPlaetze="45" Gastterrasse="true" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2006" Keller="true" Nebenflaeche="500" Personenaufzug="false" Objektzustand="Gepflegt" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Komplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe Innenstadt</Lage>
+      <Ausstattung>nach neusten ergonomischen Normen</Ausstattung>
+      <SonstigeAngaben>Vorbetreiber mit ausgezeichnete Reputation</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <BefeuerungsArt>
+        <Pelletheizung/>
+      </BefeuerungsArt>
+      <Energieausweis Energieausweistyp="Endenergiebedarf" Energieverbrauchskennwert="99.9"/>
+      <Vermarktung Preis="3456787" Nebenkosten="4000" PreisProParkflaeche="50">
+        <Miete/>
+      </Vermarktung>
+    </Gastronomie>
+    <HalleProduktion Importmodus="importieren" AnbieterObjektID="(10) HALLE-MIETE" GruppierungsID="7" Objektkategorie2="Industriehalle" Ueberschrift="(10) HALLE-MIETE" Gesamtflaeche="34500" LagerProduktionsFlaeche="23434" AnzahlParkflaechen="20" Ausstattungsqualitaet="Normal" Baujahr="1965" Bodenbelag="Laminat" Etagen="5" FahrzeitBAB="30" FahrzeitBHf="5" FahrzeitFlughafen="60" FreiAb="sofort" FusswegOeNV="5" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2005" Nebenflaeche="400" Objektzustand="Saniert" Personenaufzug="true" TeilbarAb="10000" Bodenbelastung="4321" GrundstuecksFlaeche="10000" Hallenhoehe="4.45" Hebebuehne="true" Rampe="true" Stromanschlusswert="4" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Komplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>für jede Form der Anlieferung geeignet</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <BefeuerungsArt>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Vermarktung>
+        <Miete Kaltmiete="2345" Kaution="2 MM" Pro="Quadratmeter"/>
+      </Vermarktung>
+      <Lastenaufzug Tragkraft="500.32"/>
+      <Kranbahn Tragkraft="55.43"/>
+    </HalleProduktion>
+    <SonstigeGewerbe Importmodus="importieren" AnbieterObjektID="(11) SONSTIGES-GEW-MIETE" GruppierungsID="8" Ueberschrift="(11) SONSTIGES-GEW-MIETE" Gesamtflaeche="3445656" Objektkategorie2="Gewerbeflaeche" Hauptflaeche="23344" GrundstuecksFlaeche="10000" Denkmalschutzobjekt="true" AnzahlParkflaechen="20" Ausstattungsqualitaet="Normal" Baujahr="1965" Bodenbelag="Laminat" Etagen="5" FahrzeitBAB="30" FahrzeitBHf="5" FahrzeitFlughafen="60" FreiAb="sofort" FusswegOeNV="5" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2005" Nebenflaeche="400" Objektzustand="Saniert" Personenaufzug="true" TeilbarAb="10000" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false" Keller="true">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Komplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>für jede Form der Anlieferung geeignet</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <BefeuerungsArt>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+      <Vermarktung Preis="45656" Nebenkosten="7000" PreisProParkflaeche="50">
+        <Miete/>
+      </Vermarktung>
+    </SonstigeGewerbe>
+    <Anlageobjekt Importmodus="importieren" AnbieterObjektID="(12) ANLAGE" GruppierungsID="9" Ueberschrift="(12) ANLAGE" Gesamtflaeche="3456" Objektkategorie2="Einfamilienhaus" VermietbareFlaeche="34356" Kaufpreis="6536363763" AnzahlParkflaechen="20" Ausstattungsqualitaet="Normal" Baujahr="1965" Etagen="5" FahrzeitBAB="30" FahrzeitBHf="5" FahrzeitFlughafen="60" FusswegOeNV="5" Heizungsart="Zentralheizung" JahrLetzteModernisierung="2005" Objektzustand="Saniert" Personenaufzug="true" Denkmalschutzobjekt="true" BetriebskostenUmgelegt="3456.44" GewerbeFlaechen="26784" GrundstuecksFlaeche="10000" KaufpreisProQm="10000000" MietEinnahmePaIst="50000" MietEinnahmePaSoll="70000" NichtUmgelegteKosten="9009.66" PreisProParkflaeche="70" SonstigeFlaechen="4000" WohnFlaechen="12300" XFacheMiete="3" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Komplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>für jede Form der Anlieferung geeignet</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <BefeuerungsArt>
+        <Fernwaerme/>
+      </BefeuerungsArt>
+    </Anlageobjekt>
+    <Zwangsversteigerung Importmodus="importieren" AnbieterObjektID="(13) ZWANGSVERSTEIGERUNG" Gesamtflaeche="200.0" Ueberschrift="(13) Zwangsversteigerung" StatusIS24="aktiv" StatusHP="aktiv" ScoutObjektID="50850036">
+      <Adresse Postleitzahl="10243" Hausnummer="10" Strasse="Andreasstr" Ort="Berlin"/>
+      <Objektbeschreibung>Zwangsversteigerung-Max</Objektbeschreibung>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <Amtsgericht BundeslandCode="DE-BE" Telefon="030 12 34 56 78" Aktenzeichen="123/456">Berlin</Amtsgericht>
+      <Eigentuemer>Mustermann</Eigentuemer>
+      <Erfassungsdatum>1967-08-13</Erfassungsdatum>
+      <Grundbuchblattnummer>Berlin 987654</Grundbuchblattnummer>
+      <Objektart>Grundstueck</Objektart>
+      <Preis>59000</Preis>
+      <Versteigerungstermin Teilungsversteigerung="false" Wiederholungstermin="false">1967-08-13</Versteigerungstermin>
+    </Zwangsversteigerung>
+    <GrundstueckWohnenKauf Importmodus="importieren" AnbieterObjektID="(5.1) GRD-WOHNEN-KAUF" GruppierungsID="5" Objektkategorie2="Wohnen" Ueberschrift="(5.1) GRD-WOHNEN-KAUF" GrundstuecksFlaeche="12349" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false" AbrissErforderlich="false" BaugenehmigungVorhanden="true" BebaubarNach="§30BauGB" Erschliessungszustand="Erschlossen" FreiAb="Sofort" GFZ="4.43" GRZ="8.12" KurzfristigBebaubar="true" TeilbarAb="4567">
+      <Adresse Postleitzahl="10179" Ort="Berlin"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Komplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>für jede Art von Wohnobjekt geeignet</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <Vermarktung Preis="23445">
+        <Kauf/>
+      </Vermarktung>
+      <BebaubarMit>
+        <Doppelhaus/>
+        <Einfamilienhaus/>
+      </BebaubarMit>
+    </GrundstueckWohnenKauf>
+    <GrundstueckWohnenMiete Importmodus="importieren" AnbieterObjektID="(5.2) GRD-WOHNEN-MIETE" GruppierungsID="5" Objektkategorie2="Wohnen" Ueberschrift="(5.2) GRD-WOHNEN-MIETE" GrundstuecksFlaeche="1234" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false" AbrissErforderlich="false" BaugenehmigungVorhanden="true" BebaubarNach="§30BauGB" Erschliessungszustand="Erschlossen" FreiAb="Sofort" GFZ="4.43" GRZ="8.12" KurzfristigBebaubar="true" TeilbarAb="4567">
+      <Adresse Postleitzahl="10179" Ort="Berlin"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosser Komplex mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>für jede Art von Wohnobjekt geeignet</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <Vermarktung Preis="6666">
+        <Miete/>
+      </Vermarktung>
+      <BebaubarMit>
+        <Doppelhaus/>
+        <Einfamilienhaus/>
+      </BebaubarMit>
+    </GrundstueckWohnenMiete>
+    <GrundstueckGewerbe Importmodus="importieren" AnbieterObjektID="(5.3) GRD-GEWERBE" GruppierungsID="5" Objektkategorie2="Gewerbe" Ueberschrift="(5.3) GRD-GEWERBE" GrundstuecksFlaeche="1234" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false" AbrissErforderlich="false" BaugenehmigungVorhanden="true" BebaubarNach="§30BauGB" Erschliessungszustand="Erschlossen" FreiAb="Sofort" GFZ="4.43" GRZ="8.12" KurzfristigBebaubar="true" TeilbarAb="4567">
+      <Adresse Postleitzahl="10179" Ort="Berlin"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosse Freiflaeche mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>für jede Art von Wohnobjekt geeignet</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <Vermarktung Preis="23445">
+        <Kauf/>
+      </Vermarktung>
+      <BebaubarMit>
+        <Kleingewerbe/>
+      </BebaubarMit>
+    </GrundstueckGewerbe>
+    <GarageKauf Importmodus="importieren" AnbieterObjektID="(17) GARAGE-KAUF" GruppierungsID="17" ObjektKategorie2="Garage" Ueberschrift="(17) GARAGE-KAUF" Objektzustand="Renovierungsbeduerftig" Baujahr="1989" Breite="4.4" Flaeche="66.45" Hoehe="4.25" JahrLetzteModernisierung="1989" Laenge="15.45" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosse Garage mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>postmodern</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <Kaufpreise Kaufpreis="24578"/>
+    </GarageKauf>
+    <GarageMiete Importmodus="importieren" AnbieterObjektID="(18) GARAGE-MIETE" GruppierungsID="18" ObjektKategorie2="Garage" Ueberschrift="(18) GARAGE-MIETE" Objektzustand="Renovierungsbeduerftig" Baujahr="1989" Breite="4.4" Flaeche="66.45" Hoehe="4.25" JahrLetzteModernisierung="1989" Laenge="15.45" VerfuegbarAb="2009-12-01" VerfuegbarBis="2011-12-31" Provisionspflichtig="true" Provision="2 MM" Provisionshinweis="keiner" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Adressdruck="false">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <Objektbeschreibung>grosse Garage mit optimaler Verkehrsanbindung</Objektbeschreibung>
+      <Lage>zentral Nähe BAB</Lage>
+      <Ausstattung>postmodern</Ausstattung>
+      <SonstigeAngaben>Ausgezeichnete Infrastruktur</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissPDF" Titel="Bild" Dateityp=".PDF" Dateiname="grundriss.pdf"/>
+      <Mietpreise Miete="45"/>
+    </GarageMiete>
+    <WGZimmer Importmodus="aktualisieren" AnbieterObjektID="(19) WG-ZIMMER" GruppierungsID="18" Zimmerflaeche="51.73" FreiAb="2009-01-06" Ueberschrift="(19) WG-ZIMMER" Adressdruck="true" AlterDerzeitigeBewohnerBis="66" AlterDerzeitigeBewohnerVon="16" AlterGesuchterBewohnerBis="40" AlterGesuchterBewohnerVon="20" AnzahlBadezimmer="2" AnzahlMaennlicheMitbewohner="5" AnzahlWeiblicheMitbewohner="3" Aufzug="true" Backofen="true" Badewanne="true" BalkonTerrasse="true" Barrierefrei="true" Bewohnerzahl="8" Bodenbelag="Dielen" Dusche="true" Etage="3" Etagenzahl="19" FreiBis="2010-10-10" GaesteWC="true" WC="true" GartenBenutzung="true" Gesamtflaeche="777.31" GeschlechtGesuchterBewohner="Weiblich" AnzahlGesuchteMitbewohner="2" Haustiere="nachVereinbarung" Heizungsart="Etagenheizung" Herd="true" Internetanschluss="DSLFlatrate" Keller="true" Kuehlschrank="true" Mobilar="ja" Parkplatzsituation="schlechteParkmoeglichkeit" Provision="3MM" Provisionshinweis="nichts sonst" Provisionspflichtig="true" Rauchen="nurImEigenenZimmer" Spuelmaschine="true" Telefonanschluss="analog" TVAnschluss="Kabel" Waehrung="EUR" Waschmaschine="true" WGZimmerKategorie="Sonstige" Zimmer="1" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv">
+      <Adresse Strasse="Magazinstr." Hausnummer="15-16" Postleitzahl="10179" Ort="Berlin" Laenderkennzeichen="DEU"/>
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <SonstigeAngaben>Keine</SonstigeAngaben>
+      <MultimediaAnhang AnhangArt="grundrissPDF" Titel="Bild" Dateityp=".PDF" Dateiname="grundriss.pdf"/>
+      <Mietpreise Kaltmiete="76.33" Heizkosten="10.05" Kaution="2MM" Mindestmietdauer="3" Nebenkosten="5.93" Warmmiete="100.09" HeizkostenInWarmmieteEnthalten="true"/>
+    </WGZimmer>
+    <TypenHaus Importmodus="importieren" AnbieterObjektID="TYPENHAUS" Objektkategorie2="Holzhaus" Ueberschrift="TYPENHAUS" Wohnflaeche="422.42" Zimmeranzahl="11" PreisAb="420000" Provision="2 MM" Waehrung="EUR" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AktiveGruppen="9;34;51;23;58;59" Ausbaustufe="Bausatzhaus" Bauweise="Fertigteil" Energiestandard="NiedriegenergiehausKfW60" Gesamtflaeche="567.65" Grundflaeche="400.32" KWert="4.32">
+      <Kontaktperson Anrede="Herr" Vorname="Martin" Nachname="Mustermann" Strasse="Musterstr." Hausnummer="22" Ort="Musterhausen" Postleitzahl="12345" Laenderkennzeichen="DEU" Telefon="0123-43627272872" Mobiltelefon="0179-534538729238" Telefax="0123-43276728298" Homepage="www.makler-wer.de" EMail="info@wer.de"/>
+      <MultimediaAnhang AnhangArt="grundrissBild" Titel="Bild" Dateityp=".JPG" Dateiname="grundriss.jpg"/>
+      <Baureihe>Innovativ</Baureihe>
+      <Dachform>Giebel</Dachform>
+      <WohnFlProGeschoss>150</WohnFlProGeschoss>
+      <PreisProBauleistung>4500</PreisProBauleistung>
+    </TypenHaus>
+  </Anbieter>
+</IS24ImmobilienTransfer>

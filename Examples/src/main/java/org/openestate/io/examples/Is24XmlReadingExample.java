@@ -18,26 +18,33 @@ package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_xml.Is24XmlDocument;
 import org.openestate.io.is24_xml.Is24XmlUtils;
 import org.openestate.io.is24_xml.xml.ImmobilieBaseTyp;
 import org.openestate.io.is24_xml.xml.ImmobilienTransferTyp;
 import org.openestate.io.is24_xml.xml.VirtuelleImmobilieBaseTyp;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * Example for XML reading.
+ * Example for reading IS24-XML files.
  * <p>
- * This example illustrates how to read an ImmoXML document from a file.
+ * This example illustrates how to read IS24-XML files.
  *
  * @author Andreas Rudolph
  */
 public class Is24XmlReadingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( Is24XmlReadingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
+
   /**
    * Start the example application.
    *
@@ -46,32 +53,50 @@ public class Is24XmlReadingExample
    */
   public static void main( String[] args )
   {
+    // init logging
+    PropertyConfigurator.configure(
+      Is24XmlReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // read example file, if no files were specified as command line arguments
     if (args.length<1)
-    {
-      System.out.println( "Please provide at least one ImmoXML file as argument!" );
-      System.exit( 1 );
-    }
-    for (String arg : args)
     {
       try
       {
-        read( new File( arg ) );
+        read( Is24XmlReadingExample.class.getResourceAsStream( PACKAGE + "/is24.xml" ) );
       }
       catch (Exception ex)
       {
-        System.err.println( "The provided file is invalid!" );
-        ex.printStackTrace( System.err );
+        LOGGER.error( "Can't read example file!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
+      }
+    }
+
+    // read files, that were specified as command line arguments
+    else
+    {
+      for (String arg : args)
+      {
+        try
+        {
+          read( new File( arg ) );
+        }
+        catch (Exception ex)
+        {
+          LOGGER.error( "Can't read file '" + arg + "'!" );
+          LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+          System.exit( 2 );
+        }
       }
     }
   }
 
   /**
-   * Read an ImmoXML file into a {@link Is24XmlDocument} and prints some of
+   * Read a {@link File} into an {@link Is24XmlDocument} and prints some of
    * their content to console.
    *
    * @param xmlFile
-   * the XML file to read
+   * the file to read
    *
    * @throws SAXException
    * if the file is not readable by the XML parser
@@ -87,26 +112,58 @@ public class Is24XmlReadingExample
    */
   protected static void read( File xmlFile ) throws SAXException, IOException, ParserConfigurationException, JAXBException
   {
-    System.out.println( "process file: " + xmlFile.getAbsolutePath() );
+    LOGGER.info( "process file: " + xmlFile.getAbsolutePath() );
     if (!xmlFile.isFile())
     {
-      System.out.println( "> The provided file is invalid!" );
+      LOGGER.warn( "> provided file is invalid" );
       return;
     }
     Is24XmlDocument doc = Is24XmlUtils.createDocument( xmlFile );
     if (doc==null)
     {
-      System.out.println( "> provided XML is not supported" );
+      LOGGER.warn( "> provided XML is not supported" );
     }
     else
     {
-      System.out.println( "> is transfer XML" );
-      read( doc );
+      printToConsole( doc );
     }
   }
 
   /**
-   * Print the content of a {@link Is24XmlDocument} to console.
+   * Read an {@link InputStream} into an {@link Is24XmlDocument} and prints some
+   * of its content to console.
+   *
+   * @param xmlInputStream
+   * the input stream to read
+   *
+   * @throws SAXException
+   * if the file is not readable by the XML parser
+   *
+   * @throws IOException
+   * if the file is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the XML parser is improperly configured
+   *
+   * @throws JAXBException
+   * if XML conversion into Java objects failed
+   */
+  protected static void read( InputStream xmlInputStream ) throws SAXException, IOException, ParserConfigurationException, JAXBException
+  {
+    LOGGER.info( "process example file" );
+    Is24XmlDocument doc = Is24XmlUtils.createDocument( xmlInputStream );
+    if (doc==null)
+    {
+      LOGGER.warn( "> provided XML is not supported" );
+    }
+    else
+    {
+      printToConsole( doc );
+    }
+  }
+
+  /**
+   * Print some content of an {@link Is24XmlDocument} to console.
    *
    * @param doc
    * the document to process
@@ -114,13 +171,14 @@ public class Is24XmlReadingExample
    * @throws JAXBException
    * if XML conversion into Java objects failed
    */
-  protected static void read( Is24XmlDocument doc ) throws JAXBException
+  protected static void printToConsole( Is24XmlDocument doc ) throws JAXBException
   {
     ImmobilienTransferTyp transfer = doc.toObject();
 
     // process agency in the document
     if (transfer.getAnbieter()!=null)
     {
+      // process objects
       for (JAXBElement<? extends ImmobilieBaseTyp> i : transfer.getAnbieter().getImmobilie())
       {
         ImmobilieBaseTyp obj = i.getValue();
@@ -134,10 +192,11 @@ public class Is24XmlReadingExample
           obj.getUeberschrift().trim(): "???";
 
         // print object informations to console
-        System.out.println( "> property '" + objectNr + "' "
+        LOGGER.info( "> found object '" + objectNr + "' "
           + "with title '" + objectTitle + "'" );
       }
 
+      // process virtual objects
       for (JAXBElement<? extends VirtuelleImmobilieBaseTyp> i : transfer.getAnbieter().getVirtuelleImmobilie())
       {
         VirtuelleImmobilieBaseTyp obj = i.getValue();
@@ -151,7 +210,7 @@ public class Is24XmlReadingExample
           obj.getUeberschrift().trim(): "???";
 
         // print object informations to console
-        System.out.println( "> virtual property '" + objectNr + "' "
+        LOGGER.info( "> found virtual object '" + objectNr + "' "
           + "with title '" + objectTitle + "'" );
       }
     }
