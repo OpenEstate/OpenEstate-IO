@@ -72,7 +72,7 @@ public class IdxPrinter extends CsvPrinter<IdxRecord>
     value = StringUtils.replace( value, "#", StringUtils.EMPTY );
 
     // Replace any line breaks from the value with <br>
-    value = CsvPrinter.serializeValue( value, "<br>" );
+    value = CsvPrinter.replaceLineBreaks( value, "<br>" );
 
     super.print( value );
   }

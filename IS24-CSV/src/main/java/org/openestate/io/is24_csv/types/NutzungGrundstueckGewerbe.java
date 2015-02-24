@@ -67,7 +67,7 @@ public enum NutzungGrundstueckGewerbe
     return null;
   }
 
-  public static NutzungGrundstueckGewerbe[] parseList( String valueList )
+  public static NutzungGrundstueckGewerbe[] parseMultiple( String valueList )
   {
     String[] values = StringUtils.split( valueList, ";" );
     if (values==null) return new NutzungGrundstueckGewerbe[]{};
@@ -86,7 +86,7 @@ public enum NutzungGrundstueckGewerbe
     return String.valueOf( this.value );
   }
 
-  public static String print( Iterable<NutzungGrundstueckGewerbe> arten )
+  public static String printMultiple( Iterable<NutzungGrundstueckGewerbe> arten )
   {
     if (arten==null) return null;
     List<String> values = new ArrayList<String>();

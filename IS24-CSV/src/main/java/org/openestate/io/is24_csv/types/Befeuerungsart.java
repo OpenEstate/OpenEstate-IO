@@ -18,7 +18,6 @@ package org.openestate.io.is24_csv.types;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -56,7 +55,7 @@ public enum Befeuerungsart
     return KEINE_ANGABE;
   }
 
-  public static Befeuerungsart[] parseList( String valueList )
+  public static Befeuerungsart[] parseMultiple( String valueList )
   {
     String[] values = StringUtils.split( valueList, ";" );
     if (values==null) return new Befeuerungsart[]{};
@@ -75,7 +74,7 @@ public enum Befeuerungsart
     return String.valueOf( this.value );
   }
 
-  public static String print( Iterable<Befeuerungsart> arten )
+  public static String printMultiple( Iterable<Befeuerungsart> arten )
   {
     if (arten==null) return null;
     List<String> values = new ArrayList<String>();

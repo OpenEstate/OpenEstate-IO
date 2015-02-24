@@ -16,7 +16,6 @@
 
 package org.openestate.io.is24_csv.records;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Ausstattung;
@@ -146,12 +145,13 @@ public class HausKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_ANZAHL_BADEZIMMER );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_ANZAHL_BADEZIMMER ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Anzahl Badezimmer' "
-        + "from '" + this.get( FIELD_ANZAHL_BADEZIMMER ) + "'!" );
+      LOGGER.warn( "Can't read 'Anzahl Badezimmer'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -160,12 +160,13 @@ public class HausKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_ANZAHL_GARAGE_STELLPLATZ );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_ANZAHL_GARAGE_STELLPLATZ ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Anzahl Garage / Stellplatz' "
-        + "from '" + this.get( FIELD_ANZAHL_GARAGE_STELLPLATZ ) + "'!" );
+      LOGGER.warn( "Can't read 'Anzahl Garage / Stellplatz'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -174,156 +175,175 @@ public class HausKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_ANZAHL_SCHLAFZIMMER );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_ANZAHL_SCHLAFZIMMER ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Anzahl Schlafzimmer' "
-        + "from '" + this.get( FIELD_ANZAHL_SCHLAFZIMMER ) + "'!" );
+      LOGGER.warn( "Can't read 'Anzahl Schlafzimmer'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Ausstattung getAusstattung()
   {
-    return Ausstattung.parse( this.get( FIELD_AUSSTATTUNG ) );
+    return Ausstattung.parse(
+      this.get( FIELD_AUSSTATTUNG ) );
   }
 
   public Integer getBaujahr()
   {
     try
     {
-      return this.getAsInteger( FIELD_BAUJAHR );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_BAUJAHR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Baujahr' "
-        + "from '" + this.get( FIELD_BAUJAHR ) + "'!" );
+      LOGGER.warn( "Can't read 'Baujahr'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Bauphase getBauphase()
   {
-    return Bauphase.parse( this.get( FIELD_BAUPHASE ) );
+    return Bauphase.parse(
+      this.get( FIELD_BAUPHASE ) );
   }
 
   public Boolean getBarrierefrei()
   {
-    return this.getAsBoolean( FIELD_BARRIEREFREI );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_BARRIEREFREI ) );
   }
 
   public Befeuerungsart[] getBefeuerungsart()
   {
-    return Befeuerungsart.parseList( this.get( FIELD_BEFEUERUNG ) );
+    return Befeuerungsart.parseMultiple(
+      this.get( FIELD_BEFEUERUNG ) );
   }
 
   public Boolean getDenkmalschutz()
   {
-    return this.getAsBoolean( FIELD_DENKMALSCHUTZ );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_DENKMALSCHUTZ ) );
   }
 
   public Boolean getEinliegerwohnung()
   {
-    return this.getAsBoolean( FIELD_EINLIEGERWOHNUNG );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_EINLIEGERWOHNUNG ) );
   }
 
   public Boolean getEnergieausweisInklWarmwasser()
   {
-    return this.getAsBoolean( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER ) );
   }
 
   public Double getEnergieausweisKennwert()
   {
     try
     {
-      return this.getAsDouble( FIELD_ENERGIEAUSWEIS_KENNWERT );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Energieausweis-Kennwert' "
-        + "from '" + this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) + "'!" );
+      LOGGER.warn( "Can't read 'Energieausweis-Kennwert'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Energieausweistyp getEnergieausweisTyp()
   {
-    return Energieausweistyp.parse( this.get( FIELD_ENERGIEAUSWEIS_TYP ) );
+    return Energieausweistyp.parse(
+      this.get( FIELD_ENERGIEAUSWEIS_TYP ) );
   }
 
   public Integer getEtagenzahl()
   {
     try
     {
-      return this.getAsInteger( FIELD_ETAGENZAHL );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_ETAGENZAHL ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Etagenzahl' "
-        + "from '" + this.get( FIELD_ETAGENZAHL ) + "'!" );
+      LOGGER.warn( "Can't read 'Etagenzahl'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Boolean getFerienhaus()
   {
-    return this.getAsBoolean( FIELD_FERIENHAUS );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_FERIENHAUS ) );
   }
 
   public Boolean getGaesteWc()
   {
-    return this.getAsBoolean( FIELD_GAESTE_WC );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_GAESTE_WC ) );
   }
 
   public Double getGrundstuecksflaeche()
   {
     try
     {
-      return this.getAsDouble( FIELD_GRUNDSTUECKSFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_GRUNDSTUECKSFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Grundstuecksflaeche' "
-        + "from '" + this.get( FIELD_GRUNDSTUECKSFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Grundstuecksflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Heizungsart getHeizungsart()
   {
-    return Heizungsart.parse( this.get( FIELD_HEIZUNGSART ) );
+    return Heizungsart.parse(
+      this.get( FIELD_HEIZUNGSART ) );
   }
 
   public Double getKaufpreis()
   {
     try
     {
-      return this.getAsDouble( FIELD_KAUFPREIS );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_KAUFPREIS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Kaufpreis' "
-        + "from '" + this.get( FIELD_KAUFPREIS ) + "'!" );
+      LOGGER.warn( "Can't read 'Kaufpreis'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Boolean getKeller()
   {
-    return this.getAsBoolean( FIELD_KELLER );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_KELLER ) );
   }
 
   public Double getMieteinnahmenProMonat()
   {
     try
     {
-      return this.getAsDouble( FIELD_MIETEINNAHMEN_PRO_MONAT );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_MIETEINNAHMEN_PRO_MONAT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Mieteinnahmen pro Monat' "
-        + "from '" + this.get( FIELD_MIETEINNAHMEN_PRO_MONAT ) + "'!" );
+      LOGGER.warn( "Can't read 'Mieteinnahmen pro Monat'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -332,61 +352,68 @@ public class HausKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_NUTZFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_NUTZFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Nutzflaeche' "
-        + "from '" + this.get( FIELD_NUTZFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Nutzflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public ObjektkategorieHaus getObjektkategorie()
   {
-    return ObjektkategorieHaus.parse( this.get( FIELD_OBJEKTKATEGORIE ) );
+    return ObjektkategorieHaus.parse(
+      this.get( FIELD_OBJEKTKATEGORIE ) );
   }
 
   public Objektzustand getObjektzustand()
   {
-    return Objektzustand.parse( this.get( FIELD_OBJEKTZUSTAND ) );
+    return Objektzustand.parse(
+      this.get( FIELD_OBJEKTZUSTAND ) );
   }
 
   @Deprecated
   public Boolean getRollstuhlgerecht()
   {
-    return this.getAsBoolean( FIELD_ROLLSTUHLGERECHT );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_ROLLSTUHLGERECHT ) );
   }
 
   public Integer getSanierungsjahr()
   {
     try
     {
-      return this.getAsInteger( FIELD_SANIERUNGSJAHR );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_SANIERUNGSJAHR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Sanierungsjahr' "
-        + "from '" + this.get( FIELD_SANIERUNGSJAHR ) + "'!" );
+      LOGGER.warn( "Can't read 'Sanierungsjahr'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Stellplatz getStellplatz()
   {
-    return Stellplatz.parse( this.get( FIELD_STELLPLATZ ) );
+    return Stellplatz.parse(
+      this.get( FIELD_STELLPLATZ ) );
   }
 
   public Double getStellplatzpreis()
   {
     try
     {
-      return this.getAsDouble( FIELD_STELLPLATZPREIS );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_STELLPLATZPREIS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Stellplatzpreis' "
-        + "from '" + this.get( FIELD_STELLPLATZPREIS ) + "'!" );
+      LOGGER.warn( "Can't read 'Stellplatzpreis'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -398,19 +425,21 @@ public class HausKauf extends Is24CsvRecord
 
   public Boolean getVermietet()
   {
-    return this.getAsBoolean( FIELD_VERMIETET );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_VERMIETET ) );
   }
 
   public Double getWohnflaeche()
   {
     try
     {
-      return this.getAsDouble( FIELD_WOHNFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_WOHNFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Wohnflaeche' "
-        + "from '" + this.get( FIELD_WOHNFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Wohnflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -419,12 +448,13 @@ public class HausKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_ZIMMER );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_ZIMMER ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Zimmer' "
-        + "from '" + this.get( FIELD_ZIMMER ) + "'!" );
+      LOGGER.warn( "Can't read 'Zimmer'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -436,19 +466,19 @@ public class HausKauf extends Is24CsvRecord
     return super.print();
   }
 
-  public void setAnzahlBadezimmer( Integer value )
+  public void setAnzahlBadezimmer( Number value )
   {
     this.set( FIELD_ANZAHL_BADEZIMMER,
       Is24CsvFormat.printNumber( value, 2 ) );
   }
 
-  public void setAnzahlGarageStellplatz( Integer value )
+  public void setAnzahlGarageStellplatz( Number value )
   {
     this.set( FIELD_ANZAHL_GARAGE_STELLPLATZ,
       Is24CsvFormat.printNumber( value, 2 ) );
   }
 
-  public void setAnzahlSchlafzimmer( Integer value )
+  public void setAnzahlSchlafzimmer( Number value )
   {
     this.set( FIELD_ANZAHL_SCHLAFZIMMER,
       Is24CsvFormat.printNumber( value, 2 ) );
@@ -466,7 +496,7 @@ public class HausKauf extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setBaujahr( Integer value )
+  public void setBaujahr( Number value )
   {
     this.set( FIELD_BAUJAHR,
       Is24CsvFormat.printNumber( value, 4 ) );
@@ -487,7 +517,7 @@ public class HausKauf extends Is24CsvRecord
   public void setBefeuerungsart( Iterable<Befeuerungsart> values )
   {
     this.set( FIELD_BEFEUERUNG,
-      Befeuerungsart.print( values ) );
+      Befeuerungsart.printMultiple( values ) );
   }
 
   public void setDenkmalschutz( Boolean value )
@@ -508,7 +538,7 @@ public class HausKauf extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setEnergieausweisKennwert( Double value )
+  public void setEnergieausweisKennwert( Number value )
   {
     this.set( FIELD_ENERGIEAUSWEIS_KENNWERT,
       Is24CsvFormat.printNumber( value, 5, 2 ) );
@@ -520,7 +550,7 @@ public class HausKauf extends Is24CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setEtagenzahl( Integer value )
+  public void setEtagenzahl( Number value )
   {
     this.set( FIELD_ETAGENZAHL,
       Is24CsvFormat.printNumber( value, 3 ) );
@@ -538,7 +568,7 @@ public class HausKauf extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setGrundstuecksflaeche( Double value )
+  public void setGrundstuecksflaeche( Number value )
   {
     this.set( FIELD_GRUNDSTUECKSFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
@@ -550,7 +580,7 @@ public class HausKauf extends Is24CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setKaufpreis( Double value )
+  public void setKaufpreis( Number value )
   {
     this.set( FIELD_KAUFPREIS,
       Is24CsvFormat.printNumber( value, 15, 2 ) );
@@ -562,13 +592,13 @@ public class HausKauf extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setMieteinnahmenProMonat( Double value )
+  public void setMieteinnahmenProMonat( Number value )
   {
     this.set( FIELD_MIETEINNAHMEN_PRO_MONAT,
       Is24CsvFormat.printNumber( value, 15, 2 ) );
   }
 
-  public void setNutzflaeche( Double value )
+  public void setNutzflaeche( Number value )
   {
     this.set( FIELD_NUTZFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
@@ -593,7 +623,7 @@ public class HausKauf extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setSanierungsjahr( Integer value )
+  public void setSanierungsjahr( Number value )
   {
     this.set( FIELD_SANIERUNGSJAHR,
       Is24CsvFormat.printNumber( value, 4 ) );
@@ -605,7 +635,7 @@ public class HausKauf extends Is24CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setStellplatzpreis( Double value )
+  public void setStellplatzpreis( Number value )
   {
     this.set( FIELD_STELLPLATZPREIS,
       Is24CsvFormat.printNumber( value, 15, 2 ) );
@@ -614,7 +644,7 @@ public class HausKauf extends Is24CsvRecord
   public void setVerfuegbarAb( String value )
   {
     this.set( FIELD_VERFUEGBAR_AB,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setVermietet( Boolean value )
@@ -623,13 +653,13 @@ public class HausKauf extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setWohnflaeche( Double value )
+  public void setWohnflaeche( Number value )
   {
     this.set( FIELD_WOHNFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
   }
 
-  public void setZimmer( Double value )
+  public void setZimmer( Number value )
   {
     this.set( FIELD_ZIMMER,
       Is24CsvFormat.printNumber( value, 6, 2 ) );

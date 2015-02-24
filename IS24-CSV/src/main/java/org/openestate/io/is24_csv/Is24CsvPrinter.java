@@ -72,7 +72,7 @@ public class Is24CsvPrinter extends CsvPrinter<Is24CsvRecord>
     value = StringUtils.replace( value, "|", "/" );
 
     // Replace any line breaks from the value with <br>
-    value = CsvPrinter.serializeValue( value, "<br>" );
+    value = CsvPrinter.replaceLineBreaks( value, "<br>" );
 
     super.print( value );
   }

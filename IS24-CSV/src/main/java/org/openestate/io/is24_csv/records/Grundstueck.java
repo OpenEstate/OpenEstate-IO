@@ -35,12 +35,14 @@ public abstract class Grundstueck extends Is24CsvRecord
 
   public ObjektkategorieGrundstueck getObjektkategorie()
   {
-    return ObjektkategorieGrundstueck.parse( this.get( FIELD_OBJEKTKATEGORIE ) );
+    return ObjektkategorieGrundstueck.parse(
+      this.get( FIELD_OBJEKTKATEGORIE ) );
   }
 
   public Vermarktungsart getVermarktungsart()
   {
-    return Vermarktungsart.parse( this.get( FIELD_VERMARKTUNGSART ) );
+    return Vermarktungsart.parse(
+      this.get( FIELD_VERMARKTUNGSART ) );
   }
 
   public void setObjektkategorie( ObjektkategorieGrundstueck value )

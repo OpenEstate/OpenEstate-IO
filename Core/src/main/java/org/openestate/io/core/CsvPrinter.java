@@ -35,6 +35,8 @@ import org.apache.commons.lang3.StringUtils;
  */
 public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable, Flushable
 {
+  //private final static Logger LOGGER = LoggerFactory.getLogger( CsvPrinter.class );
+  private final static Pattern LINES = Pattern.compile( "^(.*)$", Pattern.MULTILINE );
   private final CSVPrinter printer;
 
   protected CsvPrinter( CSVPrinter printer )
@@ -89,20 +91,20 @@ public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable,
     {
       this.printRecord( record );
     }
+    this.flush();
   }
 
-  protected static String serializeValue( String value )
+  protected static String replaceLineBreaks( String value )
   {
-    return serializeValue( value, null );
+    return replaceLineBreaks( value, null );
   }
 
-  protected static String serializeValue( String value, String lineBreak )
+  protected static String replaceLineBreaks( String value, String lineBreak )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     if (lineBreak==null) lineBreak = "<br/>";
-    Pattern p = Pattern.compile( "^(.*)$", Pattern.MULTILINE );
-    Matcher m = p.matcher( value.trim() );
+    Matcher m = LINES.matcher( value );
     StringBuilder out = new StringBuilder();
     while (m.find())
     {

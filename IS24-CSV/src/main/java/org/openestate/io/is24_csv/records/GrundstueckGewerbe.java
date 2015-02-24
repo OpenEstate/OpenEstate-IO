@@ -16,7 +16,6 @@
 
 package org.openestate.io.is24_csv.records;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.types.BebaubarNach;
 import org.openestate.io.is24_csv.types.Erschliessung;
@@ -84,53 +83,60 @@ public class GrundstueckGewerbe extends Grundstueck
 
   public Boolean getAbrissErforderlich()
   {
-    return this.getAsBoolean( FIELD_ABRISS_ERFORDERLICH );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_ABRISS_ERFORDERLICH ) );
   }
 
   public Boolean getBaugenehmigungVorhanden()
   {
-    return this.getAsBoolean( FIELD_BAUGENEHMIGUNG_VORHANDEN );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_BAUGENEHMIGUNG_VORHANDEN ) );
   }
 
   public BebaubarNach getBebaubarNach()
   {
-    return BebaubarNach.parse( this.get( FIELD_BEBAUBAR_NACH ) );
+    return BebaubarNach.parse(
+      this.get( FIELD_BEBAUBAR_NACH ) );
   }
 
   public NutzungGrundstueckGewerbe[] getEmpfohleneNutzung()
   {
-    return NutzungGrundstueckGewerbe.parseList( this.get( FIELD_EMPFOHLENE_NUTZUNG ) );
+    return NutzungGrundstueckGewerbe.parseMultiple(
+      this.get( FIELD_EMPFOHLENE_NUTZUNG ) );
   }
 
   public Integer getErbpachtdauer()
   {
     try
     {
-      return this.getAsInteger( FIELD_ERBPACHTDAUER );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_ERBPACHTDAUER ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Erbpachtdauer' "
-        + "from '" + this.get( FIELD_ERBPACHTDAUER ) + "'!" );
+      LOGGER.warn( "Can't read 'Erbpachtdauer'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Erschliessung getErschliessung()
   {
-    return Erschliessung.parse( this.get( FIELD_ERSCHLIESSUNG ) );
+    return Erschliessung.parse(
+      this.get( FIELD_ERSCHLIESSUNG ) );
   }
 
   public Long getFlaecheTeilbarAb()
   {
     try
     {
-      return this.getAsLong( FIELD_FLAECHE_TEILBAR_AB );
+      return Is24CsvFormat.parseLong(
+        this.get( FIELD_FLAECHE_TEILBAR_AB ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Flaeche teilbar ab' "
-        + "from '" + this.get( FIELD_FLAECHE_TEILBAR_AB ) + "'!" );
+      LOGGER.warn( "Can't read 'Flaeche teilbar ab'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -139,12 +145,13 @@ public class GrundstueckGewerbe extends Grundstueck
   {
     try
     {
-      return this.getAsDouble( FIELD_GESCHOSSFLAECHENZAHL );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_GESCHOSSFLAECHENZAHL ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Geschossflaechenzahl' "
-        + "from '" + this.get( FIELD_GESCHOSSFLAECHENZAHL ) + "'!" );
+      LOGGER.warn( "Can't read 'Geschossflaechenzahl'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -153,12 +160,13 @@ public class GrundstueckGewerbe extends Grundstueck
   {
     try
     {
-      return this.getAsDouble( FIELD_GRUNDFLAECHENZAHL );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_GRUNDFLAECHENZAHL ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Grundflaechenzahl' "
-        + "from '" + this.get( FIELD_GRUNDFLAECHENZAHL ) + "'!" );
+      LOGGER.warn( "Can't read 'Grundflaechenzahl'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -167,31 +175,34 @@ public class GrundstueckGewerbe extends Grundstueck
   {
     try
     {
-      return this.getAsDouble( FIELD_GRUNDSTUECKSFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_GRUNDSTUECKSFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Grundstuecksflaeche' "
-        + "from '" + this.get( FIELD_GRUNDSTUECKSFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Grundstuecksflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Boolean getKurzfristigBebaubar()
   {
-    return this.getAsBoolean( FIELD_KURZFRISTIG_BEBAUBAR );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_KURZFRISTIG_BEBAUBAR ) );
   }
 
   public Double getPreis()
   {
     try
     {
-      return this.getAsDouble( FIELD_PREIS );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_PREIS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Preis' "
-        + "from '" + this.get( FIELD_PREIS ) + "'!" );
+      LOGGER.warn( "Can't read 'Preis'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -242,10 +253,10 @@ public class GrundstueckGewerbe extends Grundstueck
   public void setEmpfohleneNutzung( Iterable<NutzungGrundstueckGewerbe> values )
   {
     this.set( FIELD_EMPFOHLENE_NUTZUNG,
-      NutzungGrundstueckGewerbe.print( values ) );
+      NutzungGrundstueckGewerbe.printMultiple( values ) );
   }
 
-  public void setErbpachtdauer( Integer value )
+  public void setErbpachtdauer( Number value )
   {
     this.set( FIELD_ERBPACHTDAUER,
       Is24CsvFormat.printNumber( value, 3 ) );
@@ -257,25 +268,25 @@ public class GrundstueckGewerbe extends Grundstueck
       (value!=null)? value.print(): null );
   }
 
-  public void setFlaecheTeilbarAb( Long value )
+  public void setFlaecheTeilbarAb( Number value )
   {
     this.set( FIELD_FLAECHE_TEILBAR_AB,
       Is24CsvFormat.printNumber( value, 8 ) );
   }
 
-  public void setGeschossflaechenzahl( Double value )
+  public void setGeschossflaechenzahl( Number value )
   {
     this.set( FIELD_GESCHOSSFLAECHENZAHL,
       Is24CsvFormat.printNumber( value, 3, 2 ) );
   }
 
-  public void setGrundflaechenzahl( Double value )
+  public void setGrundflaechenzahl( Number value )
   {
     this.set( FIELD_GRUNDFLAECHENZAHL,
       Is24CsvFormat.printNumber( value, 3, 2 ) );
   }
 
-  public void setGrundstuecksflaeche( Double value )
+  public void setGrundstuecksflaeche( Number value )
   {
     this.set( FIELD_GRUNDSTUECKSFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
@@ -296,7 +307,7 @@ public class GrundstueckGewerbe extends Grundstueck
     super.setObjektkategorie( (value!=null)? value: ObjektkategorieGrundstueck.GEWERBE );
   }
 
-  public void setPreis( Double value )
+  public void setPreis( Number value )
   {
     this.set( FIELD_PREIS,
       Is24CsvFormat.printNumber( value, 15, 2 ) );
@@ -305,6 +316,6 @@ public class GrundstueckGewerbe extends Grundstueck
   public void setVerfuegbarAb( String value )
   {
     this.set( FIELD_VERFUEGBAR_AB,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 }

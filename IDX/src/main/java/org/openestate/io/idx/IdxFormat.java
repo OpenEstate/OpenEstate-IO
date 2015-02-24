@@ -41,7 +41,9 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
 
   public IdxFormat()
   {
-    super( CSVFormat.newFormat( '#' ).withRecordSeparator( "\\r\\n" ).withNullString( "" ) );
+    super( CSVFormat.newFormat( '#' )
+      .withRecordSeparator( "\r\n" )
+      .withNullString( StringUtils.EMPTY ) );
   }
 
   private static DateFormat getDateFormat()
@@ -53,16 +55,6 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
   {
     return new SimpleDateFormat( "dd.MM.yyyy HH:mm:ss" );
   }
-
-  /*private static NumberFormat getNumberFormat( int integerDigits, int fractionDigits )
-  {
-    NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    format.setMaximumIntegerDigits( integerDigits );
-    format.setMaximumFractionDigits( fractionDigits );
-    format.setMinimumFractionDigits( 0 );
-    format.setGroupingUsed( false );
-    return format;
-  }*/
 
   @Override
   public String getEncoding()
@@ -123,13 +115,33 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
     return cal;
   }
 
-  public static Number parseNumber( String value ) throws ParseException
+  public static Double parseDouble( String value ) throws NumberFormatException
+  {
+    Number number = parseNumber( value, false );
+    return (number!=null)? number.doubleValue(): null;
+  }
+
+  public static Integer parseInteger( String value ) throws NumberFormatException
+  {
+    Number number = parseNumber( value, false );
+    return (number!=null)? number.intValue(): null;
+  }
+
+  public static Long parseLong( String value ) throws NumberFormatException
+  {
+    Number number = parseNumber( value, false );
+    return (number!=null)? number.longValue(): null;
+  }
+
+  public static Number parseNumber( String value ) throws NumberFormatException
   {
     return parseNumber( value, false );
   }
 
-  public static Number parseNumber( String value, boolean integerOnly ) throws ParseException
+  public static Number parseNumber( String value, boolean integerOnly ) throws NumberFormatException
   {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
     try
     {
       NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
@@ -140,11 +152,18 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
     }
     catch (ParseException ex)
     {
-      NumberFormat format = NumberFormat.getNumberInstance( Locale.GERMANY );
-      format.setMinimumFractionDigits( 0 );
-      format.setGroupingUsed( false );
-      format.setParseIntegerOnly( integerOnly );
-      return format.parse( value );
+      try
+      {
+        NumberFormat format = NumberFormat.getNumberInstance( Locale.GERMANY );
+        format.setMinimumFractionDigits( 0 );
+        format.setGroupingUsed( false );
+        format.setParseIntegerOnly( integerOnly );
+        return format.parse( value );
+      }
+      catch (ParseException ex2)
+      {
+        throw new NumberFormatException( "Can't parse '" + value + "' as number!" );
+      }
     }
   }
 
@@ -192,5 +211,21 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
     format.setMinimumFractionDigits( 0 );
     format.setGroupingUsed( false );
     return format.format( value );
+  }
+
+  public static String printString( String value )
+  {
+    return printString( value, 0 );
+  }
+
+  public static String printString( String value, int maxLength )
+  {
+    value = StringUtils.trimToNull( value );
+    if (maxLength<1)
+      return value;
+    else if (maxLength<4)
+      return StringUtils.left( value, maxLength );
+    else
+      return StringUtils.abbreviate( value, maxLength );
   }
 }

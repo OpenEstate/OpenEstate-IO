@@ -16,7 +16,6 @@
 
 package org.openestate.io.is24_csv.records;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Befeuerungsart;
@@ -167,12 +166,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_ANZAHL_PARKFLAECHEN );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_ANZAHL_PARKFLAECHEN ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Anzahl Parkflaechen' "
-        + "from '" + this.get( FIELD_ANZAHL_PARKFLAECHEN ) + "'!" );
+      LOGGER.warn( "Can't read 'Anzahl Parkflaechen'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -181,62 +181,69 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_BAUJAHR );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_BAUJAHR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Baujahr' "
-        + "from '" + this.get( FIELD_BAUJAHR ) + "'!" );
+      LOGGER.warn( "Can't read 'Baujahr'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Befeuerungsart[] getBefeuerungsart()
   {
-    return Befeuerungsart.parseList( this.get( FIELD_BEFEUERUNG ) );
+    return Befeuerungsart.parseMultiple(
+      this.get( FIELD_BEFEUERUNG ) );
   }
 
   public Bodenbelag getBodenbelag()
   {
-    return Bodenbelag.parse( this.get( FIELD_BODENBELAG ) );
+    return Bodenbelag.parse(
+      this.get( FIELD_BODENBELAG ) );
   }
 
   public Double getBodenbelastung()
   {
     try
     {
-      return this.getAsDouble( FIELD_BODENBELASTUNG );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_BODENBELASTUNG ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Bodenbelastung' "
-        + "from '" + this.get( FIELD_BODENBELASTUNG ) + "'!" );
+      LOGGER.warn( "Can't read 'Bodenbelastung'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Boolean getEnergieausweisInklWarmwasser()
   {
-    return this.getAsBoolean( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER ) );
   }
 
   public Double getEnergieausweisKennwert()
   {
     try
     {
-      return this.getAsDouble( FIELD_ENERGIEAUSWEIS_KENNWERT );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Energieausweis-Kennwert' "
-        + "from '" + this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) + "'!" );
+      LOGGER.warn( "Can't read 'Energieausweis-Kennwert'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Energieausweistyp getEnergieausweisTyp()
   {
-    return Energieausweistyp.parse( this.get( FIELD_ENERGIEAUSWEIS_TYP ) );
+    return Energieausweistyp.parse(
+      this.get( FIELD_ENERGIEAUSWEIS_TYP ) );
   }
 
   public String getEtagen()
@@ -248,12 +255,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_FAHRTWEG_AUTOBAHN );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_FAHRTWEG_AUTOBAHN ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Fahrtweg zur Autobahn' "
-        + "from '" + this.get( FIELD_FAHRTWEG_AUTOBAHN ) + "'!" );
+      LOGGER.warn( "Can't read 'Fahrtweg zur Autobahn'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -262,12 +270,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_FAHRTWEG_FLUGHAFEN );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_FAHRTWEG_FLUGHAFEN ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Fahrtweg zum Flughafen' "
-        + "from '" + this.get( FIELD_FAHRTWEG_FLUGHAFEN ) + "'!" );
+      LOGGER.warn( "Can't read 'Fahrtweg zum Flughafen'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -276,12 +285,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_FAHRTWEG_HAUPTBAHNHOF );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_FAHRTWEG_HAUPTBAHNHOF ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Fahrtweg zum Hauptbahnhof' "
-        + "from '" + this.get( FIELD_FAHRTWEG_HAUPTBAHNHOF ) + "'!" );
+      LOGGER.warn( "Can't read 'Fahrtweg zum Hauptbahnhof'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -290,12 +300,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_FUSSWEG_NAHVERKEHR );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_FUSSWEG_NAHVERKEHR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Fussweg zum Nahverkehr' "
-        + "from '" + this.get( FIELD_FUSSWEG_NAHVERKEHR ) + "'!" );
+      LOGGER.warn( "Can't read 'Fussweg zum Nahverkehr'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -304,12 +315,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_GESAMTFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_GESAMTFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Gesamtflaeche' "
-        + "from '" + this.get( FIELD_GESAMTFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Gesamtflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -318,12 +330,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_GEWERBEFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_GEWERBEFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Gewerbeflaeche' "
-        + "from '" + this.get( FIELD_GEWERBEFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Gewerbeflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -332,12 +345,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_GRUNDSTUECKSFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_GRUNDSTUECKSFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Grundstuecksflaeche' "
-        + "from '" + this.get( FIELD_GRUNDSTUECKSFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Grundstuecksflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -346,55 +360,61 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_HALLENHOEHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_HALLENHOEHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Hallenhoehe' "
-        + "from '" + this.get( FIELD_HALLENHOEHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Hallenhoehe'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Boolean getHebebuehne()
   {
-    return this.getAsBoolean( FIELD_HEBEBUEHNE );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_HEBEBUEHNE ) );
   }
 
   public Heizungsart getHeizungsart()
   {
-    return Heizungsart.parse( this.get( FIELD_HEIZUNGSART ) );
+    return Heizungsart.parse(
+      this.get( FIELD_HEIZUNGSART ) );
   }
 
   public Double getKaltmiete()
   {
     try
     {
-      return this.getAsDouble( FIELD_KALTMIETE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_KALTMIETE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Kaltmiete' "
-        + "from '" + this.get( FIELD_KALTMIETE ) + "'!" );
+      LOGGER.warn( "Can't read 'Kaltmiete'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public KaltmietePro getKaltmietePro()
   {
-    return KaltmietePro.parse( this.get( FIELD_KALTMIETE_PRO ) );
+    return KaltmietePro.parse(
+      this.get( FIELD_KALTMIETE_PRO ) );
   }
 
   public Double getKaufpreis()
   {
     try
     {
-      return this.getAsDouble( FIELD_KAUFPREIS );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_KAUFPREIS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Kaufpreis' "
-        + "from '" + this.get( FIELD_KAUFPREIS ) + "'!" );
+      LOGGER.warn( "Can't read 'Kaufpreis'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -406,38 +426,42 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
 
   public Boolean getKranbahn()
   {
-    return this.getAsBoolean( FIELD_KRANBAHN );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_KRANBAHN ) );
   }
 
   public Double getKranbahnTragkraft()
   {
     try
     {
-      return this.getAsDouble( FIELD_KRANBAHN_TRAGKRAFT );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_KRANBAHN_TRAGKRAFT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Kranbahn Tragkraft' "
-        + "from '" + this.get( FIELD_KRANBAHN_TRAGKRAFT ) + "'!" );
+      LOGGER.warn( "Can't read 'Kranbahn Tragkraft'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Boolean getLastenaufzug()
   {
-    return this.getAsBoolean( FIELD_LASTENAUFZUG );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_LASTENAUFZUG ) );
   }
 
   public Double getLastenaufzugTragkraft()
   {
     try
     {
-      return this.getAsDouble( FIELD_LASTENAUFZUG_TRAGKRAFT );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_LASTENAUFZUG_TRAGKRAFT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Lastenaufzug Tragkraft' "
-        + "from '" + this.get( FIELD_LASTENAUFZUG_TRAGKRAFT ) + "'!" );
+      LOGGER.warn( "Can't read 'Lastenaufzug Tragkraft'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -446,12 +470,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_NEBENFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_NEBENFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Nebenflaeche' "
-        + "from '" + this.get( FIELD_NEBENFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Nebenflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -460,60 +485,67 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_NEBENKOSTEN );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_NEBENKOSTEN ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Nebenkosten' "
-        + "from '" + this.get( FIELD_NEBENKOSTEN ) + "'!" );
+      LOGGER.warn( "Can't read 'Nebenkosten'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public ObjektkategorieGewerbeHalleProduktion getObjektkategorie()
   {
-    return ObjektkategorieGewerbeHalleProduktion.parse( this.get( FIELD_OBJEKTKATEGORIE ) );
+    return ObjektkategorieGewerbeHalleProduktion.parse(
+      this.get( FIELD_OBJEKTKATEGORIE ) );
   }
 
   public Objektzustand getObjektzustand()
   {
-    return Objektzustand.parse( this.get( FIELD_OBJEKTZUSTAND ) );
+    return Objektzustand.parse(
+      this.get( FIELD_OBJEKTZUSTAND ) );
   }
 
   public Boolean getPersonenaufzug()
   {
-    return this.getAsBoolean( FIELD_PERSONENAUFZUG );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_PERSONENAUFZUG ) );
   }
 
   public Double getPreisProParkflaeche()
   {
     try
     {
-      return this.getAsDouble( FIELD_PREIS_PRO_PARKFLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_PREIS_PRO_PARKFLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Preis pro Parkflaeche' "
-        + "from '" + this.get( FIELD_PREIS_PRO_PARKFLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Preis pro Parkflaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Boolean getRampe()
   {
-    return this.getAsBoolean( FIELD_RAMPE );
+    return Is24CsvFormat.parseBoolean(
+      this.get( FIELD_RAMPE ) );
   }
 
   public Integer getSanierungsjahr()
   {
     try
     {
-      return this.getAsInteger( FIELD_SANIERUNGSJAHR );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_SANIERUNGSJAHR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Sanierungsjahr' "
-        + "from '" + this.get( FIELD_SANIERUNGSJAHR ) + "'!" );
+      LOGGER.warn( "Can't read 'Sanierungsjahr'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -522,12 +554,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_STROMANSCHLUSSWERT );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_STROMANSCHLUSSWERT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Stromanschlusswert' "
-        + "from '" + this.get( FIELD_STROMANSCHLUSSWERT ) + "'!" );
+      LOGGER.warn( "Can't read 'Stromanschlusswert'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -536,12 +569,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_TEILBAR_AB );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_TEILBAR_AB ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'teilbar ab' "
-        + "from '" + this.get( FIELD_TEILBAR_AB ) + "'!" );
+      LOGGER.warn( "Can't read 'teilbar ab'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -553,7 +587,8 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
 
   public VermarktungsartGewerbe getVermarktungsart()
   {
-    return VermarktungsartGewerbe.parse( this.get( FIELD_VERMARKTUNGSART ) );
+    return VermarktungsartGewerbe.parse(
+      this.get( FIELD_VERMARKTUNGSART ) );
   }
 
   @Override
@@ -563,13 +598,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
     return super.print();
   }
 
-  public void setAnzahlParkflaechen( Integer value )
+  public void setAnzahlParkflaechen( Number value )
   {
     this.set( FIELD_ANZAHL_PARKFLAECHEN,
       Is24CsvFormat.printNumber( value, 5 ) );
   }
 
-  public void setBaujahr( Integer value )
+  public void setBaujahr( Number value )
   {
     this.set( FIELD_BAUJAHR,
       Is24CsvFormat.printNumber( value, 4 ) );
@@ -584,7 +619,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   public void setBefeuerungsart( Iterable<Befeuerungsart> values )
   {
     this.set( FIELD_BEFEUERUNG,
-      Befeuerungsart.print( values ) );
+      Befeuerungsart.printMultiple( values ) );
   }
 
   public void setBodenbelag( Bodenbelag value )
@@ -593,7 +628,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setBodenbelastung( Double value )
+  public void setBodenbelastung( Number value )
   {
     this.set( FIELD_BODENBELASTUNG,
       Is24CsvFormat.printNumber( value, 7, 2 ) );
@@ -605,7 +640,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setEnergieausweisKennwert( Double value )
+  public void setEnergieausweisKennwert( Number value )
   {
     this.set( FIELD_ENERGIEAUSWEIS_KENNWERT,
       Is24CsvFormat.printNumber( value, 5, 2 ) );
@@ -620,52 +655,52 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   public void setEtagen( String value )
   {
     this.set( FIELD_ETAGEN,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
-  public void setFahrtwegAutobahn( Integer value )
+  public void setFahrtwegAutobahn( Number value )
   {
     this.set( FIELD_FAHRTWEG_AUTOBAHN,
       Is24CsvFormat.printNumber( value, 3 ) );
   }
 
-  public void setFahrtwegFlughafen( Integer value )
+  public void setFahrtwegFlughafen( Number value )
   {
     this.set( FIELD_FAHRTWEG_FLUGHAFEN,
       Is24CsvFormat.printNumber( value, 3 ) );
   }
 
-  public void setFahrtwegHauptbahnhof( Integer value )
+  public void setFahrtwegHauptbahnhof( Number value )
   {
     this.set( FIELD_FAHRTWEG_HAUPTBAHNHOF,
       Is24CsvFormat.printNumber( value, 2 ) );
   }
 
-  public void setFusswegNahverkehr( Integer value )
+  public void setFusswegNahverkehr( Number value )
   {
     this.set( FIELD_FUSSWEG_NAHVERKEHR,
       Is24CsvFormat.printNumber( value, 2 ) );
   }
 
-  public void setGesamtflaeche( Double value )
+  public void setGesamtflaeche( Number value )
   {
     this.set( FIELD_GESAMTFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
   }
 
-  public void setGewerbeflaeche( Double value )
+  public void setGewerbeflaeche( Number value )
   {
     this.set( FIELD_GEWERBEFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
   }
 
-  public void setGrundstuecksflaeche( Double value )
+  public void setGrundstuecksflaeche( Number value )
   {
     this.set( FIELD_GRUNDSTUECKSFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
   }
 
-  public void setHallenhoehe( Double value )
+  public void setHallenhoehe( Number value )
   {
     this.set( FIELD_HALLENHOEHE,
       Is24CsvFormat.printNumber( value, 5, 2 ) );
@@ -683,7 +718,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setKaltmiete( Double value )
+  public void setKaltmiete( Number value )
   {
     this.set( FIELD_KALTMIETE,
       Is24CsvFormat.printNumber( value, 15, 2 ) );
@@ -695,7 +730,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setKaufpreis( Double value )
+  public void setKaufpreis( Number value )
   {
     this.set( FIELD_KAUFPREIS,
       Is24CsvFormat.printNumber( value, 15, 2 ) );
@@ -704,7 +739,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   public void setKaution( String value )
   {
     this.set( FIELD_KAUTION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setKranbahn( Boolean value )
@@ -713,7 +748,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setKranbahnTragkraft( Double value )
+  public void setKranbahnTragkraft( Number value )
   {
     this.set( FIELD_KRANBAHN_TRAGKRAFT,
       Is24CsvFormat.printNumber( value, 7, 2 ) );
@@ -725,19 +760,19 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setLastenaufzugTragkraft( Double value )
+  public void setLastenaufzugTragkraft( Number value )
   {
     this.set( FIELD_LASTENAUFZUG_TRAGKRAFT,
       Is24CsvFormat.printNumber( value, 7, 2 ) );
   }
 
-  public void setNebenflaeche( Double value )
+  public void setNebenflaeche( Number value )
   {
     this.set( FIELD_NEBENFLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
   }
 
-  public void setNebenkosten( Double value )
+  public void setNebenkosten( Number value )
   {
     this.set( FIELD_NEBENKOSTEN,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
@@ -761,7 +796,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setPreisProParkflaeche( Double value )
+  public void setPreisProParkflaeche( Number value )
   {
     this.set( FIELD_PREIS_PRO_PARKFLAECHE,
       Is24CsvFormat.printNumber( value, 15, 2 ) );
@@ -773,19 +808,19 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
       Is24CsvFormat.printBoolean( value ) );
   }
 
-  public void setSanierungsjahr( Integer value )
+  public void setSanierungsjahr( Number value )
   {
     this.set( FIELD_SANIERUNGSJAHR,
       Is24CsvFormat.printNumber( value, 4 ) );
   }
 
-  public void setStromanschlusswert( Integer value )
+  public void setStromanschlusswert( Number value )
   {
     this.set( FIELD_STROMANSCHLUSSWERT,
       Is24CsvFormat.printNumber( value, 5 ) );
   }
 
-  public void setTeilbarAb( Double value )
+  public void setTeilbarAb( Number value )
   {
     this.set( FIELD_TEILBAR_AB,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
@@ -794,7 +829,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   public void setVerfuegbarAb( String value )
   {
     this.set( FIELD_VERFUEGBAR_AB,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setVermarktungsart( VermarktungsartGewerbe value )

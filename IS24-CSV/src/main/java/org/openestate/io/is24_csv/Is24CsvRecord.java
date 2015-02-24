@@ -16,10 +16,14 @@
 
 package org.openestate.io.is24_csv;
 
-import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Currency;
+import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.openestate.io.core.CsvRecord;
 import org.openestate.io.is24_csv.types.Datei;
 import org.openestate.io.is24_csv.types.DateiSuffix;
@@ -38,7 +42,9 @@ import org.slf4j.LoggerFactory;
 public abstract class Is24CsvRecord extends CsvRecord
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvRecord.class );
+  private final static Pattern LINEBREAK = Pattern.compile( "<br\\s*/?>", Pattern.CASE_INSENSITIVE );
   protected final static int LENGTH = 182;
+  public final static int FILE_LIMIT = 10;
 
 
   /**
@@ -387,73 +393,6 @@ public abstract class Is24CsvRecord extends CsvRecord
     return this.get( FIELD_API_SUCHFELD3 );
   }
 
-  @Override
-  protected Boolean getAsBoolean( int pos, Boolean defaultValue )
-  {
-    String value = this.get( pos );
-    return (value!=null)? Is24CsvFormat.parseBoolean( value ): defaultValue;
-  }
-
-  @Override
-  protected Double getAsDouble( int pos, Double defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        Is24CsvFormat.parseNumber( value, false ).doubleValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as double!" );
-    }
-  }
-
-  @Override
-  protected Float getAsFloat( int pos, Float defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        Is24CsvFormat.parseNumber( value, false ).floatValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as float!" );
-    }
-  }
-
-  @Override
-  protected Integer getAsInteger( int pos, Integer defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        Is24CsvFormat.parseNumber( value, true ).intValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as integer!" );
-    }
-  }
-
-  @Override
-  protected Long getAsLong( int pos, Long defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        Is24CsvFormat.parseNumber( value, true ).longValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as long!" );
-    }
-  }
-
   public String getBeschreibungAusstattung()
   {
     return this.get( FIELD_BESCHREIBUNG_AUSSTATTUNG );
@@ -474,138 +413,321 @@ public abstract class Is24CsvRecord extends CsvRecord
     return this.get( FIELD_BESCHREIBUNG_SONSTIGES );
   }
 
+  public Datei getDatei( int i )
+  {
+    switch (i)
+    {
+      case 1:
+        return this.getDatei1();
+      case 2:
+        return this.getDatei2();
+      case 3:
+        return this.getDatei3();
+      case 4:
+        return this.getDatei4();
+      case 5:
+        return this.getDatei5();
+      case 6:
+        return this.getDatei6();
+      case 7:
+        return this.getDatei7();
+      case 8:
+        return this.getDatei8();
+      case 9:
+        return this.getDatei9();
+      case 10:
+        return this.getDatei10();
+      default:
+        throw new IllegalArgumentException( "Unsupported file position " + i + "!" );
+    }
+  }
+
   public Datei getDatei1()
   {
     String file = this.get( FIELD_DATEI1_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI1_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 1!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI1_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI1_SUFFIX ) ),
       this.get( FIELD_DATEI1_TEXT ),
-      this.getAsInteger( FIELD_DATEI1_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei2()
   {
     String file = this.get( FIELD_DATEI2_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI2_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 2!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI2_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI2_SUFFIX ) ),
       this.get( FIELD_DATEI2_TEXT ),
-      this.getAsInteger( FIELD_DATEI2_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei3()
   {
     String file = this.get( FIELD_DATEI3_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI3_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 3!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI3_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI3_SUFFIX ) ),
       this.get( FIELD_DATEI3_TEXT ),
-      this.getAsInteger( FIELD_DATEI3_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei4()
   {
     String file = this.get( FIELD_DATEI4_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI4_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 4!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI4_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI4_SUFFIX ) ),
       this.get( FIELD_DATEI4_TEXT ),
-      this.getAsInteger( FIELD_DATEI4_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei5()
   {
     String file = this.get( FIELD_DATEI5_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI5_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 5!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI5_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI5_SUFFIX ) ),
       this.get( FIELD_DATEI5_TEXT ),
-      this.getAsInteger( FIELD_DATEI5_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei6()
   {
     String file = this.get( FIELD_DATEI6_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI6_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 6!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI6_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI6_SUFFIX ) ),
       this.get( FIELD_DATEI6_TEXT ),
-      this.getAsInteger( FIELD_DATEI6_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei7()
   {
     String file = this.get( FIELD_DATEI7_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI7_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 7!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI7_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI7_SUFFIX ) ),
       this.get( FIELD_DATEI7_TEXT ),
-      this.getAsInteger( FIELD_DATEI7_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei8()
   {
     String file = this.get( FIELD_DATEI8_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI8_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 8!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI8_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI8_SUFFIX ) ),
       this.get( FIELD_DATEI8_TEXT ),
-      this.getAsInteger( FIELD_DATEI8_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei9()
   {
     String file = this.get( FIELD_DATEI9_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI9_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 9!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI9_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI9_SUFFIX ) ),
       this.get( FIELD_DATEI9_TEXT ),
-      this.getAsInteger( FIELD_DATEI9_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
   }
 
   public Datei getDatei10()
   {
     String file = this.get( FIELD_DATEI10_NAME );
-    return (file!=null)? new Datei( file,
+    if (file==null) return null;
+
+    Integer dauer = null;
+    try
+    {
+      dauer = Is24CsvFormat.parseInteger(
+        this.get( FIELD_DATEI10_DAUER ) );
+    }
+    catch (NumberFormatException ex)
+    {
+      LOGGER.warn( "Can't read duration for file 10!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    return new Datei( file,
       DateiTyp.parse( this.get( FIELD_DATEI10_TYP ) ),
       DateiSuffix.parse( this.get( FIELD_DATEI10_SUFFIX ) ),
       this.get( FIELD_DATEI10_TEXT ),
-      this.getAsInteger( FIELD_DATEI10_DAUER, 0 )
-    ): null;
+      (dauer!=null)? dauer: 0
+    );
+  }
+
+  public Datei[] getDateien()
+  {
+    List<Datei> dateien = new ArrayList<Datei>();
+    for (int i=1; i<=FILE_LIMIT; i++)
+    {
+      Datei datei = this.getDatei( i );
+      if (datei!=null) dateien.add( datei );
+    }
+    return dateien.toArray( new Datei[dateien.size()] );
   }
 
   public Integer getGruppierungId()
   {
     try
     {
-      return this.getAsInteger( FIELD_GRUPPIERUNG_ID );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_GRUPPIERUNG_ID ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read object group id "
-        + "from '" + this.get( FIELD_GRUPPIERUNG_ID ) + "'!" );
+      LOGGER.warn( "Can't read 'Gruppierung ID'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public Immobilienart getImmobilienart()
   {
-    return Immobilienart.parse( this.get( FIELD_IMMOBILIENART ) );
+    return Immobilienart.parse(
+      this.get( FIELD_IMMOBILIENART ) );
   }
 
   public Importmodus getImportmodus()
   {
-    return Importmodus.parse( this.get( FIELD_MODUS ) );
+    return Importmodus.parse(
+      this.get( FIELD_MODUS ) );
   }
 
   public String getKontaktAnrede()
@@ -676,7 +798,8 @@ public abstract class Is24CsvRecord extends CsvRecord
 
   public Objektdarstellung getObjektdarstellung()
   {
-    return Objektdarstellung.parse( this.get( FIELD_OBJEKTDARSTELLUNG ) );
+    return Objektdarstellung.parse(
+      this.get( FIELD_OBJEKTDARSTELLUNG ) );
   }
 
   public String[] getObjektdarstellungGruppen()
@@ -773,14 +896,16 @@ public abstract class Is24CsvRecord extends CsvRecord
     }
     catch (IllegalArgumentException ex)
     {
-      LOGGER.warn( "Can't read currency from '" + value + "'!" );
+      LOGGER.warn( "Can't read currency '" + value + "'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return Currency.getInstance( "EUR" );
     }
   }
 
   public boolean isAdressdruck()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_ADRESSDRUCK ) );
+    return Boolean.TRUE.equals( Is24CsvFormat.parseBoolean(
+      this.get( FIELD_ADRESSDRUCK ) ) );
   }
 
   public boolean isAktiv()
@@ -791,168 +916,275 @@ public abstract class Is24CsvRecord extends CsvRecord
 
   public boolean isProvisionspflichtig()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_PROVISIONPFLICHTIG ) );
+    return Boolean.TRUE.equals( Is24CsvFormat.parseBoolean(
+      this.get( FIELD_PROVISIONPFLICHTIG ) ) );
+  }
+
+  @Override
+  protected String parse( String value )
+  {
+    // replace <br> elements with native line separator in any parsed value
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+    Matcher m = LINEBREAK.matcher( value );
+    return (m.find())? m.replaceAll( SystemUtils.LINE_SEPARATOR ): value;
   }
 
   public void setAdressdruck( boolean value )
   {
-    this.set( FIELD_ADRESSDRUCK, (value)? "J": "N" );
+    this.set( FIELD_ADRESSDRUCK,
+      Is24CsvFormat.printBoolean( value ) );
   }
 
   public void setAktiv( boolean value )
   {
-    this.set( FIELD_STATUS, (value)? "1": "0" );
+    this.set( FIELD_STATUS,
+      (value)? "1": "0" );
   }
 
   public void setAnbieterObjektId( String value )
   {
     this.set( FIELD_ANBIETER_OBJEKT_ID,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setApiSuchfeld1( String value )
   {
     this.set( FIELD_API_SUCHFELD1,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
+      Is24CsvFormat.printString( value, 10 ) );
   }
 
   public void setApiSuchfeld2( String value )
   {
     this.set( FIELD_API_SUCHFELD2,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
+      Is24CsvFormat.printString( value, 10 ) );
   }
 
   public void setApiSuchfeld3( String value )
   {
     this.set( FIELD_API_SUCHFELD3,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
+      Is24CsvFormat.printString( value, 10 ) );
   }
 
   public void setBeschreibungAusstattung( String value )
   {
     this.set( FIELD_BESCHREIBUNG_AUSSTATTUNG,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 2000 ) );
+      Is24CsvFormat.printString( value, 2000 ) );
   }
 
   public void setBeschreibungLage( String value )
   {
     this.set( FIELD_BESCHREIBUNG_LAGE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 2000 ) );
+      Is24CsvFormat.printString( value, 2000 ) );
   }
 
   public void setBeschreibungObjekt( String value )
   {
     this.set( FIELD_BESCHREIBUNG_OBJEKT,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 2000 ) );
+      Is24CsvFormat.printString( value, 2000 ) );
   }
 
   public void setBeschreibungSonstiges( String value )
   {
     this.set( FIELD_BESCHREIBUNG_SONSTIGES,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 2000 ) );
+      Is24CsvFormat.printString( value, 2000 ) );
+  }
+
+  public void setDatei( Datei value, int i )
+  {
+    switch (i)
+    {
+      case 1:
+        this.setDatei1( value );
+        break;
+      case 2:
+        this.setDatei2( value );
+        break;
+      case 3:
+        this.setDatei3( value );
+        break;
+      case 4:
+        this.setDatei4( value );
+        break;
+      case 5:
+        this.setDatei5( value );
+        break;
+      case 6:
+        this.setDatei6( value );
+        break;
+      case 7:
+        this.setDatei7( value );
+        break;
+      case 8:
+        this.setDatei8( value );
+        break;
+      case 9:
+        this.setDatei9( value );
+        break;
+      case 10:
+        this.setDatei10( value );
+        break;
+      default:
+        throw new IllegalArgumentException( "Unsupported file position " + i + "!" );
+    }
   }
 
   public void setDatei1( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI1_NAME, file );
-    this.set( FIELD_DATEI1_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI1_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI1_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI1_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI1_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI1_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI1_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI1_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei2( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI2_NAME, file );
-    this.set( FIELD_DATEI2_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI2_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI2_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI2_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI2_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI2_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI2_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI2_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei3( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI3_NAME, file );
-    this.set( FIELD_DATEI3_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI3_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI3_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI3_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI3_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI3_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI3_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI3_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei4( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI4_NAME, file );
-    this.set( FIELD_DATEI4_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI4_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI4_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI4_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI4_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI4_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI4_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI4_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei5( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI5_NAME, file );
-    this.set( FIELD_DATEI5_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI5_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI5_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI5_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI5_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI5_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI5_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI5_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei6( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI6_NAME, file );
-    this.set( FIELD_DATEI6_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI6_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI6_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI6_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI6_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI6_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI6_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI6_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei7( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI7_NAME, file );
-    this.set( FIELD_DATEI7_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI7_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI7_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI7_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI7_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI7_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI7_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI7_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei8( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI8_NAME, file );
-    this.set( FIELD_DATEI8_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI8_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI8_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI8_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI8_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI8_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI8_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI8_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei9( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI9_NAME, file );
-    this.set( FIELD_DATEI9_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI9_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI9_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI9_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI9_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI9_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI9_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI9_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
   public void setDatei10( Datei value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getName() ): null;
     this.set( FIELD_DATEI10_NAME, file );
-    this.set( FIELD_DATEI10_TEXT, (value!=null && file!=null)? value.getText(): null );
-    this.set( FIELD_DATEI10_TYP, (value!=null && value.getTyp()!=null && file!=null)? value.getTyp().print(): null );
-    this.set( FIELD_DATEI10_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)? value.getSuffix().print(): null );
-    this.set( FIELD_DATEI10_DAUER, (value!=null && file!=null)? String.valueOf( value.getAbspieldauer() ): null );
+    this.set( FIELD_DATEI10_TEXT, (value!=null && file!=null)?
+      Is24CsvFormat.printString( value.getText(), 30 ): null );
+    this.set( FIELD_DATEI10_TYP, (value!=null && value.getTyp()!=null && file!=null)?
+      value.getTyp().print(): null );
+    this.set( FIELD_DATEI10_SUFFIX, (value!=null && value.getSuffix()!=null && file!=null)?
+      value.getSuffix().print(): null );
+    this.set( FIELD_DATEI10_DAUER, (value!=null && file!=null)?
+      Is24CsvFormat.printNumber( value.getAbspieldauer(), 5 ): null );
   }
 
-  public void setGruppierungId( Integer value )
+  public void setDateien( Iterable<Datei> values )
+  {
+    int pos = 1;
+    if (values!=null)
+    {
+      for (Datei value : values)
+      {
+        this.setDatei( value, pos );
+        pos++;
+        if (pos>FILE_LIMIT) break;
+      }
+    }
+    for (int i=pos; i<=FILE_LIMIT; i++) this.setDatei( null, i );
+  }
+
+  public void setGruppierungId( Number value )
   {
     this.set( FIELD_GRUPPIERUNG_ID,
       (value!=null)? String.valueOf( value ): null );
@@ -973,19 +1205,19 @@ public abstract class Is24CsvRecord extends CsvRecord
   public void setKontaktAnrede( String value )
   {
     this.set( FIELD_KONTAKT_ANREDE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 20 ) );
+      Is24CsvFormat.printString( value, 20 ) );
   }
 
   public void setKontaktEmail( String value )
   {
     this.set( FIELD_KONTAKT_EMAIL,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 150 ) );
+      Is24CsvFormat.printString( value, 150 ) );
   }
 
   public void setKontaktHausNr( String value )
   {
     this.set( FIELD_KONTAKT_HAUSNR,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 30 ) );
+      Is24CsvFormat.printString( value, 30 ) );
   }
 
   public void setKontaktLand( String value )
@@ -998,55 +1230,55 @@ public abstract class Is24CsvRecord extends CsvRecord
   public void setKontaktMobiltelefon( String value )
   {
     this.set( FIELD_KONTAKT_MOBILTELEFON,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 40 ) );
+      Is24CsvFormat.printString( value, 40 ) );
   }
 
   public void setKontaktNachname( String value )
   {
     this.set( FIELD_KONTAKT_NACHNAME,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setKontaktOrt( String value )
   {
     this.set( FIELD_KONTAKT_ORT,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setKontaktPlz( String value )
   {
     this.set( FIELD_KONTAKT_PLZ,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 20 ) );
+      Is24CsvFormat.printString( value, 20 ) );
   }
 
   public void setKontaktStrasse( String value )
   {
     this.set( FIELD_KONTAKT_STRASSE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 100 ) );
+      Is24CsvFormat.printString( value, 100 ) );
   }
 
   public void setKontaktTelefax( String value )
   {
     this.set( FIELD_KONTAKT_TELEFAX,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 40 ) );
+      Is24CsvFormat.printString( value, 40 ) );
   }
 
   public void setKontaktTelefon( String value )
   {
     this.set( FIELD_KONTAKT_TELEFON,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 40 ) );
+      Is24CsvFormat.printString( value, 40 ) );
   }
 
   public void setKontaktVorname( String value )
   {
     this.set( FIELD_KONTAKT_VORNAME,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 30 ) );
+      Is24CsvFormat.printString( value, 30 ) );
   }
 
   public void setKontaktWebseite( String value )
   {
     this.set( FIELD_KONTAKT_WEBSEITE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 300 ) );
+      Is24CsvFormat.printString( value, 300 ) );
   }
 
   public void setObjektdarstellung( Objektdarstellung value )
@@ -1064,13 +1296,13 @@ public abstract class Is24CsvRecord extends CsvRecord
   public void setObjektHausNr( String value )
   {
     this.set( FIELD_OBJEKT_HAUSNR,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 30 ) );
+      Is24CsvFormat.printString( value, 30 ) );
   }
 
   public void setInternationaleRegion( String value )
   {
     this.set( FIELD_OBJEKT_INTERNATIONALE_REGION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 100 ) );
+      Is24CsvFormat.printString( value, 100 ) );
   }
 
   public void setObjektLand( String value )
@@ -1083,72 +1315,73 @@ public abstract class Is24CsvRecord extends CsvRecord
   public void setObjektOrt( String value )
   {
     this.set( FIELD_OBJEKT_ORT,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setObjektPlz( String value )
   {
     this.set( FIELD_OBJEKT_PLZ,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 20 ) );
+      Is24CsvFormat.printString( value, 20 ) );
   }
 
   public void setObjektStrasse( String value )
   {
     this.set( FIELD_OBJEKT_STRASSE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 100 ) );
+      Is24CsvFormat.printString( value, 100 ) );
   }
 
   public void setProvision( String value )
   {
     this.set( FIELD_PROVISION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setProvisionpflichtig( boolean value )
   {
-    this.set( FIELD_PROVISIONPFLICHTIG, (value)? "J": "N" );
+    this.set( FIELD_PROVISIONPFLICHTIG,
+      Is24CsvFormat.printBoolean( value ) );
   }
 
   public void setProvisionshinweis( String value )
   {
     this.set( FIELD_PROVISIONSHINWEIS,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      Is24CsvFormat.printString( value, 200 ) );
   }
 
   public void setScoutKundenId( String value )
   {
     this.set( FIELD_SCOUT_KUNDEN_ID,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 15 ) );
+      Is24CsvFormat.printString( value, 15 ) );
   }
 
   public void setScoutObjektId( String value )
   {
     this.set( FIELD_SCOUT_OBJEKT_ID,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 20 ) );
+      Is24CsvFormat.printString( value, 20 ) );
   }
 
   public void setTermsRegion( String value )
   {
     this.set( FIELD_TERMS_REGION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setTermsStadt( String value )
   {
     this.set( FIELD_TERMS_STADT,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setTermsStadtteil( String value )
   {
     this.set( FIELD_TERMS_STADTTEIL,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      Is24CsvFormat.printString( value, 50 ) );
   }
 
   public void setUeberschrift( String value )
   {
     this.set( FIELD_UEBERSCHRIFT,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 100 ) );
+      Is24CsvFormat.printString( value, 100 ) );
   }
 
   public void setWaehrung( Currency value )

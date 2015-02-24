@@ -17,11 +17,16 @@
 package org.openestate.io.idx;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
 import java.util.Date;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.openestate.io.core.CsvRecord;
 import org.openestate.io.idx.types.GrossPremium;
 import org.openestate.io.idx.types.Language;
@@ -42,8 +47,10 @@ import org.slf4j.LoggerFactory;
 public class IdxRecord extends CsvRecord
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( IdxRecord.class );
+  private final static Pattern LINEBREAK = Pattern.compile( "<br\\s*/?>", Pattern.CASE_INSENSITIVE );
   protected final static String VERSION = "IDX" + IdxFormat.VERSION;
   protected final static int LENGTH = 183;
+  public final static int PICTURE_LIMIT = 13;
 
 
   /**
@@ -113,7 +120,7 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_OBJECT_COUNTRY = 12;
 
   /** Region, str(200) */
-  //protected final static int FIELD_REGION = 13;
+  protected final static int FIELD_REGION = 13;
 
   /** Anmerkung zur Lage / Situationsbeschrieb, str(50) */
   protected final static int FIELD_OBJECT_SITUATION = 14;
@@ -194,7 +201,7 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_BALCONY = 39;
 
   /** Dachboden, str(1) */
-  //protected final static int FIELD_ROOF_FLOOR = 40;
+  protected final static int FIELD_ROOF_FLOOR = 40;
 
   /** Distanz zum ÖPNV in Meter, int(5) (1min = 50meter) */
   protected final static int FIELD_DISTANCE_PUBLIC_TRANSPORT = 41;
@@ -215,10 +222,10 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_URL = 67;
 
   /** Veröffentlichung bis, date(DD.MM.YYYY) */
-  //protected final static int FIELD_PUBLISH_UNTIL = 85;
+  protected final static int FIELD_PUBLISH_UNTIL = 85;
 
   /** ???, str(200) */
-  //protected final static int FIELD_DESTINATION = 86;
+  protected final static int FIELD_DESTINATION = 86;
 
   /** Distanz zur Autobahn in Meter, int(5) (1min = 50meter) */
   protected final static int FIELD_DISTANCE_MOTORWAY = 108;
@@ -272,7 +279,7 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_GAS_SUPPLY = 124;
 
   /** Informationen zur Gemeinde, str(1) */
-  //protected final static int FIELD_MUNICIPAL_INFO = 125;
+  protected final static int FIELD_MUNICIPAL_INFO = 125;
 
   /** Homegate-URL, str(100) */
   protected final static int FIELD_OWN_OBJECT_URL = 126;
@@ -284,13 +291,13 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_DELIVERY_ID = 141;
 
   /** Gemeinschaftsgeschäft, Provisionsteilung, int(1) */
-  //protected final static int FIELD_COMMISSION_SHARING = 158;
+  protected final static int FIELD_COMMISSION_SHARING = 158;
 
   /** Gemeinschaftsgeschäft, Eigenanteil der Provision, str(10) */
-  //protected final static int FIELD_COMMISSION_OWN = 159;
+  protected final static int FIELD_COMMISSION_OWN = 159;
 
   /** Gemeinschaftsgeschäft, Partner, str(10) */
-  //protected final static int FIELD_COMMISSION_PARTNER = 160;
+  protected final static int FIELD_COMMISSION_PARTNER = 160;
 
   /** Etagenzahl, int(2) */
   protected final static int FIELD_NUMBER_OF_FLOORS = 162;
@@ -370,7 +377,7 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_AGENCY_PHONE = 76;
 
   /** Anbieter-Mobiltelefon, str(200) */
-  //protected final static int FIELD_AGENCY_MOBILE = 77;
+  protected final static int FIELD_AGENCY_MOBILE = 77;
 
   /** Anbieter-Fax, str(200) */
   protected final static int FIELD_AGENCY_FAX = 78;
@@ -379,10 +386,10 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_AGENCY_EMAIL = 79;
 
   /** Anbieter-Logo, str(200) */
-  //protected final static int FIELD_AGENCY_LOGO = 80;
+  protected final static int FIELD_AGENCY_LOGO = 80;
 
   /** Anbieter-Logo 2, str(200) */
-  //protected final static int FIELD_AGENCY_LOGO2 = 161;
+  protected final static int FIELD_AGENCY_LOGO2 = 161;
 
 
   /**
@@ -396,7 +403,7 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_VISIT_PHONE = 82;
 
   /** Besucherkontakt-Mail, str(200) */
-  //protected final static int FIELD_VISIT_EMAIL = 83;
+  protected final static int FIELD_VISIT_EMAIL = 83;
 
   /** Besucherkontakt-Notiz, str(200) */
   protected final static int FIELD_VISIT_REMARK = 84;
@@ -569,7 +576,7 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_MOVIE_TITLE = 62;
 
   /** Video, Beschreibung, str(1800) */
-  //protected final static int FIELD_MOVIE_TEXT = 63;
+  protected final static int FIELD_MOVIE_TEXT = 63;
 
   /** Dokument, Datei, str(200) (*.pdf, *.rtf, *.doc) */
   protected final static int FIELD_DOCUMENT_FILE = 64;
@@ -578,7 +585,7 @@ public class IdxRecord extends CsvRecord
   protected final static int FIELD_DOCUMENT_TITLE = 65;
 
   /** Dokument, Beschreibung, str(1800) */
-  //protected final static int FIELD_DOCUMENT_TEXT = 66;
+  protected final static int FIELD_DOCUMENT_TEXT = 66;
 
 
   /**
@@ -661,20 +668,23 @@ public class IdxRecord extends CsvRecord
     return this.get( FIELD_AGENCY_ID );
   }
 
-  /*public String getAgencyLogo()
+  @Deprecated
+  public String getAgencyLogo()
   {
     return this.get( FIELD_AGENCY_LOGO );
-  }*/
+  }
 
-  /*public String getAgencyLogo2()
+  @Deprecated
+  public String getAgencyLogo2()
   {
     return this.get( FIELD_AGENCY_LOGO2 );
-  }*/
+  }
 
-  /*public String getAgencyMobile()
+  @Deprecated
+  public String getAgencyMobile()
   {
     return this.get( FIELD_AGENCY_MOBILE );
-  }*/
+  }
 
   public String getAgencyName()
   {
@@ -706,83 +716,17 @@ public class IdxRecord extends CsvRecord
     return this.get( FIELD_AGENCY_ZIP );
   }
 
-  @Override
-  protected Boolean getAsBoolean( int pos, Boolean defaultValue )
-  {
-    String value = this.get( pos );
-    return (value!=null)? IdxFormat.parseBoolean( value ): defaultValue;
-  }
-
-  @Override
-  protected Double getAsDouble( int pos, Double defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        IdxFormat.parseNumber( value, false ).doubleValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as double!" );
-    }
-  }
-
-  @Override
-  protected Float getAsFloat( int pos, Float defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        IdxFormat.parseNumber( value, false ).floatValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as float!" );
-    }
-  }
-
-  @Override
-  protected Integer getAsInteger( int pos, Integer defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        IdxFormat.parseNumber( value, true ).intValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as integer!" );
-    }
-  }
-
-  @Override
-  protected Long getAsLong( int pos, Long defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    try
-    {
-      return (value!=null)?
-        IdxFormat.parseNumber( value, true ).longValue(): defaultValue;
-    }
-    catch (ParseException ex)
-    {
-      throw new NumberFormatException( "Can't read value '" + value + "' as long!" );
-    }
-  }
-
   public Calendar getAvailableFrom()
   {
     try
     {
-      return IdxFormat.parseDateAsCalendar( this.get( FIELD_AVAILABLE_FROM ) );
+      return IdxFormat.parseDateAsCalendar(
+        this.get( FIELD_AVAILABLE_FROM ) );
     }
     catch (ParseException ex)
     {
-      LOGGER.warn( "Can't read availability date "
-        + "from '" + this.get( FIELD_AVAILABLE_FROM ) + "'!" );
+      LOGGER.warn( "Can't read availability date!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -804,7 +748,8 @@ public class IdxRecord extends CsvRecord
 
   public Language getBillingLanguage()
   {
-    return Language.parse( this.get( FIELD_BILLING_LANGUAGE ) );
+    return Language.parse(
+      this.get( FIELD_BILLING_LANGUAGE ) );
   }
 
   public String getBillingMobile()
@@ -839,7 +784,8 @@ public class IdxRecord extends CsvRecord
 
   public Salutation getBillingSalutation()
   {
-    return Salutation.parse( this.get( FIELD_BILLING_SALUTATION ) );
+    return Salutation.parse(
+      this.get( FIELD_BILLING_SALUTATION ) );
   }
 
   public String getBillingStreet()
@@ -856,12 +802,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_CARRYING_CAPACITY_CRANE );
+      return IdxFormat.parseDouble(
+        this.get( FIELD_CARRYING_CAPACITY_CRANE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read carrying capacity for the crane "
-        + "from '" + this.get( FIELD_CARRYING_CAPACITY_CRANE ) + "'!" );
+      LOGGER.warn( "Can't read carrying capacity for the crane!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -870,12 +817,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_CARRYING_CAPACITY_ELEVATOR );
+      return IdxFormat.parseDouble(
+        this.get( FIELD_CARRYING_CAPACITY_ELEVATOR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read carrying capacity for the elevator "
-        + "from '" + this.get( FIELD_CARRYING_CAPACITY_ELEVATOR ) + "'!" );
+      LOGGER.warn( "Can't read carrying capacity for the elevator!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -884,25 +832,28 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_CEILING_HEIGHT );
+      return IdxFormat.parseDouble(
+        this.get( FIELD_CEILING_HEIGHT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read ceiling height "
-        + "from '" + this.get( FIELD_CEILING_HEIGHT ) + "'!" );
+      LOGGER.warn( "Can't read ceiling height!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
-  /*public String getCommissionOwn()
+  @Deprecated
+  public String getCommissionOwn()
   {
     return this.get( FIELD_COMMISSION_OWN );
-  }*/
+  }
 
-  /*public String getCommissionPartner()
+  @Deprecated
+  public String getCommissionPartner()
   {
     return this.get( FIELD_COMMISSION_PARTNER );
-  }*/
+  }
 
   public Currency getCurrency()
   {
@@ -914,6 +865,7 @@ public class IdxRecord extends CsvRecord
     catch (IllegalArgumentException ex)
     {
       LOGGER.warn( "Can't read currency from '" + value + "'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -922,31 +874,34 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_DELIVERY_ID );
+      return IdxFormat.parseLong(
+        this.get( FIELD_DELIVERY_ID ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read delivery id "
-        + "from '" + this.get( FIELD_DELIVERY_ID ) + "'!" );
+      LOGGER.warn( "Can't read delivery id!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
-  /*public String getDestination()
+  @Deprecated
+  public String getDestination()
   {
     return this.get( FIELD_DESTINATION );
-  }*/
+  }
 
   public Integer getDistanceKindergarten()
   {
     try
     {
-      return this.getAsInteger( FIELD_DISTANCE_KINDERGARTEN );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_DISTANCE_KINDERGARTEN ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to kindergarten "
-        + "from '" + this.get( FIELD_DISTANCE_KINDERGARTEN ) + "'!" );
+      LOGGER.warn( "Can't read distance to kindergarten!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -955,12 +910,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_DISTANCE_MOTORWAY );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_DISTANCE_MOTORWAY ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to motorway "
-        + "from '" + this.get( FIELD_DISTANCE_MOTORWAY ) + "'!" );
+      LOGGER.warn( "Can't read distance to motorway!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -969,12 +925,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_DISTANCE_PUBLIC_TRANSPORT );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_DISTANCE_PUBLIC_TRANSPORT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to public transport "
-        + "from '" + this.get( FIELD_DISTANCE_PUBLIC_TRANSPORT ) + "'!" );
+      LOGGER.warn( "Can't read distance to public transport!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -983,12 +940,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_DISTANCE_SCHOOL1 );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_DISTANCE_SCHOOL1 ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to primary school "
-        + "from '" + this.get( FIELD_DISTANCE_SCHOOL1 ) + "'!" );
+      LOGGER.warn( "Can't read distance to primary school!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -997,12 +955,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_DISTANCE_SCHOOL2 );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_DISTANCE_SCHOOL2 ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to secondary school "
-        + "from '" + this.get( FIELD_DISTANCE_SCHOOL2 ) + "'!" );
+      LOGGER.warn( "Can't read distance to secondary school!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1011,12 +970,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_DISTANCE_SHOP );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_DISTANCE_SHOP ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read distance to shopping "
-        + "from '" + this.get( FIELD_DISTANCE_SHOP ) + "'!" );
+      LOGGER.warn( "Can't read distance to shopping!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1025,40 +985,42 @@ public class IdxRecord extends CsvRecord
   {
     String file = this.get( FIELD_DOCUMENT_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_DOCUMENT_TITLE ) ): null;
-    //return (file!=null)?
-    //  new MediaElement( file, this.get( FIELD_DOCUMENT_TITLE ), this.get( FIELD_DOCUMENT_TEXT ) ): null;
+      new Media( file, this.get( FIELD_DOCUMENT_TITLE ), this.get( FIELD_DOCUMENT_TEXT ) ):
+      null;
   }
 
   public Integer getFloor()
   {
     try
     {
-      return this.getAsInteger( FIELD_FLOOR );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_FLOOR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read floor "
-        + "from '" + this.get( FIELD_FLOOR ) + "'!" );
+      LOGGER.warn( "Can't read floor!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public GrossPremium getGrossPremium()
   {
-    return GrossPremium.parse( this.get( FIELD_GROSS_PREMIUM ) );
+    return GrossPremium.parse(
+      this.get( FIELD_GROSS_PREMIUM ) );
   }
 
   public Double getHallHeight()
   {
     try
     {
-      return this.getAsDouble( FIELD_HALL_HEIGHT );
+      return IdxFormat.parseDouble(
+        this.get( FIELD_HALL_HEIGHT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read hall height "
-        + "from '" + this.get( FIELD_HALL_HEIGHT ) + "'!" );
+      LOGGER.warn( "Can't read hall height!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1067,12 +1029,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return IdxFormat.parseDateTimeAsCalendar( this.get( FIELD_LAST_MODIFIED ) );
+      return IdxFormat.parseDateTimeAsCalendar(
+        this.get( FIELD_LAST_MODIFIED ) );
     }
     catch (ParseException ex)
     {
-      LOGGER.warn( "Can't read last modification date "
-        + "from '" + this.get( FIELD_LAST_MODIFIED ) + "'!" );
+      LOGGER.warn( "Can't read last modification date!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1081,12 +1044,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_MAXIMAL_FLOOR_LOADING );
+      return IdxFormat.parseDouble(
+        this.get( FIELD_MAXIMAL_FLOOR_LOADING ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read maximal floor loading "
-        + "from '" + this.get( FIELD_MAXIMAL_FLOOR_LOADING ) + "'!" );
+      LOGGER.warn( "Can't read maximal floor loading!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1095,21 +1059,21 @@ public class IdxRecord extends CsvRecord
   {
     String file = this.get( FIELD_MOVIE_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_MOVIE_TITLE ) ): null;
-    //return (file!=null)?
-    //  new MediaElement( file, this.get( FIELD_MOVIE_TITLE ), this.get( FIELD_MOVIE_TEXT ) ): null;
+      new Media( file, this.get( FIELD_MOVIE_TITLE ), this.get( FIELD_MOVIE_TEXT ) ):
+      null;
   }
 
   public Double getNumberOfApartments()
   {
     try
     {
-      return this.getAsDouble( FIELD_NUMBER_OF_APARTMENTS );
+      return IdxFormat.parseDouble(
+        this.get( FIELD_NUMBER_OF_APARTMENTS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read number of apartments "
-        + "from '" + this.get( FIELD_NUMBER_OF_APARTMENTS ) + "'!" );
+      LOGGER.warn( "Can't read number of apartments!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1118,12 +1082,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_NUMBER_OF_FLOORS );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_NUMBER_OF_FLOORS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read number of floors "
-        + "from '" + this.get( FIELD_NUMBER_OF_FLOORS ) + "'!" );
+      LOGGER.warn( "Can't read number of floors!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1132,19 +1097,21 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_NUMBER_OF_ROOMS );
+      return IdxFormat.parseDouble(
+        this.get( FIELD_NUMBER_OF_ROOMS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read number of rooms "
-        + "from '" + this.get( FIELD_NUMBER_OF_ROOMS ) + "'!" );
+      LOGGER.warn( "Can't read number of rooms!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public ObjectCategory getObjectCategory()
   {
-    return ObjectCategory.parse( this.get( FIELD_OBJECT_CATEGORY ) );
+    return ObjectCategory.parse(
+      this.get( FIELD_OBJECT_CATEGORY ) );
   }
 
   public String getObjectCity()
@@ -1185,7 +1152,9 @@ public class IdxRecord extends CsvRecord
   public ObjectType getObjectType()
   {
     ObjectCategory cat = this.getObjectCategory();
-    return (cat!=null)? ObjectType.parse( cat, this.get( FIELD_OBJECT_TYPE ) ): null;
+    return (cat!=null)?
+      ObjectType.parse( cat, this.get( FIELD_OBJECT_TYPE ) ):
+      null;
   }
 
   public String getObjectZip()
@@ -1195,7 +1164,8 @@ public class IdxRecord extends CsvRecord
 
   public OfferType getOfferType()
   {
-    return OfferType.parse( this.get( FIELD_OFFER_TYPE ) );
+    return OfferType.parse(
+      this.get( FIELD_OFFER_TYPE ) );
   }
 
   public String getOwnObjectUrl()
@@ -1203,129 +1173,192 @@ public class IdxRecord extends CsvRecord
     return this.get( FIELD_OWN_OBJECT_URL );
   }
 
+  public Media getPicture( int i )
+  {
+    switch (i)
+    {
+      case 1:
+        return this.getPicture1();
+      case 2:
+        return this.getPicture2();
+      case 3:
+        return this.getPicture3();
+      case 4:
+        return this.getPicture4();
+      case 5:
+        return this.getPicture5();
+      case 6:
+        return this.getPicture6();
+      case 7:
+        return this.getPicture7();
+      case 8:
+        return this.getPicture8();
+      case 9:
+        return this.getPicture9();
+      case 10:
+        return this.getPicture10();
+      case 11:
+        return this.getPicture11();
+      case 12:
+        return this.getPicture12();
+      case 13:
+        return this.getPicture13();
+      default:
+        throw new IllegalArgumentException( "Unsupported picture position " + i + "!" );
+    }
+  }
+
   public Media getPicture1()
   {
     String file = this.get( FIELD_PICTURE_1_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_1_TITLE ), this.get( FIELD_PICTURE_1_TEXT ), this.get( FIELD_PICTURE_1_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_1_TITLE ), this.get( FIELD_PICTURE_1_TEXT ), this.get( FIELD_PICTURE_1_URL ) ):
+      null;
   }
 
   public Media getPicture2()
   {
     String file = this.get( FIELD_PICTURE_2_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_2_TITLE ), this.get( FIELD_PICTURE_2_TEXT ), this.get( FIELD_PICTURE_2_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_2_TITLE ), this.get( FIELD_PICTURE_2_TEXT ), this.get( FIELD_PICTURE_2_URL ) ):
+      null;
   }
 
   public Media getPicture3()
   {
     String file = this.get( FIELD_PICTURE_3_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_3_TITLE ), this.get( FIELD_PICTURE_3_TEXT ), this.get( FIELD_PICTURE_3_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_3_TITLE ), this.get( FIELD_PICTURE_3_TEXT ), this.get( FIELD_PICTURE_3_URL ) ):
+      null;
   }
 
   public Media getPicture4()
   {
     String file = this.get( FIELD_PICTURE_4_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_4_TITLE ), this.get( FIELD_PICTURE_4_TEXT ), this.get( FIELD_PICTURE_4_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_4_TITLE ), this.get( FIELD_PICTURE_4_TEXT ), this.get( FIELD_PICTURE_4_URL ) ):
+      null;
   }
 
   public Media getPicture5()
   {
     String file = this.get( FIELD_PICTURE_5_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_5_TITLE ), this.get( FIELD_PICTURE_5_TEXT ), this.get( FIELD_PICTURE_5_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_5_TITLE ), this.get( FIELD_PICTURE_5_TEXT ), this.get( FIELD_PICTURE_5_URL ) ):
+      null;
   }
 
   public Media getPicture6()
   {
     String file = this.get( FIELD_PICTURE_6_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_6_TITLE ), this.get( FIELD_PICTURE_6_TEXT ), this.get( FIELD_PICTURE_6_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_6_TITLE ), this.get( FIELD_PICTURE_6_TEXT ), this.get( FIELD_PICTURE_6_URL ) ):
+      null;
   }
 
   public Media getPicture7()
   {
     String file = this.get( FIELD_PICTURE_7_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_7_TITLE ), this.get( FIELD_PICTURE_7_TEXT ), this.get( FIELD_PICTURE_7_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_7_TITLE ), this.get( FIELD_PICTURE_7_TEXT ), this.get( FIELD_PICTURE_7_URL ) ):
+      null;
   }
 
   public Media getPicture8()
   {
     String file = this.get( FIELD_PICTURE_8_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_8_TITLE ), this.get( FIELD_PICTURE_8_TEXT ), this.get( FIELD_PICTURE_8_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_8_TITLE ), this.get( FIELD_PICTURE_8_TEXT ), this.get( FIELD_PICTURE_8_URL ) ):
+      null;
   }
 
   public Media getPicture9()
   {
     String file = this.get( FIELD_PICTURE_9_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_9_TITLE ), this.get( FIELD_PICTURE_9_TEXT ), this.get( FIELD_PICTURE_9_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_9_TITLE ), this.get( FIELD_PICTURE_9_TEXT ), this.get( FIELD_PICTURE_9_URL ) ):
+      null;
   }
 
   public Media getPicture10()
   {
     String file = this.get( FIELD_PICTURE_10_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_10_TITLE ), this.get( FIELD_PICTURE_10_TEXT ), this.get( FIELD_PICTURE_10_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_10_TITLE ), this.get( FIELD_PICTURE_10_TEXT ), this.get( FIELD_PICTURE_10_URL ) ):
+      null;
   }
 
   public Media getPicture11()
   {
     String file = this.get( FIELD_PICTURE_11_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_11_TITLE ), this.get( FIELD_PICTURE_11_TEXT ), this.get( FIELD_PICTURE_11_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_11_TITLE ), this.get( FIELD_PICTURE_11_TEXT ), this.get( FIELD_PICTURE_11_URL ) ):
+      null;
   }
 
   public Media getPicture12()
   {
     String file = this.get( FIELD_PICTURE_12_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_12_TITLE ), this.get( FIELD_PICTURE_12_TEXT ), this.get( FIELD_PICTURE_12_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_12_TITLE ), this.get( FIELD_PICTURE_12_TEXT ), this.get( FIELD_PICTURE_12_URL ) ):
+      null;
   }
 
   public Media getPicture13()
   {
     String file = this.get( FIELD_PICTURE_13_FILE );
     return (file!=null)?
-      new Media( file, this.get( FIELD_PICTURE_13_TITLE ), this.get( FIELD_PICTURE_13_TEXT ), this.get( FIELD_PICTURE_13_URL ) ): null;
+      new Media( file, this.get( FIELD_PICTURE_13_TITLE ), this.get( FIELD_PICTURE_13_TEXT ), this.get( FIELD_PICTURE_13_URL ) ):
+      null;
+  }
+
+  public Media[] getPictures()
+  {
+    List<Media> pictures = new ArrayList<Media>();
+    for (int i=1; i<=PICTURE_LIMIT; i++)
+    {
+      Media picture = this.getPicture( i );
+      if (picture!=null) pictures.add( picture );
+    }
+    return pictures.toArray( new Media[pictures.size()] );
   }
 
   public PriceUnit getPriceUnit()
   {
-    return PriceUnit.parse( this.get( FIELD_PRICE_UNIT ) );
+    return PriceUnit.parse(
+      this.get( FIELD_PRICE_UNIT ) );
   }
 
   public Long getPublishingId()
   {
     try
     {
-      return this.getAsLong( FIELD_PUBLISHING_ID );
+      return IdxFormat.parseLong(
+        this.get( FIELD_PUBLISHING_ID ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read publishing id "
-        + "from '" + this.get( FIELD_PUBLISHING_ID ) + "'!" );
+      LOGGER.warn( "Can't read publishing id!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
-  /*public Calendar getPublishUntil()
+  @Deprecated
+  public Calendar getPublishUntil()
   {
     try
     {
-      return IdxFormat.parseDateAsCalendar( this.get( FIELD_PUBLISH_UNTIL ) );
+      return IdxFormat.parseDateAsCalendar(
+        this.get( FIELD_PUBLISH_UNTIL ) );
     }
     catch (ParseException ex)
     {
-      LOGGER.warn( "Can't read publish until date "
-        + "from '" + this.get( FIELD_PUBLISH_UNTIL ) + "'!" );
+      LOGGER.warn( "Can't read publish until date!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
-  }*/
+  }
 
   @Override
   protected int getRecordLenth()
@@ -1333,10 +1366,11 @@ public class IdxRecord extends CsvRecord
     return LENGTH;
   }
 
-  /*public String getRegion()
+  @Deprecated
+  public String getRegion()
   {
     return this.get( FIELD_REGION );
-  }*/
+  }
 
   public String getRefHouse()
   {
@@ -1357,12 +1391,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_RENT_EXTRA );
+      return IdxFormat.parseLong(
+        this.get( FIELD_RENT_EXTRA ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read extra rent "
-        + "from '" + this.get( FIELD_RENT_EXTRA ) + "'!" );
+      LOGGER.warn( "Can't read extra rent!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1371,12 +1406,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_RENT_NET );
+      return IdxFormat.parseLong(
+        this.get( FIELD_RENT_NET ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read net rent "
-        + "from '" + this.get( FIELD_RENT_NET ) + "'!" );
+      LOGGER.warn( "Can't read net rent!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1385,12 +1421,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_SELLING_PRICE );
+      return IdxFormat.parseLong(
+        this.get( FIELD_SELLING_PRICE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read selling price "
-        + "from '" + this.get( FIELD_SELLING_PRICE ) + "'!" );
+      LOGGER.warn( "Can't read selling price!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1424,12 +1461,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_SURFACE_LIVING );
+      return IdxFormat.parseLong(
+        this.get( FIELD_SURFACE_LIVING ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read living surface "
-        + "from '" + this.get( FIELD_SURFACE_LIVING ) + "'!" );
+      LOGGER.warn( "Can't read living surface!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1438,12 +1476,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_SURFACE_PROPERTY );
+      return IdxFormat.parseLong(
+        this.get( FIELD_SURFACE_PROPERTY ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read property surface "
-        + "from '" + this.get( FIELD_SURFACE_PROPERTY ) + "'!" );
+      LOGGER.warn( "Can't read property surface!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1452,12 +1491,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_SURFACE_USABLE );
+      return IdxFormat.parseLong(
+        this.get( FIELD_SURFACE_USABLE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read usable surface "
-        + "from '" + this.get( FIELD_SURFACE_USABLE ) + "'!" );
+      LOGGER.warn( "Can't read usable surface!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1472,10 +1512,11 @@ public class IdxRecord extends CsvRecord
     return this.get( FIELD_VERSION );
   }
 
-  /*public String getVisitEmail()
+  @Deprecated
+  public String getVisitEmail()
   {
     return this.get( FIELD_VISIT_EMAIL );
-  }*/
+  }
 
   public String getVisitName()
   {
@@ -1496,12 +1537,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsLong( FIELD_VOLUME );
+      return IdxFormat.parseLong(
+        this.get( FIELD_VOLUME ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read volume "
-        + "from '" + this.get( FIELD_VOLUME ) + "'!" );
+      LOGGER.warn( "Can't read volume!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1510,12 +1552,13 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_YEAR_BUILT );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_YEAR_BUILT ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read build year "
-        + "from '" + this.get( FIELD_YEAR_BUILT ) + "'!" );
+      LOGGER.warn( "Can't read build year!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -1524,189 +1567,228 @@ public class IdxRecord extends CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_YEAR_RENOVATED );
+      return IdxFormat.parseInteger(
+        this.get( FIELD_YEAR_RENOVATED ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read renovation year "
-        + "from '" + this.get( FIELD_YEAR_RENOVATED ) + "'!" );
+      LOGGER.warn( "Can't read renovation year!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public boolean isAnimalAllowed()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_ANIMAL_ALLOWED ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+        this.get( FIELD_ANIMAL_ALLOWED ) ) );
   }
 
   public boolean isBalcony()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_BALCONY ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_BALCONY ) ) );
   }
 
   public boolean isBuildingLandConnected()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_BUILDING_LAND_CONNECTED ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_BUILDING_LAND_CONNECTED ) ) );
   }
 
   public boolean isCableTv()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_CABLETV ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_CABLETV ) ) );
   }
 
   public boolean isChildFriendly()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_CHILD_FRIENDLY ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_CHILD_FRIENDLY ) ) );
   }
 
-  /*public boolean isCommissionSharing()
+  @Deprecated
+  public boolean isCommissionSharing()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_COMMISSION_SHARING ) );
-  }*/
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_COMMISSION_SHARING ) ) );
+  }
 
   public boolean isCornerHouse()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_CORNER_HOUSE ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_CORNER_HOUSE ) ) );
   }
 
   public boolean isElevator()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_ELEVATOR ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_ELEVATOR ) ) );
   }
 
   public boolean isFlatSharingCommunity()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_FLAT_SHARING_COMMUNITY ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_FLAT_SHARING_COMMUNITY ) ) );
   }
 
   public boolean isFireplace()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_FIREPLACE ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_FIREPLACE ) ) );
   }
 
   public boolean isGarage()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_GARAGE ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_GARAGE ) ) );
   }
 
   public boolean isGardenhouse()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_GARDENHOUSE ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_GARDENHOUSE ) ) );
   }
 
   public boolean isGasSupply()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_GAS_SUPPLY ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_GAS_SUPPLY ) ) );
   }
 
   public boolean isIsdn()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_ISDN ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_ISDN ) ) );
   }
 
   public boolean isLiftingPlatform()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_LIFTING_PLATFORM ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_LIFTING_PLATFORM ) ) );
   }
 
   public boolean isMiddleHouse()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_MIDDLE_HOUSE ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_MIDDLE_HOUSE ) ) );
   }
 
   public boolean isMinEnergyCertified()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_MINENERGY_CERTIFIED ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_MINENERGY_CERTIFIED ) ) );
   }
 
   public boolean isMinEnergyGeneral()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_MINENERGY_GENERAL ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_MINENERGY_GENERAL ) ) );
   }
 
-  /*public boolean isMunicipalInfo()
+  @Deprecated
+  public boolean isMunicipalInfo()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_MUNICIPAL_INFO ) );
-  }*/
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_MUNICIPAL_INFO ) ) );
+  }
 
   public boolean isNewBuilding()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_NEW_BUILDING ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_NEW_BUILDING ) ) );
   }
 
   public boolean isOldBuilding()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_OLD_BUILDING ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_OLD_BUILDING ) ) );
   }
 
   public boolean isParking()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_PARKING ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_PARKING ) ) );
   }
 
   public boolean isPowerSupply()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_POWER_SUPPLY ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_POWER_SUPPLY ) ) );
   }
 
   public boolean isRailwayTerminal()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_RAILWAY_TERMINAL ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_RAILWAY_TERMINAL ) ) );
   }
 
   public boolean isRaisedGroundFloor()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_RAISED_GROUND_FLOOR ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_RAISED_GROUND_FLOOR ) ) );
   }
 
   public boolean isRamp()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_RAMP ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_RAMP ) ) );
   }
 
   public boolean isRestrooms()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_RESTROOMS ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_RESTROOMS ) ) );
   }
 
-  /*public boolean isRoofFloor()
+  @Deprecated
+  public boolean isRoofFloor()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_ROOF_FLOOR ) );
-  }*/
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_ROOF_FLOOR ) ) );
+  }
 
   public boolean isSwimmingpool()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_SWIMMINGPOOL ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_SWIMMINGPOOL ) ) );
   }
 
   public boolean isUnderBuildingLaws()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_UNDER_BUILDING_LAWS ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_UNDER_BUILDING_LAWS ) ) );
   }
 
   public boolean isUnderRoof()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_UNDER_ROOF ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_UNDER_ROOF ) ) );
   }
 
   public boolean isSewageSupply()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_SEWAGE_SUPPLY ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_SEWAGE_SUPPLY ) ) );
   }
 
   public boolean isView()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_VIEW ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_VIEW ) ) );
   }
 
   public boolean isWaterSupply()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_WATER_SUPPLY ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_WATER_SUPPLY ) ) );
   }
 
   public boolean isWheelchairAccessible()
   {
-    return Boolean.TRUE.equals( this.getAsBoolean( FIELD_WHEELCHAIR_ACCESSIBLE ) );
+    return Boolean.TRUE.equals( IdxFormat.parseBoolean(
+      this.get( FIELD_WHEELCHAIR_ACCESSIBLE ) ) );
   }
 
   @Override
@@ -1718,6 +1800,16 @@ public class IdxRecord extends CsvRecord
       LOGGER.warn( "IDX version '"+version+"' is not supported. Trying to parse the record anyway." );
     }
     super.parse( record );
+  }
+
+  @Override
+  protected String parse( String value )
+  {
+    // replace <br> elements with native line separator in any parsed value
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+    Matcher m = LINEBREAK.matcher( value );
+    return (m.find())? m.replaceAll( SystemUtils.LINE_SEPARATOR ): value;
   }
 
   @Override
@@ -1733,13 +1825,13 @@ public class IdxRecord extends CsvRecord
   public void setAdvertisementId( String value )
   {
     this.set( FIELD_ADVERTISEMENT_ID,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyCity( String value )
   {
     this.set( FIELD_AGENCY_CITY,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyCountry( String value )
@@ -1752,73 +1844,76 @@ public class IdxRecord extends CsvRecord
   public void setAgencyEmail( String value )
   {
     this.set( FIELD_AGENCY_EMAIL,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyFax( String value )
   {
     this.set( FIELD_AGENCY_FAX,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyId( String value )
   {
     this.set( FIELD_AGENCY_ID,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
+      IdxFormat.printString( value, 10 ) );
   }
 
-  /*public void setAgencyLogo( String value )
+  @Deprecated
+  public void setAgencyLogo( String value )
   {
     this.set( FIELD_AGENCY_LOGO,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
-  }*/
+      IdxFormat.printString( value, 200 ) );
+  }
 
-  /*public void setAgencyLogo2( String value )
+  @Deprecated
+  public void setAgencyLogo2( String value )
   {
     this.set( FIELD_AGENCY_LOGO2,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
-  }*/
+      IdxFormat.printString( value, 200 ) );
+  }
 
-  /*public void setAgencyMobile( String value )
+  @Deprecated
+  public void setAgencyMobile( String value )
   {
     this.set( FIELD_AGENCY_MOBILE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
-  }*/
+      IdxFormat.printString( value, 200 ) );
+  }
 
   public void setAgencyName( String value )
   {
     this.set( FIELD_AGENCY_NAME,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyName2( String value )
   {
     this.set( FIELD_AGENCY_NAME2,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 255 ) );
+      IdxFormat.printString( value, 255 ) );
   }
 
   public void setAgencyPhone( String value )
   {
     this.set( FIELD_AGENCY_PHONE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyReference( String value )
   {
     this.set( FIELD_AGENCY_REFERENCE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyStreet( String value )
   {
     this.set( FIELD_AGENCY_STREET,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAgencyZip( String value )
   {
     this.set( FIELD_AGENCY_ZIP,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setAnimalAllowed( boolean value )
@@ -1848,19 +1943,19 @@ public class IdxRecord extends CsvRecord
   public void setBillingCompany( String value )
   {
     this.set( FIELD_BILLING_COMPANY,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingCountry( String value )
   {
     this.set( FIELD_BILLING_COUNTRY,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingFirstName( String value )
   {
     this.set( FIELD_BILLING_FIRST_NAME,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingLanguage( Language value )
@@ -1872,37 +1967,37 @@ public class IdxRecord extends CsvRecord
   public void setBillingMobile( String value )
   {
     this.set( FIELD_BILLING_MOBILE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingName( String value )
   {
     this.set( FIELD_BILLING_NAME,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingPlaceName( String value )
   {
     this.set( FIELD_BILLING_PLACE_NAME,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingPhone( String value )
   {
     this.set( FIELD_BILLING_PHONE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingPhone2( String value )
   {
     this.set( FIELD_BILLING_PHONE2,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingPostBox( String value )
   {
     this.set( FIELD_BILLING_POST_BOX,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingSalutation( Salutation value )
@@ -1914,13 +2009,13 @@ public class IdxRecord extends CsvRecord
   public void setBillingStreet( String value )
   {
     this.set( FIELD_BILLING_STREET,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setBillingZip( String value )
   {
     this.set( FIELD_BILLING_ZIP,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
+      IdxFormat.printString( value, 10 ) );
   }
 
   public void setBuildingLandConnected( boolean value )
@@ -1935,19 +2030,19 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  public void setCarryingCapacityCrane( Double value )
+  public void setCarryingCapacityCrane( Number value )
   {
     this.set( FIELD_CARRYING_CAPACITY_CRANE,
       IdxFormat.printNumber( value, 10, 1 ) );
   }
 
-  public void setCarryingCapacityElevator( Double value )
+  public void setCarryingCapacityElevator( Number value )
   {
     this.set( FIELD_CARRYING_CAPACITY_ELEVATOR,
       IdxFormat.printNumber( value, 10, 1 ) );
   }
 
-  public void setCeilingHeight( Double value )
+  public void setCeilingHeight( Number value )
   {
     this.set( FIELD_CEILING_HEIGHT,
       IdxFormat.printNumber( value, 10, 2 ) );
@@ -1959,23 +2054,26 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  /*public void setCommissionOwn( String value )
+  @Deprecated
+  public void setCommissionOwn( String value )
   {
     this.set( FIELD_COMMISSION_OWN,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
-  }*/
+      IdxFormat.printString( value, 10 ) );
+  }
 
-  /*public void setCommissionPartner( String value )
+  @Deprecated
+  public void setCommissionPartner( String value )
   {
     this.set( FIELD_COMMISSION_PARTNER,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
-  }*/
+      IdxFormat.printString( value, 10 ) );
+  }
 
-  /*public void setCommissionSharing( boolean value )
+  @Deprecated
+  public void setCommissionSharing( boolean value )
   {
     this.set( FIELD_COMMISSION_SHARING,
       IdxFormat.printBoolean( value ) );
-  }*/
+  }
 
   public void setCornerHouse( boolean value )
   {
@@ -1989,43 +2087,44 @@ public class IdxRecord extends CsvRecord
       (value!=null)? value.getCurrencyCode(): null );
   }
 
-  /*public void setDestination( String value )
+  @Deprecated
+  public void setDestination( String value )
   {
     this.set( FIELD_DESTINATION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
-  }*/
+      IdxFormat.printString( value, 200 ) );
+  }
 
-  public void setDistanceKindergarten( Integer value )
+  public void setDistanceKindergarten( Number value )
   {
     this.set( FIELD_DISTANCE_KINDERGARTEN,
       IdxFormat.printNumber( value, 5 ) );
   }
 
-  public void setDistanceMotorway( Integer value )
+  public void setDistanceMotorway( Number value )
   {
     this.set( FIELD_DISTANCE_MOTORWAY,
       IdxFormat.printNumber( value, 5 ) );
   }
 
-  public void setDistancePublicTransport( Integer value )
+  public void setDistancePublicTransport( Number value )
   {
     this.set( FIELD_DISTANCE_PUBLIC_TRANSPORT,
       IdxFormat.printNumber( value, 5 ) );
   }
 
-  public void setDistanceSchool1( Integer value )
+  public void setDistanceSchool1( Number value )
   {
     this.set( FIELD_DISTANCE_SCHOOL1,
       IdxFormat.printNumber( value, 5 ) );
   }
 
-  public void setDistanceSchool2( Integer value )
+  public void setDistanceSchool2( Number value )
   {
     this.set( FIELD_DISTANCE_SCHOOL2,
       IdxFormat.printNumber( value, 5 ) );
   }
 
-  public void setDistanceShop( Integer value )
+  public void setDistanceShop( Number value )
   {
     this.set( FIELD_DISTANCE_SHOP,
       IdxFormat.printNumber( value, 5 ) );
@@ -2035,8 +2134,10 @@ public class IdxRecord extends CsvRecord
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_DOCUMENT_FILE, file );
-    this.set( FIELD_DOCUMENT_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    //this.set( FIELD_DOCUMENT_TEXT, (value!=null && file!=null)? value.getDescription(): null );
+    this.set( FIELD_DOCUMENT_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_DOCUMENT_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
   }
 
   public void setElevator( boolean value )
@@ -2057,7 +2158,7 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  public void setFloor( Integer value )
+  public void setFloor( Number value )
   {
     this.set( FIELD_FLOOR,
       IdxFormat.printNumber( value, 6 ) );
@@ -2087,7 +2188,7 @@ public class IdxRecord extends CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setHallHeight( Double value )
+  public void setHallHeight( Number value )
   {
     this.set( FIELD_HALL_HEIGHT,
       IdxFormat.printNumber( value, 10, 2 ) );
@@ -2117,7 +2218,7 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  public void setMaximalFloorLoading( Double value )
+  public void setMaximalFloorLoading( Number value )
   {
     this.set( FIELD_MAXIMAL_FLOOR_LOADING,
       IdxFormat.printNumber( value, 10, 1 ) );
@@ -2145,15 +2246,18 @@ public class IdxRecord extends CsvRecord
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_MOVIE_FILE, file );
-    this.set( FIELD_MOVIE_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    //this.set( FIELD_MOVIE_TEXT, (value!=null && file!=null)? value.getDescription(): null );
+    this.set( FIELD_MOVIE_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_MOVIE_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
   }
 
-  /*public void setMunicipalInfo( boolean value )
+  @Deprecated
+  public void setMunicipalInfo( boolean value )
   {
     this.set( FIELD_MUNICIPAL_INFO,
       IdxFormat.printBoolean( value ) );
-  }*/
+  }
 
   public void setNewBuilding( boolean value )
   {
@@ -2161,33 +2265,34 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  public void setNumberOfApartments( Double value )
+  public void setNumberOfApartments( Number value )
   {
     this.set( FIELD_NUMBER_OF_APARTMENTS,
       IdxFormat.printNumber( value, 5, 1 ) );
   }
 
-  public void setNumberOfFloors( Integer value )
+  public void setNumberOfFloors( Number value )
   {
     this.set( FIELD_NUMBER_OF_FLOORS,
       IdxFormat.printNumber( value, 2 ) );
   }
 
-  public void setNumberOfRooms( Double value )
+  public void setNumberOfRooms( Number value )
   {
     this.set( FIELD_NUMBER_OF_ROOMS,
       IdxFormat.printNumber( value, 5, 1 ) );
   }
 
-  /*public void setObjectCategory( ObjectCategory value )
+  protected void setObjectCategory( ObjectCategory value )
   {
-    this.set( FIELD_OBJECT_CATEGORY, (value!=null)? value.print(): null );
-  }*/
+    this.set( FIELD_OBJECT_CATEGORY,
+      (value!=null)? value.print(): null );
+  }
 
   public void setObjectCity( String value )
   {
     this.set( FIELD_OBJECT_CITY,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setObjectCountry( String value )
@@ -2200,13 +2305,13 @@ public class IdxRecord extends CsvRecord
   public void setObjectDescription( String value )
   {
     this.set( FIELD_OBJECT_DESCRIPTION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 4000 ) );
+      IdxFormat.printString( value, 4000 ) );
   }
 
   public void setObjectSituation( String value )
   {
     this.set( FIELD_OBJECT_SITUATION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      IdxFormat.printString( value, 50 ) );
   }
 
   public void setObjectState( String value )
@@ -2219,19 +2324,19 @@ public class IdxRecord extends CsvRecord
   public void setObjectStreet( String value )
   {
     this.set( FIELD_OBJECT_STREET,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setObjectTitle( String value )
   {
     this.set( FIELD_OBJECT_TITLE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 70 ) );
+      IdxFormat.printString( value, 70 ) );
   }
 
   public void setObjectType( ObjectType value )
   {
-    this.set( FIELD_OBJECT_CATEGORY,
-      (value!=null)? value.getCategory().print(): null );
+    this.setObjectCategory(
+      (value!=null)? value.getCategory(): null );
     this.set( FIELD_OBJECT_TYPE,
       (value!=null)? value.print(): null );
   }
@@ -2239,7 +2344,7 @@ public class IdxRecord extends CsvRecord
   public void setObjectZip( String value )
   {
     this.set( FIELD_OBJECT_ZIP,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 10 ) );
+      IdxFormat.printString( value, 10 ) );
   }
 
   public void setOldBuilding( boolean value )
@@ -2257,7 +2362,7 @@ public class IdxRecord extends CsvRecord
   public void setOwnObjectUrl( String value )
   {
     this.set( FIELD_OWN_OBJECT_URL,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 100 ) );
+      IdxFormat.printString( value, 100 ) );
   }
 
   public void setParking( boolean value )
@@ -2266,121 +2371,223 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
+  public void setPicture( Media value, int i )
+  {
+    switch (i)
+    {
+      case 1:
+        this.setPicture1( value );
+        break;
+      case 2:
+        this.setPicture2( value );
+        break;
+      case 3:
+        this.setPicture3( value );
+        break;
+      case 4:
+        this.setPicture4( value );
+        break;
+      case 5:
+        this.setPicture5( value );
+        break;
+      case 6:
+        this.setPicture6( value );
+        break;
+      case 7:
+        this.setPicture7( value );
+        break;
+      case 8:
+        this.setPicture8( value );
+        break;
+      case 9:
+        this.setPicture9( value );
+        break;
+      case 10:
+        this.setPicture10( value );
+        break;
+      case 11:
+        this.setPicture11( value );
+        break;
+      case 12:
+        this.setPicture12( value );
+        break;
+      case 13:
+        this.setPicture13( value );
+        break;
+      default:
+        throw new IllegalArgumentException( "Unsupported picture position " + i + "!" );
+    }
+  }
+
   public void setPicture1( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_1_FILE, file );
-    this.set( FIELD_PICTURE_1_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_1_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_1_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_1_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_1_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_1_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture2( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_2_FILE, file );
-    this.set( FIELD_PICTURE_2_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_2_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_2_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_2_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_2_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_2_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture3( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_3_FILE, file );
-    this.set( FIELD_PICTURE_3_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_3_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_3_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_3_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_3_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_3_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture4( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_4_FILE, file );
-    this.set( FIELD_PICTURE_4_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_4_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_4_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_4_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_4_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_4_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture5( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_5_FILE, file );
-    this.set( FIELD_PICTURE_5_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_5_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_5_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_5_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_5_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_5_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture6( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_6_FILE, file );
-    this.set( FIELD_PICTURE_6_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_6_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_6_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_6_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_6_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_6_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture7( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_7_FILE, file );
-    this.set( FIELD_PICTURE_7_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_7_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_7_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_7_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_7_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_7_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture8( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_8_FILE, file );
-    this.set( FIELD_PICTURE_8_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_8_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_8_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_8_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_8_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_8_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture9( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_9_FILE, file );
-    this.set( FIELD_PICTURE_9_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_9_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_9_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_9_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_9_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_9_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture10( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_10_FILE, file );
-    this.set( FIELD_PICTURE_10_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_10_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_10_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_10_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_10_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_10_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture11( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_11_FILE, file );
-    this.set( FIELD_PICTURE_11_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_11_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_11_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_11_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_11_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_11_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture12( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_12_FILE, file );
-    this.set( FIELD_PICTURE_12_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_12_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_12_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_12_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_12_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_12_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
   }
 
   public void setPicture13( Media value )
   {
     String file = (value!=null)? StringUtils.trimToNull( value.getFileName() ): null;
     this.set( FIELD_PICTURE_13_FILE, file );
-    this.set( FIELD_PICTURE_13_TITLE, (value!=null && file!=null)? value.getTitle(): null );
-    this.set( FIELD_PICTURE_13_TEXT, (value!=null && file!=null)? value.getDescription(): null );
-    this.set( FIELD_PICTURE_13_URL, (value!=null && file!=null)? value.getUrl(): null );
+    this.set( FIELD_PICTURE_13_TITLE, (value!=null && file!=null)?
+      IdxFormat.printString( value.getTitle(), 200 ): null );
+    this.set( FIELD_PICTURE_13_TEXT, (value!=null && file!=null)?
+      IdxFormat.printString( value.getDescription(), 1800 ): null );
+    this.set( FIELD_PICTURE_13_URL, (value!=null && file!=null)?
+      value.getUrl(): null );
+  }
+
+  public void setPictures( Iterable<Media> values )
+  {
+    int pos = 1;
+    if (values!=null)
+    {
+      for (Media value : values)
+      {
+        this.setPicture( value, pos );
+        pos++;
+        if (pos>PICTURE_LIMIT) break;
+      }
+    }
+    for (int i=pos; i<=PICTURE_LIMIT; i++) this.setPicture( null, i );
   }
 
   public void setPowerSupply( boolean value )
@@ -2395,17 +2602,19 @@ public class IdxRecord extends CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  /*public void setPublishUntil( Calendar value )
+  @Deprecated
+  public void setPublishUntil( Calendar value )
   {
     this.set( FIELD_PUBLISH_UNTIL,
       IdxFormat.printDate( value ) );
-  }*/
+  }
 
-  /*public void setPublishUntil( Date value )
+  @Deprecated
+  public void setPublishUntil( Date value )
   {
     this.set( FIELD_PUBLISH_UNTIL,
       IdxFormat.printDate( value ) );
-  }*/
+  }
 
   public void setRailwayTerminal( boolean value )
   {
@@ -2428,34 +2637,35 @@ public class IdxRecord extends CsvRecord
   public void setRefHouse( String value )
   {
     this.set( FIELD_REF_HOUSE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 80 ) );
+      IdxFormat.printString( value, 80 ) );
   }
 
   public void setRefObject( String value )
   {
     this.set( FIELD_REF_OBJECT,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 80 ) );
+      IdxFormat.printString( value, 80 ) );
   }
 
   public void setRefProperty( String value )
   {
     this.set( FIELD_REF_PROPERTY,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 80 ) );
+      IdxFormat.printString( value, 80 ) );
   }
 
-  /*public void setRegion( String value )
+  @Deprecated
+  public void setRegion( String value )
   {
     this.set( FIELD_REGION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
-  }*/
+      IdxFormat.printString( value, 200 ) );
+  }
 
-  public void setRentExtra( Long value )
+  public void setRentExtra( Number value )
   {
     this.set( FIELD_RENT_EXTRA,
       IdxFormat.printNumber( value, 10 ) );
   }
 
-  public void setRentNet( Long value )
+  public void setRentNet( Number value )
   {
     this.set( FIELD_RENT_NET,
       IdxFormat.printNumber( value, 10 ) );
@@ -2467,13 +2677,14 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  /*public void setRoofFloor( boolean value )
+  @Deprecated
+  public void setRoofFloor( boolean value )
   {
     this.set( FIELD_ROOF_FLOOR,
-  IdxFormat.printBoolean( value ) );
-  }*/
+      IdxFormat.printBoolean( value ) );
+  }
 
-  public void setSellingPrice( Long value )
+  public void setSellingPrice( Number value )
   {
     this.set( FIELD_SELLING_PRICE,
       IdxFormat.printNumber( value, 10 ) );
@@ -2482,7 +2693,7 @@ public class IdxRecord extends CsvRecord
   public void setSenderId( String value )
   {
     this.set( FIELD_SENDER_ID,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      IdxFormat.printString( value, 50 ) );
   }
 
   public void setSewageSupply( boolean value )
@@ -2494,40 +2705,40 @@ public class IdxRecord extends CsvRecord
   public void setSparefield1( String value )
   {
     this.set( FIELD_SPAREFIELD_1,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 255 ) );
+      IdxFormat.printString( value, 255 ) );
   }
 
   public void setSparefield2( String value )
   {
     this.set( FIELD_SPAREFIELD_2,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 255 ) );
+      IdxFormat.printString( value, 255 ) );
   }
 
   public void setSparefield3( String value )
   {
     this.set( FIELD_SPAREFIELD_3,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 255 ) );
+      IdxFormat.printString( value, 255 ) );
   }
 
   public void setSparefield4( String value )
   {
     this.set( FIELD_SPAREFIELD_4,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 255 ) );
+      IdxFormat.printString( value, 255 ) );
   }
 
-  public void setSurfaceLiving( Long value )
+  public void setSurfaceLiving( Number value )
   {
     this.set( FIELD_SURFACE_LIVING,
       IdxFormat.printNumber( value, 10 ) );
   }
 
-  public void setSurfaceProperty( Long value )
+  public void setSurfaceProperty( Number value )
   {
     this.set( FIELD_SURFACE_PROPERTY,
       IdxFormat.printNumber( value, 10 ) );
   }
 
-  public void setSurfaceUsable( Long value )
+  public void setSurfaceUsable( Number value )
   {
     this.set( FIELD_SURFACE_USABLE,
       IdxFormat.printNumber( value, 10 ) );
@@ -2554,13 +2765,13 @@ public class IdxRecord extends CsvRecord
   public void setUrl( String value )
   {
     this.set( FIELD_URL,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setVersion( String value )
   {
     this.set( FIELD_VERSION,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 50 ) );
+      IdxFormat.printString( value, 50 ) );
   }
 
   public void setView( boolean value )
@@ -2569,31 +2780,32 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  /*public void setVisitEmail( String value )
+  @Deprecated
+  public void setVisitEmail( String value )
   {
     this.set( FIELD_VISIT_EMAIL,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
-  }*/
+      IdxFormat.printString( value, 200 ) );
+  }
 
   public void setVisitName( String value )
   {
     this.set( FIELD_VISIT_NAME,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setVisitPhone( String value )
   {
     this.set( FIELD_VISIT_PHONE,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
   public void setVisitRemark( String value )
   {
     this.set( FIELD_VISIT_REMARK,
-      StringUtils.abbreviate( StringUtils.trimToNull( value ), 200 ) );
+      IdxFormat.printString( value, 200 ) );
   }
 
-  public void setVolume( Long value )
+  public void setVolume( Number value )
   {
     this.set( FIELD_VOLUME,
       IdxFormat.printNumber( value, 10 ) );
@@ -2611,13 +2823,13 @@ public class IdxRecord extends CsvRecord
       IdxFormat.printBoolean( value ) );
   }
 
-  public void setYearBuilt( Integer value )
+  public void setYearBuilt( Number value )
   {
     this.set( FIELD_YEAR_BUILT,
       IdxFormat.printNumber( value, 4 ) );
   }
 
-  public void setYearRenovated( Integer value )
+  public void setYearRenovated( Number value )
   {
     this.set( FIELD_YEAR_RENOVATED,
       IdxFormat.printNumber( value, 4 ) );

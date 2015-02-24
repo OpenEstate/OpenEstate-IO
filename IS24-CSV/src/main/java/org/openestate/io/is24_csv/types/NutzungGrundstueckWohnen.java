@@ -58,7 +58,7 @@ public enum NutzungGrundstueckWohnen
     return null;
   }
 
-  public static NutzungGrundstueckWohnen[] parseList( String valueList )
+  public static NutzungGrundstueckWohnen[] parseMultiple( String valueList )
   {
     String[] values = StringUtils.split( valueList, ";" );
     if (values==null) return new NutzungGrundstueckWohnen[]{};
@@ -77,7 +77,7 @@ public enum NutzungGrundstueckWohnen
     return String.valueOf( this.value );
   }
 
-  public static String print( Iterable<NutzungGrundstueckWohnen> arten )
+  public static String printMultiple( Iterable<NutzungGrundstueckWohnen> arten )
   {
     if (arten==null) return null;
     List<String> values = new ArrayList<String>();

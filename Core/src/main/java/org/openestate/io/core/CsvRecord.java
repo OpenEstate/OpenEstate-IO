@@ -48,68 +48,6 @@ public abstract class CsvRecord
     return (value!=null)? value: defaultValue;
   }
 
-  protected final Boolean getAsBoolean( int pos ) throws NumberFormatException
-  {
-    return this.getAsBoolean( pos, null );
-  }
-
-  protected Boolean getAsBoolean( int pos, Boolean defaultValue )
-  {
-    String value = this.get( pos );
-    if ("true".equalsIgnoreCase( value ) || "1".equalsIgnoreCase( value ))
-      return true;
-    else if ("false".equalsIgnoreCase( value ) || "0".equalsIgnoreCase( value ))
-      return true;
-    else if (value==null)
-      return defaultValue;
-    else
-      return null;
-  }
-
-  protected final Double getAsDouble( int pos ) throws NumberFormatException
-  {
-    return this.getAsDouble( pos, null );
-  }
-
-  protected Double getAsDouble( int pos, Double defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    return (value!=null)? Double.parseDouble( value ): defaultValue;
-  }
-
-  protected final Float getAsFloat( int pos ) throws NumberFormatException
-  {
-    return this.getAsFloat( pos, null );
-  }
-
-  protected Float getAsFloat( int pos, Float defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    return (value!=null)? Float.parseFloat( value ): defaultValue;
-  }
-
-  protected final Integer getAsInteger( int pos ) throws NumberFormatException
-  {
-    return this.getAsInteger( pos, null );
-  }
-
-  protected Integer getAsInteger( int pos, Integer defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    return (value!=null)? Double.valueOf( value ).intValue(): defaultValue;
-  }
-
-  protected final Long getAsLong( int pos ) throws NumberFormatException
-  {
-    return this.getAsLong( pos, null );
-  }
-
-  protected Long getAsLong( int pos, Long defaultValue ) throws NumberFormatException
-  {
-    String value = this.get( pos );
-    return (value!=null)? Double.valueOf( value ).longValue(): defaultValue;
-  }
-
   protected abstract int getRecordLenth();
 
   protected void parse( CSVRecord record )
@@ -117,8 +55,13 @@ public abstract class CsvRecord
     this.values.clear();
     for (int i=0; i<record.size(); i++)
     {
-      this.values.put( i, record.get( i ) );
+      this.values.put( i, this.parse( record.get( i ) ) );
     }
+  }
+
+  protected String parse( String value )
+  {
+    return value;
   }
 
   protected Iterable<String> print()

@@ -70,12 +70,13 @@ public class StellplatzKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsInteger( FIELD_BAUJAHR );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_BAUJAHR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Baujahr' "
-        + "from '" + this.get( FIELD_BAUJAHR ) + "'!" );
+      LOGGER.warn( "Can't read 'Baujahr'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -84,12 +85,13 @@ public class StellplatzKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_BREITE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_BREITE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Breite' "
-        + "from '" + this.get( FIELD_BREITE ) + "'!" );
+      LOGGER.warn( "Can't read 'Breite'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -98,12 +100,13 @@ public class StellplatzKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_FLAECHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_FLAECHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Flaeche' "
-        + "from '" + this.get( FIELD_FLAECHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Flaeche'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -112,12 +115,13 @@ public class StellplatzKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_HOEHE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_HOEHE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Hoehe' "
-        + "from '" + this.get( FIELD_HOEHE ) + "'!" );
+      LOGGER.warn( "Can't read 'Hoehe'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -126,12 +130,13 @@ public class StellplatzKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_KAUFPREIS );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_KAUFPREIS ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Kaufpreis' "
-        + "from '" + this.get( FIELD_KAUFPREIS ) + "'!" );
+      LOGGER.warn( "Can't read 'Kaufpreis'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -140,36 +145,40 @@ public class StellplatzKauf extends Is24CsvRecord
   {
     try
     {
-      return this.getAsDouble( FIELD_LAENGE );
+      return Is24CsvFormat.parseDouble(
+        this.get( FIELD_LAENGE ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Laenge' "
-        + "from '" + this.get( FIELD_LAENGE ) + "'!" );
+      LOGGER.warn( "Can't read 'Laenge'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
 
   public ObjektkategorieStellplatz getObjektkategorie()
   {
-    return ObjektkategorieStellplatz.parse( this.get( FIELD_OBJEKTKATEGORIE ) );
+    return ObjektkategorieStellplatz.parse(
+      this.get( FIELD_OBJEKTKATEGORIE ) );
   }
 
   public Objektzustand getObjektzustand()
   {
-    return Objektzustand.parse( this.get( FIELD_OBJEKTZUSTAND ) );
+    return Objektzustand.parse(
+      this.get( FIELD_OBJEKTZUSTAND ) );
   }
 
   public Integer getSanierungsjahr()
   {
     try
     {
-      return this.getAsInteger( FIELD_SANIERUNGSJAHR );
+      return Is24CsvFormat.parseInteger(
+        this.get( FIELD_SANIERUNGSJAHR ) );
     }
     catch (NumberFormatException ex)
     {
-      LOGGER.warn( "Can't read 'Sanierungsjahr' "
-        + "from '" + this.get( FIELD_SANIERUNGSJAHR ) + "'!" );
+      LOGGER.warn( "Can't read 'Sanierungsjahr'!" );
+      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
   }
@@ -181,37 +190,37 @@ public class StellplatzKauf extends Is24CsvRecord
     return super.print();
   }
 
-  public void setBaujahr( Integer value )
+  public void setBaujahr( Number value )
   {
     this.set( FIELD_BAUJAHR,
       Is24CsvFormat.printNumber( value, 4 ) );
   }
 
-  public void setBreite( Double value )
+  public void setBreite( Number value )
   {
     this.set( FIELD_BREITE,
       Is24CsvFormat.printNumber( value, 5, 2 ) );
   }
 
-  public void setFlaeche( Double value )
+  public void setFlaeche( Number value )
   {
     this.set( FIELD_FLAECHE,
       Is24CsvFormat.printNumber( value, 10, 2 ) );
   }
 
-  public void setHoehe( Double value )
+  public void setHoehe( Number value )
   {
     this.set( FIELD_HOEHE,
       Is24CsvFormat.printNumber( value, 5, 2 ) );
   }
 
-  public void setKaufpreis( Double value )
+  public void setKaufpreis( Number value )
   {
     this.set( FIELD_KAUFPREIS,
       Is24CsvFormat.printNumber( value, 6, 2 ) );
   }
 
-  public void setLaenge( Double value )
+  public void setLaenge( Number value )
   {
     this.set( FIELD_LAENGE,
       Is24CsvFormat.printNumber( value, 5, 2 ) );
@@ -229,7 +238,7 @@ public class StellplatzKauf extends Is24CsvRecord
       (value!=null)? value.print(): null );
   }
 
-  public void setSanierungsjahr( Integer value )
+  public void setSanierungsjahr( Number value )
   {
     this.set( FIELD_SANIERUNGSJAHR,
       Is24CsvFormat.printNumber( value, 4 ) );
