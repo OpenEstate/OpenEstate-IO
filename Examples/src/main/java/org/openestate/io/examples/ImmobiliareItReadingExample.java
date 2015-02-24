@@ -173,6 +173,9 @@ public class ImmobiliareItReadingExample
    */
   protected static void printToConsole( ImmobiliareItDocument doc ) throws JAXBException
   {
+    LOGGER.info( "> process document in version "
+      + doc.getDocumentVersion() );
+
     Feed feed = doc.toObject();
 
     // process properties

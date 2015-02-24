@@ -92,8 +92,8 @@ public class Is24XmlReadingExample
   }
 
   /**
-   * Read a {@link File} into an {@link Is24XmlDocument} and prints some of
-   * their content to console.
+   * Read a {@link File} into an {@link Is24XmlDocument} and print some of its
+   * content to console.
    *
    * @param xmlFile
    * the file to read
@@ -130,7 +130,7 @@ public class Is24XmlReadingExample
   }
 
   /**
-   * Read an {@link InputStream} into an {@link Is24XmlDocument} and prints some
+   * Read an {@link InputStream} into an {@link Is24XmlDocument} and print some
    * of its content to console.
    *
    * @param xmlInputStream

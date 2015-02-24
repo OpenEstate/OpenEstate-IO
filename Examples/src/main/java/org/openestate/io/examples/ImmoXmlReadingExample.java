@@ -53,7 +53,7 @@ public class ImmoXmlReadingExample
   {
     // init logging
     PropertyConfigurator.configure(
-      ImmoXmlReadingExample.class.getResource( "/org/openestate/io/examples/log4j.properties" ) );
+      ImmoXmlReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
     // read example files, if no files were specified as command line arguments
     if (args.length<1)
@@ -90,7 +90,7 @@ public class ImmoXmlReadingExample
   }
 
   /**
-   * Read a {@link File} into an {@link ImmoXmlDocument} and prints some of its
+   * Read a {@link File} into an {@link ImmoXmlDocument} and print some of its
    * content to console.
    *
    * @param xmlFile
@@ -128,7 +128,7 @@ public class ImmoXmlReadingExample
   }
 
   /**
-   * Read a {@link InputStream} into an {@link ImmoXmlDocument} and prints some
+   * Read a {@link InputStream} into an {@link ImmoXmlDocument} and print some
    * of its content to console.
    *
    * @param xmlInputStream

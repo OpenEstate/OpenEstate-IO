@@ -107,7 +107,7 @@ public class OpenImmoReadingExample
 
   /**
    * Read a {@link File} into an {@link OpenImmoTransferDocument} or
-   * {@link OpenImmoFeedbackDocument} and prints some of their content to
+   * {@link OpenImmoFeedbackDocument} and print some of their content to
    * console.
    *
    * @param xmlFile
@@ -155,7 +155,7 @@ public class OpenImmoReadingExample
 
   /**
    * Read a {@link InputStream} into an {@link OpenImmoTransferDocument} or
-   * {@link OpenImmoFeedbackDocument} and prints some of their content to
+   * {@link OpenImmoFeedbackDocument} and print some of their content to
    * console.
    *
    * @param xmlInputStream

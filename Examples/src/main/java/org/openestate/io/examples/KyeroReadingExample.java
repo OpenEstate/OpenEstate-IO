@@ -53,7 +53,7 @@ public class KyeroReadingExample
   {
     // init logging
     PropertyConfigurator.configure(
-      KyeroReadingExample.class.getResource( "/org/openestate/io/examples/log4j.properties" ) );
+      KyeroReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
     // read example files, if no files were specified as command line arguments
     if (args.length<1)
@@ -90,7 +90,7 @@ public class KyeroReadingExample
   }
 
   /**
-   * Read a {@link File} into a {@link KyeroDocument} and prints some of its
+   * Read a {@link File} into a {@link KyeroDocument} and print some of its
    * content to console.
    *
    * @param xmlFile
@@ -128,7 +128,7 @@ public class KyeroReadingExample
   }
 
   /**
-   * Read a {@link InputStream} into a {@link KyeroDocument} and prints some of
+   * Read a {@link InputStream} into a {@link KyeroDocument} and print some of
    * its content to console.
    *
    * @param xmlInputStream

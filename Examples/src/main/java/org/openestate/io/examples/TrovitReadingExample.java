@@ -53,7 +53,7 @@ public class TrovitReadingExample
   {
     // init logging
     PropertyConfigurator.configure(
-      TrovitReadingExample.class.getResource( "/org/openestate/io/examples/log4j.properties" ) );
+      TrovitReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
     // read example files, if no files were specified as command line arguments
     if (args.length<1)
@@ -90,7 +90,7 @@ public class TrovitReadingExample
   }
 
   /**
-   * Read a {@link File} into a {@link TrovitDocument} and prints some of its
+   * Read a {@link File} into a {@link TrovitDocument} and print some of its
    * content to console.
    *
    * @param xmlFile
@@ -128,7 +128,7 @@ public class TrovitReadingExample
   }
 
   /**
-   * Read a {@link InputStream} into a {@link TrovitDocument} and prints some of
+   * Read a {@link InputStream} into a {@link TrovitDocument} and print some of
    * its content to console.
    *
    * @param xmlInputStream
