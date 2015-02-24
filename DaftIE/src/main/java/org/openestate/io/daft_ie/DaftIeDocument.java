@@ -51,7 +51,7 @@ public class DaftIeDocument extends ConvertableDocument<Daft, DaftIeVersion>
     {
       Document doc = this.getDocument();
       version = StringUtils.trimToNull( DocumentUtils
-        .newXPath( "/oi:daft/oi:version/text()", doc )
+        .newXPath( "/oi:daft/@version", doc )
         .stringValueOf( doc ) );
       if (version==null)
       {
@@ -119,23 +119,15 @@ public class DaftIeDocument extends ConvertableDocument<Daft, DaftIeVersion>
       Document doc = this.getDocument();
 
       Element node = (Element) DocumentUtils
-        .newXPath( "/oi:daft/oi:version", doc )
+        .newXPath( "/oi:daft", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
-        Element parentNode = (Element) DocumentUtils
-          .newXPath( "/oi:daft", doc )
-          .selectSingleNode( doc );
-        if (parentNode==null)
-        {
-          LOGGER.warn( "Can't find an <daft> element in the document!" );
-          return;
-        }
-        node = doc.createElement( "version" );
-        parentNode.insertBefore( node, parentNode.getFirstChild() );
+        LOGGER.warn( "Can't find an <daft> element in the document!" );
+        return;
       }
 
-      node.setTextContent( version.toReadableVersion() );
+      node.setAttribute( "version", version.toReadableVersion() );
     }
     catch (JaxenException ex)
     {

@@ -38,8 +38,9 @@ public class DaftIeUtilsTest
   public void testCreateDocument()
   {
     String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<daft>\n"
-      + "  <version>" + DaftIeUtils.VERSION.toReadableVersion() + "</version>\n"
+      + "<daft version=\"" + DaftIeUtils.VERSION.toReadableVersion() + "\">\n"
+      + "  <overseas_sales>\n"
+      + "  </overseas_sales>\n"
       + "</daft>";
 
     DaftIeDocument doc;

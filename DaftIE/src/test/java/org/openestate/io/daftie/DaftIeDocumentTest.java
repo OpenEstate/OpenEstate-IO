@@ -42,8 +42,9 @@ public class DaftIeDocumentTest
   private static Document buildExampleDocument( String version ) throws Exception
   {
     return DocumentUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<daft>\n"
-      + "  <version>" + version + "</version>\n"
+      + "<daft version=\"" + version + "\">\n"
+      + "  <overseas_sales>\n"
+      + "  </overseas_sales>\n"
       + "</daft>" );
   }
 
@@ -54,7 +55,7 @@ public class DaftIeDocumentTest
     try
     {
       doc = new DaftIeDocument( buildExampleDocument( "2.7" ) );
-      Assert.assertEquals("2.7", DaftIeVersion.V2_7, doc.getDocumentVersion() );
+      Assert.assertEquals( "2.7", DaftIeVersion.V2_7, doc.getDocumentVersion() );
     }
     catch (Exception ex)
     {
@@ -70,9 +71,10 @@ public class DaftIeDocumentTest
     try
     {
       DaftIeDocument doc = new DaftIeDocument( buildExampleDocument( "" ) );
+      Assert.assertEquals( "no version", null, doc.getDocumentVersion() );
 
-      doc.setDocumentVersion(DaftIeVersion.V2_7 );
-      Assert.assertEquals("2.7", DaftIeVersion.V2_7, doc.getDocumentVersion() );
+      doc.setDocumentVersion( DaftIeVersion.V2_7 );
+      Assert.assertEquals( "2.7", DaftIeVersion.V2_7, doc.getDocumentVersion() );
     }
     catch (Exception ex)
     {
