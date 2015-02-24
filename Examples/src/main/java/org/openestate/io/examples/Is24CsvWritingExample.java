@@ -21,15 +21,32 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.is24_csv.Is24CsvPrinter;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.records.HausKauf;
 import org.openestate.io.is24_csv.records.WohnungMiete;
+import org.openestate.io.is24_csv.types.Ausstattung;
+import org.openestate.io.is24_csv.types.Auswahl;
+import org.openestate.io.is24_csv.types.Bauphase;
+import org.openestate.io.is24_csv.types.Befeuerungsart;
+import org.openestate.io.is24_csv.types.Datei;
+import org.openestate.io.is24_csv.types.DateiSuffix;
+import org.openestate.io.is24_csv.types.DateiTyp;
+import org.openestate.io.is24_csv.types.Energieausweistyp;
+import org.openestate.io.is24_csv.types.Heizungsart;
+import org.openestate.io.is24_csv.types.Importmodus;
+import org.openestate.io.is24_csv.types.ObjektkategorieHaus;
+import org.openestate.io.is24_csv.types.ObjektkategorieWohnung;
+import org.openestate.io.is24_csv.types.Objektzustand;
+import org.openestate.io.is24_csv.types.Stellplatz;
 
 /**
  * Example for CSV writing.
@@ -88,9 +105,38 @@ public class Is24CsvWritingExample
   {
     // create an example real estate
     HausKauf obj = new HausKauf();
+    init( obj );
 
-    // TODO: not implemented yet
-
+    obj.setAnzahlBadezimmer( RandomUtils.nextInt( 1, 5 ) );
+    obj.setAnzahlGarageStellplatz( RandomUtils.nextInt( 1, 5 ) );
+    obj.setAnzahlSchlafzimmer( RandomUtils.nextInt( 1, 5 ) );
+    obj.setAusstattung( Ausstattung.GEHOBEN );
+    obj.setBarrierefrei( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setBaujahr( RandomUtils.nextInt( 1900, 1990 ) );
+    obj.setBauphase( Bauphase.FERTIG_GESTELLT );
+    obj.setBefeuerungsart( Befeuerungsart.KOHLE );
+    obj.setDenkmalschutz( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setEinliegerwohnung( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setEnergieausweisInklWarmwasser( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setEnergieausweisKennwert( RandomUtils.nextDouble( 50, 500 ) );
+    obj.setEnergieausweisTyp( Energieausweistyp.ENERGIEVERBRAUCHSKENNWERT );
+    obj.setFerienhaus( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setGaesteWc( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setGrundstuecksflaeche( RandomUtils.nextDouble( 200, 2000 ) );
+    obj.setHeizungsart( Heizungsart.ZENTRALHEIZUNG );
+    obj.setKaufpreis( RandomUtils.nextDouble( 100000, 1000000 ) );
+    obj.setKeller( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setMieteinnahmenProMonat( RandomUtils.nextDouble( 5000, 50000 ) );
+    obj.setNutzflaeche( RandomUtils.nextDouble( 200, 1000 ) );
+    obj.setObjektkategorie( ObjektkategorieHaus.MEHRFAMILIENHAUS );
+    obj.setObjektzustand( Objektzustand.GEPFLEGT );
+    obj.setSanierungsjahr( RandomUtils.nextInt( 1990, 2010 ) );
+    obj.setStellplatz( Stellplatz.CARPORT );
+    obj.setStellplatzpreis( RandomUtils.nextDouble( 1000, 5000 ) );
+    obj.setVerfuegbarAb( "notes about availability" );
+    obj.setVermietet( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setWohnflaeche( RandomUtils.nextDouble( 100, 500 ) );
+    obj.setZimmer( RandomUtils.nextInt( 1, 10 ) );
     return obj;
   }
 
@@ -104,10 +150,90 @@ public class Is24CsvWritingExample
   {
     // create an example real estate
     WohnungMiete obj = new WohnungMiete();
+    init( obj );
 
-    // TODO: not implemented yet
-
+    obj.setAnzahlBadezimmer( RandomUtils.nextInt( 1, 5 ) );
+    obj.setAnzahlGarageStellplatz( RandomUtils.nextInt( 1, 5 ) );
+    obj.setAnzahlSchlafzimmer( RandomUtils.nextInt( 1, 5 ) );
+    obj.setAufzug( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setAusstattung( Ausstattung.GEHOBEN );
+    obj.setBalkonTerrasse( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setBarrierefrei( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setBaujahr( RandomUtils.nextInt( 1900, 1990 ) );
+    obj.setBefeuerungsart( Befeuerungsart.OEL );
+    obj.setEinbaukueche( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setEnergieausweisInklWarmwasser( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setEnergieausweisKennwert( RandomUtils.nextDouble( 50, 500 ) );
+    obj.setEnergieausweisTyp( Energieausweistyp.ENERGIEVERBRAUCHSKENNWERT );
+    obj.setEtage( RandomUtils.nextInt( 0, 10 ) );
+    obj.setEtagenzahl( RandomUtils.nextInt( 0, 10 ) );
+    obj.setFoerderung( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setGaesteWc( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setGartennutzung( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setHaustiere( Auswahl.NACH_VEREINBARUNG );
+    obj.setHeizkosten( RandomUtils.nextDouble( 100, 500 ) );
+    obj.setHeizungsart( Heizungsart.OFENHEIZUNG );
+    obj.setKaltmiete( RandomUtils.nextDouble( 500, 3000 ) );
+    obj.setKaution( "notes about deposit" );
+    obj.setKeller( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setNebenkosten( RandomUtils.nextDouble( 100, 500 ) );
+    obj.setNebenkostenInklHeizkosten( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setNutzflaeche( RandomUtils.nextDouble( 50, 500 ) );
+    obj.setObjektkategorie( ObjektkategorieWohnung.PENTHOUSE );
+    obj.setObjektzustand( Objektzustand.MODERNISIERT );
+    obj.setSanierungsjahr( RandomUtils.nextInt( 1990, 2010 ) );
+    obj.setSeniorengerecht( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setStellplatz( Stellplatz.TIEFGARAGE );
+    obj.setStellplatzmiete( RandomUtils.nextDouble( 50, 500 ) );
+    obj.setVerfuegbarAb( "notes about availability" );
+    obj.setWarmmiete( RandomUtils.nextDouble( 500, 2000 ) );
+    obj.setWohnflaeche( RandomUtils.nextDouble( 50, 250 ) );
+    obj.setZimmer( RandomUtils.nextInt( 1, 10 ) );
     return obj;
+  }
+
+  protected static void init( Is24CsvRecord obj )
+  {
+    obj.setAdressdruck( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setAktiv( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setAnbieterObjektId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setBeschreibungAusstattung( "description about features" );
+    obj.setBeschreibungLage( "description about location" );
+    obj.setBeschreibungObjekt( "description about object" );
+    obj.setBeschreibungSonstiges( "further descriptions" );
+    obj.setGruppierungId( RandomUtils.nextInt( 0, 1000 ) );
+    obj.setImportmodus( Importmodus.IMPORTIEREN );
+    obj.setInternationaleRegion( "name of international region" );
+    obj.setKontaktAnrede( "Mr" );
+    obj.setKontaktEmail( "tester@test.org" );
+    obj.setKontaktHausNr( "123" );
+    obj.setKontaktLand( "DEU" );
+    obj.setKontaktMobiltelefon( "030/123456" );
+    obj.setKontaktNachname( "Mustermann" );
+    obj.setKontaktOrt( "Berlin" );
+    obj.setKontaktPlz( "12345" );
+    obj.setKontaktStrasse( "example street" );
+    obj.setKontaktTelefax( "030/123457" );
+    obj.setKontaktTelefon( "030/123458" );
+    obj.setKontaktVorname( "Max" );
+    obj.setKontaktWebseite( "http://www.test.org/" );
+    obj.setObjektHausNr( "124" );
+    obj.setObjektLand( "DEU" );
+    obj.setObjektOrt( "Berlin" );
+    obj.setObjektPlz( "12345" );
+    obj.setObjektStrasse( "example street" );
+    obj.setProvision( "commission" );
+    obj.setProvisionpflichtig( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setProvisionshinweis( "notes about commission" );
+    obj.setScoutKundenId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setScoutObjektId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setUeberschrift( "a nice title for the object" );
+    obj.setWaehrung( Currency.getInstance( "EUR" ) );
+
+    obj.setDatei1( new Datei( "test1.jpg", DateiTyp.BILD, DateiSuffix.JPG, "a nice image" ) );
+    obj.setDatei2( new Datei( "test2.png", DateiTyp.BILD, DateiSuffix.PNG, "another nice image" ) );
+    obj.setDatei3( new Datei( "test3.pdf", DateiTyp.GRUNDRISS_PDF, DateiSuffix.PDF, "a document with groundplan" ) );
+    obj.setDatei4( new Datei( "http://www.test.org/", DateiTyp.LINK, null, "agency website" ) );
   }
 
   /**
