@@ -18,24 +18,31 @@ package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlUtils;
 import org.openestate.io.immoxml.xml.Anbieter;
 import org.openestate.io.immoxml.xml.Immobilie;
 import org.openestate.io.immoxml.xml.Immoxml;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * Example for XML reading.
+ * Example for reading ImmoXML files.
  * <p>
- * This example illustrates how to read an ImmoXML document from a file.
+ * This example illustrates how to read ImmoXML files.
  *
  * @author Andreas Rudolph
  */
 public class ImmoXmlReadingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlReadingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
+
   /**
    * Start the example application.
    *
@@ -44,32 +51,50 @@ public class ImmoXmlReadingExample
    */
   public static void main( String[] args )
   {
+    // init logging
+    PropertyConfigurator.configure(
+      ImmoXmlReadingExample.class.getResource( "/org/openestate/io/examples/log4j.properties" ) );
+
+    // read example files, if no files were specified as command line arguments
     if (args.length<1)
-    {
-      System.out.println( "Please provide at least one ImmoXML file as argument!" );
-      System.exit( 1 );
-    }
-    for (String arg : args)
     {
       try
       {
-        read( new File( arg ) );
+        read( ImmoXmlReadingExample.class.getResourceAsStream( PACKAGE + "/immoxml.xml" ) );
       }
       catch (Exception ex)
       {
-        System.err.println( "The provided file is invalid!" );
-        ex.printStackTrace( System.err );
+        LOGGER.error( "Can't read example file!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
+      }
+    }
+
+    // read files, that were specified as command line arguments
+    else
+    {
+      for (String arg : args)
+      {
+        try
+        {
+          read( new File( arg ) );
+        }
+        catch (Exception ex)
+        {
+          LOGGER.error( "Can't read file '" + arg + "'!" );
+          LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+          System.exit( 2 );
+        }
       }
     }
   }
 
   /**
-   * Read an ImmoXML file into a {@link ImmoXmlDocument} and prints some of
-   * their content to console.
+   * Read a {@link File} into an {@link ImmoXmlDocument} and prints some of its
+   * content to console.
    *
    * @param xmlFile
-   * the XML file to read
+   * the file to read
    *
    * @throws SAXException
    * if the file is not readable by the XML parser
@@ -85,27 +110,58 @@ public class ImmoXmlReadingExample
    */
   protected static void read( File xmlFile ) throws SAXException, IOException, ParserConfigurationException, JAXBException
   {
-    System.out.println( "process file: " + xmlFile.getAbsolutePath() );
+    LOGGER.info( "process file: " + xmlFile.getAbsolutePath() );
     if (!xmlFile.isFile())
     {
-      System.out.println( "> The provided file is invalid!" );
+      LOGGER.warn( "> provided file is invalid" );
       return;
     }
     ImmoXmlDocument doc = ImmoXmlUtils.createDocument( xmlFile );
     if (doc==null)
     {
-      System.out.println( "> provided XML is not supported" );
+      LOGGER.warn( "> provided XML is not supported" );
     }
     else
     {
-      System.out.println( "> is transfer XML in version "
-        + doc.getDocumentVersion().toReadableVersion() );
-      read((ImmoXmlDocument) doc );
+      printToConsole( doc );
     }
   }
 
   /**
-   * Print the content of a {@link ImmoXmlDocument} to console.
+   * Read a {@link InputStream} into an {@link ImmoXmlDocument} and prints some
+   * of its content to console.
+   *
+   * @param xmlInputStream
+   * the input stream to read
+   *
+   * @throws SAXException
+   * if the file is not readable by the XML parser
+   *
+   * @throws IOException
+   * if the file is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the XML parser is improperly configured
+   *
+   * @throws JAXBException
+   * if XML conversion into Java objects failed
+   */
+  protected static void read( InputStream xmlInputStream ) throws SAXException, IOException, ParserConfigurationException, JAXBException
+  {
+    LOGGER.info( "process example file" );
+    ImmoXmlDocument doc = ImmoXmlUtils.createDocument( xmlInputStream );
+    if (doc==null)
+    {
+      LOGGER.warn( "> provided XML is not supported" );
+    }
+    else
+    {
+      printToConsole( doc );
+    }
+  }
+
+  /**
+   * Print some content of an {@link ImmoXmlDocument} to console.
    *
    * @param doc
    * the document to process
@@ -113,15 +169,17 @@ public class ImmoXmlReadingExample
    * @throws JAXBException
    * if XML conversion into Java objects failed
    */
-  protected static void read( ImmoXmlDocument doc ) throws JAXBException
+  protected static void printToConsole( ImmoXmlDocument doc ) throws JAXBException
   {
+    LOGGER.info( "> process document in version "
+      + doc.getDocumentVersion() );
+
     Immoxml immoxml = doc.toObject();
 
     // process agencies in the document
     for (Anbieter anbieter : immoxml.getAnbieter())
     {
-      System.out.println( "> transfer for agency "
-        + "'" + anbieter.getAnbieternr() + "'" );
+      LOGGER.info( ">> found agency '" + anbieter.getAnbieternr() + "'" );
 
       // process real estates of the agency
       for (Immobilie immobilie : anbieter.getImmobilie())
@@ -135,7 +193,7 @@ public class ImmoXmlReadingExample
           immobilie.getFreitexte().getObjekttitel(): "???";
 
         // print object informations to console
-        System.out.println( ">> property '" + objectNr + "' "
+        LOGGER.info( ">>> found object '" + objectNr + "' "
           + "with title '" + objectTitle + "'" );
       }
     }
