@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+  <kyero>
+    <feed_version>3</feed_version>
+  </kyero>
+  <property>
+    <id>12367</id>
+    <date>2013-09-27 12:00:10</date>
+    <ref>V3TEST</ref>
+    <price>250000</price>
+    <currency>EUR</currency>
+    <price_freq>sale</price_freq>
+    <part_ownership>0</part_ownership>
+    <leasehold>0</leasehold>
+    <new_build>0</new_build>
+    <type>villa</type>
+    <town>almunecar</town>
+    <province>granada</province>
+    <location>
+      <latitude>36.728807</latitude>
+      <longitude>-3.693466</longitude>
+    </location>
+    <location_detail>Urb Tropicana</location_detail>
+    <beds>3</beds>
+    <baths>2</baths>
+    <pool>1</pool>
+    <surface_area>
+      <built>150</built>
+      <plot>500</plot>
+    </surface_area>
+    <energy_rating>
+      <consumption>D</consumption>
+      <emissions>C</emissions>
+    </energy_rating>
+    <url>
+      <bg>http://bulgarian.website.com/property/123456.htm</bg>
+      <ca>http://catalan.website.com/property/123456.htm</ca>
+      <cs>http://czech.website.com/property/123456.htm</cs>
+      <de>http://german.website.com/property/123456.htm</de>
+      <da>http://danish.website.com/property/123456.htm</da>
+      <el>http://greek.website.com/property/123456.htm</el>
+      <en>http://english.website.com/property/123456.htm</en>
+      <es>http://spanish.website.com/property/123456.htm</es>
+      <et>http://estonian.website.com/property/123456.htm</et>
+      <fi>http://finnish.website.com/property/123456.htm</fi>
+      <fr>http://french.website.com/property/123456.htm</fr>
+      <hi>http://hindi.website.com/property/123456.htm</hi>
+      <hu>http://hungarian.website.com/property/123456.htm</hu>
+      <id>http://indonesian.website.com/property/123456.htm</id>
+      <it>http://italian.website.com/property/123456.htm</it>
+      <ja>http://japanese.website.com/property/123456.htm</ja>
+      <ko>http://korean.website.com/property/123456.htm</ko>
+      <lt>http://lithunain.website.com/property/123456.htm</lt>
+      <lv>http://latvian.website.com/property/123456.htm</lv>
+      <nl>http://dutch.website.com/property/123456.htm</nl>
+      <no>http://norwegian.website.com/property/123456.htm</no>
+      <pl>http://polish.website.com/property/123456.htm</pl>
+      <pt>http://portuguese.website.com/property/123456.htm</pt>
+      <ro>http://romanian.website.com/property/123456.htm</ro>
+      <ru>http://russian.website.com/property/123456.htm</ru>
+      <sk>http://slovak.website.com/property/123456.htm</sk>
+      <sl>http://slovenian.website.com/property/123456.htm</sl>
+      <sv>http://swedish.website.com/property/123456.htm</sv>
+      <th>http://thai.website.com/property/123456.htm</th>
+      <tr>http://turkish.website.com/property/123456.htm</tr>
+      <uk>http://ukranian.website.com/property/123456.htm</uk>
+      <vi>http://vietnamese.website.com/property/123456.htm</vi>
+      <zh>http://chinese_simplified.website.com/property/123456.htm</zh>
+    </url>
+    <desc>
+      <bg>Bulgarian property description</bg>
+      <ca>Catalan property description</ca>
+      <cs>Czech property description</cs>
+      <de>German property description</de>
+      <da>Danish property description</da>
+      <el>Greek property description</el>
+      <en>English property description</en>
+      <es>Spanish property description</es>
+      <et>Estonian property description</et>
+      <fi>Finnish property description</fi>
+      <fr>French property description</fr>
+      <hi>Hindi property description</hi>
+      <hu>Hungarian property description</hu>
+      <id>Indonesian property description</id>
+      <it>Italian property description</it>
+      <ja>Japanese property description</ja>
+      <ko>Korean property description</ko>
+      <lt>Lithuanian property description</lt>
+      <lv>Latvian property description</lv>
+      <nl>Dutch property description</nl>
+      <no>Norwegian property description</no>
+      <pl>Polish property description</pl>
+      <pt>Portuguese property description</pt>
+      <ro>Romainan property description</ro>
+      <ru>Russian property description</ru>
+      <sk>Slovak property description</sk>
+      <sl>Slovenian property description</sl>
+      <sv>Swedish property description</sv>
+      <th>Thai property description</th>
+      <tr>Turkish property description</tr>
+      <uk>Ukranian property description</uk>
+      <vi>Vietnamese property description</vi>
+      <zh>Simplified Chinese property description</zh>
+    </desc>
+    <features>
+      <feature>good rental potential</feature>
+      <feature>near beach</feature>
+      <feature>water possible</feature>
+    </features>
+    <notes>Private property notes</notes>
+    <images>
+      <image id="1">
+        <url>http://images.kyero.com/12811577_large.jpg</url>
+      </image>
+      <image id="2">
+        <url>http://images.kyero.com/12811578_large.jpg</url>
+      </image>
+      <image id="3">
+        <url>http://images.kyero.com/12811579_large.jpg</url>
+      </image>
+      <image id="4">
+        <url>http://images.kyero.com/12811581_large.jpg</url>
+      </image>
+      <image id="5">
+        <url>http://images.kyero.com/12811582_large.jpg</url>
+      </image>
+    </images>
+  </property>
+</root>

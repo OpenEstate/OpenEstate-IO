@@ -18,24 +18,31 @@ package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
 import org.openestate.io.kyero.xml.PropertyType;
 import org.openestate.io.kyero.xml.Root;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * Example for XML reading.
+ * Example for reading Kyero XML feeds.
  * <p>
- * This example illustrates how to read a Kyero-XML document from a file.
+ * This example illustrates how to read Kyero XML feeds.
  *
  * @author Andreas Rudolph
  */
 public class KyeroReadingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( KyeroReadingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
+
   /**
    * Start the example application.
    *
@@ -44,32 +51,50 @@ public class KyeroReadingExample
    */
   public static void main( String[] args )
   {
+    // init logging
+    PropertyConfigurator.configure(
+      KyeroReadingExample.class.getResource( "/org/openestate/io/examples/log4j.properties" ) );
+
+    // read example files, if no files were specified as command line arguments
     if (args.length<1)
-    {
-      System.out.println( "Please provide at least one ImmoXML file as argument!" );
-      System.exit( 1 );
-    }
-    for (String arg : args)
     {
       try
       {
-        read( new File( arg ) );
+        read( KyeroReadingExample.class.getResourceAsStream( PACKAGE + "/kyero.xml" ) );
       }
       catch (Exception ex)
       {
-        System.err.println( "The provided file is invalid!" );
-        ex.printStackTrace( System.err );
+        LOGGER.error( "Can't read example file!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
+      }
+    }
+
+    // read files, that were specified as command line arguments
+    else
+    {
+      for (String arg : args)
+      {
+        try
+        {
+          read( new File( arg ) );
+        }
+        catch (Exception ex)
+        {
+          LOGGER.error( "Can't read file '" + arg + "'!" );
+          LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+          System.exit( 2 );
+        }
       }
     }
   }
 
   /**
-   * Read an ImmoXML file into a {@link KyeroDocument} and prints some of
-   * their content to console.
+   * Read a {@link File} into a {@link KyeroDocument} and prints some of its
+   * content to console.
    *
    * @param xmlFile
-   * the XML file to read
+   * the file to read
    *
    * @throws SAXException
    * if the file is not readable by the XML parser
@@ -85,27 +110,58 @@ public class KyeroReadingExample
    */
   protected static void read( File xmlFile ) throws SAXException, IOException, ParserConfigurationException, JAXBException
   {
-    System.out.println( "process file: " + xmlFile.getAbsolutePath() );
+    LOGGER.info( "process file: " + xmlFile.getAbsolutePath() );
     if (!xmlFile.isFile())
     {
-      System.out.println( "> The provided file is invalid!" );
+      LOGGER.warn( "> provided file is invalid" );
       return;
     }
     KyeroDocument doc = KyeroUtils.createDocument( xmlFile );
     if (doc==null)
     {
-      System.out.println( "> provided XML is not supported" );
+      LOGGER.warn( "> provided XML is not supported" );
     }
     else
     {
-      System.out.println( "> is transfer XML in version "
-        + doc.getDocumentVersion().toReadableVersion() );
-      read( doc );
+      printToConsole( doc );
     }
   }
 
   /**
-   * Print the content of a {@link KyeroDocument} to console.
+   * Read a {@link InputStream} into a {@link KyeroDocument} and prints some of
+   * its content to console.
+   *
+   * @param xmlInputStream
+   * the input stream to read
+   *
+   * @throws SAXException
+   * if the file is not readable by the XML parser
+   *
+   * @throws IOException
+   * if the file is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the XML parser is improperly configured
+   *
+   * @throws JAXBException
+   * if XML conversion into Java objects failed
+   */
+  protected static void read( InputStream xmlInputStream ) throws SAXException, IOException, ParserConfigurationException, JAXBException
+  {
+    LOGGER.info( "process example file" );
+    KyeroDocument doc = KyeroUtils.createDocument( xmlInputStream );
+    if (doc==null)
+    {
+      LOGGER.warn( "> provided XML is not supported" );
+    }
+    else
+    {
+      printToConsole( doc );
+    }
+  }
+
+  /**
+   * Print some content of a {@link KyeroDocument} to console.
    *
    * @param doc
    * the document to process
@@ -113,7 +169,7 @@ public class KyeroReadingExample
    * @throws JAXBException
    * if XML conversion into Java objects failed
    */
-  protected static void read( KyeroDocument doc ) throws JAXBException
+  protected static void printToConsole( KyeroDocument doc ) throws JAXBException
   {
     Root root = doc.toObject();
 
@@ -136,7 +192,7 @@ public class KyeroReadingExample
       }
 
       // print object informations to console
-      System.out.println( "> property '" + objectNr + "' "
+      LOGGER.info( "> found object '" + objectNr + "' "
         + "with title '" + objectInfo + "'" );
     }
   }
