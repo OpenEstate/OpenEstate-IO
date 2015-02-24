@@ -49,7 +49,7 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
     return new SimpleDateFormat( "dd.MM.yyyy" );
   }
 
-  private static NumberFormat getNumberFormat( int integerDigits, int fractionDigits )
+  /*private static NumberFormat getNumberFormat( int integerDigits, int fractionDigits )
   {
     NumberFormat format = NumberFormat.getNumberInstance( Locale.GERMANY );
     format.setMaximumIntegerDigits( integerDigits );
@@ -57,7 +57,7 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
     format.setMinimumFractionDigits( 0 );
     format.setGroupingUsed( false );
     return format;
-  }
+  }*/
 
   @Override
   public String getEncoding()
@@ -77,7 +77,7 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
     return new Is24CsvPrinter( printer );
   }
 
-  public static Boolean printBoolean( String value )
+  public static Boolean parseBoolean( String value )
   {
     value = StringUtils.trimToNull( value );
     if ("J".equalsIgnoreCase( value ))
@@ -150,7 +150,7 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
 
   public static String printNumber( Number value, int integerDigits )
   {
-    return Is24CsvFormat.printNumber( value, integerDigits, 0 );
+    return printNumber( value, integerDigits, 0 );
   }
 
   public static String printNumber( Number value, int integerDigits, int fractionDigits )

@@ -158,9 +158,9 @@ public class IdxWritingExample
     obj.setMinEnergyCertified( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setMinEnergyGeneral( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setNewBuilding( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.setNumberOfApartments( RandomUtils.nextFloat( 1, 10 ) );
+    obj.setNumberOfApartments( RandomUtils.nextDouble( 1, 10 ) );
     obj.setNumberOfFloors( RandomUtils.nextInt( 1, 10 ) );
-    obj.setNumberOfRooms( RandomUtils.nextFloat( 1, 10 ) );
+    obj.setNumberOfRooms( RandomUtils.nextDouble( 1, 10 ) );
     obj.setObjectCity( "Berlin" );
     obj.setObjectCountry( Locale.GERMANY.getCountry() );
     obj.setObjectDescription( "some description" + SystemUtils.LINE_SEPARATOR + " about the object" );

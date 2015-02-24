@@ -391,7 +391,7 @@ public abstract class Is24CsvRecord extends CsvRecord
   protected Boolean getAsBoolean( int pos, Boolean defaultValue )
   {
     String value = this.get( pos );
-    return (value!=null)? Is24CsvFormat.printBoolean( value ): defaultValue;
+    return (value!=null)? Is24CsvFormat.parseBoolean( value ): defaultValue;
   }
 
   @Override
@@ -431,7 +431,7 @@ public abstract class Is24CsvRecord extends CsvRecord
     try
     {
       return (value!=null)?
-        Is24CsvFormat.parseNumber( value, true).intValue(): defaultValue;
+        Is24CsvFormat.parseNumber( value, true ).intValue(): defaultValue;
     }
     catch (ParseException ex)
     {
@@ -446,7 +446,7 @@ public abstract class Is24CsvRecord extends CsvRecord
     try
     {
       return (value!=null)?
-        Is24CsvFormat.parseNumber( value, true).longValue(): defaultValue;
+        Is24CsvFormat.parseNumber( value, true ).longValue(): defaultValue;
     }
     catch (ParseException ex)
     {
