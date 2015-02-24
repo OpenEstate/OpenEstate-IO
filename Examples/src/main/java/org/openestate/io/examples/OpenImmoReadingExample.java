@@ -18,8 +18,11 @@ package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.openimmo.OpenImmoDocument;
 import org.openestate.io.openimmo.OpenImmoFeedbackDocument;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
@@ -29,17 +32,22 @@ import org.openestate.io.openimmo.xml.Immobilie;
 import org.openestate.io.openimmo.xml.Objekt;
 import org.openestate.io.openimmo.xml.Openimmo;
 import org.openestate.io.openimmo.xml.OpenimmoFeedback;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * Example for XML reading.
+ * Example for reading OpenImmo files.
  * <p>
- * This example illustrates how to read an OpenImmo document from a file.
+ * This example illustrates how to read OpenImmo files.
  *
  * @author Andreas Rudolph
  */
 public class OpenImmoReadingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoReadingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
+
   /**
    * Start the example application.
    *
@@ -48,32 +56,62 @@ public class OpenImmoReadingExample
    */
   public static void main( String[] args )
   {
+    // init logging
+    PropertyConfigurator.configure(
+      OpenImmoReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // read example files, if no files were specified as command line arguments
     if (args.length<1)
-    {
-      System.out.println( "Please provide at least one OpenImmo file as argument!" );
-      System.exit( 1 );
-    }
-    for (String arg : args)
     {
       try
       {
-        read( new File( arg ) );
+        read( OpenImmoReadingExample.class.getResourceAsStream( PACKAGE + "/openimmo.xml" ) );
       }
       catch (Exception ex)
       {
-        System.err.println( "The provided file is invalid!" );
-        ex.printStackTrace( System.err );
+        LOGGER.error( "Can't read example file!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
+      }
+
+      try
+      {
+        read( OpenImmoReadingExample.class.getResourceAsStream( PACKAGE + "/openimmo-feedback.xml" ) );
+      }
+      catch (Exception ex)
+      {
+        LOGGER.error( "Can't read file!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+        System.exit( 2 );
+      }
+    }
+
+    // read files, that were specified as command line arguments
+    else
+    {
+      for (String arg : args)
+      {
+        try
+        {
+          read( new File( arg ) );
+        }
+        catch (Exception ex)
+        {
+          LOGGER.error( "Can't read file '" + arg + "'!" );
+          LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+          System.exit( 2 );
+        }
       }
     }
   }
 
   /**
-   * Read an OpenImmo file into a {@link TransferDocument} or
-   * {@link FeedbackDocument} and prints some of their content to console.
+   * Read a {@link File} into an {@link OpenImmoTransferDocument} or
+   * {@link OpenImmoFeedbackDocument} and prints some of their content to
+   * console.
    *
    * @param xmlFile
-   * the XML file to read
+   * the file to read
    *
    * @throws SAXException
    * if the file is not readable by the XML parser
@@ -89,58 +127,77 @@ public class OpenImmoReadingExample
    */
   protected static void read( File xmlFile ) throws SAXException, IOException, ParserConfigurationException, JAXBException
   {
-    System.out.println( "process file: " + xmlFile.getAbsolutePath() );
+    LOGGER.info( "process file: " + xmlFile.getAbsolutePath() );
     if (!xmlFile.isFile())
     {
-      System.out.println( "> The provided file is invalid!" );
+      LOGGER.warn( "> provided file is invalid" );
       return;
     }
     OpenImmoDocument doc = OpenImmoUtils.createDocument( xmlFile );
     if (doc==null)
     {
-      System.out.println( "> provided XML is not supported" );
+      LOGGER.warn( "> provided XML is not supported" );
     }
     else if (doc.isFeedback())
     {
-      System.out.println( "> is feedback XML in version "
-        + doc.getDocumentVersion().toReadableVersion() );
-      read( (OpenImmoFeedbackDocument) doc );
+      OpenImmoReadingExample.printToConsole( (OpenImmoFeedbackDocument) doc );
     }
     else if (doc.isTransfer())
     {
-      System.out.println( "> is transfer XML in version "
-        + doc.getDocumentVersion().toReadableVersion() );
-      read( (OpenImmoTransferDocument) doc );
+      printToConsole( (OpenImmoTransferDocument) doc );
     }
     else
     {
-      System.out.println( "> unsupported type of XML document: "
+      LOGGER.warn( "> unsupported type of document: "
         + doc.getClass().getName() );
     }
   }
 
   /**
-   * Print the content of a {@link FeedbackDocument} to console.
+   * Read a {@link InputStream} into an {@link OpenImmoTransferDocument} or
+   * {@link OpenImmoFeedbackDocument} and prints some of their content to
+   * console.
    *
-   * @param doc
-   * the document to process
+   * @param xmlInputStream
+   * the input stream to read
+   *
+   * @throws SAXException
+   * if the file is not readable by the XML parser
+   *
+   * @throws IOException
+   * if the file is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the XML parser is improperly configured
    *
    * @throws JAXBException
    * if XML conversion into Java objects failed
    */
-  protected static void read( OpenImmoFeedbackDocument doc ) throws JAXBException
+  protected static void read( InputStream xmlInputStream ) throws SAXException, IOException, ParserConfigurationException, JAXBException
   {
-    OpenimmoFeedback feedback = doc.toObject();
-    for (Objekt objekt : feedback.getObjekt())
+    LOGGER.info( "process example file" );
+    OpenImmoDocument doc = OpenImmoUtils.createDocument( xmlInputStream );
+    if (doc==null)
     {
-      System.out.println( "> feedback for object "
-        + "'" + objekt.getOobjId() + "' "
-        + "with title '" + objekt.getBezeichnung() + "'" );
+      LOGGER.warn( "> provided XML is not supported" );
+    }
+    else if (doc.isFeedback())
+    {
+      OpenImmoReadingExample.printToConsole( (OpenImmoFeedbackDocument) doc );
+    }
+    else if (doc.isTransfer())
+    {
+      printToConsole( (OpenImmoTransferDocument) doc );
+    }
+    else
+    {
+      LOGGER.warn( "> unsupported type of document: "
+        + doc.getClass().getName() );
     }
   }
 
   /**
-   * Print the content of a {@link TransferDocument} to console.
+   * Print some content of an {@link OpenImmoFeedbackDocument} to console.
    *
    * @param doc
    * the document to process
@@ -148,15 +205,47 @@ public class OpenImmoReadingExample
    * @throws JAXBException
    * if XML conversion into Java objects failed
    */
-  protected static void read( OpenImmoTransferDocument doc ) throws JAXBException
+  protected static void printToConsole( OpenImmoFeedbackDocument doc ) throws JAXBException
   {
+    LOGGER.info( "> process feedback document in version "
+      + doc.getDocumentVersion() );
+
+    OpenimmoFeedback feedback = doc.toObject();
+    for (Objekt objekt : feedback.getObjekt())
+    {
+      // get object nr
+      String objectNr = (!StringUtils.isBlank( objekt.getOobjId() ))?
+        objekt.getOobjId().trim(): "???";
+
+      // get object title
+      String objectTitle = (!StringUtils.isBlank( objekt.getBezeichnung() ))?
+        objekt.getBezeichnung().trim(): "???";
+
+      LOGGER.info( ">> feedback for object '" + objectNr + "' "
+        + "with title '" + objectTitle + "'" );
+    }
+  }
+
+  /**
+   * Print some content of an {@link OpenImmoTransferDocument} to console.
+   *
+   * @param doc
+   * the document to process
+   *
+   * @throws JAXBException
+   * if XML conversion into Java objects failed
+   */
+  protected static void printToConsole( OpenImmoTransferDocument doc ) throws JAXBException
+  {
+    LOGGER.info( "> process transfer document in version "
+      + doc.getDocumentVersion() );
+
     Openimmo openimmo = doc.toObject();
 
     // process agencies in the document
     for (Anbieter anbieter : openimmo.getAnbieter())
     {
-      System.out.println( "> transfer for agency "
-        + "'" + anbieter.getAnbieternr() + "'" );
+      LOGGER.info( ">> found agency '" + anbieter.getAnbieternr() + "'" );
 
       // process real estates of the agency
       for (Immobilie immobilie : anbieter.getImmobilie())
@@ -170,7 +259,7 @@ public class OpenImmoReadingExample
           immobilie.getFreitexte().getObjekttitel(): "???";
 
         // print object informations to console
-        System.out.println( ">> property '" + objectNr + "' "
+        LOGGER.info( ">>> found object '" + objectNr + "' "
           + "with title '" + objectTitle + "'" );
       }
     }
