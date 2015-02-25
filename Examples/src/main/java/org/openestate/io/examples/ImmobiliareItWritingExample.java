@@ -242,8 +242,8 @@ public class ImmobiliareItWritingExample
     obj.getLocation().getCity().setValue( "Berlin" );
 
     obj.getLocation().setLocality( FACTORY.createLocationStructureLocality() );
-    obj.getLocation().getLocality().setLatitude( RandomUtils.nextDouble( 28, 71 ) );
-    obj.getLocation().getLocality().setLongitude( RandomUtils.nextDouble( 0, 38 ) );
+    obj.getLocation().getLocality().setLatitude( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getLocation().getLocality().setLongitude( RandomUtils.nextDouble( 0, 90 ) );
     obj.getLocation().getLocality().setPostalCode( "13125" );
 
     obj.getLocation().getLocality().setNeighbourhood( FACTORY.createLocationStructureLocalityNeighbourhood() );

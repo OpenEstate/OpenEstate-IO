@@ -34,6 +34,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.SilentValidationHandler;
 import org.openestate.io.kyero.xml.ObjectFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -92,12 +93,15 @@ public class KyeroUtils
     Marshaller m = getContext().createMarshaller();
     m.setProperty( Marshaller.JAXB_ENCODING, encoding );
     m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, formatted );
+    m.setEventHandler( new SilentValidationHandler() );
     return m;
   }
 
   public static Unmarshaller createUnmarshaller() throws JAXBException
   {
-    return getContext().createUnmarshaller();
+    Unmarshaller m = getContext().createUnmarshaller();
+    m.setEventHandler( new SilentValidationHandler() );
+    return m;
   }
 
   public static Element createUserDefinedSimplefield( Document doc, String name, String value )
