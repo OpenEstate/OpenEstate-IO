@@ -18,20 +18,27 @@ package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_csv.Is24CsvParser;
 import org.openestate.io.is24_csv.Is24CsvRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for CSV reading.
+ * Example for reading IS24-CSV files.
  * <p>
- * This example illustrates how to read an IS24-CSV document from a file.
+ * This example illustrates the programatic creation of IS24-CSV records and how
+ * they are written into CSV.
  *
  * @author Andreas Rudolph
  */
 public class Is24CsvReadingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvReadingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
+
   /**
    * Start the example application.
    *
@@ -40,29 +47,47 @@ public class Is24CsvReadingExample
    */
   public static void main( String[] args )
   {
+    // init logging
+    PropertyConfigurator.configure(
+      Is24CsvReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // read example file, if no files were specified as command line arguments
     if (args.length<1)
-    {
-      System.out.println( "Please provide at least one file as argument!" );
-      System.exit( 1 );
-    }
-    for (String arg : args)
     {
       try
       {
-        read( new File( arg ) );
+        read( Is24CsvReadingExample.class.getResourceAsStream( PACKAGE + "/is24.csv" ) );
       }
       catch (Exception ex)
       {
-        System.err.println( "The provided file is invalid!" );
-        ex.printStackTrace( System.err );
+        LOGGER.error( "Can't read example file!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
+      }
+    }
+
+    // read files, that were specified as command line arguments
+    else
+    {
+      for (String arg : args)
+      {
+        try
+        {
+          read( new File( arg ) );
+        }
+        catch (Exception ex)
+        {
+          LOGGER.error( "Can't read file '" + arg + "'!" );
+          LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+          System.exit( 2 );
+        }
       }
     }
   }
 
   /**
-   * Read an IS24-CSV file into a {@link Is24CsvParser} and prints some of their content
-   * to console.
+   * Read a {@link File} into an {@link Is24CsvParser} and print some of its
+   * content to console.
    *
    * @param csvFile
    * the CSV file to read
@@ -72,10 +97,10 @@ public class Is24CsvReadingExample
    */
   protected static void read( File csvFile ) throws IOException
   {
-    System.out.println( "process file: " + csvFile.getAbsolutePath() );
+    LOGGER.info( "process file: " + csvFile.getAbsolutePath() );
     if (!csvFile.isFile())
     {
-      System.out.println( "> The provided file is invalid!" );
+      LOGGER.warn( "> The provided file is invalid!" );
       return;
     }
     Is24CsvParser parser = null;
@@ -83,9 +108,9 @@ public class Is24CsvReadingExample
     {
       parser = Is24CsvParser.create( csvFile );
       if (parser==null)
-        System.out.println( "> Can't create parser!" );
+        LOGGER.warn( "> Can't create parser!" );
       else
-        read( parser );
+        printToConsole( parser );
     }
     finally
     {
@@ -94,12 +119,40 @@ public class Is24CsvReadingExample
   }
 
   /**
-   * Print the content of a {@link Is24CsvParser} to console.
+   * Read an {@link InputStream} into an {@link Is24CsvParser} and print some of
+   * its content to console.
+   *
+   * @param csvInputStream
+   * the input stream to read
+   *
+   * @throws IOException
+   * if the file is not readable
+   */
+  protected static void read( InputStream csvInputStream ) throws IOException
+  {
+    LOGGER.info( "process example file" );
+    Is24CsvParser parser = null;
+    try
+    {
+      parser = Is24CsvParser.create( csvInputStream );
+      if (parser==null)
+        LOGGER.warn( "> Can't create parser!" );
+      else
+        printToConsole( parser );
+    }
+    finally
+    {
+      IOUtils.closeQuietly( parser );
+    }
+  }
+
+  /**
+   * Print some content of an {@link Is24CsvParser} to console.
    *
    * @param parser
    * parser instance
    */
-  protected static void read( Is24CsvParser parser )
+  protected static void printToConsole( Is24CsvParser parser )
   {
     // process records
     while (parser.hasNext())
@@ -107,7 +160,7 @@ public class Is24CsvReadingExample
       Is24CsvRecord record = parser.next();
 
       // get object nr
-      String objectNr = StringUtils.trimToNull( record.getAnbieterObjektId() );
+      String objectNr = record.getAnbieterObjektId();
       if (objectNr==null) objectNr = "???";
 
       // get object title
@@ -115,7 +168,7 @@ public class Is24CsvReadingExample
       if (objectTitle==null) objectTitle = "???";
 
       // print object informations to console
-      System.out.println( "> property '" + objectNr + "' "
+      LOGGER.info( "> found object '" + objectNr + "' "
         + "with title '" + objectTitle + "'" );
     }
   }
