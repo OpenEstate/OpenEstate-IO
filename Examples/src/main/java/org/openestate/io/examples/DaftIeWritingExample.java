@@ -27,6 +27,8 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.daft_ie.DaftIeDocument;
 import org.openestate.io.daft_ie.DaftIeUtils;
 import org.openestate.io.daft_ie.xml.CommercialType;
@@ -36,17 +38,21 @@ import org.openestate.io.daft_ie.xml.ObjectFactory;
 import org.openestate.io.daft_ie.xml.OverseasRentalAdType;
 import org.openestate.io.daft_ie.xml.OverseasSaleAdType;
 import org.openestate.io.daft_ie.xml.PropertyType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for XML writing.
+ * Example for writing XML files for <a href="http://daft.ie">daft.ie</a>.
  * <p>
- * This example illustrates the programatic creation of an Trovit document,
- * and how the document is written into XML.
+ * This example illustrates the programatic creation of documents for
+ * <a href="http://daft.ie">daft.ie</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  */
 public class DaftIeWritingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( DaftIeWritingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
   private final static ObjectFactory FACTORY = DaftIeUtils.getFactory();
   private final static boolean PRETTY_PRINT = true;
 
@@ -58,21 +64,26 @@ public class DaftIeWritingExample
    */
   public static void main( String[] args )
   {
-    // create an Trovit object with some example data
+    // init logging
+    PropertyConfigurator.configure(
+      DaftIeWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // create a Daft object with some example data
+    // this object corresponds to the <daft> root element in XML
     Daft daft = FACTORY.createDaft();
 
-    // append some rental ads to the transfer
+    // append some example objectss for rent to the Daft object
     daft.setOverseasRental( FACTORY.createDaftOverseasRental() );
     daft.getOverseasRental().getOverseasRentalAd().add( createAdForRent() );
     daft.getOverseasRental().getOverseasRentalAd().add( createAdForRent() );
 
-    // append some sales ads to the transfer
+    // append some example objectss for sale to the Daft object
     daft.setOverseasSales( FACTORY.createDaftOverseasSales() );
     daft.getOverseasSales().getOverseasSaleAd().add( createAdForSale() );
     daft.getOverseasSales().getOverseasSaleAd().add( createAdForSale() );
     daft.getOverseasSales().getOverseasSaleAd().add( createAdForSale() );
 
-    // convert Trovit object into a XML document
+    // convert the Daft object into a XML document
     DaftIeDocument doc = null;
     try
     {
@@ -80,21 +91,21 @@ public class DaftIeWritingExample
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't create XML document!" );
-      ex.printStackTrace( System.err );
+      LOGGER.error( "Can't create XML document!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
     }
 
     // write XML document into a java.io.File
     try
     {
-      write( doc, File.createTempFile( "trovit-", ".xml" ) );
+      write( doc, File.createTempFile( "output-", ".xml" ) );
     }
     catch (IOException ex)
     {
-      System.err.println( "Can't create temporary file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't create temporary file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
 
     // write XML document into a java.io.OutputStream
@@ -111,7 +122,7 @@ public class DaftIeWritingExample
    * Create an {@link OverseasRentalAdType} with some example data.
    *
    * @return
-   * an example {@link OverseasRentalAdType} object
+   * created example object
    */
   protected static OverseasRentalAdType createAdForRent()
   {
@@ -174,7 +185,7 @@ public class DaftIeWritingExample
    * Create an {@link OverseasRentalAdType} with some example data.
    *
    * @return
-   * an example {@link OverseasRentalAdType} object
+   * created example object
    */
   protected static OverseasSaleAdType createAdForSale()
   {
@@ -253,17 +264,17 @@ public class DaftIeWritingExample
    */
   protected static void write( DaftIeDocument doc, File file )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( file, PRETTY_PRINT );
-      System.out.println( "> written to: " + file.getAbsolutePath() );
+      LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -278,22 +289,22 @@ public class DaftIeWritingExample
    */
   protected static void write( DaftIeDocument doc, OutputStream output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.OutputStream" );
+      LOGGER.info( "> written to a java.io.OutputStream" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write a {@link DaftIeDocument} into an {@link Writer}.
+   * Write a {@link DaftIeDocument} into a {@link Writer}.
    *
    * @param doc
    * the document to write
@@ -303,17 +314,17 @@ public class DaftIeWritingExample
    */
   protected static void write( DaftIeDocument doc, Writer output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.Writer" );
+      LOGGER.info( "> written to a java.io.Writer" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -326,19 +337,18 @@ public class DaftIeWritingExample
    */
   protected static void writeToConsole( DaftIeDocument doc )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
-      System.out.println( xml );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
+      LOGGER.info( StringUtils.repeat( "-", 50 )
+        + SystemUtils.LINE_SEPARATOR + xml );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a string!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a string!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 }

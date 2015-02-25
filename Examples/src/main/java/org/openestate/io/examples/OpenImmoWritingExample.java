@@ -27,6 +27,8 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
@@ -37,18 +39,21 @@ import org.openestate.io.openimmo.xml.Immobilie;
 import org.openestate.io.openimmo.xml.ObjectFactory;
 import org.openestate.io.openimmo.xml.Openimmo;
 import org.openestate.io.openimmo.xml.Uebertragung;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for XML writing.
+ * Example for writing OpenImmo files.
  * <p>
- * This example illustrates the programatic creation of an OpenImmo document,
- * how the document is written into XML and how the document is downgraded to
- * earlier versions.
+ * This example illustrates the programatic creation of OpenImmo documents, how
+ * they are written into XML and how they are downgraded to earlier versions.
  *
  * @author Andreas Rudolph
  */
 public class OpenImmoWritingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoWritingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
   private final static ObjectFactory FACTORY = OpenImmoUtils.getFactory();
   private final static boolean PRETTY_PRINT = true;
 
@@ -60,12 +65,17 @@ public class OpenImmoWritingExample
    */
   public static void main( String[] args )
   {
-    // create an OpenImmo object with some example data
+    // init logging
+    PropertyConfigurator.configure(
+      OpenImmoWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // create an Openimmo object with some example data
+    // this object corresponds to the <openimmo> root element in XML
     Openimmo openimmo = FACTORY.createOpenimmo();
     openimmo.setUebertragung( createUebertragung() );
     openimmo.getAnbieter().add( createAnbieter() );
 
-    // convert OpenImmo object into a XML document
+    // convert the Openimmo object into a XML document
     OpenImmoTransferDocument doc = null;
     try
     {
@@ -73,21 +83,21 @@ public class OpenImmoWritingExample
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't create XML document!" );
-      ex.printStackTrace( System.err );
+      LOGGER.error( "Can't create XML document!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
     }
 
     // write XML document into a java.io.File
     try
     {
-      write( doc, File.createTempFile( "openimmo-", ".xml" ) );
+      write( doc, File.createTempFile( "output-", ".xml" ) );
     }
     catch (IOException ex)
     {
-      System.err.println( "Can't create temporary file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't create temporary file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
 
     // write XML document into a java.io.OutputStream
@@ -114,7 +124,7 @@ public class OpenImmoWritingExample
    * Create an {@link Anbieter} with some example data.
    *
    * @return
-   * an example {@link Anbieter} object
+   * created example object
    */
   protected static Anbieter createAnbieter()
   {
@@ -135,7 +145,7 @@ public class OpenImmoWritingExample
    * Create an {@link Immobilie} with some example data.
    *
    * @return
-   * an example {@link Immobilie} object
+   * created example object
    */
   protected static Immobilie createImmobilie()
   {
@@ -207,7 +217,7 @@ public class OpenImmoWritingExample
    * Create an {@link Uebertragung} with some example data.
    *
    * @return
-   * an example {@link Uebertragung} object
+   * created example object
    */
   protected static Uebertragung createUebertragung()
   {
@@ -224,7 +234,7 @@ public class OpenImmoWritingExample
   }
 
   /**
-   * Write a {@link OpenImmoTransferDocument} into a {@link File}.
+   * Write an {@link OpenImmoTransferDocument} into a {@link File}.
    *
    * @param doc
    * the document to write
@@ -234,22 +244,22 @@ public class OpenImmoWritingExample
    */
   protected static void write( OpenImmoTransferDocument doc, File file )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( file, PRETTY_PRINT );
-      System.out.println( "> written to: " + file.getAbsolutePath() );
+      LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write a {@link OpenImmoTransferDocument} into an {@link OutputStream}.
+   * Write an {@link OpenImmoTransferDocument} into an {@link OutputStream}.
    *
    * @param doc
    * the document to write
@@ -259,22 +269,22 @@ public class OpenImmoWritingExample
    */
   protected static void write( OpenImmoTransferDocument doc, OutputStream output )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.OutputStream" );
+      LOGGER.info( "> written to a java.io.OutputStream" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write a {@link OpenImmoTransferDocument} into an {@link Writer}.
+   * Write an {@link OpenImmoTransferDocument} into a {@link Writer}.
    *
    * @param doc
    * the document to write
@@ -284,22 +294,22 @@ public class OpenImmoWritingExample
    */
   protected static void write( OpenImmoTransferDocument doc, Writer output )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.Writer" );
+      LOGGER.info( "> written to a java.io.Writer" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write a {@link OpenImmoTransferDocument} into a {@link String} and print the
+   * Write an {@link OpenImmoTransferDocument} into a {@link String} and print the
    * results to the console.
    *
    * @param doc
@@ -307,19 +317,18 @@ public class OpenImmoWritingExample
    */
   protected static void writeToConsole( OpenImmoTransferDocument doc )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
-      System.out.println( xml );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
+      LOGGER.info( StringUtils.repeat( "-", 50 )
+        + SystemUtils.LINE_SEPARATOR + xml );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a string!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a string!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 }

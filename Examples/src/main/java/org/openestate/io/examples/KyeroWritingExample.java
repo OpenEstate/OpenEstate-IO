@@ -28,6 +28,8 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
 import org.openestate.io.kyero.KyeroVersion;
@@ -40,18 +42,21 @@ import org.openestate.io.kyero.xml.PriceFreqType;
 import org.openestate.io.kyero.xml.PropertyType;
 import org.openestate.io.kyero.xml.Root;
 import org.openestate.io.kyero.xml.Root.Agent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for XML writing.
+ * Example for writing Kyero XML feeds.
  * <p>
- * This example illustrates the programatic creation of an Kyero document,
- * how the document is written into XML and how the document is downgraded to
- * earlier versions.
+ * This example illustrates the programatic creation of Kyero documents, how
+ * they are written into XML and how they are downgraded to earlier versions.
  *
  * @author Andreas Rudolph
  */
 public class KyeroWritingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( KyeroWritingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
   private final static ObjectFactory FACTORY = KyeroUtils.getFactory();
   private final static boolean PRETTY_PRINT = true;
 
@@ -63,7 +68,12 @@ public class KyeroWritingExample
    */
   public static void main( String[] args )
   {
-    // create a Kyero object with some example data
+    // init logging
+    PropertyConfigurator.configure(
+      KyeroWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // create a Root object with some example data
+    // this object corresponds to the <root> element in XML
     Root root = FACTORY.createRoot();
     root.setKyero( createKyero() );
     root.setAgent( createAgent() );
@@ -71,7 +81,7 @@ public class KyeroWritingExample
     root.getProperty().add( createProperty() );
     root.getProperty().add( createProperty() );
 
-    // convert Kyero object into a XML document
+    // convert the Root object into a XML document
     KyeroDocument doc = null;
     try
     {
@@ -79,21 +89,21 @@ public class KyeroWritingExample
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't create XML document!" );
-      ex.printStackTrace( System.err );
+      LOGGER.error( "Can't create XML document!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
     }
 
     // write XML document into a java.io.File
     try
     {
-      write( doc, File.createTempFile( "immoxml-", ".xml" ) );
+      write( doc, File.createTempFile( "output-", ".xml" ) );
     }
     catch (IOException ex)
     {
-      System.err.println( "Can't create temporary file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't create temporary file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
 
     // write XML document into a java.io.OutputStream
@@ -115,7 +125,7 @@ public class KyeroWritingExample
    * Create an {@link Agent} with some example data.
    *
    * @return
-   * an example {@link Agent} object
+   * created example object
    */
   protected static Agent createAgent()
   {
@@ -139,7 +149,7 @@ public class KyeroWritingExample
    * Create an {@link Kyero} with some example data.
    *
    * @return
-   * an example {@link Kyero} object
+   * created example object
    */
   protected static KyeroType createKyero()
   {
@@ -153,7 +163,7 @@ public class KyeroWritingExample
    * Create an {@link PropertyType} with some example data.
    *
    * @return
-   * an example {@link PropertyType} object
+   * created example object
    */
   protected static PropertyType createProperty()
   {
@@ -232,8 +242,8 @@ public class KyeroWritingExample
     obj.getImages().getImage().add( createPropertyImage( id, ++imageCount ) );
 
     obj.setLocation( FACTORY.createGpsLocationType() );
-    obj.getLocation().setLatitude( RandomUtils.nextDouble( -90, 90 ) );
-    obj.getLocation().setLongitude( RandomUtils.nextDouble( -90, 90 ) );
+    obj.getLocation().setLatitude( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getLocation().setLongitude( RandomUtils.nextDouble( 0, 90 ) );
 
     obj.setSurfaceArea( FACTORY.createSurfaceType() );
     obj.getSurfaceArea().setBuilt( RandomUtils.nextLong( 50, 250 ) );
@@ -285,6 +295,12 @@ public class KyeroWritingExample
     return obj;
   }
 
+  /**
+   * Create an {@link Image} with some example data.
+   *
+   * @return
+   * created example object
+   */
   protected static Image createPropertyImage( String id, int pos )
   {
     // create an example image
@@ -349,17 +365,17 @@ public class KyeroWritingExample
    */
   protected static void write( KyeroDocument doc, File file )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( file, PRETTY_PRINT );
-      System.out.println( "> written to: " + file.getAbsolutePath() );
+      LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -374,22 +390,22 @@ public class KyeroWritingExample
    */
   protected static void write( KyeroDocument doc, OutputStream output )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.OutputStream" );
+      LOGGER.info( "> written to a java.io.OutputStream" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write a {@link KyeroDocument} into an {@link Writer}.
+   * Write a {@link KyeroDocument} into a {@link Writer}.
    *
    * @param doc
    * the document to write
@@ -399,17 +415,17 @@ public class KyeroWritingExample
    */
   protected static void write( KyeroDocument doc, Writer output )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.Writer" );
+      LOGGER.info( "> written to a java.io.Writer" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -422,19 +438,18 @@ public class KyeroWritingExample
    */
   protected static void writeToConsole( KyeroDocument doc )
   {
-    System.out.println( "writing document with version " + doc.getDocumentVersion() );
+    LOGGER.info( "writing document with version " + doc.getDocumentVersion() );
     try
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
-      System.out.println( xml );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
+      LOGGER.info( StringUtils.repeat( "-", 50 )
+        + SystemUtils.LINE_SEPARATOR + xml );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a string!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a string!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 }

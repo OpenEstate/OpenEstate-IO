@@ -20,25 +20,36 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.casa_it.CasaItDocument;
 import org.openestate.io.casa_it.CasaItUtils;
 import org.openestate.io.casa_it.xml.Container;
 import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate;
+import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate.Images.Advertismentimage;
 import org.openestate.io.casa_it.xml.ObjectFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for XML writing.
+ * Example for writing XML files for <a href="http://casa.it">casa.it</a>.
  * <p>
- * This example illustrates the programatic creation of an casa.it document,
- * and how the document is written into XML.
+ * This example illustrates the programatic creation of documents for
+ * <a href="http://casa.it">casa.it</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  */
 public class CasaItWritingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( CasaItWritingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
   private final static ObjectFactory FACTORY = CasaItUtils.getFactory();
   private final static boolean PRETTY_PRINT = true;
 
@@ -50,16 +61,21 @@ public class CasaItWritingExample
    */
   public static void main( String[] args )
   {
-    // create an casa.it object with some example data
+    // init logging
+    PropertyConfigurator.configure(
+      CasaItWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // create a Container object with some example data
+    // this object corresponds to the <container> root element in XML
     Container container = FACTORY.createContainer();
     container.setRealestateitems( FACTORY.createContainerRealestateitems() );
 
-    // append some example ads to the transfer
+    // append some example objects to the Container object
     container.getRealestateitems().getRealestate().add( createRealestate() );
     container.getRealestateitems().getRealestate().add( createRealestate() );
     container.getRealestateitems().getRealestate().add( createRealestate() );
 
-    // convert casa.it object into a XML document
+    // convert the Container object into a XML document
     CasaItDocument doc = null;
     try
     {
@@ -67,21 +83,21 @@ public class CasaItWritingExample
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't create XML document!" );
-      ex.printStackTrace( System.err );
+      LOGGER.error( "Can't create XML document!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
     }
 
     // write XML document into a java.io.File
     try
     {
-      write( doc, File.createTempFile( "casa-it-", ".xml" ) );
+      write( doc, File.createTempFile( "output-", ".xml" ) );
     }
     catch (IOException ex)
     {
-      System.err.println( "Can't create temporary file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't create temporary file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
 
     // write XML document into a java.io.OutputStream
@@ -95,41 +111,94 @@ public class CasaItWritingExample
   }
 
   /**
-   * Create an {@link Ad} with some example data.
+   * Create a {@link Realestate} with some example data.
    *
    * @return
-   * an example {@link Ad} object
+   * created example object
    */
   protected static Realestate createRealestate()
   {
     // create an example real estate
     Realestate obj = FACTORY.createContainerRealestateitemsRealestate();
-    obj.setAction( null );
-    obj.setAddress( null );
+    obj.setAction( BigInteger.ONE );
     obj.setAgencycode( 0 );
-    obj.setBathrooms( null );
-    obj.setBox( null );
-    obj.setBuilding( null );
-    obj.setCondition( null );
-    obj.setConfiguration( null );
-    obj.setContracttype( null );
-    obj.setDescription( null );
-    obj.setFloor( null );
-    obj.setGarden( null );
-    obj.setGooglemapcoordinate( null );
-    obj.setHasbalcony( null );
-    obj.setHasterrace( null );
-    obj.setHeatingtype( null );
-    obj.setHousetypology( null );
-    obj.setImages( null );
-    obj.setOccupationstate( null );
-    obj.setPrice( null );
-    obj.setRealestatetype( null );
-    obj.setReference( null );
-    obj.setReferenceID( null );
-    obj.setRooms( null );
-    obj.setSize( null );
+    obj.setBathrooms( BigInteger.valueOf( RandomUtils.nextLong( 1, 5 ) ) );
+    obj.setCondition( BigInteger.ONE );
+    obj.setContracttype( BigInteger.ONE );
+    obj.setFloor( BigInteger.valueOf( RandomUtils.nextLong( 1, 5 ) ) );
+    obj.setHasbalcony( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setHasterrace( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.setHeatingtype( BigInteger.ONE );
+    obj.setHousetypology( BigInteger.ONE );
+    obj.setOccupationstate( BigInteger.ONE );
+    obj.setRealestatetype( BigInteger.ONE );
+    obj.setReference( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setReferenceID( RandomUtils.nextInt( 1, 1000 ) );
+    obj.setRooms( BigInteger.valueOf( RandomUtils.nextLong( 1, 10 ) ) );
+    obj.setSize( BigInteger.valueOf( RandomUtils.nextLong( 50, 5000 ) ));
+
+    obj.setAddress( FACTORY.createContainerRealestateitemsRealestateAddress() );
+    obj.getAddress().setCity( "Berlin" );
+    obj.getAddress().setNumber( "123" );
+    obj.getAddress().setStreet( "example street" );
+    obj.getAddress().setZip( "12345" );
+    obj.getAddress().setZone( "Berlin" );
+
+    obj.setBox( FACTORY.createContainerRealestateitemsRealestateBox() );
+    obj.getBox().setSize( BigInteger.valueOf( RandomUtils.nextLong( 50, 1000 ) ) );
+    obj.getBox().setType( BigInteger.ONE );
+
+    obj.setBuilding( FACTORY.createContainerRealestateitemsRealestateBuilding() );
+    obj.getBuilding().setAge( BigInteger.valueOf( RandomUtils.nextLong( 5, 50 ) ) );
+    obj.getBuilding().setExpenses( BigDecimal.valueOf( RandomUtils.nextDouble( 1000, 1000000 ) ) );
+    obj.getBuilding().setHaslift( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.getBuilding().setTotalfloors( BigInteger.valueOf( RandomUtils.nextLong( 1, 5 ) ) );
+    obj.getBuilding().setUnits( BigInteger.ONE );
+
+    obj.setConfiguration( FACTORY.createContainerRealestateitemsRealestateConfiguration() );
+    obj.getConfiguration().setIsaddressvisibleonsite( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.getConfiguration().setIsmapvisible( RandomUtils.nextInt( 0, 2 )==1 );
+    obj.getConfiguration().setIsrealestatevisibleonmap( RandomUtils.nextInt( 0, 2 )==1 );
+
+    obj.setDescription( FACTORY.createContainerRealestateitemsRealestateDescription() );
+    obj.getDescription().setValue( "a nice little description for the object" );
+
+    obj.setGarden( FACTORY.createContainerRealestateitemsRealestateGarden() );
+    obj.getGarden().setSize( BigInteger.valueOf( RandomUtils.nextLong( 10, 100 ) ) );
+    obj.getGarden().setType( BigInteger.ONE );
+
+    obj.setGooglemapcoordinate( FACTORY.createContainerRealestateitemsRealestateGooglemapcoordinate() );
+    obj.getGooglemapcoordinate().setLatitude( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getGooglemapcoordinate().setLatitudemapcenter( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getGooglemapcoordinate().setLongitude( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getGooglemapcoordinate().setLongitudemapcenter( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getGooglemapcoordinate().setMapzoom( 10 );
+
+    obj.setImages( FACTORY.createContainerRealestateitemsRealestateImages() );
+    obj.getImages().getAdvertismentimage().add( createAdvertismentimage() );
+    obj.getImages().getAdvertismentimage().add( createAdvertismentimage() );
+    obj.getImages().getAdvertismentimage().add( createAdvertismentimage() );
+
+    obj.setPrice( FACTORY.createContainerRealestateitemsRealestatePrice() );
+    obj.getPrice().setMax( BigDecimal.valueOf( RandomUtils.nextDouble( 1000, 1000000 ) ) );
+    obj.getPrice().setMin( BigDecimal.valueOf( RandomUtils.nextDouble( 1000, 1000000 ) ) );
+    obj.getPrice().setValue( BigDecimal.valueOf( RandomUtils.nextDouble( 1000, 1000000 ) ) );
+
     return obj;
+  }
+
+  /**
+   * Create an {@link Advertismentimage} with some example data.
+   *
+   * @return
+   * created example object
+   */
+  protected static Advertismentimage createAdvertismentimage()
+  {
+    Advertismentimage img = FACTORY.createContainerRealestateitemsRealestateImagesAdvertismentimage();
+    img.setImagetype( "image/jpeg" );
+    img.setPath( "image-" + RandomStringUtils.randomNumeric( 3 ) + ".jpg" );
+    return img;
   }
 
   /**
@@ -143,17 +212,17 @@ public class CasaItWritingExample
    */
   protected static void write( CasaItDocument doc, File file )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       doc.toXml( file, PRETTY_PRINT );
-      System.out.println( "> written to: " + file.getAbsolutePath() );
+      LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -168,22 +237,22 @@ public class CasaItWritingExample
    */
   protected static void write( CasaItDocument doc, OutputStream output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.OutputStream" );
+      LOGGER.info( "> written to a java.io.OutputStream" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write a {@link CasaItDocument} into an {@link Writer}.
+   * Write a {@link CasaItDocument} into a {@link Writer}.
    *
    * @param doc
    * the document to write
@@ -193,17 +262,17 @@ public class CasaItWritingExample
    */
   protected static void write( CasaItDocument doc, Writer output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.Writer" );
+      LOGGER.info( "> written to a java.io.Writer" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -216,19 +285,18 @@ public class CasaItWritingExample
    */
   protected static void writeToConsole( CasaItDocument doc )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
-      System.out.println( xml );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
+      LOGGER.info( StringUtils.repeat( "-", 50 )
+        + SystemUtils.LINE_SEPARATOR + xml );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a string!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a string!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 }

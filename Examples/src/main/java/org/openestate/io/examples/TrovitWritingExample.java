@@ -20,25 +20,40 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
 import org.openestate.io.trovit.xml.Ad;
 import org.openestate.io.trovit.xml.ObjectFactory;
+import org.openestate.io.trovit.xml.Picture;
 import org.openestate.io.trovit.xml.Trovit;
+import org.openestate.io.trovit.xml.TypeNew;
+import org.openestate.io.trovit.xml.types.Action;
+import org.openestate.io.trovit.xml.types.IntBool;
+import org.openestate.io.trovit.xml.types.PriceInterval;
+import org.openestate.io.trovit.xml.types.Unit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for XML writing.
+ * Example for writing Trovit XML feeds.
  * <p>
- * This example illustrates the programatic creation of an Trovit document,
- * and how the document is written into XML.
+ * This example illustrates the programatic creation of Trovit documents and how
+ * they are written into XML.
  *
  * @author Andreas Rudolph
  */
 public class TrovitWritingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( TrovitWritingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
   private final static ObjectFactory FACTORY = TrovitUtils.getFactory();
   private final static boolean PRETTY_PRINT = true;
 
@@ -50,7 +65,12 @@ public class TrovitWritingExample
    */
   public static void main( String[] args )
   {
-    // create an Trovit object with some example data
+    // init logging
+    PropertyConfigurator.configure(
+      TrovitWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // create a Trovit object with some example data
+    // this object corresponds to the <trovit> element in XML
     Trovit trovit = FACTORY.createTrovit();
 
     // append some example ads to the transfer
@@ -58,7 +78,7 @@ public class TrovitWritingExample
     trovit.getAd().add( createAd() );
     trovit.getAd().add( createAd() );
 
-    // convert Trovit object into a XML document
+    // convert the Trovit object into a XML document
     TrovitDocument doc = null;
     try
     {
@@ -66,21 +86,21 @@ public class TrovitWritingExample
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't create XML document!" );
-      ex.printStackTrace( System.err );
+      LOGGER.error( "Can't create XML document!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
     }
 
     // write XML document into a java.io.File
     try
     {
-      write( doc, File.createTempFile( "trovit-", ".xml" ) );
+      write( doc, File.createTempFile( "output-", ".xml" ) );
     }
     catch (IOException ex)
     {
-      System.err.println( "Can't create temporary file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't create temporary file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
 
     // write XML document into a java.io.OutputStream
@@ -97,46 +117,71 @@ public class TrovitWritingExample
    * Create an {@link Ad} with some example data.
    *
    * @return
-   * an example {@link Ad} object
+   * created example object
    */
   protected static Ad createAd()
   {
     // create an example real estate
     Ad ad = FACTORY.createAd();
-    ad.setAddress( null );
-    ad.setAgency( null );
-    ad.setBathrooms( null );
-    ad.setCity( null );
-    ad.setCityArea( null );
-    ad.setCondition( null );
-    ad.setContent( null );
-    ad.setDate( null );
-    ad.setExpirationDate( null );
-    ad.setFloorArea( null );
-    ad.setFloorNumber( null );
-    ad.setForeclosure( null );
-    ad.setId( null );
-    ad.setIsFurnished( null );
-    ad.setIsNew( null );
-    ad.setLatitude( null );
-    ad.setLongitude( null );
-    ad.setMlsDatabase( null );
-    ad.setOrientation( null );
-    ad.setParking( null );
-    ad.setPictures( null );
-    ad.setPlotArea( null );
-    ad.setPostcode( null );
-    ad.setPrice( null );
-    ad.setPropertyType( null );
-    ad.setRegion( null );
-    ad.setRooms( null );
-    ad.setTime( null );
-    ad.setTitle( null );
-    ad.setType( null );
-    ad.setUrl( null );
-    ad.setVirtualTour( null );
-    ad.setYear( null );
+    ad.setAddress( "object address" );
+    ad.setAgency( "name of the agency" );
+    ad.setBathrooms( RandomUtils.nextDouble( 0, 5 ) );
+    ad.setCity( "name of the city" );
+    ad.setCityArea( "name of the district" );
+    ad.setCondition( "some notes about the condition" );
+    ad.setContent( "some more descriptions" );
+    ad.setDate( Calendar.getInstance() );
+    ad.setExpirationDate( Calendar.getInstance() );
+    ad.setFloorNumber( "number of floors" );
+    ad.setForeclosure( "notes about foreclosure" );
+    ad.setId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    ad.setIsFurnished( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
+    ad.setIsNew( TypeNew.NEW );
+    ad.setLatitude( RandomUtils.nextDouble( 0, 90 ) );
+    ad.setLongitude( RandomUtils.nextDouble( 0, 90 ) );
+    ad.setMlsDatabase( "notes about mls database" );
+    ad.setOrientation( "notes about orientation" );
+    ad.setParking( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
+    ad.setPlotArea( RandomUtils.nextInt( 100, 5000 ) );
+    ad.setPostcode( "postcode" );
+    ad.setPropertyType( "notes about the property type" );
+    ad.setRegion( "notes about the region" );
+    ad.setRooms( RandomUtils.nextDouble( 1, 10 ) );
+    ad.setTime( Calendar.getInstance() );
+    ad.setTitle( "title of the object" );
+    ad.setType( Action.FOR_RENT );
+    ad.setUrl( "http://mywebsite.org/" );
+    ad.setVirtualTour( "notes about virtual tour" );
+    ad.setYear( RandomUtils.nextInt( 1990, 2010 ) );
+
+    ad.setFloorArea( FACTORY.createFloorArea() );
+    ad.getFloorArea().setUnit( Unit.METERS );
+    ad.getFloorArea().setValue( RandomUtils.nextInt( 10, 10000 ) );
+
+    ad.setPictures( FACTORY.createPictures() );
+    ad.getPictures().getPicture().add( createPicture() );
+    ad.getPictures().getPicture().add( createPicture() );
+    ad.getPictures().getPicture().add( createPicture() );
+
+    ad.setPrice( FACTORY.createPrice() );
+    ad.getPrice().setPeriod( PriceInterval.MONTHLY );
+    ad.getPrice().setValue( RandomUtils.nextDouble( 100, 2000 ) );
+
     return ad;
+  }
+
+  /**
+   * Create an {@link Picture} with some example data.
+   *
+   * @return
+   * created example object
+   */
+  protected static Picture createPicture()
+  {
+    Picture pic = FACTORY.createPicture();
+    pic.setPictureTitle( "some descriptive title" );
+    pic.setPictureUrl( "http://mywebsite.org/image" + RandomStringUtils.randomNumeric( 5 ) + ".jpg" );
+    return pic;
   }
 
   /**
@@ -150,17 +195,17 @@ public class TrovitWritingExample
    */
   protected static void write( TrovitDocument doc, File file )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       doc.toXml( file, PRETTY_PRINT );
-      System.out.println( "> written to: " + file.getAbsolutePath() );
+      LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -175,22 +220,22 @@ public class TrovitWritingExample
    */
   protected static void write( TrovitDocument doc, OutputStream output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.OutputStream" );
+      LOGGER.info( "> written to a java.io.OutputStream" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write a {@link TrovitDocument} into an {@link Writer}.
+   * Write a {@link TrovitDocument} into a {@link Writer}.
    *
    * @param doc
    * the document to write
@@ -200,17 +245,17 @@ public class TrovitWritingExample
    */
   protected static void write( TrovitDocument doc, Writer output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       doc.toXml( output, PRETTY_PRINT );
-      System.out.println( "> written to a java.io.Writer" );
+      LOGGER.info( "> written to a java.io.Writer" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -223,19 +268,18 @@ public class TrovitWritingExample
    */
   protected static void writeToConsole( TrovitDocument doc )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
-      System.out.println( xml );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
+      LOGGER.info( StringUtils.repeat( "-", 50 )
+        + SystemUtils.LINE_SEPARATOR + xml );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a string!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a string!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 }
