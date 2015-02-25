@@ -20,7 +20,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
-import java.math.BigInteger;
 import java.util.Calendar;
 import java.util.Currency;
 import org.apache.commons.io.output.NullOutputStream;
@@ -174,9 +173,9 @@ public class ImmobiliareItWritingExample
     obj.setExtraFeatures( FACTORY.createFeedPropertiesPropertyExtraFeatures() );
     obj.getExtraFeatures().setAirConditioning( RandomUtils.nextInt( 0, 2 )==1 );
     obj.getExtraFeatures().setBalcony( RandomUtils.nextInt( 0, 2 )==1);
-    obj.getExtraFeatures().setBathrooms( BigInteger.valueOf( RandomUtils.nextInt( 1, 5 ) ) );
-    obj.getExtraFeatures().setBeamHeight( BigInteger.valueOf( RandomUtils.nextInt( 1, 10 ) ) );
-    obj.getExtraFeatures().setBedrooms( BigInteger.valueOf( RandomUtils.nextInt( 1, 5 ) ) );
+    obj.getExtraFeatures().setBathrooms( RandomUtils.nextLong( 1, 5 ) );
+    obj.getExtraFeatures().setBeamHeight( RandomUtils.nextLong( 1, 10 ) );
+    obj.getExtraFeatures().setBedrooms( RandomUtils.nextLong( 1, 5 ) );
     obj.getExtraFeatures().setBuildYear( RandomUtils.nextInt( 1900, 2000 ) );
     obj.getExtraFeatures().setDocDescription( "some descriptions" );
     obj.getExtraFeatures().setDocSpecification( "some specifications" );
@@ -188,7 +187,7 @@ public class ImmobiliareItWritingExample
     obj.getExtraFeatures().setHeating( Heat.AUTONOMO );
     obj.getExtraFeatures().setKitchen( Kitchen.SEMI_ABITABILE );
     obj.getExtraFeatures().setNet( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.getExtraFeatures().setNumFloors( BigInteger.valueOf( RandomUtils.nextInt( 1, 5 ) ) );
+    obj.getExtraFeatures().setNumFloors( RandomUtils.nextLong( 1, 5 ) );
     obj.getExtraFeatures().setOverheadCrane( YesNoReady.READY );
     obj.getExtraFeatures().setReception( RandomUtils.nextInt( 0, 2 )==1 );
     obj.getExtraFeatures().setRentContract( Rental.LIBERO );
@@ -198,23 +197,23 @@ public class ImmobiliareItWritingExample
 
     obj.getExtraFeatures().setAdditionalCosts( FACTORY.createAdditionalCostsType() );
     obj.getExtraFeatures().getAdditionalCosts().setCurrency( Currency.getInstance( "EUR" ) );
-    obj.getExtraFeatures().getAdditionalCosts().setValue( BigInteger.valueOf( RandomUtils.nextLong( 0, 5000 ) ) );
+    obj.getExtraFeatures().getAdditionalCosts().setValue( RandomUtils.nextLong( 0, 5000 ) );
 
     obj.getExtraFeatures().setExternalArea( FACTORY.createLandSizeType() );
     obj.getExtraFeatures().getExternalArea().setUnit( LandSizeUnit.M2 );
-    obj.getExtraFeatures().getExternalArea().setValue( BigInteger.valueOf( RandomUtils.nextLong( 50, 5000 ) ) );
+    obj.getExtraFeatures().getExternalArea().setValue( RandomUtils.nextLong( 50, 5000 ) );
 
     obj.getExtraFeatures().setFloor( FACTORY.createFloor() );
     obj.getExtraFeatures().getFloor().setType( Floor.FloorType.INTERMEDIO );
-    obj.getExtraFeatures().getFloor().setValue( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
+    obj.getExtraFeatures().getFloor().setValue( RandomUtils.nextLong( 0, 10 ) );
 
     obj.getExtraFeatures().setGarage( FACTORY.createBox() );
     obj.getExtraFeatures().getGarage().setType( Box.BoxType.POSTO_AUTO );
-    obj.getExtraFeatures().getGarage().setValue( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
+    obj.getExtraFeatures().getGarage().setValue( RandomUtils.nextLong( 0, 10 ) );
 
     obj.getExtraFeatures().setOfficeSize( FACTORY.createSizeType() );
     obj.getExtraFeatures().getOfficeSize().setUnit( SizeUnit.M2 );
-    obj.getExtraFeatures().getOfficeSize().setValue( BigInteger.valueOf( RandomUtils.nextLong( 5, 50 ) ) );
+    obj.getExtraFeatures().getOfficeSize().setValue( RandomUtils.nextLong( 5, 50 ) );
 
     obj.setFeatures( FACTORY.createFeedPropertiesPropertyFeatures() );
     obj.getFeatures().setEnergyClass( ClassEnergy.D );
@@ -228,18 +227,18 @@ public class ImmobiliareItWritingExample
     obj.getFeatures().setPrice( FACTORY.createPriceType() );
     obj.getFeatures().getPrice().setCurrency( Currency.getInstance( "EUR" ) );
     obj.getFeatures().getPrice().setReserved( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.getFeatures().getPrice().setValue( BigInteger.valueOf( RandomUtils.nextLong( 500, 5000000 ) ) );
+    obj.getFeatures().getPrice().setValue( RandomUtils.nextLong( 500, 5000000 ) );
 
     obj.getFeatures().setSize( FACTORY.createSizeType() );
     obj.getFeatures().getSize().setUnit( SizeUnit.M2 );
-    obj.getFeatures().getSize().setValue( BigInteger.valueOf( RandomUtils.nextLong( 50, 5000 ) ) );
+    obj.getFeatures().getSize().setValue( RandomUtils.nextLong( 50, 5000 ) );
 
     obj.setLocation( FACTORY.createLocationStructure() );
     obj.getLocation().setAdministrativeArea( "administrative area" );
     obj.getLocation().setCountryCode( "DE" );
 
     obj.getLocation().setCity( FACTORY.createLocationStructureCity() );
-    obj.getLocation().getCity().setCode( BigInteger.ZERO );
+    obj.getLocation().getCity().setCode( 0L );
     obj.getLocation().getCity().setValue( "Berlin" );
 
     obj.getLocation().setLocality( FACTORY.createLocationStructureLocality() );
@@ -248,7 +247,7 @@ public class ImmobiliareItWritingExample
     obj.getLocation().getLocality().setPostalCode( "13125" );
 
     obj.getLocation().getLocality().setNeighbourhood( FACTORY.createLocationStructureLocalityNeighbourhood() );
-    obj.getLocation().getLocality().getNeighbourhood().setId( BigInteger.ZERO );
+    obj.getLocation().getLocality().getNeighbourhood().setId( 0L );
     obj.getLocation().getLocality().getNeighbourhood().setType( LocationNeighbourhoodType.DISTRICT );
     obj.getLocation().getLocality().getNeighbourhood().setValue( "about the neighbourhood" );
 
@@ -294,7 +293,7 @@ public class ImmobiliareItWritingExample
   protected static PictureProject createPicture()
   {
     PictureProject pic = FACTORY.createPictureProject();
-    pic.setPosition( BigInteger.valueOf( RandomUtils.nextInt( 0, 100 ) ) );
+    pic.setPosition( RandomUtils.nextLong( 0, 100 ) );
     pic.setValue( "image-" + RandomUtils.nextInt( 0, 999 ) + ".jpg" );
     return pic;
   }
@@ -308,7 +307,7 @@ public class ImmobiliareItWritingExample
   protected static PictureExtended createPictureExtended()
   {
     PictureExtended pic = FACTORY.createPictureExtended();
-    pic.setPosition( BigInteger.valueOf( RandomUtils.nextInt( 0, 100 ) ) );
+    pic.setPosition( RandomUtils.nextLong( 0, 100 ) );
     pic.setValue( "image-" + RandomUtils.nextInt( 0, 999 ) + ".jpg" );
     pic.setUrl( "http://mywebsite.org/" + pic.getValue() );
     return pic;

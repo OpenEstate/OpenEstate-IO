@@ -190,6 +190,12 @@ public class ImmobiliareItUtils
     return EnergyUnit.fromXmlValue( value );
   }
 
+  public static Long parseInteger( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseLong( value ): null;
+  }
+
   public static LandSizeUnit parseLandSizeUnit( String value )
   {
     return LandSizeUnit.fromXmlValue( value );
@@ -322,6 +328,11 @@ public class ImmobiliareItUtils
   public static String printEnergyUnit( EnergyUnit value )
   {
     return (value!=null)? value.getXmlValue(): null;
+  }
+
+  public static String printInteger( Long value )
+  {
+    return (value!=null)? DatatypeConverter.printLong( value ): null;
   }
 
   public static String printLandSizeUnit( LandSizeUnit value )

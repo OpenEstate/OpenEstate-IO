@@ -10,6 +10,9 @@
     <jaxb:javaType xmlType="xsd:dateTime" name="java.util.Calendar"
                    parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
                    printMethod="javax.xml.bind.DatatypeConverter.printDateTime" />
+    <jaxb:javaType xmlType="xsd:integer" name="java.lang.Long"
+                   parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseInteger"
+                   printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printInteger" />
     <jaxb:javaType xmlType="immobiliare:dateUpdatedType" name="java.util.Calendar"
                    parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
                    printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printDateUpdatedType" />
