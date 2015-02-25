@@ -41,7 +41,6 @@ import org.openestate.io.is24_csv.records.WohnungKauf;
 import org.openestate.io.is24_csv.records.WohnungMiete;
 import org.openestate.io.is24_csv.types.Immobilienart;
 import org.openestate.io.is24_csv.types.ObjektkategorieGrundstueck;
-import org.openestate.io.is24_csv.types.Vermarktungsart;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,60 +81,58 @@ public class Is24CsvParser extends CsvParser<Is24CsvRecord>
   @Override
   protected Is24CsvRecord newRecord( CSVRecord record )
   {
-    String value = record.get( Is24CsvRecord.FIELD_IMMOBILIENART );
-    Immobilienart art = Immobilienart.parse( value );
+    Immobilienart art = Is24CsvRecord.getImmobilienart( record );
 
     if (Immobilienart.ANLAGE.equals( art ))
-      return new Anlageobjekt();
+      return Anlageobjekt.newRecord( record );
 
     else if (Immobilienart.GEWERBE_BUERO_PRAXEN.equals( art ))
-      return new GewerbeBueroPraxis();
+      return GewerbeBueroPraxis.newRecord( record );
 
     else if (Immobilienart.GEWERBE_EINZELHANDEL.equals( art ))
-      return new GewerbeEinzelhandel();
+      return GewerbeEinzelhandel.newRecord( record );
 
     else if (Immobilienart.GEWERBE_GASTRONOMIE_HOTEL.equals( art ))
-      return new GewerbeGastronomieHotel();
+      return GewerbeGastronomieHotel.newRecord( record );
 
     else if (Immobilienart.GEWERBE_HALLE_PRODUKTION.equals( art ))
-      return new GewerbeHalleProduktion();
+      return GewerbeHalleProduktion.newRecord( record );
 
     else if (Immobilienart.GEWERBE_SONSTIGES.equals( art ))
-      return new GewerbeSonstiges();
+      return GewerbeSonstiges.newRecord( record );
 
     else if (Immobilienart.HAUS_KAUF.equals( art ))
-      return new HausKauf();
+      return HausKauf.newRecord( record );
 
     else if (Immobilienart.HAUS_MIETE.equals( art ))
-      return new HausMiete();
+      return HausMiete.newRecord( record );
 
     else if (Immobilienart.STELLPLATZ_KAUF.equals( art ))
-      return new StellplatzKauf();
+      return StellplatzKauf.newRecord( record );
 
     else if (Immobilienart.STELLPLATZ_MIETE.equals( art ))
-      return new StellplatzMiete();
+      return StellplatzMiete.newRecord( record );
 
     else if (Immobilienart.WOHNEN_AUF_ZEIT.equals( art ))
-      return new WohnenAufZeit();
+      return WohnenAufZeit.newRecord( record );
 
     else if (Immobilienart.WOHNUNG_KAUF.equals( art ))
-      return new WohnungKauf();
+      return WohnungKauf.newRecord( record );
 
     else if (Immobilienart.WOHNUNG_MIETE.equals( art ))
-      return new WohnungMiete();
+      return WohnungMiete.newRecord( record );
 
     // Immobilienart für Grundstücke wird abhängig zur Objektkategorie erzeugt
     else if (Immobilienart.GRUNDSTUECKE.equals( art ))
     {
-      String catValue = record.get( Grundstueck.FIELD_OBJEKTKATEGORIE );
-      ObjektkategorieGrundstueck cat = ObjektkategorieGrundstueck.parse( catValue );
+      ObjektkategorieGrundstueck cat = Grundstueck.getObjektkategorie( record );
       if (ObjektkategorieGrundstueck.WOHNEN.equals( cat ))
-        return new GrundstueckWohnen();
+        return GrundstueckWohnen.newRecord( record );
       else
-        return new GrundstueckGewerbe();
+        return GrundstueckGewerbe.newRecord( record );
     }
 
-    LOGGER.warn( "Unsupported 'Immobilienart' value: " + value );
+    LOGGER.warn( "Unsupported 'Immobilienart' value: " + record.get( Is24CsvRecord.FIELD_IMMOBILIENART ) );
     return null;
   }
 }

@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Befeuerungsart;
@@ -589,6 +590,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord
   {
     return VermarktungsartGewerbe.parse(
       this.get( FIELD_VERMARKTUNGSART ) );
+  }
+
+  public static GewerbeHalleProduktion newRecord( CSVRecord record )
+  {
+    GewerbeHalleProduktion is24Record = new GewerbeHalleProduktion();
+    is24Record.parse( record );
+    return is24Record;
   }
 
   @Override

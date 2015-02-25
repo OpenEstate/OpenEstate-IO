@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Ausstattung;
@@ -528,6 +529,13 @@ public class GewerbeBueroPraxis extends Is24CsvRecord
   public String getVerfuegbarAb()
   {
     return this.get( FIELD_VERFUEGBAR_AB );
+  }
+
+  public static GewerbeBueroPraxis newRecord( CSVRecord record )
+  {
+    GewerbeBueroPraxis is24Record = new GewerbeBueroPraxis();
+    is24Record.parse( record );
+    return is24Record;
   }
 
   @Override

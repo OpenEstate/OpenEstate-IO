@@ -19,6 +19,7 @@ package org.openestate.io.is24_csv.records;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Immobilienart;
@@ -221,6 +222,13 @@ public class StellplatzMiete extends Is24CsvRecord
       LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
+  }
+
+  public static StellplatzMiete newRecord( CSVRecord record )
+  {
+    StellplatzMiete is24Record = new StellplatzMiete();
+    is24Record.parse( record );
+    return is24Record;
   }
 
   @Override

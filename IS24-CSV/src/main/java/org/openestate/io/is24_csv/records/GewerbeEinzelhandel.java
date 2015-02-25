@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Ausstattung;
@@ -565,6 +566,13 @@ public class GewerbeEinzelhandel extends Is24CsvRecord
   {
     return Zulieferung.parse(
       this.get( FIELD_ZULIEFERUNG ) );
+  }
+
+  public static GewerbeEinzelhandel newRecord( CSVRecord record )
+  {
+    GewerbeEinzelhandel is24Record = new GewerbeEinzelhandel();
+    is24Record.parse( record );
+    return is24Record;
   }
 
   @Override

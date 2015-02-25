@@ -59,8 +59,6 @@ public class IdxParser extends CsvParser<IdxRecord>
   @Override
   protected IdxRecord newRecord( CSVRecord record )
   {
-    IdxRecord idxRecord = new IdxRecord();
-    idxRecord.parse( record );
-    return idxRecord;
+    return IdxRecord.newRecord( record );
   }
 }

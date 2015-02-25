@@ -1791,6 +1791,13 @@ public class IdxRecord extends CsvRecord
       this.get( FIELD_WHEELCHAIR_ACCESSIBLE ) ) );
   }
 
+  public static IdxRecord newRecord( CSVRecord record )
+  {
+    IdxRecord idxRecord = new IdxRecord();
+    idxRecord.parse( record );
+    return idxRecord;
+  }
+
   @Override
   protected void parse( CSVRecord record )
   {

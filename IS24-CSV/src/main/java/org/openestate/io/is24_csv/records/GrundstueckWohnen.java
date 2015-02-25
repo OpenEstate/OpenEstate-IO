@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.types.BebaubarNach;
 import org.openestate.io.is24_csv.types.Erschliessung;
@@ -210,6 +211,13 @@ public class GrundstueckWohnen extends Grundstueck
   public String getVerfuegbarAb()
   {
     return this.get( FIELD_VERFUEGBAR_AB );
+  }
+
+  public static GrundstueckWohnen newRecord( CSVRecord record )
+  {
+    GrundstueckWohnen is24Record = new GrundstueckWohnen();
+    is24Record.parse( record );
+    return is24Record;
   }
 
   @Override

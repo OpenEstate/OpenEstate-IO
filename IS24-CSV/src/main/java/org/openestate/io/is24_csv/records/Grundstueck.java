@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.ObjektkategorieGrundstueck;
 import org.openestate.io.is24_csv.types.Vermarktungsart;
@@ -28,15 +29,21 @@ import org.openestate.io.is24_csv.types.Vermarktungsart;
 public abstract class Grundstueck extends Is24CsvRecord
 {
   /** Vermarktungsart, Text 1 */
-  public final static int FIELD_VERMARKTUNGSART = 60;
+  protected final static int FIELD_VERMARKTUNGSART = 60;
 
   /** Objektkategorie 2, Zahl 3 */
-  public final static int FIELD_OBJEKTKATEGORIE = 61;
+  protected final static int FIELD_OBJEKTKATEGORIE = 61;
 
   public ObjektkategorieGrundstueck getObjektkategorie()
   {
     return ObjektkategorieGrundstueck.parse(
       this.get( FIELD_OBJEKTKATEGORIE ) );
+  }
+
+  public static ObjektkategorieGrundstueck getObjektkategorie( CSVRecord record )
+  {
+    return ObjektkategorieGrundstueck.parse(
+      record.get( FIELD_OBJEKTKATEGORIE ) );
   }
 
   public Vermarktungsart getVermarktungsart()

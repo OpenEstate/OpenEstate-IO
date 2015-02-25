@@ -19,6 +19,7 @@ package org.openestate.io.is24_csv.records;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Auswahl;
@@ -498,6 +499,13 @@ public class WohnenAufZeit extends Is24CsvRecord
       LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
+  }
+
+  public static WohnenAufZeit newRecord( CSVRecord record )
+  {
+    WohnenAufZeit is24Record = new WohnenAufZeit();
+    is24Record.parse( record );
+    return is24Record;
   }
 
   @Override

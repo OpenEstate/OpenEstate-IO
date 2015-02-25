@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Immobilienart;
@@ -181,6 +182,13 @@ public class StellplatzKauf extends Is24CsvRecord
       LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
       return null;
     }
+  }
+
+  public static StellplatzKauf newRecord( CSVRecord record )
+  {
+    StellplatzKauf is24Record = new StellplatzKauf();
+    is24Record.parse( record );
+    return is24Record;
   }
 
   @Override

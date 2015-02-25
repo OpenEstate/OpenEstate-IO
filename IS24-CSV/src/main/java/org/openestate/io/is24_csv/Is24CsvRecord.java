@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.openestate.io.core.CsvRecord;
@@ -52,46 +53,46 @@ public abstract class Is24CsvRecord extends CsvRecord
    */
 
   /** Importmodus, Text 1 */
-  public final static int FIELD_MODUS = 0;
+  protected final static int FIELD_MODUS = 0;
 
   /** Status, Zahl 1 */
-  public final static int FIELD_STATUS = 1;
+  protected final static int FIELD_STATUS = 1;
 
   /** Immobilienart, Zahl 2 */
-  public final static int FIELD_IMMOBILIENART = 2;
+  protected final static int FIELD_IMMOBILIENART = 2;
 
   /** Scout Objekt ID, Text 20 */
-  public final static int FIELD_SCOUT_OBJEKT_ID = 3;
+  protected final static int FIELD_SCOUT_OBJEKT_ID = 3;
 
   /** Terms-Region, Text 50 */
-  public final static int FIELD_TERMS_REGION = 4;
+  protected final static int FIELD_TERMS_REGION = 4;
 
   /** Terms-Stadt, Text 50 */
-  public final static int FIELD_TERMS_STADT = 5;
+  protected final static int FIELD_TERMS_STADT = 5;
 
   /** Terms-Stadtteil, Text 50 */
-  public final static int FIELD_TERMS_STADTTEIL = 6;
+  protected final static int FIELD_TERMS_STADTTEIL = 6;
 
   /** Anbieter Objekt-Identifikation, Text 50 */
-  public final static int FIELD_ANBIETER_OBJEKT_ID = 7;
+  protected final static int FIELD_ANBIETER_OBJEKT_ID = 7;
 
   /** Gruppierungs-ID, Zahl MAX_INT */
-  public final static int FIELD_GRUPPIERUNG_ID = 8;
+  protected final static int FIELD_GRUPPIERUNG_ID = 8;
 
   /** Mehrstufige Objektdarstellung, Zahl 2 */
-  public final static int FIELD_OBJEKTDARSTELLUNG = 9;
+  protected final static int FIELD_OBJEKTDARSTELLUNG = 9;
 
   /** Gruppen-ID’s (Semikolon-Separierte Liste von Gruppen-, Verbands- & Börsen-ID’s.) */
-  public final static int FIELD_OBJEKTDARSTELLUNG_GRUPPEN = 10;
+  protected final static int FIELD_OBJEKTDARSTELLUNG_GRUPPEN = 10;
 
   /** API-Suchfeld 1, Text 10 */
-  public final static int FIELD_API_SUCHFELD1 = 11;
+  protected final static int FIELD_API_SUCHFELD1 = 11;
 
   /** API-Suchfeld 2, Text 10 */
-  public final static int FIELD_API_SUCHFELD2 = 12;
+  protected final static int FIELD_API_SUCHFELD2 = 12;
 
   /** API-Suchfeld 3, Text 10 */
-  public final static int FIELD_API_SUCHFELD3 = 13;
+  protected final static int FIELD_API_SUCHFELD3 = 13;
 
 
   /**
@@ -99,46 +100,46 @@ public abstract class Is24CsvRecord extends CsvRecord
    */
 
   /** Scout-Kunden-ID, Text 15 */
-  public final static int FIELD_SCOUT_KUNDEN_ID = 15;
+  protected final static int FIELD_SCOUT_KUNDEN_ID = 15;
 
   /** Kontaktperson Anrede, Text 20 */
-  public final static int FIELD_KONTAKT_ANREDE = 16;
+  protected final static int FIELD_KONTAKT_ANREDE = 16;
 
   /** Kontaktperson Vorname, Text 30 */
-  public final static int FIELD_KONTAKT_VORNAME = 17;
+  protected final static int FIELD_KONTAKT_VORNAME = 17;
 
   /** Kontaktperson Nachname, Text 50 */
-  public final static int FIELD_KONTAKT_NACHNAME = 18;
+  protected final static int FIELD_KONTAKT_NACHNAME = 18;
 
   /** Kontaktperson Straße, Text 100 */
-  public final static int FIELD_KONTAKT_STRASSE = 19;
+  protected final static int FIELD_KONTAKT_STRASSE = 19;
 
   /** Kontaktperson Hausnummer, Text 30 */
-  public final static int FIELD_KONTAKT_HAUSNR = 20;
+  protected final static int FIELD_KONTAKT_HAUSNR = 20;
 
   /** Kontaktperson Postleitzahl, Text 20 */
-  public final static int FIELD_KONTAKT_PLZ = 21;
+  protected final static int FIELD_KONTAKT_PLZ = 21;
 
   /** Kontaktperson Ort, Text 50 */
-  public final static int FIELD_KONTAKT_ORT = 22;
+  protected final static int FIELD_KONTAKT_ORT = 22;
 
   /** Länderkennzeichen, Text 3 (Dreistellige ISO-Norm) */
-  public final static int FIELD_KONTAKT_LAND = 23;
+  protected final static int FIELD_KONTAKT_LAND = 23;
 
   /** Telefon, Text 40 */
-  public final static int FIELD_KONTAKT_TELEFON = 24;
+  protected final static int FIELD_KONTAKT_TELEFON = 24;
 
   /** Mobiltelefon, Text 40 */
-  public final static int FIELD_KONTAKT_MOBILTELEFON = 25;
+  protected final static int FIELD_KONTAKT_MOBILTELEFON = 25;
 
   /** Telefax, Text 40 */
-  public final static int FIELD_KONTAKT_TELEFAX = 26;
+  protected final static int FIELD_KONTAKT_TELEFAX = 26;
 
   /** Email, Text 150 */
-  public final static int FIELD_KONTAKT_EMAIL = 27;
+  protected final static int FIELD_KONTAKT_EMAIL = 27;
 
   /** Homepage, Text 300 */
-  public final static int FIELD_KONTAKT_WEBSEITE = 28;
+  protected final static int FIELD_KONTAKT_WEBSEITE = 28;
 
 
   /**
@@ -146,22 +147,22 @@ public abstract class Is24CsvRecord extends CsvRecord
    */
 
   /** Adreßdruck, Text 1 */
-  public final static int FIELD_ADRESSDRUCK = 35;
+  protected final static int FIELD_ADRESSDRUCK = 35;
 
   /** Überschrift, Text 100 */
-  public final static int FIELD_UEBERSCHRIFT = 36;
+  protected final static int FIELD_UEBERSCHRIFT = 36;
 
   /** Provision, Text 50 */
-  public final static int FIELD_PROVISION = 37;
+  protected final static int FIELD_PROVISION = 37;
 
   /** Währung, Text 3 */
-  public final static int FIELD_WAEHRUNG = 38;
+  protected final static int FIELD_WAEHRUNG = 38;
 
   /** Provisionspflichtig, Text 1 */
-  public final static int FIELD_PROVISIONPFLICHTIG = 39;
+  protected final static int FIELD_PROVISIONPFLICHTIG = 39;
 
     /** Provisionshinweis, Text 200 */
-  public final static int FIELD_PROVISIONSHINWEIS = 40;
+  protected final static int FIELD_PROVISIONSHINWEIS = 40;
 
 
   /**
@@ -169,22 +170,22 @@ public abstract class Is24CsvRecord extends CsvRecord
    */
 
   /** Straße, Text 100 */
-  public final static int FIELD_OBJEKT_STRASSE = 50;
+  protected final static int FIELD_OBJEKT_STRASSE = 50;
 
   /** Hausnummer, Text 30 */
-  public final static int FIELD_OBJEKT_HAUSNR = 51;
+  protected final static int FIELD_OBJEKT_HAUSNR = 51;
 
   /** Postleitzahl, Text 20 */
-  public final static int FIELD_OBJEKT_PLZ = 52;
+  protected final static int FIELD_OBJEKT_PLZ = 52;
 
   /** Ort, Text 50 */
-  public final static int FIELD_OBJEKT_ORT = 53;
+  protected final static int FIELD_OBJEKT_ORT = 53;
 
   /** Länderkennzeichen, Text 3 (Dreistellige ISO- Angabe) */
-  public final static int FIELD_OBJEKT_LAND = 54;
+  protected final static int FIELD_OBJEKT_LAND = 54;
 
   /** Internationale Region, Text 100 (nur für Objekte im Ausland) */
-  public final static int FIELD_OBJEKT_INTERNATIONALE_REGION = 55;
+  protected final static int FIELD_OBJEKT_INTERNATIONALE_REGION = 55;
 
 
   /**
@@ -192,16 +193,16 @@ public abstract class Is24CsvRecord extends CsvRecord
    */
 
   /** Lage, Text 2000 */
-  public final static int FIELD_BESCHREIBUNG_LAGE = 99;
+  protected final static int FIELD_BESCHREIBUNG_LAGE = 99;
 
   /** Ausstattung, Text 2000 (Nicht für die Immobilienart Grundstücke (5)) */
-  public final static int FIELD_BESCHREIBUNG_AUSSTATTUNG = 100;
+  protected final static int FIELD_BESCHREIBUNG_AUSSTATTUNG = 100;
 
   /** Objektbeschreibung, Text 2000 */
-  public final static int FIELD_BESCHREIBUNG_OBJEKT = 101;
+  protected final static int FIELD_BESCHREIBUNG_OBJEKT = 101;
 
   /** Sonstige Angaben zum Objekt, Text 2000 */
-  public final static int FIELD_BESCHREIBUNG_SONSTIGES = 102;
+  protected final static int FIELD_BESCHREIBUNG_SONSTIGES = 102;
 
 
   /**
@@ -209,163 +210,163 @@ public abstract class Is24CsvRecord extends CsvRecord
    */
 
   /** Dateiname 1, Text 255 */
-  public final static int FIELD_DATEI1_NAME = 107;
+  protected final static int FIELD_DATEI1_NAME = 107;
 
   /** Dateityp 1, Text 4 */
-  public final static int FIELD_DATEI1_SUFFIX = 108;
+  protected final static int FIELD_DATEI1_SUFFIX = 108;
 
   /** Dateityp 1, Text 4 */
-  public final static int FIELD_DATEI1_TYP = 109;
+  protected final static int FIELD_DATEI1_TYP = 109;
 
   /** Abspieldauer 1 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI1_DAUER = 110;
+  protected final static int FIELD_DATEI1_DAUER = 110;
 
   /** Text 1, Text 30 */
-  public final static int FIELD_DATEI1_TEXT = 111;
+  protected final static int FIELD_DATEI1_TEXT = 111;
 
 
   /** Dateiname 2, Text 255 */
-  public final static int FIELD_DATEI2_NAME = 112;
+  protected final static int FIELD_DATEI2_NAME = 112;
 
   /** Dateityp 2, Text 4 */
-  public final static int FIELD_DATEI2_SUFFIX = 113;
+  protected final static int FIELD_DATEI2_SUFFIX = 113;
 
   /** Dateityp 2, Text 4 */
-  public final static int FIELD_DATEI2_TYP = 114;
+  protected final static int FIELD_DATEI2_TYP = 114;
 
   /** Abspieldauer 2 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI2_DAUER = 115;
+  protected final static int FIELD_DATEI2_DAUER = 115;
 
   /** Text 2, Text 30 */
-  public final static int FIELD_DATEI2_TEXT = 116;
+  protected final static int FIELD_DATEI2_TEXT = 116;
 
 
   /** Dateiname 3, Text 255 */
-  public final static int FIELD_DATEI3_NAME = 117;
+  protected final static int FIELD_DATEI3_NAME = 117;
 
   /** Dateityp 3, Text 4 */
-  public final static int FIELD_DATEI3_SUFFIX = 118;
+  protected final static int FIELD_DATEI3_SUFFIX = 118;
 
   /** Dateityp 3, Text 4 */
-  public final static int FIELD_DATEI3_TYP = 119;
+  protected final static int FIELD_DATEI3_TYP = 119;
 
   /** Abspieldauer 3 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI3_DAUER = 120;
+  protected final static int FIELD_DATEI3_DAUER = 120;
 
   /** Text 3, Text 30 */
-  public final static int FIELD_DATEI3_TEXT = 121;
+  protected final static int FIELD_DATEI3_TEXT = 121;
 
 
   /** Dateiname 4, Text 255 */
-  public final static int FIELD_DATEI4_NAME = 122;
+  protected final static int FIELD_DATEI4_NAME = 122;
 
   /** Dateityp 4, Text 4 */
-  public final static int FIELD_DATEI4_SUFFIX = 123;
+  protected final static int FIELD_DATEI4_SUFFIX = 123;
 
   /** Dateityp 4, Text 4 */
-  public final static int FIELD_DATEI4_TYP = 124;
+  protected final static int FIELD_DATEI4_TYP = 124;
 
   /** Abspieldauer 4 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI4_DAUER = 125;
+  protected final static int FIELD_DATEI4_DAUER = 125;
 
   /** Text 4, Text 30 */
-  public final static int FIELD_DATEI4_TEXT = 126;
+  protected final static int FIELD_DATEI4_TEXT = 126;
 
 
   /** Dateiname 5, Text 255 */
-  public final static int FIELD_DATEI5_NAME = 127;
+  protected final static int FIELD_DATEI5_NAME = 127;
 
   /** Dateityp 5, Text 4 */
-  public final static int FIELD_DATEI5_SUFFIX = 128;
+  protected final static int FIELD_DATEI5_SUFFIX = 128;
 
   /** Dateityp 5, Text 4 */
-  public final static int FIELD_DATEI5_TYP = 129;
+  protected final static int FIELD_DATEI5_TYP = 129;
 
   /** Abspieldauer 5 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI5_DAUER = 130;
+  protected final static int FIELD_DATEI5_DAUER = 130;
 
   /** Text 5, Text 30 */
-  public final static int FIELD_DATEI5_TEXT = 131;
+  protected final static int FIELD_DATEI5_TEXT = 131;
 
 
   /** Dateiname 6, Text 255 */
-  public final static int FIELD_DATEI6_NAME = 132;
+  protected final static int FIELD_DATEI6_NAME = 132;
 
   /** Dateityp 6, Text 4 */
-  public final static int FIELD_DATEI6_SUFFIX = 133;
+  protected final static int FIELD_DATEI6_SUFFIX = 133;
 
   /** Dateityp 6, Text 4 */
-  public final static int FIELD_DATEI6_TYP = 134;
+  protected final static int FIELD_DATEI6_TYP = 134;
 
   /** Abspieldauer 6 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI6_DAUER = 135;
+  protected final static int FIELD_DATEI6_DAUER = 135;
 
   /** Text 6, Text 30 */
-  public final static int FIELD_DATEI6_TEXT = 136;
+  protected final static int FIELD_DATEI6_TEXT = 136;
 
 
   /** Dateiname 7, Text 255 */
-  public final static int FIELD_DATEI7_NAME = 137;
+  protected final static int FIELD_DATEI7_NAME = 137;
 
   /** Dateityp 7, Text 4 */
-  public final static int FIELD_DATEI7_SUFFIX = 138;
+  protected final static int FIELD_DATEI7_SUFFIX = 138;
 
   /** Dateityp 7, Text 4 */
-  public final static int FIELD_DATEI7_TYP = 139;
+  protected final static int FIELD_DATEI7_TYP = 139;
 
   /** Abspieldauer 7 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI7_DAUER = 140;
+  protected final static int FIELD_DATEI7_DAUER = 140;
 
   /** Text 7, Text 30 */
-  public final static int FIELD_DATEI7_TEXT = 141;
+  protected final static int FIELD_DATEI7_TEXT = 141;
 
 
   /** Dateiname 8, Text 255 */
-  public final static int FIELD_DATEI8_NAME = 142;
+  protected final static int FIELD_DATEI8_NAME = 142;
 
   /** Dateityp 8, Text 4 */
-  public final static int FIELD_DATEI8_SUFFIX = 143;
+  protected final static int FIELD_DATEI8_SUFFIX = 143;
 
   /** Dateityp 8, Text 4 */
-  public final static int FIELD_DATEI8_TYP = 144;
+  protected final static int FIELD_DATEI8_TYP = 144;
 
   /** Abspieldauer 8 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI8_DAUER = 145;
+  protected final static int FIELD_DATEI8_DAUER = 145;
 
   /** Text 8, Text 30 */
-  public final static int FIELD_DATEI8_TEXT = 146;
+  protected final static int FIELD_DATEI8_TEXT = 146;
 
 
   /** Dateiname 9, Text 255 */
-  public final static int FIELD_DATEI9_NAME = 147;
+  protected final static int FIELD_DATEI9_NAME = 147;
 
   /** Dateityp 9, Text 4 */
-  public final static int FIELD_DATEI9_SUFFIX = 148;
+  protected final static int FIELD_DATEI9_SUFFIX = 148;
 
   /** Dateityp 9, Text 4 */
-  public final static int FIELD_DATEI9_TYP = 149;
+  protected final static int FIELD_DATEI9_TYP = 149;
 
   /** Abspieldauer 9 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI9_DAUER = 150;
+  protected final static int FIELD_DATEI9_DAUER = 150;
 
   /** Text 9, Text 30 */
-  public final static int FIELD_DATEI9_TEXT = 151;
+  protected final static int FIELD_DATEI9_TEXT = 151;
 
 
   /** Dateiname 10, Text 255 */
-  public final static int FIELD_DATEI10_NAME = 152;
+  protected final static int FIELD_DATEI10_NAME = 152;
 
   /** Dateityp 10, Text 4 */
-  public final static int FIELD_DATEI10_SUFFIX = 153;
+  protected final static int FIELD_DATEI10_SUFFIX = 153;
 
   /** Dateityp 10, Text 4 */
-  public final static int FIELD_DATEI10_TYP = 154;
+  protected final static int FIELD_DATEI10_TYP = 154;
 
   /** Abspieldauer 10 in Sekunden, Zahl 5 (Für Video/Audio) */
-  public final static int FIELD_DATEI10_DAUER = 155;
+  protected final static int FIELD_DATEI10_DAUER = 155;
 
   /** Text 10, Text 30 */
-  public final static int FIELD_DATEI10_TEXT = 156;
+  protected final static int FIELD_DATEI10_TEXT = 156;
 
 
   public Is24CsvRecord()
@@ -722,6 +723,12 @@ public abstract class Is24CsvRecord extends CsvRecord
   {
     return Immobilienart.parse(
       this.get( FIELD_IMMOBILIENART ) );
+  }
+
+  public static Immobilienart getImmobilienart( CSVRecord record )
+  {
+    return Immobilienart.parse(
+      record.get( FIELD_IMMOBILIENART ) );
   }
 
   public Importmodus getImportmodus()
