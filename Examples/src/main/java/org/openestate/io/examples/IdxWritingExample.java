@@ -32,6 +32,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxPrinter;
 import org.openestate.io.idx.IdxRecord;
 import org.openestate.io.idx.types.GrossPremium;
@@ -41,17 +42,22 @@ import org.openestate.io.idx.types.ObjectType;
 import org.openestate.io.idx.types.OfferType;
 import org.openestate.io.idx.types.PriceUnit;
 import org.openestate.io.idx.types.Salutation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for CSV writing.
+ * Example for writing IDX files.
  * <p>
- * This example illustrates the programatic creation of an IDX document,
- * and how the document is written into CSV.
+ * This example illustrates the programatic creation of IDX records and how they
+ * are written into CSV.
  *
  * @author Andreas Rudolph
  */
 public class IdxWritingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( IdxWritingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
+
   /**
    * Start the example application.
    *
@@ -60,6 +66,10 @@ public class IdxWritingExample
    */
   public static void main( String[] args )
   {
+    // init logging
+    PropertyConfigurator.configure(
+      IdxWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
     // create some CSV records
     List<IdxRecord> records = new ArrayList<IdxRecord>();
     records.add( createRecord() );
@@ -70,13 +80,13 @@ public class IdxWritingExample
     // write CSV records into a java.io.File
     try
     {
-      write( records, File.createTempFile( "casa-it-", ".xml" ) );
+      write( records, File.createTempFile( "output-", ".csv" ) );
     }
     catch (IOException ex)
     {
-      System.err.println( "Can't create temporary file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't create temporary file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
 
     // write CSV records into a java.io.OutputStream
@@ -93,7 +103,7 @@ public class IdxWritingExample
    * Create an {@link IdxRecord} with some example data.
    *
    * @return
-   * an example {@link IdxRecord} object
+   * created example object
    */
   protected static IdxRecord createRecord()
   {
@@ -254,19 +264,19 @@ public class IdxWritingExample
    */
   protected static void write( List<IdxRecord> records, File file )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     IdxPrinter printer = null;
     try
     {
       printer = IdxPrinter.create( file );
       printer.printRecords( records );
-      System.out.println( "> written to: " + file.getAbsolutePath() );
+      LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a file!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a file!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
     finally
     {
@@ -285,23 +295,23 @@ public class IdxWritingExample
    */
   protected static void write( List<IdxRecord> records, OutputStream output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       IdxPrinter printer = IdxPrinter.create( output );
       printer.printRecords( records );
-      System.out.println( "> written to a java.io.OutputStream" );
+      LOGGER.info( "> written to a java.io.OutputStream" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
   /**
-   * Write some {@link IdxRecord} objects into an {@link Writer}.
+   * Write some {@link IdxRecord} objects into a {@link Writer}.
    *
    * @param records
    * the CSV records to write
@@ -311,18 +321,18 @@ public class IdxWritingExample
    */
   protected static void write( List<IdxRecord> records, Writer output )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     try
     {
       IdxPrinter printer = IdxPrinter.create( output );
       printer.printRecords( records );
-      System.out.println( "> written to a java.io.Writer" );
+      LOGGER.info( "> written to a java.io.Writer" );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into an OutputStream!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into an OutputStream!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
   }
 
@@ -335,22 +345,21 @@ public class IdxWritingExample
    */
   protected static void writeToConsole( List<IdxRecord> records )
   {
-    System.out.println( "writing document" );
+    LOGGER.info( "writing document" );
     IdxPrinter printer = null;
     try
     {
       StringBuilder csv = new StringBuilder();
       printer = IdxPrinter.create( csv );
       printer.printRecords( records );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
-      System.out.println( csv.toString() );
-      System.out.println( StringUtils.repeat( "-", 50 ) );
+      LOGGER.info( StringUtils.repeat( "-", 50 )
+        + SystemUtils.LINE_SEPARATOR + csv.toString() );
     }
     catch (Exception ex)
     {
-      System.err.println( "Can't write document into a string!" );
-      ex.printStackTrace( System.err );
-      System.exit( 2 );
+      LOGGER.error( "Can't write document into a string!" );
+      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+      System.exit( 1 );
     }
     finally
     {

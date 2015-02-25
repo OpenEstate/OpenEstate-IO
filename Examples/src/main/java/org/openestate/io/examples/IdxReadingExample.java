@@ -18,20 +18,26 @@ package org.openestate.io.examples;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxParser;
 import org.openestate.io.idx.IdxRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Example for CSV reading.
+ * Example for reading IDX files.
  * <p>
- * This example illustrates how to read an IDX document from a file.
+ * This example illustrates how to read IDX files.
  *
  * @author Andreas Rudolph
  */
 public class IdxReadingExample
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( IdxReadingExample.class );
+  private final static String PACKAGE = "/org/openestate/io/examples";
+
   /**
    * Start the example application.
    *
@@ -40,29 +46,47 @@ public class IdxReadingExample
    */
   public static void main( String[] args )
   {
+    // init logging
+    PropertyConfigurator.configure(
+      IdxReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+
+    // read example file, if no files were specified as command line arguments
     if (args.length<1)
-    {
-      System.out.println( "Please provide at least one file as argument!" );
-      System.exit( 1 );
-    }
-    for (String arg : args)
     {
       try
       {
-        read( new File( arg ) );
+        read( IdxReadingExample.class.getResourceAsStream( PACKAGE + "/idx.csv" ) );
       }
       catch (Exception ex)
       {
-        System.err.println( "The provided file is invalid!" );
-        ex.printStackTrace( System.err );
+        LOGGER.error( "Can't read example file!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
+      }
+    }
+
+    // read files, that were specified as command line arguments
+    else
+    {
+      for (String arg : args)
+      {
+        try
+        {
+          read( new File( arg ) );
+        }
+        catch (Exception ex)
+        {
+          LOGGER.error( "Can't read file '" + arg + "'!" );
+          LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+          System.exit( 2 );
+        }
       }
     }
   }
 
   /**
-   * Read an IDX file into a {@link IdxParser} and prints some of their content
-   * to console.
+   * Read a {@link File} into an {@link IdxParser} and print some of its
+   * content to console.
    *
    * @param csvFile
    * the CSV file to read
@@ -72,10 +96,10 @@ public class IdxReadingExample
    */
   protected static void read( File csvFile ) throws IOException
   {
-    System.out.println( "process file: " + csvFile.getAbsolutePath() );
+    LOGGER.info( "process file: " + csvFile.getAbsolutePath() );
     if (!csvFile.isFile())
     {
-      System.out.println( "> The provided file is invalid!" );
+      LOGGER.warn( "> The provided file is invalid!" );
       return;
     }
     IdxParser parser = null;
@@ -83,9 +107,9 @@ public class IdxReadingExample
     {
       parser = IdxParser.create( csvFile );
       if (parser==null)
-        System.out.println( "> Can't create parser!" );
+        LOGGER.warn( "> Can't create parser!" );
       else
-        read( parser );
+        printToConsole( parser );
     }
     finally
     {
@@ -94,12 +118,40 @@ public class IdxReadingExample
   }
 
   /**
-   * Print the content of a {@link IdxParser} to console.
+   * Read an {@link InputStream} into an {@link IdxParser} and print some of
+   * its content to console.
+   *
+   * @param csvInputStream
+   * the input stream to read
+   *
+   * @throws IOException
+   * if the file is not readable
+   */
+  protected static void read( InputStream csvInputStream ) throws IOException
+  {
+    LOGGER.info( "process example file" );
+    IdxParser parser = null;
+    try
+    {
+      parser = IdxParser.create( csvInputStream );
+      if (parser==null)
+        LOGGER.warn( "> Can't create parser!" );
+      else
+        printToConsole( parser );
+    }
+    finally
+    {
+      IOUtils.closeQuietly( parser );
+    }
+  }
+
+  /**
+   * Print some content of an {@link IdxParser} to console.
    *
    * @param parser
    * parser instance
    */
-  protected static void read( IdxParser parser )
+  protected static void printToConsole( IdxParser parser )
   {
     // process records
     while (parser.hasNext())
@@ -107,7 +159,7 @@ public class IdxReadingExample
       IdxRecord record = parser.next();
 
       // get object nr
-      String objectNr = StringUtils.trimToNull( record.getRefObject() );
+      String objectNr = record.getRefObject();
       if (objectNr==null) objectNr = "???";
 
       // get object title
@@ -115,7 +167,7 @@ public class IdxReadingExample
       if (objectTitle==null) objectTitle = "???";
 
       // print object informations to console
-      System.out.println( "> property '" + objectNr + "' "
+      System.out.println( "> found object '" + objectNr + "' "
         + "with title '" + objectTitle + "'" );
     }
   }
