@@ -51,10 +51,10 @@ public class WisItDocument extends BaseDocument<WIS>
     return newDocument(WisItUtils.getFactory().createWIS());
   }
 
-  public static WisItDocument newDocument( WIS trovit ) throws ParserConfigurationException, JAXBException
+  public static WisItDocument newDocument( WIS wis ) throws ParserConfigurationException, JAXBException
   {
     Document document = DocumentUtils.newDocument();
-    WisItUtils.createMarshaller( "UTF-8", true ).marshal( trovit, document );
+    WisItUtils.createMarshaller( "UTF-8", true ).marshal( wis, document );
     return new WisItDocument( document );
   }
 

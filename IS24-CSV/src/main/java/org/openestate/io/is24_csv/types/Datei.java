@@ -73,6 +73,15 @@ public class Datei
     return this.typ;
   }
 
+  public String guessMimeType()
+  {
+    DateiSuffix suffixToLookup = this.suffix;
+    if (suffixToLookup==null)
+      suffixToLookup = DateiSuffix.fromFileName( this.name );
+    return (suffixToLookup!=null)?
+      suffixToLookup.getMimeType(): "application/octet-stream";
+  }
+
   public void setAbspieldauer( int value )
   {
     this.abspieldauer = value;

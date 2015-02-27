@@ -35,7 +35,7 @@ public enum ObjektkategorieHaus
   @Deprecated
   REIHENHAUS( 25 ),
   @Deprecated
-  ZFH( 43 ),
+  ZWEIFAMILIENHAUS( 43 ),
   @Deprecated
   SONSTIGES( 113 ),
   BESONDERE_IMMOBILIE( 119 ),

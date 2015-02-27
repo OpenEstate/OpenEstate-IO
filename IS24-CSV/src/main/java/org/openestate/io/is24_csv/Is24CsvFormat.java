@@ -26,6 +26,7 @@ import java.util.Locale;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
+import org.apache.commons.lang3.LocaleUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.CsvFormat;
 
@@ -38,11 +39,12 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
 {
   public final static String ENCODING = "CP1252";
   public final static String VERSION = "1.4.0.4";
+  public final static String RECORD_SEPARATOR = "\r\n";
 
   public Is24CsvFormat()
   {
     super( CSVFormat.newFormat( '|' )
-      .withRecordSeparator( "\r\n" )
+      .withRecordSeparator( RECORD_SEPARATOR )
       .withNullString( StringUtils.EMPTY ) );
   }
 
@@ -55,6 +57,44 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
   public String getEncoding()
   {
     return ENCODING;
+  }
+
+  public static String getIso3CountryCode( String country )
+  {
+    country = StringUtils.trimToNull( country );
+    if (country==null)
+      return null;
+    if (country.length()==3)
+      return country;
+
+    String[] iso2Codes = Locale.getISOCountries();
+    if (country.length()==2)
+    {
+      for (String iso2Code: iso2Codes)
+      {
+        if (iso2Code.equalsIgnoreCase( country ))
+        {
+          Locale countryLocale = new Locale( iso2Code, iso2Code );
+          String iso3Code = StringUtils.trimToNull( countryLocale.getISO3Country() );
+          if (iso3Code!=null) return iso3Code;
+        }
+      }
+    }
+    for (String iso2Code: iso2Codes)
+    {
+      Locale countryLocale = new Locale( iso2Code, iso2Code );
+      String iso3Code = StringUtils.trimToNull( countryLocale.getISO3Country() );
+      if (iso3Code==null) continue;
+      for (Locale translationLocale : LocaleUtils.availableLocaleList())
+      {
+        String name = countryLocale.getDisplayCountry( translationLocale );
+        if (country.equalsIgnoreCase( name ))
+        {
+          return iso3Code;
+        }
+      }
+    }
+    return null;
   }
 
   @Override

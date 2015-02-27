@@ -23,7 +23,7 @@ import org.apache.commons.lang3.StringUtils;
  *
  * @author Andreas Rudolph
  */
-public enum Energieausweistyp
+public enum EnergieausweisTyp
 {
   KEINE_ANGABE( 1 ),
   ENDENERGIEBEDARF( 2 ),
@@ -31,16 +31,16 @@ public enum Energieausweistyp
 
   private final int value;
 
-  private Energieausweistyp( int value )
+  private EnergieausweisTyp( int value )
   {
     this.value = value;
   }
 
-  public static Energieausweistyp parse( String value )
+  public static EnergieausweisTyp parse( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
-    for (Energieausweistyp s : Energieausweistyp.values())
+    for (EnergieausweisTyp s : EnergieausweisTyp.values())
     {
       if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
     }

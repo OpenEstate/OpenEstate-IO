@@ -24,7 +24,7 @@ import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.Auswahl;
 import org.openestate.io.is24_csv.types.Befeuerungsart;
-import org.openestate.io.is24_csv.types.Energieausweistyp;
+import org.openestate.io.is24_csv.types.EnergieausweisTyp;
 import org.openestate.io.is24_csv.types.Geschlecht;
 import org.openestate.io.is24_csv.types.HeizungsartWohnenAufZeit;
 import org.openestate.io.is24_csv.types.Immobilienart;
@@ -231,9 +231,9 @@ public class WohnenAufZeit extends Is24CsvRecord
     }
   }
 
-  public Energieausweistyp getEnergieausweisTyp()
+  public EnergieausweisTyp getEnergieausweisTyp()
   {
-    return Energieausweistyp.parse(
+    return EnergieausweisTyp.parse(
       this.get( FIELD_ENERGIEAUSWEIS_TYP ) );
   }
 
@@ -569,7 +569,7 @@ public class WohnenAufZeit extends Is24CsvRecord
       Is24CsvFormat.printNumber( value, 5, 2 ) );
   }
 
-  public void setEnergieausweisTyp( Energieausweistyp value )
+  public void setEnergieausweisTyp( EnergieausweisTyp value )
   {
     this.set( FIELD_ENERGIEAUSWEIS_TYP,
       (value!=null)? value.print(): null );

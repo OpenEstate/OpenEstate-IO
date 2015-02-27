@@ -42,7 +42,7 @@ import org.openestate.io.is24_csv.types.Befeuerungsart;
 import org.openestate.io.is24_csv.types.Datei;
 import org.openestate.io.is24_csv.types.DateiSuffix;
 import org.openestate.io.is24_csv.types.DateiTyp;
-import org.openestate.io.is24_csv.types.Energieausweistyp;
+import org.openestate.io.is24_csv.types.EnergieausweisTyp;
 import org.openestate.io.is24_csv.types.Heizungsart;
 import org.openestate.io.is24_csv.types.Importmodus;
 import org.openestate.io.is24_csv.types.ObjektkategorieHaus;
@@ -130,7 +130,7 @@ public class Is24CsvWritingExample
     obj.setEinliegerwohnung( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setEnergieausweisInklWarmwasser( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setEnergieausweisKennwert( RandomUtils.nextDouble( 50, 500 ) );
-    obj.setEnergieausweisTyp( Energieausweistyp.ENERGIEVERBRAUCHSKENNWERT );
+    obj.setEnergieausweisTyp( EnergieausweisTyp.ENERGIEVERBRAUCHSKENNWERT );
     obj.setFerienhaus( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setGaesteWc( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setGrundstuecksflaeche( RandomUtils.nextDouble( 200, 2000 ) );
@@ -175,7 +175,7 @@ public class Is24CsvWritingExample
     obj.setEinbaukueche( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setEnergieausweisInklWarmwasser( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setEnergieausweisKennwert( RandomUtils.nextDouble( 50, 500 ) );
-    obj.setEnergieausweisTyp( Energieausweistyp.ENERGIEVERBRAUCHSKENNWERT );
+    obj.setEnergieausweisTyp( EnergieausweisTyp.ENERGIEVERBRAUCHSKENNWERT );
     obj.setEtage( RandomUtils.nextInt( 0, 10 ) );
     obj.setEtagenzahl( RandomUtils.nextInt( 0, 10 ) );
     obj.setFoerderung( RandomUtils.nextInt( 0, 2 )==1 );
