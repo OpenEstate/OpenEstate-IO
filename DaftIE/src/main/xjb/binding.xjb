@@ -44,12 +44,32 @@
       <jaxb:typesafeEnumClass name="CommercialType"/>
     </jaxb:bindings>
 
+    <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='overseasSaleAdType']//xsd:element[@name='country']">
+      <jaxb:property>
+        <jaxb:baseType>
+          <jaxb:javaType name="String"
+                         parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseCountry"
+                         printMethod="org.openestate.io.daft_ie.DaftIeUtils.printCountry"/>
+        </jaxb:baseType>
+      </jaxb:property>
+    </jaxb:bindings>
+
     <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='overseasSaleAdType']//xsd:element[@name='price_type']/xsd:simpleType">
       <jaxb:typesafeEnumClass name="PriceType"/>
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='overseasSaleAdType']//xsd:element[@name='property_status']/xsd:simpleType">
       <jaxb:typesafeEnumClass name="PropertyStatus"/>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='overseasRentalAdType']//xsd:element[@name='country']">
+      <jaxb:property>
+        <jaxb:baseType>
+          <jaxb:javaType name="String"
+                         parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseCountry"
+                         printMethod="org.openestate.io.daft_ie.DaftIeUtils.printCountry"/>
+        </jaxb:baseType>
+      </jaxb:property>
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='overseasRentalAdType']//xsd:element[@name='rent_collection_period']/xsd:simpleType">

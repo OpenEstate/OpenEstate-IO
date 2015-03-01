@@ -36,6 +36,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.LocaleUtils;
 import org.openestate.io.core.SilentValidationHandler;
 import org.openestate.io.daft_ie.xml.ObjectFactory;
 import org.slf4j.Logger;
@@ -122,6 +123,11 @@ public class DaftIeUtils
     return JAXB;
   }
 
+  public static String getCountryName( String country )
+  {
+    return LocaleUtils.getCountryName( country, Locale.ENGLISH );
+  }
+
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
@@ -140,6 +146,11 @@ public class DaftIeUtils
     if ("1".equals( value )) return Boolean.TRUE;
     if ("0".equals( value )) return Boolean.FALSE;
     return null;
+  }
+
+  public static String parseCountry( String value )
+  {
+    return StringUtils.trimToNull( value );
   }
 
   public static Calendar parseDate( String value )
@@ -233,6 +244,19 @@ public class DaftIeUtils
     if (Boolean.TRUE.equals( value ) ) return "1";
     if (Boolean.FALSE.equals( value ) ) return "0";
     return null;
+  }
+
+  public static String printCountry( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) throw new IllegalArgumentException( "Empty country!" );
+    String country = StringUtils.trimToNull( DaftIeUtils.getCountryName( value ) );
+    if (country==null)
+    {
+      LOGGER.warn( "Can't convert country '" + value + "' to its english name!" );
+      return value;
+    }
+    return country;
   }
 
   public static String printDate( Calendar value )
