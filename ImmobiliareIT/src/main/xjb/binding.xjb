@@ -57,8 +57,8 @@
 
     <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='country-code']/xsd:simpleType">
       <jaxb:javaType name="java.lang.String"
-                     parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseText2"
-                     printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printText2" />
+                     parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCountry"
+                     printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCountry" />
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='locality']//xsd:element[@name='thoroughfare']//xsd:attribute[@name='display']/xsd:simpleType">
@@ -105,8 +105,8 @@
 
     <jaxb:bindings node="/xsd:schema/xsd:element[@name='feed']//xsd:element[@name='projects']//xsd:element[@name='project']//xsd:element[@name='country-code']/xsd:simpleType">
       <jaxb:javaType name="java.lang.String"
-                     parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseText2"
-                     printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printText2" />
+                     parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCountry"
+                     printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCountry" />
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:element[@name='feed']//xsd:element[@name='properties']//xsd:element[@name='property']//xsd:element[@name='date-expiration']/xsd:simpleType">

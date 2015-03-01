@@ -32,6 +32,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.LocaleUtils;
 import org.openestate.io.core.SilentValidationHandler;
 import org.openestate.io.immobiliare_it.xml.ObjectFactory;
 import org.openestate.io.immobiliare_it.xml.types.Category;
@@ -123,6 +124,11 @@ public class ImmobiliareItUtils
     return JAXB;
   }
 
+  public static String getCountryCode( String country )
+  {
+    return LocaleUtils.getCountryISO2( country );
+  }
+
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
@@ -167,6 +173,11 @@ public class ImmobiliareItUtils
   public static Category parseCategory( String value )
   {
     return Category.fromXmlValue( value );
+  }
+
+  public static String parseCountry( String value )
+  {
+    return StringUtils.trimToNull( value );
   }
 
   public static Currency parseCurrency(String value)
@@ -257,11 +268,6 @@ public class ImmobiliareItUtils
     return value;
   }
 
-  public static String parseText2( String value )
-  {
-    return parseText( value, 2 );
-  }
-
   public static String parseText3000( String value )
   {
     return parseText( value, 3000 );
@@ -309,6 +315,19 @@ public class ImmobiliareItUtils
   public static String printCategory( Category value )
   {
     return (value!=null)? value.getXmlValue(): null;
+  }
+
+  public static String printCountry( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) throw new IllegalArgumentException( "Empty country!" );
+    String country = StringUtils.trimToNull( ImmobiliareItUtils.getCountryCode( value ) );
+    if (country==null)
+    {
+      LOGGER.warn( "Can't convert country '" + value + "' to its ISO2 code!" );
+      throw new IllegalArgumentException( "Can't convert country '" + value + "' to its ISO2 code!" );
+    }
+    return country;
   }
 
   public static String printCurrency(Currency value)
@@ -376,11 +395,6 @@ public class ImmobiliareItUtils
     //LOGGER.debug( "SHORTENING TEXT WITH " + val.length() + " CHARS TO " + length + " CHARS" );
     //LOGGER.debug( val );
     return value.substring( 0, maxLength );
-  }
-
-  public static String printText2( String value )
-  {
-    return printText( value, 2 );
   }
 
   public static String printText3000( String value )
