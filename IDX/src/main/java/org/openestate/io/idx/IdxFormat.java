@@ -26,9 +26,9 @@ import java.util.Locale;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
-import org.apache.commons.lang3.LocaleUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.CsvFormat;
+import org.openestate.io.core.LocaleUtils;
 
 /**
  * IdxFormat.
@@ -64,39 +64,9 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
     return ENCODING;
   }
 
-  public static String getIso2CountryCode( String country )
+  public static String getCountryCode( String country )
   {
-    country = StringUtils.trimToNull( country );
-    if (country==null)
-      return null;
-    if (country.length()==2)
-      return country;
-
-    String[] iso2Codes = Locale.getISOCountries();
-    if (country.length()==3)
-    {
-      for (String iso2Code: iso2Codes)
-      {
-        Locale countryLocale = new Locale( iso2Code, iso2Code );
-        if (countryLocale.getISO3Country().equalsIgnoreCase( country ))
-        {
-          return iso2Code;
-        }
-      }
-    }
-    for (String iso2Code: iso2Codes)
-    {
-      Locale countryLocale = new Locale( iso2Code, iso2Code );
-      for (Locale translationLocale : LocaleUtils.availableLocaleList())
-      {
-        String name = countryLocale.getDisplayCountry( translationLocale );
-        if (country.equalsIgnoreCase( name ))
-        {
-          return iso2Code;
-        }
-      }
-    }
-    return null;
+    return LocaleUtils.getCountryISO2( country );
   }
 
   @Override

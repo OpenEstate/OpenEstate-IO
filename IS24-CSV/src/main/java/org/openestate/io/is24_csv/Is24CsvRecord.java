@@ -1230,7 +1230,7 @@ public abstract class Is24CsvRecord extends CsvRecord
   public void setKontaktLand( String value )
   {
     this.set( FIELD_KONTAKT_LAND,
-      StringUtils.defaultIfBlank( Is24CsvFormat.getIso3CountryCode( value ), Locale.GERMANY.getISO3Country() ) );
+      StringUtils.defaultIfBlank( Is24CsvFormat.getCountryCode( value ), Locale.GERMANY.getISO3Country() ) );
   }
 
   public void setKontaktMobiltelefon( String value )
@@ -1314,7 +1314,7 @@ public abstract class Is24CsvRecord extends CsvRecord
   public void setObjektLand( String value )
   {
     this.set( FIELD_OBJEKT_LAND,
-      StringUtils.defaultIfBlank( Is24CsvFormat.getIso3CountryCode( value ), Locale.GERMANY.getISO3Country() ) );
+      StringUtils.defaultIfBlank( Is24CsvFormat.getCountryCode( value ), Locale.GERMANY.getISO3Country() ) );
   }
 
   public void setObjektOrt( String value )

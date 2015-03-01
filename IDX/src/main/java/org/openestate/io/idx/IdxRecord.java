@@ -1845,7 +1845,7 @@ public class IdxRecord extends CsvRecord
   {
     value = StringUtils.trimToEmpty( value );
     this.set( FIELD_AGENCY_COUNTRY,
-      IdxFormat.getIso2CountryCode( value ) );
+      IdxFormat.getCountryCode( value ) );
   }
 
   public void setAgencyEmail( String value )
@@ -2306,7 +2306,7 @@ public class IdxRecord extends CsvRecord
   {
     value = StringUtils.trimToEmpty( value );
     this.set( FIELD_OBJECT_COUNTRY,
-      IdxFormat.getIso2CountryCode( value ) );
+      IdxFormat.getCountryCode( value ) );
   }
 
   public void setObjectDescription( String value )
