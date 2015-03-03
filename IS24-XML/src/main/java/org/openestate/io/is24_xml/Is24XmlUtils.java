@@ -51,7 +51,7 @@ public class Is24XmlUtils
   private final static Logger LOGGER = LoggerFactory.getLogger( Is24XmlUtils.class );
   public final static String PACKAGE = "org.openestate.io.is24_xml.xml";
   public final static String NAMESPACE = "http://www.immobilienscout24.de/immobilientransfer";
-  public final static String VERSION = "revision 189438";
+  public final static String VERSION = "rev189438";
   private final static ObjectFactory FACTORY = new ObjectFactory();
   private static JAXBContext JAXB = null;
 

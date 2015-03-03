@@ -49,7 +49,7 @@ public class IdxRecord extends CsvRecord
   private final static Logger LOGGER = LoggerFactory.getLogger( IdxRecord.class );
   private final static Pattern LINEBREAK = Pattern.compile( "<br\\s*/?>", Pattern.CASE_INSENSITIVE );
   protected final static String VERSION = "IDX" + IdxFormat.VERSION;
-  protected final static int LENGTH = 183;
+  public final static int LENGTH = 183;
   public final static int PICTURE_LIMIT = 13;
 
 

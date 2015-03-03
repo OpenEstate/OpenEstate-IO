@@ -33,16 +33,19 @@ public enum DaftIeVersion implements Version
   /**
    * Daft-XML 2.7
    */
-  V2_7( "2.7", DaftIe_2_7.class );
+  V2_7( DaftIe_2_7.class, "2.7" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( DaftIeVersion.class );
-  private final String readableVersion;
   private final Class converterClass;
+  private final String readableVersion;
+  private final String[] alias;
 
-  private DaftIeVersion( String readableVersion, Class converterClass )
+
+  private DaftIeVersion( Class converterClass, String readableVersion, String...alias )
   {
-    this.readableVersion = readableVersion;
     this.converterClass = converterClass;
+    this.readableVersion = readableVersion;
+    this.alias = alias;
   }
 
   public static DaftIeVersion detectFromString( String version )
@@ -51,9 +54,13 @@ public enum DaftIeVersion implements Version
     {
       for (DaftIeVersion v : DaftIeVersion.values())
       {
-        if (v.toReadableVersion().equalsIgnoreCase( version ))
+        if (v.toReadableVersion().equalsIgnoreCase( version )) return v;
+        if (v.alias!=null)
         {
-          return v;
+          for (String a : v.alias)
+          {
+            if (a.equalsIgnoreCase( version )) return v;
+          }
         }
       }
     }

@@ -78,8 +78,7 @@ public class Is24CsvParser extends CsvParser<Is24CsvRecord>
     return new Is24CsvFormat().parse( input );
   }
 
-  @Override
-  protected Is24CsvRecord newRecord( CSVRecord record )
+  public static Is24CsvRecord createRecord( CSVRecord record )
   {
     Immobilienart art = Is24CsvRecord.getImmobilienart( record );
 
@@ -134,5 +133,11 @@ public class Is24CsvParser extends CsvParser<Is24CsvRecord>
 
     LOGGER.warn( "Unsupported 'Immobilienart' value: " + record.get( Is24CsvRecord.FIELD_IMMOBILIENART ) );
     return null;
+  }
+
+  @Override
+  protected Is24CsvRecord newRecord( CSVRecord record )
+  {
+    return Is24CsvParser.createRecord( record );
   }
 }

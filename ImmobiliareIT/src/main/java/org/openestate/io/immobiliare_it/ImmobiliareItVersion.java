@@ -33,16 +33,19 @@ public enum ImmobiliareItVersion implements Version
   /**
    * Immobiliare-XML 2.5
    */
-  V2_5( "2.5", ImmobiliareIt_2_5.class );
+  V2_5( ImmobiliareIt_2_5.class, "2.5", "2.5.0");
 
   private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItVersion.class );
-  private final String readableVersion;
   private final Class converterClass;
+  private final String readableVersion;
+  private final String[] alias;
 
-  private ImmobiliareItVersion( String readableVersion, Class converterClass )
+
+  private ImmobiliareItVersion( Class converterClass, String readableVersion, String...alias )
   {
-    this.readableVersion = readableVersion;
     this.converterClass = converterClass;
+    this.readableVersion = readableVersion;
+    this.alias = alias;
   }
 
   public static ImmobiliareItVersion detectFromString( String version )
@@ -51,9 +54,13 @@ public enum ImmobiliareItVersion implements Version
     {
       for (ImmobiliareItVersion v : ImmobiliareItVersion.values())
       {
-        if (v.toReadableVersion().equalsIgnoreCase( version ))
+        if (v.toReadableVersion().equalsIgnoreCase( version )) return v;
+        if (v.alias!=null)
         {
-          return v;
+          for (String a : v.alias)
+          {
+            if (a.equalsIgnoreCase( version )) return v;
+          }
         }
       }
     }

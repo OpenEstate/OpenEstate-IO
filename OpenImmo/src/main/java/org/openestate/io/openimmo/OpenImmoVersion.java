@@ -42,56 +42,58 @@ public enum OpenImmoVersion implements Version
   /**
    * OpenImmo 1.1
    */
-  V1_1( "1.1", OpenImmo_1_1.class),
+  V1_1( OpenImmo_1_1.class, "1.1", "1.1.0" ),
 
   /**
    * OpenImmo 1.2.0
    */
-  V1_2_0( "1.2.0", OpenImmo_1_2_0.class ),
+  V1_2_0( OpenImmo_1_2_0.class, "1.2", "1.2.0" ),
 
   /**
    * OpenImmo 1.2.1
    */
-  V1_2_1( "1.2.1", OpenImmo_1_2_1.class ),
+  V1_2_1( OpenImmo_1_2_1.class, "1.2.1" ),
 
   /**
    * OpenImmo 1.2.2
    */
-  V1_2_2( "1.2.2", OpenImmo_1_2_2.class ),
+  V1_2_2( OpenImmo_1_2_2.class, "1.2.2" ),
 
   /**
    * OpenImmo 1.2.3
    */
-  V1_2_3( "1.2.3", OpenImmo_1_2_3.class ),
+  V1_2_3( OpenImmo_1_2_3.class, "1.2.3" ),
 
   /**
    * OpenImmo 1.2.4
    */
-  V1_2_4( "1.2.4", OpenImmo_1_2_4.class ),
+  V1_2_4( OpenImmo_1_2_4.class, "1.2.4" ),
 
   /**
    * OpenImmo 1.2.5
    */
-  V1_2_5( "1.2.5", OpenImmo_1_2_5.class ),
+  V1_2_5( OpenImmo_1_2_5.class, "1.2.5" ),
 
   /**
    * OpenImmo 1.2.6
    */
-  V1_2_6( "1.2.6", OpenImmo_1_2_6.class ),
+  V1_2_6( OpenImmo_1_2_6.class, "1.2.6" ),
 
   /**
    * OpenImmo 1.2.7
    */
-  V1_2_7( "1.2.7", OpenImmo_1_2_7.class );
+  V1_2_7( OpenImmo_1_2_7.class, "1.2.7" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoVersion.class );
-  private final String readableVersion;
   private final Class converterClass;
+  private final String readableVersion;
+  private final String[] alias;
 
-  private OpenImmoVersion( String readableVersion, Class converterClass )
+  private OpenImmoVersion( Class converterClass, String readableVersion, String...alias )
   {
-    this.readableVersion = readableVersion;
     this.converterClass = converterClass;
+    this.readableVersion = readableVersion;
+    this.alias = alias;
   }
 
   public static OpenImmoVersion detectFromString( String version )
@@ -101,9 +103,13 @@ public enum OpenImmoVersion implements Version
       String[] values = StringUtils.split( version, "/" );
       for (OpenImmoVersion v : OpenImmoVersion.values())
       {
-        if (v.toReadableVersion().equalsIgnoreCase( values[0] ))
+        if (v.toReadableVersion().equalsIgnoreCase( values[0] )) return v;
+        if (v.alias!=null)
         {
-          return v;
+          for (String a : v.alias)
+          {
+            if (a.equalsIgnoreCase( values[0] )) return v;
+          }
         }
       }
     }

@@ -17,7 +17,6 @@
 package org.openestate.io.kyero;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.Converter;
 import org.openestate.io.core.Version;
 import org.openestate.io.kyero.converters.Kyero_2_1;
@@ -35,23 +34,25 @@ public enum KyeroVersion implements Version
   /**
    * Kyero v2.1
    */
-  V2_1( "2.1", "2_1", Kyero_2_1.class),
+  V2_1( Kyero_2_1.class, "2_1", "2.1" ),
 
   /**
    * Kyero v3
    */
-  V3( "3", "3", Kyero_3.class );
+  V3( Kyero_3.class, "3", "3", "3.0", "3.1" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( KyeroVersion.class );
-  private final String readableVersion;
-  private final String xmlVersion;
   private final Class converterClass;
+  private final String xmlVersion;
+  private final String readableVersion;
+  private final String[] alias;
 
-  private KyeroVersion( String readableVersion, String xmlVersion, Class converterClass )
+  private KyeroVersion( Class converterClass, String xmlVersion, String readableVersion, String...alias )
   {
-    this.readableVersion = readableVersion;
-    this.xmlVersion = xmlVersion;
     this.converterClass = converterClass;
+    this.xmlVersion = xmlVersion;
+    this.readableVersion = readableVersion;
+    this.alias = alias;
   }
 
   public static KyeroVersion detectFromString( String version )
@@ -60,20 +61,14 @@ public enum KyeroVersion implements Version
     {
       for (KyeroVersion v : KyeroVersion.values())
       {
-        if (v.toXmlVersion().equalsIgnoreCase( version ) || v.toReadableVersion().equalsIgnoreCase( version ))
+        if (v.toXmlVersion().equalsIgnoreCase( version )) return v;
+        if (v.toReadableVersion().equalsIgnoreCase( version )) return v;
+        if (v.alias!=null)
         {
-          return v;
-        }
-      }
-      for (KyeroVersion v : KyeroVersion.values())
-      {
-        if (StringUtils.startsWithIgnoreCase( version, v.toXmlVersion() + "_" ))
-        {
-          return v;
-        }
-        else if (StringUtils.startsWithIgnoreCase( version, v.toReadableVersion()+ "." ))
-        {
-          return v;
+          for (String a : v.alias)
+          {
+            if (a.equalsIgnoreCase( version )) return v;
+          }
         }
       }
     }

@@ -44,7 +44,7 @@ public abstract class Is24CsvRecord extends CsvRecord
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvRecord.class );
   private final static Pattern LINEBREAK = Pattern.compile( "<br\\s*/?>", Pattern.CASE_INSENSITIVE );
-  protected final static int LENGTH = 182;
+  public final static int LENGTH = 182;
   public final static int FILE_LIMIT = 10;
 
 

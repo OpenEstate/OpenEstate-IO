@@ -34,16 +34,18 @@ public enum ImmoXmlVersion implements Version
   /**
    * ImmoXML 1.1
    */
-  V1_1( "1.1", ImmoXML_1_1.class );
+  V1_1( ImmoXML_1_1.class, "1.1" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlVersion.class );
-  private final String readableVersion;
   private final Class converterClass;
+  private final String readableVersion;
+  private final String[] alias;
 
-  private ImmoXmlVersion( String readableVersion, Class converterClass )
+  private ImmoXmlVersion( Class converterClass, String readableVersion, String...alias )
   {
-    this.readableVersion = readableVersion;
     this.converterClass = converterClass;
+    this.readableVersion = readableVersion;
+    this.alias = alias;
   }
 
   public static ImmoXmlVersion detectFromString( String version )
@@ -53,9 +55,13 @@ public enum ImmoXmlVersion implements Version
       String[] values = StringUtils.split( version, "/" );
       for (ImmoXmlVersion v : ImmoXmlVersion.values())
       {
-        if (v.toReadableVersion().equalsIgnoreCase( values[0] ))
+        if (v.toReadableVersion().equalsIgnoreCase( values[0] )) return v;
+        if (v.alias!=null)
         {
-          return v;
+          for (String a : v.alias)
+          {
+            if (a.equalsIgnoreCase( values[0] )) return v;
+          }
         }
       }
     }

@@ -39,6 +39,9 @@ public abstract class OpenImmoDocument<JavaType> extends ConvertableDocument<Jav
   }
 
   @Override
+  public abstract OpenImmoVersion getDocumentVersion();
+
+  @Override
   public OpenImmoVersion getLatestVersion()
   {
     return OpenImmoUtils.VERSION;

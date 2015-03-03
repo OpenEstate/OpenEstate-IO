@@ -43,23 +43,23 @@ public class SilentValidationHandler implements ValidationEventHandler
 
     if (ValidationEvent.FATAL_ERROR==event.getSeverity())
     {
-      LOGGER.error( "fatal validation error" );
-      if (line>-1 && col>-1) LOGGER.error( "> at line " + line + " / column " + col );
-      LOGGER.error( "> " + event.getMessage() );
+      LOGGER.warn( "fatal validation error" );
+      if (line>-1 && col>-1) LOGGER.warn( "> at line " + line + " / column " + col );
+      LOGGER.warn( "> " + event.getMessage() );
       return false;
     }
 
     if (ValidationEvent.WARNING==event.getSeverity())
     {
       LOGGER.warn( "validation warning" );
-      if (line>-1 && col>-1) LOGGER.error( "> at line " + line + " / column " + col );
+      if (line>-1 && col>-1) LOGGER.warn( "> at line " + line + " / column " + col );
       LOGGER.warn( "> " + event.getMessage() );
     }
     else
     {
-      LOGGER.error( "validation error" );
-      if (line>-1 && col>-1) LOGGER.error( "> at line " + line + " / column " + col );
-      LOGGER.error( "> " + event.getMessage() );
+      LOGGER.warn( "validation error" );
+      if (line>-1 && col>-1) LOGGER.warn( "> at line " + line + " / column " + col );
+      LOGGER.warn( "> " + event.getMessage() );
     }
 
     return true;
