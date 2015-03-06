@@ -227,7 +227,7 @@
           <clearOutputDir>false</clearOutputDir>
           <target>2.1</target>
           <extension>true</extension>
-          <arguments>-XtoString -Xcopyable -Xequals</arguments>
+          <arguments>-XtoString -Xcopyable -Xequals -no-header</arguments>
         </configuration>
         <dependencies>
           <dependency>
