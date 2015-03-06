@@ -224,15 +224,11 @@
         <version>1.6</version>
         <configuration>
           <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-          <!--
-          <packageName>org.openestate.io.openimmo.xml</packageName>
-          <schemaFiles>openimmo_121.xsd,openimmo-feedback_121.xsd</schemaFiles>
-          -->
           <bindingFiles>binding.xjb</bindingFiles>
           <clearOutputDir>false</clearOutputDir>
           <target>2.1</target>
           <extension>true</extension>
-          <arguments>-XtoString -Xcopyable -Xequals</arguments>
+          <arguments>-XtoString -Xcopyable -Xequals -no-header</arguments>
         </configuration>
         <dependencies>
           <dependency>
