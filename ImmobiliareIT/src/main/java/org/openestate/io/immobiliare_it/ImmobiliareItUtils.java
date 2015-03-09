@@ -16,7 +16,6 @@
 
 package org.openestate.io.immobiliare_it;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -141,7 +140,7 @@ public class ImmobiliareItUtils
 
   public static boolean isValidDateUpdatedType( Calendar value )
   {
-    final Calendar min = javax.xml.bind.DatatypeConverter.parseDateTime( "2000-12-31T00:00:00" );
+    final Calendar min = DatatypeConverter.parseDateTime( "2000-12-31T00:00:00" );
     return value!=null && !value.before( min );
   }
 
@@ -172,7 +171,14 @@ public class ImmobiliareItUtils
 
   public static Category parseCategory( String value )
   {
-    return Category.fromXmlValue( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    Category cat = Category.fromXmlValue( value );
+    if (cat==null)
+      throw new IllegalArgumentException( "Can't parse category value '" + value + "'!" );
+
+    return cat;
   }
 
   public static String parseCountry( String value )
@@ -182,27 +188,43 @@ public class ImmobiliareItUtils
 
   public static Currency parseCurrency(String value)
   {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
     try
     {
-      return (value!=null && value.trim().length()==3)? Currency.getInstance( value.trim().toUpperCase() ): null;
+      if (value.trim().length()!=3)
+        throw new Exception( "Currency code must contain of 3 characters." );
+
+      return Currency.getInstance( value.trim().toUpperCase() );
     }
     catch (Exception ex)
     {
-      LOGGER.warn( "Can't parse currency: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+      throw new IllegalArgumentException( "Can't parse currency value '" + value + "'!", ex );
     }
   }
 
   public static String parseEmailType(String value)
   {
-    if (value==null || value.trim().length()==0) return null;
-    return (value.matches( "[^@]+@[^\\.]+\\..+" ))? value: null;
+    //value = StringUtils.trimToNull( value );
+    //if (value==null)
+    //  return null;
+    //else if (value.matches( "[^@]+@[^\\.]+\\..+" ))
+    //  return value;
+    //else
+    //  throw new IllegalArgumentException( "Can't parse e-mail value '" + value + "'!" );
+    return StringUtils.trimToNull( value );
   }
 
   public static EnergyUnit parseEnergyUnit( String value )
   {
-    return EnergyUnit.fromXmlValue( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    EnergyUnit unit = EnergyUnit.fromXmlValue( value );
+    if (unit==null)
+      throw new IllegalArgumentException( "Can't parse energy-unit value '" + value + "'!" );
+
+    return unit;
   }
 
   public static Long parseInteger( String value )
@@ -213,59 +235,49 @@ public class ImmobiliareItUtils
 
   public static LandSizeUnit parseLandSizeUnit( String value )
   {
-    return LandSizeUnit.fromXmlValue( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    LandSizeUnit unit = LandSizeUnit.fromXmlValue( value );
+    if (unit==null)
+      throw new IllegalArgumentException( "Can't parse land-size-unit value '" + value + "'!" );
+
+    return unit;
   }
 
   public static Double parseLatitude( String value )
   {
-    try
-    {
-      return (value!=null)? Double.valueOf( value ): null;
-    }
-    catch (Exception ex)
-    {
-      LOGGER.warn( "Can't parse latitude: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
-    }
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
   }
 
   public static Double parseLongitude( String value )
   {
-    try
-    {
-      return (value!=null)? Double.valueOf( value ): null;
-    }
-    catch (Exception ex)
-    {
-      LOGGER.warn( "Can't parse longitude: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
-    }
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
   }
 
   public static Integer parseRooms( String value )
   {
-    try
-    {
-      return (value!=null)? Integer.valueOf( value ): null;
-    }
-    catch (Exception ex)
-    {
-      LOGGER.warn( "Can't parse rooms: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
-    }
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseInt( value ): null;
   }
 
   public static SizeUnit parseSizeUnit( String value )
   {
-    return SizeUnit.fromXmlValue( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    SizeUnit unit = SizeUnit.fromXmlValue( value );
+    if (unit==null)
+      throw new IllegalArgumentException( "Can't parse size-unit value '" + value + "'!" );
+
+    return unit;
   }
 
   private static String parseText( String value, int length )
   {
-    return value;
+    return StringUtils.trimToNull( value );
   }
 
   public static String parseText3000( String value )
@@ -275,126 +287,161 @@ public class ImmobiliareItUtils
 
   public static Transaction parseTransaction( String value )
   {
-    return Transaction.fromXmlValue( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    Transaction unit = Transaction.fromXmlValue( value );
+    if (unit==null)
+      throw new IllegalArgumentException( "Can't parse transaction value '" + value + "'!" );
+
+    return unit;
   }
 
   public static Integer parseYear( String value )
   {
-    try
-    {
-      return Integer.valueOf( value );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.warn( "Can't parse year: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
-    }
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseInt( value ): null;
   }
 
-  @SuppressFBWarnings(
-    value = "NP_BOOLEAN_RETURN_NULL",
-    justification = "NULL is an expected return value.")
   public static Boolean parseYesNo( String value )
   {
-    if ("yes".equalsIgnoreCase( value )) return true;
-    if ("no".equalsIgnoreCase( value )) return false;
-    return null;
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      return null;
+    else if ("yes".equalsIgnoreCase( value ))
+      return Boolean.TRUE;
+    else if ("no".equalsIgnoreCase( value ))
+      return Boolean.FALSE;
+    else
+      throw new IllegalArgumentException( "Can't parse yes-no value '" + value + "'!" );
   }
 
-  @SuppressFBWarnings(
-    value = "NP_BOOLEAN_RETURN_NULL",
-    justification = "NULL is an expected return value.")
   public static Boolean parseYN( String value )
   {
-    if ("y".equalsIgnoreCase( value )) return true;
-    if ("n".equalsIgnoreCase( value )) return false;
-    return null;
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      return null;
+    else if ("y".equalsIgnoreCase( value ))
+      return Boolean.TRUE;
+    else if ("n".equalsIgnoreCase( value ))
+      return Boolean.FALSE;
+    else
+      throw new IllegalArgumentException( "Can't parse y-n value '" + value + "'!" );
   }
 
   public static String printCategory( Category value )
   {
-    return (value!=null)? value.getXmlValue(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print category value!" );
+    else
+      return value.getXmlValue();
   }
 
   public static String printCountry( String value )
   {
     value = StringUtils.trimToNull( value );
-    if (value==null) throw new IllegalArgumentException( "Empty country!" );
-    String country = StringUtils.trimToNull( ImmobiliareItUtils.getCountryCode( value ) );
-    if (country==null)
-    {
-      LOGGER.warn( "Can't convert country '" + value + "' to its ISO2 code!" );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print country value!" );
+
+    String iso2 = StringUtils.trimToNull( ImmobiliareItUtils.getCountryCode( value ) );
+    if (iso2==null)
       throw new IllegalArgumentException( "Can't convert country '" + value + "' to its ISO2 code!" );
-    }
-    return country;
+    else
+      return iso2;
   }
 
-  public static String printCurrency(Currency value)
+  public static String printCurrency( Currency value)
   {
-    if (value==null) throw new IllegalArgumentException( "Empty currency!" );
-    return value.getCurrencyCode();
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print currency value!" );
+    else
+      return value.getCurrencyCode();
   }
 
   public static String printDateUpdatedType( Calendar value )
   {
-    if (isValidDateUpdatedType( value )) return javax.xml.bind.DatatypeConverter.printDateTime( value );
-    throw new IllegalArgumentException( "Invalid date-updated: " + value );
+    if (value==null || !isValidDateUpdatedType( value ))
+      throw new IllegalArgumentException( "Can't print date-updated value!" );
+    else
+      return DatatypeConverter.printDateTime( value );
   }
 
-  public static String printEmailType(String value)
+  public static String printEmailType( String value)
   {
-    if (isValidEmailType(value)) return value;
-    throw new IllegalArgumentException( "Invalid email: " + value );
+    if (value==null || !isValidEmailType( value ))
+      throw new IllegalArgumentException( "Can't print email value!" );
+    else
+      return value;
   }
 
   public static String printEnergyUnit( EnergyUnit value )
   {
-    return (value!=null)? value.getXmlValue(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print energy-unit value!" );
+    else
+      return value.getXmlValue();
   }
 
   public static String printInteger( Long value )
   {
-    return (value!=null)? DatatypeConverter.printLong( value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printLong( value );
   }
 
   public static String printLandSizeUnit( LandSizeUnit value )
   {
-    return (value!=null)? value.getXmlValue(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print land-size-unit value!" );
+    else
+      return value.getXmlValue();
   }
 
   public static String printLatitude( Double value )
   {
-    if (isValidLatitude(value)) return value.toString();
-    throw new IllegalArgumentException( "Invalid latitude: " + value );
+    if (value==null || !isValidLatitude(value))
+      throw new IllegalArgumentException( "Can't print latitude value!" );
+    else
+      return DatatypeConverter.printDouble( value );
   }
 
   public static String printLongitude( Double value )
   {
-    if (isValidLongitude(value)) return value.toString();
-    throw new IllegalArgumentException( "Invalid longitude: " + value );
+    if (value==null || !isValidLongitude(value))
+      throw new IllegalArgumentException( "Can't print longitude value!" );
+    else
+      return DatatypeConverter.printDouble( value );
   }
 
   public static String printRooms( Integer value )
   {
-    if (isValidRooms(value)) return value.toString();
-    throw new IllegalArgumentException( "Invalid rooms: " + value );
+    if (value==null || !isValidRooms(value))
+      throw new IllegalArgumentException( "Can't print rooms value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }
 
   public static String printSizeUnit( SizeUnit value )
   {
-    return (value!=null)? value.getXmlValue(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print size-unit value!" );
+    else
+      return value.getXmlValue();
   }
 
   private static String printText( String value, int maxLength )
   {
     value = StringUtils.trimToEmpty( value );
     int length = value.length();
-    if (length<=0) return null;
-    if (length<=maxLength) return value;
-    //LOGGER.debug( "SHORTENING TEXT WITH " + val.length() + " CHARS TO " + length + " CHARS" );
-    //LOGGER.debug( val );
-    return value.substring( 0, maxLength );
+    if (length<=0)
+      return StringUtils.EMPTY;
+    else if (length<=maxLength)
+      return value;
+    else if (maxLength>3)
+      return StringUtils.abbreviate( value, maxLength );
+    else
+      return value.substring( 0, maxLength );
   }
 
   public static String printText3000( String value )
@@ -404,13 +451,18 @@ public class ImmobiliareItUtils
 
   public static String printTransaction( Transaction value )
   {
-    return (value!=null)? value.getXmlValue(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print transaction value!" );
+    else
+      return value.getXmlValue();
   }
 
   public static String printYear( Integer value )
   {
-    if (isValidYear(value)) return DatatypeConverter.printInt( value );
-    throw new IllegalArgumentException( "Invalid year: " + value );
+    if (value==null || !isValidYear(value))
+      throw new IllegalArgumentException( "Can't print year value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }
 
   public static String printYesNo( Boolean value )
@@ -420,7 +472,7 @@ public class ImmobiliareItUtils
     else if (Boolean.FALSE.equals( value ))
       return "no";
     else
-      return null;
+      throw new IllegalArgumentException( "Can't print yes-no value!" );
   }
 
   public static String printYN( Boolean value )
@@ -430,6 +482,6 @@ public class ImmobiliareItUtils
     else if (Boolean.FALSE.equals( value ))
       return "N";
     else
-      return null;
+      throw new IllegalArgumentException( "Can't print y-n value!" );
   }
 }

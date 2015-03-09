@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -121,9 +122,19 @@ public class TrovitUtils
     return JAXB;
   }
 
+  public static DateFormat getDateFormat()
+  {
+    return new SimpleDateFormat( "dd/MM/yyyy" );
+  }
+
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
+  }
+
+  public static DateFormat getTimeFormat()
+  {
+    return new SimpleDateFormat( "HH:mm:ss" );
   }
 
   public synchronized static void initContext( ClassLoader classloader ) throws JAXBException
@@ -133,7 +144,14 @@ public class TrovitUtils
 
   public static Action parseAction( String value )
   {
-    return Action.lookup( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    Action action = Action.fromXmlValue( value );
+    if (action==null)
+      throw new IllegalArgumentException( "Can't parse action value '" + value + "'!" );
+
+    return action;
   }
 
   public static Boolean parseBool( String value )
@@ -142,9 +160,11 @@ public class TrovitUtils
     if ("si".equalsIgnoreCase( value ) || "yes".equalsIgnoreCase( value ))
       return Boolean.TRUE;
     else if ("no".equalsIgnoreCase( value ))
-      return Boolean.TRUE;
+      return Boolean.FALSE;
+    else if (value!=null)
+      return DatatypeConverter.parseBoolean( value );
     else
-      return (value!=null)? DatatypeConverter.parseBoolean( value ): null;
+      throw new IllegalArgumentException( "Can't parse boolean value '" + value + "'!" );
   }
 
   public static Calendar parseDate( String value )
@@ -185,13 +205,30 @@ public class TrovitUtils
   {
     value = StringUtils.trimToNull( value );
 
-    Boolean boolValue = parseBool( value );
-    if (boolValue!=null) return new IntBool( boolValue );
+    if ("0".equalsIgnoreCase( value ))
+      return new IntBool( 0 );
+    else if ("1".equalsIgnoreCase( value ))
+      return new IntBool( 1 );
 
-    Integer intValue = parseInt( value );
-    if (intValue!=null) return new IntBool( intValue );
+    try
+    {
+      Boolean boolValue = parseBool( value );
+      if (boolValue!=null) return new IntBool( boolValue );
+    }
+    catch (Exception ex)
+    {
+    }
 
-    return null;
+    try
+    {
+      Integer intValue = parseInt( value );
+      if (intValue!=null) return new IntBool( intValue );
+    }
+    catch (Exception ex)
+    {
+    }
+
+    throw new IllegalArgumentException( "Can't parse int-bool value '"+value+"'!" );
   }
 
   public static Long parseLong( String value )
@@ -202,7 +239,14 @@ public class TrovitUtils
 
   public static PriceInterval parsePriceInterval( String value )
   {
-    return PriceInterval.lookup( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    PriceInterval priceInterval = PriceInterval.fromXmlValue( value );
+    if (priceInterval==null)
+      throw new IllegalArgumentException( "Can't parse price-interval value '" + value + "'!" );
+
+    return priceInterval;
   }
 
   public static Double parsePriceValue( String value )
@@ -232,17 +276,17 @@ public class TrovitUtils
     {
     }
 
-    return null;
+    throw new IllegalArgumentException( "Can't parse price value '"+value+"'!" );
   }
 
   public static String parseString100( String value )
   {
-    return DatatypeConverter.parseString( value );
+    return StringUtils.trimToNull( value );
   }
 
   public static String parseString255( String value )
   {
-    return DatatypeConverter.parseString( value );
+    return StringUtils.trimToNull( value );
   }
 
   public static Calendar parseTime( String value )
@@ -267,7 +311,14 @@ public class TrovitUtils
 
   public static Unit parseUnit( String value )
   {
-    return Unit.lookup( value );
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    Unit unit = Unit.fromXmlValue( value );
+    if (unit==null)
+      throw new IllegalArgumentException( "Can't parse unit value '" + value + "'!" );
+
+    return unit;
   }
 
   public static Integer parseYear( String value )
@@ -278,33 +329,42 @@ public class TrovitUtils
 
   public static String printAction( Action value )
   {
-    return (value!=null)? value.write(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print action value!" );
+    else
+      return value.write();
   }
 
   public static String printBool( Boolean value )
   {
-    return (value!=null)? DatatypeConverter.printBoolean( value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print boolean value!" );
+    else
+      return DatatypeConverter.printBoolean( value );
   }
 
   public static String printDate( Calendar value )
   {
-    if (value==null) return null;
-    return new SimpleDateFormat( "dd/MM/yyyy" ).format( value.getTime() );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date value!" );
+    else
+      return getDateFormat().format( value.getTime() );
   }
 
   public static String printFloat( Double value )
   {
-    return (value!=null)? DatatypeConverter.printDouble( value ): StringUtils.EMPTY;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print float value!" );
+    else
+      return DatatypeConverter.printDouble( value );
   }
 
   public static String printInt( Integer value )
   {
-    return (value!=null)? DatatypeConverter.printInt( value ): StringUtils.EMPTY;
-  }
-
-  public static String printLong( Long value )
-  {
-    return (value!=null)? DatatypeConverter.printLong( value ): StringUtils.EMPTY;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }
 
   public static String printIntBool( IntBool value )
@@ -316,17 +376,30 @@ public class TrovitUtils
     else if (intValue!=null)
       return printInt( intValue );
     else
-      return StringUtils.EMPTY;
+      throw new IllegalArgumentException( "Can't print int-bool value!" );
+  }
+
+  public static String printLong( Long value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print long value!" );
+    else
+      return DatatypeConverter.printLong( value );
   }
 
   public static String printPriceInterval( PriceInterval value )
   {
-    return (value!=null)? value.write(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print price-interval value!" );
+    else
+      return value.write();
   }
 
   public static String printPriceValue( Double value )
   {
-    if (value==null) return null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print price value!" );
+
     NumberFormat formatter = NumberFormat.getNumberInstance( Locale.ENGLISH );
     formatter.setGroupingUsed( false );
     formatter.setMaximumFractionDigits( 2 );
@@ -335,28 +408,43 @@ public class TrovitUtils
 
   public static String printString100( String value )
   {
-    return StringUtils.abbreviate( value, 100 );
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print string value!" );
+    else
+      return StringUtils.abbreviate( value, 100 );
   }
 
   public static String printString255( String value )
   {
-    return StringUtils.abbreviate( value, 255 );
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print string value!" );
+    else
+      return StringUtils.abbreviate( value, 255 );
   }
 
   public static String printTime( Calendar value )
   {
-    if (value==null) return null;
-    return new SimpleDateFormat( "HH:mm:ss" ).format( value.getTime() );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print time value!" );
+    else
+      return getTimeFormat().format( value.getTime() );
   }
 
   public static String printUnit( Unit value )
   {
-    return (value!=null)? value.write(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print unit value!" );
+    else
+      return value.write();
   }
 
   public static String printYear( Integer value )
   {
-    return (value!=null && value>999 && value<10000)?
-      DatatypeConverter.printInt( value ): StringUtils.EMPTY;
+    if (value==null || value<1000 || value>9999)
+      throw new IllegalArgumentException( "Can't print year value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }
 }

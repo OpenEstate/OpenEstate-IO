@@ -19,8 +19,10 @@ package org.openestate.io.is24_xml;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -118,6 +120,11 @@ public class Is24XmlUtils
     return JAXB;
   }
 
+  public static DateFormat getDateFormat()
+  {
+    return new SimpleDateFormat( "yyyy-MM-dd" );
+  }
+
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
@@ -141,8 +148,14 @@ public class Is24XmlUtils
 
   public static String parseEmail( String value )
   {
-    value = StringUtils.trimToNull( value );
-    return (value!=null && value.matches( ".*@.*\\..*" ))? value: null;
+    //value = StringUtils.trimToNull( value );
+    //if (value==null)
+    //  return null;
+    //else if (value.matches( ".*@.*\\..*" ))
+    //  return value;
+    //else
+    //  throw new IllegalArgumentException( "Can't parse e-mail value '" + value + "'!" );
+    return StringUtils.trimToNull( value );
   }
 
   private static String parseText( String value, int length )
@@ -226,13 +239,14 @@ public class Is24XmlUtils
     if (value==null) return null;
     try
     {
-      return (!value.toLowerCase().startsWith( "http://" ) && !value.toLowerCase().startsWith( "https://" ))?
-        new URL( "http://" + value ) : new URL( value );
+      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URL( "http://" + value );
+      else
+        return new URL( value );
     }
-    catch (Exception ex)
+    catch (MalformedURLException ex)
     {
-      LOGGER.warn( ex.getLocalizedMessage() );
-      return null;
+      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
     }
   }
 
@@ -240,9 +254,8 @@ public class Is24XmlUtils
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
+
     NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    //DecimalFormat format = new DecimalFormat();
-    //format.getDecimalFormatSymbols().setDecimalSeparator( '.' );
     format.setGroupingUsed( false );
     format.setMaximumFractionDigits( 0 );
     format.setMaximumIntegerDigits( totalDigits );
@@ -256,8 +269,7 @@ public class Is24XmlUtils
     }
     catch (Exception ex)
     {
-      LOGGER.warn( ex.getLocalizedMessage() );
-      return null;
+      throw new IllegalArgumentException( "Can't parse integer value '" + value + "'!", ex );
     }
   }
 
@@ -265,9 +277,8 @@ public class Is24XmlUtils
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
+
     NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    //DecimalFormat format = new DecimalFormat();
-    //format.getDecimalFormatSymbols().setDecimalSeparator( '.' );
     format.setGroupingUsed( false );
     format.setMaximumFractionDigits( fractionDigits );
     format.setMaximumIntegerDigits( totalDigits-fractionDigits );
@@ -283,8 +294,7 @@ public class Is24XmlUtils
     }
     catch (Exception ex)
     {
-      LOGGER.warn( ex.getLocalizedMessage() );
-      return null;
+      throw new IllegalArgumentException( "Can't parse double value '" + value + "'!", ex );
     }
   }
 
@@ -366,18 +376,27 @@ public class Is24XmlUtils
   public static Double parseZimmeranzahl( String value )
   {
     Double num = parseZahl62( value );
-    if (num!=null && num>=0.5 && num<=9999 ) return num;
-    else return null;
+    if (num!=null && num>=0.5 && num<=9999 )
+      return num;
+    else
+      throw new IllegalArgumentException( "Can't parse room number value '" + value + "'!" );
   }
 
   public static String printDate( Calendar value )
   {
-    return (value!=null)? new SimpleDateFormat( "yyyy-MM-dd" ).format( value.getTime() ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date value!" );
+    else
+      return getDateFormat().format( value.getTime() );
   }
 
   public static String printEmail( String value )
   {
-    return (value!=null && value.length()<=150 && value.matches( ".*@.*\\..*" ))? value: null;
+    value = StringUtils.trimToNull( value );
+    if (value==null || value.length()>150 || !value.matches( ".*@.*\\..*" ))
+      throw new IllegalArgumentException( "Can't print email value!" );
+    else
+      return value;
   }
 
   public static String printPreisAufAnfrage( Double value )
@@ -389,11 +408,14 @@ public class Is24XmlUtils
   {
     value = StringUtils.trimToEmpty( value );
     int length = value.length();
-    if (length<=0) return null;
-    if (length<=maxLength) return value;
-    //LOGGER.debug( "SHORTENING TEXT WITH " + val.length() + " CHARS TO " + length + " CHARS" );
-    //LOGGER.debug( val );
-    return value.substring( 0, maxLength );
+    if (length<=0)
+      return StringUtils.EMPTY;
+    else if (length<=maxLength)
+      return value;
+    else if (maxLength>3)
+      return StringUtils.abbreviate( value, maxLength );
+    else
+      return value.substring( 0, maxLength );
   }
 
   public static String printText4( String value )
@@ -468,17 +490,19 @@ public class Is24XmlUtils
 
   public static String printWebUrl( URL value )
   {
-    return (value!=null && value.getHost()!=null && value.getHost().length()>0)? value.toString(): null;
+    if (value==null || StringUtils.isBlank( value.getHost() ))
+      throw new IllegalArgumentException( "Can't print URL value!" );
+    else
+      return value.toString();
   }
 
   private static String printZahl( Long value, int totalDigits )
   {
-    if (value==null) return null;
-    double max = Math.pow( 10, value );
-    if (value>=max) return null;
+    final double max = Math.pow( 10, value );
+    if (value==null || value>=max)
+      throw new IllegalArgumentException( "Can't print double value!" );
+
     NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    //DecimalFormat format = new DecimalFormat();
-    //format.getDecimalFormatSymbols().setDecimalSeparator( '.' );
     format.setGroupingUsed( false );
     format.setMaximumFractionDigits( 0 );
     format.setMaximumIntegerDigits( totalDigits );
@@ -488,137 +512,170 @@ public class Is24XmlUtils
     }
     catch (Exception ex)
     {
-      LOGGER.warn( ex.getLocalizedMessage() );
-      return null;
+      throw new IllegalArgumentException( "Can't print double value!", ex );
     }
   }
 
   private static String printZahl( Double value, int totalDigits, int fractionDigits, Double min, Double max )
   {
-    if (value==null) return null;
+    if (value==null || (min!=null && value<=min) || (max!=null && value>max))
+      throw new IllegalArgumentException( "Can't print double value!" );
+
     NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    //DecimalFormat format = new DecimalFormat();
-    //format.getDecimalFormatSymbols().setDecimalSeparator( '.' );
     format.setGroupingUsed( false );
     format.setMaximumFractionDigits( fractionDigits );
     format.setMaximumIntegerDigits( totalDigits-fractionDigits );
     try
     {
-      if (min!=null && value<=min) return null;
-      else if (max!=null && value>max) return null;
-      else return format.format( value );
+      return format.format( value );
     }
     catch (Exception ex)
     {
-      LOGGER.warn( ex.getLocalizedMessage() );
-      return null;
+      throw new IllegalArgumentException( "Can't print double value!", ex );
     }
   }
 
   public static String printZahl2( Long value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 2 );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 2 );
   }
 
   public static String printZahl2Including0( Long value )
   {
-    if (value==null || value<0) return null;
-    return printZahl( value, 2 );
+    if (value==null || value<0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 2 );
   }
 
   public static String printZahl3( Long value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 3 );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 3 );
   }
 
   public static String printZahl3Including0( Long value )
   {
-    if (value==null || value<0) return null;
-    return printZahl( value, 3 );
+    if (value==null || value<0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 3 );
   }
 
   public static String printZahl4( Long value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 4 );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 4 );
   }
 
   public static String printZahl5( Long value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 5 );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 5 );
   }
 
   public static String printZahl8( Long value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 8 );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 8 );
   }
 
   public static String printZahl10( Long value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 10 );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 10 );
   }
 
   public static String printZahl20( Long value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 20 );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return printZahl( value, 20 );
   }
 
   public static String printZahl31( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 3, 1, 0d, 100d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 3, 1, 0d, 100d );
   }
 
   public static String printZahl32( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 3, 2, 0d, 10d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 3, 2, 0d, 10d );
   }
 
   public static String printZahl42( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 4, 2, 0d, 100d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 4, 2, 0d, 100d );
   }
 
   public static String printZahl52( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 5, 2, 0d, 1000d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 5, 2, 0d, 1000d );
   }
 
   public static String printZahl62( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 6, 2, 0d, 10000d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 6, 2, 0d, 10000d );
   }
 
   public static String printZahl72( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 7, 2, 0d, 100000d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 7, 2, 0d, 100000d );
   }
 
   public static String printZahl102( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 10, 2, 0d, 100000000d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 10, 2, 0d, 100000000d );
   }
 
   public static String printZahl152( Double value )
   {
-    if (value==null || value<=0) return null;
-    return printZahl( value, 15, 2, 0d, 10000000000000d );
+    if (value==null || value<=0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl( value, 15, 2, 0d, 10000000000000d );
   }
 
   public static String printZimmeranzahl( Double value )
   {
-    return (value!=null && value>=0.5 && value<=9999 )? printZahl62( value ): null;
+    if (value==null || value<0.5 || value>9999)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return printZahl62( value );
   }
 }

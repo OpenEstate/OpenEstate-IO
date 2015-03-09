@@ -20,8 +20,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -117,6 +119,11 @@ public class ImmoXmlUtils
     return JAXB;
   }
 
+  public static DateFormat getDateFormat()
+  {
+    return new SimpleDateFormat( "yyyy-MM-dd" );
+  }
+
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
@@ -184,7 +191,7 @@ public class ImmoXmlUtils
       //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
       //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
     }
-    throw new IllegalArgumentException( "Can't parse datetime value '"+value+"'!" );
+    throw new IllegalArgumentException( "Can't parse date-time value '"+value+"'!" );
   }
 
   public static Double parseDecimal( String value )
@@ -193,7 +200,6 @@ public class ImmoXmlUtils
     if (value==null) return null;
     try
     {
-      //return Double.parseDouble( value );
       return DatatypeConverter.parseDouble( value );
     }
     catch (NumberFormatException ex)
@@ -216,22 +222,30 @@ public class ImmoXmlUtils
       //LOGGER.warn( "Can't parse value '" + value + "' as decimal!" );
       //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
     }
-    //LOGGER.warn( "Can't parse value '" + value + "' as decimal!" );
     throw new IllegalArgumentException( "Can't parse decimal value '"+value+"'!" );
   }
 
   public static String printDate( Calendar value )
   {
-    return (value!=null)? DatatypeConverter.printDate( value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date value!" );
+    else
+      return getDateFormat().format( value.getTime() );
   }
 
   public static String printDateTime( Calendar value )
   {
-    return (value!=null)? DatatypeConverter.printDateTime(value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date-time value!" );
+    else
+      return DatatypeConverter.printDateTime( value );
   }
 
   public static String printDecimal( Double value )
   {
-    return (value!=null)? DatatypeConverter.printDouble( value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return DatatypeConverter.printDouble( value );
   }
 }

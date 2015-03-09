@@ -34,13 +34,13 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 /**
- * CasaITUtils.
+ * CasaItUtils.
  *
  * @author Andreas Rudolph
  */
 public class CasaItUtils
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger(CasaITUtils.class );
+  //private final static Logger LOGGER = LoggerFactory.getLogger( CasaItUtils.class );
   public final static String PACKAGE = "org.openestate.io.casa_it.xml";
   public final static String NAMESPACE = StringUtils.EMPTY;
   private final static ObjectFactory FACTORY = new ObjectFactory();

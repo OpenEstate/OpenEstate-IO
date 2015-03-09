@@ -28,7 +28,7 @@ public enum PriceInterval
   MONTHLY,
   WEEKLY;
 
-  public static PriceInterval lookup( String name )
+  public static PriceInterval fromXmlValue( String name )
   {
     name = StringUtils.trimToNull( name );
     if (name==null) return null;

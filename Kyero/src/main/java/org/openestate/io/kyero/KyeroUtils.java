@@ -36,8 +36,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.DocumentUtils;
 import org.openestate.io.core.SilentValidationHandler;
 import org.openestate.io.kyero.xml.ObjectFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -49,7 +47,7 @@ import org.xml.sax.SAXException;
  */
 public class KyeroUtils
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger( KyeroUtils.class );
+  //private final static Logger LOGGER = LoggerFactory.getLogger( KyeroUtils.class );
   public final static String PACKAGE = "org.openestate.io.kyero.xml";
   public final static KyeroVersion VERSION = KyeroVersion.V3;
   public final static String NAMESPACE = StringUtils.EMPTY;
@@ -187,11 +185,10 @@ public class KyeroUtils
   {
     if (value==null)
       return false;
-    if (!"http".equals( value.getProtocol() ))
+    else if (!"http".equals( value.getProtocol() ))
       return false;
-    if (value.toString().length()>255)
-      return false;
-    return true;
+    else
+      return value.toString().length()<256;
   }
 
   public static Boolean parseBoolType( String value )
@@ -202,6 +199,8 @@ public class KyeroUtils
 
   public static Calendar parseDateType( String value )
   {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
     try
     {
       Calendar cal = Calendar.getInstance();
@@ -218,10 +217,7 @@ public class KyeroUtils
       }
       catch (ParseException ex2)
       {
-        LOGGER.warn( "Can't parse date!" );
-        LOGGER.warn( "> value: " + value );
-        LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-        return null;
+        throw new IllegalArgumentException( "Can't parse date value '"+value+"'!", ex2 );
       }
     }
   }
@@ -234,41 +230,34 @@ public class KyeroUtils
 
   public static String parseFeedVersionType( String value )
   {
-    return value;
+    return StringUtils.trimToNull( value );
   }
 
   public static String parseIdType( String value )
   {
-    return value;
+    return StringUtils.trimToNull( value );
   }
 
   public static Integer parseImageAttributeType( String value )
   {
-    try
-    {
-      return Integer.valueOf( value );
-    }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't parse image-attribute!" );
-      LOGGER.warn( "> value: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
-    }
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseInt( value ): null;
   }
 
   public static URL parseImageUrlType( String value )
   {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
     try
     {
-      return new URL( value );
+      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URL( "http://" + value );
+      else
+        return new URL( value );
     }
     catch (MalformedURLException ex)
     {
-      LOGGER.warn( "Can't parse image-url!" );
-      LOGGER.warn( "> value: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
     }
   }
 
@@ -280,52 +269,45 @@ public class KyeroUtils
 
   public static String parseLocationType( String value )
   {
-    return value;
+    return StringUtils.trimToNull( value );
   }
 
   public static Long parsePriceType( String value )
   {
-    if ("x".equalsIgnoreCase( value )) return null;
-    try
-    {
-      return Long.valueOf( value );
-    }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't parse price!" );
-      LOGGER.warn( "> value: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
-    }
+    value = StringUtils.trimToNull( value );
+    return (value!=null && !"x".equalsIgnoreCase( value ))?
+      DatatypeConverter.parseLong( value ): null;
   }
 
   public static String parseRefType( String value )
   {
-    return value;
+    return StringUtils.trimToNull( value );
   }
 
   public static String parseRequiredType( String value )
   {
-    return value;
+    return StringUtils.trimToNull( value );
   }
 
   public static String parseTypeDataType( String value )
   {
-    return value;
+    return StringUtils.trimToNull( value );
   }
 
   public static URL parseUrlDataType( String value )
   {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
     try
     {
-      return new URL( value );
+      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URL( "http://" + value );
+      else
+        return new URL( value );
     }
     catch (MalformedURLException ex)
     {
-      LOGGER.warn( "Can't parse url!" );
-      LOGGER.warn( "> value: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
     }
   }
 
@@ -336,89 +318,122 @@ public class KyeroUtils
     else if (Boolean.FALSE.equals( value ))
       return "0";
     else
-      return StringUtils.EMPTY;
+      throw new IllegalArgumentException( "Can't print boolean value!" );
   }
 
   public static String printDateType( Calendar value )
   {
-    if (value!=null) return getDateFormat().format( value.getTime() );
-    throw new IllegalArgumentException( "Empty date value!" );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date value!" );
+
+    return getDateFormat().format( value.getTime() );
   }
 
   public static String printDecimal( Double value )
   {
-    return (value!=null && value>=0)? DatatypeConverter.printDouble( value ): null;
+    if (value==null || value<0)
+      throw new IllegalArgumentException( "Can't print decimal value!" );
+    else
+      return DatatypeConverter.printDouble( value );
   }
 
   public static String printFeedVersionType( String value )
   {
-    if (isValidFeedVersionType( value )) return value;
-    throw new IllegalArgumentException( "Invalid feed-version value: " + value );
+    value = StringUtils.trimToNull( value );
+    if (value==null || !isValidFeedVersionType( value ))
+      throw new IllegalArgumentException( "Can't print feed-version value!" );
+    else
+      return value;
   }
 
   public static String printIdType( String value )
   {
-    if (isValidIdType( value )) return StringUtils.abbreviate( value, 50 );
-    throw new IllegalArgumentException( "Invalid id value: " + value );
+    value = StringUtils.trimToNull( value );
+    if (value==null || !isValidIdType( value ))
+      throw new IllegalArgumentException( "Can't print id value!" );
+    else
+      return StringUtils.abbreviate( value, 50 );
   }
 
   public static String printImageAttributeType( Integer value )
   {
-    if (isValidImageAttributeType( value )) return DatatypeConverter.printInt( value );
-    throw new IllegalArgumentException( "Invalid image-attribute value: " + value );
+    if (value==null || !isValidImageAttributeType( value ))
+      throw new IllegalArgumentException( "Can't print image-attribute value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }
 
   public static String printImageUrlType( URL value )
   {
-    if (isValidImageUrlType( value )) return value.toString();
-    throw new IllegalArgumentException( "Invalid image-url value: " + value );
+    if (value==null || !isValidImageUrlType( value ))
+      throw new IllegalArgumentException( "Can't print image-url value!" );
+    else
+      return value.toString();
   }
 
   public static String printInteger( Long value )
   {
-    return (value!=null)? DatatypeConverter.printLong( value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printLong( value );
   }
 
   public static String printLocationType( String value )
   {
-    if (value!=null) return StringUtils.abbreviate( value, 50 );
-    throw new IllegalArgumentException( "Empty location value!" );
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print location value!" );
+    else
+      return StringUtils.abbreviate( value, 50 );
   }
 
   public static String printNonNegativeInteger( Long value )
   {
-    return (value!=null && value>=0)? DatatypeConverter.printLong( value ): null;
+    if (value==null || value<0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printLong( value );
   }
 
   public static String printPriceType( Long value )
   {
-    if (value!=null)
-      return DatatypeConverter.printLong( value );
-    else
-      return "x";
+    return (value!=null)?
+      DatatypeConverter.printLong( value ): "x";
   }
 
   public static String printRefType( String value )
   {
-    if (isValidRefType( value )) return StringUtils.abbreviate( value, 15 );
-    throw new IllegalArgumentException( "Invalid ref value: " + value );
+    value = StringUtils.trimToNull( value );
+    if (value==null || !isValidRefType( value ))
+      throw new IllegalArgumentException( "Can't print ref value!" );
+    else
+      return StringUtils.abbreviate( value, 15 );
   }
 
   public static String printRequiredType( String value )
   {
-    if (isValidRequiredType( value )) return value;
-    throw new IllegalArgumentException( "Invalid required value: " + value );
+    value = StringUtils.trimToNull( value );
+    if (value==null || !isValidRequiredType( value ))
+      throw new IllegalArgumentException( "Can't print required value!" );
+    else
+      return value;
   }
 
   public static String printTypeDataType( String value )
   {
-    if (isValidTypeDataType( value )) return value;
-    throw new IllegalArgumentException( "Invalid type-data value: " + value );
+    value = StringUtils.trimToNull( value );
+    if (value==null || !isValidTypeDataType( value ))
+      throw new IllegalArgumentException( "Can't print type-data value!" );
+    else
+      return value;
   }
 
   public static String printUrlDataType( URL value )
   {
-    if (isValidUrlDataType( value )) return value.toString();
-    throw new IllegalArgumentException( "Invalid url value: " + value );
+    if (value==null || !isValidUrlDataType( value ))
+      throw new IllegalArgumentException( "Can't print url-data value!" );
+    else
+      return value.toString();
   }
 }

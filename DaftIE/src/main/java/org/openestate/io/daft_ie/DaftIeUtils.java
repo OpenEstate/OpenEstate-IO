@@ -16,14 +16,15 @@
 
 package org.openestate.io.daft_ie;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -46,7 +47,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 /**
- * DaftIEUtils.
+ * DaftIeUtils.
  *
  * @author Andreas Rudolph
  */
@@ -128,6 +129,11 @@ public class DaftIeUtils
     return LocaleUtils.getCountryName( country, Locale.ENGLISH );
   }
 
+  public static DateFormat getDateFormat()
+  {
+    return new SimpleDateFormat( "yyyy-MM-dd" );
+  }
+
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
@@ -138,14 +144,17 @@ public class DaftIeUtils
     JAXB = JAXBContext.newInstance( PACKAGE, classloader );
   }
 
-  @SuppressFBWarnings(
-    value = "NP_BOOLEAN_RETURN_NULL",
-    justification = "NULL is an expected return value.")
   public static Boolean parseBoolean( String value )
   {
-    if ("1".equals( value )) return Boolean.TRUE;
-    if ("0".equals( value )) return Boolean.FALSE;
-    return null;
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      return null;
+    else if ("1".equals( value ))
+      return Boolean.TRUE;
+    else if ("0".equals( value ))
+      return Boolean.FALSE;
+    else
+      throw new IllegalArgumentException( "Can't parse boolean value '"+value+"'!" );
   }
 
   public static String parseCountry( String value )
@@ -210,16 +219,18 @@ public class DaftIeUtils
       //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
       //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
     }
-    throw new IllegalArgumentException( "Can't parse datetime value '"+value+"'!" );
+    throw new IllegalArgumentException( "Can't parse date-time value '"+value+"'!" );
   }
 
   public static Double parseDouble( String value )
   {
+    value = StringUtils.trimToNull( value );
     return (value!=null)? DatatypeConverter.parseDouble( value ): null;
   }
 
   public static Integer parseInteger( String value )
   {
+    value = StringUtils.trimToNull( value );
     return (value!=null)? DatatypeConverter.parseInt( value ): null;
   }
 
@@ -229,60 +240,82 @@ public class DaftIeUtils
     if (value==null) return null;
     try
     {
-      return new URL( value );
+      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URL( "http://" + value );
+      else
+        return new URL( value );
     }
     catch (MalformedURLException ex)
     {
-      LOGGER.warn( "Can't read URL: " + value );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
     }
   }
 
   public static String printBoolean( Boolean value )
   {
-    if (Boolean.TRUE.equals( value ) ) return "1";
-    if (Boolean.FALSE.equals( value ) ) return "0";
-    return null;
+    if (Boolean.TRUE.equals( value ) )
+      return "1";
+    else if (Boolean.FALSE.equals( value ) )
+      return "0";
+    else
+      throw new IllegalArgumentException( "Can't print boolean value!" );
   }
 
   public static String printCountry( String value )
   {
     value = StringUtils.trimToNull( value );
-    if (value==null) throw new IllegalArgumentException( "Empty country!" );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print country value!" );
+
     String country = StringUtils.trimToNull( DaftIeUtils.getCountryName( value ) );
     if (country==null)
     {
       LOGGER.warn( "Can't convert country '" + value + "' to its english name!" );
       return value;
     }
-    return country;
+    else
+    {
+      return country;
+    }
   }
 
   public static String printDate( Calendar value )
   {
-    return (value!=null)? DatatypeConverter.printDate( value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date value!" );
+    else
+      return getDateFormat().format( value.getTime() );
   }
 
   public static String printDateTime( Calendar value )
   {
-    return (value!=null)? DatatypeConverter.printDateTime(value ): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date-time value!" );
+    else
+      return DatatypeConverter.printDateTime(value );
   }
 
   public static String printDouble( Double value )
   {
-    return (value!=null && value>=0)?
-      DatatypeConverter.printDouble( value ): null;
+    if (value==null || value<0)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return DatatypeConverter.printDouble( value );
   }
 
   public static String printInteger( Integer value )
   {
-    return (value!=null && value>=0)?
-      DatatypeConverter.printInt( value ): null;
+    if (value==null || value<0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }
 
   public static String printURL( URL value )
   {
-    return (value!=null)? value.toString(): null;
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print URL value!" );
+    else
+      return value.toString();
   }
 }

@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -117,6 +118,11 @@ public class WisItUtils
     return JAXB;
   }
 
+  public static DateFormat getDateTimeFormat()
+  {
+    return new SimpleDateFormat( "yyyy-MM-dd mm:hh:ss" );
+  }
+
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
@@ -145,7 +151,7 @@ public class WisItUtils
       //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
       //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
     }
-    throw new IllegalArgumentException( "Can't parse date value '"+value+"'!" );
+    throw new IllegalArgumentException( "Can't parse date-time value '"+value+"'!" );
   }
 
   public static Double parseDecimal( String value )
@@ -166,33 +172,46 @@ public class WisItUtils
     if ("ja".equalsIgnoreCase( value ))
       return Boolean.TRUE;
     else if ("nein".equalsIgnoreCase( value ))
-      return Boolean.TRUE;
+      return Boolean.FALSE;
+    else if (value!=null)
+      return DatatypeConverter.parseBoolean( value );
     else
-      return (value!=null)? DatatypeConverter.parseBoolean( value ): null;
+      throw new IllegalArgumentException( "Can't parse boolean value '" + value + "'!" );
   }
 
   public static String printDateTime( Calendar value )
   {
-    if (value==null) return null;
-    return new SimpleDateFormat( "yyyy-MM-dd mm:hh:ss" ).format( value.getTime() );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print date-time value!" );
+    else
+      return getDateTimeFormat().format( value.getTime() );
   }
 
   public static String printDecimal( Double value )
   {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print decimal value!" );
+
     NumberFormat formatter = NumberFormat.getInstance( Locale.ENGLISH );
     formatter.setGroupingUsed( false );
     formatter.setMaximumFractionDigits( 2 );
-    return (value!=null)? formatter.format( value ): null;
+    return formatter.format( value );
   }
 
   public static String printNonNegativeInteger( Integer value )
   {
-    return (value!=null && value>=0)? DatatypeConverter.printInt( value ): null;
+    if (value==null || value<0)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }
 
   /*public static String printPositiveInteger( Integer value )
   {
-    return (value!=null && value>0)? DatatypeConverter.printInt( value ): null;
+    if (value==null || value<1)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printInt( value );
   }*/
 
   public static String printYesNo( Boolean value )
@@ -202,6 +221,6 @@ public class WisItUtils
     else if (Boolean.FALSE.equals( value ))
       return "nein";
     else
-      return null;
+      throw new IllegalArgumentException( "Can't print boolean value!" );
   }
 }

@@ -28,7 +28,7 @@ public enum Unit
   FEET,
   METERS;
 
-  public static Unit lookup( String name )
+  public static Unit fromXmlValue( String name )
   {
     name = StringUtils.trimToNull( name );
     if (name==null) return null;

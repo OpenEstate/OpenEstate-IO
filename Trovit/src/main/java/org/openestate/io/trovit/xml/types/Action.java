@@ -16,7 +16,6 @@
 
 package org.openestate.io.trovit.xml.types;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -36,7 +35,7 @@ public enum Action
     this.aliases = aliases;
   }
 
-  public static Action lookup( String name )
+  public static Action fromXmlValue( String name )
   {
     name = StringUtils.trimToNull( name );
     if (name==null) return null;
