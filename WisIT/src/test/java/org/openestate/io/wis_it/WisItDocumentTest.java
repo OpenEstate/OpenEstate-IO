@@ -79,6 +79,8 @@ public class WisItDocumentTest
     obj.setORT( "Berlin" );
 
     WIS wis = WisItUtils.getFactory().createWIS();
+    wis.setBENUTZER( WisItUtils.getFactory().createWISBENUTZER() );
+    wis.getBENUTZER().setKDNR( "123" );
     wis.setOBJEKTE(WisItUtils.getFactory().createWISOBJEKTE() );
     wis.getOBJEKTE().getOBJEKT().add( obj );
 

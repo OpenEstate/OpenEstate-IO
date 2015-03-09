@@ -10,9 +10,11 @@
       parseMethod="org.openestate.io.wis_it.WisItUtils.parseInteger"
       printMethod="org.openestate.io.wis_it.WisItUtils.printNonNegativeInteger" />
 
+    <!--
     <jaxb:javaType  name="java.lang.Integer" xmlType="xsd:positiveInteger"
       parseMethod="org.openestate.io.wis_it.WisItUtils.parseInteger"
       printMethod="org.openestate.io.wis_it.WisItUtils.printPositiveInteger" />
+    -->
 
   </jaxb:globalBindings>
 

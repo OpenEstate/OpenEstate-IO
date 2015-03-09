@@ -190,10 +190,10 @@ public class WisItUtils
     return (value!=null && value>=0)? DatatypeConverter.printInt( value ): null;
   }
 
-  public static String printPositiveInteger( Integer value )
+  /*public static String printPositiveInteger( Integer value )
   {
     return (value!=null && value>0)? DatatypeConverter.printInt( value ): null;
-  }
+  }*/
 
   public static String printYesNo( Boolean value )
   {

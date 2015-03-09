@@ -46,8 +46,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *         &lt;element name="KONVENTIONIERT" type="{}yesNoType" minOccurs="0"/>
  *         &lt;element name="KUBATUR" type="{}decimalType" minOccurs="0"/>
  *         &lt;element name="ZUSTAND" type="{}conditionType" minOccurs="0"/>
- *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
+ *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
+ *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
  *         &lt;element name="STOCKWERK" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
  *         &lt;element name="AUFZUG" type="{}yesNoType" minOccurs="0"/>
  *         &lt;element name="GARAGE" type="{}yesNoType" minOccurs="0"/>
@@ -141,10 +141,10 @@ public class ObjectType
     @XmlElement(name = "ID", required = true)
     protected String id;
     @XmlElement(name = "LOESCHEN", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean loeschen;
     @XmlElement(name = "GUELTIGBIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     protected Calendar gueltigbis;
     @XmlElement(name = "IMMOBILIENART")
     protected PropertyType immobilienart;
@@ -155,65 +155,65 @@ public class ObjectType
     @XmlElement(name = "MIETEKAUF")
     protected MarketingType mietekauf;
     @XmlElement(name = "PREIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     protected Double preis;
     @XmlElement(name = "AUFANFRAGE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean aufanfrage;
     @XmlElement(name = "NUTZFLAECHE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     protected Double nutzflaeche;
     @XmlElement(name = "FLAECHEART")
     protected AreaType flaecheart;
     @XmlElement(name = "FOERDERBAR", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean foerderbar;
     @XmlElement(name = "KONVENTIONIERT", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean konventioniert;
     @XmlElement(name = "KUBATUR", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     protected Double kubatur;
     @XmlElement(name = "ZUSTAND")
     protected ConditionType zustand;
     @XmlElement(name = "ZIMMER", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "positiveInteger")
+    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlSchemaType(name = "nonNegativeInteger")
     protected Integer zimmer;
     @XmlElement(name = "STOCKWERKE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "positiveInteger")
+    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlSchemaType(name = "nonNegativeInteger")
     protected Integer stockwerke;
     @XmlElement(name = "STOCKWERK", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
     protected Integer stockwerk;
     @XmlElement(name = "AUFZUG", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean aufzug;
     @XmlElement(name = "GARAGE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean garage;
     @XmlElement(name = "ABSTELLPLATZ", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean abstellplatz;
     @XmlElement(name = "GRUENFLAECHE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean gruenflaeche;
     @XmlElement(name = "KELLER", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean keller;
     @XmlElement(name = "TERRASSE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean terrasse;
     @XmlElement(name = "LOGGIA", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean loggia;
     @XmlElement(name = "BALKON", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean balkon;
     @XmlElement(name = "DACHBODEN", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean dachboden;
     @XmlElement(name = "HEIZUNG")
     protected HeatingType heizung;

@@ -48,11 +48,15 @@ public class WisItDocument extends BaseDocument<WIS>
 
   public static WisItDocument newDocument() throws ParserConfigurationException, JAXBException
   {
-    return newDocument(WisItUtils.getFactory().createWIS());
+    return newDocument( WisItUtils.getFactory().createWIS() );
   }
 
   public static WisItDocument newDocument( WIS wis ) throws ParserConfigurationException, JAXBException
   {
+    if (wis.getOBJEKTE()==null)
+      wis.setOBJEKTE( WisItUtils.getFactory().createWISOBJEKTE() );
+    wis.getOBJEKTE().setANZAHL( wis.getOBJEKTE().getOBJEKT().size() );
+
     Document document = DocumentUtils.newDocument();
     WisItUtils.createMarshaller( "UTF-8", true ).marshal( wis, document );
     return new WisItDocument( document );

@@ -14,7 +14,7 @@
         <xsd:element name="OBJEKTE" minOccurs="0" maxOccurs="1">
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="ANZAHL" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1"/>
+              <xsd:element name="ANZAHL" type="xsd:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
               <xsd:element name="OBJEKT" type="ObjectType" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
           </xsd:complexType>
@@ -40,8 +40,8 @@
       <xsd:element name="KONVENTIONIERT" type="yesNoType" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="KUBATUR" type="decimalType" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="ZUSTAND" type="conditionType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="ZIMMER" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="STOCKWERKE" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ZIMMER" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="STOCKWERKE" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="STOCKWERK" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="AUFZUG" type="yesNoType" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="GARAGE" type="yesNoType" minOccurs="0" maxOccurs="1"/>

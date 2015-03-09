@@ -49,7 +49,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/>
+ *                   &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/>
  *                   &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
@@ -371,7 +371,7 @@ public class WIS
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/>
+     *         &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/>
      *         &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
@@ -391,8 +391,8 @@ public class WIS
     {
 
         @XmlElement(name = "ANZAHL", required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter2 .class)
-        @XmlSchemaType(name = "positiveInteger")
+        @XmlJavaTypeAdapter(Adapter1 .class)
+        @XmlSchemaType(name = "nonNegativeInteger")
         protected Integer anzahl;
         @XmlElement(name = "OBJEKT")
         protected List<ObjectType> objekt;
