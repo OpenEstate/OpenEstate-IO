@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * A {@link ValidationEventHandler} that handles validation events during XML
  * processing.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class XmlValidationHandler implements ValidationEventHandler
