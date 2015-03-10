@@ -31,16 +31,31 @@ import org.openestate.io.core.CsvFormat;
 import org.openestate.io.core.LocaleUtils;
 
 /**
- * Is24CsvFormat.
+ * Specification of the IS24-CSV format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
 {
-  public final static String ENCODING = "CP1252";
+  /**
+   * the implemented version of this format
+   */
   public final static String VERSION = "1.4.0.4";
+
+  /**
+   * the encoding of this format
+   */
+  public final static String ENCODING = "CP1252";
+
+  /**
+   * the record separator of this format
+   */
   public final static String RECORD_SEPARATOR = "\r\n";
 
+  /**
+   * Create IS24-CSV format.
+   */
   public Is24CsvFormat()
   {
     super( CSVFormat.newFormat( '|' )
@@ -48,6 +63,26 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
       .withNullString( StringUtils.EMPTY ) );
   }
 
+  /**
+   * Returns a country code, as it is preferred by this format.
+   *
+   * @param country
+   * country name to convert
+   *
+   * @return
+   * converted country code or null, if no matching country was found
+   */
+  public static String getCountryCode( String country )
+  {
+    return LocaleUtils.getCountryISO3( country );
+  }
+
+  /**
+   * Returns the preferred date format for this format.
+   *
+   * @return
+   * date format
+   */
   private static DateFormat getDateFormat()
   {
     return new SimpleDateFormat( "dd.MM.yyyy" );
@@ -57,11 +92,6 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
   public String getEncoding()
   {
     return ENCODING;
-  }
-
-  public static String getCountryCode( String country )
-  {
-    return LocaleUtils.getCountryISO3( country );
   }
 
   @Override

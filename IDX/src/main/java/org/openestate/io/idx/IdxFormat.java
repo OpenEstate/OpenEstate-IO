@@ -31,28 +31,69 @@ import org.openestate.io.core.CsvFormat;
 import org.openestate.io.core.LocaleUtils;
 
 /**
- * IdxFormat.
+ * Specification of the IDX format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
 {
-  public final static String ENCODING = "ISO-8859-1";
+  /**
+   * the implemented version of this format
+   */
   public final static String VERSION = "3.01";
+
+  /**
+   * the encoding of this format
+   */
+  public final static String ENCODING = "ISO-8859-1";
+
+  /**
+   * the record separator of this format
+   */
   public final static String RECORD_SEPARATOR = "\r\n";
 
+  /**
+   * Create IDX format.
+   */
   public IdxFormat()
   {
-    super(CSVFormat.newFormat( '#' )
+    super( CSVFormat.newFormat( '#' )
       .withRecordSeparator( RECORD_SEPARATOR )
       .withNullString( StringUtils.EMPTY ) );
   }
 
+  /**
+   * Returns a country code, as it is preferred by this format.
+   *
+   * @param country
+   * country name to convert
+   *
+   * @return
+   * converted country code or null, if no matching country was found
+   */
+  public static String getCountryCode( String country )
+  {
+    return LocaleUtils.getCountryISO2( country );
+  }
+
+  /**
+   * Returns the preferred date format for this format.
+   *
+   * @return
+   * date format
+   */
   private static DateFormat getDateFormat()
   {
     return new SimpleDateFormat( "dd.MM.yyyy" );
   }
 
+  /**
+   * Returns the preferred date-time format for this format.
+   *
+   * @return
+   * date-time format
+   */
   private static DateFormat getDateTimeFormat()
   {
     return new SimpleDateFormat( "dd.MM.yyyy HH:mm:ss" );
@@ -62,11 +103,6 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
   public String getEncoding()
   {
     return ENCODING;
-  }
-
-  public static String getCountryCode( String country )
-  {
-    return LocaleUtils.getCountryISO2( country );
   }
 
   @Override

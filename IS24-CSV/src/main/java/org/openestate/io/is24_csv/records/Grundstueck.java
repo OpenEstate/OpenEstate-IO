@@ -22,8 +22,9 @@ import org.openestate.io.is24_csv.types.ObjektkategorieGrundstueck;
 import org.openestate.io.is24_csv.types.Vermarktungsart;
 
 /**
- * Grundstueck.
+ * General record from the IS24-CSV format for plots.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public abstract class Grundstueck extends Is24CsvRecord

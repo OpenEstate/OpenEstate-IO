@@ -25,32 +25,88 @@ import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.core.CsvParser;
 
 /**
- * IdxParser.
+ * Parser for the IDX format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class IdxParser extends CsvParser<IdxRecord>
 {
+  /**
+   * Create with specifications of a {@link CSVParser}.
+   *
+   * @param parser
+   * the CSV parser from
+   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+   */
   protected IdxParser( CSVParser parser )
   {
     super( parser );
   }
 
+  /**
+   * Creates a {@link IdxParser} from a {@link String} with CSV data.
+   *
+   * @param csvString
+   * CSV string
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static IdxParser create( String csvString ) throws IOException
   {
     return new IdxFormat().parse( csvString );
   }
 
+  /**
+   * Creates a {@link IdxParser} from a {@link File} with CSV data.
+   *
+   * @param csvFile
+   * CSV file
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static IdxParser create( File csvFile ) throws IOException
   {
     return new IdxFormat().parse( csvFile );
   }
 
+  /**
+   * Creates a {@link IdxParser} from an {@link InputStream} with CSV data.
+   *
+   * @param input
+   * CSV input
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static IdxParser create( InputStream input ) throws IOException
   {
     return new IdxFormat().parse( input );
   }
 
+  /**
+   * Creates a {@link IdxParser} from a {@link Reader} with CSV data.
+   *
+   * @param input
+   * CSV input
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static IdxParser create( Reader input ) throws IOException
   {
     return new IdxFormat().parse( input );

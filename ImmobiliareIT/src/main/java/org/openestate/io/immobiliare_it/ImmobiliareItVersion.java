@@ -17,21 +17,23 @@
 package org.openestate.io.immobiliare_it;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.Version;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlVersion;
 import org.openestate.io.immobiliare_it.converters.ImmobiliareIt_2_5;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * DaftIEVersion.
+ * Implemented versions of the XML format by
+ * <a href="http://immobiliare.it/">immobiliare.it</a>.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public enum ImmobiliareItVersion implements Version
+public enum ImmobiliareItVersion implements XmlVersion
 {
   /**
-   * Immobiliare-XML 2.5
+   * Version 2.5
    */
   V2_5( ImmobiliareIt_2_5.class, "2.5", "2.5.0");
 
@@ -39,7 +41,6 @@ public enum ImmobiliareItVersion implements Version
   private final Class converterClass;
   private final String readableVersion;
   private final String[] alias;
-
 
   private ImmobiliareItVersion( Class converterClass, String readableVersion, String...alias )
   {
@@ -68,11 +69,11 @@ public enum ImmobiliareItVersion implements Version
   }
 
   @Override
-  public Converter getConverter()
+  public XmlConverter getConverter()
   {
     try
     {
-      return (Converter) this.converterClass.newInstance();
+      return (XmlConverter) this.converterClass.newInstance();
     }
     catch (Exception ex)
     {
@@ -107,14 +108,14 @@ public enum ImmobiliareItVersion implements Version
   }
 
   @Override
-  public boolean isNewerThen( Version v )
+  public boolean isNewerThen( XmlVersion v )
   {
     ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
     return ArrayUtils.indexOf( versions, this ) > ArrayUtils.indexOf( versions, v );
   }
 
   @Override
-  public boolean isOlderThen( Version v )
+  public boolean isOlderThen( XmlVersion v )
   {
     ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
     return ArrayUtils.indexOf( versions, this ) < ArrayUtils.indexOf( versions, v );

@@ -17,15 +17,17 @@
 package org.openestate.io.immoxml.converters;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.openestate.io.core.Converter;
+import org.openestate.io.core.XmlConverter;
 import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlVersion;
 
 /**
+ * Converter for version 1.1.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class ImmoXML_1_1 extends Converter<ImmoXmlDocument, ImmoXmlVersion>
+public class ImmoXML_1_1 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion>
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXML_1_1.class );
 

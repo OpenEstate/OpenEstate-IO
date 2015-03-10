@@ -20,7 +20,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -36,13 +36,13 @@ public class Kyero_3Test
 
   private static Document buildDocumentForDowngrade() throws Exception
   {
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       Kyero_3Test.class.getResourceAsStream( "/kyero-3-downgrade.xml" ) );
   }
 
   private static Document buildDocumentForUpgrade() throws Exception
   {
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       Kyero_3Test.class.getResourceAsStream( "/kyero-3-upgrade.xml" ) );
   }
 
@@ -59,17 +59,17 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:new_build", doc );
       Assert.assertEquals(
         "3 <new_build> elements available before conversion.", 3, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "2 <price_freq>sale</price_freq> elements available before conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:price_freq[text()='new_build']", doc );
       Assert.assertEquals(
         "0 <price_freq>new_build</price_freq> elements available before conversion.", 0, count );
@@ -81,17 +81,17 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:new_build", doc );
       Assert.assertEquals(
         "0 <new_build> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "1 <price_freq>sale</price_freq> element available after conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:price_freq[text()='new_build']", doc );
       Assert.assertEquals(
         "1 <price_freq>new_build</price_freq> element available after conversion.", 1, count );
@@ -117,12 +117,12 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:type", doc );
       Assert.assertEquals(
         "3 <type> elements available before conversion.", 3, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:type[not(*)]", doc );
       Assert.assertEquals(
         "3 <type> elements without children available before conversion.", 3, count );
@@ -134,12 +134,12 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:type[not(*)]", doc );
       Assert.assertEquals(
         "0 <type> elements without children available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:type/oi:en", doc );
       Assert.assertEquals(
         "3 converted <type> elements available after conversion.", 3, count );
@@ -165,12 +165,12 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:url[not(*)]", doc );
       Assert.assertEquals(
         "0 <url> elements without children available before conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:url/*", doc );
       Assert.assertEquals(
         "6 children of <url> elements available before conversion.", 6, count );
@@ -182,12 +182,12 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:url[not(*)]", doc );
       Assert.assertEquals(
         "3 <url> elements without children available after conversion.", 3, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:url/*", doc );
       Assert.assertEquals(
         "0 children of <url> elements available after conversion.", 0, count );
@@ -213,7 +213,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:custom  | " +
         "/oi:root/oi:agent/oi:custom", doc );
       Assert.assertEquals(
@@ -226,7 +226,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:custom  | " +
         "/oi:root/oi:agent/oi:custom", doc );
       Assert.assertEquals(
@@ -253,7 +253,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:energy_rating", doc );
       Assert.assertEquals(
         "3 <energy_rating> elements available before conversion.", 3, count );
@@ -265,7 +265,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:energy_rating", doc );
       Assert.assertEquals(
         "0 <energy_rating> elements available after conversion.", 0, count );
@@ -291,7 +291,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:location", doc );
       Assert.assertEquals(
         "3 <location> elements available before conversion.", 3, count );
@@ -303,7 +303,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:location", doc );
       Assert.assertEquals(
         "0 <location> elements available after conversion.", 0, count );
@@ -329,7 +329,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:notes", doc );
       Assert.assertEquals(
         "3 <notes> elements available before conversion.", 3, count );
@@ -341,7 +341,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:notes", doc );
       Assert.assertEquals(
         "0 <notes> elements available after conversion.", 0, count );
@@ -374,7 +374,7 @@ public class Kyero_3Test
 
       for (String lang : unsupportedLanguages)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:root/oi:property/oi:desc/oi:"+lang+" | " +
           "/oi:root/oi:property/oi:images/oi:image/oi:title/oi:"+lang, doc );
         Assert.assertEquals(
@@ -390,7 +390,7 @@ public class Kyero_3Test
 
       for (String lang : unsupportedLanguages)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:root/oi:property/oi:desc/oi:"+lang+" | " +
           "/oi:root/oi:property/oi:images/oi:image/oi:title/oi:"+lang, doc );
         Assert.assertEquals(
@@ -418,7 +418,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:currency", doc );
       Assert.assertEquals(
         "3 <currency> elements available before conversion.", 3, count );
@@ -430,7 +430,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:currency", doc );
       Assert.assertEquals(
         "1 <currency> element available after conversion.", 1, count );
@@ -456,12 +456,12 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:new_build", doc );
       Assert.assertEquals(
         "0 <new_build> elements available before conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "1 <price_freq>sale</price_freq> elements available before conversion.", 1, count );
@@ -473,12 +473,12 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:new_build", doc );
       Assert.assertEquals(
         "1 <new_build> elements available after conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "2 <price_freq>sale</price_freq> elements available before conversion.", 2, count );
@@ -504,7 +504,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:type[not(*)]", doc );
       Assert.assertEquals(
         "0 <type> elements without children available before conversion.", 0, count );
@@ -516,7 +516,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:type[not(*)]", doc );
       Assert.assertEquals(
         "3 <type> elements without children available after conversion.", 3, count );
@@ -542,7 +542,7 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:url[not(*)]", doc );
       Assert.assertEquals(
         "3 <url> elements without children available before conversion.", 3, count );
@@ -554,12 +554,12 @@ public class Kyero_3Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:url[not(*)]", doc );
       Assert.assertEquals(
         "0 <url> elements without children available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:root/oi:property/oi:url/oi:en", doc );
       Assert.assertEquals(
         "2 conveted <url> elements available after conversion.", 2, count );

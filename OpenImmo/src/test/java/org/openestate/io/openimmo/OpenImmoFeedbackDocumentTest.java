@@ -22,7 +22,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.xml.OpenimmoFeedback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,14 +45,14 @@ public class OpenImmoFeedbackDocumentTest
     OpenImmoVersion v = OpenImmoVersion.detectFromString( version );
     if (OpenImmoVersion.V1_2_4.isNewerThen( v ))
     {
-      return DocumentUtils.newDocument(
+      return XmlUtils.newDocument(
         "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
         + "<openimmo_feedback"+xmlns+">\n"
         + "</openimmo_feedback>" );
     }
     else
     {
-      return DocumentUtils.newDocument(
+      return XmlUtils.newDocument(
         "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
         + "<openimmo_feedback"+xmlns+">\n"
         + "  <version>" + StringEscapeUtils.escapeXml10( version ) + "</version>\n"

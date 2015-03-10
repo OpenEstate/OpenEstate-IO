@@ -50,6 +50,7 @@ import org.slf4j.LoggerFactory;
  * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a> and how
  * they are written into XML.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class WisItWritingExample

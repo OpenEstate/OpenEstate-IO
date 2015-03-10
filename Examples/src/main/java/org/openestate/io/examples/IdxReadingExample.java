@@ -31,6 +31,7 @@ import org.slf4j.LoggerFactory;
  * <p>
  * This example illustrates how to read IDX files.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class IdxReadingExample

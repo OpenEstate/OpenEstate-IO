@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
 import org.openestate.io.openimmo.OpenImmoDocument;
@@ -34,10 +34,12 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
+ * Converter for version 1.2.7.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
+public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmo_1_2_7.class );
 
@@ -178,7 +180,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeAktionElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:verwaltung_techn/oi:aktion[@aktionart]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -201,7 +203,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeAnhangElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:anhang[@gruppe] | " +
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:anhaenge/oi:anhang[@gruppe]",
       doc ).selectNodes( doc );
@@ -227,7 +229,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeBefeuerungElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:befeuerung[@KOHLE or @HOLZ or @FLUESSIGGAS]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -256,7 +258,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeEnergiepassElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -273,7 +275,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       List childNodes;
 
       // <primaerenergietraeger> elements are not supported in version 1.2.6
-      childNodes = DocumentUtils.newXPath( "oi:primaerenergietraeger", doc )
+      childNodes = XmlUtils.newXPath( "oi:primaerenergietraeger", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -282,7 +284,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // <epasstext> elements are not supported in version 1.2.6
-      childNodes = DocumentUtils.newXPath( "oi:epasstext", doc )
+      childNodes = XmlUtils.newXPath( "oi:epasstext", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -291,7 +293,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // create a <user_defined_simplefield> for <stromwert> elements
-      childNodes = DocumentUtils.newXPath( "oi:stromwert", doc )
+      childNodes = XmlUtils.newXPath( "oi:stromwert", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -309,7 +311,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // create a <user_defined_simplefield> for <waermewert> elements
-      childNodes = DocumentUtils.newXPath( "oi:waermewert", doc )
+      childNodes = XmlUtils.newXPath( "oi:waermewert", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -327,7 +329,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // create a <user_defined_simplefield> for <wertklasse> elements
-      childNodes = DocumentUtils.newXPath( "oi:wertklasse", doc )
+      childNodes = XmlUtils.newXPath( "oi:wertklasse", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -345,7 +347,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // create a <user_defined_simplefield> for <baujahr> elements
-      childNodes = DocumentUtils.newXPath( "oi:baujahr", doc )
+      childNodes = XmlUtils.newXPath( "oi:baujahr", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -363,7 +365,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // create a <user_defined_simplefield> for <ausstelldatum> elements
-      childNodes = DocumentUtils.newXPath( "oi:ausstelldatum", doc )
+      childNodes = XmlUtils.newXPath( "oi:ausstelldatum", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -381,7 +383,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // create a <user_defined_simplefield> for <jahrgang> elements
-      childNodes = DocumentUtils.newXPath( "oi:jahrgang", doc )
+      childNodes = XmlUtils.newXPath( "oi:jahrgang", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -399,7 +401,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       }
 
       // create a <user_defined_simplefield> for <gebaeudeart> elements
-      childNodes = DocumentUtils.newXPath( "oi:gebaeudeart", doc )
+      childNodes = XmlUtils.newXPath( "oi:gebaeudeart", doc )
         .selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -429,7 +431,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeSummemietenettoElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:summemietenetto[@summemieteust]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -453,13 +455,13 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeMultipleEnergiepassElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
       Element parentNode = (Element) item;
-      List childNodes = DocumentUtils.newXPath( "oi:energiepass", doc )
+      List childNodes = XmlUtils.newXPath( "oi:energiepass", doc )
         .selectNodes( parentNode );
       if (childNodes.size()<2) continue;
       for (int j=1; j<childNodes.size(); j++)
@@ -479,7 +481,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeObjektTextElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:freitexte/oi:objekt_text",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -513,14 +515,14 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
     fields.put( "jahrgang", "user_defined_simplefield[@feldname='epass_jahrgang']" );
     fields.put( "gebaeudeart", "user_defined_simplefield[@feldname='epass_gebaeudeart']" );
 
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
       Element node = (Element) item;
 
-      Element energiepassNode = (Element) DocumentUtils.newXPath(
+      Element energiepassNode = (Element) XmlUtils.newXPath(
         "oi:energiepass", doc ).selectSingleNode( node );
       if (energiepassNode==null)
       {
@@ -529,7 +531,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
       for (Map.Entry<String,String> entry : fields.entrySet())
       {
         boolean fieldProcessed = false;
-        List childNodes = DocumentUtils.newXPath( entry.getValue(), doc )
+        List childNodes = XmlUtils.newXPath( entry.getValue(), doc )
           .selectNodes( node );
         for (Object childItem : childNodes)
         {
@@ -566,7 +568,7 @@ public class OpenImmo_1_2_7 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void upgradeSummemietenettoElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:summemietenetto[@sonstigemieteust]",
       doc ).selectNodes( doc );
     for (Object item : nodes)

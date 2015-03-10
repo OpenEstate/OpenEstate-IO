@@ -72,6 +72,7 @@ import org.slf4j.LoggerFactory;
  * <a href="http://immobiliare.it">immobiliare.it</a> and how they are written
  * into XML.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class ImmobiliareItWritingExample

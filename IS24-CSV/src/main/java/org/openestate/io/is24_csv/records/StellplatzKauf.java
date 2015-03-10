@@ -26,8 +26,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * StellplatzKauf.
+ * Record from the IS24-CSV format for parking spaces to purchase.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class StellplatzKauf extends Is24CsvRecord

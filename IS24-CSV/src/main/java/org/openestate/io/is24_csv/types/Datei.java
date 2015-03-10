@@ -19,6 +19,7 @@ package org.openestate.io.is24_csv.types;
 /**
  * Datei.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class Datei

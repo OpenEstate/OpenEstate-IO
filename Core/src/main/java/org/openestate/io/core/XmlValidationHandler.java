@@ -22,14 +22,36 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * SilentValidationHandler.
+ * A {@link ValidationEventHandler} that handles validation events during XML
+ * processing.
  *
  * @author Andreas Rudolph
  */
-public class SilentValidationHandler implements ValidationEventHandler
+public class XmlValidationHandler implements ValidationEventHandler
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger( SilentValidationHandler.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( XmlValidationHandler.class );
 
+  /**
+   * Receive notification of a validation warning or error.
+   *
+   * The ValidationEvent will have a
+   * {@link javax.xml.bind.ValidationEventLocator} embedded in it that
+   * indicates where the error or warning occurred.
+   *
+   * <p>
+   * If an unchecked runtime exception is thrown from this method, the JAXB
+   * provider will treat it as if the method returned false and interrupt
+   * the current unmarshal, validate, or marshal operation.
+   *
+   * @param event the encapsulated validation event information.  It is a
+   * provider error if this parameter is null.
+   * @return true if the JAXB Provider should attempt to continue the current
+   *         unmarshal, validate, or marshal operation after handling this
+   *         warning/error, false if the provider should terminate the current
+   *         operation with the appropriate <tt>UnmarshalException</tt>,
+   *         <tt>ValidationException</tt>, or <tt>MarshalException</tt>.
+   * @throws IllegalArgumentException if the event object is null.
+   */
   @Override
   public boolean handleEvent( ValidationEvent event )
   {

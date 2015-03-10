@@ -13,4 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * Records for the IS24-CSV format.
+ *
+ * @since 1.0
+ * @author Andreas Rudolph
+ */
 package org.openestate.io.is24_csv.records;

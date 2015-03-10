@@ -19,8 +19,8 @@ package org.openestate.io.openimmo.converters;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
 import org.openestate.io.openimmo.OpenImmoDocument;
@@ -32,10 +32,12 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
+ * Converter for version 1.2.1.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
+public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmo_1_2_1.class );
 
@@ -148,17 +150,17 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeEnergiepassElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
       Element parentNode = (Element) item;
       boolean skalaProcessed = false;
-      String artValue = DocumentUtils.newXPath( "oi:art/text()", doc )
+      String artValue = XmlUtils.newXPath( "oi:art/text()", doc )
         .stringValueOf( parentNode );
 
-      List childNodes = DocumentUtils.newXPath( "oi:mitwarmwasser", doc )
+      List childNodes = XmlUtils.newXPath( "oi:mitwarmwasser", doc )
         .selectNodes( parentNode );
       for (Object child : childNodes)
       {
@@ -166,7 +168,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = DocumentUtils.newXPath( "oi:energieverbrauchkennwert", doc )
+      childNodes = XmlUtils.newXPath( "oi:energieverbrauchkennwert", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -183,7 +185,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = DocumentUtils.newXPath( "oi:endenergiebedarf", doc )
+      childNodes = XmlUtils.newXPath( "oi:endenergiebedarf", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -219,7 +221,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeHausElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -246,7 +248,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
     //DocumentUtils.write( doc, System.out );
     //System.out.println( "----------------------------" );
 
-    DocumentUtils.replaceNamespace( doc, OpenImmoUtils.OLD_NAMESPACE );
+    XmlUtils.replaceNamespace( doc, OpenImmoUtils.OLD_NAMESPACE );
 
     //System.out.println( "----------------------------" );
     //System.out.println( "DOCUMENT AFTER CONVERSION:" );
@@ -264,7 +266,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeObjektartZusatzElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:objektart_zusatz",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -291,7 +293,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void upgradeEnergiepassElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -300,12 +302,12 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
       String energiebedarfValue = null;
       String skalaValue = null;
 
-      Element artNode = (Element) DocumentUtils.newXPath( "oi:art", doc )
+      Element artNode = (Element) XmlUtils.newXPath( "oi:art", doc )
         .selectSingleNode( parentNode );
       String artValue = (artNode!=null)?
         StringUtils.trimToNull( artNode.getTextContent() ): null;
 
-      List childNodes = DocumentUtils.newXPath( "oi:heizwert", doc )
+      List childNodes = XmlUtils.newXPath( "oi:heizwert", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -313,7 +315,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = DocumentUtils.newXPath( "oi:energiebedarf", doc )
+      childNodes = XmlUtils.newXPath( "oi:energiebedarf", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -323,7 +325,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = DocumentUtils.newXPath( "oi:skala", doc )
+      childNodes = XmlUtils.newXPath( "oi:skala", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -372,7 +374,7 @@ public class OpenImmo_1_2_1 extends Converter<OpenImmoDocument, OpenImmoVersion>
     //DocumentUtils.write( doc, System.out );
     //System.out.println( "----------------------------" );
 
-    DocumentUtils.replaceNamespace( doc, StringUtils.EMPTY );
+    XmlUtils.replaceNamespace( doc, StringUtils.EMPTY );
 
     //System.out.println( "----------------------------" );
     //System.out.println( "DOCUMENT AFTER CONVERSION:" );

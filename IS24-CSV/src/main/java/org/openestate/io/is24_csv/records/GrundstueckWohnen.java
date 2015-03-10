@@ -28,8 +28,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GrundstueckWohnen.
+ * Record from the IS24-CSV format for plots with residential use.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class GrundstueckWohnen extends Grundstueck

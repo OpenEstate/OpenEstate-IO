@@ -31,8 +31,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GewerbeGastronomieHotel.
+ * Record from the IS24-CSV format for gastronomy objects.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class GewerbeGastronomieHotel extends Is24CsvRecord

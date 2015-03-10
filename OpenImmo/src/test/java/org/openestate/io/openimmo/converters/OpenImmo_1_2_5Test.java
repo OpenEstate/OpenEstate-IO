@@ -20,7 +20,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -36,19 +36,19 @@ public class OpenImmo_1_2_5Test
 
   private static Document buildFeedbackDocumentForDowngrade() throws Exception
   {
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       OpenImmo_1_2_5Test.class.getResourceAsStream( "/openimmo-feedback-1-2-5-downgrade.xml" ) );
   }
 
   private static Document buildTransferDocumentForDowngrade() throws Exception
   {
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       OpenImmo_1_2_5Test.class.getResourceAsStream( "/openimmo-1-2-5-downgrade.xml" ) );
   }
 
   private static Document buildTransferDocumentForUpgrade() throws Exception
   {
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       OpenImmo_1_2_5Test.class.getResourceAsStream( "/openimmo-1-2-5-upgrade.xml" ) );
   }
 
@@ -65,12 +65,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:bebaubar_nach[@bebaubar_attr]", doc );
       Assert.assertEquals(
         "2 <bebaubar_nach> elements available before conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:bebaubar_nach[@bebaubar_attr='BAULAND_OHNE_B_PLAN']", doc );
       Assert.assertEquals(
         "1 convertable <bebaubar_nach> element available before conversion.", 1, count );
@@ -82,12 +82,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:bebaubar_nach[@bebaubar_attr]", doc );
       Assert.assertEquals(
         "1 <bebaubar_nach> element available after conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:bebaubar_nach[@bebaubar_attr='BAULAND_OHNE_B_PLAN']", doc );
       Assert.assertEquals(
         "0 convertable <bebaubar_nach> elements available after conversion.", 0, count );
@@ -113,12 +113,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='KEINE_ANGABE']", doc );
       Assert.assertEquals(
         "1 <haus haustyp=\"KEINE_ANGABE\"> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='FERTIGHAUS']", doc );
       Assert.assertEquals(
         "1 convertable <haus haustyp=\"FERTIGHAUS\"> element available before conversion.", 1, count );
@@ -130,12 +130,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='KEINE_ANGABE']", doc );
       Assert.assertEquals(
         "2 <haus haustyp=\"KEINE_ANGABE\"> elements available after conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='FERTIGHAUS']", doc );
       Assert.assertEquals(
         "0 <haus haustyp=\"FERTIGHAUS\"> elements available after conversion.", 0, count );
@@ -161,21 +161,21 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:hwbwert", doc );
       Assert.assertEquals(
         "1 convertable <hwbwert> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:hwbklasse", doc );
       Assert.assertEquals(
         "1 convertable <hwbklasse> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:fgeewert", doc );
       Assert.assertEquals( "1 convertable <fgeewert> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:fgeeklasse", doc );
       Assert.assertEquals(
         "1 convertable <fgeeklasse> element available before conversion.", 1, count );
@@ -187,42 +187,42 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:hwbwert", doc );
       Assert.assertEquals(
         "0 convertable <hwbwert> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:hwbklasse", doc );
       Assert.assertEquals(
         "0 convertable <hwbklasse> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:fgeewert", doc );
       Assert.assertEquals(
         "0 convertable <fgeewert> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:fgeeklasse", doc );
       Assert.assertEquals(
         "0 convertable <fgeeklasse> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_hwbwert']", doc );
       Assert.assertEquals(
         "1 converted <user_defined_simplefield feldname=\"epass_hwbwert\"> element available after conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_hwbklasse']", doc );
       Assert.assertEquals(
         "1 converted <user_defined_simplefield feldname=\"epass_hwbklasse\"> element available after conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_fgeewert']", doc );
       Assert.assertEquals(
         "1 converted <user_defined_simplefield feldname=\"epass_fgeewert\"> element available after conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_fgeeklasse']", doc );
       Assert.assertEquals(
         "1 converted <user_defined_simplefield feldname=\"epass_fgeeklasse\"> element available after conversion.", 1, count );
@@ -248,12 +248,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:erschliessung[@erschl_attr]", doc );
       Assert.assertEquals(
         "2 <erschliessung> elements available before conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:erschliessung[@erschl_attr='ORTSUEBLICHERSCHLOSSEN']", doc );
       Assert.assertEquals(
         "1 convertable <erschliessung> element available before conversion.", 1, count );
@@ -265,12 +265,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:erschliessung[@erschl_attr]", doc );
       Assert.assertEquals(
         "1 <erschliessung> element available after conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:erschliessung[@erschl_attr='ORTSUEBLICHERSCHLOSSEN']", doc );
       Assert.assertEquals(
         "0 convertable <erschliessung> elements available after conversion.", 0, count );
@@ -296,12 +296,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:wohnung[@wohnungtyp='KEINE_ANGABE']", doc );
       Assert.assertEquals(
         "1 <wohnung wohnungtyp==\"KEINE_ANGABE\"> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:wohnung[@wohnungtyp='ATTIKAWOHNUNG']", doc );
       Assert.assertEquals(
         "1 convertable <wohnung wohnungtyp==\"ATTIKAWOHNUNG\"> element available before conversion.", 1, count );
@@ -313,12 +313,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:wohnung[@wohnungtyp='KEINE_ANGABE']", doc );
       Assert.assertEquals(
         "2 <wohnung wohnungtyp==\"KEINE_ANGABE\"> elements available after conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:wohnung[@wohnungtyp='ATTIKAWOHNUNG']", doc );
       Assert.assertEquals(
         "0 <wohnung wohnungtyp==\"ATTIKAWOHNUNG\"> elements available after conversion.", 0, count );
@@ -344,12 +344,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:zustand[@zustand_art]", doc );
       Assert.assertEquals(
         "3 <zustand> elements available before conversion.", 3, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:zustand[@zustand_art='TEIL_SANIERT' or @zustand_art='VOLL_SANIERT' or @zustand_art='SANIERUNGSBEDUERFTIG']", doc );
       Assert.assertEquals(
         "3 convertable <zustand> elements available before conversion.", 3, count );
@@ -361,12 +361,12 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:zustand[@zustand_art]", doc );
       Assert.assertEquals(
         "2 <zustand> elements available after conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:zustand[@zustand_art='TEIL_SANIERT' or @zustand_art='VOLL_SANIERT' or @zustand_art='SANIERUNGSBEDUERFTIG']", doc );
       Assert.assertEquals(
         "0 convertable <zustand> elements available after conversion.", 0, count );
@@ -392,7 +392,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:flaechen/oi:anzahl_logia", doc );
       Assert.assertEquals(
         "3 <anzahl_logia> elements available before conversion.", 3, count );
@@ -404,7 +404,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:flaechen/oi:anzahl_logia", doc );
       Assert.assertEquals(
         "0 <anzahl_logia> elements available after conversion.", 0, count );
@@ -430,7 +430,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:erschliessung_umfang", doc );
       Assert.assertEquals(
         "3 <erschliessung_umfang> elements available before conversion.", 3, count );
@@ -442,7 +442,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:erschliessung_umfang", doc );
       Assert.assertEquals(
         "0 <erschliessung_umfang> elements available after conversion.", 0, count );
@@ -473,7 +473,7 @@ public class OpenImmo_1_2_5Test
 
       for (String element : elements)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:openimmo_feedback/oi:objekt/oi:" + element, doc );
         Assert.assertEquals(
           "1 convertable <"+element+"> element available before conversion.", 1, count );
@@ -488,7 +488,7 @@ public class OpenImmo_1_2_5Test
 
       for (String element : elements)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:openimmo_feedback/oi:objekt/oi:" + element, doc );
         Assert.assertEquals(
           "0 convertable <"+element+"> elements available after conversion.", 0, count );
@@ -520,7 +520,7 @@ public class OpenImmo_1_2_5Test
 
       for (String element : elements)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:openimmo/oi:anbieter/oi:immobilie/oi:kontaktperson/oi:" + element, doc );
         Assert.assertEquals(
           "1 convertable <"+element+"> element available before conversion.", 1, count );
@@ -535,7 +535,7 @@ public class OpenImmo_1_2_5Test
 
       for (String element : elements)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:openimmo/oi:anbieter/oi:immobilie/oi:kontaktperson/oi:" + element, doc );
         Assert.assertEquals(
           "0 convertable <"+element+"> elements available after conversion.", 0, count );
@@ -562,7 +562,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mwst_gesamt", doc );
       Assert.assertEquals(
         "3 <mwst_gesamt> elements available before conversion.", 3, count );
@@ -574,7 +574,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mwst_gesamt", doc );
       Assert.assertEquals(
         "0 <mwst_gesamt> elements available after conversion.", 0, count );
@@ -600,7 +600,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:versteigerung/oi:verkehrswert", doc );
       Assert.assertEquals(
         "3 <verkehrswert> elements available before conversion.", 3, count );
@@ -612,7 +612,7 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:versteigerung/oi:verkehrswert", doc );
       Assert.assertEquals(
         "0 <verkehrswert> elements available after conversion.", 0, count );
@@ -643,7 +643,7 @@ public class OpenImmo_1_2_5Test
 
       for (String element : elements)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:openimmo/oi:anbieter/oi:immobilie/oi:verwaltung_techn/oi:" + element, doc );
         Assert.assertEquals(
           "1 convertable <"+element+"> element available before conversion.", 1, count );
@@ -658,7 +658,7 @@ public class OpenImmo_1_2_5Test
 
       for (String element : elements)
       {
-        count = DocumentUtils.countNodes(
+        count = XmlUtils.countNodes(
           "/oi:openimmo/oi:anbieter/oi:immobilie/oi:verwaltung_techn/oi:" + element, doc );
         Assert.assertEquals(
           "0 convertable <"+element+"> elements available after conversion.", 0, count );
@@ -685,22 +685,22 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_hwbwert']", doc );
       Assert.assertEquals(
         "2 convertable <user_defined_simplefield feldname=\"epass_hwbwert\"> elements available before conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_hwbklasse']", doc );
       Assert.assertEquals(
         "2 convertable <user_defined_simplefield feldname=\"epass_hwbklasse\"> elements available before conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_fgeewert']", doc );
       Assert.assertEquals(
         "2 convertable <user_defined_simplefield feldname=\"epass_fgeewert\"> elements available before conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_fgeeklasse']", doc );
       Assert.assertEquals(
         "2 convertable <user_defined_simplefield feldname=\"epass_fgeeklasse\"> elements available before conversion.", 2, count );
@@ -712,42 +712,42 @@ public class OpenImmo_1_2_5Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_hwbwert']", doc );
       Assert.assertEquals(
         "0 convertable <user_defined_simplefield feldname=\"epass_hwbwert\"> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_hwbklasse']", doc );
       Assert.assertEquals(
         "0 convertable <user_defined_simplefield feldname=\"epass_hwbklasse\"> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_fgeewert']", doc );
       Assert.assertEquals(
         "0 convertable <user_defined_simplefield feldname=\"epass_fgeewert\"> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:user_defined_simplefield[@feldname='epass_fgeeklasse']", doc );
       Assert.assertEquals(
         "0 convertable <user_defined_simplefield feldname=\"epass_fgeeklasse\"> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:hwbwert", doc );
       Assert.assertEquals(
         "2 converted <hwbwert> elements available after conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:hwbklasse", doc );
       Assert.assertEquals(
         "2 converted <hwbklasse> elements available after conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:fgeewert", doc );
       Assert.assertEquals(
         "2 converted <fgeewert> elements available after conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:fgeeklasse", doc );
       Assert.assertEquals(
         "2 converted <fgeeklasse> elements available after conversion.", 2, count );

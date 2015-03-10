@@ -13,4 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.openestate.io.daftie;
+
+/**
+ * Read and write XML data for
+ * <a href="http://immobiliare.it/">immobiliare.it</a>.
+ *
+ * @since 1.0
+ * @author Andreas Rudolph
+ */
+package org.openestate.io.immobiliare_it;

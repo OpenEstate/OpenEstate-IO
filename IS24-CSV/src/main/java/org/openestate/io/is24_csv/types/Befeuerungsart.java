@@ -23,6 +23,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Befeuerungsart.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public enum Befeuerungsart

@@ -20,8 +20,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.ConvertableDocument;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConvertableDocument;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.daft_ie.xml.Daft;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,28 +29,37 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * XML document from <a href="http://daft.ie/">daft.ie</a> with a &lt;daft&gt;
+ * root element.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class DaftIeDocument extends ConvertableDocument<Daft, DaftIeVersion>
+public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( DaftIeDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   public DaftIeDocument( Document document )
   {
     super( document );
-    if (!isTransferDocument( document ))
+    if (!isReadable( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
   }
 
   @Override
   public DaftIeVersion getDocumentVersion()
   {
-    String version = null;
+    String version;
     try
     {
       Document doc = this.getDocument();
-      version = StringUtils.trimToNull( DocumentUtils
+      version = StringUtils.trimToNull(XmlUtils
         .newXPath( "/oi:daft/@version", doc )
         .stringValueOf( doc ) );
       if (version==null)
@@ -90,23 +99,59 @@ public class DaftIeDocument extends ConvertableDocument<Daft, DaftIeVersion>
     return DaftIeUtils.VERSION;
   }
 
-  public static boolean isTransferDocument( Document doc )
+  /**
+   * Checks, if a {@link Document} is readable as a {@link DaftIeDocument}.
+   *
+   * @param doc
+   * document to check
+   *
+   * @return
+   * true, if the document is usable, otherwise false
+   */
+  public static boolean isReadable( Document doc )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     return "daft".equals( root.getTagName() );
   }
 
+  /**
+   * Creates an empty {@link DaftIeDocument}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static DaftIeDocument newDocument() throws ParserConfigurationException, JAXBException
   {
     return newDocument(DaftIeUtils.getFactory().createDaft());
   }
 
+  /**
+   * Creates a {@link DaftIeDocument} from a {@link Daft} object.
+   *
+   * @param daft
+   * Java object, that represents the &lt;daft&gt; root element
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static DaftIeDocument newDocument( Daft daft ) throws ParserConfigurationException, JAXBException
   {
     if (StringUtils.isBlank( daft.getVersion() ))
       daft.setVersion(DaftIeUtils.VERSION.toReadableVersion() );
 
-    Document document = DocumentUtils.newDocument();
+    Document document = XmlUtils.newDocument();
     DaftIeUtils.createMarshaller( "UTF-8", true ).marshal( daft, document );
     return new DaftIeDocument( document );
   }
@@ -117,8 +162,7 @@ public class DaftIeDocument extends ConvertableDocument<Daft, DaftIeVersion>
     try
     {
       Document doc = this.getDocument();
-
-      Element node = (Element) DocumentUtils
+      Element node = (Element) XmlUtils
         .newXPath( "/oi:daft", doc )
         .selectSingleNode( doc );
       if (node==null)
@@ -126,7 +170,6 @@ public class DaftIeDocument extends ConvertableDocument<Daft, DaftIeVersion>
         LOGGER.warn( "Can't find an <daft> element in the document!" );
         return;
       }
-
       node.setAttribute( "version", version.toReadableVersion() );
     }
     catch (JaxenException ex)
@@ -136,6 +179,15 @@ public class DaftIeDocument extends ConvertableDocument<Daft, DaftIeVersion>
     }
   }
 
+  /**
+   * Creates a {@link Daft} object from the contained {@link Document}.
+   *
+   * @return
+   * created object, that represents the &lt;daft&gt; root element
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   @Override
   public Daft toObject() throws JAXBException
   {

@@ -26,11 +26,13 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * CsvPrinter.
+ * A general CSV printer, that is bound to a {@link CsvFormat} and writes CSV
+ * data from {@link CsvRecord} objects.
  *
  * @param <Record>
- * ...
+ * the class used for a record, that is printed to a CSV file
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable, Flushable
@@ -39,43 +41,98 @@ public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable,
   private final static Pattern LINES = Pattern.compile( "^(.*)$", Pattern.MULTILINE );
   private final CSVPrinter printer;
 
+  /**
+   * Create with specifications of a {@link CSVPrinter}.
+   *
+   * @param printer
+   * the CSV printer from
+   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+   */
   protected CsvPrinter( CSVPrinter printer )
   {
     this.printer = printer;
   }
 
+  /**
+   * Closes the printer instance.
+   *
+   * @throws IOException
+   * if closing failed
+   */
   @Override
   public void close() throws IOException
   {
     this.printer.close();
   }
 
+  /**
+   * Closes the printer instance without throwing exceptions.
+   */
   public final void closeQuietly()
   {
     IOUtils.closeQuietly( this );
   }
 
+  /**
+   * Flushes the printer instance.
+   *
+   * @throws IOException
+   * if flushing failed
+   */
   @Override
   public void flush() throws IOException
   {
     this.printer.flush();
   }
 
+  /**
+   * Prints a single CSV value.
+   *
+   * @param value
+   * CSV value to print
+   *
+   * @throws IOException
+   * if printing failed
+   */
   protected void print( String value ) throws IOException
   {
     this.printer.print( value );
   }
 
+  /**
+   * Prints a record separator (line break).
+   *
+   * @throws IOException
+   * if printing failed
+   */
   protected void println() throws IOException
   {
     this.printer.println();
   }
 
+  /**
+   * Prints a comment.
+   *
+   * @param comment
+   * comment to print
+   *
+   * @throws IOException
+   * if printing failed
+   */
   protected void printComment( String comment ) throws IOException
   {
     this.printer.printComment( comment );
   }
 
+  /**
+   * Print a {@link CsvRecord} followed by a record separator (line break).
+   *
+   * @param record
+   * record to print
+   *
+   * @throws IOException
+   * if printing failed
+   */
   public void printRecord( Record record ) throws IOException
   {
     for (String value : record.print())
@@ -85,6 +142,15 @@ public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable,
     this.println();
   }
 
+  /**
+   * Print multiple {@link CsvRecord} objects.
+   *
+   * @param records
+   * records to print
+   *
+   * @throws IOException
+   * if printing failed
+   */
   public void printRecords( Iterable<Record> records ) throws IOException
   {
     for (Record record : records)
@@ -94,11 +160,41 @@ public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable,
     this.flush();
   }
 
+  /**
+   * Helper function to replace line breaks in a string with &lt;br/&gt; before
+   * printing.
+   * <p>
+   * This method may be used by inheriting classes, if the particular format
+   * does not support line breaks.
+   *
+   * @param value
+   * value to replace
+   *
+   * @return
+   * value with replaced line breaks
+   */
   protected static String replaceLineBreaks( String value )
   {
     return replaceLineBreaks( value, null );
   }
 
+  /**
+   * Helper function to replace line breaks in a string with a custom value
+   * before printing.
+   * <p>
+   * This method may be used by inheriting classes, if the particular format
+   * does not support line breaks.
+   *
+   * @param value
+   * value to replace
+   *
+   * @param lineBreak
+   * value, that is used for replacement of line breaks - if null, &lt;br/&gt;
+   * is used
+   *
+   * @return
+   * value with replaced line breaks
+   */
   protected static String replaceLineBreaks( String value, String lineBreak )
   {
     value = StringUtils.trimToNull( value );

@@ -51,6 +51,7 @@ import org.slf4j.LoggerFactory;
  * This example illustrates the programatic creation of IDX records and how they
  * are written into CSV.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class IdxWritingExample

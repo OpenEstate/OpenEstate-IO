@@ -20,8 +20,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.ConvertableDocument;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConvertableDocument;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.kyero.xml.Root;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,28 +29,36 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * Kyero-XML document with a &lt;root&gt; root element.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class KyeroDocument extends ConvertableDocument<Root, KyeroVersion>
+public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger(KyeroDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   public KyeroDocument( Document document )
   {
     super( document );
-    if (!isTransferDocument( document ))
+    if (!isReadable( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
   }
 
   @Override
   public KyeroVersion getDocumentVersion()
   {
-    String version = null;
+    String version;
     try
     {
       Document doc = this.getDocument();
-      version = StringUtils.trimToNull( DocumentUtils
+      version = StringUtils.trimToNull(XmlUtils
         .newXPath( "/oi:root/oi:kyero/oi:feed_version/text()", doc )
         .stringValueOf( doc ) );
       if (version==null)
@@ -90,17 +98,53 @@ public class KyeroDocument extends ConvertableDocument<Root, KyeroVersion>
     return KyeroVersion.V3;
   }
 
-  public static boolean isTransferDocument( Document doc )
+  /**
+   * Checks, if a {@link Document} is readable as a {@link KyeroDocument}.
+   *
+   * @param doc
+   * document to check
+   *
+   * @return
+   * true, if the document is usable, otherwise false
+   */
+  public static boolean isReadable( Document doc )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     return "root".equals( root.getTagName() );
   }
 
+  /**
+   * Creates an empty {@link KyeroDocument}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static KyeroDocument newDocument() throws ParserConfigurationException, JAXBException
   {
     return newDocument(KyeroUtils.getFactory().createRoot());
   }
 
+  /**
+   * Creates a {@link KyeroDocument} from a {@link Root} object.
+   *
+   * @param root
+   * Java object, that represents the &lt;root&gt; root element
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static KyeroDocument newDocument( Root root ) throws ParserConfigurationException, JAXBException
   {
     if (root.getKyero()==null)
@@ -108,7 +152,7 @@ public class KyeroDocument extends ConvertableDocument<Root, KyeroVersion>
     if (StringUtils.isBlank( root.getKyero().getFeedVersion() ))
       root.getKyero().setFeedVersion( KyeroUtils.VERSION.toXmlVersion() );
 
-    Document document = DocumentUtils.newDocument();
+    Document document = XmlUtils.newDocument();
     KyeroUtils.createMarshaller( "UTF-8", true ).marshal( root, document );
     return new KyeroDocument( document );
   }
@@ -120,17 +164,17 @@ public class KyeroDocument extends ConvertableDocument<Root, KyeroVersion>
     {
       Document doc = this.getDocument();
 
-      Element node = (Element) DocumentUtils
+      Element node = (Element) XmlUtils
         .newXPath( "/oi:root/oi:kyero/oi:feed_version", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
-        Element parentNode = (Element) DocumentUtils
+        Element parentNode = (Element) XmlUtils
           .newXPath( "/oi:root/oi:kyero", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
         {
-          Element grandParentNode = (Element) DocumentUtils
+          Element grandParentNode = (Element) XmlUtils
             .newXPath( "/oi:root", doc )
             .selectSingleNode( doc );
           if (grandParentNode==null)
@@ -155,6 +199,15 @@ public class KyeroDocument extends ConvertableDocument<Root, KyeroVersion>
     }
   }
 
+  /**
+   * Creates a {@link Root} object from the contained {@link Document}.
+   *
+   * @return
+   * created object, that represents the &lt;root&gt; root element
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   @Override
   public Root toObject() throws JAXBException
   {

@@ -26,17 +26,201 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * KyeroLanguage.
+ * Supported langauges by Kyero-XML.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public enum KyeroLanguage
 {
-  AR, BG, CA, CS, DE, DA, EL, EN, ES, ET, FA, FI, FR, HE, HI, HU, ID, IT, JA, KO,
-  LT, LV, NL, NO, PL, PT, RO, RU, SK, SL, SV, TH, TR, UK, VI, ZH;
+  /**
+   * Arabic
+   */
+  AR,
+
+  /**
+   * Bulgarian
+   */
+  BG,
+
+  /**
+   * Catalan
+   */
+  CA,
+
+  /**
+   * Czech
+   */
+  CS,
+
+  /**
+   * Danish
+   */
+  DA,
+
+  /**
+   * German
+   */
+  DE,
+
+  /**
+   * Greek
+   */
+  EL,
+
+  /**
+   * English
+   */
+  EN,
+
+  /**
+   * Spanish
+   */
+  ES,
+
+  /**
+   * Estonian
+   */
+  ET,
+
+  /**
+   * Farsi
+   */
+  FA,
+
+  /**
+   * Finnish
+   */
+  FI,
+
+  /**
+   * French
+   */
+  FR,
+
+  /**
+   * Hebrew
+   */
+  HE,
+
+  /**
+   * Hindi
+   */
+  HI,
+
+  /**
+   * Hungarian
+   */
+  HU,
+
+  /**
+   * Indonesian
+   */
+  ID,
+
+  /**
+   * Italian
+   */
+  IT,
+
+  /**
+   * Japanese
+   */
+  JA,
+
+  /**
+   * Korean
+   */
+  KO,
+
+  /**
+   * Lithuanian
+   */
+  LT,
+
+  /**
+   * Latvian
+   */
+  LV,
+
+  /**
+   * Dutch
+   */
+  NL,
+
+  /**
+   * Norwegian
+   */
+  NO,
+
+  /**
+   * Polish
+   */
+  PL,
+
+  /**
+   * Portuguese
+   */
+  PT,
+
+  /**
+   * Romanian
+   */
+  RO,
+
+  /**
+   * Russian
+   */
+  RU,
+
+  /**
+   * Slovak
+   */
+  SK,
+
+  /**
+   * Slovenian
+   */
+  SL,
+
+  /**
+   * Swedish
+   */
+  SV,
+
+  /**
+   * Thai
+   */
+  TH,
+
+  /**
+   * Turkish
+   */
+  TR,
+
+  /**
+   * Ukranian
+   */
+  UK,
+
+  /**
+   * Vietnamese
+   */
+  VI,
+
+  /**
+   * Simplified Chinese
+   */
+  ZH;
 
   private final static Logger LOGGER = LoggerFactory.getLogger( KyeroLanguage.class );
 
+  /**
+   * Removes all translations from a {@link LangType} object.
+   *
+   * @param container
+   * container, where translations are removed from
+   */
   public static void clear( LangType container )
   {
     for (KyeroLanguage language : KyeroLanguage.values())
@@ -45,6 +229,16 @@ public enum KyeroLanguage
     }
   }
 
+  /**
+   * Returns the {@link KyeroLanguage} for a certain language code.
+   *
+   * @param languageCode
+   * the language code
+   *
+   * @return
+   * language according to the provided code or null, if the language is not
+   * supported
+   */
   public static KyeroLanguage fromLanguageCode( String languageCode )
   {
     languageCode = StringUtils.trimToNull( languageCode );
@@ -56,12 +250,31 @@ public enum KyeroLanguage
     return null;
   }
 
+  /**
+   * Returns the {@link KyeroLanguage} for a certain {@link Locale} object.
+   *
+   * @param locale
+   * the locale
+   *
+   * @return
+   * language according to the provided locale or null, if the language is not
+   * supported
+   */
   public static KyeroLanguage fromLocale( Locale locale )
   {
     return (locale!=null)?
       KyeroLanguage.fromLanguageCode( locale.getLanguage() ): null;
   }
 
+  /**
+   * Returns languages, that have a translation in a {@link LangType} container.
+   *
+   * @param container
+   * container to lookup
+   *
+   * @return
+   * languages with translations in the container
+   */
   public static KyeroLanguage[] getLanguages( LangType container )
   {
     List<KyeroLanguage> languages = new ArrayList<KyeroLanguage>();
@@ -177,6 +390,16 @@ public enum KyeroLanguage
     return languages.toArray(new KyeroLanguage[languages.size()] );
   }
 
+  /**
+   * Returns the translation from a {@link LangType} container for this
+   * language.
+   *
+   * @param container
+   * container to lookup
+   *
+   * @return
+   * translation for this language
+   */
   public String getText( LangType container )
   {
     if (container==null) return null;
@@ -296,11 +519,32 @@ public enum KyeroLanguage
     }
   }
 
+  /**
+   * Returns the translation from a {@link LangType} container for a language.
+   *
+   * @param container
+   * container to lookup
+   *
+   * @param language
+   * language to lookup
+   *
+   * @return
+   * translation for this language
+   */
   public static String getText( LangType container, KyeroLanguage language )
   {
     return (language!=null)? language.getText( container ): null;
   }
 
+  /**
+   * Sets the translation for this language in a {@link LangType} container.
+   *
+   * @param container
+   * container to modify
+   *
+   * @param txt
+   * translation to set
+   */
   public void setText( LangType container, String txt )
   {
     if (container==null) return;
@@ -455,16 +699,40 @@ public enum KyeroLanguage
     }
   }
 
+  /**
+   * Sets the translation for a language in a {@link LangType} container.
+   *
+   * @param container
+   * container to modify
+   *
+   * @param txt
+   * translation to set
+   *
+   * @param language
+   * language to set
+   */
   public static void setText( LangType container, String txt, KyeroLanguage language )
   {
     if (language!=null) language.setText( container, txt );
   }
 
+  /**
+   * Returns the language code for this language.
+   *
+   * @return
+   * language code
+   */
   public String toLanguageCode()
   {
     return this.name().toLowerCase();
   }
 
+  /**
+   * Returns the {@link Locale} for this language.
+   *
+   * @return
+   * locale
+   */
   public Locale toLocale()
   {
     return LocaleUtils.toLocale( this.toLanguageCode() );

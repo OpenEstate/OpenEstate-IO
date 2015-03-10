@@ -17,27 +17,28 @@
 package org.openestate.io.kyero;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.Version;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlVersion;
 import org.openestate.io.kyero.converters.Kyero_2_1;
 import org.openestate.io.kyero.converters.Kyero_3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * KyeroVersion.
+ * Implemented versions of the Kyero-XML format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public enum KyeroVersion implements Version
+public enum KyeroVersion implements XmlVersion
 {
   /**
-   * Kyero v2.1
+   * Version v2.1
    */
   V2_1( Kyero_2_1.class, "2_1", "2.1" ),
 
   /**
-   * Kyero v3
+   * Version v3
    */
   V3( Kyero_3.class, "3", "3", "3.0", "3.1" );
 
@@ -76,11 +77,11 @@ public enum KyeroVersion implements Version
   }
 
   @Override
-  public Converter getConverter()
+  public XmlConverter getConverter()
   {
     try
     {
-      return (Converter) this.converterClass.newInstance();
+      return (XmlConverter) this.converterClass.newInstance();
     }
     catch (Exception ex)
     {
@@ -115,14 +116,14 @@ public enum KyeroVersion implements Version
   }
 
   @Override
-  public boolean isNewerThen( Version v )
+  public boolean isNewerThen( XmlVersion v )
   {
     KyeroVersion[] versions = KyeroVersion.values();
     return ArrayUtils.indexOf( versions, this ) > ArrayUtils.indexOf( versions, v );
   }
 
   @Override
-  public boolean isOlderThen( Version v )
+  public boolean isOlderThen( XmlVersion v )
   {
     KyeroVersion[] versions = KyeroVersion.values();
     return ArrayUtils.indexOf( versions, this ) < ArrayUtils.indexOf( versions, v );

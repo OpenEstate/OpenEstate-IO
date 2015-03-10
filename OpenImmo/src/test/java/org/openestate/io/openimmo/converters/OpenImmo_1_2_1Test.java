@@ -21,7 +21,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,13 +39,13 @@ public class OpenImmo_1_2_1Test
 
   private static Document buildTransferDocumentForDowngrade() throws Exception
   {
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       OpenImmo_1_2_1Test.class.getResourceAsStream( "/openimmo-1-2-1-downgrade.xml" ) );
   }
 
   private static Document buildTransferDocumentForUpgrade() throws Exception
   {
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       OpenImmo_1_2_1Test.class.getResourceAsStream( "/openimmo-1-2-1-upgrade.xml" ) );
   }
 
@@ -62,22 +62,22 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass", doc );
       Assert.assertEquals(
         "2 <energiepass> elements available before conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:mitwarmwasser", doc );
       Assert.assertEquals(
         "1 convertable <mitwarmwasser> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energieverbrauchkennwert", doc );
       Assert.assertEquals(
         "1 convertable <energieverbrauchkennwert> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:endenergiebedarf", doc );
       Assert.assertEquals(
         "1 convertable <endenergiebedarf> element available before conversion.", 1, count );
@@ -92,32 +92,32 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.printNodes( doc );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass", doc );
       Assert.assertEquals(
         "2 <energiepass> elements available after conversion.", 2, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:mitwarmwasser", doc );
       Assert.assertEquals(
         "0 convertable <mitwarmwasser> elements available before conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energieverbrauchkennwert", doc );
       Assert.assertEquals(
         "0 convertable <energieverbrauchkennwert> elements available before conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:endenergiebedarf", doc );
       Assert.assertEquals(
         "0 convertable <endenergiebedarf> elements available before conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energiebedarf", doc );
       Assert.assertEquals(
         "1 converted <energiebedarf> element available before conversion.", 1, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:skala[@type='ZAHL']", doc );
       Assert.assertEquals(
         "2 converted <skala> elements available before conversion.", 2, count );
@@ -143,7 +143,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='BUNGALOW']", doc );
       Assert.assertEquals(
         "1 convertable <haus> element available before conversion.", 1, count );
@@ -155,12 +155,12 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='BUNGALOW']", doc );
       Assert.assertEquals(
         "0 convertable <haus> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus", doc );
       Assert.assertEquals(
         "1 converted <haus> element available after conversion.", 1, count );
@@ -187,7 +187,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      root = DocumentUtils.getRootElement( doc );
+      root = XmlUtils.getRootElement( doc );
       ns = (root!=null)? StringUtils.trimToEmpty( root.getNamespaceURI() ): null;
       Assert.assertEquals(
         "XML namespace before conversion.", StringUtils.EMPTY, ns );
@@ -199,7 +199,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      root = DocumentUtils.getRootElement( doc );
+      root = XmlUtils.getRootElement( doc );
       ns = (root!=null)? StringUtils.trimToEmpty( root.getNamespaceURI() ): null;
       Assert.assertEquals(
         "XML namespace after conversion.", OpenImmoUtils.OLD_NAMESPACE, ns );
@@ -225,7 +225,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:objektart_zusatz", doc );
       Assert.assertEquals(
         "2 convertable <objektart_zusatz> elements available before conversion.", 2, count );
@@ -237,7 +237,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:objektart_zusatz", doc );
       Assert.assertEquals(
         "0 convertable <objektart_zusatz> elements available after conversion.", 0, count );
@@ -263,7 +263,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:skala", doc );
       Assert.assertEquals(
         "2 convertable <energiepass> elements available before conversion.", 2, count );
@@ -278,12 +278,12 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.printNodes( doc );
       //System.out.println( "----------------------------" );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:skala", doc );
       Assert.assertEquals(
         "0 convertable <energiepass> elements available after conversion.", 0, count );
 
-      count = DocumentUtils.countNodes(
+      count = XmlUtils.countNodes(
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energieverbrauchkennwert | " +
         "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:endenergiebedarf", doc );
       Assert.assertEquals(
@@ -311,7 +311,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      root = DocumentUtils.getRootElement( doc );
+      root = XmlUtils.getRootElement( doc );
       ns = (root!=null)? StringUtils.trimToEmpty( root.getNamespaceURI() ): null;
       Assert.assertEquals(
         "XML namespace before conversion.", OpenImmoUtils.OLD_NAMESPACE, ns );
@@ -323,7 +323,7 @@ public class OpenImmo_1_2_1Test
       //DocumentUtils.write( doc, System.out );
       //System.out.println( "----------------------------" );
 
-      root = DocumentUtils.getRootElement( doc );
+      root = XmlUtils.getRootElement( doc );
       ns = (root!=null)? StringUtils.trimToEmpty( root.getNamespaceURI() ): null;
       Assert.assertEquals(
         "XML namespace after conversion.", StringUtils.EMPTY, ns );

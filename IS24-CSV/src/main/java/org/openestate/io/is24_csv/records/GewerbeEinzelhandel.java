@@ -35,8 +35,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GewerbeEinzelhandel.
+ * Record from the IS24-CSV format for retail objects.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class GewerbeEinzelhandel extends Is24CsvRecord

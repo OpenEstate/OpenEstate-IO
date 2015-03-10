@@ -22,7 +22,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.xml.Openimmo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +41,7 @@ public class OpenImmoTransferDocumentTest
   {
     String xmlns = ("1.2.0".equals( version ) || "1.1".equals( version ))?
       " xmlns=\"" + OpenImmoUtils.OLD_NAMESPACE + "\"": StringUtils.EMPTY;
-    return DocumentUtils.newDocument(
+    return XmlUtils.newDocument(
       "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
       + "<openimmo"+xmlns+">\n"
       + "  <uebertragung version=\"" + StringEscapeUtils.escapeXml10( version ) + "\" "

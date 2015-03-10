@@ -17,7 +17,9 @@
 package org.openestate.io.immobiliare_it.xml.types;
 
 /**
+ * Category.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public enum Category

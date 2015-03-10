@@ -38,6 +38,7 @@ import org.xml.sax.SAXException;
  * <p>
  * This example illustrates how to read IS24-XML files.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class Is24XmlReadingExample

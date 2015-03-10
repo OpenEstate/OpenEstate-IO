@@ -15,10 +15,10 @@
  */
 
 /**
- * Read and write XML data for
- * <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.
+ * Convert XML data for <a href="http://immobiliare.it/">immobiliare.it</a>
+ * between different versions.
  *
  * @since 1.0
  * @author Andreas Rudolph
  */
-package org.openestate.io.wis_it;
+package org.openestate.io.immobiliare_it.converters;

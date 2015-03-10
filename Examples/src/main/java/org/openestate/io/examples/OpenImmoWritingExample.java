@@ -48,6 +48,7 @@ import org.slf4j.LoggerFactory;
  * This example illustrates the programatic creation of OpenImmo documents, how
  * they are written into XML and how they are downgraded to earlier versions.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class OpenImmoWritingExample

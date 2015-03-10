@@ -23,6 +23,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * NutzungGrundstueckWohnen.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public enum NutzungGrundstueckWohnen

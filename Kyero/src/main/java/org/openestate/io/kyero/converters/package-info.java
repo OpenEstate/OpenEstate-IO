@@ -13,4 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * Convert Kyero-XML data between different versions.
+ *
+ * @since 1.0
+ * @author Andreas Rudolph
+ */
 package org.openestate.io.kyero.converters;

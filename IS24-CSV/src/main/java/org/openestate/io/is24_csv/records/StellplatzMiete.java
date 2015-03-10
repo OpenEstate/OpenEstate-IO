@@ -29,8 +29,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * StellplatzMiete.
+ * Record from the IS24-CSV format for parking spaces to rent.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class StellplatzMiete extends Is24CsvRecord

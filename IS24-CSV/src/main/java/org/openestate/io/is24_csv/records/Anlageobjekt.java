@@ -30,8 +30,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Anlageobjekt.
+ * Record from the IS24-CSV format for investment objects.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class Anlageobjekt extends Is24CsvRecord

@@ -21,7 +21,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.is24_xml.xml.ImmobilienTransferTyp;
 import org.openestate.io.is24_xml.xml.ImmobilienTransferTyp.Anbieter;
 import org.slf4j.Logger;
@@ -39,7 +39,7 @@ public class Is24XmlDocumentTest
 
   private static Document buildExampleDocument() throws Exception
   {
-    return DocumentUtils.newDocument( Is24XmlDocumentTest.class.getResourceAsStream( "/is24.xml" ) );
+    return XmlUtils.newDocument( Is24XmlDocumentTest.class.getResourceAsStream( "/is24.xml" ) );
   }
 
   @Test

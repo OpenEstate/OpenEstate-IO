@@ -32,8 +32,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * WohnungMiete.
+ * Record from the IS24-CSV format for residences to rent.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class WohnungMiete extends Is24CsvRecord

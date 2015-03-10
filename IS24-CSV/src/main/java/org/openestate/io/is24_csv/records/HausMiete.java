@@ -32,8 +32,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * HausMiete.
+ * Record from the IS24-CSV format for houses to rent.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class HausMiete extends Is24CsvRecord

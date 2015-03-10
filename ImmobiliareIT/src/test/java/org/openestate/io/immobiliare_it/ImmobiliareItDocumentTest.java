@@ -21,7 +21,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.immobiliare_it.xml.Feed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +38,7 @@ public class ImmobiliareItDocumentTest
 
   private static Document buildExampleDocument( String version ) throws Exception
   {
-    return DocumentUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+    return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
       + "<feed xmlns=\"" + ImmobiliareItUtils.NAMESPACE + "\">\n"
       + "  <version>" + version + "</version>\n"
       + "</feed>" );

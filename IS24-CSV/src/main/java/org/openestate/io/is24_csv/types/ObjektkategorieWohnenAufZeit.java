@@ -21,6 +21,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * ObjektkategorieWohnenAufZeit.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public enum ObjektkategorieWohnenAufZeit

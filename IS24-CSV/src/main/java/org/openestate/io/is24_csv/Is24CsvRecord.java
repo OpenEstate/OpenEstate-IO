@@ -36,8 +36,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Is24CsvRecord
+ * A general Record from the IS24-CSV format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public abstract class Is24CsvRecord extends CsvRecord

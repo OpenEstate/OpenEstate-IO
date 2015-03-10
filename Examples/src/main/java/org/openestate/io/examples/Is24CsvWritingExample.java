@@ -58,6 +58,7 @@ import org.slf4j.LoggerFactory;
  * This example illustrates the programatic creation of an IS24-CSV document,
  * and how the document is written into CSV.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class Is24CsvWritingExample

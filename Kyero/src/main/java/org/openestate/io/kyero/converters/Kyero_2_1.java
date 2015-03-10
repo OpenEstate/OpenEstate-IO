@@ -17,15 +17,17 @@
 package org.openestate.io.kyero.converters;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.openestate.io.core.Converter;
+import org.openestate.io.core.XmlConverter;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroVersion;
 
 /**
+ * Converter for version 2.1.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class Kyero_2_1 extends Converter<KyeroDocument, KyeroVersion>
+public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion>
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger( Kyero_2_1.class );
 

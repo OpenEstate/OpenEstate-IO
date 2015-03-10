@@ -25,37 +25,108 @@ import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.CsvPrinter;
 
 /**
- * IdxPrinter.
+ * Printer for the IDX format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class IdxPrinter extends CsvPrinter<IdxRecord>
 {
+  /**
+   * Create with specifications of a {@link CSVPrinter}.
+   *
+   * @param printer
+   * the CSV printer from
+   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+   */
   protected IdxPrinter( CSVPrinter printer )
   {
     super( printer );
   }
 
+  /**
+   * Creates a {@link IdxPrinter}, that writes CSV data into a
+   * {@link StringBuffer}.
+   *
+   * @param csvString
+   * where CSV is written to
+   *
+   * @return
+   * created printer
+   *
+   * @throws IOException
+   * if CSV is not writable
+   */
   public static IdxPrinter create( StringBuffer csvString ) throws IOException
   {
     return new IdxFormat().print( csvString );
   }
 
+  /**
+   * Creates a {@link IdxPrinter}, that writes CSV data into a
+   * {@link StringBuilder}.
+   *
+   * @param csvString
+   * where CSV is written to
+   *
+   * @return
+   * created printer
+   *
+   * @throws IOException
+   * if CSV is not writable
+   */
   public static IdxPrinter create( StringBuilder csvString ) throws IOException
   {
     return new IdxFormat().print( csvString );
   }
 
+  /**
+   * Creates a {@link IdxPrinter}, that writes CSV data into a {@link File}.
+   *
+   * @param csvFile
+   * where CSV is written to
+   *
+   * @return
+   * created printer
+   *
+   * @throws IOException
+   * if CSV is not writable
+   */
   public static IdxPrinter create( File csvFile ) throws IOException
   {
     return new IdxFormat().print( csvFile );
   }
 
+  /**
+   * Creates a {@link IdxPrinter}, that writes CSV data into an
+   * {@link OutputStream}.
+   *
+   * @param output
+   * where CSV is written to
+   *
+   * @return
+   * created printer
+   *
+   * @throws IOException
+   * if CSV is not writable
+   */
   public static IdxPrinter create( OutputStream output ) throws IOException
   {
     return new IdxFormat().print( output );
   }
 
+  /**
+   * Creates a {@link IdxPrinter}, that writes CSV data into a {@link Writer}.
+   *
+   * @param output
+   * where CSV is written to
+   *
+   * @return
+   * created printer
+   *
+   * @throws IOException
+   * if CSV is not writable
+   */
   public static IdxPrinter create( Writer output ) throws IOException
   {
     return new IdxFormat().print( output );

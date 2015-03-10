@@ -17,15 +17,17 @@
 package org.openestate.io.daft_ie.converters;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.openestate.io.core.Converter;
+import org.openestate.io.core.XmlConverter;
 import org.openestate.io.daft_ie.DaftIeDocument;
 import org.openestate.io.daft_ie.DaftIeVersion;
 
 /**
+ * Converter for version 2.7.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class DaftIe_2_7 extends Converter<DaftIeDocument, DaftIeVersion>
+public class DaftIe_2_7 extends XmlConverter<DaftIeDocument, DaftIeVersion>
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmo_1_1.class );
 

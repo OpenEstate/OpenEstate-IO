@@ -18,8 +18,8 @@ package org.openestate.io.openimmo;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.Version;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlVersion;
 import org.openestate.io.openimmo.converters.OpenImmo_1_1;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_0;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_1;
@@ -33,54 +33,55 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * OpenImmoVersion.
+ * Implemented versions of the OpenImmo-XML format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public enum OpenImmoVersion implements Version
+public enum OpenImmoVersion implements XmlVersion
 {
   /**
-   * OpenImmo 1.1
+   * Version 1.1
    */
   V1_1( OpenImmo_1_1.class, "1.1", "1.1.0" ),
 
   /**
-   * OpenImmo 1.2.0
+   * Version 1.2.0
    */
   V1_2_0( OpenImmo_1_2_0.class, "1.2", "1.2.0" ),
 
   /**
-   * OpenImmo 1.2.1
+   * Version 1.2.1
    */
   V1_2_1( OpenImmo_1_2_1.class, "1.2.1" ),
 
   /**
-   * OpenImmo 1.2.2
+   * Version 1.2.2
    */
   V1_2_2( OpenImmo_1_2_2.class, "1.2.2" ),
 
   /**
-   * OpenImmo 1.2.3
+   * Version 1.2.3
    */
   V1_2_3( OpenImmo_1_2_3.class, "1.2.3" ),
 
   /**
-   * OpenImmo 1.2.4
+   * Version 1.2.4
    */
   V1_2_4( OpenImmo_1_2_4.class, "1.2.4" ),
 
   /**
-   * OpenImmo 1.2.5
+   * Version 1.2.5
    */
   V1_2_5( OpenImmo_1_2_5.class, "1.2.5" ),
 
   /**
-   * OpenImmo 1.2.6
+   * Version 1.2.6
    */
   V1_2_6( OpenImmo_1_2_6.class, "1.2.6" ),
 
   /**
-   * OpenImmo 1.2.7
+   * Version 1.2.7
    */
   V1_2_7( OpenImmo_1_2_7.class, "1.2.7" );
 
@@ -117,11 +118,11 @@ public enum OpenImmoVersion implements Version
   }
 
   @Override
-  public Converter getConverter()
+  public XmlConverter getConverter()
   {
     try
     {
-      return (Converter) this.converterClass.newInstance();
+      return (XmlConverter) this.converterClass.newInstance();
     }
     catch (Exception ex)
     {
@@ -156,14 +157,14 @@ public enum OpenImmoVersion implements Version
   }
 
   @Override
-  public boolean isNewerThen( Version v )
+  public boolean isNewerThen( XmlVersion v )
   {
     OpenImmoVersion[] versions = OpenImmoVersion.values();
     return ArrayUtils.indexOf( versions, this ) > ArrayUtils.indexOf( versions, v );
   }
 
   @Override
-  public boolean isOlderThen( Version v )
+  public boolean isOlderThen( XmlVersion v )
   {
     OpenImmoVersion[] versions = OpenImmoVersion.values();
     return ArrayUtils.indexOf( versions, this ) < ArrayUtils.indexOf( versions, v );

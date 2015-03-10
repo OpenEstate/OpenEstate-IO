@@ -17,39 +17,45 @@
 package org.openestate.io.core;
 
 /**
- * AbstractConverter.
+ * A general class, that converts a {@link XmlConvertableDocument} into another
+ * {@link XmlVersion}.
  *
  * @param <DocumentType>
- * ...
+ * the class of {@link XmlConvertableDocument}
  *
  * @param <VersionType>
- * ...
+ * the class to determine different versions of the document
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public abstract class Converter<DocumentType extends ConvertableDocument, VersionType extends Version>
+public abstract class XmlConverter<DocumentType extends XmlConvertableDocument, VersionType extends XmlVersion>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( AbstractConverter.class );
+  //private final static Logger LOGGER = LoggerFactory.getLogger( XmlConverter.class );
 
   /**
-   * Downgrade a document from the current version to the previous version.
+   * Downgrade a {@link XmlConvertableDocument} from the current version to the
+   * previous version.
    *
-   * @param doc document
+   * @param doc
+   * the document to downgrade
    */
   public abstract void downgradeToPreviousVersion( DocumentType doc );
 
   /**
-   * Returns the version of the converter.
+   * Returns the version, that this converter is implemented for.
    *
    * @return version
+   * version of the converter
    */
   public abstract VersionType getVersion();
 
   /**
-   * Upgrade an OpenImmo document from the previous version to the current
-   * version.
+   * Upgrade a {@link XmlConvertableDocument} document from the previous version to
+   * the current version.
    *
-   * @param doc OpenImmo document
+   * @param doc
+   * the document to upgrade
    */
   public abstract void upgradeFromPreviousVersion( DocumentType doc );
 }

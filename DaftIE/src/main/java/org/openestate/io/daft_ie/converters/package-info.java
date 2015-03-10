@@ -14,26 +14,11 @@
  * limitations under the License.
  */
 
-package org.openestate.io.core;
-
 /**
- * Version.
+ * Convert XML data for <a href="http://daft.ie/">daft.ie</a> between different
+ * versions.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public interface Version
-{
-  public Converter getConverter();
-
-  public Version getNextVersion();
-
-  public Version getPreviousVersion();
-
-  public boolean isLatestVersion();
-
-  public boolean isNewerThen( Version v );
-
-  public boolean isOlderThen( Version v );
-
-  public String toReadableVersion();
-}
+package org.openestate.io.daft_ie.converters;

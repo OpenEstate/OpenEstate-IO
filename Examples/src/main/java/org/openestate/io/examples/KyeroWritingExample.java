@@ -51,6 +51,7 @@ import org.slf4j.LoggerFactory;
  * This example illustrates the programatic creation of Kyero documents, how
  * they are written into XML and how they are downgraded to earlier versions.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class KyeroWritingExample
@@ -122,7 +123,7 @@ public class KyeroWritingExample
   }
 
   /**
-   * Create an {@link Agent} with some example data.
+   * Create an {@link Agent} object with some example data.
    *
    * @return
    * created example object
@@ -146,7 +147,7 @@ public class KyeroWritingExample
   }
 
   /**
-   * Create an {@link Kyero} with some example data.
+   * Create a {@link KyeroType} object with some example data.
    *
    * @return
    * created example object
@@ -160,7 +161,7 @@ public class KyeroWritingExample
   }
 
   /**
-   * Create an {@link PropertyType} with some example data.
+   * Create a {@link PropertyType} object with some example data.
    *
    * @return
    * created example object
@@ -217,7 +218,7 @@ public class KyeroWritingExample
     obj.getDesc().setNo( "Norwegian property description" );
     obj.getDesc().setPl( "Polish property description" );
     obj.getDesc().setPt( "Portuguese property description" );
-    obj.getDesc().setRo( "Romainan property description" );
+    obj.getDesc().setRo( "Romanian property description" );
     obj.getDesc().setRu( "Russian property description" );
     obj.getDesc().setSk( "Slovak property description" );
     obj.getDesc().setSl( "Slovenian property description" );
@@ -296,7 +297,7 @@ public class KyeroWritingExample
   }
 
   /**
-   * Create an {@link Image} with some example data.
+   * Create an {@link Image} object with some example data.
    *
    * @return
    * created example object
@@ -340,7 +341,7 @@ public class KyeroWritingExample
     img.getTitle().setNo( "Norwegian image title" );
     img.getTitle().setPl( "Polish image title" );
     img.getTitle().setPt( "Portuguese image title" );
-    img.getTitle().setRo( "Romainan image title" );
+    img.getTitle().setRo( "Romanian image title" );
     img.getTitle().setRu( "Russian image title" );
     img.getTitle().setSk( "Slovak image title" );
     img.getTitle().setSl( "Slovenian image title" );

@@ -18,21 +18,22 @@ package org.openestate.io.immoxml;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.Version;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlVersion;
 import org.openestate.io.immoxml.converters.ImmoXML_1_1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * ImmoXmlVersion.
+ * Implemented versions of the ImmoXML format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public enum ImmoXmlVersion implements Version
+public enum ImmoXmlVersion implements XmlVersion
 {
   /**
-   * ImmoXML 1.1
+   * Version 1.1
    */
   V1_1( ImmoXML_1_1.class, "1.1" );
 
@@ -69,11 +70,11 @@ public enum ImmoXmlVersion implements Version
   }
 
   @Override
-  public Converter getConverter()
+  public XmlConverter getConverter()
   {
     try
     {
-      return (Converter) this.converterClass.newInstance();
+      return (XmlConverter) this.converterClass.newInstance();
     }
     catch (Exception ex)
     {
@@ -108,14 +109,14 @@ public enum ImmoXmlVersion implements Version
   }
 
   @Override
-  public boolean isNewerThen( Version v )
+  public boolean isNewerThen( XmlVersion v )
   {
     ImmoXmlVersion[] versions = ImmoXmlVersion.values();
     return ArrayUtils.indexOf( versions, this ) > ArrayUtils.indexOf( versions, v );
   }
 
   @Override
-  public boolean isOlderThen( Version v )
+  public boolean isOlderThen( XmlVersion v )
   {
     ImmoXmlVersion[] versions = ImmoXmlVersion.values();
     return ArrayUtils.indexOf( versions, this ) < ArrayUtils.indexOf( versions, v );

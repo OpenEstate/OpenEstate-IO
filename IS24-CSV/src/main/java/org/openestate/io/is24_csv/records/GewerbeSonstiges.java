@@ -32,8 +32,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GewerbeSonstiges.
+ * Record from the IS24-CSV format for further commercial objects.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class GewerbeSonstiges extends Is24CsvRecord

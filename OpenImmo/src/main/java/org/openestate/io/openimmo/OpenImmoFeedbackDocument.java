@@ -20,7 +20,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.xml.OpenimmoFeedback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,29 +28,37 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * OpenImmo-XML document with a &lt;openimmo_feedback&gt; root element.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoFeedbackDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   public OpenImmoFeedbackDocument( Document document )
   {
     super( document );
-    if (!isFeedbackDocument( document ))
+    if (!isReadable( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
   }
 
   @Override
   public OpenImmoVersion getDocumentVersion()
   {
-    String version = null;
+    String version;
     try
     {
       Document doc = this.getDocument();
 
-      Element node = (Element) DocumentUtils
+      Element node = (Element) XmlUtils
         .newXPath( "/oi:openimmo_feedback/oi:version", doc )
         .selectSingleNode( doc );
 
@@ -61,7 +69,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
       //   the old namespace is used
       if (node==null)
       {
-        Element root = DocumentUtils.getRootElement( doc );
+        Element root = XmlUtils.getRootElement( doc );
         return (OpenImmoUtils.OLD_NAMESPACE.equalsIgnoreCase( root.getNamespaceURI() ))?
           OpenImmoVersion.V1_2_0: OpenImmoVersion.V1_2_3;
       }
@@ -98,23 +106,61 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
     return null;
   }
 
-  public static boolean isFeedbackDocument( Document doc )
+  /**
+   * Checks, if a {@link Document} is readable as a
+   * {@link OpenImmoFeedbackDocument}.
+   *
+   * @param doc
+   * document to check
+   *
+   * @return
+   * true, if the document is usable, otherwise false
+   */
+  public static boolean isReadable( Document doc )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     return "openimmo_feedback".equals( root.getTagName() );
   }
 
+  /**
+   * Creates an empty {@link OpenImmoFeedbackDocument}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static OpenImmoFeedbackDocument newDocument() throws ParserConfigurationException, JAXBException
   {
     return newDocument( OpenImmoUtils.getFactory().createOpenimmoFeedback() );
   }
 
+  /**
+   * Creates a {@link OpenImmoFeedbackDocument} from a
+   * {@link OpenimmoFeedback} object.
+   *
+   * @param feedback
+   * Java object, that represents the &lt;openimmo_feedback&gt; root element
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static OpenImmoFeedbackDocument newDocument( OpenimmoFeedback feedback ) throws ParserConfigurationException, JAXBException
   {
     if (StringUtils.isBlank( feedback.getVersion() ))
       feedback.setVersion( OpenImmoUtils.VERSION.toReadableVersion() );
 
-    Document document = DocumentUtils.newDocument();
+    Document document = XmlUtils.newDocument();
     OpenImmoUtils.createMarshaller( "UTF-8", true ).marshal( feedback, document );
     return new OpenImmoFeedbackDocument( document );
   }
@@ -126,12 +172,12 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
     {
       Document doc = this.getDocument();
 
-      String currentVersion = StringUtils.trimToEmpty( DocumentUtils
+      String currentVersion = StringUtils.trimToEmpty(XmlUtils
         .newXPath( "/oi:openimmo/oi:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       String[] ver = StringUtils.split( currentVersion, "/", 2 );
 
-      Element node = (Element) DocumentUtils
+      Element node = (Element) XmlUtils
         .newXPath( "/oi:openimmo_feedback/oi:version", doc )
         .selectSingleNode( doc );
 
@@ -140,7 +186,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
       {
         if (node!=null)
         {
-          Element root = DocumentUtils.getRootElement( doc );
+          Element root = XmlUtils.getRootElement( doc );
           root.removeChild( node );
         }
         return;
@@ -148,7 +194,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
 
       if (node==null)
       {
-        Element parentNode = (Element) DocumentUtils
+        Element parentNode = (Element) XmlUtils
           .newXPath( "/oi:openimmo_feedback", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
@@ -171,6 +217,16 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
     }
   }
 
+  /**
+   * Creates a {@link OpenimmoFeedback} object from the contained
+   * {@link Document}.
+   *
+   * @return
+   * created object, that represents the &lt;openimmo_feedback&gt; root element
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   @Override
   public OpenimmoFeedback toObject() throws JAXBException
   {

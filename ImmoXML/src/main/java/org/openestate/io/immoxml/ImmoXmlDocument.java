@@ -20,8 +20,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.ConvertableDocument;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConvertableDocument;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.immoxml.xml.Immoxml;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,28 +29,36 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * ImmoXML document with a &lt;immoxml&gt; root element.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class ImmoXmlDocument extends ConvertableDocument<Immoxml, ImmoXmlVersion>
+public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   public ImmoXmlDocument( Document document )
   {
     super( document );
-    if (!isTransferDocument( document ))
+    if (!isReadable( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
   }
 
   @Override
   public ImmoXmlVersion getDocumentVersion()
   {
-    String version = null;
+    String version;
     try
     {
       Document doc = this.getDocument();
-      version = StringUtils.trimToNull( DocumentUtils
+      version = StringUtils.trimToNull(XmlUtils
         .newXPath( "/oi:immoxml/oi:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       if (version==null)
@@ -90,25 +98,61 @@ public class ImmoXmlDocument extends ConvertableDocument<Immoxml, ImmoXmlVersion
     return ImmoXmlVersion.V1_1;
   }
 
-  public static boolean isTransferDocument( Document doc )
+  /**
+   * Checks, if a {@link Document} is readable as a {@link ImmoXmlDocument}.
+   *
+   * @param doc
+   * document to check
+   *
+   * @return
+   * true, if the document is usable, otherwise false
+   */
+  public static boolean isReadable( Document doc )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     return "immoxml".equals( root.getTagName() );
   }
 
+  /**
+   * Creates an empty {@link ImmoXmlDocument}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static ImmoXmlDocument newDocument() throws ParserConfigurationException, JAXBException
   {
-    return newDocument(ImmoXmlUtils.getFactory().createImmoxml());
+    return newDocument( ImmoXmlUtils.getFactory().createImmoxml() );
   }
 
+  /**
+   * Creates a {@link ImmoXmlDocument} from a {@link Immoxml} object.
+   *
+   * @param immoxml
+   * Java object, that represents the &lt;immoxml&gt; root element
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static ImmoXmlDocument newDocument( Immoxml immoxml ) throws ParserConfigurationException, JAXBException
   {
     if (immoxml.getUebertragung()==null)
       immoxml.setUebertragung(ImmoXmlUtils.getFactory().createUebertragung() );
     if (StringUtils.isBlank( immoxml.getUebertragung().getVersion() ))
-      immoxml.getUebertragung().setVersion(ImmoXmlUtils.VERSION.toReadableVersion() );
+      immoxml.getUebertragung().setVersion( ImmoXmlUtils.VERSION.toReadableVersion() );
 
-    Document document = DocumentUtils.newDocument();
+    Document document = XmlUtils.newDocument();
     ImmoXmlUtils.createMarshaller( "UTF-8", true ).marshal( immoxml, document );
     return new ImmoXmlDocument( document );
   }
@@ -120,17 +164,17 @@ public class ImmoXmlDocument extends ConvertableDocument<Immoxml, ImmoXmlVersion
     {
       Document doc = this.getDocument();
 
-      String currentVersion = StringUtils.trimToEmpty( DocumentUtils
+      String currentVersion = StringUtils.trimToEmpty(XmlUtils
         .newXPath( "/oi:immoxml/oi:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       String[] ver = StringUtils.split( currentVersion, "/", 2 );
 
-      Element node = (Element) DocumentUtils
+      Element node = (Element) XmlUtils
         .newXPath( "/oi:immoxml/oi:uebertragung", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
-        Element parentNode = (Element) DocumentUtils
+        Element parentNode = (Element) XmlUtils
           .newXPath( "/oi:immoxml", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
@@ -153,6 +197,15 @@ public class ImmoXmlDocument extends ConvertableDocument<Immoxml, ImmoXmlVersion
     }
   }
 
+  /**
+   * Creates a {@link Immoxml} object from the contained {@link Document}.
+   *
+   * @return
+   * created object, that represents the &lt;immoxml&gt; root element
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   @Override
   public Immoxml toObject() throws JAXBException
   {

@@ -19,6 +19,7 @@ package org.openestate.io.trovit.xml.types;
 /**
  * IntBool.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class IntBool

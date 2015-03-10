@@ -34,8 +34,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GewerbeBueroPraxen.
+ * Record from the IS24-CSV format for offices / surgeries.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class GewerbeBueroPraxis extends Is24CsvRecord

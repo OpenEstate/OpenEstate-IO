@@ -24,32 +24,71 @@ import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * CsvRecord.
+ * A general CSV record, that is read by a {@link CsvParser} and written by a
+ * {@link CsvPrinter}.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public abstract class CsvRecord
 {
   private final Map<Integer,String> values;
 
+  /**
+   * Create an empty record.
+   */
   protected CsvRecord()
   {
     this.values = new HashMap<Integer, String>();
   }
 
+  /**
+   * Returns the value of the record at a certain index position.
+   *
+   * @param pos
+   * index position
+   *
+   * @return
+   * value at index position or null, if not available
+   */
   protected final String get( int pos )
   {
     return this.get( pos, null );
   }
 
+  /**
+   * Returns the value of the record at a certain index position.
+   *
+   * @param pos
+   * index position
+   *
+   * @param defaultValue
+   * returned default value, if no value is available at the index position
+   *
+   * @return
+   * value at index position or the provided defaultValue, if not available
+   */
   protected final String get( int pos, String defaultValue )
   {
     String value = StringUtils.trimToNull( this.values.get( pos ) );
     return (value!=null)? value: defaultValue;
   }
 
+  /**
+   * Returns the number of values, that are hold by this record.
+   *
+   * @return
+   * number of values
+   */
   protected abstract int getRecordLenth();
 
+  /**
+   * Loads data from {@link CsvParser} into the record.
+   *
+   * @param record
+   * the CSV record from
+   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+   */
   protected void parse( CSVRecord record )
   {
     this.values.clear();
@@ -59,11 +98,26 @@ public abstract class CsvRecord
     }
   }
 
+  /**
+   * Converts a single value before it is assigned to this record.
+   *
+   * @param value
+   * value to convert
+   *
+   * @return
+   * converted value
+   */
   protected String parse( String value )
   {
     return value;
   }
 
+  /**
+   * Returns a list of values for this record as they are written into CSV.
+   *
+   * @return
+   * CSV values to write
+   */
   protected Iterable<String> print()
   {
     final int length = this.getRecordLenth();
@@ -75,6 +129,15 @@ public abstract class CsvRecord
     return row;
   }
 
+  /**
+   * Sets the value of this record at a certain index position.
+   *
+   * @param pos
+   * index position
+   *
+   * @param value
+   * the value to set
+   */
   protected final void set( int pos, String value )
   {
     value = StringUtils.trimToNull( value );

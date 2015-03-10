@@ -21,31 +21,39 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
- * AbstractConvertableDocument.
+ * An extended {@link XmlDocument} with versioning functionality.
  *
  * @param <JavaType>
- * ...
+ * the class of a (via JAXB generated) Java object, that the contained
+ * {@link Document} is mapped to
  *
  * @param <VersionType>
- * ...
+ * the class to determine different versions of the document
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public abstract class ConvertableDocument<JavaType, VersionType extends Version> extends BaseDocument<JavaType>
+public abstract class XmlConvertableDocument<JavaType, VersionType extends XmlVersion> extends XmlDocument<JavaType>
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger( ConvertableDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( XmlConvertableDocument.class );
 
-  public ConvertableDocument( Document document )
+  public XmlConvertableDocument( Document document )
   {
     super( document );
   }
 
+  /**
+   * Downgrades the contained {@link Document} to an earlier version.
+   *
+   * @param targetVersion
+   * the version, that the {@link Document} is downgraded to
+   */
   public void downgrade( VersionType targetVersion )
   {
     if (targetVersion==null)
       throw new NullPointerException( "No target version was provided!" );
 
-    Version currentVersion = this.getDocumentVersion();
+    XmlVersion currentVersion = this.getDocumentVersion();
     if (currentVersion==null)
     {
       currentVersion = this.getLatestVersion();
@@ -61,7 +69,7 @@ public abstract class ConvertableDocument<JavaType, VersionType extends Version>
       return;
     }
 
-    Version v = currentVersion;
+    XmlVersion v = currentVersion;
     while (true)
     {
       v.getConverter().downgradeToPreviousVersion( this );
@@ -70,18 +78,51 @@ public abstract class ConvertableDocument<JavaType, VersionType extends Version>
     }
   }
 
+  /**
+   * Returns the current {@link XmlVersion} of the contained {@link Document}.
+   *
+   * @return
+   * current document version
+   */
   public abstract VersionType getDocumentVersion();
 
+  /**
+   * Returns the newest supported {@link XmlVersion} for the contained
+   * {@link Document}.
+   *
+   * @return
+   * latest supported version
+   */
   public abstract VersionType getLatestVersion();
 
+  /**
+   * Changes the {@link XmlVersion} of the contained {@link Document}.
+   * <p>
+   * <strong>Warning:</strong>
+   * This function only changes the version information. It does not execute an
+   * upgrade / downgrade. Use instead
+   * {@link XmlConvertableDocument#downgrade(org.openestate.io.core.XmlVersion)},
+   * {@link XmlConvertableDocument#upgrade(org.openestate.io.core.XmlVersion)},
+   * {@link XmlConvertableDocument#upgradeToLatestVersion()}
+   * in order to perform an upgrade / downgrade.
+   *
+   * @param version
+   * new document version
+   */
   public abstract void setDocumentVersion( VersionType version );
 
-  public void upgrade( Version targetVersion )
+  /**
+   * Upgrades the contained {@link Document} to a newer version.
+   *
+   * @param targetVersion
+   * the version, that the {@link Document} is upgraded to
+   */
+  public void upgrade( XmlVersion targetVersion )
   {
     if (targetVersion==null)
       throw new NullPointerException( "No target version was provided!" );
 
-    Version currentVersion = this.getDocumentVersion();
+    XmlVersion currentVersion = this.getDocumentVersion();
     if (currentVersion==null)
     {
       currentVersion = this.getLatestVersion();
@@ -97,7 +138,7 @@ public abstract class ConvertableDocument<JavaType, VersionType extends Version>
       return;
     }
 
-    Version v = currentVersion;
+    XmlVersion v = currentVersion;
     while (true)
     {
       v = v.getNextVersion();
@@ -106,6 +147,9 @@ public abstract class ConvertableDocument<JavaType, VersionType extends Version>
     }
   }
 
+  /**
+   * Upgrades the contained {@link Document} to the newest / latest version.
+   */
   public final void upgradeToLatestVersion()
   {
     upgrade( this.getLatestVersion() );

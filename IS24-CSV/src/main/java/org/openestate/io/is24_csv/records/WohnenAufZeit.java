@@ -37,8 +37,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * WohnenAufZeit.
+ * Record from the IS24-CSV format for short term accomodation.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class WohnenAufZeit extends Is24CsvRecord

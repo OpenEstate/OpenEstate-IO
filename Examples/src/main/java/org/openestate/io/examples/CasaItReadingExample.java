@@ -36,6 +36,7 @@ import org.xml.sax.SAXException;
  * This example illustrates how to read XML files for
  * <a href="http://casa.it">casa.it</a>.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class CasaItReadingExample

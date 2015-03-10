@@ -36,109 +36,257 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.openestate.io.core.DocumentUtils;
 import org.openestate.io.core.LocaleUtils;
-import org.openestate.io.core.SilentValidationHandler;
+import org.openestate.io.core.XmlUtils;
+import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.daft_ie.xml.ObjectFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 /**
- * DaftIeUtils.
+ * Some helper functions for the XML format of
+ * <a href="http://daft.ie/">daft.ie</a>.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class DaftIeUtils
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( DaftIeUtils.class );
-  public final static String PACKAGE = "org.openestate.io.daft_ie.xml";
-  public final static String NAMESPACE = StringUtils.EMPTY;
-  public final static DaftIeVersion VERSION = DaftIeVersion.V2_7;
-  public final static Locale DEFAULT_LOCALE = Locale.ENGLISH;
-  private final static ObjectFactory FACTORY = new ObjectFactory();
   private static JAXBContext JAXB = null;
+
+  /**
+   * the latest implemented version of this format
+   */
+  public final static DaftIeVersion VERSION = DaftIeVersion.V2_7;
+
+  /**
+   * the XML target namespace of this format
+   */
+  public final static String NAMESPACE = StringUtils.EMPTY;
+
+  /**
+   * the default locale of this format
+   */
+  public final static Locale DEFAULT_LOCALE = Locale.ENGLISH;
+
+  /**
+   * the package, where generated JAXB classes are located
+   */
+  public final static String PACKAGE = "org.openestate.io.daft_ie.xml";
+
+  /**
+   * the factory for creation of JAXB objects
+   */
+  public final static ObjectFactory FACTORY = new ObjectFactory();
+
 
   private DaftIeUtils()
   {
   }
 
+  /**
+   * Creates a {@link DaftIeDocument} from an {@link InputStream}.
+   *
+   * @param input
+   * XML input
+   *
+   * @return
+   * created document or null, of the document is not supported by this format
+   *
+   * @throws SAXException
+   * if XML is invalid
+   *
+   * @throws IOException
+   * if reading failed
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static DaftIeDocument createDocument( InputStream input ) throws SAXException, IOException, ParserConfigurationException
   {
-    return createDocument( DocumentUtils.newDocument( input, true ) );
+    return createDocument( XmlUtils.newDocument( input, true ) );
   }
 
+  /**
+   * Creates a {@link DaftIeDocument} from a {@link File}.
+   *
+   * @param xmlFile
+   * XML file
+   *
+   * @return
+   * created document or null, of the document is not supported by this format
+   *
+   * @throws SAXException
+   * if XML is invalid
+   *
+   * @throws IOException
+   * if reading failed
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static DaftIeDocument createDocument( File xmlFile ) throws SAXException, IOException, ParserConfigurationException
   {
-    return createDocument( DocumentUtils.newDocument( xmlFile, true ) );
+    return createDocument( XmlUtils.newDocument( xmlFile, true ) );
   }
 
+  /**
+   * Creates a {@link DaftIeDocument} from a {@link String}.
+   *
+   * @param xmlString
+   * XML string
+   *
+   * @return
+   * created document or null, of the document is not supported by this format
+   *
+   * @throws SAXException
+   * if XML is invalid
+   *
+   * @throws IOException
+   * if reading failed
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static DaftIeDocument createDocument( String xmlString ) throws SAXException, IOException, ParserConfigurationException
   {
-    return createDocument( DocumentUtils.newDocument( xmlString, true ) );
+    return createDocument( XmlUtils.newDocument( xmlString, true ) );
   }
 
+  /**
+   * Creates a {@link DaftIeDocument} from a {@link Document}.
+   *
+   * @param doc
+   * XML document
+   *
+   * @return
+   * created document or null, of the document is not supported by this format
+   */
   public static DaftIeDocument createDocument( Document doc )
   {
-    if (DaftIeDocument.isTransferDocument( doc ))
+    if (DaftIeDocument.isReadable( doc ))
       return new DaftIeDocument( doc );
     else
       return null;
   }
 
+  /**
+   * Creates a {@link Marshaller} to write JAXB objects into XML.
+   *
+   * @return
+   * created marshaller
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static Marshaller createMarshaller() throws JAXBException
   {
     return createMarshaller( Charset.defaultCharset().name(), true );
   }
 
+  /**
+   * Creates a {@link Marshaller} to write JAXB objects into XML.
+   *
+   * @param encoding
+   * encoding of written XML
+   *
+   * @param formatted
+   * if written XML is pretty printed
+   *
+   * @return
+   * created marshaller
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static Marshaller createMarshaller( String encoding, boolean formatted ) throws JAXBException
   {
     Marshaller m = getContext().createMarshaller();
     m.setProperty( Marshaller.JAXB_ENCODING, encoding );
     m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, formatted );
-    m.setEventHandler( new SilentValidationHandler() );
+    m.setEventHandler(new XmlValidationHandler() );
     return m;
   }
 
+  /**
+   * Creates a {@link Unmarshaller} to read JAXB objects from XML.
+   *
+   * @return
+   * created unmarshaller
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static Unmarshaller createUnmarshaller() throws JAXBException
   {
     Unmarshaller m = getContext().createUnmarshaller();
-    m.setEventHandler( new SilentValidationHandler() );
+    m.setEventHandler(new XmlValidationHandler() );
     return m;
   }
 
-  public static Element createUserDefinedSimplefield( Document doc, String name, String value )
-  {
-    Element root = DocumentUtils.getRootElement( doc );
-    Element node = doc.createElementNS( root.getNamespaceURI(), "user_defined_simplefield" );
-    node.setAttribute( "feldname", name );
-    node.setTextContent( value );
-    return node;
-  }
-
+  /**
+   * Returns the {@link JAXBContext} for this format.
+   *
+   * @return
+   * context
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public synchronized static JAXBContext getContext() throws JAXBException
   {
     if (JAXB==null) initContext( Thread.currentThread().getContextClassLoader() );
     return JAXB;
   }
 
+  /**
+   * Returns a country name, as it is preferred by this format.
+   *
+   * @param country
+   * country name to convert
+   *
+   * @return
+   * converted country name or null, if no matching country was found
+   */
   public static String getCountryName( String country )
   {
-    return LocaleUtils.getCountryName( country, Locale.ENGLISH );
+    return LocaleUtils.getCountryName( country, DEFAULT_LOCALE );
   }
 
+  /**
+   * Returns the preferred date format for this format.
+   *
+   * @return
+   * date format
+   */
   public static DateFormat getDateFormat()
   {
     return new SimpleDateFormat( "yyyy-MM-dd" );
   }
 
+  /**
+   * Returns the {@link ObjectFactory} for this format.
+   *
+   * @return
+   * object factory
+   */
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
   }
 
+  /**
+   * Intializes the {@link JAXBContext} for this format.
+   *
+   * @param classloader
+   * the classloader to load the generated JAXB classes with
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public synchronized static void initContext( ClassLoader classloader ) throws JAXBException
   {
     JAXB = JAXBContext.newInstance( PACKAGE, classloader );

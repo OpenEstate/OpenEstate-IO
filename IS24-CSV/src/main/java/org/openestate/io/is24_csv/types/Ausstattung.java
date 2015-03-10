@@ -21,6 +21,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Ausstattung.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public enum Ausstattung

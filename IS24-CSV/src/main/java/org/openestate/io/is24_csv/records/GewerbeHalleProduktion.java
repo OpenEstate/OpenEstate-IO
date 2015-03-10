@@ -32,8 +32,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GewerbeHalleProduktion.
+ * Record from the IS24-CSV format for storage / production objects.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class GewerbeHalleProduktion extends Is24CsvRecord

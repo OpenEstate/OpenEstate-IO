@@ -22,7 +22,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.daft_ie.DaftIeUtils;
 import org.openestate.io.daft_ie.DaftIeVersion;
 import org.openestate.io.daft_ie.xml.Daft;
@@ -41,7 +41,7 @@ public class DaftIeDocumentTest
 
   private static Document buildExampleDocument( String version ) throws Exception
   {
-    return DocumentUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+    return XmlUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
       + "<daft version=\"" + version + "\">\n"
       + "  <overseas_sales>\n"
       + "  </overseas_sales>\n"

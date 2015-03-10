@@ -51,47 +51,97 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * DocumentUtils.
+ * Some helper functions for XML processing.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class DocumentUtils
+public class XmlUtils
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger( DocumentUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( XmlUtils.class );
 
+  /**
+   * Recursively remove any comments and unnecessary white spaces from a
+   * {@link Node} and its children.
+   *
+   * @param node
+   * the node to clean
+   */
   public static void clean( Node node )
   {
     NodeList childNodes = node.getChildNodes();
-    for (int n = childNodes.getLength() - 1; n >= 0; n--)
+    for (int n = childNodes.getLength()-1; n>=0; n--)
     {
-       Node child = childNodes.item(n);
-       short nodeType = child.getNodeType();
-
-       if (nodeType == Node.ELEMENT_NODE)
-          clean(child);
-       else if (nodeType == Node.TEXT_NODE)
-       {
-          String trimmedNodeVal = child.getNodeValue().trim();
-          if (trimmedNodeVal.length() == 0)
-             node.removeChild(child);
-          else
-             child.setNodeValue(trimmedNodeVal);
-       }
-       else if (nodeType == Node.COMMENT_NODE)
-          node.removeChild(child);
+      Node child = childNodes.item( n );
+      short nodeType = child.getNodeType();
+      if (nodeType==Node.ELEMENT_NODE)
+      {
+        clean( child );
+      }
+      else if (nodeType==Node.COMMENT_NODE)
+      {
+        node.removeChild( child );
+      }
+      else if (nodeType==Node.TEXT_NODE)
+      {
+        String value = StringUtils.trimToNull( child.getNodeValue() );
+        if (value==null)
+          node.removeChild( child );
+        else
+          child.setNodeValue( value );
+      }
     }
   }
 
+  /**
+   * Count the number of nodes, that are matching against an XPath expression.
+   *
+   * @param xpathExpression
+   * the XPath expression to match
+   *
+   * @param doc
+   * the document, on which the XPath expression is evaluated
+   *
+   * @return
+   * number of matching nodes
+   *
+   * @throws JaxenException
+   * if the XPath evaluation failed
+   */
   public static int countNodes( String xpathExpression, Document doc ) throws JaxenException
   {
     return countNodes( xpathExpression, doc, doc );
   }
 
+  /**
+   * Count the number of nodes, that are matching against an XPath expression.
+   *
+   * @param xpathExpression
+   * the XPath expression to match
+   *
+   * @param context
+   * the node, on which the XPath expression is evaluated
+   *
+   * @return
+   * number of matching nodes
+   *
+   * @throws JaxenException
+   * if the XPath evaluation failed
+   */
   public static int countNodes( String xpathExpression, Document doc, Object context ) throws JaxenException
   {
     return newXPath( xpathExpression, doc ).selectNodes( context ).size();
   }
 
+  /**
+   * Return the root {@link Element} of a {@link Document}.
+   *
+   * @param doc
+   * the document, where the root element is looked up
+   *
+   * @return
+   * root element of the document or null, if not found
+   */
   public static Element getRootElement( Document doc )
   {
     if (doc==null) return null;
@@ -104,11 +154,32 @@ public class DocumentUtils
     return null;
   }
 
+  /**
+   * Create an empty {@link Document}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument() throws ParserConfigurationException
   {
     return newDocument( true );
   }
 
+  /**
+   * Create an empty {@link Document}.
+   *
+   * @param namespaceAware
+   * if namespaces are used in the created document
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( boolean namespaceAware ) throws ParserConfigurationException
   {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -117,22 +188,100 @@ public class DocumentUtils
     return builder.newDocument();
   }
 
+  /**
+   * Create a {@link Document} from a XML string.
+   *
+   * @param xmlString
+   * the XML string, the document is created from
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( String xmlString ) throws SAXException, IOException, ParserConfigurationException
   {
     return newDocument( xmlString, true );
   }
 
+  /**
+   * Create a {@link Document} from a XML string.
+   *
+   * @param xmlString
+   * the XML string, the document is created from
+   *
+   * @param namespaceAware
+   * if namespaces are used in the created document
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( String xmlString, boolean namespaceAware ) throws SAXException, IOException, ParserConfigurationException
   {
     return newDocument(
       new InputSource( new StringReader( xmlString ) ), namespaceAware );
   }
 
+  /**
+   * Create a {@link Document} from an {@link InputSource}.
+   *
+   * @param xmlSource
+   * the XML input, the document is created from
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( InputSource xmlSource ) throws SAXException, IOException, ParserConfigurationException
   {
     return newDocument( xmlSource, true );
   }
 
+  /**
+   * Create a {@link Document} from an {@link InputSource}.
+   *
+   * @param xmlSource
+   * the XML input, the document is created from
+   *
+   * @param namespaceAware
+   * if namespaces are used in the created document
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( InputSource xmlSource, boolean namespaceAware ) throws SAXException, IOException, ParserConfigurationException
   {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -141,11 +290,50 @@ public class DocumentUtils
     return builder.parse( xmlSource );
   }
 
+  /**
+   * Create a {@link Document} from an {@link InputStream}.
+   *
+   * @param xmlStream
+   * the XML input, the document is created from
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( InputStream xmlStream ) throws SAXException, IOException, ParserConfigurationException
   {
     return newDocument( xmlStream, true );
   }
 
+  /**
+   * Create a {@link Document} from an {@link InputStream}.
+   *
+   * @param xmlStream
+   * the XML input, the document is created from
+   *
+   * @param namespaceAware
+   * if namespaces are used in the created document
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( InputStream xmlStream, boolean namespaceAware ) throws SAXException, IOException, ParserConfigurationException
   {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -154,11 +342,50 @@ public class DocumentUtils
     return builder.parse( xmlStream );
   }
 
+  /**
+   * Create a {@link Document} from a {@link File}.
+   *
+   * @param xmlFile
+   * the XML file, the document is created from
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( File xmlFile ) throws SAXException, IOException, ParserConfigurationException
   {
     return newDocument( xmlFile, true );
   }
 
+  /**
+   * Create a {@link Document} from a {@link File}.
+   *
+   * @param xmlFile
+   * the XML file, the document is created from
+   *
+   * @param namespaceAware
+   * if namespaces are used in the created document
+   *
+   * @return
+   * created document
+   *
+   * @throws SAXException
+   * if XML contains an error
+   *
+   * @throws IOException
+   * if XML is not readable
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   */
   public static Document newDocument( File xmlFile, boolean namespaceAware ) throws SAXException, IOException, ParserConfigurationException
   {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -167,19 +394,80 @@ public class DocumentUtils
     return builder.parse( xmlFile );
   }
 
+  /**
+   * Create a {@link XPath} expression.
+   *
+   * @param expression
+   * string with the XPath expression to create
+   *
+   * @return
+   * the created XPath expression
+   *
+   * @throws JaxenException
+   * if the XPath is not creatable
+   */
+  public static XPath newXPath( String expression ) throws JaxenException
+  {
+    return newXPath( expression, null, null );
+  }
+
+  /**
+   * Create a {@link XPath} expression.
+   *
+   * @param expression
+   * string with the XPath expression to create
+   *
+   * @param doc
+   * the document, whose namespace is bound to the XPath expression
+   *
+   * @return
+   * the created XPath expression
+   *
+   * @throws JaxenException
+   * if the XPath is not creatable
+   */
   public static XPath newXPath( String expression, Document doc ) throws JaxenException
+  {
+    return newXPath( expression, doc, "oi" );
+  }
+
+  /**
+   * Create a {@link XPath} expression.
+   *
+   * @param expression
+   * string with the XPath expression to create
+   *
+   * @param doc
+   * the document, whose namespace is bound to the XPath expression
+   *
+   * @param namespacePrefix
+   * prefix of the document namespace, that is bound to the XPath expression
+   *
+   * @return
+   * the created XPath expression
+   *
+   * @throws JaxenException
+   * if the XPath is not creatable
+   */
+  public static XPath newXPath( String expression, Document doc, String namespacePrefix ) throws JaxenException
   {
     DOMXPath xpath = new DOMXPath( expression );
     //LOGGER.debug( "new xpath: " + xpath.debug() );
-    if (doc!=null)
+    if (doc!=null && namespacePrefix!=null)
     {
       Element root = getRootElement( doc );
       String uri = StringUtils.trimToEmpty( root.getNamespaceURI() );
-      xpath.addNamespace( "oi", uri );
+      xpath.addNamespace( namespacePrefix, uri );
     }
     return xpath;
   }
 
+  /**
+   * Print nodes of a {@link Document} recursively to the local logger.
+   *
+   * @param doc
+   * the document to print
+   */
   public static void printNodes( Document doc )
   {
     NodeList children = doc.getChildNodes();
@@ -190,6 +478,12 @@ public class DocumentUtils
     }
   }
 
+  /**
+   * Print an {@link Element} and its children to the local logger.
+   *
+   * @param node
+   * the element to print
+   */
   public static void printNode( Element node )
   {
     printNode( node, 0 );
@@ -215,6 +509,15 @@ public class DocumentUtils
     }
   }
 
+  /**
+   * Replace the namespace of any {@link Element} in a {@link Document}.
+   *
+   * @param doc
+   * the document to update
+   *
+   * @param newNamespaceURI
+   * the new namespace URI
+   */
   public static void replaceNamespace( Document doc, String newNamespaceURI )
   {
     NodeList children = doc.getChildNodes();
@@ -224,6 +527,18 @@ public class DocumentUtils
     }
   }
 
+  /**
+   * Replace the namespace of a {@link Node} and its children.
+   *
+   * @param doc
+   * the document to update
+   *
+   * @param node
+   * the node to update
+   *
+   * @param newNamespaceURI
+   * the new namespace URI
+   */
   public static void replaceNamespace( Document doc, Node node, String newNamespaceURI )
   {
     if (node instanceof Attr)
@@ -241,15 +556,30 @@ public class DocumentUtils
     }
   }
 
+  /**
+   * Replace all text values of a {@link Document} with CDATA values.
+   *
+   * @param doc
+   * the document to update
+   */
   public static void replaceTextWithCData( Document doc )
   {
     NodeList children = doc.getChildNodes();
     for (int i=0; i<children.getLength(); i++)
     {
-      DocumentUtils.replaceTextWithCData(doc, children.item( i ) );
+      XmlUtils.replaceTextWithCData(doc, children.item( i ) );
     }
   }
 
+  /**
+   * Replace all text values of a {@link Node} with CDATA values.
+   *
+   * @param doc
+   * the document to update
+   *
+   * @param node
+   * the node to update
+   */
   public static void replaceTextWithCData( Document doc, Node node )
   {
     if (node instanceof Text)
@@ -266,16 +596,49 @@ public class DocumentUtils
       for (int i=0; i<children.getLength(); i++)
       {
         //LOGGER.debug( "> " + children.item( i ).getClass().getName() );
-        DocumentUtils.replaceTextWithCData( doc, children.item( i ) );
+        XmlUtils.replaceTextWithCData( doc, children.item( i ) );
       }
     }
   }
 
+  /**
+   * Write a {@link Document} to a {@link File}.
+   *
+   * @param doc
+   * the document to write
+   *
+   * @param file
+   * the file, where the document is written to
+   *
+   * @throws TransformerException
+   * if XML transformation failed
+   *
+   * @throws IOException
+   * if writing failed
+   */
   public static void write( Document doc, File file ) throws TransformerException, IOException
   {
     write( doc, file, true );
   }
 
+  /**
+   * Write a {@link Document} to a {@link File}.
+   *
+   * @param doc
+   * the document to write
+   *
+   * @param file
+   * the file, where the document is written to
+   *
+   * @param prettyPrint
+   * if pretty printing is enabled for the generated XML code
+   *
+   * @throws TransformerException
+   * if XML transformation failed
+   *
+   * @throws IOException
+   * if writing failed
+   */
   public static void write( Document doc, File file, boolean prettyPrint ) throws TransformerException, IOException
   {
     OutputStream output = null;
@@ -290,11 +653,38 @@ public class DocumentUtils
     }
   }
 
+  /**
+   * Write a {@link Document} to an {@link OutputStream}.
+   *
+   * @param doc
+   * the document to write
+   *
+   * @param output
+   * the output, where the document is written to
+   *
+   * @throws TransformerException
+   * if XML transformation failed
+   */
   public static void write( Document doc, OutputStream output ) throws TransformerException
   {
     write( doc, output, true );
   }
 
+  /**
+   * Write a {@link Document} to an {@link OutputStream}.
+   *
+   * @param doc
+   * the document to write
+   *
+   * @param output
+   * the output, where the document is written to
+   *
+   * @param prettyPrint
+   * if pretty printing is enabled for the generated XML code
+   *
+   * @throws TransformerException
+   * if XML transformation failed
+   */
   public static void write( Document doc, OutputStream output, boolean prettyPrint ) throws TransformerException
   {
     clean( doc );
@@ -308,11 +698,38 @@ public class DocumentUtils
     transformer.transform( new DOMSource( doc ), new StreamResult( output ) );
   }
 
+  /**
+   * Write a {@link Document} to a {@link Writer}.
+   *
+   * @param doc
+   * the document to write
+   *
+   * @param output
+   * the output, where the document is written to
+   *
+   * @throws TransformerException
+   * if XML transformation failed
+   */
   public static void write( Document doc, Writer output ) throws TransformerException
   {
     write( doc, output, true );
   }
 
+  /**
+   * Write a {@link Document} to a {@link Writer}.
+   *
+   * @param doc
+   * the document to write
+   *
+   * @param output
+   * the output, where the document is written to
+   *
+   * @param prettyPrint
+   * if pretty printing is enabled for the generated XML code
+   *
+   * @throws TransformerException
+   * if XML transformation failed
+   */
   public static void write( Document doc, Writer output, boolean prettyPrint ) throws TransformerException
   {
     clean( doc );

@@ -13,4 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * Read and write XML data for <a href="http://daft.ie/">daft.ie</a>.
+ *
+ * @since 1.0
+ * @author Andreas Rudolph
+ */
 package org.openestate.io.daft_ie;

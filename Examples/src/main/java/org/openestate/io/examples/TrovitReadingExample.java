@@ -36,6 +36,7 @@ import org.xml.sax.SAXException;
  * <p>
  * This example illustrates how to read Trovit XML feeds.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class TrovitReadingExample

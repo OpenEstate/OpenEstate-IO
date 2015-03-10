@@ -35,8 +35,8 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.openestate.io.core.DocumentUtils;
-import org.openestate.io.core.SilentValidationHandler;
+import org.openestate.io.core.XmlUtils;
+import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.wis_it.xml.ObjectFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -61,22 +61,22 @@ public class WisItUtils
 
   public static WisItDocument createDocument( InputStream input ) throws SAXException, IOException, ParserConfigurationException
   {
-    return createDocument( DocumentUtils.newDocument( input, true ) );
+    return createDocument(XmlUtils.newDocument( input, true ) );
   }
 
   public static WisItDocument createDocument( File xmlFile ) throws SAXException, IOException, ParserConfigurationException
   {
-    return createDocument( DocumentUtils.newDocument( xmlFile, true ) );
+    return createDocument(XmlUtils.newDocument( xmlFile, true ) );
   }
 
   public static WisItDocument createDocument( String xmlString ) throws SAXException, IOException, ParserConfigurationException
   {
-    return createDocument( DocumentUtils.newDocument( xmlString, true ) );
+    return createDocument(XmlUtils.newDocument( xmlString, true ) );
   }
 
   public static WisItDocument createDocument( Document doc )
   {
-    if (WisItDocument.isTransferDocument( doc ))
+    if (WisItDocument.isReadable( doc ))
       return new WisItDocument( doc );
     else
       return null;
@@ -92,20 +92,20 @@ public class WisItUtils
     Marshaller m = getContext().createMarshaller();
     m.setProperty( Marshaller.JAXB_ENCODING, encoding );
     m.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, formatted );
-    m.setEventHandler( new SilentValidationHandler() );
+    m.setEventHandler(new XmlValidationHandler() );
     return m;
   }
 
   public static Unmarshaller createUnmarshaller() throws JAXBException
   {
     Unmarshaller m = getContext().createUnmarshaller();
-    m.setEventHandler( new SilentValidationHandler() );
+    m.setEventHandler(new XmlValidationHandler() );
     return m;
   }
 
   public static Element createUserDefinedSimplefield( Document doc, String name, String value )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     Element node = doc.createElementNS( root.getNamespaceURI(), "user_defined_simplefield" );
     node.setAttribute( "feldname", name );
     node.setTextContent( value );

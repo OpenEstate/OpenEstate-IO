@@ -44,6 +44,7 @@ import org.slf4j.LoggerFactory;
  * This example illustrates the programatic creation of documents for
  * <a href="http://casa.it">casa.it</a> and how they are written into XML.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class CasaItWritingExample

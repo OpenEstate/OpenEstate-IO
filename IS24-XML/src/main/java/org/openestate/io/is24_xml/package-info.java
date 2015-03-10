@@ -13,4 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * Read and write XML data in IS24-XML format.
+ *
+ * @since 1.0
+ * @author Andreas Rudolph
+ */
 package org.openestate.io.is24_xml;

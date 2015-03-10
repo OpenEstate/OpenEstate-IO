@@ -20,7 +20,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.xml.Openimmo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,28 +28,36 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * OpenImmo-XML document with a &lt;openimmo&gt; root element.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoTransferDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   public OpenImmoTransferDocument( Document document )
   {
     super( document );
-    if (!isTransferDocument( document ))
+    if (!isReadable( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
   }
 
   @Override
   public OpenImmoVersion getDocumentVersion()
   {
-    String version = null;
+    String version;
     try
     {
       Document doc = this.getDocument();
-      version = StringUtils.trimToNull( DocumentUtils
+      version = StringUtils.trimToNull(XmlUtils
         .newXPath( "/oi:openimmo/oi:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       if (version==null)
@@ -83,17 +91,54 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
     return null;
   }
 
-  public static boolean isTransferDocument( Document doc )
+  /**
+   * Checks, if a {@link Document} is readable as a
+   * {@link OpenImmoTransferDocument}.
+   *
+   * @param doc
+   * document to check
+   *
+   * @return
+   * true, if the document is usable, otherwise false
+   */
+  public static boolean isReadable( Document doc )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     return "openimmo".equals( root.getTagName() );
   }
 
+  /**
+   * Creates an empty {@link OpenImmoTransferDocument}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static OpenImmoTransferDocument newDocument() throws ParserConfigurationException, JAXBException
   {
     return newDocument( OpenImmoUtils.getFactory().createOpenimmo() );
   }
 
+  /**
+   * Creates a {@link OpenImmoTransferDocument} from a {@link Openimmo} object.
+   *
+   * @param openimmo
+   * Java object, that represents the &lt;openimmo&gt; root element
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static OpenImmoTransferDocument newDocument( Openimmo openimmo ) throws ParserConfigurationException, JAXBException
   {
     if (openimmo.getUebertragung()==null)
@@ -101,7 +146,7 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
     if (StringUtils.isBlank( openimmo.getUebertragung().getVersion() ))
       openimmo.getUebertragung().setVersion( OpenImmoUtils.VERSION.toReadableVersion() );
 
-    Document document = DocumentUtils.newDocument();
+    Document document = XmlUtils.newDocument();
     OpenImmoUtils.createMarshaller( "UTF-8", true ).marshal( openimmo, document );
     return new OpenImmoTransferDocument( document );
   }
@@ -113,17 +158,17 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
     {
       Document doc = this.getDocument();
 
-      String currentVersion = StringUtils.trimToEmpty( DocumentUtils
+      String currentVersion = StringUtils.trimToEmpty(XmlUtils
         .newXPath( "/oi:openimmo/oi:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       String[] ver = StringUtils.split( currentVersion, "/", 2 );
 
-      Element node = (Element) DocumentUtils
+      Element node = (Element) XmlUtils
         .newXPath( "/oi:openimmo/oi:uebertragung", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
-        Element parentNode = (Element) DocumentUtils
+        Element parentNode = (Element) XmlUtils
           .newXPath( "/oi:openimmo", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
@@ -146,6 +191,15 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
     }
   }
 
+  /**
+   * Creates a {@link Openimmo} object from the contained {@link Document}.
+   *
+   * @return
+   * created object, that represents the &lt;openimmo&gt; root element
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   @Override
   public Openimmo toObject() throws JAXBException
   {

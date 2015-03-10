@@ -20,8 +20,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.ConvertableDocument;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConvertableDocument;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.immobiliare_it.xml.Feed;
 import org.openestate.io.immobiliare_it.xml.Version;
 import org.slf4j.Logger;
@@ -30,28 +30,37 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * XML document from <a href="http://immobiliare.it/">immobiliare.it</a> with a
+ * &lt;feed&gt; root element.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class ImmobiliareItDocument extends ConvertableDocument<Feed, ImmobiliareItVersion>
+public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, ImmobiliareItVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   public ImmobiliareItDocument( Document document )
   {
     super( document );
-    if (!isTransferDocument( document ))
+    if (!isReadable( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
   }
 
   @Override
   public ImmobiliareItVersion getDocumentVersion()
   {
-    String version = null;
+    String version;
     try
     {
       Document doc = this.getDocument();
-      version = StringUtils.trimToNull( DocumentUtils
+      version = StringUtils.trimToNull(XmlUtils
         .newXPath( "/oi:feed/oi:version/text()", doc )
         .stringValueOf( doc ) );
       if (version==null)
@@ -91,23 +100,60 @@ public class ImmobiliareItDocument extends ConvertableDocument<Feed, Immobiliare
     return ImmobiliareItUtils.VERSION;
   }
 
-  public static boolean isTransferDocument( Document doc )
+  /**
+   * Checks, if a {@link Document} is readable as a
+   * {@link ImmobiliareItDocument}.
+   *
+   * @param doc
+   * document to check
+   *
+   * @return
+   * true, if the document is usable, otherwise false
+   */
+  public static boolean isReadable( Document doc )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     return "feed".equals( root.getTagName() );
   }
 
+  /**
+   * Creates an empty {@link ImmobiliareItDocument}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static ImmobiliareItDocument newDocument() throws ParserConfigurationException, JAXBException
   {
-    return newDocument(ImmobiliareItUtils.getFactory().createFeed());
+    return newDocument( ImmobiliareItUtils.getFactory().createFeed() );
   }
 
+  /**
+   * Creates a {@link ImmobiliareItDocument} from a {@link Feed} object.
+   *
+   * @param feed
+   * Java object, that represents the &lt;feed&gt; root element
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static ImmobiliareItDocument newDocument( Feed feed ) throws ParserConfigurationException, JAXBException
   {
     if (feed.getVersion()==null)
       feed.setVersion( Version.V2_5 );
 
-    Document document = DocumentUtils.newDocument();
+    Document document = XmlUtils.newDocument();
     ImmobiliareItUtils.createMarshaller( "UTF-8", true ).marshal( feed, document );
     return new ImmobiliareItDocument( document );
   }
@@ -119,17 +165,17 @@ public class ImmobiliareItDocument extends ConvertableDocument<Feed, Immobiliare
     {
       Document doc = this.getDocument();
 
-      Element node = (Element) DocumentUtils
+      Element node = (Element) XmlUtils
         .newXPath( "/oi:feed/oi:version", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
-        Element parentNode = (Element) DocumentUtils
+        Element parentNode = (Element) XmlUtils
           .newXPath( "/oi:feed", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
         {
-          LOGGER.warn( "Can't find an <daft> element in the document!" );
+          LOGGER.warn( "Can't find a <feed> element in the document!" );
           return;
         }
         node = doc.createElement( "version" );
@@ -145,6 +191,15 @@ public class ImmobiliareItDocument extends ConvertableDocument<Feed, Immobiliare
     }
   }
 
+  /**
+   * Creates a {@link Feed} object from the contained {@link Document}.
+   *
+   * @return
+   * created object, that represents the &lt;feed&gt; root element
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   @Override
   public Feed toObject() throws JAXBException
   {

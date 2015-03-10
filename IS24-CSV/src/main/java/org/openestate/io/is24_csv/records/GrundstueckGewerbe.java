@@ -28,8 +28,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GrundstueckGewerbe.
+ * Record from the IS24-CSV format for plots with commercial use.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class GrundstueckGewerbe extends Grundstueck

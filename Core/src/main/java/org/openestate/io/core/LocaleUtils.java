@@ -20,12 +20,22 @@ import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * LocaleUtils.
+ * Some helper functions for localizations.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
 {
+  /**
+   * Return an ISO-2 country code from a country name.
+   *
+   * @param country
+   * country name
+   *
+   * @return
+   * ISO-2 country code or null, if no code was found
+   */
   public static String getCountryISO2( String country )
   {
     country = StringUtils.trimToNull( country );
@@ -53,6 +63,15 @@ public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
     return null;
   }
 
+  /**
+   * Create an ISO-2 country code from an ISO-3 country code.
+   *
+   * @param iso3Code
+   * ISO-3 country code
+   *
+   * @return
+   * ISO-2 country code or null, if no code was found
+   */
   public static String getCountryISO2FromISO3( String iso3Code )
   {
     iso3Code = StringUtils.trimToNull( iso3Code );
@@ -72,6 +91,15 @@ public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
     return null;
   }
 
+  /**
+   * Return an ISO-3 country code from a country name.
+   *
+   * @param country
+   * country name
+   *
+   * @return
+   * ISO-3 country code or null, if no code was found
+   */
   public static String getCountryISO3( String country )
   {
     country = StringUtils.trimToNull( country );
@@ -101,6 +129,15 @@ public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
     return null;
   }
 
+  /**
+   * Create an ISO-3 country code from an ISO-2 country code.
+   *
+   * @param iso2Code
+   * ISO-2 country code
+   *
+   * @return
+   * ISO-3 country code or null, if no code was found
+   */
   public static String getCountryISO3FromISO2( String iso2Code )
   {
     iso2Code = StringUtils.trimToNull( iso2Code );
@@ -114,6 +151,18 @@ public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
     return null;
   }
 
+  /**
+   * Return a country name in another language.
+   *
+   * @param country
+   * country name
+   *
+   * @param language
+   * language to translate
+   *
+   * @return
+   * translated country name or null, if no translation was found
+   */
   public static String getCountryName( String country, Locale language )
   {
     country = StringUtils.trimToNull( country );
@@ -129,6 +178,18 @@ public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
     return null;
   }
 
+  /**
+   * Translate a country name into another language.
+   *
+   * @param country
+   * country name
+   *
+   * @param language
+   * language to translate
+   *
+   * @return
+   * translated country name or null, if no translation was found
+   */
   public static String translateCountryName( String country, Locale language )
   {
     country = StringUtils.trimToNull( country );

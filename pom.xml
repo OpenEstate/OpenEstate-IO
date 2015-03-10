@@ -196,6 +196,7 @@
         <configuration>
           <finalName>${project.baseName}-v${project.version}</finalName>
           <doctitle>${project.baseName} v${project.version} API</doctitle>
+          <windowtitle>${project.baseName}-v${project.version}</windowtitle>
           <reportOutputDirectory>${basedir}/target</reportOutputDirectory>
           <destDir>javadoc</destDir>
           <quiet>true</quiet>

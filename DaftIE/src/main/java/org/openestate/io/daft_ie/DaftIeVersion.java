@@ -17,21 +17,23 @@
 package org.openestate.io.daft_ie;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.Version;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlVersion;
 import org.openestate.io.daft_ie.converters.DaftIe_2_7;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * DaftIEVersion.
+ * Implemented versions of the XML format by
+ * <a href="http://daft.ie/">daft.ie</a>.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public enum DaftIeVersion implements Version
+public enum DaftIeVersion implements XmlVersion
 {
   /**
-   * Daft-XML 2.7
+   * Version 2.7
    */
   V2_7( DaftIe_2_7.class, "2.7" );
 
@@ -39,7 +41,6 @@ public enum DaftIeVersion implements Version
   private final Class converterClass;
   private final String readableVersion;
   private final String[] alias;
-
 
   private DaftIeVersion( Class converterClass, String readableVersion, String...alias )
   {
@@ -68,11 +69,11 @@ public enum DaftIeVersion implements Version
   }
 
   @Override
-  public Converter getConverter()
+  public XmlConverter getConverter()
   {
     try
     {
-      return (Converter) this.converterClass.newInstance();
+      return (XmlConverter) this.converterClass.newInstance();
     }
     catch (Exception ex)
     {
@@ -107,14 +108,14 @@ public enum DaftIeVersion implements Version
   }
 
   @Override
-  public boolean isNewerThen( Version v )
+  public boolean isNewerThen( XmlVersion v )
   {
     DaftIeVersion[] versions = DaftIeVersion.values();
     return ArrayUtils.indexOf( versions, this ) > ArrayUtils.indexOf( versions, v );
   }
 
   @Override
-  public boolean isOlderThen( Version v )
+  public boolean isOlderThen( XmlVersion v )
   {
     DaftIeVersion[] versions = DaftIeVersion.values();
     return ArrayUtils.indexOf( versions, this ) < ArrayUtils.indexOf( versions, v );

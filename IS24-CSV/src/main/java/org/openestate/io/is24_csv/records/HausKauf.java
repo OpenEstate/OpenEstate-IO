@@ -32,8 +32,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * HausKauf.
+ * Record from the IS24-CSV format for houses to purchase.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class HausKauf extends Is24CsvRecord

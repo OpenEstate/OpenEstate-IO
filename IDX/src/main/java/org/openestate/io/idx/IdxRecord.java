@@ -40,8 +40,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * IdxRecord
+ * Record from the IDX format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class IdxRecord extends CsvRecord

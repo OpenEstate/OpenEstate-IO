@@ -20,8 +20,8 @@ import java.util.List;
 import javax.xml.bind.DatatypeConverter;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
 import org.openestate.io.openimmo.OpenImmoDocument;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
@@ -31,10 +31,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * Converter for version 1.2.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
+public class OpenImmo_1_2_0 extends XmlConverter<OpenImmoDocument, OpenImmoVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmo_1_2_0.class );
 
@@ -215,7 +217,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeBefeuerungElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:befeuerung[@FERN or @BLOCK or @WASSER-ELEKTRO]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -241,7 +243,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeHausElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -279,7 +281,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeMieteinnahmenElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_ist[@periode] |" +
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_soll[@periode]",
       doc ).selectNodes( doc );
@@ -334,7 +336,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void downgradeUebertragungElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:uebertragung[@senderversion or @regi_id or @modus]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -359,7 +361,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeAnbieterChildElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:lizenzkennung | " +
       "/oi:openimmo/oi:anbieter/oi:impressum_strukt",
       doc ).selectNodes( doc );
@@ -386,7 +388,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeAusstattungChildElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:dvbt | " +
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:breitband_zugang | " +
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:umts_empfang | " +
@@ -414,7 +416,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeBewertungElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:bewertung",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -437,7 +439,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeBieterverfahrenElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:bieterverfahren",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -460,7 +462,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeEnergiepassElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -485,7 +487,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeGeoChildElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:geo/oi:anzahl_etagen | " +
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:geo/oi:karten_makro | " +
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:geo/oi:karten_mikro | " +
@@ -510,7 +512,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeHeizkostenEnthaltenElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:heizkosten_enthalten",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -533,7 +535,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void removeUserDefinedExtendElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "//oi:user_defined_extend", doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -555,7 +557,7 @@ public class OpenImmo_1_2_0 extends Converter<OpenImmoDocument, OpenImmoVersion>
    */
   protected void upgradeMieteinnahmenElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_ist |" +
       "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_soll",
       doc ).selectNodes( doc );

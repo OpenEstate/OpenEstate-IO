@@ -18,50 +18,105 @@ package org.openestate.io.wis_it;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.openestate.io.core.BaseDocument;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlDocument;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.wis_it.xml.WIS;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * XML document from
+ * <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a> with a
+ * &lt;WIS&gt; root element.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class WisItDocument extends BaseDocument<WIS>
+public class WisItDocument extends XmlDocument<WIS>
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger( WisItDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   public WisItDocument( Document document )
   {
     super( document );
-    if (!isTransferDocument( document ))
+    if (!isReadable( document ))
       throw new IllegalArgumentException( "The provided document is invalid!" );
     setTextWrittenAsCDATA( true );
   }
 
-  public static boolean isTransferDocument( Document doc )
+  /**
+   * Checks, if a {@link Document} is readable as a {@link WisItDocument}.
+   *
+   * @param doc
+   * document to check
+   *
+   * @return
+   * true, if the document is usable, otherwise false
+   */
+  public static boolean isReadable( Document doc )
   {
-    Element root = DocumentUtils.getRootElement( doc );
+    Element root = XmlUtils.getRootElement( doc );
     return "WIS".equals( root.getTagName() );
   }
 
+  /**
+   * Creates an empty {@link WisItDocument}.
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static WisItDocument newDocument() throws ParserConfigurationException, JAXBException
   {
     return newDocument( WisItUtils.getFactory().createWIS() );
   }
 
+  /**
+   * Creates a {@link WisItDocument} from a {@link WIS} object.
+   *
+   * @param wis
+   * Java object, that represents the &lt;WIS&gt; root element
+   *
+   * @return
+   * created document
+   *
+   * @throws ParserConfigurationException
+   * if the parser is not properly configured
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   public static WisItDocument newDocument( WIS wis ) throws ParserConfigurationException, JAXBException
   {
     if (wis.getOBJEKTE()==null)
       wis.setOBJEKTE( WisItUtils.getFactory().createWISOBJEKTE() );
     wis.getOBJEKTE().setANZAHL( wis.getOBJEKTE().getOBJEKT().size() );
 
-    Document document = DocumentUtils.newDocument();
+    Document document = XmlUtils.newDocument();
     WisItUtils.createMarshaller( "UTF-8", true ).marshal( wis, document );
     return new WisItDocument( document );
   }
 
+  /**
+   * Creates a {@link WIS} object from the contained {@link Document}.
+   *
+   * @return
+   * created object, that represents the &lt;WIS&gt; root element
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
   @Override
   public WIS toObject() throws JAXBException
   {

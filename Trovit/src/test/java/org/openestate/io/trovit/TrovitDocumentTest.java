@@ -21,7 +21,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.trovit.xml.Ad;
 import org.openestate.io.trovit.xml.Trovit;
 import org.slf4j.Logger;
@@ -39,7 +39,7 @@ public class TrovitDocumentTest
 
   private static Document buildExampleDocument() throws Exception
   {
-    return DocumentUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+    return XmlUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
       + "<trovit>\n"
       + "  <ad>\n"
       + "    <id><![CDATA[...]]></id>\n"

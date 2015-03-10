@@ -17,7 +17,9 @@
 package org.openestate.io.immobiliare_it.xml.types;
 
 /**
+ * Transaction.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public enum Transaction

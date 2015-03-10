@@ -13,4 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * Some example classes, that illustrate the general usage of this library.
+ *
+ * @since 1.0
+ * @author Andreas Rudolph
+ */
 package org.openestate.io.examples;

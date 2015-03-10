@@ -16,23 +16,29 @@
 
 package org.openestate.io.openimmo;
 
-import org.openestate.io.core.ConvertableDocument;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openestate.io.core.XmlConvertableDocument;
 import org.w3c.dom.Document;
 
 /**
- * OpenImmoDocument.
+ * A general OpenImmo-XML document.
  *
  * @param <JavaType>
- * ...
+ * the class of a (via JAXB generated) Java object, that the contained
+ * {@link Document} is mapped to
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public abstract class OpenImmoDocument<JavaType> extends ConvertableDocument<JavaType, OpenImmoVersion>
+public abstract class OpenImmoDocument<JavaType> extends XmlConvertableDocument<JavaType, OpenImmoVersion>
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoDocument.class );
+  //private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoDocument.class );
 
+  /**
+   * Create from a {@link Document}.
+   *
+   * @param document
+   * the document to create from
+   */
   protected OpenImmoDocument( Document document )
   {
     super( document );
@@ -47,11 +53,23 @@ public abstract class OpenImmoDocument<JavaType> extends ConvertableDocument<Jav
     return OpenImmoUtils.VERSION;
   }
 
+  /**
+   * Checks, if the current document is a {@link OpenImmoFeedbackDocument}.
+   *
+   * @return
+   * true, if the current document is a {@link OpenImmoFeedbackDocument}
+   */
   public boolean isFeedback()
   {
     return this instanceof OpenImmoFeedbackDocument;
   }
 
+  /**
+   * Checks, if the current document is a {@link OpenImmoTransferDocument}.
+   *
+   * @return
+   * true, if the current document is a {@link OpenImmoTransferDocument}
+   */
   public boolean isTransfer()
   {
     return this instanceof OpenImmoTransferDocument;

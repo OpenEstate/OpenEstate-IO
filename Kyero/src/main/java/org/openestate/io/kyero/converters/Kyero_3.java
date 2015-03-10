@@ -20,8 +20,8 @@ import java.util.List;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
-import org.openestate.io.core.Converter;
-import org.openestate.io.core.DocumentUtils;
+import org.openestate.io.core.XmlConverter;
+import org.openestate.io.core.XmlUtils;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
 import org.openestate.io.kyero.KyeroVersion;
@@ -31,10 +31,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * Converter for version 3.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
-public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
+public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( Kyero_3.class );
 
@@ -201,7 +203,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void downgradeNewBuildElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:new_build",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -211,7 +213,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
       String value = StringUtils.trimToNull( node.getTextContent() );
       if ("1".equals( value ))
       {
-        Element priceFreqNode = (Element) DocumentUtils.newXPath( "oi:price_freq", doc )
+        Element priceFreqNode = (Element) XmlUtils.newXPath( "oi:price_freq", doc )
           .selectSingleNode( parentNode );
         if (priceFreqNode==null)
         {
@@ -241,7 +243,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void downgradeTypeElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:type",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -270,7 +272,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void downgradeUrlElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:url",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -279,7 +281,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
 
       String enUrlValue = null;
       String fallbackUrlValue = null;
-      List childNodes = DocumentUtils.newXPath(
+      List childNodes = XmlUtils.newXPath(
         "*", doc ).selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -308,7 +310,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void removeCustomElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:custom  | " +
       "/oi:root/oi:agent/oi:custom",
       doc ).selectNodes( doc );
@@ -330,7 +332,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void removeEnergyRatingElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:energy_rating",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -351,7 +353,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void removeLocationElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:location",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -372,7 +374,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void removeNotesElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:notes",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -399,14 +401,14 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
       "id", "it", "ja", "ko", "lt", "lv", "no", "pl", "pt", "ro", "ru", "sk",
       "sl", "sv", "th", "tr", "uk", "vi", "zh",
     };
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:desc | " +
       "/oi:root/oi:property/oi:images/oi:image/oi:title",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
       Element node = (Element) item;
-      List childNodes = DocumentUtils.newXPath(
+      List childNodes = XmlUtils.newXPath(
         "*", doc ).selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -434,7 +436,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void upgradeCurrencyElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:currency",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -468,7 +470,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void upgradeNewBuildElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:price_freq",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -497,7 +499,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void upgradeTypeElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:type",
       doc ).selectNodes( doc );
     for (Object item : nodes)
@@ -506,7 +508,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
 
       String enTypeValue = null;
       String fallbackTypeValue = null;
-      List childNodes = DocumentUtils.newXPath(
+      List childNodes = XmlUtils.newXPath(
         "*", doc ).selectNodes( node );
       for (Object childItem : childNodes)
       {
@@ -535,7 +537,7 @@ public class Kyero_3 extends Converter<KyeroDocument, KyeroVersion>
    */
   protected void upgradeUrlElements( Document doc ) throws JaxenException
   {
-    List nodes = DocumentUtils.newXPath(
+    List nodes = XmlUtils.newXPath(
       "/oi:root/oi:property/oi:url",
       doc ).selectNodes( doc );
     for (Object item : nodes)

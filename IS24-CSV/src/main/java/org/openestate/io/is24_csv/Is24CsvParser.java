@@ -45,39 +45,105 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Is24CsvParser.
+ * Parser for the IS24-CSV format.
  *
+ * @since 1.0
  * @author Andreas Rudolph
  */
 public class Is24CsvParser extends CsvParser<Is24CsvRecord>
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvParser.class );
 
+  /**
+   * Create with specifications of a {@link CSVParser}.
+   *
+   * @param parser
+   * the CSV parser from
+   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+   */
   protected Is24CsvParser( CSVParser parser )
   {
     super( parser );
   }
 
+  /**
+   * Creates a {@link Is24CsvParser} from a {@link String} with CSV data.
+   *
+   * @param csvString
+   * CSV string
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static Is24CsvParser create( String csvString ) throws IOException
   {
     return new Is24CsvFormat().parse( csvString );
   }
 
+  /**
+   * Creates a {@link Is24CsvParser} from a {@link File} with CSV data.
+   *
+   * @param csvFile
+   * CSV file
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static Is24CsvParser create( File csvFile ) throws IOException
   {
     return new Is24CsvFormat().parse( csvFile );
   }
 
+  /**
+   * Creates a {@link Is24CsvParser} from an {@link InputStream} with CSV data.
+   *
+   * @param input
+   * CSV input
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static Is24CsvParser create( InputStream input ) throws IOException
   {
     return new Is24CsvFormat().parse( input );
   }
 
+  /**
+   * Creates a {@link Is24CsvParser} from a {@link Reader} with CSV data.
+   *
+   * @param input
+   * CSV input
+   *
+   * @return
+   * created parser
+   *
+   * @throws IOException
+   * if CSV is not readable
+   */
   public static Is24CsvParser create( Reader input ) throws IOException
   {
     return new Is24CsvFormat().parse( input );
   }
 
+  /**
+   * Creates a record, according to the object category, that is provided in
+   * a {@link CSVRecord}.
+   *
+   * @param record
+   * the record to process
+   *
+   * @return
+   * created record or null, if no matching record was found
+   */
   public static Is24CsvRecord createRecord( CSVRecord record )
   {
     Immobilienart art = Is24CsvRecord.getImmobilienart( record );
