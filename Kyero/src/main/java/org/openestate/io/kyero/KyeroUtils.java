@@ -334,7 +334,7 @@ public class KyeroUtils
   public static Boolean parseBoolType( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseBoolean( value ): null;
+    return DatatypeConverter.parseBoolean( value );
   }
 
   public static Calendar parseDateType( String value )

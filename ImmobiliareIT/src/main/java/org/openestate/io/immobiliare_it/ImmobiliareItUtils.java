@@ -445,10 +445,8 @@ public class ImmobiliareItUtils
 
   public static Boolean parseYesNo( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null)
-      return null;
-    else if ("yes".equalsIgnoreCase( value ))
+    value = StringUtils.trimToEmpty( value );
+    if ("yes".equalsIgnoreCase( value ))
       return Boolean.TRUE;
     else if ("no".equalsIgnoreCase( value ))
       return Boolean.FALSE;
@@ -458,10 +456,8 @@ public class ImmobiliareItUtils
 
   public static Boolean parseYN( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null)
-      return null;
-    else if ("y".equalsIgnoreCase( value ))
+    value = StringUtils.trimToEmpty( value );
+    if ("y".equalsIgnoreCase( value ))
       return Boolean.TRUE;
     else if ("n".equalsIgnoreCase( value ))
       return Boolean.FALSE;

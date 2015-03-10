@@ -16,6 +16,7 @@
 
 package org.openestate.io.core;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
 
@@ -25,6 +26,9 @@ import org.apache.commons.lang3.StringUtils;
  * @since 1.0
  * @author Andreas Rudolph
  */
+@SuppressFBWarnings(
+  value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS",
+  justification = "This behaviour is intended.")
 public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
 {
   /**

@@ -16,6 +16,7 @@
 
 package org.openestate.io.idx;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -117,6 +118,9 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
     return new IdxPrinter( printer );
   }
 
+  @SuppressFBWarnings(
+    value = "NP_BOOLEAN_RETURN_NULL",
+    justification = "This behaviour is intended.")
   public static Boolean parseBoolean( String value )
   {
     value = StringUtils.trimToNull( value );

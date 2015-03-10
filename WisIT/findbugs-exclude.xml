@@ -1,5 +1,5 @@
 <FindBugsFilter>
   <Match>
-    <Package name="~org.openestate.io.trovit.xml.*" />
+    <Package name="~org.openestate.io.wis_it.xml.*" />
   </Match>
 </FindBugsFilter>

@@ -76,10 +76,10 @@ public class Anlageobjekt extends Is24CsvRecord
   protected final static int FIELD_X_FACHE = 71;
 
   /** Mieteinnahmen p.a. (IST) Zahl, 15,2 */
-  protected static int FIELD_MIETEINNAHMEN_IST = 72;
+  protected final static int FIELD_MIETEINNAHMEN_IST = 72;
 
   /** Mieteinnahmen p.a. (SOLL) Zahl, 15,2 */
-  protected static int FIELD_MIETEINNAHMEN_SOLL = 73;
+  protected final static int FIELD_MIETEINNAHMEN_SOLL = 73;
 
   /** Anzahl Parkflächen, Zahl 5 */
   protected final static int FIELD_ANZAHL_PARKFLAECHEN = 74;

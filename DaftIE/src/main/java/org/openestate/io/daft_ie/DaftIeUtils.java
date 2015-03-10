@@ -294,10 +294,8 @@ public class DaftIeUtils
 
   public static Boolean parseBoolean( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null)
-      return null;
-    else if ("1".equals( value ))
+    value = StringUtils.trimToEmpty( value );
+    if ("1".equals( value ))
       return Boolean.TRUE;
     else if ("0".equals( value ))
       return Boolean.FALSE;
