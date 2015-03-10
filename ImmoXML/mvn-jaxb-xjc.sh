@@ -9,3 +9,4 @@ cd $PROJECT_DIR
 rm -f jaxb.timestamp
 rm -f src/main/java/org/openestate/io/immoxml/xml/*.*
 $MVN jaxb2:xjc
+./mvn-jaxb-cleanup.py
