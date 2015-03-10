@@ -22,35 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;immobilie&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.immoxml.de}objektkategorie"/>
- *         &lt;element ref="{http://www.immoxml.de}geo"/>
- *         &lt;element ref="{http://www.immoxml.de}kontaktperson"/>
- *         &lt;element ref="{http://www.immoxml.de}weitere_adresse" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}preise" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}flaechen" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}ausstattung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}zustand_angaben" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}infrastruktur" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}freitexte" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anhaenge" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}verwaltung_objekt" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}verwaltung_techn"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -24,51 +24,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="art" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="ONLINE"/>
- *             &lt;enumeration value="OFFLINE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="umfang" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="TEIL"/>
- *             &lt;enumeration value="VOLL"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="modus">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="NEW"/>
- *             &lt;enumeration value="CHANGE"/>
- *             &lt;enumeration value="DELETE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="version" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="sendersoftware" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="senderversion" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="techn_email" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="regi_id" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;uebertragung&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -100,11 +59,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the art property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Uebertragung.Art }
-     *     
+     *
      */
     public Uebertragung.Art getArt() {
         return art;
@@ -112,11 +71,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the art property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Uebertragung.Art }
-     *     
+     *
      */
     public void setArt(Uebertragung.Art value) {
         this.art = value;
@@ -124,11 +83,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the umfang property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Uebertragung.Umfang }
-     *     
+     *
      */
     public Uebertragung.Umfang getUmfang() {
         return umfang;
@@ -136,11 +95,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the umfang property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Uebertragung.Umfang }
-     *     
+     *
      */
     public void setUmfang(Uebertragung.Umfang value) {
         this.umfang = value;
@@ -148,11 +107,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the modus property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Uebertragung.Modus }
-     *     
+     *
      */
     public Uebertragung.Modus getModus() {
         return modus;
@@ -160,11 +119,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the modus property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Uebertragung.Modus }
-     *     
+     *
      */
     public void setModus(Uebertragung.Modus value) {
         this.modus = value;
@@ -172,11 +131,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the version property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getVersion() {
         return version;
@@ -184,11 +143,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the version property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setVersion(String value) {
         this.version = value;
@@ -196,11 +155,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the sendersoftware property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getSendersoftware() {
         return sendersoftware;
@@ -208,11 +167,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the sendersoftware property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setSendersoftware(String value) {
         this.sendersoftware = value;
@@ -220,11 +179,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the senderversion property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getSenderversion() {
         return senderversion;
@@ -232,11 +191,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the senderversion property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setSenderversion(String value) {
         this.senderversion = value;
@@ -244,11 +203,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the technEmail property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getTechnEmail() {
         return technEmail;
@@ -256,11 +215,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the technEmail property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setTechnEmail(String value) {
         this.technEmail = value;
@@ -268,11 +227,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the regiId property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getRegiId() {
         return regiId;
@@ -280,11 +239,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the regiId property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setRegiId(String value) {
         this.regiId = value;
@@ -292,11 +251,11 @@ public class Uebertragung
 
     /**
      * Gets the value of the timestamp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public Calendar getTimestamp() {
         return timestamp;
@@ -304,11 +263,11 @@ public class Uebertragung
 
     /**
      * Sets the value of the timestamp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setTimestamp(Calendar value) {
         this.timestamp = value;
@@ -569,19 +528,8 @@ public class Uebertragung
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="ONLINE"/>
-     *     &lt;enumeration value="OFFLINE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>art</em> attribute in &lt;uebertragung&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum
@@ -602,20 +550,8 @@ public class Uebertragung
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="NEW"/>
-     *     &lt;enumeration value="CHANGE"/>
-     *     &lt;enumeration value="DELETE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>modus</em> attribute in &lt;uebertragung&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum
@@ -637,19 +573,8 @@ public class Uebertragung
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="TEIL"/>
-     *     &lt;enumeration value="VOLL"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>umfang</em> attribute in &lt;uebertragung&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

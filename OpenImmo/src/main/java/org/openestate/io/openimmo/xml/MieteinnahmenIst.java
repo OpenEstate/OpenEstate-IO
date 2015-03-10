@@ -24,30 +24,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>decimal">
- *       &lt;attribute name="periode">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="TAG"/>
- *             &lt;enumeration value="WOCHE"/>
- *             &lt;enumeration value="MONAT"/>
- *             &lt;enumeration value="JAHR"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;mieteinnahmen_ist&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -67,11 +47,11 @@ public class MieteinnahmenIst
 
     /**
      * Gets the value of the value property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public Double getValue() {
         return value;
@@ -79,11 +59,11 @@ public class MieteinnahmenIst
 
     /**
      * Sets the value of the value property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(Double value) {
         this.value = value;
@@ -91,11 +71,11 @@ public class MieteinnahmenIst
 
     /**
      * Gets the value of the periode property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link MieteinnahmenIst.Periode }
-     *     
+     *
      */
     public MieteinnahmenIst.Periode getPeriode() {
         return periode;
@@ -103,11 +83,11 @@ public class MieteinnahmenIst
 
     /**
      * Sets the value of the periode property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link MieteinnahmenIst.Periode }
-     *     
+     *
      */
     public void setPeriode(MieteinnahmenIst.Periode value) {
         this.periode = value;
@@ -214,21 +194,8 @@ public class MieteinnahmenIst
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="TAG"/>
-     *     &lt;enumeration value="WOCHE"/>
-     *     &lt;enumeration value="MONAT"/>
-     *     &lt;enumeration value="JAHR"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>periode</em> attribute in &lt;mieteinnahmen_ist&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

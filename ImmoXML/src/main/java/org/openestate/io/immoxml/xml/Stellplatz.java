@@ -21,21 +21,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for stellplatz complex type.
+ * Java class for "stellplatz" complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="stellplatz">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="stellplatzmiete" type="{http://www.immoxml.de}posdecimal" />
- *       &lt;attribute name="stellplatzkaufpreis" type="{http://www.immoxml.de}posdecimal" />
- *       &lt;attribute name="anzahl" type="{http://www.w3.org/2001/XMLSchema}int" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

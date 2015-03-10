@@ -24,77 +24,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;ausstattung&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}ausstatt_kategorie" minOccurs="0"/>
- *         &lt;element ref="{}wg_geeignet" minOccurs="0"/>
- *         &lt;element ref="{}raeume_veraenderbar" minOccurs="0"/>
- *         &lt;element ref="{}bad" minOccurs="0"/>
- *         &lt;element ref="{}kueche" minOccurs="0"/>
- *         &lt;element ref="{}boden" minOccurs="0"/>
- *         &lt;element ref="{}kamin" minOccurs="0"/>
- *         &lt;element ref="{}heizungsart" minOccurs="0"/>
- *         &lt;element ref="{}befeuerung" minOccurs="0"/>
- *         &lt;element ref="{}klimatisiert" minOccurs="0"/>
- *         &lt;element ref="{}fahrstuhl" minOccurs="0"/>
- *         &lt;element ref="{}stellplatzart" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}gartennutzung" minOccurs="0"/>
- *         &lt;element ref="{}ausricht_balkon_terrasse" minOccurs="0"/>
- *         &lt;element ref="{}moebliert" minOccurs="0"/>
- *         &lt;element ref="{}rollstuhlgerecht" minOccurs="0"/>
- *         &lt;element ref="{}kabel_sat_tv" minOccurs="0"/>
- *         &lt;element ref="{}dvbt" minOccurs="0"/>
- *         &lt;element ref="{}barrierefrei" minOccurs="0"/>
- *         &lt;element ref="{}sauna" minOccurs="0"/>
- *         &lt;element ref="{}swimmingpool" minOccurs="0"/>
- *         &lt;element ref="{}wasch_trockenraum" minOccurs="0"/>
- *         &lt;element ref="{}wintergarten" minOccurs="0"/>
- *         &lt;element ref="{}dv_verkabelung" minOccurs="0"/>
- *         &lt;element ref="{}rampe" minOccurs="0"/>
- *         &lt;element ref="{}hebebuehne" minOccurs="0"/>
- *         &lt;element ref="{}kran" minOccurs="0"/>
- *         &lt;element ref="{}gastterrasse" minOccurs="0"/>
- *         &lt;element ref="{}stromanschlusswert" minOccurs="0"/>
- *         &lt;element ref="{}kantine_cafeteria" minOccurs="0"/>
- *         &lt;element ref="{}teekueche" minOccurs="0"/>
- *         &lt;element ref="{}hallenhoehe" minOccurs="0"/>
- *         &lt;element ref="{}angeschl_gastronomie" minOccurs="0"/>
- *         &lt;element ref="{}brauereibindung" minOccurs="0"/>
- *         &lt;element ref="{}sporteinrichtungen" minOccurs="0"/>
- *         &lt;element ref="{}wellnessbereich" minOccurs="0"/>
- *         &lt;element ref="{}serviceleistungen" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}telefon_ferienimmobilie" minOccurs="0"/>
- *         &lt;element ref="{}breitband_zugang" minOccurs="0"/>
- *         &lt;element ref="{}umts_empfang" minOccurs="0"/>
- *         &lt;element ref="{}sicherheitstechnik" minOccurs="0"/>
- *         &lt;element ref="{}unterkellert" minOccurs="0"/>
- *         &lt;element ref="{}abstellraum" minOccurs="0"/>
- *         &lt;element ref="{}fahrradraum" minOccurs="0"/>
- *         &lt;element ref="{}rolladen" minOccurs="0"/>
- *         &lt;element ref="{}dachform" minOccurs="0"/>
- *         &lt;element ref="{}bauweise" minOccurs="0"/>
- *         &lt;element ref="{}ausbaustufe" minOccurs="0"/>
- *         &lt;element ref="{}energietyp" minOccurs="0"/>
- *         &lt;element ref="{}bibliothek" minOccurs="0"/>
- *         &lt;element ref="{}dachboden" minOccurs="0"/>
- *         &lt;element ref="{}gaestewc" minOccurs="0"/>
- *         &lt;element ref="{}kabelkanaele" minOccurs="0"/>
- *         &lt;element ref="{}seniorengerecht" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

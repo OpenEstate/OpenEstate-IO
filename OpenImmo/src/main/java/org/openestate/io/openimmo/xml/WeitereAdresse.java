@@ -23,53 +23,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;weitere_adresse&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}vorname" minOccurs="0"/>
- *         &lt;element ref="{}name" minOccurs="0"/>
- *         &lt;element ref="{}titel" minOccurs="0"/>
- *         &lt;element ref="{}anrede" minOccurs="0"/>
- *         &lt;element ref="{}anrede_brief" minOccurs="0"/>
- *         &lt;element ref="{}firma" minOccurs="0"/>
- *         &lt;element ref="{}zusatzfeld" minOccurs="0"/>
- *         &lt;element ref="{}strasse" minOccurs="0"/>
- *         &lt;element ref="{}hausnummer" minOccurs="0"/>
- *         &lt;element ref="{}plz" minOccurs="0"/>
- *         &lt;element ref="{}ort" minOccurs="0"/>
- *         &lt;element ref="{}postfach" minOccurs="0"/>
- *         &lt;element ref="{}postf_plz" minOccurs="0"/>
- *         &lt;element ref="{}postf_ort" minOccurs="0"/>
- *         &lt;element ref="{}land" minOccurs="0"/>
- *         &lt;element ref="{}email_zentrale" minOccurs="0"/>
- *         &lt;element ref="{}email_direkt" minOccurs="0"/>
- *         &lt;element ref="{}email_privat" minOccurs="0"/>
- *         &lt;element ref="{}email_sonstige" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}tel_durchw" minOccurs="0"/>
- *         &lt;element ref="{}tel_zentrale" minOccurs="0"/>
- *         &lt;element ref="{}tel_handy" minOccurs="0"/>
- *         &lt;element ref="{}tel_fax" minOccurs="0"/>
- *         &lt;element ref="{}tel_privat" minOccurs="0"/>
- *         &lt;element ref="{}tel_sonstige" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}url" minOccurs="0"/>
- *         &lt;element ref="{}adressfreigabe" minOccurs="0"/>
- *         &lt;element ref="{}personennummer" minOccurs="0"/>
- *         &lt;element ref="{}freitextfeld" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="adressart" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

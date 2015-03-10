@@ -26,29 +26,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>dateTime">
- *       &lt;attribute name="ctype" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="MD5"/>
- *             &lt;enumeration value="DATETIME"/>
- *             &lt;enumeration value="ETAG"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;check&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -68,11 +49,11 @@ public class Check
 
     /**
      * Gets the value of the value property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public Calendar getValue() {
         return value;
@@ -80,11 +61,11 @@ public class Check
 
     /**
      * Sets the value of the value property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(Calendar value) {
         this.value = value;
@@ -92,11 +73,11 @@ public class Check
 
     /**
      * Gets the value of the ctype property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Check.Ctype }
-     *     
+     *
      */
     public Check.Ctype getCtype() {
         return ctype;
@@ -104,11 +85,11 @@ public class Check
 
     /**
      * Sets the value of the ctype property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Check.Ctype }
-     *     
+     *
      */
     public void setCtype(Check.Ctype value) {
         this.ctype = value;
@@ -215,20 +196,8 @@ public class Check
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="MD5"/>
-     *     &lt;enumeration value="DATETIME"/>
-     *     &lt;enumeration value="ETAG"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>ctype</em> attribute in &lt;check&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

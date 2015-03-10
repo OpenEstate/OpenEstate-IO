@@ -21,30 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="sonstige_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="PARKHAUS"/>
- *             &lt;enumeration value="TANKSTELLE"/>
- *             &lt;enumeration value="KRANKENHAUS"/>
- *             &lt;enumeration value="SONSTIGE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;sonstige&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -58,11 +38,11 @@ public class Sonstige
 
     /**
      * Gets the value of the sonstigeTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Sonstige.SonstigeTyp }
-     *     
+     *
      */
     public Sonstige.SonstigeTyp getSonstigeTyp() {
         return sonstigeTyp;
@@ -70,11 +50,11 @@ public class Sonstige
 
     /**
      * Sets the value of the sonstigeTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Sonstige.SonstigeTyp }
-     *     
+     *
      */
     public void setSonstigeTyp(Sonstige.SonstigeTyp value) {
         this.sonstigeTyp = value;
@@ -159,21 +139,8 @@ public class Sonstige
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="PARKHAUS"/>
-     *     &lt;enumeration value="TANKSTELLE"/>
-     *     &lt;enumeration value="KRANKENHAUS"/>
-     *     &lt;enumeration value="SONSTIGE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>sonstige_typ</em> attribute in &lt;sonstige&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

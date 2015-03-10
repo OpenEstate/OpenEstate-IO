@@ -26,43 +26,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;verwaltung_objekt&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.immoxml.de}objektadresse_freigeben" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}verfuegbar_ab" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}abdatum" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}bisdatum" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}min_mietdauer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}max_mietdauer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}versteigerungstermin" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}wbs_sozialwohnung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}vermietet" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gruppennummer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}zugang" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}laufzeit" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}max_personen" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}nichtraucher" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}haustiere" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}geschlecht" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}denkmalgeschuetzt" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}als_ferien" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gewerbliche_nutzung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}branchen" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}hochhaus" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

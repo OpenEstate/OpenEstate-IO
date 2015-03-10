@@ -22,39 +22,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="gebiete">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="WOHN"/>
- *             &lt;enumeration value="GEWERBE"/>
- *             &lt;enumeration value="INDUSTRIE"/>
- *             &lt;enumeration value="MISCH"/>
- *             &lt;enumeration value="NEUBAU"/>
- *             &lt;enumeration value="ORTSLAGE"/>
- *             &lt;enumeration value="SIEDLUNG"/>
- *             &lt;enumeration value="STADTRAND"/>
- *             &lt;enumeration value="STADTTEIL"/>
- *             &lt;enumeration value="STADTZENTRUM"/>
- *             &lt;enumeration value="NEBENZENTRUM"/>
- *             &lt;enumeration value="1A"/>
- *             &lt;enumeration value="1B"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;lage_gebiet&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -68,11 +39,11 @@ public class LageGebiet
 
     /**
      * Gets the value of the gebiete property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link LageGebiet.Gebiete }
-     *     
+     *
      */
     public LageGebiet.Gebiete getGebiete() {
         return gebiete;
@@ -80,11 +51,11 @@ public class LageGebiet
 
     /**
      * Sets the value of the gebiete property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link LageGebiet.Gebiete }
-     *     
+     *
      */
     public void setGebiete(LageGebiet.Gebiete value) {
         this.gebiete = value;
@@ -169,30 +140,8 @@ public class LageGebiet
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="WOHN"/>
-     *     &lt;enumeration value="GEWERBE"/>
-     *     &lt;enumeration value="INDUSTRIE"/>
-     *     &lt;enumeration value="MISCH"/>
-     *     &lt;enumeration value="NEUBAU"/>
-     *     &lt;enumeration value="ORTSLAGE"/>
-     *     &lt;enumeration value="SIEDLUNG"/>
-     *     &lt;enumeration value="STADTRAND"/>
-     *     &lt;enumeration value="STADTTEIL"/>
-     *     &lt;enumeration value="STADTZENTRUM"/>
-     *     &lt;enumeration value="NEBENZENTRUM"/>
-     *     &lt;enumeration value="1A"/>
-     *     &lt;enumeration value="1B"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>gebiete</em> attribute in &lt;lage_gebiet&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

@@ -23,29 +23,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="wert">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="absolut"/>
- *             &lt;enumeration value="prozent"/>
- *             &lt;enumeration value="text"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;provision_teilen&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -63,11 +44,11 @@ public class ProvisionTeilen
 
     /**
      * Gets the value of the content property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getContent() {
         return content;
@@ -75,11 +56,11 @@ public class ProvisionTeilen
 
     /**
      * Sets the value of the content property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setContent(String value) {
         this.content = value;
@@ -87,11 +68,11 @@ public class ProvisionTeilen
 
     /**
      * Gets the value of the wert property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ProvisionTeilen.Wert }
-     *     
+     *
      */
     public ProvisionTeilen.Wert getWert() {
         return wert;
@@ -99,11 +80,11 @@ public class ProvisionTeilen
 
     /**
      * Sets the value of the wert property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ProvisionTeilen.Wert }
-     *     
+     *
      */
     public void setWert(ProvisionTeilen.Wert value) {
         this.wert = value;
@@ -210,20 +191,8 @@ public class ProvisionTeilen
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="absolut"/>
-     *     &lt;enumeration value="prozent"/>
-     *     &lt;enumeration value="text"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>wert</em> attribute in &lt;provision_teilen&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

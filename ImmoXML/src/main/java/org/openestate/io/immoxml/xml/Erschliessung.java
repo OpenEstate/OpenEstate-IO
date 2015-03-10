@@ -21,29 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="erschl_attr">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="UNERSCHLOSSEN"/>
- *             &lt;enumeration value="TEILERSCHLOSSEN"/>
- *             &lt;enumeration value="VOLLERSCHLOSSEN"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;erschliessung&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -57,11 +38,11 @@ public class Erschliessung
 
     /**
      * Gets the value of the erschlAttr property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Erschliessung.ErschlAttr }
-     *     
+     *
      */
     public Erschliessung.ErschlAttr getErschlAttr() {
         return erschlAttr;
@@ -69,11 +50,11 @@ public class Erschliessung
 
     /**
      * Sets the value of the erschlAttr property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Erschliessung.ErschlAttr }
-     *     
+     *
      */
     public void setErschlAttr(Erschliessung.ErschlAttr value) {
         this.erschlAttr = value;
@@ -158,20 +139,8 @@ public class Erschliessung
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="UNERSCHLOSSEN"/>
-     *     &lt;enumeration value="TEILERSCHLOSSEN"/>
-     *     &lt;enumeration value="VOLLERSCHLOSSEN"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>erschl_attr</em> attribute in &lt;erschliessung&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

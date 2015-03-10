@@ -25,63 +25,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="epart" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="BEDARF"/>
- *               &lt;enumeration value="VERBRAUCH"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="gueltig_bis" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="energieverbrauchkennwert" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="mitwarmwasser" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="endenergiebedarf" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="primaerenergietraeger" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="stromwert" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="waermewert" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="wertklasse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="baujahr" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ausstelldatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
- *         &lt;element name="jahrgang" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="2008"/>
- *               &lt;enumeration value="2014"/>
- *               &lt;enumeration value="ohne"/>
- *               &lt;enumeration value="nicht_noetig"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="gebaeudeart" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="wohn"/>
- *               &lt;enumeration value="nichtwohn"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="epasstext" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="hwbwert" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="hwbklasse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fgeewert" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fgeeklasse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;energiepass&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -134,11 +81,11 @@ public class Energiepass
 
     /**
      * Gets the value of the epart property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Energiepass.Epart }
-     *     
+     *
      */
     public Energiepass.Epart getEpart() {
         return epart;
@@ -146,11 +93,11 @@ public class Energiepass
 
     /**
      * Sets the value of the epart property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Energiepass.Epart }
-     *     
+     *
      */
     public void setEpart(Energiepass.Epart value) {
         this.epart = value;
@@ -158,11 +105,11 @@ public class Energiepass
 
     /**
      * Gets the value of the gueltigBis property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getGueltigBis() {
         return gueltigBis;
@@ -170,11 +117,11 @@ public class Energiepass
 
     /**
      * Sets the value of the gueltigBis property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setGueltigBis(String value) {
         this.gueltigBis = value;
@@ -182,11 +129,11 @@ public class Energiepass
 
     /**
      * Gets the value of the energieverbrauchkennwert property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getEnergieverbrauchkennwert() {
         return energieverbrauchkennwert;
@@ -194,11 +141,11 @@ public class Energiepass
 
     /**
      * Sets the value of the energieverbrauchkennwert property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setEnergieverbrauchkennwert(String value) {
         this.energieverbrauchkennwert = value;
@@ -206,11 +153,11 @@ public class Energiepass
 
     /**
      * Gets the value of the mitwarmwasser property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
+     *
      */
     public Boolean isMitwarmwasser() {
         return mitwarmwasser;
@@ -218,11 +165,11 @@ public class Energiepass
 
     /**
      * Sets the value of the mitwarmwasser property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
      */
     public void setMitwarmwasser(Boolean value) {
         this.mitwarmwasser = value;
@@ -230,11 +177,11 @@ public class Energiepass
 
     /**
      * Gets the value of the endenergiebedarf property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getEndenergiebedarf() {
         return endenergiebedarf;
@@ -242,11 +189,11 @@ public class Energiepass
 
     /**
      * Sets the value of the endenergiebedarf property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setEndenergiebedarf(String value) {
         this.endenergiebedarf = value;
@@ -254,11 +201,11 @@ public class Energiepass
 
     /**
      * Gets the value of the primaerenergietraeger property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getPrimaerenergietraeger() {
         return primaerenergietraeger;
@@ -266,11 +213,11 @@ public class Energiepass
 
     /**
      * Sets the value of the primaerenergietraeger property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setPrimaerenergietraeger(String value) {
         this.primaerenergietraeger = value;
@@ -278,11 +225,11 @@ public class Energiepass
 
     /**
      * Gets the value of the stromwert property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getStromwert() {
         return stromwert;
@@ -290,11 +237,11 @@ public class Energiepass
 
     /**
      * Sets the value of the stromwert property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setStromwert(String value) {
         this.stromwert = value;
@@ -302,11 +249,11 @@ public class Energiepass
 
     /**
      * Gets the value of the waermewert property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getWaermewert() {
         return waermewert;
@@ -314,11 +261,11 @@ public class Energiepass
 
     /**
      * Sets the value of the waermewert property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setWaermewert(String value) {
         this.waermewert = value;
@@ -326,11 +273,11 @@ public class Energiepass
 
     /**
      * Gets the value of the wertklasse property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getWertklasse() {
         return wertklasse;
@@ -338,11 +285,11 @@ public class Energiepass
 
     /**
      * Sets the value of the wertklasse property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setWertklasse(String value) {
         this.wertklasse = value;
@@ -350,11 +297,11 @@ public class Energiepass
 
     /**
      * Gets the value of the baujahr property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getBaujahr() {
         return baujahr;
@@ -362,11 +309,11 @@ public class Energiepass
 
     /**
      * Sets the value of the baujahr property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setBaujahr(String value) {
         this.baujahr = value;
@@ -374,11 +321,11 @@ public class Energiepass
 
     /**
      * Gets the value of the ausstelldatum property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public Calendar getAusstelldatum() {
         return ausstelldatum;
@@ -386,11 +333,11 @@ public class Energiepass
 
     /**
      * Sets the value of the ausstelldatum property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAusstelldatum(Calendar value) {
         this.ausstelldatum = value;
@@ -398,11 +345,11 @@ public class Energiepass
 
     /**
      * Gets the value of the jahrgang property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Energiepass.Jahrgang }
-     *     
+     *
      */
     public Energiepass.Jahrgang getJahrgang() {
         return jahrgang;
@@ -410,11 +357,11 @@ public class Energiepass
 
     /**
      * Sets the value of the jahrgang property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Energiepass.Jahrgang }
-     *     
+     *
      */
     public void setJahrgang(Energiepass.Jahrgang value) {
         this.jahrgang = value;
@@ -422,11 +369,11 @@ public class Energiepass
 
     /**
      * Gets the value of the gebaeudeart property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Energiepass.Gebaeudeart }
-     *     
+     *
      */
     public Energiepass.Gebaeudeart getGebaeudeart() {
         return gebaeudeart;
@@ -434,11 +381,11 @@ public class Energiepass
 
     /**
      * Sets the value of the gebaeudeart property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Energiepass.Gebaeudeart }
-     *     
+     *
      */
     public void setGebaeudeart(Energiepass.Gebaeudeart value) {
         this.gebaeudeart = value;
@@ -446,11 +393,11 @@ public class Energiepass
 
     /**
      * Gets the value of the epasstext property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getEpasstext() {
         return epasstext;
@@ -458,11 +405,11 @@ public class Energiepass
 
     /**
      * Sets the value of the epasstext property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setEpasstext(String value) {
         this.epasstext = value;
@@ -470,11 +417,11 @@ public class Energiepass
 
     /**
      * Gets the value of the hwbwert property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getHwbwert() {
         return hwbwert;
@@ -482,11 +429,11 @@ public class Energiepass
 
     /**
      * Sets the value of the hwbwert property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setHwbwert(String value) {
         this.hwbwert = value;
@@ -494,11 +441,11 @@ public class Energiepass
 
     /**
      * Gets the value of the hwbklasse property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getHwbklasse() {
         return hwbklasse;
@@ -506,11 +453,11 @@ public class Energiepass
 
     /**
      * Sets the value of the hwbklasse property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setHwbklasse(String value) {
         this.hwbklasse = value;
@@ -518,11 +465,11 @@ public class Energiepass
 
     /**
      * Gets the value of the fgeewert property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getFgeewert() {
         return fgeewert;
@@ -530,11 +477,11 @@ public class Energiepass
 
     /**
      * Sets the value of the fgeewert property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setFgeewert(String value) {
         this.fgeewert = value;
@@ -542,11 +489,11 @@ public class Energiepass
 
     /**
      * Gets the value of the fgeeklasse property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getFgeeklasse() {
         return fgeeklasse;
@@ -554,11 +501,11 @@ public class Energiepass
 
     /**
      * Sets the value of the fgeeklasse property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setFgeeklasse(String value) {
         this.fgeeklasse = value;
@@ -1017,19 +964,8 @@ public class Energiepass
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="BEDARF"/>
-     *     &lt;enumeration value="VERBRAUCH"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>epart</em> attribute in &lt;energiepass&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum
@@ -1050,19 +986,8 @@ public class Energiepass
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="wohn"/>
-     *     &lt;enumeration value="nichtwohn"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>gebaeudeart</em> attribute in &lt;energiepass&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum
@@ -1095,21 +1020,8 @@ public class Energiepass
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="2008"/>
-     *     &lt;enumeration value="2014"/>
-     *     &lt;enumeration value="ohne"/>
-     *     &lt;enumeration value="nicht_noetig"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>jahrgang</em> attribute in &lt;energiepass&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

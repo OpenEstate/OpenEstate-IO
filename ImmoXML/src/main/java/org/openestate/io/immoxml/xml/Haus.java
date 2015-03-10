@@ -22,45 +22,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="haustyp">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="REIHENHAUS"/>
- *             &lt;enumeration value="REIHENEND"/>
- *             &lt;enumeration value="REIHENMITTEL"/>
- *             &lt;enumeration value="REIHENECK"/>
- *             &lt;enumeration value="DOPPELHAUSHAELFTE"/>
- *             &lt;enumeration value="EINFAMILIENHAUS"/>
- *             &lt;enumeration value="STADTHAUS"/>
- *             &lt;enumeration value="VILLA"/>
- *             &lt;enumeration value="RESTHOF"/>
- *             &lt;enumeration value="BAUERNHAUS"/>
- *             &lt;enumeration value="LANDHAUS"/>
- *             &lt;enumeration value="SCHLOSS"/>
- *             &lt;enumeration value="ZWEIFAMILIENHAUS"/>
- *             &lt;enumeration value="MEHRFAMILIENHAUS"/>
- *             &lt;enumeration value="FERIENHAUS"/>
- *             &lt;enumeration value="BERGHUETTE"/>
- *             &lt;enumeration value="CHALET"/>
- *             &lt;enumeration value="STRANDHAUS"/>
- *             &lt;enumeration value="LAUBE-DATSCHE-GARTENHAUS"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;haus&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -74,11 +39,11 @@ public class Haus
 
     /**
      * Gets the value of the haustyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Haus.Haustyp }
-     *     
+     *
      */
     public Haus.Haustyp getHaustyp() {
         return haustyp;
@@ -86,11 +51,11 @@ public class Haus
 
     /**
      * Sets the value of the haustyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Haus.Haustyp }
-     *     
+     *
      */
     public void setHaustyp(Haus.Haustyp value) {
         this.haustyp = value;
@@ -175,36 +140,8 @@ public class Haus
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="REIHENHAUS"/>
-     *     &lt;enumeration value="REIHENEND"/>
-     *     &lt;enumeration value="REIHENMITTEL"/>
-     *     &lt;enumeration value="REIHENECK"/>
-     *     &lt;enumeration value="DOPPELHAUSHAELFTE"/>
-     *     &lt;enumeration value="EINFAMILIENHAUS"/>
-     *     &lt;enumeration value="STADTHAUS"/>
-     *     &lt;enumeration value="VILLA"/>
-     *     &lt;enumeration value="RESTHOF"/>
-     *     &lt;enumeration value="BAUERNHAUS"/>
-     *     &lt;enumeration value="LANDHAUS"/>
-     *     &lt;enumeration value="SCHLOSS"/>
-     *     &lt;enumeration value="ZWEIFAMILIENHAUS"/>
-     *     &lt;enumeration value="MEHRFAMILIENHAUS"/>
-     *     &lt;enumeration value="FERIENHAUS"/>
-     *     &lt;enumeration value="BERGHUETTE"/>
-     *     &lt;enumeration value="CHALET"/>
-     *     &lt;enumeration value="STRANDHAUS"/>
-     *     &lt;enumeration value="LAUBE-DATSCHE-GARTENHAUS"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>haustyp</em> attribute in &lt;haus&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

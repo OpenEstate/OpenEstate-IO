@@ -20,23 +20,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;bad&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="DUSCHE" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="WANNE" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="FENSTER" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="BIDET" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="PISSOIR" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

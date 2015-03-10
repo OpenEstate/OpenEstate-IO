@@ -22,44 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;geo&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}plz"/>
- *         &lt;element ref="{}ort" minOccurs="0"/>
- *         &lt;element ref="{}geokoordinaten" minOccurs="0"/>
- *         &lt;element ref="{}strasse" minOccurs="0"/>
- *         &lt;element ref="{}hausnummer" minOccurs="0"/>
- *         &lt;element ref="{}bundesland" minOccurs="0"/>
- *         &lt;element ref="{}land" minOccurs="0"/>
- *         &lt;element ref="{}gemeindecode" minOccurs="0"/>
- *         &lt;element ref="{}flur" minOccurs="0"/>
- *         &lt;element ref="{}flurstueck" minOccurs="0"/>
- *         &lt;element ref="{}gemarkung" minOccurs="0"/>
- *         &lt;element ref="{}etage" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_etagen" minOccurs="0"/>
- *         &lt;element ref="{}lage_im_bau" minOccurs="0"/>
- *         &lt;element ref="{}wohnungsnr" minOccurs="0"/>
- *         &lt;element ref="{}lage_gebiet" minOccurs="0"/>
- *         &lt;element ref="{}regionaler_zusatz" minOccurs="0"/>
- *         &lt;element ref="{}karten_makro" minOccurs="0"/>
- *         &lt;element ref="{}karten_mikro" minOccurs="0"/>
- *         &lt;element ref="{}virtuelletour" minOccurs="0"/>
- *         &lt;element ref="{}luftbildern" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

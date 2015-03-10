@@ -22,39 +22,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="zins_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="MEHRFAMILIENHAUS"/>
- *             &lt;enumeration value="WOHN_UND_GESCHAEFTSHAUS"/>
- *             &lt;enumeration value="GESCHAEFTSHAUS"/>
- *             &lt;enumeration value="BUEROGEBAEUDE"/>
- *             &lt;enumeration value="SB_MAERKTE"/>
- *             &lt;enumeration value="EINKAUFSCENTREN"/>
- *             &lt;enumeration value="WOHNANLAGEN"/>
- *             &lt;enumeration value="VERBRAUCHERMAERKTE"/>
- *             &lt;enumeration value="INDUSTRIEANLAGEN"/>
- *             &lt;enumeration value="PFLEGEHEIM"/>
- *             &lt;enumeration value="SANATORIUM"/>
- *             &lt;enumeration value="SENIORENHEIM"/>
- *             &lt;enumeration value="BETREUTES-WOHNEN"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;zinshaus_renditeobjekt&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -68,11 +39,11 @@ public class ZinshausRenditeobjekt
 
     /**
      * Gets the value of the zinsTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ZinshausRenditeobjekt.ZinsTyp }
-     *     
+     *
      */
     public ZinshausRenditeobjekt.ZinsTyp getZinsTyp() {
         return zinsTyp;
@@ -80,11 +51,11 @@ public class ZinshausRenditeobjekt
 
     /**
      * Sets the value of the zinsTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ZinshausRenditeobjekt.ZinsTyp }
-     *     
+     *
      */
     public void setZinsTyp(ZinshausRenditeobjekt.ZinsTyp value) {
         this.zinsTyp = value;
@@ -169,30 +140,8 @@ public class ZinshausRenditeobjekt
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="MEHRFAMILIENHAUS"/>
-     *     &lt;enumeration value="WOHN_UND_GESCHAEFTSHAUS"/>
-     *     &lt;enumeration value="GESCHAEFTSHAUS"/>
-     *     &lt;enumeration value="BUEROGEBAEUDE"/>
-     *     &lt;enumeration value="SB_MAERKTE"/>
-     *     &lt;enumeration value="EINKAUFSCENTREN"/>
-     *     &lt;enumeration value="WOHNANLAGEN"/>
-     *     &lt;enumeration value="VERBRAUCHERMAERKTE"/>
-     *     &lt;enumeration value="INDUSTRIEANLAGEN"/>
-     *     &lt;enumeration value="PFLEGEHEIM"/>
-     *     &lt;enumeration value="SANATORIUM"/>
-     *     &lt;enumeration value="SENIORENHEIM"/>
-     *     &lt;enumeration value="BETREUTES-WOHNEN"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>zins_typ</em> attribute in &lt;zinshaus_renditeobjekt&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

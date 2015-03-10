@@ -21,27 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="zimmertyp">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="ZIMMER"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;zimmer&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -55,11 +38,11 @@ public class Zimmer
 
     /**
      * Gets the value of the zimmertyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Zimmer.Zimmertyp }
-     *     
+     *
      */
     public Zimmer.Zimmertyp getZimmertyp() {
         return zimmertyp;
@@ -67,11 +50,11 @@ public class Zimmer
 
     /**
      * Sets the value of the zimmertyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Zimmer.Zimmertyp }
-     *     
+     *
      */
     public void setZimmertyp(Zimmer.Zimmertyp value) {
         this.zimmertyp = value;
@@ -156,18 +139,8 @@ public class Zimmer
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="ZIMMER"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>zimmertyp</em> attribute in &lt;zimmer&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

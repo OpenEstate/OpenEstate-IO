@@ -21,29 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="keller">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="JA"/>
- *             &lt;enumeration value="NEIN"/>
- *             &lt;enumeration value="TEIL"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;unterkellert&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -57,11 +38,11 @@ public class Unterkellert
 
     /**
      * Gets the value of the keller property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Unterkellert.Keller }
-     *     
+     *
      */
     public Unterkellert.Keller getKeller() {
         return keller;
@@ -69,11 +50,11 @@ public class Unterkellert
 
     /**
      * Sets the value of the keller property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Unterkellert.Keller }
-     *     
+     *
      */
     public void setKeller(Unterkellert.Keller value) {
         this.keller = value;
@@ -158,20 +139,8 @@ public class Unterkellert
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="JA"/>
-     *     &lt;enumeration value="NEIN"/>
-     *     &lt;enumeration value="TEIL"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>keller</em> attribute in &lt;unterkellert&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

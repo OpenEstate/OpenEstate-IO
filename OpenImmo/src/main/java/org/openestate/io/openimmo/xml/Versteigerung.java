@@ -23,26 +23,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;versteigerung&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}zwangsversteigerung" minOccurs="0"/>
- *         &lt;element ref="{}aktenzeichen" minOccurs="0"/>
- *         &lt;element ref="{}zvtermin" minOccurs="0"/>
- *         &lt;element ref="{}zusatztermin" minOccurs="0"/>
- *         &lt;element ref="{}amtsgericht" minOccurs="0"/>
- *         &lt;element ref="{}verkehrswert" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

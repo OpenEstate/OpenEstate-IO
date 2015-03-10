@@ -22,34 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;zustand_angaben&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}baujahr" minOccurs="0"/>
- *         &lt;element ref="{}letztemodernisierung" minOccurs="0"/>
- *         &lt;element ref="{}zustand" minOccurs="0"/>
- *         &lt;element ref="{}alter" minOccurs="0"/>
- *         &lt;element ref="{}bebaubar_nach" minOccurs="0"/>
- *         &lt;element ref="{}erschliessung" minOccurs="0"/>
- *         &lt;element ref="{}erschliessung_umfang" minOccurs="0"/>
- *         &lt;element ref="{}bauzone" minOccurs="0"/>
- *         &lt;element ref="{}altlasten" minOccurs="0"/>
- *         &lt;element ref="{}energiepass" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}verkaufstatus" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

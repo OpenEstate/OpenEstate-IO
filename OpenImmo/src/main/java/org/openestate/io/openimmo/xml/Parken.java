@@ -21,36 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="parken_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="STELLPLATZ"/>
- *             &lt;enumeration value="CARPORT"/>
- *             &lt;enumeration value="DOPPELGARAGE"/>
- *             &lt;enumeration value="DUPLEX"/>
- *             &lt;enumeration value="TIEFGARAGE"/>
- *             &lt;enumeration value="BOOTSLIEGEPLATZ"/>
- *             &lt;enumeration value="EINZELGARAGE"/>
- *             &lt;enumeration value="PARKHAUS"/>
- *             &lt;enumeration value="TIEFGARAGENSTELLPLATZ"/>
- *             &lt;enumeration value="PARKPLATZ_STROM"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;parken&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -64,11 +38,11 @@ public class Parken
 
     /**
      * Gets the value of the parkenTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Parken.ParkenTyp }
-     *     
+     *
      */
     public Parken.ParkenTyp getParkenTyp() {
         return parkenTyp;
@@ -76,11 +50,11 @@ public class Parken
 
     /**
      * Sets the value of the parkenTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Parken.ParkenTyp }
-     *     
+     *
      */
     public void setParkenTyp(Parken.ParkenTyp value) {
         this.parkenTyp = value;
@@ -165,27 +139,8 @@ public class Parken
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="STELLPLATZ"/>
-     *     &lt;enumeration value="CARPORT"/>
-     *     &lt;enumeration value="DOPPELGARAGE"/>
-     *     &lt;enumeration value="DUPLEX"/>
-     *     &lt;enumeration value="TIEFGARAGE"/>
-     *     &lt;enumeration value="BOOTSLIEGEPLATZ"/>
-     *     &lt;enumeration value="EINZELGARAGE"/>
-     *     &lt;enumeration value="PARKHAUS"/>
-     *     &lt;enumeration value="TIEFGARAGENSTELLPLATZ"/>
-     *     &lt;enumeration value="PARKPLATZ_STROM"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>parken_typ</em> attribute in &lt;parken&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

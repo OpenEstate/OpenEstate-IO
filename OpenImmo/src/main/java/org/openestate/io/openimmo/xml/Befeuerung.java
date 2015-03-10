@@ -20,32 +20,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;befeuerung&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="OEL" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="GAS" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="ELEKTRO" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="ALTERNATIV" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="SOLAR" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="ERDWAERME" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="LUFTWP" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="FERN" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="BLOCK" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="WASSER-ELEKTRO" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="PELLET" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="KOHLE" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="HOLZ" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="FLUESSIGGAS" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

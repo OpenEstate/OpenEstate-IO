@@ -25,58 +25,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;preise&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.immoxml.de}kaufpreis" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}nettokaltmiete" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kaltmiete" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}warmmiete" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}nebenkosten" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}heizkosten" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}zzg_mehrwertsteuer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}mietzuschlaege" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}pacht" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}erbpacht" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}hausgeld" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}abstand" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}preis_zeitraum_von" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}preis_zeitraum_bis" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}preis_zeiteinheit" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}mietpreis_pro_qm" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kaufpreis_pro_qm" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}innen_courtage" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}aussen_courtage" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}waehrung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}mwst_satz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}freitext_preis" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}x_fache" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}nettorendite" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}mieteinnahmen_ist" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}mieteinnahmen_soll" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}erschliessungskosten" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kaution" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}geschaeftsguthaben" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stp_carport" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stp_duplex" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stp_freiplatz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stp_garage" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stp_parkhaus" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stp_tiefgarage" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stp_sonstige" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

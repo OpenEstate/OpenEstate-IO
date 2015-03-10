@@ -21,37 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="gastgew_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="GASTRONOMIE"/>
- *             &lt;enumeration value="GASTRONOMIE_UND_WOHNUNG"/>
- *             &lt;enumeration value="PENSIONEN"/>
- *             &lt;enumeration value="HOTELS"/>
- *             &lt;enumeration value="WEITERE_BEHERBERGUNGSBETRIEBE"/>
- *             &lt;enumeration value="BAR"/>
- *             &lt;enumeration value="CAFE"/>
- *             &lt;enumeration value="DISCOTHEK"/>
- *             &lt;enumeration value="RESTAURANT"/>
- *             &lt;enumeration value="RAUCHERLOKAL"/>
- *             &lt;enumeration value="EINRAUMLOKAL"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;gastgewerbe&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -65,11 +38,11 @@ public class Gastgewerbe
 
     /**
      * Gets the value of the gastgewTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Gastgewerbe.GastgewTyp }
-     *     
+     *
      */
     public Gastgewerbe.GastgewTyp getGastgewTyp() {
         return gastgewTyp;
@@ -77,11 +50,11 @@ public class Gastgewerbe
 
     /**
      * Sets the value of the gastgewTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Gastgewerbe.GastgewTyp }
-     *     
+     *
      */
     public void setGastgewTyp(Gastgewerbe.GastgewTyp value) {
         this.gastgewTyp = value;
@@ -166,28 +139,8 @@ public class Gastgewerbe
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="GASTRONOMIE"/>
-     *     &lt;enumeration value="GASTRONOMIE_UND_WOHNUNG"/>
-     *     &lt;enumeration value="PENSIONEN"/>
-     *     &lt;enumeration value="HOTELS"/>
-     *     &lt;enumeration value="WEITERE_BEHERBERGUNGSBETRIEBE"/>
-     *     &lt;enumeration value="BAR"/>
-     *     &lt;enumeration value="CAFE"/>
-     *     &lt;enumeration value="DISCOTHEK"/>
-     *     &lt;enumeration value="RESTAURANT"/>
-     *     &lt;enumeration value="RAUCHERLOKAL"/>
-     *     &lt;enumeration value="EINRAUMLOKAL"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>gastgew_typ</em> attribute in &lt;gastgewerbe&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

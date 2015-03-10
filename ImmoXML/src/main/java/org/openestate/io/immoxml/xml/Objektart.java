@@ -22,32 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;objektart&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element ref="{http://www.immoxml.de}zimmer" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}wohnung" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}haus" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}grundstueck" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}buero_praxen" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}einzelhandel" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}gastgewerbe" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}hallen_lager_prod" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}land_und_forstwirtschaft" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}sonstige" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}freizeitimmobilie_gewerblich" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.immoxml.de}zinshaus_renditeobjekt" maxOccurs="unbounded"/>
- *       &lt;/choice>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -16,8 +16,19 @@
 
 package org.openestate.io.openimmo;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Enumeration;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import javax.xml.bind.annotation.XmlRootElement;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,6 +37,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * OpenImmoUtilsTest.
  *
  * @author Andreas Rudolph
  */

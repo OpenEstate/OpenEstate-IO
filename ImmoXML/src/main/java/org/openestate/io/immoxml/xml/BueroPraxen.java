@@ -21,30 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="buero_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="BUEROFLAECHE"/>
- *             &lt;enumeration value="BUEROHAUS"/>
- *             &lt;enumeration value="PRAXIS"/>
- *             &lt;enumeration value="AUSSTELLUNGSFLAECHE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;buero_praxen&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -58,11 +38,11 @@ public class BueroPraxen
 
     /**
      * Gets the value of the bueroTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BueroPraxen.BueroTyp }
-     *     
+     *
      */
     public BueroPraxen.BueroTyp getBueroTyp() {
         return bueroTyp;
@@ -70,11 +50,11 @@ public class BueroPraxen
 
     /**
      * Sets the value of the bueroTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BueroPraxen.BueroTyp }
-     *     
+     *
      */
     public void setBueroTyp(BueroPraxen.BueroTyp value) {
         this.bueroTyp = value;
@@ -159,21 +139,8 @@ public class BueroPraxen
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="BUEROFLAECHE"/>
-     *     &lt;enumeration value="BUEROHAUS"/>
-     *     &lt;enumeration value="PRAXIS"/>
-     *     &lt;enumeration value="AUSSTELLUNGSFLAECHE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>buero_typ</em> attribute in &lt;buero_praxen&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

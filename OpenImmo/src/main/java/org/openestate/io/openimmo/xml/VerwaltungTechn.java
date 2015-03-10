@@ -25,37 +25,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;verwaltung_techn&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}objektnr_intern" minOccurs="0"/>
- *         &lt;element ref="{}objektnr_extern"/>
- *         &lt;element ref="{}aktion"/>
- *         &lt;element ref="{}aktiv_von" minOccurs="0"/>
- *         &lt;element ref="{}aktiv_bis" minOccurs="0"/>
- *         &lt;element ref="{}openimmo_obid"/>
- *         &lt;element ref="{}kennung_ursprung" minOccurs="0"/>
- *         &lt;element ref="{}stand_vom"/>
- *         &lt;element ref="{}weitergabe_generell" minOccurs="0"/>
- *         &lt;element ref="{}weitergabe_positiv" minOccurs="0"/>
- *         &lt;element ref="{}weitergabe_negativ" minOccurs="0"/>
- *         &lt;element ref="{}gruppen_kennung" minOccurs="0"/>
- *         &lt;element ref="{}master" minOccurs="0"/>
- *         &lt;element ref="{}sprache" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -21,28 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="alter_attr">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="ALTBAU"/>
- *             &lt;enumeration value="NEUBAU"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;alter&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -56,11 +38,11 @@ public class Alter
 
     /**
      * Gets the value of the alterAttr property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Alter.AlterAttr }
-     *     
+     *
      */
     public Alter.AlterAttr getAlterAttr() {
         return alterAttr;
@@ -68,11 +50,11 @@ public class Alter
 
     /**
      * Sets the value of the alterAttr property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Alter.AlterAttr }
-     *     
+     *
      */
     public void setAlterAttr(Alter.AlterAttr value) {
         this.alterAttr = value;
@@ -157,19 +139,8 @@ public class Alter
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="ALTBAU"/>
-     *     &lt;enumeration value="NEUBAU"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>alter_attr</em> attribute in &lt;alter&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

@@ -22,36 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;objektart&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;choice>
- *           &lt;element ref="{}zimmer" maxOccurs="unbounded"/>
- *           &lt;element ref="{}wohnung" maxOccurs="unbounded"/>
- *           &lt;element ref="{}haus" maxOccurs="unbounded"/>
- *           &lt;element ref="{}grundstueck" maxOccurs="unbounded"/>
- *           &lt;element ref="{}buero_praxen" maxOccurs="unbounded"/>
- *           &lt;element ref="{}einzelhandel" maxOccurs="unbounded"/>
- *           &lt;element ref="{}gastgewerbe" maxOccurs="unbounded"/>
- *           &lt;element ref="{}hallen_lager_prod" maxOccurs="unbounded"/>
- *           &lt;element ref="{}land_und_forstwirtschaft" maxOccurs="unbounded"/>
- *           &lt;element ref="{}parken" maxOccurs="unbounded"/>
- *           &lt;element ref="{}sonstige" maxOccurs="unbounded"/>
- *           &lt;element ref="{}freizeitimmobilie_gewerblich" maxOccurs="unbounded"/>
- *           &lt;element ref="{}zinshaus_renditeobjekt" maxOccurs="unbounded"/>
- *         &lt;/choice>
- *         &lt;element ref="{}objektart_zusatz" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

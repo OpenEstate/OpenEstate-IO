@@ -21,29 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="geschl_attr">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="EGAL"/>
- *             &lt;enumeration value="NUR_MANN"/>
- *             &lt;enumeration value="NUR_FRAU"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;geschlecht&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -57,11 +38,11 @@ public class Geschlecht
 
     /**
      * Gets the value of the geschlAttr property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Geschlecht.GeschlAttr }
-     *     
+     *
      */
     public Geschlecht.GeschlAttr getGeschlAttr() {
         return geschlAttr;
@@ -69,11 +50,11 @@ public class Geschlecht
 
     /**
      * Sets the value of the geschlAttr property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Geschlecht.GeschlAttr }
-     *     
+     *
      */
     public void setGeschlAttr(Geschlecht.GeschlAttr value) {
         this.geschlAttr = value;
@@ -158,20 +139,8 @@ public class Geschlecht
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="EGAL"/>
-     *     &lt;enumeration value="NUR_MANN"/>
-     *     &lt;enumeration value="NUR_FRAU"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>geschl_attr</em> attribute in &lt;geschlecht&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

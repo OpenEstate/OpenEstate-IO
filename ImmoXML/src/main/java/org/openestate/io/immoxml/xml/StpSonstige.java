@@ -21,34 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immoxml.de}stellplatz">
- *       &lt;attribute name="platzart">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="FREIPLATZ"/>
- *             &lt;enumeration value="GARAGE"/>
- *             &lt;enumeration value="TIEFGARAGE"/>
- *             &lt;enumeration value="CARPORT"/>
- *             &lt;enumeration value="DUPLEX"/>
- *             &lt;enumeration value="PARKHAUS"/>
- *             &lt;enumeration value="SONSTIGES"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="bemerkung" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;stp_sonstige&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -65,11 +41,11 @@ public class StpSonstige
 
     /**
      * Gets the value of the platzart property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link StpSonstige.Platzart }
-     *     
+     *
      */
     public StpSonstige.Platzart getPlatzart() {
         return platzart;
@@ -77,11 +53,11 @@ public class StpSonstige
 
     /**
      * Sets the value of the platzart property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link StpSonstige.Platzart }
-     *     
+     *
      */
     public void setPlatzart(StpSonstige.Platzart value) {
         this.platzart = value;
@@ -89,11 +65,11 @@ public class StpSonstige
 
     /**
      * Gets the value of the bemerkung property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getBemerkung() {
         return bemerkung;
@@ -101,11 +77,11 @@ public class StpSonstige
 
     /**
      * Sets the value of the bemerkung property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setBemerkung(String value) {
         this.bemerkung = value;
@@ -217,24 +193,8 @@ public class StpSonstige
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="FREIPLATZ"/>
-     *     &lt;enumeration value="GARAGE"/>
-     *     &lt;enumeration value="TIEFGARAGE"/>
-     *     &lt;enumeration value="CARPORT"/>
-     *     &lt;enumeration value="DUPLEX"/>
-     *     &lt;enumeration value="PARKHAUS"/>
-     *     &lt;enumeration value="SONSTIGES"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>platzart</em> attribute in &lt;stp_sonstige&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

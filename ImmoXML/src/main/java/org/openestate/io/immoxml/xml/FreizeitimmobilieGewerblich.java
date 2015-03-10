@@ -21,28 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="freizeit_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="SPORTANLAGEN"/>
- *             &lt;enumeration value="VERGNUEGUNGSPARKS_UND_CENTER"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;freizeitimmobilie_gewerblich&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -56,11 +38,11 @@ public class FreizeitimmobilieGewerblich
 
     /**
      * Gets the value of the freizeitTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link FreizeitimmobilieGewerblich.FreizeitTyp }
-     *     
+     *
      */
     public FreizeitimmobilieGewerblich.FreizeitTyp getFreizeitTyp() {
         return freizeitTyp;
@@ -68,11 +50,11 @@ public class FreizeitimmobilieGewerblich
 
     /**
      * Sets the value of the freizeitTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link FreizeitimmobilieGewerblich.FreizeitTyp }
-     *     
+     *
      */
     public void setFreizeitTyp(FreizeitimmobilieGewerblich.FreizeitTyp value) {
         this.freizeitTyp = value;
@@ -157,19 +139,8 @@ public class FreizeitimmobilieGewerblich
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="SPORTANLAGEN"/>
-     *     &lt;enumeration value="VERGNUEGUNGSPARKS_UND_CENTER"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>freizeit_typ</em> attribute in &lt;freizeitimmobilie_gewerblich&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

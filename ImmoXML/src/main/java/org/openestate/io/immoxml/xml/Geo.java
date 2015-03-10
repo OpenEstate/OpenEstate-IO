@@ -22,38 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;geo&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.immoxml.de}plz"/>
- *         &lt;element ref="{http://www.immoxml.de}ort" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}geokoordinaten" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}strasse" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}hausnummer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}bundesland" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}land" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gemeindecode" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}flur" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}flurstueck" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gemarkung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}etage" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}lage_im_bau" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}wohnungsnr" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}lage_gebiet" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}regionaler_zusatz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -24,69 +24,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;flaechen&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}wohnflaeche" minOccurs="0"/>
- *         &lt;element ref="{}nutzflaeche" minOccurs="0"/>
- *         &lt;element ref="{}gesamtflaeche" minOccurs="0"/>
- *         &lt;element ref="{}ladenflaeche" minOccurs="0"/>
- *         &lt;element ref="{}lagerflaeche" minOccurs="0"/>
- *         &lt;element ref="{}verkaufsflaeche" minOccurs="0"/>
- *         &lt;element ref="{}freiflaeche" minOccurs="0"/>
- *         &lt;element ref="{}bueroflaeche" minOccurs="0"/>
- *         &lt;element ref="{}bueroteilflaeche" minOccurs="0"/>
- *         &lt;element ref="{}fensterfront" minOccurs="0"/>
- *         &lt;element ref="{}verwaltungsflaeche" minOccurs="0"/>
- *         &lt;element ref="{}gastroflaeche" minOccurs="0"/>
- *         &lt;element ref="{}grz" minOccurs="0"/>
- *         &lt;element ref="{}gfz" minOccurs="0"/>
- *         &lt;element ref="{}bmz" minOccurs="0"/>
- *         &lt;element ref="{}bgf" minOccurs="0"/>
- *         &lt;element ref="{}grundstuecksflaeche" minOccurs="0"/>
- *         &lt;element ref="{}sonstflaeche" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_zimmer" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_schlafzimmer" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_badezimmer" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_sep_wc" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_balkone" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_terrassen" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_logia" minOccurs="0"/>
- *         &lt;element ref="{}balkon_terrasse_flaeche" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_wohn_schlafzimmer" minOccurs="0"/>
- *         &lt;element ref="{}gartenflaeche" minOccurs="0"/>
- *         &lt;element ref="{}kellerflaeche" minOccurs="0"/>
- *         &lt;element ref="{}fensterfront_qm" minOccurs="0"/>
- *         &lt;element ref="{}grundstuecksfront" minOccurs="0"/>
- *         &lt;element ref="{}dachbodenflaeche" minOccurs="0"/>
- *         &lt;element ref="{}teilbar_ab" minOccurs="0"/>
- *         &lt;element ref="{}beheizbare_flaeche" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_stellplaetze" minOccurs="0"/>
- *         &lt;element ref="{}plaetze_gastraum" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_betten" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_tagungsraeume" minOccurs="0"/>
- *         &lt;element ref="{}vermietbare_flaeche" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_wohneinheiten" minOccurs="0"/>
- *         &lt;element ref="{}anzahl_gewerbeeinheiten" minOccurs="0"/>
- *         &lt;element ref="{}einliegerwohnung" minOccurs="0"/>
- *         &lt;element ref="{}kubatur" minOccurs="0"/>
- *         &lt;element ref="{}ausnuetzungsziffer" minOccurs="0"/>
- *         &lt;element ref="{}flaechevon" minOccurs="0"/>
- *         &lt;element ref="{}flaechebis" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -20,22 +20,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;ausricht_balkon_terrasse&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="NORD" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="OST" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="SUED" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="WEST" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

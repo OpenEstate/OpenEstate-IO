@@ -70,8 +70,8 @@ public class ObjectFactory {
     private final static QName _WbsSozialwohnung_QNAME = new QName("", "wbs_sozialwohnung");
     private final static QName _Fahrradraum_QNAME = new QName("", "fahrradraum");
     private final static QName _Gemeindecode_QNAME = new QName("", "gemeindecode");
-    private final static QName _Personennummer_QNAME = new QName("", "personennummer");
     private final static QName _Teekueche_QNAME = new QName("", "teekueche");
+    private final static QName _Personennummer_QNAME = new QName("", "personennummer");
     private final static QName _Objektbeschreibung_QNAME = new QName("", "objektbeschreibung");
     private final static QName _HoechstgebotZeigen_QNAME = new QName("", "hoechstgebot_zeigen");
     private final static QName _Geschaeftsguthaben_QNAME = new QName("", "geschaeftsguthaben");
@@ -88,12 +88,12 @@ public class ObjectFactory {
     private final static QName _Gfz_QNAME = new QName("", "gfz");
     private final static QName _AktivBis_QNAME = new QName("", "aktiv_bis");
     private final static QName _EmailPrivat_QNAME = new QName("", "email_privat");
-    private final static QName _AnzahlWohneinheiten_QNAME = new QName("", "anzahl_wohneinheiten");
     private final static QName _AnzahlGewerbeeinheiten_QNAME = new QName("", "anzahl_gewerbeeinheiten");
+    private final static QName _AnzahlWohneinheiten_QNAME = new QName("", "anzahl_wohneinheiten");
     private final static QName _Firma_QNAME = new QName("", "firma");
     private final static QName _Wohnungsnr_QNAME = new QName("", "wohnungsnr");
-    private final static QName _Kamin_QNAME = new QName("", "kamin");
     private final static QName _Zvtermin_QNAME = new QName("", "zvtermin");
+    private final static QName _Kamin_QNAME = new QName("", "kamin");
     private final static QName _WeitergabePositiv_QNAME = new QName("", "weitergabe_positiv");
     private final static QName _ObjektartZusatz_QNAME = new QName("", "objektart_zusatz");
     private final static QName _Versteigerungstermin_QNAME = new QName("", "versteigerungstermin");
@@ -108,8 +108,8 @@ public class ObjectFactory {
     private final static QName _Freitextfeld_QNAME = new QName("", "freitextfeld");
     private final static QName _Swimmingpool_QNAME = new QName("", "swimmingpool");
     private final static QName _Gruppennummer_QNAME = new QName("", "gruppennummer");
-    private final static QName _Anbieternr_QNAME = new QName("", "anbieternr");
     private final static QName _Bmz_QNAME = new QName("", "bmz");
+    private final static QName _Anbieternr_QNAME = new QName("", "anbieternr");
     private final static QName _AnzahlLogia_QNAME = new QName("", "anzahl_logia");
     private final static QName _Mietzuschlaege_QNAME = new QName("", "mietzuschlaege");
     private final static QName _Barrierefrei_QNAME = new QName("", "barrierefrei");
@@ -121,17 +121,17 @@ public class ObjectFactory {
     private final static QName _Besichtigungstermin2_QNAME = new QName("", "besichtigungstermin_2");
     private final static QName _Impressum_QNAME = new QName("", "impressum");
     private final static QName _Name_QNAME = new QName("", "name");
-    private final static QName _EmailZentrale_QNAME = new QName("", "email_zentrale");
     private final static QName _TelPrivat_QNAME = new QName("", "tel_privat");
     private final static QName _Abdatum_QNAME = new QName("", "abdatum");
+    private final static QName _EmailZentrale_QNAME = new QName("", "email_zentrale");
     private final static QName _Grz_QNAME = new QName("", "grz");
     private final static QName _Verwaltungsflaeche_QNAME = new QName("", "verwaltungsflaeche");
     private final static QName _BeginnBietzeit_QNAME = new QName("", "beginn_bietzeit");
     private final static QName _MaxPersonen_QNAME = new QName("", "max_personen");
-    private final static QName _Vorname_QNAME = new QName("", "vorname");
     private final static QName _Lizenzkennung_QNAME = new QName("", "lizenzkennung");
-    private final static QName _Erschliessungskosten_QNAME = new QName("", "erschliessungskosten");
+    private final static QName _Vorname_QNAME = new QName("", "vorname");
     private final static QName _Abstellraum_QNAME = new QName("", "abstellraum");
+    private final static QName _Erschliessungskosten_QNAME = new QName("", "erschliessungskosten");
     private final static QName _ObjektnrExtern_QNAME = new QName("", "objektnr_extern");
     private final static QName _AnzahlSchlafzimmer_QNAME = new QName("", "anzahl_schlafzimmer");
     private final static QName _TelHandy_QNAME = new QName("", "tel_handy");
@@ -143,8 +143,8 @@ public class ObjectFactory {
     private final static QName _Heizkosten_QNAME = new QName("", "heizkosten");
     private final static QName _Anrede_QNAME = new QName("", "anrede");
     private final static QName _Bauzone_QNAME = new QName("", "bauzone");
-    private final static QName _Zwangsversteigerung_QNAME = new QName("", "zwangsversteigerung");
     private final static QName _Dvbt_QNAME = new QName("", "dvbt");
+    private final static QName _Zwangsversteigerung_QNAME = new QName("", "zwangsversteigerung");
     private final static QName _AnredeBrief_QNAME = new QName("", "anrede_brief");
     private final static QName _Branchen_QNAME = new QName("", "branchen");
     private final static QName _Kaufpreisbrutto_QNAME = new QName("", "kaufpreisbrutto");
@@ -158,17 +158,17 @@ public class ObjectFactory {
     private final static QName _Gesamtmietebrutto_QNAME = new QName("", "gesamtmietebrutto");
     private final static QName _FreitextPreis_QNAME = new QName("", "freitext_preis");
     private final static QName _Bueroteilflaeche_QNAME = new QName("", "bueroteilflaeche");
-    private final static QName _AusstattKategorie_QNAME = new QName("", "ausstatt_kategorie");
     private final static QName _Sporteinrichtungen_QNAME = new QName("", "sporteinrichtungen");
+    private final static QName _AusstattKategorie_QNAME = new QName("", "ausstatt_kategorie");
     private final static QName _AnzahlTagungsraeume_QNAME = new QName("", "anzahl_tagungsraeume");
     private final static QName _BeheizbareFlaeche_QNAME = new QName("", "beheizbare_flaeche");
-    private final static QName _Provisionspflichtig_QNAME = new QName("", "provisionspflichtig");
     private final static QName _HeizkostenEnthalten_QNAME = new QName("", "heizkosten_enthalten");
+    private final static QName _Provisionspflichtig_QNAME = new QName("", "provisionspflichtig");
     private final static QName _GruppenKennung_QNAME = new QName("", "gruppen_kennung");
     private final static QName _Einliegerwohnung_QNAME = new QName("", "einliegerwohnung");
     private final static QName _PostfPlz_QNAME = new QName("", "postf_plz");
-    private final static QName _Position_QNAME = new QName("", "position");
     private final static QName _WgGeeignet_QNAME = new QName("", "wg_geeignet");
+    private final static QName _Position_QNAME = new QName("", "position");
     private final static QName _Gastterrasse_QNAME = new QName("", "gastterrasse");
     private final static QName _PreisZeitraumBis_QNAME = new QName("", "preis_zeitraum_bis");
     private final static QName _KautionText_QNAME = new QName("", "kaution_text");
@@ -183,11 +183,11 @@ public class ObjectFactory {
     private final static QName _TelFax_QNAME = new QName("", "tel_fax");
     private final static QName _Kaution_QNAME = new QName("", "kaution");
     private final static QName _NettorenditeIst_QNAME = new QName("", "nettorendite_ist");
-    private final static QName _AnzahlStellplaetze_QNAME = new QName("", "anzahl_stellplaetze");
-    private final static QName _MwstGesamt_QNAME = new QName("", "mwst_gesamt");
     private final static QName _TelDurchw_QNAME = new QName("", "tel_durchw");
-    private final static QName _PlaetzeGastraum_QNAME = new QName("", "plaetze_gastraum");
+    private final static QName _MwstGesamt_QNAME = new QName("", "mwst_gesamt");
+    private final static QName _AnzahlStellplaetze_QNAME = new QName("", "anzahl_stellplaetze");
     private final static QName _AnzahlBadezimmer_QNAME = new QName("", "anzahl_badezimmer");
+    private final static QName _PlaetzeGastraum_QNAME = new QName("", "plaetze_gastraum");
     private final static QName _Rolladen_QNAME = new QName("", "rolladen");
     private final static QName _KaufpreisProQm_QNAME = new QName("", "kaufpreis_pro_qm");
     private final static QName _Freiflaeche_QNAME = new QName("", "freiflaeche");
@@ -197,8 +197,8 @@ public class ObjectFactory {
     private final static QName _AnzahlBalkonTerrassen_QNAME = new QName("", "anzahl_balkon_terrassen");
     private final static QName _Bueroflaeche_QNAME = new QName("", "bueroflaeche");
     private final static QName _Hausnummer_QNAME = new QName("", "hausnummer");
-    private final static QName _AnzahlBalkone_QNAME = new QName("", "anzahl_balkone");
     private final static QName _BalkonTerrasseFlaeche_QNAME = new QName("", "balkon_terrasse_flaeche");
+    private final static QName _AnzahlBalkone_QNAME = new QName("", "anzahl_balkone");
     private final static QName _Richtpreisprom2_QNAME = new QName("", "richtpreisprom2");
     private final static QName _OpenimmoAnid_QNAME = new QName("", "openimmo_anid");
     private final static QName _WeitergabeNegativ_QNAME = new QName("", "weitergabe_negativ");
@@ -211,11 +211,11 @@ public class ObjectFactory {
     private final static QName _Sauna_QNAME = new QName("", "sauna");
     private final static QName _Format_QNAME = new QName("", "format");
     private final static QName _Objekttitel_QNAME = new QName("", "objekttitel");
-    private final static QName _Gemarkung_QNAME = new QName("", "gemarkung");
     private final static QName _Gartennutzung_QNAME = new QName("", "gartennutzung");
+    private final static QName _Gemarkung_QNAME = new QName("", "gemarkung");
     private final static QName _Zugang_QNAME = new QName("", "zugang");
-    private final static QName _Zusatztermin_QNAME = new QName("", "zusatztermin");
     private final static QName _Brauereibindung_QNAME = new QName("", "brauereibindung");
+    private final static QName _Zusatztermin_QNAME = new QName("", "zusatztermin");
     private final static QName _Nettokaltmiete_QNAME = new QName("", "nettokaltmiete");
     private final static QName _Verkaufsflaeche_QNAME = new QName("", "verkaufsflaeche");
     private final static QName _Flurstueck_QNAME = new QName("", "flurstueck");
@@ -223,38 +223,38 @@ public class ObjectFactory {
     private final static QName _AlsFerien_QNAME = new QName("", "als_ferien");
     private final static QName _RegionalerZusatz_QNAME = new QName("", "regionaler_zusatz");
     private final static QName _OpenimmoObid_QNAME = new QName("", "openimmo_obid");
-    private final static QName _Flaechebis_QNAME = new QName("", "flaechebis");
     private final static QName _Gartenflaeche_QNAME = new QName("", "gartenflaeche");
+    private final static QName _Flaechebis_QNAME = new QName("", "flaechebis");
     private final static QName _ObjektadresseFreigeben_QNAME = new QName("", "objektadresse_freigeben");
     private final static QName _Grundstuecksfront_QNAME = new QName("", "grundstuecksfront");
     private final static QName _StpTiefgarage_QNAME = new QName("", "stp_tiefgarage");
-    private final static QName _Anhanginhalt_QNAME = new QName("", "anhanginhalt");
     private final static QName _Nebenkosten_QNAME = new QName("", "nebenkosten");
     private final static QName _Kran_QNAME = new QName("", "kran");
+    private final static QName _Anhanginhalt_QNAME = new QName("", "anhanginhalt");
     private final static QName _Erbpacht_QNAME = new QName("", "erbpacht");
     private final static QName _Strasse_QNAME = new QName("", "strasse");
+    private final static QName _Sonstflaeche_QNAME = new QName("", "sonstflaeche");
     private final static QName _Flaechevon_QNAME = new QName("", "flaechevon");
     private final static QName _Gesamtbelastungbrutto_QNAME = new QName("", "gesamtbelastungbrutto");
     private final static QName _Stromanschlusswert_QNAME = new QName("", "stromanschlusswert");
-    private final static QName _Sonstflaeche_QNAME = new QName("", "sonstflaeche");
     private final static QName _Ladenflaeche_QNAME = new QName("", "ladenflaeche");
     private final static QName _Besichtigungstermin_QNAME = new QName("", "besichtigungstermin");
     private final static QName _EndeBietzeit_QNAME = new QName("", "ende_bietzeit");
     private final static QName _WeitergabeGenerell_QNAME = new QName("", "weitergabe_generell");
     private final static QName _Altlasten_QNAME = new QName("", "altlasten");
-    private final static QName _Amtsgericht_QNAME = new QName("", "amtsgericht");
     private final static QName _Lagerflaeche_QNAME = new QName("", "lagerflaeche");
+    private final static QName _Amtsgericht_QNAME = new QName("", "amtsgericht");
     private final static QName _SonstigeAngaben_QNAME = new QName("", "sonstige_angaben");
     private final static QName _StpDuplex_QNAME = new QName("", "stp_duplex");
     private final static QName _Kubatur_QNAME = new QName("", "kubatur");
     private final static QName _Richtpreis_QNAME = new QName("", "richtpreis");
-    private final static QName _Anhangtitel_QNAME = new QName("", "anhangtitel");
     private final static QName _Bgf_QNAME = new QName("", "bgf");
+    private final static QName _Anhangtitel_QNAME = new QName("", "anhangtitel");
     private final static QName _AnzahlZimmer_QNAME = new QName("", "anzahl_zimmer");
     private final static QName _TelZentrale_QNAME = new QName("", "tel_zentrale");
     private final static QName _FensterfrontQm_QNAME = new QName("", "fensterfront_qm");
-    private final static QName _ObjektnrIntern_QNAME = new QName("", "objektnr_intern");
     private final static QName _Luftbildern_QNAME = new QName("", "luftbildern");
+    private final static QName _ObjektnrIntern_QNAME = new QName("", "objektnr_intern");
     private final static QName _StpCarport_QNAME = new QName("", "stp_carport");
     private final static QName _Etage_QNAME = new QName("", "etage");
     private final static QName _Nettorendite_QNAME = new QName("", "nettorendite");
@@ -268,291 +268,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Grundstueck }
-     * 
-     */
-    public Grundstueck createGrundstueck() {
-        return new Grundstueck();
-    }
-
-    /**
-     * Create an instance of {@link Moebliert }
-     * 
-     */
-    public Moebliert createMoebliert() {
-        return new Moebliert();
-    }
-
-    /**
-     * Create an instance of {@link BueroPraxen }
-     * 
-     */
-    public BueroPraxen createBueroPraxen() {
-        return new BueroPraxen();
-    }
-
-    /**
-     * Create an instance of {@link Sonstige }
-     * 
-     */
-    public Sonstige createSonstige() {
-        return new Sonstige();
-    }
-
-    /**
-     * Create an instance of {@link Einzelhandel }
-     * 
-     */
-    public Einzelhandel createEinzelhandel() {
-        return new Einzelhandel();
-    }
-
-    /**
-     * Create an instance of {@link Wohnung }
-     * 
-     */
-    public Wohnung createWohnung() {
-        return new Wohnung();
-    }
-
-    /**
-     * Create an instance of {@link Erschliessung }
-     * 
-     */
-    public Erschliessung createErschliessung() {
-        return new Erschliessung();
-    }
-
-    /**
-     * Create an instance of {@link Zustand }
-     * 
-     */
-    public Zustand createZustand() {
-        return new Zustand();
-    }
-
-    /**
-     * Create an instance of {@link Ausblick }
-     * 
-     */
-    public Ausblick createAusblick() {
-        return new Ausblick();
-    }
-
-    /**
-     * Create an instance of {@link Distanzen }
-     * 
-     */
-    public Distanzen createDistanzen() {
-        return new Distanzen();
-    }
-
-    /**
-     * Create an instance of {@link DistanzenSport }
-     * 
-     */
-    public DistanzenSport createDistanzenSport() {
-        return new DistanzenSport();
-    }
-
-    /**
-     * Create an instance of {@link Alter }
-     * 
-     */
-    public Alter createAlter() {
-        return new Alter();
-    }
-
-    /**
-     * Create an instance of {@link Verkaufstatus }
-     * 
-     */
-    public Verkaufstatus createVerkaufstatus() {
-        return new Verkaufstatus();
-    }
-
-    /**
-     * Create an instance of {@link Energiepass }
-     * 
-     */
-    public Energiepass createEnergiepass() {
-        return new Energiepass();
-    }
-
-    /**
-     * Create an instance of {@link PreisZeiteinheit }
-     * 
-     */
-    public PreisZeiteinheit createPreisZeiteinheit() {
-        return new PreisZeiteinheit();
-    }
-
-    /**
-     * Create an instance of {@link ProvisionTeilen }
-     * 
-     */
-    public ProvisionTeilen createProvisionTeilen() {
-        return new ProvisionTeilen();
-    }
-
-    /**
-     * Create an instance of {@link MieteinnahmenIst }
-     * 
-     */
-    public MieteinnahmenIst createMieteinnahmenIst() {
-        return new MieteinnahmenIst();
-    }
-
-    /**
-     * Create an instance of {@link MieteinnahmenSoll }
-     * 
-     */
-    public MieteinnahmenSoll createMieteinnahmenSoll() {
-        return new MieteinnahmenSoll();
-    }
-
-    /**
-     * Create an instance of {@link StpSonstige }
-     * 
-     */
-    public StpSonstige createStpSonstige() {
-        return new StpSonstige();
-    }
-
-    /**
-     * Create an instance of {@link Uebertragung }
-     * 
-     */
-    public Uebertragung createUebertragung() {
-        return new Uebertragung();
-    }
-
-    /**
-     * Create an instance of {@link Gastgewerbe }
-     * 
-     */
-    public Gastgewerbe createGastgewerbe() {
-        return new Gastgewerbe();
-    }
-
-    /**
-     * Create an instance of {@link LandUndForstwirtschaft }
-     * 
-     */
-    public LandUndForstwirtschaft createLandUndForstwirtschaft() {
-        return new LandUndForstwirtschaft();
-    }
-
-    /**
-     * Create an instance of {@link LageGebiet }
-     * 
-     */
-    public LageGebiet createLageGebiet() {
-        return new LageGebiet();
-    }
-
-    /**
-     * Create an instance of {@link ZinshausRenditeobjekt }
-     * 
-     */
-    public ZinshausRenditeobjekt createZinshausRenditeobjekt() {
-        return new ZinshausRenditeobjekt();
-    }
-
-    /**
-     * Create an instance of {@link Unterkellert }
-     * 
-     */
-    public Unterkellert createUnterkellert() {
-        return new Unterkellert();
-    }
-
-    /**
-     * Create an instance of {@link BebaubarNach }
-     * 
-     */
-    public BebaubarNach createBebaubarNach() {
-        return new BebaubarNach();
-    }
-
-    /**
-     * Create an instance of {@link EmailSonstige }
-     * 
-     */
-    public EmailSonstige createEmailSonstige() {
-        return new EmailSonstige();
-    }
-
-    /**
-     * Create an instance of {@link TelSonstige }
-     * 
-     */
-    public TelSonstige createTelSonstige() {
-        return new TelSonstige();
-    }
-
-    /**
-     * Create an instance of {@link Interessent }
-     * 
-     */
-    public Interessent createInteressent() {
-        return new Interessent();
-    }
-
-    /**
-     * Create an instance of {@link Geschlecht }
-     * 
-     */
-    public Geschlecht createGeschlecht() {
-        return new Geschlecht();
-    }
-
-    /**
-     * Create an instance of {@link ErschliessungUmfang }
-     * 
-     */
-    public ErschliessungUmfang createErschliessungUmfang() {
-        return new ErschliessungUmfang();
-    }
-
-    /**
-     * Create an instance of {@link Zimmer }
-     * 
-     */
-    public Zimmer createZimmer() {
-        return new Zimmer();
-    }
-
-    /**
      * Create an instance of {@link Haus }
      * 
      */
     public Haus createHaus() {
         return new Haus();
-    }
-
-    /**
-     * Create an instance of {@link HallenLagerProd }
-     * 
-     */
-    public HallenLagerProd createHallenLagerProd() {
-        return new HallenLagerProd();
-    }
-
-    /**
-     * Create an instance of {@link Parken }
-     * 
-     */
-    public Parken createParken() {
-        return new Parken();
-    }
-
-    /**
-     * Create an instance of {@link FreizeitimmobilieGewerblich }
-     * 
-     */
-    public FreizeitimmobilieGewerblich createFreizeitimmobilieGewerblich() {
-        return new FreizeitimmobilieGewerblich();
     }
 
     /**
@@ -564,6 +284,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MinMietdauer }
+     * 
+     */
+    public MinMietdauer createMinMietdauer() {
+        return new MinMietdauer();
+    }
+
+    /**
+     * Create an instance of {@link Parken }
+     * 
+     */
+    public Parken createParken() {
+        return new Parken();
+    }
+
+    /**
+     * Create an instance of {@link ProvisionTeilen }
+     * 
+     */
+    public ProvisionTeilen createProvisionTeilen() {
+        return new ProvisionTeilen();
+    }
+
+    /**
      * Create an instance of {@link Anhang }
      * 
      */
@@ -572,19 +316,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Foto }
+     * Create an instance of {@link Ausblick }
      * 
      */
-    public Foto createFoto() {
-        return new Foto();
+    public Ausblick createAusblick() {
+        return new Ausblick();
     }
 
     /**
-     * Create an instance of {@link MinMietdauer }
+     * Create an instance of {@link HallenLagerProd }
      * 
      */
-    public MinMietdauer createMinMietdauer() {
-        return new MinMietdauer();
+    public HallenLagerProd createHallenLagerProd() {
+        return new HallenLagerProd();
+    }
+
+    /**
+     * Create an instance of {@link Distanzen }
+     * 
+     */
+    public Distanzen createDistanzen() {
+        return new Distanzen();
+    }
+
+    /**
+     * Create an instance of {@link MieteinnahmenIst }
+     * 
+     */
+    public MieteinnahmenIst createMieteinnahmenIst() {
+        return new MieteinnahmenIst();
     }
 
     /**
@@ -596,11 +356,259 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TelSonstige }
+     * 
+     */
+    public TelSonstige createTelSonstige() {
+        return new TelSonstige();
+    }
+
+    /**
+     * Create an instance of {@link DistanzenSport }
+     * 
+     */
+    public DistanzenSport createDistanzenSport() {
+        return new DistanzenSport();
+    }
+
+    /**
+     * Create an instance of {@link EmailSonstige }
+     * 
+     */
+    public EmailSonstige createEmailSonstige() {
+        return new EmailSonstige();
+    }
+
+    /**
+     * Create an instance of {@link LageGebiet }
+     * 
+     */
+    public LageGebiet createLageGebiet() {
+        return new LageGebiet();
+    }
+
+    /**
+     * Create an instance of {@link MieteinnahmenSoll }
+     * 
+     */
+    public MieteinnahmenSoll createMieteinnahmenSoll() {
+        return new MieteinnahmenSoll();
+    }
+
+    /**
      * Create an instance of {@link Aktion }
      * 
      */
     public Aktion createAktion() {
         return new Aktion();
+    }
+
+    /**
+     * Create an instance of {@link FreizeitimmobilieGewerblich }
+     * 
+     */
+    public FreizeitimmobilieGewerblich createFreizeitimmobilieGewerblich() {
+        return new FreizeitimmobilieGewerblich();
+    }
+
+    /**
+     * Create an instance of {@link Zimmer }
+     * 
+     */
+    public Zimmer createZimmer() {
+        return new Zimmer();
+    }
+
+    /**
+     * Create an instance of {@link Unterkellert }
+     * 
+     */
+    public Unterkellert createUnterkellert() {
+        return new Unterkellert();
+    }
+
+    /**
+     * Create an instance of {@link Foto }
+     * 
+     */
+    public Foto createFoto() {
+        return new Foto();
+    }
+
+    /**
+     * Create an instance of {@link StpSonstige }
+     * 
+     */
+    public StpSonstige createStpSonstige() {
+        return new StpSonstige();
+    }
+
+    /**
+     * Create an instance of {@link ErschliessungUmfang }
+     * 
+     */
+    public ErschliessungUmfang createErschliessungUmfang() {
+        return new ErschliessungUmfang();
+    }
+
+    /**
+     * Create an instance of {@link Geschlecht }
+     * 
+     */
+    public Geschlecht createGeschlecht() {
+        return new Geschlecht();
+    }
+
+    /**
+     * Create an instance of {@link Interessent }
+     * 
+     */
+    public Interessent createInteressent() {
+        return new Interessent();
+    }
+
+    /**
+     * Create an instance of {@link PreisZeiteinheit }
+     * 
+     */
+    public PreisZeiteinheit createPreisZeiteinheit() {
+        return new PreisZeiteinheit();
+    }
+
+    /**
+     * Create an instance of {@link BebaubarNach }
+     * 
+     */
+    public BebaubarNach createBebaubarNach() {
+        return new BebaubarNach();
+    }
+
+    /**
+     * Create an instance of {@link ZinshausRenditeobjekt }
+     * 
+     */
+    public ZinshausRenditeobjekt createZinshausRenditeobjekt() {
+        return new ZinshausRenditeobjekt();
+    }
+
+    /**
+     * Create an instance of {@link LandUndForstwirtschaft }
+     * 
+     */
+    public LandUndForstwirtschaft createLandUndForstwirtschaft() {
+        return new LandUndForstwirtschaft();
+    }
+
+    /**
+     * Create an instance of {@link Gastgewerbe }
+     * 
+     */
+    public Gastgewerbe createGastgewerbe() {
+        return new Gastgewerbe();
+    }
+
+    /**
+     * Create an instance of {@link Uebertragung }
+     * 
+     */
+    public Uebertragung createUebertragung() {
+        return new Uebertragung();
+    }
+
+    /**
+     * Create an instance of {@link Energiepass }
+     * 
+     */
+    public Energiepass createEnergiepass() {
+        return new Energiepass();
+    }
+
+    /**
+     * Create an instance of {@link Verkaufstatus }
+     * 
+     */
+    public Verkaufstatus createVerkaufstatus() {
+        return new Verkaufstatus();
+    }
+
+    /**
+     * Create an instance of {@link Alter }
+     * 
+     */
+    public Alter createAlter() {
+        return new Alter();
+    }
+
+    /**
+     * Create an instance of {@link Zustand }
+     * 
+     */
+    public Zustand createZustand() {
+        return new Zustand();
+    }
+
+    /**
+     * Create an instance of {@link Erschliessung }
+     * 
+     */
+    public Erschliessung createErschliessung() {
+        return new Erschliessung();
+    }
+
+    /**
+     * Create an instance of {@link Wohnung }
+     * 
+     */
+    public Wohnung createWohnung() {
+        return new Wohnung();
+    }
+
+    /**
+     * Create an instance of {@link Einzelhandel }
+     * 
+     */
+    public Einzelhandel createEinzelhandel() {
+        return new Einzelhandel();
+    }
+
+    /**
+     * Create an instance of {@link Sonstige }
+     * 
+     */
+    public Sonstige createSonstige() {
+        return new Sonstige();
+    }
+
+    /**
+     * Create an instance of {@link BueroPraxen }
+     * 
+     */
+    public BueroPraxen createBueroPraxen() {
+        return new BueroPraxen();
+    }
+
+    /**
+     * Create an instance of {@link Moebliert }
+     * 
+     */
+    public Moebliert createMoebliert() {
+        return new Moebliert();
+    }
+
+    /**
+     * Create an instance of {@link Grundstueck }
+     * 
+     */
+    public Grundstueck createGrundstueck() {
+        return new Grundstueck();
+    }
+
+    /**
+     * Create an instance of {@link Fehlerliste }
+     * 
+     */
+    public Fehlerliste createFehlerliste() {
+        return new Fehlerliste();
     }
 
     /**
@@ -617,14 +625,6 @@ public class ObjectFactory {
      */
     public Bewertung createBewertung() {
         return new Bewertung();
-    }
-
-    /**
-     * Create an instance of {@link Fehlerliste }
-     * 
-     */
-    public Fehlerliste createFehlerliste() {
-        return new Fehlerliste();
     }
 
     /**
@@ -708,43 +708,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UserDefinedSimplefield }
-     * 
-     */
-    public UserDefinedSimplefield createUserDefinedSimplefield() {
-        return new UserDefinedSimplefield();
-    }
-
-    /**
-     * Create an instance of {@link UserDefinedAnyfield }
-     * 
-     */
-    public UserDefinedAnyfield createUserDefinedAnyfield() {
-        return new UserDefinedAnyfield();
-    }
-
-    /**
-     * Create an instance of {@link UserDefinedExtend.Feld }
-     * 
-     */
-    public UserDefinedExtend.Feld createUserDefinedExtendFeld() {
-        return new UserDefinedExtend.Feld();
-    }
-
-    /**
      * Create an instance of {@link BreitbandZugang }
      * 
      */
     public BreitbandZugang createBreitbandZugang() {
         return new BreitbandZugang();
-    }
-
-    /**
-     * Create an instance of {@link Bewertung.Feld }
-     * 
-     */
-    public Bewertung.Feld createBewertungFeld() {
-        return new Bewertung.Feld();
     }
 
     /**
@@ -769,142 +737,6 @@ public class ObjectFactory {
      */
     public Preise createPreise() {
         return new Preise();
-    }
-
-    /**
-     * Create an instance of {@link Kaufpreis }
-     * 
-     */
-    public Kaufpreis createKaufpreis() {
-        return new Kaufpreis();
-    }
-
-    /**
-     * Create an instance of {@link Kaufpreisnetto }
-     * 
-     */
-    public Kaufpreisnetto createKaufpreisnetto() {
-        return new Kaufpreisnetto();
-    }
-
-    /**
-     * Create an instance of {@link Hauptmietzinsnetto }
-     * 
-     */
-    public Hauptmietzinsnetto createHauptmietzinsnetto() {
-        return new Hauptmietzinsnetto();
-    }
-
-    /**
-     * Create an instance of {@link Betriebskostennetto }
-     * 
-     */
-    public Betriebskostennetto createBetriebskostennetto() {
-        return new Betriebskostennetto();
-    }
-
-    /**
-     * Create an instance of {@link Evbnetto }
-     * 
-     */
-    public Evbnetto createEvbnetto() {
-        return new Evbnetto();
-    }
-
-    /**
-     * Create an instance of {@link Gesamtmietenetto }
-     * 
-     */
-    public Gesamtmietenetto createGesamtmietenetto() {
-        return new Gesamtmietenetto();
-    }
-
-    /**
-     * Create an instance of {@link Gesamtbelastungnetto }
-     * 
-     */
-    public Gesamtbelastungnetto createGesamtbelastungnetto() {
-        return new Gesamtbelastungnetto();
-    }
-
-    /**
-     * Create an instance of {@link Gesamtkostenprom2Von }
-     * 
-     */
-    public Gesamtkostenprom2Von createGesamtkostenprom2Von() {
-        return new Gesamtkostenprom2Von();
-    }
-
-    /**
-     * Create an instance of {@link Monatlichekostennetto }
-     * 
-     */
-    public Monatlichekostennetto createMonatlichekostennetto() {
-        return new Monatlichekostennetto();
-    }
-
-    /**
-     * Create an instance of {@link Nebenkostenprom2Von }
-     * 
-     */
-    public Nebenkostenprom2Von createNebenkostenprom2Von() {
-        return new Nebenkostenprom2Von();
-    }
-
-    /**
-     * Create an instance of {@link Ruecklagenetto }
-     * 
-     */
-    public Ruecklagenetto createRuecklagenetto() {
-        return new Ruecklagenetto();
-    }
-
-    /**
-     * Create an instance of {@link Sonstigekostennetto }
-     * 
-     */
-    public Sonstigekostennetto createSonstigekostennetto() {
-        return new Sonstigekostennetto();
-    }
-
-    /**
-     * Create an instance of {@link Sonstigemietenetto }
-     * 
-     */
-    public Sonstigemietenetto createSonstigemietenetto() {
-        return new Sonstigemietenetto();
-    }
-
-    /**
-     * Create an instance of {@link Summemietenetto }
-     * 
-     */
-    public Summemietenetto createSummemietenetto() {
-        return new Summemietenetto();
-    }
-
-    /**
-     * Create an instance of {@link Nettomieteprom2Von }
-     * 
-     */
-    public Nettomieteprom2Von createNettomieteprom2Von() {
-        return new Nettomieteprom2Von();
-    }
-
-    /**
-     * Create an instance of {@link InnenCourtage }
-     * 
-     */
-    public InnenCourtage createInnenCourtage() {
-        return new InnenCourtage();
-    }
-
-    /**
-     * Create an instance of {@link AussenCourtage }
-     * 
-     */
-    public AussenCourtage createAussenCourtage() {
-        return new AussenCourtage();
     }
 
     /**
@@ -940,107 +772,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Geokoordinaten }
-     * 
-     */
-    public Geokoordinaten createGeokoordinaten() {
-        return new Geokoordinaten();
-    }
-
-    /**
-     * Create an instance of {@link Land }
-     * 
-     */
-    public Land createLand() {
-        return new Land();
-    }
-
-    /**
      * Create an instance of {@link Ausstattung }
      * 
      */
     public Ausstattung createAusstattung() {
         return new Ausstattung();
-    }
-
-    /**
-     * Create an instance of {@link Bad }
-     * 
-     */
-    public Bad createBad() {
-        return new Bad();
-    }
-
-    /**
-     * Create an instance of {@link Heizungsart }
-     * 
-     */
-    public Heizungsart createHeizungsart() {
-        return new Heizungsart();
-    }
-
-    /**
-     * Create an instance of {@link Fahrstuhl }
-     * 
-     */
-    public Fahrstuhl createFahrstuhl() {
-        return new Fahrstuhl();
-    }
-
-    /**
-     * Create an instance of {@link Stellplatzart }
-     * 
-     */
-    public Stellplatzart createStellplatzart() {
-        return new Stellplatzart();
-    }
-
-    /**
-     * Create an instance of {@link AusrichtBalkonTerrasse }
-     * 
-     */
-    public AusrichtBalkonTerrasse createAusrichtBalkonTerrasse() {
-        return new AusrichtBalkonTerrasse();
-    }
-
-    /**
-     * Create an instance of {@link Serviceleistungen }
-     * 
-     */
-    public Serviceleistungen createServiceleistungen() {
-        return new Serviceleistungen();
-    }
-
-    /**
-     * Create an instance of {@link Dachform }
-     * 
-     */
-    public Dachform createDachform() {
-        return new Dachform();
-    }
-
-    /**
-     * Create an instance of {@link Bauweise }
-     * 
-     */
-    public Bauweise createBauweise() {
-        return new Bauweise();
-    }
-
-    /**
-     * Create an instance of {@link Ausbaustufe }
-     * 
-     */
-    public Ausbaustufe createAusbaustufe() {
-        return new Ausbaustufe();
-    }
-
-    /**
-     * Create an instance of {@link Energietyp }
-     * 
-     */
-    public Energietyp createEnergietyp() {
-        return new Energietyp();
     }
 
     /**
@@ -1052,6 +788,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AussenCourtage }
+     * 
+     */
+    public AussenCourtage createAussenCourtage() {
+        return new AussenCourtage();
+    }
+
+    /**
      * Create an instance of {@link Objekt }
      * 
      */
@@ -1060,27 +804,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Heizungsart }
+     * 
+     */
+    public Heizungsart createHeizungsart() {
+        return new Heizungsart();
+    }
+
+    /**
+     * Create an instance of {@link Kaufpreisnetto }
+     * 
+     */
+    public Kaufpreisnetto createKaufpreisnetto() {
+        return new Kaufpreisnetto();
+    }
+
+    /**
+     * Create an instance of {@link Land }
+     * 
+     */
+    public Land createLand() {
+        return new Land();
+    }
+
+    /**
      * Create an instance of {@link OpenimmoFeedback }
      * 
      */
     public OpenimmoFeedback createOpenimmoFeedback() {
         return new OpenimmoFeedback();
-    }
-
-    /**
-     * Create an instance of {@link Fehlerliste.Fehler }
-     * 
-     */
-    public Fehlerliste.Fehler createFehlerlisteFehler() {
-        return new Fehlerliste.Fehler();
-    }
-
-    /**
-     * Create an instance of {@link Status }
-     * 
-     */
-    public Status createStatus() {
-        return new Status();
     }
 
     /**
@@ -1116,14 +868,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Nutzungsart }
-     * 
-     */
-    public Nutzungsart createNutzungsart() {
-        return new Nutzungsart();
-    }
-
-    /**
      * Create an instance of {@link Flaechen }
      * 
      */
@@ -1140,11 +884,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Daten }
+     * Create an instance of {@link Fahrstuhl }
      * 
      */
-    public Daten createDaten() {
-        return new Daten();
+    public Fahrstuhl createFahrstuhl() {
+        return new Fahrstuhl();
     }
 
     /**
@@ -1156,19 +900,107 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Anbieter }
+     * Create an instance of {@link ZustandAngaben }
      * 
      */
-    public Anbieter createAnbieter() {
-        return new Anbieter();
+    public ZustandAngaben createZustandAngaben() {
+        return new ZustandAngaben();
     }
 
     /**
-     * Create an instance of {@link Immobilie }
+     * Create an instance of {@link Sonstigemietenetto }
      * 
      */
-    public Immobilie createImmobilie() {
-        return new Immobilie();
+    public Sonstigemietenetto createSonstigemietenetto() {
+        return new Sonstigemietenetto();
+    }
+
+    /**
+     * Create an instance of {@link InnenCourtage }
+     * 
+     */
+    public InnenCourtage createInnenCourtage() {
+        return new InnenCourtage();
+    }
+
+    /**
+     * Create an instance of {@link Kaufpreis }
+     * 
+     */
+    public Kaufpreis createKaufpreis() {
+        return new Kaufpreis();
+    }
+
+    /**
+     * Create an instance of {@link UserDefinedSimplefield }
+     * 
+     */
+    public UserDefinedSimplefield createUserDefinedSimplefield() {
+        return new UserDefinedSimplefield();
+    }
+
+    /**
+     * Create an instance of {@link Bad }
+     * 
+     */
+    public Bad createBad() {
+        return new Bad();
+    }
+
+    /**
+     * Create an instance of {@link Ausbaustufe }
+     * 
+     */
+    public Ausbaustufe createAusbaustufe() {
+        return new Ausbaustufe();
+    }
+
+    /**
+     * Create an instance of {@link Serviceleistungen }
+     * 
+     */
+    public Serviceleistungen createServiceleistungen() {
+        return new Serviceleistungen();
+    }
+
+    /**
+     * Create an instance of {@link Summemietenetto }
+     * 
+     */
+    public Summemietenetto createSummemietenetto() {
+        return new Summemietenetto();
+    }
+
+    /**
+     * Create an instance of {@link AusrichtBalkonTerrasse }
+     * 
+     */
+    public AusrichtBalkonTerrasse createAusrichtBalkonTerrasse() {
+        return new AusrichtBalkonTerrasse();
+    }
+
+    /**
+     * Create an instance of {@link Monatlichekostennetto }
+     * 
+     */
+    public Monatlichekostennetto createMonatlichekostennetto() {
+        return new Monatlichekostennetto();
+    }
+
+    /**
+     * Create an instance of {@link Gesamtkostenprom2Von }
+     * 
+     */
+    public Gesamtkostenprom2Von createGesamtkostenprom2Von() {
+        return new Gesamtkostenprom2Von();
+    }
+
+    /**
+     * Create an instance of {@link Daten }
+     * 
+     */
+    public Daten createDaten() {
+        return new Daten();
     }
 
     /**
@@ -1180,19 +1012,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Versteigerung }
+     * Create an instance of {@link Ruecklagenetto }
      * 
      */
-    public Versteigerung createVersteigerung() {
-        return new Versteigerung();
+    public Ruecklagenetto createRuecklagenetto() {
+        return new Ruecklagenetto();
     }
 
     /**
-     * Create an instance of {@link ZustandAngaben }
+     * Create an instance of {@link Gesamtbelastungnetto }
      * 
      */
-    public ZustandAngaben createZustandAngaben() {
-        return new ZustandAngaben();
+    public Gesamtbelastungnetto createGesamtbelastungnetto() {
+        return new Gesamtbelastungnetto();
+    }
+
+    /**
+     * Create an instance of {@link Master }
+     * 
+     */
+    public Master createMaster() {
+        return new Master();
+    }
+
+    /**
+     * Create an instance of {@link Nebenkostenprom2Von }
+     * 
+     */
+    public Nebenkostenprom2Von createNebenkostenprom2Von() {
+        return new Nebenkostenprom2Von();
     }
 
     /**
@@ -1204,6 +1052,102 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Gesamtmietenetto }
+     * 
+     */
+    public Gesamtmietenetto createGesamtmietenetto() {
+        return new Gesamtmietenetto();
+    }
+
+    /**
+     * Create an instance of {@link Immobilie }
+     * 
+     */
+    public Immobilie createImmobilie() {
+        return new Immobilie();
+    }
+
+    /**
+     * Create an instance of {@link Geokoordinaten }
+     * 
+     */
+    public Geokoordinaten createGeokoordinaten() {
+        return new Geokoordinaten();
+    }
+
+    /**
+     * Create an instance of {@link Dachform }
+     * 
+     */
+    public Dachform createDachform() {
+        return new Dachform();
+    }
+
+    /**
+     * Create an instance of {@link Energietyp }
+     * 
+     */
+    public Energietyp createEnergietyp() {
+        return new Energietyp();
+    }
+
+    /**
+     * Create an instance of {@link Nettomieteprom2Von }
+     * 
+     */
+    public Nettomieteprom2Von createNettomieteprom2Von() {
+        return new Nettomieteprom2Von();
+    }
+
+    /**
+     * Create an instance of {@link Status }
+     * 
+     */
+    public Status createStatus() {
+        return new Status();
+    }
+
+    /**
+     * Create an instance of {@link Nutzungsart }
+     * 
+     */
+    public Nutzungsart createNutzungsart() {
+        return new Nutzungsart();
+    }
+
+    /**
+     * Create an instance of {@link Bauweise }
+     * 
+     */
+    public Bauweise createBauweise() {
+        return new Bauweise();
+    }
+
+    /**
+     * Create an instance of {@link Evbnetto }
+     * 
+     */
+    public Evbnetto createEvbnetto() {
+        return new Evbnetto();
+    }
+
+    /**
+     * Create an instance of {@link Anbieter }
+     * 
+     */
+    public Anbieter createAnbieter() {
+        return new Anbieter();
+    }
+
+    /**
+     * Create an instance of {@link Hauptmietzinsnetto }
+     * 
+     */
+    public Hauptmietzinsnetto createHauptmietzinsnetto() {
+        return new Hauptmietzinsnetto();
+    }
+
+    /**
      * Create an instance of {@link VerwaltungTechn }
      * 
      */
@@ -1212,11 +1156,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Master }
+     * Create an instance of {@link Betriebskostennetto }
      * 
      */
-    public Master createMaster() {
-        return new Master();
+    public Betriebskostennetto createBetriebskostennetto() {
+        return new Betriebskostennetto();
+    }
+
+    /**
+     * Create an instance of {@link Versteigerung }
+     * 
+     */
+    public Versteigerung createVersteigerung() {
+        return new Versteigerung();
+    }
+
+    /**
+     * Create an instance of {@link UserDefinedAnyfield }
+     * 
+     */
+    public UserDefinedAnyfield createUserDefinedAnyfield() {
+        return new UserDefinedAnyfield();
+    }
+
+    /**
+     * Create an instance of {@link Sonstigekostennetto }
+     * 
+     */
+    public Sonstigekostennetto createSonstigekostennetto() {
+        return new Sonstigekostennetto();
+    }
+
+    /**
+     * Create an instance of {@link Stellplatzart }
+     * 
+     */
+    public Stellplatzart createStellplatzart() {
+        return new Stellplatzart();
+    }
+
+    /**
+     * Create an instance of {@link Fehlerliste.Fehler }
+     * 
+     */
+    public Fehlerliste.Fehler createFehlerlisteFehler() {
+        return new Fehlerliste.Fehler();
+    }
+
+    /**
+     * Create an instance of {@link UserDefinedExtend.Feld }
+     * 
+     */
+    public UserDefinedExtend.Feld createUserDefinedExtendFeld() {
+        return new UserDefinedExtend.Feld();
+    }
+
+    /**
+     * Create an instance of {@link Bewertung.Feld }
+     * 
+     */
+    public Bewertung.Feld createBewertungFeld() {
+        return new Bewertung.Feld();
     }
 
     /**
@@ -1618,21 +1618,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "personennummer")
-    public JAXBElement<String> createPersonennummer(String value) {
-        return new JAXBElement<String>(_Personennummer_QNAME, String.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "teekueche")
     public JAXBElement<Boolean> createTeekueche(Boolean value) {
         return new JAXBElement<Boolean>(_Teekueche_QNAME, Boolean.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "personennummer")
+    public JAXBElement<String> createPersonennummer(String value) {
+        return new JAXBElement<String>(_Personennummer_QNAME, String.class, null, value);
     }
 
     /**
@@ -1790,20 +1790,20 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "anzahl_wohneinheiten")
+    @XmlElementDecl(namespace = "", name = "anzahl_gewerbeeinheiten")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createAnzahlWohneinheiten(Double value) {
-        return new JAXBElement<Double>(_AnzahlWohneinheiten_QNAME, Double.class, null, value);
+    public JAXBElement<Double> createAnzahlGewerbeeinheiten(Double value) {
+        return new JAXBElement<Double>(_AnzahlGewerbeeinheiten_QNAME, Double.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "anzahl_gewerbeeinheiten")
+    @XmlElementDecl(namespace = "", name = "anzahl_wohneinheiten")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createAnzahlGewerbeeinheiten(Double value) {
-        return new JAXBElement<Double>(_AnzahlGewerbeeinheiten_QNAME, Double.class, null, value);
+    public JAXBElement<Double> createAnzahlWohneinheiten(Double value) {
+        return new JAXBElement<Double>(_AnzahlWohneinheiten_QNAME, Double.class, null, value);
     }
 
     /**
@@ -1825,15 +1825,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "kamin")
-    public JAXBElement<Boolean> createKamin(Boolean value) {
-        return new JAXBElement<Boolean>(_Kamin_QNAME, Boolean.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
      * 
      */
@@ -1841,6 +1832,15 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(Adapter1 .class)
     public JAXBElement<Calendar> createZvtermin(Calendar value) {
         return new JAXBElement<Calendar>(_Zvtermin_QNAME, Calendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "kamin")
+    public JAXBElement<Boolean> createKamin(Boolean value) {
+        return new JAXBElement<Boolean>(_Kamin_QNAME, Boolean.class, null, value);
     }
 
     /**
@@ -1977,18 +1977,18 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "anbieternr")
-    public JAXBElement<String> createAnbieternr(String value) {
-        return new JAXBElement<String>(_Anbieternr_QNAME, String.class, null, value);
+    @XmlElementDecl(namespace = "", name = "bmz")
+    public JAXBElement<String> createBmz(String value) {
+        return new JAXBElement<String>(_Bmz_QNAME, String.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "bmz")
-    public JAXBElement<String> createBmz(String value) {
-        return new JAXBElement<String>(_Bmz_QNAME, String.class, null, value);
+    @XmlElementDecl(namespace = "", name = "anbieternr")
+    public JAXBElement<String> createAnbieternr(String value) {
+        return new JAXBElement<String>(_Anbieternr_QNAME, String.class, null, value);
     }
 
     /**
@@ -2098,15 +2098,6 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "email_zentrale")
-    public JAXBElement<String> createEmailZentrale(String value) {
-        return new JAXBElement<String>(_EmailZentrale_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "", name = "tel_privat")
     public JAXBElement<String> createTelPrivat(String value) {
         return new JAXBElement<String>(_TelPrivat_QNAME, String.class, null, value);
@@ -2120,6 +2111,15 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(Adapter2 .class)
     public JAXBElement<Calendar> createAbdatum(Calendar value) {
         return new JAXBElement<Calendar>(_Abdatum_QNAME, Calendar.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "email_zentrale")
+    public JAXBElement<String> createEmailZentrale(String value) {
+        return new JAXBElement<String>(_EmailZentrale_QNAME, String.class, null, value);
     }
 
     /**
@@ -2164,18 +2164,27 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "vorname")
-    public JAXBElement<String> createVorname(String value) {
-        return new JAXBElement<String>(_Vorname_QNAME, String.class, null, value);
+    @XmlElementDecl(namespace = "", name = "lizenzkennung")
+    public JAXBElement<String> createLizenzkennung(String value) {
+        return new JAXBElement<String>(_Lizenzkennung_QNAME, String.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "lizenzkennung")
-    public JAXBElement<String> createLizenzkennung(String value) {
-        return new JAXBElement<String>(_Lizenzkennung_QNAME, String.class, null, value);
+    @XmlElementDecl(namespace = "", name = "vorname")
+    public JAXBElement<String> createVorname(String value) {
+        return new JAXBElement<String>(_Vorname_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "abstellraum")
+    public JAXBElement<Boolean> createAbstellraum(Boolean value) {
+        return new JAXBElement<Boolean>(_Abstellraum_QNAME, Boolean.class, null, value);
     }
 
     /**
@@ -2186,15 +2195,6 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(Adapter4 .class)
     public JAXBElement<Double> createErschliessungskosten(Double value) {
         return new JAXBElement<Double>(_Erschliessungskosten_QNAME, Double.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "abstellraum")
-    public JAXBElement<Boolean> createAbstellraum(Boolean value) {
-        return new JAXBElement<Boolean>(_Abstellraum_QNAME, Boolean.class, null, value);
     }
 
     /**
@@ -2306,18 +2306,18 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "zwangsversteigerung")
-    public JAXBElement<Boolean> createZwangsversteigerung(Boolean value) {
-        return new JAXBElement<Boolean>(_Zwangsversteigerung_QNAME, Boolean.class, null, value);
+    @XmlElementDecl(namespace = "", name = "dvbt")
+    public JAXBElement<Boolean> createDvbt(Boolean value) {
+        return new JAXBElement<Boolean>(_Dvbt_QNAME, Boolean.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "dvbt")
-    public JAXBElement<Boolean> createDvbt(Boolean value) {
-        return new JAXBElement<Boolean>(_Dvbt_QNAME, Boolean.class, null, value);
+    @XmlElementDecl(namespace = "", name = "zwangsversteigerung")
+    public JAXBElement<Boolean> createZwangsversteigerung(Boolean value) {
+        return new JAXBElement<Boolean>(_Zwangsversteigerung_QNAME, Boolean.class, null, value);
     }
 
     /**
@@ -2444,21 +2444,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AusstattKategorie }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "ausstatt_kategorie")
-    public JAXBElement<AusstattKategorie> createAusstattKategorie(AusstattKategorie value) {
-        return new JAXBElement<AusstattKategorie>(_AusstattKategorie_QNAME, AusstattKategorie.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "sporteinrichtungen")
     public JAXBElement<Boolean> createSporteinrichtungen(Boolean value) {
         return new JAXBElement<Boolean>(_Sporteinrichtungen_QNAME, Boolean.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AusstattKategorie }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "ausstatt_kategorie")
+    public JAXBElement<AusstattKategorie> createAusstattKategorie(AusstattKategorie value) {
+        return new JAXBElement<AusstattKategorie>(_AusstattKategorie_QNAME, AusstattKategorie.class, null, value);
     }
 
     /**
@@ -2485,18 +2485,18 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "provisionspflichtig")
-    public JAXBElement<Boolean> createProvisionspflichtig(Boolean value) {
-        return new JAXBElement<Boolean>(_Provisionspflichtig_QNAME, Boolean.class, null, value);
+    @XmlElementDecl(namespace = "", name = "heizkosten_enthalten")
+    public JAXBElement<Boolean> createHeizkostenEnthalten(Boolean value) {
+        return new JAXBElement<Boolean>(_HeizkostenEnthalten_QNAME, Boolean.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "heizkosten_enthalten")
-    public JAXBElement<Boolean> createHeizkostenEnthalten(Boolean value) {
-        return new JAXBElement<Boolean>(_HeizkostenEnthalten_QNAME, Boolean.class, null, value);
+    @XmlElementDecl(namespace = "", name = "provisionspflichtig")
+    public JAXBElement<Boolean> createProvisionspflichtig(Boolean value) {
+        return new JAXBElement<Boolean>(_Provisionspflichtig_QNAME, Boolean.class, null, value);
     }
 
     /**
@@ -2527,21 +2527,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "position")
-    public JAXBElement<String> createPosition(String value) {
-        return new JAXBElement<String>(_Position_QNAME, String.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "wg_geeignet")
     public JAXBElement<Boolean> createWgGeeignet(Boolean value) {
         return new JAXBElement<Boolean>(_WgGeeignet_QNAME, Boolean.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "position")
+    public JAXBElement<String> createPosition(String value) {
+        return new JAXBElement<String>(_Position_QNAME, String.class, null, value);
     }
 
     /**
@@ -2678,13 +2678,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "anzahl_stellplaetze")
-    @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createAnzahlStellplaetze(Double value) {
-        return new JAXBElement<Double>(_AnzahlStellplaetze_QNAME, Double.class, null, value);
+    @XmlElementDecl(namespace = "", name = "tel_durchw")
+    public JAXBElement<String> createTelDurchw(String value) {
+        return new JAXBElement<String>(_TelDurchw_QNAME, String.class, null, value);
     }
 
     /**
@@ -2698,22 +2697,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "tel_durchw")
-    public JAXBElement<String> createTelDurchw(String value) {
-        return new JAXBElement<String>(_TelDurchw_QNAME, String.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "plaetze_gastraum")
+    @XmlElementDecl(namespace = "", name = "anzahl_stellplaetze")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createPlaetzeGastraum(Double value) {
-        return new JAXBElement<Double>(_PlaetzeGastraum_QNAME, Double.class, null, value);
+    public JAXBElement<Double> createAnzahlStellplaetze(Double value) {
+        return new JAXBElement<Double>(_AnzahlStellplaetze_QNAME, Double.class, null, value);
     }
 
     /**
@@ -2724,6 +2714,16 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(Adapter4 .class)
     public JAXBElement<Double> createAnzahlBadezimmer(Double value) {
         return new JAXBElement<Double>(_AnzahlBadezimmer_QNAME, Double.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "plaetze_gastraum")
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    public JAXBElement<Double> createPlaetzeGastraum(Double value) {
+        return new JAXBElement<Double>(_PlaetzeGastraum_QNAME, Double.class, null, value);
     }
 
     /**
@@ -2817,20 +2817,20 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "anzahl_balkone")
+    @XmlElementDecl(namespace = "", name = "balkon_terrasse_flaeche")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createAnzahlBalkone(Double value) {
-        return new JAXBElement<Double>(_AnzahlBalkone_QNAME, Double.class, null, value);
+    public JAXBElement<Double> createBalkonTerrasseFlaeche(Double value) {
+        return new JAXBElement<Double>(_BalkonTerrasseFlaeche_QNAME, Double.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "balkon_terrasse_flaeche")
+    @XmlElementDecl(namespace = "", name = "anzahl_balkone")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createBalkonTerrasseFlaeche(Double value) {
-        return new JAXBElement<Double>(_BalkonTerrasseFlaeche_QNAME, Double.class, null, value);
+    public JAXBElement<Double> createAnzahlBalkone(Double value) {
+        return new JAXBElement<Double>(_AnzahlBalkone_QNAME, Double.class, null, value);
     }
 
     /**
@@ -2944,15 +2944,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "gemarkung")
-    public JAXBElement<String> createGemarkung(String value) {
-        return new JAXBElement<String>(_Gemarkung_QNAME, String.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
@@ -2965,9 +2956,27 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "gemarkung")
+    public JAXBElement<String> createGemarkung(String value) {
+        return new JAXBElement<String>(_Gemarkung_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "zugang")
     public JAXBElement<String> createZugang(String value) {
         return new JAXBElement<String>(_Zugang_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "brauereibindung")
+    public JAXBElement<Boolean> createBrauereibindung(Boolean value) {
+        return new JAXBElement<Boolean>(_Brauereibindung_QNAME, Boolean.class, null, value);
     }
 
     /**
@@ -2978,15 +2987,6 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(Adapter1 .class)
     public JAXBElement<Calendar> createZusatztermin(Calendar value) {
         return new JAXBElement<Calendar>(_Zusatztermin_QNAME, Calendar.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "brauereibindung")
-    public JAXBElement<Boolean> createBrauereibindung(Boolean value) {
-        return new JAXBElement<Boolean>(_Brauereibindung_QNAME, Boolean.class, null, value);
     }
 
     /**
@@ -3058,20 +3058,20 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "flaechebis")
+    @XmlElementDecl(namespace = "", name = "gartenflaeche")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createFlaechebis(Double value) {
-        return new JAXBElement<Double>(_Flaechebis_QNAME, Double.class, null, value);
+    public JAXBElement<Double> createGartenflaeche(Double value) {
+        return new JAXBElement<Double>(_Gartenflaeche_QNAME, Double.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "gartenflaeche")
+    @XmlElementDecl(namespace = "", name = "flaechebis")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createGartenflaeche(Double value) {
-        return new JAXBElement<Double>(_Gartenflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<Double> createFlaechebis(Double value) {
+        return new JAXBElement<Double>(_Flaechebis_QNAME, Double.class, null, value);
     }
 
     /**
@@ -3103,15 +3103,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "anhanginhalt")
-    public JAXBElement<byte[]> createAnhanginhalt(byte[] value) {
-        return new JAXBElement<byte[]>(_Anhanginhalt_QNAME, byte[].class, null, ((byte[]) value));
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
@@ -3131,6 +3122,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "anhanginhalt")
+    public JAXBElement<byte[]> createAnhanginhalt(byte[] value) {
+        return new JAXBElement<byte[]>(_Anhanginhalt_QNAME, byte[].class, null, ((byte[]) value));
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
@@ -3147,6 +3147,16 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "", name = "strasse")
     public JAXBElement<String> createStrasse(String value) {
         return new JAXBElement<String>(_Strasse_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "sonstflaeche")
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    public JAXBElement<Double> createSonstflaeche(Double value) {
+        return new JAXBElement<Double>(_Sonstflaeche_QNAME, Double.class, null, value);
     }
 
     /**
@@ -3176,16 +3186,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "", name = "stromanschlusswert")
     public JAXBElement<Object> createStromanschlusswert(Object value) {
         return new JAXBElement<Object>(_Stromanschlusswert_QNAME, Object.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "sonstflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createSonstflaeche(Double value) {
-        return new JAXBElement<Double>(_Sonstflaeche_QNAME, Double.class, null, value);
     }
 
     /**
@@ -3237,15 +3237,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "amtsgericht")
-    public JAXBElement<String> createAmtsgericht(String value) {
-        return new JAXBElement<String>(_Amtsgericht_QNAME, String.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
@@ -3253,6 +3244,15 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(Adapter4 .class)
     public JAXBElement<Double> createLagerflaeche(Double value) {
         return new JAXBElement<Double>(_Lagerflaeche_QNAME, Double.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "amtsgericht")
+    public JAXBElement<String> createAmtsgericht(String value) {
+        return new JAXBElement<String>(_Amtsgericht_QNAME, String.class, null, value);
     }
 
     /**
@@ -3297,18 +3297,18 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "anhangtitel")
-    public JAXBElement<String> createAnhangtitel(String value) {
-        return new JAXBElement<String>(_Anhangtitel_QNAME, String.class, null, value);
+    @XmlElementDecl(namespace = "", name = "bgf")
+    public JAXBElement<String> createBgf(String value) {
+        return new JAXBElement<String>(_Bgf_QNAME, String.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "bgf")
-    public JAXBElement<String> createBgf(String value) {
-        return new JAXBElement<String>(_Bgf_QNAME, String.class, null, value);
+    @XmlElementDecl(namespace = "", name = "anhangtitel")
+    public JAXBElement<String> createAnhangtitel(String value) {
+        return new JAXBElement<String>(_Anhangtitel_QNAME, String.class, null, value);
     }
 
     /**
@@ -3341,21 +3341,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "objektnr_intern")
-    public JAXBElement<String> createObjektnrIntern(String value) {
-        return new JAXBElement<String>(_ObjektnrIntern_QNAME, String.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "luftbildern")
     public JAXBElement<Boolean> createLuftbildern(Boolean value) {
         return new JAXBElement<Boolean>(_Luftbildern_QNAME, Boolean.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "objektnr_intern")
+    public JAXBElement<String> createObjektnrIntern(String value) {
+        return new JAXBElement<String>(_ObjektnrIntern_QNAME, String.class, null, value);
     }
 
     /**

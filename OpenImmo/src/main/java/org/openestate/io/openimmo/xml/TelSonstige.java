@@ -22,33 +22,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;>kontakt">
- *       &lt;attribute name="telefonart">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="TEL_ZENTRALE"/>
- *             &lt;enumeration value="TEL_DURCHW"/>
- *             &lt;enumeration value="TEL_PRIVAT"/>
- *             &lt;enumeration value="TEL_HANDY"/>
- *             &lt;enumeration value="TEL_FAX"/>
- *             &lt;enumeration value="TEL_SONSTIGE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="bemerkung" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;tel_sonstige&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -68,11 +45,11 @@ public class TelSonstige
 
     /**
      * Gets the value of the value property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getValue() {
         return value;
@@ -80,11 +57,11 @@ public class TelSonstige
 
     /**
      * Sets the value of the value property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(String value) {
         this.value = value;
@@ -92,11 +69,11 @@ public class TelSonstige
 
     /**
      * Gets the value of the telefonart property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link TelSonstige.Telefonart }
-     *     
+     *
      */
     public TelSonstige.Telefonart getTelefonart() {
         return telefonart;
@@ -104,11 +81,11 @@ public class TelSonstige
 
     /**
      * Sets the value of the telefonart property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link TelSonstige.Telefonart }
-     *     
+     *
      */
     public void setTelefonart(TelSonstige.Telefonart value) {
         this.telefonart = value;
@@ -116,11 +93,11 @@ public class TelSonstige
 
     /**
      * Gets the value of the bemerkung property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getBemerkung() {
         return bemerkung;
@@ -128,11 +105,11 @@ public class TelSonstige
 
     /**
      * Sets the value of the bemerkung property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setBemerkung(String value) {
         this.bemerkung = value;
@@ -261,23 +238,8 @@ public class TelSonstige
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="TEL_ZENTRALE"/>
-     *     &lt;enumeration value="TEL_DURCHW"/>
-     *     &lt;enumeration value="TEL_PRIVAT"/>
-     *     &lt;enumeration value="TEL_HANDY"/>
-     *     &lt;enumeration value="TEL_FAX"/>
-     *     &lt;enumeration value="TEL_SONSTIGE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>telefonart</em> attribute in &lt;tel_sonstige&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

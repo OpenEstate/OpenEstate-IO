@@ -22,39 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;immobilie&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}objektkategorie"/>
- *         &lt;element ref="{}geo"/>
- *         &lt;element ref="{}kontaktperson"/>
- *         &lt;element ref="{}weitere_adresse" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}preise" minOccurs="0"/>
- *         &lt;element ref="{}bieterverfahren" minOccurs="0"/>
- *         &lt;element ref="{}versteigerung" minOccurs="0"/>
- *         &lt;element ref="{}flaechen" minOccurs="0"/>
- *         &lt;element ref="{}ausstattung" minOccurs="0"/>
- *         &lt;element ref="{}zustand_angaben" minOccurs="0"/>
- *         &lt;element ref="{}bewertung" minOccurs="0"/>
- *         &lt;element ref="{}infrastruktur" minOccurs="0"/>
- *         &lt;element ref="{}freitexte" minOccurs="0"/>
- *         &lt;element ref="{}anhaenge" minOccurs="0"/>
- *         &lt;element ref="{}verwaltung_objekt" minOccurs="0"/>
- *         &lt;element ref="{}verwaltung_techn"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

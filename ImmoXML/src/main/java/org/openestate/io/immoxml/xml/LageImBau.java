@@ -20,22 +20,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;lage_im_bau&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="LINKS" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="RECHTS" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="VORNE" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="HINTEN" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -21,28 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="moeb">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="VOLL"/>
- *             &lt;enumeration value="TEIL"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;moebliert&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -56,11 +38,11 @@ public class Moebliert
 
     /**
      * Gets the value of the moeb property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Moebliert.Moeb }
-     *     
+     *
      */
     public Moebliert.Moeb getMoeb() {
         return moeb;
@@ -68,11 +50,11 @@ public class Moebliert
 
     /**
      * Sets the value of the moeb property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Moebliert.Moeb }
-     *     
+     *
      */
     public void setMoeb(Moebliert.Moeb value) {
         this.moeb = value;
@@ -157,19 +139,8 @@ public class Moebliert
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="VOLL"/>
-     *     &lt;enumeration value="TEIL"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>moeb</em> attribute in &lt;moebliert&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

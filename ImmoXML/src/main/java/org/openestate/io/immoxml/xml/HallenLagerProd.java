@@ -21,34 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="hallen_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="HALLE"/>
- *             &lt;enumeration value="LAGER"/>
- *             &lt;enumeration value="PRODUKTION"/>
- *             &lt;enumeration value="WERKSTATT"/>
- *             &lt;enumeration value="WERKSTATT"/>
- *             &lt;enumeration value="HOCHREGALLAGER"/>
- *             &lt;enumeration value="SERVICE"/>
- *             &lt;enumeration value="FREIFLAECHEN"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;hallen_lager_prod&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -62,11 +38,11 @@ public class HallenLagerProd
 
     /**
      * Gets the value of the hallenTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link HallenLagerProd.HallenTyp }
-     *     
+     *
      */
     public HallenLagerProd.HallenTyp getHallenTyp() {
         return hallenTyp;
@@ -74,11 +50,11 @@ public class HallenLagerProd
 
     /**
      * Sets the value of the hallenTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link HallenLagerProd.HallenTyp }
-     *     
+     *
      */
     public void setHallenTyp(HallenLagerProd.HallenTyp value) {
         this.hallenTyp = value;
@@ -163,25 +139,8 @@ public class HallenLagerProd
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="HALLE"/>
-     *     &lt;enumeration value="LAGER"/>
-     *     &lt;enumeration value="PRODUKTION"/>
-     *     &lt;enumeration value="WERKSTATT"/>
-     *     &lt;enumeration value="WERKSTATT"/>
-     *     &lt;enumeration value="HOCHREGALLAGER"/>
-     *     &lt;enumeration value="SERVICE"/>
-     *     &lt;enumeration value="FREIFLAECHEN"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>hallen_typ</em> attribute in &lt;hallen_lager_prod&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

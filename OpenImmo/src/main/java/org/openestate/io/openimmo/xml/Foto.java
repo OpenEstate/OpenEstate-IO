@@ -22,32 +22,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}format"/>
- *         &lt;element ref="{}daten"/>
- *       &lt;/sequence>
- *       &lt;attribute name="location" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="EXTERN"/>
- *             &lt;enumeration value="REMOTE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;foto&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -68,11 +46,11 @@ public class Foto
 
     /**
      * Gets the value of the format property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getFormat() {
         return format;
@@ -80,11 +58,11 @@ public class Foto
 
     /**
      * Sets the value of the format property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setFormat(String value) {
         this.format = value;
@@ -92,11 +70,11 @@ public class Foto
 
     /**
      * Gets the value of the daten property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Daten }
-     *     
+     *
      */
     public Daten getDaten() {
         return daten;
@@ -104,11 +82,11 @@ public class Foto
 
     /**
      * Sets the value of the daten property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Daten }
-     *     
+     *
      */
     public void setDaten(Daten value) {
         this.daten = value;
@@ -116,11 +94,11 @@ public class Foto
 
     /**
      * Gets the value of the location property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Foto.Location }
-     *     
+     *
      */
     public Foto.Location getLocation() {
         return location;
@@ -128,11 +106,11 @@ public class Foto
 
     /**
      * Sets the value of the location property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Foto.Location }
-     *     
+     *
      */
     public void setLocation(Foto.Location value) {
         this.location = value;
@@ -261,19 +239,8 @@ public class Foto
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="EXTERN"/>
-     *     &lt;enumeration value="REMOTE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>gruppe</em> attribute in &lt;foto&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

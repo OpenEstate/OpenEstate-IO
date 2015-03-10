@@ -23,62 +23,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;flaechen&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.immoxml.de}wohnflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}nutzflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gesamtflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}ladenflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}lagerflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}verkaufsflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}freiflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}bueroflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}bueroteilflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}fensterfront" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}verwaltungsflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gastroflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}grz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gfz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}bmz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}bgf" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}grundstuecksflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}sonstflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_zimmer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_schlafzimmer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_badezimmer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_sep_wc" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_balkon_terrassen" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}balkon_terrasse_flaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_wohn_schlafzimmer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gartenflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kellerflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}fensterfront_qm" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}grundstuecksfront" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}dachbodenflaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}teilbar_ab" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}beheizbare_flaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_stellplaetze" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}plaetze_gastraum" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_betten" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_tagungsraeume" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}vermietbare_flaeche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_wohneinheiten" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anzahl_gewerbeeinheiten" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}einliegerwohnung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -23,57 +23,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="int_id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="anrede" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="vorname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="nachname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="firma" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="strasse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="postfach" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="plz" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ort" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="tel" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="mobil" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bevorzugt" maxOccurs="unbounded" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="EMAIL"/>
- *               &lt;enumeration value="TEL"/>
- *               &lt;enumeration value="MOBIL"/>
- *               &lt;enumeration value="FAX"/>
- *               &lt;enumeration value="BRIEF"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="wunsch" maxOccurs="unbounded" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="BESICHTIGUNG"/>
- *               &lt;enumeration value="ANRUF"/>
- *               &lt;enumeration value="DETAIL"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="anfrage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;interessent&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -122,11 +75,11 @@ public class Interessent
 
     /**
      * Gets the value of the intId property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getIntId() {
         return intId;
@@ -134,11 +87,11 @@ public class Interessent
 
     /**
      * Sets the value of the intId property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setIntId(String value) {
         this.intId = value;
@@ -146,11 +99,11 @@ public class Interessent
 
     /**
      * Gets the value of the anrede property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getAnrede() {
         return anrede;
@@ -158,11 +111,11 @@ public class Interessent
 
     /**
      * Sets the value of the anrede property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAnrede(String value) {
         this.anrede = value;
@@ -170,11 +123,11 @@ public class Interessent
 
     /**
      * Gets the value of the vorname property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getVorname() {
         return vorname;
@@ -182,11 +135,11 @@ public class Interessent
 
     /**
      * Sets the value of the vorname property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setVorname(String value) {
         this.vorname = value;
@@ -194,11 +147,11 @@ public class Interessent
 
     /**
      * Gets the value of the nachname property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getNachname() {
         return nachname;
@@ -206,11 +159,11 @@ public class Interessent
 
     /**
      * Sets the value of the nachname property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setNachname(String value) {
         this.nachname = value;
@@ -218,11 +171,11 @@ public class Interessent
 
     /**
      * Gets the value of the firma property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getFirma() {
         return firma;
@@ -230,11 +183,11 @@ public class Interessent
 
     /**
      * Sets the value of the firma property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setFirma(String value) {
         this.firma = value;
@@ -242,11 +195,11 @@ public class Interessent
 
     /**
      * Gets the value of the strasse property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getStrasse() {
         return strasse;
@@ -254,11 +207,11 @@ public class Interessent
 
     /**
      * Sets the value of the strasse property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setStrasse(String value) {
         this.strasse = value;
@@ -266,11 +219,11 @@ public class Interessent
 
     /**
      * Gets the value of the postfach property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getPostfach() {
         return postfach;
@@ -278,11 +231,11 @@ public class Interessent
 
     /**
      * Sets the value of the postfach property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setPostfach(String value) {
         this.postfach = value;
@@ -290,11 +243,11 @@ public class Interessent
 
     /**
      * Gets the value of the plz property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getPlz() {
         return plz;
@@ -302,11 +255,11 @@ public class Interessent
 
     /**
      * Sets the value of the plz property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setPlz(String value) {
         this.plz = value;
@@ -314,11 +267,11 @@ public class Interessent
 
     /**
      * Gets the value of the ort property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getOrt() {
         return ort;
@@ -326,11 +279,11 @@ public class Interessent
 
     /**
      * Sets the value of the ort property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setOrt(String value) {
         this.ort = value;
@@ -338,11 +291,11 @@ public class Interessent
 
     /**
      * Gets the value of the tel property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getTel() {
         return tel;
@@ -350,11 +303,11 @@ public class Interessent
 
     /**
      * Sets the value of the tel property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setTel(String value) {
         this.tel = value;
@@ -362,11 +315,11 @@ public class Interessent
 
     /**
      * Gets the value of the fax property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getFax() {
         return fax;
@@ -374,11 +327,11 @@ public class Interessent
 
     /**
      * Sets the value of the fax property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setFax(String value) {
         this.fax = value;
@@ -386,11 +339,11 @@ public class Interessent
 
     /**
      * Gets the value of the mobil property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getMobil() {
         return mobil;
@@ -398,11 +351,11 @@ public class Interessent
 
     /**
      * Sets the value of the mobil property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setMobil(String value) {
         this.mobil = value;
@@ -410,11 +363,11 @@ public class Interessent
 
     /**
      * Gets the value of the email property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getEmail() {
         return email;
@@ -422,11 +375,11 @@ public class Interessent
 
     /**
      * Sets the value of the email property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setEmail(String value) {
         this.email = value;
@@ -434,25 +387,25 @@ public class Interessent
 
     /**
      * Gets the value of the bevorzugt property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the bevorzugt property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getBevorzugt().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Interessent.Bevorzugt }
-     * 
-     * 
+     *
+     *
      */
     public List<Interessent.Bevorzugt> getBevorzugt() {
         if (bevorzugt == null) {
@@ -463,25 +416,25 @@ public class Interessent
 
     /**
      * Gets the value of the wunsch property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the wunsch property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getWunsch().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Interessent.Wunsch }
-     * 
-     * 
+     *
+     *
      */
     public List<Interessent.Wunsch> getWunsch() {
         if (wunsch == null) {
@@ -492,11 +445,11 @@ public class Interessent
 
     /**
      * Gets the value of the anfrage property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getAnfrage() {
         return anfrage;
@@ -504,11 +457,11 @@ public class Interessent
 
     /**
      * Sets the value of the anfrage property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAnfrage(String value) {
         this.anfrage = value;
@@ -516,25 +469,25 @@ public class Interessent
 
     /**
      * Gets the value of the userDefinedExtend property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the userDefinedExtend property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getUserDefinedExtend().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link UserDefinedExtend }
-     * 
-     * 
+     *
+     *
      */
     public List<UserDefinedExtend> getUserDefinedExtend() {
         if (userDefinedExtend == null) {
@@ -989,22 +942,8 @@ public class Interessent
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="EMAIL"/>
-     *     &lt;enumeration value="TEL"/>
-     *     &lt;enumeration value="MOBIL"/>
-     *     &lt;enumeration value="FAX"/>
-     *     &lt;enumeration value="BRIEF"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for &lt;bevorzugt&gt; in &lt;interessent&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum
@@ -1028,20 +967,8 @@ public class Interessent
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="BESICHTIGUNG"/>
-     *     &lt;enumeration value="ANRUF"/>
-     *     &lt;enumeration value="DETAIL"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for &lt;wunsch&gt; in &lt;interessent&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

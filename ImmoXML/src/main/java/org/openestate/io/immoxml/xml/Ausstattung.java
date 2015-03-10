@@ -23,59 +23,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;ausstattung&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.immoxml.de}wg_geeignet" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}raeume_veraenderbar" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}bad" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kueche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}boden" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kamin" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}heizungsart" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}befeuerung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}klimatisiert" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}fahrstuhl" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stellplatzart" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gartennutzung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}ausricht_balkon_terrasse" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}moebliert" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}rollstuhlgerecht" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kabel_sat_tv" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}barrierefrei" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}sauna" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}swimmingpool" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}wasch_trockenraum" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}dv_verkabelung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}rampe" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}hebebuehne" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kran" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}gastterrasse" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}stromanschlusswert" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}kantine_cafeteria" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}teekueche" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}hallenhoehe" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}angeschl_gastronomie" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}brauereibindung" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}sporteinrichtungen" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}wellnessbereich" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}serviceleistungen" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}telefon_ferienimmobilie" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}sicherheitstechnik" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}unterkellert" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

@@ -24,33 +24,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>float">
- *       &lt;attribute name="distanz_zu_sport" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="STRAND"/>
- *             &lt;enumeration value="SEE"/>
- *             &lt;enumeration value="MEER"/>
- *             &lt;enumeration value="SKIGEBIET"/>
- *             &lt;enumeration value="SPORTANLAGEN"/>
- *             &lt;enumeration value="WANDERGEBIETE"/>
- *             &lt;enumeration value="NAHERHOLUNG"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;distanzen_sport&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -70,11 +47,11 @@ public class DistanzenSport
 
     /**
      * Gets the value of the value property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public Double getValue() {
         return value;
@@ -82,11 +59,11 @@ public class DistanzenSport
 
     /**
      * Sets the value of the value property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(Double value) {
         this.value = value;
@@ -94,11 +71,11 @@ public class DistanzenSport
 
     /**
      * Gets the value of the distanzZuSport property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link DistanzenSport.DistanzZuSport }
-     *     
+     *
      */
     public DistanzenSport.DistanzZuSport getDistanzZuSport() {
         return distanzZuSport;
@@ -106,11 +83,11 @@ public class DistanzenSport
 
     /**
      * Sets the value of the distanzZuSport property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link DistanzenSport.DistanzZuSport }
-     *     
+     *
      */
     public void setDistanzZuSport(DistanzenSport.DistanzZuSport value) {
         this.distanzZuSport = value;
@@ -217,24 +194,8 @@ public class DistanzenSport
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="STRAND"/>
-     *     &lt;enumeration value="SEE"/>
-     *     &lt;enumeration value="MEER"/>
-     *     &lt;enumeration value="SKIGEBIET"/>
-     *     &lt;enumeration value="SPORTANLAGEN"/>
-     *     &lt;enumeration value="WANDERGEBIETE"/>
-     *     &lt;enumeration value="NAHERHOLUNG"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>distanz_zu_sport</em> attribute in &lt;distanzen_sport&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

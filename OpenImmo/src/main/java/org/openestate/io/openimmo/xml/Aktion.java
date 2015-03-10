@@ -21,29 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="aktionart">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="CHANGE"/>
- *             &lt;enumeration value="DELETE"/>
- *             &lt;enumeration value="REFERENZ"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;aktion&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -57,11 +38,11 @@ public class Aktion
 
     /**
      * Gets the value of the aktionart property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Aktion.AktionArt }
-     *     
+     *
      */
     public Aktion.AktionArt getAktionart() {
         return aktionart;
@@ -69,11 +50,11 @@ public class Aktion
 
     /**
      * Sets the value of the aktionart property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Aktion.AktionArt }
-     *     
+     *
      */
     public void setAktionart(Aktion.AktionArt value) {
         this.aktionart = value;
@@ -158,20 +139,8 @@ public class Aktion
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="CHANGE"/>
-     *     &lt;enumeration value="DELETE"/>
-     *     &lt;enumeration value="REFERENZ"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>aktionart</em> attribute in &lt;aktion&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

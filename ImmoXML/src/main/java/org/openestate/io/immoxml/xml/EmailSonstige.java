@@ -22,31 +22,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.immoxml.de>kontakt">
- *       &lt;attribute name="emailart">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="EM_ZENTRALE"/>
- *             &lt;enumeration value="EM_DIREKT"/>
- *             &lt;enumeration value="EM_PRIVAT"/>
- *             &lt;enumeration value="EM_SONSTIGE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="bemerkung" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;email_sonstige&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -66,11 +45,11 @@ public class EmailSonstige
 
     /**
      * E-Mail
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getValue() {
         return value;
@@ -78,11 +57,11 @@ public class EmailSonstige
 
     /**
      * Sets the value of the value property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(String value) {
         this.value = value;
@@ -90,11 +69,11 @@ public class EmailSonstige
 
     /**
      * Gets the value of the emailart property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link EmailSonstige.Emailart }
-     *     
+     *
      */
     public EmailSonstige.Emailart getEmailart() {
         return emailart;
@@ -102,11 +81,11 @@ public class EmailSonstige
 
     /**
      * Sets the value of the emailart property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link EmailSonstige.Emailart }
-     *     
+     *
      */
     public void setEmailart(EmailSonstige.Emailart value) {
         this.emailart = value;
@@ -114,11 +93,11 @@ public class EmailSonstige
 
     /**
      * Gets the value of the bemerkung property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getBemerkung() {
         return bemerkung;
@@ -126,11 +105,11 @@ public class EmailSonstige
 
     /**
      * Sets the value of the bemerkung property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setBemerkung(String value) {
         this.bemerkung = value;
@@ -259,21 +238,8 @@ public class EmailSonstige
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="EM_ZENTRALE"/>
-     *     &lt;enumeration value="EM_DIREKT"/>
-     *     &lt;enumeration value="EM_PRIVAT"/>
-     *     &lt;enumeration value="EM_SONSTIGE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>emailart</em> attribute in &lt;email_sonstige&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

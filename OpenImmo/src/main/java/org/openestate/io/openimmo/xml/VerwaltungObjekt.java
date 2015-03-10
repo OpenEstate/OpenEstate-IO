@@ -26,44 +26,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;verwaltung_objekt&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}objektadresse_freigeben" minOccurs="0"/>
- *         &lt;element ref="{}verfuegbar_ab" minOccurs="0"/>
- *         &lt;element ref="{}abdatum" minOccurs="0"/>
- *         &lt;element ref="{}bisdatum" minOccurs="0"/>
- *         &lt;element ref="{}min_mietdauer" minOccurs="0"/>
- *         &lt;element ref="{}max_mietdauer" minOccurs="0"/>
- *         &lt;element ref="{}versteigerungstermin" minOccurs="0"/>
- *         &lt;element ref="{}wbs_sozialwohnung" minOccurs="0"/>
- *         &lt;element ref="{}vermietet" minOccurs="0"/>
- *         &lt;element ref="{}gruppennummer" minOccurs="0"/>
- *         &lt;element ref="{}zugang" minOccurs="0"/>
- *         &lt;element ref="{}laufzeit" minOccurs="0"/>
- *         &lt;element ref="{}max_personen" minOccurs="0"/>
- *         &lt;element ref="{}nichtraucher" minOccurs="0"/>
- *         &lt;element ref="{}haustiere" minOccurs="0"/>
- *         &lt;element ref="{}geschlecht" minOccurs="0"/>
- *         &lt;element ref="{}denkmalgeschuetzt" minOccurs="0"/>
- *         &lt;element ref="{}als_ferien" minOccurs="0"/>
- *         &lt;element ref="{}gewerbliche_nutzung" minOccurs="0"/>
- *         &lt;element ref="{}branchen" minOccurs="0"/>
- *         &lt;element ref="{}hochhaus" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

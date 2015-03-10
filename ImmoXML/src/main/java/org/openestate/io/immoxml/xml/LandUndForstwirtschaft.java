@@ -21,38 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="land_typ">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="LANDWIRTSCHAFTLICHE_BETRIEBE"/>
- *             &lt;enumeration value="BAUERNHOF"/>
- *             &lt;enumeration value="AUSSIEDLERHOF"/>
- *             &lt;enumeration value="GARTENBAU"/>
- *             &lt;enumeration value="ACKERBAU"/>
- *             &lt;enumeration value="WEINBAU"/>
- *             &lt;enumeration value="VIEHWIRTSCHAFT"/>
- *             &lt;enumeration value="JAGD_UND_FORSTWIRTSCHAFT"/>
- *             &lt;enumeration value="TEICH_UND_FISCHWIRTSCHAFT"/>
- *             &lt;enumeration value="SCHEUNEN"/>
- *             &lt;enumeration value="REITERHOEFE"/>
- *             &lt;enumeration value="SONSTIGE_LANDWIRTSCHAFTSIMMOBILIEN"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;land_und_forstwirtschaft&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -66,11 +38,11 @@ public class LandUndForstwirtschaft
 
     /**
      * Gets the value of the landTyp property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link LandUndForstwirtschaft.LandTyp }
-     *     
+     *
      */
     public LandUndForstwirtschaft.LandTyp getLandTyp() {
         return landTyp;
@@ -78,11 +50,11 @@ public class LandUndForstwirtschaft
 
     /**
      * Sets the value of the landTyp property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link LandUndForstwirtschaft.LandTyp }
-     *     
+     *
      */
     public void setLandTyp(LandUndForstwirtschaft.LandTyp value) {
         this.landTyp = value;
@@ -167,29 +139,8 @@ public class LandUndForstwirtschaft
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="LANDWIRTSCHAFTLICHE_BETRIEBE"/>
-     *     &lt;enumeration value="BAUERNHOF"/>
-     *     &lt;enumeration value="AUSSIEDLERHOF"/>
-     *     &lt;enumeration value="GARTENBAU"/>
-     *     &lt;enumeration value="ACKERBAU"/>
-     *     &lt;enumeration value="WEINBAU"/>
-     *     &lt;enumeration value="VIEHWIRTSCHAFT"/>
-     *     &lt;enumeration value="JAGD_UND_FORSTWIRTSCHAFT"/>
-     *     &lt;enumeration value="TEICH_UND_FISCHWIRTSCHAFT"/>
-     *     &lt;enumeration value="SCHEUNEN"/>
-     *     &lt;enumeration value="REITERHOEFE"/>
-     *     &lt;enumeration value="SONSTIGE_LANDWIRTSCHAFTSIMMOBILIEN"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>land_typ</em> attribute in &lt;land_und_forstwirtschaft&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

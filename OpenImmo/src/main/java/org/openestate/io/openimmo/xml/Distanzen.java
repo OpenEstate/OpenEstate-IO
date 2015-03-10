@@ -24,40 +24,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>float">
- *       &lt;attribute name="distanz_zu" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="FLUGHAFEN"/>
- *             &lt;enumeration value="FERNBAHNHOF"/>
- *             &lt;enumeration value="AUTOBAHN"/>
- *             &lt;enumeration value="US_BAHN"/>
- *             &lt;enumeration value="BUS"/>
- *             &lt;enumeration value="KINDERGAERTEN"/>
- *             &lt;enumeration value="GRUNDSCHULE"/>
- *             &lt;enumeration value="HAUPTSCHULE"/>
- *             &lt;enumeration value="REALSCHULE"/>
- *             &lt;enumeration value="GESAMTSCHULE"/>
- *             &lt;enumeration value="GYMNASIUM"/>
- *             &lt;enumeration value="ZENTRUM"/>
- *             &lt;enumeration value="EINKAUFSMOEGLICHKEITEN"/>
- *             &lt;enumeration value="GASTSTAETTEN"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;distanzen&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -77,11 +47,11 @@ public class Distanzen
 
     /**
      * Gets the value of the value property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public Double getValue() {
         return value;
@@ -89,11 +59,11 @@ public class Distanzen
 
     /**
      * Sets the value of the value property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(Double value) {
         this.value = value;
@@ -101,11 +71,11 @@ public class Distanzen
 
     /**
      * Gets the value of the distanzZu property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Distanzen.DistanzZu }
-     *     
+     *
      */
     public Distanzen.DistanzZu getDistanzZu() {
         return distanzZu;
@@ -113,11 +83,11 @@ public class Distanzen
 
     /**
      * Sets the value of the distanzZu property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Distanzen.DistanzZu }
-     *     
+     *
      */
     public void setDistanzZu(Distanzen.DistanzZu value) {
         this.distanzZu = value;
@@ -224,31 +194,8 @@ public class Distanzen
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="FLUGHAFEN"/>
-     *     &lt;enumeration value="FERNBAHNHOF"/>
-     *     &lt;enumeration value="AUTOBAHN"/>
-     *     &lt;enumeration value="US_BAHN"/>
-     *     &lt;enumeration value="BUS"/>
-     *     &lt;enumeration value="KINDERGAERTEN"/>
-     *     &lt;enumeration value="GRUNDSCHULE"/>
-     *     &lt;enumeration value="HAUPTSCHULE"/>
-     *     &lt;enumeration value="REALSCHULE"/>
-     *     &lt;enumeration value="GESAMTSCHULE"/>
-     *     &lt;enumeration value="GYMNASIUM"/>
-     *     &lt;enumeration value="ZENTRUM"/>
-     *     &lt;enumeration value="EINKAUFSMOEGLICHKEITEN"/>
-     *     &lt;enumeration value="GASTSTAETTEN"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>distanz_zu</em> attribute in &lt;distanzen&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

@@ -23,52 +23,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;weitere_adresse&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.immoxml.de}vorname" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}name" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}titel" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anrede" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}anrede_brief" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}firma" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}zusatzfeld" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}strasse" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}hausnummer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}plz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}ort" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}postfach" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}postf_plz" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}postf_ort" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}land" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}email_zentrale" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}email_direkt" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}email_privat" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}email_sonstige" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}tel_durchw" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}tel_zentrale" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}tel_handy" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}tel_fax" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}tel_privat" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}tel_sonstige" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}url" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}adressfreigabe" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}personennummer" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}freitextfeld" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{http://www.immoxml.de}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="adressart" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

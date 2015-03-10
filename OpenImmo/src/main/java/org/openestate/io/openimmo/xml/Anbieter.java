@@ -22,31 +22,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;anbieter&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}anbieternr" minOccurs="0"/>
- *         &lt;element ref="{}firma"/>
- *         &lt;element ref="{}openimmo_anid"/>
- *         &lt;element ref="{}lizenzkennung" minOccurs="0"/>
- *         &lt;element ref="{}anhang" minOccurs="0"/>
- *         &lt;element ref="{}immobilie" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}impressum" minOccurs="0"/>
- *         &lt;element ref="{}impressum_strukt" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_simplefield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_anyfield" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element ref="{}user_defined_extend" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

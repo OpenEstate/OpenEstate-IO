@@ -20,27 +20,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * Java class for &lt;energietyp&gt; element.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="PASSIVHAUS" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="NIEDRIGENERGIE" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="NEUBAUSTANDARD" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="KFW40" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="KFW60" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="KFW55" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="KFW70" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="MINERGIEBAUWEISE" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="MINERGIE_ZERTIFIZIERT" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
  * 
  * 
  */

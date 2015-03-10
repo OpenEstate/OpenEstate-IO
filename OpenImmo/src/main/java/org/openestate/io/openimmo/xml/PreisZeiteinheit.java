@@ -21,30 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="zeiteinheit">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="TAG"/>
- *             &lt;enumeration value="WOCHE"/>
- *             &lt;enumeration value="MONAT"/>
- *             &lt;enumeration value="JAHR"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;preis_zeiteinheit&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -58,11 +38,11 @@ public class PreisZeiteinheit
 
     /**
      * Gets the value of the zeiteinheit property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link PreisZeiteinheit.Zeiteinheit }
-     *     
+     *
      */
     public PreisZeiteinheit.Zeiteinheit getZeiteinheit() {
         return zeiteinheit;
@@ -70,11 +50,11 @@ public class PreisZeiteinheit
 
     /**
      * Sets the value of the zeiteinheit property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link PreisZeiteinheit.Zeiteinheit }
-     *     
+     *
      */
     public void setZeiteinheit(PreisZeiteinheit.Zeiteinheit value) {
         this.zeiteinheit = value;
@@ -159,21 +139,8 @@ public class PreisZeiteinheit
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="TAG"/>
-     *     &lt;enumeration value="WOCHE"/>
-     *     &lt;enumeration value="MONAT"/>
-     *     &lt;enumeration value="JAHR"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>zeiteinheit</em> attribute in &lt;preis_zeiteinheit&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

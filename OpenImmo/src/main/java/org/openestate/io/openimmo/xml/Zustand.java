@@ -21,42 +21,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="zustand_art">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="ERSTBEZUG"/>
- *             &lt;enumeration value="TEIL_VOLLRENOVIERUNGSBED"/>
- *             &lt;enumeration value="NEUWERTIG"/>
- *             &lt;enumeration value="TEIL_VOLLSANIERT"/>
- *             &lt;enumeration value="TEIL_VOLLRENOVIERT"/>
- *             &lt;enumeration value="TEIL_SANIERT"/>
- *             &lt;enumeration value="VOLL_SANIERT"/>
- *             &lt;enumeration value="SANIERUNGSBEDUERFTIG"/>
- *             &lt;enumeration value="BAUFAELLIG"/>
- *             &lt;enumeration value="NACH_VEREINBARUNG"/>
- *             &lt;enumeration value="MODERNISIERT"/>
- *             &lt;enumeration value="GEPFLEGT"/>
- *             &lt;enumeration value="ROHBAU"/>
- *             &lt;enumeration value="ENTKERNT"/>
- *             &lt;enumeration value="ABRISSOBJEKT"/>
- *             &lt;enumeration value="PROJEKTIERT"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;zustand&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -70,11 +38,11 @@ public class Zustand
 
     /**
      * Gets the value of the zustandArt property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Zustand.ZustandArt }
-     *     
+     *
      */
     public Zustand.ZustandArt getZustandArt() {
         return zustandArt;
@@ -82,11 +50,11 @@ public class Zustand
 
     /**
      * Sets the value of the zustandArt property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Zustand.ZustandArt }
-     *     
+     *
      */
     public void setZustandArt(Zustand.ZustandArt value) {
         this.zustandArt = value;
@@ -171,33 +139,8 @@ public class Zustand
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="ERSTBEZUG"/>
-     *     &lt;enumeration value="TEIL_VOLLRENOVIERUNGSBED"/>
-     *     &lt;enumeration value="NEUWERTIG"/>
-     *     &lt;enumeration value="TEIL_VOLLSANIERT"/>
-     *     &lt;enumeration value="TEIL_VOLLRENOVIERT"/>
-     *     &lt;enumeration value="TEIL_SANIERT"/>
-     *     &lt;enumeration value="VOLL_SANIERT"/>
-     *     &lt;enumeration value="SANIERUNGSBEDUERFTIG"/>
-     *     &lt;enumeration value="BAUFAELLIG"/>
-     *     &lt;enumeration value="NACH_VEREINBARUNG"/>
-     *     &lt;enumeration value="MODERNISIERT"/>
-     *     &lt;enumeration value="GEPFLEGT"/>
-     *     &lt;enumeration value="ROHBAU"/>
-     *     &lt;enumeration value="ENTKERNT"/>
-     *     &lt;enumeration value="ABRISSOBJEKT"/>
-     *     &lt;enumeration value="PROJEKTIERT"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>zustand</em> attribute in &lt;zustand_art&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

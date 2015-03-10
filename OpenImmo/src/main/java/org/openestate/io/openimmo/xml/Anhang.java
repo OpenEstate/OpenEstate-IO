@@ -23,56 +23,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}anhangtitel" minOccurs="0"/>
- *         &lt;element ref="{}format"/>
- *         &lt;element ref="{}check" minOccurs="0"/>
- *         &lt;element ref="{}daten"/>
- *       &lt;/sequence>
- *       &lt;attribute name="location" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="INTERN"/>
- *             &lt;enumeration value="EXTERN"/>
- *             &lt;enumeration value="REMOTE"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="gruppe">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="TITELBILD"/>
- *             &lt;enumeration value="INNENANSICHTEN"/>
- *             &lt;enumeration value="AUSSENANSICHTEN"/>
- *             &lt;enumeration value="GRUNDRISS"/>
- *             &lt;enumeration value="KARTEN_LAGEPLAN"/>
- *             &lt;enumeration value="ANBIETERLOGO"/>
- *             &lt;enumeration value="BILD"/>
- *             &lt;enumeration value="DOKUMENTE"/>
- *             &lt;enumeration value="LINKS"/>
- *             &lt;enumeration value="PANORAMA"/>
- *             &lt;enumeration value="QRCODE"/>
- *             &lt;enumeration value="FILM"/>
- *             &lt;enumeration value="FILMLINK"/>
- *             &lt;enumeration value="EPASS-SKALA"/>
- *             &lt;enumeration value="ANBOBJURL"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;anhang&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -99,11 +53,11 @@ public class Anhang
 
     /**
      * Gets the value of the anhangtitel property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getAnhangtitel() {
         return anhangtitel;
@@ -111,11 +65,11 @@ public class Anhang
 
     /**
      * Sets the value of the anhangtitel property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAnhangtitel(String value) {
         this.anhangtitel = value;
@@ -123,11 +77,11 @@ public class Anhang
 
     /**
      * Gets the value of the format property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getFormat() {
         return format;
@@ -135,11 +89,11 @@ public class Anhang
 
     /**
      * Sets the value of the format property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setFormat(String value) {
         this.format = value;
@@ -147,11 +101,11 @@ public class Anhang
 
     /**
      * Gets the value of the check property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Check }
-     *     
+     *
      */
     public Check getCheck() {
         return check;
@@ -159,11 +113,11 @@ public class Anhang
 
     /**
      * Sets the value of the check property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Check }
-     *     
+     *
      */
     public void setCheck(Check value) {
         this.check = value;
@@ -171,11 +125,11 @@ public class Anhang
 
     /**
      * Gets the value of the daten property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Daten }
-     *     
+     *
      */
     public Daten getDaten() {
         return daten;
@@ -183,11 +137,11 @@ public class Anhang
 
     /**
      * Sets the value of the daten property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Daten }
-     *     
+     *
      */
     public void setDaten(Daten value) {
         this.daten = value;
@@ -195,11 +149,11 @@ public class Anhang
 
     /**
      * Gets the value of the location property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Anhang.Location }
-     *     
+     *
      */
     public Anhang.Location getLocation() {
         return location;
@@ -207,11 +161,11 @@ public class Anhang
 
     /**
      * Sets the value of the location property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Anhang.Location }
-     *     
+     *
      */
     public void setLocation(Anhang.Location value) {
         this.location = value;
@@ -219,11 +173,11 @@ public class Anhang
 
     /**
      * Gets the value of the gruppe property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Anhang.Gruppe }
-     *     
+     *
      */
     public Anhang.Gruppe getGruppe() {
         return gruppe;
@@ -231,11 +185,11 @@ public class Anhang
 
     /**
      * Sets the value of the gruppe property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Anhang.Gruppe }
-     *     
+     *
      */
     public void setGruppe(Anhang.Gruppe value) {
         this.gruppe = value;
@@ -430,32 +384,8 @@ public class Anhang
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="TITELBILD"/>
-     *     &lt;enumeration value="INNENANSICHTEN"/>
-     *     &lt;enumeration value="AUSSENANSICHTEN"/>
-     *     &lt;enumeration value="GRUNDRISS"/>
-     *     &lt;enumeration value="KARTEN_LAGEPLAN"/>
-     *     &lt;enumeration value="ANBIETERLOGO"/>
-     *     &lt;enumeration value="BILD"/>
-     *     &lt;enumeration value="DOKUMENTE"/>
-     *     &lt;enumeration value="LINKS"/>
-     *     &lt;enumeration value="PANORAMA"/>
-     *     &lt;enumeration value="QRCODE"/>
-     *     &lt;enumeration value="FILM"/>
-     *     &lt;enumeration value="FILMLINK"/>
-     *     &lt;enumeration value="EPASS-SKALA"/>
-     *     &lt;enumeration value="ANBOBJURL"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>gruppe</em> attribute in &lt;anhang&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum
@@ -500,20 +430,8 @@ public class Anhang
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="INTERN"/>
-     *     &lt;enumeration value="EXTERN"/>
-     *     &lt;enumeration value="REMOTE"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>location</em> attribute in &lt;anhang&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum

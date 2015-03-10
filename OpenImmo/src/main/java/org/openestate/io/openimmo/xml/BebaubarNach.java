@@ -22,33 +22,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="bebaubar_attr">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="34_NACHBARSCHAFT"/>
- *             &lt;enumeration value="35_AUSSENGEBIET"/>
- *             &lt;enumeration value="B_PLAN"/>
- *             &lt;enumeration value="KEIN BAULAND"/>
- *             &lt;enumeration value="BAUERWARTUNGSLAND"/>
- *             &lt;enumeration value="LAENDERSPEZIFISCH"/>
- *             &lt;enumeration value="BAULAND_OHNE_B_PLAN"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+ * Java class for &lt;bebaubar_nach&gt; element.
+ *
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -62,11 +39,11 @@ public class BebaubarNach
 
     /**
      * Gets the value of the bebaubarAttr property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BebaubarNach.BebaubarAttr }
-     *     
+     *
      */
     public BebaubarNach.BebaubarAttr getBebaubarAttr() {
         return bebaubarAttr;
@@ -74,11 +51,11 @@ public class BebaubarNach
 
     /**
      * Sets the value of the bebaubarAttr property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BebaubarNach.BebaubarAttr }
-     *     
+     *
      */
     public void setBebaubarAttr(BebaubarNach.BebaubarAttr value) {
         this.bebaubarAttr = value;
@@ -163,24 +140,8 @@ public class BebaubarNach
 
 
     /**
-     * <p>Java class for null.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p>
-     * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="34_NACHBARSCHAFT"/>
-     *     &lt;enumeration value="35_AUSSENGEBIET"/>
-     *     &lt;enumeration value="B_PLAN"/>
-     *     &lt;enumeration value="KEIN BAULAND"/>
-     *     &lt;enumeration value="BAUERWARTUNGSLAND"/>
-     *     &lt;enumeration value="LAENDERSPEZIFISCH"/>
-     *     &lt;enumeration value="BAULAND_OHNE_B_PLAN"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
-     * </pre>
-     * 
+     * Java enum for <em>bebaubar_attr</em> attribute in &lt;bebaubar_nach&gt; elements.
+
      */
     @XmlType(name = "")
     @XmlEnum
