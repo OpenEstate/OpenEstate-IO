@@ -2,13 +2,13 @@ OpenEstate-IO-Examples 1.0-SNAPSHOT
 ===================================
 
 *OpenEstate-IO-Examples* is a Java library, that provides some example classes
-to illustrate usage of the implemented OpenEstate-IO formats.
+to illustrate usage of the formats implemented *OpenEstate-IO*.
 
 
 How to use
 ----------
 
-The examples are located in the
+The example classes are located in the
 [`src/main/java/org/openestate/io/examples`](src/main/java/org/openestate/io/examples)
 folder of this module. You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki).
@@ -60,8 +60,7 @@ Todo
 Further informations
 --------------------
 
--   [OpenEstate-IO at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
--   [Validator for common XML formats](http://validator.openestate.org/)
+-   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+-   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)

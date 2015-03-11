@@ -2,16 +2,16 @@ OpenEstate-IO-IDX 1.0-SNAPSHOT
 ==============================
 
 *OpenEstate-IO-IDX* is a Java library to read and write real estate data in the
-IDX format (version 3.01), that is used by [homegate.ch](http://homegate.ch) and
-some other portals.
+*IDX* format (version 3.01), that is used by [*homegate.ch*](http://homegate.ch)
+and some other portals.
 
 
 Features
 --------
 
--   read CSV data according to the specifications of IDX 3.01
+-   read CSV data according to the specifications of *IDX* 3.01
     (see [`IdxReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/IdxReadingExample.java))
--   write CSV data according to the specifications of IDX 3.01
+-   write CSV data according to the specifications of *IDX* 3.01
     (see [`IdxWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/IdxWritingExample.java))
 
 
@@ -19,8 +19,8 @@ How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). You can also
-find example code for this format in the
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
+code for this format is available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 
@@ -71,7 +71,7 @@ Todo
 Further informations
 --------------------
 
--   [OpenEstate-IO at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
+-   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+-   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)

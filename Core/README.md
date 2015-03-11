@@ -1,15 +1,18 @@
 OpenEstate-IO-Core 1.0-SNAPSHOT
 ===============================
 
-*OpenEstate-IO-Core* is a Java library, that provides some general classes for
-shared use by the OpenEstate-IO format implementations.
+*OpenEstate-IO-Core* is a Java library, that provides some general classes used
+by the *OpenEstate-IO* format implementations.
 
 
 How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki).
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
+code for each format is available in the
+[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
+module.
 
 
 Dependencies
@@ -57,8 +60,7 @@ Todo
 Further informations
 --------------------
 
--   [OpenEstate-IO at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
--   [Validator for common XML formats](http://validator.openestate.org/)
+-   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+-   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)

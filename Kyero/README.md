@@ -2,17 +2,17 @@ OpenEstate-IO-Kyero 1.0-SNAPSHOT
 ================================
 
 *OpenEstate-IO-Kyero* is a Java library to read and write real estate data in
-the XML format of [kyero.com](http://kyero.com) (version 3 and 2.1).
+the XML format of [*kyero.com*](http://kyero.com) (version 3 and 2.1).
 
 
 Features
 --------
 
 -   read XML data according to the specifications of
-    [kyero.com](http://kyero.com) in version 3 and 2.1
+    [*kyero.com*](http://kyero.com) in version 3 and 2.1
     (see [`KyeroReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/KyeroReadingExample.java))
 -   write XML data according to the specifications of
-    [kyero.com](http://kyero.com) in version 3 and 2.1
+    [*kyero.com*](http://kyero.com) in version 3 and 2.1
     (see [`KyeroWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/KyeroWritingExample.java))
 
 
@@ -20,8 +20,8 @@ How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). You can also
-find example code for this format in the
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
+code for this format is available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 
@@ -30,7 +30,7 @@ Specifications
 --------------
 
 The specifications for this format are placed in the [`specs`](specs) folder.
-[Kyero.com](http://kyero.com) also provides some
+[*Kyero.com*](http://kyero.com) also provides some
 [further documentations](http://agents.kyero.com/kyero-import-specification).
 
 
@@ -85,9 +85,9 @@ Todo
 Further informations
 --------------------
 
--   [OpenEstate-IO at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
--   [Validator for Kyero-XML](http://validator.openestate.org/)
+-   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+-   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
+-   [Validator for *kyero.com* XML](http://validator.openestate.org/)
 -   [XML import specifications](http://agents.kyero.com/kyero-import-specification)

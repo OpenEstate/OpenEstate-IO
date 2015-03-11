@@ -9,16 +9,18 @@ Warning
 -------
 
 This is an experimental build, that was not used in production so far. The XML
-schema, that was provided to us by [casa.it](http://casa.it) may not be up to
+schema, that was provided to us by [*casa.it*](http://casa.it) may not be up to
 date anymore.
 
 
 Features
 --------
 
--   read XML data according to the specifications of [casa.it](http://casa.it)
+-   read XML data according to the specifications of
+    [*casa.it*](http://casa.it)
     (see [`CasaItReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/CasaItReadingExample.java))
--   write XML data according to the specifications of [casa.it](http://casa.it)
+-   write XML data according to the specifications of
+    [*casa.it*](http://casa.it)
     (see [`CasaItWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/CasaItWritingExample.java))
 
 
@@ -26,8 +28,8 @@ How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). You can also
-find example code for this format in the
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
+code for this format is available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 
@@ -79,7 +81,7 @@ Todo
 Further informations
 --------------------
 
--   [OpenEstate-IO at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
+-   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+-   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)

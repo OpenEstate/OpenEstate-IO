@@ -2,18 +2,18 @@ OpenEstate-IO-OpenImmo 1.0-SNAPSHOT
 ===================================
 
 *OpenEstate-IO-OpenImmo* is a Java library to read and write real estate data in
-the OpenImmo format (version 1.2.7, 1.2.6, 1.2.5, 1.2.4, 1.2.3, 1.2.2, 1.2.1,
-1.2 and 1.1), that is used by a variety of real estate software in Germany.
+the *OpenImmo* format (version 1.2.7 down to 1.1), that is used by a variety of
+real estate software in Germany.
 
 
 Features
 --------
 
--   read XML data according to the specifications of OpenImmo 1.2.7, 1.2.6,
-    1.2.5, 1.2.4, 1.2.3, 1.2.2, 1.2.1, 1.2 and 1.1
+-   read XML data according to the specifications of
+    *OpenImmo* 1.2.7 down to 1.1
     (see [`OpenImmoReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/OpenImmoReadingExample.java))
--   write XML data according to the specifications of OpenImmo 1.2.7, 1.2.6,
-    1.2.5, 1.2.4, 1.2.3, 1.2.2, 1.2.1, 1.2 and 1.1
+-   write XML data according to the specifications of
+    *OpenImmo* 1.2.7 down to 1.1
     (see [`OpenImmoWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/OpenImmoWritingExample.java))
 
 
@@ -21,8 +21,8 @@ How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). You can also
-find example code for this format in the
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
+code for this format is available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 
@@ -30,9 +30,9 @@ module.
 Specifications
 --------------
 
-According to the license of the OpenImmo format we're not allowed to publish the
-specifications. Get in contact with [OpenImmo e.V.](http://openimmo.de/) to
-obtain the specifications for OpenImmo.
+According to the license of the *OpenImmo* format we're not allowed to publish
+the specifications. Get in contact with [*OpenImmo e.V.*](http://openimmo.de/)
+to obtain the specifications of the *OpenImmo* format.
 
 
 ### Modifications to the original specification
@@ -104,9 +104,9 @@ Todo
 Further informations
 --------------------
 
--   [OpenEstate-IO at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
--   [Validator for OpenImmo](http://validator.openestate.org/)
--   [OpenImmo e.V.](http://www.openimmo.de/)
+-   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+-   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
+-   [Validator for *OpenImmo*](http://validator.openestate.org/)
+-   [*OpenImmo e.V.*](http://www.openimmo.de/)

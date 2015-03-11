@@ -2,18 +2,18 @@ OpenEstate-IO-IS24-CSV 1.0-SNAPSHOT
 ===================================
 
 *OpenEstate-IO-IS24-CSV* is a Java library to read and write real estate data in
-the IS24-CSV format (version 1.4.0.4), that was used by
-[immobilienscout24.de](http://immobilienscout24.de) until 2014.
+the *IS24-CSV* format (version 1.4.0.4), that was used by
+[*immobilienscout24.de*](http://immobilienscout24.de) until 2014.
 
 
 Warning
 -------
 
-IS24-CSV is outdated and not used by
-[immobilienscout24.de](http://immobilienscout24.de) anymore. We're still
+*IS24-CSV* is outdated and not used by
+[*immobilienscout24.de*](http://immobilienscout24.de) anymore. We're still
 supporting this format for compatibility with older real estate software.
 
-IS24-CSV was replaced by a REST webservice in 2014. You can access this
+*IS24-CSV* was replaced by a REST webservice in 2014. You can access this
 webservice from your Java application with
 [*OpenEstate-IS24-REST*](https://github.com/OpenEstate/OpenEstate-IS24-REST).
 
@@ -21,9 +21,9 @@ webservice from your Java application with
 Features
 --------
 
--   read CSV data according to the specifications of IS24-CSV 1.4.0.4
+-   read CSV data according to the specifications of *IS24-CSV* 1.4.0.4
     (see [`Is24CsvReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/Is24CsvReadingExample.java))
--   write CSV data according to the specifications of IS24-CSV 1.4.0.4
+-   write CSV data according to the specifications of *IS24-CSV* 1.4.0.4
     (see [`Is24CsvWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/Is24CsvWritingExample.java))
 
 
@@ -31,8 +31,8 @@ How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). You can also
-find example code for this format in the
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
+code for this format is available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 
@@ -83,7 +83,7 @@ Todo
 Further informations
 --------------------
 
--   [OpenEstate-IO at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
+-   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+-   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
