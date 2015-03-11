@@ -38,7 +38,6 @@ import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.is24_xml.xml.ObjectFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 /**
