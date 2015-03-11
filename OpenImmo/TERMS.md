@@ -35,31 +35,31 @@ Lizenznehmerinnen)
     unbegrenztes Nutzungsrecht ein. Dieses gilt nur für die unter 1.
     beschriebene Version.
 
-    a.    Der Lizenznehmer erhält das Recht auf Basis dieser Beschreibung eigene
+    1.    Der Lizenznehmer erhält das Recht auf Basis dieser Beschreibung eigene
           OpenImmo Datensätze zu erstellen oder einzulesen. Ein Weitergabe des
           OpenImmo XML-Schemas ist nicht erlaubt.
 
-    b.    Bei der Weitergabe von Produkten oder dem Angebot der Miete ist die
+    2.    Bei der Weitergabe von Produkten oder dem Angebot der Miete ist die
           verwendete OpenImmo Version anzugeben.
 
-    c.    Bei der Weitergabe der Datensätze ist die, im Rahmen der
+    3.    Bei der Weitergabe der Datensätze ist die, im Rahmen der
           Nutzungsvereinbarung zugeteilte Anbieterkennung zu verwenden.
 
-    d.    Die Lizenz bezieht sich nur auf die natürliche oder juristische
+    4.    Die Lizenz bezieht sich nur auf die natürliche oder juristische
           Person, deren Daten beim Download angegeben wurden. Die Angaben sind
           vollständig und wahrheitsgemäß zu machen.
 
 3.	**Nicht erlaubte Verwendungsformen**
 
-    a.    Eine Weitergabe, Veröffentlichung oder Vervielfältigung der OpenImmo
+    1.    Eine Weitergabe, Veröffentlichung oder Vervielfältigung der OpenImmo
           Struktur in Form des XML Schemas ist nicht gestattet. Dies gilt
           insbesondere für die Zugänglichmachung über eine URL im Internet.
 
-    b.    Eine Veränderung oder Erweiterung der OpenImmo Struktur, wie sie im
+    2.    Eine Veränderung oder Erweiterung der OpenImmo Struktur, wie sie im
           XML Schema der Version unter 1. beschrieben ist, ist nicht erlaubt.
           Ebenso sind Übersetzungen in andere Sprachen nicht erlaubt.
 
-    c.    Eine Übertragung der Struktur in andere Beschreibungsformate wie z.B.
+    3.    Eine Übertragung der Struktur in andere Beschreibungsformate wie z.B.
           XML-DTD ist nur für interne Produktionszwecke erlaubt.
 
 4. 	**Entzug der Nutzungsrechte**
@@ -72,17 +72,17 @@ Lizenznehmerinnen)
 
 5. 	**Gewährleistung und Haftung**
 
-    a.    Der Lizenzgeber sichert über die inhaltliche Struktur der OpenImmo
+    1.    Der Lizenzgeber sichert über die inhaltliche Struktur der OpenImmo
           Daten keine weitergehenden Eigenschaften bzw. Verwendungs- oder
           Einsatzmöglichkeiten zu. Die Erstellung und Akzeptanz von OpenImmo
           Datensätzen und deren Richtigkeit liegt in der alleinigen
           Verantwortung des Lizenznehmers.
 
-    b.    Der Lizenzgeber übernimmt keine Gewährleistung, Haftung oder
+    2.    Der Lizenzgeber übernimmt keine Gewährleistung, Haftung oder
           Verantwortlichkeit für die Richtigkeit und Vollständigkeit der vom
           Lizenznehmer erstellten oder akzeptierten Daten.
 
-    c.    Der Lizenznehmer stellt den Lizenzgeber von sämtlichen Ansprüchen,
+    3.    Der Lizenznehmer stellt den Lizenzgeber von sämtlichen Ansprüchen,
           Schäden oder wirtschaftlichen Nachteilen Dritter frei, die aus der
           Erstellung, Akzeptanz und Weitergabe von OpenImmo Daten entstehen
           könnten. Dies gilt insbesondere für nicht lizensierte Daten oder
