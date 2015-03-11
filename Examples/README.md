@@ -8,7 +8,9 @@ to illustrate usage of the implemented OpenEstate-IO formats.
 How to use
 ----------
 
-You can find further informations in the
+The examples are located in the
+[`src/main/java/org/openestate/io/examples`](src/main/java/org/openestate/io/examples)
+folder of this module. You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki).
 
 
@@ -21,7 +23,7 @@ Dependencies
     (optional; for processing of CSV formats)
 -   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.3.2](http://commons.apache.org/proper/commons-lang/)
--   [jaxb2-basics-runtime 0.9.1](https://github.com/highsource/jaxb2-basics)
+-   [jaxb2-basics-runtime 0.9.3](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
     (optional; for processing of XML formats)
