@@ -30,9 +30,10 @@ module.
 Specifications
 --------------
 
-According to the license of the *OpenImmo* format we're not allowed to publish
-the specifications. Get in contact with [*OpenImmo e.V.*](http://openimmo.de/)
-to obtain the specifications of the *OpenImmo* format.
+According to the [license of the *OpenImmo* format](TERMS.md) we're not allowed
+to publish the specifications. Get in contact with
+[*OpenImmo e.V.*](http://openimmo.de/) to obtain the specifications of the
+*OpenImmo* format.
 
 
 ### Modifications to the original specification
@@ -91,14 +92,6 @@ This library is licensed under the terms of
 Take a look at
 [`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
 for the license text.
-
-
-Todo
-----
-
--   further testing
--   add missing javadoc comments
--   publish at Maven Central Repository
 
 
 Further informations

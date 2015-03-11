@@ -2,7 +2,7 @@ OpenEstate-IO-CasaIT 1.0-SNAPSHOT
 =================================
 
 *OpenEstate-IO-CasaIT* is a Java library to read and write real estate data in
-the XML format of [casa.it](http://casa.it).
+the XML format of [*casa.it*](http://casa.it).
 
 
 Warning
@@ -68,14 +68,6 @@ This library is licensed under the terms of
 Take a look at
 [`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
 for the license text.
-
-
-Todo
-----
-
--   further testing
--   add missing javadoc comments
--   publish at Maven Central Repository
 
 
 Further informations

@@ -117,14 +117,6 @@ Take a look at
 for the license text.
 
 
-Todo
-----
-
--   further testing
--   add missing javadoc comments
--   publish at Maven Central Repository
-
-
 Further informations
 --------------------
 
