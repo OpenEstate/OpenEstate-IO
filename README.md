@@ -1,7 +1,7 @@
 OpenEstate-IO 1.0-SNAPSHOT
 ==========================
 
-*OpenEstate-IO* provided a set of Java libraries to read and write real estate
+*OpenEstate-IO* provides a set of Java libraries to read and write real estate
 data in common formats. These libraries are used within
 [*OpenEstate-ImmoTool*](http://openestate.org/) and in some of our clients
 projects in order to process real estate data.
