@@ -56,7 +56,7 @@ public class ImmoXmlUtils
   /**
    * the latest implemented version of this format
    */
-  public final static ImmoXmlVersion VERSION = ImmoXmlVersion.V1_1;
+  public final static ImmoXmlVersion VERSION = ImmoXmlVersion.V3_0;
 
   /**
    * the XML target namespace of this format

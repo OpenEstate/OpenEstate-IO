@@ -95,7 +95,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
   @Override
   public ImmoXmlVersion getLatestVersion()
   {
-    return ImmoXmlVersion.V1_1;
+    return ImmoXmlVersion.V3_0;
   }
 
   /**

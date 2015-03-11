@@ -56,8 +56,8 @@ public class ImmoXmlDocumentTest
       String version = ImmoXmlUtils.VERSION.toReadableVersion();
       ImmoXmlDocument doc = new ImmoXmlDocument( buildExampleDocument( version ) );
 
-      doc.downgrade(ImmoXmlVersion.V1_1 );
-      Assert.assertEquals("downgrade from "+version+" to 1.1", ImmoXmlVersion.V1_1, doc.getDocumentVersion() );
+      doc.downgrade( ImmoXmlVersion.V3_0 );
+      Assert.assertEquals("downgrade from "+version+" to 3.0", ImmoXmlVersion.V3_0, doc.getDocumentVersion() );
     }
     catch (Exception ex)
     {
@@ -66,57 +66,6 @@ public class ImmoXmlDocumentTest
       Assert.fail( "Test of ImmoXmlDocument.downgrade failed!" );
     }
   }
-
-  /*@Test
-  public void testGetDocumentVersion()
-  {
-    ImmoXmlDocument doc;
-    try
-    {
-      doc = new ImmoXmlDocument( buildExampleDocument( "1.2.7" ) );
-      Assert.assertEquals(
-        "1.2.7", ImmoXMLVersion.V1_2_7, doc.getDocumentVersion() );
-
-      doc = new ImmoXmlDocument( buildExampleDocument( "1.2.6/AT1.0" ) );
-      Assert.assertEquals(
-        "1.2.6/AT1.0", ImmoXMLVersion.V1_2_6, doc.getDocumentVersion() );
-
-      doc = new ImmoXmlDocument( buildExampleDocument( "1.2.0" ) );
-      Assert.assertEquals(
-        "1.2.0", ImmoXMLVersion.V1_2_0, doc.getDocumentVersion() );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of ImmoXmlDocument.getDocumentVersion failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of ImmoXmlDocument.getDocumentVersion failed!" );
-    }
-  }*/
-
-  /*@Test
-  public void testSetDocumentVersion()
-  {
-    try
-    {
-      ImmoXmlDocument doc = new ImmoXmlDocument( buildExampleDocument( "1.2.7" ) );
-      Assert.assertEquals(
-        "1.2.7", ImmoXMLVersion.V1_2_7, doc.getDocumentVersion() );
-
-      doc.setDocumentVersion( ImmoXMLVersion.V1_2_6 );
-      Assert.assertEquals(
-        "1.2.6/AT1.0", ImmoXMLVersion.V1_2_6, doc.getDocumentVersion() );
-
-      doc.setDocumentVersion( ImmoXMLVersion.V1_2_0 );
-      Assert.assertEquals(
-        "1.2.0", ImmoXMLVersion.V1_2_0, doc.getDocumentVersion() );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of ImmoXmlDocument.setDocumentVersion failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of ImmoXmlDocument.setDocumentVersion failed!" );
-    }
-  }*/
 
   @Test
   public void testToObject()

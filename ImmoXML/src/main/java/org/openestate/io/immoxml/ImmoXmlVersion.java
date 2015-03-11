@@ -20,7 +20,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlVersion;
-import org.openestate.io.immoxml.converters.ImmoXML_1_1;
+import org.openestate.io.immoxml.converters.ImmoXML_3_0;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,9 +33,9 @@ import org.slf4j.LoggerFactory;
 public enum ImmoXmlVersion implements XmlVersion
 {
   /**
-   * Version 1.1
+   * Version 3.0
    */
-  V1_1( ImmoXML_1_1.class, "1.1" );
+  V3_0( ImmoXML_3_0.class, "3.0", "3" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlVersion.class );
   private final Class converterClass;

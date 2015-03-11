@@ -22,40 +22,40 @@ import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlVersion;
 
 /**
- * Converter for version 1.1.
+ * Converter for version 3.0.
  *
  * @since 1.0
  * @author Andreas Rudolph
  */
-public class ImmoXML_1_1 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion>
+public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion>
 {
   //private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXML_1_1.class );
 
   @Override
   public ImmoXmlVersion getVersion()
   {
-    return ImmoXmlVersion.V1_1;
+    return ImmoXmlVersion.V3_0;
   }
 
   /**
-   * Downgrade an ImmoXML document from version 1.1.
+   * Downgrade an ImmoXML document from version 3.0.
    * <p>
-   * Versions before 1.1 are not supported. Therefore this method always throws
+   * Versions before 3.0 are not supported. Therefore this method always throws
    * a {@link NotImplementedException}.
    *
-   * @param doc ImmoXML document in version 1.1
+   * @param doc ImmoXML document in version 3.0
    */
   @Override
   public void downgradeToPreviousVersion( ImmoXmlDocument doc )
   {
     throw new NotImplementedException(
-      "ImmoXML versions before 1.1 are not supported!" );
+      "ImmoXML versions before 3.0 are not supported!" );
   }
 
   /**
-   * Downgrade an ImmoXML document to version 1.1.
+   * Downgrade an ImmoXML document to version 3.0.
    * <p>
-   * Versions before 1.1 are not supported. Therefore this method always throws
+   * Versions before 3.0 are not supported. Therefore this method always throws
    * a {@link NotImplementedException}.
    *
    * @param doc ImmoXML document
@@ -64,6 +64,6 @@ public class ImmoXML_1_1 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion>
   public void upgradeFromPreviousVersion( ImmoXmlDocument doc )
   {
     throw new NotImplementedException(
-      "ImmoXML versions before 1.1 are not supported!" );
+      "ImmoXML versions before 3.0 are not supported!" );
   }
 }
