@@ -2,23 +2,46 @@ OpenEstate-IO 1.0-SNAPSHOT
 ==========================
 
 *OpenEstate-IO* provided a set of Java libraries to read and write real estate
-data in different common formats. These libraries are used within
+data in common formats. These libraries are used within
 [*OpenEstate-ImmoTool*](http://openestate.org/) and in some of our clients
 projects in order to process real estates.
 
 
-Features
---------
+Supported Formats
+-----------------
 
-...
+| Module                           | Format                                                         | Type | Version   |
+| -------------------------------- | -------------------------------------------------------------- | ---- | --------- |
+| [`CasaIT`](CasaIT)               | [Casa.it](http://casa.it) format (*experimental*)              | XML  | ?         |
+| [`DaftIE`](DaftIE)               | [Daft.ie](http://daft.ie) Overseas Webfeed                     | XML  | 2.7       |
+| [`IDX`](IDX)                     | IDX format                                                     | CSV  | 3.01      |
+| [`ImmoXML`](ImmoXML)             | ImmoXML format                                                 | XML  | 3.0       |
+| [`ImmobiliareIT`](ImmobiliareIT) | [Immobiliare.it](http://immobiliare.it) format                 | XML  | 2.5       |
+| [`IS24-CSV`](IS24-CSV)           | IS24-CSV format (*legacy*)                                     | CSV  | 1.4.0.4   |
+| [`IS24-XML`](IS24-XML)           | IS24-XML format (*legacy*)                                     | XML  | rev189438 |
+| [`Kyero`](Kyero)                 | [Kyero.com](http://kyero.com) XML feed                         | XML  | 3         |
+|                                  |                                                                |      | 2.1       |
+| [`OpenImmo`](OpenImmo)           | OpenImmo format                                                | XML  | 1.2.7     |
+|                                  |                                                                |      | 1.2.6     |
+|                                  |                                                                |      | 1.2.5     |
+|                                  |                                                                |      | 1.2.4     |
+|                                  |                                                                |      | 1.2.3     |
+|                                  |                                                                |      | 1.2.2     |
+|                                  |                                                                |      | 1.2.1     |
+|                                  |                                                                |      | 1.2       |
+|                                  |                                                                |      | 1.1       |
+| [`Trovit`](Trovit)               | [Trovit.com](http://trovit.com) Homes Feed                     | XML  | ?         |
+| [`WisIT`](WisIT)                 | [Wohnen-in-Suedtirol.it](http://wohnen-in-suedtirol.it) format | XML  | ?         |
+
+Open a module subfolder to get more informations about the specific format.
 
 
 How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki) or in the
-`docs` subfolder.
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). You can also
+find example code for each format in the [`Examples`](Examples) module.
 
 
 Dependencies
@@ -31,7 +54,9 @@ Dependencies
 -   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.3.2](http://commons.apache.org/proper/commons-lang/)
 -   [jaxb2-basics-runtime 0.9.1](https://github.com/highsource/jaxb2-basics)
+    (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
+    (optional; for processing of XML formats)
 -   [SLF4J 1.7.7](http://www.slf4j.org/)
 -   [log4j 1.2.17](http://logging.apache.org/log4j/1.2/)
     (optional; may be replaced by another logging system
@@ -56,6 +81,7 @@ Todo
 ----
 
 -   further testing
+-   add missing javadoc comments
 -   publish at Maven Central Repository
 
 
@@ -66,3 +92,4 @@ Further informations
 -   [Releases of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/releases)
 -   [Changelog of OpenEstate-IO](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of OpenEstate-IO](http://manual.openestate.org/OpenEstate-IO/)
+-   [Validator for common XML formats](http://validator.openestate.org/)

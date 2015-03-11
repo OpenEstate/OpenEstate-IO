@@ -9,26 +9,8 @@ After you have received the schema files, place the two files called
 "openimmo_127.xsd" and "openimmo-feedback_125.xsd" into this directory.
 Correct file names are important!
 
-Make the following modifications to the XSD files:
-
-1)  Uncomment or remove
-    <xsd:element name="user_defined_extend"> ... </xsd:element>
-    from "openimmo-feedback_125.xsd".
-
-2)  Replace <xsd:element name="anzahl_stellplaetze">
-    with <xsd:element name="anzahl_stellplaetze" type="xsd:decimal">
-    in "openimmo_127.xsd".
-
-3)  Replace <xsd:element name="hallenhoehe">
-    with <xsd:element name="hallenhoehe" type="xsd:decimal">
-    in "openimmo_127.xsd".
-
-4)  Remove <xsd:choice> from <xsd:element name="geo">
-    and move its child elements into the parent <xsd:sequence>
-    in "openimmo_127.xsd".
-
-5)  Remove <xsd:choice> from <xsd:element name="kontaktperson">
-    and move its child elements into the parent <xsd:sequence>
-    in "openimmo_127.xsd".
+Also make sure, that you apply the modifications to "openimmo_127.xsd" and
+"openimmo-feedback_125.xsd", that are documented in the "README.md" of this
+module.
 
 Afterwards you can generate the JAXB classes by yourself via "mvn-jaxb-xjc.sh".
