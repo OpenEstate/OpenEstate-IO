@@ -12,7 +12,7 @@
 
   <dependencySets>
     <dependencySet>
-      <outputDirectory></outputDirectory>
+      <outputDirectory>lib</outputDirectory>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>true</useProjectArtifact>
       <useProjectAttachments>true</useProjectAttachments>
@@ -23,7 +23,7 @@
     </dependencySet>
 
     <dependencySet>
-      <outputDirectory>3rdparty</outputDirectory>
+      <outputDirectory>lib/3rdparty</outputDirectory>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
       <excludes>
@@ -36,11 +36,27 @@
   <fileSets>
     <fileSet>
       <directory>${basedir}/target/3rdparty</directory>
-      <outputDirectory>3rdparty</outputDirectory>
+      <outputDirectory>lib/3rdparty</outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
+
+    <fileSet>
+      <directory>${basedir}/specs</directory>
+      <outputDirectory>specs/WisIT</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
   </fileSets>
+
+  <files>
+    <file>
+      <source>${basedir}/README.md</source>
+      <outputDirectory></outputDirectory>
+      <destName>README-WisIT.md</destName>
+    </file>
+  </files>
 
 </assembly>

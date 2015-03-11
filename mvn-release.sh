@@ -4,7 +4,7 @@ MVN=mvn
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # force an update of submodules
-#$PROJECT_DIR/git-submodule-update.sh
+$PROJECT_DIR/git-submodule-update.sh
 
 # install library and build release package
 export LANG=en

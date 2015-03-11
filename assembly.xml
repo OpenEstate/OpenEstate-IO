@@ -25,6 +25,20 @@
       </includes>
     </fileSet>
     <fileSet>
+      <directory>${basedir}/docs</directory>
+      <outputDirectory>docs</outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+      <includes>
+        <include>**/*.md</include>
+      </includes>
+      <excludes>
+        <exclude>**/_*.md</exclude>
+        <exclude>**/Home.md</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet>
       <directory>${basedir}/misc/licenses</directory>
       <outputDirectory>lib/3rdparty</outputDirectory>
       <directoryMode>0755</directoryMode>
@@ -42,84 +56,84 @@
     <!-- assemble modules -->
     <fileSet>
       <directory>${basedir}/CasaIT/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/Core/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/DaftIE/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/Examples/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/IDX/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/ImmobiliareIT/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/ImmoXML/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/IS24-XML/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/Kyero/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/OpenImmo/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/Trovit/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
       <directory>${basedir}/WisIT/release</directory>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
