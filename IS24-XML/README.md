@@ -52,7 +52,7 @@ modifications to the original `is24immotransfer.xsd`:
 
 -   replaced
 
-    ```
+    ```xml
     <xs:element name="Anbieter">
       <xs:complexType>
         <xs:complexContent>
@@ -71,7 +71,7 @@ modifications to the original `is24immotransfer.xsd`:
 
     with
 
-    ```
+    ```xml
     <xs:element name="Anbieter">
       <xs:complexType>
         <xs:complexContent>
