@@ -1,0 +1,112 @@
+Links
+  * http://feed.immobiliare.it/import/docs/xml-specification.html
+  * http://feed.immobiliare.it/import/docs/validator.php
+  * http://feed.immobiliare.it/import/docs/xsd/v1.5.xsd
+
+Übersetzungen zu 'feed/properties/property/property-type/type'
+  * Appartamento - Wohnung (ganz allgemein)
+  * Attico - meist eigentlich als "Dachgeschosswohnung" verstanden, da hierfür aber auch eine eigene Kategorie angeführt ist, würde ich es der "Terrassenwohnung" zuteilen.
+  * Mansarda - Dachgeschosswohung
+  * Garage - Garage
+  * Casa Indipendente - Haus (eigentlich "freistehend", also kein Reihenhaus, ist aber besser, es nicht so genau zu nehmen..)
+  * Palazzo - Palast (gemeint ist ein "(herrschaftliches) Stadthaus" wie sie in den größeren italienischen Städten oft vorzufinden sind..)
+  * Stabile - einfach nur "Gebäude"
+  * Rustico - ländliches Wohnhaus (hierin fallen oftmals auch bäuerliche Häuser, würde es aber dem "Landhaus" im Immotool zuteilen)
+  * Casale - Bauernhaus
+  * Villa - Villa
+  * Villetta a schiera - Reihenhaus-Villa
+  * Loft - Loft
+  * Open Space - eigentlich keine Ahnung, wussten nicht, dass das auch gebräuchlich ist, könnten Sie eifnach als "frei verfügbarer Raum" interpretieren, aber keine Ahnung, was da zuordnen, eventuell "Zimmer?"..
+  * Multiproprietà - Häuser in gemeinschaftlichem Eigentum (wurde bei Ferienwohnungen oft gemacht, ist aber wieder ein wenig aus der Mode gekommen - mehrere Familien kaufen eine Ferienwohnung und "teilen" sich dann das Haus für definierte Zeiträume zu)
+  * Other - Andere
+
+Übersetzungen zu 'feed/properties/property/property-type/business-type[@category]'
+  * Attività e/o licenze - wirtschaftliche Tätigkeit/Lizenz
+    o Centro commerciale - Einkaufszentrum
+    o Azienda agricola - landwirtschaftlicher Betrieb
+    o Ristorante - Restaurant
+    o Bar - Bar
+    o Pizzeria - Pizzeria
+    o Pizza Al Taglio - Pizza al taglio, fast food, Kebab - Pizza al Taglio (glaube ich auch in Deutschland gebräuchlich, ansonsten sind damit "Pizzaschnitten" gemeint
+    o Pub - Pub
+    o Alimentari - Lebensmittelgeschäft
+    o Rosticceria - wörtlich "Bratküche", gemeint ist ein Restaurant (mit Grillspezialitäten)
+    o Pasticceria - Konditorei
+    o Discoteca - Diskothek
+    o Hotel - Hotel
+    o Bed and Breakfast - Zimmer mit Frühstück
+    o Pensione - Pension
+    o Gelateria - Eisdiele
+    o Panetteria - Bäckerei
+    o Altro | Alimentare - anderes/Lebensmittelgeschäft
+    o Negozio - Geschäftslokal
+    o Ferramenta - Eisenwarenhandlung
+    o Casalinghi - Haushaltswaren
+    o Palestra - Fitnesscenter
+    o Abbigliamento - Textilgeschäft
+    o Estetica / Solarium - Schönheitssalon / Solarium
+    o Parrucchiere uomo/donna - Herren-Damen-Frisör
+    o Auto officina - Autowerkstatt
+    o Videonoleggio - Videoverleih
+    o Tabaccheria - Tabak-Trafik
+    o Tintoria - Färberei
+    o Lavanderia - Wäscherei
+    o Cartoleria - Papierhandel
+    o Libreria - Buchhandlung
+    o Informatica - Computerwaren
+    o Telefonia - Telefongeschäft
+    o Edicola - Zeitungshandel
+    o Altro | Non alimentare - anderes/Nicht-Lebensmittel
+    o Giochi - Spielwaren
+    o Scommesse - Wettbüro
+  * Terreno - Grundstücke
+    o Residenziale - terreno edificabile residenziale - Baugrund für Wohnungsbau
+    o Commerciale - terreno edificabile commerciale - Baugrund für gewerbliche Immobilien
+    o Industriale - terreno edificabile industriale - Baugrund für Industriegebäude
+    o Agricolo - terreno agricolo o non edificabile
+  * Immobile commerciale e/o industriale - landwirtschaftlicher Grund
+    o Capannone - Halle
+    o Azienda Agricola - landwirtschaftl. Betrieb
+    o Garage - Garage / Parcheggio / Autosilos - Garage /Parkplätze /Parkhäuser
+    o Negozio - Geschäftslokal
+    o Ufficio- Bürolokal
+    o Stabile - Stabile, palazzo - Gebäude, Stadthaus
+    o Capannone Industriale - Industriehalle
+    o Casa di cura - Kurhaus
+    o Magazzino - Magazin
+    o Showroom - Ausstellungsraum
+    o Scuderia - Stalle e scuderie - Ställe und Pferderennställe
+    o Stabilimento Balneare - Badeanlage
+    o Laboratorio - Labor
+    o Albergo - Alberghi e strutture ricettivoe - Gasthof - Gasthof und Unterkünfte
+    o Altro - Andere
+
+Übersetzungen zu 'feed/properties/property/property-type/terrains/terrain'
+  * seminativo - Saatfeld
+  * seminativo irriguo - Saatfeld mit Bewässerung
+  * seminativo arborato - Saatfeld mit Bäumen
+  * seminativo arborato irriguo - Saatfeld mit Bewässerung und Bäumen
+  * prato - Wiese
+  * prato irriguo - Wiese mit Bewässerung
+  * prato arborato - Wiese mit Bäumen
+  * prato a marcita - verrottetes Feld (bin mir da nicht sicher)
+  * risaia stabile - Reisfeld
+  * pascolo - Weide
+  * pascolo arborato - Weide mit Bäumen
+  * pascolo cespugliato - Weide mit Sträuchern/Gebüsch
+  * giardino - Garten
+  * orto - Gemüsegarten
+  * orto irriguo - Gemüsefeld mit BEwässerung
+  * agrumeto - Feld für Zitrusfrüchte
+  * vigneto - Weinberg
+  * uliveto - Olivenhain
+  * frutteto - Obstgarten
+  * gelseto - Maulbeerhain
+  * colture speciali - spezielle Anbaukulturen
+  * castagneto da frutto - Kastanienhain
+  * canneto - Schilf
+  * bosco alto fusto - Wald
+  * bosco ceduo - Nutzwald
+  * bosco misto - Mischwald
+  * incolto produttivo - unbebautes/nutzbares Ödland
+  * incolto sterile - unfruchtbares Ödland
