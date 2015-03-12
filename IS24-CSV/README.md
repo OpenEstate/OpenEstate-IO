@@ -31,8 +31,8 @@ How to use
 ----------
 
 You can find further informations in the
-[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
-code for this format is available in the
+[project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-IS24-CSV).
+Some example classes for this format are available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 

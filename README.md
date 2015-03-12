@@ -41,7 +41,7 @@ How to use
 
 You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
-code for each format is available in the [`Examples`](Examples) module.
+classes for each format are available in the [`Examples`](Examples) module.
 
 
 Dependencies

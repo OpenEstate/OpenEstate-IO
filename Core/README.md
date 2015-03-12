@@ -10,7 +10,7 @@ How to use
 
 You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
-code for each format is available in the
+classes for each format are available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 
