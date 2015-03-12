@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo xmlns="http://www.openimmo.de">
+  <uebertragung version="1.2.0"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <objektart_zusatz>some more text</objektart_zusatz>
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <zustand_angaben>
+        <energiepass>
+          <art>VERBRAUCH</art>
+          <skala type="ZAHL">123</skala>
+        </energiepass>
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <zustand_angaben>
+        <energiepass>
+          <art>BEDARF</art>
+          <skala type="ZAHL">456</skala>
+          <energiebedarf>456</energiebedarf>
+        </energiepass>
+      </zustand_angaben>
+    </immobilie>
+  </anbieter>
+</openimmo>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               jaxb:extensionBindingPrefixes="xjc"
+               version="2.0">
+
+  <!--
+  <jaxb:globalBindings>
+    <jaxb:javaType  name="java.util.Calendar" xmlType="xsd:date"
+      parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
+      printMethod="javax.xml.bind.DatatypeConverter.printDate" />
+  </jaxb:globalBindings>
+  -->
+
+  <jaxb:bindings schemaLocation="../xsd/homes.xsd" node="/xsd:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.openestate.io.trovit.xml">
+        <jaxb:javadoc><![CDATA[<body>Generated JAXB classes to read and write Trovit XML Feeds.</body>]]></jaxb:javadoc>
+      </jaxb:package>
+    </jaxb:schemaBindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeAd']">
+      <jaxb:javaType  name="org.openestate.io.trovit.xml.types.Action"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseAction"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printAction" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeBool']">
+      <jaxb:javaType  name="java.lang.Boolean"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseBool"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printBool" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeDate']">
+      <jaxb:javaType  name="java.util.Calendar"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseDate"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printDate" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeEmpty']">
+      <jaxb:typesafeEnumClass name="TypeEmpty">
+        <jaxb:typesafeEnumMember value="" name="EMPTY" />
+      </jaxb:typesafeEnumClass>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeFloat']">
+      <jaxb:javaType  name="java.lang.Double"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseFloat"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printFloat" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeInt']">
+      <jaxb:javaType  name="java.lang.Integer"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseInt"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printInt" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeIntBool']">
+      <jaxb:javaType  name="org.openestate.io.trovit.xml.types.IntBool"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseIntBool"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printIntBool" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeLong']">
+      <jaxb:javaType  name="java.lang.Long"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseLong"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printLong" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeNew']">
+      <jaxb:typesafeEnumClass name="TypeNew">
+        <jaxb:typesafeEnumMember value="1" name="NEW" />
+        <jaxb:typesafeEnumMember value="0" name="NOT_NEW" />
+      </jaxb:typesafeEnumClass>
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typePrice']">
+      <jaxb:javaType  name="org.openestate.io.trovit.xml.types.PriceInterval"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parsePriceInterval"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printPriceInterval" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typePriceString']">
+      <jaxb:javaType  name="java.lang.Double"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parsePriceValue"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printPriceValue" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeString']">
+      <jaxb:javaType  name="java.lang.String"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseString255"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printString255" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeString100']">
+      <jaxb:javaType  name="java.lang.String"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseString100"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printString100" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeTime']">
+      <jaxb:javaType  name="java.util.Calendar"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseTime"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printTime" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeUnit']">
+      <jaxb:javaType  name="org.openestate.io.trovit.xml.types.Unit"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseUnit"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printUnit" />
+    </jaxb:bindings>
+
+    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeYear']">
+      <jaxb:javaType  name="java.lang.Integer"
+        parseMethod="org.openestate.io.trovit.TrovitUtils.parseYear"
+        printMethod="org.openestate.io.trovit.TrovitUtils.printYear" />
+    </jaxb:bindings>
+
+  </jaxb:bindings>
+
+</jaxb:bindings>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo_feedback>
+  <version>1.2.7</version>
+  <sender>
+    <name>immoabc</name>
+    <datum>2011-11-11</datum>
+    <makler_id>446544</makler_id>
+  </sender>
+  <objekt>
+    <portal_unique_id>4eu73u734da8s38d</portal_unique_id>
+    <portal_obj_id>P12345678</portal_obj_id>
+    <anbieter_id>MA-1024</anbieter_id>
+    <oobj_id>MA-1024-8874</oobj_id>
+    <vermarktungsart>KAUF</vermarktungsart>
+    <bezeichnung>Haus zum kauf</bezeichnung>
+    <ort>Dortmund</ort>
+    <flaeche>120</flaeche>
+    <interessent>
+      <vorname>peter</vorname>
+      <nachname>maier</nachname>
+      <bevorzugt>EMAIL</bevorzugt>
+      <bevorzugt>TEL</bevorzugt>
+      <wunsch>BESICHTIGUNG</wunsch>
+      <wunsch>ANRUF</wunsch>
+    </interessent>
+  </objekt>
+  <fehlerliste>
+    <fehler>
+      <objekt_id>verwalt_intern</objekt_id>
+      <fehlernr>1</fehlernr>
+      <text>erklärung</text>
+    </fehler>
+    <fehler>
+      <objekt_id/>
+      <fehlernr/>
+      <text/>
+    </fehler>
+  </fehlerliste>
+  <status>
+    <statusnr>1</statusnr>
+    <text>Fehler beschreibung</text>
+  </status>
+</openimmo_feedback>

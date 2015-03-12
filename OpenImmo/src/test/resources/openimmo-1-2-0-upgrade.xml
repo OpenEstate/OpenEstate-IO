@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo xmlns="http://www.openimmo.de">
+  <uebertragung version="1.1"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <preise>
+        <mieteinnahmen_ist>100</mieteinnahmen_ist>
+        <mieteinnahmen_soll>1000</mieteinnahmen_soll>
+      </preise>
+    </immobilie>
+  </anbieter>
+</openimmo>

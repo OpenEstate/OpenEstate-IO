@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+
+  <id>release</id>
+  <baseDirectory>${project.artifactId}-${project.version}</baseDirectory>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <formats>
+    <format>dir</format>
+  </formats>
+
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+      <outputFileNameMapping>${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>true</useProjectArtifact>
+      <useProjectAttachments>true</useProjectAttachments>
+      <includes>
+        <include>${groupId}:${artifactId}</include>
+        <include>${groupId}:${artifactId}:jar:*</include>
+      </includes>
+    </dependencySet>
+
+    <dependencySet>
+      <outputDirectory>lib/3rdparty</outputDirectory>
+      <outputFileNameMapping>${artifact.artifactId}-${artifact.version}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <excludes>
+        <exclude>${groupId}:*</exclude>
+        <exclude>com.google.code.findbugs:*</exclude>
+      </excludes>
+    </dependencySet>
+  </dependencySets>
+
+  <fileSets>
+    <fileSet>
+      <directory>${basedir}/target/3rdparty</directory>
+      <outputDirectory>lib/3rdparty</outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
+  </fileSets>
+
+  <files>
+    <file>
+      <source>${basedir}/README.md</source>
+      <outputDirectory></outputDirectory>
+      <destName>README-Core.md</destName>
+    </file>
+  </files>
+
+</assembly>

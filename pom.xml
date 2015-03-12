@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <name>ALL-OpenEstate-IO</name>
+  <version>1.0-RC1</version>
+  <url>http://openestate.org</url>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>ALL</artifactId>
+  <packaging>pom</packaging>
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.baseName>OpenEstate-IO</project.baseName>
+    <project.releaseDir>${basedir}/release</project.releaseDir>
+  </properties>
+
+  <modules>
+    <module>Core</module>
+    <module>CasaIT</module>
+    <module>DaftIE</module>
+    <module>Examples</module>
+    <module>IDX</module>
+    <module>ImmobiliareIT</module>
+    <module>ImmoXML</module>
+    <module>IS24-CSV</module>
+    <module>IS24-XML</module>
+    <module>Kyero</module>
+    <module>OpenImmo</module>
+    <module>Trovit</module>
+    <module>WisIT</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- internal dependencies -->
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-CasaIT</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-DaftIE</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-IDX</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-IS24-XML</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Kyero</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-OpenImmo</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Trovit</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-WisIT</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- external dependencies -->
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>annotations</artifactId>
+        <version>3.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.10</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-csv</artifactId>
+        <version>1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.3.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jvnet.jaxb2_commons</groupId>
+        <artifactId>jaxb2-basics-runtime</artifactId>
+        <version>0.9.3</version>
+      </dependency>
+      <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>1.1.6</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.10</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.7.10</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+
+      <!-- clean -->
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.6.1</version>
+        <configuration>
+          <failOnError>false</failOnError>
+          <filesets>
+            <fileset>
+              <directory>${project.releaseDir}</directory>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+      <!-- compiler -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <showDeprecation>true</showDeprecation>
+          <debug>false</debug>
+        </configuration>
+      </plugin>
+
+      <!-- javadoc -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.1</version>
+        <inherited>false</inherited>
+        <configuration>
+          <finalName>${project.baseName}-v${project.version}</finalName>
+          <doctitle>${project.baseName} v${project.version} API</doctitle>
+          <windowtitle>${project.baseName}-v${project.version}</windowtitle>
+          <reportOutputDirectory>${basedir}/target</reportOutputDirectory>
+          <destDir>javadoc</destDir>
+          <quiet>true</quiet>
+          <links>
+            <link>http://docs.oracle.com/javase/6/docs/api/</link>
+          </links>
+          <groups>
+            <group>
+              <title>core classes</title>
+              <packages>org.openestate.io.core</packages>
+            </group>
+            <group>
+              <title>casa.it</title>
+              <packages>org.openestate.io.casa_it:org.openestate.io.casa_it.*</packages>
+            </group>
+            <group>
+              <title>daft.ie</title>
+              <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
+            </group>
+            <group>
+              <title>IDX</title>
+              <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
+            </group>
+            <group>
+              <title>immobiliare.it</title>
+              <packages>org.openestate.io.immobiliare_it:org.openestate.io.immobiliare_it.*</packages>
+            </group>
+            <group>
+              <title>ImmoXML</title>
+              <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
+            </group>
+            <group>
+              <title>IS24-CSV</title>
+              <packages>org.openestate.io.is24_csv:org.openestate.io.is24_csv.*</packages>
+            </group>
+            <group>
+              <title>IS24-XML</title>
+              <packages>org.openestate.io.is24_xml:org.openestate.io.is24_xml.*</packages>
+            </group>
+            <group>
+              <title>Kyero</title>
+              <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
+            </group>
+            <group>
+              <title>OpenImmo</title>
+              <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
+            </group>
+            <group>
+              <title>Trovit</title>
+              <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
+            </group>
+            <group>
+              <title>wohnen-in-suedtirol.it</title>
+              <packages>org.openestate.io.wis_it:org.openestate.io.wis_it.*</packages>
+            </group>
+            <group>
+              <title>example classes</title>
+              <packages>org.openestate.io.examples:org.openestate.io.examples.*</packages>
+            </group>
+          </groups>
+        </configuration>
+      </plugin>
+
+      <!-- assembly -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.5.3</version>
+        <inherited>false</inherited>
+        <configuration>
+          <finalName>${project.baseName}-${project.version}-release</finalName>
+          <outputDirectory>${project.releaseDir}</outputDirectory>
+          <appendAssemblyId>false</appendAssemblyId>
+          <attach>false</attach>
+          <useAllReactorProjects>true</useAllReactorProjects>
+          <tarLongFileMode>posix</tarLongFileMode>
+          <descriptors>
+            <descriptor>assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <organization>
+    <name>OpenEstate</name>
+    <url>http://openestate.org/</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>andy</id>
+      <name>Andreas Rudolph</name>
+      <email>andy@openindex.de</email>
+      <organization>OpenIndex</organization>
+      <organizationUrl>http://www.openindex.de/</organizationUrl>
+    </developer>
+    <developer>
+      <id>walter</id>
+      <name>Walter Wagner</name>
+      <email>walter@openindex.de</email>
+      <organization>OpenIndex</organization>
+      <organizationUrl>http://www.openindex.de/</organizationUrl>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+</project>

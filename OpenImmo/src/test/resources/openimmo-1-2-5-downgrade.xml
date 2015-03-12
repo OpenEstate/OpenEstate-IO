@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo>
+  <uebertragung version="1.2.5"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="FERTIGHAUS" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <haus haustyp="KEINE_ANGABE" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+  </anbieter>
+  <anbieter>
+    <firma>second agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <wohnung wohnungtyp="ATTIKAWOHNUNG" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <wohnung wohnungtyp="KEINE_ANGABE" />
+        </objektart>
+      </objektkategorie>
+    </immobilie>
+  </anbieter>
+  <anbieter>
+    <firma>third agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <preise>
+        <mwst_gesamt>123.45</mwst_gesamt>
+      </preise>
+      <versteigerung>
+        <verkehrswert>987.65</verkehrswert>
+      </versteigerung>
+      <flaechen>
+        <anzahl_logia>5</anzahl_logia>
+      </flaechen>
+      <zustand_angaben>
+        <zustand zustand_art="TEIL_SANIERT" />
+        <bebaubar_nach bebaubar_attr="BAULAND_OHNE_B_PLAN" />
+        <erschliessung erschl_attr="ORTSUEBLICHERSCHLOSSEN" />
+        <erschliessung_umfang erschl_attr="STROM" />
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <mwst_gesamt>234.56</mwst_gesamt>
+      </preise>
+      <versteigerung>
+        <verkehrswert>876.54</verkehrswert>
+      </versteigerung>
+      <flaechen>
+        <anzahl_logia>2</anzahl_logia>
+      </flaechen>
+      <zustand_angaben>
+        <zustand zustand_art="VOLL_SANIERT" />
+        <bebaubar_nach bebaubar_attr="BAUERWARTUNGSLAND" />
+        <erschliessung erschl_attr="UNERSCHLOSSEN" />
+        <erschliessung_umfang erschl_attr="GAS" />
+      </zustand_angaben>
+    </immobilie>
+    <immobilie>
+      <preise>
+        <mwst_gesamt>345.67</mwst_gesamt>
+      </preise>
+      <versteigerung>
+        <verkehrswert>765.43</verkehrswert>
+      </versteigerung>
+      <flaechen>
+        <anzahl_logia>1</anzahl_logia>
+      </flaechen>
+      <zustand_angaben>
+        <zustand zustand_art="SANIERUNGSBEDUERFTIG" />
+        <erschliessung_umfang erschl_attr="WASSER" />
+        <energiepass>
+          <epart>BEDARF</epart>
+          <gueltig_bis>03-2018</gueltig_bis>
+          <endenergiebedarf>123</endenergiebedarf>
+          <hwbwert>123</hwbwert>
+          <hwbklasse>B</hwbklasse>
+          <fgeewert>234</fgeewert>
+          <fgeeklasse>C</fgeeklasse>
+        </energiepass>
+      </zustand_angaben>
+    </immobilie>
+  </anbieter>
+  <anbieter>
+    <firma>fourth agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <kontaktperson>
+        <email_zentrale>test@test.de</email_zentrale>
+        <email_direkt>test@test.de</email_direkt>
+        <tel_zentrale>030/123456</tel_zentrale>
+        <tel_durchw>030/123456</tel_durchw>
+        <name>Simpson</name>
+        <vorname>Homer</vorname>
+        <position>Chef</position>
+        <land iso_land="DEU"/>
+        <url>http:</url>
+        <personennummer>5</personennummer>
+        <immobilientreuhaenderid>123</immobilientreuhaenderid>
+        <foto location="EXTERN">
+          <format>image/jpeg</format>
+          <daten>
+            <pfad>image.jpg</pfad>
+          </daten>
+        </foto>
+      </kontaktperson>
+      <verwaltung_techn>
+        <gruppen_kennung>123</gruppen_kennung>
+        <master visible="true">123</master>
+        <sprache>DE</sprache>
+      </verwaltung_techn>
+    </immobilie>
+  </anbieter>
+</openimmo>

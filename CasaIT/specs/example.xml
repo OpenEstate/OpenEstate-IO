@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <realestateitems>
+    <realestate action="0" agencycode="135018" reference="rif.immobile" referenceID="001" contracttype="2" condition="-1" hasbalcony="false" hasterrace="false" heatingtype="-1" housetypology="4" bathrooms="-1" floor="-2" rooms="-1" occupationstate="-1" realestatetype="1" size="0" >
+      <address city="015146" zone="" street="" number="" zip="" />
+      <description value="descrizione di test per l'immobile indicato. Almeno 20 caratteri" />
+      <building age="0" expenses="-1" units="-1" totalfloors="-1" haslift="false" />
+      <price value="0" max="1" min="0" />
+      <box size="0" type="-1" />
+      <garden size="0" type="-1" />
+      <configuration isaddressvisibleonsite="false" ismapvisible="false" isrealestatevisibleonmap="false" />
+      <googlemapcoordinate latitude="0" longitude="0" mapzoom="0" latitudemapcenter="0" longitudemapcenter="0" />
+      <images>
+        <advertismentimage path="http://www.casa.it/im/logos/casa_207x56.png" imagetype="Image" />
+      </images>
+    </realestate>
+  </realestateitems>
+</container>

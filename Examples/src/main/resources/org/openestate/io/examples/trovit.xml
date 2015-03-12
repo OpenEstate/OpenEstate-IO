@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trovit>
+  <ad>
+    <id><![CDATA[7004578]]></id>
+    <url><![CDATA[http://www.yourdomain.co.uk/ad/7004578]]></url>
+    <title><![CDATA[London- Notting Hill]]></title>
+    <type><![CDATA[For rent]]></type>
+    <agency><![CDATA[Lettings Agency]]></agency>
+    <content><![CDATA[Flat, 3 bedrooms, 2 bathrooms, open-plan living room and kitchen.
+Spacious, perfect for a small family or for students. Utilities are not included in the
+rental price.]]></content>
+    <price><![CDATA[800]]></price>
+    <property_type><![CDATA[Flat]]></property_type>
+    <floor_area unit="feet"><![CDATA[300]]></floor_area>
+    <rooms><![CDATA[3]]></rooms>
+    <bathrooms><![CDATA[2]]></bathrooms>
+    <parking><![CDATA[0]]></parking>
+    <address><![CDATA[34 Portobello Road]]></address>
+    <city><![CDATA[London]]></city>
+    <city_area><![CDATA[Notting Hill]]></city_area>
+    <postcode><![CDATA[W11]]></postcode>
+    <region><![CDATA[Greater London]]></region>
+    <latitude><![CDATA[(51.51310938435912]]></latitude>
+    <longitude><![CDATA[ -0.20099401473999023]]></longitude>
+    <pictures>
+      <picture>
+        <picture_url><![CDATA[http://www.yourdomain.co.uk/image.jpg]]></picture_url>
+        <picture_title><![CDATA[living room]]></picture_title>
+      </picture>
+    </pictures>
+    <virtual_tour><![CDATA[]]></virtual_tour>
+    <date><![CDATA[01/01/2011 13:40]]></date>
+    <expiration_date><![CDATA[31/12/2009]]></expiration_date>
+    <plot_area><![CDATA[]]></plot_area>
+    <floor_number><![CDATA[3]]></floor_number>
+    <orientation><![CDATA[south]]></orientation>
+    <foreclosure><![CDATA[]]></foreclosure>
+    <is_furnished><![CDATA[0]]></is_furnished>
+    <is_new><![CDATA[0]]></is_new>
+    <condition><![CDATA[recently renovated]]></condition>
+    <year><![CDATA[1956]]></year>
+  </ad>
+  <ad>
+    <id><![CDATA[332A53BC2]]></id>
+    <url><![CDATA[http://www.yourdomain.co.uk/ad/332A53BC2]]></url>
+    <title><![CDATA[Semi-detached in Edinburgh]]></title>
+    <type><![CDATA[For sale]]></type>
+    <content><![CDATA[Semi-Detached on a quiet residential street, ten minutes from
+        Manchester centre and the airport.
+        4 bedrooms, 4 bathrooms, small garden with a shed]]></content>
+    <price><![CDATA[209950]]></price>
+    <property_type><![CDATA[Flat]]></property_type>
+    <floor_area unit="feet"><![CDATA[300]]></floor_area>
+    <rooms><![CDATA[4]]></rooms>
+    <bathrooms><![CDATA[4]]></bathrooms>
+    <parking><![CDATA[1]]></parking>
+    <address><![CDATA[]]></address>
+    <city><![CDATA[Manchester]]></city>
+    <postcode><![CDATA[]]></postcode>
+    <region><![CDATA[Greater Manchester]]></region>
+    <pictures>
+      <picture>
+        <picture_url><![CDATA[http://www.yourdomain.co.uk/image.jpg]]></picture_url>
+        <picture_title><![CDATA[living room]]></picture_title>
+      </picture>
+    </pictures>
+    <date><![CDATA[20/03/2011 18:30]]></date>
+    <expiration_date><![CDATA[]]></expiration_date>
+    <plot_area><![CDATA[400]]></plot_area>
+    <floor_number><![CDATA[]]></floor_number>
+    <orientation><![CDATA[]]></orientation>
+    <foreclosure><![CDATA[]]></foreclosure>
+    <is_furnished><![CDATA[]]></is_furnished>
+    <is_new><![CDATA[]]></is_new>
+    <condition><![CDATA[]]></condition>
+    <year><![CDATA[]]></year>
+  </ad>
+</trovit>

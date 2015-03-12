@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:documentation>XML  Schema feed trovit . Last updated 2007-10-29</xsd:documentation>
+	</xsd:annotation>
+	<!-- Type definitions -->
+	<!-- Type definitions -->
+	<xsd:simpleType name="typeEmpty">
+		<xsd:annotation>
+			<xsd:documentation>Empty string to admit tags without value</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeInt">
+		<xsd:annotation>
+			<xsd:documentation>Integer positive or empty value</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:int">
+					<xsd:pattern value="([0-9]+)"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="typeEmpty"/>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeBool">
+	          <xsd:annotation>
+		    <xsd:documentation>Type of price. true, false, yes, si or no </xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+		    <xsd:pattern value="((s|S)(i|I))|((n|N)(o|O))|((y|Y)(e|E)(s|S))|((t|T)(r|R)(u|U)(e|E))|((f|F)(a|A)(l|L)(s|S)(e|E))"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeIntBool">
+		<xsd:annotation>
+			<xsd:documentation>An Integer value or a boolean (the boolean permits the values yes/no)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="typeInt"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="typeBool"/>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeUnit">
+		<xsd:annotation>
+			<xsd:documentation>Type of unit. feet or meters</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="((f|F)(e|E)(e|E)(t|T))|((m|M)(e|E)(t|T)(e|E)(r|R)(s|S))"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        <xsd:simpleType name="typePriceString">
+		<xsd:annotation>
+		    <xsd:documentation>Pattern for prices</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+		    <xsd:pattern value="(\d+([\.|,](\d{1}|\d{2}))?)?"/>
+		</xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="typePrice">
+        <xsd:annotation>
+            <xsd:documentation>Type of price. monthly or weekly</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+		<xsd:pattern value="((m|M)(o|O)(n|N)(t|T)(h|H)(l|L)(y|Y))|((w|W)(e|E)(e|E)(k|K)(l|L)(y|Y))"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+	<xsd:simpleType name="typeAd">
+		<xsd:annotation>
+			<xsd:documentation>Type of add. For rent or For sale or Venta or Alquiler</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="((f|F)(o|O)(r|R) (((r|R)(e|E)(n|N)(t|T))|((s|S)(a|A)(l|L)(e|E))))|((v|V)(e|E)(n|N)(t|T)(a|A))|((a|A)(l|L)(q|Q)(u|U)(i|I)(l|L)(e|E)(r|R))"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeDate">
+		<xsd:annotation>
+			<xsd:documentation>
+				Type of date. Format: DD/MM/YYYY
+				D: Day
+				M: Month
+				Y: Year
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{1,2}(\/|\-)[0-9]{1,2}(\/|\-)[0-9]{4}"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeTime">
+		<xsd:annotation>
+			<xsd:documentation>
+				Type of time. Format: HH:MM or HH:MM:SS
+				H: Hour
+				M: Minute
+				S: Second
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="[0-9][0-9]\:[0-9][0-9](\:[0-9][0-9])?"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="typeEmpty"/>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeYear">
+		<xsd:annotation>
+			<xsd:documentation>
+				Type of year. Format: YYYY
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="[0-9]{4}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="typeEmpty"/>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Type of string</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeString100">
+		<xsd:annotation>
+			<xsd:documentation>Type of string</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeLong">
+		<xsd:annotation>
+			<xsd:documentation>Long or empty value</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:long">
+					<xsd:fractionDigits value="100"/>
+					<xsd:totalDigits value="100"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="typeEmpty"/>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeFloat">
+		<xsd:annotation>
+			<xsd:documentation>Float or empty value</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:float"/>
+			</xsd:simpleType>
+			<xsd:simpleType>
+				<xsd:restriction base="typeEmpty"/>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="typeNew">
+		<xsd:annotation>
+			<xsd:documentation>
+				Type of new. 
+				1 - New
+				0 - Not new
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Root element -->
+	<xsd:element name="trovit">
+		<xsd:annotation>
+			<xsd:documentation>Root element. Container for all ads</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ad" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ad">
+		<xsd:annotation>
+			<xsd:documentation>Container for ad info</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:all>
+				<xsd:element ref="id" minOccurs="1"/>
+				<xsd:element ref="url" minOccurs="1"/>
+				<xsd:element ref="title" minOccurs="1"/>
+				<xsd:element ref="type" minOccurs="1"/>
+				<xsd:element ref="content" minOccurs="1"/>
+				<xsd:element ref="date" minOccurs="1"/>
+				<xsd:element ref="expiration_date" minOccurs="0"/>
+				<xsd:element ref="is_new" minOccurs="0"/>
+				<xsd:element ref="city" minOccurs="0"/>
+				<xsd:element ref="price" minOccurs="0"/>
+				<xsd:element ref="time" minOccurs="0"/>
+				<xsd:element ref="agency" minOccurs="0"/>
+				<xsd:element ref="property_type" minOccurs="0"/>
+				<xsd:element ref="floor_area" minOccurs="0"/>
+				<xsd:element ref="rooms" minOccurs="0"/>
+				<xsd:element ref="bathrooms" minOccurs="0"/>
+				<xsd:element ref="parking" minOccurs="0"/>
+				<xsd:element ref="address" minOccurs="0"/>
+				<xsd:element ref="city_area" minOccurs="0"/>
+				<xsd:element ref="postcode" minOccurs="0"/>
+				<xsd:element ref="region" minOccurs="0"/>
+				<xsd:element ref="latitude" minOccurs="0"/>
+				<xsd:element ref="longitude" minOccurs="0"/>
+				<xsd:element ref="virtual_tour" minOccurs="0"/>
+				<xsd:element ref="pictures" minOccurs="0"/>
+				<xsd:element ref="plot_area" minOccurs="0"/>
+				<xsd:element ref="floor_number" minOccurs="0"/>
+				<xsd:element ref="orientation" minOccurs="0"/>
+				<xsd:element ref="condition" minOccurs="0"/>
+				<xsd:element ref="foreclosure" minOccurs="0"/>
+				<xsd:element ref="mls_database" minOccurs="0"/>
+				<xsd:element ref="is_furnished" minOccurs="0"/>
+				<xsd:element ref="year" minOccurs="0"/>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="id" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Mandatory: Unique id of the ad in your website (numeric or alphanumeric, but has to be unique because we use it to avoid duplicate entries)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="url" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Mandatory: URL of the ad on your website.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="title" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Mandatory: title of the ad </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="type" type="typeAd">
+		<xsd:annotation>
+			<xsd:documentation>Mandatory: type of the ad ("For rent" or "For sale")</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="content" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Mandatory: content of the ad</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="date" type="typeDate">
+		<xsd:annotation>
+			<xsd:documentation>Mandatory: date of the ad in the following format: DD/MM/YYYY</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="expiration_date" type="typeDate">
+		<xsd:annotation>
+			<xsd:documentation>Date when the ad will expire: DD/MM/YYYY</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+    <xsd:element name="price">
+        <xsd:annotation>
+            <xsd:documentation>Optional: sale or rent price of the home. In the case of rent you can indicate the period of the rent: weekly or monthly </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="typePriceString">
+                    <xsd:attribute name="period" type="typePrice" use="optional"/>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+	<xsd:element name="city" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: city name</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="time" type="typeTime">
+		<xsd:annotation>
+			<xsd:documentation>Optional: time of the ad in the following format: HH:MM  or HH:MM:SS</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="agency" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: name of the agency</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="property_type" type="typeString100">
+		<xsd:annotation>
+			<xsd:documentation>Optional: appartment, loft, house, etc</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="floor_area">
+		<xsd:annotation>
+			<xsd:documentation>Optional: area of the property, either in square feet (set unit="feet") or square meters (unit="meters").</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="typeInt">
+					<xsd:attribute name="unit" type="typeUnit" use="optional"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="is_new" type="typeNew">
+		<xsd:annotation>
+			<xsd:documentation>Optional: indicates if home is new (1) or not</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="rooms" type="typePriceString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: number of bedrooms</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="plot_area" type="typeInt">
+		<xsd:annotation>
+			<xsd:documentation>Optional: plot area</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="floor_number" type="typeString100">
+		<xsd:annotation>
+			<xsd:documentation>Optional: floor number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="bathrooms" type="typePriceString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: number of bathrooms</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="parking" type="typeIntBool">
+		<xsd:annotation>
+			<xsd:documentation>Optional: number of parking places or yes/no</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="is_furnished" type="typeIntBool">
+		<xsd:annotation>
+			<xsd:documentation>Optional: Whether the property is furnished or not (Use: yes/no)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="address" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: address</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="foreclosure" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: foreclosure</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="mls_database" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: MLS id</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="city_area" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: city area or neighbourhood where the property is located</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="postcode" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: postcode</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="region" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional:name of the region/county/state</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="orientation" type="typeString100">
+		<xsd:annotation>
+			<xsd:documentation>Optional: orientation of the property: north, south, east or west</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="condition" type="typeString100">
+		<xsd:annotation>
+			<xsd:documentation>Optional: orientation of the property: north, south, east or west</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="latitude" type="typeLong" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Optional: latitude</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="longitude" type="typeLong" nillable="true">
+		<xsd:annotation>
+			<xsd:documentation>Optional: longitude</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="virtual_tour" type="typeString">
+		<xsd:annotation>
+			<xsd:documentation>Optional: URL of the virtual tour of the property </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="year" type="typeYear">
+		<xsd:annotation>
+			<xsd:documentation>Optional: Year of the property </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="picture">
+		<xsd:complexType>
+			<xsd:all>
+				<xsd:element name="picture_url" type="typeString">
+					<xsd:annotation>
+						<xsd:documentation> URL of the picture on your site</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="picture_title" type="typeString" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Optional: title of the picture</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="pictures">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="picture" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

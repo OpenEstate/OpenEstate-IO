@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<immoxml xmlns="http://www.immoxml.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.immoxml.de immoxml.xsd">
+  <uebertragung art="ONLINE" umfang="TEIL" version="3.0" sendersoftware="lagler" techn_email="info@lagler.de"/>
+  <anbieter>
+    <anbieternr>23700</anbieternr>
+    <firma>Immobilien GmbH</firma>
+    <immoxml_anid>ALAG200301220921000002WMFRH0EBM</immoxml_anid>
+    <immobilie>
+      <objektkategorie>
+        <nutzungsart WOHNEN="true"/>
+        <vermarktungsart KAUF="true" MIETE_PACHT="true"/>
+        <objektart>
+          <haus haustyp="EINFAMILIENHAUS"/>
+        </objektart>
+        <user_defined_simplefield feldname="lagler_objektart">Einfamilienhaus</user_defined_simplefield>
+      </objektkategorie>
+      <geo>
+        <plz>12345</plz>
+        <ort>Berlin</ort>
+        <strasse>Berliner Straße 3</strasse>
+        <land iso_land="DEU"/>
+        <lage_gebiet gebiete="WOHN"/>
+      </geo>
+      <kontaktperson>
+        <email_direkt>-</email_direkt>
+        <tel_durchw>-</tel_durchw>
+        <name>-</name>
+        <vorname>-</vorname>
+      </kontaktperson>
+      <preise>
+        <kaufpreis>420000.00</kaufpreis>
+        <nettokaltmiete>781.72</nettokaltmiete>
+        <kaufpreis_pro_qm>2896.55</kaufpreis_pro_qm>
+        <innen_courtage>5,8 % inkl. MwSt.</innen_courtage>
+        <aussen_courtage>5,8 % inkl. MwSt.</aussen_courtage>
+        <waehrung iso_waehrung="EUR"/>
+        <kaution>3 MM</kaution>
+        <stp_freiplatz anzahl="1" stellplatzmiete="80" stellplatzkaufpreis="5000"/>
+      </preise>
+      <flaechen>
+        <wohnflaeche>145</wohnflaeche>
+        <nutzflaeche>52</nutzflaeche>
+        <gesamtflaeche>197</gesamtflaeche>
+        <grundstuecksflaeche>670</grundstuecksflaeche>
+        <anzahl_zimmer>5</anzahl_zimmer>
+        <anzahl_schlafzimmer>3</anzahl_schlafzimmer>
+        <anzahl_badezimmer>2</anzahl_badezimmer>
+        <anzahl_balkon_terrassen>3</anzahl_balkon_terrassen>
+        <gartenflaeche>300</gartenflaeche>
+        <kellerflaeche>38</kellerflaeche>
+        <anzahl_stellplaetze>3</anzahl_stellplaetze>
+        <user_defined_simplefield feldname="anzahl_etagen">2</user_defined_simplefield>
+      </flaechen>
+      <ausstattung>
+        <wg_geeignet>true</wg_geeignet>
+        <bad DUSCHE="true" WANNE="true" FENSTER="true"/>
+        <kueche EBK="true"/>
+        <boden FLIESEN="true" TEPPICH="true" PARKETT="true" KUNSTSTOFF="true" ESTRICH="true"/>
+        <kamin>true</kamin>
+        <heizungsart ZENTRAL="true" FUSSBODEN="true"/>
+        <befeuerung GAS="true"/>
+        <stellplatzart GARAGE="true"/>
+        <rollstuhlgerecht>true</rollstuhlgerecht>
+        <kabel_sat_tv>true</kabel_sat_tv>
+        <sauna>true</sauna>
+        <swimmingpool>true</swimmingpool>
+        <unterkellert keller="JA"/>
+      </ausstattung>
+      <zustand_angaben>
+        <baujahr>1990</baujahr>
+        <zustand zustand_art="NEUWERTIG"/>
+        <alter alter_attr="NEUBAU"/>
+      </zustand_angaben>
+      <infrastruktur>
+        <ausblick blick="FERNE"/>
+        <distanzen distanz_zu="BUS">0.2</distanzen>
+        <distanzen distanz_zu="GESAMTSCHULE">4</distanzen>
+        <distanzen distanz_zu="GRUNDSCHULE">3</distanzen>
+        <distanzen distanz_zu="GYMNASIUM">2.5</distanzen>
+        <distanzen distanz_zu="KINDERGAERTEN">0.5</distanzen>
+        <distanzen_sport distanz_zu_sport="NAHERHOLUNG">0.5</distanzen_sport>
+        <distanzen_sport distanz_zu_sport="SPORTANLAGEN">1</distanzen_sport>
+      </infrastruktur>
+      <freitexte>
+        <objekttitel>Dies ist eine Beispiel-Immobilie</objekttitel>
+        <objektbeschreibung>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</objektbeschreibung>
+      </freitexte>
+      <anhaenge>
+        <anhang location="EXTERN" gruppe="BILD">
+          <anhangtitel>Innenansicht</anhangtitel>
+          <format>JPG</format>
+          <daten>
+            <pfad>I-00004A.jpg</pfad>
+          </daten>
+        </anhang>
+        <anhang location="EXTERN" gruppe="BILD">
+          <anhangtitel>Grundstück</anhangtitel>
+          <format>GIF</format>
+          <daten>
+            <pfad>G-00010A.gif</pfad>
+          </daten>
+        </anhang>
+      </anhaenge>
+      <verwaltung_objekt>
+        <verfuegbar_ab>01.07.04</verfuegbar_ab>
+        <vermietet>true</vermietet>
+      </verwaltung_objekt>
+      <verwaltung_techn>
+        <objektnr_extern>375607</objektnr_extern>
+        <aktion aktionart="CHANGE"/>
+        <immoxml_obid>OLAG20050122092103000T2TO56YZ0M</immoxml_obid>
+        <stand_vom>2005-05-05</stand_vom>
+      </verwaltung_techn>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <nutzungsart WOHNEN="true" GEWERBE="true"/>
+        <vermarktungsart KAUF="true" MIETE_PACHT="true"/>
+        <objektart>
+          <zinshaus_renditeobjekt zins_typ="WOHN_UND_GESCHAEFTSHAUS"/>
+        </objektart>
+        <user_defined_simplefield feldname="lagler_objektart">Wohn- / Geschäftshaus</user_defined_simplefield>
+      </objektkategorie>
+      <geo>
+        <plz>12345</plz>
+        <ort>Berlin</ort>
+        <strasse>Berliner Straße 4</strasse>
+        <land iso_land="DEU"/>
+        <lage_gebiet gebiete="1A"/>
+      </geo>
+      <kontaktperson>
+        <email_direkt>-</email_direkt>
+        <tel_durchw>-</tel_durchw>
+        <name>-</name>
+        <vorname>-</vorname>
+      </kontaktperson>
+      <preise>
+        <kaufpreis>1650000.00</kaufpreis>
+        <nettokaltmiete>169200.00</nettokaltmiete>
+        <innen_courtage>4,64 % inkl. MwSt.</innen_courtage>
+        <aussen_courtage>4,64 % inkl. MwSt.</aussen_courtage>
+        <waehrung iso_waehrung="EUR"/>
+      </preise>
+      <flaechen>
+        <wohnflaeche>170</wohnflaeche>
+        <nutzflaeche>420</nutzflaeche>
+        <gesamtflaeche>590</gesamtflaeche>
+        <fensterfront>4.2</fensterfront>
+        <grundstuecksflaeche>2190</grundstuecksflaeche>
+        <fensterfront_qm>10.57</fensterfront_qm>
+        <anzahl_stellplaetze>30</anzahl_stellplaetze>
+        <plaetze_gastraum>20</plaetze_gastraum>
+        <anzahl_wohneinheiten>2</anzahl_wohneinheiten>
+        <anzahl_gewerbeeinheiten>5</anzahl_gewerbeeinheiten>
+        <user_defined_simplefield feldname="gewfl_bez1">Wohnfläche</user_defined_simplefield>
+        <user_defined_simplefield feldname="gewfl_bez2">Büro-/Praxisfläche</user_defined_simplefield>
+        <user_defined_simplefield feldname="gewfl_bez3">Verkaufsfläche</user_defined_simplefield>
+        <user_defined_simplefield feldname="gewfl_bez4">Gastronomiefläche</user_defined_simplefield>
+        <user_defined_simplefield feldname="gewflaeche1">170</user_defined_simplefield>
+        <user_defined_simplefield feldname="gewflaeche2">210</user_defined_simplefield>
+        <user_defined_simplefield feldname="gewflaeche3">100</user_defined_simplefield>
+        <user_defined_simplefield feldname="gewflaeche4">110</user_defined_simplefield>
+      </flaechen>
+      <ausstattung>
+        <raeume_veraenderbar>true</raeume_veraenderbar>
+        <heizungsart ZENTRAL="true"/>
+        <klimatisiert>true</klimatisiert>
+        <fahrstuhl PERSONEN="true"/>
+        <stellplatzart TIEFGARAGE="true"/>
+        <rollstuhlgerecht>true</rollstuhlgerecht>
+        <hebebuehne>true</hebebuehne>
+        <kantine_cafeteria>true</kantine_cafeteria>
+        <teekueche>true</teekueche>
+        <user_defined_simplefield feldname="bodenbelag_antistatischer_teppichboden">true</user_defined_simplefield>
+      </ausstattung>
+      <zustand_angaben>
+        <baujahr>1929</baujahr>
+      </zustand_angaben>
+      <infrastruktur>
+        <zulieferung>true</zulieferung>
+        <distanzen distanz_zu="AUTOBAHN">3</distanzen>
+        <distanzen distanz_zu="FERNBAHNHOF">6</distanzen>
+        <distanzen distanz_zu="BUS">0.05</distanzen>
+        <distanzen distanz_zu="US_BAHN">0.05</distanzen>
+        <distanzen distanz_zu="GRUNDSCHULE">0.15</distanzen>
+        <distanzen distanz_zu="GYMNASIUM">0.8</distanzen>
+        <distanzen distanz_zu="KINDERGAERTEN">0.2</distanzen>
+      </infrastruktur>
+      <freitexte>
+        <objekttitel>Dies ist eine zweite Beispiel-Immobilie</objekttitel>
+        <objektbeschreibung>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</objektbeschreibung>
+      </freitexte>
+      <anhaenge>
+        <anhang location="EXTERN" gruppe="BILD">
+          <anhangtitel>Außenansicht</anhangtitel>
+          <format>JPG</format>
+          <daten>
+            <pfad>A-00006B.jpg</pfad>
+          </daten>
+        </anhang>
+        <anhang location="EXTERN" gruppe="BILD">
+          <anhangtitel>Innenansicht</anhangtitel>
+          <format>JPG</format>
+          <daten>
+            <pfad>I-00012B.jpg</pfad>
+          </daten>
+        </anhang>
+      </anhaenge>
+      <verwaltung_objekt>
+        <verfuegbar_ab>sofort</verfuegbar_ab>
+        <haustiere>true</haustiere>
+      </verwaltung_objekt>
+      <verwaltung_techn>
+        <objektnr_extern>375608</objektnr_extern>
+        <aktion aktionart="CHANGE"/>
+        <immoxml_obid>OLAG20050122092103000T2TO56YZZZ</immoxml_obid>
+        <stand_vom>2005-05-05</stand_vom>
+      </verwaltung_techn>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <nutzungsart WOHNEN="true"/>
+        <vermarktungsart KAUF="true"/>
+        <objektart>
+          <grundstueck grundst_typ="WOHNEN"/>
+        </objektart>
+        <user_defined_simplefield feldname="lagler_objektart">Baugrundstück</user_defined_simplefield>
+      </objektkategorie>
+      <geo>
+        <plz>12345</plz>
+        <ort>Berlin</ort>
+        <strasse>Berliner Straße 5</strasse>
+        <land iso_land="DEU"/>
+        <lage_gebiet gebiete="WOHN"/>
+      </geo>
+      <kontaktperson>
+        <email_direkt>-</email_direkt>
+        <tel_durchw>-</tel_durchw>
+        <name>-</name>
+        <vorname>-</vorname>
+      </kontaktperson>
+      <preise>
+        <kaufpreis>150000.00</kaufpreis>
+        <innen_courtage>5,75 % inkl. MwSt.</innen_courtage>
+        <aussen_courtage>5,75 % inkl. MwSt.</aussen_courtage>
+        <waehrung iso_waehrung="EUR"/>
+      </preise>
+      <flaechen>
+        <grz>3.1</grz>
+        <gfz>1.2</gfz>
+        <grundstuecksflaeche>800</grundstuecksflaeche>
+        <teilbar_ab>300</teilbar_ab>
+      </flaechen>
+      <ausstattung/>
+      <zustand_angaben>
+        <bebaubar_nach bebaubar_attr="34_NACHBARSCHAFT"/>
+        <erschliessung erschl_attr="VOLLERSCHLOSSEN"/>
+      </zustand_angaben>
+      <infrastruktur/>
+      <freitexte>
+        <objekttitel>Dies ist eine dritte Beispiel-Immobilie</objekttitel>
+        <objektbeschreibung>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</objektbeschreibung>
+      </freitexte>
+      <anhaenge>
+        <anhang location="EXTERN" gruppe="BILD">
+          <anhangtitel>Grundstück</anhangtitel>
+          <format>JPG</format>
+          <daten>
+            <pfad>G-00022C.jpg</pfad>
+          </daten>
+        </anhang>
+      </anhaenge>
+      <verwaltung_objekt>
+        <verfuegbar_ab>31.12.2005</verfuegbar_ab>
+      </verwaltung_objekt>
+      <verwaltung_techn>
+        <objektnr_extern>375609</objektnr_extern>
+        <aktion aktionart="CHANGE"/>
+        <immoxml_obid>OLAG20050122092112000T2TO56YZUU</immoxml_obid>
+        <stand_vom>2005-05-05</stand_vom>
+      </verwaltung_techn>
+    </immobilie>
+  </anbieter>
+</immoxml>

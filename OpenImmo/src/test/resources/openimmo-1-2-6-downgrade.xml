@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openimmo>
+  <uebertragung version="1.2.6"/>
+  <anbieter>
+    <firma>first agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <preise>
+        <kaufpreisnetto kaufpreisust="123">456</kaufpreisnetto>
+        <kaufpreisbrutto>789</kaufpreisbrutto>
+        <hauptmietzinsnetto hauptmietzinsust="123">456</hauptmietzinsnetto>
+        <pauschalmiete>789</pauschalmiete>
+        <betriebskostennetto betriebskostenust="123">456</betriebskostennetto>
+        <evbnetto evbust="123">456</evbnetto>
+        <gesamtmietenetto gesamtmieteust="123">456</gesamtmietenetto>
+        <gesamtmietebrutto>789</gesamtmietebrutto>
+        <gesamtbelastungnetto gesamtbelastungust="123">456</gesamtbelastungnetto>
+        <gesamtbelastungbrutto>789</gesamtbelastungbrutto>
+        <gesamtkostenprom2von gesamtkostenprom2bis="123">456</gesamtkostenprom2von>
+        <heizkostennetto heizkostenust="123">456</heizkostennetto>
+        <monatlichekostennetto monatlichekostenust="123">456</monatlichekostennetto>
+        <monatlichekostenbrutto>789</monatlichekostenbrutto>
+        <nebenkostenprom2von nebenkostenprom2bis="123">456</nebenkostenprom2von>
+        <ruecklagenetto ruecklageust="123">456</ruecklagenetto>
+        <sonstigekostennetto sonstigekostenust="123">456</sonstigekostennetto>
+        <sonstigemietenetto sonstigemieteust="123">456</sonstigemietenetto>
+        <summemietenetto summemieteust="123">456</summemietenetto>
+        <nettomieteprom2von nettomieteprom2bis="123">456</nettomieteprom2von>
+        <provisionnetto provisionust="123">456</provisionnetto>
+        <provisionbrutto>789</provisionbrutto>
+        <richtpreisprom2>789</richtpreisprom2>
+      </preise>
+      <versteigerung>
+        <zwangsversteigerung>true</zwangsversteigerung>
+      </versteigerung>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <buero_praxen buero_typ="BUEROFLAECHE"/>
+        </objektart>
+      </objektkategorie>
+      <versteigerung>
+        <zwangsversteigerung>false</zwangsversteigerung>
+      </versteigerung>
+      <flaechen>
+        <kubatur>123</kubatur>
+        <ausnuetzungsziffer>234</ausnuetzungsziffer>
+        <flaechevon>345</flaechevon>
+        <flaechebis>456</flaechebis>
+      </flaechen>
+    </immobilie>
+  </anbieter>
+  <anbieter>
+    <firma>second agency</firma>
+    <openimmo_anid/>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <buero_praxen buero_typ="COWORKING"/>
+        </objektart>
+      </objektkategorie>
+      <preise>
+        <kaufpreis auf_anfrage="true">123</kaufpreis>
+      </preise>
+      <ausstattung>
+        <boden FLIESEN="true" GRANIT="true"/>
+        <energietyp MINERGIEBAUWEISE="true" PASSIVHAUS="true"/>
+      </ausstattung>
+      <zustand_angaben>
+        <bauzone>Dorfzone</bauzone>
+      </zustand_angaben>
+      <infrastruktur>
+        <ausblick blick="MEER"/>
+      </infrastruktur>
+    </immobilie>
+    <immobilie>
+      <objektkategorie>
+        <objektart>
+          <buero_praxen buero_typ="SHARED_OFFICE"/>
+        </objektart>
+      </objektkategorie>
+      <preise>
+        <kaufpreis auf_anfrage="false">456</kaufpreis>
+      </preise>
+      <ausstattung>
+        <boden DIELEN="true" GRANIT="false"/>
+        <energietyp MINERGIE_ZERTIFIZIERT="true" NEUBAUSTANDARD="true"/>
+      </ausstattung>
+      <zustand_angaben>
+        <bauzone>W2</bauzone>
+      </zustand_angaben>
+      <infrastruktur>
+        <ausblick blick="SEE"/>
+      </infrastruktur>
+    </immobilie>
+  </anbieter>
+</openimmo>

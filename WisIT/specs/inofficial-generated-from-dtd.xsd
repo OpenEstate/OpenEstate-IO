@@ -1,0 +1,324 @@
+<schema
+  xmlns='http://www.w3.org/2000/10/XMLSchema'
+  targetNamespace=''
+  xmlns:t=''>
+
+ <element name='WIS'>
+  <complexType>
+   <sequence>
+    <element ref='t:BENUTZER'/>
+    <element ref='t:OBJEKTE'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='BENUTZER'>
+  <complexType>
+   <sequence>
+    <element ref='t:KDNR'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='KDNR'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='OBJEKTE'>
+  <complexType>
+   <sequence>
+    <element ref='t:ANZAHL'/>
+    <element ref='t:OBJEKT' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='ANZAHL'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='OBJEKT'>
+  <complexType>
+   <sequence>
+    <element ref='t:ID' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:LOESCHEN' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:GUELTIGBIS' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:IMMOBILIENART' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:ORT' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:FRAKTION' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:MIETEKAUF' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:PREIS' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:AUFANFRAGE' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:NUTZFLAECHE' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:FLAECHEART' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:FOERDERBAR' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:KONVENTIONIERT' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:KUBATUR' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:ZUSTAND' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:ZIMMER' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:STOCKWERKE' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:STOCKWERK' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:AUFZUG' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:GARAGE' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:ABSTELLPLATZ' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:GRUENFLAECHE' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:KELLER' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:TERRASSE' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:LOGGIA' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BALKON' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:DACHBODEN' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:HEIZUNG' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:KLIMAHAUS' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:UEBERGABEZEITPUNKT' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BAUJAHR' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:INFODE' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:INFOIT' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD1' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD2' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD3' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD4' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD5' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD6' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD7' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD8' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD9' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:BILD10' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:DOWNLOAD1' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:DOWNLOAD2' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:DOWNLOAD3' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='ID'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='LOESCHEN'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='GUELTIGBIS'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='IMMOBILIENART'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='ORT'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='FRAKTION'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='MIETEKAUF'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='PREIS'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='AUFANFRAGE'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='NUTZFLAECHE'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='FLAECHEART'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='FOERDERBAR'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='KONVENTIONIERT'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='KUBATUR'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='ZUSTAND'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='ZIMMER'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='STOCKWERKE'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='STOCKWERK'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='AUFZUG'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='GARAGE'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='ABSTELLPLATZ'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='GRUENFLAECHE'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='KELLER'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='TERRASSE'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='LOGGIA'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BALKON'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='DACHBODEN'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='HEIZUNG'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='KLIMAHAUS'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='UEBERGABEZEITPUNKT'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BAUJAHR'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='INFODE'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='INFOIT'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD1'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD2'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD3'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD4'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD5'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD6'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD7'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD8'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD9'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='BILD10'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='DOWNLOAD1'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='DOWNLOAD2'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='DOWNLOAD3'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+</schema>
