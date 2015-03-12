@@ -59,7 +59,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
       Document doc = this.getDocument();
 
       Element node = (Element) XmlUtils
-        .newXPath( "/oi:openimmo_feedback/oi:version", doc )
+        .newXPath( "/io:openimmo_feedback/io:version", doc )
         .selectSingleNode( doc );
 
       // versions older then 1.2.4 do not support the <version> element
@@ -173,12 +173,12 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
       Document doc = this.getDocument();
 
       String currentVersion = StringUtils.trimToEmpty(XmlUtils
-        .newXPath( "/oi:openimmo/oi:uebertragung/@version", doc )
+        .newXPath( "/io:openimmo/io:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       String[] ver = StringUtils.split( currentVersion, "/", 2 );
 
       Element node = (Element) XmlUtils
-        .newXPath( "/oi:openimmo_feedback/oi:version", doc )
+        .newXPath( "/io:openimmo_feedback/io:version", doc )
         .selectSingleNode( doc );
 
       // versions older then 1.2.4 do not support the <version> element
@@ -195,7 +195,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
       if (node==null)
       {
         Element parentNode = (Element) XmlUtils
-          .newXPath( "/oi:openimmo_feedback", doc )
+          .newXPath( "/io:openimmo_feedback", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
         {

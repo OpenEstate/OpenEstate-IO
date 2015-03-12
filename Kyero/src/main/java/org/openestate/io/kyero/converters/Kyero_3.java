@@ -204,7 +204,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void downgradeNewBuildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:new_build",
+      "/io:root/io:property/io:new_build",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -213,7 +213,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
       String value = StringUtils.trimToNull( node.getTextContent() );
       if ("1".equals( value ))
       {
-        Element priceFreqNode = (Element) XmlUtils.newXPath( "oi:price_freq", doc )
+        Element priceFreqNode = (Element) XmlUtils.newXPath( "io:price_freq", doc )
           .selectSingleNode( parentNode );
         if (priceFreqNode==null)
         {
@@ -244,7 +244,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void downgradeTypeElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:type",
+      "/io:root/io:property/io:type",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -273,7 +273,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void downgradeUrlElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:url",
+      "/io:root/io:property/io:url",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -311,8 +311,8 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void removeCustomElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:custom  | " +
-      "/oi:root/oi:agent/oi:custom",
+      "/io:root/io:property/io:custom  | " +
+      "/io:root/io:agent/io:custom",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -333,7 +333,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void removeEnergyRatingElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:energy_rating",
+      "/io:root/io:property/io:energy_rating",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -354,7 +354,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void removeLocationElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:location",
+      "/io:root/io:property/io:location",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -375,7 +375,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void removeNotesElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:notes",
+      "/io:root/io:property/io:notes",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -402,8 +402,8 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
       "sl", "sv", "th", "tr", "uk", "vi", "zh",
     };
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:desc | " +
-      "/oi:root/oi:property/oi:images/oi:image/oi:title",
+      "/io:root/io:property/io:desc | " +
+      "/io:root/io:property/io:images/io:image/io:title",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -437,7 +437,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void upgradeCurrencyElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:currency",
+      "/io:root/io:property/io:currency",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -471,7 +471,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void upgradeNewBuildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:price_freq",
+      "/io:root/io:property/io:price_freq",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -500,7 +500,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void upgradeTypeElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:type",
+      "/io:root/io:property/io:type",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -538,7 +538,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
   protected void upgradeUrlElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:root/oi:property/oi:url",
+      "/io:root/io:property/io:url",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {

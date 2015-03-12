@@ -59,7 +59,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
     {
       Document doc = this.getDocument();
       version = StringUtils.trimToNull(XmlUtils
-        .newXPath( "/oi:immoxml/oi:uebertragung/@version", doc )
+        .newXPath( "/io:immoxml/io:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       if (version==null)
       {
@@ -165,17 +165,17 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
       Document doc = this.getDocument();
 
       String currentVersion = StringUtils.trimToEmpty(XmlUtils
-        .newXPath( "/oi:immoxml/oi:uebertragung/@version", doc )
+        .newXPath( "/io:immoxml/io:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       String[] ver = StringUtils.split( currentVersion, "/", 2 );
 
       Element node = (Element) XmlUtils
-        .newXPath( "/oi:immoxml/oi:uebertragung", doc )
+        .newXPath( "/io:immoxml/io:uebertragung", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
         Element parentNode = (Element) XmlUtils
-          .newXPath( "/oi:immoxml", doc )
+          .newXPath( "/io:immoxml", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
         {

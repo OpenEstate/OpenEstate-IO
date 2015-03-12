@@ -151,16 +151,16 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeEnergiepassElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass",
+      "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
       Element parentNode = (Element) item;
       boolean skalaProcessed = false;
-      String artValue = XmlUtils.newXPath( "oi:art/text()", doc )
+      String artValue = XmlUtils.newXPath( "io:art/text()", doc )
         .stringValueOf( parentNode );
 
-      List childNodes = XmlUtils.newXPath( "oi:mitwarmwasser", doc )
+      List childNodes = XmlUtils.newXPath( "io:mitwarmwasser", doc )
         .selectNodes( parentNode );
       for (Object child : childNodes)
       {
@@ -168,7 +168,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = XmlUtils.newXPath( "oi:energieverbrauchkennwert", doc )
+      childNodes = XmlUtils.newXPath( "io:energieverbrauchkennwert", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -185,7 +185,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = XmlUtils.newXPath( "oi:endenergiebedarf", doc )
+      childNodes = XmlUtils.newXPath( "io:endenergiebedarf", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -222,7 +222,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeHausElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -267,7 +267,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeObjektartZusatzElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:objektart_zusatz",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:objektart_zusatz",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -294,7 +294,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void upgradeEnergiepassElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass",
+      "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -302,12 +302,12 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
       String energiebedarfValue = null;
       String skalaValue = null;
 
-      Element artNode = (Element) XmlUtils.newXPath( "oi:art", doc )
+      Element artNode = (Element) XmlUtils.newXPath( "io:art", doc )
         .selectSingleNode( parentNode );
       String artValue = (artNode!=null)?
         StringUtils.trimToNull( artNode.getTextContent() ): null;
 
-      List childNodes = XmlUtils.newXPath( "oi:heizwert", doc )
+      List childNodes = XmlUtils.newXPath( "io:heizwert", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -315,7 +315,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = XmlUtils.newXPath( "oi:energiebedarf", doc )
+      childNodes = XmlUtils.newXPath( "io:energiebedarf", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -325,7 +325,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
         childNode.getParentNode().removeChild( childNode );
       }
 
-      childNodes = XmlUtils.newXPath( "oi:skala", doc )
+      childNodes = XmlUtils.newXPath( "io:skala", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {

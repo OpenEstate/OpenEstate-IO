@@ -280,7 +280,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeAusrichtBalkonTerrasseElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:ausricht_balkon_terrasse[@NORDOST or @NORDWEST or @SUEDOST or @SUEDWEST]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausricht_balkon_terrasse[@NORDOST or @NORDWEST or @SUEDOST or @SUEDWEST]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -342,7 +342,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeBadElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:bad[@BIDET or @PISSOIR]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:bad[@BIDET or @PISSOIR]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -366,7 +366,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeBefeuerungElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:befeuerung[@PELLET]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@PELLET]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -389,7 +389,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeBodenElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:boden[@MARMOR or @TERRAKOTTA]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:boden[@MARMOR or @TERRAKOTTA]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -413,7 +413,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeDachformElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:dachform[@FLACHDACH or @PYRAMIDENDACH]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:dachform[@FLACHDACH or @PYRAMIDENDACH]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -440,7 +440,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeFlaechenChildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:flaechen",
+      "/io:openimmo/io:anbieter/io:immobilie/io:flaechen",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -449,7 +449,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
       boolean passedAnzahlTerrassen = false;
       double sum = 0;
 
-      List childNodes = XmlUtils.newXPath( "oi:anzahl_balkone", doc )
+      List childNodes = XmlUtils.newXPath( "io:anzahl_balkone", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -471,7 +471,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
         parentNode.removeChild( node );
       }
 
-      childNodes = XmlUtils.newXPath( "oi:anzahl_terrassen", doc )
+      childNodes = XmlUtils.newXPath( "io:anzahl_terrassen", doc )
         .selectNodes( parentNode );
       for (Object childItem : childNodes)
       {
@@ -495,7 +495,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
 
       if (sum>0)
       {
-        Element node = (Element) XmlUtils.newXPath( "oi:anzahl_balkon_terrassen", doc )
+        Element node = (Element) XmlUtils.newXPath( "io:anzahl_balkon_terrassen", doc )
           .selectSingleNode( parentNode );
         if (node==null)
         {
@@ -526,7 +526,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeHausElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -559,7 +559,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeKuecheElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:kueche[@PANTRY]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:kueche[@PANTRY]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -580,7 +580,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeParkenElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:parken",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:parken",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -607,7 +607,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeSonstigeElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:sonstige[@sonstige_typ]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:sonstige[@sonstige_typ]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -638,7 +638,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeWohnungElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:wohnung[@wohnungtyp]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:wohnung[@wohnungtyp]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -666,7 +666,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeZinshausRenditeobjektElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:zinshaus_renditeobjekt[@zins_typ]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:zinshaus_renditeobjekt[@zins_typ]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -720,12 +720,12 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeAusstattungChildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:energietyp | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:bibliothek | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:dachboden | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:gaestewc | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:kabelkanaele | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:seniorengerecht",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:energietyp | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:bibliothek | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:dachboden | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:gaestewc | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:kabelkanaele | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:seniorengerecht",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -746,7 +746,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeEmailFeedbackElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:kontaktperson/oi:email_feedback",
+      "/io:openimmo/io:anbieter/io:immobilie/io:kontaktperson/io:email_feedback",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -771,9 +771,9 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removePreiseChildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:courtage_hinweis | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:nettorendite_soll | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:nettorendite_ist",
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:courtage_hinweis | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:nettorendite_soll | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:nettorendite_ist",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -795,8 +795,8 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeUserDefinedExtendElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:freitexte/oi:user_defined_extend | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:anhaenge/oi:user_defined_extend",
+      "/io:openimmo/io:anbieter/io:immobilie/io:freitexte/io:user_defined_extend | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:anhaenge/io:user_defined_extend",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -821,8 +821,8 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeZustandAngabenChildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:letztemodernisierung | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:verkaufstatus",
+      "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:letztemodernisierung | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:verkaufstatus",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -844,7 +844,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void upgradeSonstigeElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -874,7 +874,7 @@ public class OpenImmo_1_2_3 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void upgradeZinshausRenditeobjektElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {

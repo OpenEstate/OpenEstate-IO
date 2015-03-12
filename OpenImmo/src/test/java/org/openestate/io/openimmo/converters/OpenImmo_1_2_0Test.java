@@ -60,7 +60,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:befeuerung[@FERN or @BLOCK or @WASSER-ELEKTRO]", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@FERN or @BLOCK or @WASSER-ELEKTRO]", doc );
       Assert.assertEquals(
         "3 convertable <befeuerung> elements available before conversion.", 3, count );
 
@@ -72,12 +72,12 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:befeuerung[@FERN or @BLOCK or @WASSER-ELEKTRO]", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@FERN or @BLOCK or @WASSER-ELEKTRO]", doc );
       Assert.assertEquals(
         "0 convertable <befeuerung> elements available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:befeuerung", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung", doc );
       Assert.assertEquals(
         "3 converted <befeuerung> elements available after conversion.", 3, count );
     }
@@ -103,7 +103,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='KRANKENHAUS' or @haustyp='PFLEGEHEIM' or @haustyp='SANATORIUM' or @haustyp='SENIORENHEIM' or @haustyp='BETREUTES-WOHNEN']", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='KRANKENHAUS' or @haustyp='PFLEGEHEIM' or @haustyp='SANATORIUM' or @haustyp='SENIORENHEIM' or @haustyp='BETREUTES-WOHNEN']", doc );
       Assert.assertEquals(
         "5 convertable <haus> element available before conversion.", 5, count );
 
@@ -115,12 +115,12 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='KRANKENHAUS' or @haustyp='PFLEGEHEIM' or @haustyp='SANATORIUM' or @haustyp='SENIORENHEIM' or @haustyp='BETREUTES-WOHNEN']", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='KRANKENHAUS' or @haustyp='PFLEGEHEIM' or @haustyp='SANATORIUM' or @haustyp='SENIORENHEIM' or @haustyp='BETREUTES-WOHNEN']", doc );
       Assert.assertEquals(
         "0 convertable <haus> elements available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus", doc );
       Assert.assertEquals(
         "5 converted <haus> elements available after conversion.", 5, count );
     }
@@ -146,8 +146,8 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_ist[@periode] |" +
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_soll[@periode]", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_ist[@periode] |" +
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_soll[@periode]", doc );
       Assert.assertEquals(
         "2 convertable <mieteinnahmen_ist> and <mieteinnahmen_soll> elements available before conversion.", 2, count );
 
@@ -159,14 +159,14 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_ist[@periode] |" +
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_soll[@periode]", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_ist[@periode] |" +
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_soll[@periode]", doc );
       Assert.assertEquals(
         "0 convertable <mieteinnahmen_ist> and <mieteinnahmen_soll> elements available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_ist |" +
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_soll", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_ist |" +
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_soll", doc );
       Assert.assertEquals(
         "2 converted <mieteinnahmen_ist> and <mieteinnahmen_soll> elements available after conversion.", 2, count );
     }
@@ -192,7 +192,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:uebertragung[@senderversion or @regi_id or @modus]", doc );
+        "/io:openimmo/io:uebertragung[@senderversion or @regi_id or @modus]", doc );
       Assert.assertEquals(
         "1 convertable <uebertragung> element available before conversion.", 1, count );
 
@@ -204,7 +204,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:uebertragung[@senderversion or @regi_id or @modus]", doc );
+        "/io:openimmo/io:uebertragung[@senderversion or @regi_id or @modus]", doc );
       Assert.assertEquals(
         "0 convertable <uebertragung> elements available after conversion.", 0, count );
     }
@@ -235,7 +235,7 @@ public class OpenImmo_1_2_0Test
       for (String element : elements)
       {
         count = XmlUtils.countNodes(
-          "/oi:openimmo/oi:anbieter/oi:" + element, doc );
+          "/io:openimmo/io:anbieter/io:" + element, doc );
         Assert.assertEquals(
           "1 convertable <"+element+"> element available before conversion.", 1, count );
       }
@@ -250,7 +250,7 @@ public class OpenImmo_1_2_0Test
       for (String element : elements)
       {
         count = XmlUtils.countNodes(
-          "/oi:openimmo/oi:anbieter/oi:" + element, doc );
+          "/io:openimmo/io:anbieter/io:" + element, doc );
         Assert.assertEquals(
           "0 convertable <"+element+"> elements available after conversion.", 0, count );
       }
@@ -283,7 +283,7 @@ public class OpenImmo_1_2_0Test
       for (String element : elements)
       {
         count = XmlUtils.countNodes(
-          "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:" + element, doc );
+          "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:" + element, doc );
         Assert.assertEquals(
           "1 convertable <"+element+"> element available before conversion.", 1, count );
       }
@@ -298,7 +298,7 @@ public class OpenImmo_1_2_0Test
       for (String element : elements)
       {
         count = XmlUtils.countNodes(
-          "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:" + element, doc );
+          "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:" + element, doc );
         Assert.assertEquals(
           "0 convertable <"+element+"> elements available after conversion.", 0, count );
       }
@@ -325,7 +325,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:bewertung", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:bewertung", doc );
       Assert.assertEquals(
         "1 convertable <bewertung> element available before conversion.", 1, count );
 
@@ -337,7 +337,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:bewertung", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:bewertung", doc );
       Assert.assertEquals(
         "0 convertable <bewertung> elements available after conversion.", 0, count );
     }
@@ -363,7 +363,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:bieterverfahren", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:bieterverfahren", doc );
       Assert.assertEquals(
         "1 convertable <bieterverfahren> element available before conversion.", 1, count );
 
@@ -375,7 +375,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:bieterverfahren", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:bieterverfahren", doc );
       Assert.assertEquals(
         "0 convertable <bieterverfahren> elements available after conversion.", 0, count );
     }
@@ -401,7 +401,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass", doc );
       Assert.assertEquals(
         "2 convertable <energiepass> elements available before conversion.", 2, count );
 
@@ -413,7 +413,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass", doc );
       Assert.assertEquals(
         "0 convertable <energiepass> elements available after conversion.", 0, count );
     }
@@ -445,7 +445,7 @@ public class OpenImmo_1_2_0Test
       for (String element : elements)
       {
         count = XmlUtils.countNodes(
-          "/oi:openimmo/oi:anbieter/oi:immobilie/oi:geo/oi:" + element, doc );
+          "/io:openimmo/io:anbieter/io:immobilie/io:geo/io:" + element, doc );
         Assert.assertEquals(
           "1 convertable <"+element+"> element available before conversion.", 1, count );
       }
@@ -460,7 +460,7 @@ public class OpenImmo_1_2_0Test
       for (String element : elements)
       {
         count = XmlUtils.countNodes(
-          "/oi:openimmo/oi:anbieter/oi:immobilie/oi:geo/oi:" + element, doc );
+          "/io:openimmo/io:anbieter/io:immobilie/io:geo/io:" + element, doc );
         Assert.assertEquals(
           "0 convertable <"+element+"> elements available after conversion.", 0, count );
       }
@@ -487,7 +487,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:heizkosten_enthalten", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:heizkosten_enthalten", doc );
       Assert.assertEquals(
         "1 convertable <heizkosten_enthalten> element available before conversion.", 1, count );
 
@@ -499,7 +499,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:heizkosten_enthalten", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:heizkosten_enthalten", doc );
       Assert.assertEquals(
         "0 convertable <heizkosten_enthalten> elements available after conversion.", 0, count );
     }
@@ -525,7 +525,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "//oi:user_defined_extend", doc );
+        "//io:user_defined_extend", doc );
       Assert.assertEquals(
         "4 convertable <user_defined_extend> elements available before conversion.", 4, count );
 
@@ -537,7 +537,7 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "//oi:user_defined_extend", doc );
+        "//io:user_defined_extend", doc );
       Assert.assertEquals(
         "0 convertable <user_defined_extend> elements available after conversion.", 0, count );
     }
@@ -563,8 +563,8 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_ist |" +
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_soll", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_ist |" +
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_soll", doc );
       Assert.assertEquals(
         "2 convertable <mieteinnahmen_ist> and <mieteinnahmen_soll> elements available after conversion.", 2, count );
 
@@ -576,8 +576,8 @@ public class OpenImmo_1_2_0Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_ist[@periode='JAHR'] |" +
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:mieteinnahmen_soll[@periode='JAHR']", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_ist[@periode='JAHR'] |" +
+        "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:mieteinnahmen_soll[@periode='JAHR']", doc );
       Assert.assertEquals(
         "2 converted <mieteinnahmen_ist> and <mieteinnahmen_soll> elements available after conversion.", 2, count );
     }

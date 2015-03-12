@@ -60,17 +60,17 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:new_build", doc );
+        "/io:root/io:property/io:new_build", doc );
       Assert.assertEquals(
         "3 <new_build> elements available before conversion.", 3, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
+        "/io:root/io:property/io:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "2 <price_freq>sale</price_freq> elements available before conversion.", 2, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:price_freq[text()='new_build']", doc );
+        "/io:root/io:property/io:price_freq[text()='new_build']", doc );
       Assert.assertEquals(
         "0 <price_freq>new_build</price_freq> elements available before conversion.", 0, count );
 
@@ -82,17 +82,17 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:new_build", doc );
+        "/io:root/io:property/io:new_build", doc );
       Assert.assertEquals(
         "0 <new_build> elements available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
+        "/io:root/io:property/io:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "1 <price_freq>sale</price_freq> element available after conversion.", 1, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:price_freq[text()='new_build']", doc );
+        "/io:root/io:property/io:price_freq[text()='new_build']", doc );
       Assert.assertEquals(
         "1 <price_freq>new_build</price_freq> element available after conversion.", 1, count );
     }
@@ -118,12 +118,12 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:type", doc );
+        "/io:root/io:property/io:type", doc );
       Assert.assertEquals(
         "3 <type> elements available before conversion.", 3, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:type[not(*)]", doc );
+        "/io:root/io:property/io:type[not(*)]", doc );
       Assert.assertEquals(
         "3 <type> elements without children available before conversion.", 3, count );
 
@@ -135,12 +135,12 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:type[not(*)]", doc );
+        "/io:root/io:property/io:type[not(*)]", doc );
       Assert.assertEquals(
         "0 <type> elements without children available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:type/oi:en", doc );
+        "/io:root/io:property/io:type/io:en", doc );
       Assert.assertEquals(
         "3 converted <type> elements available after conversion.", 3, count );
     }
@@ -166,12 +166,12 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:url[not(*)]", doc );
+        "/io:root/io:property/io:url[not(*)]", doc );
       Assert.assertEquals(
         "0 <url> elements without children available before conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:url/*", doc );
+        "/io:root/io:property/io:url/*", doc );
       Assert.assertEquals(
         "6 children of <url> elements available before conversion.", 6, count );
 
@@ -183,12 +183,12 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:url[not(*)]", doc );
+        "/io:root/io:property/io:url[not(*)]", doc );
       Assert.assertEquals(
         "3 <url> elements without children available after conversion.", 3, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:url/*", doc );
+        "/io:root/io:property/io:url/*", doc );
       Assert.assertEquals(
         "0 children of <url> elements available after conversion.", 0, count );
     }
@@ -214,8 +214,8 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:custom  | " +
-        "/oi:root/oi:agent/oi:custom", doc );
+        "/io:root/io:property/io:custom  | " +
+        "/io:root/io:agent/io:custom", doc );
       Assert.assertEquals(
         "6 <custom> elements available before conversion.", 6, count );
 
@@ -227,8 +227,8 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:custom  | " +
-        "/oi:root/oi:agent/oi:custom", doc );
+        "/io:root/io:property/io:custom  | " +
+        "/io:root/io:agent/io:custom", doc );
       Assert.assertEquals(
         "0 <custom> elements available after conversion.", 0, count );
     }
@@ -254,7 +254,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:energy_rating", doc );
+        "/io:root/io:property/io:energy_rating", doc );
       Assert.assertEquals(
         "3 <energy_rating> elements available before conversion.", 3, count );
 
@@ -266,7 +266,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:energy_rating", doc );
+        "/io:root/io:property/io:energy_rating", doc );
       Assert.assertEquals(
         "0 <energy_rating> elements available after conversion.", 0, count );
     }
@@ -292,7 +292,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:location", doc );
+        "/io:root/io:property/io:location", doc );
       Assert.assertEquals(
         "3 <location> elements available before conversion.", 3, count );
 
@@ -304,7 +304,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:location", doc );
+        "/io:root/io:property/io:location", doc );
       Assert.assertEquals(
         "0 <location> elements available after conversion.", 0, count );
     }
@@ -330,7 +330,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:notes", doc );
+        "/io:root/io:property/io:notes", doc );
       Assert.assertEquals(
         "3 <notes> elements available before conversion.", 3, count );
 
@@ -342,7 +342,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:notes", doc );
+        "/io:root/io:property/io:notes", doc );
       Assert.assertEquals(
         "0 <notes> elements available after conversion.", 0, count );
     }
@@ -375,8 +375,8 @@ public class Kyero_3Test
       for (String lang : unsupportedLanguages)
       {
         count = XmlUtils.countNodes(
-          "/oi:root/oi:property/oi:desc/oi:"+lang+" | " +
-          "/oi:root/oi:property/oi:images/oi:image/oi:title/oi:"+lang, doc );
+          "/io:root/io:property/io:desc/io:"+lang+" | " +
+          "/io:root/io:property/io:images/io:image/io:title/io:"+lang, doc );
         Assert.assertEquals(
           "2 translations in \"" + lang + "\" available before conversion.", 2, count );
       }
@@ -391,8 +391,8 @@ public class Kyero_3Test
       for (String lang : unsupportedLanguages)
       {
         count = XmlUtils.countNodes(
-          "/oi:root/oi:property/oi:desc/oi:"+lang+" | " +
-          "/oi:root/oi:property/oi:images/oi:image/oi:title/oi:"+lang, doc );
+          "/io:root/io:property/io:desc/io:"+lang+" | " +
+          "/io:root/io:property/io:images/io:image/io:title/io:"+lang, doc );
         Assert.assertEquals(
           "0 translations in \"" + lang + "\" available after conversion.", 0, count );
       }
@@ -419,7 +419,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:currency", doc );
+        "/io:root/io:property/io:currency", doc );
       Assert.assertEquals(
         "3 <currency> elements available before conversion.", 3, count );
 
@@ -431,7 +431,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:currency", doc );
+        "/io:root/io:property/io:currency", doc );
       Assert.assertEquals(
         "1 <currency> element available after conversion.", 1, count );
     }
@@ -457,12 +457,12 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:new_build", doc );
+        "/io:root/io:property/io:new_build", doc );
       Assert.assertEquals(
         "0 <new_build> elements available before conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
+        "/io:root/io:property/io:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "1 <price_freq>sale</price_freq> elements available before conversion.", 1, count );
 
@@ -474,12 +474,12 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:new_build", doc );
+        "/io:root/io:property/io:new_build", doc );
       Assert.assertEquals(
         "1 <new_build> elements available after conversion.", 1, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:price_freq[text()='sale']", doc );
+        "/io:root/io:property/io:price_freq[text()='sale']", doc );
       Assert.assertEquals(
         "2 <price_freq>sale</price_freq> elements available before conversion.", 2, count );
     }
@@ -505,7 +505,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:type[not(*)]", doc );
+        "/io:root/io:property/io:type[not(*)]", doc );
       Assert.assertEquals(
         "0 <type> elements without children available before conversion.", 0, count );
 
@@ -517,7 +517,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:type[not(*)]", doc );
+        "/io:root/io:property/io:type[not(*)]", doc );
       Assert.assertEquals(
         "3 <type> elements without children available after conversion.", 3, count );
     }
@@ -543,7 +543,7 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:url[not(*)]", doc );
+        "/io:root/io:property/io:url[not(*)]", doc );
       Assert.assertEquals(
         "3 <url> elements without children available before conversion.", 3, count );
 
@@ -555,12 +555,12 @@ public class Kyero_3Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:url[not(*)]", doc );
+        "/io:root/io:property/io:url[not(*)]", doc );
       Assert.assertEquals(
         "0 <url> elements without children available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:root/oi:property/oi:url/oi:en", doc );
+        "/io:root/io:property/io:url/io:en", doc );
       Assert.assertEquals(
         "2 conveted <url> elements available after conversion.", 2, count );
     }

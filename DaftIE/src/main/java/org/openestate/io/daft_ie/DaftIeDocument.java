@@ -60,7 +60,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion>
     {
       Document doc = this.getDocument();
       version = StringUtils.trimToNull(XmlUtils
-        .newXPath( "/oi:daft/@version", doc )
+        .newXPath( "/io:daft/@version", doc )
         .stringValueOf( doc ) );
       if (version==null)
       {
@@ -163,7 +163,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion>
     {
       Document doc = this.getDocument();
       Element node = (Element) XmlUtils
-        .newXPath( "/oi:daft", doc )
+        .newXPath( "/io:daft", doc )
         .selectSingleNode( doc );
       if (node==null)
       {

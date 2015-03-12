@@ -59,7 +59,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion>
     {
       Document doc = this.getDocument();
       version = StringUtils.trimToNull(XmlUtils
-        .newXPath( "/oi:root/oi:kyero/oi:feed_version/text()", doc )
+        .newXPath( "/io:root/io:kyero/io:feed_version/text()", doc )
         .stringValueOf( doc ) );
       if (version==null)
       {
@@ -165,17 +165,17 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion>
       Document doc = this.getDocument();
 
       Element node = (Element) XmlUtils
-        .newXPath( "/oi:root/oi:kyero/oi:feed_version", doc )
+        .newXPath( "/io:root/io:kyero/io:feed_version", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
         Element parentNode = (Element) XmlUtils
-          .newXPath( "/oi:root/oi:kyero", doc )
+          .newXPath( "/io:root/io:kyero", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
         {
           Element grandParentNode = (Element) XmlUtils
-            .newXPath( "/oi:root", doc )
+            .newXPath( "/io:root", doc )
             .selectSingleNode( doc );
           if (grandParentNode==null)
           {

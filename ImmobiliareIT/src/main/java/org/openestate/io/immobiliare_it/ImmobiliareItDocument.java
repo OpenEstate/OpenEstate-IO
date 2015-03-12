@@ -61,7 +61,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
     {
       Document doc = this.getDocument();
       version = StringUtils.trimToNull(XmlUtils
-        .newXPath( "/oi:feed/oi:version/text()", doc )
+        .newXPath( "/io:feed/io:version/text()", doc )
         .stringValueOf( doc ) );
       if (version==null)
       {
@@ -166,12 +166,12 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
       Document doc = this.getDocument();
 
       Element node = (Element) XmlUtils
-        .newXPath( "/oi:feed/oi:version", doc )
+        .newXPath( "/io:feed/io:version", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
         Element parentNode = (Element) XmlUtils
-          .newXPath( "/oi:feed", doc )
+          .newXPath( "/io:feed", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
         {

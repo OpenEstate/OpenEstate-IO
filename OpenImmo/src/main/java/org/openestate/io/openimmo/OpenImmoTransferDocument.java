@@ -58,7 +58,7 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
     {
       Document doc = this.getDocument();
       version = StringUtils.trimToNull(XmlUtils
-        .newXPath( "/oi:openimmo/oi:uebertragung/@version", doc )
+        .newXPath( "/io:openimmo/io:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       if (version==null)
       {
@@ -159,17 +159,17 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
       Document doc = this.getDocument();
 
       String currentVersion = StringUtils.trimToEmpty(XmlUtils
-        .newXPath( "/oi:openimmo/oi:uebertragung/@version", doc )
+        .newXPath( "/io:openimmo/io:uebertragung/@version", doc )
         .stringValueOf( doc ) );
       String[] ver = StringUtils.split( currentVersion, "/", 2 );
 
       Element node = (Element) XmlUtils
-        .newXPath( "/oi:openimmo/oi:uebertragung", doc )
+        .newXPath( "/io:openimmo/io:uebertragung", doc )
         .selectSingleNode( doc );
       if (node==null)
       {
         Element parentNode = (Element) XmlUtils
-          .newXPath( "/oi:openimmo", doc )
+          .newXPath( "/io:openimmo", doc )
           .selectSingleNode( doc );
         if (parentNode==null)
         {

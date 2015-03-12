@@ -63,22 +63,22 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass", doc );
       Assert.assertEquals(
         "2 <energiepass> elements available before conversion.", 2, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:mitwarmwasser", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:mitwarmwasser", doc );
       Assert.assertEquals(
         "1 convertable <mitwarmwasser> element available before conversion.", 1, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energieverbrauchkennwert", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:energieverbrauchkennwert", doc );
       Assert.assertEquals(
         "1 convertable <energieverbrauchkennwert> element available before conversion.", 1, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:endenergiebedarf", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:endenergiebedarf", doc );
       Assert.assertEquals(
         "1 convertable <endenergiebedarf> element available before conversion.", 1, count );
 
@@ -93,32 +93,32 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass", doc );
       Assert.assertEquals(
         "2 <energiepass> elements available after conversion.", 2, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:mitwarmwasser", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:mitwarmwasser", doc );
       Assert.assertEquals(
         "0 convertable <mitwarmwasser> elements available before conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energieverbrauchkennwert", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:energieverbrauchkennwert", doc );
       Assert.assertEquals(
         "0 convertable <energieverbrauchkennwert> elements available before conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:endenergiebedarf", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:endenergiebedarf", doc );
       Assert.assertEquals(
         "0 convertable <endenergiebedarf> elements available before conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energiebedarf", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:energiebedarf", doc );
       Assert.assertEquals(
         "1 converted <energiebedarf> element available before conversion.", 1, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:skala[@type='ZAHL']", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:skala[@type='ZAHL']", doc );
       Assert.assertEquals(
         "2 converted <skala> elements available before conversion.", 2, count );
     }
@@ -144,7 +144,7 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='BUNGALOW']", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='BUNGALOW']", doc );
       Assert.assertEquals(
         "1 convertable <haus> element available before conversion.", 1, count );
 
@@ -156,12 +156,12 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus[@haustyp='BUNGALOW']", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='BUNGALOW']", doc );
       Assert.assertEquals(
         "0 convertable <haus> elements available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:haus", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus", doc );
       Assert.assertEquals(
         "1 converted <haus> element available after conversion.", 1, count );
     }
@@ -226,7 +226,7 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:objektart_zusatz", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:objektart_zusatz", doc );
       Assert.assertEquals(
         "2 convertable <objektart_zusatz> elements available before conversion.", 2, count );
 
@@ -238,7 +238,7 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:objektart_zusatz", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:objektart_zusatz", doc );
       Assert.assertEquals(
         "0 convertable <objektart_zusatz> elements available after conversion.", 0, count );
     }
@@ -264,7 +264,7 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:skala", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:skala", doc );
       Assert.assertEquals(
         "2 convertable <energiepass> elements available before conversion.", 2, count );
 
@@ -279,13 +279,13 @@ public class OpenImmo_1_2_1Test
       //System.out.println( "----------------------------" );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:skala", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:skala", doc );
       Assert.assertEquals(
         "0 convertable <energiepass> elements available after conversion.", 0, count );
 
       count = XmlUtils.countNodes(
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:energieverbrauchkennwert | " +
-        "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:energiepass/oi:endenergiebedarf", doc );
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:energieverbrauchkennwert | " +
+        "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:endenergiebedarf", doc );
       Assert.assertEquals(
         "2 converted <energiepass> elements available after conversion.", 2, count );
     }

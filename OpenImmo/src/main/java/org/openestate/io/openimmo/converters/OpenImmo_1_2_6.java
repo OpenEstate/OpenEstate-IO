@@ -174,7 +174,7 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeAusblickElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:infrastruktur/oi:ausblick[@blick]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:infrastruktur/io:ausblick[@blick]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -197,7 +197,7 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeBodenElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:boden[@GRANIT]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:boden[@GRANIT]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -221,7 +221,7 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeBueroPraxenElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:objektkategorie/oi:objektart/oi:buero_praxen[@buero_typ]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:buero_praxen[@buero_typ]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -246,7 +246,7 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeKaufpreisElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:kaufpreis[@auf_anfrage]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:kaufpreis[@auf_anfrage]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -266,7 +266,7 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeBauzoneElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:zustand_angaben/oi:bauzone",
+      "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:bauzone",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -288,7 +288,7 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void downgradeEnergietypElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:ausstattung/oi:energietyp[@MINERGIEBAUWEISE or @MINERGIE_ZERTIFIZIERT]",
+      "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:energietyp[@MINERGIEBAUWEISE or @MINERGIE_ZERTIFIZIERT]",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -313,10 +313,10 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeFlaechenChildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:flaechen/oi:kubatur | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:flaechen/oi:ausnuetzungsziffer | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:flaechen/oi:flaechevon | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:flaechen/oi:flaechebis",
+      "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:kubatur | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:ausnuetzungsziffer | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:flaechevon | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:flaechebis",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -350,29 +350,29 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removePreiseChildElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:kaufpreisnetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:kaufpreisbrutto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:hauptmietzinsnetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:pauschalmiete | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:betriebskostennetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:evbnetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:gesamtmietenetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:gesamtmietebrutto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:gesamtbelastungnetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:gesamtbelastungbrutto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:gesamtkostenprom2von | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:heizkostennetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:monatlichekostennetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:monatlichekostenbrutto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:nebenkostenprom2von | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:ruecklagenetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:sonstigekostennetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:sonstigemietenetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:summemietenetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:nettomieteprom2von | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:provisionnetto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:provisionbrutto | " +
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:preise/oi:richtpreisprom2",
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:kaufpreisnetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:kaufpreisbrutto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:hauptmietzinsnetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:pauschalmiete | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:betriebskostennetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:evbnetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:gesamtmietenetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:gesamtmietebrutto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:gesamtbelastungnetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:gesamtbelastungbrutto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:gesamtkostenprom2von | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:heizkostennetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:monatlichekostennetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:monatlichekostenbrutto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:nebenkostenprom2von | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:ruecklagenetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:sonstigekostennetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:sonstigemietenetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:summemietenetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:nettomieteprom2von | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:provisionnetto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:provisionbrutto | " +
+      "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:richtpreisprom2",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {
@@ -393,7 +393,7 @@ public class OpenImmo_1_2_6 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   protected void removeZwangsversteigerungElements( Document doc ) throws JaxenException
   {
     List nodes = XmlUtils.newXPath(
-      "/oi:openimmo/oi:anbieter/oi:immobilie/oi:versteigerung/oi:zwangsversteigerung",
+      "/io:openimmo/io:anbieter/io:immobilie/io:versteigerung/io:zwangsversteigerung",
       doc ).selectNodes( doc );
     for (Object item : nodes)
     {

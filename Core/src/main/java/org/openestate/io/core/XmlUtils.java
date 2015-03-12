@@ -428,7 +428,7 @@ public class XmlUtils
    */
   public static XPath newXPath( String expression, Document doc ) throws JaxenException
   {
-    return newXPath( expression, doc, "oi" );
+    return newXPath( expression, doc, "io" );
   }
 
   /**
