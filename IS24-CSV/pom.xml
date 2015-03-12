@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <name>OpenEstate-IO-IS24-CSV</name>
-  <version>1.0-RC1</version>
+  <version>1.0-SNAPSHOT</version>
   <url>http://www.openestate.org</url>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>org.openestate.io</groupId>
     <artifactId>ALL</artifactId>
-    <version>1.0-RC1</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
 
   <properties>
