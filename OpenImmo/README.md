@@ -48,7 +48,7 @@ modifications to the original `openimmo_127.xsd` schema:
     with `<xsd:element name="hallenhoehe" type="xsd:decimal">`
 
 -   replaced `<xsd:element name="stromanschlusswert">`
-    with `<xsd:element name="hallenhoehe" type="xsd:decimal">`
+    with `<xsd:element name="stromanschlusswert" type="xsd:decimal">`
 
 -   removed `<xsd:choice>` from `<xsd:element name="geo">`
     and move its child elements into the parent `<xsd:sequence>`
