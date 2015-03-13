@@ -129,7 +129,10 @@ public class Ausstattung
     protected Boolean hebebuehne;
     protected Boolean kran;
     protected Boolean gastterrasse;
-    protected Object stromanschlusswert;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlSchemaType(name = "decimal")
+    protected Double stromanschlusswert;
     @XmlElement(name = "kantine_cafeteria")
     protected Boolean kantineCafeteria;
     protected Boolean teekueche;
@@ -852,10 +855,10 @@ public class Ausstattung
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public Object getStromanschlusswert() {
+    public Double getStromanschlusswert() {
         return stromanschlusswert;
     }
 
@@ -864,10 +867,10 @@ public class Ausstattung
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public void setStromanschlusswert(Object value) {
+    public void setStromanschlusswert(Double value) {
         this.stromanschlusswert = value;
     }
 
@@ -1719,7 +1722,7 @@ public class Ausstattung
             strategy.appendField(locator, this, "gastterrasse", buffer, theGastterrasse);
         }
         {
-            Object theStromanschlusswert;
+            Double theStromanschlusswert;
             theStromanschlusswert = this.getStromanschlusswert();
             strategy.appendField(locator, this, "stromanschlusswert", buffer, theStromanschlusswert);
         }
@@ -2109,9 +2112,9 @@ public class Ausstattung
                 copy.gastterrasse = null;
             }
             if (this.stromanschlusswert!= null) {
-                Object sourceStromanschlusswert;
+                Double sourceStromanschlusswert;
                 sourceStromanschlusswert = this.getStromanschlusswert();
-                Object copyStromanschlusswert = ((Object) strategy.copy(LocatorUtils.property(locator, "stromanschlusswert", sourceStromanschlusswert), sourceStromanschlusswert));
+                Double copyStromanschlusswert = ((Double) strategy.copy(LocatorUtils.property(locator, "stromanschlusswert", sourceStromanschlusswert), sourceStromanschlusswert));
                 copy.setStromanschlusswert(copyStromanschlusswert);
             } else {
                 copy.stromanschlusswert = null;
@@ -2629,9 +2632,9 @@ public class Ausstattung
             }
         }
         {
-            Object lhsStromanschlusswert;
+            Double lhsStromanschlusswert;
             lhsStromanschlusswert = this.getStromanschlusswert();
-            Object rhsStromanschlusswert;
+            Double rhsStromanschlusswert;
             rhsStromanschlusswert = that.getStromanschlusswert();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stromanschlusswert", lhsStromanschlusswert), LocatorUtils.property(thatLocator, "stromanschlusswert", rhsStromanschlusswert), lhsStromanschlusswert, rhsStromanschlusswert)) {
                 return false;

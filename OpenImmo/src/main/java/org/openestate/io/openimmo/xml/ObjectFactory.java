@@ -3180,12 +3180,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "stromanschlusswert")
-    public JAXBElement<Object> createStromanschlusswert(Object value) {
-        return new JAXBElement<Object>(_Stromanschlusswert_QNAME, Object.class, null, value);
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    public JAXBElement<Double> createStromanschlusswert(Double value) {
+        return new JAXBElement<Double>(_Stromanschlusswert_QNAME, Double.class, null, value);
     }
 
     /**
