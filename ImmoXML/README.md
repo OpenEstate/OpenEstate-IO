@@ -45,6 +45,12 @@ modifications to the original `immoxml.xsd` schema:
 -   replaced `<xsd:element name="hallenhoehe">`
     with `<xsd:element name="hallenhoehe" type="posdecimal">`
 
+-   replaced `<xsd:element name="stromanschlusswert">`
+    with `<xsd:element name="stromanschlusswert" type="xsd:decimal">`
+
+-   replaced `<xsd:element name="impressum" />`
+    with `<xsd:element name="impressum" type="xsd:string" />`
+
 -   removed `<xsd:choice>` from `<xsd:element name="geo">`
     and moved its child elements into the parent `<xsd:sequence>`
 

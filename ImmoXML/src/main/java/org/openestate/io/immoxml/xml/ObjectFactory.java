@@ -1402,12 +1402,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "impressum")
-    public JAXBElement<Object> createImpressum(Object value) {
-        return new JAXBElement<Object>(_Impressum_QNAME, Object.class, null, value);
+    public JAXBElement<String> createImpressum(String value) {
+        return new JAXBElement<String>(_Impressum_QNAME, String.class, null, value);
     }
 
     /**
@@ -1430,12 +1430,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stromanschlusswert")
-    public JAXBElement<Object> createStromanschlusswert(Object value) {
-        return new JAXBElement<Object>(_Stromanschlusswert_QNAME, Object.class, null, value);
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    public JAXBElement<Double> createStromanschlusswert(Double value) {
+        return new JAXBElement<Double>(_Stromanschlusswert_QNAME, Double.class, null, value);
     }
 
     /**
