@@ -37,14 +37,16 @@ public class Stellplatz
 {
 
     @XmlAttribute(name = "stellplatzmiete")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "decimal")
     protected Double stellplatzmiete;
     @XmlAttribute(name = "stellplatzkaufpreis")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "decimal")
     protected Double stellplatzkaufpreis;
     @XmlAttribute(name = "anzahl")
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlSchemaType(name = "int")
     protected Integer anzahl;
 
     /**
@@ -100,7 +102,7 @@ public class Stellplatz
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
     public Integer getAnzahl() {
@@ -112,7 +114,7 @@ public class Stellplatz
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
     public void setAnzahl(Integer value) {

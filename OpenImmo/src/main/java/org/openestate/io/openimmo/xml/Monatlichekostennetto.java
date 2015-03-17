@@ -38,11 +38,11 @@ public class Monatlichekostennetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "decimal")
     protected Double value;
     @XmlAttribute(name = "monatlichekostenust")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "decimal")
     protected Double monatlichekostenust;
 

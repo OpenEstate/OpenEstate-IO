@@ -10,10 +10,14 @@ Changelog for OpenEstate-IO
 1.0-RC2 (not released yet)
 --------------------------
 
--   fixed a mistake in the OpenImmo specs for `<stromanschlusswert>`
--   fixed a mistake in the ImmoXML specs for `<stromanschlusswert>`
--   fixed a mistake in the ImmoXML specs for `<impressum>`
--   improved parsing & printing of `xsd:int` & `xsd:positiveInteger` for ImmoXML
+-   OpenImmo
+    -   fixed a mistake in the specs for `<stromanschlusswert>`
+    -   improved parsing & printing of `xsd:int` & `xsd:positiveInteger`
+
+-   ImmoXML
+    -   fixed a mistake in specs for `<stromanschlusswert>`
+    -   fixed a mistake in specs for `<impressum>`
+    -   improved parsing & printing of `xsd:int` & `xsd:positiveInteger`
 
 
 1.0-RC1 (12.03.2015)

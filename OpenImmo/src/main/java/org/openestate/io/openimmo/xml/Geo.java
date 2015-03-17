@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
 import org.jvnet.jaxb2_commons.lang.CopyTo;
 import org.jvnet.jaxb2_commons.lang.Equals;
@@ -71,8 +73,13 @@ public class Geo
     protected String flur;
     protected String flurstueck;
     protected String gemarkung;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlSchemaType(name = "int")
     protected Integer etage;
-    @XmlElement(name = "anzahl_etagen")
+    @XmlElement(name = "anzahl_etagen", type = String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlSchemaType(name = "int")
     protected Integer anzahlEtagen;
     @XmlElement(name = "lage_im_bau")
     protected LageImBau lageImBau;
@@ -363,7 +370,7 @@ public class Geo
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
     public Integer getEtage() {
@@ -375,7 +382,7 @@ public class Geo
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
     public void setEtage(Integer value) {
@@ -387,7 +394,7 @@ public class Geo
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
     public Integer getAnzahlEtagen() {
@@ -399,7 +406,7 @@ public class Geo
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
     public void setAnzahlEtagen(Integer value) {
