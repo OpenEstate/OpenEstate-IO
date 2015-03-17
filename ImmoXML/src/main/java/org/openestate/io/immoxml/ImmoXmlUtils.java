@@ -384,6 +384,20 @@ public class ImmoXmlUtils
     throw new IllegalArgumentException( "Can't parse decimal value '"+value+"'!" );
   }
 
+  public static Integer parseInteger( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+    try
+    {
+      return DatatypeConverter.parseInt( value );
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse integer value '"+value+"'! " + ex.getLocalizedMessage() );
+    }
+  }
+
   public static String printDate( Calendar value )
   {
     if (value==null)
@@ -406,5 +420,21 @@ public class ImmoXmlUtils
       throw new IllegalArgumentException( "Can't print double value!" );
     else
       return DatatypeConverter.printDouble( value );
+  }
+
+  public static String printInteger( Integer value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print integer value!" );
+    else
+      return DatatypeConverter.printInt( value );
+  }
+
+  public static String printPositiveInteger( Integer value )
+  {
+    if (value==null || value<1)
+      throw new IllegalArgumentException( "Can't print positive integer value!" );
+    else
+      return printInteger( value );
   }
 }

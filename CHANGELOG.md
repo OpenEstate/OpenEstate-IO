@@ -13,6 +13,7 @@ Changelog for OpenEstate-IO
 -   fixed a mistake in the OpenImmo specs for `<stromanschlusswert>`
 -   fixed a mistake in the ImmoXML specs for `<stromanschlusswert>`
 -   fixed a mistake in the ImmoXML specs for `<impressum>`
+-   improved parsing & printing of `xsd:int` & `xsd:positiveInteger` for ImmoXML
 
 
 1.0-RC1 (12.03.2015)

@@ -77,39 +77,39 @@ public class Preise
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double kaufpreis;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double nettokaltmiete;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double kaltmiete;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double warmmiete;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double nebenkosten;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double heizkosten;
     @XmlElement(name = "zzg_mehrwertsteuer")
     protected Boolean zzgMehrwertsteuer;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double mietzuschlaege;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double pacht;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double erbpacht;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double hausgeld;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double abstand;
     @XmlElement(name = "preis_zeitraum_von", type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -122,10 +122,10 @@ public class Preise
     @XmlElement(name = "preis_zeiteinheit")
     protected PreisZeiteinheit preisZeiteinheit;
     @XmlElement(name = "mietpreis_pro_qm", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double mietpreisProQm;
     @XmlElement(name = "kaufpreis_pro_qm", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double kaufpreisProQm;
     @XmlElement(name = "innen_courtage")
     protected InnenCourtage innenCourtage;
@@ -133,29 +133,29 @@ public class Preise
     protected AussenCourtage aussenCourtage;
     protected Waehrung waehrung;
     @XmlElement(name = "mwst_satz", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double mwstSatz;
     @XmlElement(name = "freitext_preis")
     protected String freitextPreis;
     @XmlElement(name = "x_fache")
     protected String xFache;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double nettorendite;
     @XmlElement(name = "mieteinnahmen_ist", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double mieteinnahmenIst;
     @XmlElement(name = "mieteinnahmen_soll", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double mieteinnahmenSoll;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double erschliessungskosten;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double kaution;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double geschaeftsguthaben;
     @XmlElement(name = "stp_carport")
     protected Stellplatz stpCarport;

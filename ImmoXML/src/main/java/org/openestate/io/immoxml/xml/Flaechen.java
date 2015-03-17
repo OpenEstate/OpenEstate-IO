@@ -79,113 +79,113 @@ public class Flaechen
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double wohnflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double nutzflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double gesamtflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double ladenflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double lagerflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double verkaufsflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double freiflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double bueroflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double bueroteilflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double fensterfront;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double verwaltungsflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double gastroflaeche;
     protected String grz;
     protected String gfz;
     protected String bmz;
     protected String bgf;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double grundstuecksflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double sonstflaeche;
     @XmlElement(name = "anzahl_zimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlZimmer;
     @XmlElement(name = "anzahl_schlafzimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlSchlafzimmer;
     @XmlElement(name = "anzahl_badezimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlBadezimmer;
     @XmlElement(name = "anzahl_sep_wc", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlSepWc;
     @XmlElement(name = "anzahl_balkon_terrassen", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlBalkonTerrassen;
     @XmlElement(name = "balkon_terrasse_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double balkonTerrasseFlaeche;
     @XmlElement(name = "anzahl_wohn_schlafzimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlWohnSchlafzimmer;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double gartenflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double kellerflaeche;
     @XmlElement(name = "fensterfront_qm", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double fensterfrontQm;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double grundstuecksfront;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double dachbodenflaeche;
     @XmlElement(name = "teilbar_ab", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double teilbarAb;
     @XmlElement(name = "beheizbare_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double beheizbareFlaeche;
     @XmlElement(name = "anzahl_stellplaetze", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlStellplaetze;
     @XmlElement(name = "plaetze_gastraum", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double plaetzeGastraum;
     @XmlElement(name = "anzahl_betten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlBetten;
     @XmlElement(name = "anzahl_tagungsraeume", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlTagungsraeume;
     @XmlElement(name = "vermietbare_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double vermietbareFlaeche;
     @XmlElement(name = "anzahl_wohneinheiten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlWohneinheiten;
     @XmlElement(name = "anzahl_gewerbeeinheiten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Double anzahlGewerbeeinheiten;
     protected Boolean einliegerwohnung;
     @XmlElement(name = "user_defined_simplefield")

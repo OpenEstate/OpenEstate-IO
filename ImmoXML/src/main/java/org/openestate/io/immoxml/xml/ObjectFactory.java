@@ -1,7 +1,6 @@
 
 package org.openestate.io.immoxml.xml;
 
-import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -807,7 +806,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "freiflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createFreiflaeche(Double value) {
         return new JAXBElement<Double>(_Freiflaeche_QNAME, Double.class, null, value);
     }
@@ -817,7 +816,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaufpreis_pro_qm")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createKaufpreisProQm(Double value) {
         return new JAXBElement<Double>(_KaufpreisProQm_QNAME, Double.class, null, value);
     }
@@ -827,7 +826,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "hausgeld")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createHausgeld(Double value) {
         return new JAXBElement<Double>(_Hausgeld_QNAME, Double.class, null, value);
     }
@@ -837,7 +836,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "balkon_terrasse_flaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createBalkonTerrasseFlaeche(Double value) {
         return new JAXBElement<Double>(_BalkonTerrasseFlaeche_QNAME, Double.class, null, value);
     }
@@ -866,7 +865,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_balkon_terrassen")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlBalkonTerrassen(Double value) {
         return new JAXBElement<Double>(_AnzahlBalkonTerrassen_QNAME, Double.class, null, value);
     }
@@ -876,7 +875,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_sep_wc")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlSepWc(Double value) {
         return new JAXBElement<Double>(_AnzahlSepWc_QNAME, Double.class, null, value);
     }
@@ -886,7 +885,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bueroflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createBueroflaeche(Double value) {
         return new JAXBElement<Double>(_Bueroflaeche_QNAME, Double.class, null, value);
     }
@@ -914,7 +913,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mieteinnahmen_ist")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createMieteinnahmenIst(Double value) {
         return new JAXBElement<Double>(_MieteinnahmenIst_QNAME, Double.class, null, value);
     }
@@ -924,7 +923,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_gewerbeeinheiten")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlGewerbeeinheiten(Double value) {
         return new JAXBElement<Double>(_AnzahlGewerbeeinheiten_QNAME, Double.class, null, value);
     }
@@ -934,7 +933,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_wohneinheiten")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlWohneinheiten(Double value) {
         return new JAXBElement<Double>(_AnzahlWohneinheiten_QNAME, Double.class, null, value);
     }
@@ -989,7 +988,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "teilbar_ab")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createTeilbarAb(Double value) {
         return new JAXBElement<Double>(_TeilbarAb_QNAME, Double.class, null, value);
     }
@@ -1081,7 +1080,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "hallenhoehe")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createHallenhoehe(Double value) {
         return new JAXBElement<Double>(_Hallenhoehe_QNAME, Double.class, null, value);
     }
@@ -1128,7 +1127,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nettokaltmiete")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createNettokaltmiete(Double value) {
         return new JAXBElement<Double>(_Nettokaltmiete_QNAME, Double.class, null, value);
     }
@@ -1192,7 +1191,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "laufzeit")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createLaufzeit(Double value) {
         return new JAXBElement<Double>(_Laufzeit_QNAME, Double.class, null, value);
     }
@@ -1211,7 +1210,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mietzuschlaege")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createMietzuschlaege(Double value) {
         return new JAXBElement<Double>(_Mietzuschlaege_QNAME, Double.class, null, value);
     }
@@ -1257,7 +1256,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "verkaufsflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createVerkaufsflaeche(Double value) {
         return new JAXBElement<Double>(_Verkaufsflaeche_QNAME, Double.class, null, value);
     }
@@ -1321,7 +1320,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gartenflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createGartenflaeche(Double value) {
         return new JAXBElement<Double>(_Gartenflaeche_QNAME, Double.class, null, value);
     }
@@ -1340,7 +1339,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "erbpacht")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createErbpacht(Double value) {
         return new JAXBElement<Double>(_Erbpacht_QNAME, Double.class, null, value);
     }
@@ -1359,7 +1358,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nebenkosten")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createNebenkosten(Double value) {
         return new JAXBElement<Double>(_Nebenkosten_QNAME, Double.class, null, value);
     }
@@ -1396,7 +1395,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "grundstuecksfront")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createGrundstuecksfront(Double value) {
         return new JAXBElement<Double>(_Grundstuecksfront_QNAME, Double.class, null, value);
     }
@@ -1415,7 +1414,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "ladenflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createLadenflaeche(Double value) {
         return new JAXBElement<Double>(_Ladenflaeche_QNAME, Double.class, null, value);
     }
@@ -1434,7 +1433,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stromanschlusswert")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createStromanschlusswert(Double value) {
         return new JAXBElement<Double>(_Stromanschlusswert_QNAME, Double.class, null, value);
     }
@@ -1444,7 +1443,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "sonstflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createSonstflaeche(Double value) {
         return new JAXBElement<Double>(_Sonstflaeche_QNAME, Double.class, null, value);
     }
@@ -1537,7 +1536,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "lagerflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createLagerflaeche(Double value) {
         return new JAXBElement<Double>(_Lagerflaeche_QNAME, Double.class, null, value);
     }
@@ -1556,7 +1555,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "verwaltungsflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createVerwaltungsflaeche(Double value) {
         return new JAXBElement<Double>(_Verwaltungsflaeche_QNAME, Double.class, null, value);
     }
@@ -1566,7 +1565,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "erschliessungskosten")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createErschliessungskosten(Double value) {
         return new JAXBElement<Double>(_Erschliessungskosten_QNAME, Double.class, null, value);
     }
@@ -1603,7 +1602,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "fensterfront_qm")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createFensterfrontQm(Double value) {
         return new JAXBElement<Double>(_FensterfrontQm_QNAME, Double.class, null, value);
     }
@@ -1613,7 +1612,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_zimmer")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlZimmer(Double value) {
         return new JAXBElement<Double>(_AnzahlZimmer_QNAME, Double.class, null, value);
     }
@@ -1637,12 +1636,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "max_personen")
-    public JAXBElement<BigInteger> createMaxPersonen(BigInteger value) {
-        return new JAXBElement<BigInteger>(_MaxPersonen_QNAME, BigInteger.class, null, value);
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    public JAXBElement<Integer> createMaxPersonen(Integer value) {
+        return new JAXBElement<Integer>(_MaxPersonen_QNAME, Integer.class, null, value);
     }
 
     /**
@@ -1659,6 +1659,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "etage")
+    @XmlJavaTypeAdapter(Adapter4 .class)
     public JAXBElement<Integer> createEtage(Integer value) {
         return new JAXBElement<Integer>(_Etage_QNAME, Integer.class, null, value);
     }
@@ -1668,7 +1669,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kellerflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createKellerflaeche(Double value) {
         return new JAXBElement<Double>(_Kellerflaeche_QNAME, Double.class, null, value);
     }
@@ -1678,7 +1679,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_schlafzimmer")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlSchlafzimmer(Double value) {
         return new JAXBElement<Double>(_AnzahlSchlafzimmer_QNAME, Double.class, null, value);
     }
@@ -1706,7 +1707,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nettorendite")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createNettorendite(Double value) {
         return new JAXBElement<Double>(_Nettorendite_QNAME, Double.class, null, value);
     }
@@ -1716,7 +1717,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_wohn_schlafzimmer")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlWohnSchlafzimmer(Double value) {
         return new JAXBElement<Double>(_AnzahlWohnSchlafzimmer_QNAME, Double.class, null, value);
     }
@@ -1726,7 +1727,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "heizkosten")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createHeizkosten(Double value) {
         return new JAXBElement<Double>(_Heizkosten_QNAME, Double.class, null, value);
     }
@@ -1745,7 +1746,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mwst_satz")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createMwstSatz(Double value) {
         return new JAXBElement<Double>(_MwstSatz_QNAME, Double.class, null, value);
     }
@@ -1755,7 +1756,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gesamtflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createGesamtflaeche(Double value) {
         return new JAXBElement<Double>(_Gesamtflaeche_QNAME, Double.class, null, value);
     }
@@ -1837,7 +1838,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mietpreis_pro_qm")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createMietpreisProQm(Double value) {
         return new JAXBElement<Double>(_MietpreisProQm_QNAME, Double.class, null, value);
     }
@@ -1865,7 +1866,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gastroflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createGastroflaeche(Double value) {
         return new JAXBElement<Double>(_Gastroflaeche_QNAME, Double.class, null, value);
     }
@@ -1893,7 +1894,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "beheizbare_flaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createBeheizbareFlaeche(Double value) {
         return new JAXBElement<Double>(_BeheizbareFlaeche_QNAME, Double.class, null, value);
     }
@@ -1903,7 +1904,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_tagungsraeume")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlTagungsraeume(Double value) {
         return new JAXBElement<Double>(_AnzahlTagungsraeume_QNAME, Double.class, null, value);
     }
@@ -1949,7 +1950,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nutzflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createNutzflaeche(Double value) {
         return new JAXBElement<Double>(_Nutzflaeche_QNAME, Double.class, null, value);
     }
@@ -1959,7 +1960,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaufpreis")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createKaufpreis(Double value) {
         return new JAXBElement<Double>(_Kaufpreis_QNAME, Double.class, null, value);
     }
@@ -1969,7 +1970,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bueroteilflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createBueroteilflaeche(Double value) {
         return new JAXBElement<Double>(_Bueroteilflaeche_QNAME, Double.class, null, value);
     }
@@ -1979,7 +1980,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "dachbodenflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createDachbodenflaeche(Double value) {
         return new JAXBElement<Double>(_Dachbodenflaeche_QNAME, Double.class, null, value);
     }
@@ -2034,7 +2035,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "grundstuecksflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createGrundstuecksflaeche(Double value) {
         return new JAXBElement<Double>(_Grundstuecksflaeche_QNAME, Double.class, null, value);
     }
@@ -2062,7 +2063,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_betten")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlBetten(Double value) {
         return new JAXBElement<Double>(_AnzahlBetten_QNAME, Double.class, null, value);
     }
@@ -2108,7 +2109,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "pacht")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createPacht(Double value) {
         return new JAXBElement<Double>(_Pacht_QNAME, Double.class, null, value);
     }
@@ -2137,7 +2138,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mieteinnahmen_soll")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createMieteinnahmenSoll(Double value) {
         return new JAXBElement<Double>(_MieteinnahmenSoll_QNAME, Double.class, null, value);
     }
@@ -2156,7 +2157,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "vermietbare_flaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createVermietbareFlaeche(Double value) {
         return new JAXBElement<Double>(_VermietbareFlaeche_QNAME, Double.class, null, value);
     }
@@ -2239,7 +2240,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "abstand")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAbstand(Double value) {
         return new JAXBElement<Double>(_Abstand_QNAME, Double.class, null, value);
     }
@@ -2249,7 +2250,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "warmmiete")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createWarmmiete(Double value) {
         return new JAXBElement<Double>(_Warmmiete_QNAME, Double.class, null, value);
     }
@@ -2268,7 +2269,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "geschaeftsguthaben")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createGeschaeftsguthaben(Double value) {
         return new JAXBElement<Double>(_Geschaeftsguthaben_QNAME, Double.class, null, value);
     }
@@ -2278,7 +2279,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaltmiete")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createKaltmiete(Double value) {
         return new JAXBElement<Double>(_Kaltmiete_QNAME, Double.class, null, value);
     }
@@ -2288,7 +2289,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "wohnflaeche")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createWohnflaeche(Double value) {
         return new JAXBElement<Double>(_Wohnflaeche_QNAME, Double.class, null, value);
     }
@@ -2335,7 +2336,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaution")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createKaution(Double value) {
         return new JAXBElement<Double>(_Kaution_QNAME, Double.class, null, value);
     }
@@ -2345,7 +2346,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_stellplaetze")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlStellplaetze(Double value) {
         return new JAXBElement<Double>(_AnzahlStellplaetze_QNAME, Double.class, null, value);
     }
@@ -2373,7 +2374,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "plaetze_gastraum")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createPlaetzeGastraum(Double value) {
         return new JAXBElement<Double>(_PlaetzeGastraum_QNAME, Double.class, null, value);
     }
@@ -2383,7 +2384,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_badezimmer")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createAnzahlBadezimmer(Double value) {
         return new JAXBElement<Double>(_AnzahlBadezimmer_QNAME, Double.class, null, value);
     }
@@ -2402,7 +2403,7 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "fensterfront")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     public JAXBElement<Double> createFensterfront(Double value) {
         return new JAXBElement<Double>(_Fensterfront_QNAME, Double.class, null, value);
     }
