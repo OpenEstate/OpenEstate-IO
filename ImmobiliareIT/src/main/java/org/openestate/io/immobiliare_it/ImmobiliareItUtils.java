@@ -79,7 +79,6 @@ public class ImmobiliareItUtils
    */
   public final static ObjectFactory FACTORY = new ObjectFactory();
 
-
   private ImmobiliareItUtils()
   {
   }
