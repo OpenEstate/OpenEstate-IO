@@ -14,8 +14,8 @@ Changelog for OpenEstate-IO
     -   more relaxed parsing of `xsd:date` / `xsd:dateTime` values
 
 -   ImmoXML
-    -   fixed a mistake in specs for `<stromanschlusswert>`
-    -   fixed a mistake in specs for `<impressum>`
+    -   fixed a mistake in the specs for `<stromanschlusswert>`
+    -   fixed a mistake in the specs for `<impressum>`
     -   improved parsing & printing of `xsd:int` & `xsd:positiveInteger`
 
 -   OpenImmo
