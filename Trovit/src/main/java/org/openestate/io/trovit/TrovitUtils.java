@@ -310,24 +310,7 @@ public class TrovitUtils
 
   public static Calendar parseDate( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    try
-    {
-      Date date = DateUtils.parseDateStrictly( value, new String[]{
-        "dd.MM.yyyy", "dd.MM.yy", "dd/MM/yyyy", "dd/MM/yy", "dd-MM-yyyy",
-        "dd-MMM-yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "yyyy-D", "MM/yyyy",
-        "MMM yyyy", "MMMMM yyyy", "yyyy" } );
-      Calendar cal = Calendar.getInstance();
-      cal.setTime( date );
-      return cal;
-    }
-    catch (ParseException ex)
-    {
-      //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-    }
-    throw new IllegalArgumentException( "Can't parse date value '"+value+"'!" );
+    return XmlUtils.parseDate( value );
   }
 
   public static Double parseFloat( String value )

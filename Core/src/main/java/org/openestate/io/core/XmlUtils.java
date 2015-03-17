@@ -23,6 +23,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.io.Writer;
+import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -34,6 +38,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.jaxen.JaxenException;
 import org.jaxen.XPath;
 import org.jaxen.dom.DOMXPath;
@@ -460,6 +465,138 @@ public class XmlUtils
       xpath.addNamespace( namespacePrefix, uri );
     }
     return xpath;
+  }
+
+  /**
+   * Reads an xsd:date value.
+   * <p>
+   * If the value is not a valid xsd:date, we're trying to parse the value
+   * against other common formats. If this also fails, we're trying to parse the
+   * value as xsd:dateTime.
+   * <p>
+   * The functions throws an {@link IllegalArgumentException}, if the value is
+   * not readable.
+   *
+   * @param value
+   * the XML value to parse
+   *
+   * @return
+   * parsed date value
+   */
+  public static Calendar parseDate( String value )
+  {
+    return parseDate( value, true );
+  }
+
+  private static Calendar parseDate( String value, boolean tryDateTimeOnError )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+    try
+    {
+      return DatatypeConverter.parseDate( value );
+    }
+    catch (IllegalArgumentException ex)
+    {
+      //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+    try
+    {
+      Date date = DateUtils.parseDateStrictly( value, new String[]{
+        "dd.MM.yyyy", "dd.MM.yy", "dd/MM/yyyy", "dd/MM/yy", "dd-MM-yyyy",
+        "dd-MMM-yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "yyyy-D", "MM/yyyy",
+        "MMM yyyy", "MMMMM yyyy", "yyyy" } );
+      Calendar cal = Calendar.getInstance();
+      cal.setTime( date );
+      return cal;
+    }
+    catch (ParseException ex)
+    {
+      //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    // try to parse the value as xsd:dateTime instead
+    if (tryDateTimeOnError)
+    {
+      try
+      {
+        return parseDateTime( value, false );
+      }
+      catch (IllegalArgumentException ex)
+      {
+        //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
+        //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+      }
+    }
+
+    throw new IllegalArgumentException( "Can't parse date value '"+value+"'!" );
+  }
+
+  /**
+   * Reads an xsd:dateTime value.
+   * <p>
+   * If the value is not a valid xsd:dateTime, we're trying to parse the value
+   * against other common formats. If this also fails, we're trying to parse the
+   * value as xsd:date.
+   * <p>
+   * The functions throws an {@link IllegalArgumentException}, if the value is
+   * not readable.
+   *
+   * @param value
+   * the XML value to parse
+   *
+   * @return
+   * parsed date value
+   */
+  public static Calendar parseDateTime( String value )
+  {
+    return parseDateTime( value, true );
+  }
+
+  private static Calendar parseDateTime( String value, boolean tryDateOnError )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+    try
+    {
+      return DatatypeConverter.parseDateTime( value );
+    }
+    catch (IllegalArgumentException ex)
+    {
+      //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+    try
+    {
+      Date date = DateUtils.parseDateStrictly( value, new String[]{
+        "yyyy-MM-dd'T'HH:mm:ss", "yyyy-MM-dd'T'HH:mm", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm" } );
+      Calendar cal = Calendar.getInstance();
+      cal.setTime( date );
+      return cal;
+    }
+    catch (ParseException ex)
+    {
+      //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
+    // try to parse the value as xsd:date instead
+    if (tryDateOnError)
+    {
+      try
+      {
+        return parseDate( value, false );
+      }
+      catch (IllegalArgumentException ex)
+      {
+        //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
+        //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+      }
+    }
+
+    throw new IllegalArgumentException( "Can't parse date-time value '"+value+"'!" );
   }
 
   /**

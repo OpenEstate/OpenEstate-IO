@@ -14,7 +14,7 @@
                    parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseInteger"
                    printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printInteger" />
     <jaxb:javaType xmlType="immobiliare:dateUpdatedType" name="java.util.Calendar"
-                   parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
+                   parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseDateUpdatedType"
                    printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printDateUpdatedType" />
     <jaxb:javaType xmlType="immobiliare:emailType" name="java.lang.String"
                    parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseEmailType"

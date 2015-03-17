@@ -23,10 +23,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
@@ -35,7 +33,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateUtils;
 import org.openestate.io.core.LocaleUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
@@ -310,62 +307,12 @@ public class DaftIeUtils
 
   public static Calendar parseDate( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    try
-    {
-      return DatatypeConverter.parseDate( value );
-    }
-    catch (IllegalArgumentException ex)
-    {
-      //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-    }
-    try
-    {
-      Date date = DateUtils.parseDateStrictly( value, new String[]{
-        "dd.MM.yyyy", "dd.MM.yy", "dd/MM/yyyy", "dd/MM/yy", "dd-MM-yyyy",
-        "dd-MMM-yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "yyyy-D", "MM/yyyy",
-        "MMM yyyy", "MMMMM yyyy", "yyyy" } );
-      Calendar cal = Calendar.getInstance();
-      cal.setTime( date );
-      return cal;
-    }
-    catch (ParseException ex)
-    {
-      //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-    }
-    throw new IllegalArgumentException( "Can't parse date value '"+value+"'!" );
+    return XmlUtils.parseDate( value );
   }
 
   public static Calendar parseDateTime( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    try
-    {
-      return DatatypeConverter.parseDateTime( value );
-    }
-    catch (IllegalArgumentException ex)
-    {
-      //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-    }
-    try
-    {
-      Date date = DateUtils.parseDateStrictly( value, new String[]{
-        "yyyy-MM-dd'T'hh:mm:ss", "yyyy-MM-dd'T'hh:mm" } );
-      Calendar cal = Calendar.getInstance();
-      cal.setTime( date );
-      return cal;
-    }
-    catch (ParseException ex)
-    {
-      //LOGGER.warn( "Can't parse value '" + value + "' as datetime!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-    }
-    throw new IllegalArgumentException( "Can't parse date-time value '"+value+"'!" );
+    return XmlUtils.parseDateTime( value );
   }
 
   public static Double parseDouble( String value )
