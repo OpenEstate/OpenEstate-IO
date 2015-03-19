@@ -3,7 +3,7 @@ package org.openestate.io.immoxml.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
-public class Adapter4
+public class Adapter6
     extends XmlAdapter<String, Integer>
 {
 
@@ -13,7 +13,7 @@ public class Adapter4
     }
 
     public String marshal(Integer value) {
-        return (org.openestate.io.immoxml.ImmoXmlUtils.printInteger(value));
+        return (org.openestate.io.immoxml.ImmoXmlUtils.printPositiveInteger(value));
     }
 
 }

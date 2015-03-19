@@ -37,7 +37,7 @@ public class BreitbandZugang
     @XmlAttribute(name = "art")
     protected String art;
     @XmlAttribute(name = "speed")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "decimal")
     protected Double speed;
 

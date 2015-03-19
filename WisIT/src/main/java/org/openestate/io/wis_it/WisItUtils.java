@@ -241,7 +241,7 @@ public class WisItUtils
    */
   public static DateFormat getDateTimeFormat()
   {
-    return new SimpleDateFormat( "yyyy-MM-dd mm:hh:ss" );
+    return new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
   }
 
   /**
@@ -269,7 +269,6 @@ public class WisItUtils
     JAXB = JAXBContext.newInstance( PACKAGE, classloader );
   }
 
-
   public static Calendar parseDateTime( String value )
   {
     value = StringUtils.trimToNull( value );
@@ -284,9 +283,21 @@ public class WisItUtils
     }
     catch (ParseException ex)
     {
-      //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
+      //LOGGER.warn( "Can't parse value '" + value + "' as date-time!" );
       //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
     }
+
+    // try to parse the value as xsd:dateTime instead
+    try
+    {
+      return XmlUtils.parseDateTime( value );
+    }
+    catch (IllegalArgumentException ex)
+    {
+      //LOGGER.warn( "Can't parse value '" + value + "' as date-time!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+
     throw new IllegalArgumentException( "Can't parse date-time value '"+value+"'!" );
   }
 

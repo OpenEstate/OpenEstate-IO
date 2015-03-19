@@ -1,4 +1,4 @@
-OpenEstate-IO 1.0-RC1
+OpenEstate-IO 1.0-RC2
 =====================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate
@@ -90,6 +90,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0-RC1/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0-RC2/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for common XML formats](http://validator.openestate.org/)

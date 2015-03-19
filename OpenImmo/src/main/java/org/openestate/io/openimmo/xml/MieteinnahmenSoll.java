@@ -39,7 +39,7 @@ public class MieteinnahmenSoll
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "decimal")
     protected Double value;
     @XmlAttribute(name = "periode")

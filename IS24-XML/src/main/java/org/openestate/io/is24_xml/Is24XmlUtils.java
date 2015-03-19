@@ -27,7 +27,6 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -269,8 +268,7 @@ public class Is24XmlUtils
 
   public static Calendar parseDate( String value )
   {
-    value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDate( value ): null;
+    return XmlUtils.parseDate( value );
   }
 
   public static Double parsePreisAufAnfrage( String value )

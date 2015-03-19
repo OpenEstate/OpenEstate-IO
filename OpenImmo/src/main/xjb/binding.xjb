@@ -19,6 +19,12 @@
     <jaxb:javaType name="java.lang.Double" xmlType="xsd:float"
                    parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseDecimal"
                    printMethod="org.openestate.io.openimmo.OpenImmoUtils.printDecimal" />
+    <jaxb:javaType name="java.lang.Integer" xmlType="xsd:int"
+                   parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseInteger"
+                   printMethod="org.openestate.io.openimmo.OpenImmoUtils.printInteger" />
+    <jaxb:javaType name="java.lang.Integer" xmlType="xsd:positiveInteger"
+                   parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseInteger"
+                   printMethod="org.openestate.io.openimmo.OpenImmoUtils.printPositiveInteger" />
   </jaxb:globalBindings>
 
 

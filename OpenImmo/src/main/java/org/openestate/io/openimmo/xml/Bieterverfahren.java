@@ -71,7 +71,7 @@ public class Bieterverfahren
     @XmlElement(name = "hoechstgebot_zeigen")
     protected Boolean hoechstgebotZeigen;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "decimal")
     protected Double mindestpreis;
     @XmlElement(name = "user_defined_simplefield")

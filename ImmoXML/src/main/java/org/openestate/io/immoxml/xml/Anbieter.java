@@ -51,7 +51,7 @@ public class Anbieter
     protected Anhang anhang;
     @XmlElement(required = true)
     protected List<Immobilie> immobilie;
-    protected Object impressum;
+    protected String impressum;
     @XmlElement(name = "user_defined_simplefield")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
@@ -187,10 +187,10 @@ public class Anbieter
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public Object getImpressum() {
+    public String getImpressum() {
         return impressum;
     }
 
@@ -199,10 +199,10 @@ public class Anbieter
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public void setImpressum(Object value) {
+    public void setImpressum(String value) {
         this.impressum = value;
     }
 
@@ -305,7 +305,7 @@ public class Anbieter
             strategy.appendField(locator, this, "immobilie", buffer, theImmobilie);
         }
         {
-            Object theImpressum;
+            String theImpressum;
             theImpressum = this.getImpressum();
             strategy.appendField(locator, this, "impressum", buffer, theImpressum);
         }
@@ -381,9 +381,9 @@ public class Anbieter
                 copy.immobilie = null;
             }
             if (this.impressum!= null) {
-                Object sourceImpressum;
+                String sourceImpressum;
                 sourceImpressum = this.getImpressum();
-                Object copyImpressum = ((Object) strategy.copy(LocatorUtils.property(locator, "impressum", sourceImpressum), sourceImpressum));
+                String copyImpressum = ((String) strategy.copy(LocatorUtils.property(locator, "impressum", sourceImpressum), sourceImpressum));
                 copy.setImpressum(copyImpressum);
             } else {
                 copy.impressum = null;
@@ -476,9 +476,9 @@ public class Anbieter
             }
         }
         {
-            Object lhsImpressum;
+            String lhsImpressum;
             lhsImpressum = this.getImpressum();
-            Object rhsImpressum;
+            String rhsImpressum;
             rhsImpressum = that.getImpressum();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "impressum", lhsImpressum), LocatorUtils.property(thatLocator, "impressum", rhsImpressum), lhsImpressum, rhsImpressum)) {
                 return false;

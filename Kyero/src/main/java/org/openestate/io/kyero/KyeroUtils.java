@@ -37,7 +37,6 @@ import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.kyero.xml.ObjectFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 /**
@@ -349,17 +348,30 @@ public class KyeroUtils
     }
     catch (ParseException ex)
     {
-      try
-      {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime( getDateFormatAlternative().parse( value ) );
-        return cal;
-      }
-      catch (ParseException ex2)
-      {
-        throw new IllegalArgumentException( "Can't parse date value '"+value+"'!", ex2 );
-      }
+      //LOGGER.warn( "Can't parse value '" + value + "' against primary date format!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
     }
+    try
+    {
+      Calendar cal = Calendar.getInstance();
+      cal.setTime( getDateFormatAlternative().parse( value ) );
+      return cal;
+    }
+    catch (ParseException ex)
+    {
+      //LOGGER.warn( "Can't parse value '" + value + "' against secondary date format!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+    try
+    {
+      return XmlUtils.parseDateTime( value );
+    }
+    catch (Exception ex)
+    {
+      //LOGGER.warn( "Can't parse value '" + value + "' as xsd:dateTime!" );
+      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+    }
+    throw new IllegalArgumentException( "Can't parse date-type value '"+value+"'!" );
   }
 
   public static Double parseDecimal( String value )

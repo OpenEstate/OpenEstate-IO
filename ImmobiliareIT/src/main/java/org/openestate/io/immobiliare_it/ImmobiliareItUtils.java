@@ -20,8 +20,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Currency;
+import java.util.Date;
 import java.util.Locale;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
@@ -30,6 +32,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.openestate.io.core.LocaleUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
@@ -78,7 +81,6 @@ public class ImmobiliareItUtils
    * the factory for creation of JAXB objects
    */
   public final static ObjectFactory FACTORY = new ObjectFactory();
-
 
   private ImmobiliareItUtils()
   {
@@ -340,6 +342,18 @@ public class ImmobiliareItUtils
     catch (Exception ex)
     {
       throw new IllegalArgumentException( "Can't parse currency value '" + value + "'!", ex );
+    }
+  }
+
+  public static Calendar parseDateUpdatedType( String value )
+  {
+    try
+    {
+      return XmlUtils.parseDateTime( value );
+    }
+    catch (Exception ex)
+    {
+      throw new IllegalArgumentException( "Can't parse date-updated value '"+value+"'!", ex );
     }
   }
 

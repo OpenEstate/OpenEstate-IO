@@ -1,0 +1,289 @@
+<xs:schema xmlns:xi="http://www.w3.org/2003/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
+
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="kyero" type="kyeroType" />
+        <xs:element name="agent" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:integer" minOccurs="0" />
+              <xs:element name="name" type="xs:string" minOccurs="0" />
+              <xs:element name="email" type="xs:string" minOccurs="0" />
+              <xs:element name="tel" type="xs:string" minOccurs="0" />
+              <xs:element name="fax" type="xs:string" minOccurs="0" />
+              <xs:element name="mob" type="xs:string" minOccurs="0" />
+              <xs:element name="addr1" type="xs:string" minOccurs="0" />
+              <xs:element name="addr2" type="xs:string" minOccurs="0" />
+              <xs:element name="town" type="xs:string" minOccurs="0" />
+              <xs:element name="region" type="xs:string" minOccurs="0" />
+              <xs:element name="postcode" type="xs:string" minOccurs="0" />
+              <xs:element name="country" type="xs:string" minOccurs="0" />
+              <xs:group ref="agentCustomGroup" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="property" type="propertyType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="kyeroType">
+    <xs:sequence>
+      <xs:element name="feed_version">
+        <xs:simpleType>
+          <xs:restriction base="xs:string"> 
+            <xs:minLength value="1"/>
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="feed_generated" type="dateType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+      
+  <xs:complexType name="propertyType">
+    <xs:sequence>
+      <xs:element name="id" type="idType" />
+      <xs:element name="date" type="dateType" />
+      <xs:element name="ref" type="refType"/>
+      <xs:element name="price" type="priceType"/>
+      <xs:element name="currency" type="currencyType" minOccurs="0" />
+      <xs:element name="price_freq" type="priceFreqType" />
+      <xs:element name="part_ownership" type="boolType" minOccurs="0"/>
+      <xs:element name="leasehold" type="boolType" minOccurs="0" />
+      <xs:element name="type" type="enLangType" />
+      <xs:element name="town" type="requiredType" />
+      <xs:element name="province" type="requiredType" />
+      <xs:element name="location_detail" type="locationType" minOccurs="0" />
+      <xs:element name="beds" type="xs:nonNegativeInteger" nillable="true" minOccurs="0"/>
+      <xs:element name="baths" type="xs:nonNegativeInteger" nillable="true" minOccurs="0" />
+      <xs:element name="pool" type="boolType" minOccurs="0" />
+      <xs:element name="surface_area" type="surfaceType" minOccurs="0" />  
+      <xs:element name="url" type="urlType" minOccurs="0" />
+      <xs:element name="desc" type="langType" minOccurs="0" />
+      <xs:element name="features" type="featuresType" />
+      <xs:element name="images" type="imagesType" minOccurs="0" />      
+      <xs:group ref="customGroup" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:string"> 
+      <xs:minLength value="1"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="requiredType">
+    <xs:restriction base="xs:string"> 
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dateType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])\s(0[0-9]|1[0-9]|2[01234]):(0[0-9]|[1-5][0-9]):(0[0-9]|[1-5][0-9])"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="refType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="currencyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AED"/>
+      <xs:enumeration value="ARS"/>
+      <xs:enumeration value="AUD"/>
+      <xs:enumeration value="BHD"/>
+      <xs:enumeration value="BND"/>
+      <xs:enumeration value="BRL"/>
+      <xs:enumeration value="BWP"/>
+      <xs:enumeration value="CAD"/>
+      <xs:enumeration value="CHF"/>
+      <xs:enumeration value="CLP"/>
+      <xs:enumeration value="CNY"/>
+      <xs:enumeration value="CYP"/>
+      <xs:enumeration value="CZK"/>
+      <xs:enumeration value="DKK"/>
+      <xs:enumeration value="EUR"/>
+      <xs:enumeration value="GBP"/>
+      <xs:enumeration value="HUF"/>
+      <xs:enumeration value="ILS"/>
+      <xs:enumeration value="INR"/>
+      <xs:enumeration value="ISK"/>
+      <xs:enumeration value="JPY"/>
+      <xs:enumeration value="KWD"/>
+      <xs:enumeration value="LKR"/>
+      <xs:enumeration value="LYD"/>
+      <xs:enumeration value="MTL"/>
+      <xs:enumeration value="MUR"/>
+      <xs:enumeration value="MXN"/>
+      <xs:enumeration value="MYR"/>
+      <xs:enumeration value="NOK"/>
+      <xs:enumeration value="NPR"/>
+      <xs:enumeration value="NZD"/>
+      <xs:enumeration value="OMR"/>
+      <xs:enumeration value="PKR"/>
+      <xs:enumeration value="PLN"/>
+      <xs:enumeration value="QAR"/>
+      <xs:enumeration value="SAR"/>
+      <xs:enumeration value="SEK"/>
+      <xs:enumeration value="SGD"/>
+      <xs:enumeration value="SIT"/>
+      <xs:enumeration value="THB"/>
+      <xs:enumeration value="TTD"/>
+      <xs:enumeration value="USD"/>
+      <xs:enumeration value="ZAR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="priceType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]+|x)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="priceFreqType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sale"/>
+      <xs:enumeration value="week"/>
+      <xs:enumeration value="month"/>
+      <xs:enumeration value="new_build"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="boolType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="enLangType">
+    <xs:all>
+      <xs:element name="en" type="typeDataType" />
+      <xs:element name="es" type="typeDataType" minOccurs="0" />
+      <xs:element name="de" type="typeDataType" minOccurs="0" />
+      <xs:element name="nl" type="typeDataType" minOccurs="0" />
+      <xs:element name="fr" type="typeDataType" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:complexType name="langType">
+    <xs:all>
+      <xs:element name="en" type="xs:string" minOccurs="0" />
+      <xs:element name="es" type="xs:string" minOccurs="0" />
+      <xs:element name="de" type="xs:string" minOccurs="0" />
+      <xs:element name="nl" type="xs:string" minOccurs="0" />
+      <xs:element name="fr" type="xs:string" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="typeDataType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([a-zA-Z&amp;\s\(\)/\-]+)" />
+      <xs:minLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="locationType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="surfaceType">
+    <xs:all>
+      <xs:element name="built" type="xs:integer" minOccurs="0" />
+      <xs:element name="plot" type="xs:integer" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="urlType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="http://(.*)" />
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="imagesType">
+    <xs:sequence>
+      <xs:element name="image" minOccurs="0" maxOccurs="10">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="url" type="imageUrlType" minOccurs="0" />
+            <xs:element name="primary" type="boolType" minOccurs="0" />
+            <xs:element name="title" type="langType" minOccurs="0" />
+          </xs:all>
+          <xs:attribute name="id" type="imageAttributeType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="featuresType">
+    <xs:sequence>
+      <xs:element name="feature" type="xs:string" minOccurs="1" maxOccurs="50">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="imageUrlType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(http|ftp)://(.*)\.(gif|jpe?g|png|GIF|JPE?G|PNG)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="imageAttributeType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="customType">
+    <xs:simpleContent>
+      <xs:extension base="boolType">
+        <xs:attribute name="id" type="customIdType" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="customIdType">
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="[1-4]" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:group name="agentCustomGroup">
+    <xs:sequence>
+      <xs:element name="custom" minOccurs="0" maxOccurs="4">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="title">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="en" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="id" type="customIdType" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="customGroup">
+    <xs:sequence>
+      <xs:element name="custom" type="customType" minOccurs="0" maxOccurs="4" />
+    </xs:sequence>
+  </xs:group>
+
+</xs:schema>
