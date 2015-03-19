@@ -7,7 +7,7 @@ Changelog for OpenEstate-IO
 -   initial release
 
 
-1.0-RC2 (not released yet)
+1.0-RC2 (19 Mar 2015)
 --------------------------
 
 -   all XML formats
