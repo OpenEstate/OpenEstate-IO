@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <name>ALL-OpenEstate-IO</name>
-  <version>1.0-RC2</version>
+  <version>1.0-SNAPSHOT</version>
   <url>http://openestate.org</url>
   <groupId>org.openestate.io</groupId>
   <artifactId>ALL</artifactId>

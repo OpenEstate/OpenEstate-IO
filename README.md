@@ -1,5 +1,5 @@
-OpenEstate-IO 1.0-RC2
-=====================
+OpenEstate-IO 1.0-SNAPSHOT
+==========================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate
 data in common formats. These libraries are used within
@@ -90,6 +90,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0-RC2/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for common XML formats](http://validator.openestate.org/)
