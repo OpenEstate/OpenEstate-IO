@@ -8,9 +8,9 @@
             <goals>
                 <goal>install</goal>
             </goals>
-            <properties>
-                <createChecksum>true</createChecksum>
-            </properties>
+            <activatedProfiles>
+                <activatedProfile>development</activatedProfile>
+            </activatedProfiles>
         </action>
         <action>
             <actionName>rebuild</actionName>
@@ -21,9 +21,9 @@
                 <goal>clean</goal>
                 <goal>install</goal>
             </goals>
-            <properties>
-                <createChecksum>true</createChecksum>
-            </properties>
+            <activatedProfiles>
+                <activatedProfile>development</activatedProfile>
+            </activatedProfiles>
         </action>
         <action>
             <actionName>build-with-dependencies</actionName>
@@ -34,8 +34,36 @@
             <goals>
                 <goal>install</goal>
             </goals>
+            <activatedProfiles>
+                <activatedProfile>development</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>test</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>test</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>development</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>test.single</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>test-compile</goal>
+                <goal>surefire:test</goal>
+            </goals>
             <properties>
-                <createChecksum>true</createChecksum>
+                <test>${packageClassName}</test>
             </properties>
+            <activatedProfiles>
+                <activatedProfile>development</activatedProfile>
+            </activatedProfiles>
         </action>
     </actions>

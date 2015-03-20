@@ -17,6 +17,30 @@
     <project.releaseDir>${basedir}/release</project.releaseDir>
   </properties>
 
+  <profiles>
+
+    <!-- development profile -->
+    <profile>
+      <id>development</id>
+      <properties>
+        <createChecksum>true</createChecksum>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <source.skip>true</source.skip>
+      </properties>
+    </profile>
+
+    <!-- release profile -->
+    <profile>
+      <id>release</id>
+      <properties>
+        <createChecksum>true</createChecksum>
+        <maven.javadoc.skip>false</maven.javadoc.skip>
+        <source.skip>false</source.skip>
+      </properties>
+    </profile>
+
+  </profiles>
+
   <modules>
     <module>Core</module>
     <module>CasaIT</module>
