@@ -24,18 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _EinzelhandelTypLastenaufzug_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Lastenaufzug");
     private final static QName _Immobilie_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Immobilie");
     private final static QName _TypenHaus_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "TypenHaus");
     private final static QName _VirtuelleImmobilie_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "VirtuelleImmobilie");
     private final static QName _Grundstueck_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Grundstueck");
-    private final static QName _VermarktungGrundstueckWohnenKaufTypErbpacht_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Erbpacht");
-    private final static QName _VermarktungGrundstueckWohnenKaufTypKauf_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Kauf");
-    private final static QName _VermarktungGrundstueckWohnenMieteTypMiete_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Miete");
-    private final static QName _VermarktungGrundstueckWohnenMieteTypPacht_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Pacht");
-    private final static QName _ApiSuchfelderTypApiSuchfeld1_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfeld1");
-    private final static QName _ApiSuchfelderTypApiSuchfeld3_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfeld3");
-    private final static QName _ApiSuchfelderTypApiSuchfeld2_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfeld2");
     private final static QName _BefeuerungsArtTypPelletheizung_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Pelletheizung");
     private final static QName _BefeuerungsArtTypStrom_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Strom");
     private final static QName _BefeuerungsArtTypFernwaerme_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Fernwaerme");
@@ -45,7 +37,9 @@ public class ObjectFactory {
     private final static QName _BefeuerungsArtTypErdwaerme_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Erdwaerme");
     private final static QName _BefeuerungsArtTypKeineAngabe_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "KeineAngabe");
     private final static QName _BefeuerungsArtTypKohle_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Kohle");
-    private final static QName _VirtuelleImmobilieBaseTypApiSuchfelder_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfelder");
+    private final static QName _ApiSuchfelderTypApiSuchfeld1_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfeld1");
+    private final static QName _ApiSuchfelderTypApiSuchfeld3_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfeld3");
+    private final static QName _ApiSuchfelderTypApiSuchfeld2_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfeld2");
     private final static QName _GrundstueckEmpfohleneNutzungHotel_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Hotel");
     private final static QName _GrundstueckEmpfohleneNutzungGarten_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Garten");
     private final static QName _GrundstueckEmpfohleneNutzungEinzelhandelKlein_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Einzelhandel-klein");
@@ -72,6 +66,12 @@ public class ObjectFactory {
     private final static QName _GrundstueckEmpfohleneNutzungKeineBebauung_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "keineBebauung");
     private final static QName _GrundstueckEmpfohleneNutzungEinzelhandelGross_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Einzelhandel-gross");
     private final static QName _GrundstueckEmpfohleneNutzungGewerbe_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Gewerbe");
+    private final static QName _VermarktungGewerbeTyp2Kauf_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Kauf");
+    private final static QName _EinzelhandelTypLastenaufzug_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Lastenaufzug");
+    private final static QName _VermarktungGewerbeTypMiete_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Miete");
+    private final static QName _VermarktungGrundstueckGewerbeTypErbpacht_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Erbpacht");
+    private final static QName _VermarktungGrundstueckGewerbeTypPacht_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "Pacht");
+    private final static QName _VirtuelleImmobilieBaseTypApiSuchfelder_QNAME = new QName("http://www.immobilienscout24.de/immobilientransfer", "ApiSuchfelder");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.openestate.io.is24_xml.xml
@@ -705,15 +705,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HebeanlageTyp }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Lastenaufzug", scope = EinzelhandelTyp.class)
-    public JAXBElement<HebeanlageTyp> createEinzelhandelTypLastenaufzug(HebeanlageTyp value) {
-        return new JAXBElement<HebeanlageTyp>(_EinzelhandelTypLastenaufzug_QNAME, HebeanlageTyp.class, EinzelhandelTyp.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}}
      * 
      */
@@ -921,78 +912,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Erbpacht }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckWohnenKaufTyp.class)
-    public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> createVermarktungGrundstueckWohnenKaufTypErbpacht(VermarktungGrundstueckWohnenKaufTyp.Erbpacht value) {
-        return new JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht>(_VermarktungGrundstueckWohnenKaufTypErbpacht_QNAME, VermarktungGrundstueckWohnenKaufTyp.Erbpacht.class, VermarktungGrundstueckWohnenKaufTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Kauf }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckWohnenKaufTyp.class)
-    public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> createVermarktungGrundstueckWohnenKaufTypKauf(VermarktungGrundstueckWohnenKaufTyp.Kauf value) {
-        return new JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf>(_VermarktungGrundstueckWohnenKaufTypKauf_QNAME, VermarktungGrundstueckWohnenKaufTyp.Kauf.class, VermarktungGrundstueckWohnenKaufTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Miete }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGrundstueckWohnenMieteTyp.class)
-    public JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Miete> createVermarktungGrundstueckWohnenMieteTypMiete(VermarktungGrundstueckWohnenMieteTyp.Miete value) {
-        return new JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Miete>(_VermarktungGrundstueckWohnenMieteTypMiete_QNAME, VermarktungGrundstueckWohnenMieteTyp.Miete.class, VermarktungGrundstueckWohnenMieteTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Pacht }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckWohnenMieteTyp.class)
-    public JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Pacht> createVermarktungGrundstueckWohnenMieteTypPacht(VermarktungGrundstueckWohnenMieteTyp.Pacht value) {
-        return new JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Pacht>(_VermarktungGrundstueckWohnenMieteTypPacht_QNAME, VermarktungGrundstueckWohnenMieteTyp.Pacht.class, VermarktungGrundstueckWohnenMieteTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGewerbeTyp2 .class)
-    public JAXBElement<Object> createVermarktungGewerbeTyp2Kauf(Object value) {
-        return new JAXBElement<Object>(_VermarktungGrundstueckWohnenKaufTypKauf_QNAME, Object.class, VermarktungGewerbeTyp2 .class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld1", scope = ApiSuchfelderTyp.class)
-    public JAXBElement<String> createApiSuchfelderTypApiSuchfeld1(String value) {
-        return new JAXBElement<String>(_ApiSuchfelderTypApiSuchfeld1_QNAME, String.class, ApiSuchfelderTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld3", scope = ApiSuchfelderTyp.class)
-    public JAXBElement<String> createApiSuchfelderTypApiSuchfeld3(String value) {
-        return new JAXBElement<String>(_ApiSuchfelderTypApiSuchfeld3_QNAME, String.class, ApiSuchfelderTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld2", scope = ApiSuchfelderTyp.class)
-    public JAXBElement<String> createApiSuchfelderTypApiSuchfeld2(String value) {
-        return new JAXBElement<String>(_ApiSuchfelderTypApiSuchfeld2_QNAME, String.class, ApiSuchfelderTyp.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
      * 
      */
@@ -1074,75 +993,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Miete }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGewerbeTyp.class)
-    public JAXBElement<VermarktungGewerbeTyp.Miete> createVermarktungGewerbeTypMiete(VermarktungGewerbeTyp.Miete value) {
-        return new JAXBElement<VermarktungGewerbeTyp.Miete>(_VermarktungGrundstueckWohnenMieteTypMiete_QNAME, VermarktungGewerbeTyp.Miete.class, VermarktungGewerbeTyp.class, value);
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld1", scope = ApiSuchfelderTyp.class)
+    public JAXBElement<String> createApiSuchfelderTypApiSuchfeld1(String value) {
+        return new JAXBElement<String>(_ApiSuchfelderTypApiSuchfeld1_QNAME, String.class, ApiSuchfelderTyp.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Kauf }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGewerbeTyp.class)
-    public JAXBElement<VermarktungGewerbeTyp.Kauf> createVermarktungGewerbeTypKauf(VermarktungGewerbeTyp.Kauf value) {
-        return new JAXBElement<VermarktungGewerbeTyp.Kauf>(_VermarktungGrundstueckWohnenKaufTypKauf_QNAME, VermarktungGewerbeTyp.Kauf.class, VermarktungGewerbeTyp.class, value);
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld3", scope = ApiSuchfelderTyp.class)
+    public JAXBElement<String> createApiSuchfelderTypApiSuchfeld3(String value) {
+        return new JAXBElement<String>(_ApiSuchfelderTypApiSuchfeld3_QNAME, String.class, ApiSuchfelderTyp.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Erbpacht }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckGewerbeTyp.class)
-    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> createVermarktungGrundstueckGewerbeTypErbpacht(VermarktungGrundstueckGewerbeTyp.Erbpacht value) {
-        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht>(_VermarktungGrundstueckWohnenKaufTypErbpacht_QNAME, VermarktungGrundstueckGewerbeTyp.Erbpacht.class, VermarktungGrundstueckGewerbeTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Miete }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGrundstueckGewerbeTyp.class)
-    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> createVermarktungGrundstueckGewerbeTypMiete(VermarktungGrundstueckGewerbeTyp.Miete value) {
-        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete>(_VermarktungGrundstueckWohnenMieteTypMiete_QNAME, VermarktungGrundstueckGewerbeTyp.Miete.class, VermarktungGrundstueckGewerbeTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Kauf }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckGewerbeTyp.class)
-    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> createVermarktungGrundstueckGewerbeTypKauf(VermarktungGrundstueckGewerbeTyp.Kauf value) {
-        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf>(_VermarktungGrundstueckWohnenKaufTypKauf_QNAME, VermarktungGrundstueckGewerbeTyp.Kauf.class, VermarktungGrundstueckGewerbeTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Pacht }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckGewerbeTyp.class)
-    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> createVermarktungGrundstueckGewerbeTypPacht(VermarktungGrundstueckGewerbeTyp.Pacht value) {
-        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht>(_VermarktungGrundstueckWohnenMieteTypPacht_QNAME, VermarktungGrundstueckGewerbeTyp.Pacht.class, VermarktungGrundstueckGewerbeTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfelder", scope = VirtuelleImmobilieBaseTyp.class)
-    public JAXBElement<ApiSuchfelderTyp> createVirtuelleImmobilieBaseTypApiSuchfelder(ApiSuchfelderTyp value) {
-        return new JAXBElement<ApiSuchfelderTyp>(_VirtuelleImmobilieBaseTypApiSuchfelder_QNAME, ApiSuchfelderTyp.class, VirtuelleImmobilieBaseTyp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfelder", scope = ImmobilieBaseTyp.class)
-    public JAXBElement<ApiSuchfelderTyp> createImmobilieBaseTypApiSuchfelder(ApiSuchfelderTyp value) {
-        return new JAXBElement<ApiSuchfelderTyp>(_VirtuelleImmobilieBaseTypApiSuchfelder_QNAME, ApiSuchfelderTyp.class, ImmobilieBaseTyp.class, value);
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld2", scope = ApiSuchfelderTyp.class)
+    public JAXBElement<String> createApiSuchfelderTypApiSuchfeld2(String value) {
+        return new JAXBElement<String>(_ApiSuchfelderTypApiSuchfeld2_QNAME, String.class, ApiSuchfelderTyp.class, value);
     }
 
     /**
@@ -1380,12 +1254,111 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGewerbeTyp2 .class)
+    public JAXBElement<Object> createVermarktungGewerbeTyp2Kauf(Object value) {
+        return new JAXBElement<Object>(_VermarktungGewerbeTyp2Kauf_QNAME, Object.class, VermarktungGewerbeTyp2 .class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link HebeanlageTyp }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Lastenaufzug", scope = EinzelhandelTyp.class)
+    public JAXBElement<HebeanlageTyp> createEinzelhandelTypLastenaufzug(HebeanlageTyp value) {
+        return new JAXBElement<HebeanlageTyp>(_EinzelhandelTypLastenaufzug_QNAME, HebeanlageTyp.class, EinzelhandelTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Miete }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGewerbeTyp.class)
+    public JAXBElement<VermarktungGewerbeTyp.Miete> createVermarktungGewerbeTypMiete(VermarktungGewerbeTyp.Miete value) {
+        return new JAXBElement<VermarktungGewerbeTyp.Miete>(_VermarktungGewerbeTypMiete_QNAME, VermarktungGewerbeTyp.Miete.class, VermarktungGewerbeTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Kauf }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGewerbeTyp.class)
+    public JAXBElement<VermarktungGewerbeTyp.Kauf> createVermarktungGewerbeTypKauf(VermarktungGewerbeTyp.Kauf value) {
+        return new JAXBElement<VermarktungGewerbeTyp.Kauf>(_VermarktungGewerbeTyp2Kauf_QNAME, VermarktungGewerbeTyp.Kauf.class, VermarktungGewerbeTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Erbpacht }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckGewerbeTyp.class)
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> createVermarktungGrundstueckGewerbeTypErbpacht(VermarktungGrundstueckGewerbeTyp.Erbpacht value) {
+        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht>(_VermarktungGrundstueckGewerbeTypErbpacht_QNAME, VermarktungGrundstueckGewerbeTyp.Erbpacht.class, VermarktungGrundstueckGewerbeTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Miete }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGrundstueckGewerbeTyp.class)
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> createVermarktungGrundstueckGewerbeTypMiete(VermarktungGrundstueckGewerbeTyp.Miete value) {
+        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete>(_VermarktungGewerbeTypMiete_QNAME, VermarktungGrundstueckGewerbeTyp.Miete.class, VermarktungGrundstueckGewerbeTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Kauf }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckGewerbeTyp.class)
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> createVermarktungGrundstueckGewerbeTypKauf(VermarktungGrundstueckGewerbeTyp.Kauf value) {
+        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf>(_VermarktungGewerbeTyp2Kauf_QNAME, VermarktungGrundstueckGewerbeTyp.Kauf.class, VermarktungGrundstueckGewerbeTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Pacht }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckGewerbeTyp.class)
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> createVermarktungGrundstueckGewerbeTypPacht(VermarktungGrundstueckGewerbeTyp.Pacht value) {
+        return new JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht>(_VermarktungGrundstueckGewerbeTypPacht_QNAME, VermarktungGrundstueckGewerbeTyp.Pacht.class, VermarktungGrundstueckGewerbeTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Miete }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGrundstueckWohnenMieteTyp.class)
+    public JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Miete> createVermarktungGrundstueckWohnenMieteTypMiete(VermarktungGrundstueckWohnenMieteTyp.Miete value) {
+        return new JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Miete>(_VermarktungGewerbeTypMiete_QNAME, VermarktungGrundstueckWohnenMieteTyp.Miete.class, VermarktungGrundstueckWohnenMieteTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Pacht }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckWohnenMieteTyp.class)
+    public JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Pacht> createVermarktungGrundstueckWohnenMieteTypPacht(VermarktungGrundstueckWohnenMieteTyp.Pacht value) {
+        return new JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Pacht>(_VermarktungGrundstueckGewerbeTypPacht_QNAME, VermarktungGrundstueckWohnenMieteTyp.Pacht.class, VermarktungGrundstueckWohnenMieteTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfelder", scope = VirtuelleImmobilieBaseTyp.class)
+    public JAXBElement<ApiSuchfelderTyp> createVirtuelleImmobilieBaseTypApiSuchfelder(ApiSuchfelderTyp value) {
+        return new JAXBElement<ApiSuchfelderTyp>(_VirtuelleImmobilieBaseTypApiSuchfelder_QNAME, ApiSuchfelderTyp.class, VirtuelleImmobilieBaseTyp.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Erbpacht }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckTypAlt.class)
     public JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> createVermarktungGrundstueckTypAltErbpacht(VermarktungGrundstueckTypAlt.Erbpacht value) {
-        return new JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht>(_VermarktungGrundstueckWohnenKaufTypErbpacht_QNAME, VermarktungGrundstueckTypAlt.Erbpacht.class, VermarktungGrundstueckTypAlt.class, value);
+        return new JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht>(_VermarktungGrundstueckGewerbeTypErbpacht_QNAME, VermarktungGrundstueckTypAlt.Erbpacht.class, VermarktungGrundstueckTypAlt.class, value);
     }
 
     /**
@@ -1394,7 +1367,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckTypAlt.class)
     public JAXBElement<VermarktungGrundstueckTypAlt.Kauf> createVermarktungGrundstueckTypAltKauf(VermarktungGrundstueckTypAlt.Kauf value) {
-        return new JAXBElement<VermarktungGrundstueckTypAlt.Kauf>(_VermarktungGrundstueckWohnenKaufTypKauf_QNAME, VermarktungGrundstueckTypAlt.Kauf.class, VermarktungGrundstueckTypAlt.class, value);
+        return new JAXBElement<VermarktungGrundstueckTypAlt.Kauf>(_VermarktungGewerbeTyp2Kauf_QNAME, VermarktungGrundstueckTypAlt.Kauf.class, VermarktungGrundstueckTypAlt.class, value);
     }
 
     /**
@@ -1403,7 +1376,34 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckTypAlt.class)
     public JAXBElement<VermarktungGrundstueckTypAlt.Pacht> createVermarktungGrundstueckTypAltPacht(VermarktungGrundstueckTypAlt.Pacht value) {
-        return new JAXBElement<VermarktungGrundstueckTypAlt.Pacht>(_VermarktungGrundstueckWohnenMieteTypPacht_QNAME, VermarktungGrundstueckTypAlt.Pacht.class, VermarktungGrundstueckTypAlt.class, value);
+        return new JAXBElement<VermarktungGrundstueckTypAlt.Pacht>(_VermarktungGrundstueckGewerbeTypPacht_QNAME, VermarktungGrundstueckTypAlt.Pacht.class, VermarktungGrundstueckTypAlt.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfelder", scope = ImmobilieBaseTyp.class)
+    public JAXBElement<ApiSuchfelderTyp> createImmobilieBaseTypApiSuchfelder(ApiSuchfelderTyp value) {
+        return new JAXBElement<ApiSuchfelderTyp>(_VirtuelleImmobilieBaseTypApiSuchfelder_QNAME, ApiSuchfelderTyp.class, ImmobilieBaseTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Erbpacht }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckWohnenKaufTyp.class)
+    public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> createVermarktungGrundstueckWohnenKaufTypErbpacht(VermarktungGrundstueckWohnenKaufTyp.Erbpacht value) {
+        return new JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht>(_VermarktungGrundstueckGewerbeTypErbpacht_QNAME, VermarktungGrundstueckWohnenKaufTyp.Erbpacht.class, VermarktungGrundstueckWohnenKaufTyp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Kauf }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckWohnenKaufTyp.class)
+    public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> createVermarktungGrundstueckWohnenKaufTypKauf(VermarktungGrundstueckWohnenKaufTyp.Kauf value) {
+        return new JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf>(_VermarktungGewerbeTyp2Kauf_QNAME, VermarktungGrundstueckWohnenKaufTyp.Kauf.class, VermarktungGrundstueckWohnenKaufTyp.class, value);
     }
 
 }
