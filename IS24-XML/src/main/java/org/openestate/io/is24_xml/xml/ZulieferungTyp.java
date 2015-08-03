@@ -12,18 +12,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ZulieferungTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="DirekterZugang"/>
- *     &lt;enumeration value="KeineDirekteAnfahrt"/>
- *     &lt;enumeration value="PKW-Zufahrt"/>
- *     &lt;enumeration value="VonVorn"/>
- *     &lt;enumeration value="VonHinten"/>
- *     &lt;enumeration value="Ganztaegig"/>
- *     &lt;enumeration value="Vormittags"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ZulieferungTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="DirekterZugang"/&gt;
+ *     &lt;enumeration value="KeineDirekteAnfahrt"/&gt;
+ *     &lt;enumeration value="PKW-Zufahrt"/&gt;
+ *     &lt;enumeration value="VonVorn"/&gt;
+ *     &lt;enumeration value="VonHinten"/&gt;
+ *     &lt;enumeration value="Ganztaegig"/&gt;
+ *     &lt;enumeration value="Vormittags"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

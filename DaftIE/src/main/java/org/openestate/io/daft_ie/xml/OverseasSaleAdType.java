@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
@@ -27,64 +28,64 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="overseasSaleAdType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="region" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="property_type" type="{}propertyType"/>
- *         &lt;element name="house_type" type="{}houseType"/>
- *         &lt;element name="commercial_type" type="{}commercialType"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="price" type="{}positiveInteger"/>
- *         &lt;element name="price_type">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="region"/>
- *               &lt;enumeration value="excess"/>
- *               &lt;enumeration value="from"/>
- *               &lt;enumeration value="on application"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="bathroom_number" type="{}positiveInteger"/>
- *         &lt;element name="bedroom_number" type="{}positiveInteger"/>
- *         &lt;element name="is_new_development" type="{}bool" minOccurs="0"/>
- *         &lt;element name="units_available" type="{}positiveInteger" minOccurs="0"/>
- *         &lt;element name="new_development_availability" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="square_metres" type="{}positiveDecimal" minOccurs="0"/>
- *         &lt;element name="acres" type="{}positiveDecimal" minOccurs="0"/>
- *         &lt;element name="directions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="co2_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="energy_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="viewing_details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="phone1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="contact_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="phone_info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="main_email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="cc_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="external_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="agent_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="property_status">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="for-sale"/>
- *               &lt;enumeration value="sale-agreed"/>
- *               &lt;enumeration value="sold"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="photos" type="{}photosType" minOccurs="0"/>
- *         &lt;element name="features" type="{}featuresType" minOccurs="0"/>
- *         &lt;element name="pdfs" type="{}pdfsType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="overseasSaleAdType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="region" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="property_type" type="{}propertyType"/&gt;
+ *         &lt;element name="house_type" type="{}houseType"/&gt;
+ *         &lt;element name="commercial_type" type="{}commercialType"/&gt;
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="price" type="{}positiveInteger"/&gt;
+ *         &lt;element name="price_type"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="region"/&gt;
+ *               &lt;enumeration value="excess"/&gt;
+ *               &lt;enumeration value="from"/&gt;
+ *               &lt;enumeration value="on application"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="bathroom_number" type="{}positiveInteger"/&gt;
+ *         &lt;element name="bedroom_number" type="{}positiveInteger"/&gt;
+ *         &lt;element name="is_new_development" type="{}bool" minOccurs="0"/&gt;
+ *         &lt;element name="units_available" type="{}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="new_development_availability" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="square_metres" type="{}positiveDecimal" minOccurs="0"/&gt;
+ *         &lt;element name="acres" type="{}positiveDecimal" minOccurs="0"/&gt;
+ *         &lt;element name="directions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="co2_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="energy_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="viewing_details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="phone1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="contact_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="phone_info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="main_email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="cc_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="external_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="agent_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="property_status"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="for-sale"/&gt;
+ *               &lt;enumeration value="sale-agreed"/&gt;
+ *               &lt;enumeration value="sold"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="photos" type="{}photosType" minOccurs="0"/&gt;
+ *         &lt;element name="features" type="{}featuresType" minOccurs="0"/&gt;
+ *         &lt;element name="pdfs" type="{}pdfsType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -139,37 +140,46 @@ public class OverseasSaleAdType
     @XmlElement(required = true)
     protected java.lang.String address;
     @XmlElement(name = "property_type", required = true)
+    @XmlSchemaType(name = "string")
     protected PropertyType propertyType;
     @XmlElement(name = "house_type", required = true)
+    @XmlSchemaType(name = "string")
     protected HouseType houseType;
     @XmlElement(name = "commercial_type", required = true)
+    @XmlSchemaType(name = "string")
     protected CommercialType commercialType;
     @XmlElement(required = true)
     protected java.lang.String description;
     @XmlElement(required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer price;
     @XmlElement(name = "price_type", required = true)
     protected OverseasSaleAdType.PriceType priceType;
     @XmlElement(name = "bathroom_number", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer bathroomNumber;
     @XmlElement(name = "bedroom_number", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer bedroomNumber;
     @XmlElement(name = "is_new_development", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean isNewDevelopment;
     @XmlElement(name = "units_available", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer unitsAvailable;
     @XmlElement(name = "new_development_availability")
     protected java.lang.String newDevelopmentAvailability;
     @XmlElement(name = "square_metres", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double squareMetres;
     @XmlElement(type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double acres;
     protected java.lang.String directions;
     @XmlElement(name = "co2_rating")
@@ -1779,14 +1789,14 @@ public class OverseasSaleAdType
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="region"/>
-     *     &lt;enumeration value="excess"/>
-     *     &lt;enumeration value="from"/>
-     *     &lt;enumeration value="on application"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="region"/&gt;
+     *     &lt;enumeration value="excess"/&gt;
+     *     &lt;enumeration value="from"/&gt;
+     *     &lt;enumeration value="on application"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */
@@ -1830,13 +1840,13 @@ public class OverseasSaleAdType
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="for-sale"/>
-     *     &lt;enumeration value="sale-agreed"/>
-     *     &lt;enumeration value="sold"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="for-sale"/&gt;
+     *     &lt;enumeration value="sale-agreed"/&gt;
+     *     &lt;enumeration value="sold"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */

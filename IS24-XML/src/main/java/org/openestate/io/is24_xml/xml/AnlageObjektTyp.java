@@ -26,27 +26,27 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AnlageObjektTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}AnlageobjekteKategorieTyp" />
- *       &lt;attribute name="VermietbareFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="WohnFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="GewerbeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="SonstigeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="XFacheMiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl31Typ" />
- *       &lt;attribute name="MietEinnahmePaIst" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="MietEinnahmePaSoll" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Kaufpreis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="KaufpreisProQm" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="BetriebskostenUmgelegt" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="NichtUmgelegteKosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="PreisProParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AnlageObjektTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}AnlageobjekteKategorieTyp" /&gt;
+ *       &lt;attribute name="VermietbareFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="WohnFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="GewerbeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="SonstigeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="XFacheMiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl31Typ" /&gt;
+ *       &lt;attribute name="MietEinnahmePaIst" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="MietEinnahmePaSoll" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Kaufpreis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="KaufpreisProQm" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="BetriebskostenUmgelegt" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="NichtUmgelegteKosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="PreisProParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -64,43 +64,43 @@ public class AnlageObjektTyp
     @XmlAttribute(name = "Objektkategorie2", required = true)
     protected AnlageobjekteKategorieTyp objektkategorie2;
     @XmlAttribute(name = "VermietbareFlaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double vermietbareFlaeche;
     @XmlAttribute(name = "WohnFlaechen")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double wohnFlaechen;
     @XmlAttribute(name = "GewerbeFlaechen")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double gewerbeFlaechen;
     @XmlAttribute(name = "GrundstuecksFlaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double grundstuecksFlaeche;
     @XmlAttribute(name = "SonstigeFlaechen")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double sonstigeFlaechen;
     @XmlAttribute(name = "XFacheMiete")
-    @XmlJavaTypeAdapter(Adapter19 .class)
+    @XmlJavaTypeAdapter(Adapter27 .class)
     protected Double xFacheMiete;
     @XmlAttribute(name = "MietEinnahmePaIst")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double mietEinnahmePaIst;
     @XmlAttribute(name = "MietEinnahmePaSoll")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double mietEinnahmePaSoll;
     @XmlAttribute(name = "Kaufpreis", required = true)
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double kaufpreis;
     @XmlAttribute(name = "KaufpreisProQm")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double kaufpreisProQm;
     @XmlAttribute(name = "BetriebskostenUmgelegt")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double betriebskostenUmgelegt;
     @XmlAttribute(name = "NichtUmgelegteKosten")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double nichtUmgelegteKosten;
     @XmlAttribute(name = "PreisProParkflaeche")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double preisProParkflaeche;
     @XmlAttribute(name = "Denkmalschutzobjekt")
     protected Boolean denkmalschutzobjekt;

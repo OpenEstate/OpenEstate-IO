@@ -27,29 +27,29 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TypenHausTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilieBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Baureihe" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Haustypinfo" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Dachform" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="WohnFlProGeschoss" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="PreisProBauleistung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}TypenHausKategorienTyp" default="keineAngabe" />
- *       &lt;attribute name="Wohnflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Grundflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Zimmeranzahl" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}ZimmeranzahlTyp" />
- *       &lt;attribute name="PreisAb" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Bauweise" type="{http://www.immobilienscout24.de/immobilientransfer}BauweiseTyp" />
- *       &lt;attribute name="KWert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" />
- *       &lt;attribute name="Ausbaustufe" type="{http://www.immobilienscout24.de/immobilientransfer}AusbaustufeTyp" />
- *       &lt;attribute name="Energiestandard" type="{http://www.immobilienscout24.de/immobilientransfer}EnergiestandardTyp" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="TypenHausTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilieBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Baureihe" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Haustypinfo" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Dachform" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="WohnFlProGeschoss" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="PreisProBauleistung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}TypenHausKategorienTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Wohnflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Grundflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Zimmeranzahl" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}ZimmeranzahlTyp" /&gt;
+ *       &lt;attribute name="PreisAb" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Bauweise" type="{http://www.immobilienscout24.de/immobilientransfer}BauweiseTyp" /&gt;
+ *       &lt;attribute name="KWert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" /&gt;
+ *       &lt;attribute name="Ausbaustufe" type="{http://www.immobilienscout24.de/immobilientransfer}AusbaustufeTyp" /&gt;
+ *       &lt;attribute name="Energiestandard" type="{http://www.immobilienscout24.de/immobilientransfer}EnergiestandardTyp" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -71,41 +71,41 @@ public class TypenHausTyp
 {
 
     @XmlElement(name = "Baureihe")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String baureihe;
     @XmlElement(name = "Haustypinfo")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String haustypinfo;
     @XmlElement(name = "Dachform")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String dachform;
     @XmlElement(name = "WohnFlProGeschoss")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String wohnFlProGeschoss;
     @XmlElement(name = "PreisProBauleistung")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String preisProBauleistung;
     @XmlAttribute(name = "Objektkategorie2")
     protected TypenHausKategorienTyp objektkategorie2;
     @XmlAttribute(name = "Wohnflaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double wohnflaeche;
     @XmlAttribute(name = "Grundflaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double grundflaeche;
     @XmlAttribute(name = "Gesamtflaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double gesamtflaeche;
     @XmlAttribute(name = "Zimmeranzahl", required = true)
-    @XmlJavaTypeAdapter(Adapter31 .class)
+    @XmlJavaTypeAdapter(Adapter32 .class)
     protected Double zimmeranzahl;
     @XmlAttribute(name = "PreisAb", required = true)
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double preisAb;
     @XmlAttribute(name = "Bauweise")
     protected BauweiseTyp bauweise;
     @XmlAttribute(name = "KWert")
-    @XmlJavaTypeAdapter(Adapter20 .class)
+    @XmlJavaTypeAdapter(Adapter28 .class)
     protected Double kWert;
     @XmlAttribute(name = "Ausbaustufe")
     protected AusbaustufeTyp ausbaustufe;

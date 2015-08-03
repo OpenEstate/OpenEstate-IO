@@ -1,20 +1,20 @@
 
 package org.openestate.io.daft_ie.xml;
 
-import java.net.URL;
+import java.util.Calendar;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter1
-    extends XmlAdapter<String, URL>
+    extends XmlAdapter<String, Calendar>
 {
 
 
-    public URL unmarshal(String value) {
-        return (org.openestate.io.daft_ie.DaftIeUtils.parseURL(value));
+    public Calendar unmarshal(String value) {
+        return (org.openestate.io.daft_ie.DaftIeUtils.parseDateTime(value));
     }
 
-    public String marshal(URL value) {
-        return (org.openestate.io.daft_ie.DaftIeUtils.printURL(value));
+    public String marshal(Calendar value) {
+        return (org.openestate.io.daft_ie.DaftIeUtils.printDateTime(value));
     }
 
 }

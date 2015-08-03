@@ -12,16 +12,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AusbaustufeTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="KeineAngabe"/>
- *     &lt;enumeration value="Bausatzhaus"/>
- *     &lt;enumeration value="Ausbauhaus"/>
- *     &lt;enumeration value="SchluesselfertigMitKeller"/>
- *     &lt;enumeration value="SchluesselfertigOhneBodenplatte"/>
- *     &lt;enumeration value="SchluesselfertigMitBodenplatte"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AusbaustufeTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="KeineAngabe"/&gt;
+ *     &lt;enumeration value="Bausatzhaus"/&gt;
+ *     &lt;enumeration value="Ausbauhaus"/&gt;
+ *     &lt;enumeration value="SchluesselfertigMitKeller"/&gt;
+ *     &lt;enumeration value="SchluesselfertigOhneBodenplatte"/&gt;
+ *     &lt;enumeration value="SchluesselfertigMitBodenplatte"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

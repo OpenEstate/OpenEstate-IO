@@ -1,20 +1,19 @@
 
 package org.openestate.io.trovit.xml;
 
-import java.util.Calendar;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter8
-    extends XmlAdapter<String, Calendar>
+    extends XmlAdapter<String, Integer>
 {
 
 
-    public Calendar unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseTime(value));
+    public Integer unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseInt(value));
     }
 
-    public String marshal(Calendar value) {
-        return (org.openestate.io.trovit.TrovitUtils.printTime(value));
+    public String marshal(Integer value) {
+        return (org.openestate.io.trovit.TrovitUtils.printInt(value));
     }
 
 }

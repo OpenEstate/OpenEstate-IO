@@ -12,13 +12,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="operation">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="write"/>
- *     &lt;enumeration value="force"/>
- *     &lt;enumeration value="delete"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="operation"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="write"/&gt;
+ *     &lt;enumeration value="force"/&gt;
+ *     &lt;enumeration value="delete"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

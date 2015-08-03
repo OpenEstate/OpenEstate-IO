@@ -38,11 +38,11 @@ public class Gesamtmietenetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double value;
     @XmlAttribute(name = "gesamtmieteust")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double gesamtmieteust;
 

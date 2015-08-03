@@ -12,22 +12,22 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ObjektZustandTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Erstbezug"/>
- *     &lt;enumeration value="Neuwertig"/>
- *     &lt;enumeration value="VollstaendigReonviert"/>
- *     &lt;enumeration value="Renovierungsbeduerftig"/>
- *     &lt;enumeration value="Modernisiert"/>
- *     &lt;enumeration value="NachVereinbarung"/>
- *     &lt;enumeration value="Gepflegt"/>
- *     &lt;enumeration value="ErstbezugNachSanierung"/>
- *     &lt;enumeration value="Saniert"/>
- *     &lt;enumeration value="Unrenoviert"/>
- *     &lt;enumeration value="Abbruchreif"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ObjektZustandTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Erstbezug"/&gt;
+ *     &lt;enumeration value="Neuwertig"/&gt;
+ *     &lt;enumeration value="VollstaendigReonviert"/&gt;
+ *     &lt;enumeration value="Renovierungsbeduerftig"/&gt;
+ *     &lt;enumeration value="Modernisiert"/&gt;
+ *     &lt;enumeration value="NachVereinbarung"/&gt;
+ *     &lt;enumeration value="Gepflegt"/&gt;
+ *     &lt;enumeration value="ErstbezugNachSanierung"/&gt;
+ *     &lt;enumeration value="Saniert"/&gt;
+ *     &lt;enumeration value="Unrenoviert"/&gt;
+ *     &lt;enumeration value="Abbruchreif"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

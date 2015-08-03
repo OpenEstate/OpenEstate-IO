@@ -68,7 +68,7 @@ public class Geo
     protected String flurstueck;
     protected String gemarkung;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
     protected Integer etage;
     @XmlElement(name = "lage_im_bau")

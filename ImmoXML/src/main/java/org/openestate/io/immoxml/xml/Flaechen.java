@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
@@ -79,113 +80,148 @@ public class Flaechen
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double wohnflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double nutzflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double gesamtflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double ladenflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double lagerflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double verkaufsflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double freiflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double bueroflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double bueroteilflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double fensterfront;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double verwaltungsflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double gastroflaeche;
     protected String grz;
     protected String gfz;
     protected String bmz;
     protected String bgf;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double grundstuecksflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double sonstflaeche;
     @XmlElement(name = "anzahl_zimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlZimmer;
     @XmlElement(name = "anzahl_schlafzimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlSchlafzimmer;
     @XmlElement(name = "anzahl_badezimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlBadezimmer;
     @XmlElement(name = "anzahl_sep_wc", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlSepWc;
     @XmlElement(name = "anzahl_balkon_terrassen", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlBalkonTerrassen;
     @XmlElement(name = "balkon_terrasse_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double balkonTerrasseFlaeche;
     @XmlElement(name = "anzahl_wohn_schlafzimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlWohnSchlafzimmer;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double gartenflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double kellerflaeche;
     @XmlElement(name = "fensterfront_qm", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double fensterfrontQm;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double grundstuecksfront;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double dachbodenflaeche;
     @XmlElement(name = "teilbar_ab", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double teilbarAb;
     @XmlElement(name = "beheizbare_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double beheizbareFlaeche;
     @XmlElement(name = "anzahl_stellplaetze", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlStellplaetze;
     @XmlElement(name = "plaetze_gastraum", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double plaetzeGastraum;
     @XmlElement(name = "anzahl_betten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlBetten;
     @XmlElement(name = "anzahl_tagungsraeume", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlTagungsraeume;
     @XmlElement(name = "vermietbare_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double vermietbareFlaeche;
     @XmlElement(name = "anzahl_wohneinheiten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlWohneinheiten;
     @XmlElement(name = "anzahl_gewerbeeinheiten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double anzahlGewerbeeinheiten;
     protected Boolean einliegerwohnung;
     @XmlElement(name = "user_defined_simplefield")

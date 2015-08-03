@@ -66,11 +66,11 @@ public class VerwaltungObjekt
     @XmlElement(name = "verfuegbar_ab")
     protected String verfuegbarAb;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar abdatum;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar bisdatum;
     @XmlElement(name = "min_mietdauer")
@@ -78,7 +78,7 @@ public class VerwaltungObjekt
     @XmlElement(name = "max_mietdauer")
     protected MaxMietdauer maxMietdauer;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar versteigerungstermin;
     @XmlElement(name = "wbs_sozialwohnung")
@@ -87,7 +87,7 @@ public class VerwaltungObjekt
     protected String gruppennummer;
     protected String zugang;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double laufzeit;
     @XmlElement(name = "max_personen", type = String.class)

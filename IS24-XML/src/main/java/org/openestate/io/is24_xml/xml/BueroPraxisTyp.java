@@ -27,26 +27,26 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="BueroPraxisTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}BueroPraxisKategorienTyp" default="keineAngabe" />
- *       &lt;attribute name="BueroPraxisFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" default="keineAngabe" />
- *       &lt;attribute name="DatenVerkabelung" type="{http://www.immobilienscout24.de/immobilientransfer}DatenVerkabelungsTyp" default="keineAngabe" />
- *       &lt;attribute name="Klimaanlage" type="{http://www.immobilienscout24.de/immobilientransfer}JaNeinVereinbarungTyp" default="keineAngabe" />
- *       &lt;attribute name="Kantine" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Barrierefrei" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="KuecheVorhanden" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Starkstrom" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="BueroPraxisTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}BueroPraxisKategorienTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="BueroPraxisFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="DatenVerkabelung" type="{http://www.immobilienscout24.de/immobilientransfer}DatenVerkabelungsTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Klimaanlage" type="{http://www.immobilienscout24.de/immobilientransfer}JaNeinVereinbarungTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Kantine" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Barrierefrei" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="KuecheVorhanden" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Starkstrom" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -68,7 +68,7 @@ public class BueroPraxisTyp
     @XmlAttribute(name = "Objektkategorie2")
     protected BueroPraxisKategorienTyp objektkategorie2;
     @XmlAttribute(name = "BueroPraxisFlaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double bueroPraxisFlaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;

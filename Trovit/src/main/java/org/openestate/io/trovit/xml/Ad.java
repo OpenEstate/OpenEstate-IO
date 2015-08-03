@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
@@ -29,47 +30,47 @@ import org.openestate.io.trovit.xml.types.IntBool;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element ref="{}id"/>
- *         &lt;element ref="{}url"/>
- *         &lt;element ref="{}title"/>
- *         &lt;element ref="{}type"/>
- *         &lt;element ref="{}content"/>
- *         &lt;element ref="{}date"/>
- *         &lt;element ref="{}expiration_date" minOccurs="0"/>
- *         &lt;element ref="{}is_new" minOccurs="0"/>
- *         &lt;element ref="{}city" minOccurs="0"/>
- *         &lt;element ref="{}price" minOccurs="0"/>
- *         &lt;element ref="{}time" minOccurs="0"/>
- *         &lt;element ref="{}agency" minOccurs="0"/>
- *         &lt;element ref="{}property_type" minOccurs="0"/>
- *         &lt;element ref="{}floor_area" minOccurs="0"/>
- *         &lt;element ref="{}rooms" minOccurs="0"/>
- *         &lt;element ref="{}bathrooms" minOccurs="0"/>
- *         &lt;element ref="{}parking" minOccurs="0"/>
- *         &lt;element ref="{}address" minOccurs="0"/>
- *         &lt;element ref="{}city_area" minOccurs="0"/>
- *         &lt;element ref="{}postcode" minOccurs="0"/>
- *         &lt;element ref="{}region" minOccurs="0"/>
- *         &lt;element ref="{}latitude" minOccurs="0"/>
- *         &lt;element ref="{}longitude" minOccurs="0"/>
- *         &lt;element ref="{}virtual_tour" minOccurs="0"/>
- *         &lt;element ref="{}pictures" minOccurs="0"/>
- *         &lt;element ref="{}plot_area" minOccurs="0"/>
- *         &lt;element ref="{}floor_number" minOccurs="0"/>
- *         &lt;element ref="{}orientation" minOccurs="0"/>
- *         &lt;element ref="{}condition" minOccurs="0"/>
- *         &lt;element ref="{}foreclosure" minOccurs="0"/>
- *         &lt;element ref="{}mls_database" minOccurs="0"/>
- *         &lt;element ref="{}is_furnished" minOccurs="0"/>
- *         &lt;element ref="{}year" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element ref="{}id"/&gt;
+ *         &lt;element ref="{}url"/&gt;
+ *         &lt;element ref="{}title"/&gt;
+ *         &lt;element ref="{}type"/&gt;
+ *         &lt;element ref="{}content"/&gt;
+ *         &lt;element ref="{}date"/&gt;
+ *         &lt;element ref="{}expiration_date" minOccurs="0"/&gt;
+ *         &lt;element ref="{}is_new" minOccurs="0"/&gt;
+ *         &lt;element ref="{}city" minOccurs="0"/&gt;
+ *         &lt;element ref="{}price" minOccurs="0"/&gt;
+ *         &lt;element ref="{}time" minOccurs="0"/&gt;
+ *         &lt;element ref="{}agency" minOccurs="0"/&gt;
+ *         &lt;element ref="{}property_type" minOccurs="0"/&gt;
+ *         &lt;element ref="{}floor_area" minOccurs="0"/&gt;
+ *         &lt;element ref="{}rooms" minOccurs="0"/&gt;
+ *         &lt;element ref="{}bathrooms" minOccurs="0"/&gt;
+ *         &lt;element ref="{}parking" minOccurs="0"/&gt;
+ *         &lt;element ref="{}address" minOccurs="0"/&gt;
+ *         &lt;element ref="{}city_area" minOccurs="0"/&gt;
+ *         &lt;element ref="{}postcode" minOccurs="0"/&gt;
+ *         &lt;element ref="{}region" minOccurs="0"/&gt;
+ *         &lt;element ref="{}latitude" minOccurs="0"/&gt;
+ *         &lt;element ref="{}longitude" minOccurs="0"/&gt;
+ *         &lt;element ref="{}virtual_tour" minOccurs="0"/&gt;
+ *         &lt;element ref="{}pictures" minOccurs="0"/&gt;
+ *         &lt;element ref="{}plot_area" minOccurs="0"/&gt;
+ *         &lt;element ref="{}floor_number" minOccurs="0"/&gt;
+ *         &lt;element ref="{}orientation" minOccurs="0"/&gt;
+ *         &lt;element ref="{}condition" minOccurs="0"/&gt;
+ *         &lt;element ref="{}foreclosure" minOccurs="0"/&gt;
+ *         &lt;element ref="{}mls_database" minOccurs="0"/&gt;
+ *         &lt;element ref="{}is_furnished" minOccurs="0"/&gt;
+ *         &lt;element ref="{}year" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -93,39 +94,42 @@ public class Ad
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String title;
     @XmlElement(required = true, type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     protected Action type;
     @XmlElement(required = true)
     protected String content;
     @XmlElement(required = true, type = String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     protected Calendar date;
     @XmlElement(name = "expiration_date", type = String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     protected Calendar expirationDate;
     @XmlElement(name = "is_new")
+    @XmlSchemaType(name = "string")
     protected TypeNew isNew;
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String city;
     protected Price price;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter8 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "anySimpleType")
     protected Calendar time;
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String agency;
     @XmlElement(name = "property_type")
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String propertyType;
     @XmlElement(name = "floor_area")
     protected FloorArea floorArea;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Double rooms;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Double bathrooms;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlSchemaType(name = "anySimpleType")
     protected IntBool parking;
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String address;
@@ -137,24 +141,27 @@ public class Ad
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String region;
     @XmlElement(type = String.class, nillable = true)
-    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlSchemaType(name = "anySimpleType")
     protected Double latitude;
     @XmlElement(type = String.class, nillable = true)
-    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlSchemaType(name = "anySimpleType")
     protected Double longitude;
     @XmlElement(name = "virtual_tour")
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String virtualTour;
     protected Pictures pictures;
     @XmlElement(name = "plot_area", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter8 .class)
+    @XmlSchemaType(name = "anySimpleType")
     protected Integer plotArea;
     @XmlElement(name = "floor_number")
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String floorNumber;
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String orientation;
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String condition;
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String foreclosure;
@@ -162,10 +169,12 @@ public class Ad
     @XmlJavaTypeAdapter(Adapter1 .class)
     protected String mlsDatabase;
     @XmlElement(name = "is_furnished", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlSchemaType(name = "anySimpleType")
     protected IntBool isFurnished;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter9 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "anySimpleType")
     protected Integer year;
 
     /**

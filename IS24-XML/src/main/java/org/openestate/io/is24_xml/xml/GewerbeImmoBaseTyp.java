@@ -27,32 +27,32 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="GewerbeImmoBaseTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="BefeuerungsArt" type="{http://www.immobilienscout24.de/immobilientransfer}BefeuerungsArtTyp" minOccurs="0"/>
- *         &lt;element name="Energieausweis" type="{http://www.immobilienscout24.de/immobilientransfer}EnergieausweisTyp" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Nebenflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="TeilbarAb" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Etagen" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *       &lt;attribute name="FreiAb" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *       &lt;attribute name="Baujahr" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" />
- *       &lt;attribute name="Objektzustand" type="{http://www.immobilienscout24.de/immobilientransfer}ObjektZustandTyp" default="keineAngabe" />
- *       &lt;attribute name="Personenaufzug" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="AnzahlParkflaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" />
- *       &lt;attribute name="FusswegOeNV" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
- *       &lt;attribute name="FahrzeitBHf" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
- *       &lt;attribute name="FahrzeitBAB" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" />
- *       &lt;attribute name="FahrzeitFlughafen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" />
- *       &lt;attribute name="Heizungsart" type="{http://www.immobilienscout24.de/immobilientransfer}HeizungsartTyp" />
- *       &lt;attribute name="JahrLetzteModernisierung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" />
- *       &lt;attribute name="Ausstattungsqualitaet" type="{http://www.immobilienscout24.de/immobilientransfer}AusstattungsqualitaetsTyp" default="KeineAngabe" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="GewerbeImmoBaseTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="BefeuerungsArt" type="{http://www.immobilienscout24.de/immobilientransfer}BefeuerungsArtTyp" minOccurs="0"/&gt;
+ *         &lt;element name="Energieausweis" type="{http://www.immobilienscout24.de/immobilientransfer}EnergieausweisTyp" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Nebenflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="TeilbarAb" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Etagen" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *       &lt;attribute name="FreiAb" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *       &lt;attribute name="Baujahr" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" /&gt;
+ *       &lt;attribute name="Objektzustand" type="{http://www.immobilienscout24.de/immobilientransfer}ObjektZustandTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Personenaufzug" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="AnzahlParkflaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" /&gt;
+ *       &lt;attribute name="FusswegOeNV" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+ *       &lt;attribute name="FahrzeitBHf" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+ *       &lt;attribute name="FahrzeitBAB" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" /&gt;
+ *       &lt;attribute name="FahrzeitFlughafen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" /&gt;
+ *       &lt;attribute name="Heizungsart" type="{http://www.immobilienscout24.de/immobilientransfer}HeizungsartTyp" /&gt;
+ *       &lt;attribute name="JahrLetzteModernisierung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" /&gt;
+ *       &lt;attribute name="Ausstattungsqualitaet" type="{http://www.immobilienscout24.de/immobilientransfer}AusstattungsqualitaetsTyp" default="KeineAngabe" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -63,12 +63,12 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "energieausweis"
 })
 @XmlSeeAlso({
-    GastronomieTyp.class,
-    EinzelhandelTyp.class,
     BueroPraxisTyp.class,
+    EinzelhandelTyp.class,
+    GastronomieTyp.class,
     HalleProduktionTyp.class,
-    AnlageObjektTyp.class,
-    SonstigeGewerbeTyp.class
+    SonstigeGewerbeTyp.class,
+    AnlageObjektTyp.class
 })
 public abstract class GewerbeImmoBaseTyp
     extends ImmobilieBaseTyp
@@ -80,46 +80,46 @@ public abstract class GewerbeImmoBaseTyp
     @XmlElement(name = "Energieausweis")
     protected EnergieausweisTyp energieausweis;
     @XmlAttribute(name = "Gesamtflaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double gesamtflaeche;
     @XmlAttribute(name = "Nebenflaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double nebenflaeche;
     @XmlAttribute(name = "TeilbarAb")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double teilbarAb;
     @XmlAttribute(name = "Etagen")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String etagen;
     @XmlAttribute(name = "FreiAb")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String freiAb;
     @XmlAttribute(name = "Baujahr")
-    @XmlJavaTypeAdapter(Adapter16 .class)
+    @XmlJavaTypeAdapter(Adapter22 .class)
     protected Long baujahr;
     @XmlAttribute(name = "Objektzustand")
     protected ObjektZustandTyp objektzustand;
     @XmlAttribute(name = "Personenaufzug")
     protected Boolean personenaufzug;
     @XmlAttribute(name = "AnzahlParkflaechen")
-    @XmlJavaTypeAdapter(Adapter33 .class)
+    @XmlJavaTypeAdapter(Adapter23 .class)
     protected Long anzahlParkflaechen;
     @XmlAttribute(name = "FusswegOeNV")
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter19 .class)
     protected Long fusswegOeNV;
     @XmlAttribute(name = "FahrzeitBHf")
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter19 .class)
     protected Long fahrzeitBHf;
     @XmlAttribute(name = "FahrzeitBAB")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter21 .class)
     protected Long fahrzeitBAB;
     @XmlAttribute(name = "FahrzeitFlughafen")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter21 .class)
     protected Long fahrzeitFlughafen;
     @XmlAttribute(name = "Heizungsart")
     protected HeizungsartTyp heizungsart;
     @XmlAttribute(name = "JahrLetzteModernisierung")
-    @XmlJavaTypeAdapter(Adapter16 .class)
+    @XmlJavaTypeAdapter(Adapter22 .class)
     protected Long jahrLetzteModernisierung;
     @XmlAttribute(name = "Ausstattungsqualitaet")
     protected AusstattungsqualitaetsTyp ausstattungsqualitaet;

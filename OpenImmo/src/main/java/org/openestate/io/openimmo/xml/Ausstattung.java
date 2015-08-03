@@ -130,14 +130,14 @@ public class Ausstattung
     protected Boolean kran;
     protected Boolean gastterrasse;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double stromanschlusswert;
     @XmlElement(name = "kantine_cafeteria")
     protected Boolean kantineCafeteria;
     protected Boolean teekueche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double hallenhoehe;
     @XmlElement(name = "angeschl_gastronomie")

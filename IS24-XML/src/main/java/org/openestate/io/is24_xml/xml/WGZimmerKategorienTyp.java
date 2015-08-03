@@ -12,21 +12,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="WGZimmerKategorienTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Dachgeschoss"/>
- *     &lt;enumeration value="Loft"/>
- *     &lt;enumeration value="Maisonette"/>
- *     &lt;enumeration value="Penthouse"/>
- *     &lt;enumeration value="Terrassenwohnung"/>
- *     &lt;enumeration value="Erdgeschoss"/>
- *     &lt;enumeration value="Etagenwohnung"/>
- *     &lt;enumeration value="Hochparterre"/>
- *     &lt;enumeration value="Souterrain"/>
- *     &lt;enumeration value="Sonstige"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="WGZimmerKategorienTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Dachgeschoss"/&gt;
+ *     &lt;enumeration value="Loft"/&gt;
+ *     &lt;enumeration value="Maisonette"/&gt;
+ *     &lt;enumeration value="Penthouse"/&gt;
+ *     &lt;enumeration value="Terrassenwohnung"/&gt;
+ *     &lt;enumeration value="Erdgeschoss"/&gt;
+ *     &lt;enumeration value="Etagenwohnung"/&gt;
+ *     &lt;enumeration value="Hochparterre"/&gt;
+ *     &lt;enumeration value="Souterrain"/&gt;
+ *     &lt;enumeration value="Sonstige"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

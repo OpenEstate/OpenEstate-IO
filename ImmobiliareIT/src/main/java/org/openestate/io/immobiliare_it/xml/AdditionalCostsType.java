@@ -28,19 +28,19 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="additionalCostsType">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>integer">
- *       &lt;attribute name="currency" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;pattern value="[a-zA-Z]{3}"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="additionalCostsType"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;integer"&gt;
+ *       &lt;attribute name="currency" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;pattern value="[a-zA-Z]{3}"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -58,7 +58,7 @@ public class AdditionalCostsType
     @XmlSchemaType(name = "integer")
     protected Long value;
     @XmlAttribute(name = "currency", required = true)
-    @XmlJavaTypeAdapter(Adapter20 .class)
+    @XmlJavaTypeAdapter(Adapter11 .class)
     protected Currency currency;
 
     /**

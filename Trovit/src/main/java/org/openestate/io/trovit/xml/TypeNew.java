@@ -12,12 +12,12 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="typeNew">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="1"/>
- *     &lt;enumeration value="0"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="typeNew"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="1"/&gt;
+ *     &lt;enumeration value="0"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

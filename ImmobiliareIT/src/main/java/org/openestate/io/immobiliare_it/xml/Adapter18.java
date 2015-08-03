@@ -2,18 +2,19 @@
 package org.openestate.io.immobiliare_it.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import org.openestate.io.immobiliare_it.xml.types.SizeUnit;
 
 public class Adapter18
-    extends XmlAdapter<String, Boolean>
+    extends XmlAdapter<String, SizeUnit>
 {
 
 
-    public Boolean unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo(value));
+    public SizeUnit unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseSizeUnit(value));
     }
 
-    public String marshal(Boolean value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo(value));
+    public String marshal(SizeUnit value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printSizeUnit(value));
     }
 
 }

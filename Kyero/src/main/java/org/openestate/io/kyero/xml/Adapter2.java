@@ -13,7 +13,7 @@ public class Adapter2
     }
 
     public String marshal(Long value) {
-        return (org.openestate.io.kyero.KyeroUtils.printNonNegativeInteger(value));
+        return (org.openestate.io.kyero.KyeroUtils.printInteger(value));
     }
 
 }

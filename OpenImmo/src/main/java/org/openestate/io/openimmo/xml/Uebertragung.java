@@ -53,7 +53,7 @@ public class Uebertragung
     @XmlAttribute(name = "regi_id")
     protected String regiId;
     @XmlAttribute(name = "timestamp")
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
     protected Calendar timestamp;
 

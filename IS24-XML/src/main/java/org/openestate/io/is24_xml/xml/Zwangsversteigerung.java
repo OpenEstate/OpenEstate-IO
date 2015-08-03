@@ -44,24 +44,24 @@ public class Zwangsversteigerung
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungTyp">
-     *       &lt;sequence>
-     *         &lt;element name="Aenderungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-     *         &lt;element name="Amtsgericht" type="{http://www.immobilienscout24.de/immobilientransfer}AmtsgerichtTyp"/>
-     *         &lt;element name="Aufhebungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-     *         &lt;element name="Eigentuemer" type="{http://www.immobilienscout24.de/immobilientransfer}Text80Typ"/>
-     *         &lt;element name="Erfassungsdatum" type="{http://www.w3.org/2001/XMLSchema}date"/>
-     *         &lt;element name="Grundbuchblattnummer" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ"/>
-     *         &lt;element name="Objektart" type="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungKategorieTyp"/>
-     *         &lt;element name="Preis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ"/>
-     *         &lt;element name="Versteigerungstermin" type="{http://www.immobilienscout24.de/immobilientransfer}VersteigerungsterminTyp"/>
-     *       &lt;/sequence>
-     *       &lt;attribute name="Gesamtflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
-     *     &lt;/extension>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungTyp"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Aenderungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
+     *         &lt;element name="Amtsgericht" type="{http://www.immobilienscout24.de/immobilientransfer}AmtsgerichtTyp"/&gt;
+     *         &lt;element name="Aufhebungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
+     *         &lt;element name="Eigentuemer" type="{http://www.immobilienscout24.de/immobilientransfer}Text80Typ"/&gt;
+     *         &lt;element name="Erfassungsdatum" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+     *         &lt;element name="Grundbuchblattnummer" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ"/&gt;
+     *         &lt;element name="Objektart" type="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungKategorieTyp"/&gt;
+     *         &lt;element name="Preis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ"/&gt;
+     *         &lt;element name="Versteigerungstermin" type="{http://www.immobilienscout24.de/immobilientransfer}VersteigerungsterminTyp"/&gt;
+     *       &lt;/sequence&gt;
+     *       &lt;attribute name="Gesamtflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -94,24 +94,26 @@ public class Zwangsversteigerung
         @XmlSchemaType(name = "date")
         protected Calendar aufhebungsdatum;
         @XmlElement(name = "Eigentuemer", required = true)
-        @XmlJavaTypeAdapter(Adapter18 .class)
+        @XmlJavaTypeAdapter(Adapter8 .class)
         protected String eigentuemer;
         @XmlElement(name = "Erfassungsdatum", required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter1 .class)
         @XmlSchemaType(name = "date")
         protected Calendar erfassungsdatum;
         @XmlElement(name = "Grundbuchblattnummer", required = true)
-        @XmlJavaTypeAdapter(Adapter26 .class)
+        @XmlJavaTypeAdapter(Adapter6 .class)
         protected String grundbuchblattnummer;
         @XmlElement(name = "Objektart", required = true)
+        @XmlSchemaType(name = "string")
         protected ZwangsversteigerungKategorieTyp objektart;
         @XmlElement(name = "Preis", required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter22 .class)
+        @XmlJavaTypeAdapter(Adapter35 .class)
+        @XmlSchemaType(name = "decimal")
         protected Double preis;
         @XmlElement(name = "Versteigerungstermin", required = true)
         protected VersteigerungsterminTyp versteigerungstermin;
         @XmlAttribute(name = "Gesamtflaeche", required = true)
-        @XmlJavaTypeAdapter(Adapter35 .class)
+        @XmlJavaTypeAdapter(Adapter34 .class)
         protected Double gesamtflaeche;
 
         /**

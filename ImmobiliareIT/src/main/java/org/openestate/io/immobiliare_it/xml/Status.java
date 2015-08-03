@@ -12,19 +12,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="status">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="in costruzione"/>
- *     &lt;enumeration value="nuovo"/>
- *     &lt;enumeration value="abitabile"/>
- *     &lt;enumeration value="ottimo"/>
- *     &lt;enumeration value="buono"/>
- *     &lt;enumeration value="ristrutturato"/>
- *     &lt;enumeration value="da ristrutturare"/>
- *     &lt;enumeration value="discreto"/>
- *     &lt;enumeration value="nd"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="status"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="in costruzione"/&gt;
+ *     &lt;enumeration value="nuovo"/&gt;
+ *     &lt;enumeration value="abitabile"/&gt;
+ *     &lt;enumeration value="ottimo"/&gt;
+ *     &lt;enumeration value="buono"/&gt;
+ *     &lt;enumeration value="ristrutturato"/&gt;
+ *     &lt;enumeration value="da ristrutturare"/&gt;
+ *     &lt;enumeration value="discreto"/&gt;
+ *     &lt;enumeration value="nd"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

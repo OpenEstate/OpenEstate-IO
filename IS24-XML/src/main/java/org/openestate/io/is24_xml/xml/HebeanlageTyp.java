@@ -25,13 +25,13 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HebeanlageTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Tragkraft" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="HebeanlageTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Tragkraft" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -43,7 +43,7 @@ public class HebeanlageTyp
 {
 
     @XmlAttribute(name = "Tragkraft")
-    @XmlJavaTypeAdapter(Adapter27 .class)
+    @XmlJavaTypeAdapter(Adapter33 .class)
     protected Double tragkraft;
 
     /**

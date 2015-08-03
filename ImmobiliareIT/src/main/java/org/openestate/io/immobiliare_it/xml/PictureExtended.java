@@ -24,13 +24,13 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="pictureExtended">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://feed.immobiliare.it>pictureProject">
- *       &lt;attribute name="url" type="{http://www.w3.org/2001/XMLSchema}string" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="pictureExtended"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://feed.immobiliare.it&gt;pictureProject"&gt;
+ *       &lt;attribute name="url" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

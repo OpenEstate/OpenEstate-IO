@@ -4,6 +4,7 @@ package org.openestate.io.immobiliare_it.xml;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
 import org.jvnet.jaxb2_commons.lang.CopyTo;
@@ -24,19 +25,19 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="proptype">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="type" type="{http://feed.immobiliare.it}propertyTypeSimple"/>
- *         &lt;sequence>
- *           &lt;element name="business-type" type="{http://feed.immobiliare.it}businessElement"/>
- *           &lt;element name="terrains" type="{http://feed.immobiliare.it}terrains" minOccurs="0"/>
- *         &lt;/sequence>
- *       &lt;/choice>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="proptype"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="type" type="{http://feed.immobiliare.it}propertyTypeSimple"/&gt;
+ *         &lt;sequence&gt;
+ *           &lt;element name="business-type" type="{http://feed.immobiliare.it}businessElement"/&gt;
+ *           &lt;element name="terrains" type="{http://feed.immobiliare.it}terrains" minOccurs="0"/&gt;
+ *         &lt;/sequence&gt;
+ *       &lt;/choice&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -51,6 +52,7 @@ public class Proptype
     implements Cloneable, CopyTo, Equals, ToString
 {
 
+    @XmlSchemaType(name = "string")
     protected PropertyTypeSimple type;
     @XmlElement(name = "business-type")
     protected BusinessElement businessType;

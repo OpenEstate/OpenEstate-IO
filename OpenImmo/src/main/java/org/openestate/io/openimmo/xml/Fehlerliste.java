@@ -171,7 +171,7 @@ public class Fehlerliste
         @XmlElement(name = "objekt_id")
         protected String objektId;
         @XmlElement(type = String.class)
-        @XmlJavaTypeAdapter(Adapter4 .class)
+        @XmlJavaTypeAdapter(Adapter5 .class)
         @XmlSchemaType(name = "int")
         protected Integer fehlernr;
         protected String text;

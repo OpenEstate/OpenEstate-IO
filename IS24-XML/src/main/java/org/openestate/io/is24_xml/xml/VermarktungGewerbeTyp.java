@@ -27,36 +27,36 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VermarktungGewerbeTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="Miete">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;attribute name="Pro" type="{http://www.immobilienscout24.de/immobilientransfer}MieteEinheitTyp" default="Monat" />
- *                 &lt;attribute name="Kaltmiete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" />
- *                 &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Kauf">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/choice>
- *       &lt;attribute name="PreisParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Nebenkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VermarktungGewerbeTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="Miete"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;attribute name="Pro" type="{http://www.immobilienscout24.de/immobilientransfer}MieteEinheitTyp" default="Monat" /&gt;
+ *                 &lt;attribute name="Kaltmiete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
+ *                 &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Kauf"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/choice&gt;
+ *       &lt;attribute name="PreisParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Nebenkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -75,10 +75,10 @@ public class VermarktungGewerbeTyp
     @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
     protected JAXBElement<VermarktungGewerbeTyp.Kauf> kauf;
     @XmlAttribute(name = "PreisParkflaeche")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double preisParkflaeche;
     @XmlAttribute(name = "Nebenkosten")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double nebenkosten;
 
     /**
@@ -329,13 +329,13 @@ public class VermarktungGewerbeTyp
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -347,7 +347,7 @@ public class VermarktungGewerbeTyp
     {
 
         @XmlAttribute(name = "Preis", required = true)
-        @XmlJavaTypeAdapter(Adapter17 .class)
+        @XmlJavaTypeAdapter(Adapter36 .class)
         protected Double preis;
 
         /**
@@ -460,15 +460,15 @@ public class VermarktungGewerbeTyp
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;attribute name="Pro" type="{http://www.immobilienscout24.de/immobilientransfer}MieteEinheitTyp" default="Monat" />
-     *       &lt;attribute name="Kaltmiete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" />
-     *       &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;attribute name="Pro" type="{http://www.immobilienscout24.de/immobilientransfer}MieteEinheitTyp" default="Monat" /&gt;
+     *       &lt;attribute name="Kaltmiete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
+     *       &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -482,10 +482,10 @@ public class VermarktungGewerbeTyp
         @XmlAttribute(name = "Pro")
         protected MieteEinheitTyp pro;
         @XmlAttribute(name = "Kaltmiete", required = true)
-        @XmlJavaTypeAdapter(Adapter17 .class)
+        @XmlJavaTypeAdapter(Adapter36 .class)
         protected Double kaltmiete;
         @XmlAttribute(name = "Kaution")
-        @XmlJavaTypeAdapter(Adapter14 .class)
+        @XmlJavaTypeAdapter(Adapter7 .class)
         protected String kaution;
 
         /**

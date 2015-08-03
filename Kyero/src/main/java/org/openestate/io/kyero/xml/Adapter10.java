@@ -4,16 +4,16 @@ package org.openestate.io.kyero.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter10
-    extends XmlAdapter<String, Boolean>
+    extends XmlAdapter<String, String>
 {
 
 
-    public Boolean unmarshal(String value) {
-        return (org.openestate.io.kyero.KyeroUtils.parseBoolType(value));
+    public String unmarshal(String value) {
+        return (org.openestate.io.kyero.KyeroUtils.parseTypeDataType(value));
     }
 
-    public String marshal(Boolean value) {
-        return (org.openestate.io.kyero.KyeroUtils.printBoolType(value));
+    public String marshal(String value) {
+        return (org.openestate.io.kyero.KyeroUtils.printTypeDataType(value));
     }
 
 }

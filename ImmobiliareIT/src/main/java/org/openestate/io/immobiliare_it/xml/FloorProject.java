@@ -29,27 +29,27 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="floorProject">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>integer">
- *       &lt;attribute name="type">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="Intermedio"/>
- *             &lt;enumeration value="Interrato"/>
- *             &lt;enumeration value="Seminterrato"/>
- *             &lt;enumeration value="PianoTerra"/>
- *             &lt;enumeration value="Rialzato"/>
- *             &lt;enumeration value="PianoNobile"/>
- *             &lt;enumeration value="Multipiano su pi\u00f9 livelli"/>
- *             &lt;enumeration value="Ultimo"/>
- *             &lt;enumeration value="Attico"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="floorProject"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;integer"&gt;
+ *       &lt;attribute name="type"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;enumeration value="Intermedio"/&gt;
+ *             &lt;enumeration value="Interrato"/&gt;
+ *             &lt;enumeration value="Seminterrato"/&gt;
+ *             &lt;enumeration value="PianoTerra"/&gt;
+ *             &lt;enumeration value="Rialzato"/&gt;
+ *             &lt;enumeration value="PianoNobile"/&gt;
+ *             &lt;enumeration value="Multipiano su pi\u00f9 livelli"/&gt;
+ *             &lt;enumeration value="Ultimo"/&gt;
+ *             &lt;enumeration value="Attico"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -223,19 +223,19 @@ public class FloorProject
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="Intermedio"/>
-     *     &lt;enumeration value="Interrato"/>
-     *     &lt;enumeration value="Seminterrato"/>
-     *     &lt;enumeration value="PianoTerra"/>
-     *     &lt;enumeration value="Rialzato"/>
-     *     &lt;enumeration value="PianoNobile"/>
-     *     &lt;enumeration value="Multipiano su pi\u00f9 livelli"/>
-     *     &lt;enumeration value="Ultimo"/>
-     *     &lt;enumeration value="Attico"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="Intermedio"/&gt;
+     *     &lt;enumeration value="Interrato"/&gt;
+     *     &lt;enumeration value="Seminterrato"/&gt;
+     *     &lt;enumeration value="PianoTerra"/&gt;
+     *     &lt;enumeration value="Rialzato"/&gt;
+     *     &lt;enumeration value="PianoNobile"/&gt;
+     *     &lt;enumeration value="Multipiano su pi\u00f9 livelli"/&gt;
+     *     &lt;enumeration value="Ultimo"/&gt;
+     *     &lt;enumeration value="Attico"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */

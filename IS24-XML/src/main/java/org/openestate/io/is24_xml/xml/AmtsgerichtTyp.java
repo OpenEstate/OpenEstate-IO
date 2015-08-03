@@ -26,15 +26,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AmtsgerichtTyp">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.immobilienscout24.de/immobilientransfer>Text40Typ">
- *       &lt;attribute name="BundeslandCode" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}ISOBundeslaenderCodeTyp" />
- *       &lt;attribute name="Telefon" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text15Typ" />
- *       &lt;attribute name="Aktenzeichen" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text15Typ" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="AmtsgerichtTyp"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.immobilienscout24.de/immobilientransfer&gt;Text40Typ"&gt;
+ *       &lt;attribute name="BundeslandCode" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}ISOBundeslaenderCodeTyp" /&gt;
+ *       &lt;attribute name="Telefon" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text15Typ" /&gt;
+ *       &lt;attribute name="Aktenzeichen" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text15Typ" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -48,15 +48,15 @@ public class AmtsgerichtTyp
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter26 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
     protected String value;
     @XmlAttribute(name = "BundeslandCode", required = true)
     protected ISOBundeslaenderCodeTyp bundeslandCode;
     @XmlAttribute(name = "Telefon", required = true)
-    @XmlJavaTypeAdapter(Adapter8 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     protected String telefon;
     @XmlAttribute(name = "Aktenzeichen", required = true)
-    @XmlJavaTypeAdapter(Adapter8 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     protected String aktenzeichen;
 
     /**

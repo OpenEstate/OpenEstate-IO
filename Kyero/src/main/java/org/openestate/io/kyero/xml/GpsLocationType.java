@@ -26,16 +26,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="gpsLocationType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="longitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *         &lt;element name="latitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="gpsLocationType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="longitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *         &lt;element name="latitude" type="{http://www.w3.org/2001/XMLSchema}decimal"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,11 +49,11 @@ public class GpsLocationType
 {
 
     @XmlElement(required = true, type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "decimal")
     protected Double longitude;
     @XmlElement(required = true, type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "decimal")
     protected Double latitude;
 

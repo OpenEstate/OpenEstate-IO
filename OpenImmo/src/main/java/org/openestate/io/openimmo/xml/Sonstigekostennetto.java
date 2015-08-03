@@ -38,11 +38,11 @@ public class Sonstigekostennetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double value;
     @XmlAttribute(name = "sonstigekostenust")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double sonstigekostenust;
 

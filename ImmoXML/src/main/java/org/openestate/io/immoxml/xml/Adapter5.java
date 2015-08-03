@@ -4,16 +4,16 @@ package org.openestate.io.immoxml.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter5
-    extends XmlAdapter<String, Double>
+    extends XmlAdapter<String, Integer>
 {
 
 
-    public Double unmarshal(String value) {
-        return (org.openestate.io.immoxml.ImmoXmlUtils.parseDecimal(value));
+    public Integer unmarshal(String value) {
+        return (org.openestate.io.immoxml.ImmoXmlUtils.parseInteger(value));
     }
 
-    public String marshal(Double value) {
-        return (org.openestate.io.immoxml.ImmoXmlUtils.printDecimal(value));
+    public String marshal(Integer value) {
+        return (org.openestate.io.immoxml.ImmoXmlUtils.printInteger(value));
     }
 
 }

@@ -4,16 +4,16 @@ package org.openestate.io.kyero.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter5
-    extends XmlAdapter<String, Integer>
+    extends XmlAdapter<String, String>
 {
 
 
-    public Integer unmarshal(String value) {
-        return (org.openestate.io.kyero.KyeroUtils.parseImageAttributeType(value));
+    public String unmarshal(String value) {
+        return (org.openestate.io.kyero.KyeroUtils.parseRequiredType(value));
     }
 
-    public String marshal(Integer value) {
-        return (org.openestate.io.kyero.KyeroUtils.printImageAttributeType(value));
+    public String marshal(String value) {
+        return (org.openestate.io.kyero.KyeroUtils.printRequiredType(value));
     }
 
 }

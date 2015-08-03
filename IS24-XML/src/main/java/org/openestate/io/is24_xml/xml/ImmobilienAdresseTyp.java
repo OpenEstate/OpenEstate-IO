@@ -22,14 +22,14 @@ import org.jvnet.jaxb2_commons.locator.ObjectLocator;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ImmobilienAdresseTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilienAdresseBaseTyp">
- *       &lt;attribute name="Postleitzahl" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text20Typ" />
- *       &lt;attribute name="Ort" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ImmobilienAdresseTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilienAdresseBaseTyp"&gt;
+ *       &lt;attribute name="Postleitzahl" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text20Typ" /&gt;
+ *       &lt;attribute name="Ort" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

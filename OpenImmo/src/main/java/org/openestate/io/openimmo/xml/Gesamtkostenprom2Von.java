@@ -38,11 +38,11 @@ public class Gesamtkostenprom2Von
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double value;
     @XmlAttribute(name = "gesamtkostenprom2bis")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double gesamtkostenprom2Bis;
 

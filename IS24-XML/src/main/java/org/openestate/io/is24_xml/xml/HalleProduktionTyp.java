@@ -27,26 +27,26 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HalleProduktionTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/>
- *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/>
- *         &lt;element name="Kranbahn" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}HalleProduktionKategorieTyp" default="keineAngabe" />
- *       &lt;attribute name="LagerProduktionsFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" />
- *       &lt;attribute name="Hebebuehne" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Hallenhoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Bodenbelastung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" />
- *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Stromanschlusswert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="HalleProduktionTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/&gt;
+ *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/&gt;
+ *         &lt;element name="Kranbahn" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}HalleProduktionKategorieTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="LagerProduktionsFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" /&gt;
+ *       &lt;attribute name="Hebebuehne" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Hallenhoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Bodenbelastung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" /&gt;
+ *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Stromanschlusswert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -74,25 +74,25 @@ public class HalleProduktionTyp
     @XmlAttribute(name = "Objektkategorie2")
     protected HalleProduktionKategorieTyp objektkategorie2;
     @XmlAttribute(name = "LagerProduktionsFlaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double lagerProduktionsFlaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Hebebuehne")
     protected Boolean hebebuehne;
     @XmlAttribute(name = "Hallenhoehe")
-    @XmlJavaTypeAdapter(Adapter13 .class)
+    @XmlJavaTypeAdapter(Adapter30 .class)
     protected Double hallenhoehe;
     @XmlAttribute(name = "Rampe")
     protected Boolean rampe;
     @XmlAttribute(name = "Bodenbelastung")
-    @XmlJavaTypeAdapter(Adapter27 .class)
+    @XmlJavaTypeAdapter(Adapter33 .class)
     protected Double bodenbelastung;
     @XmlAttribute(name = "GrundstuecksFlaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double grundstuecksFlaeche;
     @XmlAttribute(name = "Stromanschlusswert")
-    @XmlJavaTypeAdapter(Adapter33 .class)
+    @XmlJavaTypeAdapter(Adapter23 .class)
     protected Long stromanschlusswert;
 
     /**

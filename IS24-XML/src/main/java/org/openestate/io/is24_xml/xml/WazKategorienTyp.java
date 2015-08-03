@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="WazKategorienTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Zimmer"/>
- *     &lt;enumeration value="Appartment"/>
- *     &lt;enumeration value="Wohnung"/>
- *     &lt;enumeration value="Haus"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="WazKategorienTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Zimmer"/&gt;
+ *     &lt;enumeration value="Appartment"/&gt;
+ *     &lt;enumeration value="Wohnung"/&gt;
+ *     &lt;enumeration value="Haus"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

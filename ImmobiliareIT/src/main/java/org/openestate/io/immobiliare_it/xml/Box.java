@@ -29,22 +29,22 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="box">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>integer">
- *       &lt;attribute name="type">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="No"/>
- *             &lt;enumeration value="Box"/>
- *             &lt;enumeration value="Rimessa"/>
- *             &lt;enumeration value="PostoAuto"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="box"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;integer"&gt;
+ *       &lt;attribute name="type"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;enumeration value="No"/&gt;
+ *             &lt;enumeration value="Box"/&gt;
+ *             &lt;enumeration value="Rimessa"/&gt;
+ *             &lt;enumeration value="PostoAuto"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -218,14 +218,14 @@ public class Box
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="No"/>
-     *     &lt;enumeration value="Box"/>
-     *     &lt;enumeration value="Rimessa"/>
-     *     &lt;enumeration value="PostoAuto"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="No"/&gt;
+     *     &lt;enumeration value="Box"/&gt;
+     *     &lt;enumeration value="Rimessa"/&gt;
+     *     &lt;enumeration value="PostoAuto"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */

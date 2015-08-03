@@ -11,13 +11,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="currencyType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="EUR"/>
- *     &lt;enumeration value="GBP"/>
- *     &lt;enumeration value="USD"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="currencyType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EUR"/&gt;
+ *     &lt;enumeration value="GBP"/&gt;
+ *     &lt;enumeration value="USD"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -28,19 +28,19 @@ import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="landSizeType">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>integer">
- *       &lt;attribute name="unit">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;pattern value="m2|sft|ha"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="landSizeType"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;integer"&gt;
+ *       &lt;attribute name="unit"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;pattern value="m2|sft|ha"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -58,7 +58,7 @@ public class LandSizeType
     @XmlSchemaType(name = "integer")
     protected Long value;
     @XmlAttribute(name = "unit")
-    @XmlJavaTypeAdapter(Adapter21 .class)
+    @XmlJavaTypeAdapter(Adapter17 .class)
     protected LandSizeUnit unit;
 
     /**

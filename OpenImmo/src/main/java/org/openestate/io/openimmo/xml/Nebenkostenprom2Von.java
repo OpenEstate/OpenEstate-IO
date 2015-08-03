@@ -38,11 +38,11 @@ public class Nebenkostenprom2Von
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double value;
     @XmlAttribute(name = "nebenkostenprom2bis")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double nebenkostenprom2Bis;
 

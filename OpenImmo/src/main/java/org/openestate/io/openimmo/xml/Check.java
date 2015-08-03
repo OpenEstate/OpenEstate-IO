@@ -41,7 +41,7 @@ public class Check
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
     protected Calendar value;
     @XmlAttribute(name = "ctype", required = true)

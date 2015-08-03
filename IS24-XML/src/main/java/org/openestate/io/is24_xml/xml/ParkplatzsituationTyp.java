@@ -12,15 +12,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ParkplatzsituationTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="guteParkmoeglichkeit"/>
- *     &lt;enumeration value="schlechteParkmoeglichkeit"/>
- *     &lt;enumeration value="Bewohnerparken"/>
- *     &lt;enumeration value="eigenerStellplatzGarage"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ParkplatzsituationTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="guteParkmoeglichkeit"/&gt;
+ *     &lt;enumeration value="schlechteParkmoeglichkeit"/&gt;
+ *     &lt;enumeration value="Bewohnerparken"/&gt;
+ *     &lt;enumeration value="eigenerStellplatzGarage"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -2,19 +2,18 @@
 package org.openestate.io.trovit.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.trovit.xml.types.Action;
 
 public class Adapter7
-    extends XmlAdapter<String, Action>
+    extends XmlAdapter<String, String>
 {
 
 
-    public Action unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseAction(value));
+    public String unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseString100(value));
     }
 
-    public String marshal(Action value) {
-        return (org.openestate.io.trovit.TrovitUtils.printAction(value));
+    public String marshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.printString100(value));
     }
 
 }

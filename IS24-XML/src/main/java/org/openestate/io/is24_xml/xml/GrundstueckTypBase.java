@@ -28,22 +28,22 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="GrundstueckTypBase">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp">
- *       &lt;attribute name="GrundstuecksFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="TeilbarAb" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl8Typ" />
- *       &lt;attribute name="BebaubarNach" type="{http://www.immobilienscout24.de/immobilientransfer}BebaubarNachTyp" />
- *       &lt;attribute name="BaugenehmigungVorhanden" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="AbrissErforderlich" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="GRZ" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" />
- *       &lt;attribute name="GFZ" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" />
- *       &lt;attribute name="Erschliessungszustand" type="{http://www.immobilienscout24.de/immobilientransfer}ErschliessungszustandTyp" />
- *       &lt;attribute name="KurzfristigBebaubar" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="FreiAb" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="GrundstueckTypBase"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp"&gt;
+ *       &lt;attribute name="GrundstuecksFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="TeilbarAb" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl8Typ" /&gt;
+ *       &lt;attribute name="BebaubarNach" type="{http://www.immobilienscout24.de/immobilientransfer}BebaubarNachTyp" /&gt;
+ *       &lt;attribute name="BaugenehmigungVorhanden" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="AbrissErforderlich" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="GRZ" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" /&gt;
+ *       &lt;attribute name="GFZ" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" /&gt;
+ *       &lt;attribute name="Erschliessungszustand" type="{http://www.immobilienscout24.de/immobilientransfer}ErschliessungszustandTyp" /&gt;
+ *       &lt;attribute name="KurzfristigBebaubar" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="FreiAb" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -51,10 +51,10 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GrundstueckTypBase")
 @XmlSeeAlso({
-    org.openestate.io.is24_xml.xml.GrundstueckWohnenMiete.Type.class,
     Grundstueck.class,
-    org.openestate.io.is24_xml.xml.GrundstueckGewerbe.Type.class,
-    org.openestate.io.is24_xml.xml.GrundstueckWohnenKauf.Type.class
+    org.openestate.io.is24_xml.xml.GrundstueckWohnenKauf.Type.class,
+    org.openestate.io.is24_xml.xml.GrundstueckWohnenMiete.Type.class,
+    org.openestate.io.is24_xml.xml.GrundstueckGewerbe.Type.class
 })
 public abstract class GrundstueckTypBase
     extends ImmobilieBaseTyp
@@ -62,10 +62,10 @@ public abstract class GrundstueckTypBase
 {
 
     @XmlAttribute(name = "GrundstuecksFlaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double grundstuecksFlaeche;
     @XmlAttribute(name = "TeilbarAb")
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter24 .class)
     protected Long teilbarAb;
     @XmlAttribute(name = "BebaubarNach")
     protected BebaubarNachTyp bebaubarNach;
@@ -74,17 +74,17 @@ public abstract class GrundstueckTypBase
     @XmlAttribute(name = "AbrissErforderlich")
     protected Boolean abrissErforderlich;
     @XmlAttribute(name = "GRZ")
-    @XmlJavaTypeAdapter(Adapter20 .class)
+    @XmlJavaTypeAdapter(Adapter28 .class)
     protected Double grz;
     @XmlAttribute(name = "GFZ")
-    @XmlJavaTypeAdapter(Adapter20 .class)
+    @XmlJavaTypeAdapter(Adapter28 .class)
     protected Double gfz;
     @XmlAttribute(name = "Erschliessungszustand")
     protected ErschliessungszustandTyp erschliessungszustand;
     @XmlAttribute(name = "KurzfristigBebaubar")
     protected Boolean kurzfristigBebaubar;
     @XmlAttribute(name = "FreiAb")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String freiAb;
 
     /**

@@ -12,22 +12,22 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="propertyType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="bauernhof"/>
- *     &lt;enumeration value="baugrund"/>
- *     &lt;enumeration value="buero"/>
- *     &lt;enumeration value="einfamilienhaus"/>
- *     &lt;enumeration value="garage"/>
- *     &lt;enumeration value="gastgewerbeobjekt"/>
- *     &lt;enumeration value="geschaeft"/>
- *     &lt;enumeration value="gewerbehalle"/>
- *     &lt;enumeration value="kulturgrund"/>
- *     &lt;enumeration value="reihenhaus"/>
- *     &lt;enumeration value="wald"/>
- *     &lt;enumeration value="wohnung"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="propertyType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="bauernhof"/&gt;
+ *     &lt;enumeration value="baugrund"/&gt;
+ *     &lt;enumeration value="buero"/&gt;
+ *     &lt;enumeration value="einfamilienhaus"/&gt;
+ *     &lt;enumeration value="garage"/&gt;
+ *     &lt;enumeration value="gastgewerbeobjekt"/&gt;
+ *     &lt;enumeration value="geschaeft"/&gt;
+ *     &lt;enumeration value="gewerbehalle"/&gt;
+ *     &lt;enumeration value="kulturgrund"/&gt;
+ *     &lt;enumeration value="reihenhaus"/&gt;
+ *     &lt;enumeration value="wald"/&gt;
+ *     &lt;enumeration value="wohnung"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

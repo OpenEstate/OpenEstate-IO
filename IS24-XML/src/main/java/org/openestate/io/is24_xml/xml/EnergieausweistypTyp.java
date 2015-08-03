@@ -12,13 +12,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="EnergieausweistypTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="KeineAngabe"/>
- *     &lt;enumeration value="Endenergiebedarf"/>
- *     &lt;enumeration value="Energieverbrauchskennwert"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="EnergieausweistypTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="KeineAngabe"/&gt;
+ *     &lt;enumeration value="Endenergiebedarf"/&gt;
+ *     &lt;enumeration value="Energieverbrauchskennwert"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

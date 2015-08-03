@@ -1,20 +1,19 @@
 
 package org.openestate.io.is24_xml.xml;
 
-import java.net.URL;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter30
-    extends XmlAdapter<String, URL>
+    extends XmlAdapter<String, Double>
 {
 
 
-    public URL unmarshal(String value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.parseWebUrl(value));
+    public Double unmarshal(String value) {
+        return (org.openestate.io.is24_xml.Is24XmlUtils.parseZahl52(value));
     }
 
-    public String marshal(URL value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.printWebUrl(value));
+    public String marshal(Double value) {
+        return (org.openestate.io.is24_xml.Is24XmlUtils.printZahl52(value));
     }
 
 }

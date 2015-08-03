@@ -247,12 +247,22 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxb2-maven-plugin</artifactId>
         <configuration>
-          <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+          <sources>
+            <source>${project.basedir}/src/main/xsd/v2.7.xsd</source>
+            <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
+          </sources>
           <bindingFiles>binding.xjb</bindingFiles>
+          <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
           <clearOutputDir>false</clearOutputDir>
           <target>2.1</target>
           <extension>true</extension>
-          <arguments>-XtoString -Xcopyable -Xequals -no-header</arguments>
+          <generateEpisode>false</generateEpisode>
+          <noGeneratedHeaderComments>true</noGeneratedHeaderComments>
+          <arguments>
+            <argument>-XtoString</argument>
+            <argument>-Xcopyable</argument>
+            <argument>-Xequals</argument>
+          </arguments>
         </configuration>
         <dependencies>
           <dependency>

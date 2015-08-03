@@ -38,11 +38,11 @@ public class Heizkostennetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double value;
     @XmlAttribute(name = "heizkostenust")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double heizkostenust;
 

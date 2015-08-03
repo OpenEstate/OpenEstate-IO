@@ -27,38 +27,38 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="propertyType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="id" type="{}idType"/>
- *         &lt;element name="date" type="{}dateType"/>
- *         &lt;element name="ref" type="{}refType"/>
- *         &lt;element name="price" type="{}priceType"/>
- *         &lt;element name="currency" type="{}currencyType" minOccurs="0"/>
- *         &lt;element name="price_freq" type="{}priceFreqType"/>
- *         &lt;element name="part_ownership" type="{}boolType" minOccurs="0"/>
- *         &lt;element name="leasehold" type="{}boolType" minOccurs="0"/>
- *         &lt;element name="new_build" type="{}boolType" minOccurs="0"/>
- *         &lt;element name="type" type="{}typeDataType"/>
- *         &lt;element name="town" type="{}requiredType"/>
- *         &lt;element name="province" type="{}requiredType"/>
- *         &lt;element name="location" type="{}gpsLocationType" minOccurs="0"/>
- *         &lt;element name="location_detail" type="{}locationType" minOccurs="0"/>
- *         &lt;element name="beds" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="baths" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="pool" type="{}boolType" minOccurs="0"/>
- *         &lt;element name="surface_area" type="{}surfaceType" minOccurs="0"/>
- *         &lt;element name="energy_rating" type="{}energyRatingType" minOccurs="0"/>
- *         &lt;element name="url" type="{}urlType" minOccurs="0"/>
- *         &lt;element name="desc" type="{}langType" minOccurs="0"/>
- *         &lt;element name="features" type="{}featuresType"/>
- *         &lt;element name="images" type="{}imagesType" minOccurs="0"/>
- *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="propertyType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="id" type="{}idType"/&gt;
+ *         &lt;element name="date" type="{}dateType"/&gt;
+ *         &lt;element name="ref" type="{}refType"/&gt;
+ *         &lt;element name="price" type="{}priceType"/&gt;
+ *         &lt;element name="currency" type="{}currencyType" minOccurs="0"/&gt;
+ *         &lt;element name="price_freq" type="{}priceFreqType"/&gt;
+ *         &lt;element name="part_ownership" type="{}boolType" minOccurs="0"/&gt;
+ *         &lt;element name="leasehold" type="{}boolType" minOccurs="0"/&gt;
+ *         &lt;element name="new_build" type="{}boolType" minOccurs="0"/&gt;
+ *         &lt;element name="type" type="{}typeDataType"/&gt;
+ *         &lt;element name="town" type="{}requiredType"/&gt;
+ *         &lt;element name="province" type="{}requiredType"/&gt;
+ *         &lt;element name="location" type="{}gpsLocationType" minOccurs="0"/&gt;
+ *         &lt;element name="location_detail" type="{}locationType" minOccurs="0"/&gt;
+ *         &lt;element name="beds" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="baths" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="pool" type="{}boolType" minOccurs="0"/&gt;
+ *         &lt;element name="surface_area" type="{}surfaceType" minOccurs="0"/&gt;
+ *         &lt;element name="energy_rating" type="{}energyRatingType" minOccurs="0"/&gt;
+ *         &lt;element name="url" type="{}urlType" minOccurs="0"/&gt;
+ *         &lt;element name="desc" type="{}langType" minOccurs="0"/&gt;
+ *         &lt;element name="features" type="{}featuresType"/&gt;
+ *         &lt;element name="images" type="{}imagesType" minOccurs="0"/&gt;
+ *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -75,49 +75,52 @@ public class PropertyType
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected String id;
     @XmlElement(required = true, type = String.class)
-    @XmlJavaTypeAdapter(Adapter9 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "token")
     protected Calendar date;
     @XmlElement(required = true)
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String ref;
     @XmlElement(required = true, type = String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter8 .class)
     protected Long price;
+    @XmlSchemaType(name = "string")
     protected CurrencyType currency;
     @XmlElement(name = "price_freq", required = true)
+    @XmlSchemaType(name = "string")
     protected PriceFreqType priceFreq;
     @XmlElement(name = "part_ownership", type = String.class)
-    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected Boolean partOwnership;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected Boolean leasehold;
     @XmlElement(name = "new_build", type = String.class)
-    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected Boolean newBuild;
     @XmlElement(required = true)
-    @XmlJavaTypeAdapter(Adapter8 .class)
+    @XmlJavaTypeAdapter(Adapter10 .class)
     protected String type;
     @XmlElement(required = true)
-    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected String town;
     @XmlElement(required = true)
-    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected String province;
     protected GpsLocationType location;
     @XmlElement(name = "location_detail")
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter11 .class)
     protected String locationDetail;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
     protected Long beds;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
     protected Long baths;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter10 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected Boolean pool;
     @XmlElement(name = "surface_area")
     protected SurfaceType surfaceArea;

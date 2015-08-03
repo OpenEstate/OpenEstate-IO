@@ -12,21 +12,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="FilmFormateTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AVI"/>
- *     &lt;enumeration value="MPG"/>
- *     &lt;enumeration value="MOV"/>
- *     &lt;enumeration value="QT"/>
- *     &lt;enumeration value="QTL"/>
- *     &lt;enumeration value="RM"/>
- *     &lt;enumeration value="RV"/>
- *     &lt;enumeration value="MPE"/>
- *     &lt;enumeration value="MPEG"/>
- *     &lt;enumeration value="MP4"/>
- *     &lt;enumeration value="WMV"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="FilmFormateTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AVI"/&gt;
+ *     &lt;enumeration value="MPG"/&gt;
+ *     &lt;enumeration value="MOV"/&gt;
+ *     &lt;enumeration value="QT"/&gt;
+ *     &lt;enumeration value="QTL"/&gt;
+ *     &lt;enumeration value="RM"/&gt;
+ *     &lt;enumeration value="RV"/&gt;
+ *     &lt;enumeration value="MPE"/&gt;
+ *     &lt;enumeration value="MPEG"/&gt;
+ *     &lt;enumeration value="MP4"/&gt;
+ *     &lt;enumeration value="WMV"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

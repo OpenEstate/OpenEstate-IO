@@ -41,6 +41,9 @@ to publish the specifications. Get in contact with
 In order to improve the generated Java classes, we've made the following
 modifications to the original `openimmo_127.xsd` schema:
 
+-   added `<xsd:include schemaLocation="openimmo-feedback_125.xsd"/>`
+    before `<xsd:element name="openimmo">`
+
 -   replaced `<xsd:element name="anzahl_stellplaetze">`
     with `<xsd:element name="anzahl_stellplaetze" type="xsd:decimal">`
 

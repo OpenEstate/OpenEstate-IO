@@ -39,7 +39,7 @@ public class DistanzenSport
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "float")
     protected Double value;
     @XmlAttribute(name = "distanz_zu_sport", required = true)

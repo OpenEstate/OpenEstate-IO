@@ -12,20 +12,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="EinzelhandelKategorienTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Ausstellungsflaeche"/>
- *     &lt;enumeration value="Einkaufszentrum"/>
- *     &lt;enumeration value="FactoryOutlet"/>
- *     &lt;enumeration value="Kaufhaus"/>
- *     &lt;enumeration value="Kiosk"/>
- *     &lt;enumeration value="Laden"/>
- *     &lt;enumeration value="SBMarkt"/>
- *     &lt;enumeration value="Verkaufsflaeche"/>
- *     &lt;enumeration value="Verkaufshalle"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="EinzelhandelKategorienTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Ausstellungsflaeche"/&gt;
+ *     &lt;enumeration value="Einkaufszentrum"/&gt;
+ *     &lt;enumeration value="FactoryOutlet"/&gt;
+ *     &lt;enumeration value="Kaufhaus"/&gt;
+ *     &lt;enumeration value="Kiosk"/&gt;
+ *     &lt;enumeration value="Laden"/&gt;
+ *     &lt;enumeration value="SBMarkt"/&gt;
+ *     &lt;enumeration value="Verkaufsflaeche"/&gt;
+ *     &lt;enumeration value="Verkaufshalle"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

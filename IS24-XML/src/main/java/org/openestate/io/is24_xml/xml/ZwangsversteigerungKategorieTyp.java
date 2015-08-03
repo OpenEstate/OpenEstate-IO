@@ -12,15 +12,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ZwangsversteigerungKategorieTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Eigentumswohnung"/>
- *     &lt;enumeration value="Ein/Mehrfamilienhaus"/>
- *     &lt;enumeration value="Gewerbe/Anlage"/>
- *     &lt;enumeration value="Grundstueck"/>
- *     &lt;enumeration value="Garage/Sonstige"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ZwangsversteigerungKategorieTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Eigentumswohnung"/&gt;
+ *     &lt;enumeration value="Ein/Mehrfamilienhaus"/&gt;
+ *     &lt;enumeration value="Gewerbe/Anlage"/&gt;
+ *     &lt;enumeration value="Grundstueck"/&gt;
+ *     &lt;enumeration value="Garage/Sonstige"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

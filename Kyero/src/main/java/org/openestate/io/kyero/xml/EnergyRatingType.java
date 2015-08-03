@@ -3,6 +3,7 @@ package org.openestate.io.kyero.xml;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
 import org.jvnet.jaxb2_commons.lang.CopyTo;
@@ -23,16 +24,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="energyRatingType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="consumption" type="{}energyRatingMarkType" minOccurs="0"/>
- *         &lt;element name="emissions" type="{}energyRatingMarkType" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="energyRatingType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="consumption" type="{}energyRatingMarkType" minOccurs="0"/&gt;
+ *         &lt;element name="emissions" type="{}energyRatingMarkType" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -45,7 +46,9 @@ public class EnergyRatingType
     implements Cloneable, CopyTo, Equals, ToString
 {
 
+    @XmlSchemaType(name = "string")
     protected EnergyRatingMarkType consumption;
+    @XmlSchemaType(name = "string")
     protected EnergyRatingMarkType emissions;
 
     /**

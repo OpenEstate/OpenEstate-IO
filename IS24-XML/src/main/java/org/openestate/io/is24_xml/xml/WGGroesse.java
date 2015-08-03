@@ -12,20 +12,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="WGGroesse">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="2"/>
- *     &lt;enumeration value="3"/>
- *     &lt;enumeration value="4"/>
- *     &lt;enumeration value="5"/>
- *     &lt;enumeration value="6"/>
- *     &lt;enumeration value="7"/>
- *     &lt;enumeration value="8"/>
- *     &lt;enumeration value="9"/>
- *     &lt;enumeration value="10"/>
- *     &lt;enumeration value="11+"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="WGGroesse"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="2"/&gt;
+ *     &lt;enumeration value="3"/&gt;
+ *     &lt;enumeration value="4"/&gt;
+ *     &lt;enumeration value="5"/&gt;
+ *     &lt;enumeration value="6"/&gt;
+ *     &lt;enumeration value="7"/&gt;
+ *     &lt;enumeration value="8"/&gt;
+ *     &lt;enumeration value="9"/&gt;
+ *     &lt;enumeration value="10"/&gt;
+ *     &lt;enumeration value="11+"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

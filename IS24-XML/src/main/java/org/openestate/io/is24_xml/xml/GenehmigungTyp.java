@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="GenehmigungTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="erlaubt"/>
- *     &lt;enumeration value="verboten"/>
- *     &lt;enumeration value="nachVereinbarung"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GenehmigungTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="erlaubt"/&gt;
+ *     &lt;enumeration value="verboten"/&gt;
+ *     &lt;enumeration value="nachVereinbarung"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

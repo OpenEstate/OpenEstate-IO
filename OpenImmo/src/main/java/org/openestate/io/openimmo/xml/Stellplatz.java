@@ -37,15 +37,15 @@ public class Stellplatz
 {
 
     @XmlAttribute(name = "stellplatzmiete")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double stellplatzmiete;
     @XmlAttribute(name = "stellplatzkaufpreis")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double stellplatzkaufpreis;
     @XmlAttribute(name = "anzahl")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
     protected Integer anzahl;
 

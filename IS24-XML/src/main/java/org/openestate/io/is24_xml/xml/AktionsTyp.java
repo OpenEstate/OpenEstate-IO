@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AktionsTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="importieren"/>
- *     &lt;enumeration value="aktualisieren"/>
- *     &lt;enumeration value="loeschen"/>
- *     &lt;enumeration value="ignorieren"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AktionsTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="importieren"/&gt;
+ *     &lt;enumeration value="aktualisieren"/&gt;
+ *     &lt;enumeration value="loeschen"/&gt;
+ *     &lt;enumeration value="ignorieren"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

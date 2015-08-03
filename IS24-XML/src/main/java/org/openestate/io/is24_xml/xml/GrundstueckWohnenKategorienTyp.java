@@ -12,11 +12,11 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="GrundstueckWohnenKategorienTyp">
- *   &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}GrundstueckKategorienTyp">
- *     &lt;enumeration value="Wohnen"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GrundstueckWohnenKategorienTyp"&gt;
+ *   &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}GrundstueckKategorienTyp"&gt;
+ *     &lt;enumeration value="Wohnen"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,15 +25,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="EnergieausweisTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Energieausweistyp" type="{http://www.immobilienscout24.de/immobilientransfer}EnergieausweistypTyp" />
- *       &lt;attribute name="Energieverbrauchskennwert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="WarmwasserEnthalten" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="EnergieausweisTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Energieausweistyp" type="{http://www.immobilienscout24.de/immobilientransfer}EnergieausweistypTyp" /&gt;
+ *       &lt;attribute name="Energieverbrauchskennwert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="WarmwasserEnthalten" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -47,7 +47,7 @@ public class EnergieausweisTyp
     @XmlAttribute(name = "Energieausweistyp")
     protected EnergieausweistypTyp energieausweistyp;
     @XmlAttribute(name = "Energieverbrauchskennwert")
-    @XmlJavaTypeAdapter(Adapter13 .class)
+    @XmlJavaTypeAdapter(Adapter30 .class)
     protected Double energieverbrauchskennwert;
     @XmlAttribute(name = "WarmwasserEnthalten")
     protected Boolean warmwasserEnthalten;

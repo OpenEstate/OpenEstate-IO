@@ -12,29 +12,29 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AnlageobjekteKategorieTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Einfamilienhaus"/>
- *     &lt;enumeration value="Mehrfamilienhaus"/>
- *     &lt;enumeration value="Eigentumswohnung"/>
- *     &lt;enumeration value="Einkaufszentrum"/>
- *     &lt;enumeration value="Gaststaette"/>
- *     &lt;enumeration value="Hotel"/>
- *     &lt;enumeration value="Freizeitanlage"/>
- *     &lt;enumeration value="Gewerbeeinheit"/>
- *     &lt;enumeration value="Buerogebaeude"/>
- *     &lt;enumeration value="Geschaeftshaus"/>
- *     &lt;enumeration value="Gewerbeanwesen"/>
- *     &lt;enumeration value="HalleLager"/>
- *     &lt;enumeration value="Industrieanwesen"/>
- *     &lt;enumeration value="LadenVerkaufsflaeche"/>
- *     &lt;enumeration value="Servicecenter"/>
- *     &lt;enumeration value="Sonstige"/>
- *     &lt;enumeration value="Supermarkt"/>
- *     &lt;enumeration value="WohnGeschaeftshaus"/>
- *     &lt;enumeration value="Wohnanlage"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AnlageobjekteKategorieTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Einfamilienhaus"/&gt;
+ *     &lt;enumeration value="Mehrfamilienhaus"/&gt;
+ *     &lt;enumeration value="Eigentumswohnung"/&gt;
+ *     &lt;enumeration value="Einkaufszentrum"/&gt;
+ *     &lt;enumeration value="Gaststaette"/&gt;
+ *     &lt;enumeration value="Hotel"/&gt;
+ *     &lt;enumeration value="Freizeitanlage"/&gt;
+ *     &lt;enumeration value="Gewerbeeinheit"/&gt;
+ *     &lt;enumeration value="Buerogebaeude"/&gt;
+ *     &lt;enumeration value="Geschaeftshaus"/&gt;
+ *     &lt;enumeration value="Gewerbeanwesen"/&gt;
+ *     &lt;enumeration value="HalleLager"/&gt;
+ *     &lt;enumeration value="Industrieanwesen"/&gt;
+ *     &lt;enumeration value="LadenVerkaufsflaeche"/&gt;
+ *     &lt;enumeration value="Servicecenter"/&gt;
+ *     &lt;enumeration value="Sonstige"/&gt;
+ *     &lt;enumeration value="Supermarkt"/&gt;
+ *     &lt;enumeration value="WohnGeschaeftshaus"/&gt;
+ *     &lt;enumeration value="Wohnanlage"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

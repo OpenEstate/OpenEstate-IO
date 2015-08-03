@@ -29,26 +29,26 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="EinzelhandelTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/>
- *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}EinzelhandelKategorienTyp" default="keineAngabe" />
- *       &lt;attribute name="Verkaufsflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" />
- *       &lt;attribute name="Schaufensterfront" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Deckenlast" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" />
- *       &lt;attribute name="Lageart" type="{http://www.immobilienscout24.de/immobilientransfer}LageartTyp" />
- *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Zulieferung" type="{http://www.immobilienscout24.de/immobilientransfer}ZulieferungTyp" />
- *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="EinzelhandelTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/&gt;
+ *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}EinzelhandelKategorienTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Verkaufsflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" /&gt;
+ *       &lt;attribute name="Schaufensterfront" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Deckenlast" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" /&gt;
+ *       &lt;attribute name="Lageart" type="{http://www.immobilienscout24.de/immobilientransfer}LageartTyp" /&gt;
+ *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Zulieferung" type="{http://www.immobilienscout24.de/immobilientransfer}ZulieferungTyp" /&gt;
+ *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -73,15 +73,15 @@ public class EinzelhandelTyp
     @XmlAttribute(name = "Objektkategorie2")
     protected EinzelhandelKategorienTyp objektkategorie2;
     @XmlAttribute(name = "Verkaufsflaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double verkaufsflaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Schaufensterfront")
-    @XmlJavaTypeAdapter(Adapter13 .class)
+    @XmlJavaTypeAdapter(Adapter30 .class)
     protected Double schaufensterfront;
     @XmlAttribute(name = "Deckenlast")
-    @XmlJavaTypeAdapter(Adapter27 .class)
+    @XmlJavaTypeAdapter(Adapter33 .class)
     protected Double deckenlast;
     @XmlAttribute(name = "Lageart")
     protected LageartTyp lageart;

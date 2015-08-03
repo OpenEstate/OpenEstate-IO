@@ -26,13 +26,13 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AnbieterTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="ScoutKundenID" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text15Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AnbieterTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="ScoutKundenID" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text15Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -47,7 +47,7 @@ public class AnbieterTyp
 {
 
     @XmlAttribute(name = "ScoutKundenID", required = true)
-    @XmlJavaTypeAdapter(Adapter8 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     protected String scoutKundenID;
 
     /**

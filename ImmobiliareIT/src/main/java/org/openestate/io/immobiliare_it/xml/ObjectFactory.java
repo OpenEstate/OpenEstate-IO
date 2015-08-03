@@ -30,14 +30,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Box }
-     * 
-     */
-    public Box createBox() {
-        return new Box();
-    }
-
-    /**
      * Create an instance of {@link BoxProject }
      * 
      */
@@ -51,6 +43,22 @@ public class ObjectFactory {
      */
     public FloorProject createFloorProject() {
         return new FloorProject();
+    }
+
+    /**
+     * Create an instance of {@link Floor }
+     * 
+     */
+    public Floor createFloor() {
+        return new Floor();
+    }
+
+    /**
+     * Create an instance of {@link Box }
+     * 
+     */
+    public Box createBox() {
+        return new Box();
     }
 
     /**
@@ -75,14 +83,6 @@ public class ObjectFactory {
      */
     public LocationStructure.Locality.Neighbourhood createLocationStructureLocalityNeighbourhood() {
         return new LocationStructure.Locality.Neighbourhood();
-    }
-
-    /**
-     * Create an instance of {@link Floor }
-     * 
-     */
-    public Floor createFloor() {
-        return new Floor();
     }
 
     /**
@@ -174,83 +174,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LandSizeType }
+     * Create an instance of {@link Publisher }
      * 
      */
-    public LandSizeType createLandSizeType() {
-        return new LandSizeType();
+    public Publisher createPublisher() {
+        return new Publisher();
     }
 
     /**
-     * Create an instance of {@link VideoProject }
+     * Create an instance of {@link TransactionType }
      * 
      */
-    public VideoProject createVideoProject() {
-        return new VideoProject();
-    }
-
-    /**
-     * Create an instance of {@link Proptype }
-     * 
-     */
-    public Proptype createProptype() {
-        return new Proptype();
-    }
-
-    /**
-     * Create an instance of {@link PictureExtended }
-     * 
-     */
-    public PictureExtended createPictureExtended() {
-        return new PictureExtended();
-    }
-
-    /**
-     * Create an instance of {@link AdditionalCostsType }
-     * 
-     */
-    public AdditionalCostsType createAdditionalCostsType() {
-        return new AdditionalCostsType();
-    }
-
-    /**
-     * Create an instance of {@link SizeType }
-     * 
-     */
-    public SizeType createSizeType() {
-        return new SizeType();
-    }
-
-    /**
-     * Create an instance of {@link PictureProject }
-     * 
-     */
-    public PictureProject createPictureProject() {
-        return new PictureProject();
-    }
-
-    /**
-     * Create an instance of {@link PriceType }
-     * 
-     */
-    public PriceType createPriceType() {
-        return new PriceType();
-    }
-
-    /**
-     * Create an instance of {@link DescriptionType }
-     * 
-     */
-    public DescriptionType createDescriptionType() {
-        return new DescriptionType();
-    }
-
-    /**
-     * Create an instance of {@link ClassEnergyPerformance }
-     * 
-     */
-    public ClassEnergyPerformance createClassEnergyPerformance() {
-        return new ClassEnergyPerformance();
+    public TransactionType createTransactionType() {
+        return new TransactionType();
     }
 
     /**
@@ -262,19 +198,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Publisher }
+     * Create an instance of {@link Building }
      * 
      */
-    public Publisher createPublisher() {
-        return new Publisher();
+    public Building createBuilding() {
+        return new Building();
     }
 
     /**
-     * Create an instance of {@link Langtxt }
+     * Create an instance of {@link Proptype }
      * 
      */
-    public Langtxt createLangtxt() {
-        return new Langtxt();
+    public Proptype createProptype() {
+        return new Proptype();
     }
 
     /**
@@ -286,19 +222,83 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Building }
+     * Create an instance of {@link SizeType }
      * 
      */
-    public Building createBuilding() {
-        return new Building();
+    public SizeType createSizeType() {
+        return new SizeType();
     }
 
     /**
-     * Create an instance of {@link TransactionType }
+     * Create an instance of {@link LandSizeType }
      * 
      */
-    public TransactionType createTransactionType() {
-        return new TransactionType();
+    public LandSizeType createLandSizeType() {
+        return new LandSizeType();
+    }
+
+    /**
+     * Create an instance of {@link PriceType }
+     * 
+     */
+    public PriceType createPriceType() {
+        return new PriceType();
+    }
+
+    /**
+     * Create an instance of {@link Langtxt }
+     * 
+     */
+    public Langtxt createLangtxt() {
+        return new Langtxt();
+    }
+
+    /**
+     * Create an instance of {@link DescriptionType }
+     * 
+     */
+    public DescriptionType createDescriptionType() {
+        return new DescriptionType();
+    }
+
+    /**
+     * Create an instance of {@link PictureProject }
+     * 
+     */
+    public PictureProject createPictureProject() {
+        return new PictureProject();
+    }
+
+    /**
+     * Create an instance of {@link PictureExtended }
+     * 
+     */
+    public PictureExtended createPictureExtended() {
+        return new PictureExtended();
+    }
+
+    /**
+     * Create an instance of {@link VideoProject }
+     * 
+     */
+    public VideoProject createVideoProject() {
+        return new VideoProject();
+    }
+
+    /**
+     * Create an instance of {@link ClassEnergyPerformance }
+     * 
+     */
+    public ClassEnergyPerformance createClassEnergyPerformance() {
+        return new ClassEnergyPerformance();
+    }
+
+    /**
+     * Create an instance of {@link AdditionalCostsType }
+     * 
+     */
+    public AdditionalCostsType createAdditionalCostsType() {
+        return new AdditionalCostsType();
     }
 
     /**

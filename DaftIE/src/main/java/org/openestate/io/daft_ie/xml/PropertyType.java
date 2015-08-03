@@ -12,16 +12,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="propertyType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="house"/>
- *     &lt;enumeration value="apartment"/>
- *     &lt;enumeration value="duplex"/>
- *     &lt;enumeration value="bungalow"/>
- *     &lt;enumeration value="site"/>
- *     &lt;enumeration value="commercial"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="propertyType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="house"/&gt;
+ *     &lt;enumeration value="apartment"/&gt;
+ *     &lt;enumeration value="duplex"/&gt;
+ *     &lt;enumeration value="bungalow"/&gt;
+ *     &lt;enumeration value="site"/&gt;
+ *     &lt;enumeration value="commercial"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

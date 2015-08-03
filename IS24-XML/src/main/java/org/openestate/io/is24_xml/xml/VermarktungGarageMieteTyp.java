@@ -25,13 +25,13 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VermarktungGarageMieteTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Miete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VermarktungGarageMieteTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Miete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -43,7 +43,7 @@ public class VermarktungGarageMieteTyp
 {
 
     @XmlAttribute(name = "Miete", required = true)
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double miete;
 
     /**

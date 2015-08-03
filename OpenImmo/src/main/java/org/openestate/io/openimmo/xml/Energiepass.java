@@ -68,7 +68,7 @@ public class Energiepass
     protected String wertklasse;
     protected String baujahr;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar ausstelldatum;
     protected Energiepass.Jahrgang jahrgang;

@@ -12,39 +12,39 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="propertyTypeSimple">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Appartamento"/>
- *     &lt;enumeration value="Attico"/>
- *     &lt;enumeration value="Mansarda"/>
- *     &lt;enumeration value="Garage"/>
- *     &lt;enumeration value="Casa Indipendente"/>
- *     &lt;enumeration value="Palazzo"/>
- *     &lt;enumeration value="Stabile"/>
- *     &lt;enumeration value="Rustico"/>
- *     &lt;enumeration value="Casale"/>
- *     &lt;enumeration value="Villa"/>
- *     &lt;enumeration value="Villetta a schiera"/>
- *     &lt;enumeration value="Loft"/>
- *     &lt;enumeration value="Open Space"/>
- *     &lt;enumeration value="Multipropriet\u00e0"/>
- *     &lt;enumeration value="Villetta"/>
- *     &lt;enumeration value="Agriturismo"/>
- *     &lt;enumeration value="Bed and Breakfast"/>
- *     &lt;enumeration value="Barca"/>
- *     &lt;enumeration value="Bungalow"/>
- *     &lt;enumeration value="Chalet"/>
- *     &lt;enumeration value="Baita"/>
- *     &lt;enumeration value="Hotel"/>
- *     &lt;enumeration value="Parco Vacanze"/>
- *     &lt;enumeration value="Residence"/>
- *     &lt;enumeration value="Roulotte"/>
- *     &lt;enumeration value="Stanza"/>
- *     &lt;enumeration value="Camera"/>
- *     &lt;enumeration value="Casa per ferie (gruppi)"/>
- *     &lt;enumeration value="Other"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="propertyTypeSimple"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Appartamento"/&gt;
+ *     &lt;enumeration value="Attico"/&gt;
+ *     &lt;enumeration value="Mansarda"/&gt;
+ *     &lt;enumeration value="Garage"/&gt;
+ *     &lt;enumeration value="Casa Indipendente"/&gt;
+ *     &lt;enumeration value="Palazzo"/&gt;
+ *     &lt;enumeration value="Stabile"/&gt;
+ *     &lt;enumeration value="Rustico"/&gt;
+ *     &lt;enumeration value="Casale"/&gt;
+ *     &lt;enumeration value="Villa"/&gt;
+ *     &lt;enumeration value="Villetta a schiera"/&gt;
+ *     &lt;enumeration value="Loft"/&gt;
+ *     &lt;enumeration value="Open Space"/&gt;
+ *     &lt;enumeration value="Multipropriet\u00e0"/&gt;
+ *     &lt;enumeration value="Villetta"/&gt;
+ *     &lt;enumeration value="Agriturismo"/&gt;
+ *     &lt;enumeration value="Bed and Breakfast"/&gt;
+ *     &lt;enumeration value="Barca"/&gt;
+ *     &lt;enumeration value="Bungalow"/&gt;
+ *     &lt;enumeration value="Chalet"/&gt;
+ *     &lt;enumeration value="Baita"/&gt;
+ *     &lt;enumeration value="Hotel"/&gt;
+ *     &lt;enumeration value="Parco Vacanze"/&gt;
+ *     &lt;enumeration value="Residence"/&gt;
+ *     &lt;enumeration value="Roulotte"/&gt;
+ *     &lt;enumeration value="Stanza"/&gt;
+ *     &lt;enumeration value="Camera"/&gt;
+ *     &lt;enumeration value="Casa per ferie (gruppi)"/&gt;
+ *     &lt;enumeration value="Other"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

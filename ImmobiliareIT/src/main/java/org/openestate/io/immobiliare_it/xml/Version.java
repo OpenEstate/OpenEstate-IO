@@ -12,18 +12,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="version">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="1.5"/>
- *     &lt;enumeration value="1.6"/>
- *     &lt;enumeration value="2.0"/>
- *     &lt;enumeration value="2.1"/>
- *     &lt;enumeration value="2.2"/>
- *     &lt;enumeration value="2.4"/>
- *     &lt;enumeration value="2.2.1"/>
- *     &lt;enumeration value="2.5"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="version"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="1.5"/&gt;
+ *     &lt;enumeration value="1.6"/&gt;
+ *     &lt;enumeration value="2.0"/&gt;
+ *     &lt;enumeration value="2.1"/&gt;
+ *     &lt;enumeration value="2.2"/&gt;
+ *     &lt;enumeration value="2.4"/&gt;
+ *     &lt;enumeration value="2.2.1"/&gt;
+ *     &lt;enumeration value="2.5"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

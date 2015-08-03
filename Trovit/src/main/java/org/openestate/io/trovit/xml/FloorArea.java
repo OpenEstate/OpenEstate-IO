@@ -28,13 +28,13 @@ import org.openestate.io.trovit.xml.types.Unit;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;>typeInt">
- *       &lt;attribute name="unit" type="{}typeUnit" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;&gt;typeInt"&gt;
+ *       &lt;attribute name="unit" type="{}typeUnit" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,10 +49,10 @@ public class FloorArea
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter8 .class)
     protected Integer value;
     @XmlAttribute(name = "unit")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected Unit unit;
 
     /**

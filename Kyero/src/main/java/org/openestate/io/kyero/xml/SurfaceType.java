@@ -26,16 +26,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="surfaceType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="built" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *         &lt;element name="plot" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="surfaceType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="built" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *         &lt;element name="plot" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,11 +49,11 @@ public class SurfaceType
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
     protected Long built;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
     protected Long plot;
 

@@ -12,16 +12,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DatenVerkabelungsTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="ja"/>
- *     &lt;enumeration value="true"/>
- *     &lt;enumeration value="nein"/>
- *     &lt;enumeration value="false"/>
- *     &lt;enumeration value="nachVereinbarung"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DatenVerkabelungsTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="ja"/&gt;
+ *     &lt;enumeration value="true"/&gt;
+ *     &lt;enumeration value="nein"/&gt;
+ *     &lt;enumeration value="false"/&gt;
+ *     &lt;enumeration value="nachVereinbarung"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

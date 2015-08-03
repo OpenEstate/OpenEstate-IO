@@ -9,11 +9,11 @@ public class Adapter11
 
 
     public String unmarshal(String value) {
-        return (org.openestate.io.kyero.KyeroUtils.parseRequiredType(value));
+        return (org.openestate.io.kyero.KyeroUtils.parseLocationType(value));
     }
 
     public String marshal(String value) {
-        return (org.openestate.io.kyero.KyeroUtils.printRequiredType(value));
+        return (org.openestate.io.kyero.KyeroUtils.printLocationType(value));
     }
 
 }

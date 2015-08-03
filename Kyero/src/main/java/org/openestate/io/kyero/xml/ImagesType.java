@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
@@ -29,27 +30,27 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="imagesType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="image" maxOccurs="50" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="url" type="{}imageUrlType" minOccurs="0"/>
- *                   &lt;element name="title" type="{}langType" minOccurs="0"/>
- *                 &lt;/all>
- *                 &lt;attribute name="id" use="required" type="{}imageAttributeType" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="imagesType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="image" maxOccurs="50" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="url" type="{}imageUrlType" minOccurs="0"/&gt;
+ *                   &lt;element name="title" type="{}langType" minOccurs="0"/&gt;
+ *                 &lt;/all&gt;
+ *                 &lt;attribute name="id" use="required" type="{}imageAttributeType" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -182,17 +183,17 @@ public class ImagesType
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="url" type="{}imageUrlType" minOccurs="0"/>
-     *         &lt;element name="title" type="{}langType" minOccurs="0"/>
-     *       &lt;/all>
-     *       &lt;attribute name="id" use="required" type="{}imageAttributeType" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="url" type="{}imageUrlType" minOccurs="0"/&gt;
+     *         &lt;element name="title" type="{}langType" minOccurs="0"/&gt;
+     *       &lt;/all&gt;
+     *       &lt;attribute name="id" use="required" type="{}imageAttributeType" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -207,10 +208,11 @@ public class ImagesType
 
         @XmlElement(type = String.class)
         @XmlJavaTypeAdapter(Adapter13 .class)
+        @XmlSchemaType(name = "token")
         protected URL url;
         protected LangType title;
         @XmlAttribute(name = "id", required = true)
-        @XmlJavaTypeAdapter(Adapter5 .class)
+        @XmlJavaTypeAdapter(Adapter14 .class)
         protected Integer id;
 
         /**

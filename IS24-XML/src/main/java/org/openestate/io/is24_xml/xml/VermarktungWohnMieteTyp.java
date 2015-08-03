@@ -25,19 +25,19 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VermarktungWohnMieteTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Kaltmiete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Warmmiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Nebenkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Heizkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="HeizkostenInWarmmieteEnthalten" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="StellplatzMiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VermarktungWohnMieteTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Kaltmiete" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Warmmiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Nebenkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Heizkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="HeizkostenInWarmmieteEnthalten" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="StellplatzMiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,24 +49,24 @@ public class VermarktungWohnMieteTyp
 {
 
     @XmlAttribute(name = "Kaltmiete", required = true)
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double kaltmiete;
     @XmlAttribute(name = "Warmmiete")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double warmmiete;
     @XmlAttribute(name = "Nebenkosten")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double nebenkosten;
     @XmlAttribute(name = "Heizkosten")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double heizkosten;
     @XmlAttribute(name = "HeizkostenInWarmmieteEnthalten")
     protected Boolean heizkostenInWarmmieteEnthalten;
     @XmlAttribute(name = "StellplatzMiete")
-    @XmlJavaTypeAdapter(Adapter22 .class)
+    @XmlJavaTypeAdapter(Adapter35 .class)
     protected Double stellplatzMiete;
     @XmlAttribute(name = "Kaution")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String kaution;
 
     /**

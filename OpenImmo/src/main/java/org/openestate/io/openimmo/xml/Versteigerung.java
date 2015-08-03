@@ -45,16 +45,16 @@ public class Versteigerung
     protected Boolean zwangsversteigerung;
     protected String aktenzeichen;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
     protected Calendar zvtermin;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
     protected Calendar zusatztermin;
     protected String amtsgericht;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double verkehrswert;
 

@@ -9,11 +9,11 @@ public class Adapter35
 
 
     public Double unmarshal(String value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.parseZahl102(value));
+        return (org.openestate.io.is24_xml.Is24XmlUtils.parseZahl152(value));
     }
 
     public String marshal(Double value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.printZahl102(value));
+        return (org.openestate.io.is24_xml.Is24XmlUtils.printZahl152(value));
     }
 
 }

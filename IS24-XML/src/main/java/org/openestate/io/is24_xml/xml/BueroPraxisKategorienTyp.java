@@ -12,24 +12,24 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="BueroPraxisKategorienTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Loft"/>
- *     &lt;enumeration value="Atelier"/>
- *     &lt;enumeration value="Buero"/>
- *     &lt;enumeration value="BueroEtage"/>
- *     &lt;enumeration value="Buerohaus"/>
- *     &lt;enumeration value="Buerozentrum"/>
- *     &lt;enumeration value="BueroUndLagerGebaeude"/>
- *     &lt;enumeration value="Praxis"/>
- *     &lt;enumeration value="PraxisEtage"/>
- *     &lt;enumeration value="PraxisHaus"/>
- *     &lt;enumeration value="GewerbeZentrum"/>
- *     &lt;enumeration value="WohnUndGeschaeftsgebaeude"/>
- *     &lt;enumeration value="BueroUndGeschaeftsgebaeude"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="BueroPraxisKategorienTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Loft"/&gt;
+ *     &lt;enumeration value="Atelier"/&gt;
+ *     &lt;enumeration value="Buero"/&gt;
+ *     &lt;enumeration value="BueroEtage"/&gt;
+ *     &lt;enumeration value="Buerohaus"/&gt;
+ *     &lt;enumeration value="Buerozentrum"/&gt;
+ *     &lt;enumeration value="BueroUndLagerGebaeude"/&gt;
+ *     &lt;enumeration value="Praxis"/&gt;
+ *     &lt;enumeration value="PraxisEtage"/&gt;
+ *     &lt;enumeration value="PraxisHaus"/&gt;
+ *     &lt;enumeration value="GewerbeZentrum"/&gt;
+ *     &lt;enumeration value="WohnUndGeschaeftsgebaeude"/&gt;
+ *     &lt;enumeration value="BueroUndGeschaeftsgebaeude"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

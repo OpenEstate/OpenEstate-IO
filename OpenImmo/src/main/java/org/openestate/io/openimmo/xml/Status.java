@@ -38,7 +38,7 @@ public class Status
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
     protected Integer statusnr;
     protected String text;

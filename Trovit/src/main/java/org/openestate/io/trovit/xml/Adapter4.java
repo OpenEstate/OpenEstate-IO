@@ -2,19 +2,18 @@
 package org.openestate.io.trovit.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.trovit.xml.types.Unit;
 
 public class Adapter4
-    extends XmlAdapter<String, Unit>
+    extends XmlAdapter<String, Double>
 {
 
 
-    public Unit unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseUnit(value));
+    public Double unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parsePriceValue(value));
     }
 
-    public String marshal(Unit value) {
-        return (org.openestate.io.trovit.TrovitUtils.printUnit(value));
+    public String marshal(Double value) {
+        return (org.openestate.io.trovit.TrovitUtils.printPriceValue(value));
     }
 
 }

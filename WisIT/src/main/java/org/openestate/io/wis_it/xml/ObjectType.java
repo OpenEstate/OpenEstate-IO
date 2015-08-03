@@ -27,60 +27,60 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ObjectType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="LOESCHEN" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="GUELTIGBIS" type="{}dateTimeType" minOccurs="0"/>
- *         &lt;element name="IMMOBILIENART" type="{}propertyType" minOccurs="0"/>
- *         &lt;element name="ORT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="FRAKTION" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="MIETEKAUF" type="{}marketingType" minOccurs="0"/>
- *         &lt;element name="PREIS" type="{}decimalType" minOccurs="0"/>
- *         &lt;element name="AUFANFRAGE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="NUTZFLAECHE" type="{}decimalType" minOccurs="0"/>
- *         &lt;element name="FLAECHEART" type="{}areaType" minOccurs="0"/>
- *         &lt;element name="FOERDERBAR" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="KONVENTIONIERT" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="KUBATUR" type="{}decimalType" minOccurs="0"/>
- *         &lt;element name="ZUSTAND" type="{}conditionType" minOccurs="0"/>
- *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="STOCKWERK" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="AUFZUG" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="GARAGE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="ABSTELLPLATZ" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="GRUENFLAECHE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="KELLER" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="TERRASSE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="LOGGIA" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="BALKON" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="DACHBODEN" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="HEIZUNG" type="{}heatingType" minOccurs="0"/>
- *         &lt;element name="KLIMAHAUS" type="{}energyStandard" minOccurs="0"/>
- *         &lt;element name="UEBERGABEZEITPUNKT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BAUJAHR" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="INFODE" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="INFOIT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD4" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD5" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD6" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD7" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD8" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD9" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD10" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="DOWNLOAD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="DOWNLOAD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="DOWNLOAD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ObjectType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="LOESCHEN" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="GUELTIGBIS" type="{}dateTimeType" minOccurs="0"/&gt;
+ *         &lt;element name="IMMOBILIENART" type="{}propertyType" minOccurs="0"/&gt;
+ *         &lt;element name="ORT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="FRAKTION" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="MIETEKAUF" type="{}marketingType" minOccurs="0"/&gt;
+ *         &lt;element name="PREIS" type="{}decimalType" minOccurs="0"/&gt;
+ *         &lt;element name="AUFANFRAGE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="NUTZFLAECHE" type="{}decimalType" minOccurs="0"/&gt;
+ *         &lt;element name="FLAECHEART" type="{}areaType" minOccurs="0"/&gt;
+ *         &lt;element name="FOERDERBAR" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="KONVENTIONIERT" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="KUBATUR" type="{}decimalType" minOccurs="0"/&gt;
+ *         &lt;element name="ZUSTAND" type="{}conditionType" minOccurs="0"/&gt;
+ *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="STOCKWERK" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="AUFZUG" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="GARAGE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="ABSTELLPLATZ" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="GRUENFLAECHE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="KELLER" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="TERRASSE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="LOGGIA" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="BALKON" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="DACHBODEN" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="HEIZUNG" type="{}heatingType" minOccurs="0"/&gt;
+ *         &lt;element name="KLIMAHAUS" type="{}energyStandard" minOccurs="0"/&gt;
+ *         &lt;element name="UEBERGABEZEITPUNKT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BAUJAHR" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="INFODE" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="INFOIT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD4" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD5" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD6" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD7" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD8" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD9" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD10" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="DOWNLOAD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="DOWNLOAD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="DOWNLOAD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -144,26 +144,31 @@ public class ObjectType
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean loeschen;
     @XmlElement(name = "GUELTIGBIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     protected Calendar gueltigbis;
     @XmlElement(name = "IMMOBILIENART")
+    @XmlSchemaType(name = "string")
     protected PropertyType immobilienart;
     @XmlElement(name = "ORT")
     protected String ort;
     @XmlElement(name = "FRAKTION")
     protected String fraktion;
     @XmlElement(name = "MIETEKAUF")
+    @XmlSchemaType(name = "string")
     protected MarketingType mietekauf;
     @XmlElement(name = "PREIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double preis;
     @XmlElement(name = "AUFANFRAGE", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean aufanfrage;
     @XmlElement(name = "NUTZFLAECHE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double nutzflaeche;
     @XmlElement(name = "FLAECHEART")
+    @XmlSchemaType(name = "string")
     protected AreaType flaecheart;
     @XmlElement(name = "FOERDERBAR", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -172,9 +177,11 @@ public class ObjectType
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean konventioniert;
     @XmlElement(name = "KUBATUR", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlSchemaType(name = "decimal")
     protected Double kubatur;
     @XmlElement(name = "ZUSTAND")
+    @XmlSchemaType(name = "string")
     protected ConditionType zustand;
     @XmlElement(name = "ZIMMER", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
@@ -216,8 +223,10 @@ public class ObjectType
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean dachboden;
     @XmlElement(name = "HEIZUNG")
+    @XmlSchemaType(name = "string")
     protected HeatingType heizung;
     @XmlElement(name = "KLIMAHAUS")
+    @XmlSchemaType(name = "string")
     protected EnergyStandard klimahaus;
     @XmlElement(name = "UEBERGABEZEITPUNKT")
     protected String uebergabezeitpunkt;

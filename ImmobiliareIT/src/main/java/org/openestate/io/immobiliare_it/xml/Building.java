@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
@@ -27,20 +28,20 @@ import org.openestate.io.immobiliare_it.xml.types.Category;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="building">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="status" type="{http://feed.immobiliare.it}status"/>
- *         &lt;element name="terrains" type="{http://feed.immobiliare.it}terrains" minOccurs="0"/>
- *         &lt;element name="class" type="{http://feed.immobiliare.it}class" minOccurs="0"/>
- *       &lt;/all>
- *       &lt;attribute name="category" type="{http://feed.immobiliare.it}cat" />
- *       &lt;attribute name="type" type="{http://feed.immobiliare.it}allPropertyTypeSimple" />
- *       &lt;attribute name="detail" type="{http://feed.immobiliare.it}PropertyTypeBusiness" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="building"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="status" type="{http://feed.immobiliare.it}status"/&gt;
+ *         &lt;element name="terrains" type="{http://feed.immobiliare.it}terrains" minOccurs="0"/&gt;
+ *         &lt;element name="class" type="{http://feed.immobiliare.it}class" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *       &lt;attribute name="category" type="{http://feed.immobiliare.it}cat" /&gt;
+ *       &lt;attribute name="type" type="{http://feed.immobiliare.it}allPropertyTypeSimple" /&gt;
+ *       &lt;attribute name="detail" type="{http://feed.immobiliare.it}PropertyTypeBusiness" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -54,12 +55,14 @@ public class Building
 {
 
     @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
     protected Status status;
     protected Terrains terrains;
     @XmlElement(name = "class")
+    @XmlSchemaType(name = "string")
     protected Clazz clazz;
     @XmlAttribute(name = "category")
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Category category;
     @XmlAttribute(name = "type")
     protected PropertyType type;

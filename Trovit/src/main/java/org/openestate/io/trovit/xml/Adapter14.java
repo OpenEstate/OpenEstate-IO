@@ -4,16 +4,16 @@ package org.openestate.io.trovit.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter14
-    extends XmlAdapter<String, Boolean>
+    extends XmlAdapter<String, Long>
 {
 
 
-    public Boolean unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseBool(value));
+    public Long unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseLong(value));
     }
 
-    public String marshal(Boolean value) {
-        return (org.openestate.io.trovit.TrovitUtils.printBool(value));
+    public String marshal(Long value) {
+        return (org.openestate.io.trovit.TrovitUtils.printLong(value));
     }
 
 }

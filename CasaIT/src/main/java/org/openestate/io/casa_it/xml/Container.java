@@ -30,379 +30,379 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="realestateitems">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="realestate" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="address" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="city" use="required">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                           &lt;length value="6"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                                     &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                                     &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                                     &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="description" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="value" use="required">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                           &lt;minLength value="20"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="building" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="age">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                           &lt;minInclusive value="-1"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="expenses">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                           &lt;minInclusive value="-1"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="units">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                           &lt;minInclusive value="-1"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="totalfloors">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                           &lt;minInclusive value="-1"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="price" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="value">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                           &lt;minInclusive value="-1"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="min" use="required">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                           &lt;minInclusive value="0"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="max" use="required">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
- *                                           &lt;minInclusive value="1"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="box" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="size">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                           &lt;minInclusive value="0"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="type">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                           &lt;enumeration value="-1"/>
- *                                           &lt;enumeration value="0"/>
- *                                           &lt;enumeration value="1"/>
- *                                           &lt;enumeration value="2"/>
- *                                           &lt;enumeration value="3"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="garden" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="size">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                           &lt;minInclusive value="0"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                     &lt;attribute name="type">
- *                                       &lt;simpleType>
- *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                           &lt;enumeration value="-1"/>
- *                                           &lt;enumeration value="0"/>
- *                                           &lt;enumeration value="1"/>
- *                                           &lt;enumeration value="2"/>
- *                                         &lt;/restriction>
- *                                       &lt;/simpleType>
- *                                     &lt;/attribute>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="configuration" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
- *                                     &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
- *                                     &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="googlemapcoordinate" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" />
- *                                     &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" />
- *                                     &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" />
- *                                     &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
- *                                     &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="images" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="advertismentimage" maxOccurs="14">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                                               &lt;attribute name="imagetype" use="required">
- *                                                 &lt;simpleType>
- *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                     &lt;enumeration value="Image"/>
- *                                                     &lt;enumeration value="Map"/>
- *                                                   &lt;/restriction>
- *                                                 &lt;/simpleType>
- *                                               &lt;/attribute>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                           &lt;attribute name="action" use="required">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="0"/>
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="2"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="agencycode" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
- *                           &lt;attribute name="reference" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                           &lt;attribute name="referenceID" type="{http://www.w3.org/2001/XMLSchema}int" />
- *                           &lt;attribute name="contracttype" use="required">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="2"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="condition">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="-1"/>
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="2"/>
- *                                 &lt;enumeration value="3"/>
- *                                 &lt;enumeration value="4"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="hasbalcony" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *                           &lt;attribute name="hasterrace" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *                           &lt;attribute name="heatingtype">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="-1"/>
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="2"/>
- *                                 &lt;enumeration value="3"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="housetypology" use="required">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="3"/>
- *                                 &lt;enumeration value="4"/>
- *                                 &lt;enumeration value="5"/>
- *                                 &lt;enumeration value="6"/>
- *                                 &lt;enumeration value="7"/>
- *                                 &lt;enumeration value="8"/>
- *                                 &lt;enumeration value="9"/>
- *                                 &lt;enumeration value="10"/>
- *                                 &lt;enumeration value="11"/>
- *                                 &lt;enumeration value="12"/>
- *                                 &lt;enumeration value="13"/>
- *                                 &lt;enumeration value="14"/>
- *                                 &lt;enumeration value="15"/>
- *                                 &lt;enumeration value="16"/>
- *                                 &lt;enumeration value="17"/>
- *                                 &lt;enumeration value="18"/>
- *                                 &lt;enumeration value="19"/>
- *                                 &lt;enumeration value="20"/>
- *                                 &lt;enumeration value="21"/>
- *                                 &lt;enumeration value="22"/>
- *                                 &lt;enumeration value="23"/>
- *                                 &lt;enumeration value="24"/>
- *                                 &lt;enumeration value="26"/>
- *                                 &lt;enumeration value="27"/>
- *                                 &lt;enumeration value="28"/>
- *                                 &lt;enumeration value="29"/>
- *                                 &lt;enumeration value="30"/>
- *                                 &lt;enumeration value="31"/>
- *                                 &lt;enumeration value="32"/>
- *                                 &lt;enumeration value="33"/>
- *                                 &lt;enumeration value="34"/>
- *                                 &lt;enumeration value="35"/>
- *                                 &lt;enumeration value="36"/>
- *                                 &lt;enumeration value="37"/>
- *                                 &lt;enumeration value="38"/>
- *                                 &lt;enumeration value="39"/>
- *                                 &lt;enumeration value="40"/>
- *                                 &lt;enumeration value="41"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="bathrooms">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;minInclusive value="-1"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="floor">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="-2"/>
- *                                 &lt;enumeration value="-1"/>
- *                                 &lt;enumeration value="0"/>
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="2"/>
- *                                 &lt;enumeration value="3"/>
- *                                 &lt;enumeration value="4"/>
- *                                 &lt;enumeration value="5"/>
- *                                 &lt;enumeration value="6"/>
- *                                 &lt;enumeration value="7"/>
- *                                 &lt;enumeration value="8"/>
- *                                 &lt;enumeration value="9"/>
- *                                 &lt;enumeration value="10"/>
- *                                 &lt;enumeration value="11"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="rooms">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;minInclusive value="-1"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="occupationstate">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="-1"/>
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="2"/>
- *                                 &lt;enumeration value="3"/>
- *                                 &lt;enumeration value="4"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="realestatetype" use="required">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
- *                                 &lt;enumeration value="1"/>
- *                                 &lt;enumeration value="2"/>
- *                                 &lt;enumeration value="4"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/choice>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="realestateitems"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="realestate" maxOccurs="unbounded"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="address" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="city" use="required"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                           &lt;length value="6"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                                     &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                                     &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                                     &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="description" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="value" use="required"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                           &lt;minLength value="20"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="building" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="age"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                           &lt;minInclusive value="-1"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="expenses"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                           &lt;minInclusive value="-1"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="units"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                           &lt;minInclusive value="-1"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="totalfloors"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                           &lt;minInclusive value="-1"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="price" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="value"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                           &lt;minInclusive value="-1"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="min" use="required"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                           &lt;minInclusive value="0"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="max" use="required"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *                                           &lt;minInclusive value="1"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="box" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="size"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                           &lt;minInclusive value="0"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="type"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                           &lt;enumeration value="-1"/&gt;
+ *                                           &lt;enumeration value="0"/&gt;
+ *                                           &lt;enumeration value="1"/&gt;
+ *                                           &lt;enumeration value="2"/&gt;
+ *                                           &lt;enumeration value="3"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="garden" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="size"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                           &lt;minInclusive value="0"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                     &lt;attribute name="type"&gt;
+ *                                       &lt;simpleType&gt;
+ *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                           &lt;enumeration value="-1"/&gt;
+ *                                           &lt;enumeration value="0"/&gt;
+ *                                           &lt;enumeration value="1"/&gt;
+ *                                           &lt;enumeration value="2"/&gt;
+ *                                         &lt;/restriction&gt;
+ *                                       &lt;/simpleType&gt;
+ *                                     &lt;/attribute&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="configuration" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+ *                                     &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+ *                                     &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="googlemapcoordinate" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+ *                                     &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+ *                                     &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *                                     &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+ *                                     &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="images" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="advertismentimage" maxOccurs="14"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                                               &lt;attribute name="imagetype" use="required"&gt;
+ *                                                 &lt;simpleType&gt;
+ *                                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                     &lt;enumeration value="Image"/&gt;
+ *                                                     &lt;enumeration value="Map"/&gt;
+ *                                                   &lt;/restriction&gt;
+ *                                                 &lt;/simpleType&gt;
+ *                                               &lt;/attribute&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                           &lt;attribute name="action" use="required"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="0"/&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="2"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="agencycode" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *                           &lt;attribute name="reference" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                           &lt;attribute name="referenceID" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *                           &lt;attribute name="contracttype" use="required"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="2"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="condition"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="-1"/&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="2"/&gt;
+ *                                 &lt;enumeration value="3"/&gt;
+ *                                 &lt;enumeration value="4"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="hasbalcony" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *                           &lt;attribute name="hasterrace" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *                           &lt;attribute name="heatingtype"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="-1"/&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="2"/&gt;
+ *                                 &lt;enumeration value="3"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="housetypology" use="required"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="3"/&gt;
+ *                                 &lt;enumeration value="4"/&gt;
+ *                                 &lt;enumeration value="5"/&gt;
+ *                                 &lt;enumeration value="6"/&gt;
+ *                                 &lt;enumeration value="7"/&gt;
+ *                                 &lt;enumeration value="8"/&gt;
+ *                                 &lt;enumeration value="9"/&gt;
+ *                                 &lt;enumeration value="10"/&gt;
+ *                                 &lt;enumeration value="11"/&gt;
+ *                                 &lt;enumeration value="12"/&gt;
+ *                                 &lt;enumeration value="13"/&gt;
+ *                                 &lt;enumeration value="14"/&gt;
+ *                                 &lt;enumeration value="15"/&gt;
+ *                                 &lt;enumeration value="16"/&gt;
+ *                                 &lt;enumeration value="17"/&gt;
+ *                                 &lt;enumeration value="18"/&gt;
+ *                                 &lt;enumeration value="19"/&gt;
+ *                                 &lt;enumeration value="20"/&gt;
+ *                                 &lt;enumeration value="21"/&gt;
+ *                                 &lt;enumeration value="22"/&gt;
+ *                                 &lt;enumeration value="23"/&gt;
+ *                                 &lt;enumeration value="24"/&gt;
+ *                                 &lt;enumeration value="26"/&gt;
+ *                                 &lt;enumeration value="27"/&gt;
+ *                                 &lt;enumeration value="28"/&gt;
+ *                                 &lt;enumeration value="29"/&gt;
+ *                                 &lt;enumeration value="30"/&gt;
+ *                                 &lt;enumeration value="31"/&gt;
+ *                                 &lt;enumeration value="32"/&gt;
+ *                                 &lt;enumeration value="33"/&gt;
+ *                                 &lt;enumeration value="34"/&gt;
+ *                                 &lt;enumeration value="35"/&gt;
+ *                                 &lt;enumeration value="36"/&gt;
+ *                                 &lt;enumeration value="37"/&gt;
+ *                                 &lt;enumeration value="38"/&gt;
+ *                                 &lt;enumeration value="39"/&gt;
+ *                                 &lt;enumeration value="40"/&gt;
+ *                                 &lt;enumeration value="41"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="bathrooms"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;minInclusive value="-1"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="floor"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="-2"/&gt;
+ *                                 &lt;enumeration value="-1"/&gt;
+ *                                 &lt;enumeration value="0"/&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="2"/&gt;
+ *                                 &lt;enumeration value="3"/&gt;
+ *                                 &lt;enumeration value="4"/&gt;
+ *                                 &lt;enumeration value="5"/&gt;
+ *                                 &lt;enumeration value="6"/&gt;
+ *                                 &lt;enumeration value="7"/&gt;
+ *                                 &lt;enumeration value="8"/&gt;
+ *                                 &lt;enumeration value="9"/&gt;
+ *                                 &lt;enumeration value="10"/&gt;
+ *                                 &lt;enumeration value="11"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="rooms"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;minInclusive value="-1"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="occupationstate"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="-1"/&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="2"/&gt;
+ *                                 &lt;enumeration value="3"/&gt;
+ *                                 &lt;enumeration value="4"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="realestatetype" use="required"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+ *                                 &lt;enumeration value="1"/&gt;
+ *                                 &lt;enumeration value="2"/&gt;
+ *                                 &lt;enumeration value="4"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/choice&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -526,369 +526,369 @@ public class Container
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="realestate" maxOccurs="unbounded">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="address" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="city" use="required">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                 &lt;length value="6"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                           &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                           &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                           &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="description" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="value" use="required">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                 &lt;minLength value="20"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="building" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="age">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                 &lt;minInclusive value="-1"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="expenses">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                 &lt;minInclusive value="-1"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="units">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                 &lt;minInclusive value="-1"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="totalfloors">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                 &lt;minInclusive value="-1"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="price" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="value">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                 &lt;minInclusive value="-1"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="min" use="required">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                 &lt;minInclusive value="0"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="max" use="required">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-     *                                 &lt;minInclusive value="1"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="box" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="size">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                 &lt;minInclusive value="0"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="type">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                 &lt;enumeration value="-1"/>
-     *                                 &lt;enumeration value="0"/>
-     *                                 &lt;enumeration value="1"/>
-     *                                 &lt;enumeration value="2"/>
-     *                                 &lt;enumeration value="3"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="garden" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="size">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                 &lt;minInclusive value="0"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                           &lt;attribute name="type">
-     *                             &lt;simpleType>
-     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                                 &lt;enumeration value="-1"/>
-     *                                 &lt;enumeration value="0"/>
-     *                                 &lt;enumeration value="1"/>
-     *                                 &lt;enumeration value="2"/>
-     *                               &lt;/restriction>
-     *                             &lt;/simpleType>
-     *                           &lt;/attribute>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="configuration" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-     *                           &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-     *                           &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="googlemapcoordinate" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                           &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                           &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" />
-     *                           &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                           &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="images" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="advertismentimage" maxOccurs="14">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                                     &lt;attribute name="imagetype" use="required">
-     *                                       &lt;simpleType>
-     *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                           &lt;enumeration value="Image"/>
-     *                                           &lt;enumeration value="Map"/>
-     *                                         &lt;/restriction>
-     *                                       &lt;/simpleType>
-     *                                     &lt;/attribute>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *                 &lt;attribute name="action" use="required">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="0"/>
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="2"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="agencycode" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
-     *                 &lt;attribute name="reference" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                 &lt;attribute name="referenceID" type="{http://www.w3.org/2001/XMLSchema}int" />
-     *                 &lt;attribute name="contracttype" use="required">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="2"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="condition">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="-1"/>
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="2"/>
-     *                       &lt;enumeration value="3"/>
-     *                       &lt;enumeration value="4"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="hasbalcony" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *                 &lt;attribute name="hasterrace" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *                 &lt;attribute name="heatingtype">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="-1"/>
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="2"/>
-     *                       &lt;enumeration value="3"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="housetypology" use="required">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="3"/>
-     *                       &lt;enumeration value="4"/>
-     *                       &lt;enumeration value="5"/>
-     *                       &lt;enumeration value="6"/>
-     *                       &lt;enumeration value="7"/>
-     *                       &lt;enumeration value="8"/>
-     *                       &lt;enumeration value="9"/>
-     *                       &lt;enumeration value="10"/>
-     *                       &lt;enumeration value="11"/>
-     *                       &lt;enumeration value="12"/>
-     *                       &lt;enumeration value="13"/>
-     *                       &lt;enumeration value="14"/>
-     *                       &lt;enumeration value="15"/>
-     *                       &lt;enumeration value="16"/>
-     *                       &lt;enumeration value="17"/>
-     *                       &lt;enumeration value="18"/>
-     *                       &lt;enumeration value="19"/>
-     *                       &lt;enumeration value="20"/>
-     *                       &lt;enumeration value="21"/>
-     *                       &lt;enumeration value="22"/>
-     *                       &lt;enumeration value="23"/>
-     *                       &lt;enumeration value="24"/>
-     *                       &lt;enumeration value="26"/>
-     *                       &lt;enumeration value="27"/>
-     *                       &lt;enumeration value="28"/>
-     *                       &lt;enumeration value="29"/>
-     *                       &lt;enumeration value="30"/>
-     *                       &lt;enumeration value="31"/>
-     *                       &lt;enumeration value="32"/>
-     *                       &lt;enumeration value="33"/>
-     *                       &lt;enumeration value="34"/>
-     *                       &lt;enumeration value="35"/>
-     *                       &lt;enumeration value="36"/>
-     *                       &lt;enumeration value="37"/>
-     *                       &lt;enumeration value="38"/>
-     *                       &lt;enumeration value="39"/>
-     *                       &lt;enumeration value="40"/>
-     *                       &lt;enumeration value="41"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="bathrooms">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;minInclusive value="-1"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="floor">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="-2"/>
-     *                       &lt;enumeration value="-1"/>
-     *                       &lt;enumeration value="0"/>
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="2"/>
-     *                       &lt;enumeration value="3"/>
-     *                       &lt;enumeration value="4"/>
-     *                       &lt;enumeration value="5"/>
-     *                       &lt;enumeration value="6"/>
-     *                       &lt;enumeration value="7"/>
-     *                       &lt;enumeration value="8"/>
-     *                       &lt;enumeration value="9"/>
-     *                       &lt;enumeration value="10"/>
-     *                       &lt;enumeration value="11"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="rooms">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;minInclusive value="-1"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="occupationstate">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="-1"/>
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="2"/>
-     *                       &lt;enumeration value="3"/>
-     *                       &lt;enumeration value="4"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="realestatetype" use="required">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-     *                       &lt;enumeration value="1"/>
-     *                       &lt;enumeration value="2"/>
-     *                       &lt;enumeration value="4"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="realestate" maxOccurs="unbounded"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="address" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="city" use="required"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                 &lt;length value="6"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *                           &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *                           &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *                           &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="description" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="value" use="required"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                 &lt;minLength value="20"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="building" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="age"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                 &lt;minInclusive value="-1"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="expenses"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                 &lt;minInclusive value="-1"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="units"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                 &lt;minInclusive value="-1"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="totalfloors"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                 &lt;minInclusive value="-1"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="price" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="value"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                 &lt;minInclusive value="-1"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="min" use="required"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                 &lt;minInclusive value="0"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="max" use="required"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+     *                                 &lt;minInclusive value="1"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="box" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="size"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                 &lt;minInclusive value="0"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="type"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                 &lt;enumeration value="-1"/&gt;
+     *                                 &lt;enumeration value="0"/&gt;
+     *                                 &lt;enumeration value="1"/&gt;
+     *                                 &lt;enumeration value="2"/&gt;
+     *                                 &lt;enumeration value="3"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="garden" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="size"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                 &lt;minInclusive value="0"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                           &lt;attribute name="type"&gt;
+     *                             &lt;simpleType&gt;
+     *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                                 &lt;enumeration value="-1"/&gt;
+     *                                 &lt;enumeration value="0"/&gt;
+     *                                 &lt;enumeration value="1"/&gt;
+     *                                 &lt;enumeration value="2"/&gt;
+     *                               &lt;/restriction&gt;
+     *                             &lt;/simpleType&gt;
+     *                           &lt;/attribute&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="configuration" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+     *                           &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+     *                           &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="googlemapcoordinate" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+     *                           &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+     *                           &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+     *                           &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+     *                           &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="images" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="advertismentimage" maxOccurs="14"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *                                     &lt;attribute name="imagetype" use="required"&gt;
+     *                                       &lt;simpleType&gt;
+     *                                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                           &lt;enumeration value="Image"/&gt;
+     *                                           &lt;enumeration value="Map"/&gt;
+     *                                         &lt;/restriction&gt;
+     *                                       &lt;/simpleType&gt;
+     *                                     &lt;/attribute&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *                 &lt;attribute name="action" use="required"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="0"/&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="2"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="agencycode" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+     *                 &lt;attribute name="reference" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *                 &lt;attribute name="referenceID" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+     *                 &lt;attribute name="contracttype" use="required"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="2"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="condition"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="-1"/&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="2"/&gt;
+     *                       &lt;enumeration value="3"/&gt;
+     *                       &lt;enumeration value="4"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="hasbalcony" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *                 &lt;attribute name="hasterrace" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *                 &lt;attribute name="heatingtype"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="-1"/&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="2"/&gt;
+     *                       &lt;enumeration value="3"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="housetypology" use="required"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="3"/&gt;
+     *                       &lt;enumeration value="4"/&gt;
+     *                       &lt;enumeration value="5"/&gt;
+     *                       &lt;enumeration value="6"/&gt;
+     *                       &lt;enumeration value="7"/&gt;
+     *                       &lt;enumeration value="8"/&gt;
+     *                       &lt;enumeration value="9"/&gt;
+     *                       &lt;enumeration value="10"/&gt;
+     *                       &lt;enumeration value="11"/&gt;
+     *                       &lt;enumeration value="12"/&gt;
+     *                       &lt;enumeration value="13"/&gt;
+     *                       &lt;enumeration value="14"/&gt;
+     *                       &lt;enumeration value="15"/&gt;
+     *                       &lt;enumeration value="16"/&gt;
+     *                       &lt;enumeration value="17"/&gt;
+     *                       &lt;enumeration value="18"/&gt;
+     *                       &lt;enumeration value="19"/&gt;
+     *                       &lt;enumeration value="20"/&gt;
+     *                       &lt;enumeration value="21"/&gt;
+     *                       &lt;enumeration value="22"/&gt;
+     *                       &lt;enumeration value="23"/&gt;
+     *                       &lt;enumeration value="24"/&gt;
+     *                       &lt;enumeration value="26"/&gt;
+     *                       &lt;enumeration value="27"/&gt;
+     *                       &lt;enumeration value="28"/&gt;
+     *                       &lt;enumeration value="29"/&gt;
+     *                       &lt;enumeration value="30"/&gt;
+     *                       &lt;enumeration value="31"/&gt;
+     *                       &lt;enumeration value="32"/&gt;
+     *                       &lt;enumeration value="33"/&gt;
+     *                       &lt;enumeration value="34"/&gt;
+     *                       &lt;enumeration value="35"/&gt;
+     *                       &lt;enumeration value="36"/&gt;
+     *                       &lt;enumeration value="37"/&gt;
+     *                       &lt;enumeration value="38"/&gt;
+     *                       &lt;enumeration value="39"/&gt;
+     *                       &lt;enumeration value="40"/&gt;
+     *                       &lt;enumeration value="41"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="bathrooms"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;minInclusive value="-1"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="floor"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="-2"/&gt;
+     *                       &lt;enumeration value="-1"/&gt;
+     *                       &lt;enumeration value="0"/&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="2"/&gt;
+     *                       &lt;enumeration value="3"/&gt;
+     *                       &lt;enumeration value="4"/&gt;
+     *                       &lt;enumeration value="5"/&gt;
+     *                       &lt;enumeration value="6"/&gt;
+     *                       &lt;enumeration value="7"/&gt;
+     *                       &lt;enumeration value="8"/&gt;
+     *                       &lt;enumeration value="9"/&gt;
+     *                       &lt;enumeration value="10"/&gt;
+     *                       &lt;enumeration value="11"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="rooms"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;minInclusive value="-1"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="occupationstate"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="-1"/&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="2"/&gt;
+     *                       &lt;enumeration value="3"/&gt;
+     *                       &lt;enumeration value="4"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="realestatetype" use="required"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+     *                       &lt;enumeration value="1"/&gt;
+     *                       &lt;enumeration value="2"/&gt;
+     *                       &lt;enumeration value="4"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1022,359 +1022,359 @@ public class Container
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="address" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="city" use="required">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                       &lt;length value="6"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                 &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                 &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                 &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="description" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="value" use="required">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                       &lt;minLength value="20"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="building" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="age">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                       &lt;minInclusive value="-1"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="expenses">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                       &lt;minInclusive value="-1"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="units">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                       &lt;minInclusive value="-1"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="totalfloors">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                       &lt;minInclusive value="-1"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="price" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="value">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                       &lt;minInclusive value="-1"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="min" use="required">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                       &lt;minInclusive value="0"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="max" use="required">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-         *                       &lt;minInclusive value="1"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="box" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="size">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                       &lt;minInclusive value="0"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="type">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                       &lt;enumeration value="-1"/>
-         *                       &lt;enumeration value="0"/>
-         *                       &lt;enumeration value="1"/>
-         *                       &lt;enumeration value="2"/>
-         *                       &lt;enumeration value="3"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="garden" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="size">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                       &lt;minInclusive value="0"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *                 &lt;attribute name="type">
-         *                   &lt;simpleType>
-         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *                       &lt;enumeration value="-1"/>
-         *                       &lt;enumeration value="0"/>
-         *                       &lt;enumeration value="1"/>
-         *                       &lt;enumeration value="2"/>
-         *                     &lt;/restriction>
-         *                   &lt;/simpleType>
-         *                 &lt;/attribute>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="configuration" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-         *                 &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-         *                 &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="googlemapcoordinate" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                 &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                 &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" />
-         *                 &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *                 &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="images" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="advertismentimage" maxOccurs="14">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                           &lt;attribute name="imagetype" use="required">
-         *                             &lt;simpleType>
-         *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                 &lt;enumeration value="Image"/>
-         *                                 &lt;enumeration value="Map"/>
-         *                               &lt;/restriction>
-         *                             &lt;/simpleType>
-         *                           &lt;/attribute>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *       &lt;attribute name="action" use="required">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="0"/>
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="2"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="agencycode" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
-         *       &lt;attribute name="reference" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *       &lt;attribute name="referenceID" type="{http://www.w3.org/2001/XMLSchema}int" />
-         *       &lt;attribute name="contracttype" use="required">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="2"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="condition">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="-1"/>
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="2"/>
-         *             &lt;enumeration value="3"/>
-         *             &lt;enumeration value="4"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="hasbalcony" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-         *       &lt;attribute name="hasterrace" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-         *       &lt;attribute name="heatingtype">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="-1"/>
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="2"/>
-         *             &lt;enumeration value="3"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="housetypology" use="required">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="3"/>
-         *             &lt;enumeration value="4"/>
-         *             &lt;enumeration value="5"/>
-         *             &lt;enumeration value="6"/>
-         *             &lt;enumeration value="7"/>
-         *             &lt;enumeration value="8"/>
-         *             &lt;enumeration value="9"/>
-         *             &lt;enumeration value="10"/>
-         *             &lt;enumeration value="11"/>
-         *             &lt;enumeration value="12"/>
-         *             &lt;enumeration value="13"/>
-         *             &lt;enumeration value="14"/>
-         *             &lt;enumeration value="15"/>
-         *             &lt;enumeration value="16"/>
-         *             &lt;enumeration value="17"/>
-         *             &lt;enumeration value="18"/>
-         *             &lt;enumeration value="19"/>
-         *             &lt;enumeration value="20"/>
-         *             &lt;enumeration value="21"/>
-         *             &lt;enumeration value="22"/>
-         *             &lt;enumeration value="23"/>
-         *             &lt;enumeration value="24"/>
-         *             &lt;enumeration value="26"/>
-         *             &lt;enumeration value="27"/>
-         *             &lt;enumeration value="28"/>
-         *             &lt;enumeration value="29"/>
-         *             &lt;enumeration value="30"/>
-         *             &lt;enumeration value="31"/>
-         *             &lt;enumeration value="32"/>
-         *             &lt;enumeration value="33"/>
-         *             &lt;enumeration value="34"/>
-         *             &lt;enumeration value="35"/>
-         *             &lt;enumeration value="36"/>
-         *             &lt;enumeration value="37"/>
-         *             &lt;enumeration value="38"/>
-         *             &lt;enumeration value="39"/>
-         *             &lt;enumeration value="40"/>
-         *             &lt;enumeration value="41"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="bathrooms">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;minInclusive value="-1"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="floor">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="-2"/>
-         *             &lt;enumeration value="-1"/>
-         *             &lt;enumeration value="0"/>
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="2"/>
-         *             &lt;enumeration value="3"/>
-         *             &lt;enumeration value="4"/>
-         *             &lt;enumeration value="5"/>
-         *             &lt;enumeration value="6"/>
-         *             &lt;enumeration value="7"/>
-         *             &lt;enumeration value="8"/>
-         *             &lt;enumeration value="9"/>
-         *             &lt;enumeration value="10"/>
-         *             &lt;enumeration value="11"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="rooms">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;minInclusive value="-1"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="occupationstate">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="-1"/>
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="2"/>
-         *             &lt;enumeration value="3"/>
-         *             &lt;enumeration value="4"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="realestatetype" use="required">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-         *             &lt;enumeration value="1"/>
-         *             &lt;enumeration value="2"/>
-         *             &lt;enumeration value="4"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="address" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="city" use="required"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                       &lt;length value="6"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+         *                 &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+         *                 &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+         *                 &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="description" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="value" use="required"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                       &lt;minLength value="20"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="building" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="age"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                       &lt;minInclusive value="-1"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="expenses"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                       &lt;minInclusive value="-1"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="units"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                       &lt;minInclusive value="-1"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="totalfloors"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                       &lt;minInclusive value="-1"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="price" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="value"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                       &lt;minInclusive value="-1"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="min" use="required"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                       &lt;minInclusive value="0"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="max" use="required"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+         *                       &lt;minInclusive value="1"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="box" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="size"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                       &lt;minInclusive value="0"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="type"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                       &lt;enumeration value="-1"/&gt;
+         *                       &lt;enumeration value="0"/&gt;
+         *                       &lt;enumeration value="1"/&gt;
+         *                       &lt;enumeration value="2"/&gt;
+         *                       &lt;enumeration value="3"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="garden" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="size"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                       &lt;minInclusive value="0"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *                 &lt;attribute name="type"&gt;
+         *                   &lt;simpleType&gt;
+         *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *                       &lt;enumeration value="-1"/&gt;
+         *                       &lt;enumeration value="0"/&gt;
+         *                       &lt;enumeration value="1"/&gt;
+         *                       &lt;enumeration value="2"/&gt;
+         *                     &lt;/restriction&gt;
+         *                   &lt;/simpleType&gt;
+         *                 &lt;/attribute&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="configuration" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+         *                 &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+         *                 &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="googlemapcoordinate" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+         *                 &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+         *                 &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+         *                 &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+         *                 &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="images" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="advertismentimage" maxOccurs="14"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+         *                           &lt;attribute name="imagetype" use="required"&gt;
+         *                             &lt;simpleType&gt;
+         *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                 &lt;enumeration value="Image"/&gt;
+         *                                 &lt;enumeration value="Map"/&gt;
+         *                               &lt;/restriction&gt;
+         *                             &lt;/simpleType&gt;
+         *                           &lt;/attribute&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *       &lt;attribute name="action" use="required"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="0"/&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="2"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="agencycode" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+         *       &lt;attribute name="reference" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+         *       &lt;attribute name="referenceID" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+         *       &lt;attribute name="contracttype" use="required"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="2"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="condition"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="-1"/&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="2"/&gt;
+         *             &lt;enumeration value="3"/&gt;
+         *             &lt;enumeration value="4"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="hasbalcony" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+         *       &lt;attribute name="hasterrace" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+         *       &lt;attribute name="heatingtype"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="-1"/&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="2"/&gt;
+         *             &lt;enumeration value="3"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="housetypology" use="required"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="3"/&gt;
+         *             &lt;enumeration value="4"/&gt;
+         *             &lt;enumeration value="5"/&gt;
+         *             &lt;enumeration value="6"/&gt;
+         *             &lt;enumeration value="7"/&gt;
+         *             &lt;enumeration value="8"/&gt;
+         *             &lt;enumeration value="9"/&gt;
+         *             &lt;enumeration value="10"/&gt;
+         *             &lt;enumeration value="11"/&gt;
+         *             &lt;enumeration value="12"/&gt;
+         *             &lt;enumeration value="13"/&gt;
+         *             &lt;enumeration value="14"/&gt;
+         *             &lt;enumeration value="15"/&gt;
+         *             &lt;enumeration value="16"/&gt;
+         *             &lt;enumeration value="17"/&gt;
+         *             &lt;enumeration value="18"/&gt;
+         *             &lt;enumeration value="19"/&gt;
+         *             &lt;enumeration value="20"/&gt;
+         *             &lt;enumeration value="21"/&gt;
+         *             &lt;enumeration value="22"/&gt;
+         *             &lt;enumeration value="23"/&gt;
+         *             &lt;enumeration value="24"/&gt;
+         *             &lt;enumeration value="26"/&gt;
+         *             &lt;enumeration value="27"/&gt;
+         *             &lt;enumeration value="28"/&gt;
+         *             &lt;enumeration value="29"/&gt;
+         *             &lt;enumeration value="30"/&gt;
+         *             &lt;enumeration value="31"/&gt;
+         *             &lt;enumeration value="32"/&gt;
+         *             &lt;enumeration value="33"/&gt;
+         *             &lt;enumeration value="34"/&gt;
+         *             &lt;enumeration value="35"/&gt;
+         *             &lt;enumeration value="36"/&gt;
+         *             &lt;enumeration value="37"/&gt;
+         *             &lt;enumeration value="38"/&gt;
+         *             &lt;enumeration value="39"/&gt;
+         *             &lt;enumeration value="40"/&gt;
+         *             &lt;enumeration value="41"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="bathrooms"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;minInclusive value="-1"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="floor"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="-2"/&gt;
+         *             &lt;enumeration value="-1"/&gt;
+         *             &lt;enumeration value="0"/&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="2"/&gt;
+         *             &lt;enumeration value="3"/&gt;
+         *             &lt;enumeration value="4"/&gt;
+         *             &lt;enumeration value="5"/&gt;
+         *             &lt;enumeration value="6"/&gt;
+         *             &lt;enumeration value="7"/&gt;
+         *             &lt;enumeration value="8"/&gt;
+         *             &lt;enumeration value="9"/&gt;
+         *             &lt;enumeration value="10"/&gt;
+         *             &lt;enumeration value="11"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="rooms"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;minInclusive value="-1"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="occupationstate"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="-1"/&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="2"/&gt;
+         *             &lt;enumeration value="3"/&gt;
+         *             &lt;enumeration value="4"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="realestatetype" use="required"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+         *             &lt;enumeration value="1"/&gt;
+         *             &lt;enumeration value="2"/&gt;
+         *             &lt;enumeration value="4"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="size" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -2639,23 +2639,23 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="city" use="required">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *             &lt;length value="6"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *       &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *       &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *       &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="city" use="required"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *             &lt;length value="6"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="zone" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+             *       &lt;attribute name="street" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+             *       &lt;attribute name="number" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+             *       &lt;attribute name="zip" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -2971,30 +2971,30 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="size">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *             &lt;minInclusive value="0"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="type">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *             &lt;enumeration value="-1"/>
-             *             &lt;enumeration value="0"/>
-             *             &lt;enumeration value="1"/>
-             *             &lt;enumeration value="2"/>
-             *             &lt;enumeration value="3"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="size"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *             &lt;minInclusive value="0"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="type"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *             &lt;enumeration value="-1"/&gt;
+             *             &lt;enumeration value="0"/&gt;
+             *             &lt;enumeration value="1"/&gt;
+             *             &lt;enumeration value="2"/&gt;
+             *             &lt;enumeration value="3"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -3166,41 +3166,41 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="age">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *             &lt;minInclusive value="-1"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="expenses">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *             &lt;minInclusive value="-1"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="units">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *             &lt;minInclusive value="-1"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="totalfloors">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *             &lt;minInclusive value="-1"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="age"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *             &lt;minInclusive value="-1"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="expenses"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *             &lt;minInclusive value="-1"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="units"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *             &lt;minInclusive value="-1"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="totalfloors"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *             &lt;minInclusive value="-1"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="haslift" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -3516,15 +3516,15 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-             *       &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-             *       &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="isaddressvisibleonsite" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+             *       &lt;attribute name="ismapvisible" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+             *       &lt;attribute name="isrealestatevisibleonmap" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -3756,19 +3756,19 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="value" use="required">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *             &lt;minLength value="20"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="value" use="required"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *             &lt;minLength value="20"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -3892,29 +3892,29 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="size">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *             &lt;minInclusive value="0"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="type">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer">
-             *             &lt;enumeration value="-1"/>
-             *             &lt;enumeration value="0"/>
-             *             &lt;enumeration value="1"/>
-             *             &lt;enumeration value="2"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="size"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *             &lt;minInclusive value="0"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="type"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}integer"&gt;
+             *             &lt;enumeration value="-1"/&gt;
+             *             &lt;enumeration value="0"/&gt;
+             *             &lt;enumeration value="1"/&gt;
+             *             &lt;enumeration value="2"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -4086,17 +4086,17 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *       &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *       &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" />
-             *       &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *       &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" />
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="latitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+             *       &lt;attribute name="longitude" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+             *       &lt;attribute name="mapzoom" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+             *       &lt;attribute name="latitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+             *       &lt;attribute name="longitudemapcenter" type="{http://www.w3.org/2001/XMLSchema}double" /&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -4412,31 +4412,31 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="advertismentimage" maxOccurs="14">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *                 &lt;attribute name="imagetype" use="required">
-             *                   &lt;simpleType>
-             *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                       &lt;enumeration value="Image"/>
-             *                       &lt;enumeration value="Map"/>
-             *                     &lt;/restriction>
-             *                   &lt;/simpleType>
-             *                 &lt;/attribute>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="advertismentimage" maxOccurs="14"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+             *                 &lt;attribute name="imagetype" use="required"&gt;
+             *                   &lt;simpleType&gt;
+             *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                       &lt;enumeration value="Image"/&gt;
+             *                       &lt;enumeration value="Map"/&gt;
+             *                     &lt;/restriction&gt;
+             *                   &lt;/simpleType&gt;
+             *                 &lt;/attribute&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -4570,21 +4570,21 @@ public class Container
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-                 *       &lt;attribute name="imagetype" use="required">
-                 *         &lt;simpleType>
-                 *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *             &lt;enumeration value="Image"/>
-                 *             &lt;enumeration value="Map"/>
-                 *           &lt;/restriction>
-                 *         &lt;/simpleType>
-                 *       &lt;/attribute>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;attribute name="path" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+                 *       &lt;attribute name="imagetype" use="required"&gt;
+                 *         &lt;simpleType&gt;
+                 *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *             &lt;enumeration value="Image"/&gt;
+                 *             &lt;enumeration value="Map"/&gt;
+                 *           &lt;/restriction&gt;
+                 *         &lt;/simpleType&gt;
+                 *       &lt;/attribute&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -4758,33 +4758,33 @@ public class Container
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="value">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *             &lt;minInclusive value="-1"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="min" use="required">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *             &lt;minInclusive value="0"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *       &lt;attribute name="max" use="required">
-             *         &lt;simpleType>
-             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
-             *             &lt;minInclusive value="1"/>
-             *           &lt;/restriction>
-             *         &lt;/simpleType>
-             *       &lt;/attribute>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;attribute name="value"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *             &lt;minInclusive value="-1"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="min" use="required"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *             &lt;minInclusive value="0"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *       &lt;attribute name="max" use="required"&gt;
+             *         &lt;simpleType&gt;
+             *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+             *             &lt;minInclusive value="1"/&gt;
+             *           &lt;/restriction&gt;
+             *         &lt;/simpleType&gt;
+             *       &lt;/attribute&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 

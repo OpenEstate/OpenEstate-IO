@@ -35,11 +35,11 @@ public class Geokoordinaten
 {
 
     @XmlAttribute(name = "breitengrad", required = true)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "float")
     protected Double breitengrad;
     @XmlAttribute(name = "laengengrad", required = true)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "float")
     protected Double laengengrad;
 

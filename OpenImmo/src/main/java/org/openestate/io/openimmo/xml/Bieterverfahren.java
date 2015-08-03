@@ -49,29 +49,29 @@ public class Bieterverfahren
 {
 
     @XmlElement(name = "beginn_angebotsphase", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar beginnAngebotsphase;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar besichtigungstermin;
     @XmlElement(name = "besichtigungstermin_2", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar besichtigungstermin2;
     @XmlElement(name = "beginn_bietzeit", type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
     protected Calendar beginnBietzeit;
     @XmlElement(name = "ende_bietzeit", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar endeBietzeit;
     @XmlElement(name = "hoechstgebot_zeigen")
     protected Boolean hoechstgebotZeigen;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
     protected Double mindestpreis;
     @XmlElement(name = "user_defined_simplefield")

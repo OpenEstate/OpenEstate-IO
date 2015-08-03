@@ -26,20 +26,20 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="GarageTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp">
- *       &lt;attribute name="ObjektKategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}GaragenKategorieTyp" default="keineAngabe" />
- *       &lt;attribute name="Objektzustand" type="{http://www.immobilienscout24.de/immobilientransfer}ObjektZustandTyp" default="keineAngabe" />
- *       &lt;attribute name="Hoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl42Typ" />
- *       &lt;attribute name="Laenge" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Breite" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Flaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Baujahr" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" />
- *       &lt;attribute name="JahrLetzteModernisierung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="GarageTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp"&gt;
+ *       &lt;attribute name="ObjektKategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}GaragenKategorieTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Objektzustand" type="{http://www.immobilienscout24.de/immobilientransfer}ObjektZustandTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Hoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl42Typ" /&gt;
+ *       &lt;attribute name="Laenge" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Breite" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Flaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Baujahr" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" /&gt;
+ *       &lt;attribute name="JahrLetzteModernisierung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -47,8 +47,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GarageTyp")
 @XmlSeeAlso({
-    org.openestate.io.is24_xml.xml.GarageKauf.Type.class,
-    org.openestate.io.is24_xml.xml.GarageMiete.Type.class
+    org.openestate.io.is24_xml.xml.GarageMiete.Type.class,
+    org.openestate.io.is24_xml.xml.GarageKauf.Type.class
 })
 public class GarageTyp
     extends ImmobilieBaseTyp
@@ -60,22 +60,22 @@ public class GarageTyp
     @XmlAttribute(name = "Objektzustand")
     protected ObjektZustandTyp objektzustand;
     @XmlAttribute(name = "Hoehe")
-    @XmlJavaTypeAdapter(Adapter23 .class)
+    @XmlJavaTypeAdapter(Adapter29 .class)
     protected Double hoehe;
     @XmlAttribute(name = "Laenge")
-    @XmlJavaTypeAdapter(Adapter13 .class)
+    @XmlJavaTypeAdapter(Adapter30 .class)
     protected Double laenge;
     @XmlAttribute(name = "Breite")
-    @XmlJavaTypeAdapter(Adapter13 .class)
+    @XmlJavaTypeAdapter(Adapter30 .class)
     protected Double breite;
     @XmlAttribute(name = "Flaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
+    @XmlJavaTypeAdapter(Adapter34 .class)
     protected Double flaeche;
     @XmlAttribute(name = "Baujahr")
-    @XmlJavaTypeAdapter(Adapter16 .class)
+    @XmlJavaTypeAdapter(Adapter22 .class)
     protected Long baujahr;
     @XmlAttribute(name = "JahrLetzteModernisierung")
-    @XmlJavaTypeAdapter(Adapter16 .class)
+    @XmlJavaTypeAdapter(Adapter22 .class)
     protected Long jahrLetzteModernisierung;
 
     /**

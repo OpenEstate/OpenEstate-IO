@@ -10,11 +10,11 @@ public class Adapter6
 
 
     public Calendar unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseDate(value));
+        return (org.openestate.io.trovit.TrovitUtils.parseTime(value));
     }
 
     public String marshal(Calendar value) {
-        return (org.openestate.io.trovit.TrovitUtils.printDate(value));
+        return (org.openestate.io.trovit.TrovitUtils.printTime(value));
     }
 
 }

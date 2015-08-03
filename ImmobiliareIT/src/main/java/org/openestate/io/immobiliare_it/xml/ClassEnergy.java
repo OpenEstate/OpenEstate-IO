@@ -12,19 +12,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="classEnergy">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="A+"/>
- *     &lt;enumeration value="A"/>
- *     &lt;enumeration value="B"/>
- *     &lt;enumeration value="C"/>
- *     &lt;enumeration value="D"/>
- *     &lt;enumeration value="E"/>
- *     &lt;enumeration value="F"/>
- *     &lt;enumeration value="G"/>
- *     &lt;enumeration value="esente"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="classEnergy"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="A+"/&gt;
+ *     &lt;enumeration value="A"/&gt;
+ *     &lt;enumeration value="B"/&gt;
+ *     &lt;enumeration value="C"/&gt;
+ *     &lt;enumeration value="D"/&gt;
+ *     &lt;enumeration value="E"/&gt;
+ *     &lt;enumeration value="F"/&gt;
+ *     &lt;enumeration value="G"/&gt;
+ *     &lt;enumeration value="esente"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -31,24 +31,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ImmobilieBaseTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Adresse" type="{http://www.immobilienscout24.de/immobilientransfer}ImmobilienAdresseTyp"/>
- *         &lt;element name="ManuelleGeoCodierung" type="{http://www.immobilienscout24.de/immobilientransfer}ManuellGeoCodingTyp" minOccurs="0"/>
- *         &lt;element name="Kontaktperson" type="{http://www.immobilienscout24.de/immobilientransfer}KontaktAdresseTyp" minOccurs="0"/>
- *         &lt;element name="ApiSuchfelder" type="{http://www.immobilienscout24.de/immobilientransfer}ApiSuchfelderTyp" minOccurs="0"/>
- *         &lt;element name="Objektbeschreibung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Lage" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Ausstattung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="SonstigeAngaben" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="MultimediaAnhang" type="{http://www.immobilienscout24.de/immobilientransfer}MultimediaAnhangTyp" maxOccurs="15" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attGroup ref="{http://www.immobilienscout24.de/immobilientransfer}ImmoAttribute"/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ImmobilieBaseTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Adresse" type="{http://www.immobilienscout24.de/immobilientransfer}ImmobilienAdresseTyp"/&gt;
+ *         &lt;element name="ManuelleGeoCodierung" type="{http://www.immobilienscout24.de/immobilientransfer}ManuellGeoCodingTyp" minOccurs="0"/&gt;
+ *         &lt;element name="Kontaktperson" type="{http://www.immobilienscout24.de/immobilientransfer}KontaktAdresseTyp" minOccurs="0"/&gt;
+ *         &lt;element name="ApiSuchfelder" type="{http://www.immobilienscout24.de/immobilientransfer}ApiSuchfelderTyp" minOccurs="0"/&gt;
+ *         &lt;element name="Objektbeschreibung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Lage" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Ausstattung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="SonstigeAngaben" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="MultimediaAnhang" type="{http://www.immobilienscout24.de/immobilientransfer}MultimediaAnhangTyp" maxOccurs="15" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attGroup ref="{http://www.immobilienscout24.de/immobilientransfer}ImmoAttribute"/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -66,14 +66,14 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "multimediaAnhang"
 })
 @XmlSeeAlso({
-    GrundstueckTypBase.class,
-    WazTyp.class,
-    WGZimmerTyp.class,
     WohnungTyp.class,
     HausTyp.class,
-    GarageTyp.class,
+    WazTyp.class,
+    GrundstueckTypBase.class,
     GewerbeImmoBaseTyp.class,
-    ZwangsversteigerungTyp.class
+    GarageTyp.class,
+    ZwangsversteigerungTyp.class,
+    WGZimmerTyp.class
 })
 public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToString
 {
@@ -87,21 +87,21 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
     @XmlElementRef(name = "ApiSuchfelder", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
     protected JAXBElement<ApiSuchfelderTyp> apiSuchfelder;
     @XmlElement(name = "Objektbeschreibung")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String objektbeschreibung;
     @XmlElement(name = "Lage")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String lage;
     @XmlElement(name = "Ausstattung")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String ausstattung;
     @XmlElement(name = "SonstigeAngaben")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String sonstigeAngaben;
     @XmlElement(name = "MultimediaAnhang")
     protected List<MultimediaAnhangTyp> multimediaAnhang;
     @XmlAttribute(name = "AnbieterObjektID", required = true)
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String anbieterObjektID;
     @XmlAttribute(name = "StatusVBM")
     protected StatusTyp statusVBM;
@@ -114,23 +114,23 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
     @XmlAttribute(name = "Importmodus")
     protected AktionsTyp importmodus;
     @XmlAttribute(name = "ScoutObjektID")
-    @XmlJavaTypeAdapter(Adapter36 .class)
+    @XmlJavaTypeAdapter(Adapter26 .class)
     protected Long scoutObjektID;
     @XmlAttribute(name = "GruppierungsID")
-    @XmlJavaTypeAdapter(Adapter21 .class)
+    @XmlJavaTypeAdapter(Adapter25 .class)
     protected Long gruppierungsID;
     @XmlAttribute(name = "Adressdruck")
     protected Boolean adressdruck;
     @XmlAttribute(name = "Ueberschrift", required = true)
-    @XmlJavaTypeAdapter(Adapter34 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected String ueberschrift;
     @XmlAttribute(name = "Provision")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String provision;
     @XmlAttribute(name = "Provisionspflichtig")
     protected Boolean provisionspflichtig;
     @XmlAttribute(name = "Provisionshinweis")
-    @XmlJavaTypeAdapter(Adapter29 .class)
+    @XmlJavaTypeAdapter(Adapter14 .class)
     protected String provisionshinweis;
     @XmlAttribute(name = "Waehrung")
     protected WaehrungTyp waehrung;

@@ -26,20 +26,20 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="KontaktAdresseTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AdresseBaseTyp">
- *       &lt;attribute name="Anrede" type="{http://www.immobilienscout24.de/immobilientransfer}Text20Typ" />
- *       &lt;attribute name="Vorname" type="{http://www.immobilienscout24.de/immobilientransfer}Text30Typ" />
- *       &lt;attribute name="Nachname" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *       &lt;attribute name="Telefon" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ" />
- *       &lt;attribute name="Mobiltelefon" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ" />
- *       &lt;attribute name="Telefax" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ" />
- *       &lt;attribute name="EMail" type="{http://www.immobilienscout24.de/immobilientransfer}EmailTyp" />
- *       &lt;attribute name="Homepage" type="{http://www.immobilienscout24.de/immobilientransfer}WebUrlTyp" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="KontaktAdresseTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AdresseBaseTyp"&gt;
+ *       &lt;attribute name="Anrede" type="{http://www.immobilienscout24.de/immobilientransfer}Text20Typ" /&gt;
+ *       &lt;attribute name="Vorname" type="{http://www.immobilienscout24.de/immobilientransfer}Text30Typ" /&gt;
+ *       &lt;attribute name="Nachname" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *       &lt;attribute name="Telefon" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ" /&gt;
+ *       &lt;attribute name="Mobiltelefon" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ" /&gt;
+ *       &lt;attribute name="Telefax" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ" /&gt;
+ *       &lt;attribute name="EMail" type="{http://www.immobilienscout24.de/immobilientransfer}EmailTyp" /&gt;
+ *       &lt;attribute name="Homepage" type="{http://www.immobilienscout24.de/immobilientransfer}WebUrlTyp" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -52,28 +52,28 @@ public class KontaktAdresseTyp
 {
 
     @XmlAttribute(name = "Anrede")
-    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected String anrede;
     @XmlAttribute(name = "Vorname")
-    @XmlJavaTypeAdapter(Adapter25 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected String vorname;
     @XmlAttribute(name = "Nachname")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String nachname;
     @XmlAttribute(name = "Telefon")
-    @XmlJavaTypeAdapter(Adapter26 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
     protected String telefon;
     @XmlAttribute(name = "Mobiltelefon")
-    @XmlJavaTypeAdapter(Adapter26 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
     protected String mobiltelefon;
     @XmlAttribute(name = "Telefax")
-    @XmlJavaTypeAdapter(Adapter26 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
     protected String telefax;
     @XmlAttribute(name = "EMail")
-    @XmlJavaTypeAdapter(Adapter32 .class)
+    @XmlJavaTypeAdapter(Adapter16 .class)
     protected String eMail;
     @XmlAttribute(name = "Homepage")
-    @XmlJavaTypeAdapter(Adapter30 .class)
+    @XmlJavaTypeAdapter(Adapter17 .class)
     protected URL homepage;
 
     /**

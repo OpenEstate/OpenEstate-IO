@@ -29,63 +29,63 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="overseasRentalAdType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="region" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="property_type" type="{}propertyType"/>
- *         &lt;element name="house_type" type="{}houseType"/>
- *         &lt;element name="commercial_type" type="{}commercialType"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="rent" type="{}positiveInteger"/>
- *         &lt;element name="rent_collection_period">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="weekly"/>
- *               &lt;enumeration value="monthly"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="bathroom_number" type="{}positiveInteger"/>
- *         &lt;element name="bedroom_number" type="{}positiveInteger"/>
- *         &lt;element name="furnished">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="furnished"/>
- *               &lt;enumeration value="unfurnished"/>
- *               &lt;enumeration value="either"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="cable_television" type="{}bool"/>
- *         &lt;element name="washing_machine" type="{}bool"/>
- *         &lt;element name="dryer" type="{}bool"/>
- *         &lt;element name="dishwasher" type="{}bool"/>
- *         &lt;element name="microwave" type="{}bool"/>
- *         &lt;element name="single_beds" type="{}positiveInteger" minOccurs="0"/>
- *         &lt;element name="double_beds" type="{}positiveInteger" minOccurs="0"/>
- *         &lt;element name="twin_beds" type="{}positiveInteger" minOccurs="0"/>
- *         &lt;element name="number_people" type="{}positiveInteger" minOccurs="0"/>
- *         &lt;element name="available_from" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
- *         &lt;element name="lease" type="{}positiveInteger" minOccurs="0"/>
- *         &lt;element name="phone1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="contact_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="phone_info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="main_email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="cc_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="external_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="agent_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="photos" type="{}photosType" minOccurs="0"/>
- *         &lt;element name="features" type="{}featuresType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="overseasRentalAdType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="region" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="property_type" type="{}propertyType"/&gt;
+ *         &lt;element name="house_type" type="{}houseType"/&gt;
+ *         &lt;element name="commercial_type" type="{}commercialType"/&gt;
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="rent" type="{}positiveInteger"/&gt;
+ *         &lt;element name="rent_collection_period"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="weekly"/&gt;
+ *               &lt;enumeration value="monthly"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="bathroom_number" type="{}positiveInteger"/&gt;
+ *         &lt;element name="bedroom_number" type="{}positiveInteger"/&gt;
+ *         &lt;element name="furnished"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="furnished"/&gt;
+ *               &lt;enumeration value="unfurnished"/&gt;
+ *               &lt;enumeration value="either"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="cable_television" type="{}bool"/&gt;
+ *         &lt;element name="washing_machine" type="{}bool"/&gt;
+ *         &lt;element name="dryer" type="{}bool"/&gt;
+ *         &lt;element name="dishwasher" type="{}bool"/&gt;
+ *         &lt;element name="microwave" type="{}bool"/&gt;
+ *         &lt;element name="single_beds" type="{}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="double_beds" type="{}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="twin_beds" type="{}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="number_people" type="{}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="available_from" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
+ *         &lt;element name="lease" type="{}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="phone1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="contact_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="phone_info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="main_email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="cc_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="external_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="agent_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="photos" type="{}photosType" minOccurs="0"/&gt;
+ *         &lt;element name="features" type="{}featuresType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -141,59 +141,70 @@ public class OverseasRentalAdType
     @XmlElement(required = true)
     protected java.lang.String address;
     @XmlElement(name = "property_type", required = true)
+    @XmlSchemaType(name = "string")
     protected PropertyType propertyType;
     @XmlElement(name = "house_type", required = true)
+    @XmlSchemaType(name = "string")
     protected HouseType houseType;
     @XmlElement(name = "commercial_type", required = true)
+    @XmlSchemaType(name = "string")
     protected CommercialType commercialType;
     @XmlElement(required = true)
     protected java.lang.String description;
     @XmlElement(required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer rent;
     @XmlElement(name = "rent_collection_period", required = true)
     protected OverseasRentalAdType.RentPeriod rentCollectionPeriod;
     @XmlElement(name = "bathroom_number", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer bathroomNumber;
     @XmlElement(name = "bedroom_number", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer bedroomNumber;
     @XmlElement(required = true)
     protected OverseasRentalAdType.Furnished furnished;
     @XmlElement(name = "cable_television", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean cableTelevision;
     @XmlElement(name = "washing_machine", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean washingMachine;
     @XmlElement(required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean dryer;
     @XmlElement(required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean dishwasher;
     @XmlElement(required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean microwave;
     @XmlElement(name = "single_beds", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer singleBeds;
     @XmlElement(name = "double_beds", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer doubleBeds;
     @XmlElement(name = "twin_beds", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer twinBeds;
     @XmlElement(name = "number_people", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer numberPeople;
     @XmlElement(name = "available_from", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
     protected Calendar availableFrom;
     @XmlElement(type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
     protected Integer lease;
     @XmlElement(required = true)
     protected java.lang.String phone1;
@@ -1839,13 +1850,13 @@ public class OverseasRentalAdType
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="furnished"/>
-     *     &lt;enumeration value="unfurnished"/>
-     *     &lt;enumeration value="either"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="furnished"/&gt;
+     *     &lt;enumeration value="unfurnished"/&gt;
+     *     &lt;enumeration value="either"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */
@@ -1887,12 +1898,12 @@ public class OverseasRentalAdType
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="weekly"/>
-     *     &lt;enumeration value="monthly"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="weekly"/&gt;
+     *     &lt;enumeration value="monthly"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */

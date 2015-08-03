@@ -28,13 +28,13 @@ import org.openestate.io.trovit.xml.types.PriceInterval;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;>typePriceString">
- *       &lt;attribute name="period" type="{}typePrice" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;&gt;typePriceString"&gt;
+ *       &lt;attribute name="period" type="{}typePrice" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,10 +49,10 @@ public class Price
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Double value;
     @XmlAttribute(name = "period")
-    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected PriceInterval period;
 
     /**

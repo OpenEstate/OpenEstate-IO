@@ -30,41 +30,41 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ImmobilienTransferTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Anbieter">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AnbieterTyp">
- *                 &lt;sequence>
- *                   &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilie" maxOccurs="unbounded" minOccurs="0"/>
- *                   &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}Immobilie" maxOccurs="unbounded" minOccurs="0"/>
- *                 &lt;/sequence>
- *               &lt;/extension>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *       &lt;attribute name="EmailBeiFehler" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}EmailTyp" />
- *       &lt;attribute name="ErstellerSoftware" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ">
- *             &lt;minLength value="3"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="ErstellerSoftwareVersion" use="required">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ">
- *             &lt;minLength value="3"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ImmobilienTransferTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Anbieter"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AnbieterTyp"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilie" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                   &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}Immobilie" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="EmailBeiFehler" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}EmailTyp" /&gt;
+ *       &lt;attribute name="ErstellerSoftware" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ"&gt;
+ *             &lt;minLength value="3"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;attribute name="ErstellerSoftwareVersion" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ"&gt;
+ *             &lt;minLength value="3"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -80,13 +80,13 @@ public class ImmobilienTransferTyp
     @XmlElement(name = "Anbieter", required = true)
     protected ImmobilienTransferTyp.Anbieter anbieter;
     @XmlAttribute(name = "EmailBeiFehler", required = true)
-    @XmlJavaTypeAdapter(Adapter32 .class)
+    @XmlJavaTypeAdapter(Adapter16 .class)
     protected String emailBeiFehler;
     @XmlAttribute(name = "ErstellerSoftware", required = true)
-    @XmlJavaTypeAdapter(Adapter34 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected String erstellerSoftware;
     @XmlAttribute(name = "ErstellerSoftwareVersion", required = true)
-    @XmlJavaTypeAdapter(Adapter34 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected String erstellerSoftwareVersion;
 
     /**
@@ -335,16 +335,16 @@ public class ImmobilienTransferTyp
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AnbieterTyp">
-     *       &lt;sequence>
-     *         &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilie" maxOccurs="unbounded" minOccurs="0"/>
-     *         &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}Immobilie" maxOccurs="unbounded" minOccurs="0"/>
-     *       &lt;/sequence>
-     *     &lt;/extension>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AnbieterTyp"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilie" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *         &lt;element ref="{http://www.immobilienscout24.de/immobilientransfer}Immobilie" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -412,26 +412,26 @@ public class ImmobilienTransferTyp
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link SonstigeGewerbe }
-         * {@link GarageKauf }
-         * {@link WohnungMiete }
-         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
-         * {@link WAZ }
-         * {@link Zwangsversteigerung }
-         * {@link Einzelhandel }
          * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link Gastronomie }
-         * {@link GrundstueckWohnenKauf }
-         * {@link GarageMiete }
-         * {@link BueroPraxis }
-         * {@link GrundstueckWohnenMiete }
-         * {@link HausMiete }
-         * {@link WGZimmer }
-         * {@link HalleProduktion }
-         * {@link GrundstueckGewerbe }
-         * {@link WohnungKauf }
-         * {@link HausKauf }
+         * {@link WohnungMiete }
          * {@link Anlageobjekt }
+         * {@link WAZ }
+         * {@link GrundstueckWohnenKauf }
+         * {@link HausKauf }
+         * {@link GrundstueckWohnenMiete }
+         * {@link GrundstueckGewerbe }
+         * {@link HalleProduktion }
+         * {@link Einzelhandel }
+         * {@link WGZimmer }
+         * {@link SonstigeGewerbe }
+         * {@link Gastronomie }
+         * {@link GarageMiete }
+         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
+         * {@link BueroPraxis }
+         * {@link HausMiete }
+         * {@link GarageKauf }
+         * {@link WohnungKauf }
+         * {@link Zwangsversteigerung }
          * 
          * 
          */

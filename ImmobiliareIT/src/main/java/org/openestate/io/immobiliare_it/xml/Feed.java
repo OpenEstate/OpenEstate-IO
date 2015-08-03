@@ -34,338 +34,338 @@ import org.openestate.io.immobiliare_it.xml.types.Category;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="version" type="{http://feed.immobiliare.it}version"/>
- *         &lt;element name="metadata">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="publisher" type="{http://feed.immobiliare.it}publisher"/>
- *                   &lt;element name="build-date" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *                   &lt;element name="multipage" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="current" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                             &lt;element name="last" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                           &lt;/all>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="projects" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="project">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/>
- *                             &lt;element name="agent">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
- *                                       &lt;element name="sales-office">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;all>
- *                                                 &lt;element name="country-code">
- *                                                   &lt;simpleType>
- *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                                       &lt;pattern value="[a-zA-Z]{2}"/>
- *                                                     &lt;/restriction>
- *                                                   &lt;/simpleType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="city">
- *                                                   &lt;complexType>
- *                                                     &lt;simpleContent>
- *                                                       &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *                                                         &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *                                                       &lt;/extension>
- *                                                     &lt;/simpleContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="locality">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;sequence>
- *                                                           &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                         &lt;/sequence>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                                 &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                                 &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                               &lt;/all>
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="features">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *                                       &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *                                       &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/>
- *                                       &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
- *                                       &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure" minOccurs="0"/>
- *                             &lt;element name="pictures" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="videos" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="lots" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                       &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                       &lt;element name="lot" maxOccurs="unbounded">
- *                                         &lt;complexType>
- *                                           &lt;complexContent>
- *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                               &lt;all>
- *                                                 &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/>
- *                                                 &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
- *                                                 &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
- *                                                 &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/>
- *                                                 &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *                                                 &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/>
- *                                                 &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/>
- *                                                 &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                                 &lt;element name="pictures" minOccurs="0">
- *                                                   &lt;complexType>
- *                                                     &lt;complexContent>
- *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                                         &lt;sequence>
- *                                                           &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
- *                                                         &lt;/sequence>
- *                                                       &lt;/restriction>
- *                                                     &lt;/complexContent>
- *                                                   &lt;/complexType>
- *                                                 &lt;/element>
- *                                               &lt;/all>
- *                                               &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *                                               &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *                                             &lt;/restriction>
- *                                           &lt;/complexContent>
- *                                         &lt;/complexType>
- *                                       &lt;/element>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                           &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" />
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="properties">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *                   &lt;element name="property">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;all>
- *                             &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/>
- *                             &lt;element name="date-expiration" minOccurs="0">
- *                               &lt;simpleType>
- *                                 &lt;union memberTypes=" {http://www.w3.org/2001/XMLSchema}dateTime {http://feed.immobiliare.it}nullString">
- *                                 &lt;/union>
- *                               &lt;/simpleType>
- *                             &lt;/element>
- *                             &lt;element name="transaction-type" type="{http://feed.immobiliare.it}transactionType"/>
- *                             &lt;element name="building" type="{http://feed.immobiliare.it}building" minOccurs="0"/>
- *                             &lt;element name="category" type="{http://feed.immobiliare.it}cat" minOccurs="0"/>
- *                             &lt;element name="property-type" type="{http://feed.immobiliare.it}proptype" minOccurs="0"/>
- *                             &lt;element name="building-status" type="{http://feed.immobiliare.it}status" minOccurs="0"/>
- *                             &lt;element name="agent">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure"/>
- *                             &lt;element name="features">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/>
- *                                       &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
- *                                       &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
- *                                       &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/>
- *                                       &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
- *                                       &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="extra-features" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;all>
- *                                       &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *                                       &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *                                       &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/>
- *                                       &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/>
- *                                       &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/>
- *                                       &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/>
- *                                       &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
- *                                       &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
- *                                       &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
- *                                       &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
- *                                       &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/>
- *                                       &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *                                       &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/>
- *                                       &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/>
- *                                       &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/>
- *                                       &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
- *                                       &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
- *                                       &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
- *                                       &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/>
- *                                       &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/>
- *                                       &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/>
- *                                       &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *                                       &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/>
- *                                       &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                       &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                                     &lt;/all>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="pictures" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence maxOccurs="15" minOccurs="0">
- *                                       &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/>
- *                                       &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="blueprints" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                             &lt;element name="videos" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence maxOccurs="4">
- *                                       &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/all>
- *                           &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" />
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="version" type="{http://feed.immobiliare.it}version"/&gt;
+ *         &lt;element name="metadata"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="publisher" type="{http://feed.immobiliare.it}publisher"/&gt;
+ *                   &lt;element name="build-date" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+ *                   &lt;element name="multipage" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="current" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                             &lt;element name="last" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                           &lt;/all&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="projects" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="project"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/&gt;
+ *                             &lt;element name="agent"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+ *                                       &lt;element name="sales-office"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;all&gt;
+ *                                                 &lt;element name="country-code"&gt;
+ *                                                   &lt;simpleType&gt;
+ *                                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                                       &lt;pattern value="[a-zA-Z]{2}"/&gt;
+ *                                                     &lt;/restriction&gt;
+ *                                                   &lt;/simpleType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="city"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;simpleContent&gt;
+ *                                                       &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+ *                                                         &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *                                                       &lt;/extension&gt;
+ *                                                     &lt;/simpleContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="locality"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;sequence&gt;
+ *                                                           &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                         &lt;/sequence&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                                 &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                                 &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                               &lt;/all&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="features"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *                                       &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *                                       &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                       &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/&gt;
+ *                                       &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+ *                                       &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure" minOccurs="0"/&gt;
+ *                             &lt;element name="pictures" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="videos" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="lots" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                       &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                       &lt;element name="lot" maxOccurs="unbounded"&gt;
+ *                                         &lt;complexType&gt;
+ *                                           &lt;complexContent&gt;
+ *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                               &lt;all&gt;
+ *                                                 &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/&gt;
+ *                                                 &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+ *                                                 &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+ *                                                 &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/&gt;
+ *                                                 &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+ *                                                 &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/&gt;
+ *                                                 &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/&gt;
+ *                                                 &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                                                 &lt;element name="pictures" minOccurs="0"&gt;
+ *                                                   &lt;complexType&gt;
+ *                                                     &lt;complexContent&gt;
+ *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                                         &lt;sequence&gt;
+ *                                                           &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+ *                                                         &lt;/sequence&gt;
+ *                                                       &lt;/restriction&gt;
+ *                                                     &lt;/complexContent&gt;
+ *                                                   &lt;/complexType&gt;
+ *                                                 &lt;/element&gt;
+ *                                               &lt;/all&gt;
+ *                                               &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *                                               &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *                                             &lt;/restriction&gt;
+ *                                           &lt;/complexContent&gt;
+ *                                         &lt;/complexType&gt;
+ *                                       &lt;/element&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                           &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" /&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="properties"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+ *                   &lt;element name="property"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                           &lt;all&gt;
+ *                             &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                             &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/&gt;
+ *                             &lt;element name="date-expiration" minOccurs="0"&gt;
+ *                               &lt;simpleType&gt;
+ *                                 &lt;union memberTypes=" {http://www.w3.org/2001/XMLSchema}dateTime {http://feed.immobiliare.it}nullString"&gt;
+ *                                 &lt;/union&gt;
+ *                               &lt;/simpleType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="transaction-type" type="{http://feed.immobiliare.it}transactionType"/&gt;
+ *                             &lt;element name="building" type="{http://feed.immobiliare.it}building" minOccurs="0"/&gt;
+ *                             &lt;element name="category" type="{http://feed.immobiliare.it}cat" minOccurs="0"/&gt;
+ *                             &lt;element name="property-type" type="{http://feed.immobiliare.it}proptype" minOccurs="0"/&gt;
+ *                             &lt;element name="building-status" type="{http://feed.immobiliare.it}status" minOccurs="0"/&gt;
+ *                             &lt;element name="agent"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure"/&gt;
+ *                             &lt;element name="features"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/&gt;
+ *                                       &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+ *                                       &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+ *                                       &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/&gt;
+ *                                       &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+ *                                       &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="extra-features" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;all&gt;
+ *                                       &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *                                       &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *                                       &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/&gt;
+ *                                       &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/&gt;
+ *                                       &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/&gt;
+ *                                       &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/&gt;
+ *                                       &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+ *                                       &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+ *                                       &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+ *                                       &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+ *                                       &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/&gt;
+ *                                       &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *                                       &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/&gt;
+ *                                       &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/&gt;
+ *                                       &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/&gt;
+ *                                       &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+ *                                       &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+ *                                       &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+ *                                       &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/&gt;
+ *                                       &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/&gt;
+ *                                       &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/&gt;
+ *                                       &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *                                       &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/&gt;
+ *                                       &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                       &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                                     &lt;/all&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="pictures" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence maxOccurs="15" minOccurs="0"&gt;
+ *                                       &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                                       &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="blueprints" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                             &lt;element name="videos" minOccurs="0"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                                     &lt;sequence maxOccurs="4"&gt;
+ *                                       &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/restriction&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/all&gt;
+ *                           &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" /&gt;
+ *                         &lt;/restriction&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -380,6 +380,7 @@ public class Feed
 {
 
     @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
     protected Version version;
     @XmlElement(required = true)
     protected Feed.Metadata metadata;
@@ -633,28 +634,28 @@ public class Feed
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="publisher" type="{http://feed.immobiliare.it}publisher"/>
-     *         &lt;element name="build-date" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
-     *         &lt;element name="multipage" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="current" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                   &lt;element name="last" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                 &lt;/all>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="publisher" type="{http://feed.immobiliare.it}publisher"/&gt;
+     *         &lt;element name="build-date" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+     *         &lt;element name="multipage" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="current" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                   &lt;element name="last" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                 &lt;/all&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -875,16 +876,16 @@ public class Feed
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="current" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *         &lt;element name="last" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *       &lt;/all>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="current" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *         &lt;element name="last" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *       &lt;/all&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -1064,168 +1065,168 @@ public class Feed
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="project">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/>
-     *                   &lt;element name="agent">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
-     *                             &lt;element name="sales-office">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;all>
-     *                                       &lt;element name="country-code">
-     *                                         &lt;simpleType>
-     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                             &lt;pattern value="[a-zA-Z]{2}"/>
-     *                                           &lt;/restriction>
-     *                                         &lt;/simpleType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="city">
-     *                                         &lt;complexType>
-     *                                           &lt;simpleContent>
-     *                                             &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                                               &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
-     *                                             &lt;/extension>
-     *                                           &lt;/simpleContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="locality">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                                       &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                                     &lt;/all>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="features">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-     *                             &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-     *                             &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/>
-     *                             &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
-     *                             &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure" minOccurs="0"/>
-     *                   &lt;element name="pictures" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="videos" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="lots" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                             &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                             &lt;element name="lot" maxOccurs="unbounded">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;all>
-     *                                       &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/>
-     *                                       &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
-     *                                       &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
-     *                                       &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/>
-     *                                       &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-     *                                       &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/>
-     *                                       &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/>
-     *                                       &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                       &lt;element name="pictures" minOccurs="0">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/all>
-     *                                     &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" />
-     *                                     &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" />
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/all>
-     *                 &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="project"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                   &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/&gt;
+     *                   &lt;element name="agent"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+     *                             &lt;element name="sales-office"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;all&gt;
+     *                                       &lt;element name="country-code"&gt;
+     *                                         &lt;simpleType&gt;
+     *                                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                                             &lt;pattern value="[a-zA-Z]{2}"/&gt;
+     *                                           &lt;/restriction&gt;
+     *                                         &lt;/simpleType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="city"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;simpleContent&gt;
+     *                                             &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+     *                                               &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+     *                                             &lt;/extension&gt;
+     *                                           &lt;/simpleContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="locality"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                       &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                                       &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                                     &lt;/all&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="features"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+     *                             &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+     *                             &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                             &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/&gt;
+     *                             &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+     *                             &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure" minOccurs="0"/&gt;
+     *                   &lt;element name="pictures" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="videos" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="lots" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                             &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                             &lt;element name="lot" maxOccurs="unbounded"&gt;
+     *                               &lt;complexType&gt;
+     *                                 &lt;complexContent&gt;
+     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                     &lt;all&gt;
+     *                                       &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/&gt;
+     *                                       &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+     *                                       &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+     *                                       &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/&gt;
+     *                                       &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+     *                                       &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/&gt;
+     *                                       &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/&gt;
+     *                                       &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                                       &lt;element name="pictures" minOccurs="0"&gt;
+     *                                         &lt;complexType&gt;
+     *                                           &lt;complexContent&gt;
+     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                                               &lt;sequence&gt;
+     *                                                 &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+     *                                               &lt;/sequence&gt;
+     *                                             &lt;/restriction&gt;
+     *                                           &lt;/complexContent&gt;
+     *                                         &lt;/complexType&gt;
+     *                                       &lt;/element&gt;
+     *                                     &lt;/all&gt;
+     *                                     &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+     *                                     &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+     *                                   &lt;/restriction&gt;
+     *                                 &lt;/complexContent&gt;
+     *                               &lt;/complexType&gt;
+     *                             &lt;/element&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/all&gt;
+     *                 &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" /&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1349,158 +1350,158 @@ public class Feed
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/>
-         *         &lt;element name="agent">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
-         *                   &lt;element name="sales-office">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;all>
-         *                             &lt;element name="country-code">
-         *                               &lt;simpleType>
-         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                                   &lt;pattern value="[a-zA-Z]{2}"/>
-         *                                 &lt;/restriction>
-         *                               &lt;/simpleType>
-         *                             &lt;/element>
-         *                             &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="city">
-         *                               &lt;complexType>
-         *                                 &lt;simpleContent>
-         *                                   &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *                                     &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
-         *                                   &lt;/extension>
-         *                                 &lt;/simpleContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="locality">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                             &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                           &lt;/all>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="features">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-         *                   &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-         *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/>
-         *                   &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
-         *                   &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure" minOccurs="0"/>
-         *         &lt;element name="pictures" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="videos" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="lots" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *                   &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *                   &lt;element name="lot" maxOccurs="unbounded">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;all>
-         *                             &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/>
-         *                             &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
-         *                             &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
-         *                             &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/>
-         *                             &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-         *                             &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/>
-         *                             &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/>
-         *                             &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                             &lt;element name="pictures" minOccurs="0">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/all>
-         *                           &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" />
-         *                           &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" />
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/all>
-         *       &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *         &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/&gt;
+         *         &lt;element name="agent"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+         *                   &lt;element name="sales-office"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;all&gt;
+         *                             &lt;element name="country-code"&gt;
+         *                               &lt;simpleType&gt;
+         *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *                                   &lt;pattern value="[a-zA-Z]{2}"/&gt;
+         *                                 &lt;/restriction&gt;
+         *                               &lt;/simpleType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="city"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;simpleContent&gt;
+         *                                   &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+         *                                     &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+         *                                   &lt;/extension&gt;
+         *                                 &lt;/simpleContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="locality"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                             &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                             &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                           &lt;/all&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="features"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+         *                   &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+         *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                   &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/&gt;
+         *                   &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+         *                   &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure" minOccurs="0"/&gt;
+         *         &lt;element name="pictures" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="videos" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="lots" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *                   &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *                   &lt;element name="lot" maxOccurs="unbounded"&gt;
+         *                     &lt;complexType&gt;
+         *                       &lt;complexContent&gt;
+         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                           &lt;all&gt;
+         *                             &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/&gt;
+         *                             &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+         *                             &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+         *                             &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/&gt;
+         *                             &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+         *                             &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/&gt;
+         *                             &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/&gt;
+         *                             &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *                             &lt;element name="pictures" minOccurs="0"&gt;
+         *                               &lt;complexType&gt;
+         *                                 &lt;complexContent&gt;
+         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                                     &lt;sequence&gt;
+         *                                       &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+         *                                     &lt;/sequence&gt;
+         *                                   &lt;/restriction&gt;
+         *                                 &lt;/complexContent&gt;
+         *                               &lt;/complexType&gt;
+         *                             &lt;/element&gt;
+         *                           &lt;/all&gt;
+         *                           &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+         *                           &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+         *                         &lt;/restriction&gt;
+         *                       &lt;/complexContent&gt;
+         *                     &lt;/complexType&gt;
+         *                   &lt;/element&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/all&gt;
+         *       &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" /&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -1516,7 +1517,8 @@ public class Feed
             @XmlElement(name = "unique-id", required = true)
             protected String uniqueId;
             @XmlElement(name = "date-updated", required = true, type = String.class)
-            @XmlJavaTypeAdapter(Adapter8 .class)
+            @XmlJavaTypeAdapter(Adapter3 .class)
+            @XmlSchemaType(name = "dateTime")
             protected Calendar dateUpdated;
             @XmlElement(required = true)
             protected Feed.Projects.Project.Agent agent;
@@ -2005,57 +2007,57 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
-             *         &lt;element name="sales-office">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;all>
-             *                   &lt;element name="country-code">
-             *                     &lt;simpleType>
-             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *                         &lt;pattern value="[a-zA-Z]{2}"/>
-             *                       &lt;/restriction>
-             *                     &lt;/simpleType>
-             *                   &lt;/element>
-             *                   &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="city">
-             *                     &lt;complexType>
-             *                       &lt;simpleContent>
-             *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-             *                           &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
-             *                         &lt;/extension>
-             *                       &lt;/simpleContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="locality">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                   &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *                   &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *                 &lt;/all>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+             *         &lt;element name="sales-office"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;all&gt;
+             *                   &lt;element name="country-code"&gt;
+             *                     &lt;simpleType&gt;
+             *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *                         &lt;pattern value="[a-zA-Z]{2}"/&gt;
+             *                       &lt;/restriction&gt;
+             *                     &lt;/simpleType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="city"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;simpleContent&gt;
+             *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+             *                           &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+             *                         &lt;/extension&gt;
+             *                       &lt;/simpleContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="locality"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                   &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *                   &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *                 &lt;/all&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -2071,7 +2073,7 @@ public class Feed
                 @XmlElement(required = true)
                 protected String name;
                 @XmlElement(required = true)
-                @XmlJavaTypeAdapter(Adapter6 .class)
+                @XmlJavaTypeAdapter(Adapter4 .class)
                 protected String email;
                 @XmlElement(name = "sales-office", required = true)
                 protected Feed.Projects.Project.Agent.SalesOffice salesOffice;
@@ -2276,45 +2278,45 @@ public class Feed
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;all>
-                 *         &lt;element name="country-code">
-                 *           &lt;simpleType>
-                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-                 *               &lt;pattern value="[a-zA-Z]{2}"/>
-                 *             &lt;/restriction>
-                 *           &lt;/simpleType>
-                 *         &lt;/element>
-                 *         &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="city">
-                 *           &lt;complexType>
-                 *             &lt;simpleContent>
-                 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-                 *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
-                 *               &lt;/extension>
-                 *             &lt;/simpleContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="locality">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-                 *         &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-                 *       &lt;/all>
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;all&gt;
+                 *         &lt;element name="country-code"&gt;
+                 *           &lt;simpleType&gt;
+                 *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+                 *               &lt;pattern value="[a-zA-Z]{2}"/&gt;
+                 *             &lt;/restriction&gt;
+                 *           &lt;/simpleType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="sub-administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="city"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;simpleContent&gt;
+                 *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+                 *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+                 *               &lt;/extension&gt;
+                 *             &lt;/simpleContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="locality"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+                 *         &lt;element name="mobile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+                 *       &lt;/all&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -2725,13 +2727,13 @@ public class Feed
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;simpleContent>
-                     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-                     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
-                     *     &lt;/extension>
-                     *   &lt;/simpleContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;simpleContent&gt;
+                     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+                     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+                     *     &lt;/extension&gt;
+                     *   &lt;/simpleContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -2907,15 +2909,15 @@ public class Feed
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="thoroughfare" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -3045,24 +3047,24 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-             *         &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
-             *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/>
-             *         &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
-             *         &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="building-status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="start-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+             *         &lt;element name="end-date" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+             *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *         &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="description" type="{http://feed.immobiliare.it}langtxt"/&gt;
+             *         &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+             *         &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -3095,6 +3097,7 @@ public class Feed
                 @XmlElement(required = true)
                 protected Langtxt description;
                 @XmlElement(name = "energy-class", required = true)
+                @XmlSchemaType(name = "string")
                 protected ClassEnergy energyClass;
                 @XmlElement(name = "energy-performance")
                 protected ClassEnergyPerformance energyPerformance;
@@ -3623,49 +3626,49 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-             *         &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-             *         &lt;element name="lot" maxOccurs="unbounded">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;all>
-             *                   &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/>
-             *                   &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
-             *                   &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
-             *                   &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/>
-             *                   &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-             *                   &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/>
-             *                   &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/>
-             *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                   &lt;element name="pictures" minOccurs="0">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/all>
-             *                 &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" />
-             *                 &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" />
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="residential" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+             *         &lt;element name="commercial" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+             *         &lt;element name="lot" maxOccurs="unbounded"&gt;
+             *           &lt;complexType&gt;
+             *             &lt;complexContent&gt;
+             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                 &lt;all&gt;
+             *                   &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/&gt;
+             *                   &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+             *                   &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+             *                   &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/&gt;
+             *                   &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+             *                   &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/&gt;
+             *                   &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/&gt;
+             *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+             *                   &lt;element name="pictures" minOccurs="0"&gt;
+             *                     &lt;complexType&gt;
+             *                       &lt;complexContent&gt;
+             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *                           &lt;sequence&gt;
+             *                             &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+             *                           &lt;/sequence&gt;
+             *                         &lt;/restriction&gt;
+             *                       &lt;/complexContent&gt;
+             *                     &lt;/complexType&gt;
+             *                   &lt;/element&gt;
+             *                 &lt;/all&gt;
+             *                 &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+             *                 &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+             *               &lt;/restriction&gt;
+             *             &lt;/complexContent&gt;
+             *           &lt;/complexType&gt;
+             *         &lt;/element&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -3901,37 +3904,37 @@ public class Feed
                  * <p>The following schema fragment specifies the expected content contained within this class.
                  * 
                  * <pre>
-                 * &lt;complexType>
-                 *   &lt;complexContent>
-                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *       &lt;all>
-                 *         &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/>
-                 *         &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
-                 *         &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
-                 *         &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/>
-                 *         &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/>
-                 *         &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/>
-                 *         &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/>
-                 *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/>
-                 *         &lt;element name="pictures" minOccurs="0">
-                 *           &lt;complexType>
-                 *             &lt;complexContent>
-                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                 *                 &lt;sequence>
-                 *                   &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-                 *                 &lt;/sequence>
-                 *               &lt;/restriction>
-                 *             &lt;/complexContent>
-                 *           &lt;/complexType>
-                 *         &lt;/element>
-                 *       &lt;/all>
-                 *       &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" />
-                 *       &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" />
-                 *     &lt;/restriction>
-                 *   &lt;/complexContent>
-                 * &lt;/complexType>
+                 * &lt;complexType&gt;
+                 *   &lt;complexContent&gt;
+                 *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *       &lt;all&gt;
+                 *         &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="property-type" type="{http://feed.immobiliare.it}propertyTypeProject"/&gt;
+                 *         &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+                 *         &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+                 *         &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType" minOccurs="0"/&gt;
+                 *         &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer"/&gt;
+                 *         &lt;element name="floor" type="{http://feed.immobiliare.it}floorProject"/&gt;
+                 *         &lt;element name="garage" type="{http://feed.immobiliare.it}boxProject"/&gt;
+                 *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="specification" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+                 *         &lt;element name="pictures" minOccurs="0"&gt;
+                 *           &lt;complexType&gt;
+                 *             &lt;complexContent&gt;
+                 *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                 *                 &lt;sequence&gt;
+                 *                   &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+                 *                 &lt;/sequence&gt;
+                 *               &lt;/restriction&gt;
+                 *             &lt;/complexContent&gt;
+                 *           &lt;/complexType&gt;
+                 *         &lt;/element&gt;
+                 *       &lt;/all&gt;
+                 *       &lt;attribute name="total" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+                 *       &lt;attribute name="forsale" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+                 *     &lt;/restriction&gt;
+                 *   &lt;/complexContent&gt;
+                 * &lt;/complexType&gt;
                  * </pre>
                  * 
                  * 
@@ -3947,13 +3950,15 @@ public class Feed
                     @XmlElement(name = "unique-id", required = true)
                     protected String uniqueId;
                     @XmlElement(name = "property-type", required = true)
+                    @XmlSchemaType(name = "string")
                     protected PropertyTypeProject propertyType;
                     @XmlElement(required = true)
                     protected PriceType price;
                     @XmlElement(required = true)
                     protected SizeType size;
                     @XmlElement(type = String.class)
-                    @XmlJavaTypeAdapter(Adapter9 .class)
+                    @XmlJavaTypeAdapter(Adapter10 .class)
+                    @XmlSchemaType(name = "integer")
                     protected Integer rooms;
                     @XmlElement(required = true, type = String.class)
                     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -4637,15 +4642,15 @@ public class Feed
                      * <p>The following schema fragment specifies the expected content contained within this class.
                      * 
                      * <pre>
-                     * &lt;complexType>
-                     *   &lt;complexContent>
-                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-                     *       &lt;sequence>
-                     *         &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-                     *       &lt;/sequence>
-                     *     &lt;/restriction>
-                     *   &lt;/complexContent>
-                     * &lt;/complexType>
+                     * &lt;complexType&gt;
+                     *   &lt;complexContent&gt;
+                     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+                     *       &lt;sequence&gt;
+                     *         &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+                     *       &lt;/sequence&gt;
+                     *     &lt;/restriction&gt;
+                     *   &lt;/complexContent&gt;
+                     * &lt;/complexType&gt;
                      * </pre>
                      * 
                      * 
@@ -4785,15 +4790,15 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -4929,15 +4934,15 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -5067,139 +5072,139 @@ public class Feed
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
-     *         &lt;element name="property">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;all>
-     *                   &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/>
-     *                   &lt;element name="date-expiration" minOccurs="0">
-     *                     &lt;simpleType>
-     *                       &lt;union memberTypes=" {http://www.w3.org/2001/XMLSchema}dateTime {http://feed.immobiliare.it}nullString">
-     *                       &lt;/union>
-     *                     &lt;/simpleType>
-     *                   &lt;/element>
-     *                   &lt;element name="transaction-type" type="{http://feed.immobiliare.it}transactionType"/>
-     *                   &lt;element name="building" type="{http://feed.immobiliare.it}building" minOccurs="0"/>
-     *                   &lt;element name="category" type="{http://feed.immobiliare.it}cat" minOccurs="0"/>
-     *                   &lt;element name="property-type" type="{http://feed.immobiliare.it}proptype" minOccurs="0"/>
-     *                   &lt;element name="building-status" type="{http://feed.immobiliare.it}status" minOccurs="0"/>
-     *                   &lt;element name="agent">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure"/>
-     *                   &lt;element name="features">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/>
-     *                             &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
-     *                             &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
-     *                             &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/>
-     *                             &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
-     *                             &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="extra-features" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;all>
-     *                             &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-     *                             &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-     *                             &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/>
-     *                             &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/>
-     *                             &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/>
-     *                             &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/>
-     *                             &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-     *                             &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-     *                             &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-     *                             &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-     *                             &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/>
-     *                             &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-     *                             &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/>
-     *                             &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/>
-     *                             &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/>
-     *                             &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-     *                             &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-     *                             &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-     *                             &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/>
-     *                             &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/>
-     *                             &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/>
-     *                             &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-     *                             &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/>
-     *                             &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                             &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *                           &lt;/all>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="pictures" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence maxOccurs="15" minOccurs="0">
-     *                             &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/>
-     *                             &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="blueprints" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="videos" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence maxOccurs="4">
-     *                             &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/all>
-     *                 &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" />
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+     *         &lt;element name="property"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                 &lt;all&gt;
+     *                   &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *                   &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/&gt;
+     *                   &lt;element name="date-expiration" minOccurs="0"&gt;
+     *                     &lt;simpleType&gt;
+     *                       &lt;union memberTypes=" {http://www.w3.org/2001/XMLSchema}dateTime {http://feed.immobiliare.it}nullString"&gt;
+     *                       &lt;/union&gt;
+     *                     &lt;/simpleType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="transaction-type" type="{http://feed.immobiliare.it}transactionType"/&gt;
+     *                   &lt;element name="building" type="{http://feed.immobiliare.it}building" minOccurs="0"/&gt;
+     *                   &lt;element name="category" type="{http://feed.immobiliare.it}cat" minOccurs="0"/&gt;
+     *                   &lt;element name="property-type" type="{http://feed.immobiliare.it}proptype" minOccurs="0"/&gt;
+     *                   &lt;element name="building-status" type="{http://feed.immobiliare.it}status" minOccurs="0"/&gt;
+     *                   &lt;element name="agent"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure"/&gt;
+     *                   &lt;element name="features"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/&gt;
+     *                             &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+     *                             &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+     *                             &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/&gt;
+     *                             &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+     *                             &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="extra-features" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;all&gt;
+     *                             &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+     *                             &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+     *                             &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/&gt;
+     *                             &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/&gt;
+     *                             &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/&gt;
+     *                             &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/&gt;
+     *                             &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+     *                             &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+     *                             &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+     *                             &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+     *                             &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/&gt;
+     *                             &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+     *                             &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/&gt;
+     *                             &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/&gt;
+     *                             &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/&gt;
+     *                             &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+     *                             &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+     *                             &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+     *                             &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/&gt;
+     *                             &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/&gt;
+     *                             &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/&gt;
+     *                             &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+     *                             &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/&gt;
+     *                             &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                             &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *                           &lt;/all&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="pictures" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence maxOccurs="15" minOccurs="0"&gt;
+     *                             &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *                             &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="blueprints" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                   &lt;element name="videos" minOccurs="0"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *                           &lt;sequence maxOccurs="4"&gt;
+     *                             &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/restriction&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/all&gt;
+     *                 &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" /&gt;
+     *               &lt;/restriction&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -5332,129 +5337,129 @@ public class Feed
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;all>
-         *         &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/>
-         *         &lt;element name="date-expiration" minOccurs="0">
-         *           &lt;simpleType>
-         *             &lt;union memberTypes=" {http://www.w3.org/2001/XMLSchema}dateTime {http://feed.immobiliare.it}nullString">
-         *             &lt;/union>
-         *           &lt;/simpleType>
-         *         &lt;/element>
-         *         &lt;element name="transaction-type" type="{http://feed.immobiliare.it}transactionType"/>
-         *         &lt;element name="building" type="{http://feed.immobiliare.it}building" minOccurs="0"/>
-         *         &lt;element name="category" type="{http://feed.immobiliare.it}cat" minOccurs="0"/>
-         *         &lt;element name="property-type" type="{http://feed.immobiliare.it}proptype" minOccurs="0"/>
-         *         &lt;element name="building-status" type="{http://feed.immobiliare.it}status" minOccurs="0"/>
-         *         &lt;element name="agent">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure"/>
-         *         &lt;element name="features">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/>
-         *                   &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
-         *                   &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
-         *                   &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/>
-         *                   &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
-         *                   &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="extra-features" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;all>
-         *                   &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-         *                   &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-         *                   &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/>
-         *                   &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/>
-         *                   &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/>
-         *                   &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/>
-         *                   &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-         *                   &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-         *                   &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-         *                   &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-         *                   &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/>
-         *                   &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-         *                   &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/>
-         *                   &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/>
-         *                   &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/>
-         *                   &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-         *                   &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-         *                   &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-         *                   &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/>
-         *                   &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/>
-         *                   &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/>
-         *                   &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-         *                   &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/>
-         *                   &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                   &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-         *                 &lt;/all>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="pictures" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence maxOccurs="15" minOccurs="0">
-         *                   &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/>
-         *                   &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="blueprints" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="videos" minOccurs="0">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence maxOccurs="4">
-         *                   &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/all>
-         *       &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" />
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *       &lt;all&gt;
+         *         &lt;element name="unique-id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+         *         &lt;element name="date-updated" type="{http://feed.immobiliare.it}dateUpdatedType"/&gt;
+         *         &lt;element name="date-expiration" minOccurs="0"&gt;
+         *           &lt;simpleType&gt;
+         *             &lt;union memberTypes=" {http://www.w3.org/2001/XMLSchema}dateTime {http://feed.immobiliare.it}nullString"&gt;
+         *             &lt;/union&gt;
+         *           &lt;/simpleType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="transaction-type" type="{http://feed.immobiliare.it}transactionType"/&gt;
+         *         &lt;element name="building" type="{http://feed.immobiliare.it}building" minOccurs="0"/&gt;
+         *         &lt;element name="category" type="{http://feed.immobiliare.it}cat" minOccurs="0"/&gt;
+         *         &lt;element name="property-type" type="{http://feed.immobiliare.it}proptype" minOccurs="0"/&gt;
+         *         &lt;element name="building-status" type="{http://feed.immobiliare.it}status" minOccurs="0"/&gt;
+         *         &lt;element name="agent"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="location" type="{http://feed.immobiliare.it}locationStructure"/&gt;
+         *         &lt;element name="features"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/&gt;
+         *                   &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+         *                   &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+         *                   &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/&gt;
+         *                   &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+         *                   &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="extra-features" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;all&gt;
+         *                   &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+         *                   &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+         *                   &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/&gt;
+         *                   &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/&gt;
+         *                   &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/&gt;
+         *                   &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/&gt;
+         *                   &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+         *                   &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+         *                   &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+         *                   &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+         *                   &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/&gt;
+         *                   &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+         *                   &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/&gt;
+         *                   &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/&gt;
+         *                   &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/&gt;
+         *                   &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+         *                   &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+         *                   &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+         *                   &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/&gt;
+         *                   &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/&gt;
+         *                   &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/&gt;
+         *                   &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+         *                   &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/&gt;
+         *                   &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                   &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+         *                 &lt;/all&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="pictures" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence maxOccurs="15" minOccurs="0"&gt;
+         *                   &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/&gt;
+         *                   &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="blueprints" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *         &lt;element name="videos" minOccurs="0"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+         *                 &lt;sequence maxOccurs="4"&gt;
+         *                   &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/restriction&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/all&gt;
+         *       &lt;attribute name="operation" type="{http://feed.immobiliare.it}operation" /&gt;
+         *     &lt;/restriction&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -5470,7 +5475,8 @@ public class Feed
             @XmlElement(name = "unique-id", required = true)
             protected String uniqueId;
             @XmlElement(name = "date-updated", required = true, type = String.class)
-            @XmlJavaTypeAdapter(Adapter8 .class)
+            @XmlJavaTypeAdapter(Adapter3 .class)
+            @XmlSchemaType(name = "dateTime")
             protected Calendar dateUpdated;
             @XmlElement(name = "date-expiration", type = String.class)
             @XmlJavaTypeAdapter(Adapter22 .class)
@@ -5479,11 +5485,12 @@ public class Feed
             protected TransactionType transactionType;
             protected Building building;
             @XmlElement(type = String.class)
-            @XmlJavaTypeAdapter(Adapter7 .class)
+            @XmlJavaTypeAdapter(Adapter5 .class)
             protected Category category;
             @XmlElement(name = "property-type")
             protected Proptype propertyType;
             @XmlElement(name = "building-status")
+            @XmlSchemaType(name = "string")
             protected Status buildingStatus;
             @XmlElement(required = true)
             protected Feed.Properties.Property.Agent agent;
@@ -6297,16 +6304,16 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="office-name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="email" type="{http://feed.immobiliare.it}emailType"/&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -6322,7 +6329,7 @@ public class Feed
                 @XmlElement(name = "office-name")
                 protected String officeName;
                 @XmlElement(required = true)
-                @XmlJavaTypeAdapter(Adapter6 .class)
+                @XmlJavaTypeAdapter(Adapter4 .class)
                 protected String email;
 
                 /**
@@ -6481,15 +6488,15 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="blueprint" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -6624,42 +6631,42 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;all>
-             *         &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-             *         &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-             *         &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/>
-             *         &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/>
-             *         &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/>
-             *         &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/>
-             *         &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-             *         &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-             *         &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-             *         &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-             *         &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/>
-             *         &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-             *         &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/>
-             *         &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/>
-             *         &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/>
-             *         &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-             *         &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-             *         &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/>
-             *         &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/>
-             *         &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/>
-             *         &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/>
-             *         &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
-             *         &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/>
-             *         &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *         &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-             *       &lt;/all>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;all&gt;
+             *         &lt;element name="bedrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+             *         &lt;element name="bathrooms" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+             *         &lt;element name="garage" type="{http://feed.immobiliare.it}box" minOccurs="0"/&gt;
+             *         &lt;element name="kitchen" type="{http://feed.immobiliare.it}kitchen" minOccurs="0"/&gt;
+             *         &lt;element name="heating" type="{http://feed.immobiliare.it}heat" minOccurs="0"/&gt;
+             *         &lt;element name="garden" type="{http://feed.immobiliare.it}garden" minOccurs="0"/&gt;
+             *         &lt;element name="terrace" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+             *         &lt;element name="balcony" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+             *         &lt;element name="elevator" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+             *         &lt;element name="air-conditioning" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+             *         &lt;element name="floor" type="{http://feed.immobiliare.it}floor" minOccurs="0"/&gt;
+             *         &lt;element name="num-floors" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+             *         &lt;element name="virtual-tour" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="rent-contract" type="{http://feed.immobiliare.it}rental" minOccurs="0"/&gt;
+             *         &lt;element name="additional-costs" type="{http://feed.immobiliare.it}additionalCostsType" minOccurs="0"/&gt;
+             *         &lt;element name="furniture" type="{http://feed.immobiliare.it}furniture" minOccurs="0"/&gt;
+             *         &lt;element name="security-alarm" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+             *         &lt;element name="reception" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+             *         &lt;element name="net" type="{http://feed.immobiliare.it}yesno" minOccurs="0"/&gt;
+             *         &lt;element name="external-area" type="{http://feed.immobiliare.it}landSizeType" minOccurs="0"/&gt;
+             *         &lt;element name="build-year" type="{http://feed.immobiliare.it}year" minOccurs="0"/&gt;
+             *         &lt;element name="free-conditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="overhead-crane" type="{http://feed.immobiliare.it}yesnoready" minOccurs="0"/&gt;
+             *         &lt;element name="beam-height" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+             *         &lt;element name="office-size" type="{http://feed.immobiliare.it}sizeType" minOccurs="0"/&gt;
+             *         &lt;element name="floorplanner-url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="doc-specification" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *         &lt;element name="doc-description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+             *       &lt;/all&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -6681,20 +6688,23 @@ public class Feed
                 @XmlSchemaType(name = "integer")
                 protected Long bathrooms;
                 protected Box garage;
+                @XmlSchemaType(name = "string")
                 protected Kitchen kitchen;
+                @XmlSchemaType(name = "string")
                 protected Heat heating;
+                @XmlSchemaType(name = "string")
                 protected Garden garden;
                 @XmlElement(type = String.class)
-                @XmlJavaTypeAdapter(Adapter5 .class)
+                @XmlJavaTypeAdapter(Adapter7 .class)
                 protected Boolean terrace;
                 @XmlElement(type = String.class)
-                @XmlJavaTypeAdapter(Adapter5 .class)
+                @XmlJavaTypeAdapter(Adapter7 .class)
                 protected Boolean balcony;
                 @XmlElement(type = String.class)
-                @XmlJavaTypeAdapter(Adapter5 .class)
+                @XmlJavaTypeAdapter(Adapter7 .class)
                 protected Boolean elevator;
                 @XmlElement(name = "air-conditioning", type = String.class)
-                @XmlJavaTypeAdapter(Adapter5 .class)
+                @XmlJavaTypeAdapter(Adapter7 .class)
                 protected Boolean airConditioning;
                 protected Floor floor;
                 @XmlElement(name = "num-floors", type = String.class)
@@ -6704,27 +6714,31 @@ public class Feed
                 @XmlElement(name = "virtual-tour")
                 protected String virtualTour;
                 @XmlElement(name = "rent-contract")
+                @XmlSchemaType(name = "string")
                 protected Rental rentContract;
                 @XmlElement(name = "additional-costs")
                 protected AdditionalCostsType additionalCosts;
+                @XmlSchemaType(name = "string")
                 protected Furniture furniture;
                 @XmlElement(name = "security-alarm", type = String.class)
-                @XmlJavaTypeAdapter(Adapter5 .class)
+                @XmlJavaTypeAdapter(Adapter7 .class)
                 protected Boolean securityAlarm;
                 @XmlElement(type = String.class)
-                @XmlJavaTypeAdapter(Adapter5 .class)
+                @XmlJavaTypeAdapter(Adapter7 .class)
                 protected Boolean reception;
                 @XmlElement(type = String.class)
-                @XmlJavaTypeAdapter(Adapter5 .class)
+                @XmlJavaTypeAdapter(Adapter7 .class)
                 protected Boolean net;
                 @XmlElement(name = "external-area")
                 protected LandSizeType externalArea;
                 @XmlElement(name = "build-year", type = String.class)
-                @XmlJavaTypeAdapter(Adapter4 .class)
+                @XmlJavaTypeAdapter(Adapter6 .class)
+                @XmlSchemaType(name = "integer")
                 protected Integer buildYear;
                 @XmlElement(name = "free-conditions")
                 protected String freeConditions;
                 @XmlElement(name = "overhead-crane")
+                @XmlSchemaType(name = "string")
                 protected YesNoReady overheadCrane;
                 @XmlElement(name = "beam-height", type = String.class)
                 @XmlJavaTypeAdapter(Adapter2 .class)
@@ -8091,20 +8105,20 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/>
-             *         &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/>
-             *         &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/>
-             *         &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/>
-             *         &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/>
-             *         &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="rooms" type="{http://feed.immobiliare.it}roomsType"/&gt;
+             *         &lt;element name="size" type="{http://feed.immobiliare.it}sizeType"/&gt;
+             *         &lt;element name="price" type="{http://feed.immobiliare.it}priceType"/&gt;
+             *         &lt;element name="description" type="{http://feed.immobiliare.it}langtxt" maxOccurs="25"/&gt;
+             *         &lt;element name="energy-class" type="{http://feed.immobiliare.it}classEnergy"/&gt;
+             *         &lt;element name="energy-performance" type="{http://feed.immobiliare.it}classEnergyPerformance" minOccurs="0"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -8123,7 +8137,8 @@ public class Feed
             {
 
                 @XmlElement(required = true, type = String.class)
-                @XmlJavaTypeAdapter(Adapter9 .class)
+                @XmlJavaTypeAdapter(Adapter10 .class)
+                @XmlSchemaType(name = "integer")
                 protected Integer rooms;
                 @XmlElement(required = true)
                 protected SizeType size;
@@ -8132,6 +8147,7 @@ public class Feed
                 @XmlElement(required = true)
                 protected List<Langtxt> description;
                 @XmlElement(name = "energy-class", required = true)
+                @XmlSchemaType(name = "string")
                 protected ClassEnergy energyClass;
                 @XmlElement(name = "energy-performance")
                 protected ClassEnergyPerformance energyPerformance;
@@ -8486,16 +8502,16 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence maxOccurs="15" minOccurs="0">
-             *         &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/>
-             *         &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence maxOccurs="15" minOccurs="0"&gt;
+             *         &lt;element name="picture-url" type="{http://feed.immobiliare.it}pictureProject" maxOccurs="unbounded" minOccurs="0"/&gt;
+             *         &lt;element name="picture" type="{http://feed.immobiliare.it}pictureExtended" maxOccurs="unbounded" minOccurs="0"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 
@@ -8635,15 +8651,15 @@ public class Feed
              * <p>The following schema fragment specifies the expected content contained within this class.
              * 
              * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence maxOccurs="4">
-             *         &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+             *       &lt;sequence maxOccurs="4"&gt;
+             *         &lt;element name="video" type="{http://feed.immobiliare.it}videoProject"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/restriction&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
              * </pre>
              * 
              * 

@@ -12,21 +12,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="GastroKategorieTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Barbetrieb"/>
- *     &lt;enumeration value="Caffee"/>
- *     &lt;enumeration value="Diskothek"/>
- *     &lt;enumeration value="Gaestehaus"/>
- *     &lt;enumeration value="Gaststaette"/>
- *     &lt;enumeration value="Hotel"/>
- *     &lt;enumeration value="Hotelanwesen"/>
- *     &lt;enumeration value="HotelGarni"/>
- *     &lt;enumeration value="Pension"/>
- *     &lt;enumeration value="Restaurant"/>
- *     &lt;enumeration value="Ferienbungalow"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GastroKategorieTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Barbetrieb"/&gt;
+ *     &lt;enumeration value="Caffee"/&gt;
+ *     &lt;enumeration value="Diskothek"/&gt;
+ *     &lt;enumeration value="Gaestehaus"/&gt;
+ *     &lt;enumeration value="Gaststaette"/&gt;
+ *     &lt;enumeration value="Hotel"/&gt;
+ *     &lt;enumeration value="Hotelanwesen"/&gt;
+ *     &lt;enumeration value="HotelGarni"/&gt;
+ *     &lt;enumeration value="Pension"/&gt;
+ *     &lt;enumeration value="Restaurant"/&gt;
+ *     &lt;enumeration value="Ferienbungalow"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */
