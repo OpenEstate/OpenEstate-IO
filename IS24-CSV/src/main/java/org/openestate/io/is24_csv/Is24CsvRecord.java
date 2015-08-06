@@ -940,14 +940,24 @@ public abstract class Is24CsvRecord extends CsvRecord
 
   public void setAdressdruck( boolean value )
   {
+    this.setAdressdruck( Boolean.valueOf( value ) );
+  }
+
+  public void setAdressdruck( Boolean value )
+  {
     this.set( FIELD_ADRESSDRUCK,
-      Is24CsvFormat.printBoolean( value ) );
+      Is24CsvFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setAktiv( boolean value )
   {
+    this.setAktiv( Boolean.valueOf( value ) );
+  }
+
+  public void setAktiv( Boolean value )
+  {
     this.set( FIELD_STATUS,
-      (value)? "1": "0" );
+      (value || value==null)? "1": "0" );
   }
 
   public void setAnbieterObjektId( String value )
@@ -1344,8 +1354,13 @@ public abstract class Is24CsvRecord extends CsvRecord
 
   public void setProvisionpflichtig( boolean value )
   {
+    this.setProvisionpflichtig( Boolean.valueOf( value ) );
+  }
+
+  public void setProvisionpflichtig( Boolean value )
+  {
     this.set( FIELD_PROVISIONPFLICHTIG,
-      Is24CsvFormat.printBoolean( value ) );
+      Is24CsvFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setProvisionshinweis( String value )
