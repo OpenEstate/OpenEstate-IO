@@ -62,7 +62,7 @@ public class WisItDocument extends XmlDocument<WIS>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "WIS".equals( root.getTagName() );
+    return "WIS".equals( root.getLocalName() );
   }
 
   /**

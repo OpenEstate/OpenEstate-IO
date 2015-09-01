@@ -110,7 +110,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "root".equals( root.getTagName() );
+    return "root".equals( root.getLocalName() );
   }
 
   /**

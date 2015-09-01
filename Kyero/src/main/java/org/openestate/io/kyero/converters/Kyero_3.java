@@ -286,7 +286,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
       for (Object childItem : childNodes)
       {
         Element langNode = (Element) childItem;
-        if ("en".equalsIgnoreCase( langNode.getTagName() ))
+        if ("en".equalsIgnoreCase( langNode.getLocalName() ))
           enUrlValue = StringUtils.trimToNull( langNode.getTextContent() );
         else if (fallbackUrlValue==null)
           fallbackUrlValue = StringUtils.trimToNull( langNode.getTextContent() );
@@ -413,7 +413,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
       for (Object childItem : childNodes)
       {
         Element langNode = (Element) childItem;
-        String lang = langNode.getTagName().toLowerCase();
+        String lang = langNode.getLocalName().toLowerCase();
         if (ArrayUtils.contains( unsupportedLanguages, lang ))
         {
           node.removeChild( langNode );
@@ -513,7 +513,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion>
       for (Object childItem : childNodes)
       {
         Element langNode = (Element) childItem;
-        if ("en".equalsIgnoreCase( langNode.getTagName() ))
+        if ("en".equalsIgnoreCase( langNode.getLocalName() ))
           enTypeValue = StringUtils.trimToNull( langNode.getTextContent() );
         else if (fallbackTypeValue==null)
           fallbackTypeValue = StringUtils.trimToNull( langNode.getTextContent() );

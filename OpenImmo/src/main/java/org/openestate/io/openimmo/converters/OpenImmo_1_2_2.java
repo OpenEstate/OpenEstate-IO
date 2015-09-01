@@ -571,7 +571,7 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
   /**
    * Downgrade &lt;objektart&gt; elements to OpenImmo 1.2.1.
    * <p>
-   * The &lt;objektart&gt; element does only allow the samte type of child
+   * The &lt;objektart&gt; element does only allow the same type of child
    * element in version 1.2.1.
    * <p>
    * Any child type, that differs from the first child type, is removed.
@@ -596,12 +596,12 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
         Element node = (Element) childItem;
         if (type==null)
         {
-          //LOGGER.debug( "PRIMARY TYPE: " + node.getTagName() );
-          type = node.getTagName();
+          //LOGGER.debug( "PRIMARY TYPE: " + node.getLocalName() );
+          type = node.getLocalName();
         }
-        else if (!type.equalsIgnoreCase( node.getTagName() ))
+        else if (!type.equalsIgnoreCase( node.getLocalName() ))
         {
-          //LOGGER.debug( "REMOVE SECONDARY TYPE: " + node.getTagName() );
+          //LOGGER.debug( "REMOVE SECONDARY TYPE: " + node.getLocalName() );
           parentNode.removeChild( node );
         }
       }

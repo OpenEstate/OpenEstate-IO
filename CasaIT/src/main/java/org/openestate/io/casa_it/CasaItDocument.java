@@ -60,7 +60,7 @@ public class CasaItDocument extends XmlDocument<Container>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "container".equals( root.getTagName() );
+    return "container".equals( root.getLocalName() );
   }
 
   /**
