@@ -412,26 +412,26 @@ public class ImmobilienTransferTyp
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link WohnungMiete }
-         * {@link Anlageobjekt }
-         * {@link WAZ }
+         * {@link Zwangsversteigerung }
          * {@link GrundstueckWohnenKauf }
          * {@link HausKauf }
-         * {@link GrundstueckWohnenMiete }
-         * {@link GrundstueckGewerbe }
-         * {@link HalleProduktion }
-         * {@link Einzelhandel }
-         * {@link WGZimmer }
-         * {@link SonstigeGewerbe }
-         * {@link Gastronomie }
-         * {@link GarageMiete }
          * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
-         * {@link BueroPraxis }
-         * {@link HausMiete }
+         * {@link Gastronomie }
          * {@link GarageKauf }
+         * {@link WohnungMiete }
+         * {@link WGZimmer }
+         * {@link HausMiete }
+         * {@link WAZ }
+         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
+         * {@link GrundstueckGewerbe }
+         * {@link BueroPraxis }
+         * {@link GarageMiete }
+         * {@link Einzelhandel }
+         * {@link HalleProduktion }
+         * {@link GrundstueckWohnenMiete }
          * {@link WohnungKauf }
-         * {@link Zwangsversteigerung }
+         * {@link SonstigeGewerbe }
+         * {@link Anlageobjekt }
          * 
          * 
          */
