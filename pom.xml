@@ -57,6 +57,12 @@
     <module>WisIT</module>
   </modules>
 
+  <scm>
+    <connection>scm:git:https://github.com/OpenEstate/OpenEstate-IO.git</connection>
+    <developerConnection>scm:git:[fetch=]https://github.com/OpenEstate/OpenEstate-IO.git[push=]ssh://git@github.com:OpenEstate/OpenEstate-IO.git</developerConnection>
+    <url>https://github.com/OpenEstate/OpenEstate-IO</url>
+  </scm>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.baseName>OpenEstate-IO</project.baseName>
