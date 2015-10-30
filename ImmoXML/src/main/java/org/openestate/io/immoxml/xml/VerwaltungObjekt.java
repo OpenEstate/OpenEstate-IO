@@ -1,6 +1,8 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -89,11 +91,11 @@ public class VerwaltungObjekt
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double laufzeit;
+    protected BigDecimal laufzeit;
     @XmlElement(name = "max_personen", type = String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "positiveInteger")
-    protected Integer maxPersonen;
+    protected BigInteger maxPersonen;
     protected Boolean nichtraucher;
     protected Boolean haustiere;
     protected Geschlecht geschlecht;
@@ -381,7 +383,7 @@ public class VerwaltungObjekt
      *     {@link String }
      *     
      */
-    public Double getLaufzeit() {
+    public BigDecimal getLaufzeit() {
         return laufzeit;
     }
 
@@ -393,7 +395,7 @@ public class VerwaltungObjekt
      *     {@link String }
      *     
      */
-    public void setLaufzeit(Double value) {
+    public void setLaufzeit(BigDecimal value) {
         this.laufzeit = value;
     }
 
@@ -405,7 +407,7 @@ public class VerwaltungObjekt
      *     {@link String }
      *     
      */
-    public Integer getMaxPersonen() {
+    public BigInteger getMaxPersonen() {
         return maxPersonen;
     }
 
@@ -417,7 +419,7 @@ public class VerwaltungObjekt
      *     {@link String }
      *     
      */
-    public void setMaxPersonen(Integer value) {
+    public void setMaxPersonen(BigInteger value) {
         this.maxPersonen = value;
     }
 
@@ -742,12 +744,12 @@ public class VerwaltungObjekt
             strategy.appendField(locator, this, "zugang", buffer, theZugang);
         }
         {
-            Double theLaufzeit;
+            BigDecimal theLaufzeit;
             theLaufzeit = this.getLaufzeit();
             strategy.appendField(locator, this, "laufzeit", buffer, theLaufzeit);
         }
         {
-            Integer theMaxPersonen;
+            BigInteger theMaxPersonen;
             theMaxPersonen = this.getMaxPersonen();
             strategy.appendField(locator, this, "maxPersonen", buffer, theMaxPersonen);
         }
@@ -906,17 +908,17 @@ public class VerwaltungObjekt
                 copy.zugang = null;
             }
             if (this.laufzeit!= null) {
-                Double sourceLaufzeit;
+                BigDecimal sourceLaufzeit;
                 sourceLaufzeit = this.getLaufzeit();
-                Double copyLaufzeit = ((Double) strategy.copy(LocatorUtils.property(locator, "laufzeit", sourceLaufzeit), sourceLaufzeit));
+                BigDecimal copyLaufzeit = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "laufzeit", sourceLaufzeit), sourceLaufzeit));
                 copy.setLaufzeit(copyLaufzeit);
             } else {
                 copy.laufzeit = null;
             }
             if (this.maxPersonen!= null) {
-                Integer sourceMaxPersonen;
+                BigInteger sourceMaxPersonen;
                 sourceMaxPersonen = this.getMaxPersonen();
-                Integer copyMaxPersonen = ((Integer) strategy.copy(LocatorUtils.property(locator, "maxPersonen", sourceMaxPersonen), sourceMaxPersonen));
+                BigInteger copyMaxPersonen = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "maxPersonen", sourceMaxPersonen), sourceMaxPersonen));
                 copy.setMaxPersonen(copyMaxPersonen);
             } else {
                 copy.maxPersonen = null;
@@ -1127,18 +1129,18 @@ public class VerwaltungObjekt
             }
         }
         {
-            Double lhsLaufzeit;
+            BigDecimal lhsLaufzeit;
             lhsLaufzeit = this.getLaufzeit();
-            Double rhsLaufzeit;
+            BigDecimal rhsLaufzeit;
             rhsLaufzeit = that.getLaufzeit();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "laufzeit", lhsLaufzeit), LocatorUtils.property(thatLocator, "laufzeit", rhsLaufzeit), lhsLaufzeit, rhsLaufzeit)) {
                 return false;
             }
         }
         {
-            Integer lhsMaxPersonen;
+            BigInteger lhsMaxPersonen;
             lhsMaxPersonen = this.getMaxPersonen();
-            Integer rhsMaxPersonen;
+            BigInteger rhsMaxPersonen;
             rhsMaxPersonen = that.getMaxPersonen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "maxPersonen", lhsMaxPersonen), LocatorUtils.property(thatLocator, "maxPersonen", rhsMaxPersonen), lhsMaxPersonen, rhsMaxPersonen)) {
                 return false;

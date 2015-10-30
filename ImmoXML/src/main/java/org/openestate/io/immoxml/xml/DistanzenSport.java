@@ -1,6 +1,7 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -41,7 +42,7 @@ public class DistanzenSport
     @XmlValue
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "float")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "distanz_zu_sport", required = true)
     protected DistanzenSport.DistanzZuSport distanzZuSport;
 
@@ -53,7 +54,7 @@ public class DistanzenSport
      *     {@link String }
      *
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -65,7 +66,7 @@ public class DistanzenSport
      *     {@link String }
      *
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -109,7 +110,7 @@ public class DistanzenSport
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
@@ -135,9 +136,9 @@ public class DistanzenSport
         if (draftCopy instanceof DistanzenSport) {
             final DistanzenSport copy = ((DistanzenSport) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
@@ -167,9 +168,9 @@ public class DistanzenSport
         }
         final DistanzenSport that = ((DistanzenSport) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
