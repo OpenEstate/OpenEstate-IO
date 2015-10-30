@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -327,7 +328,7 @@ public class Root
         @XmlElement(type = String.class)
         @XmlJavaTypeAdapter(Adapter2 .class)
         @XmlSchemaType(name = "integer")
-        protected Long id;
+        protected BigInteger id;
         protected String name;
         protected String email;
         protected String tel;
@@ -348,7 +349,7 @@ public class Root
          *     {@link String }
          *     
          */
-        public Long getId() {
+        public BigInteger getId() {
             return id;
         }
 
@@ -360,7 +361,7 @@ public class Root
          *     {@link String }
          *     
          */
-        public void setId(Long value) {
+        public void setId(BigInteger value) {
             this.id = value;
         }
 
@@ -644,7 +645,7 @@ public class Root
 
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
             {
-                Long theId;
+                BigInteger theId;
                 theId = this.getId();
                 strategy.appendField(locator, this, "id", buffer, theId);
             }
@@ -720,9 +721,9 @@ public class Root
             if (draftCopy instanceof Root.Agent) {
                 final Root.Agent copy = ((Root.Agent) draftCopy);
                 if (this.id!= null) {
-                    Long sourceId;
+                    BigInteger sourceId;
                     sourceId = this.getId();
-                    Long copyId = ((Long) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId));
+                    BigInteger copyId = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId));
                     copy.setId(copyId);
                 } else {
                     copy.id = null;
@@ -832,9 +833,9 @@ public class Root
             }
             final Root.Agent that = ((Root.Agent) object);
             {
-                Long lhsId;
+                BigInteger lhsId;
                 lhsId = this.getId();
-                Long rhsId;
+                BigInteger rhsId;
                 rhsId = that.getId();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "id", lhsId), LocatorUtils.property(thatLocator, "id", rhsId), lhsId, rhsId)) {
                     return false;

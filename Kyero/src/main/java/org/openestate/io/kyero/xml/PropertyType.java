@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -114,11 +115,11 @@ public class PropertyType
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Long beds;
+    protected BigInteger beds;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Long baths;
+    protected BigInteger baths;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter9 .class)
     protected Boolean pool;
@@ -477,7 +478,7 @@ public class PropertyType
      *     {@link String }
      *     
      */
-    public Long getBeds() {
+    public BigInteger getBeds() {
         return beds;
     }
 
@@ -489,7 +490,7 @@ public class PropertyType
      *     {@link String }
      *     
      */
-    public void setBeds(Long value) {
+    public void setBeds(BigInteger value) {
         this.beds = value;
     }
 
@@ -501,7 +502,7 @@ public class PropertyType
      *     {@link String }
      *     
      */
-    public Long getBaths() {
+    public BigInteger getBaths() {
         return baths;
     }
 
@@ -513,7 +514,7 @@ public class PropertyType
      *     {@link String }
      *     
      */
-    public void setBaths(Long value) {
+    public void setBaths(BigInteger value) {
         this.baths = value;
     }
 
@@ -795,12 +796,12 @@ public class PropertyType
             strategy.appendField(locator, this, "locationDetail", buffer, theLocationDetail);
         }
         {
-            Long theBeds;
+            BigInteger theBeds;
             theBeds = this.getBeds();
             strategy.appendField(locator, this, "beds", buffer, theBeds);
         }
         {
-            Long theBaths;
+            BigInteger theBaths;
             theBaths = this.getBaths();
             strategy.appendField(locator, this, "baths", buffer, theBaths);
         }
@@ -973,17 +974,17 @@ public class PropertyType
                 copy.locationDetail = null;
             }
             if (this.beds!= null) {
-                Long sourceBeds;
+                BigInteger sourceBeds;
                 sourceBeds = this.getBeds();
-                Long copyBeds = ((Long) strategy.copy(LocatorUtils.property(locator, "beds", sourceBeds), sourceBeds));
+                BigInteger copyBeds = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "beds", sourceBeds), sourceBeds));
                 copy.setBeds(copyBeds);
             } else {
                 copy.beds = null;
             }
             if (this.baths!= null) {
-                Long sourceBaths;
+                BigInteger sourceBaths;
                 sourceBaths = this.getBaths();
-                Long copyBaths = ((Long) strategy.copy(LocatorUtils.property(locator, "baths", sourceBaths), sourceBaths));
+                BigInteger copyBaths = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "baths", sourceBaths), sourceBaths));
                 copy.setBaths(copyBaths);
             } else {
                 copy.baths = null;
@@ -1195,18 +1196,18 @@ public class PropertyType
             }
         }
         {
-            Long lhsBeds;
+            BigInteger lhsBeds;
             lhsBeds = this.getBeds();
-            Long rhsBeds;
+            BigInteger rhsBeds;
             rhsBeds = that.getBeds();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "beds", lhsBeds), LocatorUtils.property(thatLocator, "beds", rhsBeds), lhsBeds, rhsBeds)) {
                 return false;
             }
         }
         {
-            Long lhsBaths;
+            BigInteger lhsBaths;
             lhsBaths = this.getBaths();
-            Long rhsBaths;
+            BigInteger rhsBaths;
             rhsBaths = that.getBaths();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "baths", lhsBaths), LocatorUtils.property(thatLocator, "baths", rhsBaths), lhsBaths, rhsBaths)) {
                 return false;

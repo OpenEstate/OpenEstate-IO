@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,11 +52,11 @@ public class GpsLocationType
     @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double longitude;
+    protected BigDecimal longitude;
     @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double latitude;
+    protected BigDecimal latitude;
 
     /**
      * Gets the value of the longitude property.
@@ -65,7 +66,7 @@ public class GpsLocationType
      *     {@link String }
      *     
      */
-    public Double getLongitude() {
+    public BigDecimal getLongitude() {
         return longitude;
     }
 
@@ -77,7 +78,7 @@ public class GpsLocationType
      *     {@link String }
      *     
      */
-    public void setLongitude(Double value) {
+    public void setLongitude(BigDecimal value) {
         this.longitude = value;
     }
 
@@ -89,7 +90,7 @@ public class GpsLocationType
      *     {@link String }
      *     
      */
-    public Double getLatitude() {
+    public BigDecimal getLatitude() {
         return latitude;
     }
 
@@ -101,7 +102,7 @@ public class GpsLocationType
      *     {@link String }
      *     
      */
-    public void setLatitude(Double value) {
+    public void setLatitude(BigDecimal value) {
         this.latitude = value;
     }
 
@@ -121,12 +122,12 @@ public class GpsLocationType
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theLongitude;
+            BigDecimal theLongitude;
             theLongitude = this.getLongitude();
             strategy.appendField(locator, this, "longitude", buffer, theLongitude);
         }
         {
-            Double theLatitude;
+            BigDecimal theLatitude;
             theLatitude = this.getLatitude();
             strategy.appendField(locator, this, "latitude", buffer, theLatitude);
         }
@@ -147,17 +148,17 @@ public class GpsLocationType
         if (draftCopy instanceof GpsLocationType) {
             final GpsLocationType copy = ((GpsLocationType) draftCopy);
             if (this.longitude!= null) {
-                Double sourceLongitude;
+                BigDecimal sourceLongitude;
                 sourceLongitude = this.getLongitude();
-                Double copyLongitude = ((Double) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude));
+                BigDecimal copyLongitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude));
                 copy.setLongitude(copyLongitude);
             } else {
                 copy.longitude = null;
             }
             if (this.latitude!= null) {
-                Double sourceLatitude;
+                BigDecimal sourceLatitude;
                 sourceLatitude = this.getLatitude();
-                Double copyLatitude = ((Double) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude));
+                BigDecimal copyLatitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude));
                 copy.setLatitude(copyLatitude);
             } else {
                 copy.latitude = null;
@@ -179,18 +180,18 @@ public class GpsLocationType
         }
         final GpsLocationType that = ((GpsLocationType) object);
         {
-            Double lhsLongitude;
+            BigDecimal lhsLongitude;
             lhsLongitude = this.getLongitude();
-            Double rhsLongitude;
+            BigDecimal rhsLongitude;
             rhsLongitude = that.getLongitude();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "longitude", lhsLongitude), LocatorUtils.property(thatLocator, "longitude", rhsLongitude), lhsLongitude, rhsLongitude)) {
                 return false;
             }
         }
         {
-            Double lhsLatitude;
+            BigDecimal lhsLatitude;
             lhsLatitude = this.getLatitude();
-            Double rhsLatitude;
+            BigDecimal rhsLatitude;
             rhsLatitude = that.getLatitude();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "latitude", lhsLatitude), LocatorUtils.property(thatLocator, "latitude", rhsLatitude), lhsLatitude, rhsLatitude)) {
                 return false;
