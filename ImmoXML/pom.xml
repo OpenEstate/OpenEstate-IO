@@ -268,7 +268,7 @@
           <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics</artifactId>
-            <version>0.9.4</version>
+            <version>0.9.5</version>
           </dependency>
         </dependencies>
       </plugin>
