@@ -1,6 +1,7 @@
 
 package org.openestate.io.daft_ie.xml;
 
+import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -154,17 +155,17 @@ public class OverseasRentalAdType
     @XmlElement(required = true, type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer rent;
+    protected BigInteger rent;
     @XmlElement(name = "rent_collection_period", required = true)
     protected OverseasRentalAdType.RentPeriod rentCollectionPeriod;
     @XmlElement(name = "bathroom_number", required = true, type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer bathroomNumber;
+    protected BigInteger bathroomNumber;
     @XmlElement(name = "bedroom_number", required = true, type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer bedroomNumber;
+    protected BigInteger bedroomNumber;
     @XmlElement(required = true)
     protected OverseasRentalAdType.Furnished furnished;
     @XmlElement(name = "cable_television", required = true, type = java.lang.String.class)
@@ -185,19 +186,19 @@ public class OverseasRentalAdType
     @XmlElement(name = "single_beds", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer singleBeds;
+    protected BigInteger singleBeds;
     @XmlElement(name = "double_beds", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer doubleBeds;
+    protected BigInteger doubleBeds;
     @XmlElement(name = "twin_beds", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer twinBeds;
+    protected BigInteger twinBeds;
     @XmlElement(name = "number_people", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer numberPeople;
+    protected BigInteger numberPeople;
     @XmlElement(name = "available_from", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
@@ -205,7 +206,7 @@ public class OverseasRentalAdType
     @XmlElement(type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "integer")
-    protected Integer lease;
+    protected BigInteger lease;
     @XmlElement(required = true)
     protected java.lang.String phone1;
     protected java.lang.String phone2;
@@ -424,7 +425,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getRent() {
+    public BigInteger getRent() {
         return rent;
     }
 
@@ -436,7 +437,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setRent(Integer value) {
+    public void setRent(BigInteger value) {
         this.rent = value;
     }
 
@@ -472,7 +473,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getBathroomNumber() {
+    public BigInteger getBathroomNumber() {
         return bathroomNumber;
     }
 
@@ -484,7 +485,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setBathroomNumber(Integer value) {
+    public void setBathroomNumber(BigInteger value) {
         this.bathroomNumber = value;
     }
 
@@ -496,7 +497,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getBedroomNumber() {
+    public BigInteger getBedroomNumber() {
         return bedroomNumber;
     }
 
@@ -508,7 +509,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setBedroomNumber(Integer value) {
+    public void setBedroomNumber(BigInteger value) {
         this.bedroomNumber = value;
     }
 
@@ -664,7 +665,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getSingleBeds() {
+    public BigInteger getSingleBeds() {
         return singleBeds;
     }
 
@@ -676,7 +677,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setSingleBeds(Integer value) {
+    public void setSingleBeds(BigInteger value) {
         this.singleBeds = value;
     }
 
@@ -688,7 +689,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getDoubleBeds() {
+    public BigInteger getDoubleBeds() {
         return doubleBeds;
     }
 
@@ -700,7 +701,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setDoubleBeds(Integer value) {
+    public void setDoubleBeds(BigInteger value) {
         this.doubleBeds = value;
     }
 
@@ -712,7 +713,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getTwinBeds() {
+    public BigInteger getTwinBeds() {
         return twinBeds;
     }
 
@@ -724,7 +725,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setTwinBeds(Integer value) {
+    public void setTwinBeds(BigInteger value) {
         this.twinBeds = value;
     }
 
@@ -736,7 +737,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getNumberPeople() {
+    public BigInteger getNumberPeople() {
         return numberPeople;
     }
 
@@ -748,7 +749,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setNumberPeople(Integer value) {
+    public void setNumberPeople(BigInteger value) {
         this.numberPeople = value;
     }
 
@@ -784,7 +785,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getLease() {
+    public BigInteger getLease() {
         return lease;
     }
 
@@ -796,7 +797,7 @@ public class OverseasRentalAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setLease(Integer value) {
+    public void setLease(BigInteger value) {
         this.lease = value;
     }
 
@@ -1096,7 +1097,7 @@ public class OverseasRentalAdType
             strategy.appendField(locator, this, "description", buffer, theDescription);
         }
         {
-            Integer theRent;
+            BigInteger theRent;
             theRent = this.getRent();
             strategy.appendField(locator, this, "rent", buffer, theRent);
         }
@@ -1106,12 +1107,12 @@ public class OverseasRentalAdType
             strategy.appendField(locator, this, "rentCollectionPeriod", buffer, theRentCollectionPeriod);
         }
         {
-            Integer theBathroomNumber;
+            BigInteger theBathroomNumber;
             theBathroomNumber = this.getBathroomNumber();
             strategy.appendField(locator, this, "bathroomNumber", buffer, theBathroomNumber);
         }
         {
-            Integer theBedroomNumber;
+            BigInteger theBedroomNumber;
             theBedroomNumber = this.getBedroomNumber();
             strategy.appendField(locator, this, "bedroomNumber", buffer, theBedroomNumber);
         }
@@ -1146,22 +1147,22 @@ public class OverseasRentalAdType
             strategy.appendField(locator, this, "microwave", buffer, theMicrowave);
         }
         {
-            Integer theSingleBeds;
+            BigInteger theSingleBeds;
             theSingleBeds = this.getSingleBeds();
             strategy.appendField(locator, this, "singleBeds", buffer, theSingleBeds);
         }
         {
-            Integer theDoubleBeds;
+            BigInteger theDoubleBeds;
             theDoubleBeds = this.getDoubleBeds();
             strategy.appendField(locator, this, "doubleBeds", buffer, theDoubleBeds);
         }
         {
-            Integer theTwinBeds;
+            BigInteger theTwinBeds;
             theTwinBeds = this.getTwinBeds();
             strategy.appendField(locator, this, "twinBeds", buffer, theTwinBeds);
         }
         {
-            Integer theNumberPeople;
+            BigInteger theNumberPeople;
             theNumberPeople = this.getNumberPeople();
             strategy.appendField(locator, this, "numberPeople", buffer, theNumberPeople);
         }
@@ -1171,7 +1172,7 @@ public class OverseasRentalAdType
             strategy.appendField(locator, this, "availableFrom", buffer, theAvailableFrom);
         }
         {
-            Integer theLease;
+            BigInteger theLease;
             theLease = this.getLease();
             strategy.appendField(locator, this, "lease", buffer, theLease);
         }
@@ -1306,9 +1307,9 @@ public class OverseasRentalAdType
                 copy.description = null;
             }
             if (this.rent!= null) {
-                Integer sourceRent;
+                BigInteger sourceRent;
                 sourceRent = this.getRent();
-                Integer copyRent = ((Integer) strategy.copy(LocatorUtils.property(locator, "rent", sourceRent), sourceRent));
+                BigInteger copyRent = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "rent", sourceRent), sourceRent));
                 copy.setRent(copyRent);
             } else {
                 copy.rent = null;
@@ -1322,17 +1323,17 @@ public class OverseasRentalAdType
                 copy.rentCollectionPeriod = null;
             }
             if (this.bathroomNumber!= null) {
-                Integer sourceBathroomNumber;
+                BigInteger sourceBathroomNumber;
                 sourceBathroomNumber = this.getBathroomNumber();
-                Integer copyBathroomNumber = ((Integer) strategy.copy(LocatorUtils.property(locator, "bathroomNumber", sourceBathroomNumber), sourceBathroomNumber));
+                BigInteger copyBathroomNumber = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathroomNumber", sourceBathroomNumber), sourceBathroomNumber));
                 copy.setBathroomNumber(copyBathroomNumber);
             } else {
                 copy.bathroomNumber = null;
             }
             if (this.bedroomNumber!= null) {
-                Integer sourceBedroomNumber;
+                BigInteger sourceBedroomNumber;
                 sourceBedroomNumber = this.getBedroomNumber();
-                Integer copyBedroomNumber = ((Integer) strategy.copy(LocatorUtils.property(locator, "bedroomNumber", sourceBedroomNumber), sourceBedroomNumber));
+                BigInteger copyBedroomNumber = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bedroomNumber", sourceBedroomNumber), sourceBedroomNumber));
                 copy.setBedroomNumber(copyBedroomNumber);
             } else {
                 copy.bedroomNumber = null;
@@ -1386,33 +1387,33 @@ public class OverseasRentalAdType
                 copy.microwave = null;
             }
             if (this.singleBeds!= null) {
-                Integer sourceSingleBeds;
+                BigInteger sourceSingleBeds;
                 sourceSingleBeds = this.getSingleBeds();
-                Integer copySingleBeds = ((Integer) strategy.copy(LocatorUtils.property(locator, "singleBeds", sourceSingleBeds), sourceSingleBeds));
+                BigInteger copySingleBeds = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "singleBeds", sourceSingleBeds), sourceSingleBeds));
                 copy.setSingleBeds(copySingleBeds);
             } else {
                 copy.singleBeds = null;
             }
             if (this.doubleBeds!= null) {
-                Integer sourceDoubleBeds;
+                BigInteger sourceDoubleBeds;
                 sourceDoubleBeds = this.getDoubleBeds();
-                Integer copyDoubleBeds = ((Integer) strategy.copy(LocatorUtils.property(locator, "doubleBeds", sourceDoubleBeds), sourceDoubleBeds));
+                BigInteger copyDoubleBeds = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "doubleBeds", sourceDoubleBeds), sourceDoubleBeds));
                 copy.setDoubleBeds(copyDoubleBeds);
             } else {
                 copy.doubleBeds = null;
             }
             if (this.twinBeds!= null) {
-                Integer sourceTwinBeds;
+                BigInteger sourceTwinBeds;
                 sourceTwinBeds = this.getTwinBeds();
-                Integer copyTwinBeds = ((Integer) strategy.copy(LocatorUtils.property(locator, "twinBeds", sourceTwinBeds), sourceTwinBeds));
+                BigInteger copyTwinBeds = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "twinBeds", sourceTwinBeds), sourceTwinBeds));
                 copy.setTwinBeds(copyTwinBeds);
             } else {
                 copy.twinBeds = null;
             }
             if (this.numberPeople!= null) {
-                Integer sourceNumberPeople;
+                BigInteger sourceNumberPeople;
                 sourceNumberPeople = this.getNumberPeople();
-                Integer copyNumberPeople = ((Integer) strategy.copy(LocatorUtils.property(locator, "numberPeople", sourceNumberPeople), sourceNumberPeople));
+                BigInteger copyNumberPeople = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "numberPeople", sourceNumberPeople), sourceNumberPeople));
                 copy.setNumberPeople(copyNumberPeople);
             } else {
                 copy.numberPeople = null;
@@ -1426,9 +1427,9 @@ public class OverseasRentalAdType
                 copy.availableFrom = null;
             }
             if (this.lease!= null) {
-                Integer sourceLease;
+                BigInteger sourceLease;
                 sourceLease = this.getLease();
-                Integer copyLease = ((Integer) strategy.copy(LocatorUtils.property(locator, "lease", sourceLease), sourceLease));
+                BigInteger copyLease = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "lease", sourceLease), sourceLease));
                 copy.setLease(copyLease);
             } else {
                 copy.lease = null;
@@ -1602,9 +1603,9 @@ public class OverseasRentalAdType
             }
         }
         {
-            Integer lhsRent;
+            BigInteger lhsRent;
             lhsRent = this.getRent();
-            Integer rhsRent;
+            BigInteger rhsRent;
             rhsRent = that.getRent();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rent", lhsRent), LocatorUtils.property(thatLocator, "rent", rhsRent), lhsRent, rhsRent)) {
                 return false;
@@ -1620,18 +1621,18 @@ public class OverseasRentalAdType
             }
         }
         {
-            Integer lhsBathroomNumber;
+            BigInteger lhsBathroomNumber;
             lhsBathroomNumber = this.getBathroomNumber();
-            Integer rhsBathroomNumber;
+            BigInteger rhsBathroomNumber;
             rhsBathroomNumber = that.getBathroomNumber();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bathroomNumber", lhsBathroomNumber), LocatorUtils.property(thatLocator, "bathroomNumber", rhsBathroomNumber), lhsBathroomNumber, rhsBathroomNumber)) {
                 return false;
             }
         }
         {
-            Integer lhsBedroomNumber;
+            BigInteger lhsBedroomNumber;
             lhsBedroomNumber = this.getBedroomNumber();
-            Integer rhsBedroomNumber;
+            BigInteger rhsBedroomNumber;
             rhsBedroomNumber = that.getBedroomNumber();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bedroomNumber", lhsBedroomNumber), LocatorUtils.property(thatLocator, "bedroomNumber", rhsBedroomNumber), lhsBedroomNumber, rhsBedroomNumber)) {
                 return false;
@@ -1692,36 +1693,36 @@ public class OverseasRentalAdType
             }
         }
         {
-            Integer lhsSingleBeds;
+            BigInteger lhsSingleBeds;
             lhsSingleBeds = this.getSingleBeds();
-            Integer rhsSingleBeds;
+            BigInteger rhsSingleBeds;
             rhsSingleBeds = that.getSingleBeds();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "singleBeds", lhsSingleBeds), LocatorUtils.property(thatLocator, "singleBeds", rhsSingleBeds), lhsSingleBeds, rhsSingleBeds)) {
                 return false;
             }
         }
         {
-            Integer lhsDoubleBeds;
+            BigInteger lhsDoubleBeds;
             lhsDoubleBeds = this.getDoubleBeds();
-            Integer rhsDoubleBeds;
+            BigInteger rhsDoubleBeds;
             rhsDoubleBeds = that.getDoubleBeds();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "doubleBeds", lhsDoubleBeds), LocatorUtils.property(thatLocator, "doubleBeds", rhsDoubleBeds), lhsDoubleBeds, rhsDoubleBeds)) {
                 return false;
             }
         }
         {
-            Integer lhsTwinBeds;
+            BigInteger lhsTwinBeds;
             lhsTwinBeds = this.getTwinBeds();
-            Integer rhsTwinBeds;
+            BigInteger rhsTwinBeds;
             rhsTwinBeds = that.getTwinBeds();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "twinBeds", lhsTwinBeds), LocatorUtils.property(thatLocator, "twinBeds", rhsTwinBeds), lhsTwinBeds, rhsTwinBeds)) {
                 return false;
             }
         }
         {
-            Integer lhsNumberPeople;
+            BigInteger lhsNumberPeople;
             lhsNumberPeople = this.getNumberPeople();
-            Integer rhsNumberPeople;
+            BigInteger rhsNumberPeople;
             rhsNumberPeople = that.getNumberPeople();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "numberPeople", lhsNumberPeople), LocatorUtils.property(thatLocator, "numberPeople", rhsNumberPeople), lhsNumberPeople, rhsNumberPeople)) {
                 return false;
@@ -1737,9 +1738,9 @@ public class OverseasRentalAdType
             }
         }
         {
-            Integer lhsLease;
+            BigInteger lhsLease;
             lhsLease = this.getLease();
-            Integer rhsLease;
+            BigInteger rhsLease;
             rhsLease = that.getLease();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "lease", lhsLease), LocatorUtils.property(thatLocator, "lease", rhsLease), lhsLease, rhsLease)) {
                 return false;

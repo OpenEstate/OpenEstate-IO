@@ -19,6 +19,8 @@ package org.openestate.io.daft_ie;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -315,16 +317,16 @@ public class DaftIeUtils
     return XmlUtils.parseDateTime( value );
   }
 
-  public static Double parseDouble( String value )
+  public static BigDecimal parsePositiveDecimal( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Integer parseInteger( String value )
+  public static BigInteger parsePositiveInteger( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseInt( value ): null;
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
   public static URL parseURL( String value )
@@ -388,20 +390,20 @@ public class DaftIeUtils
       return DatatypeConverter.printDateTime(value );
   }
 
-  public static String printDouble( Double value )
+  public static String printPositiveDecimal( BigDecimal value )
   {
-    if (value==null || value<0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )<0)
+      throw new IllegalArgumentException( "Can't print positive double value!" );
     else
-      return DatatypeConverter.printDouble( value );
+      return DatatypeConverter.printDecimal( value );
   }
 
-  public static String printInteger( Integer value )
+  public static String printPositiveInteger( BigInteger value )
   {
-    if (value==null || value<0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
+    if (value==null || value.compareTo( BigInteger.ZERO )<0)
+      throw new IllegalArgumentException( "Can't print positive integer value!" );
     else
-      return DatatypeConverter.printInt( value );
+      return DatatypeConverter.printInteger( value );
   }
 
   public static String printURL( URL value )
