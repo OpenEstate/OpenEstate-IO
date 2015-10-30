@@ -4,6 +4,12 @@
                jaxb:extensionBindingPrefixes="xjc"
                version="2.0">
 
+  <jaxb:globalBindings>
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:double"
+                   parseMethod="org.openestate.io.casa_it.CasaItUtils.parseDouble"
+                   printMethod="org.openestate.io.casa_it.CasaItUtils.printDouble"/>
+  </jaxb:globalBindings>
+
   <jaxb:bindings schemaLocation="../xsd/schema.xsd" node="/xsd:schema">
 
     <jaxb:schemaBindings>

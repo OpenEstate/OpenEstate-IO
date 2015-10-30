@@ -10,7 +10,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
 import org.jvnet.jaxb2_commons.lang.CopyTo;
 import org.jvnet.jaxb2_commons.lang.Equals;
@@ -4108,25 +4110,33 @@ public class Container
             {
 
                 @XmlAttribute(name = "latitude")
-                protected Double latitude;
+                @XmlJavaTypeAdapter(Adapter1 .class)
+                @XmlSchemaType(name = "double")
+                protected BigDecimal latitude;
                 @XmlAttribute(name = "longitude")
-                protected Double longitude;
+                @XmlJavaTypeAdapter(Adapter1 .class)
+                @XmlSchemaType(name = "double")
+                protected BigDecimal longitude;
                 @XmlAttribute(name = "mapzoom")
                 protected Integer mapzoom;
                 @XmlAttribute(name = "latitudemapcenter")
-                protected Double latitudemapcenter;
+                @XmlJavaTypeAdapter(Adapter1 .class)
+                @XmlSchemaType(name = "double")
+                protected BigDecimal latitudemapcenter;
                 @XmlAttribute(name = "longitudemapcenter")
-                protected Double longitudemapcenter;
+                @XmlJavaTypeAdapter(Adapter1 .class)
+                @XmlSchemaType(name = "double")
+                protected BigDecimal longitudemapcenter;
 
                 /**
                  * Gets the value of the latitude property.
                  * 
                  * @return
                  *     possible object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public Double getLatitude() {
+                public BigDecimal getLatitude() {
                     return latitude;
                 }
 
@@ -4135,10 +4145,10 @@ public class Container
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public void setLatitude(Double value) {
+                public void setLatitude(BigDecimal value) {
                     this.latitude = value;
                 }
 
@@ -4147,10 +4157,10 @@ public class Container
                  * 
                  * @return
                  *     possible object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public Double getLongitude() {
+                public BigDecimal getLongitude() {
                     return longitude;
                 }
 
@@ -4159,10 +4169,10 @@ public class Container
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public void setLongitude(Double value) {
+                public void setLongitude(BigDecimal value) {
                     this.longitude = value;
                 }
 
@@ -4195,10 +4205,10 @@ public class Container
                  * 
                  * @return
                  *     possible object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public Double getLatitudemapcenter() {
+                public BigDecimal getLatitudemapcenter() {
                     return latitudemapcenter;
                 }
 
@@ -4207,10 +4217,10 @@ public class Container
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public void setLatitudemapcenter(Double value) {
+                public void setLatitudemapcenter(BigDecimal value) {
                     this.latitudemapcenter = value;
                 }
 
@@ -4219,10 +4229,10 @@ public class Container
                  * 
                  * @return
                  *     possible object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public Double getLongitudemapcenter() {
+                public BigDecimal getLongitudemapcenter() {
                     return longitudemapcenter;
                 }
 
@@ -4231,10 +4241,10 @@ public class Container
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link Double }
+                 *     {@link String }
                  *     
                  */
-                public void setLongitudemapcenter(Double value) {
+                public void setLongitudemapcenter(BigDecimal value) {
                     this.longitudemapcenter = value;
                 }
 
@@ -4254,12 +4264,12 @@ public class Container
 
                 public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
                     {
-                        Double theLatitude;
+                        BigDecimal theLatitude;
                         theLatitude = this.getLatitude();
                         strategy.appendField(locator, this, "latitude", buffer, theLatitude);
                     }
                     {
-                        Double theLongitude;
+                        BigDecimal theLongitude;
                         theLongitude = this.getLongitude();
                         strategy.appendField(locator, this, "longitude", buffer, theLongitude);
                     }
@@ -4269,12 +4279,12 @@ public class Container
                         strategy.appendField(locator, this, "mapzoom", buffer, theMapzoom);
                     }
                     {
-                        Double theLatitudemapcenter;
+                        BigDecimal theLatitudemapcenter;
                         theLatitudemapcenter = this.getLatitudemapcenter();
                         strategy.appendField(locator, this, "latitudemapcenter", buffer, theLatitudemapcenter);
                     }
                     {
-                        Double theLongitudemapcenter;
+                        BigDecimal theLongitudemapcenter;
                         theLongitudemapcenter = this.getLongitudemapcenter();
                         strategy.appendField(locator, this, "longitudemapcenter", buffer, theLongitudemapcenter);
                     }
@@ -4295,17 +4305,17 @@ public class Container
                     if (draftCopy instanceof Container.Realestateitems.Realestate.Googlemapcoordinate) {
                         final Container.Realestateitems.Realestate.Googlemapcoordinate copy = ((Container.Realestateitems.Realestate.Googlemapcoordinate) draftCopy);
                         if (this.latitude!= null) {
-                            Double sourceLatitude;
+                            BigDecimal sourceLatitude;
                             sourceLatitude = this.getLatitude();
-                            Double copyLatitude = ((Double) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude));
+                            BigDecimal copyLatitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude));
                             copy.setLatitude(copyLatitude);
                         } else {
                             copy.latitude = null;
                         }
                         if (this.longitude!= null) {
-                            Double sourceLongitude;
+                            BigDecimal sourceLongitude;
                             sourceLongitude = this.getLongitude();
-                            Double copyLongitude = ((Double) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude));
+                            BigDecimal copyLongitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude));
                             copy.setLongitude(copyLongitude);
                         } else {
                             copy.longitude = null;
@@ -4319,17 +4329,17 @@ public class Container
                             copy.mapzoom = null;
                         }
                         if (this.latitudemapcenter!= null) {
-                            Double sourceLatitudemapcenter;
+                            BigDecimal sourceLatitudemapcenter;
                             sourceLatitudemapcenter = this.getLatitudemapcenter();
-                            Double copyLatitudemapcenter = ((Double) strategy.copy(LocatorUtils.property(locator, "latitudemapcenter", sourceLatitudemapcenter), sourceLatitudemapcenter));
+                            BigDecimal copyLatitudemapcenter = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "latitudemapcenter", sourceLatitudemapcenter), sourceLatitudemapcenter));
                             copy.setLatitudemapcenter(copyLatitudemapcenter);
                         } else {
                             copy.latitudemapcenter = null;
                         }
                         if (this.longitudemapcenter!= null) {
-                            Double sourceLongitudemapcenter;
+                            BigDecimal sourceLongitudemapcenter;
                             sourceLongitudemapcenter = this.getLongitudemapcenter();
-                            Double copyLongitudemapcenter = ((Double) strategy.copy(LocatorUtils.property(locator, "longitudemapcenter", sourceLongitudemapcenter), sourceLongitudemapcenter));
+                            BigDecimal copyLongitudemapcenter = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "longitudemapcenter", sourceLongitudemapcenter), sourceLongitudemapcenter));
                             copy.setLongitudemapcenter(copyLongitudemapcenter);
                         } else {
                             copy.longitudemapcenter = null;
@@ -4351,18 +4361,18 @@ public class Container
                     }
                     final Container.Realestateitems.Realestate.Googlemapcoordinate that = ((Container.Realestateitems.Realestate.Googlemapcoordinate) object);
                     {
-                        Double lhsLatitude;
+                        BigDecimal lhsLatitude;
                         lhsLatitude = this.getLatitude();
-                        Double rhsLatitude;
+                        BigDecimal rhsLatitude;
                         rhsLatitude = that.getLatitude();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "latitude", lhsLatitude), LocatorUtils.property(thatLocator, "latitude", rhsLatitude), lhsLatitude, rhsLatitude)) {
                             return false;
                         }
                     }
                     {
-                        Double lhsLongitude;
+                        BigDecimal lhsLongitude;
                         lhsLongitude = this.getLongitude();
-                        Double rhsLongitude;
+                        BigDecimal rhsLongitude;
                         rhsLongitude = that.getLongitude();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "longitude", lhsLongitude), LocatorUtils.property(thatLocator, "longitude", rhsLongitude), lhsLongitude, rhsLongitude)) {
                             return false;
@@ -4378,18 +4388,18 @@ public class Container
                         }
                     }
                     {
-                        Double lhsLatitudemapcenter;
+                        BigDecimal lhsLatitudemapcenter;
                         lhsLatitudemapcenter = this.getLatitudemapcenter();
-                        Double rhsLatitudemapcenter;
+                        BigDecimal rhsLatitudemapcenter;
                         rhsLatitudemapcenter = that.getLatitudemapcenter();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "latitudemapcenter", lhsLatitudemapcenter), LocatorUtils.property(thatLocator, "latitudemapcenter", rhsLatitudemapcenter), lhsLatitudemapcenter, rhsLatitudemapcenter)) {
                             return false;
                         }
                     }
                     {
-                        Double lhsLongitudemapcenter;
+                        BigDecimal lhsLongitudemapcenter;
                         lhsLongitudemapcenter = this.getLongitudemapcenter();
-                        Double rhsLongitudemapcenter;
+                        BigDecimal rhsLongitudemapcenter;
                         rhsLongitudemapcenter = that.getLongitudemapcenter();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "longitudemapcenter", lhsLongitudemapcenter), LocatorUtils.property(thatLocator, "longitudemapcenter", rhsLongitudemapcenter), lhsLongitudemapcenter, rhsLongitudemapcenter)) {
                             return false;
