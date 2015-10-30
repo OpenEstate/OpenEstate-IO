@@ -16,6 +16,7 @@
 
 package org.openestate.io.wis_it;
 
+import java.math.BigInteger;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlDocument;
@@ -101,7 +102,7 @@ public class WisItDocument extends XmlDocument<WIS>
   {
     if (wis.getOBJEKTE()==null)
       wis.setOBJEKTE( WisItUtils.getFactory().createWISOBJEKTE() );
-    wis.getOBJEKTE().setANZAHL( wis.getOBJEKTE().getOBJEKT().size() );
+    wis.getOBJEKTE().setANZAHL( BigInteger.valueOf( wis.getOBJEKTE().getOBJEKT().size() ) );
 
     Document document = XmlUtils.newDocument();
     WisItUtils.createMarshaller( "UTF-8", true ).marshal( wis, document );

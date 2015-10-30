@@ -6,13 +6,13 @@
 
   <jaxb:globalBindings>
 
-    <jaxb:javaType  name="java.lang.Integer" xmlType="xsd:nonNegativeInteger"
-      parseMethod="org.openestate.io.wis_it.WisItUtils.parseInteger"
+    <jaxb:javaType  name="java.math.BigInteger" xmlType="xsd:nonNegativeInteger"
+      parseMethod="org.openestate.io.wis_it.WisItUtils.parseNonNegativeInteger"
       printMethod="org.openestate.io.wis_it.WisItUtils.printNonNegativeInteger" />
 
     <!--
-    <jaxb:javaType  name="java.lang.Integer" xmlType="xsd:positiveInteger"
-      parseMethod="org.openestate.io.wis_it.WisItUtils.parseInteger"
+    <jaxb:javaType  name="java.math.BigInteger" xmlType="xsd:positiveInteger"
+      parseMethod="org.openestate.io.wis_it.WisItUtils.parsePositiveInteger"
       printMethod="org.openestate.io.wis_it.WisItUtils.printPositiveInteger" />
     -->
 
@@ -33,7 +33,7 @@
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='decimalType']">
-      <jaxb:javaType  name="java.lang.Double"
+      <jaxb:javaType  name="java.math.BigDecimal"
         parseMethod="org.openestate.io.wis_it.WisItUtils.parseDecimal"
         printMethod="org.openestate.io.wis_it.WisItUtils.printDecimal" />
     </jaxb:bindings>

@@ -1,18 +1,19 @@
 
 package org.openestate.io.wis_it.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter1
-    extends XmlAdapter<String, Integer>
+    extends XmlAdapter<String, BigInteger>
 {
 
 
-    public Integer unmarshal(String value) {
-        return (org.openestate.io.wis_it.WisItUtils.parseInteger(value));
+    public BigInteger unmarshal(String value) {
+        return (org.openestate.io.wis_it.WisItUtils.parseNonNegativeInteger(value));
     }
 
-    public String marshal(Integer value) {
+    public String marshal(BigInteger value) {
         return (org.openestate.io.wis_it.WisItUtils.printNonNegativeInteger(value));
     }
 

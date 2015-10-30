@@ -1,6 +1,8 @@
 
 package org.openestate.io.wis_it.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -159,14 +161,14 @@ public class ObjectType
     @XmlElement(name = "PREIS", type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double preis;
+    protected BigDecimal preis;
     @XmlElement(name = "AUFANFRAGE", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean aufanfrage;
     @XmlElement(name = "NUTZFLAECHE", type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nutzflaeche;
+    protected BigDecimal nutzflaeche;
     @XmlElement(name = "FLAECHEART")
     @XmlSchemaType(name = "string")
     protected AreaType flaecheart;
@@ -179,22 +181,22 @@ public class ObjectType
     @XmlElement(name = "KUBATUR", type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kubatur;
+    protected BigDecimal kubatur;
     @XmlElement(name = "ZUSTAND")
     @XmlSchemaType(name = "string")
     protected ConditionType zustand;
     @XmlElement(name = "ZIMMER", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Integer zimmer;
+    protected BigInteger zimmer;
     @XmlElement(name = "STOCKWERKE", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Integer stockwerke;
+    protected BigInteger stockwerke;
     @XmlElement(name = "STOCKWERK", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Integer stockwerk;
+    protected BigInteger stockwerk;
     @XmlElement(name = "AUFZUG", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean aufzug;
@@ -439,7 +441,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Double getPREIS() {
+    public BigDecimal getPREIS() {
         return preis;
     }
 
@@ -451,7 +453,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setPREIS(Double value) {
+    public void setPREIS(BigDecimal value) {
         this.preis = value;
     }
 
@@ -487,7 +489,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Double getNUTZFLAECHE() {
+    public BigDecimal getNUTZFLAECHE() {
         return nutzflaeche;
     }
 
@@ -499,7 +501,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setNUTZFLAECHE(Double value) {
+    public void setNUTZFLAECHE(BigDecimal value) {
         this.nutzflaeche = value;
     }
 
@@ -583,7 +585,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Double getKUBATUR() {
+    public BigDecimal getKUBATUR() {
         return kubatur;
     }
 
@@ -595,7 +597,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setKUBATUR(Double value) {
+    public void setKUBATUR(BigDecimal value) {
         this.kubatur = value;
     }
 
@@ -631,7 +633,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Integer getZIMMER() {
+    public BigInteger getZIMMER() {
         return zimmer;
     }
 
@@ -643,7 +645,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setZIMMER(Integer value) {
+    public void setZIMMER(BigInteger value) {
         this.zimmer = value;
     }
 
@@ -655,7 +657,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Integer getSTOCKWERKE() {
+    public BigInteger getSTOCKWERKE() {
         return stockwerke;
     }
 
@@ -667,7 +669,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setSTOCKWERKE(Integer value) {
+    public void setSTOCKWERKE(BigInteger value) {
         this.stockwerke = value;
     }
 
@@ -679,7 +681,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Integer getSTOCKWERK() {
+    public BigInteger getSTOCKWERK() {
         return stockwerk;
     }
 
@@ -691,7 +693,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setSTOCKWERK(Integer value) {
+    public void setSTOCKWERK(BigInteger value) {
         this.stockwerk = value;
     }
 
@@ -1418,7 +1420,7 @@ public class ObjectType
             strategy.appendField(locator, this, "mietekauf", buffer, theMIETEKAUF);
         }
         {
-            Double thePREIS;
+            BigDecimal thePREIS;
             thePREIS = this.getPREIS();
             strategy.appendField(locator, this, "preis", buffer, thePREIS);
         }
@@ -1428,7 +1430,7 @@ public class ObjectType
             strategy.appendField(locator, this, "aufanfrage", buffer, theAUFANFRAGE);
         }
         {
-            Double theNUTZFLAECHE;
+            BigDecimal theNUTZFLAECHE;
             theNUTZFLAECHE = this.getNUTZFLAECHE();
             strategy.appendField(locator, this, "nutzflaeche", buffer, theNUTZFLAECHE);
         }
@@ -1448,7 +1450,7 @@ public class ObjectType
             strategy.appendField(locator, this, "konventioniert", buffer, theKONVENTIONIERT);
         }
         {
-            Double theKUBATUR;
+            BigDecimal theKUBATUR;
             theKUBATUR = this.getKUBATUR();
             strategy.appendField(locator, this, "kubatur", buffer, theKUBATUR);
         }
@@ -1458,17 +1460,17 @@ public class ObjectType
             strategy.appendField(locator, this, "zustand", buffer, theZUSTAND);
         }
         {
-            Integer theZIMMER;
+            BigInteger theZIMMER;
             theZIMMER = this.getZIMMER();
             strategy.appendField(locator, this, "zimmer", buffer, theZIMMER);
         }
         {
-            Integer theSTOCKWERKE;
+            BigInteger theSTOCKWERKE;
             theSTOCKWERKE = this.getSTOCKWERKE();
             strategy.appendField(locator, this, "stockwerke", buffer, theSTOCKWERKE);
         }
         {
-            Integer theSTOCKWERK;
+            BigInteger theSTOCKWERK;
             theSTOCKWERK = this.getSTOCKWERK();
             strategy.appendField(locator, this, "stockwerk", buffer, theSTOCKWERK);
         }
@@ -1685,9 +1687,9 @@ public class ObjectType
                 copy.mietekauf = null;
             }
             if (this.preis!= null) {
-                Double sourcePREIS;
+                BigDecimal sourcePREIS;
                 sourcePREIS = this.getPREIS();
-                Double copyPREIS = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePREIS), sourcePREIS));
+                BigDecimal copyPREIS = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePREIS), sourcePREIS));
                 copy.setPREIS(copyPREIS);
             } else {
                 copy.preis = null;
@@ -1701,9 +1703,9 @@ public class ObjectType
                 copy.aufanfrage = null;
             }
             if (this.nutzflaeche!= null) {
-                Double sourceNUTZFLAECHE;
+                BigDecimal sourceNUTZFLAECHE;
                 sourceNUTZFLAECHE = this.getNUTZFLAECHE();
-                Double copyNUTZFLAECHE = ((Double) strategy.copy(LocatorUtils.property(locator, "nutzflaeche", sourceNUTZFLAECHE), sourceNUTZFLAECHE));
+                BigDecimal copyNUTZFLAECHE = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nutzflaeche", sourceNUTZFLAECHE), sourceNUTZFLAECHE));
                 copy.setNUTZFLAECHE(copyNUTZFLAECHE);
             } else {
                 copy.nutzflaeche = null;
@@ -1733,9 +1735,9 @@ public class ObjectType
                 copy.konventioniert = null;
             }
             if (this.kubatur!= null) {
-                Double sourceKUBATUR;
+                BigDecimal sourceKUBATUR;
                 sourceKUBATUR = this.getKUBATUR();
-                Double copyKUBATUR = ((Double) strategy.copy(LocatorUtils.property(locator, "kubatur", sourceKUBATUR), sourceKUBATUR));
+                BigDecimal copyKUBATUR = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kubatur", sourceKUBATUR), sourceKUBATUR));
                 copy.setKUBATUR(copyKUBATUR);
             } else {
                 copy.kubatur = null;
@@ -1749,25 +1751,25 @@ public class ObjectType
                 copy.zustand = null;
             }
             if (this.zimmer!= null) {
-                Integer sourceZIMMER;
+                BigInteger sourceZIMMER;
                 sourceZIMMER = this.getZIMMER();
-                Integer copyZIMMER = ((Integer) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZIMMER), sourceZIMMER));
+                BigInteger copyZIMMER = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZIMMER), sourceZIMMER));
                 copy.setZIMMER(copyZIMMER);
             } else {
                 copy.zimmer = null;
             }
             if (this.stockwerke!= null) {
-                Integer sourceSTOCKWERKE;
+                BigInteger sourceSTOCKWERKE;
                 sourceSTOCKWERKE = this.getSTOCKWERKE();
-                Integer copySTOCKWERKE = ((Integer) strategy.copy(LocatorUtils.property(locator, "stockwerke", sourceSTOCKWERKE), sourceSTOCKWERKE));
+                BigInteger copySTOCKWERKE = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "stockwerke", sourceSTOCKWERKE), sourceSTOCKWERKE));
                 copy.setSTOCKWERKE(copySTOCKWERKE);
             } else {
                 copy.stockwerke = null;
             }
             if (this.stockwerk!= null) {
-                Integer sourceSTOCKWERK;
+                BigInteger sourceSTOCKWERK;
                 sourceSTOCKWERK = this.getSTOCKWERK();
-                Integer copySTOCKWERK = ((Integer) strategy.copy(LocatorUtils.property(locator, "stockwerk", sourceSTOCKWERK), sourceSTOCKWERK));
+                BigInteger copySTOCKWERK = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "stockwerk", sourceSTOCKWERK), sourceSTOCKWERK));
                 copy.setSTOCKWERK(copySTOCKWERK);
             } else {
                 copy.stockwerk = null;
@@ -2076,9 +2078,9 @@ public class ObjectType
             }
         }
         {
-            Double lhsPREIS;
+            BigDecimal lhsPREIS;
             lhsPREIS = this.getPREIS();
-            Double rhsPREIS;
+            BigDecimal rhsPREIS;
             rhsPREIS = that.getPREIS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPREIS), LocatorUtils.property(thatLocator, "preis", rhsPREIS), lhsPREIS, rhsPREIS)) {
                 return false;
@@ -2094,9 +2096,9 @@ public class ObjectType
             }
         }
         {
-            Double lhsNUTZFLAECHE;
+            BigDecimal lhsNUTZFLAECHE;
             lhsNUTZFLAECHE = this.getNUTZFLAECHE();
-            Double rhsNUTZFLAECHE;
+            BigDecimal rhsNUTZFLAECHE;
             rhsNUTZFLAECHE = that.getNUTZFLAECHE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nutzflaeche", lhsNUTZFLAECHE), LocatorUtils.property(thatLocator, "nutzflaeche", rhsNUTZFLAECHE), lhsNUTZFLAECHE, rhsNUTZFLAECHE)) {
                 return false;
@@ -2130,9 +2132,9 @@ public class ObjectType
             }
         }
         {
-            Double lhsKUBATUR;
+            BigDecimal lhsKUBATUR;
             lhsKUBATUR = this.getKUBATUR();
-            Double rhsKUBATUR;
+            BigDecimal rhsKUBATUR;
             rhsKUBATUR = that.getKUBATUR();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kubatur", lhsKUBATUR), LocatorUtils.property(thatLocator, "kubatur", rhsKUBATUR), lhsKUBATUR, rhsKUBATUR)) {
                 return false;
@@ -2148,27 +2150,27 @@ public class ObjectType
             }
         }
         {
-            Integer lhsZIMMER;
+            BigInteger lhsZIMMER;
             lhsZIMMER = this.getZIMMER();
-            Integer rhsZIMMER;
+            BigInteger rhsZIMMER;
             rhsZIMMER = that.getZIMMER();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmer", lhsZIMMER), LocatorUtils.property(thatLocator, "zimmer", rhsZIMMER), lhsZIMMER, rhsZIMMER)) {
                 return false;
             }
         }
         {
-            Integer lhsSTOCKWERKE;
+            BigInteger lhsSTOCKWERKE;
             lhsSTOCKWERKE = this.getSTOCKWERKE();
-            Integer rhsSTOCKWERKE;
+            BigInteger rhsSTOCKWERKE;
             rhsSTOCKWERKE = that.getSTOCKWERKE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stockwerke", lhsSTOCKWERKE), LocatorUtils.property(thatLocator, "stockwerke", rhsSTOCKWERKE), lhsSTOCKWERKE, rhsSTOCKWERKE)) {
                 return false;
             }
         }
         {
-            Integer lhsSTOCKWERK;
+            BigInteger lhsSTOCKWERK;
             lhsSTOCKWERK = this.getSTOCKWERK();
-            Integer rhsSTOCKWERK;
+            BigInteger rhsSTOCKWERK;
             rhsSTOCKWERK = that.getSTOCKWERK();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stockwerk", lhsSTOCKWERK), LocatorUtils.property(thatLocator, "stockwerk", rhsSTOCKWERK), lhsSTOCKWERK, rhsSTOCKWERK)) {
                 return false;

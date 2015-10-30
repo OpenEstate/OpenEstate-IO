@@ -1,6 +1,7 @@
 
 package org.openestate.io.wis_it.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -393,7 +394,7 @@ public class WIS
         @XmlElement(name = "ANZAHL", required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter1 .class)
         @XmlSchemaType(name = "nonNegativeInteger")
-        protected Integer anzahl;
+        protected BigInteger anzahl;
         @XmlElement(name = "OBJEKT")
         protected List<ObjectType> objekt;
 
@@ -405,7 +406,7 @@ public class WIS
          *     {@link String }
          *     
          */
-        public Integer getANZAHL() {
+        public BigInteger getANZAHL() {
             return anzahl;
         }
 
@@ -417,7 +418,7 @@ public class WIS
          *     {@link String }
          *     
          */
-        public void setANZAHL(Integer value) {
+        public void setANZAHL(BigInteger value) {
             this.anzahl = value;
         }
 
@@ -466,7 +467,7 @@ public class WIS
 
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
             {
-                Integer theANZAHL;
+                BigInteger theANZAHL;
                 theANZAHL = this.getANZAHL();
                 strategy.appendField(locator, this, "anzahl", buffer, theANZAHL);
             }
@@ -492,9 +493,9 @@ public class WIS
             if (draftCopy instanceof WIS.OBJEKTE) {
                 final WIS.OBJEKTE copy = ((WIS.OBJEKTE) draftCopy);
                 if (this.anzahl!= null) {
-                    Integer sourceANZAHL;
+                    BigInteger sourceANZAHL;
                     sourceANZAHL = this.getANZAHL();
-                    Integer copyANZAHL = ((Integer) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceANZAHL), sourceANZAHL));
+                    BigInteger copyANZAHL = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceANZAHL), sourceANZAHL));
                     copy.setANZAHL(copyANZAHL);
                 } else {
                     copy.anzahl = null;
@@ -529,9 +530,9 @@ public class WIS
             }
             final WIS.OBJEKTE that = ((WIS.OBJEKTE) object);
             {
-                Integer lhsANZAHL;
+                BigInteger lhsANZAHL;
                 lhsANZAHL = this.getANZAHL();
-                Integer rhsANZAHL;
+                BigInteger rhsANZAHL;
                 rhsANZAHL = that.getANZAHL();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahl", lhsANZAHL), LocatorUtils.property(thatLocator, "anzahl", rhsANZAHL), lhsANZAHL, rhsANZAHL)) {
                     return false;
