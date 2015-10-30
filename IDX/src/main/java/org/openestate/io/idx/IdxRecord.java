@@ -16,6 +16,7 @@
 
 package org.openestate.io.idx;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -799,11 +800,11 @@ public class IdxRecord extends CsvRecord
     return this.get( FIELD_BILLING_ZIP );
   }
 
-  public Double getCarryingCapacityCrane()
+  public BigDecimal getCarryingCapacityCrane()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_CARRYING_CAPACITY_CRANE ) );
     }
     catch (NumberFormatException ex)
@@ -814,11 +815,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getCarryingCapacityElevator()
+  public BigDecimal getCarryingCapacityElevator()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_CARRYING_CAPACITY_ELEVATOR ) );
     }
     catch (NumberFormatException ex)
@@ -829,11 +830,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getCeilingHeight()
+  public BigDecimal getCeilingHeight()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_CEILING_HEIGHT ) );
     }
     catch (NumberFormatException ex)
@@ -1011,11 +1012,11 @@ public class IdxRecord extends CsvRecord
       this.get( FIELD_GROSS_PREMIUM ) );
   }
 
-  public Double getHallHeight()
+  public BigDecimal getHallHeight()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_HALL_HEIGHT ) );
     }
     catch (NumberFormatException ex)
@@ -1041,11 +1042,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getMaximalFloorLoading()
+  public BigDecimal getMaximalFloorLoading()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_MAXIMAL_FLOOR_LOADING ) );
     }
     catch (NumberFormatException ex)
@@ -1064,11 +1065,11 @@ public class IdxRecord extends CsvRecord
       null;
   }
 
-  public Double getNumberOfApartments()
+  public BigDecimal getNumberOfApartments()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_NUMBER_OF_APARTMENTS ) );
     }
     catch (NumberFormatException ex)
@@ -1094,11 +1095,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getNumberOfRooms()
+  public BigDecimal getNumberOfRooms()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_NUMBER_OF_ROOMS ) );
     }
     catch (NumberFormatException ex)

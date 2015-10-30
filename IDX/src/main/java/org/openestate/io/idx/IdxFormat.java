@@ -17,6 +17,7 @@
 package org.openestate.io.idx;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -162,10 +163,10 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
     return cal;
   }
 
-  public static Double parseDouble( String value ) throws NumberFormatException
+  public static BigDecimal parseDecimal( String value ) throws NumberFormatException
   {
     Number number = parseNumber( value, false );
-    return (number!=null)? number.doubleValue(): null;
+    return (number!=null)? BigDecimal.valueOf( number.doubleValue() ): null;
   }
 
   public static Integer parseInteger( String value ) throws NumberFormatException
