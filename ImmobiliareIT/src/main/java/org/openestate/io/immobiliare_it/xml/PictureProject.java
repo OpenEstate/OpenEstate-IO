@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -54,7 +55,7 @@ public class PictureProject implements Cloneable, CopyTo, Equals, ToString
     @XmlAttribute(name = "position")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
-    protected Long position;
+    protected BigInteger position;
 
     /**
      * Gets the value of the value property.
@@ -88,7 +89,7 @@ public class PictureProject implements Cloneable, CopyTo, Equals, ToString
      *     {@link String }
      *     
      */
-    public Long getPosition() {
+    public BigInteger getPosition() {
         return position;
     }
 
@@ -100,7 +101,7 @@ public class PictureProject implements Cloneable, CopyTo, Equals, ToString
      *     {@link String }
      *     
      */
-    public void setPosition(Long value) {
+    public void setPosition(BigInteger value) {
         this.position = value;
     }
 
@@ -125,7 +126,7 @@ public class PictureProject implements Cloneable, CopyTo, Equals, ToString
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Long thePosition;
+            BigInteger thePosition;
             thePosition = this.getPosition();
             strategy.appendField(locator, this, "position", buffer, thePosition);
         }
@@ -154,9 +155,9 @@ public class PictureProject implements Cloneable, CopyTo, Equals, ToString
                 copy.value = null;
             }
             if (this.position!= null) {
-                Long sourcePosition;
+                BigInteger sourcePosition;
                 sourcePosition = this.getPosition();
-                Long copyPosition = ((Long) strategy.copy(LocatorUtils.property(locator, "position", sourcePosition), sourcePosition));
+                BigInteger copyPosition = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "position", sourcePosition), sourcePosition));
                 copy.setPosition(copyPosition);
             } else {
                 copy.position = null;
@@ -187,9 +188,9 @@ public class PictureProject implements Cloneable, CopyTo, Equals, ToString
             }
         }
         {
-            Long lhsPosition;
+            BigInteger lhsPosition;
             lhsPosition = this.getPosition();
-            Long rhsPosition;
+            BigInteger rhsPosition;
             rhsPosition = that.getPosition();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "position", lhsPosition), LocatorUtils.property(thatLocator, "position", rhsPosition), lhsPosition, rhsPosition)) {
                 return false;

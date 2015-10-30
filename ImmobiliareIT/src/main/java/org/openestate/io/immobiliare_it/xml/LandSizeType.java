@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -56,7 +57,7 @@ public class LandSizeType
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
-    protected Long value;
+    protected BigInteger value;
     @XmlAttribute(name = "unit")
     @XmlJavaTypeAdapter(Adapter17 .class)
     protected LandSizeUnit unit;
@@ -69,7 +70,7 @@ public class LandSizeType
      *     {@link String }
      *     
      */
-    public Long getValue() {
+    public BigInteger getValue() {
         return value;
     }
 
@@ -81,7 +82,7 @@ public class LandSizeType
      *     {@link String }
      *     
      */
-    public void setValue(Long value) {
+    public void setValue(BigInteger value) {
         this.value = value;
     }
 
@@ -125,7 +126,7 @@ public class LandSizeType
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Long theValue;
+            BigInteger theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
@@ -151,9 +152,9 @@ public class LandSizeType
         if (draftCopy instanceof LandSizeType) {
             final LandSizeType copy = ((LandSizeType) draftCopy);
             if (this.value!= null) {
-                Long sourceValue;
+                BigInteger sourceValue;
                 sourceValue = this.getValue();
-                Long copyValue = ((Long) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigInteger copyValue = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
@@ -183,9 +184,9 @@ public class LandSizeType
         }
         final LandSizeType that = ((LandSizeType) object);
         {
-            Long lhsValue;
+            BigInteger lhsValue;
             lhsValue = this.getValue();
-            Long rhsValue;
+            BigInteger rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;

@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -67,7 +68,7 @@ public class Floor
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
-    protected Long value;
+    protected BigInteger value;
     @XmlAttribute(name = "type")
     protected Floor.FloorType type;
 
@@ -79,7 +80,7 @@ public class Floor
      *     {@link String }
      *     
      */
-    public Long getValue() {
+    public BigInteger getValue() {
         return value;
     }
 
@@ -91,7 +92,7 @@ public class Floor
      *     {@link String }
      *     
      */
-    public void setValue(Long value) {
+    public void setValue(BigInteger value) {
         this.value = value;
     }
 
@@ -135,7 +136,7 @@ public class Floor
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Long theValue;
+            BigInteger theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
@@ -161,9 +162,9 @@ public class Floor
         if (draftCopy instanceof Floor) {
             final Floor copy = ((Floor) draftCopy);
             if (this.value!= null) {
-                Long sourceValue;
+                BigInteger sourceValue;
                 sourceValue = this.getValue();
-                Long copyValue = ((Long) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigInteger copyValue = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
@@ -193,9 +194,9 @@ public class Floor
         }
         final Floor that = ((Floor) object);
         {
-            Long lhsValue;
+            BigInteger lhsValue;
             lhsValue = this.getValue();
-            Long rhsValue;
+            BigInteger rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;

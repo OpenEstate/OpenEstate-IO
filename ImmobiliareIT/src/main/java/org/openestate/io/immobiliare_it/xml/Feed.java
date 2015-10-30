@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -901,11 +902,11 @@ public class Feed
             @XmlElement(required = true, type = String.class)
             @XmlJavaTypeAdapter(Adapter2 .class)
             @XmlSchemaType(name = "integer")
-            protected Long current;
+            protected BigInteger current;
             @XmlElement(required = true, type = String.class)
             @XmlJavaTypeAdapter(Adapter2 .class)
             @XmlSchemaType(name = "integer")
-            protected Long last;
+            protected BigInteger last;
 
             /**
              * Gets the value of the current property.
@@ -915,7 +916,7 @@ public class Feed
              *     {@link String }
              *     
              */
-            public Long getCurrent() {
+            public BigInteger getCurrent() {
                 return current;
             }
 
@@ -927,7 +928,7 @@ public class Feed
              *     {@link String }
              *     
              */
-            public void setCurrent(Long value) {
+            public void setCurrent(BigInteger value) {
                 this.current = value;
             }
 
@@ -939,7 +940,7 @@ public class Feed
              *     {@link String }
              *     
              */
-            public Long getLast() {
+            public BigInteger getLast() {
                 return last;
             }
 
@@ -951,7 +952,7 @@ public class Feed
              *     {@link String }
              *     
              */
-            public void setLast(Long value) {
+            public void setLast(BigInteger value) {
                 this.last = value;
             }
 
@@ -971,12 +972,12 @@ public class Feed
 
             public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
                 {
-                    Long theCurrent;
+                    BigInteger theCurrent;
                     theCurrent = this.getCurrent();
                     strategy.appendField(locator, this, "current", buffer, theCurrent);
                 }
                 {
-                    Long theLast;
+                    BigInteger theLast;
                     theLast = this.getLast();
                     strategy.appendField(locator, this, "last", buffer, theLast);
                 }
@@ -997,17 +998,17 @@ public class Feed
                 if (draftCopy instanceof Feed.Metadata.Multipage) {
                     final Feed.Metadata.Multipage copy = ((Feed.Metadata.Multipage) draftCopy);
                     if (this.current!= null) {
-                        Long sourceCurrent;
+                        BigInteger sourceCurrent;
                         sourceCurrent = this.getCurrent();
-                        Long copyCurrent = ((Long) strategy.copy(LocatorUtils.property(locator, "current", sourceCurrent), sourceCurrent));
+                        BigInteger copyCurrent = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "current", sourceCurrent), sourceCurrent));
                         copy.setCurrent(copyCurrent);
                     } else {
                         copy.current = null;
                     }
                     if (this.last!= null) {
-                        Long sourceLast;
+                        BigInteger sourceLast;
                         sourceLast = this.getLast();
-                        Long copyLast = ((Long) strategy.copy(LocatorUtils.property(locator, "last", sourceLast), sourceLast));
+                        BigInteger copyLast = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "last", sourceLast), sourceLast));
                         copy.setLast(copyLast);
                     } else {
                         copy.last = null;
@@ -1029,18 +1030,18 @@ public class Feed
                 }
                 final Feed.Metadata.Multipage that = ((Feed.Metadata.Multipage) object);
                 {
-                    Long lhsCurrent;
+                    BigInteger lhsCurrent;
                     lhsCurrent = this.getCurrent();
-                    Long rhsCurrent;
+                    BigInteger rhsCurrent;
                     rhsCurrent = that.getCurrent();
                     if (!strategy.equals(LocatorUtils.property(thisLocator, "current", lhsCurrent), LocatorUtils.property(thatLocator, "current", rhsCurrent), lhsCurrent, rhsCurrent)) {
                         return false;
                     }
                 }
                 {
-                    Long lhsLast;
+                    BigInteger lhsLast;
                     lhsLast = this.getLast();
-                    Long rhsLast;
+                    BigInteger rhsLast;
                     rhsLast = that.getLast();
                     if (!strategy.equals(LocatorUtils.property(thisLocator, "last", lhsLast), LocatorUtils.property(thatLocator, "last", rhsLast), lhsLast, rhsLast)) {
                         return false;
@@ -2751,7 +2752,7 @@ public class Feed
                         @XmlAttribute(name = "code")
                         @XmlJavaTypeAdapter(Adapter2 .class)
                         @XmlSchemaType(name = "integer")
-                        protected Long code;
+                        protected BigInteger code;
 
                         /**
                          * Gets the value of the value property.
@@ -2785,7 +2786,7 @@ public class Feed
                          *     {@link String }
                          *     
                          */
-                        public Long getCode() {
+                        public BigInteger getCode() {
                             return code;
                         }
 
@@ -2797,7 +2798,7 @@ public class Feed
                          *     {@link String }
                          *     
                          */
-                        public void setCode(Long value) {
+                        public void setCode(BigInteger value) {
                             this.code = value;
                         }
 
@@ -2822,7 +2823,7 @@ public class Feed
                                 strategy.appendField(locator, this, "value", buffer, theValue);
                             }
                             {
-                                Long theCode;
+                                BigInteger theCode;
                                 theCode = this.getCode();
                                 strategy.appendField(locator, this, "code", buffer, theCode);
                             }
@@ -2851,9 +2852,9 @@ public class Feed
                                     copy.value = null;
                                 }
                                 if (this.code!= null) {
-                                    Long sourceCode;
+                                    BigInteger sourceCode;
                                     sourceCode = this.getCode();
-                                    Long copyCode = ((Long) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode));
+                                    BigInteger copyCode = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode));
                                     copy.setCode(copyCode);
                                 } else {
                                     copy.code = null;
@@ -2884,9 +2885,9 @@ public class Feed
                                 }
                             }
                             {
-                                Long lhsCode;
+                                BigInteger lhsCode;
                                 lhsCode = this.getCode();
-                                Long rhsCode;
+                                BigInteger rhsCode;
                                 rhsCode = that.getCode();
                                 if (!strategy.equals(LocatorUtils.property(thisLocator, "code", lhsCode), LocatorUtils.property(thatLocator, "code", rhsCode), lhsCode, rhsCode)) {
                                     return false;
@@ -3686,11 +3687,11 @@ public class Feed
                 @XmlElement(required = true, type = String.class)
                 @XmlJavaTypeAdapter(Adapter2 .class)
                 @XmlSchemaType(name = "integer")
-                protected Long residential;
+                protected BigInteger residential;
                 @XmlElement(required = true, type = String.class)
                 @XmlJavaTypeAdapter(Adapter2 .class)
                 @XmlSchemaType(name = "integer")
-                protected Long commercial;
+                protected BigInteger commercial;
                 @XmlElement(required = true)
                 protected List<Feed.Projects.Project.Lots.Lot> lot;
 
@@ -3702,7 +3703,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public Long getResidential() {
+                public BigInteger getResidential() {
                     return residential;
                 }
 
@@ -3714,7 +3715,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public void setResidential(Long value) {
+                public void setResidential(BigInteger value) {
                     this.residential = value;
                 }
 
@@ -3726,7 +3727,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public Long getCommercial() {
+                public BigInteger getCommercial() {
                     return commercial;
                 }
 
@@ -3738,7 +3739,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public void setCommercial(Long value) {
+                public void setCommercial(BigInteger value) {
                     this.commercial = value;
                 }
 
@@ -3787,12 +3788,12 @@ public class Feed
 
                 public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
                     {
-                        Long theResidential;
+                        BigInteger theResidential;
                         theResidential = this.getResidential();
                         strategy.appendField(locator, this, "residential", buffer, theResidential);
                     }
                     {
-                        Long theCommercial;
+                        BigInteger theCommercial;
                         theCommercial = this.getCommercial();
                         strategy.appendField(locator, this, "commercial", buffer, theCommercial);
                     }
@@ -3818,17 +3819,17 @@ public class Feed
                     if (draftCopy instanceof Feed.Projects.Project.Lots) {
                         final Feed.Projects.Project.Lots copy = ((Feed.Projects.Project.Lots) draftCopy);
                         if (this.residential!= null) {
-                            Long sourceResidential;
+                            BigInteger sourceResidential;
                             sourceResidential = this.getResidential();
-                            Long copyResidential = ((Long) strategy.copy(LocatorUtils.property(locator, "residential", sourceResidential), sourceResidential));
+                            BigInteger copyResidential = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "residential", sourceResidential), sourceResidential));
                             copy.setResidential(copyResidential);
                         } else {
                             copy.residential = null;
                         }
                         if (this.commercial!= null) {
-                            Long sourceCommercial;
+                            BigInteger sourceCommercial;
                             sourceCommercial = this.getCommercial();
-                            Long copyCommercial = ((Long) strategy.copy(LocatorUtils.property(locator, "commercial", sourceCommercial), sourceCommercial));
+                            BigInteger copyCommercial = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "commercial", sourceCommercial), sourceCommercial));
                             copy.setCommercial(copyCommercial);
                         } else {
                             copy.commercial = null;
@@ -3863,18 +3864,18 @@ public class Feed
                     }
                     final Feed.Projects.Project.Lots that = ((Feed.Projects.Project.Lots) object);
                     {
-                        Long lhsResidential;
+                        BigInteger lhsResidential;
                         lhsResidential = this.getResidential();
-                        Long rhsResidential;
+                        BigInteger rhsResidential;
                         rhsResidential = that.getResidential();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "residential", lhsResidential), LocatorUtils.property(thatLocator, "residential", rhsResidential), lhsResidential, rhsResidential)) {
                             return false;
                         }
                     }
                     {
-                        Long lhsCommercial;
+                        BigInteger lhsCommercial;
                         lhsCommercial = this.getCommercial();
-                        Long rhsCommercial;
+                        BigInteger rhsCommercial;
                         rhsCommercial = that.getCommercial();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "commercial", lhsCommercial), LocatorUtils.property(thatLocator, "commercial", rhsCommercial), lhsCommercial, rhsCommercial)) {
                             return false;
@@ -3963,7 +3964,7 @@ public class Feed
                     @XmlElement(required = true, type = String.class)
                     @XmlJavaTypeAdapter(Adapter2 .class)
                     @XmlSchemaType(name = "integer")
-                    protected Long bathrooms;
+                    protected BigInteger bathrooms;
                     @XmlElement(required = true)
                     protected FloorProject floor;
                     @XmlElement(required = true)
@@ -3976,11 +3977,11 @@ public class Feed
                     @XmlAttribute(name = "total")
                     @XmlJavaTypeAdapter(Adapter2 .class)
                     @XmlSchemaType(name = "integer")
-                    protected Long total;
+                    protected BigInteger total;
                     @XmlAttribute(name = "forsale")
                     @XmlJavaTypeAdapter(Adapter2 .class)
                     @XmlSchemaType(name = "integer")
-                    protected Long forsale;
+                    protected BigInteger forsale;
 
                     /**
                      * Gets the value of the uniqueId property.
@@ -4110,7 +4111,7 @@ public class Feed
                      *     {@link String }
                      *     
                      */
-                    public Long getBathrooms() {
+                    public BigInteger getBathrooms() {
                         return bathrooms;
                     }
 
@@ -4122,7 +4123,7 @@ public class Feed
                      *     {@link String }
                      *     
                      */
-                    public void setBathrooms(Long value) {
+                    public void setBathrooms(BigInteger value) {
                         this.bathrooms = value;
                     }
 
@@ -4254,7 +4255,7 @@ public class Feed
                      *     {@link String }
                      *     
                      */
-                    public Long getTotal() {
+                    public BigInteger getTotal() {
                         return total;
                     }
 
@@ -4266,7 +4267,7 @@ public class Feed
                      *     {@link String }
                      *     
                      */
-                    public void setTotal(Long value) {
+                    public void setTotal(BigInteger value) {
                         this.total = value;
                     }
 
@@ -4278,7 +4279,7 @@ public class Feed
                      *     {@link String }
                      *     
                      */
-                    public Long getForsale() {
+                    public BigInteger getForsale() {
                         return forsale;
                     }
 
@@ -4290,7 +4291,7 @@ public class Feed
                      *     {@link String }
                      *     
                      */
-                    public void setForsale(Long value) {
+                    public void setForsale(BigInteger value) {
                         this.forsale = value;
                     }
 
@@ -4335,7 +4336,7 @@ public class Feed
                             strategy.appendField(locator, this, "rooms", buffer, theRooms);
                         }
                         {
-                            Long theBathrooms;
+                            BigInteger theBathrooms;
                             theBathrooms = this.getBathrooms();
                             strategy.appendField(locator, this, "bathrooms", buffer, theBathrooms);
                         }
@@ -4365,12 +4366,12 @@ public class Feed
                             strategy.appendField(locator, this, "pictures", buffer, thePictures);
                         }
                         {
-                            Long theTotal;
+                            BigInteger theTotal;
                             theTotal = this.getTotal();
                             strategy.appendField(locator, this, "total", buffer, theTotal);
                         }
                         {
-                            Long theForsale;
+                            BigInteger theForsale;
                             theForsale = this.getForsale();
                             strategy.appendField(locator, this, "forsale", buffer, theForsale);
                         }
@@ -4431,9 +4432,9 @@ public class Feed
                                 copy.rooms = null;
                             }
                             if (this.bathrooms!= null) {
-                                Long sourceBathrooms;
+                                BigInteger sourceBathrooms;
                                 sourceBathrooms = this.getBathrooms();
-                                Long copyBathrooms = ((Long) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms));
+                                BigInteger copyBathrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms));
                                 copy.setBathrooms(copyBathrooms);
                             } else {
                                 copy.bathrooms = null;
@@ -4479,17 +4480,17 @@ public class Feed
                                 copy.pictures = null;
                             }
                             if (this.total!= null) {
-                                Long sourceTotal;
+                                BigInteger sourceTotal;
                                 sourceTotal = this.getTotal();
-                                Long copyTotal = ((Long) strategy.copy(LocatorUtils.property(locator, "total", sourceTotal), sourceTotal));
+                                BigInteger copyTotal = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "total", sourceTotal), sourceTotal));
                                 copy.setTotal(copyTotal);
                             } else {
                                 copy.total = null;
                             }
                             if (this.forsale!= null) {
-                                Long sourceForsale;
+                                BigInteger sourceForsale;
                                 sourceForsale = this.getForsale();
-                                Long copyForsale = ((Long) strategy.copy(LocatorUtils.property(locator, "forsale", sourceForsale), sourceForsale));
+                                BigInteger copyForsale = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "forsale", sourceForsale), sourceForsale));
                                 copy.setForsale(copyForsale);
                             } else {
                                 copy.forsale = null;
@@ -4556,9 +4557,9 @@ public class Feed
                             }
                         }
                         {
-                            Long lhsBathrooms;
+                            BigInteger lhsBathrooms;
                             lhsBathrooms = this.getBathrooms();
-                            Long rhsBathrooms;
+                            BigInteger rhsBathrooms;
                             rhsBathrooms = that.getBathrooms();
                             if (!strategy.equals(LocatorUtils.property(thisLocator, "bathrooms", lhsBathrooms), LocatorUtils.property(thatLocator, "bathrooms", rhsBathrooms), lhsBathrooms, rhsBathrooms)) {
                                 return false;
@@ -4610,18 +4611,18 @@ public class Feed
                             }
                         }
                         {
-                            Long lhsTotal;
+                            BigInteger lhsTotal;
                             lhsTotal = this.getTotal();
-                            Long rhsTotal;
+                            BigInteger rhsTotal;
                             rhsTotal = that.getTotal();
                             if (!strategy.equals(LocatorUtils.property(thisLocator, "total", lhsTotal), LocatorUtils.property(thatLocator, "total", rhsTotal), lhsTotal, rhsTotal)) {
                                 return false;
                             }
                         }
                         {
-                            Long lhsForsale;
+                            BigInteger lhsForsale;
                             lhsForsale = this.getForsale();
-                            Long rhsForsale;
+                            BigInteger rhsForsale;
                             rhsForsale = that.getForsale();
                             if (!strategy.equals(LocatorUtils.property(thisLocator, "forsale", lhsForsale), LocatorUtils.property(thatLocator, "forsale", rhsForsale), lhsForsale, rhsForsale)) {
                                 return false;
@@ -6682,11 +6683,11 @@ public class Feed
                 @XmlElement(type = String.class)
                 @XmlJavaTypeAdapter(Adapter2 .class)
                 @XmlSchemaType(name = "integer")
-                protected Long bedrooms;
+                protected BigInteger bedrooms;
                 @XmlElement(type = String.class)
                 @XmlJavaTypeAdapter(Adapter2 .class)
                 @XmlSchemaType(name = "integer")
-                protected Long bathrooms;
+                protected BigInteger bathrooms;
                 protected Box garage;
                 @XmlSchemaType(name = "string")
                 protected Kitchen kitchen;
@@ -6710,7 +6711,7 @@ public class Feed
                 @XmlElement(name = "num-floors", type = String.class)
                 @XmlJavaTypeAdapter(Adapter2 .class)
                 @XmlSchemaType(name = "integer")
-                protected Long numFloors;
+                protected BigInteger numFloors;
                 @XmlElement(name = "virtual-tour")
                 protected String virtualTour;
                 @XmlElement(name = "rent-contract")
@@ -6743,7 +6744,7 @@ public class Feed
                 @XmlElement(name = "beam-height", type = String.class)
                 @XmlJavaTypeAdapter(Adapter2 .class)
                 @XmlSchemaType(name = "integer")
-                protected Long beamHeight;
+                protected BigInteger beamHeight;
                 @XmlElement(name = "office-size")
                 protected SizeType officeSize;
                 @XmlElement(name = "floorplanner-url")
@@ -6761,7 +6762,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public Long getBedrooms() {
+                public BigInteger getBedrooms() {
                     return bedrooms;
                 }
 
@@ -6773,7 +6774,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public void setBedrooms(Long value) {
+                public void setBedrooms(BigInteger value) {
                     this.bedrooms = value;
                 }
 
@@ -6785,7 +6786,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public Long getBathrooms() {
+                public BigInteger getBathrooms() {
                     return bathrooms;
                 }
 
@@ -6797,7 +6798,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public void setBathrooms(Long value) {
+                public void setBathrooms(BigInteger value) {
                     this.bathrooms = value;
                 }
 
@@ -7025,7 +7026,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public Long getNumFloors() {
+                public BigInteger getNumFloors() {
                     return numFloors;
                 }
 
@@ -7037,7 +7038,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public void setNumFloors(Long value) {
+                public void setNumFloors(BigInteger value) {
                     this.numFloors = value;
                 }
 
@@ -7313,7 +7314,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public Long getBeamHeight() {
+                public BigInteger getBeamHeight() {
                     return beamHeight;
                 }
 
@@ -7325,7 +7326,7 @@ public class Feed
                  *     {@link String }
                  *     
                  */
-                public void setBeamHeight(Long value) {
+                public void setBeamHeight(BigInteger value) {
                     this.beamHeight = value;
                 }
 
@@ -7441,12 +7442,12 @@ public class Feed
 
                 public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
                     {
-                        Long theBedrooms;
+                        BigInteger theBedrooms;
                         theBedrooms = this.getBedrooms();
                         strategy.appendField(locator, this, "bedrooms", buffer, theBedrooms);
                     }
                     {
-                        Long theBathrooms;
+                        BigInteger theBathrooms;
                         theBathrooms = this.getBathrooms();
                         strategy.appendField(locator, this, "bathrooms", buffer, theBathrooms);
                     }
@@ -7496,7 +7497,7 @@ public class Feed
                         strategy.appendField(locator, this, "floor", buffer, theFloor);
                     }
                     {
-                        Long theNumFloors;
+                        BigInteger theNumFloors;
                         theNumFloors = this.getNumFloors();
                         strategy.appendField(locator, this, "numFloors", buffer, theNumFloors);
                     }
@@ -7556,7 +7557,7 @@ public class Feed
                         strategy.appendField(locator, this, "overheadCrane", buffer, theOverheadCrane);
                     }
                     {
-                        Long theBeamHeight;
+                        BigInteger theBeamHeight;
                         theBeamHeight = this.getBeamHeight();
                         strategy.appendField(locator, this, "beamHeight", buffer, theBeamHeight);
                     }
@@ -7597,17 +7598,17 @@ public class Feed
                     if (draftCopy instanceof Feed.Properties.Property.ExtraFeatures) {
                         final Feed.Properties.Property.ExtraFeatures copy = ((Feed.Properties.Property.ExtraFeatures) draftCopy);
                         if (this.bedrooms!= null) {
-                            Long sourceBedrooms;
+                            BigInteger sourceBedrooms;
                             sourceBedrooms = this.getBedrooms();
-                            Long copyBedrooms = ((Long) strategy.copy(LocatorUtils.property(locator, "bedrooms", sourceBedrooms), sourceBedrooms));
+                            BigInteger copyBedrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bedrooms", sourceBedrooms), sourceBedrooms));
                             copy.setBedrooms(copyBedrooms);
                         } else {
                             copy.bedrooms = null;
                         }
                         if (this.bathrooms!= null) {
-                            Long sourceBathrooms;
+                            BigInteger sourceBathrooms;
                             sourceBathrooms = this.getBathrooms();
-                            Long copyBathrooms = ((Long) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms));
+                            BigInteger copyBathrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms));
                             copy.setBathrooms(copyBathrooms);
                         } else {
                             copy.bathrooms = null;
@@ -7685,9 +7686,9 @@ public class Feed
                             copy.floor = null;
                         }
                         if (this.numFloors!= null) {
-                            Long sourceNumFloors;
+                            BigInteger sourceNumFloors;
                             sourceNumFloors = this.getNumFloors();
-                            Long copyNumFloors = ((Long) strategy.copy(LocatorUtils.property(locator, "numFloors", sourceNumFloors), sourceNumFloors));
+                            BigInteger copyNumFloors = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "numFloors", sourceNumFloors), sourceNumFloors));
                             copy.setNumFloors(copyNumFloors);
                         } else {
                             copy.numFloors = null;
@@ -7781,9 +7782,9 @@ public class Feed
                             copy.overheadCrane = null;
                         }
                         if (this.beamHeight!= null) {
-                            Long sourceBeamHeight;
+                            BigInteger sourceBeamHeight;
                             sourceBeamHeight = this.getBeamHeight();
-                            Long copyBeamHeight = ((Long) strategy.copy(LocatorUtils.property(locator, "beamHeight", sourceBeamHeight), sourceBeamHeight));
+                            BigInteger copyBeamHeight = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "beamHeight", sourceBeamHeight), sourceBeamHeight));
                             copy.setBeamHeight(copyBeamHeight);
                         } else {
                             copy.beamHeight = null;
@@ -7837,18 +7838,18 @@ public class Feed
                     }
                     final Feed.Properties.Property.ExtraFeatures that = ((Feed.Properties.Property.ExtraFeatures) object);
                     {
-                        Long lhsBedrooms;
+                        BigInteger lhsBedrooms;
                         lhsBedrooms = this.getBedrooms();
-                        Long rhsBedrooms;
+                        BigInteger rhsBedrooms;
                         rhsBedrooms = that.getBedrooms();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "bedrooms", lhsBedrooms), LocatorUtils.property(thatLocator, "bedrooms", rhsBedrooms), lhsBedrooms, rhsBedrooms)) {
                             return false;
                         }
                     }
                     {
-                        Long lhsBathrooms;
+                        BigInteger lhsBathrooms;
                         lhsBathrooms = this.getBathrooms();
-                        Long rhsBathrooms;
+                        BigInteger rhsBathrooms;
                         rhsBathrooms = that.getBathrooms();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "bathrooms", lhsBathrooms), LocatorUtils.property(thatLocator, "bathrooms", rhsBathrooms), lhsBathrooms, rhsBathrooms)) {
                             return false;
@@ -7936,9 +7937,9 @@ public class Feed
                         }
                     }
                     {
-                        Long lhsNumFloors;
+                        BigInteger lhsNumFloors;
                         lhsNumFloors = this.getNumFloors();
-                        Long rhsNumFloors;
+                        BigInteger rhsNumFloors;
                         rhsNumFloors = that.getNumFloors();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "numFloors", lhsNumFloors), LocatorUtils.property(thatLocator, "numFloors", rhsNumFloors), lhsNumFloors, rhsNumFloors)) {
                             return false;
@@ -8044,9 +8045,9 @@ public class Feed
                         }
                     }
                     {
-                        Long lhsBeamHeight;
+                        BigInteger lhsBeamHeight;
                         lhsBeamHeight = this.getBeamHeight();
-                        Long rhsBeamHeight;
+                        BigInteger rhsBeamHeight;
                         rhsBeamHeight = that.getBeamHeight();
                         if (!strategy.equals(LocatorUtils.property(thisLocator, "beamHeight", lhsBeamHeight), LocatorUtils.property(thatLocator, "beamHeight", rhsBeamHeight), lhsBeamHeight, rhsBeamHeight)) {
                             return false;
