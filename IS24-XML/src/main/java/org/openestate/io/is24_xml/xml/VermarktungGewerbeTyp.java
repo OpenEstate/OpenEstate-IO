@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -76,10 +77,10 @@ public class VermarktungGewerbeTyp
     protected JAXBElement<VermarktungGewerbeTyp.Kauf> kauf;
     @XmlAttribute(name = "PreisParkflaeche")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double preisParkflaeche;
+    protected BigDecimal preisParkflaeche;
     @XmlAttribute(name = "Nebenkosten")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double nebenkosten;
+    protected BigDecimal nebenkosten;
 
     /**
      * Gets the value of the miete property.
@@ -137,7 +138,7 @@ public class VermarktungGewerbeTyp
      *     {@link String }
      *     
      */
-    public Double getPreisParkflaeche() {
+    public BigDecimal getPreisParkflaeche() {
         return preisParkflaeche;
     }
 
@@ -149,7 +150,7 @@ public class VermarktungGewerbeTyp
      *     {@link String }
      *     
      */
-    public void setPreisParkflaeche(Double value) {
+    public void setPreisParkflaeche(BigDecimal value) {
         this.preisParkflaeche = value;
     }
 
@@ -161,7 +162,7 @@ public class VermarktungGewerbeTyp
      *     {@link String }
      *     
      */
-    public Double getNebenkosten() {
+    public BigDecimal getNebenkosten() {
         return nebenkosten;
     }
 
@@ -173,7 +174,7 @@ public class VermarktungGewerbeTyp
      *     {@link String }
      *     
      */
-    public void setNebenkosten(Double value) {
+    public void setNebenkosten(BigDecimal value) {
         this.nebenkosten = value;
     }
 
@@ -203,12 +204,12 @@ public class VermarktungGewerbeTyp
             strategy.appendField(locator, this, "kauf", buffer, theKauf);
         }
         {
-            Double thePreisParkflaeche;
+            BigDecimal thePreisParkflaeche;
             thePreisParkflaeche = this.getPreisParkflaeche();
             strategy.appendField(locator, this, "preisParkflaeche", buffer, thePreisParkflaeche);
         }
         {
-            Double theNebenkosten;
+            BigDecimal theNebenkosten;
             theNebenkosten = this.getNebenkosten();
             strategy.appendField(locator, this, "nebenkosten", buffer, theNebenkosten);
         }
@@ -247,17 +248,17 @@ public class VermarktungGewerbeTyp
                 copy.kauf = null;
             }
             if (this.preisParkflaeche!= null) {
-                Double sourcePreisParkflaeche;
+                BigDecimal sourcePreisParkflaeche;
                 sourcePreisParkflaeche = this.getPreisParkflaeche();
-                Double copyPreisParkflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "preisParkflaeche", sourcePreisParkflaeche), sourcePreisParkflaeche));
+                BigDecimal copyPreisParkflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preisParkflaeche", sourcePreisParkflaeche), sourcePreisParkflaeche));
                 copy.setPreisParkflaeche(copyPreisParkflaeche);
             } else {
                 copy.preisParkflaeche = null;
             }
             if (this.nebenkosten!= null) {
-                Double sourceNebenkosten;
+                BigDecimal sourceNebenkosten;
                 sourceNebenkosten = this.getNebenkosten();
-                Double copyNebenkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
+                BigDecimal copyNebenkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
                 copy.setNebenkosten(copyNebenkosten);
             } else {
                 copy.nebenkosten = null;
@@ -297,18 +298,18 @@ public class VermarktungGewerbeTyp
             }
         }
         {
-            Double lhsPreisParkflaeche;
+            BigDecimal lhsPreisParkflaeche;
             lhsPreisParkflaeche = this.getPreisParkflaeche();
-            Double rhsPreisParkflaeche;
+            BigDecimal rhsPreisParkflaeche;
             rhsPreisParkflaeche = that.getPreisParkflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preisParkflaeche", lhsPreisParkflaeche), LocatorUtils.property(thatLocator, "preisParkflaeche", rhsPreisParkflaeche), lhsPreisParkflaeche, rhsPreisParkflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsNebenkosten;
+            BigDecimal lhsNebenkosten;
             lhsNebenkosten = this.getNebenkosten();
-            Double rhsNebenkosten;
+            BigDecimal rhsNebenkosten;
             rhsNebenkosten = that.getNebenkosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenkosten", lhsNebenkosten), LocatorUtils.property(thatLocator, "nebenkosten", rhsNebenkosten), lhsNebenkosten, rhsNebenkosten)) {
                 return false;
@@ -348,7 +349,7 @@ public class VermarktungGewerbeTyp
 
         @XmlAttribute(name = "Preis", required = true)
         @XmlJavaTypeAdapter(Adapter36 .class)
-        protected Double preis;
+        protected BigDecimal preis;
 
         /**
          * Gets the value of the preis property.
@@ -358,7 +359,7 @@ public class VermarktungGewerbeTyp
          *     {@link String }
          *     
          */
-        public Double getPreis() {
+        public BigDecimal getPreis() {
             return preis;
         }
 
@@ -370,7 +371,7 @@ public class VermarktungGewerbeTyp
          *     {@link String }
          *     
          */
-        public void setPreis(Double value) {
+        public void setPreis(BigDecimal value) {
             this.preis = value;
         }
 
@@ -390,7 +391,7 @@ public class VermarktungGewerbeTyp
 
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
             {
-                Double thePreis;
+                BigDecimal thePreis;
                 thePreis = this.getPreis();
                 strategy.appendField(locator, this, "preis", buffer, thePreis);
             }
@@ -411,9 +412,9 @@ public class VermarktungGewerbeTyp
             if (draftCopy instanceof VermarktungGewerbeTyp.Kauf) {
                 final VermarktungGewerbeTyp.Kauf copy = ((VermarktungGewerbeTyp.Kauf) draftCopy);
                 if (this.preis!= null) {
-                    Double sourcePreis;
+                    BigDecimal sourcePreis;
                     sourcePreis = this.getPreis();
-                    Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                    BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                     copy.setPreis(copyPreis);
                 } else {
                     copy.preis = null;
@@ -435,9 +436,9 @@ public class VermarktungGewerbeTyp
             }
             final VermarktungGewerbeTyp.Kauf that = ((VermarktungGewerbeTyp.Kauf) object);
             {
-                Double lhsPreis;
+                BigDecimal lhsPreis;
                 lhsPreis = this.getPreis();
-                Double rhsPreis;
+                BigDecimal rhsPreis;
                 rhsPreis = that.getPreis();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                     return false;
@@ -483,7 +484,7 @@ public class VermarktungGewerbeTyp
         protected MieteEinheitTyp pro;
         @XmlAttribute(name = "Kaltmiete", required = true)
         @XmlJavaTypeAdapter(Adapter36 .class)
-        protected Double kaltmiete;
+        protected BigDecimal kaltmiete;
         @XmlAttribute(name = "Kaution")
         @XmlJavaTypeAdapter(Adapter7 .class)
         protected String kaution;
@@ -524,7 +525,7 @@ public class VermarktungGewerbeTyp
          *     {@link String }
          *     
          */
-        public Double getKaltmiete() {
+        public BigDecimal getKaltmiete() {
             return kaltmiete;
         }
 
@@ -536,7 +537,7 @@ public class VermarktungGewerbeTyp
          *     {@link String }
          *     
          */
-        public void setKaltmiete(Double value) {
+        public void setKaltmiete(BigDecimal value) {
             this.kaltmiete = value;
         }
 
@@ -585,7 +586,7 @@ public class VermarktungGewerbeTyp
                 strategy.appendField(locator, this, "pro", buffer, thePro);
             }
             {
-                Double theKaltmiete;
+                BigDecimal theKaltmiete;
                 theKaltmiete = this.getKaltmiete();
                 strategy.appendField(locator, this, "kaltmiete", buffer, theKaltmiete);
             }
@@ -619,9 +620,9 @@ public class VermarktungGewerbeTyp
                     copy.pro = null;
                 }
                 if (this.kaltmiete!= null) {
-                    Double sourceKaltmiete;
+                    BigDecimal sourceKaltmiete;
                     sourceKaltmiete = this.getKaltmiete();
-                    Double copyKaltmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
+                    BigDecimal copyKaltmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
                     copy.setKaltmiete(copyKaltmiete);
                 } else {
                     copy.kaltmiete = null;
@@ -660,9 +661,9 @@ public class VermarktungGewerbeTyp
                 }
             }
             {
-                Double lhsKaltmiete;
+                BigDecimal lhsKaltmiete;
                 lhsKaltmiete = this.getKaltmiete();
-                Double rhsKaltmiete;
+                BigDecimal rhsKaltmiete;
                 rhsKaltmiete = that.getKaltmiete();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "kaltmiete", lhsKaltmiete), LocatorUtils.property(thatLocator, "kaltmiete", rhsKaltmiete), lhsKaltmiete, rhsKaltmiete)) {
                     return false;

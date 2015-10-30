@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -63,7 +64,7 @@ public abstract class GrundstueckTypBase
 
     @XmlAttribute(name = "GrundstuecksFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double grundstuecksFlaeche;
+    protected BigDecimal grundstuecksFlaeche;
     @XmlAttribute(name = "TeilbarAb")
     @XmlJavaTypeAdapter(Adapter24 .class)
     protected Long teilbarAb;
@@ -75,10 +76,10 @@ public abstract class GrundstueckTypBase
     protected Boolean abrissErforderlich;
     @XmlAttribute(name = "GRZ")
     @XmlJavaTypeAdapter(Adapter28 .class)
-    protected Double grz;
+    protected BigDecimal grz;
     @XmlAttribute(name = "GFZ")
     @XmlJavaTypeAdapter(Adapter28 .class)
-    protected Double gfz;
+    protected BigDecimal gfz;
     @XmlAttribute(name = "Erschliessungszustand")
     protected ErschliessungszustandTyp erschliessungszustand;
     @XmlAttribute(name = "KurzfristigBebaubar")
@@ -95,7 +96,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
-    public Double getGrundstuecksFlaeche() {
+    public BigDecimal getGrundstuecksFlaeche() {
         return grundstuecksFlaeche;
     }
 
@@ -107,7 +108,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
-    public void setGrundstuecksFlaeche(Double value) {
+    public void setGrundstuecksFlaeche(BigDecimal value) {
         this.grundstuecksFlaeche = value;
     }
 
@@ -215,7 +216,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
-    public Double getGRZ() {
+    public BigDecimal getGRZ() {
         return grz;
     }
 
@@ -227,7 +228,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
-    public void setGRZ(Double value) {
+    public void setGRZ(BigDecimal value) {
         this.grz = value;
     }
 
@@ -239,7 +240,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
-    public Double getGFZ() {
+    public BigDecimal getGFZ() {
         return gfz;
     }
 
@@ -251,7 +252,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
-    public void setGFZ(Double value) {
+    public void setGFZ(BigDecimal value) {
         this.gfz = value;
     }
 
@@ -344,7 +345,7 @@ public abstract class GrundstueckTypBase
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         super.appendFields(locator, buffer, strategy);
         {
-            Double theGrundstuecksFlaeche;
+            BigDecimal theGrundstuecksFlaeche;
             theGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
             strategy.appendField(locator, this, "grundstuecksFlaeche", buffer, theGrundstuecksFlaeche);
         }
@@ -369,12 +370,12 @@ public abstract class GrundstueckTypBase
             strategy.appendField(locator, this, "abrissErforderlich", buffer, theAbrissErforderlich);
         }
         {
-            Double theGRZ;
+            BigDecimal theGRZ;
             theGRZ = this.getGRZ();
             strategy.appendField(locator, this, "grz", buffer, theGRZ);
         }
         {
-            Double theGFZ;
+            BigDecimal theGFZ;
             theGFZ = this.getGFZ();
             strategy.appendField(locator, this, "gfz", buffer, theGFZ);
         }
@@ -413,9 +414,9 @@ public abstract class GrundstueckTypBase
         if (target instanceof GrundstueckTypBase) {
             final GrundstueckTypBase copy = ((GrundstueckTypBase) target);
             if (this.grundstuecksFlaeche!= null) {
-                Double sourceGrundstuecksFlaeche;
+                BigDecimal sourceGrundstuecksFlaeche;
                 sourceGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-                Double copyGrundstuecksFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
+                BigDecimal copyGrundstuecksFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
                 copy.setGrundstuecksFlaeche(copyGrundstuecksFlaeche);
             } else {
                 copy.grundstuecksFlaeche = null;
@@ -453,17 +454,17 @@ public abstract class GrundstueckTypBase
                 copy.abrissErforderlich = null;
             }
             if (this.grz!= null) {
-                Double sourceGRZ;
+                BigDecimal sourceGRZ;
                 sourceGRZ = this.getGRZ();
-                Double copyGRZ = ((Double) strategy.copy(LocatorUtils.property(locator, "grz", sourceGRZ), sourceGRZ));
+                BigDecimal copyGRZ = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grz", sourceGRZ), sourceGRZ));
                 copy.setGRZ(copyGRZ);
             } else {
                 copy.grz = null;
             }
             if (this.gfz!= null) {
-                Double sourceGFZ;
+                BigDecimal sourceGFZ;
                 sourceGFZ = this.getGFZ();
-                Double copyGFZ = ((Double) strategy.copy(LocatorUtils.property(locator, "gfz", sourceGFZ), sourceGFZ));
+                BigDecimal copyGFZ = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gfz", sourceGFZ), sourceGFZ));
                 copy.setGFZ(copyGFZ);
             } else {
                 copy.gfz = null;
@@ -508,9 +509,9 @@ public abstract class GrundstueckTypBase
         }
         final GrundstueckTypBase that = ((GrundstueckTypBase) object);
         {
-            Double lhsGrundstuecksFlaeche;
+            BigDecimal lhsGrundstuecksFlaeche;
             lhsGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-            Double rhsGrundstuecksFlaeche;
+            BigDecimal rhsGrundstuecksFlaeche;
             rhsGrundstuecksFlaeche = that.getGrundstuecksFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksFlaeche", lhsGrundstuecksFlaeche), LocatorUtils.property(thatLocator, "grundstuecksFlaeche", rhsGrundstuecksFlaeche), lhsGrundstuecksFlaeche, rhsGrundstuecksFlaeche)) {
                 return false;
@@ -553,18 +554,18 @@ public abstract class GrundstueckTypBase
             }
         }
         {
-            Double lhsGRZ;
+            BigDecimal lhsGRZ;
             lhsGRZ = this.getGRZ();
-            Double rhsGRZ;
+            BigDecimal rhsGRZ;
             rhsGRZ = that.getGRZ();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grz", lhsGRZ), LocatorUtils.property(thatLocator, "grz", rhsGRZ), lhsGRZ, rhsGRZ)) {
                 return false;
             }
         }
         {
-            Double lhsGFZ;
+            BigDecimal lhsGFZ;
             lhsGFZ = this.getGFZ();
-            Double rhsGFZ;
+            BigDecimal rhsGFZ;
             rhsGFZ = that.getGFZ();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gfz", lhsGFZ), LocatorUtils.property(thatLocator, "gfz", rhsGFZ), lhsGFZ, rhsGFZ)) {
                 return false;

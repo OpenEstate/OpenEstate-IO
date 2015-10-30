@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -61,16 +62,16 @@ public class GarageTyp
     protected ObjektZustandTyp objektzustand;
     @XmlAttribute(name = "Hoehe")
     @XmlJavaTypeAdapter(Adapter29 .class)
-    protected Double hoehe;
+    protected BigDecimal hoehe;
     @XmlAttribute(name = "Laenge")
     @XmlJavaTypeAdapter(Adapter30 .class)
-    protected Double laenge;
+    protected BigDecimal laenge;
     @XmlAttribute(name = "Breite")
     @XmlJavaTypeAdapter(Adapter30 .class)
-    protected Double breite;
+    protected BigDecimal breite;
     @XmlAttribute(name = "Flaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double flaeche;
+    protected BigDecimal flaeche;
     @XmlAttribute(name = "Baujahr")
     @XmlJavaTypeAdapter(Adapter22 .class)
     protected Long baujahr;
@@ -142,7 +143,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getHoehe() {
+    public BigDecimal getHoehe() {
         return hoehe;
     }
 
@@ -154,7 +155,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setHoehe(Double value) {
+    public void setHoehe(BigDecimal value) {
         this.hoehe = value;
     }
 
@@ -166,7 +167,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getLaenge() {
+    public BigDecimal getLaenge() {
         return laenge;
     }
 
@@ -178,7 +179,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setLaenge(Double value) {
+    public void setLaenge(BigDecimal value) {
         this.laenge = value;
     }
 
@@ -190,7 +191,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getBreite() {
+    public BigDecimal getBreite() {
         return breite;
     }
 
@@ -202,7 +203,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setBreite(Double value) {
+    public void setBreite(BigDecimal value) {
         this.breite = value;
     }
 
@@ -214,7 +215,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getFlaeche() {
+    public BigDecimal getFlaeche() {
         return flaeche;
     }
 
@@ -226,7 +227,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setFlaeche(Double value) {
+    public void setFlaeche(BigDecimal value) {
         this.flaeche = value;
     }
 
@@ -305,22 +306,22 @@ public class GarageTyp
             strategy.appendField(locator, this, "objektzustand", buffer, theObjektzustand);
         }
         {
-            Double theHoehe;
+            BigDecimal theHoehe;
             theHoehe = this.getHoehe();
             strategy.appendField(locator, this, "hoehe", buffer, theHoehe);
         }
         {
-            Double theLaenge;
+            BigDecimal theLaenge;
             theLaenge = this.getLaenge();
             strategy.appendField(locator, this, "laenge", buffer, theLaenge);
         }
         {
-            Double theBreite;
+            BigDecimal theBreite;
             theBreite = this.getBreite();
             strategy.appendField(locator, this, "breite", buffer, theBreite);
         }
         {
-            Double theFlaeche;
+            BigDecimal theFlaeche;
             theFlaeche = this.getFlaeche();
             strategy.appendField(locator, this, "flaeche", buffer, theFlaeche);
         }
@@ -368,33 +369,33 @@ public class GarageTyp
                 copy.objektzustand = null;
             }
             if (this.hoehe!= null) {
-                Double sourceHoehe;
+                BigDecimal sourceHoehe;
                 sourceHoehe = this.getHoehe();
-                Double copyHoehe = ((Double) strategy.copy(LocatorUtils.property(locator, "hoehe", sourceHoehe), sourceHoehe));
+                BigDecimal copyHoehe = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hoehe", sourceHoehe), sourceHoehe));
                 copy.setHoehe(copyHoehe);
             } else {
                 copy.hoehe = null;
             }
             if (this.laenge!= null) {
-                Double sourceLaenge;
+                BigDecimal sourceLaenge;
                 sourceLaenge = this.getLaenge();
-                Double copyLaenge = ((Double) strategy.copy(LocatorUtils.property(locator, "laenge", sourceLaenge), sourceLaenge));
+                BigDecimal copyLaenge = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "laenge", sourceLaenge), sourceLaenge));
                 copy.setLaenge(copyLaenge);
             } else {
                 copy.laenge = null;
             }
             if (this.breite!= null) {
-                Double sourceBreite;
+                BigDecimal sourceBreite;
                 sourceBreite = this.getBreite();
-                Double copyBreite = ((Double) strategy.copy(LocatorUtils.property(locator, "breite", sourceBreite), sourceBreite));
+                BigDecimal copyBreite = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "breite", sourceBreite), sourceBreite));
                 copy.setBreite(copyBreite);
             } else {
                 copy.breite = null;
             }
             if (this.flaeche!= null) {
-                Double sourceFlaeche;
+                BigDecimal sourceFlaeche;
                 sourceFlaeche = this.getFlaeche();
-                Double copyFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "flaeche", sourceFlaeche), sourceFlaeche));
+                BigDecimal copyFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "flaeche", sourceFlaeche), sourceFlaeche));
                 copy.setFlaeche(copyFlaeche);
             } else {
                 copy.flaeche = null;
@@ -453,36 +454,36 @@ public class GarageTyp
             }
         }
         {
-            Double lhsHoehe;
+            BigDecimal lhsHoehe;
             lhsHoehe = this.getHoehe();
-            Double rhsHoehe;
+            BigDecimal rhsHoehe;
             rhsHoehe = that.getHoehe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hoehe", lhsHoehe), LocatorUtils.property(thatLocator, "hoehe", rhsHoehe), lhsHoehe, rhsHoehe)) {
                 return false;
             }
         }
         {
-            Double lhsLaenge;
+            BigDecimal lhsLaenge;
             lhsLaenge = this.getLaenge();
-            Double rhsLaenge;
+            BigDecimal rhsLaenge;
             rhsLaenge = that.getLaenge();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "laenge", lhsLaenge), LocatorUtils.property(thatLocator, "laenge", rhsLaenge), lhsLaenge, rhsLaenge)) {
                 return false;
             }
         }
         {
-            Double lhsBreite;
+            BigDecimal lhsBreite;
             lhsBreite = this.getBreite();
-            Double rhsBreite;
+            BigDecimal rhsBreite;
             rhsBreite = that.getBreite();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "breite", lhsBreite), LocatorUtils.property(thatLocator, "breite", rhsBreite), lhsBreite, rhsBreite)) {
                 return false;
             }
         }
         {
-            Double lhsFlaeche;
+            BigDecimal lhsFlaeche;
             lhsFlaeche = this.getFlaeche();
-            Double rhsFlaeche;
+            BigDecimal rhsFlaeche;
             rhsFlaeche = that.getFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "flaeche", lhsFlaeche), LocatorUtils.property(thatLocator, "flaeche", rhsFlaeche), lhsFlaeche, rhsFlaeche)) {
                 return false;

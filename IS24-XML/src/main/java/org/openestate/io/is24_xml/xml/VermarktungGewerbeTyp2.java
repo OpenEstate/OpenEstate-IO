@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -68,13 +69,13 @@ public class VermarktungGewerbeTyp2
     protected JAXBElement<Object> kauf;
     @XmlAttribute(name = "Nebenkosten")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double nebenkosten;
+    protected BigDecimal nebenkosten;
     @XmlAttribute(name = "PreisProParkflaeche")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double preisProParkflaeche;
+    protected BigDecimal preisProParkflaeche;
     @XmlAttribute(name = "Preis", required = true)
     @XmlJavaTypeAdapter(Adapter36 .class)
-    protected Double preis;
+    protected BigDecimal preis;
 
     /**
      * Gets the value of the miete property.
@@ -132,7 +133,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public Double getNebenkosten() {
+    public BigDecimal getNebenkosten() {
         return nebenkosten;
     }
 
@@ -144,7 +145,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public void setNebenkosten(Double value) {
+    public void setNebenkosten(BigDecimal value) {
         this.nebenkosten = value;
     }
 
@@ -156,7 +157,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public Double getPreisProParkflaeche() {
+    public BigDecimal getPreisProParkflaeche() {
         return preisProParkflaeche;
     }
 
@@ -168,7 +169,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public void setPreisProParkflaeche(Double value) {
+    public void setPreisProParkflaeche(BigDecimal value) {
         this.preisProParkflaeche = value;
     }
 
@@ -180,7 +181,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public Double getPreis() {
+    public BigDecimal getPreis() {
         return preis;
     }
 
@@ -192,7 +193,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public void setPreis(Double value) {
+    public void setPreis(BigDecimal value) {
         this.preis = value;
     }
 
@@ -222,17 +223,17 @@ public class VermarktungGewerbeTyp2
             strategy.appendField(locator, this, "kauf", buffer, theKauf);
         }
         {
-            Double theNebenkosten;
+            BigDecimal theNebenkosten;
             theNebenkosten = this.getNebenkosten();
             strategy.appendField(locator, this, "nebenkosten", buffer, theNebenkosten);
         }
         {
-            Double thePreisProParkflaeche;
+            BigDecimal thePreisProParkflaeche;
             thePreisProParkflaeche = this.getPreisProParkflaeche();
             strategy.appendField(locator, this, "preisProParkflaeche", buffer, thePreisProParkflaeche);
         }
         {
-            Double thePreis;
+            BigDecimal thePreis;
             thePreis = this.getPreis();
             strategy.appendField(locator, this, "preis", buffer, thePreis);
         }
@@ -270,25 +271,25 @@ public class VermarktungGewerbeTyp2
                 copy.kauf = null;
             }
             if (this.nebenkosten!= null) {
-                Double sourceNebenkosten;
+                BigDecimal sourceNebenkosten;
                 sourceNebenkosten = this.getNebenkosten();
-                Double copyNebenkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
+                BigDecimal copyNebenkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
                 copy.setNebenkosten(copyNebenkosten);
             } else {
                 copy.nebenkosten = null;
             }
             if (this.preisProParkflaeche!= null) {
-                Double sourcePreisProParkflaeche;
+                BigDecimal sourcePreisProParkflaeche;
                 sourcePreisProParkflaeche = this.getPreisProParkflaeche();
-                Double copyPreisProParkflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "preisProParkflaeche", sourcePreisProParkflaeche), sourcePreisProParkflaeche));
+                BigDecimal copyPreisProParkflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preisProParkflaeche", sourcePreisProParkflaeche), sourcePreisProParkflaeche));
                 copy.setPreisProParkflaeche(copyPreisProParkflaeche);
             } else {
                 copy.preisProParkflaeche = null;
             }
             if (this.preis!= null) {
-                Double sourcePreis;
+                BigDecimal sourcePreis;
                 sourcePreis = this.getPreis();
-                Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                 copy.setPreis(copyPreis);
             } else {
                 copy.preis = null;
@@ -328,27 +329,27 @@ public class VermarktungGewerbeTyp2
             }
         }
         {
-            Double lhsNebenkosten;
+            BigDecimal lhsNebenkosten;
             lhsNebenkosten = this.getNebenkosten();
-            Double rhsNebenkosten;
+            BigDecimal rhsNebenkosten;
             rhsNebenkosten = that.getNebenkosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenkosten", lhsNebenkosten), LocatorUtils.property(thatLocator, "nebenkosten", rhsNebenkosten), lhsNebenkosten, rhsNebenkosten)) {
                 return false;
             }
         }
         {
-            Double lhsPreisProParkflaeche;
+            BigDecimal lhsPreisProParkflaeche;
             lhsPreisProParkflaeche = this.getPreisProParkflaeche();
-            Double rhsPreisProParkflaeche;
+            BigDecimal rhsPreisProParkflaeche;
             rhsPreisProParkflaeche = that.getPreisProParkflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preisProParkflaeche", lhsPreisProParkflaeche), LocatorUtils.property(thatLocator, "preisProParkflaeche", rhsPreisProParkflaeche), lhsPreisProParkflaeche, rhsPreisProParkflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsPreis;
+            BigDecimal lhsPreis;
             lhsPreis = this.getPreis();
-            Double rhsPreis;
+            BigDecimal rhsPreis;
             rhsPreis = that.getPreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                 return false;

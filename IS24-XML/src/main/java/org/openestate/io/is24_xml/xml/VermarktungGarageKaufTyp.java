@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -44,7 +45,7 @@ public class VermarktungGarageKaufTyp
 
     @XmlAttribute(name = "Kaufpreis", required = true)
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double kaufpreis;
+    protected BigDecimal kaufpreis;
 
     /**
      * Gets the value of the kaufpreis property.
@@ -54,7 +55,7 @@ public class VermarktungGarageKaufTyp
      *     {@link String }
      *     
      */
-    public Double getKaufpreis() {
+    public BigDecimal getKaufpreis() {
         return kaufpreis;
     }
 
@@ -66,7 +67,7 @@ public class VermarktungGarageKaufTyp
      *     {@link String }
      *     
      */
-    public void setKaufpreis(Double value) {
+    public void setKaufpreis(BigDecimal value) {
         this.kaufpreis = value;
     }
 
@@ -86,7 +87,7 @@ public class VermarktungGarageKaufTyp
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theKaufpreis;
+            BigDecimal theKaufpreis;
             theKaufpreis = this.getKaufpreis();
             strategy.appendField(locator, this, "kaufpreis", buffer, theKaufpreis);
         }
@@ -107,9 +108,9 @@ public class VermarktungGarageKaufTyp
         if (draftCopy instanceof VermarktungGarageKaufTyp) {
             final VermarktungGarageKaufTyp copy = ((VermarktungGarageKaufTyp) draftCopy);
             if (this.kaufpreis!= null) {
-                Double sourceKaufpreis;
+                BigDecimal sourceKaufpreis;
                 sourceKaufpreis = this.getKaufpreis();
-                Double copyKaufpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "kaufpreis", sourceKaufpreis), sourceKaufpreis));
+                BigDecimal copyKaufpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaufpreis", sourceKaufpreis), sourceKaufpreis));
                 copy.setKaufpreis(copyKaufpreis);
             } else {
                 copy.kaufpreis = null;
@@ -131,9 +132,9 @@ public class VermarktungGarageKaufTyp
         }
         final VermarktungGarageKaufTyp that = ((VermarktungGarageKaufTyp) object);
         {
-            Double lhsKaufpreis;
+            BigDecimal lhsKaufpreis;
             lhsKaufpreis = this.getKaufpreis();
-            Double rhsKaufpreis;
+            BigDecimal rhsKaufpreis;
             rhsKaufpreis = that.getKaufpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaufpreis", lhsKaufpreis), LocatorUtils.property(thatLocator, "kaufpreis", rhsKaufpreis), lhsKaufpreis, rhsKaufpreis)) {
                 return false;

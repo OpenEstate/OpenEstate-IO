@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -50,16 +51,16 @@ public class VermarktungWGZimmerTyp
 
     @XmlAttribute(name = "Kaltmiete", required = true)
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double kaltmiete;
+    protected BigDecimal kaltmiete;
     @XmlAttribute(name = "Warmmiete")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double warmmiete;
+    protected BigDecimal warmmiete;
     @XmlAttribute(name = "Nebenkosten")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double nebenkosten;
+    protected BigDecimal nebenkosten;
     @XmlAttribute(name = "Heizkosten")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double heizkosten;
+    protected BigDecimal heizkosten;
     @XmlAttribute(name = "HeizkostenInWarmmieteEnthalten")
     protected Boolean heizkostenInWarmmieteEnthalten;
     @XmlAttribute(name = "Mindestmietdauer")
@@ -76,7 +77,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public Double getKaltmiete() {
+    public BigDecimal getKaltmiete() {
         return kaltmiete;
     }
 
@@ -88,7 +89,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public void setKaltmiete(Double value) {
+    public void setKaltmiete(BigDecimal value) {
         this.kaltmiete = value;
     }
 
@@ -100,7 +101,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public Double getWarmmiete() {
+    public BigDecimal getWarmmiete() {
         return warmmiete;
     }
 
@@ -112,7 +113,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public void setWarmmiete(Double value) {
+    public void setWarmmiete(BigDecimal value) {
         this.warmmiete = value;
     }
 
@@ -124,7 +125,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public Double getNebenkosten() {
+    public BigDecimal getNebenkosten() {
         return nebenkosten;
     }
 
@@ -136,7 +137,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public void setNebenkosten(Double value) {
+    public void setNebenkosten(BigDecimal value) {
         this.nebenkosten = value;
     }
 
@@ -148,7 +149,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public Double getHeizkosten() {
+    public BigDecimal getHeizkosten() {
         return heizkosten;
     }
 
@@ -160,7 +161,7 @@ public class VermarktungWGZimmerTyp
      *     {@link String }
      *     
      */
-    public void setHeizkosten(Double value) {
+    public void setHeizkosten(BigDecimal value) {
         this.heizkosten = value;
     }
 
@@ -252,22 +253,22 @@ public class VermarktungWGZimmerTyp
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theKaltmiete;
+            BigDecimal theKaltmiete;
             theKaltmiete = this.getKaltmiete();
             strategy.appendField(locator, this, "kaltmiete", buffer, theKaltmiete);
         }
         {
-            Double theWarmmiete;
+            BigDecimal theWarmmiete;
             theWarmmiete = this.getWarmmiete();
             strategy.appendField(locator, this, "warmmiete", buffer, theWarmmiete);
         }
         {
-            Double theNebenkosten;
+            BigDecimal theNebenkosten;
             theNebenkosten = this.getNebenkosten();
             strategy.appendField(locator, this, "nebenkosten", buffer, theNebenkosten);
         }
         {
-            Double theHeizkosten;
+            BigDecimal theHeizkosten;
             theHeizkosten = this.getHeizkosten();
             strategy.appendField(locator, this, "heizkosten", buffer, theHeizkosten);
         }
@@ -303,33 +304,33 @@ public class VermarktungWGZimmerTyp
         if (draftCopy instanceof VermarktungWGZimmerTyp) {
             final VermarktungWGZimmerTyp copy = ((VermarktungWGZimmerTyp) draftCopy);
             if (this.kaltmiete!= null) {
-                Double sourceKaltmiete;
+                BigDecimal sourceKaltmiete;
                 sourceKaltmiete = this.getKaltmiete();
-                Double copyKaltmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
+                BigDecimal copyKaltmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
                 copy.setKaltmiete(copyKaltmiete);
             } else {
                 copy.kaltmiete = null;
             }
             if (this.warmmiete!= null) {
-                Double sourceWarmmiete;
+                BigDecimal sourceWarmmiete;
                 sourceWarmmiete = this.getWarmmiete();
-                Double copyWarmmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "warmmiete", sourceWarmmiete), sourceWarmmiete));
+                BigDecimal copyWarmmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "warmmiete", sourceWarmmiete), sourceWarmmiete));
                 copy.setWarmmiete(copyWarmmiete);
             } else {
                 copy.warmmiete = null;
             }
             if (this.nebenkosten!= null) {
-                Double sourceNebenkosten;
+                BigDecimal sourceNebenkosten;
                 sourceNebenkosten = this.getNebenkosten();
-                Double copyNebenkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
+                BigDecimal copyNebenkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
                 copy.setNebenkosten(copyNebenkosten);
             } else {
                 copy.nebenkosten = null;
             }
             if (this.heizkosten!= null) {
-                Double sourceHeizkosten;
+                BigDecimal sourceHeizkosten;
                 sourceHeizkosten = this.getHeizkosten();
-                Double copyHeizkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "heizkosten", sourceHeizkosten), sourceHeizkosten));
+                BigDecimal copyHeizkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "heizkosten", sourceHeizkosten), sourceHeizkosten));
                 copy.setHeizkosten(copyHeizkosten);
             } else {
                 copy.heizkosten = null;
@@ -375,36 +376,36 @@ public class VermarktungWGZimmerTyp
         }
         final VermarktungWGZimmerTyp that = ((VermarktungWGZimmerTyp) object);
         {
-            Double lhsKaltmiete;
+            BigDecimal lhsKaltmiete;
             lhsKaltmiete = this.getKaltmiete();
-            Double rhsKaltmiete;
+            BigDecimal rhsKaltmiete;
             rhsKaltmiete = that.getKaltmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaltmiete", lhsKaltmiete), LocatorUtils.property(thatLocator, "kaltmiete", rhsKaltmiete), lhsKaltmiete, rhsKaltmiete)) {
                 return false;
             }
         }
         {
-            Double lhsWarmmiete;
+            BigDecimal lhsWarmmiete;
             lhsWarmmiete = this.getWarmmiete();
-            Double rhsWarmmiete;
+            BigDecimal rhsWarmmiete;
             rhsWarmmiete = that.getWarmmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "warmmiete", lhsWarmmiete), LocatorUtils.property(thatLocator, "warmmiete", rhsWarmmiete), lhsWarmmiete, rhsWarmmiete)) {
                 return false;
             }
         }
         {
-            Double lhsNebenkosten;
+            BigDecimal lhsNebenkosten;
             lhsNebenkosten = this.getNebenkosten();
-            Double rhsNebenkosten;
+            BigDecimal rhsNebenkosten;
             rhsNebenkosten = that.getNebenkosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenkosten", lhsNebenkosten), LocatorUtils.property(thatLocator, "nebenkosten", rhsNebenkosten), lhsNebenkosten, rhsNebenkosten)) {
                 return false;
             }
         }
         {
-            Double lhsHeizkosten;
+            BigDecimal lhsHeizkosten;
             lhsHeizkosten = this.getHeizkosten();
-            Double rhsHeizkosten;
+            BigDecimal rhsHeizkosten;
             rhsHeizkosten = that.getHeizkosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "heizkosten", lhsHeizkosten), LocatorUtils.property(thatLocator, "heizkosten", rhsHeizkosten), lhsHeizkosten, rhsHeizkosten)) {
                 return false;

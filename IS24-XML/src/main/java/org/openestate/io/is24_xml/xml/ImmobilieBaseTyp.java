@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
@@ -115,7 +116,7 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
     protected AktionsTyp importmodus;
     @XmlAttribute(name = "ScoutObjektID")
     @XmlJavaTypeAdapter(Adapter26 .class)
-    protected Long scoutObjektID;
+    protected BigInteger scoutObjektID;
     @XmlAttribute(name = "GruppierungsID")
     @XmlJavaTypeAdapter(Adapter25 .class)
     protected Long gruppierungsID;
@@ -524,7 +525,7 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
      *     {@link String }
      *     
      */
-    public Long getScoutObjektID() {
+    public BigInteger getScoutObjektID() {
         return scoutObjektID;
     }
 
@@ -536,7 +537,7 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
      *     {@link String }
      *     
      */
-    public void setScoutObjektID(Long value) {
+    public void setScoutObjektID(BigInteger value) {
         this.scoutObjektID = value;
     }
 
@@ -807,7 +808,7 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
             strategy.appendField(locator, this, "importmodus", buffer, theImportmodus);
         }
         {
-            Long theScoutObjektID;
+            BigInteger theScoutObjektID;
             theScoutObjektID = this.getScoutObjektID();
             strategy.appendField(locator, this, "scoutObjektID", buffer, theScoutObjektID);
         }
@@ -991,9 +992,9 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
                 copy.importmodus = null;
             }
             if (this.scoutObjektID!= null) {
-                Long sourceScoutObjektID;
+                BigInteger sourceScoutObjektID;
                 sourceScoutObjektID = this.getScoutObjektID();
-                Long copyScoutObjektID = ((Long) strategy.copy(LocatorUtils.property(locator, "scoutObjektID", sourceScoutObjektID), sourceScoutObjektID));
+                BigInteger copyScoutObjektID = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "scoutObjektID", sourceScoutObjektID), sourceScoutObjektID));
                 copy.setScoutObjektID(copyScoutObjektID);
             } else {
                 copy.scoutObjektID = null;
@@ -1202,9 +1203,9 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
             }
         }
         {
-            Long lhsScoutObjektID;
+            BigInteger lhsScoutObjektID;
             lhsScoutObjektID = this.getScoutObjektID();
-            Long rhsScoutObjektID;
+            BigInteger rhsScoutObjektID;
             rhsScoutObjektID = that.getScoutObjektID();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "scoutObjektID", lhsScoutObjektID), LocatorUtils.property(thatLocator, "scoutObjektID", rhsScoutObjektID), lhsScoutObjektID, rhsScoutObjektID)) {
                 return false;

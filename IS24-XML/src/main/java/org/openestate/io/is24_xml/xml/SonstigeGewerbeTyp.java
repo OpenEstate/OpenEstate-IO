@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -64,10 +65,10 @@ public class SonstigeGewerbeTyp
     protected SonstigeGewerbeKategorieTyp objektkategorie2;
     @XmlAttribute(name = "Hauptflaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double hauptflaeche;
+    protected BigDecimal hauptflaeche;
     @XmlAttribute(name = "GrundstuecksFlaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double grundstuecksFlaeche;
+    protected BigDecimal grundstuecksFlaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Denkmalschutzobjekt")
@@ -131,7 +132,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public Double getHauptflaeche() {
+    public BigDecimal getHauptflaeche() {
         return hauptflaeche;
     }
 
@@ -143,7 +144,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public void setHauptflaeche(Double value) {
+    public void setHauptflaeche(BigDecimal value) {
         this.hauptflaeche = value;
     }
 
@@ -155,7 +156,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public Double getGrundstuecksFlaeche() {
+    public BigDecimal getGrundstuecksFlaeche() {
         return grundstuecksFlaeche;
     }
 
@@ -167,7 +168,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public void setGrundstuecksFlaeche(Double value) {
+    public void setGrundstuecksFlaeche(BigDecimal value) {
         this.grundstuecksFlaeche = value;
     }
 
@@ -274,12 +275,12 @@ public class SonstigeGewerbeTyp
             strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
         }
         {
-            Double theHauptflaeche;
+            BigDecimal theHauptflaeche;
             theHauptflaeche = this.getHauptflaeche();
             strategy.appendField(locator, this, "hauptflaeche", buffer, theHauptflaeche);
         }
         {
-            Double theGrundstuecksFlaeche;
+            BigDecimal theGrundstuecksFlaeche;
             theGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
             strategy.appendField(locator, this, "grundstuecksFlaeche", buffer, theGrundstuecksFlaeche);
         }
@@ -332,17 +333,17 @@ public class SonstigeGewerbeTyp
                 copy.objektkategorie2 = null;
             }
             if (this.hauptflaeche!= null) {
-                Double sourceHauptflaeche;
+                BigDecimal sourceHauptflaeche;
                 sourceHauptflaeche = this.getHauptflaeche();
-                Double copyHauptflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "hauptflaeche", sourceHauptflaeche), sourceHauptflaeche));
+                BigDecimal copyHauptflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hauptflaeche", sourceHauptflaeche), sourceHauptflaeche));
                 copy.setHauptflaeche(copyHauptflaeche);
             } else {
                 copy.hauptflaeche = null;
             }
             if (this.grundstuecksFlaeche!= null) {
-                Double sourceGrundstuecksFlaeche;
+                BigDecimal sourceGrundstuecksFlaeche;
                 sourceGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-                Double copyGrundstuecksFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
+                BigDecimal copyGrundstuecksFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
                 copy.setGrundstuecksFlaeche(copyGrundstuecksFlaeche);
             } else {
                 copy.grundstuecksFlaeche = null;
@@ -409,18 +410,18 @@ public class SonstigeGewerbeTyp
             }
         }
         {
-            Double lhsHauptflaeche;
+            BigDecimal lhsHauptflaeche;
             lhsHauptflaeche = this.getHauptflaeche();
-            Double rhsHauptflaeche;
+            BigDecimal rhsHauptflaeche;
             rhsHauptflaeche = that.getHauptflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hauptflaeche", lhsHauptflaeche), LocatorUtils.property(thatLocator, "hauptflaeche", rhsHauptflaeche), lhsHauptflaeche, rhsHauptflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsGrundstuecksFlaeche;
+            BigDecimal lhsGrundstuecksFlaeche;
             lhsGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-            Double rhsGrundstuecksFlaeche;
+            BigDecimal rhsGrundstuecksFlaeche;
             rhsGrundstuecksFlaeche = that.getGrundstuecksFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksFlaeche", lhsGrundstuecksFlaeche), LocatorUtils.property(thatLocator, "grundstuecksFlaeche", rhsGrundstuecksFlaeche), lhsGrundstuecksFlaeche, rhsGrundstuecksFlaeche)) {
                 return false;

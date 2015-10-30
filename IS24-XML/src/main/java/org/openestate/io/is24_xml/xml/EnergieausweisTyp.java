@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -48,7 +49,7 @@ public class EnergieausweisTyp
     protected EnergieausweistypTyp energieausweistyp;
     @XmlAttribute(name = "Energieverbrauchskennwert")
     @XmlJavaTypeAdapter(Adapter30 .class)
-    protected Double energieverbrauchskennwert;
+    protected BigDecimal energieverbrauchskennwert;
     @XmlAttribute(name = "WarmwasserEnthalten")
     protected Boolean warmwasserEnthalten;
 
@@ -84,7 +85,7 @@ public class EnergieausweisTyp
      *     {@link String }
      *     
      */
-    public Double getEnergieverbrauchskennwert() {
+    public BigDecimal getEnergieverbrauchskennwert() {
         return energieverbrauchskennwert;
     }
 
@@ -96,7 +97,7 @@ public class EnergieausweisTyp
      *     {@link String }
      *     
      */
-    public void setEnergieverbrauchskennwert(Double value) {
+    public void setEnergieverbrauchskennwert(BigDecimal value) {
         this.energieverbrauchskennwert = value;
     }
 
@@ -145,7 +146,7 @@ public class EnergieausweisTyp
             strategy.appendField(locator, this, "energieausweistyp", buffer, theEnergieausweistyp);
         }
         {
-            Double theEnergieverbrauchskennwert;
+            BigDecimal theEnergieverbrauchskennwert;
             theEnergieverbrauchskennwert = this.getEnergieverbrauchskennwert();
             strategy.appendField(locator, this, "energieverbrauchskennwert", buffer, theEnergieverbrauchskennwert);
         }
@@ -179,9 +180,9 @@ public class EnergieausweisTyp
                 copy.energieausweistyp = null;
             }
             if (this.energieverbrauchskennwert!= null) {
-                Double sourceEnergieverbrauchskennwert;
+                BigDecimal sourceEnergieverbrauchskennwert;
                 sourceEnergieverbrauchskennwert = this.getEnergieverbrauchskennwert();
-                Double copyEnergieverbrauchskennwert = ((Double) strategy.copy(LocatorUtils.property(locator, "energieverbrauchskennwert", sourceEnergieverbrauchskennwert), sourceEnergieverbrauchskennwert));
+                BigDecimal copyEnergieverbrauchskennwert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "energieverbrauchskennwert", sourceEnergieverbrauchskennwert), sourceEnergieverbrauchskennwert));
                 copy.setEnergieverbrauchskennwert(copyEnergieverbrauchskennwert);
             } else {
                 copy.energieverbrauchskennwert = null;
@@ -220,9 +221,9 @@ public class EnergieausweisTyp
             }
         }
         {
-            Double lhsEnergieverbrauchskennwert;
+            BigDecimal lhsEnergieverbrauchskennwert;
             lhsEnergieverbrauchskennwert = this.getEnergieverbrauchskennwert();
-            Double rhsEnergieverbrauchskennwert;
+            BigDecimal rhsEnergieverbrauchskennwert;
             rhsEnergieverbrauchskennwert = that.getEnergieverbrauchskennwert();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "energieverbrauchskennwert", lhsEnergieverbrauchskennwert), LocatorUtils.property(thatLocator, "energieverbrauchskennwert", rhsEnergieverbrauchskennwert), lhsEnergieverbrauchskennwert, rhsEnergieverbrauchskennwert)) {
                 return false;

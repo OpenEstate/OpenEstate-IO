@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -44,7 +45,7 @@ public class VermarktungGarageMieteTyp
 
     @XmlAttribute(name = "Miete", required = true)
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double miete;
+    protected BigDecimal miete;
 
     /**
      * Gets the value of the miete property.
@@ -54,7 +55,7 @@ public class VermarktungGarageMieteTyp
      *     {@link String }
      *     
      */
-    public Double getMiete() {
+    public BigDecimal getMiete() {
         return miete;
     }
 
@@ -66,7 +67,7 @@ public class VermarktungGarageMieteTyp
      *     {@link String }
      *     
      */
-    public void setMiete(Double value) {
+    public void setMiete(BigDecimal value) {
         this.miete = value;
     }
 
@@ -86,7 +87,7 @@ public class VermarktungGarageMieteTyp
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theMiete;
+            BigDecimal theMiete;
             theMiete = this.getMiete();
             strategy.appendField(locator, this, "miete", buffer, theMiete);
         }
@@ -107,9 +108,9 @@ public class VermarktungGarageMieteTyp
         if (draftCopy instanceof VermarktungGarageMieteTyp) {
             final VermarktungGarageMieteTyp copy = ((VermarktungGarageMieteTyp) draftCopy);
             if (this.miete!= null) {
-                Double sourceMiete;
+                BigDecimal sourceMiete;
                 sourceMiete = this.getMiete();
-                Double copyMiete = ((Double) strategy.copy(LocatorUtils.property(locator, "miete", sourceMiete), sourceMiete));
+                BigDecimal copyMiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "miete", sourceMiete), sourceMiete));
                 copy.setMiete(copyMiete);
             } else {
                 copy.miete = null;
@@ -131,9 +132,9 @@ public class VermarktungGarageMieteTyp
         }
         final VermarktungGarageMieteTyp that = ((VermarktungGarageMieteTyp) object);
         {
-            Double lhsMiete;
+            BigDecimal lhsMiete;
             lhsMiete = this.getMiete();
-            Double rhsMiete;
+            BigDecimal rhsMiete;
             rhsMiete = that.getMiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "miete", lhsMiete), LocatorUtils.property(thatLocator, "miete", rhsMiete), lhsMiete, rhsMiete)) {
                 return false;

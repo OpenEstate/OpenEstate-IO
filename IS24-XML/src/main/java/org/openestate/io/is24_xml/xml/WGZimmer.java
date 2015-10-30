@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -113,13 +114,13 @@ public class WGZimmer
         protected WGZimmerKategorienTyp wgZimmerKategorie;
         @XmlAttribute(name = "Zimmerflaeche", required = true)
         @XmlJavaTypeAdapter(Adapter34 .class)
-        protected Double zimmerflaeche;
+        protected BigDecimal zimmerflaeche;
         @XmlAttribute(name = "Gesamtflaeche")
         @XmlJavaTypeAdapter(Adapter34 .class)
-        protected Double gesamtflaeche;
+        protected BigDecimal gesamtflaeche;
         @XmlAttribute(name = "Zimmer")
         @XmlJavaTypeAdapter(Adapter32 .class)
-        protected Double zimmer;
+        protected BigDecimal zimmer;
         @XmlAttribute(name = "FreiAb", required = true)
         @XmlJavaTypeAdapter(Adapter1 .class)
         @XmlSchemaType(name = "date")
@@ -269,7 +270,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public Double getZimmerflaeche() {
+        public BigDecimal getZimmerflaeche() {
             return zimmerflaeche;
         }
 
@@ -281,7 +282,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public void setZimmerflaeche(Double value) {
+        public void setZimmerflaeche(BigDecimal value) {
             this.zimmerflaeche = value;
         }
 
@@ -293,7 +294,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public Double getGesamtflaeche() {
+        public BigDecimal getGesamtflaeche() {
             return gesamtflaeche;
         }
 
@@ -305,7 +306,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public void setGesamtflaeche(Double value) {
+        public void setGesamtflaeche(BigDecimal value) {
             this.gesamtflaeche = value;
         }
 
@@ -317,7 +318,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public Double getZimmer() {
+        public BigDecimal getZimmer() {
             return zimmer;
         }
 
@@ -329,7 +330,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public void setZimmer(Double value) {
+        public void setZimmer(BigDecimal value) {
             this.zimmer = value;
         }
 
@@ -1284,17 +1285,17 @@ public class WGZimmer
                 strategy.appendField(locator, this, "wgZimmerKategorie", buffer, theWGZimmerKategorie);
             }
             {
-                Double theZimmerflaeche;
+                BigDecimal theZimmerflaeche;
                 theZimmerflaeche = this.getZimmerflaeche();
                 strategy.appendField(locator, this, "zimmerflaeche", buffer, theZimmerflaeche);
             }
             {
-                Double theGesamtflaeche;
+                BigDecimal theGesamtflaeche;
                 theGesamtflaeche = this.getGesamtflaeche();
                 strategy.appendField(locator, this, "gesamtflaeche", buffer, theGesamtflaeche);
             }
             {
-                Double theZimmer;
+                BigDecimal theZimmer;
                 theZimmer = this.getZimmer();
                 strategy.appendField(locator, this, "zimmer", buffer, theZimmer);
             }
@@ -1517,25 +1518,25 @@ public class WGZimmer
                     copy.wgZimmerKategorie = null;
                 }
                 if (this.zimmerflaeche!= null) {
-                    Double sourceZimmerflaeche;
+                    BigDecimal sourceZimmerflaeche;
                     sourceZimmerflaeche = this.getZimmerflaeche();
-                    Double copyZimmerflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "zimmerflaeche", sourceZimmerflaeche), sourceZimmerflaeche));
+                    BigDecimal copyZimmerflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "zimmerflaeche", sourceZimmerflaeche), sourceZimmerflaeche));
                     copy.setZimmerflaeche(copyZimmerflaeche);
                 } else {
                     copy.zimmerflaeche = null;
                 }
                 if (this.gesamtflaeche!= null) {
-                    Double sourceGesamtflaeche;
+                    BigDecimal sourceGesamtflaeche;
                     sourceGesamtflaeche = this.getGesamtflaeche();
-                    Double copyGesamtflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
+                    BigDecimal copyGesamtflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
                     copy.setGesamtflaeche(copyGesamtflaeche);
                 } else {
                     copy.gesamtflaeche = null;
                 }
                 if (this.zimmer!= null) {
-                    Double sourceZimmer;
+                    BigDecimal sourceZimmer;
                     sourceZimmer = this.getZimmer();
-                    Double copyZimmer = ((Double) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer));
+                    BigDecimal copyZimmer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer));
                     copy.setZimmer(copyZimmer);
                 } else {
                     copy.zimmer = null;
@@ -1874,27 +1875,27 @@ public class WGZimmer
                 }
             }
             {
-                Double lhsZimmerflaeche;
+                BigDecimal lhsZimmerflaeche;
                 lhsZimmerflaeche = this.getZimmerflaeche();
-                Double rhsZimmerflaeche;
+                BigDecimal rhsZimmerflaeche;
                 rhsZimmerflaeche = that.getZimmerflaeche();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmerflaeche", lhsZimmerflaeche), LocatorUtils.property(thatLocator, "zimmerflaeche", rhsZimmerflaeche), lhsZimmerflaeche, rhsZimmerflaeche)) {
                     return false;
                 }
             }
             {
-                Double lhsGesamtflaeche;
+                BigDecimal lhsGesamtflaeche;
                 lhsGesamtflaeche = this.getGesamtflaeche();
-                Double rhsGesamtflaeche;
+                BigDecimal rhsGesamtflaeche;
                 rhsGesamtflaeche = that.getGesamtflaeche();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtflaeche", lhsGesamtflaeche), LocatorUtils.property(thatLocator, "gesamtflaeche", rhsGesamtflaeche), lhsGesamtflaeche, rhsGesamtflaeche)) {
                     return false;
                 }
             }
             {
-                Double lhsZimmer;
+                BigDecimal lhsZimmer;
                 lhsZimmer = this.getZimmer();
-                Double rhsZimmer;
+                BigDecimal rhsZimmer;
                 rhsZimmer = that.getZimmer();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmer", lhsZimmer), LocatorUtils.property(thatLocator, "zimmer", rhsZimmer), lhsZimmer, rhsZimmer)) {
                     return false;

@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -72,7 +73,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
     protected JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> erbpacht;
     @XmlAttribute(name = "Preis", required = true)
     @XmlJavaTypeAdapter(Adapter36 .class)
-    protected Double preis;
+    protected BigDecimal preis;
 
     /**
      * Gets the value of the kauf property.
@@ -130,7 +131,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
      *     {@link String }
      *     
      */
-    public Double getPreis() {
+    public BigDecimal getPreis() {
         return preis;
     }
 
@@ -142,7 +143,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
      *     {@link String }
      *     
      */
-    public void setPreis(Double value) {
+    public void setPreis(BigDecimal value) {
         this.preis = value;
     }
 
@@ -172,7 +173,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
             strategy.appendField(locator, this, "erbpacht", buffer, theErbpacht);
         }
         {
-            Double thePreis;
+            BigDecimal thePreis;
             thePreis = this.getPreis();
             strategy.appendField(locator, this, "preis", buffer, thePreis);
         }
@@ -211,9 +212,9 @@ public class VermarktungGrundstueckWohnenKaufTyp
                 copy.erbpacht = null;
             }
             if (this.preis!= null) {
-                Double sourcePreis;
+                BigDecimal sourcePreis;
                 sourcePreis = this.getPreis();
-                Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                 copy.setPreis(copyPreis);
             } else {
                 copy.preis = null;
@@ -253,9 +254,9 @@ public class VermarktungGrundstueckWohnenKaufTyp
             }
         }
         {
-            Double lhsPreis;
+            BigDecimal lhsPreis;
             lhsPreis = this.getPreis();
-            Double rhsPreis;
+            BigDecimal rhsPreis;
             rhsPreis = that.getPreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                 return false;

@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -81,13 +82,13 @@ public abstract class GewerbeImmoBaseTyp
     protected EnergieausweisTyp energieausweis;
     @XmlAttribute(name = "Gesamtflaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double gesamtflaeche;
+    protected BigDecimal gesamtflaeche;
     @XmlAttribute(name = "Nebenflaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double nebenflaeche;
+    protected BigDecimal nebenflaeche;
     @XmlAttribute(name = "TeilbarAb")
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double teilbarAb;
+    protected BigDecimal teilbarAb;
     @XmlAttribute(name = "Etagen")
     @XmlJavaTypeAdapter(Adapter7 .class)
     protected String etagen;
@@ -180,7 +181,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
-    public Double getGesamtflaeche() {
+    public BigDecimal getGesamtflaeche() {
         return gesamtflaeche;
     }
 
@@ -192,7 +193,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
-    public void setGesamtflaeche(Double value) {
+    public void setGesamtflaeche(BigDecimal value) {
         this.gesamtflaeche = value;
     }
 
@@ -204,7 +205,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
-    public Double getNebenflaeche() {
+    public BigDecimal getNebenflaeche() {
         return nebenflaeche;
     }
 
@@ -216,7 +217,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
-    public void setNebenflaeche(Double value) {
+    public void setNebenflaeche(BigDecimal value) {
         this.nebenflaeche = value;
     }
 
@@ -228,7 +229,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
-    public Double getTeilbarAb() {
+    public BigDecimal getTeilbarAb() {
         return teilbarAb;
     }
 
@@ -240,7 +241,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
-    public void setTeilbarAb(Double value) {
+    public void setTeilbarAb(BigDecimal value) {
         this.teilbarAb = value;
     }
 
@@ -591,17 +592,17 @@ public abstract class GewerbeImmoBaseTyp
             strategy.appendField(locator, this, "energieausweis", buffer, theEnergieausweis);
         }
         {
-            Double theGesamtflaeche;
+            BigDecimal theGesamtflaeche;
             theGesamtflaeche = this.getGesamtflaeche();
             strategy.appendField(locator, this, "gesamtflaeche", buffer, theGesamtflaeche);
         }
         {
-            Double theNebenflaeche;
+            BigDecimal theNebenflaeche;
             theNebenflaeche = this.getNebenflaeche();
             strategy.appendField(locator, this, "nebenflaeche", buffer, theNebenflaeche);
         }
         {
-            Double theTeilbarAb;
+            BigDecimal theTeilbarAb;
             theTeilbarAb = this.getTeilbarAb();
             strategy.appendField(locator, this, "teilbarAb", buffer, theTeilbarAb);
         }
@@ -706,25 +707,25 @@ public abstract class GewerbeImmoBaseTyp
                 copy.energieausweis = null;
             }
             if (this.gesamtflaeche!= null) {
-                Double sourceGesamtflaeche;
+                BigDecimal sourceGesamtflaeche;
                 sourceGesamtflaeche = this.getGesamtflaeche();
-                Double copyGesamtflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
+                BigDecimal copyGesamtflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
                 copy.setGesamtflaeche(copyGesamtflaeche);
             } else {
                 copy.gesamtflaeche = null;
             }
             if (this.nebenflaeche!= null) {
-                Double sourceNebenflaeche;
+                BigDecimal sourceNebenflaeche;
                 sourceNebenflaeche = this.getNebenflaeche();
-                Double copyNebenflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenflaeche", sourceNebenflaeche), sourceNebenflaeche));
+                BigDecimal copyNebenflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenflaeche", sourceNebenflaeche), sourceNebenflaeche));
                 copy.setNebenflaeche(copyNebenflaeche);
             } else {
                 copy.nebenflaeche = null;
             }
             if (this.teilbarAb!= null) {
-                Double sourceTeilbarAb;
+                BigDecimal sourceTeilbarAb;
                 sourceTeilbarAb = this.getTeilbarAb();
-                Double copyTeilbarAb = ((Double) strategy.copy(LocatorUtils.property(locator, "teilbarAb", sourceTeilbarAb), sourceTeilbarAb));
+                BigDecimal copyTeilbarAb = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "teilbarAb", sourceTeilbarAb), sourceTeilbarAb));
                 copy.setTeilbarAb(copyTeilbarAb);
             } else {
                 copy.teilbarAb = null;
@@ -867,27 +868,27 @@ public abstract class GewerbeImmoBaseTyp
             }
         }
         {
-            Double lhsGesamtflaeche;
+            BigDecimal lhsGesamtflaeche;
             lhsGesamtflaeche = this.getGesamtflaeche();
-            Double rhsGesamtflaeche;
+            BigDecimal rhsGesamtflaeche;
             rhsGesamtflaeche = that.getGesamtflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtflaeche", lhsGesamtflaeche), LocatorUtils.property(thatLocator, "gesamtflaeche", rhsGesamtflaeche), lhsGesamtflaeche, rhsGesamtflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsNebenflaeche;
+            BigDecimal lhsNebenflaeche;
             lhsNebenflaeche = this.getNebenflaeche();
-            Double rhsNebenflaeche;
+            BigDecimal rhsNebenflaeche;
             rhsNebenflaeche = that.getNebenflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenflaeche", lhsNebenflaeche), LocatorUtils.property(thatLocator, "nebenflaeche", rhsNebenflaeche), lhsNebenflaeche, rhsNebenflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsTeilbarAb;
+            BigDecimal lhsTeilbarAb;
             lhsTeilbarAb = this.getTeilbarAb();
-            Double rhsTeilbarAb;
+            BigDecimal rhsTeilbarAb;
             rhsTeilbarAb = that.getTeilbarAb();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "teilbarAb", lhsTeilbarAb), LocatorUtils.property(thatLocator, "teilbarAb", rhsTeilbarAb), lhsTeilbarAb, rhsTeilbarAb)) {
                 return false;

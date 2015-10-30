@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -117,20 +118,20 @@ public class WazTyp
     protected WazKategorienTyp wazKategorie;
     @XmlAttribute(name = "Wohnflaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double wohnflaeche;
+    protected BigDecimal wohnflaeche;
     @XmlAttribute(name = "Zimmer", required = true)
     @XmlJavaTypeAdapter(Adapter32 .class)
-    protected Double zimmer;
+    protected BigDecimal zimmer;
     @XmlAttribute(name = "FreiBis")
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "date")
     protected Calendar freiBis;
     @XmlAttribute(name = "Midestmietdauer")
     @XmlJavaTypeAdapter(Adapter30 .class)
-    protected Double midestmietdauer;
+    protected BigDecimal midestmietdauer;
     @XmlAttribute(name = "Maximalmietdauer")
     @XmlJavaTypeAdapter(Adapter30 .class)
-    protected Double maximalmietdauer;
+    protected BigDecimal maximalmietdauer;
     @XmlAttribute(name = "Etage")
     @XmlJavaTypeAdapter(Adapter20 .class)
     protected Long etage;
@@ -177,7 +178,7 @@ public class WazTyp
     protected Boolean barrierefrei;
     @XmlAttribute(name = "Parkplatzmiete")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double parkplatzmiete;
+    protected BigDecimal parkplatzmiete;
     @XmlAttribute(name = "Kaution")
     @XmlJavaTypeAdapter(Adapter7 .class)
     protected String kaution;
@@ -310,7 +311,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public Double getWohnflaeche() {
+    public BigDecimal getWohnflaeche() {
         return wohnflaeche;
     }
 
@@ -322,7 +323,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public void setWohnflaeche(Double value) {
+    public void setWohnflaeche(BigDecimal value) {
         this.wohnflaeche = value;
     }
 
@@ -334,7 +335,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public Double getZimmer() {
+    public BigDecimal getZimmer() {
         return zimmer;
     }
 
@@ -346,7 +347,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public void setZimmer(Double value) {
+    public void setZimmer(BigDecimal value) {
         this.zimmer = value;
     }
 
@@ -382,7 +383,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public Double getMidestmietdauer() {
+    public BigDecimal getMidestmietdauer() {
         return midestmietdauer;
     }
 
@@ -394,7 +395,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public void setMidestmietdauer(Double value) {
+    public void setMidestmietdauer(BigDecimal value) {
         this.midestmietdauer = value;
     }
 
@@ -406,7 +407,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public Double getMaximalmietdauer() {
+    public BigDecimal getMaximalmietdauer() {
         return maximalmietdauer;
     }
 
@@ -418,7 +419,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public void setMaximalmietdauer(Double value) {
+    public void setMaximalmietdauer(BigDecimal value) {
         this.maximalmietdauer = value;
     }
 
@@ -890,7 +891,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public Double getParkplatzmiete() {
+    public BigDecimal getParkplatzmiete() {
         return parkplatzmiete;
     }
 
@@ -902,7 +903,7 @@ public class WazTyp
      *     {@link String }
      *     
      */
-    public void setParkplatzmiete(Double value) {
+    public void setParkplatzmiete(BigDecimal value) {
         this.parkplatzmiete = value;
     }
 
@@ -972,12 +973,12 @@ public class WazTyp
             strategy.appendField(locator, this, "wazKategorie", buffer, theWazKategorie);
         }
         {
-            Double theWohnflaeche;
+            BigDecimal theWohnflaeche;
             theWohnflaeche = this.getWohnflaeche();
             strategy.appendField(locator, this, "wohnflaeche", buffer, theWohnflaeche);
         }
         {
-            Double theZimmer;
+            BigDecimal theZimmer;
             theZimmer = this.getZimmer();
             strategy.appendField(locator, this, "zimmer", buffer, theZimmer);
         }
@@ -987,12 +988,12 @@ public class WazTyp
             strategy.appendField(locator, this, "freiBis", buffer, theFreiBis);
         }
         {
-            Double theMidestmietdauer;
+            BigDecimal theMidestmietdauer;
             theMidestmietdauer = this.getMidestmietdauer();
             strategy.appendField(locator, this, "midestmietdauer", buffer, theMidestmietdauer);
         }
         {
-            Double theMaximalmietdauer;
+            BigDecimal theMaximalmietdauer;
             theMaximalmietdauer = this.getMaximalmietdauer();
             strategy.appendField(locator, this, "maximalmietdauer", buffer, theMaximalmietdauer);
         }
@@ -1092,7 +1093,7 @@ public class WazTyp
             strategy.appendField(locator, this, "barrierefrei", buffer, theBarrierefrei);
         }
         {
-            Double theParkplatzmiete;
+            BigDecimal theParkplatzmiete;
             theParkplatzmiete = this.getParkplatzmiete();
             strategy.appendField(locator, this, "parkplatzmiete", buffer, theParkplatzmiete);
         }
@@ -1159,17 +1160,17 @@ public class WazTyp
                 copy.wazKategorie = null;
             }
             if (this.wohnflaeche!= null) {
-                Double sourceWohnflaeche;
+                BigDecimal sourceWohnflaeche;
                 sourceWohnflaeche = this.getWohnflaeche();
-                Double copyWohnflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "wohnflaeche", sourceWohnflaeche), sourceWohnflaeche));
+                BigDecimal copyWohnflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "wohnflaeche", sourceWohnflaeche), sourceWohnflaeche));
                 copy.setWohnflaeche(copyWohnflaeche);
             } else {
                 copy.wohnflaeche = null;
             }
             if (this.zimmer!= null) {
-                Double sourceZimmer;
+                BigDecimal sourceZimmer;
                 sourceZimmer = this.getZimmer();
-                Double copyZimmer = ((Double) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer));
+                BigDecimal copyZimmer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer));
                 copy.setZimmer(copyZimmer);
             } else {
                 copy.zimmer = null;
@@ -1183,17 +1184,17 @@ public class WazTyp
                 copy.freiBis = null;
             }
             if (this.midestmietdauer!= null) {
-                Double sourceMidestmietdauer;
+                BigDecimal sourceMidestmietdauer;
                 sourceMidestmietdauer = this.getMidestmietdauer();
-                Double copyMidestmietdauer = ((Double) strategy.copy(LocatorUtils.property(locator, "midestmietdauer", sourceMidestmietdauer), sourceMidestmietdauer));
+                BigDecimal copyMidestmietdauer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "midestmietdauer", sourceMidestmietdauer), sourceMidestmietdauer));
                 copy.setMidestmietdauer(copyMidestmietdauer);
             } else {
                 copy.midestmietdauer = null;
             }
             if (this.maximalmietdauer!= null) {
-                Double sourceMaximalmietdauer;
+                BigDecimal sourceMaximalmietdauer;
                 sourceMaximalmietdauer = this.getMaximalmietdauer();
-                Double copyMaximalmietdauer = ((Double) strategy.copy(LocatorUtils.property(locator, "maximalmietdauer", sourceMaximalmietdauer), sourceMaximalmietdauer));
+                BigDecimal copyMaximalmietdauer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "maximalmietdauer", sourceMaximalmietdauer), sourceMaximalmietdauer));
                 copy.setMaximalmietdauer(copyMaximalmietdauer);
             } else {
                 copy.maximalmietdauer = null;
@@ -1351,9 +1352,9 @@ public class WazTyp
                 copy.barrierefrei = null;
             }
             if (this.parkplatzmiete!= null) {
-                Double sourceParkplatzmiete;
+                BigDecimal sourceParkplatzmiete;
                 sourceParkplatzmiete = this.getParkplatzmiete();
-                Double copyParkplatzmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "parkplatzmiete", sourceParkplatzmiete), sourceParkplatzmiete));
+                BigDecimal copyParkplatzmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "parkplatzmiete", sourceParkplatzmiete), sourceParkplatzmiete));
                 copy.setParkplatzmiete(copyParkplatzmiete);
             } else {
                 copy.parkplatzmiete = null;
@@ -1431,18 +1432,18 @@ public class WazTyp
             }
         }
         {
-            Double lhsWohnflaeche;
+            BigDecimal lhsWohnflaeche;
             lhsWohnflaeche = this.getWohnflaeche();
-            Double rhsWohnflaeche;
+            BigDecimal rhsWohnflaeche;
             rhsWohnflaeche = that.getWohnflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnflaeche", lhsWohnflaeche), LocatorUtils.property(thatLocator, "wohnflaeche", rhsWohnflaeche), lhsWohnflaeche, rhsWohnflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsZimmer;
+            BigDecimal lhsZimmer;
             lhsZimmer = this.getZimmer();
-            Double rhsZimmer;
+            BigDecimal rhsZimmer;
             rhsZimmer = that.getZimmer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmer", lhsZimmer), LocatorUtils.property(thatLocator, "zimmer", rhsZimmer), lhsZimmer, rhsZimmer)) {
                 return false;
@@ -1458,18 +1459,18 @@ public class WazTyp
             }
         }
         {
-            Double lhsMidestmietdauer;
+            BigDecimal lhsMidestmietdauer;
             lhsMidestmietdauer = this.getMidestmietdauer();
-            Double rhsMidestmietdauer;
+            BigDecimal rhsMidestmietdauer;
             rhsMidestmietdauer = that.getMidestmietdauer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "midestmietdauer", lhsMidestmietdauer), LocatorUtils.property(thatLocator, "midestmietdauer", rhsMidestmietdauer), lhsMidestmietdauer, rhsMidestmietdauer)) {
                 return false;
             }
         }
         {
-            Double lhsMaximalmietdauer;
+            BigDecimal lhsMaximalmietdauer;
             lhsMaximalmietdauer = this.getMaximalmietdauer();
-            Double rhsMaximalmietdauer;
+            BigDecimal rhsMaximalmietdauer;
             rhsMaximalmietdauer = that.getMaximalmietdauer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "maximalmietdauer", lhsMaximalmietdauer), LocatorUtils.property(thatLocator, "maximalmietdauer", rhsMaximalmietdauer), lhsMaximalmietdauer, rhsMaximalmietdauer)) {
                 return false;
@@ -1647,9 +1648,9 @@ public class WazTyp
             }
         }
         {
-            Double lhsParkplatzmiete;
+            BigDecimal lhsParkplatzmiete;
             lhsParkplatzmiete = this.getParkplatzmiete();
-            Double rhsParkplatzmiete;
+            BigDecimal rhsParkplatzmiete;
             rhsParkplatzmiete = that.getParkplatzmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "parkplatzmiete", lhsParkplatzmiete), LocatorUtils.property(thatLocator, "parkplatzmiete", rhsParkplatzmiete), lhsParkplatzmiete, rhsParkplatzmiete)) {
                 return false;
@@ -1700,10 +1701,10 @@ public class WazTyp
 
         @XmlAttribute(name = "Kaltmiete")
         @XmlJavaTypeAdapter(Adapter35 .class)
-        protected Double kaltmiete;
+        protected BigDecimal kaltmiete;
         @XmlAttribute(name = "Nebenkosten")
         @XmlJavaTypeAdapter(Adapter35 .class)
-        protected Double nebenkosten;
+        protected BigDecimal nebenkosten;
 
         /**
          * Gets the value of the kaltmiete property.
@@ -1713,7 +1714,7 @@ public class WazTyp
          *     {@link String }
          *     
          */
-        public Double getKaltmiete() {
+        public BigDecimal getKaltmiete() {
             return kaltmiete;
         }
 
@@ -1725,7 +1726,7 @@ public class WazTyp
          *     {@link String }
          *     
          */
-        public void setKaltmiete(Double value) {
+        public void setKaltmiete(BigDecimal value) {
             this.kaltmiete = value;
         }
 
@@ -1737,7 +1738,7 @@ public class WazTyp
          *     {@link String }
          *     
          */
-        public Double getNebenkosten() {
+        public BigDecimal getNebenkosten() {
             return nebenkosten;
         }
 
@@ -1749,7 +1750,7 @@ public class WazTyp
          *     {@link String }
          *     
          */
-        public void setNebenkosten(Double value) {
+        public void setNebenkosten(BigDecimal value) {
             this.nebenkosten = value;
         }
 
@@ -1770,12 +1771,12 @@ public class WazTyp
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
             super.appendFields(locator, buffer, strategy);
             {
-                Double theKaltmiete;
+                BigDecimal theKaltmiete;
                 theKaltmiete = this.getKaltmiete();
                 strategy.appendField(locator, this, "kaltmiete", buffer, theKaltmiete);
             }
             {
-                Double theNebenkosten;
+                BigDecimal theNebenkosten;
                 theNebenkosten = this.getNebenkosten();
                 strategy.appendField(locator, this, "nebenkosten", buffer, theNebenkosten);
             }
@@ -1797,17 +1798,17 @@ public class WazTyp
             if (draftCopy instanceof WazTyp.Monatsmiete) {
                 final WazTyp.Monatsmiete copy = ((WazTyp.Monatsmiete) draftCopy);
                 if (this.kaltmiete!= null) {
-                    Double sourceKaltmiete;
+                    BigDecimal sourceKaltmiete;
                     sourceKaltmiete = this.getKaltmiete();
-                    Double copyKaltmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
+                    BigDecimal copyKaltmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
                     copy.setKaltmiete(copyKaltmiete);
                 } else {
                     copy.kaltmiete = null;
                 }
                 if (this.nebenkosten!= null) {
-                    Double sourceNebenkosten;
+                    BigDecimal sourceNebenkosten;
                     sourceNebenkosten = this.getNebenkosten();
-                    Double copyNebenkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
+                    BigDecimal copyNebenkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
                     copy.setNebenkosten(copyNebenkosten);
                 } else {
                     copy.nebenkosten = null;
@@ -1832,18 +1833,18 @@ public class WazTyp
             }
             final WazTyp.Monatsmiete that = ((WazTyp.Monatsmiete) object);
             {
-                Double lhsKaltmiete;
+                BigDecimal lhsKaltmiete;
                 lhsKaltmiete = this.getKaltmiete();
-                Double rhsKaltmiete;
+                BigDecimal rhsKaltmiete;
                 rhsKaltmiete = that.getKaltmiete();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "kaltmiete", lhsKaltmiete), LocatorUtils.property(thatLocator, "kaltmiete", rhsKaltmiete), lhsKaltmiete, rhsKaltmiete)) {
                     return false;
                 }
             }
             {
-                Double lhsNebenkosten;
+                BigDecimal lhsNebenkosten;
                 lhsNebenkosten = this.getNebenkosten();
-                Double rhsNebenkosten;
+                BigDecimal rhsNebenkosten;
                 rhsNebenkosten = that.getNebenkosten();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenkosten", lhsNebenkosten), LocatorUtils.property(thatLocator, "nebenkosten", rhsNebenkosten), lhsNebenkosten, rhsNebenkosten)) {
                     return false;
@@ -1887,7 +1888,7 @@ public class WazTyp
 
         @XmlAttribute(name = "MietePauschal", required = true)
         @XmlJavaTypeAdapter(Adapter35 .class)
-        protected Double mietePauschal;
+        protected BigDecimal mietePauschal;
         @XmlAttribute(name = "MietePro", required = true)
         protected WazZeiteinheitenTyp mietePro;
 
@@ -1899,7 +1900,7 @@ public class WazTyp
          *     {@link String }
          *     
          */
-        public Double getMietePauschal() {
+        public BigDecimal getMietePauschal() {
             return mietePauschal;
         }
 
@@ -1911,7 +1912,7 @@ public class WazTyp
          *     {@link String }
          *     
          */
-        public void setMietePauschal(Double value) {
+        public void setMietePauschal(BigDecimal value) {
             this.mietePauschal = value;
         }
 
@@ -1956,7 +1957,7 @@ public class WazTyp
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
             super.appendFields(locator, buffer, strategy);
             {
-                Double theMietePauschal;
+                BigDecimal theMietePauschal;
                 theMietePauschal = this.getMietePauschal();
                 strategy.appendField(locator, this, "mietePauschal", buffer, theMietePauschal);
             }
@@ -1983,9 +1984,9 @@ public class WazTyp
             if (draftCopy instanceof WazTyp.Pauschalmiete) {
                 final WazTyp.Pauschalmiete copy = ((WazTyp.Pauschalmiete) draftCopy);
                 if (this.mietePauschal!= null) {
-                    Double sourceMietePauschal;
+                    BigDecimal sourceMietePauschal;
                     sourceMietePauschal = this.getMietePauschal();
-                    Double copyMietePauschal = ((Double) strategy.copy(LocatorUtils.property(locator, "mietePauschal", sourceMietePauschal), sourceMietePauschal));
+                    BigDecimal copyMietePauschal = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mietePauschal", sourceMietePauschal), sourceMietePauschal));
                     copy.setMietePauschal(copyMietePauschal);
                 } else {
                     copy.mietePauschal = null;
@@ -2018,9 +2019,9 @@ public class WazTyp
             }
             final WazTyp.Pauschalmiete that = ((WazTyp.Pauschalmiete) object);
             {
-                Double lhsMietePauschal;
+                BigDecimal lhsMietePauschal;
                 lhsMietePauschal = this.getMietePauschal();
-                Double rhsMietePauschal;
+                BigDecimal rhsMietePauschal;
                 rhsMietePauschal = that.getMietePauschal();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "mietePauschal", lhsMietePauschal), LocatorUtils.property(thatLocator, "mietePauschal", rhsMietePauschal), lhsMietePauschal, rhsMietePauschal)) {
                     return false;

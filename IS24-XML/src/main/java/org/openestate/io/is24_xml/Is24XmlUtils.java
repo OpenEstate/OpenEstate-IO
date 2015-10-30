@@ -19,14 +19,15 @@ package org.openestate.io.is24_xml;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -271,9 +272,10 @@ public class Is24XmlUtils
     return XmlUtils.parseDate( value );
   }
 
-  public static Double parsePreisAufAnfrage( String value )
+  public static BigDecimal parsePreisAufAnfrage( String value )
   {
-    return parseZahl( value, 15, 2, -0.01d, 10000000000000d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
   public static String parseEmail( String value )
@@ -380,142 +382,106 @@ public class Is24XmlUtils
     }
   }
 
-  private static Long parseZahl( String value, int totalDigits )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    format.setGroupingUsed( false );
-    format.setMaximumFractionDigits( 0 );
-    format.setMaximumIntegerDigits( totalDigits );
-    try
-    {
-      Number zahl = format.parse( value );
-      if (zahl.longValue()<0)
-        return null;
-      else
-        return zahl.longValue();
-    }
-    catch (Exception ex)
-    {
-      throw new IllegalArgumentException( "Can't parse integer value '" + value + "'!", ex );
-    }
-  }
-
-  private static Double parseZahl( String value, int totalDigits, int fractionDigits, Double min, Double max )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    format.setGroupingUsed( false );
-    format.setMaximumFractionDigits( fractionDigits );
-    format.setMaximumIntegerDigits( totalDigits-fractionDigits );
-    try
-    {
-      Number zahl = format.parse( value );
-      if (min!=null && zahl.doubleValue()<=min)
-        return null;
-      else if (max!=null && zahl.doubleValue()>=max)
-        return null;
-      else
-        return zahl.doubleValue();
-    }
-    catch (Exception ex)
-    {
-      throw new IllegalArgumentException( "Can't parse double value '" + value + "'!", ex );
-    }
-  }
-
   public static Long parseZahl2( String value )
   {
-    return parseZahl( value, 2 );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseLong( value ): null;
   }
 
   public static Long parseZahl3( String value )
   {
-    return parseZahl( value, 3 );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseLong( value ): null;
   }
 
   public static Long parseZahl4( String value )
   {
-    return parseZahl( value, 4 );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseLong( value ): null;
   }
 
   public static Long parseZahl5( String value )
   {
-    return parseZahl( value, 5 );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseLong( value ): null;
   }
 
   public static Long parseZahl8( String value )
   {
-    return parseZahl( value, 8 );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseLong( value ): null;
   }
 
   public static Long parseZahl10( String value )
   {
-    return parseZahl( value, 10 );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseLong( value ): null;
   }
 
-  public static Long parseZahl20( String value )
+  public static BigInteger parseZahl20( String value )
   {
-    return parseZahl( value, 20 );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
-  public static Double parseZahl31( String value )
+  public static BigDecimal parseZahl31( String value )
   {
-    return parseZahl( value, 3, 1, 0d, 100d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZahl32( String value )
+  public static BigDecimal parseZahl32( String value )
   {
-    return parseZahl( value, 3, 2, 0d, 10d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZahl42( String value )
+  public static BigDecimal parseZahl42( String value )
   {
-    return parseZahl( value, 4, 2, 0d, 100d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZahl52( String value )
+  public static BigDecimal parseZahl52( String value )
   {
-    return parseZahl( value, 5, 2, 0d, 1000d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZahl62( String value )
+  public static BigDecimal parseZahl62( String value )
   {
-    return parseZahl( value, 6, 2, 0d, 10000d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZahl72( String value )
+  public static BigDecimal parseZahl72( String value )
   {
-    return parseZahl( value, 7, 2, 0d, 100000d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZahl102( String value )
+  public static BigDecimal parseZahl102( String value )
   {
-    return parseZahl( value, 10, 2, 0d, 100000000d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZahl152( String value )
+  public static BigDecimal parseZahl152( String value )
   {
-    return parseZahl( value, 15, 2, 0d, 10000000000000d );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseZimmeranzahl( String value )
+  public static BigDecimal parseZimmeranzahl( String value )
   {
-    Double num = parseZahl62( value );
-    if (num!=null && num>=0.5 && num<=9999 )
-      return num;
-    else
-      throw new IllegalArgumentException( "Can't parse room number value '" + value + "'!" );
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
   public static String printDate( Calendar value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print date value!" );
+      throw new IllegalArgumentException( "Can't print date value '" + value + "'!" );
     else
       return getDateFormat().format( value.getTime() );
   }
@@ -524,14 +490,19 @@ public class Is24XmlUtils
   {
     value = StringUtils.trimToNull( value );
     if (value==null || value.length()>150 || !value.matches( ".*@.*\\..*" ))
-      throw new IllegalArgumentException( "Can't print email value!" );
+      throw new IllegalArgumentException( "Can't print email value '" + value + "'!" );
     else
       return value;
   }
 
-  public static String printPreisAufAnfrage( Double value )
+  public static String printPreisAufAnfrage( BigDecimal value )
   {
-    return printZahl( value, 15, 2, -0.01d, 10000000000000d );
+    if (value==null || value.compareTo( BigDecimal.ZERO )==-1 || value.compareTo( BigDecimal.TEN.pow( 13 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
+    else if (value.compareTo( BigDecimal.ZERO )==0)
+      return "0";
+    else
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
   private static String printText( String value, int maxLength )
@@ -621,190 +592,171 @@ public class Is24XmlUtils
   public static String printWebUrl( URL value )
   {
     if (value==null || StringUtils.isBlank( value.getHost() ))
-      throw new IllegalArgumentException( "Can't print URL value!" );
+      throw new IllegalArgumentException( "Can't print URL value '" + value + "'!" );
     else
       return value.toString();
-  }
-
-  private static String printZahl( Long value, int totalDigits )
-  {
-    final double max = Math.pow( 10, value );
-    if (value==null || value>=max)
-      throw new IllegalArgumentException( "Can't print double value!" );
-
-    NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    format.setGroupingUsed( false );
-    format.setMaximumFractionDigits( 0 );
-    format.setMaximumIntegerDigits( totalDigits );
-    try
-    {
-      return format.format( value.longValue() );
-    }
-    catch (Exception ex)
-    {
-      throw new IllegalArgumentException( "Can't print double value!", ex );
-    }
-  }
-
-  private static String printZahl( Double value, int totalDigits, int fractionDigits, Double min, Double max )
-  {
-    if (value==null || (min!=null && value<=min) || (max!=null && value>max))
-      throw new IllegalArgumentException( "Can't print double value!" );
-
-    NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    format.setGroupingUsed( false );
-    format.setMaximumFractionDigits( fractionDigits );
-    format.setMaximumIntegerDigits( totalDigits-fractionDigits );
-    try
-    {
-      return format.format( value );
-    }
-    catch (Exception ex)
-    {
-      throw new IllegalArgumentException( "Can't print double value!", ex );
-    }
   }
 
   public static String printZahl2( Long value )
   {
     if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 2 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>2)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 2 digits." );
+    return val;
   }
 
   public static String printZahl2Including0( Long value )
   {
     if (value==null || value<0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 2 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>2)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 2 digits." );
+    return val;
   }
 
   public static String printZahl3( Long value )
   {
     if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 3 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>3)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 3 digits." );
+    return val;
   }
 
   public static String printZahl3Including0( Long value )
   {
     if (value==null || value<0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 3 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>3)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 3 digits." );
+    return val;
   }
 
   public static String printZahl4( Long value )
   {
     if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 4 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>4)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 4 digits." );
+    return val;
   }
 
   public static String printZahl5( Long value )
   {
     if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 5 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>5)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 5 digits." );
+    return val;
   }
 
   public static String printZahl8( Long value )
   {
     if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 8 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>8)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 8 digits." );
+    return val;
   }
 
   public static String printZahl10( Long value )
   {
     if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 10 );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printLong( value );
+    if (val.length()>10)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 10 digits." );
+    return val;
   }
 
-  public static String printZahl20( Long value )
+  public static String printZahl20( BigInteger value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return printZahl( value, 20 );
+    if (value==null || value.compareTo( BigInteger.ZERO )!=1)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
+    String val = DatatypeConverter.printInteger( value );
+    if (val.length()>20)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'! The value exceeds maximal length of 20 digits." );
+    return val;
   }
 
-  public static String printZahl31( Double value )
+  public static String printZahl31( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 2 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 3, 1, 0d, 100d );
+      return DatatypeConverter.printDecimal( value.setScale( 1, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZahl32( Double value )
+  public static String printZahl32( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 1 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 3, 2, 0d, 10d );
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZahl42( Double value )
+  public static String printZahl42( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 2 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 4, 2, 0d, 100d );
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZahl52( Double value )
+  public static String printZahl52( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 3 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 5, 2, 0d, 1000d );
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZahl62( Double value )
+  public static String printZahl62( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 4 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 6, 2, 0d, 10000d );
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZahl72( Double value )
+  public static String printZahl72( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 5 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 7, 2, 0d, 100000d );
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZahl102( Double value )
+  public static String printZahl102( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 8 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 10, 2, 0d, 100000000d );
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZahl152( Double value )
+  public static String printZahl152( BigDecimal value )
   {
-    if (value==null || value<=0)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    if (value==null || value.compareTo( BigDecimal.ZERO )!=1 || value.compareTo( BigDecimal.TEN.pow( 13 ) )!=-1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return printZahl( value, 15, 2, 0d, 10000000000000d );
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printZimmeranzahl( Double value )
+  public static String printZimmeranzahl( BigDecimal value )
   {
-    if (value==null || value<0.5 || value>9999)
-      throw new IllegalArgumentException( "Can't print double value!" );
+    BigDecimal min = new BigDecimal( "0.5" );
+    BigDecimal max = new BigDecimal( "9999" );
+    if (value==null || value.compareTo( min )==-1 || value.compareTo( max )==1)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
       return printZahl62( value );
   }

@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -47,16 +48,16 @@ public class VermarktungWohnKaufTyp
 
     @XmlAttribute(name = "Kaufpreis", required = true)
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double kaufpreis;
+    protected BigDecimal kaufpreis;
     @XmlAttribute(name = "Wohngeld")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double wohngeld;
+    protected BigDecimal wohngeld;
     @XmlAttribute(name = "StellplatzKaufpreis")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double stellplatzKaufpreis;
+    protected BigDecimal stellplatzKaufpreis;
     @XmlAttribute(name = "MieteinnahmenProMonat")
     @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double mieteinnahmenProMonat;
+    protected BigDecimal mieteinnahmenProMonat;
 
     /**
      * Gets the value of the kaufpreis property.
@@ -66,7 +67,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public Double getKaufpreis() {
+    public BigDecimal getKaufpreis() {
         return kaufpreis;
     }
 
@@ -78,7 +79,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public void setKaufpreis(Double value) {
+    public void setKaufpreis(BigDecimal value) {
         this.kaufpreis = value;
     }
 
@@ -90,7 +91,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public Double getWohngeld() {
+    public BigDecimal getWohngeld() {
         return wohngeld;
     }
 
@@ -102,7 +103,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public void setWohngeld(Double value) {
+    public void setWohngeld(BigDecimal value) {
         this.wohngeld = value;
     }
 
@@ -114,7 +115,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public Double getStellplatzKaufpreis() {
+    public BigDecimal getStellplatzKaufpreis() {
         return stellplatzKaufpreis;
     }
 
@@ -126,7 +127,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public void setStellplatzKaufpreis(Double value) {
+    public void setStellplatzKaufpreis(BigDecimal value) {
         this.stellplatzKaufpreis = value;
     }
 
@@ -138,7 +139,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public Double getMieteinnahmenProMonat() {
+    public BigDecimal getMieteinnahmenProMonat() {
         return mieteinnahmenProMonat;
     }
 
@@ -150,7 +151,7 @@ public class VermarktungWohnKaufTyp
      *     {@link String }
      *     
      */
-    public void setMieteinnahmenProMonat(Double value) {
+    public void setMieteinnahmenProMonat(BigDecimal value) {
         this.mieteinnahmenProMonat = value;
     }
 
@@ -170,22 +171,22 @@ public class VermarktungWohnKaufTyp
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theKaufpreis;
+            BigDecimal theKaufpreis;
             theKaufpreis = this.getKaufpreis();
             strategy.appendField(locator, this, "kaufpreis", buffer, theKaufpreis);
         }
         {
-            Double theWohngeld;
+            BigDecimal theWohngeld;
             theWohngeld = this.getWohngeld();
             strategy.appendField(locator, this, "wohngeld", buffer, theWohngeld);
         }
         {
-            Double theStellplatzKaufpreis;
+            BigDecimal theStellplatzKaufpreis;
             theStellplatzKaufpreis = this.getStellplatzKaufpreis();
             strategy.appendField(locator, this, "stellplatzKaufpreis", buffer, theStellplatzKaufpreis);
         }
         {
-            Double theMieteinnahmenProMonat;
+            BigDecimal theMieteinnahmenProMonat;
             theMieteinnahmenProMonat = this.getMieteinnahmenProMonat();
             strategy.appendField(locator, this, "mieteinnahmenProMonat", buffer, theMieteinnahmenProMonat);
         }
@@ -206,33 +207,33 @@ public class VermarktungWohnKaufTyp
         if (draftCopy instanceof VermarktungWohnKaufTyp) {
             final VermarktungWohnKaufTyp copy = ((VermarktungWohnKaufTyp) draftCopy);
             if (this.kaufpreis!= null) {
-                Double sourceKaufpreis;
+                BigDecimal sourceKaufpreis;
                 sourceKaufpreis = this.getKaufpreis();
-                Double copyKaufpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "kaufpreis", sourceKaufpreis), sourceKaufpreis));
+                BigDecimal copyKaufpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaufpreis", sourceKaufpreis), sourceKaufpreis));
                 copy.setKaufpreis(copyKaufpreis);
             } else {
                 copy.kaufpreis = null;
             }
             if (this.wohngeld!= null) {
-                Double sourceWohngeld;
+                BigDecimal sourceWohngeld;
                 sourceWohngeld = this.getWohngeld();
-                Double copyWohngeld = ((Double) strategy.copy(LocatorUtils.property(locator, "wohngeld", sourceWohngeld), sourceWohngeld));
+                BigDecimal copyWohngeld = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "wohngeld", sourceWohngeld), sourceWohngeld));
                 copy.setWohngeld(copyWohngeld);
             } else {
                 copy.wohngeld = null;
             }
             if (this.stellplatzKaufpreis!= null) {
-                Double sourceStellplatzKaufpreis;
+                BigDecimal sourceStellplatzKaufpreis;
                 sourceStellplatzKaufpreis = this.getStellplatzKaufpreis();
-                Double copyStellplatzKaufpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "stellplatzKaufpreis", sourceStellplatzKaufpreis), sourceStellplatzKaufpreis));
+                BigDecimal copyStellplatzKaufpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "stellplatzKaufpreis", sourceStellplatzKaufpreis), sourceStellplatzKaufpreis));
                 copy.setStellplatzKaufpreis(copyStellplatzKaufpreis);
             } else {
                 copy.stellplatzKaufpreis = null;
             }
             if (this.mieteinnahmenProMonat!= null) {
-                Double sourceMieteinnahmenProMonat;
+                BigDecimal sourceMieteinnahmenProMonat;
                 sourceMieteinnahmenProMonat = this.getMieteinnahmenProMonat();
-                Double copyMieteinnahmenProMonat = ((Double) strategy.copy(LocatorUtils.property(locator, "mieteinnahmenProMonat", sourceMieteinnahmenProMonat), sourceMieteinnahmenProMonat));
+                BigDecimal copyMieteinnahmenProMonat = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mieteinnahmenProMonat", sourceMieteinnahmenProMonat), sourceMieteinnahmenProMonat));
                 copy.setMieteinnahmenProMonat(copyMieteinnahmenProMonat);
             } else {
                 copy.mieteinnahmenProMonat = null;
@@ -254,36 +255,36 @@ public class VermarktungWohnKaufTyp
         }
         final VermarktungWohnKaufTyp that = ((VermarktungWohnKaufTyp) object);
         {
-            Double lhsKaufpreis;
+            BigDecimal lhsKaufpreis;
             lhsKaufpreis = this.getKaufpreis();
-            Double rhsKaufpreis;
+            BigDecimal rhsKaufpreis;
             rhsKaufpreis = that.getKaufpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaufpreis", lhsKaufpreis), LocatorUtils.property(thatLocator, "kaufpreis", rhsKaufpreis), lhsKaufpreis, rhsKaufpreis)) {
                 return false;
             }
         }
         {
-            Double lhsWohngeld;
+            BigDecimal lhsWohngeld;
             lhsWohngeld = this.getWohngeld();
-            Double rhsWohngeld;
+            BigDecimal rhsWohngeld;
             rhsWohngeld = that.getWohngeld();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wohngeld", lhsWohngeld), LocatorUtils.property(thatLocator, "wohngeld", rhsWohngeld), lhsWohngeld, rhsWohngeld)) {
                 return false;
             }
         }
         {
-            Double lhsStellplatzKaufpreis;
+            BigDecimal lhsStellplatzKaufpreis;
             lhsStellplatzKaufpreis = this.getStellplatzKaufpreis();
-            Double rhsStellplatzKaufpreis;
+            BigDecimal rhsStellplatzKaufpreis;
             rhsStellplatzKaufpreis = that.getStellplatzKaufpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stellplatzKaufpreis", lhsStellplatzKaufpreis), LocatorUtils.property(thatLocator, "stellplatzKaufpreis", rhsStellplatzKaufpreis), lhsStellplatzKaufpreis, rhsStellplatzKaufpreis)) {
                 return false;
             }
         }
         {
-            Double lhsMieteinnahmenProMonat;
+            BigDecimal lhsMieteinnahmenProMonat;
             lhsMieteinnahmenProMonat = this.getMieteinnahmenProMonat();
-            Double rhsMieteinnahmenProMonat;
+            BigDecimal rhsMieteinnahmenProMonat;
             rhsMieteinnahmenProMonat = that.getMieteinnahmenProMonat();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mieteinnahmenProMonat", lhsMieteinnahmenProMonat), LocatorUtils.property(thatLocator, "mieteinnahmenProMonat", rhsMieteinnahmenProMonat), lhsMieteinnahmenProMonat, rhsMieteinnahmenProMonat)) {
                 return false;

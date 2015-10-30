@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -109,12 +110,12 @@ public class Zwangsversteigerung
         @XmlElement(name = "Preis", required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter35 .class)
         @XmlSchemaType(name = "decimal")
-        protected Double preis;
+        protected BigDecimal preis;
         @XmlElement(name = "Versteigerungstermin", required = true)
         protected VersteigerungsterminTyp versteigerungstermin;
         @XmlAttribute(name = "Gesamtflaeche", required = true)
         @XmlJavaTypeAdapter(Adapter34 .class)
-        protected Double gesamtflaeche;
+        protected BigDecimal gesamtflaeche;
 
         /**
          * Gets the value of the aenderungsdatum property.
@@ -292,7 +293,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public Double getPreis() {
+        public BigDecimal getPreis() {
             return preis;
         }
 
@@ -304,7 +305,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public void setPreis(Double value) {
+        public void setPreis(BigDecimal value) {
             this.preis = value;
         }
 
@@ -340,7 +341,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public Double getGesamtflaeche() {
+        public BigDecimal getGesamtflaeche() {
             return gesamtflaeche;
         }
 
@@ -352,7 +353,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public void setGesamtflaeche(Double value) {
+        public void setGesamtflaeche(BigDecimal value) {
             this.gesamtflaeche = value;
         }
 
@@ -408,7 +409,7 @@ public class Zwangsversteigerung
                 strategy.appendField(locator, this, "objektart", buffer, theObjektart);
             }
             {
-                Double thePreis;
+                BigDecimal thePreis;
                 thePreis = this.getPreis();
                 strategy.appendField(locator, this, "preis", buffer, thePreis);
             }
@@ -418,7 +419,7 @@ public class Zwangsversteigerung
                 strategy.appendField(locator, this, "versteigerungstermin", buffer, theVersteigerungstermin);
             }
             {
-                Double theGesamtflaeche;
+                BigDecimal theGesamtflaeche;
                 theGesamtflaeche = this.getGesamtflaeche();
                 strategy.appendField(locator, this, "gesamtflaeche", buffer, theGesamtflaeche);
             }
@@ -496,9 +497,9 @@ public class Zwangsversteigerung
                     copy.objektart = null;
                 }
                 if (this.preis!= null) {
-                    Double sourcePreis;
+                    BigDecimal sourcePreis;
                     sourcePreis = this.getPreis();
-                    Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                    BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                     copy.setPreis(copyPreis);
                 } else {
                     copy.preis = null;
@@ -512,9 +513,9 @@ public class Zwangsversteigerung
                     copy.versteigerungstermin = null;
                 }
                 if (this.gesamtflaeche!= null) {
-                    Double sourceGesamtflaeche;
+                    BigDecimal sourceGesamtflaeche;
                     sourceGesamtflaeche = this.getGesamtflaeche();
-                    Double copyGesamtflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
+                    BigDecimal copyGesamtflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
                     copy.setGesamtflaeche(copyGesamtflaeche);
                 } else {
                     copy.gesamtflaeche = null;
@@ -602,9 +603,9 @@ public class Zwangsversteigerung
                 }
             }
             {
-                Double lhsPreis;
+                BigDecimal lhsPreis;
                 lhsPreis = this.getPreis();
-                Double rhsPreis;
+                BigDecimal rhsPreis;
                 rhsPreis = that.getPreis();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                     return false;
@@ -620,9 +621,9 @@ public class Zwangsversteigerung
                 }
             }
             {
-                Double lhsGesamtflaeche;
+                BigDecimal lhsGesamtflaeche;
                 lhsGesamtflaeche = this.getGesamtflaeche();
-                Double rhsGesamtflaeche;
+                BigDecimal rhsGesamtflaeche;
                 rhsGesamtflaeche = that.getGesamtflaeche();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtflaeche", lhsGesamtflaeche), LocatorUtils.property(thatLocator, "gesamtflaeche", rhsGesamtflaeche), lhsGesamtflaeche, rhsGesamtflaeche)) {
                     return false;

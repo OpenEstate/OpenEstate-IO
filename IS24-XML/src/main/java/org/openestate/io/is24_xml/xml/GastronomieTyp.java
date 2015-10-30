@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -63,7 +64,7 @@ public class GastronomieTyp
     protected VermarktungGewerbeTyp2 vermarktung;
     @XmlAttribute(name = "GastraumFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double gastraumFlaeche;
+    protected BigDecimal gastraumFlaeche;
     @XmlAttribute(name = "GastraumPlaetze")
     @XmlJavaTypeAdapter(Adapter23 .class)
     protected Long gastraumPlaetze;
@@ -111,7 +112,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    public Double getGastraumFlaeche() {
+    public BigDecimal getGastraumFlaeche() {
         return gastraumFlaeche;
     }
 
@@ -123,7 +124,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    public void setGastraumFlaeche(Double value) {
+    public void setGastraumFlaeche(BigDecimal value) {
         this.gastraumFlaeche = value;
     }
 
@@ -293,7 +294,7 @@ public class GastronomieTyp
             strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung);
         }
         {
-            Double theGastraumFlaeche;
+            BigDecimal theGastraumFlaeche;
             theGastraumFlaeche = this.getGastraumFlaeche();
             strategy.appendField(locator, this, "gastraumFlaeche", buffer, theGastraumFlaeche);
         }
@@ -353,9 +354,9 @@ public class GastronomieTyp
                 copy.vermarktung = null;
             }
             if (this.gastraumFlaeche!= null) {
-                Double sourceGastraumFlaeche;
+                BigDecimal sourceGastraumFlaeche;
                 sourceGastraumFlaeche = this.getGastraumFlaeche();
-                Double copyGastraumFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gastraumFlaeche", sourceGastraumFlaeche), sourceGastraumFlaeche));
+                BigDecimal copyGastraumFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gastraumFlaeche", sourceGastraumFlaeche), sourceGastraumFlaeche));
                 copy.setGastraumFlaeche(copyGastraumFlaeche);
             } else {
                 copy.gastraumFlaeche = null;
@@ -437,9 +438,9 @@ public class GastronomieTyp
             }
         }
         {
-            Double lhsGastraumFlaeche;
+            BigDecimal lhsGastraumFlaeche;
             lhsGastraumFlaeche = this.getGastraumFlaeche();
-            Double rhsGastraumFlaeche;
+            BigDecimal rhsGastraumFlaeche;
             rhsGastraumFlaeche = that.getGastraumFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gastraumFlaeche", lhsGastraumFlaeche), LocatorUtils.property(thatLocator, "gastraumFlaeche", rhsGastraumFlaeche), lhsGastraumFlaeche, rhsGastraumFlaeche)) {
                 return false;

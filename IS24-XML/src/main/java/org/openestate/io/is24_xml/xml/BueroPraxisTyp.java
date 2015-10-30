@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -69,7 +70,7 @@ public class BueroPraxisTyp
     protected BueroPraxisKategorienTyp objektkategorie2;
     @XmlAttribute(name = "BueroPraxisFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
-    protected Double bueroPraxisFlaeche;
+    protected BigDecimal bueroPraxisFlaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "DatenVerkabelung")
@@ -149,7 +150,7 @@ public class BueroPraxisTyp
      *     {@link String }
      *     
      */
-    public Double getBueroPraxisFlaeche() {
+    public BigDecimal getBueroPraxisFlaeche() {
         return bueroPraxisFlaeche;
     }
 
@@ -161,7 +162,7 @@ public class BueroPraxisTyp
      *     {@link String }
      *     
      */
-    public void setBueroPraxisFlaeche(Double value) {
+    public void setBueroPraxisFlaeche(BigDecimal value) {
         this.bueroPraxisFlaeche = value;
     }
 
@@ -420,7 +421,7 @@ public class BueroPraxisTyp
             strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
         }
         {
-            Double theBueroPraxisFlaeche;
+            BigDecimal theBueroPraxisFlaeche;
             theBueroPraxisFlaeche = this.getBueroPraxisFlaeche();
             strategy.appendField(locator, this, "bueroPraxisFlaeche", buffer, theBueroPraxisFlaeche);
         }
@@ -503,9 +504,9 @@ public class BueroPraxisTyp
                 copy.objektkategorie2 = null;
             }
             if (this.bueroPraxisFlaeche!= null) {
-                Double sourceBueroPraxisFlaeche;
+                BigDecimal sourceBueroPraxisFlaeche;
                 sourceBueroPraxisFlaeche = this.getBueroPraxisFlaeche();
-                Double copyBueroPraxisFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "bueroPraxisFlaeche", sourceBueroPraxisFlaeche), sourceBueroPraxisFlaeche));
+                BigDecimal copyBueroPraxisFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "bueroPraxisFlaeche", sourceBueroPraxisFlaeche), sourceBueroPraxisFlaeche));
                 copy.setBueroPraxisFlaeche(copyBueroPraxisFlaeche);
             } else {
                 copy.bueroPraxisFlaeche = null;
@@ -620,9 +621,9 @@ public class BueroPraxisTyp
             }
         }
         {
-            Double lhsBueroPraxisFlaeche;
+            BigDecimal lhsBueroPraxisFlaeche;
             lhsBueroPraxisFlaeche = this.getBueroPraxisFlaeche();
-            Double rhsBueroPraxisFlaeche;
+            BigDecimal rhsBueroPraxisFlaeche;
             rhsBueroPraxisFlaeche = that.getBueroPraxisFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bueroPraxisFlaeche", lhsBueroPraxisFlaeche), LocatorUtils.property(thatLocator, "bueroPraxisFlaeche", rhsBueroPraxisFlaeche), lhsBueroPraxisFlaeche, rhsBueroPraxisFlaeche)) {
                 return false;
