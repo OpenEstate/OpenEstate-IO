@@ -21,6 +21,8 @@ import org.openestate.io.trovit.xml.types.Unit;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -313,26 +315,28 @@ public class TrovitUtils
     return XmlUtils.parseDate( value );
   }
 
-  public static Double parseFloat( String value )
+  public static BigDecimal parseFloat( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Integer parseInt( String value )
+  public static BigInteger parseInt( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseInt( value ): null;
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
   public static IntBool parseIntBool( String value )
   {
     value = StringUtils.trimToNull( value );
 
-    if ("0".equalsIgnoreCase( value ))
-      return new IntBool( 0 );
+    if (value==null)
+      return null;
+    else if ("0".equalsIgnoreCase( value ))
+      return new IntBool( BigInteger.ZERO );
     else if ("1".equalsIgnoreCase( value ))
-      return new IntBool( 1 );
+      return new IntBool( BigInteger.ONE );
 
     try
     {
@@ -345,7 +349,7 @@ public class TrovitUtils
 
     try
     {
-      Integer intValue = parseInt( value );
+      BigInteger intValue = DatatypeConverter.parseInteger( value );
       if (intValue!=null) return new IntBool( intValue );
     }
     catch (Exception ex)
@@ -355,10 +359,10 @@ public class TrovitUtils
     throw new IllegalArgumentException( "Can't parse int-bool value '"+value+"'!" );
   }
 
-  public static Long parseLong( String value )
+  public static BigInteger parseLong( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseLong( value ): null;
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
   public static PriceInterval parsePriceInterval( String value )
@@ -373,7 +377,7 @@ public class TrovitUtils
     return priceInterval;
   }
 
-  public static Double parsePriceValue( String value )
+  public static BigDecimal parsePriceValue( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
@@ -383,7 +387,7 @@ public class TrovitUtils
       NumberFormat formatter = NumberFormat.getNumberInstance( Locale.ENGLISH );
       formatter.setGroupingUsed( false );
       formatter.setMaximumFractionDigits( 2 );
-      return formatter.parse( value ).doubleValue();
+      return BigDecimal.valueOf( formatter.parse( value ).doubleValue() );
     }
     catch (Exception ex)
     {
@@ -394,7 +398,7 @@ public class TrovitUtils
       NumberFormat formatter = NumberFormat.getNumberInstance( Locale.GERMAN );
       formatter.setGroupingUsed( false );
       formatter.setMaximumFractionDigits( 2 );
-      return formatter.parse( value ).doubleValue();
+      return BigDecimal.valueOf( formatter.parse( value ).doubleValue() );
     }
     catch (Exception ex)
     {
@@ -475,40 +479,40 @@ public class TrovitUtils
       return getDateFormat().format( value.getTime() );
   }
 
-  public static String printFloat( Double value )
+  public static String printFloat( BigDecimal value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print float value!" );
     else
-      return DatatypeConverter.printDouble( value );
+      return DatatypeConverter.printDecimal( value );
   }
 
-  public static String printInt( Integer value )
+  public static String printInt( BigInteger value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print integer value!" );
     else
-      return DatatypeConverter.printInt( value );
+      return DatatypeConverter.printInteger( value );
   }
 
   public static String printIntBool( IntBool value )
   {
     Boolean boolValue = (value!=null)? value.getBoolValue(): null;
-    Integer intValue = (value!=null)? value.getIntValue(): null;
+    BigInteger intValue = (value!=null)? value.getIntValue(): null;
     if (boolValue!=null)
-      return printBool( boolValue );
+      return DatatypeConverter.printBoolean( boolValue );
     else if (intValue!=null)
-      return printInt( intValue );
+      return DatatypeConverter.printInteger( intValue );
     else
       throw new IllegalArgumentException( "Can't print int-bool value!" );
   }
 
-  public static String printLong( Long value )
+  public static String printLong( BigInteger value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print long value!" );
     else
-      return DatatypeConverter.printLong( value );
+      return DatatypeConverter.printInteger( value );
   }
 
   public static String printPriceInterval( PriceInterval value )
@@ -519,15 +523,12 @@ public class TrovitUtils
       return value.write();
   }
 
-  public static String printPriceValue( Double value )
+  public static String printPriceValue( BigDecimal value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print price value!" );
-
-    NumberFormat formatter = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    formatter.setGroupingUsed( false );
-    formatter.setMaximumFractionDigits( 2 );
-    return formatter.format( value );
+    else
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
   public static String printString100( String value )

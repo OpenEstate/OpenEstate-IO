@@ -16,6 +16,8 @@
 
 package org.openestate.io.trovit.xml.types;
 
+import java.math.BigInteger;
+
 /**
  * IntBool.
  *
@@ -24,10 +26,10 @@ package org.openestate.io.trovit.xml.types;
  */
 public class IntBool
 {
-  public Integer intValue;
+  public BigInteger intValue;
   public Boolean boolValue;
 
-  public IntBool( Integer intValue )
+  public IntBool( BigInteger intValue )
   {
     this.boolValue = null;
     this.intValue = intValue;
@@ -44,7 +46,7 @@ public class IntBool
     return boolValue;
   }
 
-  public Integer getIntValue()
+  public BigInteger getIntValue()
   {
     return intValue;
   }
@@ -55,7 +57,7 @@ public class IntBool
     this.boolValue = boolValue;
   }
 
-  public void setIntValue( Integer intValue )
+  public void setIntValue( BigInteger intValue )
   {
     this.boolValue = null;
     this.intValue = intValue;

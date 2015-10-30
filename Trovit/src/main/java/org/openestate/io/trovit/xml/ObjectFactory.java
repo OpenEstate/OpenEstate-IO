@@ -1,6 +1,8 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -233,23 +235,23 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "rooms")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createRooms(Double value) {
-        return new JAXBElement<Double>(_Rooms_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createRooms(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Rooms_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "bathrooms")
     @XmlJavaTypeAdapter(Adapter4 .class)
-    public JAXBElement<Double> createBathrooms(Double value) {
-        return new JAXBElement<Double>(_Bathrooms_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createBathrooms(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Bathrooms_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -303,23 +305,23 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "latitude")
     @XmlJavaTypeAdapter(Adapter11 .class)
-    public JAXBElement<Double> createLatitude(Double value) {
-        return new JAXBElement<Double>(_Latitude_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createLatitude(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Latitude_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "longitude")
     @XmlJavaTypeAdapter(Adapter11 .class)
-    public JAXBElement<Double> createLongitude(Double value) {
-        return new JAXBElement<Double>(_Longitude_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createLongitude(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Longitude_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -333,13 +335,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "plot_area")
     @XmlJavaTypeAdapter(Adapter8 .class)
-    public JAXBElement<Integer> createPlotArea(Integer value) {
-        return new JAXBElement<Integer>(_PlotArea_QNAME, Integer.class, null, value);
+    public JAXBElement<BigInteger> createPlotArea(BigInteger value) {
+        return new JAXBElement<BigInteger>(_PlotArea_QNAME, BigInteger.class, null, value);
     }
 
     /**
