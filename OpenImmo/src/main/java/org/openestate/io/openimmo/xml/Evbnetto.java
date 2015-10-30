@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Evbnetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "evbust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double evbust;
+    protected BigDecimal evbust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Evbnetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Evbnetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Evbnetto
      *     {@link String }
      *     
      */
-    public Double getEvbust() {
+    public BigDecimal getEvbust() {
         return evbust;
     }
 
@@ -90,7 +91,7 @@ public class Evbnetto
      *     {@link String }
      *     
      */
-    public void setEvbust(Double value) {
+    public void setEvbust(BigDecimal value) {
         this.evbust = value;
     }
 
@@ -110,12 +111,12 @@ public class Evbnetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theEvbust;
+            BigDecimal theEvbust;
             theEvbust = this.getEvbust();
             strategy.appendField(locator, this, "evbust", buffer, theEvbust);
         }
@@ -136,17 +137,17 @@ public class Evbnetto
         if (draftCopy instanceof Evbnetto) {
             final Evbnetto copy = ((Evbnetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.evbust!= null) {
-                Double sourceEvbust;
+                BigDecimal sourceEvbust;
                 sourceEvbust = this.getEvbust();
-                Double copyEvbust = ((Double) strategy.copy(LocatorUtils.property(locator, "evbust", sourceEvbust), sourceEvbust));
+                BigDecimal copyEvbust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "evbust", sourceEvbust), sourceEvbust));
                 copy.setEvbust(copyEvbust);
             } else {
                 copy.evbust = null;
@@ -168,18 +169,18 @@ public class Evbnetto
         }
         final Evbnetto that = ((Evbnetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsEvbust;
+            BigDecimal lhsEvbust;
             lhsEvbust = this.getEvbust();
-            Double rhsEvbust;
+            BigDecimal rhsEvbust;
             rhsEvbust = that.getEvbust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "evbust", lhsEvbust), LocatorUtils.property(thatLocator, "evbust", rhsEvbust), lhsEvbust, rhsEvbust)) {
                 return false;

@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -39,7 +40,7 @@ public class BreitbandZugang
     @XmlAttribute(name = "speed")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double speed;
+    protected BigDecimal speed;
 
     /**
      * Gets the value of the art property.
@@ -73,7 +74,7 @@ public class BreitbandZugang
      *     {@link String }
      *     
      */
-    public Double getSpeed() {
+    public BigDecimal getSpeed() {
         return speed;
     }
 
@@ -85,7 +86,7 @@ public class BreitbandZugang
      *     {@link String }
      *     
      */
-    public void setSpeed(Double value) {
+    public void setSpeed(BigDecimal value) {
         this.speed = value;
     }
 
@@ -110,7 +111,7 @@ public class BreitbandZugang
             strategy.appendField(locator, this, "art", buffer, theArt);
         }
         {
-            Double theSpeed;
+            BigDecimal theSpeed;
             theSpeed = this.getSpeed();
             strategy.appendField(locator, this, "speed", buffer, theSpeed);
         }
@@ -139,9 +140,9 @@ public class BreitbandZugang
                 copy.art = null;
             }
             if (this.speed!= null) {
-                Double sourceSpeed;
+                BigDecimal sourceSpeed;
                 sourceSpeed = this.getSpeed();
-                Double copySpeed = ((Double) strategy.copy(LocatorUtils.property(locator, "speed", sourceSpeed), sourceSpeed));
+                BigDecimal copySpeed = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "speed", sourceSpeed), sourceSpeed));
                 copy.setSpeed(copySpeed);
             } else {
                 copy.speed = null;
@@ -172,9 +173,9 @@ public class BreitbandZugang
             }
         }
         {
-            Double lhsSpeed;
+            BigDecimal lhsSpeed;
             lhsSpeed = this.getSpeed();
-            Double rhsSpeed;
+            BigDecimal rhsSpeed;
             rhsSpeed = that.getSpeed();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "speed", lhsSpeed), LocatorUtils.property(thatLocator, "speed", rhsSpeed), lhsSpeed, rhsSpeed)) {
                 return false;

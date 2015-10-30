@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Gesamtmietenetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "gesamtmieteust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gesamtmieteust;
+    protected BigDecimal gesamtmieteust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Gesamtmietenetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Gesamtmietenetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Gesamtmietenetto
      *     {@link String }
      *     
      */
-    public Double getGesamtmieteust() {
+    public BigDecimal getGesamtmieteust() {
         return gesamtmieteust;
     }
 
@@ -90,7 +91,7 @@ public class Gesamtmietenetto
      *     {@link String }
      *     
      */
-    public void setGesamtmieteust(Double value) {
+    public void setGesamtmieteust(BigDecimal value) {
         this.gesamtmieteust = value;
     }
 
@@ -110,12 +111,12 @@ public class Gesamtmietenetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theGesamtmieteust;
+            BigDecimal theGesamtmieteust;
             theGesamtmieteust = this.getGesamtmieteust();
             strategy.appendField(locator, this, "gesamtmieteust", buffer, theGesamtmieteust);
         }
@@ -136,17 +137,17 @@ public class Gesamtmietenetto
         if (draftCopy instanceof Gesamtmietenetto) {
             final Gesamtmietenetto copy = ((Gesamtmietenetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.gesamtmieteust!= null) {
-                Double sourceGesamtmieteust;
+                BigDecimal sourceGesamtmieteust;
                 sourceGesamtmieteust = this.getGesamtmieteust();
-                Double copyGesamtmieteust = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtmieteust", sourceGesamtmieteust), sourceGesamtmieteust));
+                BigDecimal copyGesamtmieteust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtmieteust", sourceGesamtmieteust), sourceGesamtmieteust));
                 copy.setGesamtmieteust(copyGesamtmieteust);
             } else {
                 copy.gesamtmieteust = null;
@@ -168,18 +169,18 @@ public class Gesamtmietenetto
         }
         final Gesamtmietenetto that = ((Gesamtmietenetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsGesamtmieteust;
+            BigDecimal lhsGesamtmieteust;
             lhsGesamtmieteust = this.getGesamtmieteust();
-            Double rhsGesamtmieteust;
+            BigDecimal rhsGesamtmieteust;
             rhsGesamtmieteust = that.getGesamtmieteust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtmieteust", lhsGesamtmieteust), LocatorUtils.property(thatLocator, "gesamtmieteust", rhsGesamtmieteust), lhsGesamtmieteust, rhsGesamtmieteust)) {
                 return false;

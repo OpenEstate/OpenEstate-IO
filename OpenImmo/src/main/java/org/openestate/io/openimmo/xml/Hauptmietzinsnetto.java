@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Hauptmietzinsnetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "hauptmietzinsust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double hauptmietzinsust;
+    protected BigDecimal hauptmietzinsust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Hauptmietzinsnetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Hauptmietzinsnetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Hauptmietzinsnetto
      *     {@link String }
      *     
      */
-    public Double getHauptmietzinsust() {
+    public BigDecimal getHauptmietzinsust() {
         return hauptmietzinsust;
     }
 
@@ -90,7 +91,7 @@ public class Hauptmietzinsnetto
      *     {@link String }
      *     
      */
-    public void setHauptmietzinsust(Double value) {
+    public void setHauptmietzinsust(BigDecimal value) {
         this.hauptmietzinsust = value;
     }
 
@@ -110,12 +111,12 @@ public class Hauptmietzinsnetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theHauptmietzinsust;
+            BigDecimal theHauptmietzinsust;
             theHauptmietzinsust = this.getHauptmietzinsust();
             strategy.appendField(locator, this, "hauptmietzinsust", buffer, theHauptmietzinsust);
         }
@@ -136,17 +137,17 @@ public class Hauptmietzinsnetto
         if (draftCopy instanceof Hauptmietzinsnetto) {
             final Hauptmietzinsnetto copy = ((Hauptmietzinsnetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.hauptmietzinsust!= null) {
-                Double sourceHauptmietzinsust;
+                BigDecimal sourceHauptmietzinsust;
                 sourceHauptmietzinsust = this.getHauptmietzinsust();
-                Double copyHauptmietzinsust = ((Double) strategy.copy(LocatorUtils.property(locator, "hauptmietzinsust", sourceHauptmietzinsust), sourceHauptmietzinsust));
+                BigDecimal copyHauptmietzinsust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hauptmietzinsust", sourceHauptmietzinsust), sourceHauptmietzinsust));
                 copy.setHauptmietzinsust(copyHauptmietzinsust);
             } else {
                 copy.hauptmietzinsust = null;
@@ -168,18 +169,18 @@ public class Hauptmietzinsnetto
         }
         final Hauptmietzinsnetto that = ((Hauptmietzinsnetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsHauptmietzinsust;
+            BigDecimal lhsHauptmietzinsust;
             lhsHauptmietzinsust = this.getHauptmietzinsust();
-            Double rhsHauptmietzinsust;
+            BigDecimal rhsHauptmietzinsust;
             rhsHauptmietzinsust = that.getHauptmietzinsust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hauptmietzinsust", lhsHauptmietzinsust), LocatorUtils.property(thatLocator, "hauptmietzinsust", rhsHauptmietzinsust), lhsHauptmietzinsust, rhsHauptmietzinsust)) {
                 return false;

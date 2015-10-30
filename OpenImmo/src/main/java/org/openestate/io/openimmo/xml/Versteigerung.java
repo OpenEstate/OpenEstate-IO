@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -56,7 +57,7 @@ public class Versteigerung
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double verkehrswert;
+    protected BigDecimal verkehrswert;
 
     /**
      * Gets the value of the zwangsversteigerung property.
@@ -186,7 +187,7 @@ public class Versteigerung
      *     {@link String }
      *     
      */
-    public Double getVerkehrswert() {
+    public BigDecimal getVerkehrswert() {
         return verkehrswert;
     }
 
@@ -198,7 +199,7 @@ public class Versteigerung
      *     {@link String }
      *     
      */
-    public void setVerkehrswert(Double value) {
+    public void setVerkehrswert(BigDecimal value) {
         this.verkehrswert = value;
     }
 
@@ -243,7 +244,7 @@ public class Versteigerung
             strategy.appendField(locator, this, "amtsgericht", buffer, theAmtsgericht);
         }
         {
-            Double theVerkehrswert;
+            BigDecimal theVerkehrswert;
             theVerkehrswert = this.getVerkehrswert();
             strategy.appendField(locator, this, "verkehrswert", buffer, theVerkehrswert);
         }
@@ -304,9 +305,9 @@ public class Versteigerung
                 copy.amtsgericht = null;
             }
             if (this.verkehrswert!= null) {
-                Double sourceVerkehrswert;
+                BigDecimal sourceVerkehrswert;
                 sourceVerkehrswert = this.getVerkehrswert();
-                Double copyVerkehrswert = ((Double) strategy.copy(LocatorUtils.property(locator, "verkehrswert", sourceVerkehrswert), sourceVerkehrswert));
+                BigDecimal copyVerkehrswert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verkehrswert", sourceVerkehrswert), sourceVerkehrswert));
                 copy.setVerkehrswert(copyVerkehrswert);
             } else {
                 copy.verkehrswert = null;
@@ -373,9 +374,9 @@ public class Versteigerung
             }
         }
         {
-            Double lhsVerkehrswert;
+            BigDecimal lhsVerkehrswert;
             lhsVerkehrswert = this.getVerkehrswert();
-            Double rhsVerkehrswert;
+            BigDecimal rhsVerkehrswert;
             rhsVerkehrswert = that.getVerkehrswert();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "verkehrswert", lhsVerkehrswert), LocatorUtils.property(thatLocator, "verkehrswert", rhsVerkehrswert), lhsVerkehrswert, rhsVerkehrswert)) {
                 return false;

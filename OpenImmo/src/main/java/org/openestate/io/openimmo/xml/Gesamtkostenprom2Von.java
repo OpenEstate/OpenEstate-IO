@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Gesamtkostenprom2Von
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "gesamtkostenprom2bis")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gesamtkostenprom2Bis;
+    protected BigDecimal gesamtkostenprom2Bis;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Gesamtkostenprom2Von
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Gesamtkostenprom2Von
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Gesamtkostenprom2Von
      *     {@link String }
      *     
      */
-    public Double getGesamtkostenprom2Bis() {
+    public BigDecimal getGesamtkostenprom2Bis() {
         return gesamtkostenprom2Bis;
     }
 
@@ -90,7 +91,7 @@ public class Gesamtkostenprom2Von
      *     {@link String }
      *     
      */
-    public void setGesamtkostenprom2Bis(Double value) {
+    public void setGesamtkostenprom2Bis(BigDecimal value) {
         this.gesamtkostenprom2Bis = value;
     }
 
@@ -110,12 +111,12 @@ public class Gesamtkostenprom2Von
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theGesamtkostenprom2Bis;
+            BigDecimal theGesamtkostenprom2Bis;
             theGesamtkostenprom2Bis = this.getGesamtkostenprom2Bis();
             strategy.appendField(locator, this, "gesamtkostenprom2Bis", buffer, theGesamtkostenprom2Bis);
         }
@@ -136,17 +137,17 @@ public class Gesamtkostenprom2Von
         if (draftCopy instanceof Gesamtkostenprom2Von) {
             final Gesamtkostenprom2Von copy = ((Gesamtkostenprom2Von) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.gesamtkostenprom2Bis!= null) {
-                Double sourceGesamtkostenprom2Bis;
+                BigDecimal sourceGesamtkostenprom2Bis;
                 sourceGesamtkostenprom2Bis = this.getGesamtkostenprom2Bis();
-                Double copyGesamtkostenprom2Bis = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtkostenprom2Bis", sourceGesamtkostenprom2Bis), sourceGesamtkostenprom2Bis));
+                BigDecimal copyGesamtkostenprom2Bis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtkostenprom2Bis", sourceGesamtkostenprom2Bis), sourceGesamtkostenprom2Bis));
                 copy.setGesamtkostenprom2Bis(copyGesamtkostenprom2Bis);
             } else {
                 copy.gesamtkostenprom2Bis = null;
@@ -168,18 +169,18 @@ public class Gesamtkostenprom2Von
         }
         final Gesamtkostenprom2Von that = ((Gesamtkostenprom2Von) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsGesamtkostenprom2Bis;
+            BigDecimal lhsGesamtkostenprom2Bis;
             lhsGesamtkostenprom2Bis = this.getGesamtkostenprom2Bis();
-            Double rhsGesamtkostenprom2Bis;
+            BigDecimal rhsGesamtkostenprom2Bis;
             rhsGesamtkostenprom2Bis = that.getGesamtkostenprom2Bis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtkostenprom2Bis", lhsGesamtkostenprom2Bis), LocatorUtils.property(thatLocator, "gesamtkostenprom2Bis", rhsGesamtkostenprom2Bis), lhsGesamtkostenprom2Bis, rhsGesamtkostenprom2Bis)) {
                 return false;

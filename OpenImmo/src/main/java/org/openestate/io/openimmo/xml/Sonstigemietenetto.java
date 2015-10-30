@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Sonstigemietenetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "sonstigemieteust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double sonstigemieteust;
+    protected BigDecimal sonstigemieteust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Sonstigemietenetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Sonstigemietenetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Sonstigemietenetto
      *     {@link String }
      *     
      */
-    public Double getSonstigemieteust() {
+    public BigDecimal getSonstigemieteust() {
         return sonstigemieteust;
     }
 
@@ -90,7 +91,7 @@ public class Sonstigemietenetto
      *     {@link String }
      *     
      */
-    public void setSonstigemieteust(Double value) {
+    public void setSonstigemieteust(BigDecimal value) {
         this.sonstigemieteust = value;
     }
 
@@ -110,12 +111,12 @@ public class Sonstigemietenetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theSonstigemieteust;
+            BigDecimal theSonstigemieteust;
             theSonstigemieteust = this.getSonstigemieteust();
             strategy.appendField(locator, this, "sonstigemieteust", buffer, theSonstigemieteust);
         }
@@ -136,17 +137,17 @@ public class Sonstigemietenetto
         if (draftCopy instanceof Sonstigemietenetto) {
             final Sonstigemietenetto copy = ((Sonstigemietenetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.sonstigemieteust!= null) {
-                Double sourceSonstigemieteust;
+                BigDecimal sourceSonstigemieteust;
                 sourceSonstigemieteust = this.getSonstigemieteust();
-                Double copySonstigemieteust = ((Double) strategy.copy(LocatorUtils.property(locator, "sonstigemieteust", sourceSonstigemieteust), sourceSonstigemieteust));
+                BigDecimal copySonstigemieteust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "sonstigemieteust", sourceSonstigemieteust), sourceSonstigemieteust));
                 copy.setSonstigemieteust(copySonstigemieteust);
             } else {
                 copy.sonstigemieteust = null;
@@ -168,18 +169,18 @@ public class Sonstigemietenetto
         }
         final Sonstigemietenetto that = ((Sonstigemietenetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsSonstigemieteust;
+            BigDecimal lhsSonstigemieteust;
             lhsSonstigemieteust = this.getSonstigemieteust();
-            Double rhsSonstigemieteust;
+            BigDecimal rhsSonstigemieteust;
             rhsSonstigemieteust = that.getSonstigemieteust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstigemieteust", lhsSonstigemieteust), LocatorUtils.property(thatLocator, "sonstigemieteust", rhsSonstigemieteust), lhsSonstigemieteust, rhsSonstigemieteust)) {
                 return false;

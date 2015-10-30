@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Betriebskostennetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "betriebskostenust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double betriebskostenust;
+    protected BigDecimal betriebskostenust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Betriebskostennetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Betriebskostennetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Betriebskostennetto
      *     {@link String }
      *     
      */
-    public Double getBetriebskostenust() {
+    public BigDecimal getBetriebskostenust() {
         return betriebskostenust;
     }
 
@@ -90,7 +91,7 @@ public class Betriebskostennetto
      *     {@link String }
      *     
      */
-    public void setBetriebskostenust(Double value) {
+    public void setBetriebskostenust(BigDecimal value) {
         this.betriebskostenust = value;
     }
 
@@ -110,12 +111,12 @@ public class Betriebskostennetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theBetriebskostenust;
+            BigDecimal theBetriebskostenust;
             theBetriebskostenust = this.getBetriebskostenust();
             strategy.appendField(locator, this, "betriebskostenust", buffer, theBetriebskostenust);
         }
@@ -136,17 +137,17 @@ public class Betriebskostennetto
         if (draftCopy instanceof Betriebskostennetto) {
             final Betriebskostennetto copy = ((Betriebskostennetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.betriebskostenust!= null) {
-                Double sourceBetriebskostenust;
+                BigDecimal sourceBetriebskostenust;
                 sourceBetriebskostenust = this.getBetriebskostenust();
-                Double copyBetriebskostenust = ((Double) strategy.copy(LocatorUtils.property(locator, "betriebskostenust", sourceBetriebskostenust), sourceBetriebskostenust));
+                BigDecimal copyBetriebskostenust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "betriebskostenust", sourceBetriebskostenust), sourceBetriebskostenust));
                 copy.setBetriebskostenust(copyBetriebskostenust);
             } else {
                 copy.betriebskostenust = null;
@@ -168,18 +169,18 @@ public class Betriebskostennetto
         }
         final Betriebskostennetto that = ((Betriebskostennetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsBetriebskostenust;
+            BigDecimal lhsBetriebskostenust;
             lhsBetriebskostenust = this.getBetriebskostenust();
-            Double rhsBetriebskostenust;
+            BigDecimal rhsBetriebskostenust;
             rhsBetriebskostenust = that.getBetriebskostenust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "betriebskostenust", lhsBetriebskostenust), LocatorUtils.property(thatLocator, "betriebskostenust", rhsBetriebskostenust), lhsBetriebskostenust, rhsBetriebskostenust)) {
                 return false;

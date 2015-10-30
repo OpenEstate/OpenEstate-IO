@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Gesamtbelastungnetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "gesamtbelastungust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gesamtbelastungust;
+    protected BigDecimal gesamtbelastungust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Gesamtbelastungnetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Gesamtbelastungnetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Gesamtbelastungnetto
      *     {@link String }
      *     
      */
-    public Double getGesamtbelastungust() {
+    public BigDecimal getGesamtbelastungust() {
         return gesamtbelastungust;
     }
 
@@ -90,7 +91,7 @@ public class Gesamtbelastungnetto
      *     {@link String }
      *     
      */
-    public void setGesamtbelastungust(Double value) {
+    public void setGesamtbelastungust(BigDecimal value) {
         this.gesamtbelastungust = value;
     }
 
@@ -110,12 +111,12 @@ public class Gesamtbelastungnetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theGesamtbelastungust;
+            BigDecimal theGesamtbelastungust;
             theGesamtbelastungust = this.getGesamtbelastungust();
             strategy.appendField(locator, this, "gesamtbelastungust", buffer, theGesamtbelastungust);
         }
@@ -136,17 +137,17 @@ public class Gesamtbelastungnetto
         if (draftCopy instanceof Gesamtbelastungnetto) {
             final Gesamtbelastungnetto copy = ((Gesamtbelastungnetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.gesamtbelastungust!= null) {
-                Double sourceGesamtbelastungust;
+                BigDecimal sourceGesamtbelastungust;
                 sourceGesamtbelastungust = this.getGesamtbelastungust();
-                Double copyGesamtbelastungust = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtbelastungust", sourceGesamtbelastungust), sourceGesamtbelastungust));
+                BigDecimal copyGesamtbelastungust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtbelastungust", sourceGesamtbelastungust), sourceGesamtbelastungust));
                 copy.setGesamtbelastungust(copyGesamtbelastungust);
             } else {
                 copy.gesamtbelastungust = null;
@@ -168,18 +169,18 @@ public class Gesamtbelastungnetto
         }
         final Gesamtbelastungnetto that = ((Gesamtbelastungnetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsGesamtbelastungust;
+            BigDecimal lhsGesamtbelastungust;
             lhsGesamtbelastungust = this.getGesamtbelastungust();
-            Double rhsGesamtbelastungust;
+            BigDecimal rhsGesamtbelastungust;
             rhsGesamtbelastungust = that.getGesamtbelastungust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtbelastungust", lhsGesamtbelastungust), LocatorUtils.property(thatLocator, "gesamtbelastungust", rhsGesamtbelastungust), lhsGesamtbelastungust, rhsGesamtbelastungust)) {
                 return false;

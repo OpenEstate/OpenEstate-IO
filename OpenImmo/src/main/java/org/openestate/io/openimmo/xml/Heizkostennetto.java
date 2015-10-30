@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Heizkostennetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "heizkostenust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double heizkostenust;
+    protected BigDecimal heizkostenust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Heizkostennetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Heizkostennetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Heizkostennetto
      *     {@link String }
      *     
      */
-    public Double getHeizkostenust() {
+    public BigDecimal getHeizkostenust() {
         return heizkostenust;
     }
 
@@ -90,7 +91,7 @@ public class Heizkostennetto
      *     {@link String }
      *     
      */
-    public void setHeizkostenust(Double value) {
+    public void setHeizkostenust(BigDecimal value) {
         this.heizkostenust = value;
     }
 
@@ -110,12 +111,12 @@ public class Heizkostennetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theHeizkostenust;
+            BigDecimal theHeizkostenust;
             theHeizkostenust = this.getHeizkostenust();
             strategy.appendField(locator, this, "heizkostenust", buffer, theHeizkostenust);
         }
@@ -136,17 +137,17 @@ public class Heizkostennetto
         if (draftCopy instanceof Heizkostennetto) {
             final Heizkostennetto copy = ((Heizkostennetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.heizkostenust!= null) {
-                Double sourceHeizkostenust;
+                BigDecimal sourceHeizkostenust;
                 sourceHeizkostenust = this.getHeizkostenust();
-                Double copyHeizkostenust = ((Double) strategy.copy(LocatorUtils.property(locator, "heizkostenust", sourceHeizkostenust), sourceHeizkostenust));
+                BigDecimal copyHeizkostenust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "heizkostenust", sourceHeizkostenust), sourceHeizkostenust));
                 copy.setHeizkostenust(copyHeizkostenust);
             } else {
                 copy.heizkostenust = null;
@@ -168,18 +169,18 @@ public class Heizkostennetto
         }
         final Heizkostennetto that = ((Heizkostennetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsHeizkostenust;
+            BigDecimal lhsHeizkostenust;
             lhsHeizkostenust = this.getHeizkostenust();
-            Double rhsHeizkostenust;
+            BigDecimal rhsHeizkostenust;
             rhsHeizkostenust = that.getHeizkostenust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "heizkostenust", lhsHeizkostenust), LocatorUtils.property(thatLocator, "heizkostenust", rhsHeizkostenust), lhsHeizkostenust, rhsHeizkostenust)) {
                 return false;

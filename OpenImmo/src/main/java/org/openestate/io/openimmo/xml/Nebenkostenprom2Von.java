@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Nebenkostenprom2Von
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "nebenkostenprom2bis")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nebenkostenprom2Bis;
+    protected BigDecimal nebenkostenprom2Bis;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Nebenkostenprom2Von
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Nebenkostenprom2Von
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Nebenkostenprom2Von
      *     {@link String }
      *     
      */
-    public Double getNebenkostenprom2Bis() {
+    public BigDecimal getNebenkostenprom2Bis() {
         return nebenkostenprom2Bis;
     }
 
@@ -90,7 +91,7 @@ public class Nebenkostenprom2Von
      *     {@link String }
      *     
      */
-    public void setNebenkostenprom2Bis(Double value) {
+    public void setNebenkostenprom2Bis(BigDecimal value) {
         this.nebenkostenprom2Bis = value;
     }
 
@@ -110,12 +111,12 @@ public class Nebenkostenprom2Von
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theNebenkostenprom2Bis;
+            BigDecimal theNebenkostenprom2Bis;
             theNebenkostenprom2Bis = this.getNebenkostenprom2Bis();
             strategy.appendField(locator, this, "nebenkostenprom2Bis", buffer, theNebenkostenprom2Bis);
         }
@@ -136,17 +137,17 @@ public class Nebenkostenprom2Von
         if (draftCopy instanceof Nebenkostenprom2Von) {
             final Nebenkostenprom2Von copy = ((Nebenkostenprom2Von) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.nebenkostenprom2Bis!= null) {
-                Double sourceNebenkostenprom2Bis;
+                BigDecimal sourceNebenkostenprom2Bis;
                 sourceNebenkostenprom2Bis = this.getNebenkostenprom2Bis();
-                Double copyNebenkostenprom2Bis = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenkostenprom2Bis", sourceNebenkostenprom2Bis), sourceNebenkostenprom2Bis));
+                BigDecimal copyNebenkostenprom2Bis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenkostenprom2Bis", sourceNebenkostenprom2Bis), sourceNebenkostenprom2Bis));
                 copy.setNebenkostenprom2Bis(copyNebenkostenprom2Bis);
             } else {
                 copy.nebenkostenprom2Bis = null;
@@ -168,18 +169,18 @@ public class Nebenkostenprom2Von
         }
         final Nebenkostenprom2Von that = ((Nebenkostenprom2Von) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsNebenkostenprom2Bis;
+            BigDecimal lhsNebenkostenprom2Bis;
             lhsNebenkostenprom2Bis = this.getNebenkostenprom2Bis();
-            Double rhsNebenkostenprom2Bis;
+            BigDecimal rhsNebenkostenprom2Bis;
             rhsNebenkostenprom2Bis = that.getNebenkostenprom2Bis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenkostenprom2Bis", lhsNebenkostenprom2Bis), LocatorUtils.property(thatLocator, "nebenkostenprom2Bis", rhsNebenkostenprom2Bis), lhsNebenkostenprom2Bis, rhsNebenkostenprom2Bis)) {
                 return false;

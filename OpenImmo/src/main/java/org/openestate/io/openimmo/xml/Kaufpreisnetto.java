@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Kaufpreisnetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "kaufpreisust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kaufpreisust;
+    protected BigDecimal kaufpreisust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Kaufpreisnetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Kaufpreisnetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Kaufpreisnetto
      *     {@link String }
      *     
      */
-    public Double getKaufpreisust() {
+    public BigDecimal getKaufpreisust() {
         return kaufpreisust;
     }
 
@@ -90,7 +91,7 @@ public class Kaufpreisnetto
      *     {@link String }
      *     
      */
-    public void setKaufpreisust(Double value) {
+    public void setKaufpreisust(BigDecimal value) {
         this.kaufpreisust = value;
     }
 
@@ -110,12 +111,12 @@ public class Kaufpreisnetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theKaufpreisust;
+            BigDecimal theKaufpreisust;
             theKaufpreisust = this.getKaufpreisust();
             strategy.appendField(locator, this, "kaufpreisust", buffer, theKaufpreisust);
         }
@@ -136,17 +137,17 @@ public class Kaufpreisnetto
         if (draftCopy instanceof Kaufpreisnetto) {
             final Kaufpreisnetto copy = ((Kaufpreisnetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.kaufpreisust!= null) {
-                Double sourceKaufpreisust;
+                BigDecimal sourceKaufpreisust;
                 sourceKaufpreisust = this.getKaufpreisust();
-                Double copyKaufpreisust = ((Double) strategy.copy(LocatorUtils.property(locator, "kaufpreisust", sourceKaufpreisust), sourceKaufpreisust));
+                BigDecimal copyKaufpreisust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaufpreisust", sourceKaufpreisust), sourceKaufpreisust));
                 copy.setKaufpreisust(copyKaufpreisust);
             } else {
                 copy.kaufpreisust = null;
@@ -168,18 +169,18 @@ public class Kaufpreisnetto
         }
         final Kaufpreisnetto that = ((Kaufpreisnetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsKaufpreisust;
+            BigDecimal lhsKaufpreisust;
             lhsKaufpreisust = this.getKaufpreisust();
-            Double rhsKaufpreisust;
+            BigDecimal rhsKaufpreisust;
             rhsKaufpreisust = that.getKaufpreisust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaufpreisust", lhsKaufpreisust), LocatorUtils.property(thatLocator, "kaufpreisust", rhsKaufpreisust), lhsKaufpreisust, rhsKaufpreisust)) {
                 return false;

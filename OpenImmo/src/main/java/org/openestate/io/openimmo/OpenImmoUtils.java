@@ -19,6 +19,8 @@ package org.openestate.io.openimmo;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -309,13 +311,13 @@ public class OpenImmoUtils
     return XmlUtils.parseDateTime( value );
   }
 
-  public static Double parseDecimal( String value )
+  public static BigDecimal parseDecimal( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     try
     {
-      return DatatypeConverter.parseDouble( value );
+      return DatatypeConverter.parseDecimal( value );
     }
     catch (NumberFormatException ex)
     {
@@ -325,7 +327,7 @@ public class OpenImmoUtils
     try
     {
       NumberFormat format = NumberFormat.getNumberInstance( Locale.GERMANY );
-      return format.parse( value ).doubleValue();
+      return BigDecimal.valueOf( format.parse( value ).doubleValue() );
     }
     catch (NumberFormatException ex)
     {
@@ -340,18 +342,28 @@ public class OpenImmoUtils
     throw new IllegalArgumentException( "Can't parse decimal value '"+value+"'!" );
   }
 
-  public static Integer parseInteger( String value )
+  public static BigInteger parseInteger( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     try
     {
-      return DatatypeConverter.parseInt( value );
+      return DatatypeConverter.parseInteger( value );
     }
     catch (NumberFormatException ex)
     {
       throw new IllegalArgumentException( "Can't parse integer value '"+value+"'! " + ex.getLocalizedMessage() );
     }
+  }
+
+  public static BigDecimal parsePositiveDecimal( String value )
+  {
+    return parseDecimal( value );
+  }
+
+  public static BigInteger parsePositiveInteger( String value )
+  {
+    return parseInteger( value );
   }
 
   public static String printDate( Calendar value )
@@ -370,25 +382,32 @@ public class OpenImmoUtils
       return DatatypeConverter.printDateTime( value );
   }
 
-  public static String printDecimal( Double value )
+  public static String printDecimal( BigDecimal value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print double value!" );
     else
-      return DatatypeConverter.printDouble( value );
+      return DatatypeConverter.printDecimal( value );
   }
 
-  public static String printInteger( Integer value )
+  public static String printInteger( BigInteger value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print integer value!" );
     else
-      return DatatypeConverter.printInt( value );
+      return DatatypeConverter.printInteger( value );
   }
 
-  public static String printPositiveInteger( Integer value )
+  public static String printPositiveDecimal( BigDecimal value )
   {
-    if (value==null || value<1)
+    if (value==null || value.compareTo( BigDecimal.ZERO )>=0)
+      throw new IllegalArgumentException( "Can't print positive decimal value!" );
+    return printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
+  }
+
+  public static String printPositiveInteger( BigInteger value )
+  {
+    if (value==null || value.compareTo( BigInteger.ZERO )>0)
       throw new IllegalArgumentException( "Can't print positive integer value!" );
     else
       return printInteger( value );

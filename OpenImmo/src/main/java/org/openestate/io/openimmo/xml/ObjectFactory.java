@@ -1,6 +1,8 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -1327,23 +1329,23 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "etage")
     @XmlJavaTypeAdapter(Adapter5 .class)
-    public JAXBElement<Integer> createEtage(Integer value) {
-        return new JAXBElement<Integer>(_Etage_QNAME, Integer.class, null, value);
+    public JAXBElement<BigInteger> createEtage(BigInteger value) {
+        return new JAXBElement<BigInteger>(_Etage_QNAME, BigInteger.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_etagen")
     @XmlJavaTypeAdapter(Adapter5 .class)
-    public JAXBElement<Integer> createAnzahlEtagen(Integer value) {
-        return new JAXBElement<Integer>(_AnzahlEtagen_QNAME, Integer.class, null, value);
+    public JAXBElement<BigInteger> createAnzahlEtagen(BigInteger value) {
+        return new JAXBElement<BigInteger>(_AnzahlEtagen_QNAME, BigInteger.class, null, value);
     }
 
     /**
@@ -1626,133 +1628,133 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "pauschalmiete")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createPauschalmiete(Double value) {
-        return new JAXBElement<Double>(_Pauschalmiete_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createPauschalmiete(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Pauschalmiete_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "flaechevon")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createFlaechevon(Double value) {
-        return new JAXBElement<Double>(_Flaechevon_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createFlaechevon(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Flaechevon_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "flaechebis")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createFlaechebis(Double value) {
-        return new JAXBElement<Double>(_Flaechebis_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createFlaechebis(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Flaechebis_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "gesamtmietebrutto")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGesamtmietebrutto(Double value) {
-        return new JAXBElement<Double>(_Gesamtmietebrutto_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGesamtmietebrutto(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Gesamtmietebrutto_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "gesamtbelastungbrutto")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGesamtbelastungbrutto(Double value) {
-        return new JAXBElement<Double>(_Gesamtbelastungbrutto_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGesamtbelastungbrutto(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Gesamtbelastungbrutto_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "kaufpreisbrutto")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createKaufpreisbrutto(Double value) {
-        return new JAXBElement<Double>(_Kaufpreisbrutto_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createKaufpreisbrutto(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Kaufpreisbrutto_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "monatlichekostenbrutto")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createMonatlichekostenbrutto(Double value) {
-        return new JAXBElement<Double>(_Monatlichekostenbrutto_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createMonatlichekostenbrutto(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Monatlichekostenbrutto_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "provisionbrutto")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createProvisionbrutto(Double value) {
-        return new JAXBElement<Double>(_Provisionbrutto_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createProvisionbrutto(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Provisionbrutto_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "richtpreisprom2")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createRichtpreisprom2(Double value) {
-        return new JAXBElement<Double>(_Richtpreisprom2_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createRichtpreisprom2(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Richtpreisprom2_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "nettokaltmiete")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createNettokaltmiete(Double value) {
-        return new JAXBElement<Double>(_Nettokaltmiete_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createNettokaltmiete(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Nettokaltmiete_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "kaltmiete")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createKaltmiete(Double value) {
-        return new JAXBElement<Double>(_Kaltmiete_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createKaltmiete(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Kaltmiete_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "nebenkosten")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createNebenkosten(Double value) {
-        return new JAXBElement<Double>(_Nebenkosten_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createNebenkosten(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Nebenkosten_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "warmmiete")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createWarmmiete(Double value) {
-        return new JAXBElement<Double>(_Warmmiete_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createWarmmiete(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Warmmiete_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -1765,13 +1767,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "heizkosten")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createHeizkosten(Double value) {
-        return new JAXBElement<Double>(_Heizkosten_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createHeizkosten(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Heizkosten_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -1784,53 +1786,53 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "mietzuschlaege")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createMietzuschlaege(Double value) {
-        return new JAXBElement<Double>(_Mietzuschlaege_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createMietzuschlaege(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Mietzuschlaege_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "pacht")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createPacht(Double value) {
-        return new JAXBElement<Double>(_Pacht_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createPacht(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Pacht_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "erbpacht")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createErbpacht(Double value) {
-        return new JAXBElement<Double>(_Erbpacht_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createErbpacht(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Erbpacht_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "hausgeld")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createHausgeld(Double value) {
-        return new JAXBElement<Double>(_Hausgeld_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createHausgeld(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Hausgeld_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "abstand")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAbstand(Double value) {
-        return new JAXBElement<Double>(_Abstand_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAbstand(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Abstand_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -1854,33 +1856,33 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "mietpreis_pro_qm")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createMietpreisProQm(Double value) {
-        return new JAXBElement<Double>(_MietpreisProQm_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createMietpreisProQm(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_MietpreisProQm_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "kaufpreis_pro_qm")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createKaufpreisProQm(Double value) {
-        return new JAXBElement<Double>(_KaufpreisProQm_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createKaufpreisProQm(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_KaufpreisProQm_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "richtpreis")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createRichtpreis(Double value) {
-        return new JAXBElement<Double>(_Richtpreis_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createRichtpreis(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Richtpreis_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -1956,23 +1958,23 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "mwst_satz")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createMwstSatz(Double value) {
-        return new JAXBElement<Double>(_MwstSatz_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createMwstSatz(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_MwstSatz_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "mwst_gesamt")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createMwstGesamt(Double value) {
-        return new JAXBElement<Double>(_MwstGesamt_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createMwstGesamt(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_MwstGesamt_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -1994,53 +1996,53 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "nettorendite")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createNettorendite(Double value) {
-        return new JAXBElement<Double>(_Nettorendite_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createNettorendite(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Nettorendite_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "nettorendite_ist")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createNettorenditeIst(Double value) {
-        return new JAXBElement<Double>(_NettorenditeIst_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createNettorenditeIst(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_NettorenditeIst_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "nettorendite_soll")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createNettorenditeSoll(Double value) {
-        return new JAXBElement<Double>(_NettorenditeSoll_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createNettorenditeSoll(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_NettorenditeSoll_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "erschliessungskosten")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createErschliessungskosten(Double value) {
-        return new JAXBElement<Double>(_Erschliessungskosten_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createErschliessungskosten(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Erschliessungskosten_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "kaution")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createKaution(Double value) {
-        return new JAXBElement<Double>(_Kaution_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createKaution(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Kaution_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -2053,143 +2055,143 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "geschaeftsguthaben")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGeschaeftsguthaben(Double value) {
-        return new JAXBElement<Double>(_Geschaeftsguthaben_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGeschaeftsguthaben(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Geschaeftsguthaben_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "wohnflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createWohnflaeche(Double value) {
-        return new JAXBElement<Double>(_Wohnflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createWohnflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Wohnflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "nutzflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createNutzflaeche(Double value) {
-        return new JAXBElement<Double>(_Nutzflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createNutzflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Nutzflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "gesamtflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGesamtflaeche(Double value) {
-        return new JAXBElement<Double>(_Gesamtflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGesamtflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Gesamtflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "ladenflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createLadenflaeche(Double value) {
-        return new JAXBElement<Double>(_Ladenflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createLadenflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Ladenflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "lagerflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createLagerflaeche(Double value) {
-        return new JAXBElement<Double>(_Lagerflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createLagerflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Lagerflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "verkaufsflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createVerkaufsflaeche(Double value) {
-        return new JAXBElement<Double>(_Verkaufsflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createVerkaufsflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Verkaufsflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "freiflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createFreiflaeche(Double value) {
-        return new JAXBElement<Double>(_Freiflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createFreiflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Freiflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "bueroflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createBueroflaeche(Double value) {
-        return new JAXBElement<Double>(_Bueroflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createBueroflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Bueroflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "bueroteilflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createBueroteilflaeche(Double value) {
-        return new JAXBElement<Double>(_Bueroteilflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createBueroteilflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Bueroteilflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "fensterfront")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createFensterfront(Double value) {
-        return new JAXBElement<Double>(_Fensterfront_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createFensterfront(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Fensterfront_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "sonstflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createSonstflaeche(Double value) {
-        return new JAXBElement<Double>(_Sonstflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createSonstflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Sonstflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "verwaltungsflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createVerwaltungsflaeche(Double value) {
-        return new JAXBElement<Double>(_Verwaltungsflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createVerwaltungsflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Verwaltungsflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "gastroflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGastroflaeche(Double value) {
-        return new JAXBElement<Double>(_Gastroflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGastroflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Gastroflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -2229,253 +2231,253 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "grundstuecksflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGrundstuecksflaeche(Double value) {
-        return new JAXBElement<Double>(_Grundstuecksflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGrundstuecksflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Grundstuecksflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_zimmer")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlZimmer(Double value) {
-        return new JAXBElement<Double>(_AnzahlZimmer_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlZimmer(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlZimmer_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_schlafzimmer")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlSchlafzimmer(Double value) {
-        return new JAXBElement<Double>(_AnzahlSchlafzimmer_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlSchlafzimmer(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlSchlafzimmer_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_badezimmer")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlBadezimmer(Double value) {
-        return new JAXBElement<Double>(_AnzahlBadezimmer_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlBadezimmer(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlBadezimmer_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_sep_wc")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlSepWc(Double value) {
-        return new JAXBElement<Double>(_AnzahlSepWc_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlSepWc(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlSepWc_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "balkon_terrasse_flaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createBalkonTerrasseFlaeche(Double value) {
-        return new JAXBElement<Double>(_BalkonTerrasseFlaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createBalkonTerrasseFlaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_BalkonTerrasseFlaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_wohn_schlafzimmer")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlWohnSchlafzimmer(Double value) {
-        return new JAXBElement<Double>(_AnzahlWohnSchlafzimmer_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlWohnSchlafzimmer(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlWohnSchlafzimmer_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "gartenflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGartenflaeche(Double value) {
-        return new JAXBElement<Double>(_Gartenflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGartenflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Gartenflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_balkon_terrassen")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlBalkonTerrassen(Double value) {
-        return new JAXBElement<Double>(_AnzahlBalkonTerrassen_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlBalkonTerrassen(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlBalkonTerrassen_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_balkone")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlBalkone(Double value) {
-        return new JAXBElement<Double>(_AnzahlBalkone_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlBalkone(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlBalkone_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_terrassen")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlTerrassen(Double value) {
-        return new JAXBElement<Double>(_AnzahlTerrassen_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlTerrassen(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlTerrassen_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_logia")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlLogia(Double value) {
-        return new JAXBElement<Double>(_AnzahlLogia_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlLogia(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlLogia_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "kellerflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createKellerflaeche(Double value) {
-        return new JAXBElement<Double>(_Kellerflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createKellerflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Kellerflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "fensterfront_qm")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createFensterfrontQm(Double value) {
-        return new JAXBElement<Double>(_FensterfrontQm_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createFensterfrontQm(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_FensterfrontQm_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "grundstuecksfront")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createGrundstuecksfront(Double value) {
-        return new JAXBElement<Double>(_Grundstuecksfront_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createGrundstuecksfront(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Grundstuecksfront_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "dachbodenflaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createDachbodenflaeche(Double value) {
-        return new JAXBElement<Double>(_Dachbodenflaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createDachbodenflaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Dachbodenflaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "teilbar_ab")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createTeilbarAb(Double value) {
-        return new JAXBElement<Double>(_TeilbarAb_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createTeilbarAb(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_TeilbarAb_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "beheizbare_flaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createBeheizbareFlaeche(Double value) {
-        return new JAXBElement<Double>(_BeheizbareFlaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createBeheizbareFlaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_BeheizbareFlaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_stellplaetze")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlStellplaetze(Double value) {
-        return new JAXBElement<Double>(_AnzahlStellplaetze_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlStellplaetze(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlStellplaetze_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "plaetze_gastraum")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createPlaetzeGastraum(Double value) {
-        return new JAXBElement<Double>(_PlaetzeGastraum_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createPlaetzeGastraum(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_PlaetzeGastraum_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_betten")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlBetten(Double value) {
-        return new JAXBElement<Double>(_AnzahlBetten_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlBetten(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlBetten_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_tagungsraeume")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlTagungsraeume(Double value) {
-        return new JAXBElement<Double>(_AnzahlTagungsraeume_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlTagungsraeume(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlTagungsraeume_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "vermietbare_flaeche")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createVermietbareFlaeche(Double value) {
-        return new JAXBElement<Double>(_VermietbareFlaeche_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createVermietbareFlaeche(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_VermietbareFlaeche_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_wohneinheiten")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlWohneinheiten(Double value) {
-        return new JAXBElement<Double>(_AnzahlWohneinheiten_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlWohneinheiten(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlWohneinheiten_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_gewerbeeinheiten")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAnzahlGewerbeeinheiten(Double value) {
-        return new JAXBElement<Double>(_AnzahlGewerbeeinheiten_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAnzahlGewerbeeinheiten(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_AnzahlGewerbeeinheiten_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -2488,23 +2490,23 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "kubatur")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createKubatur(Double value) {
-        return new JAXBElement<Double>(_Kubatur_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createKubatur(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Kubatur_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "ausnuetzungsziffer")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createAusnuetzungsziffer(Double value) {
-        return new JAXBElement<Double>(_Ausnuetzungsziffer_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createAusnuetzungsziffer(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Ausnuetzungsziffer_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -2567,13 +2569,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "mindestpreis")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createMindestpreis(Double value) {
-        return new JAXBElement<Double>(_Mindestpreis_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createMindestpreis(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Mindestpreis_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -2624,13 +2626,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "verkehrswert")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createVerkehrswert(Double value) {
-        return new JAXBElement<Double>(_Verkehrswert_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createVerkehrswert(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Verkehrswert_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -2805,13 +2807,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "stromanschlusswert")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createStromanschlusswert(Double value) {
-        return new JAXBElement<Double>(_Stromanschlusswert_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createStromanschlusswert(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Stromanschlusswert_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -2833,13 +2835,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "hallenhoehe")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createHallenhoehe(Double value) {
-        return new JAXBElement<Double>(_Hallenhoehe_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createHallenhoehe(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Hallenhoehe_QNAME, BigDecimal.class, null, value);
     }
 
     /**
@@ -3226,23 +3228,23 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Double }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "laufzeit")
     @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<Double> createLaufzeit(Double value) {
-        return new JAXBElement<Double>(_Laufzeit_QNAME, Double.class, null, value);
+    public JAXBElement<BigDecimal> createLaufzeit(BigDecimal value) {
+        return new JAXBElement<BigDecimal>(_Laufzeit_QNAME, BigDecimal.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "max_personen")
     @XmlJavaTypeAdapter(Adapter6 .class)
-    public JAXBElement<Integer> createMaxPersonen(Integer value) {
-        return new JAXBElement<Integer>(_MaxPersonen_QNAME, Integer.class, null, value);
+    public JAXBElement<BigInteger> createMaxPersonen(BigInteger value) {
+        return new JAXBElement<BigInteger>(_MaxPersonen_QNAME, BigInteger.class, null, value);
     }
 
     /**

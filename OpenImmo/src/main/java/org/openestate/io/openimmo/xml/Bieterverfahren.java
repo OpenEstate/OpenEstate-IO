@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -73,7 +74,7 @@ public class Bieterverfahren
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double mindestpreis;
+    protected BigDecimal mindestpreis;
     @XmlElement(name = "user_defined_simplefield")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
@@ -233,7 +234,7 @@ public class Bieterverfahren
      *     {@link String }
      *     
      */
-    public Double getMindestpreis() {
+    public BigDecimal getMindestpreis() {
         return mindestpreis;
     }
 
@@ -245,7 +246,7 @@ public class Bieterverfahren
      *     {@link String }
      *     
      */
-    public void setMindestpreis(Double value) {
+    public void setMindestpreis(BigDecimal value) {
         this.mindestpreis = value;
     }
 
@@ -382,7 +383,7 @@ public class Bieterverfahren
             strategy.appendField(locator, this, "hoechstgebotZeigen", buffer, theHoechstgebotZeigen);
         }
         {
-            Double theMindestpreis;
+            BigDecimal theMindestpreis;
             theMindestpreis = this.getMindestpreis();
             strategy.appendField(locator, this, "mindestpreis", buffer, theMindestpreis);
         }
@@ -466,9 +467,9 @@ public class Bieterverfahren
                 copy.hoechstgebotZeigen = null;
             }
             if (this.mindestpreis!= null) {
-                Double sourceMindestpreis;
+                BigDecimal sourceMindestpreis;
                 sourceMindestpreis = this.getMindestpreis();
-                Double copyMindestpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "mindestpreis", sourceMindestpreis), sourceMindestpreis));
+                BigDecimal copyMindestpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mindestpreis", sourceMindestpreis), sourceMindestpreis));
                 copy.setMindestpreis(copyMindestpreis);
             } else {
                 copy.mindestpreis = null;
@@ -583,9 +584,9 @@ public class Bieterverfahren
             }
         }
         {
-            Double lhsMindestpreis;
+            BigDecimal lhsMindestpreis;
             lhsMindestpreis = this.getMindestpreis();
-            Double rhsMindestpreis;
+            BigDecimal rhsMindestpreis;
             rhsMindestpreis = that.getMindestpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mindestpreis", lhsMindestpreis), LocatorUtils.property(thatLocator, "mindestpreis", rhsMindestpreis), lhsMindestpreis, rhsMindestpreis)) {
                 return false;

@@ -18,6 +18,7 @@ package org.openestate.io.openimmo;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -137,13 +138,13 @@ public class OpenImmoUtilsTest
   public void testParseDecimal()
   {
     Assert.assertEquals(
-      Double.valueOf( "2.0" ), OpenImmoUtils.parseDecimal( "2" ) );
+      new BigDecimal( "2" ), OpenImmoUtils.parseDecimal( "2" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.5" ), OpenImmoUtils.parseDecimal( "2.5" ) );
+      new BigDecimal( "2.5" ), OpenImmoUtils.parseDecimal( "2.5" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.5" ), OpenImmoUtils.parseDecimal( "2,5" ) );
+      new BigDecimal( "2.5" ), OpenImmoUtils.parseDecimal( "2,5" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.0" ), OpenImmoUtils.parseDecimal( "2 MM" ) );
+      new BigDecimal( "2" ), OpenImmoUtils.parseDecimal( "2 MM" ).setScale( 0 ) );
     Assert.assertEquals(
       null, OpenImmoUtils.parseDecimal( "" ) );
     try

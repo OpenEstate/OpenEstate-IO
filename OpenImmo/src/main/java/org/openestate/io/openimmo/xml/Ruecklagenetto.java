@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,11 +41,11 @@ public class Ruecklagenetto
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "ruecklageust")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double ruecklageust;
+    protected BigDecimal ruecklageust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Ruecklagenetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Ruecklagenetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Ruecklagenetto
      *     {@link String }
      *     
      */
-    public Double getRuecklageust() {
+    public BigDecimal getRuecklageust() {
         return ruecklageust;
     }
 
@@ -90,7 +91,7 @@ public class Ruecklagenetto
      *     {@link String }
      *     
      */
-    public void setRuecklageust(Double value) {
+    public void setRuecklageust(BigDecimal value) {
         this.ruecklageust = value;
     }
 
@@ -110,12 +111,12 @@ public class Ruecklagenetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theRuecklageust;
+            BigDecimal theRuecklageust;
             theRuecklageust = this.getRuecklageust();
             strategy.appendField(locator, this, "ruecklageust", buffer, theRuecklageust);
         }
@@ -136,17 +137,17 @@ public class Ruecklagenetto
         if (draftCopy instanceof Ruecklagenetto) {
             final Ruecklagenetto copy = ((Ruecklagenetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.ruecklageust!= null) {
-                Double sourceRuecklageust;
+                BigDecimal sourceRuecklageust;
                 sourceRuecklageust = this.getRuecklageust();
-                Double copyRuecklageust = ((Double) strategy.copy(LocatorUtils.property(locator, "ruecklageust", sourceRuecklageust), sourceRuecklageust));
+                BigDecimal copyRuecklageust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "ruecklageust", sourceRuecklageust), sourceRuecklageust));
                 copy.setRuecklageust(copyRuecklageust);
             } else {
                 copy.ruecklageust = null;
@@ -168,18 +169,18 @@ public class Ruecklagenetto
         }
         final Ruecklagenetto that = ((Ruecklagenetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsRuecklageust;
+            BigDecimal lhsRuecklageust;
             lhsRuecklageust = this.getRuecklageust();
-            Double rhsRuecklageust;
+            BigDecimal rhsRuecklageust;
             rhsRuecklageust = that.getRuecklageust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ruecklageust", lhsRuecklageust), LocatorUtils.property(thatLocator, "ruecklageust", rhsRuecklageust), lhsRuecklageust, rhsRuecklageust)) {
                 return false;
