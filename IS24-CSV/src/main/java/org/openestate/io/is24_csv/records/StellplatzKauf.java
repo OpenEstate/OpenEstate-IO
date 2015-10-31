@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import java.math.BigDecimal;
 import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
@@ -83,11 +84,11 @@ public class StellplatzKauf extends Is24CsvRecord
     }
   }
 
-  public Double getBreite()
+  public BigDecimal getBreite()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_BREITE ) );
     }
     catch (NumberFormatException ex)
@@ -98,11 +99,11 @@ public class StellplatzKauf extends Is24CsvRecord
     }
   }
 
-  public Double getFlaeche()
+  public BigDecimal getFlaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_FLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -113,11 +114,11 @@ public class StellplatzKauf extends Is24CsvRecord
     }
   }
 
-  public Double getHoehe()
+  public BigDecimal getHoehe()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_HOEHE ) );
     }
     catch (NumberFormatException ex)
@@ -128,11 +129,11 @@ public class StellplatzKauf extends Is24CsvRecord
     }
   }
 
-  public Double getKaufpreis()
+  public BigDecimal getKaufpreis()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_KAUFPREIS ) );
     }
     catch (NumberFormatException ex)
@@ -143,11 +144,11 @@ public class StellplatzKauf extends Is24CsvRecord
     }
   }
 
-  public Double getLaenge()
+  public BigDecimal getLaenge()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_LAENGE ) );
     }
     catch (NumberFormatException ex)

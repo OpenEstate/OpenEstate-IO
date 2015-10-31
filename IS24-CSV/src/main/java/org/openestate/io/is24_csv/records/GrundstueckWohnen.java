@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import java.math.BigDecimal;
 import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.types.BebaubarNach;
@@ -143,11 +144,11 @@ public class GrundstueckWohnen extends Grundstueck
     }
   }
 
-  public Double getGeschossflaechenzahl()
+  public BigDecimal getGeschossflaechenzahl()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_GESCHOSSFLAECHENZAHL ) );
     }
     catch (NumberFormatException ex)
@@ -158,11 +159,11 @@ public class GrundstueckWohnen extends Grundstueck
     }
   }
 
-  public Double getGrundflaechenzahl()
+  public BigDecimal getGrundflaechenzahl()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_GRUNDFLAECHENZAHL ) );
     }
     catch (NumberFormatException ex)
@@ -173,11 +174,11 @@ public class GrundstueckWohnen extends Grundstueck
     }
   }
 
-  public Double getGrundstuecksflaeche()
+  public BigDecimal getGrundstuecksflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_GRUNDSTUECKSFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -194,11 +195,11 @@ public class GrundstueckWohnen extends Grundstueck
       this.get( FIELD_KURZFRISTIG_BEBAUBAR ) );
   }
 
-  public Double getPreis()
+  public BigDecimal getPreis()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_PREIS ) );
     }
     catch (NumberFormatException ex)

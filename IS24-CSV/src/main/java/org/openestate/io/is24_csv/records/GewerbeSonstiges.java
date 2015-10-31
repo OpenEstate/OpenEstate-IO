@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import java.math.BigDecimal;
 import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
@@ -200,11 +201,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
       this.get( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER ) );
   }
 
-  public Double getEnergieausweisKennwert()
+  public BigDecimal getEnergieausweisKennwert()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) );
     }
     catch (NumberFormatException ex)
@@ -286,11 +287,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
     }
   }
 
-  public Double getGesamtflaeche()
+  public BigDecimal getGesamtflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_GESAMTFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -301,11 +302,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
     }
   }
 
-  public Double getGewerbeflaeche()
+  public BigDecimal getGewerbeflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_GEWERBEFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -316,11 +317,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
     }
   }
 
-  public Double getGrundstuecksflaeche()
+  public BigDecimal getGrundstuecksflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_GRUNDSTUECKSFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -348,11 +349,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
       this.get( FIELD_KELLER ) );
   }
 
-  public Double getNebenflaeche()
+  public BigDecimal getNebenflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_NEBENFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -363,11 +364,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
     }
   }
 
-  public Double getNebenkosten()
+  public BigDecimal getNebenkosten()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_NEBENKOSTEN ) );
     }
     catch (NumberFormatException ex)
@@ -396,11 +397,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
       this.get( FIELD_PERSONENAUFZUG ) );
   }
 
-  public Double getPreis()
+  public BigDecimal getPreis()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_PREIS ) );
     }
     catch (NumberFormatException ex)
@@ -411,11 +412,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
     }
   }
 
-  public Double getPreisProParkflaeche()
+  public BigDecimal getPreisProParkflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_PREIS_PRO_PARKFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -441,11 +442,11 @@ public class GewerbeSonstiges extends Is24CsvRecord
     }
   }
 
-  public Double getTeilbarAb()
+  public BigDecimal getTeilbarAb()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_TEILBAR_AB ) );
     }
     catch (NumberFormatException ex)
