@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Locale;
 import org.apache.commons.io.output.NullOutputStream;
@@ -183,10 +184,10 @@ public class OpenImmoWritingExample
 
     // add some informations about prices
     immobilie.setPreise( FACTORY.createPreise() );
-    immobilie.getPreise().setHeizkosten( 456.0 );
+    immobilie.getPreise().setHeizkosten( new BigDecimal( "456.0" ) );
     immobilie.getPreise().setKaufpreis( FACTORY.createKaufpreis() );
     immobilie.getPreise().getKaufpreis().setAufAnfrage( false );
-    immobilie.getPreise().getKaufpreis().setValue( 123456.79 );
+    immobilie.getPreise().getKaufpreis().setValue( new BigDecimal( "123456.79" ) );
 
     // add some informations about features
     immobilie.setAusstattung( FACTORY.createAusstattung() );

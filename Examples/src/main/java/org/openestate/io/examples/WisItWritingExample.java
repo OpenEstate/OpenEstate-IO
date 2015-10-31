@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
@@ -82,7 +84,7 @@ public class WisItWritingExample
     wis.getOBJEKTE().getOBJEKT().add( createOBJEKT() );
     wis.getOBJEKTE().getOBJEKT().add( createOBJEKT() );
     wis.getOBJEKTE().getOBJEKT().add( createOBJEKT() );
-    wis.getOBJEKTE().setANZAHL( wis.getOBJEKTE().getOBJEKT().size() );
+    wis.getOBJEKTE().setANZAHL( BigInteger.valueOf( wis.getOBJEKTE().getOBJEKT().size() ) );
 
     // convert the WIS object into a XML document
     WisItDocument doc = null;
@@ -149,18 +151,18 @@ public class WisItWritingExample
     obj.setKELLER( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setKLIMAHAUS( EnergyStandard.A );
     obj.setKONVENTIONIERT( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.setKUBATUR( RandomUtils.nextDouble( 100, 1000 ) );
+    obj.setKUBATUR( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 1000 ) ) );
     obj.setLOESCHEN( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setLOGGIA( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setMIETEKAUF( MarketingType.MIETE );
-    obj.setNUTZFLAECHE( RandomUtils.nextDouble( 100, 1000 ) );
+    obj.setNUTZFLAECHE( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 1000 ) ) );
     obj.setORT( "Bozen" );
-    obj.setPREIS( RandomUtils.nextDouble( 300, 3000 ) );
-    obj.setSTOCKWERK( RandomUtils.nextInt( 0, 5 ) );
-    obj.setSTOCKWERKE( RandomUtils.nextInt( 0, 10 ) );
+    obj.setPREIS( BigDecimal.valueOf( RandomUtils.nextDouble( 300, 3000 ) ) );
+    obj.setSTOCKWERK( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
+    obj.setSTOCKWERKE( BigInteger.valueOf( RandomUtils.nextInt( 0, 10 ) ) );
     obj.setTERRASSE( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setUEBERGABEZEITPUNKT( "some notes about the time of handover" );
-    obj.setZIMMER( RandomUtils.nextInt( 1, 5 ) );
+    obj.setZIMMER( BigInteger.valueOf( RandomUtils.nextInt( 1, 5 ) ) );
     obj.setZUSTAND( ConditionType.GEBRAUCHT );
 
     obj.setBILD1( obj.getID() + "_1.jpg" );
