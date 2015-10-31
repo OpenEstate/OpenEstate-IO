@@ -46,10 +46,10 @@ Dependencies
 -   Java 6 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.3.2](http://commons.apache.org/proper/commons-lang/)
--   [jaxb2-basics-runtime 0.9.3](https://github.com/highsource/jaxb2-basics)
+-   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
+-   [jaxb2-basics-runtime 0.9.5](https://github.com/highsource/jaxb2-basics)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
--   [SLF4J 1.7.7](http://www.slf4j.org/)
+-   [SLF4J 1.7.12](http://www.slf4j.org/)
 
 
 Changelog
