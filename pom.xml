@@ -62,6 +62,12 @@
     <developerConnection>scm:git:[fetch=]https://github.com/OpenEstate/OpenEstate-IO.git[push=]ssh://git@github.com:OpenEstate/OpenEstate-IO.git</developerConnection>
     <url>https://github.com/OpenEstate/OpenEstate-IO</url>
   </scm>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -217,6 +223,11 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>1.6</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>2.10.3</version>
         </plugin>
@@ -236,6 +247,14 @@
           <artifactId>jaxb2-maven-plugin</artifactId>
           <version>2.2</version>
         </plugin>
+
+        <!--
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.6</version>
+        </plugin>
+        -->
       </plugins>
     </pluginManagement>
     <plugins>
@@ -357,6 +376,37 @@
         </configuration>
       </plugin>
 
+      <!-- signing -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- distribution -->
+      <!-- see http://books.sonatype.com/nexus-book/reference/staging-deployment.html -->
+      <!--
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>${staging.autoReleaseAfterClose}</autoReleaseAfterClose>
+          <skipStaging>${staging.skip}</skipStaging>
+        </configuration>
+      </plugin>
+      -->
+
     </plugins>
   </build>
 
@@ -368,7 +418,10 @@
       <properties>
         <createChecksum>true</createChecksum>
         <maven.javadoc.skip>true</maven.javadoc.skip>
+        <gpg.skip>true</gpg.skip>
         <source.skip>true</source.skip>
+        <staging.autoReleaseAfterClose>false</staging.autoReleaseAfterClose>
+        <staging.skip>true</staging.skip>
       </properties>
     </profile>
 
@@ -378,7 +431,10 @@
       <properties>
         <createChecksum>true</createChecksum>
         <maven.javadoc.skip>false</maven.javadoc.skip>
+        <gpg.skip>false</gpg.skip>
         <source.skip>false</source.skip>
+        <staging.autoReleaseAfterClose>false</staging.autoReleaseAfterClose>
+        <staging.skip>false</staging.skip>
       </properties>
     </profile>
 
