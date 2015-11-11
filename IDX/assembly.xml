@@ -20,6 +20,9 @@
         <include>${groupId}:${artifactId}</include>
         <include>${groupId}:${artifactId}:jar:*</include>
       </includes>
+      <excludes>
+        <exclude>${project.groupId}:${project.artifactId}:pom.asc</exclude>
+      </excludes>
     </dependencySet>
 
     <dependencySet>
