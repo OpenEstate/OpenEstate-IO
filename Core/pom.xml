@@ -220,7 +220,7 @@
         <executions>
           <execution>
             <id>release</id>
-            <phase>package</phase>
+            <phase>install</phase>
             <goals>
               <goal>single</goal>
             </goals>
