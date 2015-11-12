@@ -8,6 +8,23 @@ to illustrate usage of the formats implemented *OpenEstate-IO*.
 How to use
 ----------
 
+Download the [latest release from GitHub](https://github.com/OpenEstate/OpenEstate-IO/releases/latest).
+The provided archive contains all required files (compiled libraries,
+dependencies, source code and documentations).
+
+Alternatively you can integrate the library from
+[Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
+into your [Maven](http://maven.apache.org/) project. Just add the following
+dependency to your projects `pom.xml`:
+
+```xml
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-Examples</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
 The example classes are located in the
 [`src/main/java/org/openestate/io/examples`](src/main/java/org/openestate/io/examples)
 folder of this module. You can find further informations in the

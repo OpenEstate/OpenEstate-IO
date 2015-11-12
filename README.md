@@ -39,6 +39,84 @@ Open a module subfolder to get more informations about the specific format.
 How to use
 ----------
 
+Download the [latest release from GitHub](https://github.com/OpenEstate/OpenEstate-IO/releases/latest).
+The provided archive contains all required files (compiled libraries,
+dependencies, source code and documentations).
+
+Alternatively you can integrate the library from
+[Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
+into your [Maven](http://maven.apache.org/) project. Just add one or more of the
+following dependencies to your projects `pom.xml` (according to your
+requirements):
+
+```xml
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-CasaIT</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-DaftIE</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-IDX</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-IS24-XML</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-Kyero</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-OpenImmo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-Trovit</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-WisIT</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
 You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki). Some example
 classes for each format are available in the [`Examples`](Examples) module.
@@ -82,7 +160,6 @@ Todo
 
 -   further testing
 -   add missing javadoc comments
--   publish at Maven Central Repository
 
 
 Further informations

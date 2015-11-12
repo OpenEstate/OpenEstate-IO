@@ -30,6 +30,23 @@ Features
 How to use
 ----------
 
+Download the [latest release from GitHub](https://github.com/OpenEstate/OpenEstate-IO/releases/latest).
+The provided archive contains all required files (compiled libraries,
+dependencies, source code and documentations).
+
+Alternatively you can integrate the library from
+[Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
+into your [Maven](http://maven.apache.org/) project. Just add the following
+dependency to your projects `pom.xml`:
+
+```xml
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
 You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-IS24-CSV).
 Some example classes for this format are available in the
