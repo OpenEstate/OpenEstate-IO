@@ -16,6 +16,7 @@
 
 package org.openestate.io.idx.types;
 
+import java.io.Serializable;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -24,8 +25,10 @@ import org.apache.commons.lang3.StringUtils;
  * @since 1.0
  * @author Andreas Rudolph
  */
-public class Media
+public class Media implements Serializable
 {
+  private final static long serialVersionUID = 5668966682578880420L;
+
   private String fileName;
   private String title;
   private String description;

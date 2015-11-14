@@ -35,7 +35,7 @@ public enum ImmobiliareItVersion implements XmlVersion
   /**
    * Version 2.5
    */
-  V2_5( ImmobiliareIt_2_5.class, "2.5", "2.5.0");
+  V2_5( ImmobiliareIt_2_5.class, "2.5", "2.5.0" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItVersion.class );
   private final Class converterClass;

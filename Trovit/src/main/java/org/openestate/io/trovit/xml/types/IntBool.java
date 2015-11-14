@@ -16,6 +16,7 @@
 
 package org.openestate.io.trovit.xml.types;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
@@ -24,8 +25,9 @@ import java.math.BigInteger;
  * @since 1.0
  * @author Andreas Rudolph
  */
-public class IntBool
+public class IntBool implements Serializable
 {
+  private final static long serialVersionUID = 425176874298955006L;
   public BigInteger intValue;
   public Boolean boolValue;
 
