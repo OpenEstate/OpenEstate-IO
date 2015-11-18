@@ -135,7 +135,7 @@ Dependencies
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.12](http://www.slf4j.org/)
+-   [SLF4J 1.7.13](http://www.slf4j.org/)
 -   [log4j 1.2.17](http://logging.apache.org/log4j/1.2/)
     (optional; may be replaced by another logging system
     [via SLF4J](http://www.slf4j.org/manual.html))

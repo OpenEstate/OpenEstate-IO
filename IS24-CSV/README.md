@@ -68,7 +68,7 @@ Dependencies
 -   [commons-csv 1.2](http://commons.apache.org/proper/commons-csv/)
 -   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
--   [SLF4J 1.7.12](http://www.slf4j.org/)
+-   [SLF4J 1.7.13](http://www.slf4j.org/)
 
 
 Changelog
