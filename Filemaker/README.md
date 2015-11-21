@@ -1,14 +1,20 @@
 OpenEstate-IO-Filemaker 1.0-SNAPSHOT
 ====================================
 
-*OpenEstate-IO-Filemaker* is a Java library to read and write real estate data in
-the XML format of [*Filemaker*](http://www.filemaker.com/).
+*OpenEstate-IO-Filemaker* is a Java library to read and write XML formats of
+the real estate software [*FlatHunter Pro*](http://www.fmmedia.de/immobilien/flathunterpro),
+which is based on the [*Filemaker*](http://www.filemaker.com/) database system.
 
 
 Features
 --------
 
-...
+-   read *FMPXMLLAYOUT* & *FMPXMLRESULT* data according to the specifications
+    of *Filemaker*
+    (see [`FilemakerReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/FilemakerReadingExample.java))
+-   write *FMPXMLLAYOUT* & *FMPXMLRESULT* data according to the specifications
+    of *Filemaker*
+    (see [`FilemakerWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/FilemakerWritingExample.java))
 
 
 How to use
