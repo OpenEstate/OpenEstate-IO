@@ -83,6 +83,13 @@
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
+      <directory>${basedir}/Filemaker/release</directory>
+      <outputDirectory></outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
+    <fileSet>
       <directory>${basedir}/IDX/release</directory>
       <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>

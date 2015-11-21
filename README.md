@@ -14,6 +14,8 @@ Supported Formats
 | -------------------------------- | ---------------------------------------------------------------- | ---- | --------- |
 | [`CasaIT`](CasaIT)               | [*Casa.it*](http://casa.it) format (*experimental*)              | XML  | ?         |
 | [`DaftIE`](DaftIE)               | [*Daft.ie*](http://daft.ie) Overseas Webfeed                     | XML  | 2.7       |
+| [`Filemaker`](Filemaker)         | [*Filemaker*](http://www.filemaker.com) FMPXMLLAYOUT             | XML  | ?         |
+|                                  | [*Filemaker*](http://www.filemaker.com) FMPXMLRESULT             | XML  | ?         |
 | [`IDX`](IDX)                     | *IDX* format                                                     | CSV  | 3.01      |
 | [`ImmoXML`](ImmoXML)             | *ImmoXML* format                                                 | XML  | 3.0       |
 | [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](http://immobiliare.it) format                 | XML  | 2.5       |
@@ -59,6 +61,12 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-Filemaker</artifactId>
   <version>1.0-SNAPSHOT</version>
 </dependency>
 
