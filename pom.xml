@@ -46,6 +46,7 @@
     <module>CasaIT</module>
     <module>DaftIE</module>
     <module>Examples</module>
+    <module>Filemaker</module>
     <module>IDX</module>
     <module>ImmobiliareIT</module>
     <module>ImmoXML</module>
@@ -91,6 +92,11 @@
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-DaftIE</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Filemaker</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -311,6 +317,10 @@
             <group>
               <title>daft.ie</title>
               <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
+            </group>
+            <group>
+              <title>Filemaker</title>
+              <packages>org.openestate.io.filemaker:org.openestate.io.filemaker.*</packages>
             </group>
             <group>
               <title>IDX</title>

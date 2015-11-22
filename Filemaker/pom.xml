@@ -11,11 +11,11 @@
   </parent>
 
   <groupId>org.openestate.io</groupId>
-  <artifactId>OpenEstate-IO-Examples</artifactId>
+  <artifactId>OpenEstate-IO-Filemaker</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>OpenEstate-IO-Examples</name>
+  <name>OpenEstate-IO-Filemaker</name>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>
@@ -62,73 +62,38 @@
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jvnet.jaxb2_commons</groupId>
+      <artifactId>jaxb2-basics-runtime</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openestate.io</groupId>
+      <artifactId>OpenEstate-IO-Core</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-CasaIT</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-DaftIE</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Filemaker</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IDX</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Kyero</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Trovit</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-WisIT</artifactId>
+      <artifactId>slf4j-api</artifactId>
       <scope>compile</scope>
     </dependency>
 
@@ -136,6 +101,16 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
       <scope>test</scope>
     </dependency>
 
@@ -265,6 +240,38 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <!-- JAXB -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <configuration>
+          <sources>
+            <source>${project.basedir}/src/main/xsd/fmpxmllayout.xsd</source>
+            <source>${project.basedir}/src/main/xsd/fmpxmlresult.xsd</source>
+            <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
+          </sources>
+          <bindingFiles>binding.xjb</bindingFiles>
+          <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+          <clearOutputDir>false</clearOutputDir>
+          <target>2.1</target>
+          <extension>true</extension>
+          <generateEpisode>false</generateEpisode>
+          <noGeneratedHeaderComments>true</noGeneratedHeaderComments>
+          <arguments>
+            <argument>-XtoString</argument>
+            <argument>-Xcopyable</argument>
+            <argument>-Xequals</argument>
+          </arguments>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics</artifactId>
+            <version>0.9.5</version>
+          </dependency>
+        </dependencies>
       </plugin>
 
       <!-- findbugs -->
