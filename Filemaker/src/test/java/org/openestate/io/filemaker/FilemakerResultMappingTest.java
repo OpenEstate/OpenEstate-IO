@@ -16,14 +16,11 @@
 
 package org.openestate.io.filemaker;
 
-import java.math.BigInteger;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openestate.io.core.XmlUtils;
-import org.openestate.io.filemaker.xml.result.FMPXMLRESULT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -33,9 +30,9 @@ import org.w3c.dom.Document;
  * @author Andreas Rudolph
  */
 @RunWith( JUnit4.class )
-public class FilemakerResultDocumentTest
+public class FilemakerResultMappingTest
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerResultDocumentTest.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerResultMappingTest.class );
 
   private static Document buildExampleDocument() throws Exception
   {
@@ -49,7 +46,7 @@ public class FilemakerResultDocumentTest
       + "    <FIELD EMPTYOK=\"YES\" MAXREPEAT=\"1\" NAME=\"aTextField\" TYPE=\"TEXT\"/>\n"
       + "  </METADATA>\n"
       + "  <RESULTSET FOUND=\"2\">\n"
-      + "    <ROW MODID=\"1\" RECORDID=\"1\">\n"
+      + "    <ROW MODID=\"1\" RECORDID=\"2\">\n"
       + "      <COL>\n"
       + "        <DATA>123</DATA>\n"
       + "      </COL>\n"
@@ -57,7 +54,7 @@ public class FilemakerResultDocumentTest
       + "        <DATA>this is a text</DATA>\n"
       + "      </COL>\n"
       + "    </ROW>\n"
-      + "    <ROW MODID=\"2\" RECORDID=\"2\">\n"
+      + "    <ROW MODID=\"3\" RECORDID=\"4\">\n"
       + "      <COL>\n"
       + "        <DATA>456</DATA>\n"
       + "      </COL>\n"
@@ -70,73 +67,36 @@ public class FilemakerResultDocumentTest
   }
 
   @Test
-  public void testToMapping()
+  public void testMapping()
   {
+    FilemakerResultMapping mapping = null;
     try
     {
       FilemakerResultDocument doc = new FilemakerResultDocument( buildExampleDocument() );
-
-      FilemakerResultMapping mapping = doc.toMapping();
+      mapping = doc.toMapping();
       Assert.assertNotNull(
         "Created mapping for transfer document.", mapping );
     }
     catch (Exception ex)
     {
-      LOGGER.error( "Test of FilemakerResultDocument.toMapping failed!" );
+      LOGGER.error( "Test of FilemakerResultMapping failed!" );
       LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of FilemakerResultDocument.toMapping failed!" );
+      Assert.fail( "Test of FilemakerResultMapping failed!" );
     }
-  }
 
-  @Test
-  public void testToObject()
-  {
-    try
-    {
-      FilemakerResultDocument doc = new FilemakerResultDocument( buildExampleDocument() );
+    Assert.assertTrue( "test number of fields", mapping.getFieldCount()==2 );
+    Assert.assertTrue( "test number of rows", mapping.getRowCount()==2 );
 
-      FMPXMLRESULT obj = doc.toObject();
-      Assert.assertNotNull(
-        "Created object for transfer document.", obj );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of FilemakerResultDocument.toObject failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of FilemakerResultDocument.toObject failed!" );
-    }
-  }
+    FilemakerResultMapping.Row row = mapping.getRow( 0 );
+    Assert.assertTrue( "test modId of the first row", row.getModId()==1 );
+    Assert.assertTrue( "test recoirdId of the first row", row.getRecordId()==2 );
+    Assert.assertTrue( "test first value of the first row", "123".equals( row.getValue( "aNumericField" ) ) );
+    Assert.assertTrue( "test second value of the first row", "this is a text".equals( row.getValue( "aTextField" ) ) );
 
-  @Test
-  @Ignore
-  public void testToXml()
-  {
-    FMPXMLRESULT result = FilemakerUtils.getFactoryForResult().createFMPXMLRESULT();
-    result.setERRORCODE( "0" );
-    result.setPRODUCT( FilemakerUtils.getFactoryForResult().createProductType() );
-    result.getPRODUCT().setNAME( "OpenEstate-IO" );
-    result.getPRODUCT().setVERSION( "1.0" );
-    result.getPRODUCT().setBUILD( "123" );
-    result.setDATABASE( FilemakerUtils.getFactoryForResult().createDatabaseType() );
-    result.getDATABASE().setNAME( "example database" );
-    result.getDATABASE().setLAYOUT( "fmmedia2universal" );
-    result.getDATABASE().setDATEFORMAT( "D.m.yyyy" );
-    result.getDATABASE().setTIMEFORMAT( "k:mm:ss" );
-    result.getDATABASE().setRECORDS( BigInteger.ZERO );
-    result.setMETADATA( FilemakerUtils.getFactoryForResult().createMetaDataType() );
-    result.setRESULTSET( FilemakerUtils.getFactoryForResult().createResultSetType() );
-    try
-    {
-      FilemakerResultDocument doc = FilemakerResultDocument.newDocument( result );
-
-      String xml = doc.toXmlString( true );
-      LOGGER.info( "XML: " + xml );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of FilemakerResultDocument.toXml failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of FilemakerResultDocument.toXml failed!" );
-    }
+    row = mapping.getRow( 1 );
+    Assert.assertTrue( "test modId of the second row", row.getModId()==3 );
+    Assert.assertTrue( "test recoirdId of the second row", row.getRecordId()==4 );
+    Assert.assertTrue( "test first value of the second row", "456".equals( row.getValue( "aNumericField" ) ) );
+    Assert.assertTrue( "test second value of the second row", "this is another text".equals( row.getValue( "aTextField" ) ) );
   }
 }

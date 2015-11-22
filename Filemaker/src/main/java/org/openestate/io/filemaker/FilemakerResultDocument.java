@@ -102,6 +102,20 @@ public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT>
   }
 
   /**
+   * Creates a {@link FilemakerResultMapping} object from the contained {@link Document}.
+   *
+   * @return
+   * created mapping, that contains the values from the {@link FMPXMLRESULT}
+   *
+   * @throws JAXBException
+   * if a problem with JAXB occured
+   */
+  public FilemakerResultMapping toMapping() throws JAXBException
+  {
+    return new FilemakerResultMapping( this.toObject() );
+  }
+
+  /**
    * Creates a {@link FMPXMLRESULT} object from the contained {@link Document}.
    *
    * @return

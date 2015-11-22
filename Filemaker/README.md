@@ -15,6 +15,8 @@ Features
 -   write *FMPXMLLAYOUT* & *FMPXMLRESULT* data according to the specifications
     of *Filemaker*
     (see [`FilemakerWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/FilemakerWritingExample.java))
+-   read *FMPXMLRESULT* data more easily through a high level class
+    (see [`FilemakerResultMappingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/FilemakerResultMappingExample.java))
 
 
 How to use
@@ -87,8 +89,8 @@ Further informations
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
 -   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
--   [German documentation about *FMPXMLRESULT*](http://www.filemaker.com/de/help/html/import_export.16.30.html)
--   [German documentation about *FMPDSORESULT*](http://www.filemaker.com/de/help/html/import_export.16.29.html)
 -   [English documentation about *FMPXMLLAYOUT*](http://etutorials.org/XML/filemaker+pro+6+developers+guide+to+xml_xsl/Chapter+4+FileMaker+Pro+XML+Schema+or+Grammar+Formats+DTDs/4.1+FMPXMLLAYOUT+Schema+Grammar/)
 -   [English documentation about *FMPXMLRESULT*](http://etutorials.org/XML/filemaker+pro+6+developers+guide+to+xml_xsl/Chapter+4+FileMaker+Pro+XML+Schema+or+Grammar+Formats+DTDs/4.2+FMPXMLRESULT+Schema+Grammar/)
 -   [English documentation about *FMPDSORESULT*](http://etutorials.org/XML/filemaker+pro+6+developers+guide+to+xml_xsl/Chapter+4+FileMaker+Pro+XML+Schema+or+Grammar+Formats+DTDs/4.3+FMPDSORESULT+Schema+Grammar/)
+-   [German documentation about *FMPXMLRESULT*](http://www.filemaker.com/de/help/html/import_export.16.30.html)
+-   [German documentation about *FMPDSORESULT*](http://www.filemaker.com/de/help/html/import_export.16.29.html)
