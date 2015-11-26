@@ -16,12 +16,12 @@
 
 package org.openestate.io.examples;
 
+import java.io.File;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.filemaker.FilemakerResultDocument;
 import org.openestate.io.filemaker.FilemakerResultMapping;
-import org.openestate.io.filemaker.FilemakerUtils;
-import org.openestate.io.filemaker.xml.result.ObjectFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -36,7 +36,6 @@ public class FilemakerResultMappingExample
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerResultMappingExample.class );
   private final static String PACKAGE = "/org/openestate/io/examples";
-  private final static ObjectFactory FACTORY = FilemakerUtils.getFactoryForResult();
 
   /**
    * Start the example application.
@@ -50,18 +49,37 @@ public class FilemakerResultMappingExample
     PropertyConfigurator.configure(
       FilemakerWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
-    // create a mapping from the example document
+    // create a mapping from the example document, if no files were specified as command line arguments
     FilemakerResultMapping mapping = null;
-    try
+    if (args.length<1)
     {
-      mapping = new FilemakerResultDocument( buildExampleDocument() ).toMapping();
+      try
+      {
+        mapping = new FilemakerResultDocument( buildExampleDocument() ).toMapping();
+      }
+      catch (Exception ex)
+      {
+        LOGGER.error( "Can't create mapping!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+        System.exit( 1 );
+      }
     }
-    catch (Exception ex)
+
+    // read file, that was specified as command line argument
+    else
     {
-      LOGGER.error( "Can't create mapping!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      System.exit( 1 );
+      try
+      {
+        mapping = new FilemakerResultDocument( XmlUtils.newDocument( new File( args[0] ) ) ).toMapping();
+      }
+      catch (Exception ex)
+      {
+        LOGGER.error( "Can't create mapping from file '" + args[0] + "'!" );
+        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+        System.exit( 1 );
+      }
     }
+
     if (mapping==null)
     {
       LOGGER.error( "No mapping was created!" );
@@ -72,11 +90,16 @@ public class FilemakerResultMappingExample
     for (int i=0; i<mapping.getRowCount(); i++)
     {
       FilemakerResultMapping.Row row = mapping.getRow( i );
+      LOGGER.info( StringUtils.repeat( "-", 50 ) );
       LOGGER.info( "record at row " + i );
-      LOGGER.info( "> recordId      = " + row.getRecordId() );
-      LOGGER.info( "> modId         = " + row.getModId() );
-      LOGGER.info( "> aNumericField = " + row.getValue( "aNumericField" ) );
-      LOGGER.info( "> aTextField    = " + row.getValue( "aTextField" ) );
+      LOGGER.info( "> recordId = " + row.getRecordId() );
+      LOGGER.info( "> modId = " + row.getModId() );
+
+      // access record values through their field name
+      for (String field : row.getFieldNames())
+      {
+        LOGGER.info( "> " + field + " = " + row.getValue( field ) );
+      }
     }
   }
 

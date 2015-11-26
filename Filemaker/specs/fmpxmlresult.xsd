@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema targetNamespace="http://www.filemaker.com/fmpxmlresult" xmlns:fmp="http://www.filemaker.com/fmpxmlresult" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
   <xsd:element name="FMPXMLRESULT">
     <xsd:complexType>
       <xsd:sequence>
@@ -76,4 +77,5 @@
       <xsd:enumeration value="CONTAINER" />
     </xsd:restriction>
   </xsd:simpleType>
+
 </xsd:schema>
