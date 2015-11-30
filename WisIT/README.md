@@ -65,7 +65,7 @@ Dependencies
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
--   [jaxb2-basics-runtime 0.9.5](https://github.com/highsource/jaxb2-basics)
+-   [jaxb2-basics-runtime 0.10.0](https://github.com/highsource/jaxb2-basics)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
 -   [SLF4J 1.7.13](http://www.slf4j.org/)
 

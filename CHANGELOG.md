@@ -5,6 +5,8 @@ Changelog for OpenEstate-IO
 ----------------------
 
 -   initial release
+-   updated `jaxb2-basics` libraries to version 0.10.0
+-   regenerated JAXB classes for `jaxb2-basics` 0.10.0
 
 
 1.0-RC2 (19 Mar 2015)
