@@ -497,7 +497,7 @@ public class Container
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Container)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -993,7 +993,7 @@ public class Container
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof Container.Realestateitems)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -2394,7 +2394,7 @@ public class Container
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof Container.Realestateitems.Realestate)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -2904,7 +2904,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Address)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -3126,7 +3126,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Box)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -3449,7 +3449,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Building)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -3707,7 +3707,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Configuration)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -3861,7 +3861,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Description)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -4046,7 +4046,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Garden)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -4353,7 +4353,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Googlemapcoordinate)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -4549,7 +4549,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Images)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -4724,7 +4724,7 @@ public class Container
                     }
 
                     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                        if (!(object instanceof Container.Realestateitems.Realestate.Images.Advertismentimage)) {
+                        if ((object == null)||(this.getClass()!= object.getClass())) {
                             return false;
                         }
                         if (this == object) {
@@ -4963,7 +4963,7 @@ public class Container
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Container.Realestateitems.Realestate.Price)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
