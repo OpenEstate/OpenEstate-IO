@@ -238,7 +238,7 @@ public class LayoutType
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof LayoutType)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -437,7 +437,7 @@ public class LayoutType
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof LayoutType.FIELD)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -614,7 +614,7 @@ public class LayoutType
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof LayoutType.FIELD.STYLE)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {

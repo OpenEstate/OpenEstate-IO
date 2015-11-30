@@ -203,7 +203,7 @@ public class ResultSetType
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof ResultSetType)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -444,7 +444,7 @@ public class ResultSetType
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof ResultSetType.ROW)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -604,7 +604,7 @@ public class ResultSetType
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof ResultSetType.ROW.COL)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
