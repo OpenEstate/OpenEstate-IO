@@ -577,7 +577,7 @@ public class Feed
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Feed)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -828,7 +828,7 @@ public class Feed
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof Feed.Metadata)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -1022,7 +1022,7 @@ public class Feed
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof Feed.Metadata.Multipage)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -1320,7 +1320,7 @@ public class Feed
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof Feed.Projects)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -1905,7 +1905,7 @@ public class Feed
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof Feed.Projects.Project)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -2230,7 +2230,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Projects.Project.Agent)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -2643,7 +2643,7 @@ public class Feed
                     }
 
                     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                        if (!(object instanceof Feed.Projects.Project.Agent.SalesOffice)) {
+                        if ((object == null)||(this.getClass()!= object.getClass())) {
                             return false;
                         }
                         if (this == object) {
@@ -2868,7 +2868,7 @@ public class Feed
                         }
 
                         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                            if (!(object instanceof Feed.Projects.Project.Agent.SalesOffice.City)) {
+                            if ((object == null)||(this.getClass()!= object.getClass())) {
                                 return false;
                             }
                             if (this == object) {
@@ -3011,7 +3011,7 @@ public class Feed
                         }
 
                         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                            if (!(object instanceof Feed.Projects.Project.Agent.SalesOffice.Locality)) {
+                            if ((object == null)||(this.getClass()!= object.getClass())) {
                                 return false;
                             }
                             if (this == object) {
@@ -3513,7 +3513,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Projects.Project.Features)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -3856,7 +3856,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Projects.Project.Lots)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -4504,7 +4504,7 @@ public class Feed
                     }
 
                     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                        if (!(object instanceof Feed.Projects.Project.Lots.Lot)) {
+                        if ((object == null)||(this.getClass()!= object.getClass())) {
                             return false;
                         }
                         if (this == object) {
@@ -4754,7 +4754,7 @@ public class Feed
                         }
 
                         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                            if (!(object instanceof Feed.Projects.Project.Lots.Lot.Pictures)) {
+                            if ((object == null)||(this.getClass()!= object.getClass())) {
                                 return false;
                             }
                             if (this == object) {
@@ -4902,7 +4902,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Projects.Project.Pictures)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -5036,7 +5036,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Projects.Project.Videos)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -5307,7 +5307,7 @@ public class Feed
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof Feed.Properties)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -6139,7 +6139,7 @@ public class Feed
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof Feed.Properties.Property)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -6447,7 +6447,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Properties.Property.Agent)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -6599,7 +6599,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Properties.Property.Blueprints)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -7830,7 +7830,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Properties.Property.ExtraFeatures)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -8425,7 +8425,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Properties.Property.Features)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -8619,7 +8619,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Properties.Property.Pictures)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {
@@ -8763,7 +8763,7 @@ public class Feed
                 }
 
                 public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                    if (!(object instanceof Feed.Properties.Property.Videos)) {
+                    if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
                     if (this == object) {

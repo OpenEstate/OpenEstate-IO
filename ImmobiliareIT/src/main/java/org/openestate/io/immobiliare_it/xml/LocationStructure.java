@@ -360,7 +360,7 @@ public class LocationStructure
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof LocationStructure)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -567,7 +567,7 @@ public class LocationStructure
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof LocationStructure.City)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -903,7 +903,7 @@ public class LocationStructure
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof LocationStructure.Locality)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -1158,7 +1158,7 @@ public class LocationStructure
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof LocationStructure.Locality.Neighbourhood)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -1402,7 +1402,7 @@ public class LocationStructure
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof LocationStructure.Locality.Thoroughfare)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -1584,7 +1584,7 @@ public class LocationStructure
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof LocationStructure.SubAdministrativeArea)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
