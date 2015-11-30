@@ -194,7 +194,7 @@ public class WIS
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof WIS)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -335,7 +335,7 @@ public class WIS
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof WIS.BENUTZER)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -522,7 +522,7 @@ public class WIS
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof WIS.OBJEKTE)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
