@@ -277,7 +277,7 @@ public class ImmobilienTransferTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof ImmobilienTransferTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -413,25 +413,25 @@ public class ImmobilienTransferTyp
          * <p>
          * Objects of the following type(s) are allowed in the list
          * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link GrundstueckWohnenMiete }
-         * {@link Zwangsversteigerung }
-         * {@link WAZ }
-         * {@link WohnungMiete }
-         * {@link GrundstueckGewerbe }
-         * {@link HausKauf }
-         * {@link BueroPraxis }
-         * {@link Anlageobjekt }
-         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
-         * {@link HausMiete }
-         * {@link HalleProduktion }
-         * {@link Gastronomie }
-         * {@link GarageKauf }
-         * {@link Einzelhandel }
          * {@link SonstigeGewerbe }
-         * {@link GarageMiete }
+         * {@link HausMiete }
+         * {@link Einzelhandel }
+         * {@link HausKauf }
          * {@link GrundstueckWohnenKauf }
+         * {@link BueroPraxis }
          * {@link WohnungKauf }
+         * {@link WohnungMiete }
+         * {@link GarageKauf }
+         * {@link Anlageobjekt }
+         * {@link GarageMiete }
+         * {@link Gastronomie }
+         * {@link GrundstueckGewerbe }
+         * {@link HalleProduktion }
+         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
+         * {@link WAZ }
          * {@link WGZimmer }
+         * {@link Zwangsversteigerung }
+         * {@link GrundstueckWohnenMiete }
          * 
          * 
          */
@@ -520,7 +520,7 @@ public class ImmobilienTransferTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof ImmobilienTransferTyp.Anbieter)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {

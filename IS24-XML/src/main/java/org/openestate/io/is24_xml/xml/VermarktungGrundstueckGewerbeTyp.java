@@ -326,7 +326,7 @@ public class VermarktungGrundstueckGewerbeTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof VermarktungGrundstueckGewerbeTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -491,7 +491,7 @@ public class VermarktungGrundstueckGewerbeTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckGewerbeTyp.Erbpacht)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -578,7 +578,7 @@ public class VermarktungGrundstueckGewerbeTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckGewerbeTyp.Kauf)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -655,7 +655,7 @@ public class VermarktungGrundstueckGewerbeTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckGewerbeTyp.Miete)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -732,7 +732,7 @@ public class VermarktungGrundstueckGewerbeTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckGewerbeTyp.Pacht)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {

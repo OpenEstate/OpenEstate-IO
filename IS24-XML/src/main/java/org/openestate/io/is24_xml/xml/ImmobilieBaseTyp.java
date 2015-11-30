@@ -1060,7 +1060,7 @@ public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo, Equals, ToS
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof ImmobilieBaseTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

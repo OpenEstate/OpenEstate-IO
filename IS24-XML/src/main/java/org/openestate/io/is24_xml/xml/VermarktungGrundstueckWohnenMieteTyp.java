@@ -227,7 +227,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof VermarktungGrundstueckWohnenMieteTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -330,7 +330,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckWohnenMieteTyp.Miete)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -407,7 +407,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckWohnenMieteTyp.Pacht)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
