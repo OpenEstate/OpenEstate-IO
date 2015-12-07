@@ -95,29 +95,29 @@ public class OpenImmoUtilsTest
   @Test
   public void testParseDate()
   {
-    DateFormat formatter = DateFormat.getDateInstance( DateFormat.SHORT );
+    DateFormat formatter = DateFormat.getDateInstance( DateFormat.MEDIUM );
     Calendar target = Calendar.getInstance();
-    target.set( 2015, Calendar.JANUARY, 3, 0, 0, 0 );
+    target.set( 2015, Calendar.JANUARY, 30, 0, 0, 0 );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "03.01.2015" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "30.01.2015" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "03-01-2015" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "30-01-2015" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-03" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "2015-01-30" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-03T05:06:07" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "2015-01-30T05:06:07" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-03 05:06:07" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "2015-01-30 05:06:07" ).getTime() ) );
 
     Assert.assertNotNull(
       OpenImmoUtils.parseDate( "2015-03-17 19:05:00" ) );

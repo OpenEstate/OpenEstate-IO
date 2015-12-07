@@ -166,8 +166,7 @@ Take a look at [`LICENSE.txt`](LICENSE.txt) for the license text.
 Todo
 ----
 
--   further testing
--   add missing javadoc comments
+-   improve javadoc comments
 
 
 Further informations

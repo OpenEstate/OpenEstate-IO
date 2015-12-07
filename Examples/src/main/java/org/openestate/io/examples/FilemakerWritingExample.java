@@ -63,7 +63,7 @@ public class FilemakerWritingExample
     PropertyConfigurator.configure(
       FilemakerWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
-    // create an FMPXMLRESULT object with some example data
+    // create a FMPXMLRESULT object with some example data
     // this object corresponds to the <FMPXMLRESULT> root element in XML
     FMPXMLRESULT result = FACTORY.createFMPXMLRESULT();
     result.setERRORCODE( "0" );
