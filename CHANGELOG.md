@@ -4,11 +4,11 @@ Changelog for OpenEstate-IO
 1.0 (not released yet)
 ----------------------
 
--   first stable release
--   published at [Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
-
 ### new features
 
+-   The library is available through [Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
+    from this release on. See [documentation page about Maven](https://github.com/OpenEstate/OpenEstate-IO/wiki/Integration-with-Maven)
+    for more informations.
 -   implemented *FMPXMLLAYOUT* & *FMPXMLRESULT* format of *Filemaker* databases
 
 ### updates
