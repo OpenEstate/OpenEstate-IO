@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-Core</name>
+  <description>OpenEstate-IO-Core is a Java library, that provides some general classes used by the OpenEstate-IO format implementations.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

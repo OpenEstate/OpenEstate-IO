@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-OpenImmo</name>
+  <description>OpenEstate-IO-OpenImmo is a Java library to read and write real estate data in the OpenImmo format.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

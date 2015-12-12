@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-Examples</name>
+  <description>OpenEstate-IO-Examples is a Java library, that provides some example classes to illustrate usage of the formats implemented OpenEstate-IO.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

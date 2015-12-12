@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-WisIT</name>
+  <description>OpenEstate-IO-WisIT is a Java library to read and write real estate data in the XML format of wohnen-in-suedtirol.it.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

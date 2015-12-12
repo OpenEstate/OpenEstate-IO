@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
 
   <name>ALL-OpenEstate-IO</name>
+  <description>OpenEstate-IO provides a set of Java libraries to read and write real estate data in common formats.</description>
   <url>http://openestate.org</url>
   <organization>
     <name>OpenEstate</name>
