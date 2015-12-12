@@ -1,8 +1,8 @@
 Changelog for OpenEstate-IO
 ===========================
 
-1.0 (not released yet)
-----------------------
+1.0 (13 Dec 2015)
+-----------------
 
 ### new features
 
