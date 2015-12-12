@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-DaftIE</name>
+  <description>OpenEstate-IO-DaftIE is a Java library to read and write real estate data in the XML format of daft.ie.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

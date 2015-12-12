@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-CasaIT</name>
+  <description>OpenEstate-IO-CasaIT is a Java library to read and write real estate data in the XML format of casa.it.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

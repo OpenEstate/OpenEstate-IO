@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-Filemaker</name>
+  <description>OpenEstate-IO-Filemaker is a Java library to read and write XML formats of the real estate software FlatHunter Pro, which is based on the Filemaker database system.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

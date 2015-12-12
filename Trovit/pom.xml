@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-Trovit</name>
+  <description>OpenEstate-IO-Trovit is a Java library to read and write real estate data in the XML format of trovit.com.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

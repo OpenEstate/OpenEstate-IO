@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-IDX</name>
+  <description>OpenEstate-IO-IDX is a Java library to read and write real estate data in the IDX format, that is used by homegate.ch and some other portals.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

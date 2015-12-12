@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-ImmoXML</name>
+  <description>OpenEstate-IO-ImmoXML is a Java library to read and write real estate data in the ImmoXML format, that is mostly used by immopool.de.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

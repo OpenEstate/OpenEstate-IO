@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-IS24-CSV</name>
+  <description>OpenEstate-IO-IS24-CSV is a Java library to read and write real estate data in the IS24-CSV format, that was used by immobilienscout24.de until 2014.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

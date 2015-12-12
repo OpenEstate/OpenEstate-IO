@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-ImmobiliareIT</name>
+  <description>OpenEstate-IO-ImmobiliareIT is a Java library to read and write real estate data in the XML format of immobiliare.it.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>

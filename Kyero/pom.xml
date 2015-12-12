@@ -16,6 +16,7 @@
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-Kyero</name>
+  <description>OpenEstate-IO-Kyero is a Java library to read and write real estate data in the XML format of kyero.com.</description>
   <url>http://www.openestate.org</url>
   <organization>
     <name>OpenEstate</name>
