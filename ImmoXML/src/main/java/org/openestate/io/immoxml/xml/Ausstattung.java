@@ -1,6 +1,7 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -108,15 +109,16 @@ public class Ausstattung
     protected Boolean kran;
     protected Boolean gastterrasse;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double stromanschlusswert;
+    protected BigDecimal stromanschlusswert;
     @XmlElement(name = "kantine_cafeteria")
     protected Boolean kantineCafeteria;
     protected Boolean teekueche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    protected Double hallenhoehe;
+    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal hallenhoehe;
     @XmlElement(name = "angeschl_gastronomie")
     protected AngeschlGastronomie angeschlGastronomie;
     protected Boolean brauereibindung;
@@ -745,7 +747,7 @@ public class Ausstattung
      *     {@link String }
      *     
      */
-    public Double getStromanschlusswert() {
+    public BigDecimal getStromanschlusswert() {
         return stromanschlusswert;
     }
 
@@ -757,7 +759,7 @@ public class Ausstattung
      *     {@link String }
      *     
      */
-    public void setStromanschlusswert(Double value) {
+    public void setStromanschlusswert(BigDecimal value) {
         this.stromanschlusswert = value;
     }
 
@@ -817,7 +819,7 @@ public class Ausstattung
      *     {@link String }
      *     
      */
-    public Double getHallenhoehe() {
+    public BigDecimal getHallenhoehe() {
         return hallenhoehe;
     }
 
@@ -829,7 +831,7 @@ public class Ausstattung
      *     {@link String }
      *     
      */
-    public void setHallenhoehe(Double value) {
+    public void setHallenhoehe(BigDecimal value) {
         this.hallenhoehe = value;
     }
 
@@ -1229,7 +1231,7 @@ public class Ausstattung
             strategy.appendField(locator, this, "gastterrasse", buffer, theGastterrasse);
         }
         {
-            Double theStromanschlusswert;
+            BigDecimal theStromanschlusswert;
             theStromanschlusswert = this.getStromanschlusswert();
             strategy.appendField(locator, this, "stromanschlusswert", buffer, theStromanschlusswert);
         }
@@ -1244,7 +1246,7 @@ public class Ausstattung
             strategy.appendField(locator, this, "teekueche", buffer, theTeekueche);
         }
         {
-            Double theHallenhoehe;
+            BigDecimal theHallenhoehe;
             theHallenhoehe = this.getHallenhoehe();
             strategy.appendField(locator, this, "hallenhoehe", buffer, theHallenhoehe);
         }
@@ -1520,9 +1522,9 @@ public class Ausstattung
                 copy.gastterrasse = null;
             }
             if (this.stromanschlusswert!= null) {
-                Double sourceStromanschlusswert;
+                BigDecimal sourceStromanschlusswert;
                 sourceStromanschlusswert = this.getStromanschlusswert();
-                Double copyStromanschlusswert = ((Double) strategy.copy(LocatorUtils.property(locator, "stromanschlusswert", sourceStromanschlusswert), sourceStromanschlusswert));
+                BigDecimal copyStromanschlusswert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "stromanschlusswert", sourceStromanschlusswert), sourceStromanschlusswert));
                 copy.setStromanschlusswert(copyStromanschlusswert);
             } else {
                 copy.stromanschlusswert = null;
@@ -1544,9 +1546,9 @@ public class Ausstattung
                 copy.teekueche = null;
             }
             if (this.hallenhoehe!= null) {
-                Double sourceHallenhoehe;
+                BigDecimal sourceHallenhoehe;
                 sourceHallenhoehe = this.getHallenhoehe();
-                Double copyHallenhoehe = ((Double) strategy.copy(LocatorUtils.property(locator, "hallenhoehe", sourceHallenhoehe), sourceHallenhoehe));
+                BigDecimal copyHallenhoehe = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hallenhoehe", sourceHallenhoehe), sourceHallenhoehe));
                 copy.setHallenhoehe(copyHallenhoehe);
             } else {
                 copy.hallenhoehe = null;
@@ -1655,7 +1657,7 @@ public class Ausstattung
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Ausstattung)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -1888,9 +1890,9 @@ public class Ausstattung
             }
         }
         {
-            Double lhsStromanschlusswert;
+            BigDecimal lhsStromanschlusswert;
             lhsStromanschlusswert = this.getStromanschlusswert();
-            Double rhsStromanschlusswert;
+            BigDecimal rhsStromanschlusswert;
             rhsStromanschlusswert = that.getStromanschlusswert();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stromanschlusswert", lhsStromanschlusswert), LocatorUtils.property(thatLocator, "stromanschlusswert", rhsStromanschlusswert), lhsStromanschlusswert, rhsStromanschlusswert)) {
                 return false;
@@ -1915,9 +1917,9 @@ public class Ausstattung
             }
         }
         {
-            Double lhsHallenhoehe;
+            BigDecimal lhsHallenhoehe;
             lhsHallenhoehe = this.getHallenhoehe();
-            Double rhsHallenhoehe;
+            BigDecimal rhsHallenhoehe;
             rhsHallenhoehe = that.getHallenhoehe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hallenhoehe", lhsHallenhoehe), LocatorUtils.property(thatLocator, "hallenhoehe", rhsHallenhoehe), lhsHallenhoehe, rhsHallenhoehe)) {
                 return false;

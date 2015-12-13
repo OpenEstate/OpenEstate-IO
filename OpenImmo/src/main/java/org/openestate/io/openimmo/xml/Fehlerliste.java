@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -127,7 +128,7 @@ public class Fehlerliste
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Fehlerliste)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -171,9 +172,9 @@ public class Fehlerliste
         @XmlElement(name = "objekt_id")
         protected String objektId;
         @XmlElement(type = String.class)
-        @XmlJavaTypeAdapter(Adapter4 .class)
+        @XmlJavaTypeAdapter(Adapter5 .class)
         @XmlSchemaType(name = "int")
-        protected Integer fehlernr;
+        protected BigInteger fehlernr;
         protected String text;
 
         /**
@@ -208,7 +209,7 @@ public class Fehlerliste
          *     {@link String }
          *     
          */
-        public Integer getFehlernr() {
+        public BigInteger getFehlernr() {
             return fehlernr;
         }
 
@@ -220,7 +221,7 @@ public class Fehlerliste
          *     {@link String }
          *     
          */
-        public void setFehlernr(Integer value) {
+        public void setFehlernr(BigInteger value) {
             this.fehlernr = value;
         }
 
@@ -269,7 +270,7 @@ public class Fehlerliste
                 strategy.appendField(locator, this, "objektId", buffer, theObjektId);
             }
             {
-                Integer theFehlernr;
+                BigInteger theFehlernr;
                 theFehlernr = this.getFehlernr();
                 strategy.appendField(locator, this, "fehlernr", buffer, theFehlernr);
             }
@@ -303,9 +304,9 @@ public class Fehlerliste
                     copy.objektId = null;
                 }
                 if (this.fehlernr!= null) {
-                    Integer sourceFehlernr;
+                    BigInteger sourceFehlernr;
                     sourceFehlernr = this.getFehlernr();
-                    Integer copyFehlernr = ((Integer) strategy.copy(LocatorUtils.property(locator, "fehlernr", sourceFehlernr), sourceFehlernr));
+                    BigInteger copyFehlernr = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "fehlernr", sourceFehlernr), sourceFehlernr));
                     copy.setFehlernr(copyFehlernr);
                 } else {
                     copy.fehlernr = null;
@@ -327,7 +328,7 @@ public class Fehlerliste
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof Fehlerliste.Fehler)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -344,9 +345,9 @@ public class Fehlerliste
                 }
             }
             {
-                Integer lhsFehlernr;
+                BigInteger lhsFehlernr;
                 lhsFehlernr = this.getFehlernr();
-                Integer rhsFehlernr;
+                BigInteger rhsFehlernr;
                 rhsFehlernr = that.getFehlernr();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "fehlernr", lhsFehlernr), LocatorUtils.property(thatLocator, "fehlernr", rhsFehlernr), lhsFehlernr, rhsFehlernr)) {
                     return false;

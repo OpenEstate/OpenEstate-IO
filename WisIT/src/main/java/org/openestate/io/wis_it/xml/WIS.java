@@ -1,6 +1,7 @@
 
 package org.openestate.io.wis_it.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -29,37 +30,37 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="BENUTZER">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="KDNR" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="OBJEKTE" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/>
- *                   &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="BENUTZER"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="KDNR" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="OBJEKTE" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/&gt;
+ *                   &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -193,7 +194,7 @@ public class WIS
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof WIS)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -233,15 +234,15 @@ public class WIS
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="KDNR" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="KDNR" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -334,7 +335,7 @@ public class WIS
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof WIS.BENUTZER)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -367,16 +368,16 @@ public class WIS
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/>
-     *         &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/&gt;
+     *         &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -393,7 +394,7 @@ public class WIS
         @XmlElement(name = "ANZAHL", required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter1 .class)
         @XmlSchemaType(name = "nonNegativeInteger")
-        protected Integer anzahl;
+        protected BigInteger anzahl;
         @XmlElement(name = "OBJEKT")
         protected List<ObjectType> objekt;
 
@@ -405,7 +406,7 @@ public class WIS
          *     {@link String }
          *     
          */
-        public Integer getANZAHL() {
+        public BigInteger getANZAHL() {
             return anzahl;
         }
 
@@ -417,7 +418,7 @@ public class WIS
          *     {@link String }
          *     
          */
-        public void setANZAHL(Integer value) {
+        public void setANZAHL(BigInteger value) {
             this.anzahl = value;
         }
 
@@ -466,7 +467,7 @@ public class WIS
 
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
             {
-                Integer theANZAHL;
+                BigInteger theANZAHL;
                 theANZAHL = this.getANZAHL();
                 strategy.appendField(locator, this, "anzahl", buffer, theANZAHL);
             }
@@ -492,9 +493,9 @@ public class WIS
             if (draftCopy instanceof WIS.OBJEKTE) {
                 final WIS.OBJEKTE copy = ((WIS.OBJEKTE) draftCopy);
                 if (this.anzahl!= null) {
-                    Integer sourceANZAHL;
+                    BigInteger sourceANZAHL;
                     sourceANZAHL = this.getANZAHL();
-                    Integer copyANZAHL = ((Integer) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceANZAHL), sourceANZAHL));
+                    BigInteger copyANZAHL = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceANZAHL), sourceANZAHL));
                     copy.setANZAHL(copyANZAHL);
                 } else {
                     copy.anzahl = null;
@@ -521,7 +522,7 @@ public class WIS
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof WIS.OBJEKTE)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -529,9 +530,9 @@ public class WIS
             }
             final WIS.OBJEKTE that = ((WIS.OBJEKTE) object);
             {
-                Integer lhsANZAHL;
+                BigInteger lhsANZAHL;
                 lhsANZAHL = this.getANZAHL();
-                Integer rhsANZAHL;
+                BigInteger rhsANZAHL;
                 rhsANZAHL = that.getANZAHL();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahl", lhsANZAHL), LocatorUtils.property(thatLocator, "anzahl", rhsANZAHL), lhsANZAHL, rhsANZAHL)) {
                     return false;

@@ -70,14 +70,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FeaturesType }
-     * 
-     */
-    public FeaturesType createFeaturesType() {
-        return new FeaturesType();
-    }
-
-    /**
      * Create an instance of {@link LangType }
      * 
      */
@@ -94,14 +86,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UrlType }
-     * 
-     */
-    public UrlType createUrlType() {
-        return new UrlType();
-    }
-
-    /**
      * Create an instance of {@link SurfaceType }
      * 
      */
@@ -115,6 +99,22 @@ public class ObjectFactory {
      */
     public EnergyRatingType createEnergyRatingType() {
         return new EnergyRatingType();
+    }
+
+    /**
+     * Create an instance of {@link UrlType }
+     * 
+     */
+    public UrlType createUrlType() {
+        return new UrlType();
+    }
+
+    /**
+     * Create an instance of {@link FeaturesType }
+     * 
+     */
+    public FeaturesType createFeaturesType() {
+        return new FeaturesType();
     }
 
     /**

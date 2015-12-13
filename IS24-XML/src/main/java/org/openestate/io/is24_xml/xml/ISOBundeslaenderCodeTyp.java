@@ -12,28 +12,28 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ISOBundeslaenderCodeTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;length value="5"/>
- *     &lt;whiteSpace value="collapse"/>
- *     &lt;enumeration value="DE-BW"/>
- *     &lt;enumeration value="DE-BY"/>
- *     &lt;enumeration value="DE-BE"/>
- *     &lt;enumeration value="DE-BB"/>
- *     &lt;enumeration value="DE-HB"/>
- *     &lt;enumeration value="DE-HH"/>
- *     &lt;enumeration value="DE-HE"/>
- *     &lt;enumeration value="DE-MV"/>
- *     &lt;enumeration value="DE-NI"/>
- *     &lt;enumeration value="DE-NW"/>
- *     &lt;enumeration value="DE-RP"/>
- *     &lt;enumeration value="DE-SL"/>
- *     &lt;enumeration value="DE-SN"/>
- *     &lt;enumeration value="DE-ST"/>
- *     &lt;enumeration value="DE-SH"/>
- *     &lt;enumeration value="DE-TH"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ISOBundeslaenderCodeTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;length value="5"/&gt;
+ *     &lt;whiteSpace value="collapse"/&gt;
+ *     &lt;enumeration value="DE-BW"/&gt;
+ *     &lt;enumeration value="DE-BY"/&gt;
+ *     &lt;enumeration value="DE-BE"/&gt;
+ *     &lt;enumeration value="DE-BB"/&gt;
+ *     &lt;enumeration value="DE-HB"/&gt;
+ *     &lt;enumeration value="DE-HH"/&gt;
+ *     &lt;enumeration value="DE-HE"/&gt;
+ *     &lt;enumeration value="DE-MV"/&gt;
+ *     &lt;enumeration value="DE-NI"/&gt;
+ *     &lt;enumeration value="DE-NW"/&gt;
+ *     &lt;enumeration value="DE-RP"/&gt;
+ *     &lt;enumeration value="DE-SL"/&gt;
+ *     &lt;enumeration value="DE-SN"/&gt;
+ *     &lt;enumeration value="DE-ST"/&gt;
+ *     &lt;enumeration value="DE-SH"/&gt;
+ *     &lt;enumeration value="DE-TH"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

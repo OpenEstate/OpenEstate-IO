@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -133,8 +135,8 @@ public class DaftIeWritingExample
     ad.setAgentId( "123" );
     ad.setArea( "Berlin" );
     ad.setAvailableFrom( Calendar.getInstance() );
-    ad.setBathroomNumber( RandomUtils.nextInt( 0, 5 ) );
-    ad.setBedroomNumber( RandomUtils.nextInt( 0, 5 ) );
+    ad.setBathroomNumber( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
+    ad.setBedroomNumber( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
     ad.setCableTelevision( RandomUtils.nextInt( 0, 2 )==1 );
     ad.setCcEmail( "test@openestate.org" );
     ad.setCommercialType( CommercialType.LAND );
@@ -142,24 +144,24 @@ public class DaftIeWritingExample
     ad.setCountry( "DE" );
     ad.setDescription( "A description about the property." );
     ad.setDishwasher( RandomUtils.nextInt( 0, 2 )==1 );
-    ad.setDoubleBeds( RandomUtils.nextInt( 0, 5 ) );
+    ad.setDoubleBeds( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
     ad.setDryer( RandomUtils.nextInt( 0, 2 )==1 );
     ad.setExternalId( String.valueOf( RandomUtils.nextInt( 1, 1000 ) ) );
     ad.setFurnished( OverseasRentalAdType.Furnished.FURNISHED );
     ad.setHouseType( HouseType.TOWNHOUSE );
-    ad.setLease( RandomUtils.nextInt( 100, 1000 ) );
+    ad.setLease( BigInteger.valueOf( RandomUtils.nextInt( 100, 1000 ) ) );
     ad.setMainEmail( "test@openstate.org" );
     ad.setMicrowave( RandomUtils.nextInt( 0, 2 )==1 );
-    ad.setNumberPeople( RandomUtils.nextInt( 0, 5 ) );
+    ad.setNumberPeople( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
     ad.setPhone1( "030/123456" );
     ad.setPhone2( "030/123457" );
     ad.setPhoneInfo( "Some information about contacts via phone." );
     ad.setPropertyType( PropertyType.HOUSE );
     ad.setRegion( "Berlin" );
-    ad.setRent( RandomUtils.nextInt( 100, 1000 ) );
+    ad.setRent( BigInteger.valueOf( RandomUtils.nextInt( 100, 1000 ) ) );
     ad.setRentCollectionPeriod( OverseasRentalAdType.RentPeriod.MONTHLY );
-    ad.setSingleBeds( RandomUtils.nextInt( 0, 5 ) );
-    ad.setTwinBeds( RandomUtils.nextInt( 0, 5 ) );
+    ad.setSingleBeds( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
+    ad.setTwinBeds( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
     ad.setWashingMachine( RandomUtils.nextInt( 0, 2 )==1 );
 
     // add some features
@@ -192,12 +194,12 @@ public class DaftIeWritingExample
   {
     // create an example real estate for sale
     OverseasSaleAdType ad = FACTORY.createOverseasSaleAdType();
-    ad.setAcres( RandomUtils.nextDouble( 10, 1000 ) );
+    ad.setAcres( BigDecimal.valueOf( RandomUtils.nextDouble( 10, 1000 ) ) );
     ad.setAddress( "Beispielstraße 123");
     ad.setAgentId( "123" );
     ad.setArea( "Berlin" );
-    ad.setBathroomNumber( RandomUtils.nextInt( 0, 5 ) );
-    ad.setBedroomNumber( RandomUtils.nextInt( 0, 5 ) );
+    ad.setBathroomNumber( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
+    ad.setBedroomNumber( BigInteger.valueOf( RandomUtils.nextInt( 0, 5 ) ) );
     ad.setCcEmail( "test@openestate.org" );
     ad.setCo2Rating( "some notes about CO2 rating" );
     ad.setCommercialType( CommercialType.SHOP );
@@ -214,13 +216,13 @@ public class DaftIeWritingExample
     ad.setPhone1( "030/123456" );
     ad.setPhone2( "030/123457" );
     ad.setPhoneInfo( "Some information about contacts via phone." );
-    ad.setPrice( RandomUtils.nextInt( 100, 1000000 ) );
+    ad.setPrice( BigInteger.valueOf( RandomUtils.nextInt( 100, 1000000 ) ) );
     ad.setPriceType( OverseasSaleAdType.PriceType.REGION );
     ad.setPropertyStatus( OverseasSaleAdType.PropertyStatus.FOR_SALE );
     ad.setPropertyType( PropertyType.HOUSE );
     ad.setRegion( "Berlin" );
-    ad.setSquareMetres( RandomUtils.nextDouble( 10, 1000 ) );
-    ad.setUnitsAvailable( RandomUtils.nextInt( 1, 50 ) );
+    ad.setSquareMetres( BigDecimal.valueOf( RandomUtils.nextDouble( 10, 1000 ) ) );
+    ad.setUnitsAvailable( BigInteger.valueOf( RandomUtils.nextInt( 1, 50 ) ) );
     ad.setViewingDetails( "some notes about viewing details" );
 
     // add some features

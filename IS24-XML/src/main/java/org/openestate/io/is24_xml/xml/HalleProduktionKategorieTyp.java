@@ -12,24 +12,24 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="HalleProduktionKategorieTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Ausstellungsflaeche"/>
- *     &lt;enumeration value="Halle"/>
- *     &lt;enumeration value="Hochregallager"/>
- *     &lt;enumeration value="Industriehalle"/>
- *     &lt;enumeration value="IndustriehalleMitFreiflaeche"/>
- *     &lt;enumeration value="Kuehlhaus"/>
- *     &lt;enumeration value="Kuehlregallager"/>
- *     &lt;enumeration value="LagerMitFreiflaeche"/>
- *     &lt;enumeration value="Lagerflaeche"/>
- *     &lt;enumeration value="Lagerhalle"/>
- *     &lt;enumeration value="Serviceflaeche"/>
- *     &lt;enumeration value="Speditionslager"/>
- *     &lt;enumeration value="Werkstatt"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="HalleProduktionKategorieTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Ausstellungsflaeche"/&gt;
+ *     &lt;enumeration value="Halle"/&gt;
+ *     &lt;enumeration value="Hochregallager"/&gt;
+ *     &lt;enumeration value="Industriehalle"/&gt;
+ *     &lt;enumeration value="IndustriehalleMitFreiflaeche"/&gt;
+ *     &lt;enumeration value="Kuehlhaus"/&gt;
+ *     &lt;enumeration value="Kuehlregallager"/&gt;
+ *     &lt;enumeration value="LagerMitFreiflaeche"/&gt;
+ *     &lt;enumeration value="Lagerflaeche"/&gt;
+ *     &lt;enumeration value="Lagerhalle"/&gt;
+ *     &lt;enumeration value="Serviceflaeche"/&gt;
+ *     &lt;enumeration value="Speditionslager"/&gt;
+ *     &lt;enumeration value="Werkstatt"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

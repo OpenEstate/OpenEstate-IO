@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -27,31 +28,31 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VermarktungGrundstueckWohnenMieteTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="Pacht">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Miete">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/choice>
- *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VermarktungGrundstueckWohnenMieteTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="Pacht"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Miete"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/choice&gt;
+ *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -70,8 +71,8 @@ public class VermarktungGrundstueckWohnenMieteTyp
     @XmlElementRef(name = "Miete", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
     protected JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Miete> miete;
     @XmlAttribute(name = "Preis", required = true)
-    @XmlJavaTypeAdapter(Adapter17 .class)
-    protected Double preis;
+    @XmlJavaTypeAdapter(Adapter36 .class)
+    protected BigDecimal preis;
 
     /**
      * Gets the value of the pacht property.
@@ -129,7 +130,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
      *     {@link String }
      *     
      */
-    public Double getPreis() {
+    public BigDecimal getPreis() {
         return preis;
     }
 
@@ -141,7 +142,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
      *     {@link String }
      *     
      */
-    public void setPreis(Double value) {
+    public void setPreis(BigDecimal value) {
         this.preis = value;
     }
 
@@ -171,7 +172,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
             strategy.appendField(locator, this, "miete", buffer, theMiete);
         }
         {
-            Double thePreis;
+            BigDecimal thePreis;
             thePreis = this.getPreis();
             strategy.appendField(locator, this, "preis", buffer, thePreis);
         }
@@ -210,9 +211,9 @@ public class VermarktungGrundstueckWohnenMieteTyp
                 copy.miete = null;
             }
             if (this.preis!= null) {
-                Double sourcePreis;
+                BigDecimal sourcePreis;
                 sourcePreis = this.getPreis();
-                Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                 copy.setPreis(copyPreis);
             } else {
                 copy.preis = null;
@@ -226,7 +227,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof VermarktungGrundstueckWohnenMieteTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -252,9 +253,9 @@ public class VermarktungGrundstueckWohnenMieteTyp
             }
         }
         {
-            Double lhsPreis;
+            BigDecimal lhsPreis;
             lhsPreis = this.getPreis();
-            Double rhsPreis;
+            BigDecimal rhsPreis;
             rhsPreis = that.getPreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                 return false;
@@ -275,12 +276,12 @@ public class VermarktungGrundstueckWohnenMieteTyp
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -329,7 +330,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckWohnenMieteTyp.Miete)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -352,12 +353,12 @@ public class VermarktungGrundstueckWohnenMieteTyp
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -406,7 +407,7 @@ public class VermarktungGrundstueckWohnenMieteTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckWohnenMieteTyp.Pacht)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {

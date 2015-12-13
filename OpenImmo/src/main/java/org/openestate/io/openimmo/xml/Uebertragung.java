@@ -53,7 +53,7 @@ public class Uebertragung
     @XmlAttribute(name = "regi_id")
     protected String regiId;
     @XmlAttribute(name = "timestamp")
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
     protected Calendar timestamp;
 
@@ -430,7 +430,7 @@ public class Uebertragung
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Uebertragung)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

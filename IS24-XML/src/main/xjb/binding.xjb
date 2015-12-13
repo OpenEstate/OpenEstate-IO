@@ -81,37 +81,37 @@
     <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl10Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl10"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl10" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl20Typ"
+    <jaxb:javaType name="java.math.BigInteger" xmlType="is24:Zahl20Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl20"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl20" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl31Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl31Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl31"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl31" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl32Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl32Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl32"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl32" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl42Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl42Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl42"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl42" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl52Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl52Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl52"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl52" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl62Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl62Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl62"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl62" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl72Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl72Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl72"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl72" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl102Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl102Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl102"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl102" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:Zahl152Typ"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl152Typ"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl152"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl152" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:ZimmeranzahlTyp"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:ZimmeranzahlTyp"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZimmeranzahl"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZimmeranzahl" />
-    <jaxb:javaType name="java.lang.Double" xmlType="is24:PreisAufAnfrage"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:PreisAufAnfrage"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parsePreisAufAnfrage"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printPreisAufAnfrage" />
   </jaxb:globalBindings>

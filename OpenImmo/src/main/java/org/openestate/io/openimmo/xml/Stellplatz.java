@@ -1,6 +1,8 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -37,17 +39,17 @@ public class Stellplatz
 {
 
     @XmlAttribute(name = "stellplatzmiete")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double stellplatzmiete;
+    protected BigDecimal stellplatzmiete;
     @XmlAttribute(name = "stellplatzkaufpreis")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double stellplatzkaufpreis;
+    protected BigDecimal stellplatzkaufpreis;
     @XmlAttribute(name = "anzahl")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
-    protected Integer anzahl;
+    protected BigInteger anzahl;
 
     /**
      * Gets the value of the stellplatzmiete property.
@@ -57,7 +59,7 @@ public class Stellplatz
      *     {@link String }
      *     
      */
-    public Double getStellplatzmiete() {
+    public BigDecimal getStellplatzmiete() {
         return stellplatzmiete;
     }
 
@@ -69,7 +71,7 @@ public class Stellplatz
      *     {@link String }
      *     
      */
-    public void setStellplatzmiete(Double value) {
+    public void setStellplatzmiete(BigDecimal value) {
         this.stellplatzmiete = value;
     }
 
@@ -81,7 +83,7 @@ public class Stellplatz
      *     {@link String }
      *     
      */
-    public Double getStellplatzkaufpreis() {
+    public BigDecimal getStellplatzkaufpreis() {
         return stellplatzkaufpreis;
     }
 
@@ -93,7 +95,7 @@ public class Stellplatz
      *     {@link String }
      *     
      */
-    public void setStellplatzkaufpreis(Double value) {
+    public void setStellplatzkaufpreis(BigDecimal value) {
         this.stellplatzkaufpreis = value;
     }
 
@@ -105,7 +107,7 @@ public class Stellplatz
      *     {@link String }
      *     
      */
-    public Integer getAnzahl() {
+    public BigInteger getAnzahl() {
         return anzahl;
     }
 
@@ -117,7 +119,7 @@ public class Stellplatz
      *     {@link String }
      *     
      */
-    public void setAnzahl(Integer value) {
+    public void setAnzahl(BigInteger value) {
         this.anzahl = value;
     }
 
@@ -137,17 +139,17 @@ public class Stellplatz
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theStellplatzmiete;
+            BigDecimal theStellplatzmiete;
             theStellplatzmiete = this.getStellplatzmiete();
             strategy.appendField(locator, this, "stellplatzmiete", buffer, theStellplatzmiete);
         }
         {
-            Double theStellplatzkaufpreis;
+            BigDecimal theStellplatzkaufpreis;
             theStellplatzkaufpreis = this.getStellplatzkaufpreis();
             strategy.appendField(locator, this, "stellplatzkaufpreis", buffer, theStellplatzkaufpreis);
         }
         {
-            Integer theAnzahl;
+            BigInteger theAnzahl;
             theAnzahl = this.getAnzahl();
             strategy.appendField(locator, this, "anzahl", buffer, theAnzahl);
         }
@@ -168,25 +170,25 @@ public class Stellplatz
         if (draftCopy instanceof Stellplatz) {
             final Stellplatz copy = ((Stellplatz) draftCopy);
             if (this.stellplatzmiete!= null) {
-                Double sourceStellplatzmiete;
+                BigDecimal sourceStellplatzmiete;
                 sourceStellplatzmiete = this.getStellplatzmiete();
-                Double copyStellplatzmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "stellplatzmiete", sourceStellplatzmiete), sourceStellplatzmiete));
+                BigDecimal copyStellplatzmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "stellplatzmiete", sourceStellplatzmiete), sourceStellplatzmiete));
                 copy.setStellplatzmiete(copyStellplatzmiete);
             } else {
                 copy.stellplatzmiete = null;
             }
             if (this.stellplatzkaufpreis!= null) {
-                Double sourceStellplatzkaufpreis;
+                BigDecimal sourceStellplatzkaufpreis;
                 sourceStellplatzkaufpreis = this.getStellplatzkaufpreis();
-                Double copyStellplatzkaufpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "stellplatzkaufpreis", sourceStellplatzkaufpreis), sourceStellplatzkaufpreis));
+                BigDecimal copyStellplatzkaufpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "stellplatzkaufpreis", sourceStellplatzkaufpreis), sourceStellplatzkaufpreis));
                 copy.setStellplatzkaufpreis(copyStellplatzkaufpreis);
             } else {
                 copy.stellplatzkaufpreis = null;
             }
             if (this.anzahl!= null) {
-                Integer sourceAnzahl;
+                BigInteger sourceAnzahl;
                 sourceAnzahl = this.getAnzahl();
-                Integer copyAnzahl = ((Integer) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceAnzahl), sourceAnzahl));
+                BigInteger copyAnzahl = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceAnzahl), sourceAnzahl));
                 copy.setAnzahl(copyAnzahl);
             } else {
                 copy.anzahl = null;
@@ -200,7 +202,7 @@ public class Stellplatz
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Stellplatz)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -208,27 +210,27 @@ public class Stellplatz
         }
         final Stellplatz that = ((Stellplatz) object);
         {
-            Double lhsStellplatzmiete;
+            BigDecimal lhsStellplatzmiete;
             lhsStellplatzmiete = this.getStellplatzmiete();
-            Double rhsStellplatzmiete;
+            BigDecimal rhsStellplatzmiete;
             rhsStellplatzmiete = that.getStellplatzmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stellplatzmiete", lhsStellplatzmiete), LocatorUtils.property(thatLocator, "stellplatzmiete", rhsStellplatzmiete), lhsStellplatzmiete, rhsStellplatzmiete)) {
                 return false;
             }
         }
         {
-            Double lhsStellplatzkaufpreis;
+            BigDecimal lhsStellplatzkaufpreis;
             lhsStellplatzkaufpreis = this.getStellplatzkaufpreis();
-            Double rhsStellplatzkaufpreis;
+            BigDecimal rhsStellplatzkaufpreis;
             rhsStellplatzkaufpreis = that.getStellplatzkaufpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stellplatzkaufpreis", lhsStellplatzkaufpreis), LocatorUtils.property(thatLocator, "stellplatzkaufpreis", rhsStellplatzkaufpreis), lhsStellplatzkaufpreis, rhsStellplatzkaufpreis)) {
                 return false;
             }
         }
         {
-            Integer lhsAnzahl;
+            BigInteger lhsAnzahl;
             lhsAnzahl = this.getAnzahl();
-            Integer rhsAnzahl;
+            BigInteger rhsAnzahl;
             rhsAnzahl = that.getAnzahl();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahl", lhsAnzahl), LocatorUtils.property(thatLocator, "anzahl", rhsAnzahl), lhsAnzahl, rhsAnzahl)) {
                 return false;

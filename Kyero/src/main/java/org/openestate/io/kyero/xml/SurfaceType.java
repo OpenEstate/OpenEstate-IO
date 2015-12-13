@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -26,16 +27,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="surfaceType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="built" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *         &lt;element name="plot" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="surfaceType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="built" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *         &lt;element name="plot" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,13 +50,13 @@ public class SurfaceType
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
-    protected Long built;
+    protected BigInteger built;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
-    protected Long plot;
+    protected BigInteger plot;
 
     /**
      * Gets the value of the built property.
@@ -65,7 +66,7 @@ public class SurfaceType
      *     {@link String }
      *     
      */
-    public Long getBuilt() {
+    public BigInteger getBuilt() {
         return built;
     }
 
@@ -77,7 +78,7 @@ public class SurfaceType
      *     {@link String }
      *     
      */
-    public void setBuilt(Long value) {
+    public void setBuilt(BigInteger value) {
         this.built = value;
     }
 
@@ -89,7 +90,7 @@ public class SurfaceType
      *     {@link String }
      *     
      */
-    public Long getPlot() {
+    public BigInteger getPlot() {
         return plot;
     }
 
@@ -101,7 +102,7 @@ public class SurfaceType
      *     {@link String }
      *     
      */
-    public void setPlot(Long value) {
+    public void setPlot(BigInteger value) {
         this.plot = value;
     }
 
@@ -121,12 +122,12 @@ public class SurfaceType
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Long theBuilt;
+            BigInteger theBuilt;
             theBuilt = this.getBuilt();
             strategy.appendField(locator, this, "built", buffer, theBuilt);
         }
         {
-            Long thePlot;
+            BigInteger thePlot;
             thePlot = this.getPlot();
             strategy.appendField(locator, this, "plot", buffer, thePlot);
         }
@@ -147,17 +148,17 @@ public class SurfaceType
         if (draftCopy instanceof SurfaceType) {
             final SurfaceType copy = ((SurfaceType) draftCopy);
             if (this.built!= null) {
-                Long sourceBuilt;
+                BigInteger sourceBuilt;
                 sourceBuilt = this.getBuilt();
-                Long copyBuilt = ((Long) strategy.copy(LocatorUtils.property(locator, "built", sourceBuilt), sourceBuilt));
+                BigInteger copyBuilt = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "built", sourceBuilt), sourceBuilt));
                 copy.setBuilt(copyBuilt);
             } else {
                 copy.built = null;
             }
             if (this.plot!= null) {
-                Long sourcePlot;
+                BigInteger sourcePlot;
                 sourcePlot = this.getPlot();
-                Long copyPlot = ((Long) strategy.copy(LocatorUtils.property(locator, "plot", sourcePlot), sourcePlot));
+                BigInteger copyPlot = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "plot", sourcePlot), sourcePlot));
                 copy.setPlot(copyPlot);
             } else {
                 copy.plot = null;
@@ -171,7 +172,7 @@ public class SurfaceType
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof SurfaceType)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -179,18 +180,18 @@ public class SurfaceType
         }
         final SurfaceType that = ((SurfaceType) object);
         {
-            Long lhsBuilt;
+            BigInteger lhsBuilt;
             lhsBuilt = this.getBuilt();
-            Long rhsBuilt;
+            BigInteger rhsBuilt;
             rhsBuilt = that.getBuilt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "built", lhsBuilt), LocatorUtils.property(thatLocator, "built", rhsBuilt), lhsBuilt, rhsBuilt)) {
                 return false;
             }
         }
         {
-            Long lhsPlot;
+            BigInteger lhsPlot;
             lhsPlot = this.getPlot();
-            Long rhsPlot;
+            BigInteger rhsPlot;
             rhsPlot = that.getPlot();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "plot", lhsPlot), LocatorUtils.property(thatLocator, "plot", rhsPlot), lhsPlot, rhsPlot)) {
                 return false;

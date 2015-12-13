@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -38,13 +39,13 @@ public class Monatlichekostennetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "monatlichekostenust")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double monatlichekostenust;
+    protected BigDecimal monatlichekostenust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Monatlichekostennetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Monatlichekostennetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Monatlichekostennetto
      *     {@link String }
      *     
      */
-    public Double getMonatlichekostenust() {
+    public BigDecimal getMonatlichekostenust() {
         return monatlichekostenust;
     }
 
@@ -90,7 +91,7 @@ public class Monatlichekostennetto
      *     {@link String }
      *     
      */
-    public void setMonatlichekostenust(Double value) {
+    public void setMonatlichekostenust(BigDecimal value) {
         this.monatlichekostenust = value;
     }
 
@@ -110,12 +111,12 @@ public class Monatlichekostennetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theMonatlichekostenust;
+            BigDecimal theMonatlichekostenust;
             theMonatlichekostenust = this.getMonatlichekostenust();
             strategy.appendField(locator, this, "monatlichekostenust", buffer, theMonatlichekostenust);
         }
@@ -136,17 +137,17 @@ public class Monatlichekostennetto
         if (draftCopy instanceof Monatlichekostennetto) {
             final Monatlichekostennetto copy = ((Monatlichekostennetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.monatlichekostenust!= null) {
-                Double sourceMonatlichekostenust;
+                BigDecimal sourceMonatlichekostenust;
                 sourceMonatlichekostenust = this.getMonatlichekostenust();
-                Double copyMonatlichekostenust = ((Double) strategy.copy(LocatorUtils.property(locator, "monatlichekostenust", sourceMonatlichekostenust), sourceMonatlichekostenust));
+                BigDecimal copyMonatlichekostenust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "monatlichekostenust", sourceMonatlichekostenust), sourceMonatlichekostenust));
                 copy.setMonatlichekostenust(copyMonatlichekostenust);
             } else {
                 copy.monatlichekostenust = null;
@@ -160,7 +161,7 @@ public class Monatlichekostennetto
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Monatlichekostennetto)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -168,18 +169,18 @@ public class Monatlichekostennetto
         }
         final Monatlichekostennetto that = ((Monatlichekostennetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsMonatlichekostenust;
+            BigDecimal lhsMonatlichekostenust;
             lhsMonatlichekostenust = this.getMonatlichekostenust();
-            Double rhsMonatlichekostenust;
+            BigDecimal rhsMonatlichekostenust;
             rhsMonatlichekostenust = that.getMonatlichekostenust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "monatlichekostenust", lhsMonatlichekostenust), LocatorUtils.property(thatLocator, "monatlichekostenust", rhsMonatlichekostenust), lhsMonatlichekostenust, rhsMonatlichekostenust)) {
                 return false;

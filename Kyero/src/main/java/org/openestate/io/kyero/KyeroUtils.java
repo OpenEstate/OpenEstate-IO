@@ -19,6 +19,8 @@ package org.openestate.io.kyero;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -374,10 +376,10 @@ public class KyeroUtils
     throw new IllegalArgumentException( "Can't parse date-type value '"+value+"'!" );
   }
 
-  public static Double parseDecimal( String value )
+  public static BigDecimal parseDecimal( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
   public static String parseFeedVersionType( String value )
@@ -413,15 +415,21 @@ public class KyeroUtils
     }
   }
 
-  public static Long parseInteger( String value )
+  public static BigInteger parseInteger( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseLong( value ): null;
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
   public static String parseLocationType( String value )
   {
     return StringUtils.trimToNull( value );
+  }
+
+  public static BigInteger parseNonNegativeInteger( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
   public static Long parsePriceType( String value )
@@ -481,12 +489,12 @@ public class KyeroUtils
     return getDateFormat().format( value.getTime() );
   }
 
-  public static String printDecimal( Double value )
+  public static String printDecimal( BigDecimal value )
   {
-    if (value==null || value<0)
-      throw new IllegalArgumentException( "Can't print decimal value!" );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print decimal value '" + value + "'!" );
     else
-      return DatatypeConverter.printDouble( value );
+      return DatatypeConverter.printDecimal( value );
   }
 
   public static String printFeedVersionType( String value )
@@ -523,12 +531,12 @@ public class KyeroUtils
       return value.toString();
   }
 
-  public static String printInteger( Long value )
+  public static String printInteger( BigInteger value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print integer value!" );
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
     else
-      return DatatypeConverter.printLong( value );
+      return DatatypeConverter.printInteger( value );
   }
 
   public static String printLocationType( String value )
@@ -540,12 +548,12 @@ public class KyeroUtils
       return StringUtils.abbreviate( value, 50 );
   }
 
-  public static String printNonNegativeInteger( Long value )
+  public static String printNonNegativeInteger( BigInteger value )
   {
-    if (value==null || value<0)
-      throw new IllegalArgumentException( "Can't print integer value!" );
+    if (value==null || value.compareTo( BigInteger.ZERO )==-1)
+      throw new IllegalArgumentException( "Can't print integer value '" + value + "'!" );
     else
-      return DatatypeConverter.printLong( value );
+      return DatatypeConverter.printInteger( value );
   }
 
   public static String printPriceType( Long value )

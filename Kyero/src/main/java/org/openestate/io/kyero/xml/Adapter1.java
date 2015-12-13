@@ -1,19 +1,20 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter1
-    extends XmlAdapter<String, Long>
+    extends XmlAdapter<String, BigDecimal>
 {
 
 
-    public Long unmarshal(String value) {
-        return (org.openestate.io.kyero.KyeroUtils.parseInteger(value));
+    public BigDecimal unmarshal(String value) {
+        return (org.openestate.io.kyero.KyeroUtils.parseDecimal(value));
     }
 
-    public String marshal(Long value) {
-        return (org.openestate.io.kyero.KyeroUtils.printInteger(value));
+    public String marshal(BigDecimal value) {
+        return (org.openestate.io.kyero.KyeroUtils.printDecimal(value));
     }
 
 }

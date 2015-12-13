@@ -169,10 +169,10 @@ public class CasaItWritingExample
     obj.getGarden().setType( BigInteger.ONE );
 
     obj.setGooglemapcoordinate( FACTORY.createContainerRealestateitemsRealestateGooglemapcoordinate() );
-    obj.getGooglemapcoordinate().setLatitude( RandomUtils.nextDouble( 0, 90 ) );
-    obj.getGooglemapcoordinate().setLatitudemapcenter( RandomUtils.nextDouble( 0, 90 ) );
-    obj.getGooglemapcoordinate().setLongitude( RandomUtils.nextDouble( 0, 90 ) );
-    obj.getGooglemapcoordinate().setLongitudemapcenter( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getGooglemapcoordinate().setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
+    obj.getGooglemapcoordinate().setLatitudemapcenter( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
+    obj.getGooglemapcoordinate().setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
+    obj.getGooglemapcoordinate().setLongitudemapcenter( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
     obj.getGooglemapcoordinate().setMapzoom( 10 );
 
     obj.setImages( FACTORY.createContainerRealestateitemsRealestateImages() );

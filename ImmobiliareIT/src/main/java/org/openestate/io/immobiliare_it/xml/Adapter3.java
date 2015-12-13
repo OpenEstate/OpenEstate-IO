@@ -1,19 +1,20 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.util.Calendar;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter3
-    extends XmlAdapter<String, Double>
+    extends XmlAdapter<String, Calendar>
 {
 
 
-    public Double unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLongitude(value));
+    public Calendar unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseDateUpdatedType(value));
     }
 
-    public String marshal(Double value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLongitude(value));
+    public String marshal(Calendar value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printDateUpdatedType(value));
     }
 
 }

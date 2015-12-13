@@ -25,15 +25,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ManuellGeoCodingTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="TermsRegion" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *       &lt;attribute name="TermsStadt" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *       &lt;attribute name="TermsStadtTeil" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ManuellGeoCodingTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="TermsRegion" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *       &lt;attribute name="TermsStadt" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *       &lt;attribute name="TermsStadtTeil" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -45,13 +45,13 @@ public class ManuellGeoCodingTyp
 {
 
     @XmlAttribute(name = "TermsRegion")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String termsRegion;
     @XmlAttribute(name = "TermsStadt")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String termsStadt;
     @XmlAttribute(name = "TermsStadtTeil")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String termsStadtTeil;
 
     /**
@@ -205,7 +205,7 @@ public class ManuellGeoCodingTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof ManuellGeoCodingTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

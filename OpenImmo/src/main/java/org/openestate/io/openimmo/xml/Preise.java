@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -112,62 +113,62 @@ public class Preise
     protected Kaufpreis kaufpreis;
     protected Kaufpreisnetto kaufpreisnetto;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kaufpreisbrutto;
+    protected BigDecimal kaufpreisbrutto;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nettokaltmiete;
+    protected BigDecimal nettokaltmiete;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kaltmiete;
+    protected BigDecimal kaltmiete;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double warmmiete;
+    protected BigDecimal warmmiete;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nebenkosten;
+    protected BigDecimal nebenkosten;
     @XmlElement(name = "heizkosten_enthalten")
     protected Boolean heizkostenEnthalten;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double heizkosten;
+    protected BigDecimal heizkosten;
     @XmlElement(name = "zzg_mehrwertsteuer")
     protected Boolean zzgMehrwertsteuer;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double mietzuschlaege;
+    protected BigDecimal mietzuschlaege;
     protected Hauptmietzinsnetto hauptmietzinsnetto;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double pauschalmiete;
+    protected BigDecimal pauschalmiete;
     protected Betriebskostennetto betriebskostennetto;
     protected Evbnetto evbnetto;
     protected Gesamtmietenetto gesamtmietenetto;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gesamtmietebrutto;
+    protected BigDecimal gesamtmietebrutto;
     protected Gesamtbelastungnetto gesamtbelastungnetto;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gesamtbelastungbrutto;
+    protected BigDecimal gesamtbelastungbrutto;
     @XmlElement(name = "gesamtkostenprom2von")
     protected Gesamtkostenprom2Von gesamtkostenprom2Von;
     protected Heizkostennetto heizkostennetto;
     protected Monatlichekostennetto monatlichekostennetto;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double monatlichekostenbrutto;
+    protected BigDecimal monatlichekostenbrutto;
     @XmlElement(name = "nebenkostenprom2von")
     protected Nebenkostenprom2Von nebenkostenprom2Von;
     protected Ruecklagenetto ruecklagenetto;
@@ -177,39 +178,39 @@ public class Preise
     @XmlElement(name = "nettomieteprom2von")
     protected Nettomieteprom2Von nettomieteprom2Von;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    @XmlSchemaType(name = "decimal")
-    protected Double pacht;
-    @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    @XmlSchemaType(name = "decimal")
-    protected Double erbpacht;
-    @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    @XmlSchemaType(name = "decimal")
-    protected Double hausgeld;
-    @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    @XmlSchemaType(name = "decimal")
-    protected Double abstand;
-    @XmlElement(name = "preis_zeitraum_von", type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal pacht;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal erbpacht;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal hausgeld;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal abstand;
+    @XmlElement(name = "preis_zeitraum_von", type = String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar preisZeitraumVon;
     @XmlElement(name = "preis_zeitraum_bis", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar preisZeitraumBis;
     @XmlElement(name = "preis_zeiteinheit")
     protected PreisZeiteinheit preisZeiteinheit;
     @XmlElement(name = "mietpreis_pro_qm", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double mietpreisProQm;
+    protected BigDecimal mietpreisProQm;
     @XmlElement(name = "kaufpreis_pro_qm", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kaufpreisProQm;
+    protected BigDecimal kaufpreisProQm;
     protected Boolean provisionspflichtig;
     @XmlElement(name = "provision_teilen")
     protected ProvisionTeilen provisionTeilen;
@@ -221,50 +222,50 @@ public class Preise
     protected String courtageHinweis;
     protected Provisionnetto provisionnetto;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double provisionbrutto;
+    protected BigDecimal provisionbrutto;
     protected Waehrung waehrung;
     @XmlElement(name = "mwst_satz", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    protected Double mwstSatz;
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    protected BigDecimal mwstSatz;
     @XmlElement(name = "mwst_gesamt", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    protected Double mwstGesamt;
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    protected BigDecimal mwstGesamt;
     @XmlElement(name = "freitext_preis")
     protected String freitextPreis;
     @XmlElement(name = "x_fache")
     protected String xFache;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nettorendite;
+    protected BigDecimal nettorendite;
     @XmlElement(name = "nettorendite_soll", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nettorenditeSoll;
+    protected BigDecimal nettorenditeSoll;
     @XmlElement(name = "nettorendite_ist", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nettorenditeIst;
+    protected BigDecimal nettorenditeIst;
     @XmlElement(name = "mieteinnahmen_ist")
     protected MieteinnahmenIst mieteinnahmenIst;
     @XmlElement(name = "mieteinnahmen_soll")
     protected MieteinnahmenSoll mieteinnahmenSoll;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double erschliessungskosten;
+    protected BigDecimal erschliessungskosten;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kaution;
+    protected BigDecimal kaution;
     @XmlElement(name = "kaution_text")
     protected String kautionText;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double geschaeftsguthaben;
+    protected BigDecimal geschaeftsguthaben;
     @XmlElement(name = "stp_carport")
     protected Stellplatz stpCarport;
     @XmlElement(name = "stp_duplex")
@@ -280,13 +281,13 @@ public class Preise
     @XmlElement(name = "stp_sonstige")
     protected List<StpSonstige> stpSonstige;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double richtpreis;
+    protected BigDecimal richtpreis;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double richtpreisprom2;
+    protected BigDecimal richtpreisprom2;
     @XmlElement(name = "user_defined_simplefield")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
@@ -350,7 +351,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getKaufpreisbrutto() {
+    public BigDecimal getKaufpreisbrutto() {
         return kaufpreisbrutto;
     }
 
@@ -362,7 +363,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setKaufpreisbrutto(Double value) {
+    public void setKaufpreisbrutto(BigDecimal value) {
         this.kaufpreisbrutto = value;
     }
 
@@ -374,7 +375,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getNettokaltmiete() {
+    public BigDecimal getNettokaltmiete() {
         return nettokaltmiete;
     }
 
@@ -386,7 +387,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setNettokaltmiete(Double value) {
+    public void setNettokaltmiete(BigDecimal value) {
         this.nettokaltmiete = value;
     }
 
@@ -398,7 +399,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getKaltmiete() {
+    public BigDecimal getKaltmiete() {
         return kaltmiete;
     }
 
@@ -410,7 +411,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setKaltmiete(Double value) {
+    public void setKaltmiete(BigDecimal value) {
         this.kaltmiete = value;
     }
 
@@ -422,7 +423,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getWarmmiete() {
+    public BigDecimal getWarmmiete() {
         return warmmiete;
     }
 
@@ -434,7 +435,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setWarmmiete(Double value) {
+    public void setWarmmiete(BigDecimal value) {
         this.warmmiete = value;
     }
 
@@ -446,7 +447,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getNebenkosten() {
+    public BigDecimal getNebenkosten() {
         return nebenkosten;
     }
 
@@ -458,7 +459,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setNebenkosten(Double value) {
+    public void setNebenkosten(BigDecimal value) {
         this.nebenkosten = value;
     }
 
@@ -494,7 +495,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getHeizkosten() {
+    public BigDecimal getHeizkosten() {
         return heizkosten;
     }
 
@@ -506,7 +507,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setHeizkosten(Double value) {
+    public void setHeizkosten(BigDecimal value) {
         this.heizkosten = value;
     }
 
@@ -542,7 +543,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getMietzuschlaege() {
+    public BigDecimal getMietzuschlaege() {
         return mietzuschlaege;
     }
 
@@ -554,7 +555,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setMietzuschlaege(Double value) {
+    public void setMietzuschlaege(BigDecimal value) {
         this.mietzuschlaege = value;
     }
 
@@ -590,7 +591,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getPauschalmiete() {
+    public BigDecimal getPauschalmiete() {
         return pauschalmiete;
     }
 
@@ -602,7 +603,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setPauschalmiete(Double value) {
+    public void setPauschalmiete(BigDecimal value) {
         this.pauschalmiete = value;
     }
 
@@ -686,7 +687,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getGesamtmietebrutto() {
+    public BigDecimal getGesamtmietebrutto() {
         return gesamtmietebrutto;
     }
 
@@ -698,7 +699,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setGesamtmietebrutto(Double value) {
+    public void setGesamtmietebrutto(BigDecimal value) {
         this.gesamtmietebrutto = value;
     }
 
@@ -734,7 +735,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getGesamtbelastungbrutto() {
+    public BigDecimal getGesamtbelastungbrutto() {
         return gesamtbelastungbrutto;
     }
 
@@ -746,7 +747,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setGesamtbelastungbrutto(Double value) {
+    public void setGesamtbelastungbrutto(BigDecimal value) {
         this.gesamtbelastungbrutto = value;
     }
 
@@ -830,7 +831,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getMonatlichekostenbrutto() {
+    public BigDecimal getMonatlichekostenbrutto() {
         return monatlichekostenbrutto;
     }
 
@@ -842,7 +843,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setMonatlichekostenbrutto(Double value) {
+    public void setMonatlichekostenbrutto(BigDecimal value) {
         this.monatlichekostenbrutto = value;
     }
 
@@ -998,7 +999,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getPacht() {
+    public BigDecimal getPacht() {
         return pacht;
     }
 
@@ -1010,7 +1011,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setPacht(Double value) {
+    public void setPacht(BigDecimal value) {
         this.pacht = value;
     }
 
@@ -1022,7 +1023,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getErbpacht() {
+    public BigDecimal getErbpacht() {
         return erbpacht;
     }
 
@@ -1034,7 +1035,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setErbpacht(Double value) {
+    public void setErbpacht(BigDecimal value) {
         this.erbpacht = value;
     }
 
@@ -1046,7 +1047,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getHausgeld() {
+    public BigDecimal getHausgeld() {
         return hausgeld;
     }
 
@@ -1058,7 +1059,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setHausgeld(Double value) {
+    public void setHausgeld(BigDecimal value) {
         this.hausgeld = value;
     }
 
@@ -1070,7 +1071,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getAbstand() {
+    public BigDecimal getAbstand() {
         return abstand;
     }
 
@@ -1082,7 +1083,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setAbstand(Double value) {
+    public void setAbstand(BigDecimal value) {
         this.abstand = value;
     }
 
@@ -1166,7 +1167,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getMietpreisProQm() {
+    public BigDecimal getMietpreisProQm() {
         return mietpreisProQm;
     }
 
@@ -1178,7 +1179,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setMietpreisProQm(Double value) {
+    public void setMietpreisProQm(BigDecimal value) {
         this.mietpreisProQm = value;
     }
 
@@ -1190,7 +1191,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getKaufpreisProQm() {
+    public BigDecimal getKaufpreisProQm() {
         return kaufpreisProQm;
     }
 
@@ -1202,7 +1203,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setKaufpreisProQm(Double value) {
+    public void setKaufpreisProQm(BigDecimal value) {
         this.kaufpreisProQm = value;
     }
 
@@ -1358,7 +1359,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getProvisionbrutto() {
+    public BigDecimal getProvisionbrutto() {
         return provisionbrutto;
     }
 
@@ -1370,7 +1371,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setProvisionbrutto(Double value) {
+    public void setProvisionbrutto(BigDecimal value) {
         this.provisionbrutto = value;
     }
 
@@ -1406,7 +1407,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getMwstSatz() {
+    public BigDecimal getMwstSatz() {
         return mwstSatz;
     }
 
@@ -1418,7 +1419,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setMwstSatz(Double value) {
+    public void setMwstSatz(BigDecimal value) {
         this.mwstSatz = value;
     }
 
@@ -1430,7 +1431,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getMwstGesamt() {
+    public BigDecimal getMwstGesamt() {
         return mwstGesamt;
     }
 
@@ -1442,7 +1443,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setMwstGesamt(Double value) {
+    public void setMwstGesamt(BigDecimal value) {
         this.mwstGesamt = value;
     }
 
@@ -1502,7 +1503,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getNettorendite() {
+    public BigDecimal getNettorendite() {
         return nettorendite;
     }
 
@@ -1514,7 +1515,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setNettorendite(Double value) {
+    public void setNettorendite(BigDecimal value) {
         this.nettorendite = value;
     }
 
@@ -1526,7 +1527,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getNettorenditeSoll() {
+    public BigDecimal getNettorenditeSoll() {
         return nettorenditeSoll;
     }
 
@@ -1538,7 +1539,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setNettorenditeSoll(Double value) {
+    public void setNettorenditeSoll(BigDecimal value) {
         this.nettorenditeSoll = value;
     }
 
@@ -1550,7 +1551,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getNettorenditeIst() {
+    public BigDecimal getNettorenditeIst() {
         return nettorenditeIst;
     }
 
@@ -1562,7 +1563,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setNettorenditeIst(Double value) {
+    public void setNettorenditeIst(BigDecimal value) {
         this.nettorenditeIst = value;
     }
 
@@ -1622,7 +1623,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getErschliessungskosten() {
+    public BigDecimal getErschliessungskosten() {
         return erschliessungskosten;
     }
 
@@ -1634,7 +1635,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setErschliessungskosten(Double value) {
+    public void setErschliessungskosten(BigDecimal value) {
         this.erschliessungskosten = value;
     }
 
@@ -1646,7 +1647,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getKaution() {
+    public BigDecimal getKaution() {
         return kaution;
     }
 
@@ -1658,7 +1659,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setKaution(Double value) {
+    public void setKaution(BigDecimal value) {
         this.kaution = value;
     }
 
@@ -1694,7 +1695,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getGeschaeftsguthaben() {
+    public BigDecimal getGeschaeftsguthaben() {
         return geschaeftsguthaben;
     }
 
@@ -1706,7 +1707,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setGeschaeftsguthaben(Double value) {
+    public void setGeschaeftsguthaben(BigDecimal value) {
         this.geschaeftsguthaben = value;
     }
 
@@ -1891,7 +1892,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getRichtpreis() {
+    public BigDecimal getRichtpreis() {
         return richtpreis;
     }
 
@@ -1903,7 +1904,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setRichtpreis(Double value) {
+    public void setRichtpreis(BigDecimal value) {
         this.richtpreis = value;
     }
 
@@ -1915,7 +1916,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public Double getRichtpreisprom2() {
+    public BigDecimal getRichtpreisprom2() {
         return richtpreisprom2;
     }
 
@@ -1927,7 +1928,7 @@ public class Preise
      *     {@link String }
      *     
      */
-    public void setRichtpreisprom2(Double value) {
+    public void setRichtpreisprom2(BigDecimal value) {
         this.richtpreisprom2 = value;
     }
 
@@ -2044,27 +2045,27 @@ public class Preise
             strategy.appendField(locator, this, "kaufpreisnetto", buffer, theKaufpreisnetto);
         }
         {
-            Double theKaufpreisbrutto;
+            BigDecimal theKaufpreisbrutto;
             theKaufpreisbrutto = this.getKaufpreisbrutto();
             strategy.appendField(locator, this, "kaufpreisbrutto", buffer, theKaufpreisbrutto);
         }
         {
-            Double theNettokaltmiete;
+            BigDecimal theNettokaltmiete;
             theNettokaltmiete = this.getNettokaltmiete();
             strategy.appendField(locator, this, "nettokaltmiete", buffer, theNettokaltmiete);
         }
         {
-            Double theKaltmiete;
+            BigDecimal theKaltmiete;
             theKaltmiete = this.getKaltmiete();
             strategy.appendField(locator, this, "kaltmiete", buffer, theKaltmiete);
         }
         {
-            Double theWarmmiete;
+            BigDecimal theWarmmiete;
             theWarmmiete = this.getWarmmiete();
             strategy.appendField(locator, this, "warmmiete", buffer, theWarmmiete);
         }
         {
-            Double theNebenkosten;
+            BigDecimal theNebenkosten;
             theNebenkosten = this.getNebenkosten();
             strategy.appendField(locator, this, "nebenkosten", buffer, theNebenkosten);
         }
@@ -2074,7 +2075,7 @@ public class Preise
             strategy.appendField(locator, this, "heizkostenEnthalten", buffer, theHeizkostenEnthalten);
         }
         {
-            Double theHeizkosten;
+            BigDecimal theHeizkosten;
             theHeizkosten = this.getHeizkosten();
             strategy.appendField(locator, this, "heizkosten", buffer, theHeizkosten);
         }
@@ -2084,7 +2085,7 @@ public class Preise
             strategy.appendField(locator, this, "zzgMehrwertsteuer", buffer, theZzgMehrwertsteuer);
         }
         {
-            Double theMietzuschlaege;
+            BigDecimal theMietzuschlaege;
             theMietzuschlaege = this.getMietzuschlaege();
             strategy.appendField(locator, this, "mietzuschlaege", buffer, theMietzuschlaege);
         }
@@ -2094,7 +2095,7 @@ public class Preise
             strategy.appendField(locator, this, "hauptmietzinsnetto", buffer, theHauptmietzinsnetto);
         }
         {
-            Double thePauschalmiete;
+            BigDecimal thePauschalmiete;
             thePauschalmiete = this.getPauschalmiete();
             strategy.appendField(locator, this, "pauschalmiete", buffer, thePauschalmiete);
         }
@@ -2114,7 +2115,7 @@ public class Preise
             strategy.appendField(locator, this, "gesamtmietenetto", buffer, theGesamtmietenetto);
         }
         {
-            Double theGesamtmietebrutto;
+            BigDecimal theGesamtmietebrutto;
             theGesamtmietebrutto = this.getGesamtmietebrutto();
             strategy.appendField(locator, this, "gesamtmietebrutto", buffer, theGesamtmietebrutto);
         }
@@ -2124,7 +2125,7 @@ public class Preise
             strategy.appendField(locator, this, "gesamtbelastungnetto", buffer, theGesamtbelastungnetto);
         }
         {
-            Double theGesamtbelastungbrutto;
+            BigDecimal theGesamtbelastungbrutto;
             theGesamtbelastungbrutto = this.getGesamtbelastungbrutto();
             strategy.appendField(locator, this, "gesamtbelastungbrutto", buffer, theGesamtbelastungbrutto);
         }
@@ -2144,7 +2145,7 @@ public class Preise
             strategy.appendField(locator, this, "monatlichekostennetto", buffer, theMonatlichekostennetto);
         }
         {
-            Double theMonatlichekostenbrutto;
+            BigDecimal theMonatlichekostenbrutto;
             theMonatlichekostenbrutto = this.getMonatlichekostenbrutto();
             strategy.appendField(locator, this, "monatlichekostenbrutto", buffer, theMonatlichekostenbrutto);
         }
@@ -2179,22 +2180,22 @@ public class Preise
             strategy.appendField(locator, this, "nettomieteprom2Von", buffer, theNettomieteprom2Von);
         }
         {
-            Double thePacht;
+            BigDecimal thePacht;
             thePacht = this.getPacht();
             strategy.appendField(locator, this, "pacht", buffer, thePacht);
         }
         {
-            Double theErbpacht;
+            BigDecimal theErbpacht;
             theErbpacht = this.getErbpacht();
             strategy.appendField(locator, this, "erbpacht", buffer, theErbpacht);
         }
         {
-            Double theHausgeld;
+            BigDecimal theHausgeld;
             theHausgeld = this.getHausgeld();
             strategy.appendField(locator, this, "hausgeld", buffer, theHausgeld);
         }
         {
-            Double theAbstand;
+            BigDecimal theAbstand;
             theAbstand = this.getAbstand();
             strategy.appendField(locator, this, "abstand", buffer, theAbstand);
         }
@@ -2214,12 +2215,12 @@ public class Preise
             strategy.appendField(locator, this, "preisZeiteinheit", buffer, thePreisZeiteinheit);
         }
         {
-            Double theMietpreisProQm;
+            BigDecimal theMietpreisProQm;
             theMietpreisProQm = this.getMietpreisProQm();
             strategy.appendField(locator, this, "mietpreisProQm", buffer, theMietpreisProQm);
         }
         {
-            Double theKaufpreisProQm;
+            BigDecimal theKaufpreisProQm;
             theKaufpreisProQm = this.getKaufpreisProQm();
             strategy.appendField(locator, this, "kaufpreisProQm", buffer, theKaufpreisProQm);
         }
@@ -2254,7 +2255,7 @@ public class Preise
             strategy.appendField(locator, this, "provisionnetto", buffer, theProvisionnetto);
         }
         {
-            Double theProvisionbrutto;
+            BigDecimal theProvisionbrutto;
             theProvisionbrutto = this.getProvisionbrutto();
             strategy.appendField(locator, this, "provisionbrutto", buffer, theProvisionbrutto);
         }
@@ -2264,12 +2265,12 @@ public class Preise
             strategy.appendField(locator, this, "waehrung", buffer, theWaehrung);
         }
         {
-            Double theMwstSatz;
+            BigDecimal theMwstSatz;
             theMwstSatz = this.getMwstSatz();
             strategy.appendField(locator, this, "mwstSatz", buffer, theMwstSatz);
         }
         {
-            Double theMwstGesamt;
+            BigDecimal theMwstGesamt;
             theMwstGesamt = this.getMwstGesamt();
             strategy.appendField(locator, this, "mwstGesamt", buffer, theMwstGesamt);
         }
@@ -2284,17 +2285,17 @@ public class Preise
             strategy.appendField(locator, this, "xFache", buffer, theXFache);
         }
         {
-            Double theNettorendite;
+            BigDecimal theNettorendite;
             theNettorendite = this.getNettorendite();
             strategy.appendField(locator, this, "nettorendite", buffer, theNettorendite);
         }
         {
-            Double theNettorenditeSoll;
+            BigDecimal theNettorenditeSoll;
             theNettorenditeSoll = this.getNettorenditeSoll();
             strategy.appendField(locator, this, "nettorenditeSoll", buffer, theNettorenditeSoll);
         }
         {
-            Double theNettorenditeIst;
+            BigDecimal theNettorenditeIst;
             theNettorenditeIst = this.getNettorenditeIst();
             strategy.appendField(locator, this, "nettorenditeIst", buffer, theNettorenditeIst);
         }
@@ -2309,12 +2310,12 @@ public class Preise
             strategy.appendField(locator, this, "mieteinnahmenSoll", buffer, theMieteinnahmenSoll);
         }
         {
-            Double theErschliessungskosten;
+            BigDecimal theErschliessungskosten;
             theErschliessungskosten = this.getErschliessungskosten();
             strategy.appendField(locator, this, "erschliessungskosten", buffer, theErschliessungskosten);
         }
         {
-            Double theKaution;
+            BigDecimal theKaution;
             theKaution = this.getKaution();
             strategy.appendField(locator, this, "kaution", buffer, theKaution);
         }
@@ -2324,7 +2325,7 @@ public class Preise
             strategy.appendField(locator, this, "kautionText", buffer, theKautionText);
         }
         {
-            Double theGeschaeftsguthaben;
+            BigDecimal theGeschaeftsguthaben;
             theGeschaeftsguthaben = this.getGeschaeftsguthaben();
             strategy.appendField(locator, this, "geschaeftsguthaben", buffer, theGeschaeftsguthaben);
         }
@@ -2364,12 +2365,12 @@ public class Preise
             strategy.appendField(locator, this, "stpSonstige", buffer, theStpSonstige);
         }
         {
-            Double theRichtpreis;
+            BigDecimal theRichtpreis;
             theRichtpreis = this.getRichtpreis();
             strategy.appendField(locator, this, "richtpreis", buffer, theRichtpreis);
         }
         {
-            Double theRichtpreisprom2;
+            BigDecimal theRichtpreisprom2;
             theRichtpreisprom2 = this.getRichtpreisprom2();
             strategy.appendField(locator, this, "richtpreisprom2", buffer, theRichtpreisprom2);
         }
@@ -2421,41 +2422,41 @@ public class Preise
                 copy.kaufpreisnetto = null;
             }
             if (this.kaufpreisbrutto!= null) {
-                Double sourceKaufpreisbrutto;
+                BigDecimal sourceKaufpreisbrutto;
                 sourceKaufpreisbrutto = this.getKaufpreisbrutto();
-                Double copyKaufpreisbrutto = ((Double) strategy.copy(LocatorUtils.property(locator, "kaufpreisbrutto", sourceKaufpreisbrutto), sourceKaufpreisbrutto));
+                BigDecimal copyKaufpreisbrutto = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaufpreisbrutto", sourceKaufpreisbrutto), sourceKaufpreisbrutto));
                 copy.setKaufpreisbrutto(copyKaufpreisbrutto);
             } else {
                 copy.kaufpreisbrutto = null;
             }
             if (this.nettokaltmiete!= null) {
-                Double sourceNettokaltmiete;
+                BigDecimal sourceNettokaltmiete;
                 sourceNettokaltmiete = this.getNettokaltmiete();
-                Double copyNettokaltmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "nettokaltmiete", sourceNettokaltmiete), sourceNettokaltmiete));
+                BigDecimal copyNettokaltmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nettokaltmiete", sourceNettokaltmiete), sourceNettokaltmiete));
                 copy.setNettokaltmiete(copyNettokaltmiete);
             } else {
                 copy.nettokaltmiete = null;
             }
             if (this.kaltmiete!= null) {
-                Double sourceKaltmiete;
+                BigDecimal sourceKaltmiete;
                 sourceKaltmiete = this.getKaltmiete();
-                Double copyKaltmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
+                BigDecimal copyKaltmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaltmiete", sourceKaltmiete), sourceKaltmiete));
                 copy.setKaltmiete(copyKaltmiete);
             } else {
                 copy.kaltmiete = null;
             }
             if (this.warmmiete!= null) {
-                Double sourceWarmmiete;
+                BigDecimal sourceWarmmiete;
                 sourceWarmmiete = this.getWarmmiete();
-                Double copyWarmmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "warmmiete", sourceWarmmiete), sourceWarmmiete));
+                BigDecimal copyWarmmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "warmmiete", sourceWarmmiete), sourceWarmmiete));
                 copy.setWarmmiete(copyWarmmiete);
             } else {
                 copy.warmmiete = null;
             }
             if (this.nebenkosten!= null) {
-                Double sourceNebenkosten;
+                BigDecimal sourceNebenkosten;
                 sourceNebenkosten = this.getNebenkosten();
-                Double copyNebenkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
+                BigDecimal copyNebenkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
                 copy.setNebenkosten(copyNebenkosten);
             } else {
                 copy.nebenkosten = null;
@@ -2469,9 +2470,9 @@ public class Preise
                 copy.heizkostenEnthalten = null;
             }
             if (this.heizkosten!= null) {
-                Double sourceHeizkosten;
+                BigDecimal sourceHeizkosten;
                 sourceHeizkosten = this.getHeizkosten();
-                Double copyHeizkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "heizkosten", sourceHeizkosten), sourceHeizkosten));
+                BigDecimal copyHeizkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "heizkosten", sourceHeizkosten), sourceHeizkosten));
                 copy.setHeizkosten(copyHeizkosten);
             } else {
                 copy.heizkosten = null;
@@ -2485,9 +2486,9 @@ public class Preise
                 copy.zzgMehrwertsteuer = null;
             }
             if (this.mietzuschlaege!= null) {
-                Double sourceMietzuschlaege;
+                BigDecimal sourceMietzuschlaege;
                 sourceMietzuschlaege = this.getMietzuschlaege();
-                Double copyMietzuschlaege = ((Double) strategy.copy(LocatorUtils.property(locator, "mietzuschlaege", sourceMietzuschlaege), sourceMietzuschlaege));
+                BigDecimal copyMietzuschlaege = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mietzuschlaege", sourceMietzuschlaege), sourceMietzuschlaege));
                 copy.setMietzuschlaege(copyMietzuschlaege);
             } else {
                 copy.mietzuschlaege = null;
@@ -2501,9 +2502,9 @@ public class Preise
                 copy.hauptmietzinsnetto = null;
             }
             if (this.pauschalmiete!= null) {
-                Double sourcePauschalmiete;
+                BigDecimal sourcePauschalmiete;
                 sourcePauschalmiete = this.getPauschalmiete();
-                Double copyPauschalmiete = ((Double) strategy.copy(LocatorUtils.property(locator, "pauschalmiete", sourcePauschalmiete), sourcePauschalmiete));
+                BigDecimal copyPauschalmiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "pauschalmiete", sourcePauschalmiete), sourcePauschalmiete));
                 copy.setPauschalmiete(copyPauschalmiete);
             } else {
                 copy.pauschalmiete = null;
@@ -2533,9 +2534,9 @@ public class Preise
                 copy.gesamtmietenetto = null;
             }
             if (this.gesamtmietebrutto!= null) {
-                Double sourceGesamtmietebrutto;
+                BigDecimal sourceGesamtmietebrutto;
                 sourceGesamtmietebrutto = this.getGesamtmietebrutto();
-                Double copyGesamtmietebrutto = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtmietebrutto", sourceGesamtmietebrutto), sourceGesamtmietebrutto));
+                BigDecimal copyGesamtmietebrutto = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtmietebrutto", sourceGesamtmietebrutto), sourceGesamtmietebrutto));
                 copy.setGesamtmietebrutto(copyGesamtmietebrutto);
             } else {
                 copy.gesamtmietebrutto = null;
@@ -2549,9 +2550,9 @@ public class Preise
                 copy.gesamtbelastungnetto = null;
             }
             if (this.gesamtbelastungbrutto!= null) {
-                Double sourceGesamtbelastungbrutto;
+                BigDecimal sourceGesamtbelastungbrutto;
                 sourceGesamtbelastungbrutto = this.getGesamtbelastungbrutto();
-                Double copyGesamtbelastungbrutto = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtbelastungbrutto", sourceGesamtbelastungbrutto), sourceGesamtbelastungbrutto));
+                BigDecimal copyGesamtbelastungbrutto = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtbelastungbrutto", sourceGesamtbelastungbrutto), sourceGesamtbelastungbrutto));
                 copy.setGesamtbelastungbrutto(copyGesamtbelastungbrutto);
             } else {
                 copy.gesamtbelastungbrutto = null;
@@ -2581,9 +2582,9 @@ public class Preise
                 copy.monatlichekostennetto = null;
             }
             if (this.monatlichekostenbrutto!= null) {
-                Double sourceMonatlichekostenbrutto;
+                BigDecimal sourceMonatlichekostenbrutto;
                 sourceMonatlichekostenbrutto = this.getMonatlichekostenbrutto();
-                Double copyMonatlichekostenbrutto = ((Double) strategy.copy(LocatorUtils.property(locator, "monatlichekostenbrutto", sourceMonatlichekostenbrutto), sourceMonatlichekostenbrutto));
+                BigDecimal copyMonatlichekostenbrutto = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "monatlichekostenbrutto", sourceMonatlichekostenbrutto), sourceMonatlichekostenbrutto));
                 copy.setMonatlichekostenbrutto(copyMonatlichekostenbrutto);
             } else {
                 copy.monatlichekostenbrutto = null;
@@ -2637,33 +2638,33 @@ public class Preise
                 copy.nettomieteprom2Von = null;
             }
             if (this.pacht!= null) {
-                Double sourcePacht;
+                BigDecimal sourcePacht;
                 sourcePacht = this.getPacht();
-                Double copyPacht = ((Double) strategy.copy(LocatorUtils.property(locator, "pacht", sourcePacht), sourcePacht));
+                BigDecimal copyPacht = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "pacht", sourcePacht), sourcePacht));
                 copy.setPacht(copyPacht);
             } else {
                 copy.pacht = null;
             }
             if (this.erbpacht!= null) {
-                Double sourceErbpacht;
+                BigDecimal sourceErbpacht;
                 sourceErbpacht = this.getErbpacht();
-                Double copyErbpacht = ((Double) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceErbpacht), sourceErbpacht));
+                BigDecimal copyErbpacht = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceErbpacht), sourceErbpacht));
                 copy.setErbpacht(copyErbpacht);
             } else {
                 copy.erbpacht = null;
             }
             if (this.hausgeld!= null) {
-                Double sourceHausgeld;
+                BigDecimal sourceHausgeld;
                 sourceHausgeld = this.getHausgeld();
-                Double copyHausgeld = ((Double) strategy.copy(LocatorUtils.property(locator, "hausgeld", sourceHausgeld), sourceHausgeld));
+                BigDecimal copyHausgeld = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hausgeld", sourceHausgeld), sourceHausgeld));
                 copy.setHausgeld(copyHausgeld);
             } else {
                 copy.hausgeld = null;
             }
             if (this.abstand!= null) {
-                Double sourceAbstand;
+                BigDecimal sourceAbstand;
                 sourceAbstand = this.getAbstand();
-                Double copyAbstand = ((Double) strategy.copy(LocatorUtils.property(locator, "abstand", sourceAbstand), sourceAbstand));
+                BigDecimal copyAbstand = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "abstand", sourceAbstand), sourceAbstand));
                 copy.setAbstand(copyAbstand);
             } else {
                 copy.abstand = null;
@@ -2693,17 +2694,17 @@ public class Preise
                 copy.preisZeiteinheit = null;
             }
             if (this.mietpreisProQm!= null) {
-                Double sourceMietpreisProQm;
+                BigDecimal sourceMietpreisProQm;
                 sourceMietpreisProQm = this.getMietpreisProQm();
-                Double copyMietpreisProQm = ((Double) strategy.copy(LocatorUtils.property(locator, "mietpreisProQm", sourceMietpreisProQm), sourceMietpreisProQm));
+                BigDecimal copyMietpreisProQm = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mietpreisProQm", sourceMietpreisProQm), sourceMietpreisProQm));
                 copy.setMietpreisProQm(copyMietpreisProQm);
             } else {
                 copy.mietpreisProQm = null;
             }
             if (this.kaufpreisProQm!= null) {
-                Double sourceKaufpreisProQm;
+                BigDecimal sourceKaufpreisProQm;
                 sourceKaufpreisProQm = this.getKaufpreisProQm();
-                Double copyKaufpreisProQm = ((Double) strategy.copy(LocatorUtils.property(locator, "kaufpreisProQm", sourceKaufpreisProQm), sourceKaufpreisProQm));
+                BigDecimal copyKaufpreisProQm = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaufpreisProQm", sourceKaufpreisProQm), sourceKaufpreisProQm));
                 copy.setKaufpreisProQm(copyKaufpreisProQm);
             } else {
                 copy.kaufpreisProQm = null;
@@ -2757,9 +2758,9 @@ public class Preise
                 copy.provisionnetto = null;
             }
             if (this.provisionbrutto!= null) {
-                Double sourceProvisionbrutto;
+                BigDecimal sourceProvisionbrutto;
                 sourceProvisionbrutto = this.getProvisionbrutto();
-                Double copyProvisionbrutto = ((Double) strategy.copy(LocatorUtils.property(locator, "provisionbrutto", sourceProvisionbrutto), sourceProvisionbrutto));
+                BigDecimal copyProvisionbrutto = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "provisionbrutto", sourceProvisionbrutto), sourceProvisionbrutto));
                 copy.setProvisionbrutto(copyProvisionbrutto);
             } else {
                 copy.provisionbrutto = null;
@@ -2773,17 +2774,17 @@ public class Preise
                 copy.waehrung = null;
             }
             if (this.mwstSatz!= null) {
-                Double sourceMwstSatz;
+                BigDecimal sourceMwstSatz;
                 sourceMwstSatz = this.getMwstSatz();
-                Double copyMwstSatz = ((Double) strategy.copy(LocatorUtils.property(locator, "mwstSatz", sourceMwstSatz), sourceMwstSatz));
+                BigDecimal copyMwstSatz = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mwstSatz", sourceMwstSatz), sourceMwstSatz));
                 copy.setMwstSatz(copyMwstSatz);
             } else {
                 copy.mwstSatz = null;
             }
             if (this.mwstGesamt!= null) {
-                Double sourceMwstGesamt;
+                BigDecimal sourceMwstGesamt;
                 sourceMwstGesamt = this.getMwstGesamt();
-                Double copyMwstGesamt = ((Double) strategy.copy(LocatorUtils.property(locator, "mwstGesamt", sourceMwstGesamt), sourceMwstGesamt));
+                BigDecimal copyMwstGesamt = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mwstGesamt", sourceMwstGesamt), sourceMwstGesamt));
                 copy.setMwstGesamt(copyMwstGesamt);
             } else {
                 copy.mwstGesamt = null;
@@ -2805,25 +2806,25 @@ public class Preise
                 copy.xFache = null;
             }
             if (this.nettorendite!= null) {
-                Double sourceNettorendite;
+                BigDecimal sourceNettorendite;
                 sourceNettorendite = this.getNettorendite();
-                Double copyNettorendite = ((Double) strategy.copy(LocatorUtils.property(locator, "nettorendite", sourceNettorendite), sourceNettorendite));
+                BigDecimal copyNettorendite = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nettorendite", sourceNettorendite), sourceNettorendite));
                 copy.setNettorendite(copyNettorendite);
             } else {
                 copy.nettorendite = null;
             }
             if (this.nettorenditeSoll!= null) {
-                Double sourceNettorenditeSoll;
+                BigDecimal sourceNettorenditeSoll;
                 sourceNettorenditeSoll = this.getNettorenditeSoll();
-                Double copyNettorenditeSoll = ((Double) strategy.copy(LocatorUtils.property(locator, "nettorenditeSoll", sourceNettorenditeSoll), sourceNettorenditeSoll));
+                BigDecimal copyNettorenditeSoll = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nettorenditeSoll", sourceNettorenditeSoll), sourceNettorenditeSoll));
                 copy.setNettorenditeSoll(copyNettorenditeSoll);
             } else {
                 copy.nettorenditeSoll = null;
             }
             if (this.nettorenditeIst!= null) {
-                Double sourceNettorenditeIst;
+                BigDecimal sourceNettorenditeIst;
                 sourceNettorenditeIst = this.getNettorenditeIst();
-                Double copyNettorenditeIst = ((Double) strategy.copy(LocatorUtils.property(locator, "nettorenditeIst", sourceNettorenditeIst), sourceNettorenditeIst));
+                BigDecimal copyNettorenditeIst = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nettorenditeIst", sourceNettorenditeIst), sourceNettorenditeIst));
                 copy.setNettorenditeIst(copyNettorenditeIst);
             } else {
                 copy.nettorenditeIst = null;
@@ -2845,17 +2846,17 @@ public class Preise
                 copy.mieteinnahmenSoll = null;
             }
             if (this.erschliessungskosten!= null) {
-                Double sourceErschliessungskosten;
+                BigDecimal sourceErschliessungskosten;
                 sourceErschliessungskosten = this.getErschliessungskosten();
-                Double copyErschliessungskosten = ((Double) strategy.copy(LocatorUtils.property(locator, "erschliessungskosten", sourceErschliessungskosten), sourceErschliessungskosten));
+                BigDecimal copyErschliessungskosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "erschliessungskosten", sourceErschliessungskosten), sourceErschliessungskosten));
                 copy.setErschliessungskosten(copyErschliessungskosten);
             } else {
                 copy.erschliessungskosten = null;
             }
             if (this.kaution!= null) {
-                Double sourceKaution;
+                BigDecimal sourceKaution;
                 sourceKaution = this.getKaution();
-                Double copyKaution = ((Double) strategy.copy(LocatorUtils.property(locator, "kaution", sourceKaution), sourceKaution));
+                BigDecimal copyKaution = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaution", sourceKaution), sourceKaution));
                 copy.setKaution(copyKaution);
             } else {
                 copy.kaution = null;
@@ -2869,9 +2870,9 @@ public class Preise
                 copy.kautionText = null;
             }
             if (this.geschaeftsguthaben!= null) {
-                Double sourceGeschaeftsguthaben;
+                BigDecimal sourceGeschaeftsguthaben;
                 sourceGeschaeftsguthaben = this.getGeschaeftsguthaben();
-                Double copyGeschaeftsguthaben = ((Double) strategy.copy(LocatorUtils.property(locator, "geschaeftsguthaben", sourceGeschaeftsguthaben), sourceGeschaeftsguthaben));
+                BigDecimal copyGeschaeftsguthaben = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "geschaeftsguthaben", sourceGeschaeftsguthaben), sourceGeschaeftsguthaben));
                 copy.setGeschaeftsguthaben(copyGeschaeftsguthaben);
             } else {
                 copy.geschaeftsguthaben = null;
@@ -2938,17 +2939,17 @@ public class Preise
                 copy.stpSonstige = null;
             }
             if (this.richtpreis!= null) {
-                Double sourceRichtpreis;
+                BigDecimal sourceRichtpreis;
                 sourceRichtpreis = this.getRichtpreis();
-                Double copyRichtpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "richtpreis", sourceRichtpreis), sourceRichtpreis));
+                BigDecimal copyRichtpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "richtpreis", sourceRichtpreis), sourceRichtpreis));
                 copy.setRichtpreis(copyRichtpreis);
             } else {
                 copy.richtpreis = null;
             }
             if (this.richtpreisprom2 != null) {
-                Double sourceRichtpreisprom2;
+                BigDecimal sourceRichtpreisprom2;
                 sourceRichtpreisprom2 = this.getRichtpreisprom2();
-                Double copyRichtpreisprom2 = ((Double) strategy.copy(LocatorUtils.property(locator, "richtpreisprom2", sourceRichtpreisprom2), sourceRichtpreisprom2));
+                BigDecimal copyRichtpreisprom2 = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "richtpreisprom2", sourceRichtpreisprom2), sourceRichtpreisprom2));
                 copy.setRichtpreisprom2(copyRichtpreisprom2);
             } else {
                 copy.richtpreisprom2 = null;
@@ -3001,7 +3002,7 @@ public class Preise
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Preise)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -3027,45 +3028,45 @@ public class Preise
             }
         }
         {
-            Double lhsKaufpreisbrutto;
+            BigDecimal lhsKaufpreisbrutto;
             lhsKaufpreisbrutto = this.getKaufpreisbrutto();
-            Double rhsKaufpreisbrutto;
+            BigDecimal rhsKaufpreisbrutto;
             rhsKaufpreisbrutto = that.getKaufpreisbrutto();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaufpreisbrutto", lhsKaufpreisbrutto), LocatorUtils.property(thatLocator, "kaufpreisbrutto", rhsKaufpreisbrutto), lhsKaufpreisbrutto, rhsKaufpreisbrutto)) {
                 return false;
             }
         }
         {
-            Double lhsNettokaltmiete;
+            BigDecimal lhsNettokaltmiete;
             lhsNettokaltmiete = this.getNettokaltmiete();
-            Double rhsNettokaltmiete;
+            BigDecimal rhsNettokaltmiete;
             rhsNettokaltmiete = that.getNettokaltmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nettokaltmiete", lhsNettokaltmiete), LocatorUtils.property(thatLocator, "nettokaltmiete", rhsNettokaltmiete), lhsNettokaltmiete, rhsNettokaltmiete)) {
                 return false;
             }
         }
         {
-            Double lhsKaltmiete;
+            BigDecimal lhsKaltmiete;
             lhsKaltmiete = this.getKaltmiete();
-            Double rhsKaltmiete;
+            BigDecimal rhsKaltmiete;
             rhsKaltmiete = that.getKaltmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaltmiete", lhsKaltmiete), LocatorUtils.property(thatLocator, "kaltmiete", rhsKaltmiete), lhsKaltmiete, rhsKaltmiete)) {
                 return false;
             }
         }
         {
-            Double lhsWarmmiete;
+            BigDecimal lhsWarmmiete;
             lhsWarmmiete = this.getWarmmiete();
-            Double rhsWarmmiete;
+            BigDecimal rhsWarmmiete;
             rhsWarmmiete = that.getWarmmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "warmmiete", lhsWarmmiete), LocatorUtils.property(thatLocator, "warmmiete", rhsWarmmiete), lhsWarmmiete, rhsWarmmiete)) {
                 return false;
             }
         }
         {
-            Double lhsNebenkosten;
+            BigDecimal lhsNebenkosten;
             lhsNebenkosten = this.getNebenkosten();
-            Double rhsNebenkosten;
+            BigDecimal rhsNebenkosten;
             rhsNebenkosten = that.getNebenkosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenkosten", lhsNebenkosten), LocatorUtils.property(thatLocator, "nebenkosten", rhsNebenkosten), lhsNebenkosten, rhsNebenkosten)) {
                 return false;
@@ -3081,9 +3082,9 @@ public class Preise
             }
         }
         {
-            Double lhsHeizkosten;
+            BigDecimal lhsHeizkosten;
             lhsHeizkosten = this.getHeizkosten();
-            Double rhsHeizkosten;
+            BigDecimal rhsHeizkosten;
             rhsHeizkosten = that.getHeizkosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "heizkosten", lhsHeizkosten), LocatorUtils.property(thatLocator, "heizkosten", rhsHeizkosten), lhsHeizkosten, rhsHeizkosten)) {
                 return false;
@@ -3099,9 +3100,9 @@ public class Preise
             }
         }
         {
-            Double lhsMietzuschlaege;
+            BigDecimal lhsMietzuschlaege;
             lhsMietzuschlaege = this.getMietzuschlaege();
-            Double rhsMietzuschlaege;
+            BigDecimal rhsMietzuschlaege;
             rhsMietzuschlaege = that.getMietzuschlaege();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mietzuschlaege", lhsMietzuschlaege), LocatorUtils.property(thatLocator, "mietzuschlaege", rhsMietzuschlaege), lhsMietzuschlaege, rhsMietzuschlaege)) {
                 return false;
@@ -3117,9 +3118,9 @@ public class Preise
             }
         }
         {
-            Double lhsPauschalmiete;
+            BigDecimal lhsPauschalmiete;
             lhsPauschalmiete = this.getPauschalmiete();
-            Double rhsPauschalmiete;
+            BigDecimal rhsPauschalmiete;
             rhsPauschalmiete = that.getPauschalmiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pauschalmiete", lhsPauschalmiete), LocatorUtils.property(thatLocator, "pauschalmiete", rhsPauschalmiete), lhsPauschalmiete, rhsPauschalmiete)) {
                 return false;
@@ -3153,9 +3154,9 @@ public class Preise
             }
         }
         {
-            Double lhsGesamtmietebrutto;
+            BigDecimal lhsGesamtmietebrutto;
             lhsGesamtmietebrutto = this.getGesamtmietebrutto();
-            Double rhsGesamtmietebrutto;
+            BigDecimal rhsGesamtmietebrutto;
             rhsGesamtmietebrutto = that.getGesamtmietebrutto();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtmietebrutto", lhsGesamtmietebrutto), LocatorUtils.property(thatLocator, "gesamtmietebrutto", rhsGesamtmietebrutto), lhsGesamtmietebrutto, rhsGesamtmietebrutto)) {
                 return false;
@@ -3171,9 +3172,9 @@ public class Preise
             }
         }
         {
-            Double lhsGesamtbelastungbrutto;
+            BigDecimal lhsGesamtbelastungbrutto;
             lhsGesamtbelastungbrutto = this.getGesamtbelastungbrutto();
-            Double rhsGesamtbelastungbrutto;
+            BigDecimal rhsGesamtbelastungbrutto;
             rhsGesamtbelastungbrutto = that.getGesamtbelastungbrutto();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtbelastungbrutto", lhsGesamtbelastungbrutto), LocatorUtils.property(thatLocator, "gesamtbelastungbrutto", rhsGesamtbelastungbrutto), lhsGesamtbelastungbrutto, rhsGesamtbelastungbrutto)) {
                 return false;
@@ -3207,9 +3208,9 @@ public class Preise
             }
         }
         {
-            Double lhsMonatlichekostenbrutto;
+            BigDecimal lhsMonatlichekostenbrutto;
             lhsMonatlichekostenbrutto = this.getMonatlichekostenbrutto();
-            Double rhsMonatlichekostenbrutto;
+            BigDecimal rhsMonatlichekostenbrutto;
             rhsMonatlichekostenbrutto = that.getMonatlichekostenbrutto();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "monatlichekostenbrutto", lhsMonatlichekostenbrutto), LocatorUtils.property(thatLocator, "monatlichekostenbrutto", rhsMonatlichekostenbrutto), lhsMonatlichekostenbrutto, rhsMonatlichekostenbrutto)) {
                 return false;
@@ -3270,36 +3271,36 @@ public class Preise
             }
         }
         {
-            Double lhsPacht;
+            BigDecimal lhsPacht;
             lhsPacht = this.getPacht();
-            Double rhsPacht;
+            BigDecimal rhsPacht;
             rhsPacht = that.getPacht();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pacht", lhsPacht), LocatorUtils.property(thatLocator, "pacht", rhsPacht), lhsPacht, rhsPacht)) {
                 return false;
             }
         }
         {
-            Double lhsErbpacht;
+            BigDecimal lhsErbpacht;
             lhsErbpacht = this.getErbpacht();
-            Double rhsErbpacht;
+            BigDecimal rhsErbpacht;
             rhsErbpacht = that.getErbpacht();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "erbpacht", lhsErbpacht), LocatorUtils.property(thatLocator, "erbpacht", rhsErbpacht), lhsErbpacht, rhsErbpacht)) {
                 return false;
             }
         }
         {
-            Double lhsHausgeld;
+            BigDecimal lhsHausgeld;
             lhsHausgeld = this.getHausgeld();
-            Double rhsHausgeld;
+            BigDecimal rhsHausgeld;
             rhsHausgeld = that.getHausgeld();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hausgeld", lhsHausgeld), LocatorUtils.property(thatLocator, "hausgeld", rhsHausgeld), lhsHausgeld, rhsHausgeld)) {
                 return false;
             }
         }
         {
-            Double lhsAbstand;
+            BigDecimal lhsAbstand;
             lhsAbstand = this.getAbstand();
-            Double rhsAbstand;
+            BigDecimal rhsAbstand;
             rhsAbstand = that.getAbstand();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "abstand", lhsAbstand), LocatorUtils.property(thatLocator, "abstand", rhsAbstand), lhsAbstand, rhsAbstand)) {
                 return false;
@@ -3333,18 +3334,18 @@ public class Preise
             }
         }
         {
-            Double lhsMietpreisProQm;
+            BigDecimal lhsMietpreisProQm;
             lhsMietpreisProQm = this.getMietpreisProQm();
-            Double rhsMietpreisProQm;
+            BigDecimal rhsMietpreisProQm;
             rhsMietpreisProQm = that.getMietpreisProQm();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mietpreisProQm", lhsMietpreisProQm), LocatorUtils.property(thatLocator, "mietpreisProQm", rhsMietpreisProQm), lhsMietpreisProQm, rhsMietpreisProQm)) {
                 return false;
             }
         }
         {
-            Double lhsKaufpreisProQm;
+            BigDecimal lhsKaufpreisProQm;
             lhsKaufpreisProQm = this.getKaufpreisProQm();
-            Double rhsKaufpreisProQm;
+            BigDecimal rhsKaufpreisProQm;
             rhsKaufpreisProQm = that.getKaufpreisProQm();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaufpreisProQm", lhsKaufpreisProQm), LocatorUtils.property(thatLocator, "kaufpreisProQm", rhsKaufpreisProQm), lhsKaufpreisProQm, rhsKaufpreisProQm)) {
                 return false;
@@ -3405,9 +3406,9 @@ public class Preise
             }
         }
         {
-            Double lhsProvisionbrutto;
+            BigDecimal lhsProvisionbrutto;
             lhsProvisionbrutto = this.getProvisionbrutto();
-            Double rhsProvisionbrutto;
+            BigDecimal rhsProvisionbrutto;
             rhsProvisionbrutto = that.getProvisionbrutto();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "provisionbrutto", lhsProvisionbrutto), LocatorUtils.property(thatLocator, "provisionbrutto", rhsProvisionbrutto), lhsProvisionbrutto, rhsProvisionbrutto)) {
                 return false;
@@ -3423,18 +3424,18 @@ public class Preise
             }
         }
         {
-            Double lhsMwstSatz;
+            BigDecimal lhsMwstSatz;
             lhsMwstSatz = this.getMwstSatz();
-            Double rhsMwstSatz;
+            BigDecimal rhsMwstSatz;
             rhsMwstSatz = that.getMwstSatz();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mwstSatz", lhsMwstSatz), LocatorUtils.property(thatLocator, "mwstSatz", rhsMwstSatz), lhsMwstSatz, rhsMwstSatz)) {
                 return false;
             }
         }
         {
-            Double lhsMwstGesamt;
+            BigDecimal lhsMwstGesamt;
             lhsMwstGesamt = this.getMwstGesamt();
-            Double rhsMwstGesamt;
+            BigDecimal rhsMwstGesamt;
             rhsMwstGesamt = that.getMwstGesamt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mwstGesamt", lhsMwstGesamt), LocatorUtils.property(thatLocator, "mwstGesamt", rhsMwstGesamt), lhsMwstGesamt, rhsMwstGesamt)) {
                 return false;
@@ -3459,27 +3460,27 @@ public class Preise
             }
         }
         {
-            Double lhsNettorendite;
+            BigDecimal lhsNettorendite;
             lhsNettorendite = this.getNettorendite();
-            Double rhsNettorendite;
+            BigDecimal rhsNettorendite;
             rhsNettorendite = that.getNettorendite();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nettorendite", lhsNettorendite), LocatorUtils.property(thatLocator, "nettorendite", rhsNettorendite), lhsNettorendite, rhsNettorendite)) {
                 return false;
             }
         }
         {
-            Double lhsNettorenditeSoll;
+            BigDecimal lhsNettorenditeSoll;
             lhsNettorenditeSoll = this.getNettorenditeSoll();
-            Double rhsNettorenditeSoll;
+            BigDecimal rhsNettorenditeSoll;
             rhsNettorenditeSoll = that.getNettorenditeSoll();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nettorenditeSoll", lhsNettorenditeSoll), LocatorUtils.property(thatLocator, "nettorenditeSoll", rhsNettorenditeSoll), lhsNettorenditeSoll, rhsNettorenditeSoll)) {
                 return false;
             }
         }
         {
-            Double lhsNettorenditeIst;
+            BigDecimal lhsNettorenditeIst;
             lhsNettorenditeIst = this.getNettorenditeIst();
-            Double rhsNettorenditeIst;
+            BigDecimal rhsNettorenditeIst;
             rhsNettorenditeIst = that.getNettorenditeIst();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nettorenditeIst", lhsNettorenditeIst), LocatorUtils.property(thatLocator, "nettorenditeIst", rhsNettorenditeIst), lhsNettorenditeIst, rhsNettorenditeIst)) {
                 return false;
@@ -3504,18 +3505,18 @@ public class Preise
             }
         }
         {
-            Double lhsErschliessungskosten;
+            BigDecimal lhsErschliessungskosten;
             lhsErschliessungskosten = this.getErschliessungskosten();
-            Double rhsErschliessungskosten;
+            BigDecimal rhsErschliessungskosten;
             rhsErschliessungskosten = that.getErschliessungskosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "erschliessungskosten", lhsErschliessungskosten), LocatorUtils.property(thatLocator, "erschliessungskosten", rhsErschliessungskosten), lhsErschliessungskosten, rhsErschliessungskosten)) {
                 return false;
             }
         }
         {
-            Double lhsKaution;
+            BigDecimal lhsKaution;
             lhsKaution = this.getKaution();
-            Double rhsKaution;
+            BigDecimal rhsKaution;
             rhsKaution = that.getKaution();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaution", lhsKaution), LocatorUtils.property(thatLocator, "kaution", rhsKaution), lhsKaution, rhsKaution)) {
                 return false;
@@ -3531,9 +3532,9 @@ public class Preise
             }
         }
         {
-            Double lhsGeschaeftsguthaben;
+            BigDecimal lhsGeschaeftsguthaben;
             lhsGeschaeftsguthaben = this.getGeschaeftsguthaben();
-            Double rhsGeschaeftsguthaben;
+            BigDecimal rhsGeschaeftsguthaben;
             rhsGeschaeftsguthaben = that.getGeschaeftsguthaben();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "geschaeftsguthaben", lhsGeschaeftsguthaben), LocatorUtils.property(thatLocator, "geschaeftsguthaben", rhsGeschaeftsguthaben), lhsGeschaeftsguthaben, rhsGeschaeftsguthaben)) {
                 return false;
@@ -3603,18 +3604,18 @@ public class Preise
             }
         }
         {
-            Double lhsRichtpreis;
+            BigDecimal lhsRichtpreis;
             lhsRichtpreis = this.getRichtpreis();
-            Double rhsRichtpreis;
+            BigDecimal rhsRichtpreis;
             rhsRichtpreis = that.getRichtpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "richtpreis", lhsRichtpreis), LocatorUtils.property(thatLocator, "richtpreis", rhsRichtpreis), lhsRichtpreis, rhsRichtpreis)) {
                 return false;
             }
         }
         {
-            Double lhsRichtpreisprom2;
+            BigDecimal lhsRichtpreisprom2;
             lhsRichtpreisprom2 = this.getRichtpreisprom2();
-            Double rhsRichtpreisprom2;
+            BigDecimal rhsRichtpreisprom2;
             rhsRichtpreisprom2 = that.getRichtpreisprom2();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "richtpreisprom2", lhsRichtpreisprom2), LocatorUtils.property(thatLocator, "richtpreisprom2", rhsRichtpreisprom2), lhsRichtpreisprom2, rhsRichtpreisprom2)) {
                 return false;

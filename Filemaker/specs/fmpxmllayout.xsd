@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.filemaker.com/fmpxmllayout" xmlns:fmp="http://www.filemaker.com/fmpxmllayout" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xsd:element name="FMPXMLLAYOUT">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ERRORCODE" type="xsd:string" minOccurs="1" maxOccurs="1" />
+        <xsd:element name="PRODUCT" type="fmp:ProductType" minOccurs="1" maxOccurs="1" />
+        <xsd:element name="LAYOUT" type="fmp:LayoutType" minOccurs="1" maxOccurs="1" />
+        <xsd:element name="VALUELISTS" type="fmp:ValueListsType" minOccurs="1" maxOccurs="1" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="LayoutType">
+    <xsd:sequence>
+      <xsd:element name="FIELD" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="STYLE" minOccurs="1" maxOccurs="1">
+              <xsd:complexType>
+                <xsd:attribute name="TYPE" type="fmp:FieldStyleType" use="optional" />
+                <xsd:attribute name="VALUELIST" type="xsd:string" use="optional" />
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+          <xsd:attribute name="NAME" type="xsd:string" use="required" />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="NAME" type="xsd:string" use="required" />
+    <xsd:attribute name="DATABASE" type="xsd:string" use="required" />
+  </xsd:complexType>
+
+  <xsd:complexType name="ProductType">
+    <xsd:attribute name="NAME" type="xsd:string" use="required" />
+    <xsd:attribute name="VERSION" type="xsd:string" use="required" />
+    <xsd:attribute name="BUILD" type="xsd:string" use="required" />
+  </xsd:complexType>
+
+  <xsd:complexType name="ValueListsType">
+    <xsd:sequence>
+      <xsd:element name="VALUELIST" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="VALUE" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+          </xsd:sequence>
+          <xsd:attribute name="NAME" type="xsd:string" use="required" />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="FieldStyleType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="POPUPLIST" />
+      <xsd:enumeration value="POPUPMENU" />
+      <xsd:enumeration value="CHECKBOX" />
+      <xsd:enumeration value="RADIOBUTTONS" />
+      <xsd:enumeration value="SCROLLTEXT" />
+      <xsd:enumeration value="SELECTIONLIST" />
+      <xsd:enumeration value="EDITTEXT" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

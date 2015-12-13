@@ -12,15 +12,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AusstattungsqualitaetsTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="KeineAngabe"/>
- *     &lt;enumeration value="Luxus"/>
- *     &lt;enumeration value="Gehoben"/>
- *     &lt;enumeration value="Normal"/>
- *     &lt;enumeration value="Einfach"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AusstattungsqualitaetsTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="KeineAngabe"/&gt;
+ *     &lt;enumeration value="Luxus"/&gt;
+ *     &lt;enumeration value="Gehoben"/&gt;
+ *     &lt;enumeration value="Normal"/&gt;
+ *     &lt;enumeration value="Einfach"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

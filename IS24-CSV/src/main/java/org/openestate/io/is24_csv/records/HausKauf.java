@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import java.math.BigDecimal;
 import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvFormat;
 import org.openestate.io.is24_csv.Is24CsvRecord;
@@ -245,11 +246,11 @@ public class HausKauf extends Is24CsvRecord
       this.get( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER ) );
   }
 
-  public Double getEnergieausweisKennwert()
+  public BigDecimal getEnergieausweisKennwert()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) );
     }
     catch (NumberFormatException ex)
@@ -293,11 +294,11 @@ public class HausKauf extends Is24CsvRecord
       this.get( FIELD_GAESTE_WC ) );
   }
 
-  public Double getGrundstuecksflaeche()
+  public BigDecimal getGrundstuecksflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_GRUNDSTUECKSFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -314,11 +315,11 @@ public class HausKauf extends Is24CsvRecord
       this.get( FIELD_HEIZUNGSART ) );
   }
 
-  public Double getKaufpreis()
+  public BigDecimal getKaufpreis()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_KAUFPREIS ) );
     }
     catch (NumberFormatException ex)
@@ -335,11 +336,11 @@ public class HausKauf extends Is24CsvRecord
       this.get( FIELD_KELLER ) );
   }
 
-  public Double getMieteinnahmenProMonat()
+  public BigDecimal getMieteinnahmenProMonat()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_MIETEINNAHMEN_PRO_MONAT ) );
     }
     catch (NumberFormatException ex)
@@ -350,11 +351,11 @@ public class HausKauf extends Is24CsvRecord
     }
   }
 
-  public Double getNutzflaeche()
+  public BigDecimal getNutzflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_NUTZFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -405,11 +406,11 @@ public class HausKauf extends Is24CsvRecord
       this.get( FIELD_STELLPLATZ ) );
   }
 
-  public Double getStellplatzpreis()
+  public BigDecimal getStellplatzpreis()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_STELLPLATZPREIS ) );
     }
     catch (NumberFormatException ex)
@@ -431,11 +432,11 @@ public class HausKauf extends Is24CsvRecord
       this.get( FIELD_VERMIETET ) );
   }
 
-  public Double getWohnflaeche()
+  public BigDecimal getWohnflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_WOHNFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -446,11 +447,11 @@ public class HausKauf extends Is24CsvRecord
     }
   }
 
-  public Double getZimmer()
+  public BigDecimal getZimmer()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_ZIMMER ) );
     }
     catch (NumberFormatException ex)

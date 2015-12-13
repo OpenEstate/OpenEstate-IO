@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -87,174 +88,174 @@ public class Flaechen
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double wohnflaeche;
+    protected BigDecimal wohnflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nutzflaeche;
+    protected BigDecimal nutzflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gesamtflaeche;
+    protected BigDecimal gesamtflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double ladenflaeche;
+    protected BigDecimal ladenflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double lagerflaeche;
+    protected BigDecimal lagerflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double verkaufsflaeche;
+    protected BigDecimal verkaufsflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double freiflaeche;
+    protected BigDecimal freiflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double bueroflaeche;
+    protected BigDecimal bueroflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double bueroteilflaeche;
+    protected BigDecimal bueroteilflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double fensterfront;
+    protected BigDecimal fensterfront;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double verwaltungsflaeche;
+    protected BigDecimal verwaltungsflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gastroflaeche;
+    protected BigDecimal gastroflaeche;
     protected String grz;
     protected String gfz;
     protected String bmz;
     protected String bgf;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double grundstuecksflaeche;
+    protected BigDecimal grundstuecksflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double sonstflaeche;
+    protected BigDecimal sonstflaeche;
     @XmlElement(name = "anzahl_zimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlZimmer;
+    protected BigDecimal anzahlZimmer;
     @XmlElement(name = "anzahl_schlafzimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlSchlafzimmer;
+    protected BigDecimal anzahlSchlafzimmer;
     @XmlElement(name = "anzahl_badezimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlBadezimmer;
+    protected BigDecimal anzahlBadezimmer;
     @XmlElement(name = "anzahl_sep_wc", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlSepWc;
+    protected BigDecimal anzahlSepWc;
     @XmlElement(name = "anzahl_balkone", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlBalkone;
+    protected BigDecimal anzahlBalkone;
     @XmlElement(name = "anzahl_terrassen", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlTerrassen;
+    protected BigDecimal anzahlTerrassen;
     @XmlElement(name = "anzahl_logia", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlLogia;
+    protected BigDecimal anzahlLogia;
     @XmlElement(name = "balkon_terrasse_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double balkonTerrasseFlaeche;
+    protected BigDecimal balkonTerrasseFlaeche;
     @XmlElement(name = "anzahl_wohn_schlafzimmer", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlWohnSchlafzimmer;
+    protected BigDecimal anzahlWohnSchlafzimmer;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double gartenflaeche;
+    protected BigDecimal gartenflaeche;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kellerflaeche;
+    protected BigDecimal kellerflaeche;
     @XmlElement(name = "fensterfront_qm", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double fensterfrontQm;
+    protected BigDecimal fensterfrontQm;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double grundstuecksfront;
+    protected BigDecimal grundstuecksfront;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double dachbodenflaeche;
+    protected BigDecimal dachbodenflaeche;
     @XmlElement(name = "teilbar_ab", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double teilbarAb;
+    protected BigDecimal teilbarAb;
     @XmlElement(name = "beheizbare_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double beheizbareFlaeche;
+    protected BigDecimal beheizbareFlaeche;
     @XmlElement(name = "anzahl_stellplaetze", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlStellplaetze;
+    protected BigDecimal anzahlStellplaetze;
     @XmlElement(name = "plaetze_gastraum", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double plaetzeGastraum;
+    protected BigDecimal plaetzeGastraum;
     @XmlElement(name = "anzahl_betten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlBetten;
+    protected BigDecimal anzahlBetten;
     @XmlElement(name = "anzahl_tagungsraeume", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlTagungsraeume;
+    protected BigDecimal anzahlTagungsraeume;
     @XmlElement(name = "vermietbare_flaeche", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double vermietbareFlaeche;
+    protected BigDecimal vermietbareFlaeche;
     @XmlElement(name = "anzahl_wohneinheiten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlWohneinheiten;
+    protected BigDecimal anzahlWohneinheiten;
     @XmlElement(name = "anzahl_gewerbeeinheiten", type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double anzahlGewerbeeinheiten;
+    protected BigDecimal anzahlGewerbeeinheiten;
     protected Boolean einliegerwohnung;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double kubatur;
+    protected BigDecimal kubatur;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double ausnuetzungsziffer;
+    protected BigDecimal ausnuetzungsziffer;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double flaechevon;
+    protected BigDecimal flaechevon;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double flaechebis;
+    protected BigDecimal flaechebis;
     @XmlElement(name = "user_defined_simplefield")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
@@ -270,7 +271,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getWohnflaeche() {
+    public BigDecimal getWohnflaeche() {
         return wohnflaeche;
     }
 
@@ -282,7 +283,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setWohnflaeche(Double value) {
+    public void setWohnflaeche(BigDecimal value) {
         this.wohnflaeche = value;
     }
 
@@ -294,7 +295,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getNutzflaeche() {
+    public BigDecimal getNutzflaeche() {
         return nutzflaeche;
     }
 
@@ -306,7 +307,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setNutzflaeche(Double value) {
+    public void setNutzflaeche(BigDecimal value) {
         this.nutzflaeche = value;
     }
 
@@ -318,7 +319,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getGesamtflaeche() {
+    public BigDecimal getGesamtflaeche() {
         return gesamtflaeche;
     }
 
@@ -330,7 +331,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setGesamtflaeche(Double value) {
+    public void setGesamtflaeche(BigDecimal value) {
         this.gesamtflaeche = value;
     }
 
@@ -342,7 +343,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getLadenflaeche() {
+    public BigDecimal getLadenflaeche() {
         return ladenflaeche;
     }
 
@@ -354,7 +355,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setLadenflaeche(Double value) {
+    public void setLadenflaeche(BigDecimal value) {
         this.ladenflaeche = value;
     }
 
@@ -366,7 +367,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getLagerflaeche() {
+    public BigDecimal getLagerflaeche() {
         return lagerflaeche;
     }
 
@@ -378,7 +379,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setLagerflaeche(Double value) {
+    public void setLagerflaeche(BigDecimal value) {
         this.lagerflaeche = value;
     }
 
@@ -390,7 +391,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getVerkaufsflaeche() {
+    public BigDecimal getVerkaufsflaeche() {
         return verkaufsflaeche;
     }
 
@@ -402,7 +403,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setVerkaufsflaeche(Double value) {
+    public void setVerkaufsflaeche(BigDecimal value) {
         this.verkaufsflaeche = value;
     }
 
@@ -414,7 +415,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getFreiflaeche() {
+    public BigDecimal getFreiflaeche() {
         return freiflaeche;
     }
 
@@ -426,7 +427,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setFreiflaeche(Double value) {
+    public void setFreiflaeche(BigDecimal value) {
         this.freiflaeche = value;
     }
 
@@ -438,7 +439,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getBueroflaeche() {
+    public BigDecimal getBueroflaeche() {
         return bueroflaeche;
     }
 
@@ -450,7 +451,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setBueroflaeche(Double value) {
+    public void setBueroflaeche(BigDecimal value) {
         this.bueroflaeche = value;
     }
 
@@ -462,7 +463,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getBueroteilflaeche() {
+    public BigDecimal getBueroteilflaeche() {
         return bueroteilflaeche;
     }
 
@@ -474,7 +475,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setBueroteilflaeche(Double value) {
+    public void setBueroteilflaeche(BigDecimal value) {
         this.bueroteilflaeche = value;
     }
 
@@ -486,7 +487,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getFensterfront() {
+    public BigDecimal getFensterfront() {
         return fensterfront;
     }
 
@@ -498,7 +499,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setFensterfront(Double value) {
+    public void setFensterfront(BigDecimal value) {
         this.fensterfront = value;
     }
 
@@ -510,7 +511,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getVerwaltungsflaeche() {
+    public BigDecimal getVerwaltungsflaeche() {
         return verwaltungsflaeche;
     }
 
@@ -522,7 +523,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setVerwaltungsflaeche(Double value) {
+    public void setVerwaltungsflaeche(BigDecimal value) {
         this.verwaltungsflaeche = value;
     }
 
@@ -534,7 +535,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getGastroflaeche() {
+    public BigDecimal getGastroflaeche() {
         return gastroflaeche;
     }
 
@@ -546,7 +547,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setGastroflaeche(Double value) {
+    public void setGastroflaeche(BigDecimal value) {
         this.gastroflaeche = value;
     }
 
@@ -654,7 +655,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getGrundstuecksflaeche() {
+    public BigDecimal getGrundstuecksflaeche() {
         return grundstuecksflaeche;
     }
 
@@ -666,7 +667,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setGrundstuecksflaeche(Double value) {
+    public void setGrundstuecksflaeche(BigDecimal value) {
         this.grundstuecksflaeche = value;
     }
 
@@ -678,7 +679,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getSonstflaeche() {
+    public BigDecimal getSonstflaeche() {
         return sonstflaeche;
     }
 
@@ -690,7 +691,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setSonstflaeche(Double value) {
+    public void setSonstflaeche(BigDecimal value) {
         this.sonstflaeche = value;
     }
 
@@ -702,7 +703,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlZimmer() {
+    public BigDecimal getAnzahlZimmer() {
         return anzahlZimmer;
     }
 
@@ -714,7 +715,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlZimmer(Double value) {
+    public void setAnzahlZimmer(BigDecimal value) {
         this.anzahlZimmer = value;
     }
 
@@ -726,7 +727,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlSchlafzimmer() {
+    public BigDecimal getAnzahlSchlafzimmer() {
         return anzahlSchlafzimmer;
     }
 
@@ -738,7 +739,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlSchlafzimmer(Double value) {
+    public void setAnzahlSchlafzimmer(BigDecimal value) {
         this.anzahlSchlafzimmer = value;
     }
 
@@ -750,7 +751,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlBadezimmer() {
+    public BigDecimal getAnzahlBadezimmer() {
         return anzahlBadezimmer;
     }
 
@@ -762,7 +763,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlBadezimmer(Double value) {
+    public void setAnzahlBadezimmer(BigDecimal value) {
         this.anzahlBadezimmer = value;
     }
 
@@ -774,7 +775,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlSepWc() {
+    public BigDecimal getAnzahlSepWc() {
         return anzahlSepWc;
     }
 
@@ -786,7 +787,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlSepWc(Double value) {
+    public void setAnzahlSepWc(BigDecimal value) {
         this.anzahlSepWc = value;
     }
 
@@ -798,7 +799,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlBalkone() {
+    public BigDecimal getAnzahlBalkone() {
         return anzahlBalkone;
     }
 
@@ -810,7 +811,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlBalkone(Double value) {
+    public void setAnzahlBalkone(BigDecimal value) {
         this.anzahlBalkone = value;
     }
 
@@ -822,7 +823,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlTerrassen() {
+    public BigDecimal getAnzahlTerrassen() {
         return anzahlTerrassen;
     }
 
@@ -834,7 +835,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlTerrassen(Double value) {
+    public void setAnzahlTerrassen(BigDecimal value) {
         this.anzahlTerrassen = value;
     }
 
@@ -846,7 +847,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlLogia() {
+    public BigDecimal getAnzahlLogia() {
         return anzahlLogia;
     }
 
@@ -858,7 +859,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlLogia(Double value) {
+    public void setAnzahlLogia(BigDecimal value) {
         this.anzahlLogia = value;
     }
 
@@ -870,7 +871,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getBalkonTerrasseFlaeche() {
+    public BigDecimal getBalkonTerrasseFlaeche() {
         return balkonTerrasseFlaeche;
     }
 
@@ -882,7 +883,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setBalkonTerrasseFlaeche(Double value) {
+    public void setBalkonTerrasseFlaeche(BigDecimal value) {
         this.balkonTerrasseFlaeche = value;
     }
 
@@ -894,7 +895,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlWohnSchlafzimmer() {
+    public BigDecimal getAnzahlWohnSchlafzimmer() {
         return anzahlWohnSchlafzimmer;
     }
 
@@ -906,7 +907,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlWohnSchlafzimmer(Double value) {
+    public void setAnzahlWohnSchlafzimmer(BigDecimal value) {
         this.anzahlWohnSchlafzimmer = value;
     }
 
@@ -918,7 +919,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getGartenflaeche() {
+    public BigDecimal getGartenflaeche() {
         return gartenflaeche;
     }
 
@@ -930,7 +931,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setGartenflaeche(Double value) {
+    public void setGartenflaeche(BigDecimal value) {
         this.gartenflaeche = value;
     }
 
@@ -942,7 +943,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getKellerflaeche() {
+    public BigDecimal getKellerflaeche() {
         return kellerflaeche;
     }
 
@@ -954,7 +955,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setKellerflaeche(Double value) {
+    public void setKellerflaeche(BigDecimal value) {
         this.kellerflaeche = value;
     }
 
@@ -966,7 +967,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getFensterfrontQm() {
+    public BigDecimal getFensterfrontQm() {
         return fensterfrontQm;
     }
 
@@ -978,7 +979,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setFensterfrontQm(Double value) {
+    public void setFensterfrontQm(BigDecimal value) {
         this.fensterfrontQm = value;
     }
 
@@ -990,7 +991,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getGrundstuecksfront() {
+    public BigDecimal getGrundstuecksfront() {
         return grundstuecksfront;
     }
 
@@ -1002,7 +1003,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setGrundstuecksfront(Double value) {
+    public void setGrundstuecksfront(BigDecimal value) {
         this.grundstuecksfront = value;
     }
 
@@ -1014,7 +1015,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getDachbodenflaeche() {
+    public BigDecimal getDachbodenflaeche() {
         return dachbodenflaeche;
     }
 
@@ -1026,7 +1027,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setDachbodenflaeche(Double value) {
+    public void setDachbodenflaeche(BigDecimal value) {
         this.dachbodenflaeche = value;
     }
 
@@ -1038,7 +1039,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getTeilbarAb() {
+    public BigDecimal getTeilbarAb() {
         return teilbarAb;
     }
 
@@ -1050,7 +1051,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setTeilbarAb(Double value) {
+    public void setTeilbarAb(BigDecimal value) {
         this.teilbarAb = value;
     }
 
@@ -1062,7 +1063,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getBeheizbareFlaeche() {
+    public BigDecimal getBeheizbareFlaeche() {
         return beheizbareFlaeche;
     }
 
@@ -1074,7 +1075,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setBeheizbareFlaeche(Double value) {
+    public void setBeheizbareFlaeche(BigDecimal value) {
         this.beheizbareFlaeche = value;
     }
 
@@ -1086,7 +1087,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlStellplaetze() {
+    public BigDecimal getAnzahlStellplaetze() {
         return anzahlStellplaetze;
     }
 
@@ -1098,7 +1099,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlStellplaetze(Double value) {
+    public void setAnzahlStellplaetze(BigDecimal value) {
         this.anzahlStellplaetze = value;
     }
 
@@ -1110,7 +1111,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getPlaetzeGastraum() {
+    public BigDecimal getPlaetzeGastraum() {
         return plaetzeGastraum;
     }
 
@@ -1122,7 +1123,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setPlaetzeGastraum(Double value) {
+    public void setPlaetzeGastraum(BigDecimal value) {
         this.plaetzeGastraum = value;
     }
 
@@ -1134,7 +1135,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlBetten() {
+    public BigDecimal getAnzahlBetten() {
         return anzahlBetten;
     }
 
@@ -1146,7 +1147,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlBetten(Double value) {
+    public void setAnzahlBetten(BigDecimal value) {
         this.anzahlBetten = value;
     }
 
@@ -1158,7 +1159,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlTagungsraeume() {
+    public BigDecimal getAnzahlTagungsraeume() {
         return anzahlTagungsraeume;
     }
 
@@ -1170,7 +1171,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlTagungsraeume(Double value) {
+    public void setAnzahlTagungsraeume(BigDecimal value) {
         this.anzahlTagungsraeume = value;
     }
 
@@ -1182,7 +1183,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getVermietbareFlaeche() {
+    public BigDecimal getVermietbareFlaeche() {
         return vermietbareFlaeche;
     }
 
@@ -1194,7 +1195,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setVermietbareFlaeche(Double value) {
+    public void setVermietbareFlaeche(BigDecimal value) {
         this.vermietbareFlaeche = value;
     }
 
@@ -1206,7 +1207,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlWohneinheiten() {
+    public BigDecimal getAnzahlWohneinheiten() {
         return anzahlWohneinheiten;
     }
 
@@ -1218,7 +1219,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlWohneinheiten(Double value) {
+    public void setAnzahlWohneinheiten(BigDecimal value) {
         this.anzahlWohneinheiten = value;
     }
 
@@ -1230,7 +1231,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAnzahlGewerbeeinheiten() {
+    public BigDecimal getAnzahlGewerbeeinheiten() {
         return anzahlGewerbeeinheiten;
     }
 
@@ -1242,7 +1243,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAnzahlGewerbeeinheiten(Double value) {
+    public void setAnzahlGewerbeeinheiten(BigDecimal value) {
         this.anzahlGewerbeeinheiten = value;
     }
 
@@ -1278,7 +1279,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getKubatur() {
+    public BigDecimal getKubatur() {
         return kubatur;
     }
 
@@ -1290,7 +1291,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setKubatur(Double value) {
+    public void setKubatur(BigDecimal value) {
         this.kubatur = value;
     }
 
@@ -1302,7 +1303,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getAusnuetzungsziffer() {
+    public BigDecimal getAusnuetzungsziffer() {
         return ausnuetzungsziffer;
     }
 
@@ -1314,7 +1315,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setAusnuetzungsziffer(Double value) {
+    public void setAusnuetzungsziffer(BigDecimal value) {
         this.ausnuetzungsziffer = value;
     }
 
@@ -1326,7 +1327,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getFlaechevon() {
+    public BigDecimal getFlaechevon() {
         return flaechevon;
     }
 
@@ -1338,7 +1339,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setFlaechevon(Double value) {
+    public void setFlaechevon(BigDecimal value) {
         this.flaechevon = value;
     }
 
@@ -1350,7 +1351,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public Double getFlaechebis() {
+    public BigDecimal getFlaechebis() {
         return flaechebis;
     }
 
@@ -1362,7 +1363,7 @@ public class Flaechen
      *     {@link String }
      *     
      */
-    public void setFlaechebis(Double value) {
+    public void setFlaechebis(BigDecimal value) {
         this.flaechebis = value;
     }
 
@@ -1469,62 +1470,62 @@ public class Flaechen
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theWohnflaeche;
+            BigDecimal theWohnflaeche;
             theWohnflaeche = this.getWohnflaeche();
             strategy.appendField(locator, this, "wohnflaeche", buffer, theWohnflaeche);
         }
         {
-            Double theNutzflaeche;
+            BigDecimal theNutzflaeche;
             theNutzflaeche = this.getNutzflaeche();
             strategy.appendField(locator, this, "nutzflaeche", buffer, theNutzflaeche);
         }
         {
-            Double theGesamtflaeche;
+            BigDecimal theGesamtflaeche;
             theGesamtflaeche = this.getGesamtflaeche();
             strategy.appendField(locator, this, "gesamtflaeche", buffer, theGesamtflaeche);
         }
         {
-            Double theLadenflaeche;
+            BigDecimal theLadenflaeche;
             theLadenflaeche = this.getLadenflaeche();
             strategy.appendField(locator, this, "ladenflaeche", buffer, theLadenflaeche);
         }
         {
-            Double theLagerflaeche;
+            BigDecimal theLagerflaeche;
             theLagerflaeche = this.getLagerflaeche();
             strategy.appendField(locator, this, "lagerflaeche", buffer, theLagerflaeche);
         }
         {
-            Double theVerkaufsflaeche;
+            BigDecimal theVerkaufsflaeche;
             theVerkaufsflaeche = this.getVerkaufsflaeche();
             strategy.appendField(locator, this, "verkaufsflaeche", buffer, theVerkaufsflaeche);
         }
         {
-            Double theFreiflaeche;
+            BigDecimal theFreiflaeche;
             theFreiflaeche = this.getFreiflaeche();
             strategy.appendField(locator, this, "freiflaeche", buffer, theFreiflaeche);
         }
         {
-            Double theBueroflaeche;
+            BigDecimal theBueroflaeche;
             theBueroflaeche = this.getBueroflaeche();
             strategy.appendField(locator, this, "bueroflaeche", buffer, theBueroflaeche);
         }
         {
-            Double theBueroteilflaeche;
+            BigDecimal theBueroteilflaeche;
             theBueroteilflaeche = this.getBueroteilflaeche();
             strategy.appendField(locator, this, "bueroteilflaeche", buffer, theBueroteilflaeche);
         }
         {
-            Double theFensterfront;
+            BigDecimal theFensterfront;
             theFensterfront = this.getFensterfront();
             strategy.appendField(locator, this, "fensterfront", buffer, theFensterfront);
         }
         {
-            Double theVerwaltungsflaeche;
+            BigDecimal theVerwaltungsflaeche;
             theVerwaltungsflaeche = this.getVerwaltungsflaeche();
             strategy.appendField(locator, this, "verwaltungsflaeche", buffer, theVerwaltungsflaeche);
         }
         {
-            Double theGastroflaeche;
+            BigDecimal theGastroflaeche;
             theGastroflaeche = this.getGastroflaeche();
             strategy.appendField(locator, this, "gastroflaeche", buffer, theGastroflaeche);
         }
@@ -1549,127 +1550,127 @@ public class Flaechen
             strategy.appendField(locator, this, "bgf", buffer, theBgf);
         }
         {
-            Double theGrundstuecksflaeche;
+            BigDecimal theGrundstuecksflaeche;
             theGrundstuecksflaeche = this.getGrundstuecksflaeche();
             strategy.appendField(locator, this, "grundstuecksflaeche", buffer, theGrundstuecksflaeche);
         }
         {
-            Double theSonstflaeche;
+            BigDecimal theSonstflaeche;
             theSonstflaeche = this.getSonstflaeche();
             strategy.appendField(locator, this, "sonstflaeche", buffer, theSonstflaeche);
         }
         {
-            Double theAnzahlZimmer;
+            BigDecimal theAnzahlZimmer;
             theAnzahlZimmer = this.getAnzahlZimmer();
             strategy.appendField(locator, this, "anzahlZimmer", buffer, theAnzahlZimmer);
         }
         {
-            Double theAnzahlSchlafzimmer;
+            BigDecimal theAnzahlSchlafzimmer;
             theAnzahlSchlafzimmer = this.getAnzahlSchlafzimmer();
             strategy.appendField(locator, this, "anzahlSchlafzimmer", buffer, theAnzahlSchlafzimmer);
         }
         {
-            Double theAnzahlBadezimmer;
+            BigDecimal theAnzahlBadezimmer;
             theAnzahlBadezimmer = this.getAnzahlBadezimmer();
             strategy.appendField(locator, this, "anzahlBadezimmer", buffer, theAnzahlBadezimmer);
         }
         {
-            Double theAnzahlSepWc;
+            BigDecimal theAnzahlSepWc;
             theAnzahlSepWc = this.getAnzahlSepWc();
             strategy.appendField(locator, this, "anzahlSepWc", buffer, theAnzahlSepWc);
         }
         {
-            Double theAnzahlBalkone;
+            BigDecimal theAnzahlBalkone;
             theAnzahlBalkone = this.getAnzahlBalkone();
             strategy.appendField(locator, this, "anzahlBalkone", buffer, theAnzahlBalkone);
         }
         {
-            Double theAnzahlTerrassen;
+            BigDecimal theAnzahlTerrassen;
             theAnzahlTerrassen = this.getAnzahlTerrassen();
             strategy.appendField(locator, this, "anzahlTerrassen", buffer, theAnzahlTerrassen);
         }
         {
-            Double theAnzahlLogia;
+            BigDecimal theAnzahlLogia;
             theAnzahlLogia = this.getAnzahlLogia();
             strategy.appendField(locator, this, "anzahlLogia", buffer, theAnzahlLogia);
         }
         {
-            Double theBalkonTerrasseFlaeche;
+            BigDecimal theBalkonTerrasseFlaeche;
             theBalkonTerrasseFlaeche = this.getBalkonTerrasseFlaeche();
             strategy.appendField(locator, this, "balkonTerrasseFlaeche", buffer, theBalkonTerrasseFlaeche);
         }
         {
-            Double theAnzahlWohnSchlafzimmer;
+            BigDecimal theAnzahlWohnSchlafzimmer;
             theAnzahlWohnSchlafzimmer = this.getAnzahlWohnSchlafzimmer();
             strategy.appendField(locator, this, "anzahlWohnSchlafzimmer", buffer, theAnzahlWohnSchlafzimmer);
         }
         {
-            Double theGartenflaeche;
+            BigDecimal theGartenflaeche;
             theGartenflaeche = this.getGartenflaeche();
             strategy.appendField(locator, this, "gartenflaeche", buffer, theGartenflaeche);
         }
         {
-            Double theKellerflaeche;
+            BigDecimal theKellerflaeche;
             theKellerflaeche = this.getKellerflaeche();
             strategy.appendField(locator, this, "kellerflaeche", buffer, theKellerflaeche);
         }
         {
-            Double theFensterfrontQm;
+            BigDecimal theFensterfrontQm;
             theFensterfrontQm = this.getFensterfrontQm();
             strategy.appendField(locator, this, "fensterfrontQm", buffer, theFensterfrontQm);
         }
         {
-            Double theGrundstuecksfront;
+            BigDecimal theGrundstuecksfront;
             theGrundstuecksfront = this.getGrundstuecksfront();
             strategy.appendField(locator, this, "grundstuecksfront", buffer, theGrundstuecksfront);
         }
         {
-            Double theDachbodenflaeche;
+            BigDecimal theDachbodenflaeche;
             theDachbodenflaeche = this.getDachbodenflaeche();
             strategy.appendField(locator, this, "dachbodenflaeche", buffer, theDachbodenflaeche);
         }
         {
-            Double theTeilbarAb;
+            BigDecimal theTeilbarAb;
             theTeilbarAb = this.getTeilbarAb();
             strategy.appendField(locator, this, "teilbarAb", buffer, theTeilbarAb);
         }
         {
-            Double theBeheizbareFlaeche;
+            BigDecimal theBeheizbareFlaeche;
             theBeheizbareFlaeche = this.getBeheizbareFlaeche();
             strategy.appendField(locator, this, "beheizbareFlaeche", buffer, theBeheizbareFlaeche);
         }
         {
-            Double theAnzahlStellplaetze;
+            BigDecimal theAnzahlStellplaetze;
             theAnzahlStellplaetze = this.getAnzahlStellplaetze();
             strategy.appendField(locator, this, "anzahlStellplaetze", buffer, theAnzahlStellplaetze);
         }
         {
-            Double thePlaetzeGastraum;
+            BigDecimal thePlaetzeGastraum;
             thePlaetzeGastraum = this.getPlaetzeGastraum();
             strategy.appendField(locator, this, "plaetzeGastraum", buffer, thePlaetzeGastraum);
         }
         {
-            Double theAnzahlBetten;
+            BigDecimal theAnzahlBetten;
             theAnzahlBetten = this.getAnzahlBetten();
             strategy.appendField(locator, this, "anzahlBetten", buffer, theAnzahlBetten);
         }
         {
-            Double theAnzahlTagungsraeume;
+            BigDecimal theAnzahlTagungsraeume;
             theAnzahlTagungsraeume = this.getAnzahlTagungsraeume();
             strategy.appendField(locator, this, "anzahlTagungsraeume", buffer, theAnzahlTagungsraeume);
         }
         {
-            Double theVermietbareFlaeche;
+            BigDecimal theVermietbareFlaeche;
             theVermietbareFlaeche = this.getVermietbareFlaeche();
             strategy.appendField(locator, this, "vermietbareFlaeche", buffer, theVermietbareFlaeche);
         }
         {
-            Double theAnzahlWohneinheiten;
+            BigDecimal theAnzahlWohneinheiten;
             theAnzahlWohneinheiten = this.getAnzahlWohneinheiten();
             strategy.appendField(locator, this, "anzahlWohneinheiten", buffer, theAnzahlWohneinheiten);
         }
         {
-            Double theAnzahlGewerbeeinheiten;
+            BigDecimal theAnzahlGewerbeeinheiten;
             theAnzahlGewerbeeinheiten = this.getAnzahlGewerbeeinheiten();
             strategy.appendField(locator, this, "anzahlGewerbeeinheiten", buffer, theAnzahlGewerbeeinheiten);
         }
@@ -1679,22 +1680,22 @@ public class Flaechen
             strategy.appendField(locator, this, "einliegerwohnung", buffer, theEinliegerwohnung);
         }
         {
-            Double theKubatur;
+            BigDecimal theKubatur;
             theKubatur = this.getKubatur();
             strategy.appendField(locator, this, "kubatur", buffer, theKubatur);
         }
         {
-            Double theAusnuetzungsziffer;
+            BigDecimal theAusnuetzungsziffer;
             theAusnuetzungsziffer = this.getAusnuetzungsziffer();
             strategy.appendField(locator, this, "ausnuetzungsziffer", buffer, theAusnuetzungsziffer);
         }
         {
-            Double theFlaechevon;
+            BigDecimal theFlaechevon;
             theFlaechevon = this.getFlaechevon();
             strategy.appendField(locator, this, "flaechevon", buffer, theFlaechevon);
         }
         {
-            Double theFlaechebis;
+            BigDecimal theFlaechebis;
             theFlaechebis = this.getFlaechebis();
             strategy.appendField(locator, this, "flaechebis", buffer, theFlaechebis);
         }
@@ -1730,97 +1731,97 @@ public class Flaechen
         if (draftCopy instanceof Flaechen) {
             final Flaechen copy = ((Flaechen) draftCopy);
             if (this.wohnflaeche!= null) {
-                Double sourceWohnflaeche;
+                BigDecimal sourceWohnflaeche;
                 sourceWohnflaeche = this.getWohnflaeche();
-                Double copyWohnflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "wohnflaeche", sourceWohnflaeche), sourceWohnflaeche));
+                BigDecimal copyWohnflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "wohnflaeche", sourceWohnflaeche), sourceWohnflaeche));
                 copy.setWohnflaeche(copyWohnflaeche);
             } else {
                 copy.wohnflaeche = null;
             }
             if (this.nutzflaeche!= null) {
-                Double sourceNutzflaeche;
+                BigDecimal sourceNutzflaeche;
                 sourceNutzflaeche = this.getNutzflaeche();
-                Double copyNutzflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "nutzflaeche", sourceNutzflaeche), sourceNutzflaeche));
+                BigDecimal copyNutzflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nutzflaeche", sourceNutzflaeche), sourceNutzflaeche));
                 copy.setNutzflaeche(copyNutzflaeche);
             } else {
                 copy.nutzflaeche = null;
             }
             if (this.gesamtflaeche!= null) {
-                Double sourceGesamtflaeche;
+                BigDecimal sourceGesamtflaeche;
                 sourceGesamtflaeche = this.getGesamtflaeche();
-                Double copyGesamtflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
+                BigDecimal copyGesamtflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
                 copy.setGesamtflaeche(copyGesamtflaeche);
             } else {
                 copy.gesamtflaeche = null;
             }
             if (this.ladenflaeche!= null) {
-                Double sourceLadenflaeche;
+                BigDecimal sourceLadenflaeche;
                 sourceLadenflaeche = this.getLadenflaeche();
-                Double copyLadenflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "ladenflaeche", sourceLadenflaeche), sourceLadenflaeche));
+                BigDecimal copyLadenflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "ladenflaeche", sourceLadenflaeche), sourceLadenflaeche));
                 copy.setLadenflaeche(copyLadenflaeche);
             } else {
                 copy.ladenflaeche = null;
             }
             if (this.lagerflaeche!= null) {
-                Double sourceLagerflaeche;
+                BigDecimal sourceLagerflaeche;
                 sourceLagerflaeche = this.getLagerflaeche();
-                Double copyLagerflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "lagerflaeche", sourceLagerflaeche), sourceLagerflaeche));
+                BigDecimal copyLagerflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "lagerflaeche", sourceLagerflaeche), sourceLagerflaeche));
                 copy.setLagerflaeche(copyLagerflaeche);
             } else {
                 copy.lagerflaeche = null;
             }
             if (this.verkaufsflaeche!= null) {
-                Double sourceVerkaufsflaeche;
+                BigDecimal sourceVerkaufsflaeche;
                 sourceVerkaufsflaeche = this.getVerkaufsflaeche();
-                Double copyVerkaufsflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "verkaufsflaeche", sourceVerkaufsflaeche), sourceVerkaufsflaeche));
+                BigDecimal copyVerkaufsflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verkaufsflaeche", sourceVerkaufsflaeche), sourceVerkaufsflaeche));
                 copy.setVerkaufsflaeche(copyVerkaufsflaeche);
             } else {
                 copy.verkaufsflaeche = null;
             }
             if (this.freiflaeche!= null) {
-                Double sourceFreiflaeche;
+                BigDecimal sourceFreiflaeche;
                 sourceFreiflaeche = this.getFreiflaeche();
-                Double copyFreiflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "freiflaeche", sourceFreiflaeche), sourceFreiflaeche));
+                BigDecimal copyFreiflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "freiflaeche", sourceFreiflaeche), sourceFreiflaeche));
                 copy.setFreiflaeche(copyFreiflaeche);
             } else {
                 copy.freiflaeche = null;
             }
             if (this.bueroflaeche!= null) {
-                Double sourceBueroflaeche;
+                BigDecimal sourceBueroflaeche;
                 sourceBueroflaeche = this.getBueroflaeche();
-                Double copyBueroflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "bueroflaeche", sourceBueroflaeche), sourceBueroflaeche));
+                BigDecimal copyBueroflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "bueroflaeche", sourceBueroflaeche), sourceBueroflaeche));
                 copy.setBueroflaeche(copyBueroflaeche);
             } else {
                 copy.bueroflaeche = null;
             }
             if (this.bueroteilflaeche!= null) {
-                Double sourceBueroteilflaeche;
+                BigDecimal sourceBueroteilflaeche;
                 sourceBueroteilflaeche = this.getBueroteilflaeche();
-                Double copyBueroteilflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "bueroteilflaeche", sourceBueroteilflaeche), sourceBueroteilflaeche));
+                BigDecimal copyBueroteilflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "bueroteilflaeche", sourceBueroteilflaeche), sourceBueroteilflaeche));
                 copy.setBueroteilflaeche(copyBueroteilflaeche);
             } else {
                 copy.bueroteilflaeche = null;
             }
             if (this.fensterfront!= null) {
-                Double sourceFensterfront;
+                BigDecimal sourceFensterfront;
                 sourceFensterfront = this.getFensterfront();
-                Double copyFensterfront = ((Double) strategy.copy(LocatorUtils.property(locator, "fensterfront", sourceFensterfront), sourceFensterfront));
+                BigDecimal copyFensterfront = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "fensterfront", sourceFensterfront), sourceFensterfront));
                 copy.setFensterfront(copyFensterfront);
             } else {
                 copy.fensterfront = null;
             }
             if (this.verwaltungsflaeche!= null) {
-                Double sourceVerwaltungsflaeche;
+                BigDecimal sourceVerwaltungsflaeche;
                 sourceVerwaltungsflaeche = this.getVerwaltungsflaeche();
-                Double copyVerwaltungsflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "verwaltungsflaeche", sourceVerwaltungsflaeche), sourceVerwaltungsflaeche));
+                BigDecimal copyVerwaltungsflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verwaltungsflaeche", sourceVerwaltungsflaeche), sourceVerwaltungsflaeche));
                 copy.setVerwaltungsflaeche(copyVerwaltungsflaeche);
             } else {
                 copy.verwaltungsflaeche = null;
             }
             if (this.gastroflaeche!= null) {
-                Double sourceGastroflaeche;
+                BigDecimal sourceGastroflaeche;
                 sourceGastroflaeche = this.getGastroflaeche();
-                Double copyGastroflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gastroflaeche", sourceGastroflaeche), sourceGastroflaeche));
+                BigDecimal copyGastroflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gastroflaeche", sourceGastroflaeche), sourceGastroflaeche));
                 copy.setGastroflaeche(copyGastroflaeche);
             } else {
                 copy.gastroflaeche = null;
@@ -1858,201 +1859,201 @@ public class Flaechen
                 copy.bgf = null;
             }
             if (this.grundstuecksflaeche!= null) {
-                Double sourceGrundstuecksflaeche;
+                BigDecimal sourceGrundstuecksflaeche;
                 sourceGrundstuecksflaeche = this.getGrundstuecksflaeche();
-                Double copyGrundstuecksflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "grundstuecksflaeche", sourceGrundstuecksflaeche), sourceGrundstuecksflaeche));
+                BigDecimal copyGrundstuecksflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksflaeche", sourceGrundstuecksflaeche), sourceGrundstuecksflaeche));
                 copy.setGrundstuecksflaeche(copyGrundstuecksflaeche);
             } else {
                 copy.grundstuecksflaeche = null;
             }
             if (this.sonstflaeche!= null) {
-                Double sourceSonstflaeche;
+                BigDecimal sourceSonstflaeche;
                 sourceSonstflaeche = this.getSonstflaeche();
-                Double copySonstflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "sonstflaeche", sourceSonstflaeche), sourceSonstflaeche));
+                BigDecimal copySonstflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "sonstflaeche", sourceSonstflaeche), sourceSonstflaeche));
                 copy.setSonstflaeche(copySonstflaeche);
             } else {
                 copy.sonstflaeche = null;
             }
             if (this.anzahlZimmer!= null) {
-                Double sourceAnzahlZimmer;
+                BigDecimal sourceAnzahlZimmer;
                 sourceAnzahlZimmer = this.getAnzahlZimmer();
-                Double copyAnzahlZimmer = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlZimmer", sourceAnzahlZimmer), sourceAnzahlZimmer));
+                BigDecimal copyAnzahlZimmer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlZimmer", sourceAnzahlZimmer), sourceAnzahlZimmer));
                 copy.setAnzahlZimmer(copyAnzahlZimmer);
             } else {
                 copy.anzahlZimmer = null;
             }
             if (this.anzahlSchlafzimmer!= null) {
-                Double sourceAnzahlSchlafzimmer;
+                BigDecimal sourceAnzahlSchlafzimmer;
                 sourceAnzahlSchlafzimmer = this.getAnzahlSchlafzimmer();
-                Double copyAnzahlSchlafzimmer = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlSchlafzimmer", sourceAnzahlSchlafzimmer), sourceAnzahlSchlafzimmer));
+                BigDecimal copyAnzahlSchlafzimmer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlSchlafzimmer", sourceAnzahlSchlafzimmer), sourceAnzahlSchlafzimmer));
                 copy.setAnzahlSchlafzimmer(copyAnzahlSchlafzimmer);
             } else {
                 copy.anzahlSchlafzimmer = null;
             }
             if (this.anzahlBadezimmer!= null) {
-                Double sourceAnzahlBadezimmer;
+                BigDecimal sourceAnzahlBadezimmer;
                 sourceAnzahlBadezimmer = this.getAnzahlBadezimmer();
-                Double copyAnzahlBadezimmer = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlBadezimmer", sourceAnzahlBadezimmer), sourceAnzahlBadezimmer));
+                BigDecimal copyAnzahlBadezimmer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlBadezimmer", sourceAnzahlBadezimmer), sourceAnzahlBadezimmer));
                 copy.setAnzahlBadezimmer(copyAnzahlBadezimmer);
             } else {
                 copy.anzahlBadezimmer = null;
             }
             if (this.anzahlSepWc!= null) {
-                Double sourceAnzahlSepWc;
+                BigDecimal sourceAnzahlSepWc;
                 sourceAnzahlSepWc = this.getAnzahlSepWc();
-                Double copyAnzahlSepWc = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlSepWc", sourceAnzahlSepWc), sourceAnzahlSepWc));
+                BigDecimal copyAnzahlSepWc = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlSepWc", sourceAnzahlSepWc), sourceAnzahlSepWc));
                 copy.setAnzahlSepWc(copyAnzahlSepWc);
             } else {
                 copy.anzahlSepWc = null;
             }
             if (this.anzahlBalkone!= null) {
-                Double sourceAnzahlBalkone;
+                BigDecimal sourceAnzahlBalkone;
                 sourceAnzahlBalkone = this.getAnzahlBalkone();
-                Double copyAnzahlBalkone = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlBalkone", sourceAnzahlBalkone), sourceAnzahlBalkone));
+                BigDecimal copyAnzahlBalkone = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlBalkone", sourceAnzahlBalkone), sourceAnzahlBalkone));
                 copy.setAnzahlBalkone(copyAnzahlBalkone);
             } else {
                 copy.anzahlBalkone = null;
             }
             if (this.anzahlTerrassen!= null) {
-                Double sourceAnzahlTerrassen;
+                BigDecimal sourceAnzahlTerrassen;
                 sourceAnzahlTerrassen = this.getAnzahlTerrassen();
-                Double copyAnzahlTerrassen = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlTerrassen", sourceAnzahlTerrassen), sourceAnzahlTerrassen));
+                BigDecimal copyAnzahlTerrassen = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlTerrassen", sourceAnzahlTerrassen), sourceAnzahlTerrassen));
                 copy.setAnzahlTerrassen(copyAnzahlTerrassen);
             } else {
                 copy.anzahlTerrassen = null;
             }
             if (this.anzahlLogia!= null) {
-                Double sourceAnzahlLogia;
+                BigDecimal sourceAnzahlLogia;
                 sourceAnzahlLogia = this.getAnzahlLogia();
-                Double copyAnzahlLogia = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlLogia", sourceAnzahlLogia), sourceAnzahlLogia));
+                BigDecimal copyAnzahlLogia = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlLogia", sourceAnzahlLogia), sourceAnzahlLogia));
                 copy.setAnzahlLogia(copyAnzahlLogia);
             } else {
                 copy.anzahlLogia = null;
             }
             if (this.balkonTerrasseFlaeche!= null) {
-                Double sourceBalkonTerrasseFlaeche;
+                BigDecimal sourceBalkonTerrasseFlaeche;
                 sourceBalkonTerrasseFlaeche = this.getBalkonTerrasseFlaeche();
-                Double copyBalkonTerrasseFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "balkonTerrasseFlaeche", sourceBalkonTerrasseFlaeche), sourceBalkonTerrasseFlaeche));
+                BigDecimal copyBalkonTerrasseFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "balkonTerrasseFlaeche", sourceBalkonTerrasseFlaeche), sourceBalkonTerrasseFlaeche));
                 copy.setBalkonTerrasseFlaeche(copyBalkonTerrasseFlaeche);
             } else {
                 copy.balkonTerrasseFlaeche = null;
             }
             if (this.anzahlWohnSchlafzimmer!= null) {
-                Double sourceAnzahlWohnSchlafzimmer;
+                BigDecimal sourceAnzahlWohnSchlafzimmer;
                 sourceAnzahlWohnSchlafzimmer = this.getAnzahlWohnSchlafzimmer();
-                Double copyAnzahlWohnSchlafzimmer = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlWohnSchlafzimmer", sourceAnzahlWohnSchlafzimmer), sourceAnzahlWohnSchlafzimmer));
+                BigDecimal copyAnzahlWohnSchlafzimmer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlWohnSchlafzimmer", sourceAnzahlWohnSchlafzimmer), sourceAnzahlWohnSchlafzimmer));
                 copy.setAnzahlWohnSchlafzimmer(copyAnzahlWohnSchlafzimmer);
             } else {
                 copy.anzahlWohnSchlafzimmer = null;
             }
             if (this.gartenflaeche!= null) {
-                Double sourceGartenflaeche;
+                BigDecimal sourceGartenflaeche;
                 sourceGartenflaeche = this.getGartenflaeche();
-                Double copyGartenflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gartenflaeche", sourceGartenflaeche), sourceGartenflaeche));
+                BigDecimal copyGartenflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gartenflaeche", sourceGartenflaeche), sourceGartenflaeche));
                 copy.setGartenflaeche(copyGartenflaeche);
             } else {
                 copy.gartenflaeche = null;
             }
             if (this.kellerflaeche!= null) {
-                Double sourceKellerflaeche;
+                BigDecimal sourceKellerflaeche;
                 sourceKellerflaeche = this.getKellerflaeche();
-                Double copyKellerflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "kellerflaeche", sourceKellerflaeche), sourceKellerflaeche));
+                BigDecimal copyKellerflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kellerflaeche", sourceKellerflaeche), sourceKellerflaeche));
                 copy.setKellerflaeche(copyKellerflaeche);
             } else {
                 copy.kellerflaeche = null;
             }
             if (this.fensterfrontQm!= null) {
-                Double sourceFensterfrontQm;
+                BigDecimal sourceFensterfrontQm;
                 sourceFensterfrontQm = this.getFensterfrontQm();
-                Double copyFensterfrontQm = ((Double) strategy.copy(LocatorUtils.property(locator, "fensterfrontQm", sourceFensterfrontQm), sourceFensterfrontQm));
+                BigDecimal copyFensterfrontQm = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "fensterfrontQm", sourceFensterfrontQm), sourceFensterfrontQm));
                 copy.setFensterfrontQm(copyFensterfrontQm);
             } else {
                 copy.fensterfrontQm = null;
             }
             if (this.grundstuecksfront!= null) {
-                Double sourceGrundstuecksfront;
+                BigDecimal sourceGrundstuecksfront;
                 sourceGrundstuecksfront = this.getGrundstuecksfront();
-                Double copyGrundstuecksfront = ((Double) strategy.copy(LocatorUtils.property(locator, "grundstuecksfront", sourceGrundstuecksfront), sourceGrundstuecksfront));
+                BigDecimal copyGrundstuecksfront = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksfront", sourceGrundstuecksfront), sourceGrundstuecksfront));
                 copy.setGrundstuecksfront(copyGrundstuecksfront);
             } else {
                 copy.grundstuecksfront = null;
             }
             if (this.dachbodenflaeche!= null) {
-                Double sourceDachbodenflaeche;
+                BigDecimal sourceDachbodenflaeche;
                 sourceDachbodenflaeche = this.getDachbodenflaeche();
-                Double copyDachbodenflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "dachbodenflaeche", sourceDachbodenflaeche), sourceDachbodenflaeche));
+                BigDecimal copyDachbodenflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "dachbodenflaeche", sourceDachbodenflaeche), sourceDachbodenflaeche));
                 copy.setDachbodenflaeche(copyDachbodenflaeche);
             } else {
                 copy.dachbodenflaeche = null;
             }
             if (this.teilbarAb!= null) {
-                Double sourceTeilbarAb;
+                BigDecimal sourceTeilbarAb;
                 sourceTeilbarAb = this.getTeilbarAb();
-                Double copyTeilbarAb = ((Double) strategy.copy(LocatorUtils.property(locator, "teilbarAb", sourceTeilbarAb), sourceTeilbarAb));
+                BigDecimal copyTeilbarAb = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "teilbarAb", sourceTeilbarAb), sourceTeilbarAb));
                 copy.setTeilbarAb(copyTeilbarAb);
             } else {
                 copy.teilbarAb = null;
             }
             if (this.beheizbareFlaeche!= null) {
-                Double sourceBeheizbareFlaeche;
+                BigDecimal sourceBeheizbareFlaeche;
                 sourceBeheizbareFlaeche = this.getBeheizbareFlaeche();
-                Double copyBeheizbareFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "beheizbareFlaeche", sourceBeheizbareFlaeche), sourceBeheizbareFlaeche));
+                BigDecimal copyBeheizbareFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "beheizbareFlaeche", sourceBeheizbareFlaeche), sourceBeheizbareFlaeche));
                 copy.setBeheizbareFlaeche(copyBeheizbareFlaeche);
             } else {
                 copy.beheizbareFlaeche = null;
             }
             if (this.anzahlStellplaetze!= null) {
-                Double sourceAnzahlStellplaetze;
+                BigDecimal sourceAnzahlStellplaetze;
                 sourceAnzahlStellplaetze = this.getAnzahlStellplaetze();
-                Double copyAnzahlStellplaetze = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlStellplaetze", sourceAnzahlStellplaetze), sourceAnzahlStellplaetze));
+                BigDecimal copyAnzahlStellplaetze = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlStellplaetze", sourceAnzahlStellplaetze), sourceAnzahlStellplaetze));
                 copy.setAnzahlStellplaetze(copyAnzahlStellplaetze);
             } else {
                 copy.anzahlStellplaetze = null;
             }
             if (this.plaetzeGastraum!= null) {
-                Double sourcePlaetzeGastraum;
+                BigDecimal sourcePlaetzeGastraum;
                 sourcePlaetzeGastraum = this.getPlaetzeGastraum();
-                Double copyPlaetzeGastraum = ((Double) strategy.copy(LocatorUtils.property(locator, "plaetzeGastraum", sourcePlaetzeGastraum), sourcePlaetzeGastraum));
+                BigDecimal copyPlaetzeGastraum = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "plaetzeGastraum", sourcePlaetzeGastraum), sourcePlaetzeGastraum));
                 copy.setPlaetzeGastraum(copyPlaetzeGastraum);
             } else {
                 copy.plaetzeGastraum = null;
             }
             if (this.anzahlBetten!= null) {
-                Double sourceAnzahlBetten;
+                BigDecimal sourceAnzahlBetten;
                 sourceAnzahlBetten = this.getAnzahlBetten();
-                Double copyAnzahlBetten = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlBetten", sourceAnzahlBetten), sourceAnzahlBetten));
+                BigDecimal copyAnzahlBetten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlBetten", sourceAnzahlBetten), sourceAnzahlBetten));
                 copy.setAnzahlBetten(copyAnzahlBetten);
             } else {
                 copy.anzahlBetten = null;
             }
             if (this.anzahlTagungsraeume!= null) {
-                Double sourceAnzahlTagungsraeume;
+                BigDecimal sourceAnzahlTagungsraeume;
                 sourceAnzahlTagungsraeume = this.getAnzahlTagungsraeume();
-                Double copyAnzahlTagungsraeume = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlTagungsraeume", sourceAnzahlTagungsraeume), sourceAnzahlTagungsraeume));
+                BigDecimal copyAnzahlTagungsraeume = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlTagungsraeume", sourceAnzahlTagungsraeume), sourceAnzahlTagungsraeume));
                 copy.setAnzahlTagungsraeume(copyAnzahlTagungsraeume);
             } else {
                 copy.anzahlTagungsraeume = null;
             }
             if (this.vermietbareFlaeche!= null) {
-                Double sourceVermietbareFlaeche;
+                BigDecimal sourceVermietbareFlaeche;
                 sourceVermietbareFlaeche = this.getVermietbareFlaeche();
-                Double copyVermietbareFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "vermietbareFlaeche", sourceVermietbareFlaeche), sourceVermietbareFlaeche));
+                BigDecimal copyVermietbareFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "vermietbareFlaeche", sourceVermietbareFlaeche), sourceVermietbareFlaeche));
                 copy.setVermietbareFlaeche(copyVermietbareFlaeche);
             } else {
                 copy.vermietbareFlaeche = null;
             }
             if (this.anzahlWohneinheiten!= null) {
-                Double sourceAnzahlWohneinheiten;
+                BigDecimal sourceAnzahlWohneinheiten;
                 sourceAnzahlWohneinheiten = this.getAnzahlWohneinheiten();
-                Double copyAnzahlWohneinheiten = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlWohneinheiten", sourceAnzahlWohneinheiten), sourceAnzahlWohneinheiten));
+                BigDecimal copyAnzahlWohneinheiten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlWohneinheiten", sourceAnzahlWohneinheiten), sourceAnzahlWohneinheiten));
                 copy.setAnzahlWohneinheiten(copyAnzahlWohneinheiten);
             } else {
                 copy.anzahlWohneinheiten = null;
             }
             if (this.anzahlGewerbeeinheiten!= null) {
-                Double sourceAnzahlGewerbeeinheiten;
+                BigDecimal sourceAnzahlGewerbeeinheiten;
                 sourceAnzahlGewerbeeinheiten = this.getAnzahlGewerbeeinheiten();
-                Double copyAnzahlGewerbeeinheiten = ((Double) strategy.copy(LocatorUtils.property(locator, "anzahlGewerbeeinheiten", sourceAnzahlGewerbeeinheiten), sourceAnzahlGewerbeeinheiten));
+                BigDecimal copyAnzahlGewerbeeinheiten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlGewerbeeinheiten", sourceAnzahlGewerbeeinheiten), sourceAnzahlGewerbeeinheiten));
                 copy.setAnzahlGewerbeeinheiten(copyAnzahlGewerbeeinheiten);
             } else {
                 copy.anzahlGewerbeeinheiten = null;
@@ -2066,33 +2067,33 @@ public class Flaechen
                 copy.einliegerwohnung = null;
             }
             if (this.kubatur!= null) {
-                Double sourceKubatur;
+                BigDecimal sourceKubatur;
                 sourceKubatur = this.getKubatur();
-                Double copyKubatur = ((Double) strategy.copy(LocatorUtils.property(locator, "kubatur", sourceKubatur), sourceKubatur));
+                BigDecimal copyKubatur = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kubatur", sourceKubatur), sourceKubatur));
                 copy.setKubatur(copyKubatur);
             } else {
                 copy.kubatur = null;
             }
             if (this.ausnuetzungsziffer!= null) {
-                Double sourceAusnuetzungsziffer;
+                BigDecimal sourceAusnuetzungsziffer;
                 sourceAusnuetzungsziffer = this.getAusnuetzungsziffer();
-                Double copyAusnuetzungsziffer = ((Double) strategy.copy(LocatorUtils.property(locator, "ausnuetzungsziffer", sourceAusnuetzungsziffer), sourceAusnuetzungsziffer));
+                BigDecimal copyAusnuetzungsziffer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "ausnuetzungsziffer", sourceAusnuetzungsziffer), sourceAusnuetzungsziffer));
                 copy.setAusnuetzungsziffer(copyAusnuetzungsziffer);
             } else {
                 copy.ausnuetzungsziffer = null;
             }
             if (this.flaechevon!= null) {
-                Double sourceFlaechevon;
+                BigDecimal sourceFlaechevon;
                 sourceFlaechevon = this.getFlaechevon();
-                Double copyFlaechevon = ((Double) strategy.copy(LocatorUtils.property(locator, "flaechevon", sourceFlaechevon), sourceFlaechevon));
+                BigDecimal copyFlaechevon = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "flaechevon", sourceFlaechevon), sourceFlaechevon));
                 copy.setFlaechevon(copyFlaechevon);
             } else {
                 copy.flaechevon = null;
             }
             if (this.flaechebis!= null) {
-                Double sourceFlaechebis;
+                BigDecimal sourceFlaechebis;
                 sourceFlaechebis = this.getFlaechebis();
-                Double copyFlaechebis = ((Double) strategy.copy(LocatorUtils.property(locator, "flaechebis", sourceFlaechebis), sourceFlaechebis));
+                BigDecimal copyFlaechebis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "flaechebis", sourceFlaechebis), sourceFlaechebis));
                 copy.setFlaechebis(copyFlaechebis);
             } else {
                 copy.flaechebis = null;
@@ -2145,7 +2146,7 @@ public class Flaechen
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Flaechen)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -2153,108 +2154,108 @@ public class Flaechen
         }
         final Flaechen that = ((Flaechen) object);
         {
-            Double lhsWohnflaeche;
+            BigDecimal lhsWohnflaeche;
             lhsWohnflaeche = this.getWohnflaeche();
-            Double rhsWohnflaeche;
+            BigDecimal rhsWohnflaeche;
             rhsWohnflaeche = that.getWohnflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnflaeche", lhsWohnflaeche), LocatorUtils.property(thatLocator, "wohnflaeche", rhsWohnflaeche), lhsWohnflaeche, rhsWohnflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsNutzflaeche;
+            BigDecimal lhsNutzflaeche;
             lhsNutzflaeche = this.getNutzflaeche();
-            Double rhsNutzflaeche;
+            BigDecimal rhsNutzflaeche;
             rhsNutzflaeche = that.getNutzflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nutzflaeche", lhsNutzflaeche), LocatorUtils.property(thatLocator, "nutzflaeche", rhsNutzflaeche), lhsNutzflaeche, rhsNutzflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsGesamtflaeche;
+            BigDecimal lhsGesamtflaeche;
             lhsGesamtflaeche = this.getGesamtflaeche();
-            Double rhsGesamtflaeche;
+            BigDecimal rhsGesamtflaeche;
             rhsGesamtflaeche = that.getGesamtflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtflaeche", lhsGesamtflaeche), LocatorUtils.property(thatLocator, "gesamtflaeche", rhsGesamtflaeche), lhsGesamtflaeche, rhsGesamtflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsLadenflaeche;
+            BigDecimal lhsLadenflaeche;
             lhsLadenflaeche = this.getLadenflaeche();
-            Double rhsLadenflaeche;
+            BigDecimal rhsLadenflaeche;
             rhsLadenflaeche = that.getLadenflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ladenflaeche", lhsLadenflaeche), LocatorUtils.property(thatLocator, "ladenflaeche", rhsLadenflaeche), lhsLadenflaeche, rhsLadenflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsLagerflaeche;
+            BigDecimal lhsLagerflaeche;
             lhsLagerflaeche = this.getLagerflaeche();
-            Double rhsLagerflaeche;
+            BigDecimal rhsLagerflaeche;
             rhsLagerflaeche = that.getLagerflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "lagerflaeche", lhsLagerflaeche), LocatorUtils.property(thatLocator, "lagerflaeche", rhsLagerflaeche), lhsLagerflaeche, rhsLagerflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsVerkaufsflaeche;
+            BigDecimal lhsVerkaufsflaeche;
             lhsVerkaufsflaeche = this.getVerkaufsflaeche();
-            Double rhsVerkaufsflaeche;
+            BigDecimal rhsVerkaufsflaeche;
             rhsVerkaufsflaeche = that.getVerkaufsflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "verkaufsflaeche", lhsVerkaufsflaeche), LocatorUtils.property(thatLocator, "verkaufsflaeche", rhsVerkaufsflaeche), lhsVerkaufsflaeche, rhsVerkaufsflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsFreiflaeche;
+            BigDecimal lhsFreiflaeche;
             lhsFreiflaeche = this.getFreiflaeche();
-            Double rhsFreiflaeche;
+            BigDecimal rhsFreiflaeche;
             rhsFreiflaeche = that.getFreiflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "freiflaeche", lhsFreiflaeche), LocatorUtils.property(thatLocator, "freiflaeche", rhsFreiflaeche), lhsFreiflaeche, rhsFreiflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsBueroflaeche;
+            BigDecimal lhsBueroflaeche;
             lhsBueroflaeche = this.getBueroflaeche();
-            Double rhsBueroflaeche;
+            BigDecimal rhsBueroflaeche;
             rhsBueroflaeche = that.getBueroflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bueroflaeche", lhsBueroflaeche), LocatorUtils.property(thatLocator, "bueroflaeche", rhsBueroflaeche), lhsBueroflaeche, rhsBueroflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsBueroteilflaeche;
+            BigDecimal lhsBueroteilflaeche;
             lhsBueroteilflaeche = this.getBueroteilflaeche();
-            Double rhsBueroteilflaeche;
+            BigDecimal rhsBueroteilflaeche;
             rhsBueroteilflaeche = that.getBueroteilflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bueroteilflaeche", lhsBueroteilflaeche), LocatorUtils.property(thatLocator, "bueroteilflaeche", rhsBueroteilflaeche), lhsBueroteilflaeche, rhsBueroteilflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsFensterfront;
+            BigDecimal lhsFensterfront;
             lhsFensterfront = this.getFensterfront();
-            Double rhsFensterfront;
+            BigDecimal rhsFensterfront;
             rhsFensterfront = that.getFensterfront();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fensterfront", lhsFensterfront), LocatorUtils.property(thatLocator, "fensterfront", rhsFensterfront), lhsFensterfront, rhsFensterfront)) {
                 return false;
             }
         }
         {
-            Double lhsVerwaltungsflaeche;
+            BigDecimal lhsVerwaltungsflaeche;
             lhsVerwaltungsflaeche = this.getVerwaltungsflaeche();
-            Double rhsVerwaltungsflaeche;
+            BigDecimal rhsVerwaltungsflaeche;
             rhsVerwaltungsflaeche = that.getVerwaltungsflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "verwaltungsflaeche", lhsVerwaltungsflaeche), LocatorUtils.property(thatLocator, "verwaltungsflaeche", rhsVerwaltungsflaeche), lhsVerwaltungsflaeche, rhsVerwaltungsflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsGastroflaeche;
+            BigDecimal lhsGastroflaeche;
             lhsGastroflaeche = this.getGastroflaeche();
-            Double rhsGastroflaeche;
+            BigDecimal rhsGastroflaeche;
             rhsGastroflaeche = that.getGastroflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gastroflaeche", lhsGastroflaeche), LocatorUtils.property(thatLocator, "gastroflaeche", rhsGastroflaeche), lhsGastroflaeche, rhsGastroflaeche)) {
                 return false;
@@ -2297,225 +2298,225 @@ public class Flaechen
             }
         }
         {
-            Double lhsGrundstuecksflaeche;
+            BigDecimal lhsGrundstuecksflaeche;
             lhsGrundstuecksflaeche = this.getGrundstuecksflaeche();
-            Double rhsGrundstuecksflaeche;
+            BigDecimal rhsGrundstuecksflaeche;
             rhsGrundstuecksflaeche = that.getGrundstuecksflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksflaeche", lhsGrundstuecksflaeche), LocatorUtils.property(thatLocator, "grundstuecksflaeche", rhsGrundstuecksflaeche), lhsGrundstuecksflaeche, rhsGrundstuecksflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsSonstflaeche;
+            BigDecimal lhsSonstflaeche;
             lhsSonstflaeche = this.getSonstflaeche();
-            Double rhsSonstflaeche;
+            BigDecimal rhsSonstflaeche;
             rhsSonstflaeche = that.getSonstflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstflaeche", lhsSonstflaeche), LocatorUtils.property(thatLocator, "sonstflaeche", rhsSonstflaeche), lhsSonstflaeche, rhsSonstflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlZimmer;
+            BigDecimal lhsAnzahlZimmer;
             lhsAnzahlZimmer = this.getAnzahlZimmer();
-            Double rhsAnzahlZimmer;
+            BigDecimal rhsAnzahlZimmer;
             rhsAnzahlZimmer = that.getAnzahlZimmer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlZimmer", lhsAnzahlZimmer), LocatorUtils.property(thatLocator, "anzahlZimmer", rhsAnzahlZimmer), lhsAnzahlZimmer, rhsAnzahlZimmer)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlSchlafzimmer;
+            BigDecimal lhsAnzahlSchlafzimmer;
             lhsAnzahlSchlafzimmer = this.getAnzahlSchlafzimmer();
-            Double rhsAnzahlSchlafzimmer;
+            BigDecimal rhsAnzahlSchlafzimmer;
             rhsAnzahlSchlafzimmer = that.getAnzahlSchlafzimmer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlSchlafzimmer", lhsAnzahlSchlafzimmer), LocatorUtils.property(thatLocator, "anzahlSchlafzimmer", rhsAnzahlSchlafzimmer), lhsAnzahlSchlafzimmer, rhsAnzahlSchlafzimmer)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlBadezimmer;
+            BigDecimal lhsAnzahlBadezimmer;
             lhsAnzahlBadezimmer = this.getAnzahlBadezimmer();
-            Double rhsAnzahlBadezimmer;
+            BigDecimal rhsAnzahlBadezimmer;
             rhsAnzahlBadezimmer = that.getAnzahlBadezimmer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlBadezimmer", lhsAnzahlBadezimmer), LocatorUtils.property(thatLocator, "anzahlBadezimmer", rhsAnzahlBadezimmer), lhsAnzahlBadezimmer, rhsAnzahlBadezimmer)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlSepWc;
+            BigDecimal lhsAnzahlSepWc;
             lhsAnzahlSepWc = this.getAnzahlSepWc();
-            Double rhsAnzahlSepWc;
+            BigDecimal rhsAnzahlSepWc;
             rhsAnzahlSepWc = that.getAnzahlSepWc();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlSepWc", lhsAnzahlSepWc), LocatorUtils.property(thatLocator, "anzahlSepWc", rhsAnzahlSepWc), lhsAnzahlSepWc, rhsAnzahlSepWc)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlBalkone;
+            BigDecimal lhsAnzahlBalkone;
             lhsAnzahlBalkone = this.getAnzahlBalkone();
-            Double rhsAnzahlBalkone;
+            BigDecimal rhsAnzahlBalkone;
             rhsAnzahlBalkone = that.getAnzahlBalkone();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlBalkone", lhsAnzahlBalkone), LocatorUtils.property(thatLocator, "anzahlBalkone", rhsAnzahlBalkone), lhsAnzahlBalkone, rhsAnzahlBalkone)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlTerrassen;
+            BigDecimal lhsAnzahlTerrassen;
             lhsAnzahlTerrassen = this.getAnzahlTerrassen();
-            Double rhsAnzahlTerrassen;
+            BigDecimal rhsAnzahlTerrassen;
             rhsAnzahlTerrassen = that.getAnzahlTerrassen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlTerrassen", lhsAnzahlTerrassen), LocatorUtils.property(thatLocator, "anzahlTerrassen", rhsAnzahlTerrassen), lhsAnzahlTerrassen, rhsAnzahlTerrassen)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlLogia;
+            BigDecimal lhsAnzahlLogia;
             lhsAnzahlLogia = this.getAnzahlLogia();
-            Double rhsAnzahlLogia;
+            BigDecimal rhsAnzahlLogia;
             rhsAnzahlLogia = that.getAnzahlLogia();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlLogia", lhsAnzahlLogia), LocatorUtils.property(thatLocator, "anzahlLogia", rhsAnzahlLogia), lhsAnzahlLogia, rhsAnzahlLogia)) {
                 return false;
             }
         }
         {
-            Double lhsBalkonTerrasseFlaeche;
+            BigDecimal lhsBalkonTerrasseFlaeche;
             lhsBalkonTerrasseFlaeche = this.getBalkonTerrasseFlaeche();
-            Double rhsBalkonTerrasseFlaeche;
+            BigDecimal rhsBalkonTerrasseFlaeche;
             rhsBalkonTerrasseFlaeche = that.getBalkonTerrasseFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "balkonTerrasseFlaeche", lhsBalkonTerrasseFlaeche), LocatorUtils.property(thatLocator, "balkonTerrasseFlaeche", rhsBalkonTerrasseFlaeche), lhsBalkonTerrasseFlaeche, rhsBalkonTerrasseFlaeche)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlWohnSchlafzimmer;
+            BigDecimal lhsAnzahlWohnSchlafzimmer;
             lhsAnzahlWohnSchlafzimmer = this.getAnzahlWohnSchlafzimmer();
-            Double rhsAnzahlWohnSchlafzimmer;
+            BigDecimal rhsAnzahlWohnSchlafzimmer;
             rhsAnzahlWohnSchlafzimmer = that.getAnzahlWohnSchlafzimmer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlWohnSchlafzimmer", lhsAnzahlWohnSchlafzimmer), LocatorUtils.property(thatLocator, "anzahlWohnSchlafzimmer", rhsAnzahlWohnSchlafzimmer), lhsAnzahlWohnSchlafzimmer, rhsAnzahlWohnSchlafzimmer)) {
                 return false;
             }
         }
         {
-            Double lhsGartenflaeche;
+            BigDecimal lhsGartenflaeche;
             lhsGartenflaeche = this.getGartenflaeche();
-            Double rhsGartenflaeche;
+            BigDecimal rhsGartenflaeche;
             rhsGartenflaeche = that.getGartenflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gartenflaeche", lhsGartenflaeche), LocatorUtils.property(thatLocator, "gartenflaeche", rhsGartenflaeche), lhsGartenflaeche, rhsGartenflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsKellerflaeche;
+            BigDecimal lhsKellerflaeche;
             lhsKellerflaeche = this.getKellerflaeche();
-            Double rhsKellerflaeche;
+            BigDecimal rhsKellerflaeche;
             rhsKellerflaeche = that.getKellerflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kellerflaeche", lhsKellerflaeche), LocatorUtils.property(thatLocator, "kellerflaeche", rhsKellerflaeche), lhsKellerflaeche, rhsKellerflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsFensterfrontQm;
+            BigDecimal lhsFensterfrontQm;
             lhsFensterfrontQm = this.getFensterfrontQm();
-            Double rhsFensterfrontQm;
+            BigDecimal rhsFensterfrontQm;
             rhsFensterfrontQm = that.getFensterfrontQm();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fensterfrontQm", lhsFensterfrontQm), LocatorUtils.property(thatLocator, "fensterfrontQm", rhsFensterfrontQm), lhsFensterfrontQm, rhsFensterfrontQm)) {
                 return false;
             }
         }
         {
-            Double lhsGrundstuecksfront;
+            BigDecimal lhsGrundstuecksfront;
             lhsGrundstuecksfront = this.getGrundstuecksfront();
-            Double rhsGrundstuecksfront;
+            BigDecimal rhsGrundstuecksfront;
             rhsGrundstuecksfront = that.getGrundstuecksfront();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksfront", lhsGrundstuecksfront), LocatorUtils.property(thatLocator, "grundstuecksfront", rhsGrundstuecksfront), lhsGrundstuecksfront, rhsGrundstuecksfront)) {
                 return false;
             }
         }
         {
-            Double lhsDachbodenflaeche;
+            BigDecimal lhsDachbodenflaeche;
             lhsDachbodenflaeche = this.getDachbodenflaeche();
-            Double rhsDachbodenflaeche;
+            BigDecimal rhsDachbodenflaeche;
             rhsDachbodenflaeche = that.getDachbodenflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "dachbodenflaeche", lhsDachbodenflaeche), LocatorUtils.property(thatLocator, "dachbodenflaeche", rhsDachbodenflaeche), lhsDachbodenflaeche, rhsDachbodenflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsTeilbarAb;
+            BigDecimal lhsTeilbarAb;
             lhsTeilbarAb = this.getTeilbarAb();
-            Double rhsTeilbarAb;
+            BigDecimal rhsTeilbarAb;
             rhsTeilbarAb = that.getTeilbarAb();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "teilbarAb", lhsTeilbarAb), LocatorUtils.property(thatLocator, "teilbarAb", rhsTeilbarAb), lhsTeilbarAb, rhsTeilbarAb)) {
                 return false;
             }
         }
         {
-            Double lhsBeheizbareFlaeche;
+            BigDecimal lhsBeheizbareFlaeche;
             lhsBeheizbareFlaeche = this.getBeheizbareFlaeche();
-            Double rhsBeheizbareFlaeche;
+            BigDecimal rhsBeheizbareFlaeche;
             rhsBeheizbareFlaeche = that.getBeheizbareFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "beheizbareFlaeche", lhsBeheizbareFlaeche), LocatorUtils.property(thatLocator, "beheizbareFlaeche", rhsBeheizbareFlaeche), lhsBeheizbareFlaeche, rhsBeheizbareFlaeche)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlStellplaetze;
+            BigDecimal lhsAnzahlStellplaetze;
             lhsAnzahlStellplaetze = this.getAnzahlStellplaetze();
-            Double rhsAnzahlStellplaetze;
+            BigDecimal rhsAnzahlStellplaetze;
             rhsAnzahlStellplaetze = that.getAnzahlStellplaetze();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlStellplaetze", lhsAnzahlStellplaetze), LocatorUtils.property(thatLocator, "anzahlStellplaetze", rhsAnzahlStellplaetze), lhsAnzahlStellplaetze, rhsAnzahlStellplaetze)) {
                 return false;
             }
         }
         {
-            Double lhsPlaetzeGastraum;
+            BigDecimal lhsPlaetzeGastraum;
             lhsPlaetzeGastraum = this.getPlaetzeGastraum();
-            Double rhsPlaetzeGastraum;
+            BigDecimal rhsPlaetzeGastraum;
             rhsPlaetzeGastraum = that.getPlaetzeGastraum();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "plaetzeGastraum", lhsPlaetzeGastraum), LocatorUtils.property(thatLocator, "plaetzeGastraum", rhsPlaetzeGastraum), lhsPlaetzeGastraum, rhsPlaetzeGastraum)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlBetten;
+            BigDecimal lhsAnzahlBetten;
             lhsAnzahlBetten = this.getAnzahlBetten();
-            Double rhsAnzahlBetten;
+            BigDecimal rhsAnzahlBetten;
             rhsAnzahlBetten = that.getAnzahlBetten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlBetten", lhsAnzahlBetten), LocatorUtils.property(thatLocator, "anzahlBetten", rhsAnzahlBetten), lhsAnzahlBetten, rhsAnzahlBetten)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlTagungsraeume;
+            BigDecimal lhsAnzahlTagungsraeume;
             lhsAnzahlTagungsraeume = this.getAnzahlTagungsraeume();
-            Double rhsAnzahlTagungsraeume;
+            BigDecimal rhsAnzahlTagungsraeume;
             rhsAnzahlTagungsraeume = that.getAnzahlTagungsraeume();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlTagungsraeume", lhsAnzahlTagungsraeume), LocatorUtils.property(thatLocator, "anzahlTagungsraeume", rhsAnzahlTagungsraeume), lhsAnzahlTagungsraeume, rhsAnzahlTagungsraeume)) {
                 return false;
             }
         }
         {
-            Double lhsVermietbareFlaeche;
+            BigDecimal lhsVermietbareFlaeche;
             lhsVermietbareFlaeche = this.getVermietbareFlaeche();
-            Double rhsVermietbareFlaeche;
+            BigDecimal rhsVermietbareFlaeche;
             rhsVermietbareFlaeche = that.getVermietbareFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "vermietbareFlaeche", lhsVermietbareFlaeche), LocatorUtils.property(thatLocator, "vermietbareFlaeche", rhsVermietbareFlaeche), lhsVermietbareFlaeche, rhsVermietbareFlaeche)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlWohneinheiten;
+            BigDecimal lhsAnzahlWohneinheiten;
             lhsAnzahlWohneinheiten = this.getAnzahlWohneinheiten();
-            Double rhsAnzahlWohneinheiten;
+            BigDecimal rhsAnzahlWohneinheiten;
             rhsAnzahlWohneinheiten = that.getAnzahlWohneinheiten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlWohneinheiten", lhsAnzahlWohneinheiten), LocatorUtils.property(thatLocator, "anzahlWohneinheiten", rhsAnzahlWohneinheiten), lhsAnzahlWohneinheiten, rhsAnzahlWohneinheiten)) {
                 return false;
             }
         }
         {
-            Double lhsAnzahlGewerbeeinheiten;
+            BigDecimal lhsAnzahlGewerbeeinheiten;
             lhsAnzahlGewerbeeinheiten = this.getAnzahlGewerbeeinheiten();
-            Double rhsAnzahlGewerbeeinheiten;
+            BigDecimal rhsAnzahlGewerbeeinheiten;
             rhsAnzahlGewerbeeinheiten = that.getAnzahlGewerbeeinheiten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlGewerbeeinheiten", lhsAnzahlGewerbeeinheiten), LocatorUtils.property(thatLocator, "anzahlGewerbeeinheiten", rhsAnzahlGewerbeeinheiten), lhsAnzahlGewerbeeinheiten, rhsAnzahlGewerbeeinheiten)) {
                 return false;
@@ -2531,36 +2532,36 @@ public class Flaechen
             }
         }
         {
-            Double lhsKubatur;
+            BigDecimal lhsKubatur;
             lhsKubatur = this.getKubatur();
-            Double rhsKubatur;
+            BigDecimal rhsKubatur;
             rhsKubatur = that.getKubatur();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kubatur", lhsKubatur), LocatorUtils.property(thatLocator, "kubatur", rhsKubatur), lhsKubatur, rhsKubatur)) {
                 return false;
             }
         }
         {
-            Double lhsAusnuetzungsziffer;
+            BigDecimal lhsAusnuetzungsziffer;
             lhsAusnuetzungsziffer = this.getAusnuetzungsziffer();
-            Double rhsAusnuetzungsziffer;
+            BigDecimal rhsAusnuetzungsziffer;
             rhsAusnuetzungsziffer = that.getAusnuetzungsziffer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ausnuetzungsziffer", lhsAusnuetzungsziffer), LocatorUtils.property(thatLocator, "ausnuetzungsziffer", rhsAusnuetzungsziffer), lhsAusnuetzungsziffer, rhsAusnuetzungsziffer)) {
                 return false;
             }
         }
         {
-            Double lhsFlaechevon;
+            BigDecimal lhsFlaechevon;
             lhsFlaechevon = this.getFlaechevon();
-            Double rhsFlaechevon;
+            BigDecimal rhsFlaechevon;
             rhsFlaechevon = that.getFlaechevon();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "flaechevon", lhsFlaechevon), LocatorUtils.property(thatLocator, "flaechevon", rhsFlaechevon), lhsFlaechevon, rhsFlaechevon)) {
                 return false;
             }
         }
         {
-            Double lhsFlaechebis;
+            BigDecimal lhsFlaechebis;
             lhsFlaechebis = this.getFlaechebis();
-            Double rhsFlaechebis;
+            BigDecimal rhsFlaechebis;
             rhsFlaechebis = that.getFlaechebis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "flaechebis", lhsFlaechebis), LocatorUtils.property(thatLocator, "flaechebis", rhsFlaechebis), lhsFlaechebis, rhsFlaechebis)) {
                 return false;

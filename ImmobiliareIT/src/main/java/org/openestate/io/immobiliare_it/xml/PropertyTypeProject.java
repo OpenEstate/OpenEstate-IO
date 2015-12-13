@@ -12,19 +12,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="propertyTypeProject">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Appartamento"/>
- *     &lt;enumeration value="Negozio"/>
- *     &lt;enumeration value="Ufficio"/>
- *     &lt;enumeration value="Box Auto"/>
- *     &lt;enumeration value="Villa"/>
- *     &lt;enumeration value="Villetta"/>
- *     &lt;enumeration value="Capannone"/>
- *     &lt;enumeration value="Loft"/>
- *     &lt;enumeration value="Magazzino"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="propertyTypeProject"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Appartamento"/&gt;
+ *     &lt;enumeration value="Negozio"/&gt;
+ *     &lt;enumeration value="Ufficio"/&gt;
+ *     &lt;enumeration value="Box Auto"/&gt;
+ *     &lt;enumeration value="Villa"/&gt;
+ *     &lt;enumeration value="Villetta"/&gt;
+ *     &lt;enumeration value="Capannone"/&gt;
+ *     &lt;enumeration value="Loft"/&gt;
+ *     &lt;enumeration value="Magazzino"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

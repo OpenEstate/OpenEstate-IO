@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -38,9 +39,9 @@ public class Status
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
-    protected Integer statusnr;
+    protected BigInteger statusnr;
     protected String text;
 
     /**
@@ -51,7 +52,7 @@ public class Status
      *     {@link String }
      *     
      */
-    public Integer getStatusnr() {
+    public BigInteger getStatusnr() {
         return statusnr;
     }
 
@@ -63,7 +64,7 @@ public class Status
      *     {@link String }
      *     
      */
-    public void setStatusnr(Integer value) {
+    public void setStatusnr(BigInteger value) {
         this.statusnr = value;
     }
 
@@ -107,7 +108,7 @@ public class Status
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Integer theStatusnr;
+            BigInteger theStatusnr;
             theStatusnr = this.getStatusnr();
             strategy.appendField(locator, this, "statusnr", buffer, theStatusnr);
         }
@@ -133,9 +134,9 @@ public class Status
         if (draftCopy instanceof Status) {
             final Status copy = ((Status) draftCopy);
             if (this.statusnr!= null) {
-                Integer sourceStatusnr;
+                BigInteger sourceStatusnr;
                 sourceStatusnr = this.getStatusnr();
-                Integer copyStatusnr = ((Integer) strategy.copy(LocatorUtils.property(locator, "statusnr", sourceStatusnr), sourceStatusnr));
+                BigInteger copyStatusnr = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "statusnr", sourceStatusnr), sourceStatusnr));
                 copy.setStatusnr(copyStatusnr);
             } else {
                 copy.statusnr = null;
@@ -157,7 +158,7 @@ public class Status
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Status)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -165,9 +166,9 @@ public class Status
         }
         final Status that = ((Status) object);
         {
-            Integer lhsStatusnr;
+            BigInteger lhsStatusnr;
             lhsStatusnr = this.getStatusnr();
-            Integer rhsStatusnr;
+            BigInteger rhsStatusnr;
             rhsStatusnr = that.getStatusnr();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "statusnr", lhsStatusnr), LocatorUtils.property(thatLocator, "statusnr", rhsStatusnr), lhsStatusnr, rhsStatusnr)) {
                 return false;

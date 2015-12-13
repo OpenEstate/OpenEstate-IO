@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.apache.commons.io.output.NullOutputStream;
@@ -167,19 +169,19 @@ public class Is24XmlWritingExample
     obj.setEtagenzahl( RandomUtils.nextLong( 1, 10 ) );
     obj.setFreiAb( "notes about availability" );
     obj.setGaesteWC( RandomUtils.nextInt( 0, 2 )==1);
-    obj.setGrundstuecksFlaeche( RandomUtils.nextDouble( 100, 1500 ) );
+    obj.setGrundstuecksFlaeche( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 1500 ) ) );
     obj.setHausKategorie( HausKategorienTyp.MEHRFAMILIENHAUS );
     obj.setHeizungsart( HeizungsartTyp.ETAGENHEIZUNG );
     obj.setJahrLetzteModernisierung( RandomUtils.nextLong( 1980, 2000 ) );
     obj.setKeller( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setMitEinliegerwohnung( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.setNutzflaeche( RandomUtils.nextDouble( 100, 1000 ) );
+    obj.setNutzflaeche( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 1000 ) ) );
     obj.setObjektzustand( ObjektZustandTyp.NEUWERTIG );
     obj.setParkplatz( StellplatzKategorieTyp.TIEFGARAGE );
     obj.setRollstuhlgerecht( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setVermietet( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.setWohnflaeche( RandomUtils.nextDouble( 50, 500 ) );
-    obj.setZimmer( RandomUtils.nextDouble( 1, 10 ) );
+    obj.setWohnflaeche( BigDecimal.valueOf( RandomUtils.nextDouble( 50, 500 ) ) );
+    obj.setZimmer( BigDecimal.valueOf( RandomUtils.nextDouble( 1, 10 ) ) );
 
     obj.setBefeuerungsArt( FACTORY.createBefeuerungsArtTyp() );
     obj.getBefeuerungsArt().setOel( FACTORY.createBefeuerungsArtTypOel( Boolean.TRUE ) );
@@ -187,14 +189,14 @@ public class Is24XmlWritingExample
 
     obj.setEnergieausweis( FACTORY.createEnergieausweisTyp() );
     obj.getEnergieausweis().setEnergieausweistyp( EnergieausweistypTyp.ENERGIEVERBRAUCHSKENNWERT );
-    obj.getEnergieausweis().setEnergieverbrauchskennwert( RandomUtils.nextDouble( 50, 500 ) );
+    obj.getEnergieausweis().setEnergieverbrauchskennwert( BigDecimal.valueOf( RandomUtils.nextDouble( 50, 500 ) ) );
     obj.getEnergieausweis().setWarmwasserEnthalten( RandomUtils.nextInt( 0, 2 )==1 );
 
     obj.setKaufpreise( FACTORY.createVermarktungWohnKaufTyp() );
-    obj.getKaufpreise().setKaufpreis( RandomUtils.nextDouble( 100000, 9999999 ) );
-    obj.getKaufpreise().setMieteinnahmenProMonat( RandomUtils.nextDouble( 5000, 50000 ) );
-    obj.getKaufpreise().setStellplatzKaufpreis( RandomUtils.nextDouble( 1000, 10000 ) );
-    obj.getKaufpreise().setWohngeld( RandomUtils.nextDouble( 500, 5000 ) );
+    obj.getKaufpreise().setKaufpreis( BigDecimal.valueOf( RandomUtils.nextDouble( 100000, 9999999 ) ) );
+    obj.getKaufpreise().setMieteinnahmenProMonat( BigDecimal.valueOf( RandomUtils.nextDouble( 5000, 50000 ) ) );
+    obj.getKaufpreise().setStellplatzKaufpreis( BigDecimal.valueOf( RandomUtils.nextDouble( 1000, 10000 ) ) );
+    obj.getKaufpreise().setWohngeld( BigDecimal.valueOf( RandomUtils.nextDouble( 500, 5000 ) ) );
 
     return FACTORY.createHausKauf( obj );
   }
@@ -222,18 +224,18 @@ public class Is24XmlWritingExample
     obj.setEtagenzahl( RandomUtils.nextLong( 1, 10 ) );
     obj.setFreiAb( "notes about availability" );
     obj.setGaesteWC( RandomUtils.nextInt( 0, 2 )==1);
-    obj.setGrundstuecksFlaeche( RandomUtils.nextDouble( 100, 1500 ) );
+    obj.setGrundstuecksFlaeche( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 1500 ) ) );
     obj.setHausKategorie( HausKategorienTyp.EINFAMILIENHAUS );
     obj.setHaustiere( GenehmigungTyp.NACH_VEREINBARUNG );
     obj.setHeizungsart( HeizungsartTyp.ZENTRALHEIZUNG );
     obj.setJahrLetzteModernisierung( RandomUtils.nextLong( 1980, 2000 ) );
     obj.setKeller( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.setNutzflaeche( RandomUtils.nextDouble( 150, 500 ) );
+    obj.setNutzflaeche( BigDecimal.valueOf( RandomUtils.nextDouble( 150, 500 ) ) );
     obj.setObjektzustand( ObjektZustandTyp.GEPFLEGT );
     obj.setParkplatz( StellplatzKategorieTyp.CARPORT );
     obj.setRollstuhlgerecht( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.setWohnflaeche( RandomUtils.nextDouble( 50, 300 ) );
-    obj.setZimmer( RandomUtils.nextDouble( 1, 5 ) );
+    obj.setWohnflaeche( BigDecimal.valueOf( RandomUtils.nextDouble( 50, 300 ) ) );
+    obj.setZimmer( BigDecimal.valueOf( RandomUtils.nextDouble( 1, 5 ) ) );
 
     obj.setBefeuerungsArt( FACTORY.createBefeuerungsArtTyp() );
     obj.getBefeuerungsArt().setErdwaerme( FACTORY.createBefeuerungsArtTypErdwaerme( Boolean.TRUE ) );
@@ -241,17 +243,17 @@ public class Is24XmlWritingExample
 
     obj.setEnergieausweis( FACTORY.createEnergieausweisTyp() );
     obj.getEnergieausweis().setEnergieausweistyp( EnergieausweistypTyp.ENERGIEVERBRAUCHSKENNWERT );
-    obj.getEnergieausweis().setEnergieverbrauchskennwert( RandomUtils.nextDouble( 50, 500 ) );
+    obj.getEnergieausweis().setEnergieverbrauchskennwert( BigDecimal.valueOf( RandomUtils.nextDouble( 50, 500 ) ) );
     obj.getEnergieausweis().setWarmwasserEnthalten( RandomUtils.nextInt( 0, 2 )==1 );
 
     obj.setMietpreise( FACTORY.createVermarktungWohnMieteTyp() );
-    obj.getMietpreise().setHeizkosten( RandomUtils.nextDouble( 100, 500 ) );
+    obj.getMietpreise().setHeizkosten( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 500 ) ) );
     obj.getMietpreise().setHeizkostenInWarmmieteEnthalten( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.getMietpreise().setKaltmiete( RandomUtils.nextDouble( 150, 1500 ) );
+    obj.getMietpreise().setKaltmiete( BigDecimal.valueOf( RandomUtils.nextDouble( 150, 1500 ) ) );
     obj.getMietpreise().setKaution( "notes about deposit" );
-    obj.getMietpreise().setNebenkosten( RandomUtils.nextDouble( 50, 500 ) );
-    obj.getMietpreise().setStellplatzMiete( RandomUtils.nextDouble( 50, 500 ) );
-    obj.getMietpreise().setWarmmiete( RandomUtils.nextDouble( 250, 2500 ) );
+    obj.getMietpreise().setNebenkosten( BigDecimal.valueOf( RandomUtils.nextDouble( 50, 500 ) ) );
+    obj.getMietpreise().setStellplatzMiete( BigDecimal.valueOf( RandomUtils.nextDouble( 50, 500 ) ) );
+    obj.getMietpreise().setWarmmiete( BigDecimal.valueOf( RandomUtils.nextDouble( 250, 2500 ) ) );
 
     return FACTORY.createHausMiete( obj );
   }
@@ -269,7 +271,7 @@ public class Is24XmlWritingExample
     immobilie.setProvision( "commission" );
     immobilie.setProvisionshinweis( "notes about commission" );
     immobilie.setProvisionspflichtig( RandomUtils.nextInt( 0, 2 )==1 );
-    immobilie.setScoutObjektID( 456L );
+    immobilie.setScoutObjektID( BigInteger.valueOf( 456 ) );
     immobilie.setSonstigeAngaben( "further notes" );
     immobilie.setStatusHP( StatusTyp.AKTIV );
     immobilie.setStatusIS24( StatusTyp.AKTIV );

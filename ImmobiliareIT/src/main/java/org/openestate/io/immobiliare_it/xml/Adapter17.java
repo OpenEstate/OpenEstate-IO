@@ -1,20 +1,20 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
-import java.util.Currency;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
 
 public class Adapter17
-    extends XmlAdapter<String, Currency>
+    extends XmlAdapter<String, LandSizeUnit>
 {
 
 
-    public Currency unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCurrency(value));
+    public LandSizeUnit unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLandSizeUnit(value));
     }
 
-    public String marshal(Currency value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCurrency(value));
+    public String marshal(LandSizeUnit value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLandSizeUnit(value));
     }
 
 }

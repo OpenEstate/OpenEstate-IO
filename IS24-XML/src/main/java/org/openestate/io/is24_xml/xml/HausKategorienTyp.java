@@ -12,24 +12,24 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="HausKategorienTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Bungalow"/>
- *     &lt;enumeration value="Doppelhaushaelfte"/>
- *     &lt;enumeration value="Einfamilienhaus"/>
- *     &lt;enumeration value="Mehrfamilienhaus"/>
- *     &lt;enumeration value="Villa"/>
- *     &lt;enumeration value="Reihenhaus"/>
- *     &lt;enumeration value="Reihenmittelhaus"/>
- *     &lt;enumeration value="Reiheneckhaus"/>
- *     &lt;enumeration value="Zweifamilienhaus"/>
- *     &lt;enumeration value="Bauernhaus"/>
- *     &lt;enumeration value="Sonstiges"/>
- *     &lt;enumeration value="BesondereImmobilie"/>
- *     &lt;enumeration value="BurgSchloss"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="HausKategorienTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Bungalow"/&gt;
+ *     &lt;enumeration value="Doppelhaushaelfte"/&gt;
+ *     &lt;enumeration value="Einfamilienhaus"/&gt;
+ *     &lt;enumeration value="Mehrfamilienhaus"/&gt;
+ *     &lt;enumeration value="Villa"/&gt;
+ *     &lt;enumeration value="Reihenhaus"/&gt;
+ *     &lt;enumeration value="Reihenmittelhaus"/&gt;
+ *     &lt;enumeration value="Reiheneckhaus"/&gt;
+ *     &lt;enumeration value="Zweifamilienhaus"/&gt;
+ *     &lt;enumeration value="Bauernhaus"/&gt;
+ *     &lt;enumeration value="Sonstiges"/&gt;
+ *     &lt;enumeration value="BesondereImmobilie"/&gt;
+ *     &lt;enumeration value="BurgSchloss"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

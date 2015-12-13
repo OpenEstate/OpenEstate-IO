@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,29 +28,29 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TypenHausTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilieBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Baureihe" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Haustypinfo" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Dachform" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="WohnFlProGeschoss" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="PreisProBauleistung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}TypenHausKategorienTyp" default="keineAngabe" />
- *       &lt;attribute name="Wohnflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Grundflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Zimmeranzahl" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}ZimmeranzahlTyp" />
- *       &lt;attribute name="PreisAb" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Bauweise" type="{http://www.immobilienscout24.de/immobilientransfer}BauweiseTyp" />
- *       &lt;attribute name="KWert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" />
- *       &lt;attribute name="Ausbaustufe" type="{http://www.immobilienscout24.de/immobilientransfer}AusbaustufeTyp" />
- *       &lt;attribute name="Energiestandard" type="{http://www.immobilienscout24.de/immobilientransfer}EnergiestandardTyp" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="TypenHausTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}VirtuelleImmobilieBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Baureihe" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Haustypinfo" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Dachform" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="WohnFlProGeschoss" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="PreisProBauleistung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}TypenHausKategorienTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Wohnflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Grundflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Zimmeranzahl" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}ZimmeranzahlTyp" /&gt;
+ *       &lt;attribute name="PreisAb" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Bauweise" type="{http://www.immobilienscout24.de/immobilientransfer}BauweiseTyp" /&gt;
+ *       &lt;attribute name="KWert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl32Typ" /&gt;
+ *       &lt;attribute name="Ausbaustufe" type="{http://www.immobilienscout24.de/immobilientransfer}AusbaustufeTyp" /&gt;
+ *       &lt;attribute name="Energiestandard" type="{http://www.immobilienscout24.de/immobilientransfer}EnergiestandardTyp" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -71,42 +72,42 @@ public class TypenHausTyp
 {
 
     @XmlElement(name = "Baureihe")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String baureihe;
     @XmlElement(name = "Haustypinfo")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String haustypinfo;
     @XmlElement(name = "Dachform")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String dachform;
     @XmlElement(name = "WohnFlProGeschoss")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String wohnFlProGeschoss;
     @XmlElement(name = "PreisProBauleistung")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String preisProBauleistung;
     @XmlAttribute(name = "Objektkategorie2")
     protected TypenHausKategorienTyp objektkategorie2;
     @XmlAttribute(name = "Wohnflaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double wohnflaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal wohnflaeche;
     @XmlAttribute(name = "Grundflaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double grundflaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal grundflaeche;
     @XmlAttribute(name = "Gesamtflaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double gesamtflaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal gesamtflaeche;
     @XmlAttribute(name = "Zimmeranzahl", required = true)
-    @XmlJavaTypeAdapter(Adapter31 .class)
-    protected Double zimmeranzahl;
+    @XmlJavaTypeAdapter(Adapter32 .class)
+    protected BigDecimal zimmeranzahl;
     @XmlAttribute(name = "PreisAb", required = true)
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double preisAb;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal preisAb;
     @XmlAttribute(name = "Bauweise")
     protected BauweiseTyp bauweise;
     @XmlAttribute(name = "KWert")
-    @XmlJavaTypeAdapter(Adapter20 .class)
-    protected Double kWert;
+    @XmlJavaTypeAdapter(Adapter28 .class)
+    protected BigDecimal kWert;
     @XmlAttribute(name = "Ausbaustufe")
     protected AusbaustufeTyp ausbaustufe;
     @XmlAttribute(name = "Energiestandard")
@@ -268,7 +269,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public Double getWohnflaeche() {
+    public BigDecimal getWohnflaeche() {
         return wohnflaeche;
     }
 
@@ -280,7 +281,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public void setWohnflaeche(Double value) {
+    public void setWohnflaeche(BigDecimal value) {
         this.wohnflaeche = value;
     }
 
@@ -292,7 +293,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public Double getGrundflaeche() {
+    public BigDecimal getGrundflaeche() {
         return grundflaeche;
     }
 
@@ -304,7 +305,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public void setGrundflaeche(Double value) {
+    public void setGrundflaeche(BigDecimal value) {
         this.grundflaeche = value;
     }
 
@@ -316,7 +317,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public Double getGesamtflaeche() {
+    public BigDecimal getGesamtflaeche() {
         return gesamtflaeche;
     }
 
@@ -328,7 +329,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public void setGesamtflaeche(Double value) {
+    public void setGesamtflaeche(BigDecimal value) {
         this.gesamtflaeche = value;
     }
 
@@ -340,7 +341,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public Double getZimmeranzahl() {
+    public BigDecimal getZimmeranzahl() {
         return zimmeranzahl;
     }
 
@@ -352,7 +353,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public void setZimmeranzahl(Double value) {
+    public void setZimmeranzahl(BigDecimal value) {
         this.zimmeranzahl = value;
     }
 
@@ -364,7 +365,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public Double getPreisAb() {
+    public BigDecimal getPreisAb() {
         return preisAb;
     }
 
@@ -376,7 +377,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public void setPreisAb(Double value) {
+    public void setPreisAb(BigDecimal value) {
         this.preisAb = value;
     }
 
@@ -412,7 +413,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public Double getKWert() {
+    public BigDecimal getKWert() {
         return kWert;
     }
 
@@ -424,7 +425,7 @@ public class TypenHausTyp
      *     {@link String }
      *     
      */
-    public void setKWert(Double value) {
+    public void setKWert(BigDecimal value) {
         this.kWert = value;
     }
 
@@ -523,27 +524,27 @@ public class TypenHausTyp
             strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
         }
         {
-            Double theWohnflaeche;
+            BigDecimal theWohnflaeche;
             theWohnflaeche = this.getWohnflaeche();
             strategy.appendField(locator, this, "wohnflaeche", buffer, theWohnflaeche);
         }
         {
-            Double theGrundflaeche;
+            BigDecimal theGrundflaeche;
             theGrundflaeche = this.getGrundflaeche();
             strategy.appendField(locator, this, "grundflaeche", buffer, theGrundflaeche);
         }
         {
-            Double theGesamtflaeche;
+            BigDecimal theGesamtflaeche;
             theGesamtflaeche = this.getGesamtflaeche();
             strategy.appendField(locator, this, "gesamtflaeche", buffer, theGesamtflaeche);
         }
         {
-            Double theZimmeranzahl;
+            BigDecimal theZimmeranzahl;
             theZimmeranzahl = this.getZimmeranzahl();
             strategy.appendField(locator, this, "zimmeranzahl", buffer, theZimmeranzahl);
         }
         {
-            Double thePreisAb;
+            BigDecimal thePreisAb;
             thePreisAb = this.getPreisAb();
             strategy.appendField(locator, this, "preisAb", buffer, thePreisAb);
         }
@@ -553,7 +554,7 @@ public class TypenHausTyp
             strategy.appendField(locator, this, "bauweise", buffer, theBauweise);
         }
         {
-            Double theKWert;
+            BigDecimal theKWert;
             theKWert = this.getKWert();
             strategy.appendField(locator, this, "kWert", buffer, theKWert);
         }
@@ -633,41 +634,41 @@ public class TypenHausTyp
                 copy.objektkategorie2 = null;
             }
             if (this.wohnflaeche!= null) {
-                Double sourceWohnflaeche;
+                BigDecimal sourceWohnflaeche;
                 sourceWohnflaeche = this.getWohnflaeche();
-                Double copyWohnflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "wohnflaeche", sourceWohnflaeche), sourceWohnflaeche));
+                BigDecimal copyWohnflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "wohnflaeche", sourceWohnflaeche), sourceWohnflaeche));
                 copy.setWohnflaeche(copyWohnflaeche);
             } else {
                 copy.wohnflaeche = null;
             }
             if (this.grundflaeche!= null) {
-                Double sourceGrundflaeche;
+                BigDecimal sourceGrundflaeche;
                 sourceGrundflaeche = this.getGrundflaeche();
-                Double copyGrundflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "grundflaeche", sourceGrundflaeche), sourceGrundflaeche));
+                BigDecimal copyGrundflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundflaeche", sourceGrundflaeche), sourceGrundflaeche));
                 copy.setGrundflaeche(copyGrundflaeche);
             } else {
                 copy.grundflaeche = null;
             }
             if (this.gesamtflaeche!= null) {
-                Double sourceGesamtflaeche;
+                BigDecimal sourceGesamtflaeche;
                 sourceGesamtflaeche = this.getGesamtflaeche();
-                Double copyGesamtflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
+                BigDecimal copyGesamtflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
                 copy.setGesamtflaeche(copyGesamtflaeche);
             } else {
                 copy.gesamtflaeche = null;
             }
             if (this.zimmeranzahl!= null) {
-                Double sourceZimmeranzahl;
+                BigDecimal sourceZimmeranzahl;
                 sourceZimmeranzahl = this.getZimmeranzahl();
-                Double copyZimmeranzahl = ((Double) strategy.copy(LocatorUtils.property(locator, "zimmeranzahl", sourceZimmeranzahl), sourceZimmeranzahl));
+                BigDecimal copyZimmeranzahl = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "zimmeranzahl", sourceZimmeranzahl), sourceZimmeranzahl));
                 copy.setZimmeranzahl(copyZimmeranzahl);
             } else {
                 copy.zimmeranzahl = null;
             }
             if (this.preisAb!= null) {
-                Double sourcePreisAb;
+                BigDecimal sourcePreisAb;
                 sourcePreisAb = this.getPreisAb();
-                Double copyPreisAb = ((Double) strategy.copy(LocatorUtils.property(locator, "preisAb", sourcePreisAb), sourcePreisAb));
+                BigDecimal copyPreisAb = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preisAb", sourcePreisAb), sourcePreisAb));
                 copy.setPreisAb(copyPreisAb);
             } else {
                 copy.preisAb = null;
@@ -681,9 +682,9 @@ public class TypenHausTyp
                 copy.bauweise = null;
             }
             if (this.kWert!= null) {
-                Double sourceKWert;
+                BigDecimal sourceKWert;
                 sourceKWert = this.getKWert();
-                Double copyKWert = ((Double) strategy.copy(LocatorUtils.property(locator, "kWert", sourceKWert), sourceKWert));
+                BigDecimal copyKWert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kWert", sourceKWert), sourceKWert));
                 copy.setKWert(copyKWert);
             } else {
                 copy.kWert = null;
@@ -713,7 +714,7 @@ public class TypenHausTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof TypenHausTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -778,45 +779,45 @@ public class TypenHausTyp
             }
         }
         {
-            Double lhsWohnflaeche;
+            BigDecimal lhsWohnflaeche;
             lhsWohnflaeche = this.getWohnflaeche();
-            Double rhsWohnflaeche;
+            BigDecimal rhsWohnflaeche;
             rhsWohnflaeche = that.getWohnflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnflaeche", lhsWohnflaeche), LocatorUtils.property(thatLocator, "wohnflaeche", rhsWohnflaeche), lhsWohnflaeche, rhsWohnflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsGrundflaeche;
+            BigDecimal lhsGrundflaeche;
             lhsGrundflaeche = this.getGrundflaeche();
-            Double rhsGrundflaeche;
+            BigDecimal rhsGrundflaeche;
             rhsGrundflaeche = that.getGrundflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundflaeche", lhsGrundflaeche), LocatorUtils.property(thatLocator, "grundflaeche", rhsGrundflaeche), lhsGrundflaeche, rhsGrundflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsGesamtflaeche;
+            BigDecimal lhsGesamtflaeche;
             lhsGesamtflaeche = this.getGesamtflaeche();
-            Double rhsGesamtflaeche;
+            BigDecimal rhsGesamtflaeche;
             rhsGesamtflaeche = that.getGesamtflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtflaeche", lhsGesamtflaeche), LocatorUtils.property(thatLocator, "gesamtflaeche", rhsGesamtflaeche), lhsGesamtflaeche, rhsGesamtflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsZimmeranzahl;
+            BigDecimal lhsZimmeranzahl;
             lhsZimmeranzahl = this.getZimmeranzahl();
-            Double rhsZimmeranzahl;
+            BigDecimal rhsZimmeranzahl;
             rhsZimmeranzahl = that.getZimmeranzahl();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmeranzahl", lhsZimmeranzahl), LocatorUtils.property(thatLocator, "zimmeranzahl", rhsZimmeranzahl), lhsZimmeranzahl, rhsZimmeranzahl)) {
                 return false;
             }
         }
         {
-            Double lhsPreisAb;
+            BigDecimal lhsPreisAb;
             lhsPreisAb = this.getPreisAb();
-            Double rhsPreisAb;
+            BigDecimal rhsPreisAb;
             rhsPreisAb = that.getPreisAb();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preisAb", lhsPreisAb), LocatorUtils.property(thatLocator, "preisAb", rhsPreisAb), lhsPreisAb, rhsPreisAb)) {
                 return false;
@@ -832,9 +833,9 @@ public class TypenHausTyp
             }
         }
         {
-            Double lhsKWert;
+            BigDecimal lhsKWert;
             lhsKWert = this.getKWert();
-            Double rhsKWert;
+            BigDecimal rhsKWert;
             rhsKWert = that.getKWert();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kWert", lhsKWert), LocatorUtils.property(thatLocator, "kWert", rhsKWert), lhsKWert, rhsKWert)) {
                 return false;

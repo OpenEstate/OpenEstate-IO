@@ -1,6 +1,8 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -30,86 +32,86 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="locationStructure">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="country-code">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;pattern value="[a-zA-Z]{2}"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="sub-administrative-area">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}string" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="city">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="locality" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;all>
- *                   &lt;element name="neighbourhood" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;simpleContent>
- *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *                           &lt;attribute name="type">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                 &lt;enumeration value="district"/>
- *                                 &lt;enumeration value="locality"/>
- *                                 &lt;enumeration value="area"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                           &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
- *                         &lt;/extension>
- *                       &lt;/simpleContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="thoroughfare" minOccurs="0">
- *                     &lt;complexType>
- *                       &lt;simpleContent>
- *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *                           &lt;attribute name="display">
- *                             &lt;simpleType>
- *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                 &lt;pattern value="yes|no"/>
- *                               &lt;/restriction>
- *                             &lt;/simpleType>
- *                           &lt;/attribute>
- *                         &lt;/extension>
- *                       &lt;/simpleContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                   &lt;element name="postal-code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType"/>
- *                   &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType"/>
- *                 &lt;/all>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="locationStructure"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="country-code"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;pattern value="[a-zA-Z]{2}"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="sub-administrative-area"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+ *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="city"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;simpleContent&gt;
+ *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+ *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/simpleContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="locality" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;all&gt;
+ *                   &lt;element name="neighbourhood" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;simpleContent&gt;
+ *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+ *                           &lt;attribute name="type"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                 &lt;enumeration value="district"/&gt;
+ *                                 &lt;enumeration value="locality"/&gt;
+ *                                 &lt;enumeration value="area"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                           &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+ *                         &lt;/extension&gt;
+ *                       &lt;/simpleContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="thoroughfare" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;simpleContent&gt;
+ *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+ *                           &lt;attribute name="display"&gt;
+ *                             &lt;simpleType&gt;
+ *                               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                                 &lt;pattern value="yes|no"/&gt;
+ *                               &lt;/restriction&gt;
+ *                             &lt;/simpleType&gt;
+ *                           &lt;/attribute&gt;
+ *                         &lt;/extension&gt;
+ *                       &lt;/simpleContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="postal-code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType"/&gt;
+ *                   &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType"/&gt;
+ *                 &lt;/all&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -123,7 +125,7 @@ public class LocationStructure
 {
 
     @XmlElement(name = "country-code", required = true)
-    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlJavaTypeAdapter(Adapter19 .class)
     protected String countryCode;
     @XmlElement(name = "administrative-area", required = true)
     protected String administrativeArea;
@@ -358,7 +360,7 @@ public class LocationStructure
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof LocationStructure)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -425,13 +427,13 @@ public class LocationStructure
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -449,7 +451,7 @@ public class LocationStructure
         @XmlAttribute(name = "code")
         @XmlJavaTypeAdapter(Adapter2 .class)
         @XmlSchemaType(name = "integer")
-        protected Long code;
+        protected BigInteger code;
 
         /**
          * Gets the value of the value property.
@@ -483,7 +485,7 @@ public class LocationStructure
          *     {@link String }
          *     
          */
-        public Long getCode() {
+        public BigInteger getCode() {
             return code;
         }
 
@@ -495,7 +497,7 @@ public class LocationStructure
          *     {@link String }
          *     
          */
-        public void setCode(Long value) {
+        public void setCode(BigInteger value) {
             this.code = value;
         }
 
@@ -520,7 +522,7 @@ public class LocationStructure
                 strategy.appendField(locator, this, "value", buffer, theValue);
             }
             {
-                Long theCode;
+                BigInteger theCode;
                 theCode = this.getCode();
                 strategy.appendField(locator, this, "code", buffer, theCode);
             }
@@ -549,9 +551,9 @@ public class LocationStructure
                     copy.value = null;
                 }
                 if (this.code!= null) {
-                    Long sourceCode;
+                    BigInteger sourceCode;
                     sourceCode = this.getCode();
-                    Long copyCode = ((Long) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode));
+                    BigInteger copyCode = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode));
                     copy.setCode(copyCode);
                 } else {
                     copy.code = null;
@@ -565,7 +567,7 @@ public class LocationStructure
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof LocationStructure.City)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -582,9 +584,9 @@ public class LocationStructure
                 }
             }
             {
-                Long lhsCode;
+                BigInteger lhsCode;
                 lhsCode = this.getCode();
-                Long rhsCode;
+                BigInteger rhsCode;
                 rhsCode = that.getCode();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "code", lhsCode), LocatorUtils.property(thatLocator, "code", rhsCode), lhsCode, rhsCode)) {
                     return false;
@@ -607,50 +609,50 @@ public class LocationStructure
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;all>
-     *         &lt;element name="neighbourhood" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="type">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                       &lt;enumeration value="district"/>
-     *                       &lt;enumeration value="locality"/>
-     *                       &lt;enumeration value="area"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="thoroughfare" minOccurs="0">
-     *           &lt;complexType>
-     *             &lt;simpleContent>
-     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *                 &lt;attribute name="display">
-     *                   &lt;simpleType>
-     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                       &lt;pattern value="yes|no"/>
-     *                     &lt;/restriction>
-     *                   &lt;/simpleType>
-     *                 &lt;/attribute>
-     *               &lt;/extension>
-     *             &lt;/simpleContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="postal-code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType"/>
-     *         &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType"/>
-     *       &lt;/all>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;all&gt;
+     *         &lt;element name="neighbourhood" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;simpleContent&gt;
+     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+     *                 &lt;attribute name="type"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                       &lt;enumeration value="district"/&gt;
+     *                       &lt;enumeration value="locality"/&gt;
+     *                       &lt;enumeration value="area"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+     *               &lt;/extension&gt;
+     *             &lt;/simpleContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *         &lt;element name="thoroughfare" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;simpleContent&gt;
+     *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+     *                 &lt;attribute name="display"&gt;
+     *                   &lt;simpleType&gt;
+     *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *                       &lt;pattern value="yes|no"/&gt;
+     *                     &lt;/restriction&gt;
+     *                   &lt;/simpleType&gt;
+     *                 &lt;/attribute&gt;
+     *               &lt;/extension&gt;
+     *             &lt;/simpleContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *         &lt;element name="postal-code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *         &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType"/&gt;
+     *         &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType"/&gt;
+     *       &lt;/all&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -668,11 +670,13 @@ public class LocationStructure
         @XmlElement(name = "postal-code")
         protected String postalCode;
         @XmlElement(required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter3 .class)
-        protected Double longitude;
+        @XmlJavaTypeAdapter(Adapter9 .class)
+        @XmlSchemaType(name = "decimal")
+        protected BigDecimal longitude;
         @XmlElement(required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter10 .class)
-        protected Double latitude;
+        @XmlJavaTypeAdapter(Adapter8 .class)
+        @XmlSchemaType(name = "decimal")
+        protected BigDecimal latitude;
 
         /**
          * Gets the value of the neighbourhood property.
@@ -754,7 +758,7 @@ public class LocationStructure
          *     {@link String }
          *     
          */
-        public Double getLongitude() {
+        public BigDecimal getLongitude() {
             return longitude;
         }
 
@@ -766,7 +770,7 @@ public class LocationStructure
          *     {@link String }
          *     
          */
-        public void setLongitude(Double value) {
+        public void setLongitude(BigDecimal value) {
             this.longitude = value;
         }
 
@@ -778,7 +782,7 @@ public class LocationStructure
          *     {@link String }
          *     
          */
-        public Double getLatitude() {
+        public BigDecimal getLatitude() {
             return latitude;
         }
 
@@ -790,7 +794,7 @@ public class LocationStructure
          *     {@link String }
          *     
          */
-        public void setLatitude(Double value) {
+        public void setLatitude(BigDecimal value) {
             this.latitude = value;
         }
 
@@ -825,12 +829,12 @@ public class LocationStructure
                 strategy.appendField(locator, this, "postalCode", buffer, thePostalCode);
             }
             {
-                Double theLongitude;
+                BigDecimal theLongitude;
                 theLongitude = this.getLongitude();
                 strategy.appendField(locator, this, "longitude", buffer, theLongitude);
             }
             {
-                Double theLatitude;
+                BigDecimal theLatitude;
                 theLatitude = this.getLatitude();
                 strategy.appendField(locator, this, "latitude", buffer, theLatitude);
             }
@@ -875,17 +879,17 @@ public class LocationStructure
                     copy.postalCode = null;
                 }
                 if (this.longitude!= null) {
-                    Double sourceLongitude;
+                    BigDecimal sourceLongitude;
                     sourceLongitude = this.getLongitude();
-                    Double copyLongitude = ((Double) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude));
+                    BigDecimal copyLongitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude));
                     copy.setLongitude(copyLongitude);
                 } else {
                     copy.longitude = null;
                 }
                 if (this.latitude!= null) {
-                    Double sourceLatitude;
+                    BigDecimal sourceLatitude;
                     sourceLatitude = this.getLatitude();
-                    Double copyLatitude = ((Double) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude));
+                    BigDecimal copyLatitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude));
                     copy.setLatitude(copyLatitude);
                 } else {
                     copy.latitude = null;
@@ -899,7 +903,7 @@ public class LocationStructure
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof LocationStructure.Locality)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -934,18 +938,18 @@ public class LocationStructure
                 }
             }
             {
-                Double lhsLongitude;
+                BigDecimal lhsLongitude;
                 lhsLongitude = this.getLongitude();
-                Double rhsLongitude;
+                BigDecimal rhsLongitude;
                 rhsLongitude = that.getLongitude();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "longitude", lhsLongitude), LocatorUtils.property(thatLocator, "longitude", rhsLongitude), lhsLongitude, rhsLongitude)) {
                     return false;
                 }
             }
             {
-                Double lhsLatitude;
+                BigDecimal lhsLatitude;
                 lhsLatitude = this.getLatitude();
-                Double rhsLatitude;
+                BigDecimal rhsLatitude;
                 rhsLatitude = that.getLatitude();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "latitude", lhsLatitude), LocatorUtils.property(thatLocator, "latitude", rhsLatitude), lhsLatitude, rhsLatitude)) {
                     return false;
@@ -966,22 +970,22 @@ public class LocationStructure
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="type">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *             &lt;enumeration value="district"/>
-         *             &lt;enumeration value="locality"/>
-         *             &lt;enumeration value="area"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" />
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;simpleContent&gt;
+         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+         *       &lt;attribute name="type"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *             &lt;enumeration value="district"/&gt;
+         *             &lt;enumeration value="locality"/&gt;
+         *             &lt;enumeration value="area"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+         *     &lt;/extension&gt;
+         *   &lt;/simpleContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -1001,7 +1005,7 @@ public class LocationStructure
             @XmlAttribute(name = "id")
             @XmlJavaTypeAdapter(Adapter2 .class)
             @XmlSchemaType(name = "positiveInteger")
-            protected Long id;
+            protected BigInteger id;
 
             /**
              * Gets the value of the value property.
@@ -1059,7 +1063,7 @@ public class LocationStructure
              *     {@link String }
              *     
              */
-            public Long getId() {
+            public BigInteger getId() {
                 return id;
             }
 
@@ -1071,7 +1075,7 @@ public class LocationStructure
              *     {@link String }
              *     
              */
-            public void setId(Long value) {
+            public void setId(BigInteger value) {
                 this.id = value;
             }
 
@@ -1101,7 +1105,7 @@ public class LocationStructure
                     strategy.appendField(locator, this, "type", buffer, theType);
                 }
                 {
-                    Long theId;
+                    BigInteger theId;
                     theId = this.getId();
                     strategy.appendField(locator, this, "id", buffer, theId);
                 }
@@ -1138,9 +1142,9 @@ public class LocationStructure
                         copy.type = null;
                     }
                     if (this.id!= null) {
-                        Long sourceId;
+                        BigInteger sourceId;
                         sourceId = this.getId();
-                        Long copyId = ((Long) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId));
+                        BigInteger copyId = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId));
                         copy.setId(copyId);
                     } else {
                         copy.id = null;
@@ -1154,7 +1158,7 @@ public class LocationStructure
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof LocationStructure.Locality.Neighbourhood)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -1180,9 +1184,9 @@ public class LocationStructure
                     }
                 }
                 {
-                    Long lhsId;
+                    BigInteger lhsId;
                     lhsId = this.getId();
-                    Long rhsId;
+                    BigInteger rhsId;
                     rhsId = that.getId();
                     if (!strategy.equals(LocatorUtils.property(thisLocator, "id", lhsId), LocatorUtils.property(thatLocator, "id", rhsId), lhsId, rhsId)) {
                         return false;
@@ -1203,13 +1207,13 @@ public class LocationStructure
              * <p>The following schema fragment specifies the expected content contained within this class.
              * <p>
              * <pre>
-             * &lt;simpleType>
-             *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *     &lt;enumeration value="district"/>
-             *     &lt;enumeration value="locality"/>
-             *     &lt;enumeration value="area"/>
-             *   &lt;/restriction>
-             * &lt;/simpleType>
+             * &lt;simpleType&gt;
+             *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+             *     &lt;enumeration value="district"/&gt;
+             *     &lt;enumeration value="locality"/&gt;
+             *     &lt;enumeration value="area"/&gt;
+             *   &lt;/restriction&gt;
+             * &lt;/simpleType&gt;
              * </pre>
              * 
              */
@@ -1253,19 +1257,19 @@ public class LocationStructure
          * <p>The following schema fragment specifies the expected content contained within this class.
          * 
          * <pre>
-         * &lt;complexType>
-         *   &lt;simpleContent>
-         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-         *       &lt;attribute name="display">
-         *         &lt;simpleType>
-         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *             &lt;pattern value="yes|no"/>
-         *           &lt;/restriction>
-         *         &lt;/simpleType>
-         *       &lt;/attribute>
-         *     &lt;/extension>
-         *   &lt;/simpleContent>
-         * &lt;/complexType>
+         * &lt;complexType&gt;
+         *   &lt;simpleContent&gt;
+         *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+         *       &lt;attribute name="display"&gt;
+         *         &lt;simpleType&gt;
+         *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+         *             &lt;pattern value="yes|no"/&gt;
+         *           &lt;/restriction&gt;
+         *         &lt;/simpleType&gt;
+         *       &lt;/attribute&gt;
+         *     &lt;/extension&gt;
+         *   &lt;/simpleContent&gt;
+         * &lt;/complexType&gt;
          * </pre>
          * 
          * 
@@ -1281,7 +1285,7 @@ public class LocationStructure
             @XmlValue
             protected String value;
             @XmlAttribute(name = "display")
-            @XmlJavaTypeAdapter(Adapter13 .class)
+            @XmlJavaTypeAdapter(Adapter20 .class)
             protected Boolean display;
 
             /**
@@ -1398,7 +1402,7 @@ public class LocationStructure
             }
 
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-                if (!(object instanceof LocationStructure.Locality.Thoroughfare)) {
+                if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
                 if (this == object) {
@@ -1442,13 +1446,13 @@ public class LocationStructure
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
-     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;simpleContent&gt;
+     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/simpleContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -1580,7 +1584,7 @@ public class LocationStructure
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof LocationStructure.SubAdministrativeArea)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {

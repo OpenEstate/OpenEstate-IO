@@ -81,7 +81,7 @@ public class XmlUtils
       short nodeType = child.getNodeType();
       if (nodeType==Node.ELEMENT_NODE)
       {
-        clean( child );
+        XmlUtils.clean( child );
       }
       else if (nodeType==Node.COMMENT_NODE)
       {
@@ -115,7 +115,7 @@ public class XmlUtils
    */
   public static int countNodes( String xpathExpression, Document doc ) throws JaxenException
   {
-    return countNodes( xpathExpression, doc, doc );
+    return XmlUtils.countNodes( xpathExpression, doc, doc );
   }
 
   /**
@@ -123,6 +123,9 @@ public class XmlUtils
    *
    * @param xpathExpression
    * the XPath expression to match
+   *
+   * @param doc
+   * the document, on which the XPath expression is evaluated
    *
    * @param context
    * the node, on which the XPath expression is evaluated
@@ -135,7 +138,7 @@ public class XmlUtils
    */
   public static int countNodes( String xpathExpression, Document doc, Object context ) throws JaxenException
   {
-    return newXPath( xpathExpression, doc ).selectNodes( context ).size();
+    return XmlUtils.newXPath( xpathExpression, doc ).selectNodes( context ).size();
   }
 
   /**
@@ -170,7 +173,7 @@ public class XmlUtils
    */
   public static Document newDocument() throws ParserConfigurationException
   {
-    return newDocument( true );
+    return XmlUtils.newDocument( true );
   }
 
   /**
@@ -213,7 +216,7 @@ public class XmlUtils
    */
   public static Document newDocument( String xmlString ) throws SAXException, IOException, ParserConfigurationException
   {
-    return newDocument( xmlString, true );
+    return XmlUtils.newDocument( xmlString, true );
   }
 
   /**
@@ -239,7 +242,7 @@ public class XmlUtils
    */
   public static Document newDocument( String xmlString, boolean namespaceAware ) throws SAXException, IOException, ParserConfigurationException
   {
-    return newDocument(
+    return XmlUtils.newDocument(
       new InputSource( new StringReader( xmlString ) ), namespaceAware );
   }
 
@@ -263,7 +266,7 @@ public class XmlUtils
    */
   public static Document newDocument( InputSource xmlSource ) throws SAXException, IOException, ParserConfigurationException
   {
-    return newDocument( xmlSource, true );
+    return XmlUtils.newDocument( xmlSource, true );
   }
 
   /**
@@ -315,7 +318,7 @@ public class XmlUtils
    */
   public static Document newDocument( InputStream xmlStream ) throws SAXException, IOException, ParserConfigurationException
   {
-    return newDocument( xmlStream, true );
+    return XmlUtils.newDocument( xmlStream, true );
   }
 
   /**
@@ -367,7 +370,7 @@ public class XmlUtils
    */
   public static Document newDocument( File xmlFile ) throws SAXException, IOException, ParserConfigurationException
   {
-    return newDocument( xmlFile, true );
+    return XmlUtils.newDocument( xmlFile, true );
   }
 
   /**
@@ -413,7 +416,7 @@ public class XmlUtils
    */
   public static XPath newXPath( String expression ) throws JaxenException
   {
-    return newXPath( expression, null, null );
+    return XmlUtils.newXPath( expression, null, null );
   }
 
   /**
@@ -433,7 +436,7 @@ public class XmlUtils
    */
   public static XPath newXPath( String expression, Document doc ) throws JaxenException
   {
-    return newXPath( expression, doc, "io" );
+    return XmlUtils.newXPath( expression, doc, "io" );
   }
 
   /**
@@ -460,7 +463,7 @@ public class XmlUtils
     //LOGGER.debug( "new xpath: " + xpath.debug() );
     if (doc!=null && namespacePrefix!=null)
     {
-      Element root = getRootElement( doc );
+      Element root = XmlUtils.getRootElement( doc );
       String uri = StringUtils.trimToEmpty( root.getNamespaceURI() );
       xpath.addNamespace( namespacePrefix, uri );
     }
@@ -485,7 +488,7 @@ public class XmlUtils
    */
   public static Calendar parseDate( String value )
   {
-    return parseDate( value, true );
+    return XmlUtils.parseDate( value, true );
   }
 
   private static Calendar parseDate( String value, boolean tryDateTimeOnError )
@@ -522,7 +525,7 @@ public class XmlUtils
     {
       try
       {
-        return parseDateTime( value, false );
+        return XmlUtils.parseDateTime( value, false );
       }
       catch (IllegalArgumentException ex)
       {
@@ -552,7 +555,7 @@ public class XmlUtils
    */
   public static Calendar parseDateTime( String value )
   {
-    return parseDateTime( value, true );
+    return XmlUtils.parseDateTime( value, true );
   }
 
   private static Calendar parseDateTime( String value, boolean tryDateOnError )
@@ -587,7 +590,7 @@ public class XmlUtils
     {
       try
       {
-        return parseDate( value, false );
+        return XmlUtils.parseDate( value, false );
       }
       catch (IllegalArgumentException ex)
       {
@@ -623,7 +626,7 @@ public class XmlUtils
    */
   public static void printNode( Element node )
   {
-    printNode( node, 0 );
+    XmlUtils.printNode( node, 0 );
   }
 
   private static void printNode( Element node, int indent )
@@ -642,7 +645,10 @@ public class XmlUtils
     for (int i=0; i<children.getLength(); i++)
     {
       Node child = children.item( i );
-      if (child instanceof Element) printNode( (Element) child, indent+1 );
+      if (child instanceof Element)
+      {
+        XmlUtils.printNode( (Element) child, indent+1 );
+      }
     }
   }
 
@@ -660,7 +666,7 @@ public class XmlUtils
     NodeList children = doc.getChildNodes();
     for (int i=0; i<children.getLength(); i++)
     {
-      replaceNamespace( doc, children.item( i ), newNamespaceURI );
+      XmlUtils.replaceNamespace( doc, children.item( i ), newNamespaceURI );
     }
   }
 
@@ -688,7 +694,7 @@ public class XmlUtils
       NodeList children = node.getChildNodes();
       for (int i=0; i<children.getLength(); i++)
       {
-        replaceNamespace( doc, children.item( i ), newNamespaceURI );
+        XmlUtils.replaceNamespace( doc, children.item( i ), newNamespaceURI );
       }
     }
   }
@@ -755,7 +761,7 @@ public class XmlUtils
    */
   public static void write( Document doc, File file ) throws TransformerException, IOException
   {
-    write( doc, file, true );
+    XmlUtils.write( doc, file, true );
   }
 
   /**
@@ -782,7 +788,7 @@ public class XmlUtils
     try
     {
       output = new FileOutputStream( file );
-      write( doc, output, prettyPrint );
+      XmlUtils.write( doc, output, prettyPrint );
     }
     finally
     {
@@ -804,7 +810,7 @@ public class XmlUtils
    */
   public static void write( Document doc, OutputStream output ) throws TransformerException
   {
-    write( doc, output, true );
+    XmlUtils.write( doc, output, true );
   }
 
   /**
@@ -824,14 +830,17 @@ public class XmlUtils
    */
   public static void write( Document doc, OutputStream output, boolean prettyPrint ) throws TransformerException
   {
-    clean( doc );
+    XmlUtils.clean( doc );
     Transformer transformer = TransformerFactory.newInstance().newTransformer();
     transformer.setOutputProperty( OutputKeys.OMIT_XML_DECLARATION, "no" );
     transformer.setOutputProperty( OutputKeys.METHOD, "xml" );
     transformer.setOutputProperty( OutputKeys.ENCODING, "UTF-8" );
     transformer.setOutputProperty( OutputKeys.STANDALONE, "yes" );
     transformer.setOutputProperty( OutputKeys.INDENT, (prettyPrint)? "yes": "no" );
-    if (prettyPrint) transformer.setOutputProperty( "{http://xml.apache.org/xslt}indent-amount", "2" );
+    if (prettyPrint)
+    {
+      transformer.setOutputProperty( "{http://xml.apache.org/xslt}indent-amount", "2" );
+    }
     transformer.transform( new DOMSource( doc ), new StreamResult( output ) );
   }
 
@@ -849,7 +858,7 @@ public class XmlUtils
    */
   public static void write( Document doc, Writer output ) throws TransformerException
   {
-    write( doc, output, true );
+    XmlUtils.write( doc, output, true );
   }
 
   /**
@@ -869,14 +878,17 @@ public class XmlUtils
    */
   public static void write( Document doc, Writer output, boolean prettyPrint ) throws TransformerException
   {
-    clean( doc );
+    XmlUtils.clean( doc );
     Transformer transformer = TransformerFactory.newInstance().newTransformer();
     transformer.setOutputProperty( OutputKeys.OMIT_XML_DECLARATION, "no" );
     transformer.setOutputProperty( OutputKeys.METHOD, "xml" );
     transformer.setOutputProperty( OutputKeys.ENCODING, "UTF-8" );
     transformer.setOutputProperty( OutputKeys.STANDALONE, "yes" );
     transformer.setOutputProperty( OutputKeys.INDENT, (prettyPrint)? "yes": "no" );
-    if (prettyPrint) transformer.setOutputProperty( "{http://xml.apache.org/xslt}indent-amount", "2" );
+    if (prettyPrint)
+    {
+      transformer.setOutputProperty( "{http://xml.apache.org/xslt}indent-amount", "2" );
+    }
     transformer.transform( new DOMSource( doc ), new StreamResult( output ) );
   }
 }

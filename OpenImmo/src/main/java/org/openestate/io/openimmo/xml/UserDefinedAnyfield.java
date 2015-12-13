@@ -61,8 +61,8 @@ public class UserDefinedAnyfield
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * {@link Object }
      * {@link Element }
+     * {@link Object }
      * 
      * 
      */
@@ -131,7 +131,7 @@ public class UserDefinedAnyfield
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof UserDefinedAnyfield)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

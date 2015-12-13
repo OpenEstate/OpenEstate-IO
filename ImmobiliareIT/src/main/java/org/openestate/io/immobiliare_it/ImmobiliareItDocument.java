@@ -113,7 +113,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "feed".equals( root.getTagName() );
+    return "feed".equals( root.getLocalName() );
   }
 
   /**

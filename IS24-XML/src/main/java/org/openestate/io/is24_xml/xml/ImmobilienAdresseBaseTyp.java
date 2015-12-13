@@ -26,13 +26,13 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ImmobilienAdresseBaseTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AdresseBaseTyp">
- *       &lt;attribute name="InternationaleRegion" type="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ImmobilienAdresseBaseTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}AdresseBaseTyp"&gt;
+ *       &lt;attribute name="InternationaleRegion" type="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -48,7 +48,7 @@ public class ImmobilienAdresseBaseTyp
 {
 
     @XmlAttribute(name = "InternationaleRegion")
-    @XmlJavaTypeAdapter(Adapter34 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected String internationaleRegion;
 
     /**
@@ -130,7 +130,7 @@ public class ImmobilienAdresseBaseTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof ImmobilienAdresseBaseTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

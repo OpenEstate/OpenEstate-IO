@@ -26,22 +26,22 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AdresseBaseTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Strasse">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ">
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *       &lt;attribute name="Hausnummer" type="{http://www.immobilienscout24.de/immobilientransfer}Text30Typ" />
- *       &lt;attribute name="Postleitzahl" type="{http://www.immobilienscout24.de/immobilientransfer}Text20Typ" />
- *       &lt;attribute name="Ort" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *       &lt;attribute name="Laenderkennzeichen" type="{http://www.immobilienscout24.de/immobilientransfer}ISOLaenderCodeTyp" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AdresseBaseTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Strasse"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.immobilienscout24.de/immobilientransfer}Text100Typ"&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;attribute name="Hausnummer" type="{http://www.immobilienscout24.de/immobilientransfer}Text30Typ" /&gt;
+ *       &lt;attribute name="Postleitzahl" type="{http://www.immobilienscout24.de/immobilientransfer}Text20Typ" /&gt;
+ *       &lt;attribute name="Ort" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *       &lt;attribute name="Laenderkennzeichen" type="{http://www.immobilienscout24.de/immobilientransfer}ISOLaenderCodeTyp" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -57,16 +57,16 @@ public abstract class AdresseBaseTyp
 {
 
     @XmlAttribute(name = "Strasse")
-    @XmlJavaTypeAdapter(Adapter34 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected String strasse;
     @XmlAttribute(name = "Hausnummer")
-    @XmlJavaTypeAdapter(Adapter25 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected String hausnummer;
     @XmlAttribute(name = "Postleitzahl")
-    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected String postleitzahl;
     @XmlAttribute(name = "Ort")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String ort;
     @XmlAttribute(name = "Laenderkennzeichen")
     protected ISOLaenderCodeTyp laenderkennzeichen;
@@ -294,7 +294,7 @@ public abstract class AdresseBaseTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof AdresseBaseTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

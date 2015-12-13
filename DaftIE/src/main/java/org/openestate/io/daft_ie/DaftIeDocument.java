@@ -111,7 +111,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "daft".equals( root.getTagName() );
+    return "daft".equals( root.getLocalName() );
   }
 
   /**

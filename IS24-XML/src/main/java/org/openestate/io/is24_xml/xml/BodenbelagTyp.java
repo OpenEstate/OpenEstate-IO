@@ -12,24 +12,24 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="BodenbelagTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Beton"/>
- *     &lt;enumeration value="Epoxidharz"/>
- *     &lt;enumeration value="Fliesen"/>
- *     &lt;enumeration value="Laminat"/>
- *     &lt;enumeration value="Dielen"/>
- *     &lt;enumeration value="Parkett"/>
- *     &lt;enumeration value="PVC"/>
- *     &lt;enumeration value="Teppichboden"/>
- *     &lt;enumeration value="TeppichbodenAntistatisch"/>
- *     &lt;enumeration value="TeppichfliesenStuhlrollenfest"/>
- *     &lt;enumeration value="Stein"/>
- *     &lt;enumeration value="NachWunsch"/>
- *     &lt;enumeration value="OhneBodenbelag"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="BodenbelagTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Beton"/&gt;
+ *     &lt;enumeration value="Epoxidharz"/&gt;
+ *     &lt;enumeration value="Fliesen"/&gt;
+ *     &lt;enumeration value="Laminat"/&gt;
+ *     &lt;enumeration value="Dielen"/&gt;
+ *     &lt;enumeration value="Parkett"/&gt;
+ *     &lt;enumeration value="PVC"/&gt;
+ *     &lt;enumeration value="Teppichboden"/&gt;
+ *     &lt;enumeration value="TeppichbodenAntistatisch"/&gt;
+ *     &lt;enumeration value="TeppichfliesenStuhlrollenfest"/&gt;
+ *     &lt;enumeration value="Stein"/&gt;
+ *     &lt;enumeration value="NachWunsch"/&gt;
+ *     &lt;enumeration value="OhneBodenbelag"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

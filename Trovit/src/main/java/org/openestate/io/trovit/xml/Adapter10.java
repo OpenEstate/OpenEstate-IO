@@ -2,18 +2,19 @@
 package org.openestate.io.trovit.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import org.openestate.io.trovit.xml.types.IntBool;
 
 public class Adapter10
-    extends XmlAdapter<String, Double>
+    extends XmlAdapter<String, IntBool>
 {
 
 
-    public Double unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseFloat(value));
+    public IntBool unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseIntBool(value));
     }
 
-    public String marshal(Double value) {
-        return (org.openestate.io.trovit.TrovitUtils.printFloat(value));
+    public String marshal(IntBool value) {
+        return (org.openestate.io.trovit.TrovitUtils.printIntBool(value));
     }
 
 }

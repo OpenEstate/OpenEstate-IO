@@ -1,19 +1,20 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter27
-    extends XmlAdapter<String, Double>
+    extends XmlAdapter<String, BigDecimal>
 {
 
 
-    public Double unmarshal(String value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.parseZahl72(value));
+    public BigDecimal unmarshal(String value) {
+        return (org.openestate.io.is24_xml.Is24XmlUtils.parseZahl31(value));
     }
 
-    public String marshal(Double value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.printZahl72(value));
+    public String marshal(BigDecimal value) {
+        return (org.openestate.io.is24_xml.Is24XmlUtils.printZahl31(value));
     }
 
 }

@@ -2,19 +2,18 @@
 package org.openestate.io.immobiliare_it.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.immobiliare_it.xml.types.Category;
 
 public class Adapter7
-    extends XmlAdapter<String, Category>
+    extends XmlAdapter<String, Boolean>
 {
 
 
-    public Category unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCategory(value));
+    public Boolean unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYN(value));
     }
 
-    public String marshal(Category value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCategory(value));
+    public String marshal(Boolean value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYN(value));
     }
 
 }

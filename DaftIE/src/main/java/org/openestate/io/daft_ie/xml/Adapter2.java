@@ -10,11 +10,11 @@ public class Adapter2
 
 
     public Calendar unmarshal(String value) {
-        return (org.openestate.io.daft_ie.DaftIeUtils.parseDateTime(value));
+        return (org.openestate.io.daft_ie.DaftIeUtils.parseDate(value));
     }
 
     public String marshal(Calendar value) {
-        return (org.openestate.io.daft_ie.DaftIeUtils.printDateTime(value));
+        return (org.openestate.io.daft_ie.DaftIeUtils.printDate(value));
     }
 
 }

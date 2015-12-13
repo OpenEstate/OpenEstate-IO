@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,26 +28,26 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HalleProduktionTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/>
- *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/>
- *         &lt;element name="Kranbahn" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}HalleProduktionKategorieTyp" default="keineAngabe" />
- *       &lt;attribute name="LagerProduktionsFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" />
- *       &lt;attribute name="Hebebuehne" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Hallenhoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Bodenbelastung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" />
- *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Stromanschlusswert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="HalleProduktionTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/&gt;
+ *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/&gt;
+ *         &lt;element name="Kranbahn" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}HalleProduktionKategorieTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="LagerProduktionsFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" /&gt;
+ *       &lt;attribute name="Hebebuehne" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Hallenhoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Bodenbelastung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" /&gt;
+ *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Stromanschlusswert" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -74,25 +75,25 @@ public class HalleProduktionTyp
     @XmlAttribute(name = "Objektkategorie2")
     protected HalleProduktionKategorieTyp objektkategorie2;
     @XmlAttribute(name = "LagerProduktionsFlaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double lagerProduktionsFlaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal lagerProduktionsFlaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Hebebuehne")
     protected Boolean hebebuehne;
     @XmlAttribute(name = "Hallenhoehe")
-    @XmlJavaTypeAdapter(Adapter13 .class)
-    protected Double hallenhoehe;
+    @XmlJavaTypeAdapter(Adapter30 .class)
+    protected BigDecimal hallenhoehe;
     @XmlAttribute(name = "Rampe")
     protected Boolean rampe;
     @XmlAttribute(name = "Bodenbelastung")
-    @XmlJavaTypeAdapter(Adapter27 .class)
-    protected Double bodenbelastung;
-    @XmlAttribute(name = "GrundstuecksFlaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double grundstuecksFlaeche;
-    @XmlAttribute(name = "Stromanschlusswert")
     @XmlJavaTypeAdapter(Adapter33 .class)
+    protected BigDecimal bodenbelastung;
+    @XmlAttribute(name = "GrundstuecksFlaeche")
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal grundstuecksFlaeche;
+    @XmlAttribute(name = "Stromanschlusswert")
+    @XmlJavaTypeAdapter(Adapter23 .class)
     protected Long stromanschlusswert;
 
     /**
@@ -203,7 +204,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public Double getLagerProduktionsFlaeche() {
+    public BigDecimal getLagerProduktionsFlaeche() {
         return lagerProduktionsFlaeche;
     }
 
@@ -215,7 +216,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public void setLagerProduktionsFlaeche(Double value) {
+    public void setLagerProduktionsFlaeche(BigDecimal value) {
         this.lagerProduktionsFlaeche = value;
     }
 
@@ -275,7 +276,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public Double getHallenhoehe() {
+    public BigDecimal getHallenhoehe() {
         return hallenhoehe;
     }
 
@@ -287,7 +288,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public void setHallenhoehe(Double value) {
+    public void setHallenhoehe(BigDecimal value) {
         this.hallenhoehe = value;
     }
 
@@ -323,7 +324,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public Double getBodenbelastung() {
+    public BigDecimal getBodenbelastung() {
         return bodenbelastung;
     }
 
@@ -335,7 +336,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public void setBodenbelastung(Double value) {
+    public void setBodenbelastung(BigDecimal value) {
         this.bodenbelastung = value;
     }
 
@@ -347,7 +348,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public Double getGrundstuecksFlaeche() {
+    public BigDecimal getGrundstuecksFlaeche() {
         return grundstuecksFlaeche;
     }
 
@@ -359,7 +360,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
-    public void setGrundstuecksFlaeche(Double value) {
+    public void setGrundstuecksFlaeche(BigDecimal value) {
         this.grundstuecksFlaeche = value;
     }
 
@@ -424,7 +425,7 @@ public class HalleProduktionTyp
             strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
         }
         {
-            Double theLagerProduktionsFlaeche;
+            BigDecimal theLagerProduktionsFlaeche;
             theLagerProduktionsFlaeche = this.getLagerProduktionsFlaeche();
             strategy.appendField(locator, this, "lagerProduktionsFlaeche", buffer, theLagerProduktionsFlaeche);
         }
@@ -439,7 +440,7 @@ public class HalleProduktionTyp
             strategy.appendField(locator, this, "hebebuehne", buffer, theHebebuehne);
         }
         {
-            Double theHallenhoehe;
+            BigDecimal theHallenhoehe;
             theHallenhoehe = this.getHallenhoehe();
             strategy.appendField(locator, this, "hallenhoehe", buffer, theHallenhoehe);
         }
@@ -449,12 +450,12 @@ public class HalleProduktionTyp
             strategy.appendField(locator, this, "rampe", buffer, theRampe);
         }
         {
-            Double theBodenbelastung;
+            BigDecimal theBodenbelastung;
             theBodenbelastung = this.getBodenbelastung();
             strategy.appendField(locator, this, "bodenbelastung", buffer, theBodenbelastung);
         }
         {
-            Double theGrundstuecksFlaeche;
+            BigDecimal theGrundstuecksFlaeche;
             theGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
             strategy.appendField(locator, this, "grundstuecksFlaeche", buffer, theGrundstuecksFlaeche);
         }
@@ -513,9 +514,9 @@ public class HalleProduktionTyp
                 copy.objektkategorie2 = null;
             }
             if (this.lagerProduktionsFlaeche!= null) {
-                Double sourceLagerProduktionsFlaeche;
+                BigDecimal sourceLagerProduktionsFlaeche;
                 sourceLagerProduktionsFlaeche = this.getLagerProduktionsFlaeche();
-                Double copyLagerProduktionsFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "lagerProduktionsFlaeche", sourceLagerProduktionsFlaeche), sourceLagerProduktionsFlaeche));
+                BigDecimal copyLagerProduktionsFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "lagerProduktionsFlaeche", sourceLagerProduktionsFlaeche), sourceLagerProduktionsFlaeche));
                 copy.setLagerProduktionsFlaeche(copyLagerProduktionsFlaeche);
             } else {
                 copy.lagerProduktionsFlaeche = null;
@@ -537,9 +538,9 @@ public class HalleProduktionTyp
                 copy.hebebuehne = null;
             }
             if (this.hallenhoehe!= null) {
-                Double sourceHallenhoehe;
+                BigDecimal sourceHallenhoehe;
                 sourceHallenhoehe = this.getHallenhoehe();
-                Double copyHallenhoehe = ((Double) strategy.copy(LocatorUtils.property(locator, "hallenhoehe", sourceHallenhoehe), sourceHallenhoehe));
+                BigDecimal copyHallenhoehe = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hallenhoehe", sourceHallenhoehe), sourceHallenhoehe));
                 copy.setHallenhoehe(copyHallenhoehe);
             } else {
                 copy.hallenhoehe = null;
@@ -553,17 +554,17 @@ public class HalleProduktionTyp
                 copy.rampe = null;
             }
             if (this.bodenbelastung!= null) {
-                Double sourceBodenbelastung;
+                BigDecimal sourceBodenbelastung;
                 sourceBodenbelastung = this.getBodenbelastung();
-                Double copyBodenbelastung = ((Double) strategy.copy(LocatorUtils.property(locator, "bodenbelastung", sourceBodenbelastung), sourceBodenbelastung));
+                BigDecimal copyBodenbelastung = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "bodenbelastung", sourceBodenbelastung), sourceBodenbelastung));
                 copy.setBodenbelastung(copyBodenbelastung);
             } else {
                 copy.bodenbelastung = null;
             }
             if (this.grundstuecksFlaeche!= null) {
-                Double sourceGrundstuecksFlaeche;
+                BigDecimal sourceGrundstuecksFlaeche;
                 sourceGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-                Double copyGrundstuecksFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
+                BigDecimal copyGrundstuecksFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
                 copy.setGrundstuecksFlaeche(copyGrundstuecksFlaeche);
             } else {
                 copy.grundstuecksFlaeche = null;
@@ -585,7 +586,7 @@ public class HalleProduktionTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof HalleProduktionTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -632,9 +633,9 @@ public class HalleProduktionTyp
             }
         }
         {
-            Double lhsLagerProduktionsFlaeche;
+            BigDecimal lhsLagerProduktionsFlaeche;
             lhsLagerProduktionsFlaeche = this.getLagerProduktionsFlaeche();
-            Double rhsLagerProduktionsFlaeche;
+            BigDecimal rhsLagerProduktionsFlaeche;
             rhsLagerProduktionsFlaeche = that.getLagerProduktionsFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "lagerProduktionsFlaeche", lhsLagerProduktionsFlaeche), LocatorUtils.property(thatLocator, "lagerProduktionsFlaeche", rhsLagerProduktionsFlaeche), lhsLagerProduktionsFlaeche, rhsLagerProduktionsFlaeche)) {
                 return false;
@@ -659,9 +660,9 @@ public class HalleProduktionTyp
             }
         }
         {
-            Double lhsHallenhoehe;
+            BigDecimal lhsHallenhoehe;
             lhsHallenhoehe = this.getHallenhoehe();
-            Double rhsHallenhoehe;
+            BigDecimal rhsHallenhoehe;
             rhsHallenhoehe = that.getHallenhoehe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hallenhoehe", lhsHallenhoehe), LocatorUtils.property(thatLocator, "hallenhoehe", rhsHallenhoehe), lhsHallenhoehe, rhsHallenhoehe)) {
                 return false;
@@ -677,18 +678,18 @@ public class HalleProduktionTyp
             }
         }
         {
-            Double lhsBodenbelastung;
+            BigDecimal lhsBodenbelastung;
             lhsBodenbelastung = this.getBodenbelastung();
-            Double rhsBodenbelastung;
+            BigDecimal rhsBodenbelastung;
             rhsBodenbelastung = that.getBodenbelastung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bodenbelastung", lhsBodenbelastung), LocatorUtils.property(thatLocator, "bodenbelastung", rhsBodenbelastung), lhsBodenbelastung, rhsBodenbelastung)) {
                 return false;
             }
         }
         {
-            Double lhsGrundstuecksFlaeche;
+            BigDecimal lhsGrundstuecksFlaeche;
             lhsGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-            Double rhsGrundstuecksFlaeche;
+            BigDecimal rhsGrundstuecksFlaeche;
             rhsGrundstuecksFlaeche = that.getGrundstuecksFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksFlaeche", lhsGrundstuecksFlaeche), LocatorUtils.property(thatLocator, "grundstuecksFlaeche", rhsGrundstuecksFlaeche), lhsGrundstuecksFlaeche, rhsGrundstuecksFlaeche)) {
                 return false;

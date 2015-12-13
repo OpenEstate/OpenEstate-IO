@@ -12,15 +12,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="MMAnhangArtenTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="bild"/>
- *     &lt;enumeration value="video"/>
- *     &lt;enumeration value="link"/>
- *     &lt;enumeration value="grundrissBild"/>
- *     &lt;enumeration value="grundrissPDF"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="MMAnhangArtenTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="bild"/&gt;
+ *     &lt;enumeration value="video"/&gt;
+ *     &lt;enumeration value="link"/&gt;
+ *     &lt;enumeration value="grundrissBild"/&gt;
+ *     &lt;enumeration value="grundrissPDF"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

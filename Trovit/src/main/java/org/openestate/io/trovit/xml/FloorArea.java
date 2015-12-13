@@ -1,6 +1,7 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -28,13 +29,13 @@ import org.openestate.io.trovit.xml.types.Unit;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;>typeInt">
- *       &lt;attribute name="unit" type="{}typeUnit" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;&gt;typeInt"&gt;
+ *       &lt;attribute name="unit" type="{}typeUnit" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,10 +50,10 @@ public class FloorArea
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter3 .class)
-    protected Integer value;
+    @XmlJavaTypeAdapter(Adapter8 .class)
+    protected BigInteger value;
     @XmlAttribute(name = "unit")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected Unit unit;
 
     /**
@@ -63,7 +64,7 @@ public class FloorArea
      *     {@link String }
      *     
      */
-    public Integer getValue() {
+    public BigInteger getValue() {
         return value;
     }
 
@@ -75,7 +76,7 @@ public class FloorArea
      *     {@link String }
      *     
      */
-    public void setValue(Integer value) {
+    public void setValue(BigInteger value) {
         this.value = value;
     }
 
@@ -119,7 +120,7 @@ public class FloorArea
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Integer theValue;
+            BigInteger theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
@@ -145,9 +146,9 @@ public class FloorArea
         if (draftCopy instanceof FloorArea) {
             final FloorArea copy = ((FloorArea) draftCopy);
             if (this.value!= null) {
-                Integer sourceValue;
+                BigInteger sourceValue;
                 sourceValue = this.getValue();
-                Integer copyValue = ((Integer) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigInteger copyValue = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
@@ -169,7 +170,7 @@ public class FloorArea
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof FloorArea)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -177,9 +178,9 @@ public class FloorArea
         }
         final FloorArea that = ((FloorArea) object);
         {
-            Integer lhsValue;
+            BigInteger lhsValue;
             lhsValue = this.getValue();
-            Integer rhsValue;
+            BigInteger rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;

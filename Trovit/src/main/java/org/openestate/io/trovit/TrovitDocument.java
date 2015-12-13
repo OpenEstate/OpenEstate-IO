@@ -60,7 +60,7 @@ public class TrovitDocument extends XmlDocument<Trovit>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "trovit".equals( root.getTagName() );
+    return "trovit".equals( root.getLocalName() );
   }
 
   /**

@@ -2,20 +2,51 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-  <name>OpenEstate-IO-WisIT</name>
-  <version>1.0-RC2</version>
-  <url>http://www.openestate.org</url>
-  <groupId>org.openestate.io</groupId>
-  <artifactId>OpenEstate-IO-WisIT</artifactId>
-  <packaging>jar</packaging>
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.openestate.io</groupId>
     <artifactId>ALL</artifactId>
-    <version>1.0-RC2</version>
+    <version>1.0</version>
   </parent>
+
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-WisIT</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>OpenEstate-IO-WisIT</name>
+  <description>OpenEstate-IO-WisIT is a Java library to read and write real estate data in the XML format of wohnen-in-suedtirol.it.</description>
+  <url>http://www.openestate.org</url>
+  <organization>
+    <name>OpenEstate</name>
+    <url>http://openestate.org/</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>andy</id>
+      <name>Andreas Rudolph</name>
+      <email>andy@openindex.de</email>
+      <organization>OpenIndex</organization>
+      <organizationUrl>http://www.openindex.de/</organizationUrl>
+    </developer>
+    <developer>
+      <id>walter</id>
+      <name>Walter Wagner</name>
+      <email>walter@openindex.de</email>
+      <organization>OpenIndex</organization>
+      <organizationUrl>http://www.openindex.de/</organizationUrl>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -91,8 +122,8 @@
 
       <!-- clean -->
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>2.6.1</version>
         <configuration>
           <failOnError>false</failOnError>
           <filesets>
@@ -108,7 +139,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.10</version>
         <executions>
           <execution>
             <id>copy-dependency-sources</id>
@@ -150,7 +180,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.2</version>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
@@ -163,7 +192,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>2.4</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -178,7 +206,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.1</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -196,11 +223,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.5.3</version>
         <executions>
           <execution>
             <id>release</id>
-            <phase>package</phase>
+            <phase>install</phase>
             <goals>
               <goal>single</goal>
             </goals>
@@ -221,19 +247,29 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>1.6</version>
         <configuration>
+          <sources>
+            <source>${project.basedir}/src/main/xsd/wis.xsd</source>
+            <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
+          </sources>
+          <bindingFiles>binding.xjb</bindingFiles>
           <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
           <clearOutputDir>false</clearOutputDir>
           <target>2.1</target>
           <extension>true</extension>
-          <arguments>-XtoString -Xcopyable -Xequals -no-header</arguments>
+          <generateEpisode>false</generateEpisode>
+          <noGeneratedHeaderComments>true</noGeneratedHeaderComments>
+          <arguments>
+            <argument>-XtoString</argument>
+            <argument>-Xcopyable</argument>
+            <argument>-Xequals</argument>
+          </arguments>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics</artifactId>
-            <version>0.9.3</version>
+            <version>0.10.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -242,7 +278,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.0</version>
         <configuration>
           <failOnError>false</failOnError>
           <excludeFilterFile>${basedir}/findbugs-exclude.xml</excludeFilterFile>
@@ -251,36 +286,4 @@
 
     </plugins>
   </build>
-
-  <organization>
-    <name>OpenEstate</name>
-    <url>http://openestate.org/</url>
-  </organization>
-
-  <developers>
-    <developer>
-      <id>andy</id>
-      <name>Andreas Rudolph</name>
-      <email>andy@openindex.de</email>
-      <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
-    </developer>
-    <developer>
-      <id>walter</id>
-      <name>Walter Wagner</name>
-      <email>walter@openindex.de</email>
-      <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
-    </developer>
-  </developers>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
-
 </project>

@@ -1,6 +1,7 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -68,9 +69,9 @@ public class Geo
     protected String flurstueck;
     protected String gemarkung;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
-    protected Integer etage;
+    protected BigInteger etage;
     @XmlElement(name = "lage_im_bau")
     protected LageImBau lageImBau;
     protected String wohnungsnr;
@@ -355,7 +356,7 @@ public class Geo
      *     {@link String }
      *     
      */
-    public Integer getEtage() {
+    public BigInteger getEtage() {
         return etage;
     }
 
@@ -367,7 +368,7 @@ public class Geo
      *     {@link String }
      *     
      */
-    public void setEtage(Integer value) {
+    public void setEtage(BigInteger value) {
         this.etage = value;
     }
 
@@ -596,7 +597,7 @@ public class Geo
             strategy.appendField(locator, this, "gemarkung", buffer, theGemarkung);
         }
         {
-            Integer theEtage;
+            BigInteger theEtage;
             theEtage = this.getEtage();
             strategy.appendField(locator, this, "etage", buffer, theEtage);
         }
@@ -735,9 +736,9 @@ public class Geo
                 copy.gemarkung = null;
             }
             if (this.etage!= null) {
-                Integer sourceEtage;
+                BigInteger sourceEtage;
                 sourceEtage = this.getEtage();
-                Integer copyEtage = ((Integer) strategy.copy(LocatorUtils.property(locator, "etage", sourceEtage), sourceEtage));
+                BigInteger copyEtage = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "etage", sourceEtage), sourceEtage));
                 copy.setEtage(copyEtage);
             } else {
                 copy.etage = null;
@@ -809,7 +810,7 @@ public class Geo
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Geo)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -916,9 +917,9 @@ public class Geo
             }
         }
         {
-            Integer lhsEtage;
+            BigInteger lhsEtage;
             lhsEtage = this.getEtage();
-            Integer rhsEtage;
+            BigInteger rhsEtage;
             rhsEtage = that.getEtage();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "etage", lhsEtage), LocatorUtils.property(thatLocator, "etage", rhsEtage), lhsEtage, rhsEtage)) {
                 return false;

@@ -5,6 +5,7 @@ import java.net.URL;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
@@ -26,50 +27,50 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="urlType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="ar" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="bg" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="ca" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="cs" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="de" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="da" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="el" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="en" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="es" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="et" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="fa" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="fi" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="fr" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="he" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="hi" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="hu" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="id" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="it" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="ja" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="ko" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="lt" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="lv" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="nl" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="no" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="pl" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="pt" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="ro" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="ru" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="sk" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="sl" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="sv" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="th" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="tr" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="uk" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="vi" type="{}urlDataType" minOccurs="0"/>
- *         &lt;element name="zh" type="{}urlDataType" minOccurs="0"/>
- *       &lt;/all>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="urlType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;all&gt;
+ *         &lt;element name="ar" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="bg" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="ca" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="cs" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="de" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="da" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="el" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="en" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="es" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="et" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="fa" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="fi" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="fr" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="he" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="hi" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="hu" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="id" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="it" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="ja" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="ko" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="lt" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="lv" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="nl" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="no" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="pl" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="pt" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="ro" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="ru" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="sk" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="sl" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="sv" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="th" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="tr" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="uk" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="vi" type="{}urlDataType" minOccurs="0"/&gt;
+ *         &lt;element name="zh" type="{}urlDataType" minOccurs="0"/&gt;
+ *       &lt;/all&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -83,112 +84,148 @@ public class UrlType
 {
 
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL ar;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL bg;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL ca;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL cs;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL de;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL da;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL el;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL en;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL es;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL et;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL fa;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL fi;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL fr;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL he;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL hi;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL hu;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL id;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL it;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL ja;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL ko;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL lt;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL lv;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL nl;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL no;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL pl;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL pt;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL ro;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL ru;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL sk;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL sl;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL sv;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL th;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL tr;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL uk;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL vi;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter7 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    @XmlSchemaType(name = "token")
     protected URL zh;
 
     /**
@@ -1563,7 +1600,7 @@ public class UrlType
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof UrlType)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,22 +28,22 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="GastronomieTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp2"/>
- *       &lt;/sequence>
- *       &lt;attribute name="GastraumFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="GastraumPlaetze" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" />
- *       &lt;attribute name="AnzahlBetten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" />
- *       &lt;attribute name="Gastterrasse" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}GastroKategorieTyp" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="GastronomieTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp2"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="GastraumFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="GastraumPlaetze" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" /&gt;
+ *       &lt;attribute name="AnzahlBetten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" /&gt;
+ *       &lt;attribute name="Gastterrasse" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}GastroKategorieTyp" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -62,13 +63,13 @@ public class GastronomieTyp
     @XmlElement(name = "Vermarktung", required = true)
     protected VermarktungGewerbeTyp2 vermarktung;
     @XmlAttribute(name = "GastraumFlaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double gastraumFlaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal gastraumFlaeche;
     @XmlAttribute(name = "GastraumPlaetze")
-    @XmlJavaTypeAdapter(Adapter33 .class)
+    @XmlJavaTypeAdapter(Adapter23 .class)
     protected Long gastraumPlaetze;
     @XmlAttribute(name = "AnzahlBetten")
-    @XmlJavaTypeAdapter(Adapter33 .class)
+    @XmlJavaTypeAdapter(Adapter23 .class)
     protected Long anzahlBetten;
     @XmlAttribute(name = "Gastterrasse")
     protected Boolean gastterrasse;
@@ -111,7 +112,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    public Double getGastraumFlaeche() {
+    public BigDecimal getGastraumFlaeche() {
         return gastraumFlaeche;
     }
 
@@ -123,7 +124,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    public void setGastraumFlaeche(Double value) {
+    public void setGastraumFlaeche(BigDecimal value) {
         this.gastraumFlaeche = value;
     }
 
@@ -293,7 +294,7 @@ public class GastronomieTyp
             strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung);
         }
         {
-            Double theGastraumFlaeche;
+            BigDecimal theGastraumFlaeche;
             theGastraumFlaeche = this.getGastraumFlaeche();
             strategy.appendField(locator, this, "gastraumFlaeche", buffer, theGastraumFlaeche);
         }
@@ -353,9 +354,9 @@ public class GastronomieTyp
                 copy.vermarktung = null;
             }
             if (this.gastraumFlaeche!= null) {
-                Double sourceGastraumFlaeche;
+                BigDecimal sourceGastraumFlaeche;
                 sourceGastraumFlaeche = this.getGastraumFlaeche();
-                Double copyGastraumFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gastraumFlaeche", sourceGastraumFlaeche), sourceGastraumFlaeche));
+                BigDecimal copyGastraumFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gastraumFlaeche", sourceGastraumFlaeche), sourceGastraumFlaeche));
                 copy.setGastraumFlaeche(copyGastraumFlaeche);
             } else {
                 copy.gastraumFlaeche = null;
@@ -417,7 +418,7 @@ public class GastronomieTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof GastronomieTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -437,9 +438,9 @@ public class GastronomieTyp
             }
         }
         {
-            Double lhsGastraumFlaeche;
+            BigDecimal lhsGastraumFlaeche;
             lhsGastraumFlaeche = this.getGastraumFlaeche();
-            Double rhsGastraumFlaeche;
+            BigDecimal rhsGastraumFlaeche;
             rhsGastraumFlaeche = that.getGastraumFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gastraumFlaeche", lhsGastraumFlaeche), LocatorUtils.property(thatLocator, "gastraumFlaeche", rhsGastraumFlaeche), lhsGastraumFlaeche, rhsGastraumFlaeche)) {
                 return false;

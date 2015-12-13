@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:immoxml="http://www.immoxml.de"
                jaxb:extensionBindingPrefixes="xjc"
                version="2.0">
 
@@ -13,18 +14,21 @@
     <jaxb:javaType name="java.util.Calendar" xmlType="xsd:dateTime"
                    parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseDateTime"
                    printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printDateTime" />
-    <jaxb:javaType name="java.lang.Double" xmlType="xsd:decimal"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:decimal"
                    parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseDecimal"
                    printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printDecimal" />
-    <jaxb:javaType name="java.lang.Double" xmlType="xsd:float"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:float"
                    parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseDecimal"
                    printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printDecimal" />
-    <jaxb:javaType name="java.lang.Integer" xmlType="xsd:int"
+    <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:int"
                    parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseInteger"
                    printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printInteger" />
-    <jaxb:javaType name="java.lang.Integer" xmlType="xsd:positiveInteger"
-                   parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseInteger"
+    <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:positiveInteger"
+                   parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parsePositiveInteger"
                    printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printPositiveInteger" />
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="immoxml:posdecimal"
+                   parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parsePositiveDecimal"
+                   printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printPositiveDecimal" />
   </jaxb:globalBindings>
 
 

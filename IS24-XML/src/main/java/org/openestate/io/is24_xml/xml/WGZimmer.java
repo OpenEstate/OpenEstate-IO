@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -44,56 +45,56 @@ public class WGZimmer
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}WGZimmerTyp">
-     *       &lt;sequence>
-     *         &lt;element name="Mietpreise" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungWGZimmerTyp"/>
-     *       &lt;/sequence>
-     *       &lt;attribute name="WGZimmerKategorie" type="{http://www.immobilienscout24.de/immobilientransfer}WGZimmerKategorienTyp" default="keineAngabe" />
-     *       &lt;attribute name="Zimmerflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
-     *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
-     *       &lt;attribute name="Zimmer" type="{http://www.immobilienscout24.de/immobilientransfer}ZimmeranzahlTyp" />
-     *       &lt;attribute name="FreiAb" use="required" type="{http://www.w3.org/2001/XMLSchema}date" />
-     *       &lt;attribute name="FreiBis" type="{http://www.w3.org/2001/XMLSchema}date" />
-     *       &lt;attribute name="Bewohnerzahl" type="{http://www.immobilienscout24.de/immobilientransfer}WGGroesse" default="2" />
-     *       &lt;attribute name="Mobilar" type="{http://www.immobilienscout24.de/immobilientransfer}MobilarTyp" default="keineAngabe" />
-     *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagWohnenTyp" default="keineAngabe" />
-     *       &lt;attribute name="Rauchen" type="{http://www.immobilienscout24.de/immobilientransfer}RauchenTyp" default="keineAngabe" />
-     *       &lt;attribute name="Etage" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2i0Typ" />
-     *       &lt;attribute name="Etagenzahl" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="BalkonTerrasse" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="GartenBenutzung" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Backofen" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Kuehlschrank" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="AnzahlBadezimmer" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="WC" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="GaesteWC" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Herd" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Dusche" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Badewanne" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Spuelmaschine" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Waschmaschine" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Aufzug" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Haustiere" type="{http://www.immobilienscout24.de/immobilientransfer}GenehmigungTyp" />
-     *       &lt;attribute name="Barrierefrei" type="{http://www.w3.org/2001/XMLSchema}boolean" />
-     *       &lt;attribute name="Heizungsart" type="{http://www.immobilienscout24.de/immobilientransfer}HeizungsartTyp" />
-     *       &lt;attribute name="AnzahlMaennlicheMitbewohner" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="AnzahlWeiblicheMitbewohner" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="AlterDerzeitigeBewohnerVon" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="AlterDerzeitigeBewohnerBis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="AlterGesuchterBewohnerVon" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="AlterGesuchterBewohnerBis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="GeschlechtGesuchterBewohner" type="{http://www.immobilienscout24.de/immobilientransfer}WGZimmerGeschlechtTyp" default="MaennlichOderWeiblich" />
-     *       &lt;attribute name="AnzahlGesuchteMitbewohner" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" />
-     *       &lt;attribute name="Telefonanschluss" type="{http://www.immobilienscout24.de/immobilientransfer}TelefonanschlussTyp" default="keineAngabe" />
-     *       &lt;attribute name="Internetanschluss" type="{http://www.immobilienscout24.de/immobilientransfer}InternetanschlussTyp" default="keineAngabe" />
-     *       &lt;attribute name="TVAnschluss" type="{http://www.immobilienscout24.de/immobilientransfer}TVAnschlussTyp" default="keineAngabe" />
-     *       &lt;attribute name="Parkplatzsituation" type="{http://www.immobilienscout24.de/immobilientransfer}ParkplatzsituationTyp" default="keineAngabe" />
-     *     &lt;/extension>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}WGZimmerTyp"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Mietpreise" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungWGZimmerTyp"/&gt;
+     *       &lt;/sequence&gt;
+     *       &lt;attribute name="WGZimmerKategorie" type="{http://www.immobilienscout24.de/immobilientransfer}WGZimmerKategorienTyp" default="keineAngabe" /&gt;
+     *       &lt;attribute name="Zimmerflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+     *       &lt;attribute name="Gesamtflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+     *       &lt;attribute name="Zimmer" type="{http://www.immobilienscout24.de/immobilientransfer}ZimmeranzahlTyp" /&gt;
+     *       &lt;attribute name="FreiAb" use="required" type="{http://www.w3.org/2001/XMLSchema}date" /&gt;
+     *       &lt;attribute name="FreiBis" type="{http://www.w3.org/2001/XMLSchema}date" /&gt;
+     *       &lt;attribute name="Bewohnerzahl" type="{http://www.immobilienscout24.de/immobilientransfer}WGGroesse" default="2" /&gt;
+     *       &lt;attribute name="Mobilar" type="{http://www.immobilienscout24.de/immobilientransfer}MobilarTyp" default="keineAngabe" /&gt;
+     *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagWohnenTyp" default="keineAngabe" /&gt;
+     *       &lt;attribute name="Rauchen" type="{http://www.immobilienscout24.de/immobilientransfer}RauchenTyp" default="keineAngabe" /&gt;
+     *       &lt;attribute name="Etage" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2i0Typ" /&gt;
+     *       &lt;attribute name="Etagenzahl" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="BalkonTerrasse" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="GartenBenutzung" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Backofen" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Kuehlschrank" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="AnzahlBadezimmer" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="WC" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="GaesteWC" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Herd" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Dusche" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Badewanne" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Spuelmaschine" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Waschmaschine" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Aufzug" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Haustiere" type="{http://www.immobilienscout24.de/immobilientransfer}GenehmigungTyp" /&gt;
+     *       &lt;attribute name="Barrierefrei" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+     *       &lt;attribute name="Heizungsart" type="{http://www.immobilienscout24.de/immobilientransfer}HeizungsartTyp" /&gt;
+     *       &lt;attribute name="AnzahlMaennlicheMitbewohner" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="AnzahlWeiblicheMitbewohner" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="AlterDerzeitigeBewohnerVon" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="AlterDerzeitigeBewohnerBis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="AlterGesuchterBewohnerVon" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="AlterGesuchterBewohnerBis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="GeschlechtGesuchterBewohner" type="{http://www.immobilienscout24.de/immobilientransfer}WGZimmerGeschlechtTyp" default="MaennlichOderWeiblich" /&gt;
+     *       &lt;attribute name="AnzahlGesuchteMitbewohner" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl2Typ" /&gt;
+     *       &lt;attribute name="Telefonanschluss" type="{http://www.immobilienscout24.de/immobilientransfer}TelefonanschlussTyp" default="keineAngabe" /&gt;
+     *       &lt;attribute name="Internetanschluss" type="{http://www.immobilienscout24.de/immobilientransfer}InternetanschlussTyp" default="keineAngabe" /&gt;
+     *       &lt;attribute name="TVAnschluss" type="{http://www.immobilienscout24.de/immobilientransfer}TVAnschlussTyp" default="keineAngabe" /&gt;
+     *       &lt;attribute name="Parkplatzsituation" type="{http://www.immobilienscout24.de/immobilientransfer}ParkplatzsituationTyp" default="keineAngabe" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -112,14 +113,14 @@ public class WGZimmer
         @XmlAttribute(name = "WGZimmerKategorie")
         protected WGZimmerKategorienTyp wgZimmerKategorie;
         @XmlAttribute(name = "Zimmerflaeche", required = true)
-        @XmlJavaTypeAdapter(Adapter35 .class)
-        protected Double zimmerflaeche;
+        @XmlJavaTypeAdapter(Adapter34 .class)
+        protected BigDecimal zimmerflaeche;
         @XmlAttribute(name = "Gesamtflaeche")
-        @XmlJavaTypeAdapter(Adapter35 .class)
-        protected Double gesamtflaeche;
+        @XmlJavaTypeAdapter(Adapter34 .class)
+        protected BigDecimal gesamtflaeche;
         @XmlAttribute(name = "Zimmer")
-        @XmlJavaTypeAdapter(Adapter31 .class)
-        protected Double zimmer;
+        @XmlJavaTypeAdapter(Adapter32 .class)
+        protected BigDecimal zimmer;
         @XmlAttribute(name = "FreiAb", required = true)
         @XmlJavaTypeAdapter(Adapter1 .class)
         @XmlSchemaType(name = "date")
@@ -137,10 +138,10 @@ public class WGZimmer
         @XmlAttribute(name = "Rauchen")
         protected RauchenTyp rauchen;
         @XmlAttribute(name = "Etage")
-        @XmlJavaTypeAdapter(Adapter6 .class)
+        @XmlJavaTypeAdapter(Adapter18 .class)
         protected Long etage;
         @XmlAttribute(name = "Etagenzahl")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long etagenzahl;
         @XmlAttribute(name = "BalkonTerrasse")
         protected Boolean balkonTerrasse;
@@ -151,7 +152,7 @@ public class WGZimmer
         @XmlAttribute(name = "Kuehlschrank")
         protected Boolean kuehlschrank;
         @XmlAttribute(name = "AnzahlBadezimmer")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long anzahlBadezimmer;
         @XmlAttribute(name = "WC")
         protected Boolean wc;
@@ -178,27 +179,27 @@ public class WGZimmer
         @XmlAttribute(name = "Heizungsart")
         protected HeizungsartTyp heizungsart;
         @XmlAttribute(name = "AnzahlMaennlicheMitbewohner")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long anzahlMaennlicheMitbewohner;
         @XmlAttribute(name = "AnzahlWeiblicheMitbewohner")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long anzahlWeiblicheMitbewohner;
         @XmlAttribute(name = "AlterDerzeitigeBewohnerVon")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long alterDerzeitigeBewohnerVon;
         @XmlAttribute(name = "AlterDerzeitigeBewohnerBis")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long alterDerzeitigeBewohnerBis;
         @XmlAttribute(name = "AlterGesuchterBewohnerVon")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long alterGesuchterBewohnerVon;
         @XmlAttribute(name = "AlterGesuchterBewohnerBis")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long alterGesuchterBewohnerBis;
         @XmlAttribute(name = "GeschlechtGesuchterBewohner")
         protected WGZimmerGeschlechtTyp geschlechtGesuchterBewohner;
         @XmlAttribute(name = "AnzahlGesuchteMitbewohner")
-        @XmlJavaTypeAdapter(Adapter12 .class)
+        @XmlJavaTypeAdapter(Adapter19 .class)
         protected Long anzahlGesuchteMitbewohner;
         @XmlAttribute(name = "Telefonanschluss")
         protected TelefonanschlussTyp telefonanschluss;
@@ -269,7 +270,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public Double getZimmerflaeche() {
+        public BigDecimal getZimmerflaeche() {
             return zimmerflaeche;
         }
 
@@ -281,7 +282,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public void setZimmerflaeche(Double value) {
+        public void setZimmerflaeche(BigDecimal value) {
             this.zimmerflaeche = value;
         }
 
@@ -293,7 +294,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public Double getGesamtflaeche() {
+        public BigDecimal getGesamtflaeche() {
             return gesamtflaeche;
         }
 
@@ -305,7 +306,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public void setGesamtflaeche(Double value) {
+        public void setGesamtflaeche(BigDecimal value) {
             this.gesamtflaeche = value;
         }
 
@@ -317,7 +318,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public Double getZimmer() {
+        public BigDecimal getZimmer() {
             return zimmer;
         }
 
@@ -329,7 +330,7 @@ public class WGZimmer
          *     {@link String }
          *     
          */
-        public void setZimmer(Double value) {
+        public void setZimmer(BigDecimal value) {
             this.zimmer = value;
         }
 
@@ -1284,17 +1285,17 @@ public class WGZimmer
                 strategy.appendField(locator, this, "wgZimmerKategorie", buffer, theWGZimmerKategorie);
             }
             {
-                Double theZimmerflaeche;
+                BigDecimal theZimmerflaeche;
                 theZimmerflaeche = this.getZimmerflaeche();
                 strategy.appendField(locator, this, "zimmerflaeche", buffer, theZimmerflaeche);
             }
             {
-                Double theGesamtflaeche;
+                BigDecimal theGesamtflaeche;
                 theGesamtflaeche = this.getGesamtflaeche();
                 strategy.appendField(locator, this, "gesamtflaeche", buffer, theGesamtflaeche);
             }
             {
-                Double theZimmer;
+                BigDecimal theZimmer;
                 theZimmer = this.getZimmer();
                 strategy.appendField(locator, this, "zimmer", buffer, theZimmer);
             }
@@ -1517,25 +1518,25 @@ public class WGZimmer
                     copy.wgZimmerKategorie = null;
                 }
                 if (this.zimmerflaeche!= null) {
-                    Double sourceZimmerflaeche;
+                    BigDecimal sourceZimmerflaeche;
                     sourceZimmerflaeche = this.getZimmerflaeche();
-                    Double copyZimmerflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "zimmerflaeche", sourceZimmerflaeche), sourceZimmerflaeche));
+                    BigDecimal copyZimmerflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "zimmerflaeche", sourceZimmerflaeche), sourceZimmerflaeche));
                     copy.setZimmerflaeche(copyZimmerflaeche);
                 } else {
                     copy.zimmerflaeche = null;
                 }
                 if (this.gesamtflaeche!= null) {
-                    Double sourceGesamtflaeche;
+                    BigDecimal sourceGesamtflaeche;
                     sourceGesamtflaeche = this.getGesamtflaeche();
-                    Double copyGesamtflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
+                    BigDecimal copyGesamtflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
                     copy.setGesamtflaeche(copyGesamtflaeche);
                 } else {
                     copy.gesamtflaeche = null;
                 }
                 if (this.zimmer!= null) {
-                    Double sourceZimmer;
+                    BigDecimal sourceZimmer;
                     sourceZimmer = this.getZimmer();
-                    Double copyZimmer = ((Double) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer));
+                    BigDecimal copyZimmer = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer));
                     copy.setZimmer(copyZimmer);
                 } else {
                     copy.zimmer = null;
@@ -1845,7 +1846,7 @@ public class WGZimmer
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof WGZimmer.Type)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -1874,27 +1875,27 @@ public class WGZimmer
                 }
             }
             {
-                Double lhsZimmerflaeche;
+                BigDecimal lhsZimmerflaeche;
                 lhsZimmerflaeche = this.getZimmerflaeche();
-                Double rhsZimmerflaeche;
+                BigDecimal rhsZimmerflaeche;
                 rhsZimmerflaeche = that.getZimmerflaeche();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmerflaeche", lhsZimmerflaeche), LocatorUtils.property(thatLocator, "zimmerflaeche", rhsZimmerflaeche), lhsZimmerflaeche, rhsZimmerflaeche)) {
                     return false;
                 }
             }
             {
-                Double lhsGesamtflaeche;
+                BigDecimal lhsGesamtflaeche;
                 lhsGesamtflaeche = this.getGesamtflaeche();
-                Double rhsGesamtflaeche;
+                BigDecimal rhsGesamtflaeche;
                 rhsGesamtflaeche = that.getGesamtflaeche();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtflaeche", lhsGesamtflaeche), LocatorUtils.property(thatLocator, "gesamtflaeche", rhsGesamtflaeche), lhsGesamtflaeche, rhsGesamtflaeche)) {
                     return false;
                 }
             }
             {
-                Double lhsZimmer;
+                BigDecimal lhsZimmer;
                 lhsZimmer = this.getZimmer();
-                Double rhsZimmer;
+                BigDecimal rhsZimmer;
                 rhsZimmer = that.getZimmer();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmer", lhsZimmer), LocatorUtils.property(thatLocator, "zimmer", rhsZimmer), lhsZimmer, rhsZimmer)) {
                     return false;

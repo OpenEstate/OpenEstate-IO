@@ -62,11 +62,11 @@ public class VerwaltungTechn
     @XmlElement(required = true)
     protected Aktion aktion;
     @XmlElement(name = "aktiv_von", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar aktivVon;
     @XmlElement(name = "aktiv_bis", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar aktivBis;
     @XmlElement(name = "openimmo_obid", required = true)
@@ -74,7 +74,7 @@ public class VerwaltungTechn
     @XmlElement(name = "kennung_ursprung")
     protected String kennungUrsprung;
     @XmlElement(name = "stand_vom", required = true, type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar standVom;
     @XmlElement(name = "weitergabe_generell")
@@ -793,7 +793,7 @@ public class VerwaltungTechn
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof VerwaltungTechn)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

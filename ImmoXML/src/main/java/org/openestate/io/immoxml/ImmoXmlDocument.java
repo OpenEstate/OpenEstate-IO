@@ -110,7 +110,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "immoxml".equals( root.getTagName() );
+    return "immoxml".equals( root.getLocalName() );
   }
 
   /**

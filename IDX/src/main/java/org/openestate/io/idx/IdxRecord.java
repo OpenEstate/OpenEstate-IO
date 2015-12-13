@@ -16,6 +16,7 @@
 
 package org.openestate.io.idx;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -799,11 +800,11 @@ public class IdxRecord extends CsvRecord
     return this.get( FIELD_BILLING_ZIP );
   }
 
-  public Double getCarryingCapacityCrane()
+  public BigDecimal getCarryingCapacityCrane()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_CARRYING_CAPACITY_CRANE ) );
     }
     catch (NumberFormatException ex)
@@ -814,11 +815,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getCarryingCapacityElevator()
+  public BigDecimal getCarryingCapacityElevator()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_CARRYING_CAPACITY_ELEVATOR ) );
     }
     catch (NumberFormatException ex)
@@ -829,11 +830,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getCeilingHeight()
+  public BigDecimal getCeilingHeight()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_CEILING_HEIGHT ) );
     }
     catch (NumberFormatException ex)
@@ -1011,11 +1012,11 @@ public class IdxRecord extends CsvRecord
       this.get( FIELD_GROSS_PREMIUM ) );
   }
 
-  public Double getHallHeight()
+  public BigDecimal getHallHeight()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_HALL_HEIGHT ) );
     }
     catch (NumberFormatException ex)
@@ -1041,11 +1042,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getMaximalFloorLoading()
+  public BigDecimal getMaximalFloorLoading()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_MAXIMAL_FLOOR_LOADING ) );
     }
     catch (NumberFormatException ex)
@@ -1064,11 +1065,11 @@ public class IdxRecord extends CsvRecord
       null;
   }
 
-  public Double getNumberOfApartments()
+  public BigDecimal getNumberOfApartments()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_NUMBER_OF_APARTMENTS ) );
     }
     catch (NumberFormatException ex)
@@ -1094,11 +1095,11 @@ public class IdxRecord extends CsvRecord
     }
   }
 
-  public Double getNumberOfRooms()
+  public BigDecimal getNumberOfRooms()
   {
     try
     {
-      return IdxFormat.parseDouble(
+      return IdxFormat.parseDecimal(
         this.get( FIELD_NUMBER_OF_ROOMS ) );
     }
     catch (NumberFormatException ex)
@@ -1926,8 +1927,13 @@ public class IdxRecord extends CsvRecord
 
   public void setAnimalAllowed( boolean value )
   {
+    this.setAnimalAllowed( Boolean.valueOf( value ) );
+  }
+
+  public void setAnimalAllowed( Boolean value )
+  {
     this.set( FIELD_ANIMAL_ALLOWED,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setAvailableFrom( Calendar value )
@@ -1944,8 +1950,13 @@ public class IdxRecord extends CsvRecord
 
   public void setBalcony( boolean value )
   {
+    this.setBalcony( Boolean.valueOf( value ) );
+  }
+
+  public void setBalcony( Boolean value )
+  {
     this.set( FIELD_BALCONY,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setBillingCompany( String value )
@@ -2028,14 +2039,24 @@ public class IdxRecord extends CsvRecord
 
   public void setBuildingLandConnected( boolean value )
   {
+    this.setBuildingLandConnected( Boolean.valueOf( value ) );
+  }
+
+  public void setBuildingLandConnected( Boolean value )
+  {
     this.set( FIELD_BUILDING_LAND_CONNECTED,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setCableTv( boolean value )
   {
+    this.setCableTv( Boolean.valueOf( value ) );
+  }
+
+  public void setCableTv( Boolean value )
+  {
     this.set( FIELD_CABLETV,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setCarryingCapacityCrane( Number value )
@@ -2058,8 +2079,13 @@ public class IdxRecord extends CsvRecord
 
   public void setChildFriendly( boolean value )
   {
+    this.setChildFriendly( Boolean.valueOf( value ) );
+  }
+
+  public void setChildFriendly( Boolean value )
+  {
     this.set( FIELD_CHILD_FRIENDLY,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   @Deprecated
@@ -2079,14 +2105,25 @@ public class IdxRecord extends CsvRecord
   @Deprecated
   public void setCommissionSharing( boolean value )
   {
+    this.setCommissionSharing( Boolean.valueOf( value ) );
+  }
+
+  @Deprecated
+  public void setCommissionSharing( Boolean value )
+  {
     this.set( FIELD_COMMISSION_SHARING,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setCornerHouse( boolean value )
   {
+    this.setCornerHouse( Boolean.valueOf( value ) );
+  }
+
+  public void setCornerHouse( Boolean value )
+  {
     this.set( FIELD_CORNER_HOUSE,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setCurrency( Currency value )
@@ -2150,20 +2187,35 @@ public class IdxRecord extends CsvRecord
 
   public void setElevator( boolean value )
   {
+    this.setElevator( Boolean.valueOf( value ) );
+  }
+
+  public void setElevator( Boolean value )
+  {
     this.set( FIELD_ELEVATOR,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setFireplace( boolean value )
   {
+    this.setFireplace( Boolean.valueOf( value ) );
+  }
+
+  public void setFireplace( Boolean value )
+  {
     this.set( FIELD_FIREPLACE,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setFlatSharingCommunity( boolean value )
   {
+    this.setFlatSharingCommunity( Boolean.valueOf( value ) );
+  }
+
+  public void setFlatSharingCommunity( Boolean value )
+  {
     this.set( FIELD_FLAT_SHARING_COMMUNITY,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setFloor( Number value )
@@ -2174,20 +2226,35 @@ public class IdxRecord extends CsvRecord
 
   public void setGarage( boolean value )
   {
+    this.setGarage( Boolean.valueOf( value ) );
+  }
+
+  public void setGarage( Boolean value )
+  {
     this.set( FIELD_GARAGE,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setGardenhouse( boolean value )
   {
+    this.setGardenhouse( Boolean.valueOf( value ) );
+  }
+
+  public void setGardenhouse( Boolean value )
+  {
     this.set( FIELD_GARDENHOUSE,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setGasSupply( boolean value )
   {
+    this.setGasSupply( Boolean.valueOf( value ) );
+  }
+
+  public void setGasSupply( Boolean value )
+  {
     this.set( FIELD_GAS_SUPPLY,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setGrossPremium( GrossPremium value )
@@ -2204,8 +2271,13 @@ public class IdxRecord extends CsvRecord
 
   public void setIsdn( boolean value )
   {
+    this.setIsdn( Boolean.valueOf( value ) );
+  }
+
+  public void setIsdn( Boolean value )
+  {
     this.set( FIELD_ISDN,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setLastModified( Calendar value )
@@ -2222,8 +2294,13 @@ public class IdxRecord extends CsvRecord
 
   public void setLiftingPlatform( boolean value )
   {
+    this.setLiftingPlatform( Boolean.valueOf( value ) );
+  }
+
+  public void setLiftingPlatform( Boolean value )
+  {
     this.set( FIELD_LIFTING_PLATFORM,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setMaximalFloorLoading( Number value )
@@ -2234,20 +2311,35 @@ public class IdxRecord extends CsvRecord
 
   public void setMiddleHouse( boolean value )
   {
+    this.setMiddleHouse( Boolean.valueOf( value ) );
+  }
+
+  public void setMiddleHouse( Boolean value )
+  {
     this.set( FIELD_MIDDLE_HOUSE,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setMinEnergyCertified( boolean value )
   {
+    this.setMinEnergyCertified( Boolean.valueOf( value ) );
+  }
+
+  public void setMinEnergyCertified( Boolean value )
+  {
     this.set( FIELD_MINENERGY_CERTIFIED,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setMinEnergyGeneral( boolean value )
   {
+    this.setMinEnergyGeneral( Boolean.valueOf( value ) );
+  }
+
+  public void setMinEnergyGeneral( Boolean value )
+  {
     this.set( FIELD_MINENERGY_GENERAL,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setMovie( Media value )
@@ -2263,14 +2355,25 @@ public class IdxRecord extends CsvRecord
   @Deprecated
   public void setMunicipalInfo( boolean value )
   {
+    this.setMunicipalInfo( Boolean.valueOf( value ) );
+  }
+
+  @Deprecated
+  public void setMunicipalInfo( Boolean value )
+  {
     this.set( FIELD_MUNICIPAL_INFO,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setNewBuilding( boolean value )
   {
+    this.setNewBuilding( Boolean.valueOf( value ) );
+  }
+
+  public void setNewBuilding( Boolean value )
+  {
     this.set( FIELD_NEW_BUILDING,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setNumberOfApartments( Number value )
@@ -2357,8 +2460,13 @@ public class IdxRecord extends CsvRecord
 
   public void setOldBuilding( boolean value )
   {
+    this.setOldBuilding( Boolean.valueOf( value ) );
+  }
+
+  public void setOldBuilding( Boolean value )
+  {
     this.set( FIELD_OLD_BUILDING,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setOfferType( OfferType value )
@@ -2375,8 +2483,13 @@ public class IdxRecord extends CsvRecord
 
   public void setParking( boolean value )
   {
+    this.setParking( Boolean.valueOf( value ) );
+  }
+
+  public void setParking( Boolean value )
+  {
     this.set( FIELD_PARKING,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setPicture( Media value, int i )
@@ -2600,8 +2713,13 @@ public class IdxRecord extends CsvRecord
 
   public void setPowerSupply( boolean value )
   {
+    this.setPowerSupply( Boolean.valueOf( value ) );
+  }
+
+  public void setPowerSupply( Boolean value )
+  {
     this.set( FIELD_POWER_SUPPLY,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setPriceUnit( PriceUnit value )
@@ -2626,20 +2744,35 @@ public class IdxRecord extends CsvRecord
 
   public void setRailwayTerminal( boolean value )
   {
+    this.setRailwayTerminal( Boolean.valueOf( value ) );
+  }
+
+  public void setRailwayTerminal( Boolean value )
+  {
     this.set( FIELD_RAILWAY_TERMINAL,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setRaisedGroundFloor( boolean value )
   {
+    this.setRaisedGroundFloor( Boolean.valueOf( value ) );
+  }
+
+  public void setRaisedGroundFloor( Boolean value )
+  {
     this.set( FIELD_RAISED_GROUND_FLOOR,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setRamp( boolean value )
   {
+    this.setRamp( Boolean.valueOf( value ) );
+  }
+
+  public void setRamp( Boolean value )
+  {
     this.set( FIELD_RAMP,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setRefHouse( String value )
@@ -2681,15 +2814,26 @@ public class IdxRecord extends CsvRecord
 
   public void setRestrooms( boolean value )
   {
+    this.setRestrooms( Boolean.valueOf( value ) );
+  }
+
+  public void setRestrooms( Boolean value )
+  {
     this.set( FIELD_RESTROOMS,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   @Deprecated
   public void setRoofFloor( boolean value )
   {
+    this.setRoofFloor( Boolean.valueOf( value ) );
+  }
+
+  @Deprecated
+  public void setRoofFloor( Boolean value )
+  {
     this.set( FIELD_ROOF_FLOOR,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setSellingPrice( Number value )
@@ -2706,8 +2850,13 @@ public class IdxRecord extends CsvRecord
 
   public void setSewageSupply( boolean value )
   {
+    this.setSewageSupply( Boolean.valueOf( value ) );
+  }
+
+  public void setSewageSupply( Boolean value )
+  {
     this.set( FIELD_SEWAGE_SUPPLY,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setSparefield1( String value )
@@ -2754,20 +2903,35 @@ public class IdxRecord extends CsvRecord
 
   public void setSwimmingpool( boolean value )
   {
+    this.setSwimmingpool( Boolean.valueOf( value ) );
+  }
+
+  public void setSwimmingpool( Boolean value )
+  {
     this.set( FIELD_SWIMMINGPOOL,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setUnderBuildingLaws( boolean value )
   {
+    this.setUnderBuildingLaws( Boolean.valueOf( value ) );
+  }
+
+  public void setUnderBuildingLaws( Boolean value )
+  {
     this.set( FIELD_UNDER_BUILDING_LAWS,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setUnderRoof( boolean value )
   {
+    this.setUnderRoof( Boolean.valueOf( value ) );
+  }
+
+  public void setUnderRoof( Boolean value )
+  {
     this.set( FIELD_UNDER_ROOF,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setUrl( String value )
@@ -2784,8 +2948,13 @@ public class IdxRecord extends CsvRecord
 
   public void setView( boolean value )
   {
+    this.setView( Boolean.valueOf( value ) );
+  }
+
+  public void setView( Boolean value )
+  {
     this.set( FIELD_VIEW,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   @Deprecated
@@ -2821,14 +2990,24 @@ public class IdxRecord extends CsvRecord
 
   public void setWaterSupply( boolean value )
   {
+    this.setWaterSupply( Boolean.valueOf( value ) );
+  }
+
+  public void setWaterSupply( Boolean value )
+  {
     this.set( FIELD_WATER_SUPPLY,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setWheelcharAccessible( boolean value )
   {
+    this.setWheelcharAccessible( Boolean.valueOf( value ) );
+  }
+
+  public void setWheelcharAccessible( Boolean value )
+  {
     this.set( FIELD_WHEELCHAIR_ACCESSIBLE,
-      IdxFormat.printBoolean( value ) );
+      IdxFormat.printBoolean( (value!=null)? value: false ) );
   }
 
   public void setYearBuilt( Number value )

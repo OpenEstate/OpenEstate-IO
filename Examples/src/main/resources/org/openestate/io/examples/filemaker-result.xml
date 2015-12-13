@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FMPXMLRESULT xmlns="http://www.filemaker.com/fmpxmlresult">
+  <ERRORCODE>0</ERRORCODE>
+  <PRODUCT BUILD="5/23/2002" NAME="FileMaker Pro" VERSION="7.0"/>
+  <DATABASE DATEFORMAT="dd.MM.yy" LAYOUT="Zusammenfassung" NAME="Mitarbeiter.fp7" RECORDS="23" TIMEFORMAT="hh:mm:ss"/>
+  <METADATA>
+    <FIELD EMPTYOK="NO" MAXREPEAT="1" NAME="Vorname" TYPE="TEXT"/>
+    <FIELD EMPTYOK="NO" MAXREPEAT="1" NAME="Nachname" TYPE="TEXT"/>
+    <FIELD EMPTYOK="YES" MAXREPEAT="1" NAME="Abteilung" TYPE="TEXT"/>
+  </METADATA>
+  <RESULTSET FOUND="2">
+    <ROW MODID="47" RECORDID="34">
+      <COL>
+        <DATA>Johann</DATA>
+      </COL>
+      <COL>
+        <DATA>Schmidt</DATA>
+      </COL>
+      <COL>
+        <DATA>Konstruktion</DATA>
+      </COL>
+    </ROW>
+    <ROW MODID="89" RECORDID="78">
+      <COL>
+        <DATA>Susanne</DATA>
+      </COL>
+      <COL>
+        <DATA>Jonas</DATA>
+      </COL>
+      <COL>
+        <DATA>Marketing</DATA>
+      </COL>
+    </ROW>
+  </RESULTSET>
+</FMPXMLRESULT>

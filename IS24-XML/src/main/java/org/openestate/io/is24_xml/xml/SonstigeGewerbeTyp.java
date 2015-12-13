@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,21 +28,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SonstigeGewerbeTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp2"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}SonstigeGewerbeKategorieTyp" />
- *       &lt;attribute name="Hauptflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" default="keineAngabe" />
- *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="SonstigeGewerbeTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp2"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}SonstigeGewerbeKategorieTyp" /&gt;
+ *       &lt;attribute name="Hauptflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -63,11 +64,11 @@ public class SonstigeGewerbeTyp
     @XmlAttribute(name = "Objektkategorie2", required = true)
     protected SonstigeGewerbeKategorieTyp objektkategorie2;
     @XmlAttribute(name = "Hauptflaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double hauptflaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal hauptflaeche;
     @XmlAttribute(name = "GrundstuecksFlaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double grundstuecksFlaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal grundstuecksFlaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Denkmalschutzobjekt")
@@ -131,7 +132,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public Double getHauptflaeche() {
+    public BigDecimal getHauptflaeche() {
         return hauptflaeche;
     }
 
@@ -143,7 +144,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public void setHauptflaeche(Double value) {
+    public void setHauptflaeche(BigDecimal value) {
         this.hauptflaeche = value;
     }
 
@@ -155,7 +156,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public Double getGrundstuecksFlaeche() {
+    public BigDecimal getGrundstuecksFlaeche() {
         return grundstuecksFlaeche;
     }
 
@@ -167,7 +168,7 @@ public class SonstigeGewerbeTyp
      *     {@link String }
      *     
      */
-    public void setGrundstuecksFlaeche(Double value) {
+    public void setGrundstuecksFlaeche(BigDecimal value) {
         this.grundstuecksFlaeche = value;
     }
 
@@ -274,12 +275,12 @@ public class SonstigeGewerbeTyp
             strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
         }
         {
-            Double theHauptflaeche;
+            BigDecimal theHauptflaeche;
             theHauptflaeche = this.getHauptflaeche();
             strategy.appendField(locator, this, "hauptflaeche", buffer, theHauptflaeche);
         }
         {
-            Double theGrundstuecksFlaeche;
+            BigDecimal theGrundstuecksFlaeche;
             theGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
             strategy.appendField(locator, this, "grundstuecksFlaeche", buffer, theGrundstuecksFlaeche);
         }
@@ -332,17 +333,17 @@ public class SonstigeGewerbeTyp
                 copy.objektkategorie2 = null;
             }
             if (this.hauptflaeche!= null) {
-                Double sourceHauptflaeche;
+                BigDecimal sourceHauptflaeche;
                 sourceHauptflaeche = this.getHauptflaeche();
-                Double copyHauptflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "hauptflaeche", sourceHauptflaeche), sourceHauptflaeche));
+                BigDecimal copyHauptflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hauptflaeche", sourceHauptflaeche), sourceHauptflaeche));
                 copy.setHauptflaeche(copyHauptflaeche);
             } else {
                 copy.hauptflaeche = null;
             }
             if (this.grundstuecksFlaeche!= null) {
-                Double sourceGrundstuecksFlaeche;
+                BigDecimal sourceGrundstuecksFlaeche;
                 sourceGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-                Double copyGrundstuecksFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
+                BigDecimal copyGrundstuecksFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
                 copy.setGrundstuecksFlaeche(copyGrundstuecksFlaeche);
             } else {
                 copy.grundstuecksFlaeche = null;
@@ -380,7 +381,7 @@ public class SonstigeGewerbeTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof SonstigeGewerbeTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -409,18 +410,18 @@ public class SonstigeGewerbeTyp
             }
         }
         {
-            Double lhsHauptflaeche;
+            BigDecimal lhsHauptflaeche;
             lhsHauptflaeche = this.getHauptflaeche();
-            Double rhsHauptflaeche;
+            BigDecimal rhsHauptflaeche;
             rhsHauptflaeche = that.getHauptflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hauptflaeche", lhsHauptflaeche), LocatorUtils.property(thatLocator, "hauptflaeche", rhsHauptflaeche), lhsHauptflaeche, rhsHauptflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsGrundstuecksFlaeche;
+            BigDecimal lhsGrundstuecksFlaeche;
             lhsGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-            Double rhsGrundstuecksFlaeche;
+            BigDecimal rhsGrundstuecksFlaeche;
             rhsGrundstuecksFlaeche = that.getGrundstuecksFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksFlaeche", lhsGrundstuecksFlaeche), LocatorUtils.property(thatLocator, "grundstuecksFlaeche", rhsGrundstuecksFlaeche), lhsGrundstuecksFlaeche, rhsGrundstuecksFlaeche)) {
                 return false;

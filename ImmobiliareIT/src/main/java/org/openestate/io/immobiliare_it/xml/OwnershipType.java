@@ -12,16 +12,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ownershipType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="intera propriet\u00e0"/>
- *     &lt;enumeration value="nuda propriet\u00e0"/>
- *     &lt;enumeration value="parziale propriet\u00e0"/>
- *     &lt;enumeration value="usufrutto"/>
- *     &lt;enumeration value="multipropriet\u00e0"/>
- *     &lt;enumeration value="diritto di superficie"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ownershipType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="intera propriet\u00e0"/&gt;
+ *     &lt;enumeration value="nuda propriet\u00e0"/&gt;
+ *     &lt;enumeration value="parziale propriet\u00e0"/&gt;
+ *     &lt;enumeration value="usufrutto"/&gt;
+ *     &lt;enumeration value="multipropriet\u00e0"/&gt;
+ *     &lt;enumeration value="diritto di superficie"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

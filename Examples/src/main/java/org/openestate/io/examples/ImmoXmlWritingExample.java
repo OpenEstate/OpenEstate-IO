@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
 import java.util.Locale;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
@@ -171,8 +172,8 @@ public class ImmoXmlWritingExample
 
     // add some informations about prices
     immobilie.setPreise( FACTORY.createPreise() );
-    immobilie.getPreise().setHeizkosten( 456.0 );
-    immobilie.getPreise().setKaufpreis( 123456.79 );
+    immobilie.getPreise().setHeizkosten( new BigDecimal( "456.0" ) );
+    immobilie.getPreise().setKaufpreis( new BigDecimal( "123456.79" ) );
 
     // add some informations about features
     immobilie.setAusstattung( FACTORY.createAusstattung() );

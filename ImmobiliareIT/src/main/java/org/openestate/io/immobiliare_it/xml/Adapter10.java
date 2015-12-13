@@ -4,16 +4,16 @@ package org.openestate.io.immobiliare_it.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter10
-    extends XmlAdapter<String, Double>
+    extends XmlAdapter<String, Integer>
 {
 
 
-    public Double unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLatitude(value));
+    public Integer unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseRooms(value));
     }
 
-    public String marshal(Double value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLatitude(value));
+    public String marshal(Integer value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printRooms(value));
     }
 
 }

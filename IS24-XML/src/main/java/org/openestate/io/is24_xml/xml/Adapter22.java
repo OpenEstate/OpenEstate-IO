@@ -4,16 +4,16 @@ package org.openestate.io.is24_xml.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter22
-    extends XmlAdapter<String, Double>
+    extends XmlAdapter<String, Long>
 {
 
 
-    public Double unmarshal(String value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.parseZahl152(value));
+    public Long unmarshal(String value) {
+        return (org.openestate.io.is24_xml.Is24XmlUtils.parseZahl4(value));
     }
 
-    public String marshal(Double value) {
-        return (org.openestate.io.is24_xml.Is24XmlUtils.printZahl152(value));
+    public String marshal(Long value) {
+        return (org.openestate.io.is24_xml.Is24XmlUtils.printZahl4(value));
     }
 
 }

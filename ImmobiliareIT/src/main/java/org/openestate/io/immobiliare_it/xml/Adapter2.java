@@ -1,18 +1,19 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter2
-    extends XmlAdapter<String, Long>
+    extends XmlAdapter<String, BigInteger>
 {
 
 
-    public Long unmarshal(String value) {
+    public BigInteger unmarshal(String value) {
         return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseInteger(value));
     }
 
-    public String marshal(Long value) {
+    public String marshal(BigInteger value) {
         return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printInteger(value));
     }
 

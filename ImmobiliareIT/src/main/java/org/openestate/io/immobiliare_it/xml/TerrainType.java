@@ -12,38 +12,38 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="terrainType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="seminativo"/>
- *     &lt;enumeration value="seminativo irriguo"/>
- *     &lt;enumeration value="seminativo arborato"/>
- *     &lt;enumeration value="seminativo arborato irriguo"/>
- *     &lt;enumeration value="prato"/>
- *     &lt;enumeration value="prato irriguo"/>
- *     &lt;enumeration value="prato arborato"/>
- *     &lt;enumeration value="prato a marcita"/>
- *     &lt;enumeration value="risaia stabile"/>
- *     &lt;enumeration value="pascolo"/>
- *     &lt;enumeration value="pascolo arborato"/>
- *     &lt;enumeration value="pascolo cespugliato"/>
- *     &lt;enumeration value="giardino"/>
- *     &lt;enumeration value="orto"/>
- *     &lt;enumeration value="orto irriguo"/>
- *     &lt;enumeration value="agrumeto"/>
- *     &lt;enumeration value="vigneto"/>
- *     &lt;enumeration value="uliveto"/>
- *     &lt;enumeration value="frutteto"/>
- *     &lt;enumeration value="gelseto"/>
- *     &lt;enumeration value="colture speciali"/>
- *     &lt;enumeration value="castagneto da frutto"/>
- *     &lt;enumeration value="canneto"/>
- *     &lt;enumeration value="bosco alto fusto"/>
- *     &lt;enumeration value="bosco ceduo"/>
- *     &lt;enumeration value="bosco misto"/>
- *     &lt;enumeration value="incolto produttivo"/>
- *     &lt;enumeration value="incolto sterile"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="terrainType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="seminativo"/&gt;
+ *     &lt;enumeration value="seminativo irriguo"/&gt;
+ *     &lt;enumeration value="seminativo arborato"/&gt;
+ *     &lt;enumeration value="seminativo arborato irriguo"/&gt;
+ *     &lt;enumeration value="prato"/&gt;
+ *     &lt;enumeration value="prato irriguo"/&gt;
+ *     &lt;enumeration value="prato arborato"/&gt;
+ *     &lt;enumeration value="prato a marcita"/&gt;
+ *     &lt;enumeration value="risaia stabile"/&gt;
+ *     &lt;enumeration value="pascolo"/&gt;
+ *     &lt;enumeration value="pascolo arborato"/&gt;
+ *     &lt;enumeration value="pascolo cespugliato"/&gt;
+ *     &lt;enumeration value="giardino"/&gt;
+ *     &lt;enumeration value="orto"/&gt;
+ *     &lt;enumeration value="orto irriguo"/&gt;
+ *     &lt;enumeration value="agrumeto"/&gt;
+ *     &lt;enumeration value="vigneto"/&gt;
+ *     &lt;enumeration value="uliveto"/&gt;
+ *     &lt;enumeration value="frutteto"/&gt;
+ *     &lt;enumeration value="gelseto"/&gt;
+ *     &lt;enumeration value="colture speciali"/&gt;
+ *     &lt;enumeration value="castagneto da frutto"/&gt;
+ *     &lt;enumeration value="canneto"/&gt;
+ *     &lt;enumeration value="bosco alto fusto"/&gt;
+ *     &lt;enumeration value="bosco ceduo"/&gt;
+ *     &lt;enumeration value="bosco misto"/&gt;
+ *     &lt;enumeration value="incolto produttivo"/&gt;
+ *     &lt;enumeration value="incolto sterile"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

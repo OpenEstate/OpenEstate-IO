@@ -12,17 +12,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="BodenbelagWohnenTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="keineAngabe"/>
- *     &lt;enumeration value="Fliesen"/>
- *     &lt;enumeration value="Dielen"/>
- *     &lt;enumeration value="Laminat"/>
- *     &lt;enumeration value="Parkett"/>
- *     &lt;enumeration value="PVC"/>
- *     &lt;enumeration value="Teppichboden"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="BodenbelagWohnenTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Fliesen"/&gt;
+ *     &lt;enumeration value="Dielen"/&gt;
+ *     &lt;enumeration value="Laminat"/&gt;
+ *     &lt;enumeration value="Parkett"/&gt;
+ *     &lt;enumeration value="PVC"/&gt;
+ *     &lt;enumeration value="Teppichboden"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -136,7 +138,7 @@ public class KyeroWritingExample
     agent.setCountry( "Germany" );
     agent.setEmail( "test@test.org" );
     agent.setFax( "030/123456" );
-    agent.setId( RandomUtils.nextLong( 1, 10000 ) );
+    agent.setId( BigInteger.valueOf( RandomUtils.nextLong( 1, 10000 ) ) );
     agent.setMob( "030/123457" );
     agent.setName( "name of the company" );
     agent.setPostcode( "12345" );
@@ -173,8 +175,8 @@ public class KyeroWritingExample
 
     // create an example real estate
     PropertyType obj = FACTORY.createPropertyType();
-    obj.setBaths( RandomUtils.nextLong( 0, 5 ) );
-    obj.setBeds( RandomUtils.nextLong( 0, 5 ) );
+    obj.setBaths( BigInteger.valueOf( RandomUtils.nextLong( 0, 5 ) ) );
+    obj.setBeds( BigInteger.valueOf( RandomUtils.nextLong( 0, 5 ) ) );
     obj.setCurrency( CurrencyType.EUR );
     obj.setDate( Calendar.getInstance() );
     obj.setId( id );
@@ -243,12 +245,12 @@ public class KyeroWritingExample
     obj.getImages().getImage().add( createPropertyImage( id, ++imageCount ) );
 
     obj.setLocation( FACTORY.createGpsLocationType() );
-    obj.getLocation().setLatitude( RandomUtils.nextDouble( 0, 90 ) );
-    obj.getLocation().setLongitude( RandomUtils.nextDouble( 0, 90 ) );
+    obj.getLocation().setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
+    obj.getLocation().setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
 
     obj.setSurfaceArea( FACTORY.createSurfaceType() );
-    obj.getSurfaceArea().setBuilt( RandomUtils.nextLong( 50, 250 ) );
-    obj.getSurfaceArea().setPlot( RandomUtils.nextLong( 100, 1500 ) );
+    obj.getSurfaceArea().setBuilt( BigInteger.valueOf( RandomUtils.nextLong( 50, 250 ) ) );
+    obj.getSurfaceArea().setPlot( BigInteger.valueOf( RandomUtils.nextLong( 100, 1500 ) ) );
 
     obj.setUrl( FACTORY.createUrlType() );
     try

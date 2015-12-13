@@ -27,21 +27,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="businessElement">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://feed.immobiliare.it>PropertyTypeBusiness">
- *       &lt;attribute name="category">
- *         &lt;simpleType>
- *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *             &lt;enumeration value="Attivit\u00e0"/>
- *             &lt;enumeration value="Immobile"/>
- *             &lt;enumeration value="Terreno"/>
- *           &lt;/restriction>
- *         &lt;/simpleType>
- *       &lt;/attribute>
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
+ * &lt;complexType name="businessElement"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://feed.immobiliare.it&gt;PropertyTypeBusiness"&gt;
+ *       &lt;attribute name="category"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;enumeration value="Attivit\u00e0"/&gt;
+ *             &lt;enumeration value="Immobile"/&gt;
+ *             &lt;enumeration value="Terreno"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -173,7 +173,7 @@ public class BusinessElement
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof BusinessElement)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -213,13 +213,13 @@ public class BusinessElement
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="Attivit\u00e0"/>
-     *     &lt;enumeration value="Immobile"/>
-     *     &lt;enumeration value="Terreno"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="Attivit\u00e0"/&gt;
+     *     &lt;enumeration value="Immobile"/&gt;
+     *     &lt;enumeration value="Terreno"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */

@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -44,24 +45,24 @@ public class Zwangsversteigerung
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungTyp">
-     *       &lt;sequence>
-     *         &lt;element name="Aenderungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-     *         &lt;element name="Amtsgericht" type="{http://www.immobilienscout24.de/immobilientransfer}AmtsgerichtTyp"/>
-     *         &lt;element name="Aufhebungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
-     *         &lt;element name="Eigentuemer" type="{http://www.immobilienscout24.de/immobilientransfer}Text80Typ"/>
-     *         &lt;element name="Erfassungsdatum" type="{http://www.w3.org/2001/XMLSchema}date"/>
-     *         &lt;element name="Grundbuchblattnummer" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ"/>
-     *         &lt;element name="Objektart" type="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungKategorieTyp"/>
-     *         &lt;element name="Preis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ"/>
-     *         &lt;element name="Versteigerungstermin" type="{http://www.immobilienscout24.de/immobilientransfer}VersteigerungsterminTyp"/>
-     *       &lt;/sequence>
-     *       &lt;attribute name="Gesamtflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
-     *     &lt;/extension>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungTyp"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Aenderungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
+     *         &lt;element name="Amtsgericht" type="{http://www.immobilienscout24.de/immobilientransfer}AmtsgerichtTyp"/&gt;
+     *         &lt;element name="Aufhebungsdatum" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/&gt;
+     *         &lt;element name="Eigentuemer" type="{http://www.immobilienscout24.de/immobilientransfer}Text80Typ"/&gt;
+     *         &lt;element name="Erfassungsdatum" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
+     *         &lt;element name="Grundbuchblattnummer" type="{http://www.immobilienscout24.de/immobilientransfer}Text40Typ"/&gt;
+     *         &lt;element name="Objektart" type="{http://www.immobilienscout24.de/immobilientransfer}ZwangsversteigerungKategorieTyp"/&gt;
+     *         &lt;element name="Preis" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ"/&gt;
+     *         &lt;element name="Versteigerungstermin" type="{http://www.immobilienscout24.de/immobilientransfer}VersteigerungsterminTyp"/&gt;
+     *       &lt;/sequence&gt;
+     *       &lt;attribute name="Gesamtflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -94,25 +95,27 @@ public class Zwangsversteigerung
         @XmlSchemaType(name = "date")
         protected Calendar aufhebungsdatum;
         @XmlElement(name = "Eigentuemer", required = true)
-        @XmlJavaTypeAdapter(Adapter18 .class)
+        @XmlJavaTypeAdapter(Adapter8 .class)
         protected String eigentuemer;
         @XmlElement(name = "Erfassungsdatum", required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter1 .class)
         @XmlSchemaType(name = "date")
         protected Calendar erfassungsdatum;
         @XmlElement(name = "Grundbuchblattnummer", required = true)
-        @XmlJavaTypeAdapter(Adapter26 .class)
+        @XmlJavaTypeAdapter(Adapter6 .class)
         protected String grundbuchblattnummer;
         @XmlElement(name = "Objektart", required = true)
+        @XmlSchemaType(name = "string")
         protected ZwangsversteigerungKategorieTyp objektart;
         @XmlElement(name = "Preis", required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter22 .class)
-        protected Double preis;
+        @XmlJavaTypeAdapter(Adapter35 .class)
+        @XmlSchemaType(name = "decimal")
+        protected BigDecimal preis;
         @XmlElement(name = "Versteigerungstermin", required = true)
         protected VersteigerungsterminTyp versteigerungstermin;
         @XmlAttribute(name = "Gesamtflaeche", required = true)
-        @XmlJavaTypeAdapter(Adapter35 .class)
-        protected Double gesamtflaeche;
+        @XmlJavaTypeAdapter(Adapter34 .class)
+        protected BigDecimal gesamtflaeche;
 
         /**
          * Gets the value of the aenderungsdatum property.
@@ -290,7 +293,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public Double getPreis() {
+        public BigDecimal getPreis() {
             return preis;
         }
 
@@ -302,7 +305,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public void setPreis(Double value) {
+        public void setPreis(BigDecimal value) {
             this.preis = value;
         }
 
@@ -338,7 +341,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public Double getGesamtflaeche() {
+        public BigDecimal getGesamtflaeche() {
             return gesamtflaeche;
         }
 
@@ -350,7 +353,7 @@ public class Zwangsversteigerung
          *     {@link String }
          *     
          */
-        public void setGesamtflaeche(Double value) {
+        public void setGesamtflaeche(BigDecimal value) {
             this.gesamtflaeche = value;
         }
 
@@ -406,7 +409,7 @@ public class Zwangsversteigerung
                 strategy.appendField(locator, this, "objektart", buffer, theObjektart);
             }
             {
-                Double thePreis;
+                BigDecimal thePreis;
                 thePreis = this.getPreis();
                 strategy.appendField(locator, this, "preis", buffer, thePreis);
             }
@@ -416,7 +419,7 @@ public class Zwangsversteigerung
                 strategy.appendField(locator, this, "versteigerungstermin", buffer, theVersteigerungstermin);
             }
             {
-                Double theGesamtflaeche;
+                BigDecimal theGesamtflaeche;
                 theGesamtflaeche = this.getGesamtflaeche();
                 strategy.appendField(locator, this, "gesamtflaeche", buffer, theGesamtflaeche);
             }
@@ -494,9 +497,9 @@ public class Zwangsversteigerung
                     copy.objektart = null;
                 }
                 if (this.preis!= null) {
-                    Double sourcePreis;
+                    BigDecimal sourcePreis;
                     sourcePreis = this.getPreis();
-                    Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                    BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                     copy.setPreis(copyPreis);
                 } else {
                     copy.preis = null;
@@ -510,9 +513,9 @@ public class Zwangsversteigerung
                     copy.versteigerungstermin = null;
                 }
                 if (this.gesamtflaeche!= null) {
-                    Double sourceGesamtflaeche;
+                    BigDecimal sourceGesamtflaeche;
                     sourceGesamtflaeche = this.getGesamtflaeche();
-                    Double copyGesamtflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
+                    BigDecimal copyGesamtflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gesamtflaeche", sourceGesamtflaeche), sourceGesamtflaeche));
                     copy.setGesamtflaeche(copyGesamtflaeche);
                 } else {
                     copy.gesamtflaeche = null;
@@ -526,7 +529,7 @@ public class Zwangsversteigerung
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof Zwangsversteigerung.Type)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -600,9 +603,9 @@ public class Zwangsversteigerung
                 }
             }
             {
-                Double lhsPreis;
+                BigDecimal lhsPreis;
                 lhsPreis = this.getPreis();
-                Double rhsPreis;
+                BigDecimal rhsPreis;
                 rhsPreis = that.getPreis();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                     return false;
@@ -618,9 +621,9 @@ public class Zwangsversteigerung
                 }
             }
             {
-                Double lhsGesamtflaeche;
+                BigDecimal lhsGesamtflaeche;
                 lhsGesamtflaeche = this.getGesamtflaeche();
-                Double rhsGesamtflaeche;
+                BigDecimal rhsGesamtflaeche;
                 rhsGesamtflaeche = that.getGesamtflaeche();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "gesamtflaeche", lhsGesamtflaeche), LocatorUtils.property(thatLocator, "gesamtflaeche", rhsGesamtflaeche), lhsGesamtflaeche, rhsGesamtflaeche)) {
                     return false;

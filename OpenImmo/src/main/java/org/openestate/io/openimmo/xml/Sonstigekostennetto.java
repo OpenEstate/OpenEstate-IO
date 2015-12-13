@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -38,13 +39,13 @@ public class Sonstigekostennetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "sonstigekostenust")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double sonstigekostenust;
+    protected BigDecimal sonstigekostenust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Sonstigekostennetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Sonstigekostennetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Sonstigekostennetto
      *     {@link String }
      *     
      */
-    public Double getSonstigekostenust() {
+    public BigDecimal getSonstigekostenust() {
         return sonstigekostenust;
     }
 
@@ -90,7 +91,7 @@ public class Sonstigekostennetto
      *     {@link String }
      *     
      */
-    public void setSonstigekostenust(Double value) {
+    public void setSonstigekostenust(BigDecimal value) {
         this.sonstigekostenust = value;
     }
 
@@ -110,12 +111,12 @@ public class Sonstigekostennetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theSonstigekostenust;
+            BigDecimal theSonstigekostenust;
             theSonstigekostenust = this.getSonstigekostenust();
             strategy.appendField(locator, this, "sonstigekostenust", buffer, theSonstigekostenust);
         }
@@ -136,17 +137,17 @@ public class Sonstigekostennetto
         if (draftCopy instanceof Sonstigekostennetto) {
             final Sonstigekostennetto copy = ((Sonstigekostennetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.sonstigekostenust!= null) {
-                Double sourceSonstigekostenust;
+                BigDecimal sourceSonstigekostenust;
                 sourceSonstigekostenust = this.getSonstigekostenust();
-                Double copySonstigekostenust = ((Double) strategy.copy(LocatorUtils.property(locator, "sonstigekostenust", sourceSonstigekostenust), sourceSonstigekostenust));
+                BigDecimal copySonstigekostenust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "sonstigekostenust", sourceSonstigekostenust), sourceSonstigekostenust));
                 copy.setSonstigekostenust(copySonstigekostenust);
             } else {
                 copy.sonstigekostenust = null;
@@ -160,7 +161,7 @@ public class Sonstigekostennetto
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Sonstigekostennetto)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -168,18 +169,18 @@ public class Sonstigekostennetto
         }
         final Sonstigekostennetto that = ((Sonstigekostennetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsSonstigekostenust;
+            BigDecimal lhsSonstigekostenust;
             lhsSonstigekostenust = this.getSonstigekostenust();
-            Double rhsSonstigekostenust;
+            BigDecimal rhsSonstigekostenust;
             rhsSonstigekostenust = that.getSonstigekostenust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstigekostenust", lhsSonstigekostenust), LocatorUtils.property(thatLocator, "sonstigekostenust", rhsSonstigekostenust), lhsSonstigekostenust, rhsSonstigekostenust)) {
                 return false;

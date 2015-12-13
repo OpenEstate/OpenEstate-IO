@@ -16,18 +16,22 @@
 
 package org.openestate.io.trovit.xml.types;
 
+import java.io.Serializable;
+import java.math.BigInteger;
+
 /**
  * IntBool.
  *
  * @since 1.0
  * @author Andreas Rudolph
  */
-public class IntBool
+public class IntBool implements Serializable
 {
-  public Integer intValue;
+  private final static long serialVersionUID = 425176874298955006L;
+  public BigInteger intValue;
   public Boolean boolValue;
 
-  public IntBool( Integer intValue )
+  public IntBool( BigInteger intValue )
   {
     this.boolValue = null;
     this.intValue = intValue;
@@ -44,7 +48,7 @@ public class IntBool
     return boolValue;
   }
 
-  public Integer getIntValue()
+  public BigInteger getIntValue()
   {
     return intValue;
   }
@@ -55,7 +59,7 @@ public class IntBool
     this.boolValue = boolValue;
   }
 
-  public void setIntValue( Integer intValue )
+  public void setIntValue( BigInteger intValue )
   {
     this.boolValue = null;
     this.intValue = intValue;

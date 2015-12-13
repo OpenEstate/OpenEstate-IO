@@ -19,14 +19,14 @@ package org.openestate.io.wis_it;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -301,16 +301,16 @@ public class WisItUtils
     throw new IllegalArgumentException( "Can't parse date-time value '"+value+"'!" );
   }
 
-  public static Double parseDecimal( String value )
+  public static BigDecimal parseDecimal( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Integer parseInteger( String value )
+  public static BigInteger parseNonNegativeInteger( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseInt( value ): null;
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
   public static Boolean parseYesNo( String value )
@@ -334,32 +334,21 @@ public class WisItUtils
       return getDateTimeFormat().format( value.getTime() );
   }
 
-  public static String printDecimal( Double value )
+  public static String printDecimal( BigDecimal value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print decimal value!" );
-
-    NumberFormat formatter = NumberFormat.getInstance( Locale.ENGLISH );
-    formatter.setGroupingUsed( false );
-    formatter.setMaximumFractionDigits( 2 );
-    return formatter.format( value );
+    else
+      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printNonNegativeInteger( Integer value )
+  public static String printNonNegativeInteger( BigInteger value )
   {
-    if (value==null || value<0)
+    if (value==null || value.compareTo( BigInteger.ZERO )==-1)
       throw new IllegalArgumentException( "Can't print integer value!" );
     else
-      return DatatypeConverter.printInt( value );
+      return DatatypeConverter.printInteger( value );
   }
-
-  /*public static String printPositiveInteger( Integer value )
-  {
-    if (value==null || value<1)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return DatatypeConverter.printInt( value );
-  }*/
 
   public static String printYesNo( Boolean value )
   {

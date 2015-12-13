@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -38,13 +39,13 @@ public class Summemietenetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "summemieteust")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double summemieteust;
+    protected BigDecimal summemieteust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Summemietenetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Summemietenetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Summemietenetto
      *     {@link String }
      *     
      */
-    public Double getSummemieteust() {
+    public BigDecimal getSummemieteust() {
         return summemieteust;
     }
 
@@ -90,7 +91,7 @@ public class Summemietenetto
      *     {@link String }
      *     
      */
-    public void setSummemieteust(Double value) {
+    public void setSummemieteust(BigDecimal value) {
         this.summemieteust = value;
     }
 
@@ -110,12 +111,12 @@ public class Summemietenetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theSummemieteust;
+            BigDecimal theSummemieteust;
             theSummemieteust = this.getSummemieteust();
             strategy.appendField(locator, this, "summemieteust", buffer, theSummemieteust);
         }
@@ -136,17 +137,17 @@ public class Summemietenetto
         if (draftCopy instanceof Summemietenetto) {
             final Summemietenetto copy = ((Summemietenetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.summemieteust!= null) {
-                Double sourceSummemieteust;
+                BigDecimal sourceSummemieteust;
                 sourceSummemieteust = this.getSummemieteust();
-                Double copySummemieteust = ((Double) strategy.copy(LocatorUtils.property(locator, "summemieteust", sourceSummemieteust), sourceSummemieteust));
+                BigDecimal copySummemieteust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "summemieteust", sourceSummemieteust), sourceSummemieteust));
                 copy.setSummemieteust(copySummemieteust);
             } else {
                 copy.summemieteust = null;
@@ -160,7 +161,7 @@ public class Summemietenetto
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Summemietenetto)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -168,18 +169,18 @@ public class Summemietenetto
         }
         final Summemietenetto that = ((Summemietenetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsSummemieteust;
+            BigDecimal lhsSummemieteust;
             lhsSummemieteust = this.getSummemieteust();
-            Double rhsSummemieteust;
+            BigDecimal rhsSummemieteust;
             rhsSummemieteust = that.getSummemieteust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "summemieteust", lhsSummemieteust), LocatorUtils.property(thatLocator, "summemieteust", rhsSummemieteust), lhsSummemieteust, rhsSummemieteust)) {
                 return false;

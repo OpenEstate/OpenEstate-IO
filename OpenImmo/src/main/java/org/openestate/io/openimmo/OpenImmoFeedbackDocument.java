@@ -119,7 +119,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "openimmo_feedback".equals( root.getTagName() );
+    return "openimmo_feedback".equals( root.getLocalName() );
   }
 
   /**

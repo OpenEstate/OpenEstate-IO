@@ -4,16 +4,16 @@ package org.openestate.io.daft_ie.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter4
-    extends XmlAdapter<String, Integer>
+    extends XmlAdapter<String, Boolean>
 {
 
 
-    public Integer unmarshal(String value) {
-        return (org.openestate.io.daft_ie.DaftIeUtils.parseInteger(value));
+    public Boolean unmarshal(String value) {
+        return (org.openestate.io.daft_ie.DaftIeUtils.parseBoolean(value));
     }
 
-    public String marshal(Integer value) {
-        return (org.openestate.io.daft_ie.DaftIeUtils.printInteger(value));
+    public String marshal(Boolean value) {
+        return (org.openestate.io.daft_ie.DaftIeUtils.printBoolean(value));
     }
 
 }

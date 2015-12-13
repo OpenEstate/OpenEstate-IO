@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -28,27 +29,27 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VermarktungGewerbeTyp2">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="Miete">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Kauf" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
- *       &lt;/choice>
- *       &lt;attribute name="Nebenkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="PreisProParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VermarktungGewerbeTyp2"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="Miete"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Kauf" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *       &lt;/choice&gt;
+ *       &lt;attribute name="Nebenkosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="PreisProParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -67,14 +68,14 @@ public class VermarktungGewerbeTyp2
     @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
     protected JAXBElement<Object> kauf;
     @XmlAttribute(name = "Nebenkosten")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double nebenkosten;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal nebenkosten;
     @XmlAttribute(name = "PreisProParkflaeche")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double preisProParkflaeche;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal preisProParkflaeche;
     @XmlAttribute(name = "Preis", required = true)
-    @XmlJavaTypeAdapter(Adapter17 .class)
-    protected Double preis;
+    @XmlJavaTypeAdapter(Adapter36 .class)
+    protected BigDecimal preis;
 
     /**
      * Gets the value of the miete property.
@@ -132,7 +133,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public Double getNebenkosten() {
+    public BigDecimal getNebenkosten() {
         return nebenkosten;
     }
 
@@ -144,7 +145,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public void setNebenkosten(Double value) {
+    public void setNebenkosten(BigDecimal value) {
         this.nebenkosten = value;
     }
 
@@ -156,7 +157,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public Double getPreisProParkflaeche() {
+    public BigDecimal getPreisProParkflaeche() {
         return preisProParkflaeche;
     }
 
@@ -168,7 +169,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public void setPreisProParkflaeche(Double value) {
+    public void setPreisProParkflaeche(BigDecimal value) {
         this.preisProParkflaeche = value;
     }
 
@@ -180,7 +181,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public Double getPreis() {
+    public BigDecimal getPreis() {
         return preis;
     }
 
@@ -192,7 +193,7 @@ public class VermarktungGewerbeTyp2
      *     {@link String }
      *     
      */
-    public void setPreis(Double value) {
+    public void setPreis(BigDecimal value) {
         this.preis = value;
     }
 
@@ -222,17 +223,17 @@ public class VermarktungGewerbeTyp2
             strategy.appendField(locator, this, "kauf", buffer, theKauf);
         }
         {
-            Double theNebenkosten;
+            BigDecimal theNebenkosten;
             theNebenkosten = this.getNebenkosten();
             strategy.appendField(locator, this, "nebenkosten", buffer, theNebenkosten);
         }
         {
-            Double thePreisProParkflaeche;
+            BigDecimal thePreisProParkflaeche;
             thePreisProParkflaeche = this.getPreisProParkflaeche();
             strategy.appendField(locator, this, "preisProParkflaeche", buffer, thePreisProParkflaeche);
         }
         {
-            Double thePreis;
+            BigDecimal thePreis;
             thePreis = this.getPreis();
             strategy.appendField(locator, this, "preis", buffer, thePreis);
         }
@@ -270,25 +271,25 @@ public class VermarktungGewerbeTyp2
                 copy.kauf = null;
             }
             if (this.nebenkosten!= null) {
-                Double sourceNebenkosten;
+                BigDecimal sourceNebenkosten;
                 sourceNebenkosten = this.getNebenkosten();
-                Double copyNebenkosten = ((Double) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
+                BigDecimal copyNebenkosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nebenkosten", sourceNebenkosten), sourceNebenkosten));
                 copy.setNebenkosten(copyNebenkosten);
             } else {
                 copy.nebenkosten = null;
             }
             if (this.preisProParkflaeche!= null) {
-                Double sourcePreisProParkflaeche;
+                BigDecimal sourcePreisProParkflaeche;
                 sourcePreisProParkflaeche = this.getPreisProParkflaeche();
-                Double copyPreisProParkflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "preisProParkflaeche", sourcePreisProParkflaeche), sourcePreisProParkflaeche));
+                BigDecimal copyPreisProParkflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preisProParkflaeche", sourcePreisProParkflaeche), sourcePreisProParkflaeche));
                 copy.setPreisProParkflaeche(copyPreisProParkflaeche);
             } else {
                 copy.preisProParkflaeche = null;
             }
             if (this.preis!= null) {
-                Double sourcePreis;
+                BigDecimal sourcePreis;
                 sourcePreis = this.getPreis();
-                Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                 copy.setPreis(copyPreis);
             } else {
                 copy.preis = null;
@@ -302,7 +303,7 @@ public class VermarktungGewerbeTyp2
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof VermarktungGewerbeTyp2)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -328,27 +329,27 @@ public class VermarktungGewerbeTyp2
             }
         }
         {
-            Double lhsNebenkosten;
+            BigDecimal lhsNebenkosten;
             lhsNebenkosten = this.getNebenkosten();
-            Double rhsNebenkosten;
+            BigDecimal rhsNebenkosten;
             rhsNebenkosten = that.getNebenkosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nebenkosten", lhsNebenkosten), LocatorUtils.property(thatLocator, "nebenkosten", rhsNebenkosten), lhsNebenkosten, rhsNebenkosten)) {
                 return false;
             }
         }
         {
-            Double lhsPreisProParkflaeche;
+            BigDecimal lhsPreisProParkflaeche;
             lhsPreisProParkflaeche = this.getPreisProParkflaeche();
-            Double rhsPreisProParkflaeche;
+            BigDecimal rhsPreisProParkflaeche;
             rhsPreisProParkflaeche = that.getPreisProParkflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preisProParkflaeche", lhsPreisProParkflaeche), LocatorUtils.property(thatLocator, "preisProParkflaeche", rhsPreisProParkflaeche), lhsPreisProParkflaeche, rhsPreisProParkflaeche)) {
                 return false;
             }
         }
         {
-            Double lhsPreis;
+            BigDecimal lhsPreis;
             lhsPreis = this.getPreis();
-            Double rhsPreis;
+            BigDecimal rhsPreis;
             rhsPreis = that.getPreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                 return false;
@@ -369,13 +370,13 @@ public class VermarktungGewerbeTyp2
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;attribute name="Kaution" type="{http://www.immobilienscout24.de/immobilientransfer}Text50Typ" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -387,7 +388,7 @@ public class VermarktungGewerbeTyp2
     {
 
         @XmlAttribute(name = "Kaution")
-        @XmlJavaTypeAdapter(Adapter14 .class)
+        @XmlJavaTypeAdapter(Adapter7 .class)
         protected String kaution;
 
         /**
@@ -467,7 +468,7 @@ public class VermarktungGewerbeTyp2
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGewerbeTyp2 .Miete)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {

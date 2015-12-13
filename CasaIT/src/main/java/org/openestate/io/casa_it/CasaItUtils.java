@@ -19,7 +19,9 @@ package org.openestate.io.casa_it;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.nio.charset.Charset;
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -247,5 +249,19 @@ public class CasaItUtils
   public synchronized static void initContext( ClassLoader classloader ) throws JAXBException
   {
     JAXB = JAXBContext.newInstance( PACKAGE, classloader );
+  }
+
+  public static BigDecimal parseDouble( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
+  }
+
+  public static String printDouble( BigDecimal value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print decimal value!" );
+    else
+      return DatatypeConverter.printDecimal( value );
   }
 }

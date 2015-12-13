@@ -16,6 +16,7 @@
 
 package org.openestate.io.immoxml;
 
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.util.Calendar;
 import org.junit.Assert;
@@ -96,13 +97,13 @@ public class ImmoXmlUtilsTest
   public void testParseDecimal()
   {
     Assert.assertEquals(
-      Double.valueOf( "2.0" ), ImmoXmlUtils.parseDecimal( "2" ) );
+      new BigDecimal( "2" ), ImmoXmlUtils.parseDecimal( "2" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.5" ), ImmoXmlUtils.parseDecimal( "2.5" ) );
+      new BigDecimal( "2.5" ), ImmoXmlUtils.parseDecimal( "2.5" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.5" ), ImmoXmlUtils.parseDecimal( "2,5" ) );
+      new BigDecimal( "2.5" ), ImmoXmlUtils.parseDecimal( "2,5" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.0" ), ImmoXmlUtils.parseDecimal( "2 MM" ) );
+      new BigDecimal( "2" ), ImmoXmlUtils.parseDecimal( "2 MM" ).setScale( 0 ) );
     Assert.assertEquals(
       null, ImmoXmlUtils.parseDecimal( "" ) );
     try

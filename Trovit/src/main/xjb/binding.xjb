@@ -44,13 +44,13 @@
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeFloat']">
-      <jaxb:javaType  name="java.lang.Double"
+      <jaxb:javaType  name="java.math.BigDecimal"
         parseMethod="org.openestate.io.trovit.TrovitUtils.parseFloat"
         printMethod="org.openestate.io.trovit.TrovitUtils.printFloat" />
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeInt']">
-      <jaxb:javaType  name="java.lang.Integer"
+      <jaxb:javaType  name="java.math.BigInteger"
         parseMethod="org.openestate.io.trovit.TrovitUtils.parseInt"
         printMethod="org.openestate.io.trovit.TrovitUtils.printInt" />
     </jaxb:bindings>
@@ -62,7 +62,7 @@
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typeLong']">
-      <jaxb:javaType  name="java.lang.Long"
+      <jaxb:javaType  name="java.math.BigInteger"
         parseMethod="org.openestate.io.trovit.TrovitUtils.parseLong"
         printMethod="org.openestate.io.trovit.TrovitUtils.printLong" />
     </jaxb:bindings>
@@ -81,7 +81,7 @@
     </jaxb:bindings>
 
     <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='typePriceString']">
-      <jaxb:javaType  name="java.lang.Double"
+      <jaxb:javaType  name="java.math.BigDecimal"
         parseMethod="org.openestate.io.trovit.TrovitUtils.parsePriceValue"
         printMethod="org.openestate.io.trovit.TrovitUtils.printPriceValue" />
     </jaxb:bindings>

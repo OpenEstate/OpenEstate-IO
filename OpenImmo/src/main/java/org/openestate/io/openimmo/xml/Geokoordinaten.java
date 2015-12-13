@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -35,13 +36,13 @@ public class Geokoordinaten
 {
 
     @XmlAttribute(name = "breitengrad", required = true)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "float")
-    protected Double breitengrad;
+    protected BigDecimal breitengrad;
     @XmlAttribute(name = "laengengrad", required = true)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "float")
-    protected Double laengengrad;
+    protected BigDecimal laengengrad;
 
     /**
      * Gets the value of the breitengrad property.
@@ -51,7 +52,7 @@ public class Geokoordinaten
      *     {@link String }
      *     
      */
-    public Double getBreitengrad() {
+    public BigDecimal getBreitengrad() {
         return breitengrad;
     }
 
@@ -63,7 +64,7 @@ public class Geokoordinaten
      *     {@link String }
      *     
      */
-    public void setBreitengrad(Double value) {
+    public void setBreitengrad(BigDecimal value) {
         this.breitengrad = value;
     }
 
@@ -75,7 +76,7 @@ public class Geokoordinaten
      *     {@link String }
      *     
      */
-    public Double getLaengengrad() {
+    public BigDecimal getLaengengrad() {
         return laengengrad;
     }
 
@@ -87,7 +88,7 @@ public class Geokoordinaten
      *     {@link String }
      *     
      */
-    public void setLaengengrad(Double value) {
+    public void setLaengengrad(BigDecimal value) {
         this.laengengrad = value;
     }
 
@@ -107,12 +108,12 @@ public class Geokoordinaten
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theBreitengrad;
+            BigDecimal theBreitengrad;
             theBreitengrad = this.getBreitengrad();
             strategy.appendField(locator, this, "breitengrad", buffer, theBreitengrad);
         }
         {
-            Double theLaengengrad;
+            BigDecimal theLaengengrad;
             theLaengengrad = this.getLaengengrad();
             strategy.appendField(locator, this, "laengengrad", buffer, theLaengengrad);
         }
@@ -133,17 +134,17 @@ public class Geokoordinaten
         if (draftCopy instanceof Geokoordinaten) {
             final Geokoordinaten copy = ((Geokoordinaten) draftCopy);
             if (this.breitengrad!= null) {
-                Double sourceBreitengrad;
+                BigDecimal sourceBreitengrad;
                 sourceBreitengrad = this.getBreitengrad();
-                Double copyBreitengrad = ((Double) strategy.copy(LocatorUtils.property(locator, "breitengrad", sourceBreitengrad), sourceBreitengrad));
+                BigDecimal copyBreitengrad = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "breitengrad", sourceBreitengrad), sourceBreitengrad));
                 copy.setBreitengrad(copyBreitengrad);
             } else {
                 copy.breitengrad = null;
             }
             if (this.laengengrad!= null) {
-                Double sourceLaengengrad;
+                BigDecimal sourceLaengengrad;
                 sourceLaengengrad = this.getLaengengrad();
-                Double copyLaengengrad = ((Double) strategy.copy(LocatorUtils.property(locator, "laengengrad", sourceLaengengrad), sourceLaengengrad));
+                BigDecimal copyLaengengrad = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "laengengrad", sourceLaengengrad), sourceLaengengrad));
                 copy.setLaengengrad(copyLaengengrad);
             } else {
                 copy.laengengrad = null;
@@ -157,7 +158,7 @@ public class Geokoordinaten
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Geokoordinaten)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -165,18 +166,18 @@ public class Geokoordinaten
         }
         final Geokoordinaten that = ((Geokoordinaten) object);
         {
-            Double lhsBreitengrad;
+            BigDecimal lhsBreitengrad;
             lhsBreitengrad = this.getBreitengrad();
-            Double rhsBreitengrad;
+            BigDecimal rhsBreitengrad;
             rhsBreitengrad = that.getBreitengrad();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "breitengrad", lhsBreitengrad), LocatorUtils.property(thatLocator, "breitengrad", rhsBreitengrad), lhsBreitengrad, rhsBreitengrad)) {
                 return false;
             }
         }
         {
-            Double lhsLaengengrad;
+            BigDecimal lhsLaengengrad;
             lhsLaengengrad = this.getLaengengrad();
-            Double rhsLaengengrad;
+            BigDecimal rhsLaengengrad;
             rhsLaengengrad = that.getLaengengrad();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "laengengrad", lhsLaengengrad), LocatorUtils.property(thatLocator, "laengengrad", rhsLaengengrad), lhsLaengengrad, rhsLaengengrad)) {
                 return false;

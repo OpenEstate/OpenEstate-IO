@@ -16,6 +16,7 @@
 
 package org.openestate.io.is24_csv.records;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
@@ -217,11 +218,11 @@ public class WohnenAufZeit extends Is24CsvRecord
       this.get( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER ) );
   }
 
-  public Double getEnergieausweisKennwert()
+  public BigDecimal getEnergieausweisKennwert()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) );
     }
     catch (NumberFormatException ex)
@@ -328,11 +329,11 @@ public class WohnenAufZeit extends Is24CsvRecord
       this.get( FIELD_HEIZUNGSART ) );
   }
 
-  public Double getKaltmiete()
+  public BigDecimal getKaltmiete()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_KALTMIETE ) );
     }
     catch (NumberFormatException ex)
@@ -354,11 +355,11 @@ public class WohnenAufZeit extends Is24CsvRecord
       this.get( FIELD_KELLER ) );
   }
 
-  public Double getMietdauerMaximum()
+  public BigDecimal getMietdauerMaximum()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_MIETDAUER_MAXIMUM ) );
     }
     catch (NumberFormatException ex)
@@ -369,11 +370,11 @@ public class WohnenAufZeit extends Is24CsvRecord
     }
   }
 
-  public Double getMietdauerMinimum()
+  public BigDecimal getMietdauerMinimum()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_MIETDAUER_MINIMUM ) );
     }
     catch (NumberFormatException ex)
@@ -390,11 +391,11 @@ public class WohnenAufZeit extends Is24CsvRecord
       this.get( FIELD_MOBILIAR ) );
   }
 
-  public Double getNebenkosten()
+  public BigDecimal getNebenkosten()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_NEBENKOSTEN ) );
     }
     catch (NumberFormatException ex)
@@ -417,11 +418,11 @@ public class WohnenAufZeit extends Is24CsvRecord
       this.get( FIELD_OBJEKTZUSTAND ) );
   }
 
-  public Double getPauschalmiete()
+  public BigDecimal getPauschalmiete()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_PAUSCHALMIETE ) );
     }
     catch (NumberFormatException ex)
@@ -457,11 +458,11 @@ public class WohnenAufZeit extends Is24CsvRecord
       this.get( FIELD_STELLPLATZ ) );
   }
 
-  public Double getStellplatzmiete()
+  public BigDecimal getStellplatzmiete()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_STELLPLATZMIETE ) );
     }
     catch (NumberFormatException ex)
@@ -472,11 +473,11 @@ public class WohnenAufZeit extends Is24CsvRecord
     }
   }
 
-  public Double getWohnflaeche()
+  public BigDecimal getWohnflaeche()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_WOHNFLAECHE ) );
     }
     catch (NumberFormatException ex)
@@ -487,11 +488,11 @@ public class WohnenAufZeit extends Is24CsvRecord
     }
   }
 
-  public Double getZimmer()
+  public BigDecimal getZimmer()
   {
     try
     {
-      return Is24CsvFormat.parseDouble(
+      return Is24CsvFormat.parseDecimal(
         this.get( FIELD_ZIMMER ) );
     }
     catch (NumberFormatException ex)

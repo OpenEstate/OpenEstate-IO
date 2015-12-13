@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="BebaubarNachTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Unbekannt"/>
- *     &lt;enumeration value="\u00a730BauGB"/>
- *     &lt;enumeration value="\u00a734BauGB"/>
- *     &lt;enumeration value="\u00a735BauGB"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="BebaubarNachTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Unbekannt"/&gt;
+ *     &lt;enumeration value="\u00a730BauGB"/&gt;
+ *     &lt;enumeration value="\u00a734BauGB"/&gt;
+ *     &lt;enumeration value="\u00a735BauGB"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

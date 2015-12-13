@@ -1,6 +1,8 @@
 
 package org.openestate.io.wis_it.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -27,60 +29,60 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ObjectType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="LOESCHEN" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="GUELTIGBIS" type="{}dateTimeType" minOccurs="0"/>
- *         &lt;element name="IMMOBILIENART" type="{}propertyType" minOccurs="0"/>
- *         &lt;element name="ORT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="FRAKTION" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="MIETEKAUF" type="{}marketingType" minOccurs="0"/>
- *         &lt;element name="PREIS" type="{}decimalType" minOccurs="0"/>
- *         &lt;element name="AUFANFRAGE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="NUTZFLAECHE" type="{}decimalType" minOccurs="0"/>
- *         &lt;element name="FLAECHEART" type="{}areaType" minOccurs="0"/>
- *         &lt;element name="FOERDERBAR" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="KONVENTIONIERT" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="KUBATUR" type="{}decimalType" minOccurs="0"/>
- *         &lt;element name="ZUSTAND" type="{}conditionType" minOccurs="0"/>
- *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="STOCKWERK" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="AUFZUG" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="GARAGE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="ABSTELLPLATZ" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="GRUENFLAECHE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="KELLER" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="TERRASSE" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="LOGGIA" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="BALKON" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="DACHBODEN" type="{}yesNoType" minOccurs="0"/>
- *         &lt;element name="HEIZUNG" type="{}heatingType" minOccurs="0"/>
- *         &lt;element name="KLIMAHAUS" type="{}energyStandard" minOccurs="0"/>
- *         &lt;element name="UEBERGABEZEITPUNKT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BAUJAHR" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="INFODE" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="INFOIT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD4" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD5" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD6" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD7" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD8" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD9" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="BILD10" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="DOWNLOAD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="DOWNLOAD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="DOWNLOAD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ObjectType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="LOESCHEN" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="GUELTIGBIS" type="{}dateTimeType" minOccurs="0"/&gt;
+ *         &lt;element name="IMMOBILIENART" type="{}propertyType" minOccurs="0"/&gt;
+ *         &lt;element name="ORT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="FRAKTION" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="MIETEKAUF" type="{}marketingType" minOccurs="0"/&gt;
+ *         &lt;element name="PREIS" type="{}decimalType" minOccurs="0"/&gt;
+ *         &lt;element name="AUFANFRAGE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="NUTZFLAECHE" type="{}decimalType" minOccurs="0"/&gt;
+ *         &lt;element name="FLAECHEART" type="{}areaType" minOccurs="0"/&gt;
+ *         &lt;element name="FOERDERBAR" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="KONVENTIONIERT" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="KUBATUR" type="{}decimalType" minOccurs="0"/&gt;
+ *         &lt;element name="ZUSTAND" type="{}conditionType" minOccurs="0"/&gt;
+ *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="STOCKWERK" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="AUFZUG" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="GARAGE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="ABSTELLPLATZ" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="GRUENFLAECHE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="KELLER" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="TERRASSE" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="LOGGIA" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="BALKON" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="DACHBODEN" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="HEIZUNG" type="{}heatingType" minOccurs="0"/&gt;
+ *         &lt;element name="KLIMAHAUS" type="{}energyStandard" minOccurs="0"/&gt;
+ *         &lt;element name="UEBERGABEZEITPUNKT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BAUJAHR" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="INFODE" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="INFOIT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD4" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD5" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD6" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD7" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD8" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD9" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="BILD10" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="DOWNLOAD1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="DOWNLOAD2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="DOWNLOAD3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -144,26 +146,31 @@ public class ObjectType
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean loeschen;
     @XmlElement(name = "GUELTIGBIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     protected Calendar gueltigbis;
     @XmlElement(name = "IMMOBILIENART")
+    @XmlSchemaType(name = "string")
     protected PropertyType immobilienart;
     @XmlElement(name = "ORT")
     protected String ort;
     @XmlElement(name = "FRAKTION")
     protected String fraktion;
     @XmlElement(name = "MIETEKAUF")
+    @XmlSchemaType(name = "string")
     protected MarketingType mietekauf;
     @XmlElement(name = "PREIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    protected Double preis;
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal preis;
     @XmlElement(name = "AUFANFRAGE", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean aufanfrage;
     @XmlElement(name = "NUTZFLAECHE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    protected Double nutzflaeche;
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal nutzflaeche;
     @XmlElement(name = "FLAECHEART")
+    @XmlSchemaType(name = "string")
     protected AreaType flaecheart;
     @XmlElement(name = "FOERDERBAR", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -172,22 +179,24 @@ public class ObjectType
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean konventioniert;
     @XmlElement(name = "KUBATUR", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    protected Double kubatur;
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal kubatur;
     @XmlElement(name = "ZUSTAND")
+    @XmlSchemaType(name = "string")
     protected ConditionType zustand;
     @XmlElement(name = "ZIMMER", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Integer zimmer;
+    protected BigInteger zimmer;
     @XmlElement(name = "STOCKWERKE", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Integer stockwerke;
+    protected BigInteger stockwerke;
     @XmlElement(name = "STOCKWERK", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "nonNegativeInteger")
-    protected Integer stockwerk;
+    protected BigInteger stockwerk;
     @XmlElement(name = "AUFZUG", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean aufzug;
@@ -216,8 +225,10 @@ public class ObjectType
     @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean dachboden;
     @XmlElement(name = "HEIZUNG")
+    @XmlSchemaType(name = "string")
     protected HeatingType heizung;
     @XmlElement(name = "KLIMAHAUS")
+    @XmlSchemaType(name = "string")
     protected EnergyStandard klimahaus;
     @XmlElement(name = "UEBERGABEZEITPUNKT")
     protected String uebergabezeitpunkt;
@@ -430,7 +441,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Double getPREIS() {
+    public BigDecimal getPREIS() {
         return preis;
     }
 
@@ -442,7 +453,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setPREIS(Double value) {
+    public void setPREIS(BigDecimal value) {
         this.preis = value;
     }
 
@@ -478,7 +489,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Double getNUTZFLAECHE() {
+    public BigDecimal getNUTZFLAECHE() {
         return nutzflaeche;
     }
 
@@ -490,7 +501,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setNUTZFLAECHE(Double value) {
+    public void setNUTZFLAECHE(BigDecimal value) {
         this.nutzflaeche = value;
     }
 
@@ -574,7 +585,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Double getKUBATUR() {
+    public BigDecimal getKUBATUR() {
         return kubatur;
     }
 
@@ -586,7 +597,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setKUBATUR(Double value) {
+    public void setKUBATUR(BigDecimal value) {
         this.kubatur = value;
     }
 
@@ -622,7 +633,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Integer getZIMMER() {
+    public BigInteger getZIMMER() {
         return zimmer;
     }
 
@@ -634,7 +645,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setZIMMER(Integer value) {
+    public void setZIMMER(BigInteger value) {
         this.zimmer = value;
     }
 
@@ -646,7 +657,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Integer getSTOCKWERKE() {
+    public BigInteger getSTOCKWERKE() {
         return stockwerke;
     }
 
@@ -658,7 +669,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setSTOCKWERKE(Integer value) {
+    public void setSTOCKWERKE(BigInteger value) {
         this.stockwerke = value;
     }
 
@@ -670,7 +681,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public Integer getSTOCKWERK() {
+    public BigInteger getSTOCKWERK() {
         return stockwerk;
     }
 
@@ -682,7 +693,7 @@ public class ObjectType
      *     {@link String }
      *     
      */
-    public void setSTOCKWERK(Integer value) {
+    public void setSTOCKWERK(BigInteger value) {
         this.stockwerk = value;
     }
 
@@ -1409,7 +1420,7 @@ public class ObjectType
             strategy.appendField(locator, this, "mietekauf", buffer, theMIETEKAUF);
         }
         {
-            Double thePREIS;
+            BigDecimal thePREIS;
             thePREIS = this.getPREIS();
             strategy.appendField(locator, this, "preis", buffer, thePREIS);
         }
@@ -1419,7 +1430,7 @@ public class ObjectType
             strategy.appendField(locator, this, "aufanfrage", buffer, theAUFANFRAGE);
         }
         {
-            Double theNUTZFLAECHE;
+            BigDecimal theNUTZFLAECHE;
             theNUTZFLAECHE = this.getNUTZFLAECHE();
             strategy.appendField(locator, this, "nutzflaeche", buffer, theNUTZFLAECHE);
         }
@@ -1439,7 +1450,7 @@ public class ObjectType
             strategy.appendField(locator, this, "konventioniert", buffer, theKONVENTIONIERT);
         }
         {
-            Double theKUBATUR;
+            BigDecimal theKUBATUR;
             theKUBATUR = this.getKUBATUR();
             strategy.appendField(locator, this, "kubatur", buffer, theKUBATUR);
         }
@@ -1449,17 +1460,17 @@ public class ObjectType
             strategy.appendField(locator, this, "zustand", buffer, theZUSTAND);
         }
         {
-            Integer theZIMMER;
+            BigInteger theZIMMER;
             theZIMMER = this.getZIMMER();
             strategy.appendField(locator, this, "zimmer", buffer, theZIMMER);
         }
         {
-            Integer theSTOCKWERKE;
+            BigInteger theSTOCKWERKE;
             theSTOCKWERKE = this.getSTOCKWERKE();
             strategy.appendField(locator, this, "stockwerke", buffer, theSTOCKWERKE);
         }
         {
-            Integer theSTOCKWERK;
+            BigInteger theSTOCKWERK;
             theSTOCKWERK = this.getSTOCKWERK();
             strategy.appendField(locator, this, "stockwerk", buffer, theSTOCKWERK);
         }
@@ -1676,9 +1687,9 @@ public class ObjectType
                 copy.mietekauf = null;
             }
             if (this.preis!= null) {
-                Double sourcePREIS;
+                BigDecimal sourcePREIS;
                 sourcePREIS = this.getPREIS();
-                Double copyPREIS = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePREIS), sourcePREIS));
+                BigDecimal copyPREIS = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePREIS), sourcePREIS));
                 copy.setPREIS(copyPREIS);
             } else {
                 copy.preis = null;
@@ -1692,9 +1703,9 @@ public class ObjectType
                 copy.aufanfrage = null;
             }
             if (this.nutzflaeche!= null) {
-                Double sourceNUTZFLAECHE;
+                BigDecimal sourceNUTZFLAECHE;
                 sourceNUTZFLAECHE = this.getNUTZFLAECHE();
-                Double copyNUTZFLAECHE = ((Double) strategy.copy(LocatorUtils.property(locator, "nutzflaeche", sourceNUTZFLAECHE), sourceNUTZFLAECHE));
+                BigDecimal copyNUTZFLAECHE = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nutzflaeche", sourceNUTZFLAECHE), sourceNUTZFLAECHE));
                 copy.setNUTZFLAECHE(copyNUTZFLAECHE);
             } else {
                 copy.nutzflaeche = null;
@@ -1724,9 +1735,9 @@ public class ObjectType
                 copy.konventioniert = null;
             }
             if (this.kubatur!= null) {
-                Double sourceKUBATUR;
+                BigDecimal sourceKUBATUR;
                 sourceKUBATUR = this.getKUBATUR();
-                Double copyKUBATUR = ((Double) strategy.copy(LocatorUtils.property(locator, "kubatur", sourceKUBATUR), sourceKUBATUR));
+                BigDecimal copyKUBATUR = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kubatur", sourceKUBATUR), sourceKUBATUR));
                 copy.setKUBATUR(copyKUBATUR);
             } else {
                 copy.kubatur = null;
@@ -1740,25 +1751,25 @@ public class ObjectType
                 copy.zustand = null;
             }
             if (this.zimmer!= null) {
-                Integer sourceZIMMER;
+                BigInteger sourceZIMMER;
                 sourceZIMMER = this.getZIMMER();
-                Integer copyZIMMER = ((Integer) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZIMMER), sourceZIMMER));
+                BigInteger copyZIMMER = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZIMMER), sourceZIMMER));
                 copy.setZIMMER(copyZIMMER);
             } else {
                 copy.zimmer = null;
             }
             if (this.stockwerke!= null) {
-                Integer sourceSTOCKWERKE;
+                BigInteger sourceSTOCKWERKE;
                 sourceSTOCKWERKE = this.getSTOCKWERKE();
-                Integer copySTOCKWERKE = ((Integer) strategy.copy(LocatorUtils.property(locator, "stockwerke", sourceSTOCKWERKE), sourceSTOCKWERKE));
+                BigInteger copySTOCKWERKE = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "stockwerke", sourceSTOCKWERKE), sourceSTOCKWERKE));
                 copy.setSTOCKWERKE(copySTOCKWERKE);
             } else {
                 copy.stockwerke = null;
             }
             if (this.stockwerk!= null) {
-                Integer sourceSTOCKWERK;
+                BigInteger sourceSTOCKWERK;
                 sourceSTOCKWERK = this.getSTOCKWERK();
-                Integer copySTOCKWERK = ((Integer) strategy.copy(LocatorUtils.property(locator, "stockwerk", sourceSTOCKWERK), sourceSTOCKWERK));
+                BigInteger copySTOCKWERK = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "stockwerk", sourceSTOCKWERK), sourceSTOCKWERK));
                 copy.setSTOCKWERK(copySTOCKWERK);
             } else {
                 copy.stockwerk = null;
@@ -1996,7 +2007,7 @@ public class ObjectType
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof ObjectType)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -2067,9 +2078,9 @@ public class ObjectType
             }
         }
         {
-            Double lhsPREIS;
+            BigDecimal lhsPREIS;
             lhsPREIS = this.getPREIS();
-            Double rhsPREIS;
+            BigDecimal rhsPREIS;
             rhsPREIS = that.getPREIS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPREIS), LocatorUtils.property(thatLocator, "preis", rhsPREIS), lhsPREIS, rhsPREIS)) {
                 return false;
@@ -2085,9 +2096,9 @@ public class ObjectType
             }
         }
         {
-            Double lhsNUTZFLAECHE;
+            BigDecimal lhsNUTZFLAECHE;
             lhsNUTZFLAECHE = this.getNUTZFLAECHE();
-            Double rhsNUTZFLAECHE;
+            BigDecimal rhsNUTZFLAECHE;
             rhsNUTZFLAECHE = that.getNUTZFLAECHE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nutzflaeche", lhsNUTZFLAECHE), LocatorUtils.property(thatLocator, "nutzflaeche", rhsNUTZFLAECHE), lhsNUTZFLAECHE, rhsNUTZFLAECHE)) {
                 return false;
@@ -2121,9 +2132,9 @@ public class ObjectType
             }
         }
         {
-            Double lhsKUBATUR;
+            BigDecimal lhsKUBATUR;
             lhsKUBATUR = this.getKUBATUR();
-            Double rhsKUBATUR;
+            BigDecimal rhsKUBATUR;
             rhsKUBATUR = that.getKUBATUR();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kubatur", lhsKUBATUR), LocatorUtils.property(thatLocator, "kubatur", rhsKUBATUR), lhsKUBATUR, rhsKUBATUR)) {
                 return false;
@@ -2139,27 +2150,27 @@ public class ObjectType
             }
         }
         {
-            Integer lhsZIMMER;
+            BigInteger lhsZIMMER;
             lhsZIMMER = this.getZIMMER();
-            Integer rhsZIMMER;
+            BigInteger rhsZIMMER;
             rhsZIMMER = that.getZIMMER();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmer", lhsZIMMER), LocatorUtils.property(thatLocator, "zimmer", rhsZIMMER), lhsZIMMER, rhsZIMMER)) {
                 return false;
             }
         }
         {
-            Integer lhsSTOCKWERKE;
+            BigInteger lhsSTOCKWERKE;
             lhsSTOCKWERKE = this.getSTOCKWERKE();
-            Integer rhsSTOCKWERKE;
+            BigInteger rhsSTOCKWERKE;
             rhsSTOCKWERKE = that.getSTOCKWERKE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stockwerke", lhsSTOCKWERKE), LocatorUtils.property(thatLocator, "stockwerke", rhsSTOCKWERKE), lhsSTOCKWERKE, rhsSTOCKWERKE)) {
                 return false;
             }
         }
         {
-            Integer lhsSTOCKWERK;
+            BigInteger lhsSTOCKWERK;
             lhsSTOCKWERK = this.getSTOCKWERK();
-            Integer rhsSTOCKWERK;
+            BigInteger rhsSTOCKWERK;
             rhsSTOCKWERK = that.getSTOCKWERK();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stockwerk", lhsSTOCKWERK), LocatorUtils.property(thatLocator, "stockwerk", rhsSTOCKWERK), lhsSTOCKWERK, rhsSTOCKWERK)) {
                 return false;

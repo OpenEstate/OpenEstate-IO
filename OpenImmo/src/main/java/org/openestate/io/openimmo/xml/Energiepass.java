@@ -68,7 +68,7 @@ public class Energiepass
     protected String wertklasse;
     protected String baujahr;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar ausstelldatum;
     protected Energiepass.Jahrgang jahrgang;
@@ -785,7 +785,7 @@ public class Energiepass
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Energiepass)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

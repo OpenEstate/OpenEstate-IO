@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -25,13 +26,13 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HebeanlageTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="Tragkraft" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="HebeanlageTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Tragkraft" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -43,8 +44,8 @@ public class HebeanlageTyp
 {
 
     @XmlAttribute(name = "Tragkraft")
-    @XmlJavaTypeAdapter(Adapter27 .class)
-    protected Double tragkraft;
+    @XmlJavaTypeAdapter(Adapter33 .class)
+    protected BigDecimal tragkraft;
 
     /**
      * Gets the value of the tragkraft property.
@@ -54,7 +55,7 @@ public class HebeanlageTyp
      *     {@link String }
      *     
      */
-    public Double getTragkraft() {
+    public BigDecimal getTragkraft() {
         return tragkraft;
     }
 
@@ -66,7 +67,7 @@ public class HebeanlageTyp
      *     {@link String }
      *     
      */
-    public void setTragkraft(Double value) {
+    public void setTragkraft(BigDecimal value) {
         this.tragkraft = value;
     }
 
@@ -86,7 +87,7 @@ public class HebeanlageTyp
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theTragkraft;
+            BigDecimal theTragkraft;
             theTragkraft = this.getTragkraft();
             strategy.appendField(locator, this, "tragkraft", buffer, theTragkraft);
         }
@@ -107,9 +108,9 @@ public class HebeanlageTyp
         if (draftCopy instanceof HebeanlageTyp) {
             final HebeanlageTyp copy = ((HebeanlageTyp) draftCopy);
             if (this.tragkraft!= null) {
-                Double sourceTragkraft;
+                BigDecimal sourceTragkraft;
                 sourceTragkraft = this.getTragkraft();
-                Double copyTragkraft = ((Double) strategy.copy(LocatorUtils.property(locator, "tragkraft", sourceTragkraft), sourceTragkraft));
+                BigDecimal copyTragkraft = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "tragkraft", sourceTragkraft), sourceTragkraft));
                 copy.setTragkraft(copyTragkraft);
             } else {
                 copy.tragkraft = null;
@@ -123,7 +124,7 @@ public class HebeanlageTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof HebeanlageTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -131,9 +132,9 @@ public class HebeanlageTyp
         }
         final HebeanlageTyp that = ((HebeanlageTyp) object);
         {
-            Double lhsTragkraft;
+            BigDecimal lhsTragkraft;
             lhsTragkraft = this.getTragkraft();
-            Double rhsTragkraft;
+            BigDecimal rhsTragkraft;
             rhsTragkraft = that.getTragkraft();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "tragkraft", lhsTragkraft), LocatorUtils.property(thatLocator, "tragkraft", rhsTragkraft), lhsTragkraft, rhsTragkraft)) {
                 return false;

@@ -12,18 +12,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="rental">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="3+2"/>
- *     &lt;enumeration value="4+4"/>
- *     &lt;enumeration value="6+6"/>
- *     &lt;enumeration value="9+9"/>
- *     &lt;enumeration value="Transitorio"/>
- *     &lt;enumeration value="Concordato"/>
- *     &lt;enumeration value="Libero"/>
- *     &lt;enumeration value="Studenti"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="rental"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="3+2"/&gt;
+ *     &lt;enumeration value="4+4"/&gt;
+ *     &lt;enumeration value="6+6"/&gt;
+ *     &lt;enumeration value="9+9"/&gt;
+ *     &lt;enumeration value="Transitorio"/&gt;
+ *     &lt;enumeration value="Concordato"/&gt;
+ *     &lt;enumeration value="Libero"/&gt;
+ *     &lt;enumeration value="Studenti"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

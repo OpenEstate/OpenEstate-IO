@@ -11,16 +11,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="BildFormateTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="JPG"/>
- *     &lt;enumeration value="GIF"/>
- *     &lt;enumeration value="PNG"/>
- *     &lt;enumeration value="BMP"/>
- *     &lt;enumeration value="WBMP"/>
- *     &lt;enumeration value="JPEG"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="BildFormateTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="JPG"/&gt;
+ *     &lt;enumeration value="GIF"/&gt;
+ *     &lt;enumeration value="PNG"/&gt;
+ *     &lt;enumeration value="BMP"/&gt;
+ *     &lt;enumeration value="WBMP"/&gt;
+ *     &lt;enumeration value="JPEG"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

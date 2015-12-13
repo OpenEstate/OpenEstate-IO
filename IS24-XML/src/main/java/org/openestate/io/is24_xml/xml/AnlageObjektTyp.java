@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -26,27 +27,27 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AnlageObjektTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}AnlageobjekteKategorieTyp" />
- *       &lt;attribute name="VermietbareFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="WohnFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="GewerbeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="SonstigeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="XFacheMiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl31Typ" />
- *       &lt;attribute name="MietEinnahmePaIst" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="MietEinnahmePaSoll" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Kaufpreis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="KaufpreisProQm" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="BetriebskostenUmgelegt" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="NichtUmgelegteKosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="PreisProParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" />
- *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AnlageObjektTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;attribute name="Objektkategorie2" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}AnlageobjekteKategorieTyp" /&gt;
+ *       &lt;attribute name="VermietbareFlaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="WohnFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="GewerbeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="GrundstuecksFlaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="SonstigeFlaechen" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="XFacheMiete" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl31Typ" /&gt;
+ *       &lt;attribute name="MietEinnahmePaIst" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="MietEinnahmePaSoll" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Kaufpreis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="KaufpreisProQm" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="BetriebskostenUmgelegt" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="NichtUmgelegteKosten" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="PreisProParkflaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl152Typ" /&gt;
+ *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -64,44 +65,44 @@ public class AnlageObjektTyp
     @XmlAttribute(name = "Objektkategorie2", required = true)
     protected AnlageobjekteKategorieTyp objektkategorie2;
     @XmlAttribute(name = "VermietbareFlaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double vermietbareFlaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal vermietbareFlaeche;
     @XmlAttribute(name = "WohnFlaechen")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double wohnFlaechen;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal wohnFlaechen;
     @XmlAttribute(name = "GewerbeFlaechen")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double gewerbeFlaechen;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal gewerbeFlaechen;
     @XmlAttribute(name = "GrundstuecksFlaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double grundstuecksFlaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal grundstuecksFlaeche;
     @XmlAttribute(name = "SonstigeFlaechen")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double sonstigeFlaechen;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal sonstigeFlaechen;
     @XmlAttribute(name = "XFacheMiete")
-    @XmlJavaTypeAdapter(Adapter19 .class)
-    protected Double xFacheMiete;
+    @XmlJavaTypeAdapter(Adapter27 .class)
+    protected BigDecimal xFacheMiete;
     @XmlAttribute(name = "MietEinnahmePaIst")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double mietEinnahmePaIst;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal mietEinnahmePaIst;
     @XmlAttribute(name = "MietEinnahmePaSoll")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double mietEinnahmePaSoll;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal mietEinnahmePaSoll;
     @XmlAttribute(name = "Kaufpreis", required = true)
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double kaufpreis;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal kaufpreis;
     @XmlAttribute(name = "KaufpreisProQm")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double kaufpreisProQm;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal kaufpreisProQm;
     @XmlAttribute(name = "BetriebskostenUmgelegt")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double betriebskostenUmgelegt;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal betriebskostenUmgelegt;
     @XmlAttribute(name = "NichtUmgelegteKosten")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double nichtUmgelegteKosten;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal nichtUmgelegteKosten;
     @XmlAttribute(name = "PreisProParkflaeche")
-    @XmlJavaTypeAdapter(Adapter22 .class)
-    protected Double preisProParkflaeche;
+    @XmlJavaTypeAdapter(Adapter35 .class)
+    protected BigDecimal preisProParkflaeche;
     @XmlAttribute(name = "Denkmalschutzobjekt")
     protected Boolean denkmalschutzobjekt;
 
@@ -137,7 +138,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getVermietbareFlaeche() {
+    public BigDecimal getVermietbareFlaeche() {
         return vermietbareFlaeche;
     }
 
@@ -149,7 +150,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setVermietbareFlaeche(Double value) {
+    public void setVermietbareFlaeche(BigDecimal value) {
         this.vermietbareFlaeche = value;
     }
 
@@ -161,7 +162,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getWohnFlaechen() {
+    public BigDecimal getWohnFlaechen() {
         return wohnFlaechen;
     }
 
@@ -173,7 +174,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setWohnFlaechen(Double value) {
+    public void setWohnFlaechen(BigDecimal value) {
         this.wohnFlaechen = value;
     }
 
@@ -185,7 +186,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getGewerbeFlaechen() {
+    public BigDecimal getGewerbeFlaechen() {
         return gewerbeFlaechen;
     }
 
@@ -197,7 +198,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setGewerbeFlaechen(Double value) {
+    public void setGewerbeFlaechen(BigDecimal value) {
         this.gewerbeFlaechen = value;
     }
 
@@ -209,7 +210,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getGrundstuecksFlaeche() {
+    public BigDecimal getGrundstuecksFlaeche() {
         return grundstuecksFlaeche;
     }
 
@@ -221,7 +222,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setGrundstuecksFlaeche(Double value) {
+    public void setGrundstuecksFlaeche(BigDecimal value) {
         this.grundstuecksFlaeche = value;
     }
 
@@ -233,7 +234,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getSonstigeFlaechen() {
+    public BigDecimal getSonstigeFlaechen() {
         return sonstigeFlaechen;
     }
 
@@ -245,7 +246,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setSonstigeFlaechen(Double value) {
+    public void setSonstigeFlaechen(BigDecimal value) {
         this.sonstigeFlaechen = value;
     }
 
@@ -257,7 +258,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getXFacheMiete() {
+    public BigDecimal getXFacheMiete() {
         return xFacheMiete;
     }
 
@@ -269,7 +270,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setXFacheMiete(Double value) {
+    public void setXFacheMiete(BigDecimal value) {
         this.xFacheMiete = value;
     }
 
@@ -281,7 +282,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getMietEinnahmePaIst() {
+    public BigDecimal getMietEinnahmePaIst() {
         return mietEinnahmePaIst;
     }
 
@@ -293,7 +294,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setMietEinnahmePaIst(Double value) {
+    public void setMietEinnahmePaIst(BigDecimal value) {
         this.mietEinnahmePaIst = value;
     }
 
@@ -305,7 +306,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getMietEinnahmePaSoll() {
+    public BigDecimal getMietEinnahmePaSoll() {
         return mietEinnahmePaSoll;
     }
 
@@ -317,7 +318,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setMietEinnahmePaSoll(Double value) {
+    public void setMietEinnahmePaSoll(BigDecimal value) {
         this.mietEinnahmePaSoll = value;
     }
 
@@ -329,7 +330,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getKaufpreis() {
+    public BigDecimal getKaufpreis() {
         return kaufpreis;
     }
 
@@ -341,7 +342,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setKaufpreis(Double value) {
+    public void setKaufpreis(BigDecimal value) {
         this.kaufpreis = value;
     }
 
@@ -353,7 +354,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getKaufpreisProQm() {
+    public BigDecimal getKaufpreisProQm() {
         return kaufpreisProQm;
     }
 
@@ -365,7 +366,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setKaufpreisProQm(Double value) {
+    public void setKaufpreisProQm(BigDecimal value) {
         this.kaufpreisProQm = value;
     }
 
@@ -377,7 +378,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getBetriebskostenUmgelegt() {
+    public BigDecimal getBetriebskostenUmgelegt() {
         return betriebskostenUmgelegt;
     }
 
@@ -389,7 +390,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setBetriebskostenUmgelegt(Double value) {
+    public void setBetriebskostenUmgelegt(BigDecimal value) {
         this.betriebskostenUmgelegt = value;
     }
 
@@ -401,7 +402,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getNichtUmgelegteKosten() {
+    public BigDecimal getNichtUmgelegteKosten() {
         return nichtUmgelegteKosten;
     }
 
@@ -413,7 +414,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setNichtUmgelegteKosten(Double value) {
+    public void setNichtUmgelegteKosten(BigDecimal value) {
         this.nichtUmgelegteKosten = value;
     }
 
@@ -425,7 +426,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public Double getPreisProParkflaeche() {
+    public BigDecimal getPreisProParkflaeche() {
         return preisProParkflaeche;
     }
 
@@ -437,7 +438,7 @@ public class AnlageObjektTyp
      *     {@link String }
      *     
      */
-    public void setPreisProParkflaeche(Double value) {
+    public void setPreisProParkflaeche(BigDecimal value) {
         this.preisProParkflaeche = value;
     }
 
@@ -487,67 +488,67 @@ public class AnlageObjektTyp
             strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
         }
         {
-            Double theVermietbareFlaeche;
+            BigDecimal theVermietbareFlaeche;
             theVermietbareFlaeche = this.getVermietbareFlaeche();
             strategy.appendField(locator, this, "vermietbareFlaeche", buffer, theVermietbareFlaeche);
         }
         {
-            Double theWohnFlaechen;
+            BigDecimal theWohnFlaechen;
             theWohnFlaechen = this.getWohnFlaechen();
             strategy.appendField(locator, this, "wohnFlaechen", buffer, theWohnFlaechen);
         }
         {
-            Double theGewerbeFlaechen;
+            BigDecimal theGewerbeFlaechen;
             theGewerbeFlaechen = this.getGewerbeFlaechen();
             strategy.appendField(locator, this, "gewerbeFlaechen", buffer, theGewerbeFlaechen);
         }
         {
-            Double theGrundstuecksFlaeche;
+            BigDecimal theGrundstuecksFlaeche;
             theGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
             strategy.appendField(locator, this, "grundstuecksFlaeche", buffer, theGrundstuecksFlaeche);
         }
         {
-            Double theSonstigeFlaechen;
+            BigDecimal theSonstigeFlaechen;
             theSonstigeFlaechen = this.getSonstigeFlaechen();
             strategy.appendField(locator, this, "sonstigeFlaechen", buffer, theSonstigeFlaechen);
         }
         {
-            Double theXFacheMiete;
+            BigDecimal theXFacheMiete;
             theXFacheMiete = this.getXFacheMiete();
             strategy.appendField(locator, this, "xFacheMiete", buffer, theXFacheMiete);
         }
         {
-            Double theMietEinnahmePaIst;
+            BigDecimal theMietEinnahmePaIst;
             theMietEinnahmePaIst = this.getMietEinnahmePaIst();
             strategy.appendField(locator, this, "mietEinnahmePaIst", buffer, theMietEinnahmePaIst);
         }
         {
-            Double theMietEinnahmePaSoll;
+            BigDecimal theMietEinnahmePaSoll;
             theMietEinnahmePaSoll = this.getMietEinnahmePaSoll();
             strategy.appendField(locator, this, "mietEinnahmePaSoll", buffer, theMietEinnahmePaSoll);
         }
         {
-            Double theKaufpreis;
+            BigDecimal theKaufpreis;
             theKaufpreis = this.getKaufpreis();
             strategy.appendField(locator, this, "kaufpreis", buffer, theKaufpreis);
         }
         {
-            Double theKaufpreisProQm;
+            BigDecimal theKaufpreisProQm;
             theKaufpreisProQm = this.getKaufpreisProQm();
             strategy.appendField(locator, this, "kaufpreisProQm", buffer, theKaufpreisProQm);
         }
         {
-            Double theBetriebskostenUmgelegt;
+            BigDecimal theBetriebskostenUmgelegt;
             theBetriebskostenUmgelegt = this.getBetriebskostenUmgelegt();
             strategy.appendField(locator, this, "betriebskostenUmgelegt", buffer, theBetriebskostenUmgelegt);
         }
         {
-            Double theNichtUmgelegteKosten;
+            BigDecimal theNichtUmgelegteKosten;
             theNichtUmgelegteKosten = this.getNichtUmgelegteKosten();
             strategy.appendField(locator, this, "nichtUmgelegteKosten", buffer, theNichtUmgelegteKosten);
         }
         {
-            Double thePreisProParkflaeche;
+            BigDecimal thePreisProParkflaeche;
             thePreisProParkflaeche = this.getPreisProParkflaeche();
             strategy.appendField(locator, this, "preisProParkflaeche", buffer, thePreisProParkflaeche);
         }
@@ -582,105 +583,105 @@ public class AnlageObjektTyp
                 copy.objektkategorie2 = null;
             }
             if (this.vermietbareFlaeche!= null) {
-                Double sourceVermietbareFlaeche;
+                BigDecimal sourceVermietbareFlaeche;
                 sourceVermietbareFlaeche = this.getVermietbareFlaeche();
-                Double copyVermietbareFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "vermietbareFlaeche", sourceVermietbareFlaeche), sourceVermietbareFlaeche));
+                BigDecimal copyVermietbareFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "vermietbareFlaeche", sourceVermietbareFlaeche), sourceVermietbareFlaeche));
                 copy.setVermietbareFlaeche(copyVermietbareFlaeche);
             } else {
                 copy.vermietbareFlaeche = null;
             }
             if (this.wohnFlaechen!= null) {
-                Double sourceWohnFlaechen;
+                BigDecimal sourceWohnFlaechen;
                 sourceWohnFlaechen = this.getWohnFlaechen();
-                Double copyWohnFlaechen = ((Double) strategy.copy(LocatorUtils.property(locator, "wohnFlaechen", sourceWohnFlaechen), sourceWohnFlaechen));
+                BigDecimal copyWohnFlaechen = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "wohnFlaechen", sourceWohnFlaechen), sourceWohnFlaechen));
                 copy.setWohnFlaechen(copyWohnFlaechen);
             } else {
                 copy.wohnFlaechen = null;
             }
             if (this.gewerbeFlaechen!= null) {
-                Double sourceGewerbeFlaechen;
+                BigDecimal sourceGewerbeFlaechen;
                 sourceGewerbeFlaechen = this.getGewerbeFlaechen();
-                Double copyGewerbeFlaechen = ((Double) strategy.copy(LocatorUtils.property(locator, "gewerbeFlaechen", sourceGewerbeFlaechen), sourceGewerbeFlaechen));
+                BigDecimal copyGewerbeFlaechen = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gewerbeFlaechen", sourceGewerbeFlaechen), sourceGewerbeFlaechen));
                 copy.setGewerbeFlaechen(copyGewerbeFlaechen);
             } else {
                 copy.gewerbeFlaechen = null;
             }
             if (this.grundstuecksFlaeche!= null) {
-                Double sourceGrundstuecksFlaeche;
+                BigDecimal sourceGrundstuecksFlaeche;
                 sourceGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-                Double copyGrundstuecksFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
+                BigDecimal copyGrundstuecksFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
                 copy.setGrundstuecksFlaeche(copyGrundstuecksFlaeche);
             } else {
                 copy.grundstuecksFlaeche = null;
             }
             if (this.sonstigeFlaechen!= null) {
-                Double sourceSonstigeFlaechen;
+                BigDecimal sourceSonstigeFlaechen;
                 sourceSonstigeFlaechen = this.getSonstigeFlaechen();
-                Double copySonstigeFlaechen = ((Double) strategy.copy(LocatorUtils.property(locator, "sonstigeFlaechen", sourceSonstigeFlaechen), sourceSonstigeFlaechen));
+                BigDecimal copySonstigeFlaechen = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "sonstigeFlaechen", sourceSonstigeFlaechen), sourceSonstigeFlaechen));
                 copy.setSonstigeFlaechen(copySonstigeFlaechen);
             } else {
                 copy.sonstigeFlaechen = null;
             }
             if (this.xFacheMiete!= null) {
-                Double sourceXFacheMiete;
+                BigDecimal sourceXFacheMiete;
                 sourceXFacheMiete = this.getXFacheMiete();
-                Double copyXFacheMiete = ((Double) strategy.copy(LocatorUtils.property(locator, "xFacheMiete", sourceXFacheMiete), sourceXFacheMiete));
+                BigDecimal copyXFacheMiete = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "xFacheMiete", sourceXFacheMiete), sourceXFacheMiete));
                 copy.setXFacheMiete(copyXFacheMiete);
             } else {
                 copy.xFacheMiete = null;
             }
             if (this.mietEinnahmePaIst!= null) {
-                Double sourceMietEinnahmePaIst;
+                BigDecimal sourceMietEinnahmePaIst;
                 sourceMietEinnahmePaIst = this.getMietEinnahmePaIst();
-                Double copyMietEinnahmePaIst = ((Double) strategy.copy(LocatorUtils.property(locator, "mietEinnahmePaIst", sourceMietEinnahmePaIst), sourceMietEinnahmePaIst));
+                BigDecimal copyMietEinnahmePaIst = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mietEinnahmePaIst", sourceMietEinnahmePaIst), sourceMietEinnahmePaIst));
                 copy.setMietEinnahmePaIst(copyMietEinnahmePaIst);
             } else {
                 copy.mietEinnahmePaIst = null;
             }
             if (this.mietEinnahmePaSoll!= null) {
-                Double sourceMietEinnahmePaSoll;
+                BigDecimal sourceMietEinnahmePaSoll;
                 sourceMietEinnahmePaSoll = this.getMietEinnahmePaSoll();
-                Double copyMietEinnahmePaSoll = ((Double) strategy.copy(LocatorUtils.property(locator, "mietEinnahmePaSoll", sourceMietEinnahmePaSoll), sourceMietEinnahmePaSoll));
+                BigDecimal copyMietEinnahmePaSoll = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mietEinnahmePaSoll", sourceMietEinnahmePaSoll), sourceMietEinnahmePaSoll));
                 copy.setMietEinnahmePaSoll(copyMietEinnahmePaSoll);
             } else {
                 copy.mietEinnahmePaSoll = null;
             }
             if (this.kaufpreis!= null) {
-                Double sourceKaufpreis;
+                BigDecimal sourceKaufpreis;
                 sourceKaufpreis = this.getKaufpreis();
-                Double copyKaufpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "kaufpreis", sourceKaufpreis), sourceKaufpreis));
+                BigDecimal copyKaufpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaufpreis", sourceKaufpreis), sourceKaufpreis));
                 copy.setKaufpreis(copyKaufpreis);
             } else {
                 copy.kaufpreis = null;
             }
             if (this.kaufpreisProQm!= null) {
-                Double sourceKaufpreisProQm;
+                BigDecimal sourceKaufpreisProQm;
                 sourceKaufpreisProQm = this.getKaufpreisProQm();
-                Double copyKaufpreisProQm = ((Double) strategy.copy(LocatorUtils.property(locator, "kaufpreisProQm", sourceKaufpreisProQm), sourceKaufpreisProQm));
+                BigDecimal copyKaufpreisProQm = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "kaufpreisProQm", sourceKaufpreisProQm), sourceKaufpreisProQm));
                 copy.setKaufpreisProQm(copyKaufpreisProQm);
             } else {
                 copy.kaufpreisProQm = null;
             }
             if (this.betriebskostenUmgelegt!= null) {
-                Double sourceBetriebskostenUmgelegt;
+                BigDecimal sourceBetriebskostenUmgelegt;
                 sourceBetriebskostenUmgelegt = this.getBetriebskostenUmgelegt();
-                Double copyBetriebskostenUmgelegt = ((Double) strategy.copy(LocatorUtils.property(locator, "betriebskostenUmgelegt", sourceBetriebskostenUmgelegt), sourceBetriebskostenUmgelegt));
+                BigDecimal copyBetriebskostenUmgelegt = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "betriebskostenUmgelegt", sourceBetriebskostenUmgelegt), sourceBetriebskostenUmgelegt));
                 copy.setBetriebskostenUmgelegt(copyBetriebskostenUmgelegt);
             } else {
                 copy.betriebskostenUmgelegt = null;
             }
             if (this.nichtUmgelegteKosten!= null) {
-                Double sourceNichtUmgelegteKosten;
+                BigDecimal sourceNichtUmgelegteKosten;
                 sourceNichtUmgelegteKosten = this.getNichtUmgelegteKosten();
-                Double copyNichtUmgelegteKosten = ((Double) strategy.copy(LocatorUtils.property(locator, "nichtUmgelegteKosten", sourceNichtUmgelegteKosten), sourceNichtUmgelegteKosten));
+                BigDecimal copyNichtUmgelegteKosten = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nichtUmgelegteKosten", sourceNichtUmgelegteKosten), sourceNichtUmgelegteKosten));
                 copy.setNichtUmgelegteKosten(copyNichtUmgelegteKosten);
             } else {
                 copy.nichtUmgelegteKosten = null;
             }
             if (this.preisProParkflaeche!= null) {
-                Double sourcePreisProParkflaeche;
+                BigDecimal sourcePreisProParkflaeche;
                 sourcePreisProParkflaeche = this.getPreisProParkflaeche();
-                Double copyPreisProParkflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "preisProParkflaeche", sourcePreisProParkflaeche), sourcePreisProParkflaeche));
+                BigDecimal copyPreisProParkflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preisProParkflaeche", sourcePreisProParkflaeche), sourcePreisProParkflaeche));
                 copy.setPreisProParkflaeche(copyPreisProParkflaeche);
             } else {
                 copy.preisProParkflaeche = null;
@@ -702,7 +703,7 @@ public class AnlageObjektTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof AnlageObjektTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -722,117 +723,117 @@ public class AnlageObjektTyp
             }
         }
         {
-            Double lhsVermietbareFlaeche;
+            BigDecimal lhsVermietbareFlaeche;
             lhsVermietbareFlaeche = this.getVermietbareFlaeche();
-            Double rhsVermietbareFlaeche;
+            BigDecimal rhsVermietbareFlaeche;
             rhsVermietbareFlaeche = that.getVermietbareFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "vermietbareFlaeche", lhsVermietbareFlaeche), LocatorUtils.property(thatLocator, "vermietbareFlaeche", rhsVermietbareFlaeche), lhsVermietbareFlaeche, rhsVermietbareFlaeche)) {
                 return false;
             }
         }
         {
-            Double lhsWohnFlaechen;
+            BigDecimal lhsWohnFlaechen;
             lhsWohnFlaechen = this.getWohnFlaechen();
-            Double rhsWohnFlaechen;
+            BigDecimal rhsWohnFlaechen;
             rhsWohnFlaechen = that.getWohnFlaechen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnFlaechen", lhsWohnFlaechen), LocatorUtils.property(thatLocator, "wohnFlaechen", rhsWohnFlaechen), lhsWohnFlaechen, rhsWohnFlaechen)) {
                 return false;
             }
         }
         {
-            Double lhsGewerbeFlaechen;
+            BigDecimal lhsGewerbeFlaechen;
             lhsGewerbeFlaechen = this.getGewerbeFlaechen();
-            Double rhsGewerbeFlaechen;
+            BigDecimal rhsGewerbeFlaechen;
             rhsGewerbeFlaechen = that.getGewerbeFlaechen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gewerbeFlaechen", lhsGewerbeFlaechen), LocatorUtils.property(thatLocator, "gewerbeFlaechen", rhsGewerbeFlaechen), lhsGewerbeFlaechen, rhsGewerbeFlaechen)) {
                 return false;
             }
         }
         {
-            Double lhsGrundstuecksFlaeche;
+            BigDecimal lhsGrundstuecksFlaeche;
             lhsGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-            Double rhsGrundstuecksFlaeche;
+            BigDecimal rhsGrundstuecksFlaeche;
             rhsGrundstuecksFlaeche = that.getGrundstuecksFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksFlaeche", lhsGrundstuecksFlaeche), LocatorUtils.property(thatLocator, "grundstuecksFlaeche", rhsGrundstuecksFlaeche), lhsGrundstuecksFlaeche, rhsGrundstuecksFlaeche)) {
                 return false;
             }
         }
         {
-            Double lhsSonstigeFlaechen;
+            BigDecimal lhsSonstigeFlaechen;
             lhsSonstigeFlaechen = this.getSonstigeFlaechen();
-            Double rhsSonstigeFlaechen;
+            BigDecimal rhsSonstigeFlaechen;
             rhsSonstigeFlaechen = that.getSonstigeFlaechen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstigeFlaechen", lhsSonstigeFlaechen), LocatorUtils.property(thatLocator, "sonstigeFlaechen", rhsSonstigeFlaechen), lhsSonstigeFlaechen, rhsSonstigeFlaechen)) {
                 return false;
             }
         }
         {
-            Double lhsXFacheMiete;
+            BigDecimal lhsXFacheMiete;
             lhsXFacheMiete = this.getXFacheMiete();
-            Double rhsXFacheMiete;
+            BigDecimal rhsXFacheMiete;
             rhsXFacheMiete = that.getXFacheMiete();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "xFacheMiete", lhsXFacheMiete), LocatorUtils.property(thatLocator, "xFacheMiete", rhsXFacheMiete), lhsXFacheMiete, rhsXFacheMiete)) {
                 return false;
             }
         }
         {
-            Double lhsMietEinnahmePaIst;
+            BigDecimal lhsMietEinnahmePaIst;
             lhsMietEinnahmePaIst = this.getMietEinnahmePaIst();
-            Double rhsMietEinnahmePaIst;
+            BigDecimal rhsMietEinnahmePaIst;
             rhsMietEinnahmePaIst = that.getMietEinnahmePaIst();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mietEinnahmePaIst", lhsMietEinnahmePaIst), LocatorUtils.property(thatLocator, "mietEinnahmePaIst", rhsMietEinnahmePaIst), lhsMietEinnahmePaIst, rhsMietEinnahmePaIst)) {
                 return false;
             }
         }
         {
-            Double lhsMietEinnahmePaSoll;
+            BigDecimal lhsMietEinnahmePaSoll;
             lhsMietEinnahmePaSoll = this.getMietEinnahmePaSoll();
-            Double rhsMietEinnahmePaSoll;
+            BigDecimal rhsMietEinnahmePaSoll;
             rhsMietEinnahmePaSoll = that.getMietEinnahmePaSoll();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mietEinnahmePaSoll", lhsMietEinnahmePaSoll), LocatorUtils.property(thatLocator, "mietEinnahmePaSoll", rhsMietEinnahmePaSoll), lhsMietEinnahmePaSoll, rhsMietEinnahmePaSoll)) {
                 return false;
             }
         }
         {
-            Double lhsKaufpreis;
+            BigDecimal lhsKaufpreis;
             lhsKaufpreis = this.getKaufpreis();
-            Double rhsKaufpreis;
+            BigDecimal rhsKaufpreis;
             rhsKaufpreis = that.getKaufpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaufpreis", lhsKaufpreis), LocatorUtils.property(thatLocator, "kaufpreis", rhsKaufpreis), lhsKaufpreis, rhsKaufpreis)) {
                 return false;
             }
         }
         {
-            Double lhsKaufpreisProQm;
+            BigDecimal lhsKaufpreisProQm;
             lhsKaufpreisProQm = this.getKaufpreisProQm();
-            Double rhsKaufpreisProQm;
+            BigDecimal rhsKaufpreisProQm;
             rhsKaufpreisProQm = that.getKaufpreisProQm();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kaufpreisProQm", lhsKaufpreisProQm), LocatorUtils.property(thatLocator, "kaufpreisProQm", rhsKaufpreisProQm), lhsKaufpreisProQm, rhsKaufpreisProQm)) {
                 return false;
             }
         }
         {
-            Double lhsBetriebskostenUmgelegt;
+            BigDecimal lhsBetriebskostenUmgelegt;
             lhsBetriebskostenUmgelegt = this.getBetriebskostenUmgelegt();
-            Double rhsBetriebskostenUmgelegt;
+            BigDecimal rhsBetriebskostenUmgelegt;
             rhsBetriebskostenUmgelegt = that.getBetriebskostenUmgelegt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "betriebskostenUmgelegt", lhsBetriebskostenUmgelegt), LocatorUtils.property(thatLocator, "betriebskostenUmgelegt", rhsBetriebskostenUmgelegt), lhsBetriebskostenUmgelegt, rhsBetriebskostenUmgelegt)) {
                 return false;
             }
         }
         {
-            Double lhsNichtUmgelegteKosten;
+            BigDecimal lhsNichtUmgelegteKosten;
             lhsNichtUmgelegteKosten = this.getNichtUmgelegteKosten();
-            Double rhsNichtUmgelegteKosten;
+            BigDecimal rhsNichtUmgelegteKosten;
             rhsNichtUmgelegteKosten = that.getNichtUmgelegteKosten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nichtUmgelegteKosten", lhsNichtUmgelegteKosten), LocatorUtils.property(thatLocator, "nichtUmgelegteKosten", rhsNichtUmgelegteKosten), lhsNichtUmgelegteKosten, rhsNichtUmgelegteKosten)) {
                 return false;
             }
         }
         {
-            Double lhsPreisProParkflaeche;
+            BigDecimal lhsPreisProParkflaeche;
             lhsPreisProParkflaeche = this.getPreisProParkflaeche();
-            Double rhsPreisProParkflaeche;
+            BigDecimal rhsPreisProParkflaeche;
             rhsPreisProParkflaeche = that.getPreisProParkflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preisProParkflaeche", lhsPreisProParkflaeche), LocatorUtils.property(thatLocator, "preisProParkflaeche", rhsPreisProParkflaeche), lhsPreisProParkflaeche, rhsPreisProParkflaeche)) {
                 return false;

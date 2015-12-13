@@ -12,19 +12,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="SonstigeGewerbeKategorieTyp">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Anwesen"/>
- *     &lt;enumeration value="Bauernhof"/>
- *     &lt;enumeration value="Reiterhof"/>
- *     &lt;enumeration value="Weingut"/>
- *     &lt;enumeration value="Werkstatt"/>
- *     &lt;enumeration value="Freizeitanlage"/>
- *     &lt;enumeration value="Gewerbeflaeche"/>
- *     &lt;enumeration value="Spezialobjekt"/>
- *     &lt;enumeration value="Gewerbepark"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="SonstigeGewerbeKategorieTyp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Anwesen"/&gt;
+ *     &lt;enumeration value="Bauernhof"/&gt;
+ *     &lt;enumeration value="Reiterhof"/&gt;
+ *     &lt;enumeration value="Weingut"/&gt;
+ *     &lt;enumeration value="Werkstatt"/&gt;
+ *     &lt;enumeration value="Freizeitanlage"/&gt;
+ *     &lt;enumeration value="Gewerbeflaeche"/&gt;
+ *     &lt;enumeration value="Spezialobjekt"/&gt;
+ *     &lt;enumeration value="Gewerbepark"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

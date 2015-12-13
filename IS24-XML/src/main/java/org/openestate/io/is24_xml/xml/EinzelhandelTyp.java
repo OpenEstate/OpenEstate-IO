@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -29,26 +30,26 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="EinzelhandelTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp">
- *       &lt;sequence>
- *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/>
- *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}EinzelhandelKategorienTyp" default="keineAngabe" />
- *       &lt;attribute name="Verkaufsflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" />
- *       &lt;attribute name="Schaufensterfront" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Deckenlast" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" />
- *       &lt;attribute name="Lageart" type="{http://www.immobilienscout24.de/immobilientransfer}LageartTyp" />
- *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Zulieferung" type="{http://www.immobilienscout24.de/immobilientransfer}ZulieferungTyp" />
- *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="EinzelhandelTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GewerbeImmoBaseTyp"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Vermarktung" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGewerbeTyp"/&gt;
+ *         &lt;element name="Lastenaufzug" type="{http://www.immobilienscout24.de/immobilientransfer}HebeanlageTyp" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Objektkategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}EinzelhandelKategorienTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Verkaufsflaeche" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Bodenbelag" type="{http://www.immobilienscout24.de/immobilientransfer}BodenbelagTyp" /&gt;
+ *       &lt;attribute name="Schaufensterfront" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Deckenlast" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl72Typ" /&gt;
+ *       &lt;attribute name="Lageart" type="{http://www.immobilienscout24.de/immobilientransfer}LageartTyp" /&gt;
+ *       &lt;attribute name="Rampe" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Zulieferung" type="{http://www.immobilienscout24.de/immobilientransfer}ZulieferungTyp" /&gt;
+ *       &lt;attribute name="Denkmalschutzobjekt" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Keller" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -73,16 +74,16 @@ public class EinzelhandelTyp
     @XmlAttribute(name = "Objektkategorie2")
     protected EinzelhandelKategorienTyp objektkategorie2;
     @XmlAttribute(name = "Verkaufsflaeche", required = true)
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double verkaufsflaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal verkaufsflaeche;
     @XmlAttribute(name = "Bodenbelag")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Schaufensterfront")
-    @XmlJavaTypeAdapter(Adapter13 .class)
-    protected Double schaufensterfront;
+    @XmlJavaTypeAdapter(Adapter30 .class)
+    protected BigDecimal schaufensterfront;
     @XmlAttribute(name = "Deckenlast")
-    @XmlJavaTypeAdapter(Adapter27 .class)
-    protected Double deckenlast;
+    @XmlJavaTypeAdapter(Adapter33 .class)
+    protected BigDecimal deckenlast;
     @XmlAttribute(name = "Lageart")
     protected LageartTyp lageart;
     @XmlAttribute(name = "Rampe")
@@ -178,7 +179,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
-    public Double getVerkaufsflaeche() {
+    public BigDecimal getVerkaufsflaeche() {
         return verkaufsflaeche;
     }
 
@@ -190,7 +191,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
-    public void setVerkaufsflaeche(Double value) {
+    public void setVerkaufsflaeche(BigDecimal value) {
         this.verkaufsflaeche = value;
     }
 
@@ -226,7 +227,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
-    public Double getSchaufensterfront() {
+    public BigDecimal getSchaufensterfront() {
         return schaufensterfront;
     }
 
@@ -238,7 +239,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
-    public void setSchaufensterfront(Double value) {
+    public void setSchaufensterfront(BigDecimal value) {
         this.schaufensterfront = value;
     }
 
@@ -250,7 +251,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
-    public Double getDeckenlast() {
+    public BigDecimal getDeckenlast() {
         return deckenlast;
     }
 
@@ -262,7 +263,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
-    public void setDeckenlast(Double value) {
+    public void setDeckenlast(BigDecimal value) {
         this.deckenlast = value;
     }
 
@@ -418,7 +419,7 @@ public class EinzelhandelTyp
             strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
         }
         {
-            Double theVerkaufsflaeche;
+            BigDecimal theVerkaufsflaeche;
             theVerkaufsflaeche = this.getVerkaufsflaeche();
             strategy.appendField(locator, this, "verkaufsflaeche", buffer, theVerkaufsflaeche);
         }
@@ -428,12 +429,12 @@ public class EinzelhandelTyp
             strategy.appendField(locator, this, "bodenbelag", buffer, theBodenbelag);
         }
         {
-            Double theSchaufensterfront;
+            BigDecimal theSchaufensterfront;
             theSchaufensterfront = this.getSchaufensterfront();
             strategy.appendField(locator, this, "schaufensterfront", buffer, theSchaufensterfront);
         }
         {
-            Double theDeckenlast;
+            BigDecimal theDeckenlast;
             theDeckenlast = this.getDeckenlast();
             strategy.appendField(locator, this, "deckenlast", buffer, theDeckenlast);
         }
@@ -505,9 +506,9 @@ public class EinzelhandelTyp
                 copy.objektkategorie2 = null;
             }
             if (this.verkaufsflaeche!= null) {
-                Double sourceVerkaufsflaeche;
+                BigDecimal sourceVerkaufsflaeche;
                 sourceVerkaufsflaeche = this.getVerkaufsflaeche();
-                Double copyVerkaufsflaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "verkaufsflaeche", sourceVerkaufsflaeche), sourceVerkaufsflaeche));
+                BigDecimal copyVerkaufsflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verkaufsflaeche", sourceVerkaufsflaeche), sourceVerkaufsflaeche));
                 copy.setVerkaufsflaeche(copyVerkaufsflaeche);
             } else {
                 copy.verkaufsflaeche = null;
@@ -521,17 +522,17 @@ public class EinzelhandelTyp
                 copy.bodenbelag = null;
             }
             if (this.schaufensterfront!= null) {
-                Double sourceSchaufensterfront;
+                BigDecimal sourceSchaufensterfront;
                 sourceSchaufensterfront = this.getSchaufensterfront();
-                Double copySchaufensterfront = ((Double) strategy.copy(LocatorUtils.property(locator, "schaufensterfront", sourceSchaufensterfront), sourceSchaufensterfront));
+                BigDecimal copySchaufensterfront = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "schaufensterfront", sourceSchaufensterfront), sourceSchaufensterfront));
                 copy.setSchaufensterfront(copySchaufensterfront);
             } else {
                 copy.schaufensterfront = null;
             }
             if (this.deckenlast!= null) {
-                Double sourceDeckenlast;
+                BigDecimal sourceDeckenlast;
                 sourceDeckenlast = this.getDeckenlast();
-                Double copyDeckenlast = ((Double) strategy.copy(LocatorUtils.property(locator, "deckenlast", sourceDeckenlast), sourceDeckenlast));
+                BigDecimal copyDeckenlast = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "deckenlast", sourceDeckenlast), sourceDeckenlast));
                 copy.setDeckenlast(copyDeckenlast);
             } else {
                 copy.deckenlast = null;
@@ -585,7 +586,7 @@ public class EinzelhandelTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof EinzelhandelTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -623,9 +624,9 @@ public class EinzelhandelTyp
             }
         }
         {
-            Double lhsVerkaufsflaeche;
+            BigDecimal lhsVerkaufsflaeche;
             lhsVerkaufsflaeche = this.getVerkaufsflaeche();
-            Double rhsVerkaufsflaeche;
+            BigDecimal rhsVerkaufsflaeche;
             rhsVerkaufsflaeche = that.getVerkaufsflaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "verkaufsflaeche", lhsVerkaufsflaeche), LocatorUtils.property(thatLocator, "verkaufsflaeche", rhsVerkaufsflaeche), lhsVerkaufsflaeche, rhsVerkaufsflaeche)) {
                 return false;
@@ -641,18 +642,18 @@ public class EinzelhandelTyp
             }
         }
         {
-            Double lhsSchaufensterfront;
+            BigDecimal lhsSchaufensterfront;
             lhsSchaufensterfront = this.getSchaufensterfront();
-            Double rhsSchaufensterfront;
+            BigDecimal rhsSchaufensterfront;
             rhsSchaufensterfront = that.getSchaufensterfront();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "schaufensterfront", lhsSchaufensterfront), LocatorUtils.property(thatLocator, "schaufensterfront", rhsSchaufensterfront), lhsSchaufensterfront, rhsSchaufensterfront)) {
                 return false;
             }
         }
         {
-            Double lhsDeckenlast;
+            BigDecimal lhsDeckenlast;
             lhsDeckenlast = this.getDeckenlast();
-            Double rhsDeckenlast;
+            BigDecimal rhsDeckenlast;
             rhsDeckenlast = that.getDeckenlast();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "deckenlast", lhsDeckenlast), LocatorUtils.property(thatLocator, "deckenlast", rhsDeckenlast), lhsDeckenlast, rhsDeckenlast)) {
                 return false;

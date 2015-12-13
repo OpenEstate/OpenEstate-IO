@@ -11,12 +11,12 @@
     <jaxb:javaType name="java.util.Calendar" xmlType="xsd:dateTime"
                    parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseDateTime"
                    printMethod="org.openestate.io.daft_ie.DaftIeUtils.printDateTime" />
-    <jaxb:javaType name="Double" xmlType="positiveDecimal"
-                   parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseDouble"
-                   printMethod="org.openestate.io.daft_ie.DaftIeUtils.printDouble"/>
-    <jaxb:javaType name="Integer" xmlType="positiveInteger"
-                   parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseInteger"
-                   printMethod="org.openestate.io.daft_ie.DaftIeUtils.printInteger"/>
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="positiveDecimal"
+                   parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parsePositiveDecimal"
+                   printMethod="org.openestate.io.daft_ie.DaftIeUtils.printPositiveDecimal"/>
+    <jaxb:javaType name="java.math.BigInteger" xmlType="positiveInteger"
+                   parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parsePositiveInteger"
+                   printMethod="org.openestate.io.daft_ie.DaftIeUtils.printPositiveInteger"/>
     <jaxb:javaType name="Boolean" xmlType="bool"
                    parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseBoolean"
                    printMethod="org.openestate.io.daft_ie.DaftIeUtils.printBoolean"/>

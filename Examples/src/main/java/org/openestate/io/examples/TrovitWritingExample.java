@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
@@ -126,7 +128,7 @@ public class TrovitWritingExample
     Ad ad = FACTORY.createAd();
     ad.setAddress( "object address" );
     ad.setAgency( "name of the agency" );
-    ad.setBathrooms( RandomUtils.nextDouble( 0, 5 ) );
+    ad.setBathrooms( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 5 ) ) );
     ad.setCity( "name of the city" );
     ad.setCityArea( "name of the district" );
     ad.setCondition( "some notes about the condition" );
@@ -138,16 +140,16 @@ public class TrovitWritingExample
     ad.setId( RandomStringUtils.randomAlphanumeric( 5 ) );
     ad.setIsFurnished( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
     ad.setIsNew( TypeNew.NEW );
-    ad.setLatitude( RandomUtils.nextDouble( 0, 90 ) );
-    ad.setLongitude( RandomUtils.nextDouble( 0, 90 ) );
+    ad.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
+    ad.setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
     ad.setMlsDatabase( "notes about mls database" );
     ad.setOrientation( "notes about orientation" );
     ad.setParking( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
-    ad.setPlotArea( RandomUtils.nextInt( 100, 5000 ) );
+    ad.setPlotArea( BigInteger.valueOf( RandomUtils.nextInt( 100, 5000 ) ) );
     ad.setPostcode( "postcode" );
     ad.setPropertyType( "notes about the property type" );
     ad.setRegion( "notes about the region" );
-    ad.setRooms( RandomUtils.nextDouble( 1, 10 ) );
+    ad.setRooms( BigDecimal.valueOf( RandomUtils.nextDouble( 1, 10 ) ) );
     ad.setTime( Calendar.getInstance() );
     ad.setTitle( "title of the object" );
     ad.setType( Action.FOR_RENT );
@@ -157,7 +159,7 @@ public class TrovitWritingExample
 
     ad.setFloorArea( FACTORY.createFloorArea() );
     ad.getFloorArea().setUnit( Unit.METERS );
-    ad.getFloorArea().setValue( RandomUtils.nextInt( 10, 10000 ) );
+    ad.getFloorArea().setValue( BigInteger.valueOf( RandomUtils.nextInt( 10, 10000 ) ) );
 
     ad.setPictures( FACTORY.createPictures() );
     ad.getPictures().getPicture().add( createPicture() );
@@ -166,7 +168,7 @@ public class TrovitWritingExample
 
     ad.setPrice( FACTORY.createPrice() );
     ad.getPrice().setPeriod( PriceInterval.MONTHLY );
-    ad.getPrice().setValue( RandomUtils.nextDouble( 100, 2000 ) );
+    ad.getPrice().setValue( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 2000 ) ) );
 
     return ad;
   }

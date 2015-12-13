@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
@@ -31,23 +32,23 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VirtuelleImmobilieBaseTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="ManuelleGeoCodierung" type="{http://www.immobilienscout24.de/immobilientransfer}ManuellGeoCodingTyp" minOccurs="0"/>
- *         &lt;element name="Kontaktperson" type="{http://www.immobilienscout24.de/immobilientransfer}KontaktAdresseTyp" minOccurs="0"/>
- *         &lt;element name="ApiSuchfelder" type="{http://www.immobilienscout24.de/immobilientransfer}ApiSuchfelderTyp" minOccurs="0"/>
- *         &lt;element name="Objektbeschreibung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Lage" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="Ausstattung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="SonstigeAngaben" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/>
- *         &lt;element name="MultimediaAnhang" type="{http://www.immobilienscout24.de/immobilientransfer}MultimediaAnhangTyp" maxOccurs="15" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attGroup ref="{http://www.immobilienscout24.de/immobilientransfer}ImmoAttribute"/>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VirtuelleImmobilieBaseTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="ManuelleGeoCodierung" type="{http://www.immobilienscout24.de/immobilientransfer}ManuellGeoCodingTyp" minOccurs="0"/&gt;
+ *         &lt;element name="Kontaktperson" type="{http://www.immobilienscout24.de/immobilientransfer}KontaktAdresseTyp" minOccurs="0"/&gt;
+ *         &lt;element name="ApiSuchfelder" type="{http://www.immobilienscout24.de/immobilientransfer}ApiSuchfelderTyp" minOccurs="0"/&gt;
+ *         &lt;element name="Objektbeschreibung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Lage" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="Ausstattung" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="SonstigeAngaben" type="{http://www.immobilienscout24.de/immobilientransfer}Freitext2000Typ" minOccurs="0"/&gt;
+ *         &lt;element name="MultimediaAnhang" type="{http://www.immobilienscout24.de/immobilientransfer}MultimediaAnhangTyp" maxOccurs="15" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attGroup ref="{http://www.immobilienscout24.de/immobilientransfer}ImmoAttribute"/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -76,21 +77,21 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
     @XmlElementRef(name = "ApiSuchfelder", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
     protected JAXBElement<ApiSuchfelderTyp> apiSuchfelder;
     @XmlElement(name = "Objektbeschreibung")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String objektbeschreibung;
     @XmlElement(name = "Lage")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String lage;
     @XmlElement(name = "Ausstattung")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String ausstattung;
     @XmlElement(name = "SonstigeAngaben")
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter15 .class)
     protected String sonstigeAngaben;
     @XmlElement(name = "MultimediaAnhang")
     protected List<MultimediaAnhangTyp> multimediaAnhang;
     @XmlAttribute(name = "AnbieterObjektID", required = true)
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String anbieterObjektID;
     @XmlAttribute(name = "StatusVBM")
     protected StatusTyp statusVBM;
@@ -103,23 +104,23 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
     @XmlAttribute(name = "Importmodus")
     protected AktionsTyp importmodus;
     @XmlAttribute(name = "ScoutObjektID")
-    @XmlJavaTypeAdapter(Adapter36 .class)
-    protected Long scoutObjektID;
+    @XmlJavaTypeAdapter(Adapter26 .class)
+    protected BigInteger scoutObjektID;
     @XmlAttribute(name = "GruppierungsID")
-    @XmlJavaTypeAdapter(Adapter21 .class)
+    @XmlJavaTypeAdapter(Adapter25 .class)
     protected Long gruppierungsID;
     @XmlAttribute(name = "Adressdruck")
     protected Boolean adressdruck;
     @XmlAttribute(name = "Ueberschrift", required = true)
-    @XmlJavaTypeAdapter(Adapter34 .class)
+    @XmlJavaTypeAdapter(Adapter9 .class)
     protected String ueberschrift;
     @XmlAttribute(name = "Provision")
-    @XmlJavaTypeAdapter(Adapter14 .class)
+    @XmlJavaTypeAdapter(Adapter7 .class)
     protected String provision;
     @XmlAttribute(name = "Provisionspflichtig")
     protected Boolean provisionspflichtig;
     @XmlAttribute(name = "Provisionshinweis")
-    @XmlJavaTypeAdapter(Adapter29 .class)
+    @XmlJavaTypeAdapter(Adapter14 .class)
     protected String provisionshinweis;
     @XmlAttribute(name = "Waehrung")
     protected WaehrungTyp waehrung;
@@ -489,7 +490,7 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
      *     {@link String }
      *     
      */
-    public Long getScoutObjektID() {
+    public BigInteger getScoutObjektID() {
         return scoutObjektID;
     }
 
@@ -501,7 +502,7 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
      *     {@link String }
      *     
      */
-    public void setScoutObjektID(Long value) {
+    public void setScoutObjektID(BigInteger value) {
         this.scoutObjektID = value;
     }
 
@@ -767,7 +768,7 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
             strategy.appendField(locator, this, "importmodus", buffer, theImportmodus);
         }
         {
-            Long theScoutObjektID;
+            BigInteger theScoutObjektID;
             theScoutObjektID = this.getScoutObjektID();
             strategy.appendField(locator, this, "scoutObjektID", buffer, theScoutObjektID);
         }
@@ -943,9 +944,9 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
                 copy.importmodus = null;
             }
             if (this.scoutObjektID!= null) {
-                Long sourceScoutObjektID;
+                BigInteger sourceScoutObjektID;
                 sourceScoutObjektID = this.getScoutObjektID();
-                Long copyScoutObjektID = ((Long) strategy.copy(LocatorUtils.property(locator, "scoutObjektID", sourceScoutObjektID), sourceScoutObjektID));
+                BigInteger copyScoutObjektID = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "scoutObjektID", sourceScoutObjektID), sourceScoutObjektID));
                 copy.setScoutObjektID(copyScoutObjektID);
             } else {
                 copy.scoutObjektID = null;
@@ -1011,7 +1012,7 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof VirtuelleImmobilieBaseTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -1145,9 +1146,9 @@ public abstract class VirtuelleImmobilieBaseTyp implements Cloneable, CopyTo, Eq
             }
         }
         {
-            Long lhsScoutObjektID;
+            BigInteger lhsScoutObjektID;
             lhsScoutObjektID = this.getScoutObjektID();
-            Long rhsScoutObjektID;
+            BigInteger rhsScoutObjektID;
             rhsScoutObjektID = that.getScoutObjektID();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "scoutObjektID", lhsScoutObjektID), LocatorUtils.property(thatLocator, "scoutObjektID", rhsScoutObjektID), lhsScoutObjektID, rhsScoutObjektID)) {
                 return false;

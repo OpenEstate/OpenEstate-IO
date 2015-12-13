@@ -13,18 +13,21 @@
     <jaxb:javaType name="java.util.Calendar" xmlType="xsd:dateTime"
                    parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseDateTime"
                    printMethod="org.openestate.io.openimmo.OpenImmoUtils.printDateTime" />
-    <jaxb:javaType name="java.lang.Double" xmlType="xsd:decimal"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:decimal"
                    parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseDecimal"
                    printMethod="org.openestate.io.openimmo.OpenImmoUtils.printDecimal" />
-    <jaxb:javaType name="java.lang.Double" xmlType="xsd:float"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:float"
                    parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseDecimal"
                    printMethod="org.openestate.io.openimmo.OpenImmoUtils.printDecimal" />
-    <jaxb:javaType name="java.lang.Integer" xmlType="xsd:int"
+    <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:int"
                    parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseInteger"
                    printMethod="org.openestate.io.openimmo.OpenImmoUtils.printInteger" />
-    <jaxb:javaType name="java.lang.Integer" xmlType="xsd:positiveInteger"
-                   parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseInteger"
+    <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:positiveInteger"
+                   parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parsePositiveInteger"
                    printMethod="org.openestate.io.openimmo.OpenImmoUtils.printPositiveInteger" />
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="posdecimal"
+                   parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parsePositiveDecimal"
+                   printMethod="org.openestate.io.openimmo.OpenImmoUtils.printPositiveDecimal" />
   </jaxb:globalBindings>
 
 

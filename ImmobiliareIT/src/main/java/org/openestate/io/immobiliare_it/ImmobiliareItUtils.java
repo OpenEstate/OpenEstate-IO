@@ -19,11 +19,11 @@ package org.openestate.io.immobiliare_it;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.charset.Charset;
-import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Currency;
-import java.util.Date;
 import java.util.Locale;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
@@ -32,7 +32,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateUtils;
 import org.openestate.io.core.LocaleUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
@@ -291,14 +290,33 @@ public class ImmobiliareItUtils
     return value!=null && value.matches( "[^@]+@[^\\.]+\\..+" );
   }
 
-  public static boolean isValidLatitude( Double value )
+  public static boolean isValidLatitude( BigDecimal value )
   {
-    return value!=null && value>=27.2 && value<=71.1;
+    //return value!=null && isValidLatitude( value.doubleValue() );
+    BigDecimal min = new BigDecimal( "27.2" );
+    BigDecimal max = new BigDecimal( "71.1" );
+    return value!=null && value.compareTo( min )>=0 && value.compareTo( max )<=0;
   }
 
+  @Deprecated
+  public static boolean isValidLatitude( Double value )
+  {
+    //return value!=null && value>=27.2 && value<=71.1;
+    return isValidLatitude( BigDecimal.valueOf( value ) );
+  }
+
+  public static boolean isValidLongitude( BigDecimal value )
+  {
+    BigDecimal min = new BigDecimal( "31.2" );
+    BigDecimal max = new BigDecimal( "38.9" );
+    return value!=null && value.compareTo( min )>=0 && value.compareTo( max )<=0;
+  }
+
+  @Deprecated
   public static boolean isValidLongitude( Double value )
   {
-    return value!=null && value>=-31.2 && value<=38.9;
+    //return value!=null && value>=-31.2 && value<=38.9;
+    return isValidLongitude( BigDecimal.valueOf( value ) );
   }
 
   public static boolean isValidRooms( Integer value )
@@ -381,10 +399,10 @@ public class ImmobiliareItUtils
     return unit;
   }
 
-  public static Long parseInteger( String value )
+  public static BigInteger parseInteger( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseLong( value ): null;
+    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
   public static LandSizeUnit parseLandSizeUnit( String value )
@@ -399,16 +417,16 @@ public class ImmobiliareItUtils
     return unit;
   }
 
-  public static Double parseLatitude( String value )
+  public static BigDecimal parseLatitude( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static Double parseLongitude( String value )
+  public static BigDecimal parseLongitude( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDouble( value ): null;
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
   public static Integer parseRooms( String value )
@@ -532,12 +550,12 @@ public class ImmobiliareItUtils
       return value.getXmlValue();
   }
 
-  public static String printInteger( Long value )
+  public static String printInteger( BigInteger value )
   {
     if (value==null)
       throw new IllegalArgumentException( "Can't print integer value!" );
     else
-      return DatatypeConverter.printLong( value );
+      return DatatypeConverter.printInteger( value );
   }
 
   public static String printLandSizeUnit( LandSizeUnit value )
@@ -548,20 +566,20 @@ public class ImmobiliareItUtils
       return value.getXmlValue();
   }
 
-  public static String printLatitude( Double value )
+  public static String printLatitude( BigDecimal value )
   {
     if (value==null || !isValidLatitude(value))
       throw new IllegalArgumentException( "Can't print latitude value!" );
     else
-      return DatatypeConverter.printDouble( value );
+      return DatatypeConverter.printDecimal( value );
   }
 
-  public static String printLongitude( Double value )
+  public static String printLongitude( BigDecimal value )
   {
     if (value==null || !isValidLongitude(value))
       throw new IllegalArgumentException( "Can't print longitude value!" );
     else
-      return DatatypeConverter.printDouble( value );
+      return DatatypeConverter.printDecimal( value );
   }
 
   public static String printRooms( Integer value )

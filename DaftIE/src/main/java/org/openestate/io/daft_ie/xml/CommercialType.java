@@ -12,13 +12,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="commercialType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="land"/>
- *     &lt;enumeration value="shop"/>
- *     &lt;enumeration value="hotel"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="commercialType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="land"/&gt;
+ *     &lt;enumeration value="shop"/&gt;
+ *     &lt;enumeration value="hotel"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

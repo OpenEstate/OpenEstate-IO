@@ -104,7 +104,7 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "openimmo".equals( root.getTagName() );
+    return "openimmo".equals( root.getLocalName() );
   }
 
   /**

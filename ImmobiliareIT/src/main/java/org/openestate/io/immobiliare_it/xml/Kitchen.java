@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="kitchen">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Abitabile"/>
- *     &lt;enumeration value="Semi abitabile"/>
- *     &lt;enumeration value="Cucinotto"/>
- *     &lt;enumeration value="Angolo cottura"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="kitchen"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Abitabile"/&gt;
+ *     &lt;enumeration value="Semi abitabile"/&gt;
+ *     &lt;enumeration value="Cucinotto"/&gt;
+ *     &lt;enumeration value="Angolo cottura"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

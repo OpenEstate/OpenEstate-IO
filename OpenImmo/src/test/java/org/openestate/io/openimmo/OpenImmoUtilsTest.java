@@ -16,19 +16,9 @@
 
 package org.openestate.io.openimmo;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.Enumeration;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.TreeSet;
-import javax.xml.bind.annotation.XmlRootElement;
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -105,29 +95,29 @@ public class OpenImmoUtilsTest
   @Test
   public void testParseDate()
   {
-    DateFormat formatter = DateFormat.getDateInstance( DateFormat.SHORT );
+    DateFormat formatter = DateFormat.getDateInstance( DateFormat.MEDIUM );
     Calendar target = Calendar.getInstance();
-    target.set( 2015, Calendar.JANUARY, 3, 0, 0, 0 );
+    target.set( 2015, Calendar.JANUARY, 30, 0, 0, 0 );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "03.01.2015" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "30.01.2015" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "03-01-2015" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "30-01-2015" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-03" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "2015-01-30" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-03T05:06:07" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "2015-01-30T05:06:07" ).getTime() ) );
 
     Assert.assertEquals(
       formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-03 05:06:07" ).getTime() ) );
+      formatter.format( OpenImmoUtils.parseDate( "2015-01-30 05:06:07" ).getTime() ) );
 
     Assert.assertNotNull(
       OpenImmoUtils.parseDate( "2015-03-17 19:05:00" ) );
@@ -137,13 +127,13 @@ public class OpenImmoUtilsTest
   public void testParseDecimal()
   {
     Assert.assertEquals(
-      Double.valueOf( "2.0" ), OpenImmoUtils.parseDecimal( "2" ) );
+      new BigDecimal( "2" ), OpenImmoUtils.parseDecimal( "2" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.5" ), OpenImmoUtils.parseDecimal( "2.5" ) );
+      new BigDecimal( "2.5" ), OpenImmoUtils.parseDecimal( "2.5" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.5" ), OpenImmoUtils.parseDecimal( "2,5" ) );
+      new BigDecimal( "2.5" ), OpenImmoUtils.parseDecimal( "2,5" ) );
     Assert.assertEquals(
-      Double.valueOf( "2.0" ), OpenImmoUtils.parseDecimal( "2 MM" ) );
+      new BigDecimal( "2" ), OpenImmoUtils.parseDecimal( "2 MM" ).setScale( 0 ) );
     Assert.assertEquals(
       null, OpenImmoUtils.parseDecimal( "" ) );
     try

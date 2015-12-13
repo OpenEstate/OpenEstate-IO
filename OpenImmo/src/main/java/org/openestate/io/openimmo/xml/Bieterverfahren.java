@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -49,31 +50,31 @@ public class Bieterverfahren
 {
 
     @XmlElement(name = "beginn_angebotsphase", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar beginnAngebotsphase;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar besichtigungstermin;
     @XmlElement(name = "besichtigungstermin_2", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar besichtigungstermin2;
     @XmlElement(name = "beginn_bietzeit", type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
     protected Calendar beginnBietzeit;
     @XmlElement(name = "ende_bietzeit", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
     protected Calendar endeBietzeit;
     @XmlElement(name = "hoechstgebot_zeigen")
     protected Boolean hoechstgebotZeigen;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double mindestpreis;
+    protected BigDecimal mindestpreis;
     @XmlElement(name = "user_defined_simplefield")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
@@ -233,7 +234,7 @@ public class Bieterverfahren
      *     {@link String }
      *     
      */
-    public Double getMindestpreis() {
+    public BigDecimal getMindestpreis() {
         return mindestpreis;
     }
 
@@ -245,7 +246,7 @@ public class Bieterverfahren
      *     {@link String }
      *     
      */
-    public void setMindestpreis(Double value) {
+    public void setMindestpreis(BigDecimal value) {
         this.mindestpreis = value;
     }
 
@@ -382,7 +383,7 @@ public class Bieterverfahren
             strategy.appendField(locator, this, "hoechstgebotZeigen", buffer, theHoechstgebotZeigen);
         }
         {
-            Double theMindestpreis;
+            BigDecimal theMindestpreis;
             theMindestpreis = this.getMindestpreis();
             strategy.appendField(locator, this, "mindestpreis", buffer, theMindestpreis);
         }
@@ -466,9 +467,9 @@ public class Bieterverfahren
                 copy.hoechstgebotZeigen = null;
             }
             if (this.mindestpreis!= null) {
-                Double sourceMindestpreis;
+                BigDecimal sourceMindestpreis;
                 sourceMindestpreis = this.getMindestpreis();
-                Double copyMindestpreis = ((Double) strategy.copy(LocatorUtils.property(locator, "mindestpreis", sourceMindestpreis), sourceMindestpreis));
+                BigDecimal copyMindestpreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "mindestpreis", sourceMindestpreis), sourceMindestpreis));
                 copy.setMindestpreis(copyMindestpreis);
             } else {
                 copy.mindestpreis = null;
@@ -521,7 +522,7 @@ public class Bieterverfahren
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Bieterverfahren)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -583,9 +584,9 @@ public class Bieterverfahren
             }
         }
         {
-            Double lhsMindestpreis;
+            BigDecimal lhsMindestpreis;
             lhsMindestpreis = this.getMindestpreis();
-            Double rhsMindestpreis;
+            BigDecimal rhsMindestpreis;
             rhsMindestpreis = that.getMindestpreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mindestpreis", lhsMindestpreis), LocatorUtils.property(thatLocator, "mindestpreis", rhsMindestpreis), lhsMindestpreis, rhsMindestpreis)) {
                 return false;

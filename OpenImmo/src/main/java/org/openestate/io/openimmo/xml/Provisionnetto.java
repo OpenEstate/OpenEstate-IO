@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -38,13 +39,13 @@ public class Provisionnetto
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "provisionust")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double provisionust;
+    protected BigDecimal provisionust;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Provisionnetto
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Provisionnetto
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Provisionnetto
      *     {@link String }
      *     
      */
-    public Double getProvisionust() {
+    public BigDecimal getProvisionust() {
         return provisionust;
     }
 
@@ -90,7 +91,7 @@ public class Provisionnetto
      *     {@link String }
      *     
      */
-    public void setProvisionust(Double value) {
+    public void setProvisionust(BigDecimal value) {
         this.provisionust = value;
     }
 
@@ -110,12 +111,12 @@ public class Provisionnetto
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theProvisionust;
+            BigDecimal theProvisionust;
             theProvisionust = this.getProvisionust();
             strategy.appendField(locator, this, "provisionust", buffer, theProvisionust);
         }
@@ -136,17 +137,17 @@ public class Provisionnetto
         if (draftCopy instanceof Provisionnetto) {
             final Provisionnetto copy = ((Provisionnetto) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.provisionust!= null) {
-                Double sourceProvisionust;
+                BigDecimal sourceProvisionust;
                 sourceProvisionust = this.getProvisionust();
-                Double copyProvisionust = ((Double) strategy.copy(LocatorUtils.property(locator, "provisionust", sourceProvisionust), sourceProvisionust));
+                BigDecimal copyProvisionust = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "provisionust", sourceProvisionust), sourceProvisionust));
                 copy.setProvisionust(copyProvisionust);
             } else {
                 copy.provisionust = null;
@@ -160,7 +161,7 @@ public class Provisionnetto
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Provisionnetto)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -168,18 +169,18 @@ public class Provisionnetto
         }
         final Provisionnetto that = ((Provisionnetto) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsProvisionust;
+            BigDecimal lhsProvisionust;
             lhsProvisionust = this.getProvisionust();
-            Double rhsProvisionust;
+            BigDecimal rhsProvisionust;
             rhsProvisionust = that.getProvisionust();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "provisionust", lhsProvisionust), LocatorUtils.property(thatLocator, "provisionust", rhsProvisionust), lhsProvisionust, rhsProvisionust)) {
                 return false;

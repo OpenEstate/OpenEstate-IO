@@ -44,17 +44,17 @@ public class GarageMiete
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GarageTyp">
-     *       &lt;sequence>
-     *         &lt;element name="Mietpreise" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGarageMieteTyp"/>
-     *       &lt;/sequence>
-     *       &lt;attribute name="VerfuegbarAb" type="{http://www.w3.org/2001/XMLSchema}date" />
-     *       &lt;attribute name="VerfuegbarBis" type="{http://www.w3.org/2001/XMLSchema}date" />
-     *     &lt;/extension>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}GarageTyp"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="Mietpreise" type="{http://www.immobilienscout24.de/immobilientransfer}VermarktungGarageMieteTyp"/&gt;
+     *       &lt;/sequence&gt;
+     *       &lt;attribute name="VerfuegbarAb" type="{http://www.w3.org/2001/XMLSchema}date" /&gt;
+     *       &lt;attribute name="VerfuegbarBis" type="{http://www.w3.org/2001/XMLSchema}date" /&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -232,7 +232,7 @@ public class GarageMiete
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof GarageMiete.Type)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {

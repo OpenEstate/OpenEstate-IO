@@ -10,7 +10,7 @@
     <jaxb:javaType xmlType="xsd:dateTime" name="java.util.Calendar"
                    parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
                    printMethod="javax.xml.bind.DatatypeConverter.printDateTime" />
-    <jaxb:javaType xmlType="xsd:integer" name="java.lang.Long"
+    <jaxb:javaType xmlType="xsd:integer" name="java.math.BigInteger"
                    parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseInteger"
                    printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printInteger" />
     <jaxb:javaType xmlType="immobiliare:dateUpdatedType" name="java.util.Calendar"
@@ -33,10 +33,10 @@
     <jaxb:javaType xmlType="immobiliare:yesno" name="java.lang.Boolean"
                    parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYN"
                    printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYN" />
-    <jaxb:javaType xmlType="immobiliare:latitudeType" name="java.lang.Double"
+    <jaxb:javaType xmlType="immobiliare:latitudeType" name="java.math.BigDecimal"
                    parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLatitude"
                    printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLatitude" />
-    <jaxb:javaType xmlType="immobiliare:longitudeType" name="java.lang.Double"
+    <jaxb:javaType xmlType="immobiliare:longitudeType" name="java.math.BigDecimal"
                    parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLongitude"
                    printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLongitude" />
     <jaxb:javaType xmlType="immobiliare:roomsType" name="java.lang.Integer"

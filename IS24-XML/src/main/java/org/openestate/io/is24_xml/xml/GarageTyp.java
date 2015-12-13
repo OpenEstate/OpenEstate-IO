@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -26,20 +27,20 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="GarageTyp">
- *   &lt;complexContent>
- *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp">
- *       &lt;attribute name="ObjektKategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}GaragenKategorieTyp" default="keineAngabe" />
- *       &lt;attribute name="Objektzustand" type="{http://www.immobilienscout24.de/immobilientransfer}ObjektZustandTyp" default="keineAngabe" />
- *       &lt;attribute name="Hoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl42Typ" />
- *       &lt;attribute name="Laenge" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Breite" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" />
- *       &lt;attribute name="Flaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" />
- *       &lt;attribute name="Baujahr" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" />
- *       &lt;attribute name="JahrLetzteModernisierung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" />
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="GarageTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.immobilienscout24.de/immobilientransfer}ImmobilieBaseTyp"&gt;
+ *       &lt;attribute name="ObjektKategorie2" type="{http://www.immobilienscout24.de/immobilientransfer}GaragenKategorieTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Objektzustand" type="{http://www.immobilienscout24.de/immobilientransfer}ObjektZustandTyp" default="keineAngabe" /&gt;
+ *       &lt;attribute name="Hoehe" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl42Typ" /&gt;
+ *       &lt;attribute name="Laenge" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Breite" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl52Typ" /&gt;
+ *       &lt;attribute name="Flaeche" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl102Typ" /&gt;
+ *       &lt;attribute name="Baujahr" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" /&gt;
+ *       &lt;attribute name="JahrLetzteModernisierung" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl4Typ" /&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -47,8 +48,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GarageTyp")
 @XmlSeeAlso({
-    org.openestate.io.is24_xml.xml.GarageKauf.Type.class,
-    org.openestate.io.is24_xml.xml.GarageMiete.Type.class
+    org.openestate.io.is24_xml.xml.GarageMiete.Type.class,
+    org.openestate.io.is24_xml.xml.GarageKauf.Type.class
 })
 public class GarageTyp
     extends ImmobilieBaseTyp
@@ -60,22 +61,22 @@ public class GarageTyp
     @XmlAttribute(name = "Objektzustand")
     protected ObjektZustandTyp objektzustand;
     @XmlAttribute(name = "Hoehe")
-    @XmlJavaTypeAdapter(Adapter23 .class)
-    protected Double hoehe;
+    @XmlJavaTypeAdapter(Adapter29 .class)
+    protected BigDecimal hoehe;
     @XmlAttribute(name = "Laenge")
-    @XmlJavaTypeAdapter(Adapter13 .class)
-    protected Double laenge;
+    @XmlJavaTypeAdapter(Adapter30 .class)
+    protected BigDecimal laenge;
     @XmlAttribute(name = "Breite")
-    @XmlJavaTypeAdapter(Adapter13 .class)
-    protected Double breite;
+    @XmlJavaTypeAdapter(Adapter30 .class)
+    protected BigDecimal breite;
     @XmlAttribute(name = "Flaeche")
-    @XmlJavaTypeAdapter(Adapter35 .class)
-    protected Double flaeche;
+    @XmlJavaTypeAdapter(Adapter34 .class)
+    protected BigDecimal flaeche;
     @XmlAttribute(name = "Baujahr")
-    @XmlJavaTypeAdapter(Adapter16 .class)
+    @XmlJavaTypeAdapter(Adapter22 .class)
     protected Long baujahr;
     @XmlAttribute(name = "JahrLetzteModernisierung")
-    @XmlJavaTypeAdapter(Adapter16 .class)
+    @XmlJavaTypeAdapter(Adapter22 .class)
     protected Long jahrLetzteModernisierung;
 
     /**
@@ -142,7 +143,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getHoehe() {
+    public BigDecimal getHoehe() {
         return hoehe;
     }
 
@@ -154,7 +155,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setHoehe(Double value) {
+    public void setHoehe(BigDecimal value) {
         this.hoehe = value;
     }
 
@@ -166,7 +167,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getLaenge() {
+    public BigDecimal getLaenge() {
         return laenge;
     }
 
@@ -178,7 +179,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setLaenge(Double value) {
+    public void setLaenge(BigDecimal value) {
         this.laenge = value;
     }
 
@@ -190,7 +191,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getBreite() {
+    public BigDecimal getBreite() {
         return breite;
     }
 
@@ -202,7 +203,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setBreite(Double value) {
+    public void setBreite(BigDecimal value) {
         this.breite = value;
     }
 
@@ -214,7 +215,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public Double getFlaeche() {
+    public BigDecimal getFlaeche() {
         return flaeche;
     }
 
@@ -226,7 +227,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
-    public void setFlaeche(Double value) {
+    public void setFlaeche(BigDecimal value) {
         this.flaeche = value;
     }
 
@@ -305,22 +306,22 @@ public class GarageTyp
             strategy.appendField(locator, this, "objektzustand", buffer, theObjektzustand);
         }
         {
-            Double theHoehe;
+            BigDecimal theHoehe;
             theHoehe = this.getHoehe();
             strategy.appendField(locator, this, "hoehe", buffer, theHoehe);
         }
         {
-            Double theLaenge;
+            BigDecimal theLaenge;
             theLaenge = this.getLaenge();
             strategy.appendField(locator, this, "laenge", buffer, theLaenge);
         }
         {
-            Double theBreite;
+            BigDecimal theBreite;
             theBreite = this.getBreite();
             strategy.appendField(locator, this, "breite", buffer, theBreite);
         }
         {
-            Double theFlaeche;
+            BigDecimal theFlaeche;
             theFlaeche = this.getFlaeche();
             strategy.appendField(locator, this, "flaeche", buffer, theFlaeche);
         }
@@ -368,33 +369,33 @@ public class GarageTyp
                 copy.objektzustand = null;
             }
             if (this.hoehe!= null) {
-                Double sourceHoehe;
+                BigDecimal sourceHoehe;
                 sourceHoehe = this.getHoehe();
-                Double copyHoehe = ((Double) strategy.copy(LocatorUtils.property(locator, "hoehe", sourceHoehe), sourceHoehe));
+                BigDecimal copyHoehe = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hoehe", sourceHoehe), sourceHoehe));
                 copy.setHoehe(copyHoehe);
             } else {
                 copy.hoehe = null;
             }
             if (this.laenge!= null) {
-                Double sourceLaenge;
+                BigDecimal sourceLaenge;
                 sourceLaenge = this.getLaenge();
-                Double copyLaenge = ((Double) strategy.copy(LocatorUtils.property(locator, "laenge", sourceLaenge), sourceLaenge));
+                BigDecimal copyLaenge = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "laenge", sourceLaenge), sourceLaenge));
                 copy.setLaenge(copyLaenge);
             } else {
                 copy.laenge = null;
             }
             if (this.breite!= null) {
-                Double sourceBreite;
+                BigDecimal sourceBreite;
                 sourceBreite = this.getBreite();
-                Double copyBreite = ((Double) strategy.copy(LocatorUtils.property(locator, "breite", sourceBreite), sourceBreite));
+                BigDecimal copyBreite = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "breite", sourceBreite), sourceBreite));
                 copy.setBreite(copyBreite);
             } else {
                 copy.breite = null;
             }
             if (this.flaeche!= null) {
-                Double sourceFlaeche;
+                BigDecimal sourceFlaeche;
                 sourceFlaeche = this.getFlaeche();
-                Double copyFlaeche = ((Double) strategy.copy(LocatorUtils.property(locator, "flaeche", sourceFlaeche), sourceFlaeche));
+                BigDecimal copyFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "flaeche", sourceFlaeche), sourceFlaeche));
                 copy.setFlaeche(copyFlaeche);
             } else {
                 copy.flaeche = null;
@@ -424,7 +425,7 @@ public class GarageTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof GarageTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -453,36 +454,36 @@ public class GarageTyp
             }
         }
         {
-            Double lhsHoehe;
+            BigDecimal lhsHoehe;
             lhsHoehe = this.getHoehe();
-            Double rhsHoehe;
+            BigDecimal rhsHoehe;
             rhsHoehe = that.getHoehe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hoehe", lhsHoehe), LocatorUtils.property(thatLocator, "hoehe", rhsHoehe), lhsHoehe, rhsHoehe)) {
                 return false;
             }
         }
         {
-            Double lhsLaenge;
+            BigDecimal lhsLaenge;
             lhsLaenge = this.getLaenge();
-            Double rhsLaenge;
+            BigDecimal rhsLaenge;
             rhsLaenge = that.getLaenge();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "laenge", lhsLaenge), LocatorUtils.property(thatLocator, "laenge", rhsLaenge), lhsLaenge, rhsLaenge)) {
                 return false;
             }
         }
         {
-            Double lhsBreite;
+            BigDecimal lhsBreite;
             lhsBreite = this.getBreite();
-            Double rhsBreite;
+            BigDecimal rhsBreite;
             rhsBreite = that.getBreite();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "breite", lhsBreite), LocatorUtils.property(thatLocator, "breite", rhsBreite), lhsBreite, rhsBreite)) {
                 return false;
             }
         }
         {
-            Double lhsFlaeche;
+            BigDecimal lhsFlaeche;
             lhsFlaeche = this.getFlaeche();
-            Double rhsFlaeche;
+            BigDecimal rhsFlaeche;
             rhsFlaeche = that.getFlaeche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "flaeche", lhsFlaeche), LocatorUtils.property(thatLocator, "flaeche", rhsFlaeche), lhsFlaeche, rhsFlaeche)) {
                 return false;

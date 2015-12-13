@@ -25,17 +25,17 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="MultimediaAnhangTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="AnhangArt" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}MMAnhangArtenTyp" />
- *       &lt;attribute name="Dateiname" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text255Typ" />
- *       &lt;attribute name="Titel" type="{http://www.immobilienscout24.de/immobilientransfer}Text30Typ" />
- *       &lt;attribute name="Dateityp" type="{http://www.immobilienscout24.de/immobilientransfer}Text4Typ" />
- *       &lt;attribute name="Abspieldauer" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="MultimediaAnhangTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="AnhangArt" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}MMAnhangArtenTyp" /&gt;
+ *       &lt;attribute name="Dateiname" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Text255Typ" /&gt;
+ *       &lt;attribute name="Titel" type="{http://www.immobilienscout24.de/immobilientransfer}Text30Typ" /&gt;
+ *       &lt;attribute name="Dateityp" type="{http://www.immobilienscout24.de/immobilientransfer}Text4Typ" /&gt;
+ *       &lt;attribute name="Abspieldauer" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl5Typ" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,16 +49,16 @@ public class MultimediaAnhangTyp
     @XmlAttribute(name = "AnhangArt", required = true)
     protected MMAnhangArtenTyp anhangArt;
     @XmlAttribute(name = "Dateiname", required = true)
-    @XmlJavaTypeAdapter(Adapter28 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
     protected String dateiname;
     @XmlAttribute(name = "Titel")
-    @XmlJavaTypeAdapter(Adapter25 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected String titel;
     @XmlAttribute(name = "Dateityp")
-    @XmlJavaTypeAdapter(Adapter9 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     protected String dateityp;
     @XmlAttribute(name = "Abspieldauer")
-    @XmlJavaTypeAdapter(Adapter33 .class)
+    @XmlJavaTypeAdapter(Adapter23 .class)
     protected Long abspieldauer;
 
     /**
@@ -286,7 +286,7 @@ public class MultimediaAnhangTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof MultimediaAnhangTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {

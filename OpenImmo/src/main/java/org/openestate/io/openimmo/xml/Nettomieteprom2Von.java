@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -38,13 +39,13 @@ public class Nettomieteprom2Von
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double value;
+    protected BigDecimal value;
     @XmlAttribute(name = "nettomieteprom2bis")
-    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
-    protected Double nettomieteprom2Bis;
+    protected BigDecimal nettomieteprom2Bis;
 
     /**
      * Gets the value of the value property.
@@ -54,7 +55,7 @@ public class Nettomieteprom2Von
      *     {@link String }
      *     
      */
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Nettomieteprom2Von
      *     {@link String }
      *     
      */
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
@@ -78,7 +79,7 @@ public class Nettomieteprom2Von
      *     {@link String }
      *     
      */
-    public Double getNettomieteprom2Bis() {
+    public BigDecimal getNettomieteprom2Bis() {
         return nettomieteprom2Bis;
     }
 
@@ -90,7 +91,7 @@ public class Nettomieteprom2Von
      *     {@link String }
      *     
      */
-    public void setNettomieteprom2Bis(Double value) {
+    public void setNettomieteprom2Bis(BigDecimal value) {
         this.nettomieteprom2Bis = value;
     }
 
@@ -110,12 +111,12 @@ public class Nettomieteprom2Von
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
         {
-            Double theValue;
+            BigDecimal theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue);
         }
         {
-            Double theNettomieteprom2Bis;
+            BigDecimal theNettomieteprom2Bis;
             theNettomieteprom2Bis = this.getNettomieteprom2Bis();
             strategy.appendField(locator, this, "nettomieteprom2Bis", buffer, theNettomieteprom2Bis);
         }
@@ -136,17 +137,17 @@ public class Nettomieteprom2Von
         if (draftCopy instanceof Nettomieteprom2Von) {
             final Nettomieteprom2Von copy = ((Nettomieteprom2Von) draftCopy);
             if (this.value!= null) {
-                Double sourceValue;
+                BigDecimal sourceValue;
                 sourceValue = this.getValue();
-                Double copyValue = ((Double) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
+                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
                 copy.setValue(copyValue);
             } else {
                 copy.value = null;
             }
             if (this.nettomieteprom2Bis!= null) {
-                Double sourceNettomieteprom2Bis;
+                BigDecimal sourceNettomieteprom2Bis;
                 sourceNettomieteprom2Bis = this.getNettomieteprom2Bis();
-                Double copyNettomieteprom2Bis = ((Double) strategy.copy(LocatorUtils.property(locator, "nettomieteprom2Bis", sourceNettomieteprom2Bis), sourceNettomieteprom2Bis));
+                BigDecimal copyNettomieteprom2Bis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "nettomieteprom2Bis", sourceNettomieteprom2Bis), sourceNettomieteprom2Bis));
                 copy.setNettomieteprom2Bis(copyNettomieteprom2Bis);
             } else {
                 copy.nettomieteprom2Bis = null;
@@ -160,7 +161,7 @@ public class Nettomieteprom2Von
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Nettomieteprom2Von)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -168,18 +169,18 @@ public class Nettomieteprom2Von
         }
         final Nettomieteprom2Von that = ((Nettomieteprom2Von) object);
         {
-            Double lhsValue;
+            BigDecimal lhsValue;
             lhsValue = this.getValue();
-            Double rhsValue;
+            BigDecimal rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
                 return false;
             }
         }
         {
-            Double lhsNettomieteprom2Bis;
+            BigDecimal lhsNettomieteprom2Bis;
             lhsNettomieteprom2Bis = this.getNettomieteprom2Bis();
-            Double rhsNettomieteprom2Bis;
+            BigDecimal rhsNettomieteprom2Bis;
             rhsNettomieteprom2Bis = that.getNettomieteprom2Bis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nettomieteprom2Bis", lhsNettomieteprom2Bis), LocatorUtils.property(thatLocator, "nettomieteprom2Bis", rhsNettomieteprom2Bis), lhsNettomieteprom2Bis, rhsNettomieteprom2Bis)) {
                 return false;

@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -74,13 +75,13 @@ public class Geo
     protected String flurstueck;
     protected String gemarkung;
     @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
-    protected Integer etage;
+    protected BigInteger etage;
     @XmlElement(name = "anzahl_etagen", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
-    protected Integer anzahlEtagen;
+    protected BigInteger anzahlEtagen;
     @XmlElement(name = "lage_im_bau")
     protected LageImBau lageImBau;
     protected String wohnungsnr;
@@ -373,7 +374,7 @@ public class Geo
      *     {@link String }
      *     
      */
-    public Integer getEtage() {
+    public BigInteger getEtage() {
         return etage;
     }
 
@@ -385,7 +386,7 @@ public class Geo
      *     {@link String }
      *     
      */
-    public void setEtage(Integer value) {
+    public void setEtage(BigInteger value) {
         this.etage = value;
     }
 
@@ -397,7 +398,7 @@ public class Geo
      *     {@link String }
      *     
      */
-    public Integer getAnzahlEtagen() {
+    public BigInteger getAnzahlEtagen() {
         return anzahlEtagen;
     }
 
@@ -409,7 +410,7 @@ public class Geo
      *     {@link String }
      *     
      */
-    public void setAnzahlEtagen(Integer value) {
+    public void setAnzahlEtagen(BigInteger value) {
         this.anzahlEtagen = value;
     }
 
@@ -763,12 +764,12 @@ public class Geo
             strategy.appendField(locator, this, "gemarkung", buffer, theGemarkung);
         }
         {
-            Integer theEtage;
+            BigInteger theEtage;
             theEtage = this.getEtage();
             strategy.appendField(locator, this, "etage", buffer, theEtage);
         }
         {
-            Integer theAnzahlEtagen;
+            BigInteger theAnzahlEtagen;
             theAnzahlEtagen = this.getAnzahlEtagen();
             strategy.appendField(locator, this, "anzahlEtagen", buffer, theAnzahlEtagen);
         }
@@ -932,17 +933,17 @@ public class Geo
                 copy.gemarkung = null;
             }
             if (this.etage!= null) {
-                Integer sourceEtage;
+                BigInteger sourceEtage;
                 sourceEtage = this.getEtage();
-                Integer copyEtage = ((Integer) strategy.copy(LocatorUtils.property(locator, "etage", sourceEtage), sourceEtage));
+                BigInteger copyEtage = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "etage", sourceEtage), sourceEtage));
                 copy.setEtage(copyEtage);
             } else {
                 copy.etage = null;
             }
             if (this.anzahlEtagen!= null) {
-                Integer sourceAnzahlEtagen;
+                BigInteger sourceAnzahlEtagen;
                 sourceAnzahlEtagen = this.getAnzahlEtagen();
-                Integer copyAnzahlEtagen = ((Integer) strategy.copy(LocatorUtils.property(locator, "anzahlEtagen", sourceAnzahlEtagen), sourceAnzahlEtagen));
+                BigInteger copyAnzahlEtagen = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "anzahlEtagen", sourceAnzahlEtagen), sourceAnzahlEtagen));
                 copy.setAnzahlEtagen(copyAnzahlEtagen);
             } else {
                 copy.anzahlEtagen = null;
@@ -1059,7 +1060,7 @@ public class Geo
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof Geo)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -1166,18 +1167,18 @@ public class Geo
             }
         }
         {
-            Integer lhsEtage;
+            BigInteger lhsEtage;
             lhsEtage = this.getEtage();
-            Integer rhsEtage;
+            BigInteger rhsEtage;
             rhsEtage = that.getEtage();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "etage", lhsEtage), LocatorUtils.property(thatLocator, "etage", rhsEtage), lhsEtage, rhsEtage)) {
                 return false;
             }
         }
         {
-            Integer lhsAnzahlEtagen;
+            BigInteger lhsAnzahlEtagen;
             lhsAnzahlEtagen = this.getAnzahlEtagen();
-            Integer rhsAnzahlEtagen;
+            BigInteger rhsAnzahlEtagen;
             rhsAnzahlEtagen = that.getAnzahlEtagen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlEtagen", lhsAnzahlEtagen), LocatorUtils.property(thatLocator, "anzahlEtagen", rhsAnzahlEtagen), lhsAnzahlEtagen, rhsAnzahlEtagen)) {
                 return false;

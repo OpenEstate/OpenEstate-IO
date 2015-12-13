@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -27,32 +28,32 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VermarktungGrundstueckWohnenKaufTyp">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice>
- *         &lt;element name="Kauf">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="Erbpacht">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;attribute name="DauerInJahren" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/choice>
- *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VermarktungGrundstueckWohnenKaufTyp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="Kauf"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Erbpacht"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;attribute name="DauerInJahren" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/choice&gt;
+ *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -71,8 +72,8 @@ public class VermarktungGrundstueckWohnenKaufTyp
     @XmlElementRef(name = "Erbpacht", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
     protected JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> erbpacht;
     @XmlAttribute(name = "Preis", required = true)
-    @XmlJavaTypeAdapter(Adapter17 .class)
-    protected Double preis;
+    @XmlJavaTypeAdapter(Adapter36 .class)
+    protected BigDecimal preis;
 
     /**
      * Gets the value of the kauf property.
@@ -130,7 +131,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
      *     {@link String }
      *     
      */
-    public Double getPreis() {
+    public BigDecimal getPreis() {
         return preis;
     }
 
@@ -142,7 +143,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
      *     {@link String }
      *     
      */
-    public void setPreis(Double value) {
+    public void setPreis(BigDecimal value) {
         this.preis = value;
     }
 
@@ -172,7 +173,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
             strategy.appendField(locator, this, "erbpacht", buffer, theErbpacht);
         }
         {
-            Double thePreis;
+            BigDecimal thePreis;
             thePreis = this.getPreis();
             strategy.appendField(locator, this, "preis", buffer, thePreis);
         }
@@ -211,9 +212,9 @@ public class VermarktungGrundstueckWohnenKaufTyp
                 copy.erbpacht = null;
             }
             if (this.preis!= null) {
-                Double sourcePreis;
+                BigDecimal sourcePreis;
                 sourcePreis = this.getPreis();
-                Double copyPreis = ((Double) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
+                BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
                 copy.setPreis(copyPreis);
             } else {
                 copy.preis = null;
@@ -227,7 +228,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof VermarktungGrundstueckWohnenKaufTyp)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -253,9 +254,9 @@ public class VermarktungGrundstueckWohnenKaufTyp
             }
         }
         {
-            Double lhsPreis;
+            BigDecimal lhsPreis;
             lhsPreis = this.getPreis();
-            Double rhsPreis;
+            BigDecimal rhsPreis;
             rhsPreis = that.getPreis();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
                 return false;
@@ -276,13 +277,13 @@ public class VermarktungGrundstueckWohnenKaufTyp
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;attribute name="DauerInJahren" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" />
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;attribute name="DauerInJahren" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}Zahl3Typ" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -294,7 +295,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
     {
 
         @XmlAttribute(name = "DauerInJahren", required = true)
-        @XmlJavaTypeAdapter(Adapter5 .class)
+        @XmlJavaTypeAdapter(Adapter21 .class)
         protected Long dauerInJahren;
 
         /**
@@ -374,7 +375,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckWohnenKaufTyp.Erbpacht)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {
@@ -407,12 +408,12 @@ public class VermarktungGrundstueckWohnenKaufTyp
      * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
      * </pre>
      * 
      * 
@@ -461,7 +462,7 @@ public class VermarktungGrundstueckWohnenKaufTyp
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-            if (!(object instanceof VermarktungGrundstueckWohnenKaufTyp.Kauf)) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
             if (this == object) {

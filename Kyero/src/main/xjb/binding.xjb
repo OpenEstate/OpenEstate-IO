@@ -6,13 +6,13 @@
 
     <!-- parsers & writers for global simpletypes -->
 
-    <jaxb:javaType name="java.lang.Long" xmlType="xsd:integer"
+    <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:integer"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseInteger"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printInteger" />
-    <jaxb:javaType name="java.lang.Long" xmlType="xsd:nonNegativeInteger"
-                   parseMethod="org.openestate.io.kyero.KyeroUtils.parseInteger"
+    <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:nonNegativeInteger"
+                   parseMethod="org.openestate.io.kyero.KyeroUtils.parseNonNegativeInteger"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printNonNegativeInteger" />
-    <jaxb:javaType name="java.lang.Double" xmlType="xsd:decimal"
+    <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:decimal"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseDecimal"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printDecimal" />
 

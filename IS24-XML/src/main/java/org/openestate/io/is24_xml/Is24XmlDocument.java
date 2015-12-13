@@ -60,7 +60,7 @@ public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp>
   public static boolean isReadable( Document doc )
   {
     Element root = XmlUtils.getRootElement( doc );
-    return "IS24ImmobilienTransfer".equals( root.getTagName() );
+    return "IS24ImmobilienTransfer".equals( root.getLocalName() );
   }
 
   /**

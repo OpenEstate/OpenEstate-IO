@@ -1,11 +1,14 @@
 
 package org.openestate.io.daft_ie.xml;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy;
@@ -27,64 +30,64 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="overseasSaleAdType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="region" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="property_type" type="{}propertyType"/>
- *         &lt;element name="house_type" type="{}houseType"/>
- *         &lt;element name="commercial_type" type="{}commercialType"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="price" type="{}positiveInteger"/>
- *         &lt;element name="price_type">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="region"/>
- *               &lt;enumeration value="excess"/>
- *               &lt;enumeration value="from"/>
- *               &lt;enumeration value="on application"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="bathroom_number" type="{}positiveInteger"/>
- *         &lt;element name="bedroom_number" type="{}positiveInteger"/>
- *         &lt;element name="is_new_development" type="{}bool" minOccurs="0"/>
- *         &lt;element name="units_available" type="{}positiveInteger" minOccurs="0"/>
- *         &lt;element name="new_development_availability" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="square_metres" type="{}positiveDecimal" minOccurs="0"/>
- *         &lt;element name="acres" type="{}positiveDecimal" minOccurs="0"/>
- *         &lt;element name="directions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="co2_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="energy_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="viewing_details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="phone1" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="contact_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="phone_info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="main_email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="cc_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="external_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="agent_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="property_status">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="for-sale"/>
- *               &lt;enumeration value="sale-agreed"/>
- *               &lt;enumeration value="sold"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="photos" type="{}photosType" minOccurs="0"/>
- *         &lt;element name="features" type="{}featuresType" minOccurs="0"/>
- *         &lt;element name="pdfs" type="{}pdfsType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="overseasSaleAdType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="region" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="property_type" type="{}propertyType"/&gt;
+ *         &lt;element name="house_type" type="{}houseType"/&gt;
+ *         &lt;element name="commercial_type" type="{}commercialType"/&gt;
+ *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="price" type="{}positiveInteger"/&gt;
+ *         &lt;element name="price_type"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="region"/&gt;
+ *               &lt;enumeration value="excess"/&gt;
+ *               &lt;enumeration value="from"/&gt;
+ *               &lt;enumeration value="on application"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="bathroom_number" type="{}positiveInteger"/&gt;
+ *         &lt;element name="bedroom_number" type="{}positiveInteger"/&gt;
+ *         &lt;element name="is_new_development" type="{}bool" minOccurs="0"/&gt;
+ *         &lt;element name="units_available" type="{}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="new_development_availability" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="square_metres" type="{}positiveDecimal" minOccurs="0"/&gt;
+ *         &lt;element name="acres" type="{}positiveDecimal" minOccurs="0"/&gt;
+ *         &lt;element name="directions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="co2_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="energy_rating" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="viewing_details" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="phone1" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="phone2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="contact_name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="phone_info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="main_email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="cc_email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="external_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="agent_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="property_status"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;enumeration value="for-sale"/&gt;
+ *               &lt;enumeration value="sale-agreed"/&gt;
+ *               &lt;enumeration value="sold"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="photos" type="{}photosType" minOccurs="0"/&gt;
+ *         &lt;element name="features" type="{}featuresType" minOccurs="0"/&gt;
+ *         &lt;element name="pdfs" type="{}pdfsType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -139,38 +142,47 @@ public class OverseasSaleAdType
     @XmlElement(required = true)
     protected java.lang.String address;
     @XmlElement(name = "property_type", required = true)
+    @XmlSchemaType(name = "string")
     protected PropertyType propertyType;
     @XmlElement(name = "house_type", required = true)
+    @XmlSchemaType(name = "string")
     protected HouseType houseType;
     @XmlElement(name = "commercial_type", required = true)
+    @XmlSchemaType(name = "string")
     protected CommercialType commercialType;
     @XmlElement(required = true)
     protected java.lang.String description;
     @XmlElement(required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
-    protected Integer price;
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
+    protected BigInteger price;
     @XmlElement(name = "price_type", required = true)
     protected OverseasSaleAdType.PriceType priceType;
     @XmlElement(name = "bathroom_number", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
-    protected Integer bathroomNumber;
-    @XmlElement(name = "bedroom_number", required = true, type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
-    protected Integer bedroomNumber;
-    @XmlElement(name = "is_new_development", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
+    protected BigInteger bathroomNumber;
+    @XmlElement(name = "bedroom_number", required = true, type = java.lang.String.class)
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
+    protected BigInteger bedroomNumber;
+    @XmlElement(name = "is_new_development", type = java.lang.String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     protected Boolean isNewDevelopment;
     @XmlElement(name = "units_available", type = java.lang.String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
-    protected Integer unitsAvailable;
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "integer")
+    protected BigInteger unitsAvailable;
     @XmlElement(name = "new_development_availability")
     protected java.lang.String newDevelopmentAvailability;
     @XmlElement(name = "square_metres", type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter5 .class)
-    protected Double squareMetres;
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal squareMetres;
     @XmlElement(type = java.lang.String.class)
     @XmlJavaTypeAdapter(Adapter5 .class)
-    protected Double acres;
+    @XmlSchemaType(name = "decimal")
+    protected BigDecimal acres;
     protected java.lang.String directions;
     @XmlElement(name = "co2_rating")
     protected java.lang.String co2Rating;
@@ -399,7 +411,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getPrice() {
+    public BigInteger getPrice() {
         return price;
     }
 
@@ -411,7 +423,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setPrice(Integer value) {
+    public void setPrice(BigInteger value) {
         this.price = value;
     }
 
@@ -447,7 +459,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getBathroomNumber() {
+    public BigInteger getBathroomNumber() {
         return bathroomNumber;
     }
 
@@ -459,7 +471,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setBathroomNumber(Integer value) {
+    public void setBathroomNumber(BigInteger value) {
         this.bathroomNumber = value;
     }
 
@@ -471,7 +483,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getBedroomNumber() {
+    public BigInteger getBedroomNumber() {
         return bedroomNumber;
     }
 
@@ -483,7 +495,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setBedroomNumber(Integer value) {
+    public void setBedroomNumber(BigInteger value) {
         this.bedroomNumber = value;
     }
 
@@ -519,7 +531,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public Integer getUnitsAvailable() {
+    public BigInteger getUnitsAvailable() {
         return unitsAvailable;
     }
 
@@ -531,7 +543,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setUnitsAvailable(Integer value) {
+    public void setUnitsAvailable(BigInteger value) {
         this.unitsAvailable = value;
     }
 
@@ -567,7 +579,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public Double getSquareMetres() {
+    public BigDecimal getSquareMetres() {
         return squareMetres;
     }
 
@@ -579,7 +591,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setSquareMetres(Double value) {
+    public void setSquareMetres(BigDecimal value) {
         this.squareMetres = value;
     }
 
@@ -591,7 +603,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public Double getAcres() {
+    public BigDecimal getAcres() {
         return acres;
     }
 
@@ -603,7 +615,7 @@ public class OverseasSaleAdType
      *     {@link java.lang.String }
      *     
      */
-    public void setAcres(Double value) {
+    public void setAcres(BigDecimal value) {
         this.acres = value;
     }
 
@@ -1047,7 +1059,7 @@ public class OverseasSaleAdType
             strategy.appendField(locator, this, "description", buffer, theDescription);
         }
         {
-            Integer thePrice;
+            BigInteger thePrice;
             thePrice = this.getPrice();
             strategy.appendField(locator, this, "price", buffer, thePrice);
         }
@@ -1057,12 +1069,12 @@ public class OverseasSaleAdType
             strategy.appendField(locator, this, "priceType", buffer, thePriceType);
         }
         {
-            Integer theBathroomNumber;
+            BigInteger theBathroomNumber;
             theBathroomNumber = this.getBathroomNumber();
             strategy.appendField(locator, this, "bathroomNumber", buffer, theBathroomNumber);
         }
         {
-            Integer theBedroomNumber;
+            BigInteger theBedroomNumber;
             theBedroomNumber = this.getBedroomNumber();
             strategy.appendField(locator, this, "bedroomNumber", buffer, theBedroomNumber);
         }
@@ -1072,7 +1084,7 @@ public class OverseasSaleAdType
             strategy.appendField(locator, this, "isNewDevelopment", buffer, theIsNewDevelopment);
         }
         {
-            Integer theUnitsAvailable;
+            BigInteger theUnitsAvailable;
             theUnitsAvailable = this.getUnitsAvailable();
             strategy.appendField(locator, this, "unitsAvailable", buffer, theUnitsAvailable);
         }
@@ -1082,12 +1094,12 @@ public class OverseasSaleAdType
             strategy.appendField(locator, this, "newDevelopmentAvailability", buffer, theNewDevelopmentAvailability);
         }
         {
-            Double theSquareMetres;
+            BigDecimal theSquareMetres;
             theSquareMetres = this.getSquareMetres();
             strategy.appendField(locator, this, "squareMetres", buffer, theSquareMetres);
         }
         {
-            Double theAcres;
+            BigDecimal theAcres;
             theAcres = this.getAcres();
             strategy.appendField(locator, this, "acres", buffer, theAcres);
         }
@@ -1252,9 +1264,9 @@ public class OverseasSaleAdType
                 copy.description = null;
             }
             if (this.price!= null) {
-                Integer sourcePrice;
+                BigInteger sourcePrice;
                 sourcePrice = this.getPrice();
-                Integer copyPrice = ((Integer) strategy.copy(LocatorUtils.property(locator, "price", sourcePrice), sourcePrice));
+                BigInteger copyPrice = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "price", sourcePrice), sourcePrice));
                 copy.setPrice(copyPrice);
             } else {
                 copy.price = null;
@@ -1268,17 +1280,17 @@ public class OverseasSaleAdType
                 copy.priceType = null;
             }
             if (this.bathroomNumber!= null) {
-                Integer sourceBathroomNumber;
+                BigInteger sourceBathroomNumber;
                 sourceBathroomNumber = this.getBathroomNumber();
-                Integer copyBathroomNumber = ((Integer) strategy.copy(LocatorUtils.property(locator, "bathroomNumber", sourceBathroomNumber), sourceBathroomNumber));
+                BigInteger copyBathroomNumber = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathroomNumber", sourceBathroomNumber), sourceBathroomNumber));
                 copy.setBathroomNumber(copyBathroomNumber);
             } else {
                 copy.bathroomNumber = null;
             }
             if (this.bedroomNumber!= null) {
-                Integer sourceBedroomNumber;
+                BigInteger sourceBedroomNumber;
                 sourceBedroomNumber = this.getBedroomNumber();
-                Integer copyBedroomNumber = ((Integer) strategy.copy(LocatorUtils.property(locator, "bedroomNumber", sourceBedroomNumber), sourceBedroomNumber));
+                BigInteger copyBedroomNumber = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bedroomNumber", sourceBedroomNumber), sourceBedroomNumber));
                 copy.setBedroomNumber(copyBedroomNumber);
             } else {
                 copy.bedroomNumber = null;
@@ -1292,9 +1304,9 @@ public class OverseasSaleAdType
                 copy.isNewDevelopment = null;
             }
             if (this.unitsAvailable!= null) {
-                Integer sourceUnitsAvailable;
+                BigInteger sourceUnitsAvailable;
                 sourceUnitsAvailable = this.getUnitsAvailable();
-                Integer copyUnitsAvailable = ((Integer) strategy.copy(LocatorUtils.property(locator, "unitsAvailable", sourceUnitsAvailable), sourceUnitsAvailable));
+                BigInteger copyUnitsAvailable = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "unitsAvailable", sourceUnitsAvailable), sourceUnitsAvailable));
                 copy.setUnitsAvailable(copyUnitsAvailable);
             } else {
                 copy.unitsAvailable = null;
@@ -1308,17 +1320,17 @@ public class OverseasSaleAdType
                 copy.newDevelopmentAvailability = null;
             }
             if (this.squareMetres!= null) {
-                Double sourceSquareMetres;
+                BigDecimal sourceSquareMetres;
                 sourceSquareMetres = this.getSquareMetres();
-                Double copySquareMetres = ((Double) strategy.copy(LocatorUtils.property(locator, "squareMetres", sourceSquareMetres), sourceSquareMetres));
+                BigDecimal copySquareMetres = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "squareMetres", sourceSquareMetres), sourceSquareMetres));
                 copy.setSquareMetres(copySquareMetres);
             } else {
                 copy.squareMetres = null;
             }
             if (this.acres!= null) {
-                Double sourceAcres;
+                BigDecimal sourceAcres;
                 sourceAcres = this.getAcres();
-                Double copyAcres = ((Double) strategy.copy(LocatorUtils.property(locator, "acres", sourceAcres), sourceAcres));
+                BigDecimal copyAcres = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "acres", sourceAcres), sourceAcres));
                 copy.setAcres(copyAcres);
             } else {
                 copy.acres = null;
@@ -1460,7 +1472,7 @@ public class OverseasSaleAdType
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
-        if (!(object instanceof OverseasSaleAdType)) {
+        if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
         if (this == object) {
@@ -1540,9 +1552,9 @@ public class OverseasSaleAdType
             }
         }
         {
-            Integer lhsPrice;
+            BigInteger lhsPrice;
             lhsPrice = this.getPrice();
-            Integer rhsPrice;
+            BigInteger rhsPrice;
             rhsPrice = that.getPrice();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "price", lhsPrice), LocatorUtils.property(thatLocator, "price", rhsPrice), lhsPrice, rhsPrice)) {
                 return false;
@@ -1558,18 +1570,18 @@ public class OverseasSaleAdType
             }
         }
         {
-            Integer lhsBathroomNumber;
+            BigInteger lhsBathroomNumber;
             lhsBathroomNumber = this.getBathroomNumber();
-            Integer rhsBathroomNumber;
+            BigInteger rhsBathroomNumber;
             rhsBathroomNumber = that.getBathroomNumber();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bathroomNumber", lhsBathroomNumber), LocatorUtils.property(thatLocator, "bathroomNumber", rhsBathroomNumber), lhsBathroomNumber, rhsBathroomNumber)) {
                 return false;
             }
         }
         {
-            Integer lhsBedroomNumber;
+            BigInteger lhsBedroomNumber;
             lhsBedroomNumber = this.getBedroomNumber();
-            Integer rhsBedroomNumber;
+            BigInteger rhsBedroomNumber;
             rhsBedroomNumber = that.getBedroomNumber();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bedroomNumber", lhsBedroomNumber), LocatorUtils.property(thatLocator, "bedroomNumber", rhsBedroomNumber), lhsBedroomNumber, rhsBedroomNumber)) {
                 return false;
@@ -1585,9 +1597,9 @@ public class OverseasSaleAdType
             }
         }
         {
-            Integer lhsUnitsAvailable;
+            BigInteger lhsUnitsAvailable;
             lhsUnitsAvailable = this.getUnitsAvailable();
-            Integer rhsUnitsAvailable;
+            BigInteger rhsUnitsAvailable;
             rhsUnitsAvailable = that.getUnitsAvailable();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "unitsAvailable", lhsUnitsAvailable), LocatorUtils.property(thatLocator, "unitsAvailable", rhsUnitsAvailable), lhsUnitsAvailable, rhsUnitsAvailable)) {
                 return false;
@@ -1603,18 +1615,18 @@ public class OverseasSaleAdType
             }
         }
         {
-            Double lhsSquareMetres;
+            BigDecimal lhsSquareMetres;
             lhsSquareMetres = this.getSquareMetres();
-            Double rhsSquareMetres;
+            BigDecimal rhsSquareMetres;
             rhsSquareMetres = that.getSquareMetres();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "squareMetres", lhsSquareMetres), LocatorUtils.property(thatLocator, "squareMetres", rhsSquareMetres), lhsSquareMetres, rhsSquareMetres)) {
                 return false;
             }
         }
         {
-            Double lhsAcres;
+            BigDecimal lhsAcres;
             lhsAcres = this.getAcres();
-            Double rhsAcres;
+            BigDecimal rhsAcres;
             rhsAcres = that.getAcres();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "acres", lhsAcres), LocatorUtils.property(thatLocator, "acres", rhsAcres), lhsAcres, rhsAcres)) {
                 return false;
@@ -1779,14 +1791,14 @@ public class OverseasSaleAdType
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="region"/>
-     *     &lt;enumeration value="excess"/>
-     *     &lt;enumeration value="from"/>
-     *     &lt;enumeration value="on application"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="region"/&gt;
+     *     &lt;enumeration value="excess"/&gt;
+     *     &lt;enumeration value="from"/&gt;
+     *     &lt;enumeration value="on application"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */
@@ -1830,13 +1842,13 @@ public class OverseasSaleAdType
      * <p>The following schema fragment specifies the expected content contained within this class.
      * <p>
      * <pre>
-     * &lt;simpleType>
-     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *     &lt;enumeration value="for-sale"/>
-     *     &lt;enumeration value="sale-agreed"/>
-     *     &lt;enumeration value="sold"/>
-     *   &lt;/restriction>
-     * &lt;/simpleType>
+     * &lt;simpleType&gt;
+     *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *     &lt;enumeration value="for-sale"/&gt;
+     *     &lt;enumeration value="sale-agreed"/&gt;
+     *     &lt;enumeration value="sold"/&gt;
+     *   &lt;/restriction&gt;
+     * &lt;/simpleType&gt;
      * </pre>
      * 
      */

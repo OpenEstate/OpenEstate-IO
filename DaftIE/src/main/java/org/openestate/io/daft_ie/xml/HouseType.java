@@ -12,15 +12,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="houseType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="detached"/>
- *     &lt;enumeration value="semi-detached"/>
- *     &lt;enumeration value="terraced"/>
- *     &lt;enumeration value="end-of-terrace"/>
- *     &lt;enumeration value="townhouse"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="houseType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="detached"/&gt;
+ *     &lt;enumeration value="semi-detached"/&gt;
+ *     &lt;enumeration value="terraced"/&gt;
+ *     &lt;enumeration value="end-of-terrace"/&gt;
+ *     &lt;enumeration value="townhouse"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -70,7 +70,7 @@ public class OpenImmoReadingExample
       }
       catch (Exception ex)
       {
-        LOGGER.error( "Can't read example file!" );
+        LOGGER.error( "Can't read example transfer file!" );
         LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
       }
@@ -81,7 +81,7 @@ public class OpenImmoReadingExample
       }
       catch (Exception ex)
       {
-        LOGGER.error( "Can't read file!" );
+        LOGGER.error( "Can't read example feedback file!" );
         LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
         System.exit( 2 );
       }
@@ -141,7 +141,7 @@ public class OpenImmoReadingExample
     }
     else if (doc.isFeedback())
     {
-      OpenImmoReadingExample.printToConsole( (OpenImmoFeedbackDocument) doc );
+      printToConsole( (OpenImmoFeedbackDocument) doc );
     }
     else if (doc.isTransfer())
     {
@@ -184,7 +184,7 @@ public class OpenImmoReadingExample
     }
     else if (doc.isFeedback())
     {
-      OpenImmoReadingExample.printToConsole( (OpenImmoFeedbackDocument) doc );
+      printToConsole( (OpenImmoFeedbackDocument) doc );
     }
     else if (doc.isTransfer())
     {

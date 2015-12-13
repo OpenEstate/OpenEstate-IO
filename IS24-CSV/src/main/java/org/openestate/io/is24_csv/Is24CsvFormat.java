@@ -17,6 +17,7 @@
 package org.openestate.io.is24_csv;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -136,10 +137,10 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
     return cal;
   }
 
-  public static Double parseDouble( String value ) throws NumberFormatException
+  public static BigDecimal parseDecimal( String value ) throws NumberFormatException
   {
     Number number = parseNumber( value, false );
-    return (number!=null)? number.doubleValue(): null;
+    return (number!=null)? BigDecimal.valueOf( number.doubleValue() ): null;
   }
 
   public static Integer parseInteger( String value ) throws NumberFormatException
