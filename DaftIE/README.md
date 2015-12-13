@@ -1,5 +1,5 @@
-OpenEstate-IO-DaftIE 1.0-SNAPSHOT
-=================================
+OpenEstate-IO-DaftIE 1.0
+========================
 
 *OpenEstate-IO-DaftIE* is a Java library to read and write real estate data in
 the XML format of [*daft.ie*](http://daft.ie) (version 2.7).
@@ -10,10 +10,10 @@ Features
 
 -   read XML data according to the specifications of
     [*daft.ie*](http://daft.ie) in version 2.7
-    (see [`DaftIeReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/DaftIeReadingExample.java))
+    (see [`DaftIeReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/Examples/src/main/java/org/openestate/io/examples/DaftIeReadingExample.java))
 -   write XML data according to the specifications of
     [*daft.ie*](http://daft.ie) in version 2.7
-    (see [`DaftIeWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/DaftIeWritingExample.java))
+    (see [`DaftIeWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/Examples/src/main/java/org/openestate/io/examples/DaftIeWritingExample.java))
 
 
 How to use
@@ -32,7 +32,7 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 </dependency>
 ```
 
@@ -68,7 +68,7 @@ Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/CHANGELOG.md)
 for the full changelog.
 
 
@@ -78,7 +78,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/LICENSE.txt)
 for the license text.
 
 
@@ -87,6 +87,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for *daft.ie* XML](http://validator.openestate.org/)
