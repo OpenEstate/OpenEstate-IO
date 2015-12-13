@@ -1,5 +1,5 @@
-OpenEstate-IO 1.0
-=================
+OpenEstate-IO 1.1-SNAPSHOT
+==========================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate
 data in common formats. These libraries are used within
@@ -55,73 +55,73 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IDX</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Trovit</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-WisIT</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -174,6 +174,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for common XML formats](http://validator.openestate.org/)
