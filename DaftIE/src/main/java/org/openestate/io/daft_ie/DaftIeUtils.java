@@ -392,7 +392,7 @@ public class DaftIeUtils
 
   public static String printPositiveDecimal( BigDecimal value )
   {
-    if (value==null || value.compareTo( BigDecimal.ZERO )<0)
+    if (value==null || value.compareTo( BigDecimal.ZERO )<1)
       throw new IllegalArgumentException( "Can't print positive double value!" );
     else
       return DatatypeConverter.printDecimal( value );
@@ -400,7 +400,7 @@ public class DaftIeUtils
 
   public static String printPositiveInteger( BigInteger value )
   {
-    if (value==null || value.compareTo( BigInteger.ZERO )<0)
+    if (value==null || value.compareTo( BigInteger.ZERO )<1)
       throw new IllegalArgumentException( "Can't print positive integer value!" );
     else
       return DatatypeConverter.printInteger( value );
