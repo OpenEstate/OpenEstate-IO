@@ -1,7 +1,7 @@
 <#if licenseFirst??>
 ${licenseFirst}
 </#if>
-${licensePrefix}Copyright ${date?date?string("yyyy")} OpenEstate.org.
+${licensePrefix}Copyright 2015-${date?date?string("yyyy")} OpenEstate.org.
 ${licensePrefix?replace(" +$", "", "r")}
 ${licensePrefix}Licensed under the Apache License, Version 2.0 (the "License");
 ${licensePrefix}you may not use this file except in compliance with the License.
