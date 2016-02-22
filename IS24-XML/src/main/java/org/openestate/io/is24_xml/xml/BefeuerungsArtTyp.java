@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -50,8 +50,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "BefeuerungsArtTyp", propOrder = {
 
 })
-public class BefeuerungsArtTyp
-    implements Cloneable, CopyTo, Equals, ToString
+public class BefeuerungsArtTyp implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "KeineAngabe", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
@@ -290,64 +289,64 @@ public class BefeuerungsArtTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             JAXBElement<Object> theKeineAngabe;
             theKeineAngabe = this.getKeineAngabe();
-            strategy.appendField(locator, this, "keineAngabe", buffer, theKeineAngabe);
+            strategy.appendField(locator, this, "keineAngabe", buffer, theKeineAngabe, (this.keineAngabe!= null));
         }
         {
             JAXBElement<Object> theErdwaerme;
             theErdwaerme = this.getErdwaerme();
-            strategy.appendField(locator, this, "erdwaerme", buffer, theErdwaerme);
+            strategy.appendField(locator, this, "erdwaerme", buffer, theErdwaerme, (this.erdwaerme!= null));
         }
         {
             JAXBElement<Object> theSolarheizung;
             theSolarheizung = this.getSolarheizung();
-            strategy.appendField(locator, this, "solarheizung", buffer, theSolarheizung);
+            strategy.appendField(locator, this, "solarheizung", buffer, theSolarheizung, (this.solarheizung!= null));
         }
         {
             JAXBElement<Object> thePelletheizung;
             thePelletheizung = this.getPelletheizung();
-            strategy.appendField(locator, this, "pelletheizung", buffer, thePelletheizung);
+            strategy.appendField(locator, this, "pelletheizung", buffer, thePelletheizung, (this.pelletheizung!= null));
         }
         {
             JAXBElement<Object> theGas;
             theGas = this.getGas();
-            strategy.appendField(locator, this, "gas", buffer, theGas);
+            strategy.appendField(locator, this, "gas", buffer, theGas, (this.gas!= null));
         }
         {
             JAXBElement<Object> theOel;
             theOel = this.getOel();
-            strategy.appendField(locator, this, "oel", buffer, theOel);
+            strategy.appendField(locator, this, "oel", buffer, theOel, (this.oel!= null));
         }
         {
             JAXBElement<Object> theFernwaerme;
             theFernwaerme = this.getFernwaerme();
-            strategy.appendField(locator, this, "fernwaerme", buffer, theFernwaerme);
+            strategy.appendField(locator, this, "fernwaerme", buffer, theFernwaerme, (this.fernwaerme!= null));
         }
         {
             JAXBElement<Object> theStrom;
             theStrom = this.getStrom();
-            strategy.appendField(locator, this, "strom", buffer, theStrom);
+            strategy.appendField(locator, this, "strom", buffer, theStrom, (this.strom!= null));
         }
         {
             JAXBElement<Object> theKohle;
             theKohle = this.getKohle();
-            strategy.appendField(locator, this, "kohle", buffer, theKohle);
+            strategy.appendField(locator, this, "kohle", buffer, theKohle, (this.kohle!= null));
         }
         return buffer;
     }
@@ -357,94 +356,139 @@ public class BefeuerungsArtTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof BefeuerungsArtTyp) {
             final BefeuerungsArtTyp copy = ((BefeuerungsArtTyp) draftCopy);
-            if (this.keineAngabe!= null) {
-                JAXBElement<Object> sourceKeineAngabe;
-                sourceKeineAngabe = this.getKeineAngabe();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyKeineAngabe = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "keineAngabe", sourceKeineAngabe), sourceKeineAngabe));
-                copy.setKeineAngabe(copyKeineAngabe);
-            } else {
-                copy.keineAngabe = null;
+            {
+                Boolean keineAngabeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keineAngabe!= null));
+                if (keineAngabeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceKeineAngabe;
+                    sourceKeineAngabe = this.getKeineAngabe();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyKeineAngabe = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "keineAngabe", sourceKeineAngabe), sourceKeineAngabe, (this.keineAngabe!= null)));
+                    copy.setKeineAngabe(copyKeineAngabe);
+                } else {
+                    if (keineAngabeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.keineAngabe = null;
+                    }
+                }
             }
-            if (this.erdwaerme!= null) {
-                JAXBElement<Object> sourceErdwaerme;
-                sourceErdwaerme = this.getErdwaerme();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyErdwaerme = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "erdwaerme", sourceErdwaerme), sourceErdwaerme));
-                copy.setErdwaerme(copyErdwaerme);
-            } else {
-                copy.erdwaerme = null;
+            {
+                Boolean erdwaermeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erdwaerme!= null));
+                if (erdwaermeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceErdwaerme;
+                    sourceErdwaerme = this.getErdwaerme();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyErdwaerme = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "erdwaerme", sourceErdwaerme), sourceErdwaerme, (this.erdwaerme!= null)));
+                    copy.setErdwaerme(copyErdwaerme);
+                } else {
+                    if (erdwaermeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.erdwaerme = null;
+                    }
+                }
             }
-            if (this.solarheizung!= null) {
-                JAXBElement<Object> sourceSolarheizung;
-                sourceSolarheizung = this.getSolarheizung();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copySolarheizung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "solarheizung", sourceSolarheizung), sourceSolarheizung));
-                copy.setSolarheizung(copySolarheizung);
-            } else {
-                copy.solarheizung = null;
+            {
+                Boolean solarheizungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.solarheizung!= null));
+                if (solarheizungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceSolarheizung;
+                    sourceSolarheizung = this.getSolarheizung();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copySolarheizung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "solarheizung", sourceSolarheizung), sourceSolarheizung, (this.solarheizung!= null)));
+                    copy.setSolarheizung(copySolarheizung);
+                } else {
+                    if (solarheizungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.solarheizung = null;
+                    }
+                }
             }
-            if (this.pelletheizung!= null) {
-                JAXBElement<Object> sourcePelletheizung;
-                sourcePelletheizung = this.getPelletheizung();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyPelletheizung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "pelletheizung", sourcePelletheizung), sourcePelletheizung));
-                copy.setPelletheizung(copyPelletheizung);
-            } else {
-                copy.pelletheizung = null;
+            {
+                Boolean pelletheizungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pelletheizung!= null));
+                if (pelletheizungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourcePelletheizung;
+                    sourcePelletheizung = this.getPelletheizung();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyPelletheizung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "pelletheizung", sourcePelletheizung), sourcePelletheizung, (this.pelletheizung!= null)));
+                    copy.setPelletheizung(copyPelletheizung);
+                } else {
+                    if (pelletheizungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pelletheizung = null;
+                    }
+                }
             }
-            if (this.gas!= null) {
-                JAXBElement<Object> sourceGas;
-                sourceGas = this.getGas();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyGas = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "gas", sourceGas), sourceGas));
-                copy.setGas(copyGas);
-            } else {
-                copy.gas = null;
+            {
+                Boolean gasShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gas!= null));
+                if (gasShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceGas;
+                    sourceGas = this.getGas();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyGas = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "gas", sourceGas), sourceGas, (this.gas!= null)));
+                    copy.setGas(copyGas);
+                } else {
+                    if (gasShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gas = null;
+                    }
+                }
             }
-            if (this.oel!= null) {
-                JAXBElement<Object> sourceOel;
-                sourceOel = this.getOel();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyOel = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "oel", sourceOel), sourceOel));
-                copy.setOel(copyOel);
-            } else {
-                copy.oel = null;
+            {
+                Boolean oelShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.oel!= null));
+                if (oelShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceOel;
+                    sourceOel = this.getOel();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyOel = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "oel", sourceOel), sourceOel, (this.oel!= null)));
+                    copy.setOel(copyOel);
+                } else {
+                    if (oelShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.oel = null;
+                    }
+                }
             }
-            if (this.fernwaerme!= null) {
-                JAXBElement<Object> sourceFernwaerme;
-                sourceFernwaerme = this.getFernwaerme();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyFernwaerme = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "fernwaerme", sourceFernwaerme), sourceFernwaerme));
-                copy.setFernwaerme(copyFernwaerme);
-            } else {
-                copy.fernwaerme = null;
+            {
+                Boolean fernwaermeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fernwaerme!= null));
+                if (fernwaermeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceFernwaerme;
+                    sourceFernwaerme = this.getFernwaerme();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyFernwaerme = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "fernwaerme", sourceFernwaerme), sourceFernwaerme, (this.fernwaerme!= null)));
+                    copy.setFernwaerme(copyFernwaerme);
+                } else {
+                    if (fernwaermeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fernwaerme = null;
+                    }
+                }
             }
-            if (this.strom!= null) {
-                JAXBElement<Object> sourceStrom;
-                sourceStrom = this.getStrom();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyStrom = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "strom", sourceStrom), sourceStrom));
-                copy.setStrom(copyStrom);
-            } else {
-                copy.strom = null;
+            {
+                Boolean stromShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.strom!= null));
+                if (stromShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceStrom;
+                    sourceStrom = this.getStrom();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyStrom = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "strom", sourceStrom), sourceStrom, (this.strom!= null)));
+                    copy.setStrom(copyStrom);
+                } else {
+                    if (stromShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.strom = null;
+                    }
+                }
             }
-            if (this.kohle!= null) {
-                JAXBElement<Object> sourceKohle;
-                sourceKohle = this.getKohle();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyKohle = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "kohle", sourceKohle), sourceKohle));
-                copy.setKohle(copyKohle);
-            } else {
-                copy.kohle = null;
+            {
+                Boolean kohleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kohle!= null));
+                if (kohleShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceKohle;
+                    sourceKohle = this.getKohle();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyKohle = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "kohle", sourceKohle), sourceKohle, (this.kohle!= null)));
+                    copy.setKohle(copyKohle);
+                } else {
+                    if (kohleShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.kohle = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -454,7 +498,7 @@ public class BefeuerungsArtTyp
         return new BefeuerungsArtTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -467,7 +511,7 @@ public class BefeuerungsArtTyp
             lhsKeineAngabe = this.getKeineAngabe();
             JAXBElement<Object> rhsKeineAngabe;
             rhsKeineAngabe = that.getKeineAngabe();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "keineAngabe", lhsKeineAngabe), LocatorUtils.property(thatLocator, "keineAngabe", rhsKeineAngabe), lhsKeineAngabe, rhsKeineAngabe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "keineAngabe", lhsKeineAngabe), LocatorUtils.property(thatLocator, "keineAngabe", rhsKeineAngabe), lhsKeineAngabe, rhsKeineAngabe, (this.keineAngabe!= null), (that.keineAngabe!= null))) {
                 return false;
             }
         }
@@ -476,7 +520,7 @@ public class BefeuerungsArtTyp
             lhsErdwaerme = this.getErdwaerme();
             JAXBElement<Object> rhsErdwaerme;
             rhsErdwaerme = that.getErdwaerme();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "erdwaerme", lhsErdwaerme), LocatorUtils.property(thatLocator, "erdwaerme", rhsErdwaerme), lhsErdwaerme, rhsErdwaerme)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "erdwaerme", lhsErdwaerme), LocatorUtils.property(thatLocator, "erdwaerme", rhsErdwaerme), lhsErdwaerme, rhsErdwaerme, (this.erdwaerme!= null), (that.erdwaerme!= null))) {
                 return false;
             }
         }
@@ -485,7 +529,7 @@ public class BefeuerungsArtTyp
             lhsSolarheizung = this.getSolarheizung();
             JAXBElement<Object> rhsSolarheizung;
             rhsSolarheizung = that.getSolarheizung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "solarheizung", lhsSolarheizung), LocatorUtils.property(thatLocator, "solarheizung", rhsSolarheizung), lhsSolarheizung, rhsSolarheizung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "solarheizung", lhsSolarheizung), LocatorUtils.property(thatLocator, "solarheizung", rhsSolarheizung), lhsSolarheizung, rhsSolarheizung, (this.solarheizung!= null), (that.solarheizung!= null))) {
                 return false;
             }
         }
@@ -494,7 +538,7 @@ public class BefeuerungsArtTyp
             lhsPelletheizung = this.getPelletheizung();
             JAXBElement<Object> rhsPelletheizung;
             rhsPelletheizung = that.getPelletheizung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pelletheizung", lhsPelletheizung), LocatorUtils.property(thatLocator, "pelletheizung", rhsPelletheizung), lhsPelletheizung, rhsPelletheizung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pelletheizung", lhsPelletheizung), LocatorUtils.property(thatLocator, "pelletheizung", rhsPelletheizung), lhsPelletheizung, rhsPelletheizung, (this.pelletheizung!= null), (that.pelletheizung!= null))) {
                 return false;
             }
         }
@@ -503,7 +547,7 @@ public class BefeuerungsArtTyp
             lhsGas = this.getGas();
             JAXBElement<Object> rhsGas;
             rhsGas = that.getGas();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gas", lhsGas), LocatorUtils.property(thatLocator, "gas", rhsGas), lhsGas, rhsGas)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gas", lhsGas), LocatorUtils.property(thatLocator, "gas", rhsGas), lhsGas, rhsGas, (this.gas!= null), (that.gas!= null))) {
                 return false;
             }
         }
@@ -512,7 +556,7 @@ public class BefeuerungsArtTyp
             lhsOel = this.getOel();
             JAXBElement<Object> rhsOel;
             rhsOel = that.getOel();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "oel", lhsOel), LocatorUtils.property(thatLocator, "oel", rhsOel), lhsOel, rhsOel)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "oel", lhsOel), LocatorUtils.property(thatLocator, "oel", rhsOel), lhsOel, rhsOel, (this.oel!= null), (that.oel!= null))) {
                 return false;
             }
         }
@@ -521,7 +565,7 @@ public class BefeuerungsArtTyp
             lhsFernwaerme = this.getFernwaerme();
             JAXBElement<Object> rhsFernwaerme;
             rhsFernwaerme = that.getFernwaerme();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fernwaerme", lhsFernwaerme), LocatorUtils.property(thatLocator, "fernwaerme", rhsFernwaerme), lhsFernwaerme, rhsFernwaerme)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fernwaerme", lhsFernwaerme), LocatorUtils.property(thatLocator, "fernwaerme", rhsFernwaerme), lhsFernwaerme, rhsFernwaerme, (this.fernwaerme!= null), (that.fernwaerme!= null))) {
                 return false;
             }
         }
@@ -530,7 +574,7 @@ public class BefeuerungsArtTyp
             lhsStrom = this.getStrom();
             JAXBElement<Object> rhsStrom;
             rhsStrom = that.getStrom();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "strom", lhsStrom), LocatorUtils.property(thatLocator, "strom", rhsStrom), lhsStrom, rhsStrom)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "strom", lhsStrom), LocatorUtils.property(thatLocator, "strom", rhsStrom), lhsStrom, rhsStrom, (this.strom!= null), (that.strom!= null))) {
                 return false;
             }
         }
@@ -539,7 +583,7 @@ public class BefeuerungsArtTyp
             lhsKohle = this.getKohle();
             JAXBElement<Object> rhsKohle;
             rhsKohle = that.getKohle();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kohle", lhsKohle), LocatorUtils.property(thatLocator, "kohle", rhsKohle), lhsKohle, rhsKohle)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kohle", lhsKohle), LocatorUtils.property(thatLocator, "kohle", rhsKohle), lhsKohle, rhsKohle, (this.kohle!= null), (that.kohle!= null))) {
                 return false;
             }
         }
@@ -547,7 +591,7 @@ public class BefeuerungsArtTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

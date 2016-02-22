@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -29,8 +29,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "sonstige")
-public class Sonstige
-    implements Cloneable, CopyTo, Equals, ToString
+public class Sonstige implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "sonstige_typ")
@@ -61,24 +60,24 @@ public class Sonstige
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Sonstige.SonstigeTyp theSonstigeTyp;
             theSonstigeTyp = this.getSonstigeTyp();
-            strategy.appendField(locator, this, "sonstigeTyp", buffer, theSonstigeTyp);
+            strategy.appendField(locator, this, "sonstigeTyp", buffer, theSonstigeTyp, (this.sonstigeTyp!= null));
         }
         return buffer;
     }
@@ -88,21 +87,26 @@ public class Sonstige
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Sonstige) {
             final Sonstige copy = ((Sonstige) draftCopy);
-            if (this.sonstigeTyp!= null) {
-                Sonstige.SonstigeTyp sourceSonstigeTyp;
-                sourceSonstigeTyp = this.getSonstigeTyp();
-                Sonstige.SonstigeTyp copySonstigeTyp = ((Sonstige.SonstigeTyp) strategy.copy(LocatorUtils.property(locator, "sonstigeTyp", sourceSonstigeTyp), sourceSonstigeTyp));
-                copy.setSonstigeTyp(copySonstigeTyp);
-            } else {
-                copy.sonstigeTyp = null;
+            {
+                Boolean sonstigeTypShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sonstigeTyp!= null));
+                if (sonstigeTypShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Sonstige.SonstigeTyp sourceSonstigeTyp;
+                    sourceSonstigeTyp = this.getSonstigeTyp();
+                    Sonstige.SonstigeTyp copySonstigeTyp = ((Sonstige.SonstigeTyp) strategy.copy(LocatorUtils.property(locator, "sonstigeTyp", sourceSonstigeTyp), sourceSonstigeTyp, (this.sonstigeTyp!= null)));
+                    copy.setSonstigeTyp(copySonstigeTyp);
+                } else {
+                    if (sonstigeTypShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.sonstigeTyp = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -112,7 +116,7 @@ public class Sonstige
         return new Sonstige();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -125,7 +129,7 @@ public class Sonstige
             lhsSonstigeTyp = this.getSonstigeTyp();
             Sonstige.SonstigeTyp rhsSonstigeTyp;
             rhsSonstigeTyp = that.getSonstigeTyp();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstigeTyp", lhsSonstigeTyp), LocatorUtils.property(thatLocator, "sonstigeTyp", rhsSonstigeTyp), lhsSonstigeTyp, rhsSonstigeTyp)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstigeTyp", lhsSonstigeTyp), LocatorUtils.property(thatLocator, "sonstigeTyp", rhsSonstigeTyp), lhsSonstigeTyp, rhsSonstigeTyp, (this.sonstigeTyp!= null), (that.sonstigeTyp!= null))) {
                 return false;
             }
         }
@@ -133,7 +137,7 @@ public class Sonstige
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

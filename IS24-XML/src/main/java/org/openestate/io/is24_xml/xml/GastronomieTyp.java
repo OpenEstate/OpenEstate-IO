@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -57,7 +57,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 })
 public class GastronomieTyp
     extends GewerbeImmoBaseTyp
-    implements Cloneable, CopyTo, Equals, ToString
+    implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
@@ -273,60 +273,60 @@ public class GastronomieTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
             VermarktungGewerbeTyp2 theVermarktung;
             theVermarktung = this.getVermarktung();
-            strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung);
+            strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung, (this.vermarktung!= null));
         }
         {
             BigDecimal theGastraumFlaeche;
             theGastraumFlaeche = this.getGastraumFlaeche();
-            strategy.appendField(locator, this, "gastraumFlaeche", buffer, theGastraumFlaeche);
+            strategy.appendField(locator, this, "gastraumFlaeche", buffer, theGastraumFlaeche, (this.gastraumFlaeche!= null));
         }
         {
             Long theGastraumPlaetze;
             theGastraumPlaetze = this.getGastraumPlaetze();
-            strategy.appendField(locator, this, "gastraumPlaetze", buffer, theGastraumPlaetze);
+            strategy.appendField(locator, this, "gastraumPlaetze", buffer, theGastraumPlaetze, (this.gastraumPlaetze!= null));
         }
         {
             Long theAnzahlBetten;
             theAnzahlBetten = this.getAnzahlBetten();
-            strategy.appendField(locator, this, "anzahlBetten", buffer, theAnzahlBetten);
+            strategy.appendField(locator, this, "anzahlBetten", buffer, theAnzahlBetten, (this.anzahlBetten!= null));
         }
         {
             Boolean theGastterrasse;
             theGastterrasse = this.isGastterrasse();
-            strategy.appendField(locator, this, "gastterrasse", buffer, theGastterrasse);
+            strategy.appendField(locator, this, "gastterrasse", buffer, theGastterrasse, (this.gastterrasse!= null));
         }
         {
             Boolean theDenkmalschutzobjekt;
             theDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
-            strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt);
+            strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null));
         }
         {
             Boolean theKeller;
             theKeller = this.isKeller();
-            strategy.appendField(locator, this, "keller", buffer, theKeller);
+            strategy.appendField(locator, this, "keller", buffer, theKeller, (this.keller!= null));
         }
         {
             GastroKategorieTyp theObjektkategorie2;
             theObjektkategorie2 = this.getObjektkategorie2();
-            strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
+            strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2, (this.objektkategorie2 != null));
         }
         return buffer;
     }
@@ -336,78 +336,118 @@ public class GastronomieTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
         if (draftCopy instanceof GastronomieTyp) {
             final GastronomieTyp copy = ((GastronomieTyp) draftCopy);
-            if (this.vermarktung!= null) {
-                VermarktungGewerbeTyp2 sourceVermarktung;
-                sourceVermarktung = this.getVermarktung();
-                VermarktungGewerbeTyp2 copyVermarktung = ((VermarktungGewerbeTyp2) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung));
-                copy.setVermarktung(copyVermarktung);
-            } else {
-                copy.vermarktung = null;
+            {
+                Boolean vermarktungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vermarktung!= null));
+                if (vermarktungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    VermarktungGewerbeTyp2 sourceVermarktung;
+                    sourceVermarktung = this.getVermarktung();
+                    VermarktungGewerbeTyp2 copyVermarktung = ((VermarktungGewerbeTyp2) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung, (this.vermarktung!= null)));
+                    copy.setVermarktung(copyVermarktung);
+                } else {
+                    if (vermarktungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.vermarktung = null;
+                    }
+                }
             }
-            if (this.gastraumFlaeche!= null) {
-                BigDecimal sourceGastraumFlaeche;
-                sourceGastraumFlaeche = this.getGastraumFlaeche();
-                BigDecimal copyGastraumFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gastraumFlaeche", sourceGastraumFlaeche), sourceGastraumFlaeche));
-                copy.setGastraumFlaeche(copyGastraumFlaeche);
-            } else {
-                copy.gastraumFlaeche = null;
+            {
+                Boolean gastraumFlaecheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gastraumFlaeche!= null));
+                if (gastraumFlaecheShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceGastraumFlaeche;
+                    sourceGastraumFlaeche = this.getGastraumFlaeche();
+                    BigDecimal copyGastraumFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "gastraumFlaeche", sourceGastraumFlaeche), sourceGastraumFlaeche, (this.gastraumFlaeche!= null)));
+                    copy.setGastraumFlaeche(copyGastraumFlaeche);
+                } else {
+                    if (gastraumFlaecheShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gastraumFlaeche = null;
+                    }
+                }
             }
-            if (this.gastraumPlaetze!= null) {
-                Long sourceGastraumPlaetze;
-                sourceGastraumPlaetze = this.getGastraumPlaetze();
-                Long copyGastraumPlaetze = ((Long) strategy.copy(LocatorUtils.property(locator, "gastraumPlaetze", sourceGastraumPlaetze), sourceGastraumPlaetze));
-                copy.setGastraumPlaetze(copyGastraumPlaetze);
-            } else {
-                copy.gastraumPlaetze = null;
+            {
+                Boolean gastraumPlaetzeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gastraumPlaetze!= null));
+                if (gastraumPlaetzeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Long sourceGastraumPlaetze;
+                    sourceGastraumPlaetze = this.getGastraumPlaetze();
+                    Long copyGastraumPlaetze = ((Long) strategy.copy(LocatorUtils.property(locator, "gastraumPlaetze", sourceGastraumPlaetze), sourceGastraumPlaetze, (this.gastraumPlaetze!= null)));
+                    copy.setGastraumPlaetze(copyGastraumPlaetze);
+                } else {
+                    if (gastraumPlaetzeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gastraumPlaetze = null;
+                    }
+                }
             }
-            if (this.anzahlBetten!= null) {
-                Long sourceAnzahlBetten;
-                sourceAnzahlBetten = this.getAnzahlBetten();
-                Long copyAnzahlBetten = ((Long) strategy.copy(LocatorUtils.property(locator, "anzahlBetten", sourceAnzahlBetten), sourceAnzahlBetten));
-                copy.setAnzahlBetten(copyAnzahlBetten);
-            } else {
-                copy.anzahlBetten = null;
+            {
+                Boolean anzahlBettenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anzahlBetten!= null));
+                if (anzahlBettenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Long sourceAnzahlBetten;
+                    sourceAnzahlBetten = this.getAnzahlBetten();
+                    Long copyAnzahlBetten = ((Long) strategy.copy(LocatorUtils.property(locator, "anzahlBetten", sourceAnzahlBetten), sourceAnzahlBetten, (this.anzahlBetten!= null)));
+                    copy.setAnzahlBetten(copyAnzahlBetten);
+                } else {
+                    if (anzahlBettenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.anzahlBetten = null;
+                    }
+                }
             }
-            if (this.gastterrasse!= null) {
-                Boolean sourceGastterrasse;
-                sourceGastterrasse = this.isGastterrasse();
-                Boolean copyGastterrasse = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gastterrasse", sourceGastterrasse), sourceGastterrasse));
-                copy.setGastterrasse(copyGastterrasse);
-            } else {
-                copy.gastterrasse = null;
+            {
+                Boolean gastterrasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gastterrasse!= null));
+                if (gastterrasseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceGastterrasse;
+                    sourceGastterrasse = this.isGastterrasse();
+                    Boolean copyGastterrasse = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gastterrasse", sourceGastterrasse), sourceGastterrasse, (this.gastterrasse!= null)));
+                    copy.setGastterrasse(copyGastterrasse);
+                } else {
+                    if (gastterrasseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gastterrasse = null;
+                    }
+                }
             }
-            if (this.denkmalschutzobjekt!= null) {
-                Boolean sourceDenkmalschutzobjekt;
-                sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
-                Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt));
-                copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
-            } else {
-                copy.denkmalschutzobjekt = null;
+            {
+                Boolean denkmalschutzobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalschutzobjekt!= null));
+                if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceDenkmalschutzobjekt;
+                    sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+                    Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null)));
+                    copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
+                } else {
+                    if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.denkmalschutzobjekt = null;
+                    }
+                }
             }
-            if (this.keller!= null) {
-                Boolean sourceKeller;
-                sourceKeller = this.isKeller();
-                Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller));
-                copy.setKeller(copyKeller);
-            } else {
-                copy.keller = null;
+            {
+                Boolean kellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keller!= null));
+                if (kellerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceKeller;
+                    sourceKeller = this.isKeller();
+                    Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller, (this.keller!= null)));
+                    copy.setKeller(copyKeller);
+                } else {
+                    if (kellerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.keller = null;
+                    }
+                }
             }
-            if (this.objektkategorie2 != null) {
-                GastroKategorieTyp sourceObjektkategorie2;
-                sourceObjektkategorie2 = this.getObjektkategorie2();
-                GastroKategorieTyp copyObjektkategorie2 = ((GastroKategorieTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2));
-                copy.setObjektkategorie2(copyObjektkategorie2);
-            } else {
-                copy.objektkategorie2 = null;
+            {
+                Boolean objektkategorie2ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektkategorie2 != null));
+                if (objektkategorie2ShouldBeCopiedAndSet == Boolean.TRUE) {
+                    GastroKategorieTyp sourceObjektkategorie2;
+                    sourceObjektkategorie2 = this.getObjektkategorie2();
+                    GastroKategorieTyp copyObjektkategorie2 = ((GastroKategorieTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2, (this.objektkategorie2 != null)));
+                    copy.setObjektkategorie2(copyObjektkategorie2);
+                } else {
+                    if (objektkategorie2ShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.objektkategorie2 = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -417,7 +457,7 @@ public class GastronomieTyp
         return new GastronomieTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -433,7 +473,7 @@ public class GastronomieTyp
             lhsVermarktung = this.getVermarktung();
             VermarktungGewerbeTyp2 rhsVermarktung;
             rhsVermarktung = that.getVermarktung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung, (this.vermarktung!= null), (that.vermarktung!= null))) {
                 return false;
             }
         }
@@ -442,7 +482,7 @@ public class GastronomieTyp
             lhsGastraumFlaeche = this.getGastraumFlaeche();
             BigDecimal rhsGastraumFlaeche;
             rhsGastraumFlaeche = that.getGastraumFlaeche();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastraumFlaeche", lhsGastraumFlaeche), LocatorUtils.property(thatLocator, "gastraumFlaeche", rhsGastraumFlaeche), lhsGastraumFlaeche, rhsGastraumFlaeche)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastraumFlaeche", lhsGastraumFlaeche), LocatorUtils.property(thatLocator, "gastraumFlaeche", rhsGastraumFlaeche), lhsGastraumFlaeche, rhsGastraumFlaeche, (this.gastraumFlaeche!= null), (that.gastraumFlaeche!= null))) {
                 return false;
             }
         }
@@ -451,7 +491,7 @@ public class GastronomieTyp
             lhsGastraumPlaetze = this.getGastraumPlaetze();
             Long rhsGastraumPlaetze;
             rhsGastraumPlaetze = that.getGastraumPlaetze();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastraumPlaetze", lhsGastraumPlaetze), LocatorUtils.property(thatLocator, "gastraumPlaetze", rhsGastraumPlaetze), lhsGastraumPlaetze, rhsGastraumPlaetze)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastraumPlaetze", lhsGastraumPlaetze), LocatorUtils.property(thatLocator, "gastraumPlaetze", rhsGastraumPlaetze), lhsGastraumPlaetze, rhsGastraumPlaetze, (this.gastraumPlaetze!= null), (that.gastraumPlaetze!= null))) {
                 return false;
             }
         }
@@ -460,7 +500,7 @@ public class GastronomieTyp
             lhsAnzahlBetten = this.getAnzahlBetten();
             Long rhsAnzahlBetten;
             rhsAnzahlBetten = that.getAnzahlBetten();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlBetten", lhsAnzahlBetten), LocatorUtils.property(thatLocator, "anzahlBetten", rhsAnzahlBetten), lhsAnzahlBetten, rhsAnzahlBetten)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlBetten", lhsAnzahlBetten), LocatorUtils.property(thatLocator, "anzahlBetten", rhsAnzahlBetten), lhsAnzahlBetten, rhsAnzahlBetten, (this.anzahlBetten!= null), (that.anzahlBetten!= null))) {
                 return false;
             }
         }
@@ -469,7 +509,7 @@ public class GastronomieTyp
             lhsGastterrasse = this.isGastterrasse();
             Boolean rhsGastterrasse;
             rhsGastterrasse = that.isGastterrasse();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastterrasse", lhsGastterrasse), LocatorUtils.property(thatLocator, "gastterrasse", rhsGastterrasse), lhsGastterrasse, rhsGastterrasse)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastterrasse", lhsGastterrasse), LocatorUtils.property(thatLocator, "gastterrasse", rhsGastterrasse), lhsGastterrasse, rhsGastterrasse, (this.gastterrasse!= null), (that.gastterrasse!= null))) {
                 return false;
             }
         }
@@ -478,7 +518,7 @@ public class GastronomieTyp
             lhsDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
             Boolean rhsDenkmalschutzobjekt;
             rhsDenkmalschutzobjekt = that.isDenkmalschutzobjekt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null), (that.denkmalschutzobjekt!= null))) {
                 return false;
             }
         }
@@ -487,7 +527,7 @@ public class GastronomieTyp
             lhsKeller = this.isKeller();
             Boolean rhsKeller;
             rhsKeller = that.isKeller();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller, (this.keller!= null), (that.keller!= null))) {
                 return false;
             }
         }
@@ -496,7 +536,7 @@ public class GastronomieTyp
             lhsObjektkategorie2 = this.getObjektkategorie2();
             GastroKategorieTyp rhsObjektkategorie2;
             rhsObjektkategorie2 = that.getObjektkategorie2();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2, (this.objektkategorie2 != null), (that.objektkategorie2 != null))) {
                 return false;
             }
         }
@@ -504,7 +544,7 @@ public class GastronomieTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

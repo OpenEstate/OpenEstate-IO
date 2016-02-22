@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -33,8 +33,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "daten"
 })
 @XmlRootElement(name = "foto")
-public class Foto
-    implements Cloneable, CopyTo, Equals, ToString
+public class Foto implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
@@ -117,34 +116,34 @@ public class Foto
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theFormat;
             theFormat = this.getFormat();
-            strategy.appendField(locator, this, "format", buffer, theFormat);
+            strategy.appendField(locator, this, "format", buffer, theFormat, (this.format!= null));
         }
         {
             Daten theDaten;
             theDaten = this.getDaten();
-            strategy.appendField(locator, this, "daten", buffer, theDaten);
+            strategy.appendField(locator, this, "daten", buffer, theDaten, (this.daten!= null));
         }
         {
             Foto.Location theLocation;
             theLocation = this.getLocation();
-            strategy.appendField(locator, this, "location", buffer, theLocation);
+            strategy.appendField(locator, this, "location", buffer, theLocation, (this.location!= null));
         }
         return buffer;
     }
@@ -154,37 +153,52 @@ public class Foto
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Foto) {
             final Foto copy = ((Foto) draftCopy);
-            if (this.format!= null) {
-                String sourceFormat;
-                sourceFormat = this.getFormat();
-                String copyFormat = ((String) strategy.copy(LocatorUtils.property(locator, "format", sourceFormat), sourceFormat));
-                copy.setFormat(copyFormat);
-            } else {
-                copy.format = null;
+            {
+                Boolean formatShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.format!= null));
+                if (formatShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFormat;
+                    sourceFormat = this.getFormat();
+                    String copyFormat = ((String) strategy.copy(LocatorUtils.property(locator, "format", sourceFormat), sourceFormat, (this.format!= null)));
+                    copy.setFormat(copyFormat);
+                } else {
+                    if (formatShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.format = null;
+                    }
+                }
             }
-            if (this.daten!= null) {
-                Daten sourceDaten;
-                sourceDaten = this.getDaten();
-                Daten copyDaten = ((Daten) strategy.copy(LocatorUtils.property(locator, "daten", sourceDaten), sourceDaten));
-                copy.setDaten(copyDaten);
-            } else {
-                copy.daten = null;
+            {
+                Boolean datenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.daten!= null));
+                if (datenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Daten sourceDaten;
+                    sourceDaten = this.getDaten();
+                    Daten copyDaten = ((Daten) strategy.copy(LocatorUtils.property(locator, "daten", sourceDaten), sourceDaten, (this.daten!= null)));
+                    copy.setDaten(copyDaten);
+                } else {
+                    if (datenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.daten = null;
+                    }
+                }
             }
-            if (this.location!= null) {
-                Foto.Location sourceLocation;
-                sourceLocation = this.getLocation();
-                Foto.Location copyLocation = ((Foto.Location) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation));
-                copy.setLocation(copyLocation);
-            } else {
-                copy.location = null;
+            {
+                Boolean locationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.location!= null));
+                if (locationShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Foto.Location sourceLocation;
+                    sourceLocation = this.getLocation();
+                    Foto.Location copyLocation = ((Foto.Location) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation, (this.location!= null)));
+                    copy.setLocation(copyLocation);
+                } else {
+                    if (locationShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.location = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -194,7 +208,7 @@ public class Foto
         return new Foto();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -207,7 +221,7 @@ public class Foto
             lhsFormat = this.getFormat();
             String rhsFormat;
             rhsFormat = that.getFormat();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "format", lhsFormat), LocatorUtils.property(thatLocator, "format", rhsFormat), lhsFormat, rhsFormat)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "format", lhsFormat), LocatorUtils.property(thatLocator, "format", rhsFormat), lhsFormat, rhsFormat, (this.format!= null), (that.format!= null))) {
                 return false;
             }
         }
@@ -216,7 +230,7 @@ public class Foto
             lhsDaten = this.getDaten();
             Daten rhsDaten;
             rhsDaten = that.getDaten();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "daten", lhsDaten), LocatorUtils.property(thatLocator, "daten", rhsDaten), lhsDaten, rhsDaten)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "daten", lhsDaten), LocatorUtils.property(thatLocator, "daten", rhsDaten), lhsDaten, rhsDaten, (this.daten!= null), (that.daten!= null))) {
                 return false;
             }
         }
@@ -225,7 +239,7 @@ public class Foto
             lhsLocation = this.getLocation();
             Foto.Location rhsLocation;
             rhsLocation = that.getLocation();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation, (this.location!= null), (that.location!= null))) {
                 return false;
             }
         }
@@ -233,7 +247,7 @@ public class Foto
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

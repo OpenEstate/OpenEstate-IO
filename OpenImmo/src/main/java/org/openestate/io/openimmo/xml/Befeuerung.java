@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "befeuerung")
-public class Befeuerung
-    implements Cloneable, CopyTo, Equals, ToString
+public class Befeuerung implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "OEL")
@@ -398,89 +397,89 @@ public class Befeuerung
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theOEL;
             theOEL = this.isOEL();
-            strategy.appendField(locator, this, "oel", buffer, theOEL);
+            strategy.appendField(locator, this, "oel", buffer, theOEL, (this.oel!= null));
         }
         {
             Boolean theGAS;
             theGAS = this.isGAS();
-            strategy.appendField(locator, this, "gas", buffer, theGAS);
+            strategy.appendField(locator, this, "gas", buffer, theGAS, (this.gas!= null));
         }
         {
             Boolean theELEKTRO;
             theELEKTRO = this.isELEKTRO();
-            strategy.appendField(locator, this, "elektro", buffer, theELEKTRO);
+            strategy.appendField(locator, this, "elektro", buffer, theELEKTRO, (this.elektro!= null));
         }
         {
             Boolean theALTERNATIV;
             theALTERNATIV = this.isALTERNATIV();
-            strategy.appendField(locator, this, "alternativ", buffer, theALTERNATIV);
+            strategy.appendField(locator, this, "alternativ", buffer, theALTERNATIV, (this.alternativ!= null));
         }
         {
             Boolean theSOLAR;
             theSOLAR = this.isSOLAR();
-            strategy.appendField(locator, this, "solar", buffer, theSOLAR);
+            strategy.appendField(locator, this, "solar", buffer, theSOLAR, (this.solar!= null));
         }
         {
             Boolean theERDWAERME;
             theERDWAERME = this.isERDWAERME();
-            strategy.appendField(locator, this, "erdwaerme", buffer, theERDWAERME);
+            strategy.appendField(locator, this, "erdwaerme", buffer, theERDWAERME, (this.erdwaerme!= null));
         }
         {
             Boolean theLUFTWP;
             theLUFTWP = this.isLUFTWP();
-            strategy.appendField(locator, this, "luftwp", buffer, theLUFTWP);
+            strategy.appendField(locator, this, "luftwp", buffer, theLUFTWP, (this.luftwp!= null));
         }
         {
             Boolean theFERN;
             theFERN = this.isFERN();
-            strategy.appendField(locator, this, "fern", buffer, theFERN);
+            strategy.appendField(locator, this, "fern", buffer, theFERN, (this.fern!= null));
         }
         {
             Boolean theBLOCK;
             theBLOCK = this.isBLOCK();
-            strategy.appendField(locator, this, "block", buffer, theBLOCK);
+            strategy.appendField(locator, this, "block", buffer, theBLOCK, (this.block!= null));
         }
         {
             Boolean theWASSERELEKTRO;
             theWASSERELEKTRO = this.isWASSERELEKTRO();
-            strategy.appendField(locator, this, "wasserelektro", buffer, theWASSERELEKTRO);
+            strategy.appendField(locator, this, "wasserelektro", buffer, theWASSERELEKTRO, (this.wasserelektro!= null));
         }
         {
             Boolean thePELLET;
             thePELLET = this.isPELLET();
-            strategy.appendField(locator, this, "pellet", buffer, thePELLET);
+            strategy.appendField(locator, this, "pellet", buffer, thePELLET, (this.pellet!= null));
         }
         {
             Boolean theKOHLE;
             theKOHLE = this.isKOHLE();
-            strategy.appendField(locator, this, "kohle", buffer, theKOHLE);
+            strategy.appendField(locator, this, "kohle", buffer, theKOHLE, (this.kohle!= null));
         }
         {
             Boolean theHOLZ;
             theHOLZ = this.isHOLZ();
-            strategy.appendField(locator, this, "holz", buffer, theHOLZ);
+            strategy.appendField(locator, this, "holz", buffer, theHOLZ, (this.holz!= null));
         }
         {
             Boolean theFLUESSIGGAS;
             theFLUESSIGGAS = this.isFLUESSIGGAS();
-            strategy.appendField(locator, this, "fluessiggas", buffer, theFLUESSIGGAS);
+            strategy.appendField(locator, this, "fluessiggas", buffer, theFLUESSIGGAS, (this.fluessiggas!= null));
         }
         return buffer;
     }
@@ -490,125 +489,195 @@ public class Befeuerung
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Befeuerung) {
             final Befeuerung copy = ((Befeuerung) draftCopy);
-            if (this.oel!= null) {
-                Boolean sourceOEL;
-                sourceOEL = this.isOEL();
-                Boolean copyOEL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "oel", sourceOEL), sourceOEL));
-                copy.setOEL(copyOEL);
-            } else {
-                copy.oel = null;
+            {
+                Boolean oelShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.oel!= null));
+                if (oelShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceOEL;
+                    sourceOEL = this.isOEL();
+                    Boolean copyOEL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "oel", sourceOEL), sourceOEL, (this.oel!= null)));
+                    copy.setOEL(copyOEL);
+                } else {
+                    if (oelShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.oel = null;
+                    }
+                }
             }
-            if (this.gas!= null) {
-                Boolean sourceGAS;
-                sourceGAS = this.isGAS();
-                Boolean copyGAS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gas", sourceGAS), sourceGAS));
-                copy.setGAS(copyGAS);
-            } else {
-                copy.gas = null;
+            {
+                Boolean gasShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gas!= null));
+                if (gasShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceGAS;
+                    sourceGAS = this.isGAS();
+                    Boolean copyGAS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gas", sourceGAS), sourceGAS, (this.gas!= null)));
+                    copy.setGAS(copyGAS);
+                } else {
+                    if (gasShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gas = null;
+                    }
+                }
             }
-            if (this.elektro!= null) {
-                Boolean sourceELEKTRO;
-                sourceELEKTRO = this.isELEKTRO();
-                Boolean copyELEKTRO = ((Boolean) strategy.copy(LocatorUtils.property(locator, "elektro", sourceELEKTRO), sourceELEKTRO));
-                copy.setELEKTRO(copyELEKTRO);
-            } else {
-                copy.elektro = null;
+            {
+                Boolean elektroShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.elektro!= null));
+                if (elektroShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceELEKTRO;
+                    sourceELEKTRO = this.isELEKTRO();
+                    Boolean copyELEKTRO = ((Boolean) strategy.copy(LocatorUtils.property(locator, "elektro", sourceELEKTRO), sourceELEKTRO, (this.elektro!= null)));
+                    copy.setELEKTRO(copyELEKTRO);
+                } else {
+                    if (elektroShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.elektro = null;
+                    }
+                }
             }
-            if (this.alternativ!= null) {
-                Boolean sourceALTERNATIV;
-                sourceALTERNATIV = this.isALTERNATIV();
-                Boolean copyALTERNATIV = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alternativ", sourceALTERNATIV), sourceALTERNATIV));
-                copy.setALTERNATIV(copyALTERNATIV);
-            } else {
-                copy.alternativ = null;
+            {
+                Boolean alternativShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.alternativ!= null));
+                if (alternativShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceALTERNATIV;
+                    sourceALTERNATIV = this.isALTERNATIV();
+                    Boolean copyALTERNATIV = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alternativ", sourceALTERNATIV), sourceALTERNATIV, (this.alternativ!= null)));
+                    copy.setALTERNATIV(copyALTERNATIV);
+                } else {
+                    if (alternativShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.alternativ = null;
+                    }
+                }
             }
-            if (this.solar!= null) {
-                Boolean sourceSOLAR;
-                sourceSOLAR = this.isSOLAR();
-                Boolean copySOLAR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "solar", sourceSOLAR), sourceSOLAR));
-                copy.setSOLAR(copySOLAR);
-            } else {
-                copy.solar = null;
+            {
+                Boolean solarShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.solar!= null));
+                if (solarShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceSOLAR;
+                    sourceSOLAR = this.isSOLAR();
+                    Boolean copySOLAR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "solar", sourceSOLAR), sourceSOLAR, (this.solar!= null)));
+                    copy.setSOLAR(copySOLAR);
+                } else {
+                    if (solarShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.solar = null;
+                    }
+                }
             }
-            if (this.erdwaerme!= null) {
-                Boolean sourceERDWAERME;
-                sourceERDWAERME = this.isERDWAERME();
-                Boolean copyERDWAERME = ((Boolean) strategy.copy(LocatorUtils.property(locator, "erdwaerme", sourceERDWAERME), sourceERDWAERME));
-                copy.setERDWAERME(copyERDWAERME);
-            } else {
-                copy.erdwaerme = null;
+            {
+                Boolean erdwaermeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erdwaerme!= null));
+                if (erdwaermeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceERDWAERME;
+                    sourceERDWAERME = this.isERDWAERME();
+                    Boolean copyERDWAERME = ((Boolean) strategy.copy(LocatorUtils.property(locator, "erdwaerme", sourceERDWAERME), sourceERDWAERME, (this.erdwaerme!= null)));
+                    copy.setERDWAERME(copyERDWAERME);
+                } else {
+                    if (erdwaermeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.erdwaerme = null;
+                    }
+                }
             }
-            if (this.luftwp!= null) {
-                Boolean sourceLUFTWP;
-                sourceLUFTWP = this.isLUFTWP();
-                Boolean copyLUFTWP = ((Boolean) strategy.copy(LocatorUtils.property(locator, "luftwp", sourceLUFTWP), sourceLUFTWP));
-                copy.setLUFTWP(copyLUFTWP);
-            } else {
-                copy.luftwp = null;
+            {
+                Boolean luftwpShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.luftwp!= null));
+                if (luftwpShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceLUFTWP;
+                    sourceLUFTWP = this.isLUFTWP();
+                    Boolean copyLUFTWP = ((Boolean) strategy.copy(LocatorUtils.property(locator, "luftwp", sourceLUFTWP), sourceLUFTWP, (this.luftwp!= null)));
+                    copy.setLUFTWP(copyLUFTWP);
+                } else {
+                    if (luftwpShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.luftwp = null;
+                    }
+                }
             }
-            if (this.fern!= null) {
-                Boolean sourceFERN;
-                sourceFERN = this.isFERN();
-                Boolean copyFERN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fern", sourceFERN), sourceFERN));
-                copy.setFERN(copyFERN);
-            } else {
-                copy.fern = null;
+            {
+                Boolean fernShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fern!= null));
+                if (fernShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFERN;
+                    sourceFERN = this.isFERN();
+                    Boolean copyFERN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fern", sourceFERN), sourceFERN, (this.fern!= null)));
+                    copy.setFERN(copyFERN);
+                } else {
+                    if (fernShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fern = null;
+                    }
+                }
             }
-            if (this.block!= null) {
-                Boolean sourceBLOCK;
-                sourceBLOCK = this.isBLOCK();
-                Boolean copyBLOCK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "block", sourceBLOCK), sourceBLOCK));
-                copy.setBLOCK(copyBLOCK);
-            } else {
-                copy.block = null;
+            {
+                Boolean blockShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.block!= null));
+                if (blockShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceBLOCK;
+                    sourceBLOCK = this.isBLOCK();
+                    Boolean copyBLOCK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "block", sourceBLOCK), sourceBLOCK, (this.block!= null)));
+                    copy.setBLOCK(copyBLOCK);
+                } else {
+                    if (blockShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.block = null;
+                    }
+                }
             }
-            if (this.wasserelektro!= null) {
-                Boolean sourceWASSERELEKTRO;
-                sourceWASSERELEKTRO = this.isWASSERELEKTRO();
-                Boolean copyWASSERELEKTRO = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wasserelektro", sourceWASSERELEKTRO), sourceWASSERELEKTRO));
-                copy.setWASSERELEKTRO(copyWASSERELEKTRO);
-            } else {
-                copy.wasserelektro = null;
+            {
+                Boolean wasserelektroShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wasserelektro!= null));
+                if (wasserelektroShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWASSERELEKTRO;
+                    sourceWASSERELEKTRO = this.isWASSERELEKTRO();
+                    Boolean copyWASSERELEKTRO = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wasserelektro", sourceWASSERELEKTRO), sourceWASSERELEKTRO, (this.wasserelektro!= null)));
+                    copy.setWASSERELEKTRO(copyWASSERELEKTRO);
+                } else {
+                    if (wasserelektroShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wasserelektro = null;
+                    }
+                }
             }
-            if (this.pellet!= null) {
-                Boolean sourcePELLET;
-                sourcePELLET = this.isPELLET();
-                Boolean copyPELLET = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pellet", sourcePELLET), sourcePELLET));
-                copy.setPELLET(copyPELLET);
-            } else {
-                copy.pellet = null;
+            {
+                Boolean pelletShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pellet!= null));
+                if (pelletShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourcePELLET;
+                    sourcePELLET = this.isPELLET();
+                    Boolean copyPELLET = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pellet", sourcePELLET), sourcePELLET, (this.pellet!= null)));
+                    copy.setPELLET(copyPELLET);
+                } else {
+                    if (pelletShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pellet = null;
+                    }
+                }
             }
-            if (this.kohle!= null) {
-                Boolean sourceKOHLE;
-                sourceKOHLE = this.isKOHLE();
-                Boolean copyKOHLE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kohle", sourceKOHLE), sourceKOHLE));
-                copy.setKOHLE(copyKOHLE);
-            } else {
-                copy.kohle = null;
+            {
+                Boolean kohleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kohle!= null));
+                if (kohleShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceKOHLE;
+                    sourceKOHLE = this.isKOHLE();
+                    Boolean copyKOHLE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kohle", sourceKOHLE), sourceKOHLE, (this.kohle!= null)));
+                    copy.setKOHLE(copyKOHLE);
+                } else {
+                    if (kohleShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.kohle = null;
+                    }
+                }
             }
-            if (this.holz!= null) {
-                Boolean sourceHOLZ;
-                sourceHOLZ = this.isHOLZ();
-                Boolean copyHOLZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "holz", sourceHOLZ), sourceHOLZ));
-                copy.setHOLZ(copyHOLZ);
-            } else {
-                copy.holz = null;
+            {
+                Boolean holzShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.holz!= null));
+                if (holzShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceHOLZ;
+                    sourceHOLZ = this.isHOLZ();
+                    Boolean copyHOLZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "holz", sourceHOLZ), sourceHOLZ, (this.holz!= null)));
+                    copy.setHOLZ(copyHOLZ);
+                } else {
+                    if (holzShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.holz = null;
+                    }
+                }
             }
-            if (this.fluessiggas!= null) {
-                Boolean sourceFLUESSIGGAS;
-                sourceFLUESSIGGAS = this.isFLUESSIGGAS();
-                Boolean copyFLUESSIGGAS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fluessiggas", sourceFLUESSIGGAS), sourceFLUESSIGGAS));
-                copy.setFLUESSIGGAS(copyFLUESSIGGAS);
-            } else {
-                copy.fluessiggas = null;
+            {
+                Boolean fluessiggasShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fluessiggas!= null));
+                if (fluessiggasShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFLUESSIGGAS;
+                    sourceFLUESSIGGAS = this.isFLUESSIGGAS();
+                    Boolean copyFLUESSIGGAS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fluessiggas", sourceFLUESSIGGAS), sourceFLUESSIGGAS, (this.fluessiggas!= null)));
+                    copy.setFLUESSIGGAS(copyFLUESSIGGAS);
+                } else {
+                    if (fluessiggasShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fluessiggas = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -618,7 +687,7 @@ public class Befeuerung
         return new Befeuerung();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -631,7 +700,7 @@ public class Befeuerung
             lhsOEL = this.isOEL();
             Boolean rhsOEL;
             rhsOEL = that.isOEL();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "oel", lhsOEL), LocatorUtils.property(thatLocator, "oel", rhsOEL), lhsOEL, rhsOEL)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "oel", lhsOEL), LocatorUtils.property(thatLocator, "oel", rhsOEL), lhsOEL, rhsOEL, (this.oel!= null), (that.oel!= null))) {
                 return false;
             }
         }
@@ -640,7 +709,7 @@ public class Befeuerung
             lhsGAS = this.isGAS();
             Boolean rhsGAS;
             rhsGAS = that.isGAS();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gas", lhsGAS), LocatorUtils.property(thatLocator, "gas", rhsGAS), lhsGAS, rhsGAS)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gas", lhsGAS), LocatorUtils.property(thatLocator, "gas", rhsGAS), lhsGAS, rhsGAS, (this.gas!= null), (that.gas!= null))) {
                 return false;
             }
         }
@@ -649,7 +718,7 @@ public class Befeuerung
             lhsELEKTRO = this.isELEKTRO();
             Boolean rhsELEKTRO;
             rhsELEKTRO = that.isELEKTRO();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "elektro", lhsELEKTRO), LocatorUtils.property(thatLocator, "elektro", rhsELEKTRO), lhsELEKTRO, rhsELEKTRO)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "elektro", lhsELEKTRO), LocatorUtils.property(thatLocator, "elektro", rhsELEKTRO), lhsELEKTRO, rhsELEKTRO, (this.elektro!= null), (that.elektro!= null))) {
                 return false;
             }
         }
@@ -658,7 +727,7 @@ public class Befeuerung
             lhsALTERNATIV = this.isALTERNATIV();
             Boolean rhsALTERNATIV;
             rhsALTERNATIV = that.isALTERNATIV();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "alternativ", lhsALTERNATIV), LocatorUtils.property(thatLocator, "alternativ", rhsALTERNATIV), lhsALTERNATIV, rhsALTERNATIV)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "alternativ", lhsALTERNATIV), LocatorUtils.property(thatLocator, "alternativ", rhsALTERNATIV), lhsALTERNATIV, rhsALTERNATIV, (this.alternativ!= null), (that.alternativ!= null))) {
                 return false;
             }
         }
@@ -667,7 +736,7 @@ public class Befeuerung
             lhsSOLAR = this.isSOLAR();
             Boolean rhsSOLAR;
             rhsSOLAR = that.isSOLAR();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "solar", lhsSOLAR), LocatorUtils.property(thatLocator, "solar", rhsSOLAR), lhsSOLAR, rhsSOLAR)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "solar", lhsSOLAR), LocatorUtils.property(thatLocator, "solar", rhsSOLAR), lhsSOLAR, rhsSOLAR, (this.solar!= null), (that.solar!= null))) {
                 return false;
             }
         }
@@ -676,7 +745,7 @@ public class Befeuerung
             lhsERDWAERME = this.isERDWAERME();
             Boolean rhsERDWAERME;
             rhsERDWAERME = that.isERDWAERME();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "erdwaerme", lhsERDWAERME), LocatorUtils.property(thatLocator, "erdwaerme", rhsERDWAERME), lhsERDWAERME, rhsERDWAERME)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "erdwaerme", lhsERDWAERME), LocatorUtils.property(thatLocator, "erdwaerme", rhsERDWAERME), lhsERDWAERME, rhsERDWAERME, (this.erdwaerme!= null), (that.erdwaerme!= null))) {
                 return false;
             }
         }
@@ -685,7 +754,7 @@ public class Befeuerung
             lhsLUFTWP = this.isLUFTWP();
             Boolean rhsLUFTWP;
             rhsLUFTWP = that.isLUFTWP();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "luftwp", lhsLUFTWP), LocatorUtils.property(thatLocator, "luftwp", rhsLUFTWP), lhsLUFTWP, rhsLUFTWP)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "luftwp", lhsLUFTWP), LocatorUtils.property(thatLocator, "luftwp", rhsLUFTWP), lhsLUFTWP, rhsLUFTWP, (this.luftwp!= null), (that.luftwp!= null))) {
                 return false;
             }
         }
@@ -694,7 +763,7 @@ public class Befeuerung
             lhsFERN = this.isFERN();
             Boolean rhsFERN;
             rhsFERN = that.isFERN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fern", lhsFERN), LocatorUtils.property(thatLocator, "fern", rhsFERN), lhsFERN, rhsFERN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fern", lhsFERN), LocatorUtils.property(thatLocator, "fern", rhsFERN), lhsFERN, rhsFERN, (this.fern!= null), (that.fern!= null))) {
                 return false;
             }
         }
@@ -703,7 +772,7 @@ public class Befeuerung
             lhsBLOCK = this.isBLOCK();
             Boolean rhsBLOCK;
             rhsBLOCK = that.isBLOCK();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "block", lhsBLOCK), LocatorUtils.property(thatLocator, "block", rhsBLOCK), lhsBLOCK, rhsBLOCK)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "block", lhsBLOCK), LocatorUtils.property(thatLocator, "block", rhsBLOCK), lhsBLOCK, rhsBLOCK, (this.block!= null), (that.block!= null))) {
                 return false;
             }
         }
@@ -712,7 +781,7 @@ public class Befeuerung
             lhsWASSERELEKTRO = this.isWASSERELEKTRO();
             Boolean rhsWASSERELEKTRO;
             rhsWASSERELEKTRO = that.isWASSERELEKTRO();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wasserelektro", lhsWASSERELEKTRO), LocatorUtils.property(thatLocator, "wasserelektro", rhsWASSERELEKTRO), lhsWASSERELEKTRO, rhsWASSERELEKTRO)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wasserelektro", lhsWASSERELEKTRO), LocatorUtils.property(thatLocator, "wasserelektro", rhsWASSERELEKTRO), lhsWASSERELEKTRO, rhsWASSERELEKTRO, (this.wasserelektro!= null), (that.wasserelektro!= null))) {
                 return false;
             }
         }
@@ -721,7 +790,7 @@ public class Befeuerung
             lhsPELLET = this.isPELLET();
             Boolean rhsPELLET;
             rhsPELLET = that.isPELLET();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pellet", lhsPELLET), LocatorUtils.property(thatLocator, "pellet", rhsPELLET), lhsPELLET, rhsPELLET)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pellet", lhsPELLET), LocatorUtils.property(thatLocator, "pellet", rhsPELLET), lhsPELLET, rhsPELLET, (this.pellet!= null), (that.pellet!= null))) {
                 return false;
             }
         }
@@ -730,7 +799,7 @@ public class Befeuerung
             lhsKOHLE = this.isKOHLE();
             Boolean rhsKOHLE;
             rhsKOHLE = that.isKOHLE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kohle", lhsKOHLE), LocatorUtils.property(thatLocator, "kohle", rhsKOHLE), lhsKOHLE, rhsKOHLE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kohle", lhsKOHLE), LocatorUtils.property(thatLocator, "kohle", rhsKOHLE), lhsKOHLE, rhsKOHLE, (this.kohle!= null), (that.kohle!= null))) {
                 return false;
             }
         }
@@ -739,7 +808,7 @@ public class Befeuerung
             lhsHOLZ = this.isHOLZ();
             Boolean rhsHOLZ;
             rhsHOLZ = that.isHOLZ();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "holz", lhsHOLZ), LocatorUtils.property(thatLocator, "holz", rhsHOLZ), lhsHOLZ, rhsHOLZ)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "holz", lhsHOLZ), LocatorUtils.property(thatLocator, "holz", rhsHOLZ), lhsHOLZ, rhsHOLZ, (this.holz!= null), (that.holz!= null))) {
                 return false;
             }
         }
@@ -748,7 +817,7 @@ public class Befeuerung
             lhsFLUESSIGGAS = this.isFLUESSIGGAS();
             Boolean rhsFLUESSIGGAS;
             rhsFLUESSIGGAS = that.isFLUESSIGGAS();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fluessiggas", lhsFLUESSIGGAS), LocatorUtils.property(thatLocator, "fluessiggas", rhsFLUESSIGGAS), lhsFLUESSIGGAS, rhsFLUESSIGGAS)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fluessiggas", lhsFLUESSIGGAS), LocatorUtils.property(thatLocator, "fluessiggas", rhsFLUESSIGGAS), lhsFLUESSIGGAS, rhsFLUESSIGGAS, (this.fluessiggas!= null), (that.fluessiggas!= null))) {
                 return false;
             }
         }
@@ -756,7 +825,7 @@ public class Befeuerung
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

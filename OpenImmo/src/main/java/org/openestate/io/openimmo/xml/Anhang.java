@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -36,8 +36,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "daten"
 })
 @XmlRootElement(name = "anhang")
-public class Anhang
-    implements Cloneable, CopyTo, Equals, ToString
+public class Anhang implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected String anhangtitel;
@@ -196,49 +195,49 @@ public class Anhang
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theAnhangtitel;
             theAnhangtitel = this.getAnhangtitel();
-            strategy.appendField(locator, this, "anhangtitel", buffer, theAnhangtitel);
+            strategy.appendField(locator, this, "anhangtitel", buffer, theAnhangtitel, (this.anhangtitel!= null));
         }
         {
             String theFormat;
             theFormat = this.getFormat();
-            strategy.appendField(locator, this, "format", buffer, theFormat);
+            strategy.appendField(locator, this, "format", buffer, theFormat, (this.format!= null));
         }
         {
             Check theCheck;
             theCheck = this.getCheck();
-            strategy.appendField(locator, this, "check", buffer, theCheck);
+            strategy.appendField(locator, this, "check", buffer, theCheck, (this.check!= null));
         }
         {
             Daten theDaten;
             theDaten = this.getDaten();
-            strategy.appendField(locator, this, "daten", buffer, theDaten);
+            strategy.appendField(locator, this, "daten", buffer, theDaten, (this.daten!= null));
         }
         {
             Anhang.Location theLocation;
             theLocation = this.getLocation();
-            strategy.appendField(locator, this, "location", buffer, theLocation);
+            strategy.appendField(locator, this, "location", buffer, theLocation, (this.location!= null));
         }
         {
             Anhang.Gruppe theGruppe;
             theGruppe = this.getGruppe();
-            strategy.appendField(locator, this, "gruppe", buffer, theGruppe);
+            strategy.appendField(locator, this, "gruppe", buffer, theGruppe, (this.gruppe!= null));
         }
         return buffer;
     }
@@ -248,61 +247,91 @@ public class Anhang
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Anhang) {
             final Anhang copy = ((Anhang) draftCopy);
-            if (this.anhangtitel!= null) {
-                String sourceAnhangtitel;
-                sourceAnhangtitel = this.getAnhangtitel();
-                String copyAnhangtitel = ((String) strategy.copy(LocatorUtils.property(locator, "anhangtitel", sourceAnhangtitel), sourceAnhangtitel));
-                copy.setAnhangtitel(copyAnhangtitel);
-            } else {
-                copy.anhangtitel = null;
+            {
+                Boolean anhangtitelShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anhangtitel!= null));
+                if (anhangtitelShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceAnhangtitel;
+                    sourceAnhangtitel = this.getAnhangtitel();
+                    String copyAnhangtitel = ((String) strategy.copy(LocatorUtils.property(locator, "anhangtitel", sourceAnhangtitel), sourceAnhangtitel, (this.anhangtitel!= null)));
+                    copy.setAnhangtitel(copyAnhangtitel);
+                } else {
+                    if (anhangtitelShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.anhangtitel = null;
+                    }
+                }
             }
-            if (this.format!= null) {
-                String sourceFormat;
-                sourceFormat = this.getFormat();
-                String copyFormat = ((String) strategy.copy(LocatorUtils.property(locator, "format", sourceFormat), sourceFormat));
-                copy.setFormat(copyFormat);
-            } else {
-                copy.format = null;
+            {
+                Boolean formatShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.format!= null));
+                if (formatShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFormat;
+                    sourceFormat = this.getFormat();
+                    String copyFormat = ((String) strategy.copy(LocatorUtils.property(locator, "format", sourceFormat), sourceFormat, (this.format!= null)));
+                    copy.setFormat(copyFormat);
+                } else {
+                    if (formatShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.format = null;
+                    }
+                }
             }
-            if (this.check!= null) {
-                Check sourceCheck;
-                sourceCheck = this.getCheck();
-                Check copyCheck = ((Check) strategy.copy(LocatorUtils.property(locator, "check", sourceCheck), sourceCheck));
-                copy.setCheck(copyCheck);
-            } else {
-                copy.check = null;
+            {
+                Boolean checkShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.check!= null));
+                if (checkShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Check sourceCheck;
+                    sourceCheck = this.getCheck();
+                    Check copyCheck = ((Check) strategy.copy(LocatorUtils.property(locator, "check", sourceCheck), sourceCheck, (this.check!= null)));
+                    copy.setCheck(copyCheck);
+                } else {
+                    if (checkShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.check = null;
+                    }
+                }
             }
-            if (this.daten!= null) {
-                Daten sourceDaten;
-                sourceDaten = this.getDaten();
-                Daten copyDaten = ((Daten) strategy.copy(LocatorUtils.property(locator, "daten", sourceDaten), sourceDaten));
-                copy.setDaten(copyDaten);
-            } else {
-                copy.daten = null;
+            {
+                Boolean datenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.daten!= null));
+                if (datenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Daten sourceDaten;
+                    sourceDaten = this.getDaten();
+                    Daten copyDaten = ((Daten) strategy.copy(LocatorUtils.property(locator, "daten", sourceDaten), sourceDaten, (this.daten!= null)));
+                    copy.setDaten(copyDaten);
+                } else {
+                    if (datenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.daten = null;
+                    }
+                }
             }
-            if (this.location!= null) {
-                Anhang.Location sourceLocation;
-                sourceLocation = this.getLocation();
-                Anhang.Location copyLocation = ((Anhang.Location) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation));
-                copy.setLocation(copyLocation);
-            } else {
-                copy.location = null;
+            {
+                Boolean locationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.location!= null));
+                if (locationShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Anhang.Location sourceLocation;
+                    sourceLocation = this.getLocation();
+                    Anhang.Location copyLocation = ((Anhang.Location) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation, (this.location!= null)));
+                    copy.setLocation(copyLocation);
+                } else {
+                    if (locationShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.location = null;
+                    }
+                }
             }
-            if (this.gruppe!= null) {
-                Anhang.Gruppe sourceGruppe;
-                sourceGruppe = this.getGruppe();
-                Anhang.Gruppe copyGruppe = ((Anhang.Gruppe) strategy.copy(LocatorUtils.property(locator, "gruppe", sourceGruppe), sourceGruppe));
-                copy.setGruppe(copyGruppe);
-            } else {
-                copy.gruppe = null;
+            {
+                Boolean gruppeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gruppe!= null));
+                if (gruppeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Anhang.Gruppe sourceGruppe;
+                    sourceGruppe = this.getGruppe();
+                    Anhang.Gruppe copyGruppe = ((Anhang.Gruppe) strategy.copy(LocatorUtils.property(locator, "gruppe", sourceGruppe), sourceGruppe, (this.gruppe!= null)));
+                    copy.setGruppe(copyGruppe);
+                } else {
+                    if (gruppeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gruppe = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -312,7 +341,7 @@ public class Anhang
         return new Anhang();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -325,7 +354,7 @@ public class Anhang
             lhsAnhangtitel = this.getAnhangtitel();
             String rhsAnhangtitel;
             rhsAnhangtitel = that.getAnhangtitel();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "anhangtitel", lhsAnhangtitel), LocatorUtils.property(thatLocator, "anhangtitel", rhsAnhangtitel), lhsAnhangtitel, rhsAnhangtitel)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "anhangtitel", lhsAnhangtitel), LocatorUtils.property(thatLocator, "anhangtitel", rhsAnhangtitel), lhsAnhangtitel, rhsAnhangtitel, (this.anhangtitel!= null), (that.anhangtitel!= null))) {
                 return false;
             }
         }
@@ -334,7 +363,7 @@ public class Anhang
             lhsFormat = this.getFormat();
             String rhsFormat;
             rhsFormat = that.getFormat();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "format", lhsFormat), LocatorUtils.property(thatLocator, "format", rhsFormat), lhsFormat, rhsFormat)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "format", lhsFormat), LocatorUtils.property(thatLocator, "format", rhsFormat), lhsFormat, rhsFormat, (this.format!= null), (that.format!= null))) {
                 return false;
             }
         }
@@ -343,7 +372,7 @@ public class Anhang
             lhsCheck = this.getCheck();
             Check rhsCheck;
             rhsCheck = that.getCheck();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "check", lhsCheck), LocatorUtils.property(thatLocator, "check", rhsCheck), lhsCheck, rhsCheck)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "check", lhsCheck), LocatorUtils.property(thatLocator, "check", rhsCheck), lhsCheck, rhsCheck, (this.check!= null), (that.check!= null))) {
                 return false;
             }
         }
@@ -352,7 +381,7 @@ public class Anhang
             lhsDaten = this.getDaten();
             Daten rhsDaten;
             rhsDaten = that.getDaten();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "daten", lhsDaten), LocatorUtils.property(thatLocator, "daten", rhsDaten), lhsDaten, rhsDaten)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "daten", lhsDaten), LocatorUtils.property(thatLocator, "daten", rhsDaten), lhsDaten, rhsDaten, (this.daten!= null), (that.daten!= null))) {
                 return false;
             }
         }
@@ -361,7 +390,7 @@ public class Anhang
             lhsLocation = this.getLocation();
             Anhang.Location rhsLocation;
             rhsLocation = that.getLocation();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation, (this.location!= null), (that.location!= null))) {
                 return false;
             }
         }
@@ -370,7 +399,7 @@ public class Anhang
             lhsGruppe = this.getGruppe();
             Anhang.Gruppe rhsGruppe;
             rhsGruppe = that.getGruppe();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gruppe", lhsGruppe), LocatorUtils.property(thatLocator, "gruppe", rhsGruppe), lhsGruppe, rhsGruppe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gruppe", lhsGruppe), LocatorUtils.property(thatLocator, "gruppe", rhsGruppe), lhsGruppe, rhsGruppe, (this.gruppe!= null), (that.gruppe!= null))) {
                 return false;
             }
         }
@@ -378,7 +407,7 @@ public class Anhang
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

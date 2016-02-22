@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -45,8 +45,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "publisher", propOrder = {
 
 })
-public class Publisher
-    implements Cloneable, CopyTo, Equals, ToString
+public class Publisher implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
@@ -155,39 +154,39 @@ public class Publisher
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theName;
             theName = this.getName();
-            strategy.appendField(locator, this, "name", buffer, theName);
+            strategy.appendField(locator, this, "name", buffer, theName, (this.name!= null));
         }
         {
             String theSite;
             theSite = this.getSite();
-            strategy.appendField(locator, this, "site", buffer, theSite);
+            strategy.appendField(locator, this, "site", buffer, theSite, (this.site!= null));
         }
         {
             String theEmail;
             theEmail = this.getEmail();
-            strategy.appendField(locator, this, "email", buffer, theEmail);
+            strategy.appendField(locator, this, "email", buffer, theEmail, (this.email!= null));
         }
         {
             String thePhone;
             thePhone = this.getPhone();
-            strategy.appendField(locator, this, "phone", buffer, thePhone);
+            strategy.appendField(locator, this, "phone", buffer, thePhone, (this.phone!= null));
         }
         return buffer;
     }
@@ -197,45 +196,65 @@ public class Publisher
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Publisher) {
             final Publisher copy = ((Publisher) draftCopy);
-            if (this.name!= null) {
-                String sourceName;
-                sourceName = this.getName();
-                String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName));
-                copy.setName(copyName);
-            } else {
-                copy.name = null;
+            {
+                Boolean nameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.name!= null));
+                if (nameShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceName;
+                    sourceName = this.getName();
+                    String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName, (this.name!= null)));
+                    copy.setName(copyName);
+                } else {
+                    if (nameShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.name = null;
+                    }
+                }
             }
-            if (this.site!= null) {
-                String sourceSite;
-                sourceSite = this.getSite();
-                String copySite = ((String) strategy.copy(LocatorUtils.property(locator, "site", sourceSite), sourceSite));
-                copy.setSite(copySite);
-            } else {
-                copy.site = null;
+            {
+                Boolean siteShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.site!= null));
+                if (siteShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSite;
+                    sourceSite = this.getSite();
+                    String copySite = ((String) strategy.copy(LocatorUtils.property(locator, "site", sourceSite), sourceSite, (this.site!= null)));
+                    copy.setSite(copySite);
+                } else {
+                    if (siteShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.site = null;
+                    }
+                }
             }
-            if (this.email!= null) {
-                String sourceEmail;
-                sourceEmail = this.getEmail();
-                String copyEmail = ((String) strategy.copy(LocatorUtils.property(locator, "email", sourceEmail), sourceEmail));
-                copy.setEmail(copyEmail);
-            } else {
-                copy.email = null;
+            {
+                Boolean emailShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.email!= null));
+                if (emailShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEmail;
+                    sourceEmail = this.getEmail();
+                    String copyEmail = ((String) strategy.copy(LocatorUtils.property(locator, "email", sourceEmail), sourceEmail, (this.email!= null)));
+                    copy.setEmail(copyEmail);
+                } else {
+                    if (emailShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.email = null;
+                    }
+                }
             }
-            if (this.phone!= null) {
-                String sourcePhone;
-                sourcePhone = this.getPhone();
-                String copyPhone = ((String) strategy.copy(LocatorUtils.property(locator, "phone", sourcePhone), sourcePhone));
-                copy.setPhone(copyPhone);
-            } else {
-                copy.phone = null;
+            {
+                Boolean phoneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.phone!= null));
+                if (phoneShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePhone;
+                    sourcePhone = this.getPhone();
+                    String copyPhone = ((String) strategy.copy(LocatorUtils.property(locator, "phone", sourcePhone), sourcePhone, (this.phone!= null)));
+                    copy.setPhone(copyPhone);
+                } else {
+                    if (phoneShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.phone = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -245,7 +264,7 @@ public class Publisher
         return new Publisher();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -258,7 +277,7 @@ public class Publisher
             lhsName = this.getName();
             String rhsName;
             rhsName = that.getName();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName, (this.name!= null), (that.name!= null))) {
                 return false;
             }
         }
@@ -267,7 +286,7 @@ public class Publisher
             lhsSite = this.getSite();
             String rhsSite;
             rhsSite = that.getSite();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "site", lhsSite), LocatorUtils.property(thatLocator, "site", rhsSite), lhsSite, rhsSite)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "site", lhsSite), LocatorUtils.property(thatLocator, "site", rhsSite), lhsSite, rhsSite, (this.site!= null), (that.site!= null))) {
                 return false;
             }
         }
@@ -276,7 +295,7 @@ public class Publisher
             lhsEmail = this.getEmail();
             String rhsEmail;
             rhsEmail = that.getEmail();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "email", lhsEmail), LocatorUtils.property(thatLocator, "email", rhsEmail), lhsEmail, rhsEmail)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "email", lhsEmail), LocatorUtils.property(thatLocator, "email", rhsEmail), lhsEmail, rhsEmail, (this.email!= null), (that.email!= null))) {
                 return false;
             }
         }
@@ -285,7 +304,7 @@ public class Publisher
             lhsPhone = this.getPhone();
             String rhsPhone;
             rhsPhone = that.getPhone();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "phone", lhsPhone), LocatorUtils.property(thatLocator, "phone", rhsPhone), lhsPhone, rhsPhone)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "phone", lhsPhone), LocatorUtils.property(thatLocator, "phone", rhsPhone), lhsPhone, rhsPhone, (this.phone!= null), (that.phone!= null))) {
                 return false;
             }
         }
@@ -293,7 +312,7 @@ public class Publisher
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

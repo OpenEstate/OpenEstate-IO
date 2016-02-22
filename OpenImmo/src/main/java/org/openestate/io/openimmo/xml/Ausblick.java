@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -29,8 +29,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "ausblick")
-public class Ausblick
-    implements Cloneable, CopyTo, Equals, ToString
+public class Ausblick implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "blick")
@@ -61,24 +60,24 @@ public class Ausblick
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Ausblick.Blick theBlick;
             theBlick = this.getBlick();
-            strategy.appendField(locator, this, "blick", buffer, theBlick);
+            strategy.appendField(locator, this, "blick", buffer, theBlick, (this.blick!= null));
         }
         return buffer;
     }
@@ -88,21 +87,26 @@ public class Ausblick
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Ausblick) {
             final Ausblick copy = ((Ausblick) draftCopy);
-            if (this.blick!= null) {
-                Ausblick.Blick sourceBlick;
-                sourceBlick = this.getBlick();
-                Ausblick.Blick copyBlick = ((Ausblick.Blick) strategy.copy(LocatorUtils.property(locator, "blick", sourceBlick), sourceBlick));
-                copy.setBlick(copyBlick);
-            } else {
-                copy.blick = null;
+            {
+                Boolean blickShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.blick!= null));
+                if (blickShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Ausblick.Blick sourceBlick;
+                    sourceBlick = this.getBlick();
+                    Ausblick.Blick copyBlick = ((Ausblick.Blick) strategy.copy(LocatorUtils.property(locator, "blick", sourceBlick), sourceBlick, (this.blick!= null)));
+                    copy.setBlick(copyBlick);
+                } else {
+                    if (blickShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.blick = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -112,7 +116,7 @@ public class Ausblick
         return new Ausblick();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -125,7 +129,7 @@ public class Ausblick
             lhsBlick = this.getBlick();
             Ausblick.Blick rhsBlick;
             rhsBlick = that.getBlick();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "blick", lhsBlick), LocatorUtils.property(thatLocator, "blick", rhsBlick), lhsBlick, rhsBlick)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "blick", lhsBlick), LocatorUtils.property(thatLocator, "blick", rhsBlick), lhsBlick, rhsBlick, (this.blick!= null), (that.blick!= null))) {
                 return false;
             }
         }
@@ -133,7 +137,7 @@ public class Ausblick
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

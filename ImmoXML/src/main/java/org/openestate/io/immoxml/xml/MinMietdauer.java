@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -32,8 +32,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "content"
 })
 @XmlRootElement(name = "min_mietdauer")
-public class MinMietdauer
-    implements Cloneable, CopyTo, Equals, ToString
+public class MinMietdauer implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -90,29 +89,29 @@ public class MinMietdauer
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theContent;
             theContent = this.getContent();
-            strategy.appendField(locator, this, "content", buffer, theContent);
+            strategy.appendField(locator, this, "content", buffer, theContent, (this.content!= null));
         }
         {
             MinMietdauer.MinDauer theMinDauer;
             theMinDauer = this.getMinDauer();
-            strategy.appendField(locator, this, "minDauer", buffer, theMinDauer);
+            strategy.appendField(locator, this, "minDauer", buffer, theMinDauer, (this.minDauer!= null));
         }
         return buffer;
     }
@@ -122,29 +121,39 @@ public class MinMietdauer
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof MinMietdauer) {
             final MinMietdauer copy = ((MinMietdauer) draftCopy);
-            if (this.content!= null) {
-                String sourceContent;
-                sourceContent = this.getContent();
-                String copyContent = ((String) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent));
-                copy.setContent(copyContent);
-            } else {
-                copy.content = null;
+            {
+                Boolean contentShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.content!= null));
+                if (contentShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceContent;
+                    sourceContent = this.getContent();
+                    String copyContent = ((String) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent, (this.content!= null)));
+                    copy.setContent(copyContent);
+                } else {
+                    if (contentShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.content = null;
+                    }
+                }
             }
-            if (this.minDauer!= null) {
-                MinMietdauer.MinDauer sourceMinDauer;
-                sourceMinDauer = this.getMinDauer();
-                MinMietdauer.MinDauer copyMinDauer = ((MinMietdauer.MinDauer) strategy.copy(LocatorUtils.property(locator, "minDauer", sourceMinDauer), sourceMinDauer));
-                copy.setMinDauer(copyMinDauer);
-            } else {
-                copy.minDauer = null;
+            {
+                Boolean minDauerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.minDauer!= null));
+                if (minDauerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    MinMietdauer.MinDauer sourceMinDauer;
+                    sourceMinDauer = this.getMinDauer();
+                    MinMietdauer.MinDauer copyMinDauer = ((MinMietdauer.MinDauer) strategy.copy(LocatorUtils.property(locator, "minDauer", sourceMinDauer), sourceMinDauer, (this.minDauer!= null)));
+                    copy.setMinDauer(copyMinDauer);
+                } else {
+                    if (minDauerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.minDauer = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -154,7 +163,7 @@ public class MinMietdauer
         return new MinMietdauer();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -167,7 +176,7 @@ public class MinMietdauer
             lhsContent = this.getContent();
             String rhsContent;
             rhsContent = that.getContent();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent, (this.content!= null), (that.content!= null))) {
                 return false;
             }
         }
@@ -176,7 +185,7 @@ public class MinMietdauer
             lhsMinDauer = this.getMinDauer();
             MinMietdauer.MinDauer rhsMinDauer;
             rhsMinDauer = that.getMinDauer();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "minDauer", lhsMinDauer), LocatorUtils.property(thatLocator, "minDauer", rhsMinDauer), lhsMinDauer, rhsMinDauer)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "minDauer", lhsMinDauer), LocatorUtils.property(thatLocator, "minDauer", rhsMinDauer), lhsMinDauer, rhsMinDauer, (this.minDauer!= null), (that.minDauer!= null))) {
                 return false;
             }
         }
@@ -184,7 +193,7 @@ public class MinMietdauer
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

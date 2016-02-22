@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -45,8 +45,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "surfaceType", propOrder = {
 
 })
-public class SurfaceType
-    implements Cloneable, CopyTo, Equals, ToString
+public class SurfaceType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(type = String.class)
@@ -107,29 +106,29 @@ public class SurfaceType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigInteger theBuilt;
             theBuilt = this.getBuilt();
-            strategy.appendField(locator, this, "built", buffer, theBuilt);
+            strategy.appendField(locator, this, "built", buffer, theBuilt, (this.built!= null));
         }
         {
             BigInteger thePlot;
             thePlot = this.getPlot();
-            strategy.appendField(locator, this, "plot", buffer, thePlot);
+            strategy.appendField(locator, this, "plot", buffer, thePlot, (this.plot!= null));
         }
         return buffer;
     }
@@ -139,29 +138,39 @@ public class SurfaceType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof SurfaceType) {
             final SurfaceType copy = ((SurfaceType) draftCopy);
-            if (this.built!= null) {
-                BigInteger sourceBuilt;
-                sourceBuilt = this.getBuilt();
-                BigInteger copyBuilt = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "built", sourceBuilt), sourceBuilt));
-                copy.setBuilt(copyBuilt);
-            } else {
-                copy.built = null;
+            {
+                Boolean builtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.built!= null));
+                if (builtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigInteger sourceBuilt;
+                    sourceBuilt = this.getBuilt();
+                    BigInteger copyBuilt = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "built", sourceBuilt), sourceBuilt, (this.built!= null)));
+                    copy.setBuilt(copyBuilt);
+                } else {
+                    if (builtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.built = null;
+                    }
+                }
             }
-            if (this.plot!= null) {
-                BigInteger sourcePlot;
-                sourcePlot = this.getPlot();
-                BigInteger copyPlot = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "plot", sourcePlot), sourcePlot));
-                copy.setPlot(copyPlot);
-            } else {
-                copy.plot = null;
+            {
+                Boolean plotShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.plot!= null));
+                if (plotShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigInteger sourcePlot;
+                    sourcePlot = this.getPlot();
+                    BigInteger copyPlot = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "plot", sourcePlot), sourcePlot, (this.plot!= null)));
+                    copy.setPlot(copyPlot);
+                } else {
+                    if (plotShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.plot = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -171,7 +180,7 @@ public class SurfaceType
         return new SurfaceType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -184,7 +193,7 @@ public class SurfaceType
             lhsBuilt = this.getBuilt();
             BigInteger rhsBuilt;
             rhsBuilt = that.getBuilt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "built", lhsBuilt), LocatorUtils.property(thatLocator, "built", rhsBuilt), lhsBuilt, rhsBuilt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "built", lhsBuilt), LocatorUtils.property(thatLocator, "built", rhsBuilt), lhsBuilt, rhsBuilt, (this.built!= null), (that.built!= null))) {
                 return false;
             }
         }
@@ -193,7 +202,7 @@ public class SurfaceType
             lhsPlot = this.getPlot();
             BigInteger rhsPlot;
             rhsPlot = that.getPlot();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "plot", lhsPlot), LocatorUtils.property(thatLocator, "plot", rhsPlot), lhsPlot, rhsPlot)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "plot", lhsPlot), LocatorUtils.property(thatLocator, "plot", rhsPlot), lhsPlot, rhsPlot, (this.plot!= null), (that.plot!= null))) {
                 return false;
             }
         }
@@ -201,7 +210,7 @@ public class SurfaceType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

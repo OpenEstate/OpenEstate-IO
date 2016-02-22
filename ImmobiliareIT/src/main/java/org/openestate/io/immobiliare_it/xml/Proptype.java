@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -48,8 +48,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "businessType",
     "terrains"
 })
-public class Proptype
-    implements Cloneable, CopyTo, Equals, ToString
+public class Proptype implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlSchemaType(name = "string")
@@ -131,34 +130,34 @@ public class Proptype
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             PropertyTypeSimple theType;
             theType = this.getType();
-            strategy.appendField(locator, this, "type", buffer, theType);
+            strategy.appendField(locator, this, "type", buffer, theType, (this.type!= null));
         }
         {
             BusinessElement theBusinessType;
             theBusinessType = this.getBusinessType();
-            strategy.appendField(locator, this, "businessType", buffer, theBusinessType);
+            strategy.appendField(locator, this, "businessType", buffer, theBusinessType, (this.businessType!= null));
         }
         {
             Terrains theTerrains;
             theTerrains = this.getTerrains();
-            strategy.appendField(locator, this, "terrains", buffer, theTerrains);
+            strategy.appendField(locator, this, "terrains", buffer, theTerrains, (this.terrains!= null));
         }
         return buffer;
     }
@@ -168,37 +167,52 @@ public class Proptype
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Proptype) {
             final Proptype copy = ((Proptype) draftCopy);
-            if (this.type!= null) {
-                PropertyTypeSimple sourceType;
-                sourceType = this.getType();
-                PropertyTypeSimple copyType = ((PropertyTypeSimple) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType));
-                copy.setType(copyType);
-            } else {
-                copy.type = null;
+            {
+                Boolean typeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.type!= null));
+                if (typeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    PropertyTypeSimple sourceType;
+                    sourceType = this.getType();
+                    PropertyTypeSimple copyType = ((PropertyTypeSimple) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
+                    copy.setType(copyType);
+                } else {
+                    if (typeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.type = null;
+                    }
+                }
             }
-            if (this.businessType!= null) {
-                BusinessElement sourceBusinessType;
-                sourceBusinessType = this.getBusinessType();
-                BusinessElement copyBusinessType = ((BusinessElement) strategy.copy(LocatorUtils.property(locator, "businessType", sourceBusinessType), sourceBusinessType));
-                copy.setBusinessType(copyBusinessType);
-            } else {
-                copy.businessType = null;
+            {
+                Boolean businessTypeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.businessType!= null));
+                if (businessTypeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BusinessElement sourceBusinessType;
+                    sourceBusinessType = this.getBusinessType();
+                    BusinessElement copyBusinessType = ((BusinessElement) strategy.copy(LocatorUtils.property(locator, "businessType", sourceBusinessType), sourceBusinessType, (this.businessType!= null)));
+                    copy.setBusinessType(copyBusinessType);
+                } else {
+                    if (businessTypeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.businessType = null;
+                    }
+                }
             }
-            if (this.terrains!= null) {
-                Terrains sourceTerrains;
-                sourceTerrains = this.getTerrains();
-                Terrains copyTerrains = ((Terrains) strategy.copy(LocatorUtils.property(locator, "terrains", sourceTerrains), sourceTerrains));
-                copy.setTerrains(copyTerrains);
-            } else {
-                copy.terrains = null;
+            {
+                Boolean terrainsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.terrains!= null));
+                if (terrainsShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Terrains sourceTerrains;
+                    sourceTerrains = this.getTerrains();
+                    Terrains copyTerrains = ((Terrains) strategy.copy(LocatorUtils.property(locator, "terrains", sourceTerrains), sourceTerrains, (this.terrains!= null)));
+                    copy.setTerrains(copyTerrains);
+                } else {
+                    if (terrainsShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.terrains = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -208,7 +222,7 @@ public class Proptype
         return new Proptype();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -221,7 +235,7 @@ public class Proptype
             lhsType = this.getType();
             PropertyTypeSimple rhsType;
             rhsType = that.getType();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsType), LocatorUtils.property(thatLocator, "type", rhsType), lhsType, rhsType)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsType), LocatorUtils.property(thatLocator, "type", rhsType), lhsType, rhsType, (this.type!= null), (that.type!= null))) {
                 return false;
             }
         }
@@ -230,7 +244,7 @@ public class Proptype
             lhsBusinessType = this.getBusinessType();
             BusinessElement rhsBusinessType;
             rhsBusinessType = that.getBusinessType();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "businessType", lhsBusinessType), LocatorUtils.property(thatLocator, "businessType", rhsBusinessType), lhsBusinessType, rhsBusinessType)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "businessType", lhsBusinessType), LocatorUtils.property(thatLocator, "businessType", rhsBusinessType), lhsBusinessType, rhsBusinessType, (this.businessType!= null), (that.businessType!= null))) {
                 return false;
             }
         }
@@ -239,7 +253,7 @@ public class Proptype
             lhsTerrains = this.getTerrains();
             Terrains rhsTerrains;
             rhsTerrains = that.getTerrains();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "terrains", lhsTerrains), LocatorUtils.property(thatLocator, "terrains", rhsTerrains), lhsTerrains, rhsTerrains)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "terrains", lhsTerrains), LocatorUtils.property(thatLocator, "terrains", rhsTerrains), lhsTerrains, rhsTerrains, (this.terrains!= null), (that.terrains!= null))) {
                 return false;
             }
         }
@@ -247,7 +261,7 @@ public class Proptype
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

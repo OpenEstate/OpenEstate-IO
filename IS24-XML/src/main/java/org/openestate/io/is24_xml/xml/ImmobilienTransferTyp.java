@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -73,8 +73,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "ImmobilienTransferTyp", propOrder = {
     "anbieter"
 })
-public class ImmobilienTransferTyp
-    implements Cloneable, CopyTo, Equals, ToString
+public class ImmobilienTransferTyp implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Anbieter", required = true)
@@ -186,39 +185,39 @@ public class ImmobilienTransferTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             ImmobilienTransferTyp.Anbieter theAnbieter;
             theAnbieter = this.getAnbieter();
-            strategy.appendField(locator, this, "anbieter", buffer, theAnbieter);
+            strategy.appendField(locator, this, "anbieter", buffer, theAnbieter, (this.anbieter!= null));
         }
         {
             String theEmailBeiFehler;
             theEmailBeiFehler = this.getEmailBeiFehler();
-            strategy.appendField(locator, this, "emailBeiFehler", buffer, theEmailBeiFehler);
+            strategy.appendField(locator, this, "emailBeiFehler", buffer, theEmailBeiFehler, (this.emailBeiFehler!= null));
         }
         {
             String theErstellerSoftware;
             theErstellerSoftware = this.getErstellerSoftware();
-            strategy.appendField(locator, this, "erstellerSoftware", buffer, theErstellerSoftware);
+            strategy.appendField(locator, this, "erstellerSoftware", buffer, theErstellerSoftware, (this.erstellerSoftware!= null));
         }
         {
             String theErstellerSoftwareVersion;
             theErstellerSoftwareVersion = this.getErstellerSoftwareVersion();
-            strategy.appendField(locator, this, "erstellerSoftwareVersion", buffer, theErstellerSoftwareVersion);
+            strategy.appendField(locator, this, "erstellerSoftwareVersion", buffer, theErstellerSoftwareVersion, (this.erstellerSoftwareVersion!= null));
         }
         return buffer;
     }
@@ -228,45 +227,65 @@ public class ImmobilienTransferTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ImmobilienTransferTyp) {
             final ImmobilienTransferTyp copy = ((ImmobilienTransferTyp) draftCopy);
-            if (this.anbieter!= null) {
-                ImmobilienTransferTyp.Anbieter sourceAnbieter;
-                sourceAnbieter = this.getAnbieter();
-                ImmobilienTransferTyp.Anbieter copyAnbieter = ((ImmobilienTransferTyp.Anbieter) strategy.copy(LocatorUtils.property(locator, "anbieter", sourceAnbieter), sourceAnbieter));
-                copy.setAnbieter(copyAnbieter);
-            } else {
-                copy.anbieter = null;
+            {
+                Boolean anbieterShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anbieter!= null));
+                if (anbieterShouldBeCopiedAndSet == Boolean.TRUE) {
+                    ImmobilienTransferTyp.Anbieter sourceAnbieter;
+                    sourceAnbieter = this.getAnbieter();
+                    ImmobilienTransferTyp.Anbieter copyAnbieter = ((ImmobilienTransferTyp.Anbieter) strategy.copy(LocatorUtils.property(locator, "anbieter", sourceAnbieter), sourceAnbieter, (this.anbieter!= null)));
+                    copy.setAnbieter(copyAnbieter);
+                } else {
+                    if (anbieterShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.anbieter = null;
+                    }
+                }
             }
-            if (this.emailBeiFehler!= null) {
-                String sourceEmailBeiFehler;
-                sourceEmailBeiFehler = this.getEmailBeiFehler();
-                String copyEmailBeiFehler = ((String) strategy.copy(LocatorUtils.property(locator, "emailBeiFehler", sourceEmailBeiFehler), sourceEmailBeiFehler));
-                copy.setEmailBeiFehler(copyEmailBeiFehler);
-            } else {
-                copy.emailBeiFehler = null;
+            {
+                Boolean emailBeiFehlerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.emailBeiFehler!= null));
+                if (emailBeiFehlerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEmailBeiFehler;
+                    sourceEmailBeiFehler = this.getEmailBeiFehler();
+                    String copyEmailBeiFehler = ((String) strategy.copy(LocatorUtils.property(locator, "emailBeiFehler", sourceEmailBeiFehler), sourceEmailBeiFehler, (this.emailBeiFehler!= null)));
+                    copy.setEmailBeiFehler(copyEmailBeiFehler);
+                } else {
+                    if (emailBeiFehlerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.emailBeiFehler = null;
+                    }
+                }
             }
-            if (this.erstellerSoftware!= null) {
-                String sourceErstellerSoftware;
-                sourceErstellerSoftware = this.getErstellerSoftware();
-                String copyErstellerSoftware = ((String) strategy.copy(LocatorUtils.property(locator, "erstellerSoftware", sourceErstellerSoftware), sourceErstellerSoftware));
-                copy.setErstellerSoftware(copyErstellerSoftware);
-            } else {
-                copy.erstellerSoftware = null;
+            {
+                Boolean erstellerSoftwareShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erstellerSoftware!= null));
+                if (erstellerSoftwareShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceErstellerSoftware;
+                    sourceErstellerSoftware = this.getErstellerSoftware();
+                    String copyErstellerSoftware = ((String) strategy.copy(LocatorUtils.property(locator, "erstellerSoftware", sourceErstellerSoftware), sourceErstellerSoftware, (this.erstellerSoftware!= null)));
+                    copy.setErstellerSoftware(copyErstellerSoftware);
+                } else {
+                    if (erstellerSoftwareShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.erstellerSoftware = null;
+                    }
+                }
             }
-            if (this.erstellerSoftwareVersion!= null) {
-                String sourceErstellerSoftwareVersion;
-                sourceErstellerSoftwareVersion = this.getErstellerSoftwareVersion();
-                String copyErstellerSoftwareVersion = ((String) strategy.copy(LocatorUtils.property(locator, "erstellerSoftwareVersion", sourceErstellerSoftwareVersion), sourceErstellerSoftwareVersion));
-                copy.setErstellerSoftwareVersion(copyErstellerSoftwareVersion);
-            } else {
-                copy.erstellerSoftwareVersion = null;
+            {
+                Boolean erstellerSoftwareVersionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erstellerSoftwareVersion!= null));
+                if (erstellerSoftwareVersionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceErstellerSoftwareVersion;
+                    sourceErstellerSoftwareVersion = this.getErstellerSoftwareVersion();
+                    String copyErstellerSoftwareVersion = ((String) strategy.copy(LocatorUtils.property(locator, "erstellerSoftwareVersion", sourceErstellerSoftwareVersion), sourceErstellerSoftwareVersion, (this.erstellerSoftwareVersion!= null)));
+                    copy.setErstellerSoftwareVersion(copyErstellerSoftwareVersion);
+                } else {
+                    if (erstellerSoftwareVersionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.erstellerSoftwareVersion = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -276,7 +295,7 @@ public class ImmobilienTransferTyp
         return new ImmobilienTransferTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -289,7 +308,7 @@ public class ImmobilienTransferTyp
             lhsAnbieter = this.getAnbieter();
             ImmobilienTransferTyp.Anbieter rhsAnbieter;
             rhsAnbieter = that.getAnbieter();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "anbieter", lhsAnbieter), LocatorUtils.property(thatLocator, "anbieter", rhsAnbieter), lhsAnbieter, rhsAnbieter)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "anbieter", lhsAnbieter), LocatorUtils.property(thatLocator, "anbieter", rhsAnbieter), lhsAnbieter, rhsAnbieter, (this.anbieter!= null), (that.anbieter!= null))) {
                 return false;
             }
         }
@@ -298,7 +317,7 @@ public class ImmobilienTransferTyp
             lhsEmailBeiFehler = this.getEmailBeiFehler();
             String rhsEmailBeiFehler;
             rhsEmailBeiFehler = that.getEmailBeiFehler();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "emailBeiFehler", lhsEmailBeiFehler), LocatorUtils.property(thatLocator, "emailBeiFehler", rhsEmailBeiFehler), lhsEmailBeiFehler, rhsEmailBeiFehler)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "emailBeiFehler", lhsEmailBeiFehler), LocatorUtils.property(thatLocator, "emailBeiFehler", rhsEmailBeiFehler), lhsEmailBeiFehler, rhsEmailBeiFehler, (this.emailBeiFehler!= null), (that.emailBeiFehler!= null))) {
                 return false;
             }
         }
@@ -307,7 +326,7 @@ public class ImmobilienTransferTyp
             lhsErstellerSoftware = this.getErstellerSoftware();
             String rhsErstellerSoftware;
             rhsErstellerSoftware = that.getErstellerSoftware();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "erstellerSoftware", lhsErstellerSoftware), LocatorUtils.property(thatLocator, "erstellerSoftware", rhsErstellerSoftware), lhsErstellerSoftware, rhsErstellerSoftware)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "erstellerSoftware", lhsErstellerSoftware), LocatorUtils.property(thatLocator, "erstellerSoftware", rhsErstellerSoftware), lhsErstellerSoftware, rhsErstellerSoftware, (this.erstellerSoftware!= null), (that.erstellerSoftware!= null))) {
                 return false;
             }
         }
@@ -316,7 +335,7 @@ public class ImmobilienTransferTyp
             lhsErstellerSoftwareVersion = this.getErstellerSoftwareVersion();
             String rhsErstellerSoftwareVersion;
             rhsErstellerSoftwareVersion = that.getErstellerSoftwareVersion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "erstellerSoftwareVersion", lhsErstellerSoftwareVersion), LocatorUtils.property(thatLocator, "erstellerSoftwareVersion", rhsErstellerSoftwareVersion), lhsErstellerSoftwareVersion, rhsErstellerSoftwareVersion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "erstellerSoftwareVersion", lhsErstellerSoftwareVersion), LocatorUtils.property(thatLocator, "erstellerSoftwareVersion", rhsErstellerSoftwareVersion), lhsErstellerSoftwareVersion, rhsErstellerSoftwareVersion, (this.erstellerSoftwareVersion!= null), (that.erstellerSoftwareVersion!= null))) {
                 return false;
             }
         }
@@ -324,7 +343,7 @@ public class ImmobilienTransferTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -356,7 +375,7 @@ public class ImmobilienTransferTyp
     })
     public static class Anbieter
         extends AnbieterTyp
-        implements Cloneable, CopyTo, Equals, ToString
+        implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElementRef(name = "VirtuelleImmobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
@@ -412,26 +431,26 @@ public class ImmobilienTransferTyp
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link SonstigeGewerbe }
-         * {@link HausMiete }
-         * {@link Einzelhandel }
-         * {@link HausKauf }
-         * {@link GrundstueckWohnenKauf }
          * {@link BueroPraxis }
-         * {@link WohnungKauf }
          * {@link WohnungMiete }
-         * {@link GarageKauf }
-         * {@link Anlageobjekt }
+         * {@link HausMiete }
          * {@link GarageMiete }
          * {@link Gastronomie }
+         * {@link GrundstueckWohnenMiete }
+         * {@link Anlageobjekt }
+         * {@link SonstigeGewerbe }
+         * {@link GarageKauf }
+         * {@link WGZimmer }
+         * {@link WohnungKauf }
+         * {@link HausKauf }
+         * {@link Einzelhandel }
+         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
+         * {@link Zwangsversteigerung }
+         * {@link GrundstueckWohnenKauf }
+         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
          * {@link GrundstueckGewerbe }
          * {@link HalleProduktion }
-         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
          * {@link WAZ }
-         * {@link WGZimmer }
-         * {@link Zwangsversteigerung }
-         * {@link GrundstueckWohnenMiete }
          * 
          * 
          */
@@ -443,30 +462,30 @@ public class ImmobilienTransferTyp
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             super.appendFields(locator, buffer, strategy);
             {
                 List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> theVirtuelleImmobilie;
                 theVirtuelleImmobilie = (((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty()))?this.getVirtuelleImmobilie():null);
-                strategy.appendField(locator, this, "virtuelleImmobilie", buffer, theVirtuelleImmobilie);
+                strategy.appendField(locator, this, "virtuelleImmobilie", buffer, theVirtuelleImmobilie, ((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty())));
             }
             {
                 List<JAXBElement<? extends ImmobilieBaseTyp>> theImmobilie;
                 theImmobilie = (((this.immobilie!= null)&&(!this.immobilie.isEmpty()))?this.getImmobilie():null);
-                strategy.appendField(locator, this, "immobilie", buffer, theImmobilie);
+                strategy.appendField(locator, this, "immobilie", buffer, theImmobilie, ((this.immobilie!= null)&&(!this.immobilie.isEmpty())));
             }
             return buffer;
         }
@@ -476,40 +495,50 @@ public class ImmobilienTransferTyp
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             super.copyTo(locator, draftCopy, strategy);
             if (draftCopy instanceof ImmobilienTransferTyp.Anbieter) {
                 final ImmobilienTransferTyp.Anbieter copy = ((ImmobilienTransferTyp.Anbieter) draftCopy);
-                if ((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty())) {
-                    List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> sourceVirtuelleImmobilie;
-                    sourceVirtuelleImmobilie = (((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty()))?this.getVirtuelleImmobilie():null);
-                    @SuppressWarnings("unchecked")
-                    List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> copyVirtuelleImmobilie = ((List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> ) strategy.copy(LocatorUtils.property(locator, "virtuelleImmobilie", sourceVirtuelleImmobilie), sourceVirtuelleImmobilie));
-                    copy.virtuelleImmobilie = null;
-                    if (copyVirtuelleImmobilie!= null) {
-                        List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> uniqueVirtuelleImmobiliel = copy.getVirtuelleImmobilie();
-                        uniqueVirtuelleImmobiliel.addAll(copyVirtuelleImmobilie);
+                {
+                    Boolean virtuelleImmobilieShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty())));
+                    if (virtuelleImmobilieShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> sourceVirtuelleImmobilie;
+                        sourceVirtuelleImmobilie = (((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty()))?this.getVirtuelleImmobilie():null);
+                        @SuppressWarnings("unchecked")
+                        List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> copyVirtuelleImmobilie = ((List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> ) strategy.copy(LocatorUtils.property(locator, "virtuelleImmobilie", sourceVirtuelleImmobilie), sourceVirtuelleImmobilie, ((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty()))));
+                        copy.virtuelleImmobilie = null;
+                        if (copyVirtuelleImmobilie!= null) {
+                            List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> uniqueVirtuelleImmobiliel = copy.getVirtuelleImmobilie();
+                            uniqueVirtuelleImmobiliel.addAll(copyVirtuelleImmobilie);
+                        }
+                    } else {
+                        if (virtuelleImmobilieShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.virtuelleImmobilie = null;
+                        }
                     }
-                } else {
-                    copy.virtuelleImmobilie = null;
                 }
-                if ((this.immobilie!= null)&&(!this.immobilie.isEmpty())) {
-                    List<JAXBElement<? extends ImmobilieBaseTyp>> sourceImmobilie;
-                    sourceImmobilie = (((this.immobilie!= null)&&(!this.immobilie.isEmpty()))?this.getImmobilie():null);
-                    @SuppressWarnings("unchecked")
-                    List<JAXBElement<? extends ImmobilieBaseTyp>> copyImmobilie = ((List<JAXBElement<? extends ImmobilieBaseTyp>> ) strategy.copy(LocatorUtils.property(locator, "immobilie", sourceImmobilie), sourceImmobilie));
-                    copy.immobilie = null;
-                    if (copyImmobilie!= null) {
-                        List<JAXBElement<? extends ImmobilieBaseTyp>> uniqueImmobiliel = copy.getImmobilie();
-                        uniqueImmobiliel.addAll(copyImmobilie);
+                {
+                    Boolean immobilieShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.immobilie!= null)&&(!this.immobilie.isEmpty())));
+                    if (immobilieShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<JAXBElement<? extends ImmobilieBaseTyp>> sourceImmobilie;
+                        sourceImmobilie = (((this.immobilie!= null)&&(!this.immobilie.isEmpty()))?this.getImmobilie():null);
+                        @SuppressWarnings("unchecked")
+                        List<JAXBElement<? extends ImmobilieBaseTyp>> copyImmobilie = ((List<JAXBElement<? extends ImmobilieBaseTyp>> ) strategy.copy(LocatorUtils.property(locator, "immobilie", sourceImmobilie), sourceImmobilie, ((this.immobilie!= null)&&(!this.immobilie.isEmpty()))));
+                        copy.immobilie = null;
+                        if (copyImmobilie!= null) {
+                            List<JAXBElement<? extends ImmobilieBaseTyp>> uniqueImmobiliel = copy.getImmobilie();
+                            uniqueImmobiliel.addAll(copyImmobilie);
+                        }
+                    } else {
+                        if (immobilieShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.immobilie = null;
+                        }
                     }
-                } else {
-                    copy.immobilie = null;
                 }
             }
             return draftCopy;
@@ -519,7 +548,7 @@ public class ImmobilienTransferTyp
             return new ImmobilienTransferTyp.Anbieter();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -535,7 +564,7 @@ public class ImmobilienTransferTyp
                 lhsVirtuelleImmobilie = (((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty()))?this.getVirtuelleImmobilie():null);
                 List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> rhsVirtuelleImmobilie;
                 rhsVirtuelleImmobilie = (((that.virtuelleImmobilie!= null)&&(!that.virtuelleImmobilie.isEmpty()))?that.getVirtuelleImmobilie():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "virtuelleImmobilie", lhsVirtuelleImmobilie), LocatorUtils.property(thatLocator, "virtuelleImmobilie", rhsVirtuelleImmobilie), lhsVirtuelleImmobilie, rhsVirtuelleImmobilie)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "virtuelleImmobilie", lhsVirtuelleImmobilie), LocatorUtils.property(thatLocator, "virtuelleImmobilie", rhsVirtuelleImmobilie), lhsVirtuelleImmobilie, rhsVirtuelleImmobilie, ((this.virtuelleImmobilie!= null)&&(!this.virtuelleImmobilie.isEmpty())), ((that.virtuelleImmobilie!= null)&&(!that.virtuelleImmobilie.isEmpty())))) {
                     return false;
                 }
             }
@@ -544,7 +573,7 @@ public class ImmobilienTransferTyp
                 lhsImmobilie = (((this.immobilie!= null)&&(!this.immobilie.isEmpty()))?this.getImmobilie():null);
                 List<JAXBElement<? extends ImmobilieBaseTyp>> rhsImmobilie;
                 rhsImmobilie = (((that.immobilie!= null)&&(!that.immobilie.isEmpty()))?that.getImmobilie():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "immobilie", lhsImmobilie), LocatorUtils.property(thatLocator, "immobilie", rhsImmobilie), lhsImmobilie, rhsImmobilie)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "immobilie", lhsImmobilie), LocatorUtils.property(thatLocator, "immobilie", rhsImmobilie), lhsImmobilie, rhsImmobilie, ((this.immobilie!= null)&&(!this.immobilie.isEmpty())), ((that.immobilie!= null)&&(!that.immobilie.isEmpty())))) {
                     return false;
                 }
             }
@@ -552,7 +581,7 @@ public class ImmobilienTransferTyp
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

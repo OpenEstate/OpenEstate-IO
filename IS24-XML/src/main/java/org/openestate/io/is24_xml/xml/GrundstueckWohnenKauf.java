@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -63,7 +63,7 @@ public class GrundstueckWohnenKauf
     })
     public static class Type
         extends GrundstueckTypBase
-        implements Cloneable, CopyTo, Equals, ToString
+        implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "Vermarktung", required = true)
@@ -146,35 +146,35 @@ public class GrundstueckWohnenKauf
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             super.appendFields(locator, buffer, strategy);
             {
                 VermarktungGrundstueckWohnenKaufTyp theVermarktung;
                 theVermarktung = this.getVermarktung();
-                strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung);
+                strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung, (this.vermarktung!= null));
             }
             {
                 GrundstueckWohnenEmpfohleneNutzung theBebaubarMit;
                 theBebaubarMit = this.getBebaubarMit();
-                strategy.appendField(locator, this, "bebaubarMit", buffer, theBebaubarMit);
+                strategy.appendField(locator, this, "bebaubarMit", buffer, theBebaubarMit, (this.bebaubarMit!= null));
             }
             {
                 GrundstueckWohnenKategorienTyp theObjektkategorie2;
                 theObjektkategorie2 = this.getObjektkategorie2();
-                strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
+                strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2, (this.objektkategorie2 != null));
             }
             return buffer;
         }
@@ -184,38 +184,53 @@ public class GrundstueckWohnenKauf
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             super.copyTo(locator, draftCopy, strategy);
             if (draftCopy instanceof GrundstueckWohnenKauf.Type) {
                 final GrundstueckWohnenKauf.Type copy = ((GrundstueckWohnenKauf.Type) draftCopy);
-                if (this.vermarktung!= null) {
-                    VermarktungGrundstueckWohnenKaufTyp sourceVermarktung;
-                    sourceVermarktung = this.getVermarktung();
-                    VermarktungGrundstueckWohnenKaufTyp copyVermarktung = ((VermarktungGrundstueckWohnenKaufTyp) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung));
-                    copy.setVermarktung(copyVermarktung);
-                } else {
-                    copy.vermarktung = null;
+                {
+                    Boolean vermarktungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vermarktung!= null));
+                    if (vermarktungShouldBeCopiedAndSet == Boolean.TRUE) {
+                        VermarktungGrundstueckWohnenKaufTyp sourceVermarktung;
+                        sourceVermarktung = this.getVermarktung();
+                        VermarktungGrundstueckWohnenKaufTyp copyVermarktung = ((VermarktungGrundstueckWohnenKaufTyp) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung, (this.vermarktung!= null)));
+                        copy.setVermarktung(copyVermarktung);
+                    } else {
+                        if (vermarktungShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.vermarktung = null;
+                        }
+                    }
                 }
-                if (this.bebaubarMit!= null) {
-                    GrundstueckWohnenEmpfohleneNutzung sourceBebaubarMit;
-                    sourceBebaubarMit = this.getBebaubarMit();
-                    GrundstueckWohnenEmpfohleneNutzung copyBebaubarMit = ((GrundstueckWohnenEmpfohleneNutzung) strategy.copy(LocatorUtils.property(locator, "bebaubarMit", sourceBebaubarMit), sourceBebaubarMit));
-                    copy.setBebaubarMit(copyBebaubarMit);
-                } else {
-                    copy.bebaubarMit = null;
+                {
+                    Boolean bebaubarMitShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bebaubarMit!= null));
+                    if (bebaubarMitShouldBeCopiedAndSet == Boolean.TRUE) {
+                        GrundstueckWohnenEmpfohleneNutzung sourceBebaubarMit;
+                        sourceBebaubarMit = this.getBebaubarMit();
+                        GrundstueckWohnenEmpfohleneNutzung copyBebaubarMit = ((GrundstueckWohnenEmpfohleneNutzung) strategy.copy(LocatorUtils.property(locator, "bebaubarMit", sourceBebaubarMit), sourceBebaubarMit, (this.bebaubarMit!= null)));
+                        copy.setBebaubarMit(copyBebaubarMit);
+                    } else {
+                        if (bebaubarMitShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.bebaubarMit = null;
+                        }
+                    }
                 }
-                if (this.objektkategorie2 != null) {
-                    GrundstueckWohnenKategorienTyp sourceObjektkategorie2;
-                    sourceObjektkategorie2 = this.getObjektkategorie2();
-                    GrundstueckWohnenKategorienTyp copyObjektkategorie2 = ((GrundstueckWohnenKategorienTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2));
-                    copy.setObjektkategorie2(copyObjektkategorie2);
-                } else {
-                    copy.objektkategorie2 = null;
+                {
+                    Boolean objektkategorie2ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektkategorie2 != null));
+                    if (objektkategorie2ShouldBeCopiedAndSet == Boolean.TRUE) {
+                        GrundstueckWohnenKategorienTyp sourceObjektkategorie2;
+                        sourceObjektkategorie2 = this.getObjektkategorie2();
+                        GrundstueckWohnenKategorienTyp copyObjektkategorie2 = ((GrundstueckWohnenKategorienTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2, (this.objektkategorie2 != null)));
+                        copy.setObjektkategorie2(copyObjektkategorie2);
+                    } else {
+                        if (objektkategorie2ShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.objektkategorie2 = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -225,7 +240,7 @@ public class GrundstueckWohnenKauf
             return new GrundstueckWohnenKauf.Type();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -241,7 +256,7 @@ public class GrundstueckWohnenKauf
                 lhsVermarktung = this.getVermarktung();
                 VermarktungGrundstueckWohnenKaufTyp rhsVermarktung;
                 rhsVermarktung = that.getVermarktung();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung, (this.vermarktung!= null), (that.vermarktung!= null))) {
                     return false;
                 }
             }
@@ -250,7 +265,7 @@ public class GrundstueckWohnenKauf
                 lhsBebaubarMit = this.getBebaubarMit();
                 GrundstueckWohnenEmpfohleneNutzung rhsBebaubarMit;
                 rhsBebaubarMit = that.getBebaubarMit();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "bebaubarMit", lhsBebaubarMit), LocatorUtils.property(thatLocator, "bebaubarMit", rhsBebaubarMit), lhsBebaubarMit, rhsBebaubarMit)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "bebaubarMit", lhsBebaubarMit), LocatorUtils.property(thatLocator, "bebaubarMit", rhsBebaubarMit), lhsBebaubarMit, rhsBebaubarMit, (this.bebaubarMit!= null), (that.bebaubarMit!= null))) {
                     return false;
                 }
             }
@@ -259,7 +274,7 @@ public class GrundstueckWohnenKauf
                 lhsObjektkategorie2 = this.getObjektkategorie2();
                 GrundstueckWohnenKategorienTyp rhsObjektkategorie2;
                 rhsObjektkategorie2 = that.getObjektkategorie2();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2, (this.objektkategorie2 != null), (that.objektkategorie2 != null))) {
                     return false;
                 }
             }
@@ -267,7 +282,7 @@ public class GrundstueckWohnenKauf
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

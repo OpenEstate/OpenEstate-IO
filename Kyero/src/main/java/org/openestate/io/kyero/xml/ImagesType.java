@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -59,8 +59,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "imagesType", propOrder = {
     "image"
 })
-public class ImagesType
-    implements Cloneable, CopyTo, Equals, ToString
+public class ImagesType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<ImagesType.Image> image;
@@ -95,24 +94,24 @@ public class ImagesType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<ImagesType.Image> theImage;
             theImage = (((this.image!= null)&&(!this.image.isEmpty()))?this.getImage():null);
-            strategy.appendField(locator, this, "image", buffer, theImage);
+            strategy.appendField(locator, this, "image", buffer, theImage, ((this.image!= null)&&(!this.image.isEmpty())));
         }
         return buffer;
     }
@@ -122,26 +121,31 @@ public class ImagesType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ImagesType) {
             final ImagesType copy = ((ImagesType) draftCopy);
-            if ((this.image!= null)&&(!this.image.isEmpty())) {
-                List<ImagesType.Image> sourceImage;
-                sourceImage = (((this.image!= null)&&(!this.image.isEmpty()))?this.getImage():null);
-                @SuppressWarnings("unchecked")
-                List<ImagesType.Image> copyImage = ((List<ImagesType.Image> ) strategy.copy(LocatorUtils.property(locator, "image", sourceImage), sourceImage));
-                copy.image = null;
-                if (copyImage!= null) {
-                    List<ImagesType.Image> uniqueImagel = copy.getImage();
-                    uniqueImagel.addAll(copyImage);
+            {
+                Boolean imageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.image!= null)&&(!this.image.isEmpty())));
+                if (imageShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<ImagesType.Image> sourceImage;
+                    sourceImage = (((this.image!= null)&&(!this.image.isEmpty()))?this.getImage():null);
+                    @SuppressWarnings("unchecked")
+                    List<ImagesType.Image> copyImage = ((List<ImagesType.Image> ) strategy.copy(LocatorUtils.property(locator, "image", sourceImage), sourceImage, ((this.image!= null)&&(!this.image.isEmpty()))));
+                    copy.image = null;
+                    if (copyImage!= null) {
+                        List<ImagesType.Image> uniqueImagel = copy.getImage();
+                        uniqueImagel.addAll(copyImage);
+                    }
+                } else {
+                    if (imageShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.image = null;
+                    }
                 }
-            } else {
-                copy.image = null;
             }
         }
         return draftCopy;
@@ -151,7 +155,7 @@ public class ImagesType
         return new ImagesType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -164,7 +168,7 @@ public class ImagesType
             lhsImage = (((this.image!= null)&&(!this.image.isEmpty()))?this.getImage():null);
             List<ImagesType.Image> rhsImage;
             rhsImage = (((that.image!= null)&&(!that.image.isEmpty()))?that.getImage():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "image", lhsImage), LocatorUtils.property(thatLocator, "image", rhsImage), lhsImage, rhsImage)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "image", lhsImage), LocatorUtils.property(thatLocator, "image", rhsImage), lhsImage, rhsImage, ((this.image!= null)&&(!this.image.isEmpty())), ((that.image!= null)&&(!that.image.isEmpty())))) {
                 return false;
             }
         }
@@ -172,7 +176,7 @@ public class ImagesType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -202,8 +206,7 @@ public class ImagesType
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Image
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Image implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(type = String.class)
@@ -288,34 +291,34 @@ public class ImagesType
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 URL theUrl;
                 theUrl = this.getUrl();
-                strategy.appendField(locator, this, "url", buffer, theUrl);
+                strategy.appendField(locator, this, "url", buffer, theUrl, (this.url!= null));
             }
             {
                 LangType theTitle;
                 theTitle = this.getTitle();
-                strategy.appendField(locator, this, "title", buffer, theTitle);
+                strategy.appendField(locator, this, "title", buffer, theTitle, (this.title!= null));
             }
             {
                 Integer theId;
                 theId = this.getId();
-                strategy.appendField(locator, this, "id", buffer, theId);
+                strategy.appendField(locator, this, "id", buffer, theId, (this.id!= null));
             }
             return buffer;
         }
@@ -325,37 +328,52 @@ public class ImagesType
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof ImagesType.Image) {
                 final ImagesType.Image copy = ((ImagesType.Image) draftCopy);
-                if (this.url!= null) {
-                    URL sourceUrl;
-                    sourceUrl = this.getUrl();
-                    URL copyUrl = ((URL) strategy.copy(LocatorUtils.property(locator, "url", sourceUrl), sourceUrl));
-                    copy.setUrl(copyUrl);
-                } else {
-                    copy.url = null;
+                {
+                    Boolean urlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.url!= null));
+                    if (urlShouldBeCopiedAndSet == Boolean.TRUE) {
+                        URL sourceUrl;
+                        sourceUrl = this.getUrl();
+                        URL copyUrl = ((URL) strategy.copy(LocatorUtils.property(locator, "url", sourceUrl), sourceUrl, (this.url!= null)));
+                        copy.setUrl(copyUrl);
+                    } else {
+                        if (urlShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.url = null;
+                        }
+                    }
                 }
-                if (this.title!= null) {
-                    LangType sourceTitle;
-                    sourceTitle = this.getTitle();
-                    LangType copyTitle = ((LangType) strategy.copy(LocatorUtils.property(locator, "title", sourceTitle), sourceTitle));
-                    copy.setTitle(copyTitle);
-                } else {
-                    copy.title = null;
+                {
+                    Boolean titleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.title!= null));
+                    if (titleShouldBeCopiedAndSet == Boolean.TRUE) {
+                        LangType sourceTitle;
+                        sourceTitle = this.getTitle();
+                        LangType copyTitle = ((LangType) strategy.copy(LocatorUtils.property(locator, "title", sourceTitle), sourceTitle, (this.title!= null)));
+                        copy.setTitle(copyTitle);
+                    } else {
+                        if (titleShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.title = null;
+                        }
+                    }
                 }
-                if (this.id!= null) {
-                    Integer sourceId;
-                    sourceId = this.getId();
-                    Integer copyId = ((Integer) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId));
-                    copy.setId(copyId);
-                } else {
-                    copy.id = null;
+                {
+                    Boolean idShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.id!= null));
+                    if (idShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Integer sourceId;
+                        sourceId = this.getId();
+                        Integer copyId = ((Integer) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId, (this.id!= null)));
+                        copy.setId(copyId);
+                    } else {
+                        if (idShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.id = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -365,7 +383,7 @@ public class ImagesType
             return new ImagesType.Image();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -378,7 +396,7 @@ public class ImagesType
                 lhsUrl = this.getUrl();
                 URL rhsUrl;
                 rhsUrl = that.getUrl();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "url", lhsUrl), LocatorUtils.property(thatLocator, "url", rhsUrl), lhsUrl, rhsUrl)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "url", lhsUrl), LocatorUtils.property(thatLocator, "url", rhsUrl), lhsUrl, rhsUrl, (this.url!= null), (that.url!= null))) {
                     return false;
                 }
             }
@@ -387,7 +405,7 @@ public class ImagesType
                 lhsTitle = this.getTitle();
                 LangType rhsTitle;
                 rhsTitle = that.getTitle();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "title", lhsTitle), LocatorUtils.property(thatLocator, "title", rhsTitle), lhsTitle, rhsTitle)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "title", lhsTitle), LocatorUtils.property(thatLocator, "title", rhsTitle), lhsTitle, rhsTitle, (this.title!= null), (that.title!= null))) {
                     return false;
                 }
             }
@@ -396,7 +414,7 @@ public class ImagesType
                 lhsId = this.getId();
                 Integer rhsId;
                 rhsId = that.getId();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "id", lhsId), LocatorUtils.property(thatLocator, "id", rhsId), lhsId, rhsId)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "id", lhsId), LocatorUtils.property(thatLocator, "id", rhsId), lhsId, rhsId, (this.id!= null), (that.id!= null))) {
                     return false;
                 }
             }
@@ -404,7 +422,7 @@ public class ImagesType
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

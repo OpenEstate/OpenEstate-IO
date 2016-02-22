@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -65,7 +65,7 @@ public class GarageMiete
     })
     public static class Type
         extends GarageTyp
-        implements Cloneable, CopyTo, Equals, ToString
+        implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "Mietpreise", required = true)
@@ -152,35 +152,35 @@ public class GarageMiete
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             super.appendFields(locator, buffer, strategy);
             {
                 VermarktungGarageMieteTyp theMietpreise;
                 theMietpreise = this.getMietpreise();
-                strategy.appendField(locator, this, "mietpreise", buffer, theMietpreise);
+                strategy.appendField(locator, this, "mietpreise", buffer, theMietpreise, (this.mietpreise!= null));
             }
             {
                 Calendar theVerfuegbarAb;
                 theVerfuegbarAb = this.getVerfuegbarAb();
-                strategy.appendField(locator, this, "verfuegbarAb", buffer, theVerfuegbarAb);
+                strategy.appendField(locator, this, "verfuegbarAb", buffer, theVerfuegbarAb, (this.verfuegbarAb!= null));
             }
             {
                 Calendar theVerfuegbarBis;
                 theVerfuegbarBis = this.getVerfuegbarBis();
-                strategy.appendField(locator, this, "verfuegbarBis", buffer, theVerfuegbarBis);
+                strategy.appendField(locator, this, "verfuegbarBis", buffer, theVerfuegbarBis, (this.verfuegbarBis!= null));
             }
             return buffer;
         }
@@ -190,38 +190,53 @@ public class GarageMiete
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             super.copyTo(locator, draftCopy, strategy);
             if (draftCopy instanceof GarageMiete.Type) {
                 final GarageMiete.Type copy = ((GarageMiete.Type) draftCopy);
-                if (this.mietpreise!= null) {
-                    VermarktungGarageMieteTyp sourceMietpreise;
-                    sourceMietpreise = this.getMietpreise();
-                    VermarktungGarageMieteTyp copyMietpreise = ((VermarktungGarageMieteTyp) strategy.copy(LocatorUtils.property(locator, "mietpreise", sourceMietpreise), sourceMietpreise));
-                    copy.setMietpreise(copyMietpreise);
-                } else {
-                    copy.mietpreise = null;
+                {
+                    Boolean mietpreiseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mietpreise!= null));
+                    if (mietpreiseShouldBeCopiedAndSet == Boolean.TRUE) {
+                        VermarktungGarageMieteTyp sourceMietpreise;
+                        sourceMietpreise = this.getMietpreise();
+                        VermarktungGarageMieteTyp copyMietpreise = ((VermarktungGarageMieteTyp) strategy.copy(LocatorUtils.property(locator, "mietpreise", sourceMietpreise), sourceMietpreise, (this.mietpreise!= null)));
+                        copy.setMietpreise(copyMietpreise);
+                    } else {
+                        if (mietpreiseShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.mietpreise = null;
+                        }
+                    }
                 }
-                if (this.verfuegbarAb!= null) {
-                    Calendar sourceVerfuegbarAb;
-                    sourceVerfuegbarAb = this.getVerfuegbarAb();
-                    Calendar copyVerfuegbarAb = ((Calendar) strategy.copy(LocatorUtils.property(locator, "verfuegbarAb", sourceVerfuegbarAb), sourceVerfuegbarAb));
-                    copy.setVerfuegbarAb(copyVerfuegbarAb);
-                } else {
-                    copy.verfuegbarAb = null;
+                {
+                    Boolean verfuegbarAbShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.verfuegbarAb!= null));
+                    if (verfuegbarAbShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Calendar sourceVerfuegbarAb;
+                        sourceVerfuegbarAb = this.getVerfuegbarAb();
+                        Calendar copyVerfuegbarAb = ((Calendar) strategy.copy(LocatorUtils.property(locator, "verfuegbarAb", sourceVerfuegbarAb), sourceVerfuegbarAb, (this.verfuegbarAb!= null)));
+                        copy.setVerfuegbarAb(copyVerfuegbarAb);
+                    } else {
+                        if (verfuegbarAbShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.verfuegbarAb = null;
+                        }
+                    }
                 }
-                if (this.verfuegbarBis!= null) {
-                    Calendar sourceVerfuegbarBis;
-                    sourceVerfuegbarBis = this.getVerfuegbarBis();
-                    Calendar copyVerfuegbarBis = ((Calendar) strategy.copy(LocatorUtils.property(locator, "verfuegbarBis", sourceVerfuegbarBis), sourceVerfuegbarBis));
-                    copy.setVerfuegbarBis(copyVerfuegbarBis);
-                } else {
-                    copy.verfuegbarBis = null;
+                {
+                    Boolean verfuegbarBisShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.verfuegbarBis!= null));
+                    if (verfuegbarBisShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Calendar sourceVerfuegbarBis;
+                        sourceVerfuegbarBis = this.getVerfuegbarBis();
+                        Calendar copyVerfuegbarBis = ((Calendar) strategy.copy(LocatorUtils.property(locator, "verfuegbarBis", sourceVerfuegbarBis), sourceVerfuegbarBis, (this.verfuegbarBis!= null)));
+                        copy.setVerfuegbarBis(copyVerfuegbarBis);
+                    } else {
+                        if (verfuegbarBisShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.verfuegbarBis = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -231,7 +246,7 @@ public class GarageMiete
             return new GarageMiete.Type();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -247,7 +262,7 @@ public class GarageMiete
                 lhsMietpreise = this.getMietpreise();
                 VermarktungGarageMieteTyp rhsMietpreise;
                 rhsMietpreise = that.getMietpreise();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "mietpreise", lhsMietpreise), LocatorUtils.property(thatLocator, "mietpreise", rhsMietpreise), lhsMietpreise, rhsMietpreise)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "mietpreise", lhsMietpreise), LocatorUtils.property(thatLocator, "mietpreise", rhsMietpreise), lhsMietpreise, rhsMietpreise, (this.mietpreise!= null), (that.mietpreise!= null))) {
                     return false;
                 }
             }
@@ -256,7 +271,7 @@ public class GarageMiete
                 lhsVerfuegbarAb = this.getVerfuegbarAb();
                 Calendar rhsVerfuegbarAb;
                 rhsVerfuegbarAb = that.getVerfuegbarAb();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "verfuegbarAb", lhsVerfuegbarAb), LocatorUtils.property(thatLocator, "verfuegbarAb", rhsVerfuegbarAb), lhsVerfuegbarAb, rhsVerfuegbarAb)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "verfuegbarAb", lhsVerfuegbarAb), LocatorUtils.property(thatLocator, "verfuegbarAb", rhsVerfuegbarAb), lhsVerfuegbarAb, rhsVerfuegbarAb, (this.verfuegbarAb!= null), (that.verfuegbarAb!= null))) {
                     return false;
                 }
             }
@@ -265,7 +280,7 @@ public class GarageMiete
                 lhsVerfuegbarBis = this.getVerfuegbarBis();
                 Calendar rhsVerfuegbarBis;
                 rhsVerfuegbarBis = that.getVerfuegbarBis();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "verfuegbarBis", lhsVerfuegbarBis), LocatorUtils.property(thatLocator, "verfuegbarBis", rhsVerfuegbarBis), lhsVerfuegbarBis, rhsVerfuegbarBis)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "verfuegbarBis", lhsVerfuegbarBis), LocatorUtils.property(thatLocator, "verfuegbarBis", rhsVerfuegbarBis), lhsVerfuegbarBis, rhsVerfuegbarBis, (this.verfuegbarBis!= null), (that.verfuegbarBis!= null))) {
                     return false;
                 }
             }
@@ -273,7 +288,7 @@ public class GarageMiete
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

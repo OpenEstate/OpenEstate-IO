@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -45,8 +45,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 })
 @XmlRootElement(name = "picture")
-public class Picture
-    implements Cloneable, CopyTo, Equals, ToString
+public class Picture implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "picture_url", required = true)
@@ -105,29 +104,29 @@ public class Picture
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String thePictureUrl;
             thePictureUrl = this.getPictureUrl();
-            strategy.appendField(locator, this, "pictureUrl", buffer, thePictureUrl);
+            strategy.appendField(locator, this, "pictureUrl", buffer, thePictureUrl, (this.pictureUrl!= null));
         }
         {
             String thePictureTitle;
             thePictureTitle = this.getPictureTitle();
-            strategy.appendField(locator, this, "pictureTitle", buffer, thePictureTitle);
+            strategy.appendField(locator, this, "pictureTitle", buffer, thePictureTitle, (this.pictureTitle!= null));
         }
         return buffer;
     }
@@ -137,29 +136,39 @@ public class Picture
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Picture) {
             final Picture copy = ((Picture) draftCopy);
-            if (this.pictureUrl!= null) {
-                String sourcePictureUrl;
-                sourcePictureUrl = this.getPictureUrl();
-                String copyPictureUrl = ((String) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl));
-                copy.setPictureUrl(copyPictureUrl);
-            } else {
-                copy.pictureUrl = null;
+            {
+                Boolean pictureUrlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pictureUrl!= null));
+                if (pictureUrlShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePictureUrl;
+                    sourcePictureUrl = this.getPictureUrl();
+                    String copyPictureUrl = ((String) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl, (this.pictureUrl!= null)));
+                    copy.setPictureUrl(copyPictureUrl);
+                } else {
+                    if (pictureUrlShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pictureUrl = null;
+                    }
+                }
             }
-            if (this.pictureTitle!= null) {
-                String sourcePictureTitle;
-                sourcePictureTitle = this.getPictureTitle();
-                String copyPictureTitle = ((String) strategy.copy(LocatorUtils.property(locator, "pictureTitle", sourcePictureTitle), sourcePictureTitle));
-                copy.setPictureTitle(copyPictureTitle);
-            } else {
-                copy.pictureTitle = null;
+            {
+                Boolean pictureTitleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pictureTitle!= null));
+                if (pictureTitleShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePictureTitle;
+                    sourcePictureTitle = this.getPictureTitle();
+                    String copyPictureTitle = ((String) strategy.copy(LocatorUtils.property(locator, "pictureTitle", sourcePictureTitle), sourcePictureTitle, (this.pictureTitle!= null)));
+                    copy.setPictureTitle(copyPictureTitle);
+                } else {
+                    if (pictureTitleShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pictureTitle = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -169,7 +178,7 @@ public class Picture
         return new Picture();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -182,7 +191,7 @@ public class Picture
             lhsPictureUrl = this.getPictureUrl();
             String rhsPictureUrl;
             rhsPictureUrl = that.getPictureUrl();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrl", lhsPictureUrl), LocatorUtils.property(thatLocator, "pictureUrl", rhsPictureUrl), lhsPictureUrl, rhsPictureUrl)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrl", lhsPictureUrl), LocatorUtils.property(thatLocator, "pictureUrl", rhsPictureUrl), lhsPictureUrl, rhsPictureUrl, (this.pictureUrl!= null), (that.pictureUrl!= null))) {
                 return false;
             }
         }
@@ -191,7 +200,7 @@ public class Picture
             lhsPictureTitle = this.getPictureTitle();
             String rhsPictureTitle;
             rhsPictureTitle = that.getPictureTitle();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureTitle", lhsPictureTitle), LocatorUtils.property(thatLocator, "pictureTitle", rhsPictureTitle), lhsPictureTitle, rhsPictureTitle)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureTitle", lhsPictureTitle), LocatorUtils.property(thatLocator, "pictureTitle", rhsPictureTitle), lhsPictureTitle, rhsPictureTitle, (this.pictureTitle!= null), (that.pictureTitle!= null))) {
                 return false;
             }
         }
@@ -199,7 +208,7 @@ public class Picture
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

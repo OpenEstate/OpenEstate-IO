@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -34,8 +34,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "text"
 })
 @XmlRootElement(name = "status")
-public class Status
-    implements Cloneable, CopyTo, Equals, ToString
+public class Status implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(type = String.class)
@@ -93,29 +92,29 @@ public class Status
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigInteger theStatusnr;
             theStatusnr = this.getStatusnr();
-            strategy.appendField(locator, this, "statusnr", buffer, theStatusnr);
+            strategy.appendField(locator, this, "statusnr", buffer, theStatusnr, (this.statusnr!= null));
         }
         {
             String theText;
             theText = this.getText();
-            strategy.appendField(locator, this, "text", buffer, theText);
+            strategy.appendField(locator, this, "text", buffer, theText, (this.text!= null));
         }
         return buffer;
     }
@@ -125,29 +124,39 @@ public class Status
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Status) {
             final Status copy = ((Status) draftCopy);
-            if (this.statusnr!= null) {
-                BigInteger sourceStatusnr;
-                sourceStatusnr = this.getStatusnr();
-                BigInteger copyStatusnr = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "statusnr", sourceStatusnr), sourceStatusnr));
-                copy.setStatusnr(copyStatusnr);
-            } else {
-                copy.statusnr = null;
+            {
+                Boolean statusnrShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.statusnr!= null));
+                if (statusnrShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigInteger sourceStatusnr;
+                    sourceStatusnr = this.getStatusnr();
+                    BigInteger copyStatusnr = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "statusnr", sourceStatusnr), sourceStatusnr, (this.statusnr!= null)));
+                    copy.setStatusnr(copyStatusnr);
+                } else {
+                    if (statusnrShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.statusnr = null;
+                    }
+                }
             }
-            if (this.text!= null) {
-                String sourceText;
-                sourceText = this.getText();
-                String copyText = ((String) strategy.copy(LocatorUtils.property(locator, "text", sourceText), sourceText));
-                copy.setText(copyText);
-            } else {
-                copy.text = null;
+            {
+                Boolean textShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.text!= null));
+                if (textShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceText;
+                    sourceText = this.getText();
+                    String copyText = ((String) strategy.copy(LocatorUtils.property(locator, "text", sourceText), sourceText, (this.text!= null)));
+                    copy.setText(copyText);
+                } else {
+                    if (textShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.text = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -157,7 +166,7 @@ public class Status
         return new Status();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -170,7 +179,7 @@ public class Status
             lhsStatusnr = this.getStatusnr();
             BigInteger rhsStatusnr;
             rhsStatusnr = that.getStatusnr();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "statusnr", lhsStatusnr), LocatorUtils.property(thatLocator, "statusnr", rhsStatusnr), lhsStatusnr, rhsStatusnr)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "statusnr", lhsStatusnr), LocatorUtils.property(thatLocator, "statusnr", rhsStatusnr), lhsStatusnr, rhsStatusnr, (this.statusnr!= null), (that.statusnr!= null))) {
                 return false;
             }
         }
@@ -179,7 +188,7 @@ public class Status
             lhsText = this.getText();
             String rhsText;
             rhsText = that.getText();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "text", lhsText), LocatorUtils.property(thatLocator, "text", rhsText), lhsText, rhsText)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "text", lhsText), LocatorUtils.property(thatLocator, "text", rhsText), lhsText, rhsText, (this.text!= null), (that.text!= null))) {
                 return false;
             }
         }
@@ -187,7 +196,7 @@ public class Status
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

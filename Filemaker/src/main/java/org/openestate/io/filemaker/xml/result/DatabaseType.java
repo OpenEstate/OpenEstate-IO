@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -43,8 +43,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DatabaseType")
-public class DatabaseType
-    implements Cloneable, CopyTo, Equals, ToString
+public class DatabaseType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "NAME", required = true)
@@ -180,44 +179,44 @@ public class DatabaseType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theNAME;
             theNAME = this.getNAME();
-            strategy.appendField(locator, this, "name", buffer, theNAME);
+            strategy.appendField(locator, this, "name", buffer, theNAME, (this.name!= null));
         }
         {
             BigInteger theRECORDS;
             theRECORDS = this.getRECORDS();
-            strategy.appendField(locator, this, "records", buffer, theRECORDS);
+            strategy.appendField(locator, this, "records", buffer, theRECORDS, (this.records!= null));
         }
         {
             String theDATEFORMAT;
             theDATEFORMAT = this.getDATEFORMAT();
-            strategy.appendField(locator, this, "dateformat", buffer, theDATEFORMAT);
+            strategy.appendField(locator, this, "dateformat", buffer, theDATEFORMAT, (this.dateformat!= null));
         }
         {
             String theTIMEFORMAT;
             theTIMEFORMAT = this.getTIMEFORMAT();
-            strategy.appendField(locator, this, "timeformat", buffer, theTIMEFORMAT);
+            strategy.appendField(locator, this, "timeformat", buffer, theTIMEFORMAT, (this.timeformat!= null));
         }
         {
             String theLAYOUT;
             theLAYOUT = this.getLAYOUT();
-            strategy.appendField(locator, this, "layout", buffer, theLAYOUT);
+            strategy.appendField(locator, this, "layout", buffer, theLAYOUT, (this.layout!= null));
         }
         return buffer;
     }
@@ -227,53 +226,78 @@ public class DatabaseType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof DatabaseType) {
             final DatabaseType copy = ((DatabaseType) draftCopy);
-            if (this.name!= null) {
-                String sourceNAME;
-                sourceNAME = this.getNAME();
-                String copyNAME = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceNAME), sourceNAME));
-                copy.setNAME(copyNAME);
-            } else {
-                copy.name = null;
+            {
+                Boolean nameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.name!= null));
+                if (nameShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceNAME;
+                    sourceNAME = this.getNAME();
+                    String copyNAME = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceNAME), sourceNAME, (this.name!= null)));
+                    copy.setNAME(copyNAME);
+                } else {
+                    if (nameShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.name = null;
+                    }
+                }
             }
-            if (this.records!= null) {
-                BigInteger sourceRECORDS;
-                sourceRECORDS = this.getRECORDS();
-                BigInteger copyRECORDS = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "records", sourceRECORDS), sourceRECORDS));
-                copy.setRECORDS(copyRECORDS);
-            } else {
-                copy.records = null;
+            {
+                Boolean recordsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.records!= null));
+                if (recordsShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigInteger sourceRECORDS;
+                    sourceRECORDS = this.getRECORDS();
+                    BigInteger copyRECORDS = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "records", sourceRECORDS), sourceRECORDS, (this.records!= null)));
+                    copy.setRECORDS(copyRECORDS);
+                } else {
+                    if (recordsShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.records = null;
+                    }
+                }
             }
-            if (this.dateformat!= null) {
-                String sourceDATEFORMAT;
-                sourceDATEFORMAT = this.getDATEFORMAT();
-                String copyDATEFORMAT = ((String) strategy.copy(LocatorUtils.property(locator, "dateformat", sourceDATEFORMAT), sourceDATEFORMAT));
-                copy.setDATEFORMAT(copyDATEFORMAT);
-            } else {
-                copy.dateformat = null;
+            {
+                Boolean dateformatShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dateformat!= null));
+                if (dateformatShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceDATEFORMAT;
+                    sourceDATEFORMAT = this.getDATEFORMAT();
+                    String copyDATEFORMAT = ((String) strategy.copy(LocatorUtils.property(locator, "dateformat", sourceDATEFORMAT), sourceDATEFORMAT, (this.dateformat!= null)));
+                    copy.setDATEFORMAT(copyDATEFORMAT);
+                } else {
+                    if (dateformatShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.dateformat = null;
+                    }
+                }
             }
-            if (this.timeformat!= null) {
-                String sourceTIMEFORMAT;
-                sourceTIMEFORMAT = this.getTIMEFORMAT();
-                String copyTIMEFORMAT = ((String) strategy.copy(LocatorUtils.property(locator, "timeformat", sourceTIMEFORMAT), sourceTIMEFORMAT));
-                copy.setTIMEFORMAT(copyTIMEFORMAT);
-            } else {
-                copy.timeformat = null;
+            {
+                Boolean timeformatShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.timeformat!= null));
+                if (timeformatShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTIMEFORMAT;
+                    sourceTIMEFORMAT = this.getTIMEFORMAT();
+                    String copyTIMEFORMAT = ((String) strategy.copy(LocatorUtils.property(locator, "timeformat", sourceTIMEFORMAT), sourceTIMEFORMAT, (this.timeformat!= null)));
+                    copy.setTIMEFORMAT(copyTIMEFORMAT);
+                } else {
+                    if (timeformatShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.timeformat = null;
+                    }
+                }
             }
-            if (this.layout!= null) {
-                String sourceLAYOUT;
-                sourceLAYOUT = this.getLAYOUT();
-                String copyLAYOUT = ((String) strategy.copy(LocatorUtils.property(locator, "layout", sourceLAYOUT), sourceLAYOUT));
-                copy.setLAYOUT(copyLAYOUT);
-            } else {
-                copy.layout = null;
+            {
+                Boolean layoutShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.layout!= null));
+                if (layoutShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceLAYOUT;
+                    sourceLAYOUT = this.getLAYOUT();
+                    String copyLAYOUT = ((String) strategy.copy(LocatorUtils.property(locator, "layout", sourceLAYOUT), sourceLAYOUT, (this.layout!= null)));
+                    copy.setLAYOUT(copyLAYOUT);
+                } else {
+                    if (layoutShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.layout = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -283,7 +307,7 @@ public class DatabaseType
         return new DatabaseType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -296,7 +320,7 @@ public class DatabaseType
             lhsNAME = this.getNAME();
             String rhsNAME;
             rhsNAME = that.getNAME();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsNAME), LocatorUtils.property(thatLocator, "name", rhsNAME), lhsNAME, rhsNAME)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsNAME), LocatorUtils.property(thatLocator, "name", rhsNAME), lhsNAME, rhsNAME, (this.name!= null), (that.name!= null))) {
                 return false;
             }
         }
@@ -305,7 +329,7 @@ public class DatabaseType
             lhsRECORDS = this.getRECORDS();
             BigInteger rhsRECORDS;
             rhsRECORDS = that.getRECORDS();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "records", lhsRECORDS), LocatorUtils.property(thatLocator, "records", rhsRECORDS), lhsRECORDS, rhsRECORDS)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "records", lhsRECORDS), LocatorUtils.property(thatLocator, "records", rhsRECORDS), lhsRECORDS, rhsRECORDS, (this.records!= null), (that.records!= null))) {
                 return false;
             }
         }
@@ -314,7 +338,7 @@ public class DatabaseType
             lhsDATEFORMAT = this.getDATEFORMAT();
             String rhsDATEFORMAT;
             rhsDATEFORMAT = that.getDATEFORMAT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "dateformat", lhsDATEFORMAT), LocatorUtils.property(thatLocator, "dateformat", rhsDATEFORMAT), lhsDATEFORMAT, rhsDATEFORMAT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "dateformat", lhsDATEFORMAT), LocatorUtils.property(thatLocator, "dateformat", rhsDATEFORMAT), lhsDATEFORMAT, rhsDATEFORMAT, (this.dateformat!= null), (that.dateformat!= null))) {
                 return false;
             }
         }
@@ -323,7 +347,7 @@ public class DatabaseType
             lhsTIMEFORMAT = this.getTIMEFORMAT();
             String rhsTIMEFORMAT;
             rhsTIMEFORMAT = that.getTIMEFORMAT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "timeformat", lhsTIMEFORMAT), LocatorUtils.property(thatLocator, "timeformat", rhsTIMEFORMAT), lhsTIMEFORMAT, rhsTIMEFORMAT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "timeformat", lhsTIMEFORMAT), LocatorUtils.property(thatLocator, "timeformat", rhsTIMEFORMAT), lhsTIMEFORMAT, rhsTIMEFORMAT, (this.timeformat!= null), (that.timeformat!= null))) {
                 return false;
             }
         }
@@ -332,7 +356,7 @@ public class DatabaseType
             lhsLAYOUT = this.getLAYOUT();
             String rhsLAYOUT;
             rhsLAYOUT = that.getLAYOUT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "layout", lhsLAYOUT), LocatorUtils.property(thatLocator, "layout", rhsLAYOUT), lhsLAYOUT, rhsLAYOUT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "layout", lhsLAYOUT), LocatorUtils.property(thatLocator, "layout", rhsLAYOUT), lhsLAYOUT, rhsLAYOUT, (this.layout!= null), (that.layout!= null))) {
                 return false;
             }
         }
@@ -340,7 +364,7 @@ public class DatabaseType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

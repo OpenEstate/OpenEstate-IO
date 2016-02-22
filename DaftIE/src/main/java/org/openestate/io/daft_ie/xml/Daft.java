@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -68,8 +68,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 })
 @XmlRootElement(name = "daft")
-public class Daft
-    implements Cloneable, CopyTo, Equals, ToString
+public class Daft implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "overseas_sales")
@@ -152,34 +151,34 @@ public class Daft
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Daft.OverseasSales theOverseasSales;
             theOverseasSales = this.getOverseasSales();
-            strategy.appendField(locator, this, "overseasSales", buffer, theOverseasSales);
+            strategy.appendField(locator, this, "overseasSales", buffer, theOverseasSales, (this.overseasSales!= null));
         }
         {
             Daft.OverseasRental theOverseasRental;
             theOverseasRental = this.getOverseasRental();
-            strategy.appendField(locator, this, "overseasRental", buffer, theOverseasRental);
+            strategy.appendField(locator, this, "overseasRental", buffer, theOverseasRental, (this.overseasRental!= null));
         }
         {
             String theVersion;
             theVersion = this.getVersion();
-            strategy.appendField(locator, this, "version", buffer, theVersion);
+            strategy.appendField(locator, this, "version", buffer, theVersion, (this.version!= null));
         }
         return buffer;
     }
@@ -189,37 +188,52 @@ public class Daft
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Daft) {
             final Daft copy = ((Daft) draftCopy);
-            if (this.overseasSales!= null) {
-                Daft.OverseasSales sourceOverseasSales;
-                sourceOverseasSales = this.getOverseasSales();
-                Daft.OverseasSales copyOverseasSales = ((Daft.OverseasSales) strategy.copy(LocatorUtils.property(locator, "overseasSales", sourceOverseasSales), sourceOverseasSales));
-                copy.setOverseasSales(copyOverseasSales);
-            } else {
-                copy.overseasSales = null;
+            {
+                Boolean overseasSalesShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.overseasSales!= null));
+                if (overseasSalesShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Daft.OverseasSales sourceOverseasSales;
+                    sourceOverseasSales = this.getOverseasSales();
+                    Daft.OverseasSales copyOverseasSales = ((Daft.OverseasSales) strategy.copy(LocatorUtils.property(locator, "overseasSales", sourceOverseasSales), sourceOverseasSales, (this.overseasSales!= null)));
+                    copy.setOverseasSales(copyOverseasSales);
+                } else {
+                    if (overseasSalesShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.overseasSales = null;
+                    }
+                }
             }
-            if (this.overseasRental!= null) {
-                Daft.OverseasRental sourceOverseasRental;
-                sourceOverseasRental = this.getOverseasRental();
-                Daft.OverseasRental copyOverseasRental = ((Daft.OverseasRental) strategy.copy(LocatorUtils.property(locator, "overseasRental", sourceOverseasRental), sourceOverseasRental));
-                copy.setOverseasRental(copyOverseasRental);
-            } else {
-                copy.overseasRental = null;
+            {
+                Boolean overseasRentalShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.overseasRental!= null));
+                if (overseasRentalShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Daft.OverseasRental sourceOverseasRental;
+                    sourceOverseasRental = this.getOverseasRental();
+                    Daft.OverseasRental copyOverseasRental = ((Daft.OverseasRental) strategy.copy(LocatorUtils.property(locator, "overseasRental", sourceOverseasRental), sourceOverseasRental, (this.overseasRental!= null)));
+                    copy.setOverseasRental(copyOverseasRental);
+                } else {
+                    if (overseasRentalShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.overseasRental = null;
+                    }
+                }
             }
-            if (this.version!= null) {
-                String sourceVersion;
-                sourceVersion = this.getVersion();
-                String copyVersion = ((String) strategy.copy(LocatorUtils.property(locator, "version", sourceVersion), sourceVersion));
-                copy.setVersion(copyVersion);
-            } else {
-                copy.version = null;
+            {
+                Boolean versionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.version!= null));
+                if (versionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceVersion;
+                    sourceVersion = this.getVersion();
+                    String copyVersion = ((String) strategy.copy(LocatorUtils.property(locator, "version", sourceVersion), sourceVersion, (this.version!= null)));
+                    copy.setVersion(copyVersion);
+                } else {
+                    if (versionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.version = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -229,7 +243,7 @@ public class Daft
         return new Daft();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -242,7 +256,7 @@ public class Daft
             lhsOverseasSales = this.getOverseasSales();
             Daft.OverseasSales rhsOverseasSales;
             rhsOverseasSales = that.getOverseasSales();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasSales", lhsOverseasSales), LocatorUtils.property(thatLocator, "overseasSales", rhsOverseasSales), lhsOverseasSales, rhsOverseasSales)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasSales", lhsOverseasSales), LocatorUtils.property(thatLocator, "overseasSales", rhsOverseasSales), lhsOverseasSales, rhsOverseasSales, (this.overseasSales!= null), (that.overseasSales!= null))) {
                 return false;
             }
         }
@@ -251,7 +265,7 @@ public class Daft
             lhsOverseasRental = this.getOverseasRental();
             Daft.OverseasRental rhsOverseasRental;
             rhsOverseasRental = that.getOverseasRental();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasRental", lhsOverseasRental), LocatorUtils.property(thatLocator, "overseasRental", rhsOverseasRental), lhsOverseasRental, rhsOverseasRental)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasRental", lhsOverseasRental), LocatorUtils.property(thatLocator, "overseasRental", rhsOverseasRental), lhsOverseasRental, rhsOverseasRental, (this.overseasRental!= null), (that.overseasRental!= null))) {
                 return false;
             }
         }
@@ -260,7 +274,7 @@ public class Daft
             lhsVersion = this.getVersion();
             String rhsVersion;
             rhsVersion = that.getVersion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "version", lhsVersion), LocatorUtils.property(thatLocator, "version", rhsVersion), lhsVersion, rhsVersion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "version", lhsVersion), LocatorUtils.property(thatLocator, "version", rhsVersion), lhsVersion, rhsVersion, (this.version!= null), (that.version!= null))) {
                 return false;
             }
         }
@@ -268,7 +282,7 @@ public class Daft
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -296,8 +310,7 @@ public class Daft
     @XmlType(name = "", propOrder = {
         "overseasRentalAd"
     })
-    public static class OverseasRental
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class OverseasRental implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "overseas_rental_ad")
@@ -333,24 +346,24 @@ public class Daft
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 List<OverseasRentalAdType> theOverseasRentalAd;
                 theOverseasRentalAd = (((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty()))?this.getOverseasRentalAd():null);
-                strategy.appendField(locator, this, "overseasRentalAd", buffer, theOverseasRentalAd);
+                strategy.appendField(locator, this, "overseasRentalAd", buffer, theOverseasRentalAd, ((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty())));
             }
             return buffer;
         }
@@ -360,26 +373,31 @@ public class Daft
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Daft.OverseasRental) {
                 final Daft.OverseasRental copy = ((Daft.OverseasRental) draftCopy);
-                if ((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty())) {
-                    List<OverseasRentalAdType> sourceOverseasRentalAd;
-                    sourceOverseasRentalAd = (((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty()))?this.getOverseasRentalAd():null);
-                    @SuppressWarnings("unchecked")
-                    List<OverseasRentalAdType> copyOverseasRentalAd = ((List<OverseasRentalAdType> ) strategy.copy(LocatorUtils.property(locator, "overseasRentalAd", sourceOverseasRentalAd), sourceOverseasRentalAd));
-                    copy.overseasRentalAd = null;
-                    if (copyOverseasRentalAd!= null) {
-                        List<OverseasRentalAdType> uniqueOverseasRentalAdl = copy.getOverseasRentalAd();
-                        uniqueOverseasRentalAdl.addAll(copyOverseasRentalAd);
+                {
+                    Boolean overseasRentalAdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty())));
+                    if (overseasRentalAdShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<OverseasRentalAdType> sourceOverseasRentalAd;
+                        sourceOverseasRentalAd = (((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty()))?this.getOverseasRentalAd():null);
+                        @SuppressWarnings("unchecked")
+                        List<OverseasRentalAdType> copyOverseasRentalAd = ((List<OverseasRentalAdType> ) strategy.copy(LocatorUtils.property(locator, "overseasRentalAd", sourceOverseasRentalAd), sourceOverseasRentalAd, ((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty()))));
+                        copy.overseasRentalAd = null;
+                        if (copyOverseasRentalAd!= null) {
+                            List<OverseasRentalAdType> uniqueOverseasRentalAdl = copy.getOverseasRentalAd();
+                            uniqueOverseasRentalAdl.addAll(copyOverseasRentalAd);
+                        }
+                    } else {
+                        if (overseasRentalAdShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.overseasRentalAd = null;
+                        }
                     }
-                } else {
-                    copy.overseasRentalAd = null;
                 }
             }
             return draftCopy;
@@ -389,7 +407,7 @@ public class Daft
             return new Daft.OverseasRental();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -402,7 +420,7 @@ public class Daft
                 lhsOverseasRentalAd = (((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty()))?this.getOverseasRentalAd():null);
                 List<OverseasRentalAdType> rhsOverseasRentalAd;
                 rhsOverseasRentalAd = (((that.overseasRentalAd!= null)&&(!that.overseasRentalAd.isEmpty()))?that.getOverseasRentalAd():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasRentalAd", lhsOverseasRentalAd), LocatorUtils.property(thatLocator, "overseasRentalAd", rhsOverseasRentalAd), lhsOverseasRentalAd, rhsOverseasRentalAd)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasRentalAd", lhsOverseasRentalAd), LocatorUtils.property(thatLocator, "overseasRentalAd", rhsOverseasRentalAd), lhsOverseasRentalAd, rhsOverseasRentalAd, ((this.overseasRentalAd!= null)&&(!this.overseasRentalAd.isEmpty())), ((that.overseasRentalAd!= null)&&(!that.overseasRentalAd.isEmpty())))) {
                     return false;
                 }
             }
@@ -410,7 +428,7 @@ public class Daft
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 
@@ -440,8 +458,7 @@ public class Daft
     @XmlType(name = "", propOrder = {
         "overseasSaleAd"
     })
-    public static class OverseasSales
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class OverseasSales implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "overseas_sale_ad")
@@ -477,24 +494,24 @@ public class Daft
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 List<OverseasSaleAdType> theOverseasSaleAd;
                 theOverseasSaleAd = (((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty()))?this.getOverseasSaleAd():null);
-                strategy.appendField(locator, this, "overseasSaleAd", buffer, theOverseasSaleAd);
+                strategy.appendField(locator, this, "overseasSaleAd", buffer, theOverseasSaleAd, ((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty())));
             }
             return buffer;
         }
@@ -504,26 +521,31 @@ public class Daft
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Daft.OverseasSales) {
                 final Daft.OverseasSales copy = ((Daft.OverseasSales) draftCopy);
-                if ((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty())) {
-                    List<OverseasSaleAdType> sourceOverseasSaleAd;
-                    sourceOverseasSaleAd = (((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty()))?this.getOverseasSaleAd():null);
-                    @SuppressWarnings("unchecked")
-                    List<OverseasSaleAdType> copyOverseasSaleAd = ((List<OverseasSaleAdType> ) strategy.copy(LocatorUtils.property(locator, "overseasSaleAd", sourceOverseasSaleAd), sourceOverseasSaleAd));
-                    copy.overseasSaleAd = null;
-                    if (copyOverseasSaleAd!= null) {
-                        List<OverseasSaleAdType> uniqueOverseasSaleAdl = copy.getOverseasSaleAd();
-                        uniqueOverseasSaleAdl.addAll(copyOverseasSaleAd);
+                {
+                    Boolean overseasSaleAdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty())));
+                    if (overseasSaleAdShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<OverseasSaleAdType> sourceOverseasSaleAd;
+                        sourceOverseasSaleAd = (((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty()))?this.getOverseasSaleAd():null);
+                        @SuppressWarnings("unchecked")
+                        List<OverseasSaleAdType> copyOverseasSaleAd = ((List<OverseasSaleAdType> ) strategy.copy(LocatorUtils.property(locator, "overseasSaleAd", sourceOverseasSaleAd), sourceOverseasSaleAd, ((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty()))));
+                        copy.overseasSaleAd = null;
+                        if (copyOverseasSaleAd!= null) {
+                            List<OverseasSaleAdType> uniqueOverseasSaleAdl = copy.getOverseasSaleAd();
+                            uniqueOverseasSaleAdl.addAll(copyOverseasSaleAd);
+                        }
+                    } else {
+                        if (overseasSaleAdShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.overseasSaleAd = null;
+                        }
                     }
-                } else {
-                    copy.overseasSaleAd = null;
                 }
             }
             return draftCopy;
@@ -533,7 +555,7 @@ public class Daft
             return new Daft.OverseasSales();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -546,7 +568,7 @@ public class Daft
                 lhsOverseasSaleAd = (((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty()))?this.getOverseasSaleAd():null);
                 List<OverseasSaleAdType> rhsOverseasSaleAd;
                 rhsOverseasSaleAd = (((that.overseasSaleAd!= null)&&(!that.overseasSaleAd.isEmpty()))?that.getOverseasSaleAd():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasSaleAd", lhsOverseasSaleAd), LocatorUtils.property(thatLocator, "overseasSaleAd", rhsOverseasSaleAd), lhsOverseasSaleAd, rhsOverseasSaleAd)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "overseasSaleAd", lhsOverseasSaleAd), LocatorUtils.property(thatLocator, "overseasSaleAd", rhsOverseasSaleAd), lhsOverseasSaleAd, rhsOverseasSaleAd, ((this.overseasSaleAd!= null)&&(!this.overseasSaleAd.isEmpty())), ((that.overseasSaleAd!= null)&&(!that.overseasSaleAd.isEmpty())))) {
                     return false;
                 }
             }
@@ -554,7 +576,7 @@ public class Daft
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

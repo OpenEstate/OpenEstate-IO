@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -52,8 +52,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "kyeroType", propOrder = {
 
 })
-public class KyeroType
-    implements Cloneable, CopyTo, Equals, ToString
+public class KyeroType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "feed_version", required = true)
@@ -113,29 +112,29 @@ public class KyeroType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theFeedVersion;
             theFeedVersion = this.getFeedVersion();
-            strategy.appendField(locator, this, "feedVersion", buffer, theFeedVersion);
+            strategy.appendField(locator, this, "feedVersion", buffer, theFeedVersion, (this.feedVersion!= null));
         }
         {
             Calendar theFeedGenerated;
             theFeedGenerated = this.getFeedGenerated();
-            strategy.appendField(locator, this, "feedGenerated", buffer, theFeedGenerated);
+            strategy.appendField(locator, this, "feedGenerated", buffer, theFeedGenerated, (this.feedGenerated!= null));
         }
         return buffer;
     }
@@ -145,29 +144,39 @@ public class KyeroType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof KyeroType) {
             final KyeroType copy = ((KyeroType) draftCopy);
-            if (this.feedVersion!= null) {
-                String sourceFeedVersion;
-                sourceFeedVersion = this.getFeedVersion();
-                String copyFeedVersion = ((String) strategy.copy(LocatorUtils.property(locator, "feedVersion", sourceFeedVersion), sourceFeedVersion));
-                copy.setFeedVersion(copyFeedVersion);
-            } else {
-                copy.feedVersion = null;
+            {
+                Boolean feedVersionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.feedVersion!= null));
+                if (feedVersionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFeedVersion;
+                    sourceFeedVersion = this.getFeedVersion();
+                    String copyFeedVersion = ((String) strategy.copy(LocatorUtils.property(locator, "feedVersion", sourceFeedVersion), sourceFeedVersion, (this.feedVersion!= null)));
+                    copy.setFeedVersion(copyFeedVersion);
+                } else {
+                    if (feedVersionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.feedVersion = null;
+                    }
+                }
             }
-            if (this.feedGenerated!= null) {
-                Calendar sourceFeedGenerated;
-                sourceFeedGenerated = this.getFeedGenerated();
-                Calendar copyFeedGenerated = ((Calendar) strategy.copy(LocatorUtils.property(locator, "feedGenerated", sourceFeedGenerated), sourceFeedGenerated));
-                copy.setFeedGenerated(copyFeedGenerated);
-            } else {
-                copy.feedGenerated = null;
+            {
+                Boolean feedGeneratedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.feedGenerated!= null));
+                if (feedGeneratedShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceFeedGenerated;
+                    sourceFeedGenerated = this.getFeedGenerated();
+                    Calendar copyFeedGenerated = ((Calendar) strategy.copy(LocatorUtils.property(locator, "feedGenerated", sourceFeedGenerated), sourceFeedGenerated, (this.feedGenerated!= null)));
+                    copy.setFeedGenerated(copyFeedGenerated);
+                } else {
+                    if (feedGeneratedShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.feedGenerated = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -177,7 +186,7 @@ public class KyeroType
         return new KyeroType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -190,7 +199,7 @@ public class KyeroType
             lhsFeedVersion = this.getFeedVersion();
             String rhsFeedVersion;
             rhsFeedVersion = that.getFeedVersion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "feedVersion", lhsFeedVersion), LocatorUtils.property(thatLocator, "feedVersion", rhsFeedVersion), lhsFeedVersion, rhsFeedVersion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "feedVersion", lhsFeedVersion), LocatorUtils.property(thatLocator, "feedVersion", rhsFeedVersion), lhsFeedVersion, rhsFeedVersion, (this.feedVersion!= null), (that.feedVersion!= null))) {
                 return false;
             }
         }
@@ -199,7 +208,7 @@ public class KyeroType
             lhsFeedGenerated = this.getFeedGenerated();
             Calendar rhsFeedGenerated;
             rhsFeedGenerated = that.getFeedGenerated();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "feedGenerated", lhsFeedGenerated), LocatorUtils.property(thatLocator, "feedGenerated", rhsFeedGenerated), lhsFeedGenerated, rhsFeedGenerated)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "feedGenerated", lhsFeedGenerated), LocatorUtils.property(thatLocator, "feedGenerated", rhsFeedGenerated), lhsFeedGenerated, rhsFeedGenerated, (this.feedGenerated!= null), (that.feedGenerated!= null))) {
                 return false;
             }
         }
@@ -207,7 +216,7 @@ public class KyeroType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

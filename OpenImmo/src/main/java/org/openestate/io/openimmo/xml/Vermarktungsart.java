@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "vermarktungsart")
-public class Vermarktungsart
-    implements Cloneable, CopyTo, Equals, ToString
+public class Vermarktungsart implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "KAUF", required = true)
@@ -122,39 +121,39 @@ public class Vermarktungsart
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             boolean theKAUF;
             theKAUF = this.isKAUF();
-            strategy.appendField(locator, this, "kauf", buffer, theKAUF);
+            strategy.appendField(locator, this, "kauf", buffer, theKAUF, true);
         }
         {
             boolean theMIETEPACHT;
             theMIETEPACHT = this.isMIETEPACHT();
-            strategy.appendField(locator, this, "mietepacht", buffer, theMIETEPACHT);
+            strategy.appendField(locator, this, "mietepacht", buffer, theMIETEPACHT, true);
         }
         {
             Boolean theERBPACHT;
             theERBPACHT = this.isERBPACHT();
-            strategy.appendField(locator, this, "erbpacht", buffer, theERBPACHT);
+            strategy.appendField(locator, this, "erbpacht", buffer, theERBPACHT, (this.erbpacht!= null));
         }
         {
             Boolean theLEASING;
             theLEASING = this.isLEASING();
-            strategy.appendField(locator, this, "leasing", buffer, theLEASING);
+            strategy.appendField(locator, this, "leasing", buffer, theLEASING, (this.leasing!= null));
         }
         return buffer;
     }
@@ -164,41 +163,63 @@ public class Vermarktungsart
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Vermarktungsart) {
             final Vermarktungsart copy = ((Vermarktungsart) draftCopy);
             {
-                boolean sourceKAUF;
-                sourceKAUF = this.isKAUF();
-                boolean copyKAUF = strategy.copy(LocatorUtils.property(locator, "kauf", sourceKAUF), sourceKAUF);
-                copy.setKAUF(copyKAUF);
+                Boolean kaufShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, true);
+                if (kaufShouldBeCopiedAndSet == Boolean.TRUE) {
+                    boolean sourceKAUF;
+                    sourceKAUF = this.isKAUF();
+                    boolean copyKAUF = strategy.copy(LocatorUtils.property(locator, "kauf", sourceKAUF), sourceKAUF, true);
+                    copy.setKAUF(copyKAUF);
+                } else {
+                    if (kaufShouldBeCopiedAndSet == Boolean.FALSE) {
+                    }
+                }
             }
             {
-                boolean sourceMIETEPACHT;
-                sourceMIETEPACHT = this.isMIETEPACHT();
-                boolean copyMIETEPACHT = strategy.copy(LocatorUtils.property(locator, "mietepacht", sourceMIETEPACHT), sourceMIETEPACHT);
-                copy.setMIETEPACHT(copyMIETEPACHT);
+                Boolean mietepachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, true);
+                if (mietepachtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    boolean sourceMIETEPACHT;
+                    sourceMIETEPACHT = this.isMIETEPACHT();
+                    boolean copyMIETEPACHT = strategy.copy(LocatorUtils.property(locator, "mietepacht", sourceMIETEPACHT), sourceMIETEPACHT, true);
+                    copy.setMIETEPACHT(copyMIETEPACHT);
+                } else {
+                    if (mietepachtShouldBeCopiedAndSet == Boolean.FALSE) {
+                    }
+                }
             }
-            if (this.erbpacht!= null) {
-                Boolean sourceERBPACHT;
-                sourceERBPACHT = this.isERBPACHT();
-                Boolean copyERBPACHT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceERBPACHT), sourceERBPACHT));
-                copy.setERBPACHT(copyERBPACHT);
-            } else {
-                copy.erbpacht = null;
+            {
+                Boolean erbpachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erbpacht!= null));
+                if (erbpachtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceERBPACHT;
+                    sourceERBPACHT = this.isERBPACHT();
+                    Boolean copyERBPACHT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceERBPACHT), sourceERBPACHT, (this.erbpacht!= null)));
+                    copy.setERBPACHT(copyERBPACHT);
+                } else {
+                    if (erbpachtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.erbpacht = null;
+                    }
+                }
             }
-            if (this.leasing!= null) {
-                Boolean sourceLEASING;
-                sourceLEASING = this.isLEASING();
-                Boolean copyLEASING = ((Boolean) strategy.copy(LocatorUtils.property(locator, "leasing", sourceLEASING), sourceLEASING));
-                copy.setLEASING(copyLEASING);
-            } else {
-                copy.leasing = null;
+            {
+                Boolean leasingShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.leasing!= null));
+                if (leasingShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceLEASING;
+                    sourceLEASING = this.isLEASING();
+                    Boolean copyLEASING = ((Boolean) strategy.copy(LocatorUtils.property(locator, "leasing", sourceLEASING), sourceLEASING, (this.leasing!= null)));
+                    copy.setLEASING(copyLEASING);
+                } else {
+                    if (leasingShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.leasing = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -208,7 +229,7 @@ public class Vermarktungsart
         return new Vermarktungsart();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -221,7 +242,7 @@ public class Vermarktungsart
             lhsKAUF = this.isKAUF();
             boolean rhsKAUF;
             rhsKAUF = that.isKAUF();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kauf", lhsKAUF), LocatorUtils.property(thatLocator, "kauf", rhsKAUF), lhsKAUF, rhsKAUF)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kauf", lhsKAUF), LocatorUtils.property(thatLocator, "kauf", rhsKAUF), lhsKAUF, rhsKAUF, true, true)) {
                 return false;
             }
         }
@@ -230,7 +251,7 @@ public class Vermarktungsart
             lhsMIETEPACHT = this.isMIETEPACHT();
             boolean rhsMIETEPACHT;
             rhsMIETEPACHT = that.isMIETEPACHT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "mietepacht", lhsMIETEPACHT), LocatorUtils.property(thatLocator, "mietepacht", rhsMIETEPACHT), lhsMIETEPACHT, rhsMIETEPACHT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "mietepacht", lhsMIETEPACHT), LocatorUtils.property(thatLocator, "mietepacht", rhsMIETEPACHT), lhsMIETEPACHT, rhsMIETEPACHT, true, true)) {
                 return false;
             }
         }
@@ -239,7 +260,7 @@ public class Vermarktungsart
             lhsERBPACHT = this.isERBPACHT();
             Boolean rhsERBPACHT;
             rhsERBPACHT = that.isERBPACHT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "erbpacht", lhsERBPACHT), LocatorUtils.property(thatLocator, "erbpacht", rhsERBPACHT), lhsERBPACHT, rhsERBPACHT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "erbpacht", lhsERBPACHT), LocatorUtils.property(thatLocator, "erbpacht", rhsERBPACHT), lhsERBPACHT, rhsERBPACHT, (this.erbpacht!= null), (that.erbpacht!= null))) {
                 return false;
             }
         }
@@ -248,7 +269,7 @@ public class Vermarktungsart
             lhsLEASING = this.isLEASING();
             Boolean rhsLEASING;
             rhsLEASING = that.isLEASING();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "leasing", lhsLEASING), LocatorUtils.property(thatLocator, "leasing", rhsLEASING), lhsLEASING, rhsLEASING)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "leasing", lhsLEASING), LocatorUtils.property(thatLocator, "leasing", rhsLEASING), lhsLEASING, rhsLEASING, (this.leasing!= null), (that.leasing!= null))) {
                 return false;
             }
         }
@@ -256,7 +277,7 @@ public class Vermarktungsart
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

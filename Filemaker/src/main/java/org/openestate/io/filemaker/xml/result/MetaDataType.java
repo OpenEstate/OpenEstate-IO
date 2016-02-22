@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -58,8 +58,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "MetaDataType", propOrder = {
     "field"
 })
-public class MetaDataType
-    implements Cloneable, CopyTo, Equals, ToString
+public class MetaDataType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "FIELD")
@@ -95,24 +94,24 @@ public class MetaDataType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<MetaDataType.FIELD> theFIELD;
             theFIELD = (((this.field!= null)&&(!this.field.isEmpty()))?this.getFIELD():null);
-            strategy.appendField(locator, this, "field", buffer, theFIELD);
+            strategy.appendField(locator, this, "field", buffer, theFIELD, ((this.field!= null)&&(!this.field.isEmpty())));
         }
         return buffer;
     }
@@ -122,26 +121,31 @@ public class MetaDataType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof MetaDataType) {
             final MetaDataType copy = ((MetaDataType) draftCopy);
-            if ((this.field!= null)&&(!this.field.isEmpty())) {
-                List<MetaDataType.FIELD> sourceFIELD;
-                sourceFIELD = (((this.field!= null)&&(!this.field.isEmpty()))?this.getFIELD():null);
-                @SuppressWarnings("unchecked")
-                List<MetaDataType.FIELD> copyFIELD = ((List<MetaDataType.FIELD> ) strategy.copy(LocatorUtils.property(locator, "field", sourceFIELD), sourceFIELD));
-                copy.field = null;
-                if (copyFIELD!= null) {
-                    List<MetaDataType.FIELD> uniqueFIELDl = copy.getFIELD();
-                    uniqueFIELDl.addAll(copyFIELD);
+            {
+                Boolean fieldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.field!= null)&&(!this.field.isEmpty())));
+                if (fieldShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<MetaDataType.FIELD> sourceFIELD;
+                    sourceFIELD = (((this.field!= null)&&(!this.field.isEmpty()))?this.getFIELD():null);
+                    @SuppressWarnings("unchecked")
+                    List<MetaDataType.FIELD> copyFIELD = ((List<MetaDataType.FIELD> ) strategy.copy(LocatorUtils.property(locator, "field", sourceFIELD), sourceFIELD, ((this.field!= null)&&(!this.field.isEmpty()))));
+                    copy.field = null;
+                    if (copyFIELD!= null) {
+                        List<MetaDataType.FIELD> uniqueFIELDl = copy.getFIELD();
+                        uniqueFIELDl.addAll(copyFIELD);
+                    }
+                } else {
+                    if (fieldShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.field = null;
+                    }
                 }
-            } else {
-                copy.field = null;
             }
         }
         return draftCopy;
@@ -151,7 +155,7 @@ public class MetaDataType
         return new MetaDataType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -164,7 +168,7 @@ public class MetaDataType
             lhsFIELD = (((this.field!= null)&&(!this.field.isEmpty()))?this.getFIELD():null);
             List<MetaDataType.FIELD> rhsFIELD;
             rhsFIELD = (((that.field!= null)&&(!that.field.isEmpty()))?that.getFIELD():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "field", lhsFIELD), LocatorUtils.property(thatLocator, "field", rhsFIELD), lhsFIELD, rhsFIELD)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "field", lhsFIELD), LocatorUtils.property(thatLocator, "field", rhsFIELD), lhsFIELD, rhsFIELD, ((this.field!= null)&&(!this.field.isEmpty())), ((that.field!= null)&&(!that.field.isEmpty())))) {
                 return false;
             }
         }
@@ -172,7 +176,7 @@ public class MetaDataType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -199,8 +203,7 @@ public class MetaDataType
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class FIELD
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class FIELD implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "NAME", required = true)
@@ -311,39 +314,39 @@ public class MetaDataType
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theNAME;
                 theNAME = this.getNAME();
-                strategy.appendField(locator, this, "name", buffer, theNAME);
+                strategy.appendField(locator, this, "name", buffer, theNAME, (this.name!= null));
             }
             {
                 FieldType theTYPE;
                 theTYPE = this.getTYPE();
-                strategy.appendField(locator, this, "type", buffer, theTYPE);
+                strategy.appendField(locator, this, "type", buffer, theTYPE, (this.type!= null));
             }
             {
                 Boolean theEMPTYOK;
                 theEMPTYOK = this.isEMPTYOK();
-                strategy.appendField(locator, this, "emptyok", buffer, theEMPTYOK);
+                strategy.appendField(locator, this, "emptyok", buffer, theEMPTYOK, (this.emptyok!= null));
             }
             {
                 BigInteger theMAXREPEAT;
                 theMAXREPEAT = this.getMAXREPEAT();
-                strategy.appendField(locator, this, "maxrepeat", buffer, theMAXREPEAT);
+                strategy.appendField(locator, this, "maxrepeat", buffer, theMAXREPEAT, (this.maxrepeat!= null));
             }
             return buffer;
         }
@@ -353,45 +356,65 @@ public class MetaDataType
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof MetaDataType.FIELD) {
                 final MetaDataType.FIELD copy = ((MetaDataType.FIELD) draftCopy);
-                if (this.name!= null) {
-                    String sourceNAME;
-                    sourceNAME = this.getNAME();
-                    String copyNAME = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceNAME), sourceNAME));
-                    copy.setNAME(copyNAME);
-                } else {
-                    copy.name = null;
+                {
+                    Boolean nameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.name!= null));
+                    if (nameShouldBeCopiedAndSet == Boolean.TRUE) {
+                        String sourceNAME;
+                        sourceNAME = this.getNAME();
+                        String copyNAME = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceNAME), sourceNAME, (this.name!= null)));
+                        copy.setNAME(copyNAME);
+                    } else {
+                        if (nameShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.name = null;
+                        }
+                    }
                 }
-                if (this.type!= null) {
-                    FieldType sourceTYPE;
-                    sourceTYPE = this.getTYPE();
-                    FieldType copyTYPE = ((FieldType) strategy.copy(LocatorUtils.property(locator, "type", sourceTYPE), sourceTYPE));
-                    copy.setTYPE(copyTYPE);
-                } else {
-                    copy.type = null;
+                {
+                    Boolean typeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.type!= null));
+                    if (typeShouldBeCopiedAndSet == Boolean.TRUE) {
+                        FieldType sourceTYPE;
+                        sourceTYPE = this.getTYPE();
+                        FieldType copyTYPE = ((FieldType) strategy.copy(LocatorUtils.property(locator, "type", sourceTYPE), sourceTYPE, (this.type!= null)));
+                        copy.setTYPE(copyTYPE);
+                    } else {
+                        if (typeShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.type = null;
+                        }
+                    }
                 }
-                if (this.emptyok!= null) {
-                    Boolean sourceEMPTYOK;
-                    sourceEMPTYOK = this.isEMPTYOK();
-                    Boolean copyEMPTYOK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "emptyok", sourceEMPTYOK), sourceEMPTYOK));
-                    copy.setEMPTYOK(copyEMPTYOK);
-                } else {
-                    copy.emptyok = null;
+                {
+                    Boolean emptyokShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.emptyok!= null));
+                    if (emptyokShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Boolean sourceEMPTYOK;
+                        sourceEMPTYOK = this.isEMPTYOK();
+                        Boolean copyEMPTYOK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "emptyok", sourceEMPTYOK), sourceEMPTYOK, (this.emptyok!= null)));
+                        copy.setEMPTYOK(copyEMPTYOK);
+                    } else {
+                        if (emptyokShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.emptyok = null;
+                        }
+                    }
                 }
-                if (this.maxrepeat!= null) {
-                    BigInteger sourceMAXREPEAT;
-                    sourceMAXREPEAT = this.getMAXREPEAT();
-                    BigInteger copyMAXREPEAT = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "maxrepeat", sourceMAXREPEAT), sourceMAXREPEAT));
-                    copy.setMAXREPEAT(copyMAXREPEAT);
-                } else {
-                    copy.maxrepeat = null;
+                {
+                    Boolean maxrepeatShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.maxrepeat!= null));
+                    if (maxrepeatShouldBeCopiedAndSet == Boolean.TRUE) {
+                        BigInteger sourceMAXREPEAT;
+                        sourceMAXREPEAT = this.getMAXREPEAT();
+                        BigInteger copyMAXREPEAT = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "maxrepeat", sourceMAXREPEAT), sourceMAXREPEAT, (this.maxrepeat!= null)));
+                        copy.setMAXREPEAT(copyMAXREPEAT);
+                    } else {
+                        if (maxrepeatShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.maxrepeat = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -401,7 +424,7 @@ public class MetaDataType
             return new MetaDataType.FIELD();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -414,7 +437,7 @@ public class MetaDataType
                 lhsNAME = this.getNAME();
                 String rhsNAME;
                 rhsNAME = that.getNAME();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsNAME), LocatorUtils.property(thatLocator, "name", rhsNAME), lhsNAME, rhsNAME)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsNAME), LocatorUtils.property(thatLocator, "name", rhsNAME), lhsNAME, rhsNAME, (this.name!= null), (that.name!= null))) {
                     return false;
                 }
             }
@@ -423,7 +446,7 @@ public class MetaDataType
                 lhsTYPE = this.getTYPE();
                 FieldType rhsTYPE;
                 rhsTYPE = that.getTYPE();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsTYPE), LocatorUtils.property(thatLocator, "type", rhsTYPE), lhsTYPE, rhsTYPE)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsTYPE), LocatorUtils.property(thatLocator, "type", rhsTYPE), lhsTYPE, rhsTYPE, (this.type!= null), (that.type!= null))) {
                     return false;
                 }
             }
@@ -432,7 +455,7 @@ public class MetaDataType
                 lhsEMPTYOK = this.isEMPTYOK();
                 Boolean rhsEMPTYOK;
                 rhsEMPTYOK = that.isEMPTYOK();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "emptyok", lhsEMPTYOK), LocatorUtils.property(thatLocator, "emptyok", rhsEMPTYOK), lhsEMPTYOK, rhsEMPTYOK)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "emptyok", lhsEMPTYOK), LocatorUtils.property(thatLocator, "emptyok", rhsEMPTYOK), lhsEMPTYOK, rhsEMPTYOK, (this.emptyok!= null), (that.emptyok!= null))) {
                     return false;
                 }
             }
@@ -441,7 +464,7 @@ public class MetaDataType
                 lhsMAXREPEAT = this.getMAXREPEAT();
                 BigInteger rhsMAXREPEAT;
                 rhsMAXREPEAT = that.getMAXREPEAT();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "maxrepeat", lhsMAXREPEAT), LocatorUtils.property(thatLocator, "maxrepeat", rhsMAXREPEAT), lhsMAXREPEAT, rhsMAXREPEAT)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "maxrepeat", lhsMAXREPEAT), LocatorUtils.property(thatLocator, "maxrepeat", rhsMAXREPEAT), lhsMAXREPEAT, rhsMAXREPEAT, (this.maxrepeat!= null), (that.maxrepeat!= null))) {
                     return false;
                 }
             }
@@ -449,7 +472,7 @@ public class MetaDataType
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

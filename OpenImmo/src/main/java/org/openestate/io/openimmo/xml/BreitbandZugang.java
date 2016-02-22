@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -31,8 +31,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "breitband_zugang")
-public class BreitbandZugang
-    implements Cloneable, CopyTo, Equals, ToString
+public class BreitbandZugang implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "art")
@@ -91,29 +90,29 @@ public class BreitbandZugang
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theArt;
             theArt = this.getArt();
-            strategy.appendField(locator, this, "art", buffer, theArt);
+            strategy.appendField(locator, this, "art", buffer, theArt, (this.art!= null));
         }
         {
             BigDecimal theSpeed;
             theSpeed = this.getSpeed();
-            strategy.appendField(locator, this, "speed", buffer, theSpeed);
+            strategy.appendField(locator, this, "speed", buffer, theSpeed, (this.speed!= null));
         }
         return buffer;
     }
@@ -123,29 +122,39 @@ public class BreitbandZugang
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof BreitbandZugang) {
             final BreitbandZugang copy = ((BreitbandZugang) draftCopy);
-            if (this.art!= null) {
-                String sourceArt;
-                sourceArt = this.getArt();
-                String copyArt = ((String) strategy.copy(LocatorUtils.property(locator, "art", sourceArt), sourceArt));
-                copy.setArt(copyArt);
-            } else {
-                copy.art = null;
+            {
+                Boolean artShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.art!= null));
+                if (artShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceArt;
+                    sourceArt = this.getArt();
+                    String copyArt = ((String) strategy.copy(LocatorUtils.property(locator, "art", sourceArt), sourceArt, (this.art!= null)));
+                    copy.setArt(copyArt);
+                } else {
+                    if (artShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.art = null;
+                    }
+                }
             }
-            if (this.speed!= null) {
-                BigDecimal sourceSpeed;
-                sourceSpeed = this.getSpeed();
-                BigDecimal copySpeed = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "speed", sourceSpeed), sourceSpeed));
-                copy.setSpeed(copySpeed);
-            } else {
-                copy.speed = null;
+            {
+                Boolean speedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.speed!= null));
+                if (speedShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceSpeed;
+                    sourceSpeed = this.getSpeed();
+                    BigDecimal copySpeed = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "speed", sourceSpeed), sourceSpeed, (this.speed!= null)));
+                    copy.setSpeed(copySpeed);
+                } else {
+                    if (speedShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.speed = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -155,7 +164,7 @@ public class BreitbandZugang
         return new BreitbandZugang();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -168,7 +177,7 @@ public class BreitbandZugang
             lhsArt = this.getArt();
             String rhsArt;
             rhsArt = that.getArt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "art", lhsArt), LocatorUtils.property(thatLocator, "art", rhsArt), lhsArt, rhsArt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "art", lhsArt), LocatorUtils.property(thatLocator, "art", rhsArt), lhsArt, rhsArt, (this.art!= null), (that.art!= null))) {
                 return false;
             }
         }
@@ -177,7 +186,7 @@ public class BreitbandZugang
             lhsSpeed = this.getSpeed();
             BigDecimal rhsSpeed;
             rhsSpeed = that.getSpeed();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "speed", lhsSpeed), LocatorUtils.property(thatLocator, "speed", rhsSpeed), lhsSpeed, rhsSpeed)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "speed", lhsSpeed), LocatorUtils.property(thatLocator, "speed", rhsSpeed), lhsSpeed, rhsSpeed, (this.speed!= null), (that.speed!= null))) {
                 return false;
             }
         }
@@ -185,7 +194,7 @@ public class BreitbandZugang
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

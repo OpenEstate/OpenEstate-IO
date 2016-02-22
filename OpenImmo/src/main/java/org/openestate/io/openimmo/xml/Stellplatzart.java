@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "stellplatzart")
-public class Stellplatzart
-    implements Cloneable, CopyTo, Equals, ToString
+public class Stellplatzart implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "GARAGE")
@@ -190,49 +189,49 @@ public class Stellplatzart
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theGARAGE;
             theGARAGE = this.isGARAGE();
-            strategy.appendField(locator, this, "garage", buffer, theGARAGE);
+            strategy.appendField(locator, this, "garage", buffer, theGARAGE, (this.garage!= null));
         }
         {
             Boolean theTIEFGARAGE;
             theTIEFGARAGE = this.isTIEFGARAGE();
-            strategy.appendField(locator, this, "tiefgarage", buffer, theTIEFGARAGE);
+            strategy.appendField(locator, this, "tiefgarage", buffer, theTIEFGARAGE, (this.tiefgarage!= null));
         }
         {
             Boolean theCARPORT;
             theCARPORT = this.isCARPORT();
-            strategy.appendField(locator, this, "carport", buffer, theCARPORT);
+            strategy.appendField(locator, this, "carport", buffer, theCARPORT, (this.carport!= null));
         }
         {
             Boolean theFREIPLATZ;
             theFREIPLATZ = this.isFREIPLATZ();
-            strategy.appendField(locator, this, "freiplatz", buffer, theFREIPLATZ);
+            strategy.appendField(locator, this, "freiplatz", buffer, theFREIPLATZ, (this.freiplatz!= null));
         }
         {
             Boolean thePARKHAUS;
             thePARKHAUS = this.isPARKHAUS();
-            strategy.appendField(locator, this, "parkhaus", buffer, thePARKHAUS);
+            strategy.appendField(locator, this, "parkhaus", buffer, thePARKHAUS, (this.parkhaus!= null));
         }
         {
             Boolean theDUPLEX;
             theDUPLEX = this.isDUPLEX();
-            strategy.appendField(locator, this, "duplex", buffer, theDUPLEX);
+            strategy.appendField(locator, this, "duplex", buffer, theDUPLEX, (this.duplex!= null));
         }
         return buffer;
     }
@@ -242,61 +241,91 @@ public class Stellplatzart
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Stellplatzart) {
             final Stellplatzart copy = ((Stellplatzart) draftCopy);
-            if (this.garage!= null) {
-                Boolean sourceGARAGE;
-                sourceGARAGE = this.isGARAGE();
-                Boolean copyGARAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "garage", sourceGARAGE), sourceGARAGE));
-                copy.setGARAGE(copyGARAGE);
-            } else {
-                copy.garage = null;
+            {
+                Boolean garageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.garage!= null));
+                if (garageShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceGARAGE;
+                    sourceGARAGE = this.isGARAGE();
+                    Boolean copyGARAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "garage", sourceGARAGE), sourceGARAGE, (this.garage!= null)));
+                    copy.setGARAGE(copyGARAGE);
+                } else {
+                    if (garageShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.garage = null;
+                    }
+                }
             }
-            if (this.tiefgarage!= null) {
-                Boolean sourceTIEFGARAGE;
-                sourceTIEFGARAGE = this.isTIEFGARAGE();
-                Boolean copyTIEFGARAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "tiefgarage", sourceTIEFGARAGE), sourceTIEFGARAGE));
-                copy.setTIEFGARAGE(copyTIEFGARAGE);
-            } else {
-                copy.tiefgarage = null;
+            {
+                Boolean tiefgarageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.tiefgarage!= null));
+                if (tiefgarageShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceTIEFGARAGE;
+                    sourceTIEFGARAGE = this.isTIEFGARAGE();
+                    Boolean copyTIEFGARAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "tiefgarage", sourceTIEFGARAGE), sourceTIEFGARAGE, (this.tiefgarage!= null)));
+                    copy.setTIEFGARAGE(copyTIEFGARAGE);
+                } else {
+                    if (tiefgarageShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.tiefgarage = null;
+                    }
+                }
             }
-            if (this.carport!= null) {
-                Boolean sourceCARPORT;
-                sourceCARPORT = this.isCARPORT();
-                Boolean copyCARPORT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "carport", sourceCARPORT), sourceCARPORT));
-                copy.setCARPORT(copyCARPORT);
-            } else {
-                copy.carport = null;
+            {
+                Boolean carportShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.carport!= null));
+                if (carportShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceCARPORT;
+                    sourceCARPORT = this.isCARPORT();
+                    Boolean copyCARPORT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "carport", sourceCARPORT), sourceCARPORT, (this.carport!= null)));
+                    copy.setCARPORT(copyCARPORT);
+                } else {
+                    if (carportShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.carport = null;
+                    }
+                }
             }
-            if (this.freiplatz!= null) {
-                Boolean sourceFREIPLATZ;
-                sourceFREIPLATZ = this.isFREIPLATZ();
-                Boolean copyFREIPLATZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "freiplatz", sourceFREIPLATZ), sourceFREIPLATZ));
-                copy.setFREIPLATZ(copyFREIPLATZ);
-            } else {
-                copy.freiplatz = null;
+            {
+                Boolean freiplatzShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.freiplatz!= null));
+                if (freiplatzShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFREIPLATZ;
+                    sourceFREIPLATZ = this.isFREIPLATZ();
+                    Boolean copyFREIPLATZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "freiplatz", sourceFREIPLATZ), sourceFREIPLATZ, (this.freiplatz!= null)));
+                    copy.setFREIPLATZ(copyFREIPLATZ);
+                } else {
+                    if (freiplatzShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.freiplatz = null;
+                    }
+                }
             }
-            if (this.parkhaus!= null) {
-                Boolean sourcePARKHAUS;
-                sourcePARKHAUS = this.isPARKHAUS();
-                Boolean copyPARKHAUS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "parkhaus", sourcePARKHAUS), sourcePARKHAUS));
-                copy.setPARKHAUS(copyPARKHAUS);
-            } else {
-                copy.parkhaus = null;
+            {
+                Boolean parkhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.parkhaus!= null));
+                if (parkhausShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourcePARKHAUS;
+                    sourcePARKHAUS = this.isPARKHAUS();
+                    Boolean copyPARKHAUS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "parkhaus", sourcePARKHAUS), sourcePARKHAUS, (this.parkhaus!= null)));
+                    copy.setPARKHAUS(copyPARKHAUS);
+                } else {
+                    if (parkhausShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.parkhaus = null;
+                    }
+                }
             }
-            if (this.duplex!= null) {
-                Boolean sourceDUPLEX;
-                sourceDUPLEX = this.isDUPLEX();
-                Boolean copyDUPLEX = ((Boolean) strategy.copy(LocatorUtils.property(locator, "duplex", sourceDUPLEX), sourceDUPLEX));
-                copy.setDUPLEX(copyDUPLEX);
-            } else {
-                copy.duplex = null;
+            {
+                Boolean duplexShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.duplex!= null));
+                if (duplexShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceDUPLEX;
+                    sourceDUPLEX = this.isDUPLEX();
+                    Boolean copyDUPLEX = ((Boolean) strategy.copy(LocatorUtils.property(locator, "duplex", sourceDUPLEX), sourceDUPLEX, (this.duplex!= null)));
+                    copy.setDUPLEX(copyDUPLEX);
+                } else {
+                    if (duplexShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.duplex = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -306,7 +335,7 @@ public class Stellplatzart
         return new Stellplatzart();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -319,7 +348,7 @@ public class Stellplatzart
             lhsGARAGE = this.isGARAGE();
             Boolean rhsGARAGE;
             rhsGARAGE = that.isGARAGE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "garage", lhsGARAGE), LocatorUtils.property(thatLocator, "garage", rhsGARAGE), lhsGARAGE, rhsGARAGE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "garage", lhsGARAGE), LocatorUtils.property(thatLocator, "garage", rhsGARAGE), lhsGARAGE, rhsGARAGE, (this.garage!= null), (that.garage!= null))) {
                 return false;
             }
         }
@@ -328,7 +357,7 @@ public class Stellplatzart
             lhsTIEFGARAGE = this.isTIEFGARAGE();
             Boolean rhsTIEFGARAGE;
             rhsTIEFGARAGE = that.isTIEFGARAGE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "tiefgarage", lhsTIEFGARAGE), LocatorUtils.property(thatLocator, "tiefgarage", rhsTIEFGARAGE), lhsTIEFGARAGE, rhsTIEFGARAGE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "tiefgarage", lhsTIEFGARAGE), LocatorUtils.property(thatLocator, "tiefgarage", rhsTIEFGARAGE), lhsTIEFGARAGE, rhsTIEFGARAGE, (this.tiefgarage!= null), (that.tiefgarage!= null))) {
                 return false;
             }
         }
@@ -337,7 +366,7 @@ public class Stellplatzart
             lhsCARPORT = this.isCARPORT();
             Boolean rhsCARPORT;
             rhsCARPORT = that.isCARPORT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "carport", lhsCARPORT), LocatorUtils.property(thatLocator, "carport", rhsCARPORT), lhsCARPORT, rhsCARPORT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "carport", lhsCARPORT), LocatorUtils.property(thatLocator, "carport", rhsCARPORT), lhsCARPORT, rhsCARPORT, (this.carport!= null), (that.carport!= null))) {
                 return false;
             }
         }
@@ -346,7 +375,7 @@ public class Stellplatzart
             lhsFREIPLATZ = this.isFREIPLATZ();
             Boolean rhsFREIPLATZ;
             rhsFREIPLATZ = that.isFREIPLATZ();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "freiplatz", lhsFREIPLATZ), LocatorUtils.property(thatLocator, "freiplatz", rhsFREIPLATZ), lhsFREIPLATZ, rhsFREIPLATZ)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "freiplatz", lhsFREIPLATZ), LocatorUtils.property(thatLocator, "freiplatz", rhsFREIPLATZ), lhsFREIPLATZ, rhsFREIPLATZ, (this.freiplatz!= null), (that.freiplatz!= null))) {
                 return false;
             }
         }
@@ -355,7 +384,7 @@ public class Stellplatzart
             lhsPARKHAUS = this.isPARKHAUS();
             Boolean rhsPARKHAUS;
             rhsPARKHAUS = that.isPARKHAUS();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "parkhaus", lhsPARKHAUS), LocatorUtils.property(thatLocator, "parkhaus", rhsPARKHAUS), lhsPARKHAUS, rhsPARKHAUS)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "parkhaus", lhsPARKHAUS), LocatorUtils.property(thatLocator, "parkhaus", rhsPARKHAUS), lhsPARKHAUS, rhsPARKHAUS, (this.parkhaus!= null), (that.parkhaus!= null))) {
                 return false;
             }
         }
@@ -364,7 +393,7 @@ public class Stellplatzart
             lhsDUPLEX = this.isDUPLEX();
             Boolean rhsDUPLEX;
             rhsDUPLEX = that.isDUPLEX();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "duplex", lhsDUPLEX), LocatorUtils.property(thatLocator, "duplex", rhsDUPLEX), lhsDUPLEX, rhsDUPLEX)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "duplex", lhsDUPLEX), LocatorUtils.property(thatLocator, "duplex", rhsDUPLEX), lhsDUPLEX, rhsDUPLEX, (this.duplex!= null), (that.duplex!= null))) {
                 return false;
             }
         }
@@ -372,7 +401,7 @@ public class Stellplatzart
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

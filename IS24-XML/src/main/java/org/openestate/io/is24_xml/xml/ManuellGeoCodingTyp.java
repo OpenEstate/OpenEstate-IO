@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -40,8 +40,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ManuellGeoCodingTyp")
-public class ManuellGeoCodingTyp
-    implements Cloneable, CopyTo, Equals, ToString
+public class ManuellGeoCodingTyp implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "TermsRegion")
@@ -127,34 +126,34 @@ public class ManuellGeoCodingTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theTermsRegion;
             theTermsRegion = this.getTermsRegion();
-            strategy.appendField(locator, this, "termsRegion", buffer, theTermsRegion);
+            strategy.appendField(locator, this, "termsRegion", buffer, theTermsRegion, (this.termsRegion!= null));
         }
         {
             String theTermsStadt;
             theTermsStadt = this.getTermsStadt();
-            strategy.appendField(locator, this, "termsStadt", buffer, theTermsStadt);
+            strategy.appendField(locator, this, "termsStadt", buffer, theTermsStadt, (this.termsStadt!= null));
         }
         {
             String theTermsStadtTeil;
             theTermsStadtTeil = this.getTermsStadtTeil();
-            strategy.appendField(locator, this, "termsStadtTeil", buffer, theTermsStadtTeil);
+            strategy.appendField(locator, this, "termsStadtTeil", buffer, theTermsStadtTeil, (this.termsStadtTeil!= null));
         }
         return buffer;
     }
@@ -164,37 +163,52 @@ public class ManuellGeoCodingTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ManuellGeoCodingTyp) {
             final ManuellGeoCodingTyp copy = ((ManuellGeoCodingTyp) draftCopy);
-            if (this.termsRegion!= null) {
-                String sourceTermsRegion;
-                sourceTermsRegion = this.getTermsRegion();
-                String copyTermsRegion = ((String) strategy.copy(LocatorUtils.property(locator, "termsRegion", sourceTermsRegion), sourceTermsRegion));
-                copy.setTermsRegion(copyTermsRegion);
-            } else {
-                copy.termsRegion = null;
+            {
+                Boolean termsRegionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.termsRegion!= null));
+                if (termsRegionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTermsRegion;
+                    sourceTermsRegion = this.getTermsRegion();
+                    String copyTermsRegion = ((String) strategy.copy(LocatorUtils.property(locator, "termsRegion", sourceTermsRegion), sourceTermsRegion, (this.termsRegion!= null)));
+                    copy.setTermsRegion(copyTermsRegion);
+                } else {
+                    if (termsRegionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.termsRegion = null;
+                    }
+                }
             }
-            if (this.termsStadt!= null) {
-                String sourceTermsStadt;
-                sourceTermsStadt = this.getTermsStadt();
-                String copyTermsStadt = ((String) strategy.copy(LocatorUtils.property(locator, "termsStadt", sourceTermsStadt), sourceTermsStadt));
-                copy.setTermsStadt(copyTermsStadt);
-            } else {
-                copy.termsStadt = null;
+            {
+                Boolean termsStadtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.termsStadt!= null));
+                if (termsStadtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTermsStadt;
+                    sourceTermsStadt = this.getTermsStadt();
+                    String copyTermsStadt = ((String) strategy.copy(LocatorUtils.property(locator, "termsStadt", sourceTermsStadt), sourceTermsStadt, (this.termsStadt!= null)));
+                    copy.setTermsStadt(copyTermsStadt);
+                } else {
+                    if (termsStadtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.termsStadt = null;
+                    }
+                }
             }
-            if (this.termsStadtTeil!= null) {
-                String sourceTermsStadtTeil;
-                sourceTermsStadtTeil = this.getTermsStadtTeil();
-                String copyTermsStadtTeil = ((String) strategy.copy(LocatorUtils.property(locator, "termsStadtTeil", sourceTermsStadtTeil), sourceTermsStadtTeil));
-                copy.setTermsStadtTeil(copyTermsStadtTeil);
-            } else {
-                copy.termsStadtTeil = null;
+            {
+                Boolean termsStadtTeilShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.termsStadtTeil!= null));
+                if (termsStadtTeilShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTermsStadtTeil;
+                    sourceTermsStadtTeil = this.getTermsStadtTeil();
+                    String copyTermsStadtTeil = ((String) strategy.copy(LocatorUtils.property(locator, "termsStadtTeil", sourceTermsStadtTeil), sourceTermsStadtTeil, (this.termsStadtTeil!= null)));
+                    copy.setTermsStadtTeil(copyTermsStadtTeil);
+                } else {
+                    if (termsStadtTeilShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.termsStadtTeil = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -204,7 +218,7 @@ public class ManuellGeoCodingTyp
         return new ManuellGeoCodingTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -217,7 +231,7 @@ public class ManuellGeoCodingTyp
             lhsTermsRegion = this.getTermsRegion();
             String rhsTermsRegion;
             rhsTermsRegion = that.getTermsRegion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "termsRegion", lhsTermsRegion), LocatorUtils.property(thatLocator, "termsRegion", rhsTermsRegion), lhsTermsRegion, rhsTermsRegion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "termsRegion", lhsTermsRegion), LocatorUtils.property(thatLocator, "termsRegion", rhsTermsRegion), lhsTermsRegion, rhsTermsRegion, (this.termsRegion!= null), (that.termsRegion!= null))) {
                 return false;
             }
         }
@@ -226,7 +240,7 @@ public class ManuellGeoCodingTyp
             lhsTermsStadt = this.getTermsStadt();
             String rhsTermsStadt;
             rhsTermsStadt = that.getTermsStadt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "termsStadt", lhsTermsStadt), LocatorUtils.property(thatLocator, "termsStadt", rhsTermsStadt), lhsTermsStadt, rhsTermsStadt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "termsStadt", lhsTermsStadt), LocatorUtils.property(thatLocator, "termsStadt", rhsTermsStadt), lhsTermsStadt, rhsTermsStadt, (this.termsStadt!= null), (that.termsStadt!= null))) {
                 return false;
             }
         }
@@ -235,7 +249,7 @@ public class ManuellGeoCodingTyp
             lhsTermsStadtTeil = this.getTermsStadtTeil();
             String rhsTermsStadtTeil;
             rhsTermsStadtTeil = that.getTermsStadtTeil();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "termsStadtTeil", lhsTermsStadtTeil), LocatorUtils.property(thatLocator, "termsStadtTeil", rhsTermsStadtTeil), lhsTermsStadtTeil, rhsTermsStadtTeil)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "termsStadtTeil", lhsTermsStadtTeil), LocatorUtils.property(thatLocator, "termsStadtTeil", rhsTermsStadtTeil), lhsTermsStadtTeil, rhsTermsStadtTeil, (this.termsStadtTeil!= null), (that.termsStadtTeil!= null))) {
                 return false;
             }
         }
@@ -243,7 +257,7 @@ public class ManuellGeoCodingTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

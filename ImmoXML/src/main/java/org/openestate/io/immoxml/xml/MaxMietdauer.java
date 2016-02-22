@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -32,8 +32,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "content"
 })
 @XmlRootElement(name = "max_mietdauer")
-public class MaxMietdauer
-    implements Cloneable, CopyTo, Equals, ToString
+public class MaxMietdauer implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -90,29 +89,29 @@ public class MaxMietdauer
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theContent;
             theContent = this.getContent();
-            strategy.appendField(locator, this, "content", buffer, theContent);
+            strategy.appendField(locator, this, "content", buffer, theContent, (this.content!= null));
         }
         {
             MaxMietdauer.MaxDauer theMaxDauer;
             theMaxDauer = this.getMaxDauer();
-            strategy.appendField(locator, this, "maxDauer", buffer, theMaxDauer);
+            strategy.appendField(locator, this, "maxDauer", buffer, theMaxDauer, (this.maxDauer!= null));
         }
         return buffer;
     }
@@ -122,29 +121,39 @@ public class MaxMietdauer
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof MaxMietdauer) {
             final MaxMietdauer copy = ((MaxMietdauer) draftCopy);
-            if (this.content!= null) {
-                String sourceContent;
-                sourceContent = this.getContent();
-                String copyContent = ((String) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent));
-                copy.setContent(copyContent);
-            } else {
-                copy.content = null;
+            {
+                Boolean contentShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.content!= null));
+                if (contentShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceContent;
+                    sourceContent = this.getContent();
+                    String copyContent = ((String) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent, (this.content!= null)));
+                    copy.setContent(copyContent);
+                } else {
+                    if (contentShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.content = null;
+                    }
+                }
             }
-            if (this.maxDauer!= null) {
-                MaxMietdauer.MaxDauer sourceMaxDauer;
-                sourceMaxDauer = this.getMaxDauer();
-                MaxMietdauer.MaxDauer copyMaxDauer = ((MaxMietdauer.MaxDauer) strategy.copy(LocatorUtils.property(locator, "maxDauer", sourceMaxDauer), sourceMaxDauer));
-                copy.setMaxDauer(copyMaxDauer);
-            } else {
-                copy.maxDauer = null;
+            {
+                Boolean maxDauerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.maxDauer!= null));
+                if (maxDauerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    MaxMietdauer.MaxDauer sourceMaxDauer;
+                    sourceMaxDauer = this.getMaxDauer();
+                    MaxMietdauer.MaxDauer copyMaxDauer = ((MaxMietdauer.MaxDauer) strategy.copy(LocatorUtils.property(locator, "maxDauer", sourceMaxDauer), sourceMaxDauer, (this.maxDauer!= null)));
+                    copy.setMaxDauer(copyMaxDauer);
+                } else {
+                    if (maxDauerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.maxDauer = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -154,7 +163,7 @@ public class MaxMietdauer
         return new MaxMietdauer();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -167,7 +176,7 @@ public class MaxMietdauer
             lhsContent = this.getContent();
             String rhsContent;
             rhsContent = that.getContent();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent, (this.content!= null), (that.content!= null))) {
                 return false;
             }
         }
@@ -176,7 +185,7 @@ public class MaxMietdauer
             lhsMaxDauer = this.getMaxDauer();
             MaxMietdauer.MaxDauer rhsMaxDauer;
             rhsMaxDauer = that.getMaxDauer();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "maxDauer", lhsMaxDauer), LocatorUtils.property(thatLocator, "maxDauer", rhsMaxDauer), lhsMaxDauer, rhsMaxDauer)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "maxDauer", lhsMaxDauer), LocatorUtils.property(thatLocator, "maxDauer", rhsMaxDauer), lhsMaxDauer, rhsMaxDauer, (this.maxDauer!= null), (that.maxDauer!= null))) {
                 return false;
             }
         }
@@ -184,7 +193,7 @@ public class MaxMietdauer
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

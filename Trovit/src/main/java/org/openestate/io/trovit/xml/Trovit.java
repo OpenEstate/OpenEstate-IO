@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -45,8 +45,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "ad"
 })
 @XmlRootElement(name = "trovit")
-public class Trovit
-    implements Cloneable, CopyTo, Equals, ToString
+public class Trovit implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
@@ -82,24 +81,24 @@ public class Trovit
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Ad> theAd;
             theAd = (((this.ad!= null)&&(!this.ad.isEmpty()))?this.getAd():null);
-            strategy.appendField(locator, this, "ad", buffer, theAd);
+            strategy.appendField(locator, this, "ad", buffer, theAd, ((this.ad!= null)&&(!this.ad.isEmpty())));
         }
         return buffer;
     }
@@ -109,26 +108,31 @@ public class Trovit
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Trovit) {
             final Trovit copy = ((Trovit) draftCopy);
-            if ((this.ad!= null)&&(!this.ad.isEmpty())) {
-                List<Ad> sourceAd;
-                sourceAd = (((this.ad!= null)&&(!this.ad.isEmpty()))?this.getAd():null);
-                @SuppressWarnings("unchecked")
-                List<Ad> copyAd = ((List<Ad> ) strategy.copy(LocatorUtils.property(locator, "ad", sourceAd), sourceAd));
-                copy.ad = null;
-                if (copyAd!= null) {
-                    List<Ad> uniqueAdl = copy.getAd();
-                    uniqueAdl.addAll(copyAd);
+            {
+                Boolean adShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.ad!= null)&&(!this.ad.isEmpty())));
+                if (adShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Ad> sourceAd;
+                    sourceAd = (((this.ad!= null)&&(!this.ad.isEmpty()))?this.getAd():null);
+                    @SuppressWarnings("unchecked")
+                    List<Ad> copyAd = ((List<Ad> ) strategy.copy(LocatorUtils.property(locator, "ad", sourceAd), sourceAd, ((this.ad!= null)&&(!this.ad.isEmpty()))));
+                    copy.ad = null;
+                    if (copyAd!= null) {
+                        List<Ad> uniqueAdl = copy.getAd();
+                        uniqueAdl.addAll(copyAd);
+                    }
+                } else {
+                    if (adShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ad = null;
+                    }
                 }
-            } else {
-                copy.ad = null;
             }
         }
         return draftCopy;
@@ -138,7 +142,7 @@ public class Trovit
         return new Trovit();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -151,7 +155,7 @@ public class Trovit
             lhsAd = (((this.ad!= null)&&(!this.ad.isEmpty()))?this.getAd():null);
             List<Ad> rhsAd;
             rhsAd = (((that.ad!= null)&&(!that.ad.isEmpty()))?that.getAd():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ad", lhsAd), LocatorUtils.property(thatLocator, "ad", rhsAd), lhsAd, rhsAd)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ad", lhsAd), LocatorUtils.property(thatLocator, "ad", rhsAd), lhsAd, rhsAd, ((this.ad!= null)&&(!this.ad.isEmpty())), ((that.ad!= null)&&(!that.ad.isEmpty())))) {
                 return false;
             }
         }
@@ -159,7 +163,7 @@ public class Trovit
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

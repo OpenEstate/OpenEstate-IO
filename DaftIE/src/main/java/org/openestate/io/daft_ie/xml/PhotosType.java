@@ -10,15 +10,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -46,8 +46,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "photosType", propOrder = {
     "photo"
 })
-public class PhotosType
-    implements Cloneable, CopyTo, Equals, ToString
+public class PhotosType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(type = String.class)
@@ -85,24 +84,24 @@ public class PhotosType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<URL> thePhoto;
             thePhoto = (((this.photo!= null)&&(!this.photo.isEmpty()))?this.getPhoto():null);
-            strategy.appendField(locator, this, "photo", buffer, thePhoto);
+            strategy.appendField(locator, this, "photo", buffer, thePhoto, ((this.photo!= null)&&(!this.photo.isEmpty())));
         }
         return buffer;
     }
@@ -112,26 +111,31 @@ public class PhotosType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof PhotosType) {
             final PhotosType copy = ((PhotosType) draftCopy);
-            if ((this.photo!= null)&&(!this.photo.isEmpty())) {
-                List<URL> sourcePhoto;
-                sourcePhoto = (((this.photo!= null)&&(!this.photo.isEmpty()))?this.getPhoto():null);
-                @SuppressWarnings("unchecked")
-                List<URL> copyPhoto = ((List<URL> ) strategy.copy(LocatorUtils.property(locator, "photo", sourcePhoto), sourcePhoto));
-                copy.photo = null;
-                if (copyPhoto!= null) {
-                    List<URL> uniquePhotol = copy.getPhoto();
-                    uniquePhotol.addAll(copyPhoto);
+            {
+                Boolean photoShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.photo!= null)&&(!this.photo.isEmpty())));
+                if (photoShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<URL> sourcePhoto;
+                    sourcePhoto = (((this.photo!= null)&&(!this.photo.isEmpty()))?this.getPhoto():null);
+                    @SuppressWarnings("unchecked")
+                    List<URL> copyPhoto = ((List<URL> ) strategy.copy(LocatorUtils.property(locator, "photo", sourcePhoto), sourcePhoto, ((this.photo!= null)&&(!this.photo.isEmpty()))));
+                    copy.photo = null;
+                    if (copyPhoto!= null) {
+                        List<URL> uniquePhotol = copy.getPhoto();
+                        uniquePhotol.addAll(copyPhoto);
+                    }
+                } else {
+                    if (photoShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.photo = null;
+                    }
                 }
-            } else {
-                copy.photo = null;
             }
         }
         return draftCopy;
@@ -141,7 +145,7 @@ public class PhotosType
         return new PhotosType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -154,7 +158,7 @@ public class PhotosType
             lhsPhoto = (((this.photo!= null)&&(!this.photo.isEmpty()))?this.getPhoto():null);
             List<URL> rhsPhoto;
             rhsPhoto = (((that.photo!= null)&&(!that.photo.isEmpty()))?that.getPhoto():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "photo", lhsPhoto), LocatorUtils.property(thatLocator, "photo", rhsPhoto), lhsPhoto, rhsPhoto)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "photo", lhsPhoto), LocatorUtils.property(thatLocator, "photo", rhsPhoto), lhsPhoto, rhsPhoto, ((this.photo!= null)&&(!this.photo.isEmpty())), ((that.photo!= null)&&(!that.photo.isEmpty())))) {
                 return false;
             }
         }
@@ -162,7 +166,7 @@ public class PhotosType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

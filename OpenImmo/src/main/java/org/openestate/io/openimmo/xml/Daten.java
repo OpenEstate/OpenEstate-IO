@@ -5,15 +5,15 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -30,8 +30,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "anhanginhalt"
 })
 @XmlRootElement(name = "daten")
-public class Daten
-    implements Cloneable, CopyTo, Equals, ToString
+public class Daten implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected String pfad;
@@ -84,29 +83,29 @@ public class Daten
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String thePfad;
             thePfad = this.getPfad();
-            strategy.appendField(locator, this, "pfad", buffer, thePfad);
+            strategy.appendField(locator, this, "pfad", buffer, thePfad, (this.pfad!= null));
         }
         {
             byte[] theAnhanginhalt;
             theAnhanginhalt = this.getAnhanginhalt();
-            strategy.appendField(locator, this, "anhanginhalt", buffer, theAnhanginhalt);
+            strategy.appendField(locator, this, "anhanginhalt", buffer, theAnhanginhalt, (this.anhanginhalt!= null));
         }
         return buffer;
     }
@@ -116,29 +115,39 @@ public class Daten
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Daten) {
             final Daten copy = ((Daten) draftCopy);
-            if (this.pfad!= null) {
-                String sourcePfad;
-                sourcePfad = this.getPfad();
-                String copyPfad = ((String) strategy.copy(LocatorUtils.property(locator, "pfad", sourcePfad), sourcePfad));
-                copy.setPfad(copyPfad);
-            } else {
-                copy.pfad = null;
+            {
+                Boolean pfadShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pfad!= null));
+                if (pfadShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePfad;
+                    sourcePfad = this.getPfad();
+                    String copyPfad = ((String) strategy.copy(LocatorUtils.property(locator, "pfad", sourcePfad), sourcePfad, (this.pfad!= null)));
+                    copy.setPfad(copyPfad);
+                } else {
+                    if (pfadShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pfad = null;
+                    }
+                }
             }
-            if (this.anhanginhalt!= null) {
-                byte[] sourceAnhanginhalt;
-                sourceAnhanginhalt = this.getAnhanginhalt();
-                byte[] copyAnhanginhalt = ((byte[]) strategy.copy(LocatorUtils.property(locator, "anhanginhalt", sourceAnhanginhalt), sourceAnhanginhalt));
-                copy.setAnhanginhalt(copyAnhanginhalt);
-            } else {
-                copy.anhanginhalt = null;
+            {
+                Boolean anhanginhaltShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anhanginhalt!= null));
+                if (anhanginhaltShouldBeCopiedAndSet == Boolean.TRUE) {
+                    byte[] sourceAnhanginhalt;
+                    sourceAnhanginhalt = this.getAnhanginhalt();
+                    byte[] copyAnhanginhalt = ((byte[]) strategy.copy(LocatorUtils.property(locator, "anhanginhalt", sourceAnhanginhalt), sourceAnhanginhalt, (this.anhanginhalt!= null)));
+                    copy.setAnhanginhalt(copyAnhanginhalt);
+                } else {
+                    if (anhanginhaltShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.anhanginhalt = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -148,7 +157,7 @@ public class Daten
         return new Daten();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -161,7 +170,7 @@ public class Daten
             lhsPfad = this.getPfad();
             String rhsPfad;
             rhsPfad = that.getPfad();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pfad", lhsPfad), LocatorUtils.property(thatLocator, "pfad", rhsPfad), lhsPfad, rhsPfad)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pfad", lhsPfad), LocatorUtils.property(thatLocator, "pfad", rhsPfad), lhsPfad, rhsPfad, (this.pfad!= null), (that.pfad!= null))) {
                 return false;
             }
         }
@@ -170,7 +179,7 @@ public class Daten
             lhsAnhanginhalt = this.getAnhanginhalt();
             byte[] rhsAnhanginhalt;
             rhsAnhanginhalt = that.getAnhanginhalt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "anhanginhalt", lhsAnhanginhalt), LocatorUtils.property(thatLocator, "anhanginhalt", rhsAnhanginhalt), lhsAnhanginhalt, rhsAnhanginhalt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "anhanginhalt", lhsAnhanginhalt), LocatorUtils.property(thatLocator, "anhanginhalt", rhsAnhanginhalt), lhsAnhanginhalt, rhsAnhanginhalt, (this.anhanginhalt!= null), (that.anhanginhalt!= null))) {
                 return false;
             }
         }
@@ -178,7 +187,7 @@ public class Daten
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

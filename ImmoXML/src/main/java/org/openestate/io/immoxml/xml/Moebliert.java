@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "moebliert")
-public class Moebliert
-    implements Cloneable, CopyTo, Equals, ToString
+public class Moebliert implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "VOLL")
@@ -86,29 +85,29 @@ public class Moebliert
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theVOLL;
             theVOLL = this.isVOLL();
-            strategy.appendField(locator, this, "voll", buffer, theVOLL);
+            strategy.appendField(locator, this, "voll", buffer, theVOLL, (this.voll!= null));
         }
         {
             Boolean theTEIL;
             theTEIL = this.isTEIL();
-            strategy.appendField(locator, this, "teil", buffer, theTEIL);
+            strategy.appendField(locator, this, "teil", buffer, theTEIL, (this.teil!= null));
         }
         return buffer;
     }
@@ -118,29 +117,39 @@ public class Moebliert
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Moebliert) {
             final Moebliert copy = ((Moebliert) draftCopy);
-            if (this.voll!= null) {
-                Boolean sourceVOLL;
-                sourceVOLL = this.isVOLL();
-                Boolean copyVOLL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "voll", sourceVOLL), sourceVOLL));
-                copy.setVOLL(copyVOLL);
-            } else {
-                copy.voll = null;
+            {
+                Boolean vollShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.voll!= null));
+                if (vollShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceVOLL;
+                    sourceVOLL = this.isVOLL();
+                    Boolean copyVOLL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "voll", sourceVOLL), sourceVOLL, (this.voll!= null)));
+                    copy.setVOLL(copyVOLL);
+                } else {
+                    if (vollShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.voll = null;
+                    }
+                }
             }
-            if (this.teil!= null) {
-                Boolean sourceTEIL;
-                sourceTEIL = this.isTEIL();
-                Boolean copyTEIL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "teil", sourceTEIL), sourceTEIL));
-                copy.setTEIL(copyTEIL);
-            } else {
-                copy.teil = null;
+            {
+                Boolean teilShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.teil!= null));
+                if (teilShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceTEIL;
+                    sourceTEIL = this.isTEIL();
+                    Boolean copyTEIL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "teil", sourceTEIL), sourceTEIL, (this.teil!= null)));
+                    copy.setTEIL(copyTEIL);
+                } else {
+                    if (teilShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.teil = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -150,7 +159,7 @@ public class Moebliert
         return new Moebliert();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -163,7 +172,7 @@ public class Moebliert
             lhsVOLL = this.isVOLL();
             Boolean rhsVOLL;
             rhsVOLL = that.isVOLL();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "voll", lhsVOLL), LocatorUtils.property(thatLocator, "voll", rhsVOLL), lhsVOLL, rhsVOLL)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "voll", lhsVOLL), LocatorUtils.property(thatLocator, "voll", rhsVOLL), lhsVOLL, rhsVOLL, (this.voll!= null), (that.voll!= null))) {
                 return false;
             }
         }
@@ -172,7 +181,7 @@ public class Moebliert
             lhsTEIL = this.isTEIL();
             Boolean rhsTEIL;
             rhsTEIL = that.isTEIL();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "teil", lhsTEIL), LocatorUtils.property(thatLocator, "teil", rhsTEIL), lhsTEIL, rhsTEIL)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "teil", lhsTEIL), LocatorUtils.property(thatLocator, "teil", rhsTEIL), lhsTEIL, rhsTEIL, (this.teil!= null), (that.teil!= null))) {
                 return false;
             }
         }
@@ -180,7 +189,7 @@ public class Moebliert
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

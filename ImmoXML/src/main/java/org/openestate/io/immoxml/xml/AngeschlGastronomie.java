@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "angeschl_gastronomie")
-public class AngeschlGastronomie
-    implements Cloneable, CopyTo, Equals, ToString
+public class AngeschlGastronomie implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "HOTELRESTAURANT")
@@ -86,29 +85,29 @@ public class AngeschlGastronomie
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theHOTELRESTAURANT;
             theHOTELRESTAURANT = this.isHOTELRESTAURANT();
-            strategy.appendField(locator, this, "hotelrestaurant", buffer, theHOTELRESTAURANT);
+            strategy.appendField(locator, this, "hotelrestaurant", buffer, theHOTELRESTAURANT, (this.hotelrestaurant!= null));
         }
         {
             Boolean theBAR;
             theBAR = this.isBAR();
-            strategy.appendField(locator, this, "bar", buffer, theBAR);
+            strategy.appendField(locator, this, "bar", buffer, theBAR, (this.bar!= null));
         }
         return buffer;
     }
@@ -118,29 +117,39 @@ public class AngeschlGastronomie
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof AngeschlGastronomie) {
             final AngeschlGastronomie copy = ((AngeschlGastronomie) draftCopy);
-            if (this.hotelrestaurant!= null) {
-                Boolean sourceHOTELRESTAURANT;
-                sourceHOTELRESTAURANT = this.isHOTELRESTAURANT();
-                Boolean copyHOTELRESTAURANT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hotelrestaurant", sourceHOTELRESTAURANT), sourceHOTELRESTAURANT));
-                copy.setHOTELRESTAURANT(copyHOTELRESTAURANT);
-            } else {
-                copy.hotelrestaurant = null;
+            {
+                Boolean hotelrestaurantShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hotelrestaurant!= null));
+                if (hotelrestaurantShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceHOTELRESTAURANT;
+                    sourceHOTELRESTAURANT = this.isHOTELRESTAURANT();
+                    Boolean copyHOTELRESTAURANT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hotelrestaurant", sourceHOTELRESTAURANT), sourceHOTELRESTAURANT, (this.hotelrestaurant!= null)));
+                    copy.setHOTELRESTAURANT(copyHOTELRESTAURANT);
+                } else {
+                    if (hotelrestaurantShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hotelrestaurant = null;
+                    }
+                }
             }
-            if (this.bar!= null) {
-                Boolean sourceBAR;
-                sourceBAR = this.isBAR();
-                Boolean copyBAR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "bar", sourceBAR), sourceBAR));
-                copy.setBAR(copyBAR);
-            } else {
-                copy.bar = null;
+            {
+                Boolean barShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bar!= null));
+                if (barShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceBAR;
+                    sourceBAR = this.isBAR();
+                    Boolean copyBAR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "bar", sourceBAR), sourceBAR, (this.bar!= null)));
+                    copy.setBAR(copyBAR);
+                } else {
+                    if (barShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bar = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -150,7 +159,7 @@ public class AngeschlGastronomie
         return new AngeschlGastronomie();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -163,7 +172,7 @@ public class AngeschlGastronomie
             lhsHOTELRESTAURANT = this.isHOTELRESTAURANT();
             Boolean rhsHOTELRESTAURANT;
             rhsHOTELRESTAURANT = that.isHOTELRESTAURANT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hotelrestaurant", lhsHOTELRESTAURANT), LocatorUtils.property(thatLocator, "hotelrestaurant", rhsHOTELRESTAURANT), lhsHOTELRESTAURANT, rhsHOTELRESTAURANT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hotelrestaurant", lhsHOTELRESTAURANT), LocatorUtils.property(thatLocator, "hotelrestaurant", rhsHOTELRESTAURANT), lhsHOTELRESTAURANT, rhsHOTELRESTAURANT, (this.hotelrestaurant!= null), (that.hotelrestaurant!= null))) {
                 return false;
             }
         }
@@ -172,7 +181,7 @@ public class AngeschlGastronomie
             lhsBAR = this.isBAR();
             Boolean rhsBAR;
             rhsBAR = that.isBAR();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bar", lhsBAR), LocatorUtils.property(thatLocator, "bar", rhsBAR), lhsBAR, rhsBAR)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bar", lhsBAR), LocatorUtils.property(thatLocator, "bar", rhsBAR), lhsBAR, rhsBAR, (this.bar!= null), (that.bar!= null))) {
                 return false;
             }
         }
@@ -180,7 +189,7 @@ public class AngeschlGastronomie
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

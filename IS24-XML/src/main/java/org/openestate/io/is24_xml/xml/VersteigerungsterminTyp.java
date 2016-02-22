@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -44,8 +44,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "VersteigerungsterminTyp", propOrder = {
     "value"
 })
-public class VersteigerungsterminTyp
-    implements Cloneable, CopyTo, Equals, ToString
+public class VersteigerungsterminTyp implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -138,34 +137,34 @@ public class VersteigerungsterminTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Calendar theValue;
             theValue = this.getValue();
-            strategy.appendField(locator, this, "value", buffer, theValue);
+            strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
             boolean theWiederholungstermin;
             theWiederholungstermin = ((this.wiederholungstermin!= null)?this.isWiederholungstermin():false);
-            strategy.appendField(locator, this, "wiederholungstermin", buffer, theWiederholungstermin);
+            strategy.appendField(locator, this, "wiederholungstermin", buffer, theWiederholungstermin, (this.wiederholungstermin!= null));
         }
         {
             boolean theTeilungsversteigerung;
             theTeilungsversteigerung = ((this.teilungsversteigerung!= null)?this.isTeilungsversteigerung():false);
-            strategy.appendField(locator, this, "teilungsversteigerung", buffer, theTeilungsversteigerung);
+            strategy.appendField(locator, this, "teilungsversteigerung", buffer, theTeilungsversteigerung, (this.teilungsversteigerung!= null));
         }
         return buffer;
     }
@@ -175,37 +174,52 @@ public class VersteigerungsterminTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof VersteigerungsterminTyp) {
             final VersteigerungsterminTyp copy = ((VersteigerungsterminTyp) draftCopy);
-            if (this.value!= null) {
-                Calendar sourceValue;
-                sourceValue = this.getValue();
-                Calendar copyValue = ((Calendar) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
-                copy.setValue(copyValue);
-            } else {
-                copy.value = null;
+            {
+                Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
+                if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceValue;
+                    sourceValue = this.getValue();
+                    Calendar copyValue = ((Calendar) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    copy.setValue(copyValue);
+                } else {
+                    if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.value = null;
+                    }
+                }
             }
-            if (this.wiederholungstermin!= null) {
-                boolean sourceWiederholungstermin;
-                sourceWiederholungstermin = ((this.wiederholungstermin!= null)?this.isWiederholungstermin():false);
-                boolean copyWiederholungstermin = strategy.copy(LocatorUtils.property(locator, "wiederholungstermin", sourceWiederholungstermin), sourceWiederholungstermin);
-                copy.setWiederholungstermin(copyWiederholungstermin);
-            } else {
-                copy.wiederholungstermin = null;
+            {
+                Boolean wiederholungsterminShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wiederholungstermin!= null));
+                if (wiederholungsterminShouldBeCopiedAndSet == Boolean.TRUE) {
+                    boolean sourceWiederholungstermin;
+                    sourceWiederholungstermin = ((this.wiederholungstermin!= null)?this.isWiederholungstermin():false);
+                    boolean copyWiederholungstermin = strategy.copy(LocatorUtils.property(locator, "wiederholungstermin", sourceWiederholungstermin), sourceWiederholungstermin, (this.wiederholungstermin!= null));
+                    copy.setWiederholungstermin(copyWiederholungstermin);
+                } else {
+                    if (wiederholungsterminShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wiederholungstermin = null;
+                    }
+                }
             }
-            if (this.teilungsversteigerung!= null) {
-                boolean sourceTeilungsversteigerung;
-                sourceTeilungsversteigerung = ((this.teilungsversteigerung!= null)?this.isTeilungsversteigerung():false);
-                boolean copyTeilungsversteigerung = strategy.copy(LocatorUtils.property(locator, "teilungsversteigerung", sourceTeilungsversteigerung), sourceTeilungsversteigerung);
-                copy.setTeilungsversteigerung(copyTeilungsversteigerung);
-            } else {
-                copy.teilungsversteigerung = null;
+            {
+                Boolean teilungsversteigerungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.teilungsversteigerung!= null));
+                if (teilungsversteigerungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    boolean sourceTeilungsversteigerung;
+                    sourceTeilungsversteigerung = ((this.teilungsversteigerung!= null)?this.isTeilungsversteigerung():false);
+                    boolean copyTeilungsversteigerung = strategy.copy(LocatorUtils.property(locator, "teilungsversteigerung", sourceTeilungsversteigerung), sourceTeilungsversteigerung, (this.teilungsversteigerung!= null));
+                    copy.setTeilungsversteigerung(copyTeilungsversteigerung);
+                } else {
+                    if (teilungsversteigerungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.teilungsversteigerung = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -215,7 +229,7 @@ public class VersteigerungsterminTyp
         return new VersteigerungsterminTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -228,7 +242,7 @@ public class VersteigerungsterminTyp
             lhsValue = this.getValue();
             Calendar rhsValue;
             rhsValue = that.getValue();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
@@ -237,7 +251,7 @@ public class VersteigerungsterminTyp
             lhsWiederholungstermin = ((this.wiederholungstermin!= null)?this.isWiederholungstermin():false);
             boolean rhsWiederholungstermin;
             rhsWiederholungstermin = ((that.wiederholungstermin!= null)?that.isWiederholungstermin():false);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wiederholungstermin", lhsWiederholungstermin), LocatorUtils.property(thatLocator, "wiederholungstermin", rhsWiederholungstermin), lhsWiederholungstermin, rhsWiederholungstermin)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wiederholungstermin", lhsWiederholungstermin), LocatorUtils.property(thatLocator, "wiederholungstermin", rhsWiederholungstermin), lhsWiederholungstermin, rhsWiederholungstermin, (this.wiederholungstermin!= null), (that.wiederholungstermin!= null))) {
                 return false;
             }
         }
@@ -246,7 +260,7 @@ public class VersteigerungsterminTyp
             lhsTeilungsversteigerung = ((this.teilungsversteigerung!= null)?this.isTeilungsversteigerung():false);
             boolean rhsTeilungsversteigerung;
             rhsTeilungsversteigerung = ((that.teilungsversteigerung!= null)?that.isTeilungsversteigerung():false);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "teilungsversteigerung", lhsTeilungsversteigerung), LocatorUtils.property(thatLocator, "teilungsversteigerung", rhsTeilungsversteigerung), lhsTeilungsversteigerung, rhsTeilungsversteigerung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "teilungsversteigerung", lhsTeilungsversteigerung), LocatorUtils.property(thatLocator, "teilungsversteigerung", rhsTeilungsversteigerung), lhsTeilungsversteigerung, rhsTeilungsversteigerung, (this.teilungsversteigerung!= null), (that.teilungsversteigerung!= null))) {
                 return false;
             }
         }
@@ -254,7 +268,7 @@ public class VersteigerungsterminTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

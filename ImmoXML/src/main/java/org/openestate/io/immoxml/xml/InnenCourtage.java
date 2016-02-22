@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -31,8 +31,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "content"
 })
 @XmlRootElement(name = "innen_courtage")
-public class InnenCourtage
-    implements Cloneable, CopyTo, Equals, ToString
+public class InnenCourtage implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -89,29 +88,29 @@ public class InnenCourtage
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theContent;
             theContent = this.getContent();
-            strategy.appendField(locator, this, "content", buffer, theContent);
+            strategy.appendField(locator, this, "content", buffer, theContent, (this.content!= null));
         }
         {
             Boolean theMitMwst;
             theMitMwst = this.isMitMwst();
-            strategy.appendField(locator, this, "mitMwst", buffer, theMitMwst);
+            strategy.appendField(locator, this, "mitMwst", buffer, theMitMwst, (this.mitMwst!= null));
         }
         return buffer;
     }
@@ -121,29 +120,39 @@ public class InnenCourtage
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof InnenCourtage) {
             final InnenCourtage copy = ((InnenCourtage) draftCopy);
-            if (this.content!= null) {
-                String sourceContent;
-                sourceContent = this.getContent();
-                String copyContent = ((String) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent));
-                copy.setContent(copyContent);
-            } else {
-                copy.content = null;
+            {
+                Boolean contentShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.content!= null));
+                if (contentShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceContent;
+                    sourceContent = this.getContent();
+                    String copyContent = ((String) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent, (this.content!= null)));
+                    copy.setContent(copyContent);
+                } else {
+                    if (contentShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.content = null;
+                    }
+                }
             }
-            if (this.mitMwst!= null) {
-                Boolean sourceMitMwst;
-                sourceMitMwst = this.isMitMwst();
-                Boolean copyMitMwst = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mitMwst", sourceMitMwst), sourceMitMwst));
-                copy.setMitMwst(copyMitMwst);
-            } else {
-                copy.mitMwst = null;
+            {
+                Boolean mitMwstShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mitMwst!= null));
+                if (mitMwstShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceMitMwst;
+                    sourceMitMwst = this.isMitMwst();
+                    Boolean copyMitMwst = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mitMwst", sourceMitMwst), sourceMitMwst, (this.mitMwst!= null)));
+                    copy.setMitMwst(copyMitMwst);
+                } else {
+                    if (mitMwstShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.mitMwst = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -153,7 +162,7 @@ public class InnenCourtage
         return new InnenCourtage();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -166,7 +175,7 @@ public class InnenCourtage
             lhsContent = this.getContent();
             String rhsContent;
             rhsContent = that.getContent();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent, (this.content!= null), (that.content!= null))) {
                 return false;
             }
         }
@@ -175,7 +184,7 @@ public class InnenCourtage
             lhsMitMwst = this.isMitMwst();
             Boolean rhsMitMwst;
             rhsMitMwst = that.isMitMwst();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "mitMwst", lhsMitMwst), LocatorUtils.property(thatLocator, "mitMwst", rhsMitMwst), lhsMitMwst, rhsMitMwst)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "mitMwst", lhsMitMwst), LocatorUtils.property(thatLocator, "mitMwst", rhsMitMwst), lhsMitMwst, rhsMitMwst, (this.mitMwst!= null), (that.mitMwst!= null))) {
                 return false;
             }
         }
@@ -183,7 +192,7 @@ public class InnenCourtage
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

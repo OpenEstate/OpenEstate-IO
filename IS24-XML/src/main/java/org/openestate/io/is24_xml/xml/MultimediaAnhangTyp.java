@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -42,8 +42,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MultimediaAnhangTyp")
-public class MultimediaAnhangTyp
-    implements Cloneable, CopyTo, Equals, ToString
+public class MultimediaAnhangTyp implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "AnhangArt", required = true)
@@ -182,44 +181,44 @@ public class MultimediaAnhangTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             MMAnhangArtenTyp theAnhangArt;
             theAnhangArt = this.getAnhangArt();
-            strategy.appendField(locator, this, "anhangArt", buffer, theAnhangArt);
+            strategy.appendField(locator, this, "anhangArt", buffer, theAnhangArt, (this.anhangArt!= null));
         }
         {
             String theDateiname;
             theDateiname = this.getDateiname();
-            strategy.appendField(locator, this, "dateiname", buffer, theDateiname);
+            strategy.appendField(locator, this, "dateiname", buffer, theDateiname, (this.dateiname!= null));
         }
         {
             String theTitel;
             theTitel = this.getTitel();
-            strategy.appendField(locator, this, "titel", buffer, theTitel);
+            strategy.appendField(locator, this, "titel", buffer, theTitel, (this.titel!= null));
         }
         {
             String theDateityp;
             theDateityp = this.getDateityp();
-            strategy.appendField(locator, this, "dateityp", buffer, theDateityp);
+            strategy.appendField(locator, this, "dateityp", buffer, theDateityp, (this.dateityp!= null));
         }
         {
             Long theAbspieldauer;
             theAbspieldauer = this.getAbspieldauer();
-            strategy.appendField(locator, this, "abspieldauer", buffer, theAbspieldauer);
+            strategy.appendField(locator, this, "abspieldauer", buffer, theAbspieldauer, (this.abspieldauer!= null));
         }
         return buffer;
     }
@@ -229,53 +228,78 @@ public class MultimediaAnhangTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof MultimediaAnhangTyp) {
             final MultimediaAnhangTyp copy = ((MultimediaAnhangTyp) draftCopy);
-            if (this.anhangArt!= null) {
-                MMAnhangArtenTyp sourceAnhangArt;
-                sourceAnhangArt = this.getAnhangArt();
-                MMAnhangArtenTyp copyAnhangArt = ((MMAnhangArtenTyp) strategy.copy(LocatorUtils.property(locator, "anhangArt", sourceAnhangArt), sourceAnhangArt));
-                copy.setAnhangArt(copyAnhangArt);
-            } else {
-                copy.anhangArt = null;
+            {
+                Boolean anhangArtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anhangArt!= null));
+                if (anhangArtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    MMAnhangArtenTyp sourceAnhangArt;
+                    sourceAnhangArt = this.getAnhangArt();
+                    MMAnhangArtenTyp copyAnhangArt = ((MMAnhangArtenTyp) strategy.copy(LocatorUtils.property(locator, "anhangArt", sourceAnhangArt), sourceAnhangArt, (this.anhangArt!= null)));
+                    copy.setAnhangArt(copyAnhangArt);
+                } else {
+                    if (anhangArtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.anhangArt = null;
+                    }
+                }
             }
-            if (this.dateiname!= null) {
-                String sourceDateiname;
-                sourceDateiname = this.getDateiname();
-                String copyDateiname = ((String) strategy.copy(LocatorUtils.property(locator, "dateiname", sourceDateiname), sourceDateiname));
-                copy.setDateiname(copyDateiname);
-            } else {
-                copy.dateiname = null;
+            {
+                Boolean dateinameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dateiname!= null));
+                if (dateinameShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceDateiname;
+                    sourceDateiname = this.getDateiname();
+                    String copyDateiname = ((String) strategy.copy(LocatorUtils.property(locator, "dateiname", sourceDateiname), sourceDateiname, (this.dateiname!= null)));
+                    copy.setDateiname(copyDateiname);
+                } else {
+                    if (dateinameShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.dateiname = null;
+                    }
+                }
             }
-            if (this.titel!= null) {
-                String sourceTitel;
-                sourceTitel = this.getTitel();
-                String copyTitel = ((String) strategy.copy(LocatorUtils.property(locator, "titel", sourceTitel), sourceTitel));
-                copy.setTitel(copyTitel);
-            } else {
-                copy.titel = null;
+            {
+                Boolean titelShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.titel!= null));
+                if (titelShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTitel;
+                    sourceTitel = this.getTitel();
+                    String copyTitel = ((String) strategy.copy(LocatorUtils.property(locator, "titel", sourceTitel), sourceTitel, (this.titel!= null)));
+                    copy.setTitel(copyTitel);
+                } else {
+                    if (titelShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.titel = null;
+                    }
+                }
             }
-            if (this.dateityp!= null) {
-                String sourceDateityp;
-                sourceDateityp = this.getDateityp();
-                String copyDateityp = ((String) strategy.copy(LocatorUtils.property(locator, "dateityp", sourceDateityp), sourceDateityp));
-                copy.setDateityp(copyDateityp);
-            } else {
-                copy.dateityp = null;
+            {
+                Boolean dateitypShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dateityp!= null));
+                if (dateitypShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceDateityp;
+                    sourceDateityp = this.getDateityp();
+                    String copyDateityp = ((String) strategy.copy(LocatorUtils.property(locator, "dateityp", sourceDateityp), sourceDateityp, (this.dateityp!= null)));
+                    copy.setDateityp(copyDateityp);
+                } else {
+                    if (dateitypShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.dateityp = null;
+                    }
+                }
             }
-            if (this.abspieldauer!= null) {
-                Long sourceAbspieldauer;
-                sourceAbspieldauer = this.getAbspieldauer();
-                Long copyAbspieldauer = ((Long) strategy.copy(LocatorUtils.property(locator, "abspieldauer", sourceAbspieldauer), sourceAbspieldauer));
-                copy.setAbspieldauer(copyAbspieldauer);
-            } else {
-                copy.abspieldauer = null;
+            {
+                Boolean abspieldauerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.abspieldauer!= null));
+                if (abspieldauerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Long sourceAbspieldauer;
+                    sourceAbspieldauer = this.getAbspieldauer();
+                    Long copyAbspieldauer = ((Long) strategy.copy(LocatorUtils.property(locator, "abspieldauer", sourceAbspieldauer), sourceAbspieldauer, (this.abspieldauer!= null)));
+                    copy.setAbspieldauer(copyAbspieldauer);
+                } else {
+                    if (abspieldauerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.abspieldauer = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -285,7 +309,7 @@ public class MultimediaAnhangTyp
         return new MultimediaAnhangTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -298,7 +322,7 @@ public class MultimediaAnhangTyp
             lhsAnhangArt = this.getAnhangArt();
             MMAnhangArtenTyp rhsAnhangArt;
             rhsAnhangArt = that.getAnhangArt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "anhangArt", lhsAnhangArt), LocatorUtils.property(thatLocator, "anhangArt", rhsAnhangArt), lhsAnhangArt, rhsAnhangArt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "anhangArt", lhsAnhangArt), LocatorUtils.property(thatLocator, "anhangArt", rhsAnhangArt), lhsAnhangArt, rhsAnhangArt, (this.anhangArt!= null), (that.anhangArt!= null))) {
                 return false;
             }
         }
@@ -307,7 +331,7 @@ public class MultimediaAnhangTyp
             lhsDateiname = this.getDateiname();
             String rhsDateiname;
             rhsDateiname = that.getDateiname();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "dateiname", lhsDateiname), LocatorUtils.property(thatLocator, "dateiname", rhsDateiname), lhsDateiname, rhsDateiname)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "dateiname", lhsDateiname), LocatorUtils.property(thatLocator, "dateiname", rhsDateiname), lhsDateiname, rhsDateiname, (this.dateiname!= null), (that.dateiname!= null))) {
                 return false;
             }
         }
@@ -316,7 +340,7 @@ public class MultimediaAnhangTyp
             lhsTitel = this.getTitel();
             String rhsTitel;
             rhsTitel = that.getTitel();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "titel", lhsTitel), LocatorUtils.property(thatLocator, "titel", rhsTitel), lhsTitel, rhsTitel)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "titel", lhsTitel), LocatorUtils.property(thatLocator, "titel", rhsTitel), lhsTitel, rhsTitel, (this.titel!= null), (that.titel!= null))) {
                 return false;
             }
         }
@@ -325,7 +349,7 @@ public class MultimediaAnhangTyp
             lhsDateityp = this.getDateityp();
             String rhsDateityp;
             rhsDateityp = that.getDateityp();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "dateityp", lhsDateityp), LocatorUtils.property(thatLocator, "dateityp", rhsDateityp), lhsDateityp, rhsDateityp)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "dateityp", lhsDateityp), LocatorUtils.property(thatLocator, "dateityp", rhsDateityp), lhsDateityp, rhsDateityp, (this.dateityp!= null), (that.dateityp!= null))) {
                 return false;
             }
         }
@@ -334,7 +358,7 @@ public class MultimediaAnhangTyp
             lhsAbspieldauer = this.getAbspieldauer();
             Long rhsAbspieldauer;
             rhsAbspieldauer = that.getAbspieldauer();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "abspieldauer", lhsAbspieldauer), LocatorUtils.property(thatLocator, "abspieldauer", rhsAbspieldauer), lhsAbspieldauer, rhsAbspieldauer)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "abspieldauer", lhsAbspieldauer), LocatorUtils.property(thatLocator, "abspieldauer", rhsAbspieldauer), lhsAbspieldauer, rhsAbspieldauer, (this.abspieldauer!= null), (that.abspieldauer!= null))) {
                 return false;
             }
         }
@@ -342,7 +366,7 @@ public class MultimediaAnhangTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

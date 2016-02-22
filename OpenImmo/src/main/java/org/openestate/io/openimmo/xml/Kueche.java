@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "kueche")
-public class Kueche
-    implements Cloneable, CopyTo, Equals, ToString
+public class Kueche implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "EBK")
@@ -112,34 +111,34 @@ public class Kueche
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theEBK;
             theEBK = this.isEBK();
-            strategy.appendField(locator, this, "ebk", buffer, theEBK);
+            strategy.appendField(locator, this, "ebk", buffer, theEBK, (this.ebk!= null));
         }
         {
             Boolean theOFFEN;
             theOFFEN = this.isOFFEN();
-            strategy.appendField(locator, this, "offen", buffer, theOFFEN);
+            strategy.appendField(locator, this, "offen", buffer, theOFFEN, (this.offen!= null));
         }
         {
             Boolean thePANTRY;
             thePANTRY = this.isPANTRY();
-            strategy.appendField(locator, this, "pantry", buffer, thePANTRY);
+            strategy.appendField(locator, this, "pantry", buffer, thePANTRY, (this.pantry!= null));
         }
         return buffer;
     }
@@ -149,37 +148,52 @@ public class Kueche
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Kueche) {
             final Kueche copy = ((Kueche) draftCopy);
-            if (this.ebk!= null) {
-                Boolean sourceEBK;
-                sourceEBK = this.isEBK();
-                Boolean copyEBK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ebk", sourceEBK), sourceEBK));
-                copy.setEBK(copyEBK);
-            } else {
-                copy.ebk = null;
+            {
+                Boolean ebkShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ebk!= null));
+                if (ebkShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceEBK;
+                    sourceEBK = this.isEBK();
+                    Boolean copyEBK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ebk", sourceEBK), sourceEBK, (this.ebk!= null)));
+                    copy.setEBK(copyEBK);
+                } else {
+                    if (ebkShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ebk = null;
+                    }
+                }
             }
-            if (this.offen!= null) {
-                Boolean sourceOFFEN;
-                sourceOFFEN = this.isOFFEN();
-                Boolean copyOFFEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "offen", sourceOFFEN), sourceOFFEN));
-                copy.setOFFEN(copyOFFEN);
-            } else {
-                copy.offen = null;
+            {
+                Boolean offenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.offen!= null));
+                if (offenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceOFFEN;
+                    sourceOFFEN = this.isOFFEN();
+                    Boolean copyOFFEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "offen", sourceOFFEN), sourceOFFEN, (this.offen!= null)));
+                    copy.setOFFEN(copyOFFEN);
+                } else {
+                    if (offenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.offen = null;
+                    }
+                }
             }
-            if (this.pantry!= null) {
-                Boolean sourcePANTRY;
-                sourcePANTRY = this.isPANTRY();
-                Boolean copyPANTRY = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pantry", sourcePANTRY), sourcePANTRY));
-                copy.setPANTRY(copyPANTRY);
-            } else {
-                copy.pantry = null;
+            {
+                Boolean pantryShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pantry!= null));
+                if (pantryShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourcePANTRY;
+                    sourcePANTRY = this.isPANTRY();
+                    Boolean copyPANTRY = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pantry", sourcePANTRY), sourcePANTRY, (this.pantry!= null)));
+                    copy.setPANTRY(copyPANTRY);
+                } else {
+                    if (pantryShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pantry = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -189,7 +203,7 @@ public class Kueche
         return new Kueche();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -202,7 +216,7 @@ public class Kueche
             lhsEBK = this.isEBK();
             Boolean rhsEBK;
             rhsEBK = that.isEBK();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ebk", lhsEBK), LocatorUtils.property(thatLocator, "ebk", rhsEBK), lhsEBK, rhsEBK)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ebk", lhsEBK), LocatorUtils.property(thatLocator, "ebk", rhsEBK), lhsEBK, rhsEBK, (this.ebk!= null), (that.ebk!= null))) {
                 return false;
             }
         }
@@ -211,7 +225,7 @@ public class Kueche
             lhsOFFEN = this.isOFFEN();
             Boolean rhsOFFEN;
             rhsOFFEN = that.isOFFEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "offen", lhsOFFEN), LocatorUtils.property(thatLocator, "offen", rhsOFFEN), lhsOFFEN, rhsOFFEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "offen", lhsOFFEN), LocatorUtils.property(thatLocator, "offen", rhsOFFEN), lhsOFFEN, rhsOFFEN, (this.offen!= null), (that.offen!= null))) {
                 return false;
             }
         }
@@ -220,7 +234,7 @@ public class Kueche
             lhsPANTRY = this.isPANTRY();
             Boolean rhsPANTRY;
             rhsPANTRY = that.isPANTRY();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pantry", lhsPANTRY), LocatorUtils.property(thatLocator, "pantry", rhsPANTRY), lhsPANTRY, rhsPANTRY)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pantry", lhsPANTRY), LocatorUtils.property(thatLocator, "pantry", rhsPANTRY), lhsPANTRY, rhsPANTRY, (this.pantry!= null), (that.pantry!= null))) {
                 return false;
             }
         }
@@ -228,7 +242,7 @@ public class Kueche
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -29,8 +29,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "gastgewerbe")
-public class Gastgewerbe
-    implements Cloneable, CopyTo, Equals, ToString
+public class Gastgewerbe implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "gastgew_typ")
@@ -61,24 +60,24 @@ public class Gastgewerbe
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Gastgewerbe.GastgewTyp theGastgewTyp;
             theGastgewTyp = this.getGastgewTyp();
-            strategy.appendField(locator, this, "gastgewTyp", buffer, theGastgewTyp);
+            strategy.appendField(locator, this, "gastgewTyp", buffer, theGastgewTyp, (this.gastgewTyp!= null));
         }
         return buffer;
     }
@@ -88,21 +87,26 @@ public class Gastgewerbe
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Gastgewerbe) {
             final Gastgewerbe copy = ((Gastgewerbe) draftCopy);
-            if (this.gastgewTyp!= null) {
-                Gastgewerbe.GastgewTyp sourceGastgewTyp;
-                sourceGastgewTyp = this.getGastgewTyp();
-                Gastgewerbe.GastgewTyp copyGastgewTyp = ((Gastgewerbe.GastgewTyp) strategy.copy(LocatorUtils.property(locator, "gastgewTyp", sourceGastgewTyp), sourceGastgewTyp));
-                copy.setGastgewTyp(copyGastgewTyp);
-            } else {
-                copy.gastgewTyp = null;
+            {
+                Boolean gastgewTypShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gastgewTyp!= null));
+                if (gastgewTypShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Gastgewerbe.GastgewTyp sourceGastgewTyp;
+                    sourceGastgewTyp = this.getGastgewTyp();
+                    Gastgewerbe.GastgewTyp copyGastgewTyp = ((Gastgewerbe.GastgewTyp) strategy.copy(LocatorUtils.property(locator, "gastgewTyp", sourceGastgewTyp), sourceGastgewTyp, (this.gastgewTyp!= null)));
+                    copy.setGastgewTyp(copyGastgewTyp);
+                } else {
+                    if (gastgewTypShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gastgewTyp = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -112,7 +116,7 @@ public class Gastgewerbe
         return new Gastgewerbe();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -125,7 +129,7 @@ public class Gastgewerbe
             lhsGastgewTyp = this.getGastgewTyp();
             Gastgewerbe.GastgewTyp rhsGastgewTyp;
             rhsGastgewTyp = that.getGastgewTyp();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastgewTyp", lhsGastgewTyp), LocatorUtils.property(thatLocator, "gastgewTyp", rhsGastgewTyp), lhsGastgewTyp, rhsGastgewTyp)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastgewTyp", lhsGastgewTyp), LocatorUtils.property(thatLocator, "gastgewTyp", rhsGastgewTyp), lhsGastgewTyp, rhsGastgewTyp, (this.gastgewTyp!= null), (that.gastgewTyp!= null))) {
                 return false;
             }
         }
@@ -133,7 +137,7 @@ public class Gastgewerbe
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
