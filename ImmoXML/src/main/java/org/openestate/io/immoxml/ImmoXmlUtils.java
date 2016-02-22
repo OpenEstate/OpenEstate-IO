@@ -391,13 +391,15 @@ public class ImmoXmlUtils
 
   public static String printPositiveDecimal( BigDecimal value )
   {
-    if (value==null || value.compareTo( BigDecimal.ZERO )<1)
+    // ImmoXML specifies positive decimal values including 0
+    if (value==null || value.compareTo( BigDecimal.ZERO )<0)
       throw new IllegalArgumentException( "Can't print positive decimal value!" );
     return printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
   public static String printPositiveInteger( BigInteger value )
   {
+    // ImmoXML specifies positive integer values excluding 0
     if (value==null || value.compareTo( BigInteger.ZERO )<1)
       throw new IllegalArgumentException( "Can't print positive integer value!" );
     else
