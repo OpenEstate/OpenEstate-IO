@@ -60,9 +60,13 @@ import org.xml.sax.SAXException;
  * @since 1.0
  * @author Andreas Rudolph
  */
-public class XmlUtils
+public final class XmlUtils
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( XmlUtils.class );
+
+  private XmlUtils()
+  {
+  }
 
   /**
    * Recursively remove any comments and unnecessary white spaces from a

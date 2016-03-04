@@ -28,8 +28,12 @@ import org.apache.commons.lang3.StringUtils;
 @SuppressFBWarnings(
   value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS",
   justification = "This behaviour is intended.")
-public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
+public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
 {
+  private LocaleUtils()
+  {
+  }
+
   /**
    * Return an ISO-2 country code from a country name.
    *
