@@ -102,9 +102,8 @@ public class ImmoXmlUtilsTest
     Assert.assertEquals(
       new BigDecimal( "2.5" ), ImmoXmlUtils.parseDecimal( "2,5" ) );
     Assert.assertEquals(
-      new BigDecimal( "2" ), ImmoXmlUtils.parseDecimal( "2 MM" ).setScale( 0 ) );
-    Assert.assertEquals(
       null, ImmoXmlUtils.parseDecimal( "" ) );
+
     try
     {
       Assert.assertEquals(
@@ -114,10 +113,20 @@ public class ImmoXmlUtilsTest
     catch (IllegalArgumentException ex)
     {
     }
+
     try
     {
       Assert.assertEquals(
-        null, ImmoXmlUtils.parseDecimal( "," ) );
+        null, ImmoXmlUtils.parseDecimal( "." ) );
+      Assert.fail( "An exception should have been thrown." );
+    }
+    catch (IllegalArgumentException ex)
+    {
+    }
+
+    try
+    {
+      ImmoXmlUtils.parseDecimal( "2 MM" );
       Assert.fail( "An exception should have been thrown." );
     }
     catch (IllegalArgumentException ex)

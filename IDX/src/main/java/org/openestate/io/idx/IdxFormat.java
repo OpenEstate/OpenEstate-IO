@@ -18,7 +18,6 @@ package org.openestate.io.idx;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.math.BigDecimal;
 import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,6 +29,7 @@ import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.CsvFormat;
 import org.openestate.io.core.LocaleUtils;
+import org.openestate.io.core.NumberUtils;
 
 /**
  * Specification of the IDX format.
@@ -187,31 +187,7 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
 
   public static Number parseNumber( String value, boolean integerOnly ) throws NumberFormatException
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    try
-    {
-      NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-      format.setMinimumFractionDigits( 0 );
-      format.setGroupingUsed( false );
-      format.setParseIntegerOnly( integerOnly );
-      return format.parse( value );
-    }
-    catch (ParseException ex)
-    {
-      try
-      {
-        NumberFormat format = NumberFormat.getNumberInstance( Locale.GERMANY );
-        format.setMinimumFractionDigits( 0 );
-        format.setGroupingUsed( false );
-        format.setParseIntegerOnly( integerOnly );
-        return format.parse( value );
-      }
-      catch (ParseException ex2)
-      {
-        throw new NumberFormatException( "Can't parse '" + value + "' as number!" );
-      }
-    }
+    return NumberUtils.parseNumber( value, integerOnly, Locale.ENGLISH, Locale.GERMANY );
   }
 
   public static String printBoolean( Boolean value )
@@ -251,13 +227,7 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter>
 
   public static String printNumber( Number value, int integerDigits, int fractionDigits )
   {
-    if (value==null) return null;
-    NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    format.setMaximumIntegerDigits( integerDigits );
-    format.setMaximumFractionDigits( fractionDigits );
-    format.setMinimumFractionDigits( 0 );
-    format.setGroupingUsed( false );
-    return format.format( value );
+    return NumberUtils.printNumber( value, integerDigits, fractionDigits, Locale.ENGLISH );
   }
 
   public static String printString( String value )

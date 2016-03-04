@@ -22,8 +22,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -34,6 +32,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
+import org.openestate.io.core.NumberUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.immoxml.xml.ObjectFactory;
@@ -317,15 +316,9 @@ public class ImmoXmlUtils
     }
     try
     {
-      NumberFormat format = NumberFormat.getNumberInstance( Locale.GERMANY );
-      return BigDecimal.valueOf( format.parse( value ).doubleValue() );
+      return BigDecimal.valueOf( NumberUtils.parseNumber( value, Locale.GERMANY ).doubleValue() );
     }
     catch (NumberFormatException ex)
-    {
-      //LOGGER.warn( "Can't parse value '" + value + "' as decimal!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-    }
-    catch (ParseException ex)
     {
       //LOGGER.warn( "Can't parse value '" + value + "' as decimal!" );
       //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );

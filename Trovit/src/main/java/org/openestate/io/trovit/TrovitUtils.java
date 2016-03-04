@@ -24,7 +24,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -38,6 +37,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.openestate.io.core.NumberUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.trovit.xml.types.Action;
@@ -378,32 +378,10 @@ public class TrovitUtils
 
   public static BigDecimal parsePriceValue( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    try
-    {
-      NumberFormat formatter = NumberFormat.getNumberInstance( Locale.ENGLISH );
-      formatter.setGroupingUsed( false );
-      formatter.setMaximumFractionDigits( 2 );
-      return BigDecimal.valueOf( formatter.parse( value ).doubleValue() );
-    }
-    catch (Exception ex)
-    {
-    }
-
-    try
-    {
-      NumberFormat formatter = NumberFormat.getNumberInstance( Locale.GERMAN );
-      formatter.setGroupingUsed( false );
-      formatter.setMaximumFractionDigits( 2 );
-      return BigDecimal.valueOf( formatter.parse( value ).doubleValue() );
-    }
-    catch (Exception ex)
-    {
-    }
-
-    throw new IllegalArgumentException( "Can't parse price value '"+value+"'!" );
+    Number number = NumberUtils.parseNumber( value, Locale.ENGLISH, Locale.GERMANY );
+    if (number==null)
+      throw new IllegalArgumentException( "Can't parse price value '"+value+"'!" );
+    return BigDecimal.valueOf( number.doubleValue() );
   }
 
   public static String parseString100( String value )
