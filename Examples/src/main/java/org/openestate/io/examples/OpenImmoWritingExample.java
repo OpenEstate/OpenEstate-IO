@@ -227,7 +227,7 @@ public class OpenImmoWritingExample
     uebertragung.setArt( Uebertragung.Art.OFFLINE );
     uebertragung.setModus( Uebertragung.Modus.NEW );
     uebertragung.setSendersoftware( "OpenEstate-IO" );
-    uebertragung.setSenderversion( "1.1-SNAPSHOT" );
+    uebertragung.setSenderversion( "1.1" );
     uebertragung.setTechnEmail( "test@test.org" );
     uebertragung.setTimestamp( Calendar.getInstance() );
     uebertragung.setUmfang( Uebertragung.Umfang.VOLL );
