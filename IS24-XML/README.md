@@ -1,5 +1,5 @@
-OpenEstate-IO-IS24-XML 1.1
-==========================
+OpenEstate-IO-IS24-XML 1.2-SNAPSHOT
+===================================
 
 *OpenEstate-IO-IS24-XML* is a Java library to read and write real estate data in
 the *IS24-XML* format (revision 189438), that was used by
@@ -23,10 +23,10 @@ Features
 
 -   read XML data according to the specifications of
     *IS24-XML* (revision 189438)
-    (see [`Is24XmlReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.1/Examples/src/main/java/org/openestate/io/examples/Is24XmlReadingExample.java))
+    (see [`Is24XmlReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/Is24XmlReadingExample.java))
 -   write XML data according to the specifications of
     *IS24-XML* (revision 189438)
-    (see [`Is24XmlWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.1/Examples/src/main/java/org/openestate/io/examples/Is24XmlWritingExample.java))
+    (see [`Is24XmlWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/Is24XmlWritingExample.java))
 
 
 How to use
@@ -45,7 +45,7 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -120,7 +120,7 @@ Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 for the full changelog.
 
 
@@ -130,7 +130,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.1/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
 for the license text.
 
 
@@ -139,6 +139,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for *IS24-XML*](http://validator.openestate.org/)
