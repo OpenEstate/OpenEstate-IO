@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -31,7 +31,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlRootElement(name = "stp_sonstige")
 public class StpSonstige
     extends Stellplatz
-    implements Cloneable, CopyTo, Equals, ToString
+    implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "platzart")
@@ -88,30 +88,30 @@ public class StpSonstige
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
             StpSonstige.Platzart thePlatzart;
             thePlatzart = this.getPlatzart();
-            strategy.appendField(locator, this, "platzart", buffer, thePlatzart);
+            strategy.appendField(locator, this, "platzart", buffer, thePlatzart, (this.platzart!= null));
         }
         {
             String theBemerkung;
             theBemerkung = this.getBemerkung();
-            strategy.appendField(locator, this, "bemerkung", buffer, theBemerkung);
+            strategy.appendField(locator, this, "bemerkung", buffer, theBemerkung, (this.bemerkung!= null));
         }
         return buffer;
     }
@@ -121,30 +121,40 @@ public class StpSonstige
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
         if (draftCopy instanceof StpSonstige) {
             final StpSonstige copy = ((StpSonstige) draftCopy);
-            if (this.platzart!= null) {
-                StpSonstige.Platzart sourcePlatzart;
-                sourcePlatzart = this.getPlatzart();
-                StpSonstige.Platzart copyPlatzart = ((StpSonstige.Platzart) strategy.copy(LocatorUtils.property(locator, "platzart", sourcePlatzart), sourcePlatzart));
-                copy.setPlatzart(copyPlatzart);
-            } else {
-                copy.platzart = null;
+            {
+                Boolean platzartShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.platzart!= null));
+                if (platzartShouldBeCopiedAndSet == Boolean.TRUE) {
+                    StpSonstige.Platzart sourcePlatzart;
+                    sourcePlatzart = this.getPlatzart();
+                    StpSonstige.Platzart copyPlatzart = ((StpSonstige.Platzart) strategy.copy(LocatorUtils.property(locator, "platzart", sourcePlatzart), sourcePlatzart, (this.platzart!= null)));
+                    copy.setPlatzart(copyPlatzart);
+                } else {
+                    if (platzartShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.platzart = null;
+                    }
+                }
             }
-            if (this.bemerkung!= null) {
-                String sourceBemerkung;
-                sourceBemerkung = this.getBemerkung();
-                String copyBemerkung = ((String) strategy.copy(LocatorUtils.property(locator, "bemerkung", sourceBemerkung), sourceBemerkung));
-                copy.setBemerkung(copyBemerkung);
-            } else {
-                copy.bemerkung = null;
+            {
+                Boolean bemerkungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bemerkung!= null));
+                if (bemerkungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceBemerkung;
+                    sourceBemerkung = this.getBemerkung();
+                    String copyBemerkung = ((String) strategy.copy(LocatorUtils.property(locator, "bemerkung", sourceBemerkung), sourceBemerkung, (this.bemerkung!= null)));
+                    copy.setBemerkung(copyBemerkung);
+                } else {
+                    if (bemerkungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bemerkung = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -154,7 +164,7 @@ public class StpSonstige
         return new StpSonstige();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -170,7 +180,7 @@ public class StpSonstige
             lhsPlatzart = this.getPlatzart();
             StpSonstige.Platzart rhsPlatzart;
             rhsPlatzart = that.getPlatzart();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "platzart", lhsPlatzart), LocatorUtils.property(thatLocator, "platzart", rhsPlatzart), lhsPlatzart, rhsPlatzart)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "platzart", lhsPlatzart), LocatorUtils.property(thatLocator, "platzart", rhsPlatzart), lhsPlatzart, rhsPlatzart, (this.platzart!= null), (that.platzart!= null))) {
                 return false;
             }
         }
@@ -179,7 +189,7 @@ public class StpSonstige
             lhsBemerkung = this.getBemerkung();
             String rhsBemerkung;
             rhsBemerkung = that.getBemerkung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bemerkung", lhsBemerkung), LocatorUtils.property(thatLocator, "bemerkung", rhsBemerkung), lhsBemerkung, rhsBemerkung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bemerkung", lhsBemerkung), LocatorUtils.property(thatLocator, "bemerkung", rhsBemerkung), lhsBemerkung, rhsBemerkung, (this.bemerkung!= null), (that.bemerkung!= null))) {
                 return false;
             }
         }
@@ -187,7 +197,7 @@ public class StpSonstige
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

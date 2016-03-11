@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "lage_im_bau")
-public class LageImBau
-    implements Cloneable, CopyTo, Equals, ToString
+public class LageImBau implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "LINKS")
@@ -138,39 +137,39 @@ public class LageImBau
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theLINKS;
             theLINKS = this.isLINKS();
-            strategy.appendField(locator, this, "links", buffer, theLINKS);
+            strategy.appendField(locator, this, "links", buffer, theLINKS, (this.links!= null));
         }
         {
             Boolean theRECHTS;
             theRECHTS = this.isRECHTS();
-            strategy.appendField(locator, this, "rechts", buffer, theRECHTS);
+            strategy.appendField(locator, this, "rechts", buffer, theRECHTS, (this.rechts!= null));
         }
         {
             Boolean theVORNE;
             theVORNE = this.isVORNE();
-            strategy.appendField(locator, this, "vorne", buffer, theVORNE);
+            strategy.appendField(locator, this, "vorne", buffer, theVORNE, (this.vorne!= null));
         }
         {
             Boolean theHINTEN;
             theHINTEN = this.isHINTEN();
-            strategy.appendField(locator, this, "hinten", buffer, theHINTEN);
+            strategy.appendField(locator, this, "hinten", buffer, theHINTEN, (this.hinten!= null));
         }
         return buffer;
     }
@@ -180,45 +179,65 @@ public class LageImBau
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof LageImBau) {
             final LageImBau copy = ((LageImBau) draftCopy);
-            if (this.links!= null) {
-                Boolean sourceLINKS;
-                sourceLINKS = this.isLINKS();
-                Boolean copyLINKS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "links", sourceLINKS), sourceLINKS));
-                copy.setLINKS(copyLINKS);
-            } else {
-                copy.links = null;
+            {
+                Boolean linksShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.links!= null));
+                if (linksShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceLINKS;
+                    sourceLINKS = this.isLINKS();
+                    Boolean copyLINKS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "links", sourceLINKS), sourceLINKS, (this.links!= null)));
+                    copy.setLINKS(copyLINKS);
+                } else {
+                    if (linksShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.links = null;
+                    }
+                }
             }
-            if (this.rechts!= null) {
-                Boolean sourceRECHTS;
-                sourceRECHTS = this.isRECHTS();
-                Boolean copyRECHTS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rechts", sourceRECHTS), sourceRECHTS));
-                copy.setRECHTS(copyRECHTS);
-            } else {
-                copy.rechts = null;
+            {
+                Boolean rechtsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rechts!= null));
+                if (rechtsShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceRECHTS;
+                    sourceRECHTS = this.isRECHTS();
+                    Boolean copyRECHTS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rechts", sourceRECHTS), sourceRECHTS, (this.rechts!= null)));
+                    copy.setRECHTS(copyRECHTS);
+                } else {
+                    if (rechtsShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.rechts = null;
+                    }
+                }
             }
-            if (this.vorne!= null) {
-                Boolean sourceVORNE;
-                sourceVORNE = this.isVORNE();
-                Boolean copyVORNE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "vorne", sourceVORNE), sourceVORNE));
-                copy.setVORNE(copyVORNE);
-            } else {
-                copy.vorne = null;
+            {
+                Boolean vorneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vorne!= null));
+                if (vorneShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceVORNE;
+                    sourceVORNE = this.isVORNE();
+                    Boolean copyVORNE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "vorne", sourceVORNE), sourceVORNE, (this.vorne!= null)));
+                    copy.setVORNE(copyVORNE);
+                } else {
+                    if (vorneShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.vorne = null;
+                    }
+                }
             }
-            if (this.hinten!= null) {
-                Boolean sourceHINTEN;
-                sourceHINTEN = this.isHINTEN();
-                Boolean copyHINTEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hinten", sourceHINTEN), sourceHINTEN));
-                copy.setHINTEN(copyHINTEN);
-            } else {
-                copy.hinten = null;
+            {
+                Boolean hintenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hinten!= null));
+                if (hintenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceHINTEN;
+                    sourceHINTEN = this.isHINTEN();
+                    Boolean copyHINTEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hinten", sourceHINTEN), sourceHINTEN, (this.hinten!= null)));
+                    copy.setHINTEN(copyHINTEN);
+                } else {
+                    if (hintenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hinten = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -228,7 +247,7 @@ public class LageImBau
         return new LageImBau();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -241,7 +260,7 @@ public class LageImBau
             lhsLINKS = this.isLINKS();
             Boolean rhsLINKS;
             rhsLINKS = that.isLINKS();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "links", lhsLINKS), LocatorUtils.property(thatLocator, "links", rhsLINKS), lhsLINKS, rhsLINKS)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "links", lhsLINKS), LocatorUtils.property(thatLocator, "links", rhsLINKS), lhsLINKS, rhsLINKS, (this.links!= null), (that.links!= null))) {
                 return false;
             }
         }
@@ -250,7 +269,7 @@ public class LageImBau
             lhsRECHTS = this.isRECHTS();
             Boolean rhsRECHTS;
             rhsRECHTS = that.isRECHTS();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "rechts", lhsRECHTS), LocatorUtils.property(thatLocator, "rechts", rhsRECHTS), lhsRECHTS, rhsRECHTS)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "rechts", lhsRECHTS), LocatorUtils.property(thatLocator, "rechts", rhsRECHTS), lhsRECHTS, rhsRECHTS, (this.rechts!= null), (that.rechts!= null))) {
                 return false;
             }
         }
@@ -259,7 +278,7 @@ public class LageImBau
             lhsVORNE = this.isVORNE();
             Boolean rhsVORNE;
             rhsVORNE = that.isVORNE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "vorne", lhsVORNE), LocatorUtils.property(thatLocator, "vorne", rhsVORNE), lhsVORNE, rhsVORNE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "vorne", lhsVORNE), LocatorUtils.property(thatLocator, "vorne", rhsVORNE), lhsVORNE, rhsVORNE, (this.vorne!= null), (that.vorne!= null))) {
                 return false;
             }
         }
@@ -268,7 +287,7 @@ public class LageImBau
             lhsHINTEN = this.isHINTEN();
             Boolean rhsHINTEN;
             rhsHINTEN = that.isHINTEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hinten", lhsHINTEN), LocatorUtils.property(thatLocator, "hinten", rhsHINTEN), lhsHINTEN, rhsHINTEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hinten", lhsHINTEN), LocatorUtils.property(thatLocator, "hinten", rhsHINTEN), lhsHINTEN, rhsHINTEN, (this.hinten!= null), (that.hinten!= null))) {
                 return false;
             }
         }
@@ -276,7 +295,7 @@ public class LageImBau
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

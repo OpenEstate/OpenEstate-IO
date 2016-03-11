@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "boden")
-public class Boden
-    implements Cloneable, CopyTo, Equals, ToString
+public class Boden implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "FLIESEN")
@@ -398,89 +397,89 @@ public class Boden
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theFLIESEN;
             theFLIESEN = this.isFLIESEN();
-            strategy.appendField(locator, this, "fliesen", buffer, theFLIESEN);
+            strategy.appendField(locator, this, "fliesen", buffer, theFLIESEN, (this.fliesen!= null));
         }
         {
             Boolean theSTEIN;
             theSTEIN = this.isSTEIN();
-            strategy.appendField(locator, this, "stein", buffer, theSTEIN);
+            strategy.appendField(locator, this, "stein", buffer, theSTEIN, (this.stein!= null));
         }
         {
             Boolean theTEPPICH;
             theTEPPICH = this.isTEPPICH();
-            strategy.appendField(locator, this, "teppich", buffer, theTEPPICH);
+            strategy.appendField(locator, this, "teppich", buffer, theTEPPICH, (this.teppich!= null));
         }
         {
             Boolean thePARKETT;
             thePARKETT = this.isPARKETT();
-            strategy.appendField(locator, this, "parkett", buffer, thePARKETT);
+            strategy.appendField(locator, this, "parkett", buffer, thePARKETT, (this.parkett!= null));
         }
         {
             Boolean theFERTIGPARKETT;
             theFERTIGPARKETT = this.isFERTIGPARKETT();
-            strategy.appendField(locator, this, "fertigparkett", buffer, theFERTIGPARKETT);
+            strategy.appendField(locator, this, "fertigparkett", buffer, theFERTIGPARKETT, (this.fertigparkett!= null));
         }
         {
             Boolean theLAMINAT;
             theLAMINAT = this.isLAMINAT();
-            strategy.appendField(locator, this, "laminat", buffer, theLAMINAT);
+            strategy.appendField(locator, this, "laminat", buffer, theLAMINAT, (this.laminat!= null));
         }
         {
             Boolean theDIELEN;
             theDIELEN = this.isDIELEN();
-            strategy.appendField(locator, this, "dielen", buffer, theDIELEN);
+            strategy.appendField(locator, this, "dielen", buffer, theDIELEN, (this.dielen!= null));
         }
         {
             Boolean theKUNSTSTOFF;
             theKUNSTSTOFF = this.isKUNSTSTOFF();
-            strategy.appendField(locator, this, "kunststoff", buffer, theKUNSTSTOFF);
+            strategy.appendField(locator, this, "kunststoff", buffer, theKUNSTSTOFF, (this.kunststoff!= null));
         }
         {
             Boolean theESTRICH;
             theESTRICH = this.isESTRICH();
-            strategy.appendField(locator, this, "estrich", buffer, theESTRICH);
+            strategy.appendField(locator, this, "estrich", buffer, theESTRICH, (this.estrich!= null));
         }
         {
             Boolean theDOPPELBODEN;
             theDOPPELBODEN = this.isDOPPELBODEN();
-            strategy.appendField(locator, this, "doppelboden", buffer, theDOPPELBODEN);
+            strategy.appendField(locator, this, "doppelboden", buffer, theDOPPELBODEN, (this.doppelboden!= null));
         }
         {
             Boolean theLINOLEUM;
             theLINOLEUM = this.isLINOLEUM();
-            strategy.appendField(locator, this, "linoleum", buffer, theLINOLEUM);
+            strategy.appendField(locator, this, "linoleum", buffer, theLINOLEUM, (this.linoleum!= null));
         }
         {
             Boolean theMARMOR;
             theMARMOR = this.isMARMOR();
-            strategy.appendField(locator, this, "marmor", buffer, theMARMOR);
+            strategy.appendField(locator, this, "marmor", buffer, theMARMOR, (this.marmor!= null));
         }
         {
             Boolean theTERRAKOTTA;
             theTERRAKOTTA = this.isTERRAKOTTA();
-            strategy.appendField(locator, this, "terrakotta", buffer, theTERRAKOTTA);
+            strategy.appendField(locator, this, "terrakotta", buffer, theTERRAKOTTA, (this.terrakotta!= null));
         }
         {
             Boolean theGRANIT;
             theGRANIT = this.isGRANIT();
-            strategy.appendField(locator, this, "granit", buffer, theGRANIT);
+            strategy.appendField(locator, this, "granit", buffer, theGRANIT, (this.granit!= null));
         }
         return buffer;
     }
@@ -490,125 +489,195 @@ public class Boden
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Boden) {
             final Boden copy = ((Boden) draftCopy);
-            if (this.fliesen!= null) {
-                Boolean sourceFLIESEN;
-                sourceFLIESEN = this.isFLIESEN();
-                Boolean copyFLIESEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fliesen", sourceFLIESEN), sourceFLIESEN));
-                copy.setFLIESEN(copyFLIESEN);
-            } else {
-                copy.fliesen = null;
+            {
+                Boolean fliesenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fliesen!= null));
+                if (fliesenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFLIESEN;
+                    sourceFLIESEN = this.isFLIESEN();
+                    Boolean copyFLIESEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fliesen", sourceFLIESEN), sourceFLIESEN, (this.fliesen!= null)));
+                    copy.setFLIESEN(copyFLIESEN);
+                } else {
+                    if (fliesenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fliesen = null;
+                    }
+                }
             }
-            if (this.stein!= null) {
-                Boolean sourceSTEIN;
-                sourceSTEIN = this.isSTEIN();
-                Boolean copySTEIN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "stein", sourceSTEIN), sourceSTEIN));
-                copy.setSTEIN(copySTEIN);
-            } else {
-                copy.stein = null;
+            {
+                Boolean steinShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.stein!= null));
+                if (steinShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceSTEIN;
+                    sourceSTEIN = this.isSTEIN();
+                    Boolean copySTEIN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "stein", sourceSTEIN), sourceSTEIN, (this.stein!= null)));
+                    copy.setSTEIN(copySTEIN);
+                } else {
+                    if (steinShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.stein = null;
+                    }
+                }
             }
-            if (this.teppich!= null) {
-                Boolean sourceTEPPICH;
-                sourceTEPPICH = this.isTEPPICH();
-                Boolean copyTEPPICH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "teppich", sourceTEPPICH), sourceTEPPICH));
-                copy.setTEPPICH(copyTEPPICH);
-            } else {
-                copy.teppich = null;
+            {
+                Boolean teppichShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.teppich!= null));
+                if (teppichShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceTEPPICH;
+                    sourceTEPPICH = this.isTEPPICH();
+                    Boolean copyTEPPICH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "teppich", sourceTEPPICH), sourceTEPPICH, (this.teppich!= null)));
+                    copy.setTEPPICH(copyTEPPICH);
+                } else {
+                    if (teppichShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.teppich = null;
+                    }
+                }
             }
-            if (this.parkett!= null) {
-                Boolean sourcePARKETT;
-                sourcePARKETT = this.isPARKETT();
-                Boolean copyPARKETT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "parkett", sourcePARKETT), sourcePARKETT));
-                copy.setPARKETT(copyPARKETT);
-            } else {
-                copy.parkett = null;
+            {
+                Boolean parkettShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.parkett!= null));
+                if (parkettShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourcePARKETT;
+                    sourcePARKETT = this.isPARKETT();
+                    Boolean copyPARKETT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "parkett", sourcePARKETT), sourcePARKETT, (this.parkett!= null)));
+                    copy.setPARKETT(copyPARKETT);
+                } else {
+                    if (parkettShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.parkett = null;
+                    }
+                }
             }
-            if (this.fertigparkett!= null) {
-                Boolean sourceFERTIGPARKETT;
-                sourceFERTIGPARKETT = this.isFERTIGPARKETT();
-                Boolean copyFERTIGPARKETT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fertigparkett", sourceFERTIGPARKETT), sourceFERTIGPARKETT));
-                copy.setFERTIGPARKETT(copyFERTIGPARKETT);
-            } else {
-                copy.fertigparkett = null;
+            {
+                Boolean fertigparkettShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fertigparkett!= null));
+                if (fertigparkettShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFERTIGPARKETT;
+                    sourceFERTIGPARKETT = this.isFERTIGPARKETT();
+                    Boolean copyFERTIGPARKETT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fertigparkett", sourceFERTIGPARKETT), sourceFERTIGPARKETT, (this.fertigparkett!= null)));
+                    copy.setFERTIGPARKETT(copyFERTIGPARKETT);
+                } else {
+                    if (fertigparkettShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fertigparkett = null;
+                    }
+                }
             }
-            if (this.laminat!= null) {
-                Boolean sourceLAMINAT;
-                sourceLAMINAT = this.isLAMINAT();
-                Boolean copyLAMINAT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "laminat", sourceLAMINAT), sourceLAMINAT));
-                copy.setLAMINAT(copyLAMINAT);
-            } else {
-                copy.laminat = null;
+            {
+                Boolean laminatShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.laminat!= null));
+                if (laminatShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceLAMINAT;
+                    sourceLAMINAT = this.isLAMINAT();
+                    Boolean copyLAMINAT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "laminat", sourceLAMINAT), sourceLAMINAT, (this.laminat!= null)));
+                    copy.setLAMINAT(copyLAMINAT);
+                } else {
+                    if (laminatShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.laminat = null;
+                    }
+                }
             }
-            if (this.dielen!= null) {
-                Boolean sourceDIELEN;
-                sourceDIELEN = this.isDIELEN();
-                Boolean copyDIELEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dielen", sourceDIELEN), sourceDIELEN));
-                copy.setDIELEN(copyDIELEN);
-            } else {
-                copy.dielen = null;
+            {
+                Boolean dielenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dielen!= null));
+                if (dielenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceDIELEN;
+                    sourceDIELEN = this.isDIELEN();
+                    Boolean copyDIELEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dielen", sourceDIELEN), sourceDIELEN, (this.dielen!= null)));
+                    copy.setDIELEN(copyDIELEN);
+                } else {
+                    if (dielenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.dielen = null;
+                    }
+                }
             }
-            if (this.kunststoff!= null) {
-                Boolean sourceKUNSTSTOFF;
-                sourceKUNSTSTOFF = this.isKUNSTSTOFF();
-                Boolean copyKUNSTSTOFF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kunststoff", sourceKUNSTSTOFF), sourceKUNSTSTOFF));
-                copy.setKUNSTSTOFF(copyKUNSTSTOFF);
-            } else {
-                copy.kunststoff = null;
+            {
+                Boolean kunststoffShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kunststoff!= null));
+                if (kunststoffShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceKUNSTSTOFF;
+                    sourceKUNSTSTOFF = this.isKUNSTSTOFF();
+                    Boolean copyKUNSTSTOFF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kunststoff", sourceKUNSTSTOFF), sourceKUNSTSTOFF, (this.kunststoff!= null)));
+                    copy.setKUNSTSTOFF(copyKUNSTSTOFF);
+                } else {
+                    if (kunststoffShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.kunststoff = null;
+                    }
+                }
             }
-            if (this.estrich!= null) {
-                Boolean sourceESTRICH;
-                sourceESTRICH = this.isESTRICH();
-                Boolean copyESTRICH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "estrich", sourceESTRICH), sourceESTRICH));
-                copy.setESTRICH(copyESTRICH);
-            } else {
-                copy.estrich = null;
+            {
+                Boolean estrichShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.estrich!= null));
+                if (estrichShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceESTRICH;
+                    sourceESTRICH = this.isESTRICH();
+                    Boolean copyESTRICH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "estrich", sourceESTRICH), sourceESTRICH, (this.estrich!= null)));
+                    copy.setESTRICH(copyESTRICH);
+                } else {
+                    if (estrichShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.estrich = null;
+                    }
+                }
             }
-            if (this.doppelboden!= null) {
-                Boolean sourceDOPPELBODEN;
-                sourceDOPPELBODEN = this.isDOPPELBODEN();
-                Boolean copyDOPPELBODEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "doppelboden", sourceDOPPELBODEN), sourceDOPPELBODEN));
-                copy.setDOPPELBODEN(copyDOPPELBODEN);
-            } else {
-                copy.doppelboden = null;
+            {
+                Boolean doppelbodenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.doppelboden!= null));
+                if (doppelbodenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceDOPPELBODEN;
+                    sourceDOPPELBODEN = this.isDOPPELBODEN();
+                    Boolean copyDOPPELBODEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "doppelboden", sourceDOPPELBODEN), sourceDOPPELBODEN, (this.doppelboden!= null)));
+                    copy.setDOPPELBODEN(copyDOPPELBODEN);
+                } else {
+                    if (doppelbodenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.doppelboden = null;
+                    }
+                }
             }
-            if (this.linoleum!= null) {
-                Boolean sourceLINOLEUM;
-                sourceLINOLEUM = this.isLINOLEUM();
-                Boolean copyLINOLEUM = ((Boolean) strategy.copy(LocatorUtils.property(locator, "linoleum", sourceLINOLEUM), sourceLINOLEUM));
-                copy.setLINOLEUM(copyLINOLEUM);
-            } else {
-                copy.linoleum = null;
+            {
+                Boolean linoleumShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.linoleum!= null));
+                if (linoleumShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceLINOLEUM;
+                    sourceLINOLEUM = this.isLINOLEUM();
+                    Boolean copyLINOLEUM = ((Boolean) strategy.copy(LocatorUtils.property(locator, "linoleum", sourceLINOLEUM), sourceLINOLEUM, (this.linoleum!= null)));
+                    copy.setLINOLEUM(copyLINOLEUM);
+                } else {
+                    if (linoleumShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.linoleum = null;
+                    }
+                }
             }
-            if (this.marmor!= null) {
-                Boolean sourceMARMOR;
-                sourceMARMOR = this.isMARMOR();
-                Boolean copyMARMOR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "marmor", sourceMARMOR), sourceMARMOR));
-                copy.setMARMOR(copyMARMOR);
-            } else {
-                copy.marmor = null;
+            {
+                Boolean marmorShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.marmor!= null));
+                if (marmorShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceMARMOR;
+                    sourceMARMOR = this.isMARMOR();
+                    Boolean copyMARMOR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "marmor", sourceMARMOR), sourceMARMOR, (this.marmor!= null)));
+                    copy.setMARMOR(copyMARMOR);
+                } else {
+                    if (marmorShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.marmor = null;
+                    }
+                }
             }
-            if (this.terrakotta!= null) {
-                Boolean sourceTERRAKOTTA;
-                sourceTERRAKOTTA = this.isTERRAKOTTA();
-                Boolean copyTERRAKOTTA = ((Boolean) strategy.copy(LocatorUtils.property(locator, "terrakotta", sourceTERRAKOTTA), sourceTERRAKOTTA));
-                copy.setTERRAKOTTA(copyTERRAKOTTA);
-            } else {
-                copy.terrakotta = null;
+            {
+                Boolean terrakottaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.terrakotta!= null));
+                if (terrakottaShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceTERRAKOTTA;
+                    sourceTERRAKOTTA = this.isTERRAKOTTA();
+                    Boolean copyTERRAKOTTA = ((Boolean) strategy.copy(LocatorUtils.property(locator, "terrakotta", sourceTERRAKOTTA), sourceTERRAKOTTA, (this.terrakotta!= null)));
+                    copy.setTERRAKOTTA(copyTERRAKOTTA);
+                } else {
+                    if (terrakottaShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.terrakotta = null;
+                    }
+                }
             }
-            if (this.granit!= null) {
-                Boolean sourceGRANIT;
-                sourceGRANIT = this.isGRANIT();
-                Boolean copyGRANIT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "granit", sourceGRANIT), sourceGRANIT));
-                copy.setGRANIT(copyGRANIT);
-            } else {
-                copy.granit = null;
+            {
+                Boolean granitShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.granit!= null));
+                if (granitShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceGRANIT;
+                    sourceGRANIT = this.isGRANIT();
+                    Boolean copyGRANIT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "granit", sourceGRANIT), sourceGRANIT, (this.granit!= null)));
+                    copy.setGRANIT(copyGRANIT);
+                } else {
+                    if (granitShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.granit = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -618,7 +687,7 @@ public class Boden
         return new Boden();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -631,7 +700,7 @@ public class Boden
             lhsFLIESEN = this.isFLIESEN();
             Boolean rhsFLIESEN;
             rhsFLIESEN = that.isFLIESEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fliesen", lhsFLIESEN), LocatorUtils.property(thatLocator, "fliesen", rhsFLIESEN), lhsFLIESEN, rhsFLIESEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fliesen", lhsFLIESEN), LocatorUtils.property(thatLocator, "fliesen", rhsFLIESEN), lhsFLIESEN, rhsFLIESEN, (this.fliesen!= null), (that.fliesen!= null))) {
                 return false;
             }
         }
@@ -640,7 +709,7 @@ public class Boden
             lhsSTEIN = this.isSTEIN();
             Boolean rhsSTEIN;
             rhsSTEIN = that.isSTEIN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "stein", lhsSTEIN), LocatorUtils.property(thatLocator, "stein", rhsSTEIN), lhsSTEIN, rhsSTEIN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "stein", lhsSTEIN), LocatorUtils.property(thatLocator, "stein", rhsSTEIN), lhsSTEIN, rhsSTEIN, (this.stein!= null), (that.stein!= null))) {
                 return false;
             }
         }
@@ -649,7 +718,7 @@ public class Boden
             lhsTEPPICH = this.isTEPPICH();
             Boolean rhsTEPPICH;
             rhsTEPPICH = that.isTEPPICH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "teppich", lhsTEPPICH), LocatorUtils.property(thatLocator, "teppich", rhsTEPPICH), lhsTEPPICH, rhsTEPPICH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "teppich", lhsTEPPICH), LocatorUtils.property(thatLocator, "teppich", rhsTEPPICH), lhsTEPPICH, rhsTEPPICH, (this.teppich!= null), (that.teppich!= null))) {
                 return false;
             }
         }
@@ -658,7 +727,7 @@ public class Boden
             lhsPARKETT = this.isPARKETT();
             Boolean rhsPARKETT;
             rhsPARKETT = that.isPARKETT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "parkett", lhsPARKETT), LocatorUtils.property(thatLocator, "parkett", rhsPARKETT), lhsPARKETT, rhsPARKETT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "parkett", lhsPARKETT), LocatorUtils.property(thatLocator, "parkett", rhsPARKETT), lhsPARKETT, rhsPARKETT, (this.parkett!= null), (that.parkett!= null))) {
                 return false;
             }
         }
@@ -667,7 +736,7 @@ public class Boden
             lhsFERTIGPARKETT = this.isFERTIGPARKETT();
             Boolean rhsFERTIGPARKETT;
             rhsFERTIGPARKETT = that.isFERTIGPARKETT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fertigparkett", lhsFERTIGPARKETT), LocatorUtils.property(thatLocator, "fertigparkett", rhsFERTIGPARKETT), lhsFERTIGPARKETT, rhsFERTIGPARKETT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fertigparkett", lhsFERTIGPARKETT), LocatorUtils.property(thatLocator, "fertigparkett", rhsFERTIGPARKETT), lhsFERTIGPARKETT, rhsFERTIGPARKETT, (this.fertigparkett!= null), (that.fertigparkett!= null))) {
                 return false;
             }
         }
@@ -676,7 +745,7 @@ public class Boden
             lhsLAMINAT = this.isLAMINAT();
             Boolean rhsLAMINAT;
             rhsLAMINAT = that.isLAMINAT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "laminat", lhsLAMINAT), LocatorUtils.property(thatLocator, "laminat", rhsLAMINAT), lhsLAMINAT, rhsLAMINAT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "laminat", lhsLAMINAT), LocatorUtils.property(thatLocator, "laminat", rhsLAMINAT), lhsLAMINAT, rhsLAMINAT, (this.laminat!= null), (that.laminat!= null))) {
                 return false;
             }
         }
@@ -685,7 +754,7 @@ public class Boden
             lhsDIELEN = this.isDIELEN();
             Boolean rhsDIELEN;
             rhsDIELEN = that.isDIELEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "dielen", lhsDIELEN), LocatorUtils.property(thatLocator, "dielen", rhsDIELEN), lhsDIELEN, rhsDIELEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "dielen", lhsDIELEN), LocatorUtils.property(thatLocator, "dielen", rhsDIELEN), lhsDIELEN, rhsDIELEN, (this.dielen!= null), (that.dielen!= null))) {
                 return false;
             }
         }
@@ -694,7 +763,7 @@ public class Boden
             lhsKUNSTSTOFF = this.isKUNSTSTOFF();
             Boolean rhsKUNSTSTOFF;
             rhsKUNSTSTOFF = that.isKUNSTSTOFF();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kunststoff", lhsKUNSTSTOFF), LocatorUtils.property(thatLocator, "kunststoff", rhsKUNSTSTOFF), lhsKUNSTSTOFF, rhsKUNSTSTOFF)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kunststoff", lhsKUNSTSTOFF), LocatorUtils.property(thatLocator, "kunststoff", rhsKUNSTSTOFF), lhsKUNSTSTOFF, rhsKUNSTSTOFF, (this.kunststoff!= null), (that.kunststoff!= null))) {
                 return false;
             }
         }
@@ -703,7 +772,7 @@ public class Boden
             lhsESTRICH = this.isESTRICH();
             Boolean rhsESTRICH;
             rhsESTRICH = that.isESTRICH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "estrich", lhsESTRICH), LocatorUtils.property(thatLocator, "estrich", rhsESTRICH), lhsESTRICH, rhsESTRICH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "estrich", lhsESTRICH), LocatorUtils.property(thatLocator, "estrich", rhsESTRICH), lhsESTRICH, rhsESTRICH, (this.estrich!= null), (that.estrich!= null))) {
                 return false;
             }
         }
@@ -712,7 +781,7 @@ public class Boden
             lhsDOPPELBODEN = this.isDOPPELBODEN();
             Boolean rhsDOPPELBODEN;
             rhsDOPPELBODEN = that.isDOPPELBODEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "doppelboden", lhsDOPPELBODEN), LocatorUtils.property(thatLocator, "doppelboden", rhsDOPPELBODEN), lhsDOPPELBODEN, rhsDOPPELBODEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "doppelboden", lhsDOPPELBODEN), LocatorUtils.property(thatLocator, "doppelboden", rhsDOPPELBODEN), lhsDOPPELBODEN, rhsDOPPELBODEN, (this.doppelboden!= null), (that.doppelboden!= null))) {
                 return false;
             }
         }
@@ -721,7 +790,7 @@ public class Boden
             lhsLINOLEUM = this.isLINOLEUM();
             Boolean rhsLINOLEUM;
             rhsLINOLEUM = that.isLINOLEUM();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "linoleum", lhsLINOLEUM), LocatorUtils.property(thatLocator, "linoleum", rhsLINOLEUM), lhsLINOLEUM, rhsLINOLEUM)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "linoleum", lhsLINOLEUM), LocatorUtils.property(thatLocator, "linoleum", rhsLINOLEUM), lhsLINOLEUM, rhsLINOLEUM, (this.linoleum!= null), (that.linoleum!= null))) {
                 return false;
             }
         }
@@ -730,7 +799,7 @@ public class Boden
             lhsMARMOR = this.isMARMOR();
             Boolean rhsMARMOR;
             rhsMARMOR = that.isMARMOR();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "marmor", lhsMARMOR), LocatorUtils.property(thatLocator, "marmor", rhsMARMOR), lhsMARMOR, rhsMARMOR)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "marmor", lhsMARMOR), LocatorUtils.property(thatLocator, "marmor", rhsMARMOR), lhsMARMOR, rhsMARMOR, (this.marmor!= null), (that.marmor!= null))) {
                 return false;
             }
         }
@@ -739,7 +808,7 @@ public class Boden
             lhsTERRAKOTTA = this.isTERRAKOTTA();
             Boolean rhsTERRAKOTTA;
             rhsTERRAKOTTA = that.isTERRAKOTTA();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "terrakotta", lhsTERRAKOTTA), LocatorUtils.property(thatLocator, "terrakotta", rhsTERRAKOTTA), lhsTERRAKOTTA, rhsTERRAKOTTA)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "terrakotta", lhsTERRAKOTTA), LocatorUtils.property(thatLocator, "terrakotta", rhsTERRAKOTTA), lhsTERRAKOTTA, rhsTERRAKOTTA, (this.terrakotta!= null), (that.terrakotta!= null))) {
                 return false;
             }
         }
@@ -748,7 +817,7 @@ public class Boden
             lhsGRANIT = this.isGRANIT();
             Boolean rhsGRANIT;
             rhsGRANIT = that.isGRANIT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "granit", lhsGRANIT), LocatorUtils.property(thatLocator, "granit", rhsGRANIT), lhsGRANIT, rhsGRANIT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "granit", lhsGRANIT), LocatorUtils.property(thatLocator, "granit", rhsGRANIT), lhsGRANIT, rhsGRANIT, (this.granit!= null), (that.granit!= null))) {
                 return false;
             }
         }
@@ -756,7 +825,7 @@ public class Boden
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

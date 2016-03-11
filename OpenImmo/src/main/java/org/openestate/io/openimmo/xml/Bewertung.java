@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -32,8 +32,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "feld"
 })
 @XmlRootElement(name = "bewertung")
-public class Bewertung
-    implements Cloneable, CopyTo, Equals, ToString
+public class Bewertung implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<Bewertung.Feld> feld;
@@ -68,24 +67,24 @@ public class Bewertung
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Bewertung.Feld> theFeld;
             theFeld = (((this.feld!= null)&&(!this.feld.isEmpty()))?this.getFeld():null);
-            strategy.appendField(locator, this, "feld", buffer, theFeld);
+            strategy.appendField(locator, this, "feld", buffer, theFeld, ((this.feld!= null)&&(!this.feld.isEmpty())));
         }
         return buffer;
     }
@@ -95,26 +94,31 @@ public class Bewertung
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Bewertung) {
             final Bewertung copy = ((Bewertung) draftCopy);
-            if ((this.feld!= null)&&(!this.feld.isEmpty())) {
-                List<Bewertung.Feld> sourceFeld;
-                sourceFeld = (((this.feld!= null)&&(!this.feld.isEmpty()))?this.getFeld():null);
-                @SuppressWarnings("unchecked")
-                List<Bewertung.Feld> copyFeld = ((List<Bewertung.Feld> ) strategy.copy(LocatorUtils.property(locator, "feld", sourceFeld), sourceFeld));
-                copy.feld = null;
-                if (copyFeld!= null) {
-                    List<Bewertung.Feld> uniqueFeldl = copy.getFeld();
-                    uniqueFeldl.addAll(copyFeld);
+            {
+                Boolean feldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.feld!= null)&&(!this.feld.isEmpty())));
+                if (feldShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Bewertung.Feld> sourceFeld;
+                    sourceFeld = (((this.feld!= null)&&(!this.feld.isEmpty()))?this.getFeld():null);
+                    @SuppressWarnings("unchecked")
+                    List<Bewertung.Feld> copyFeld = ((List<Bewertung.Feld> ) strategy.copy(LocatorUtils.property(locator, "feld", sourceFeld), sourceFeld, ((this.feld!= null)&&(!this.feld.isEmpty()))));
+                    copy.feld = null;
+                    if (copyFeld!= null) {
+                        List<Bewertung.Feld> uniqueFeldl = copy.getFeld();
+                        uniqueFeldl.addAll(copyFeld);
+                    }
+                } else {
+                    if (feldShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.feld = null;
+                    }
                 }
-            } else {
-                copy.feld = null;
             }
         }
         return draftCopy;
@@ -124,7 +128,7 @@ public class Bewertung
         return new Bewertung();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -137,7 +141,7 @@ public class Bewertung
             lhsFeld = (((this.feld!= null)&&(!this.feld.isEmpty()))?this.getFeld():null);
             List<Bewertung.Feld> rhsFeld;
             rhsFeld = (((that.feld!= null)&&(!that.feld.isEmpty()))?that.getFeld():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "feld", lhsFeld), LocatorUtils.property(thatLocator, "feld", rhsFeld), lhsFeld, rhsFeld)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "feld", lhsFeld), LocatorUtils.property(thatLocator, "feld", rhsFeld), lhsFeld, rhsFeld, ((this.feld!= null)&&(!this.feld.isEmpty())), ((that.feld!= null)&&(!that.feld.isEmpty())))) {
                 return false;
             }
         }
@@ -145,7 +149,7 @@ public class Bewertung
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -163,8 +167,7 @@ public class Bewertung
         "typ",
         "modus"
     })
-    public static class Feld
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Feld implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)
@@ -281,39 +284,39 @@ public class Bewertung
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theName;
                 theName = this.getName();
-                strategy.appendField(locator, this, "name", buffer, theName);
+                strategy.appendField(locator, this, "name", buffer, theName, (this.name!= null));
             }
             {
                 String theWert;
                 theWert = this.getWert();
-                strategy.appendField(locator, this, "wert", buffer, theWert);
+                strategy.appendField(locator, this, "wert", buffer, theWert, (this.wert!= null));
             }
             {
                 List<String> theTyp;
                 theTyp = (((this.typ!= null)&&(!this.typ.isEmpty()))?this.getTyp():null);
-                strategy.appendField(locator, this, "typ", buffer, theTyp);
+                strategy.appendField(locator, this, "typ", buffer, theTyp, ((this.typ!= null)&&(!this.typ.isEmpty())));
             }
             {
                 List<String> theModus;
                 theModus = (((this.modus!= null)&&(!this.modus.isEmpty()))?this.getModus():null);
-                strategy.appendField(locator, this, "modus", buffer, theModus);
+                strategy.appendField(locator, this, "modus", buffer, theModus, ((this.modus!= null)&&(!this.modus.isEmpty())));
             }
             return buffer;
         }
@@ -323,55 +326,75 @@ public class Bewertung
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Bewertung.Feld) {
                 final Bewertung.Feld copy = ((Bewertung.Feld) draftCopy);
-                if (this.name!= null) {
-                    String sourceName;
-                    sourceName = this.getName();
-                    String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName));
-                    copy.setName(copyName);
-                } else {
-                    copy.name = null;
-                }
-                if (this.wert!= null) {
-                    String sourceWert;
-                    sourceWert = this.getWert();
-                    String copyWert = ((String) strategy.copy(LocatorUtils.property(locator, "wert", sourceWert), sourceWert));
-                    copy.setWert(copyWert);
-                } else {
-                    copy.wert = null;
-                }
-                if ((this.typ!= null)&&(!this.typ.isEmpty())) {
-                    List<String> sourceTyp;
-                    sourceTyp = (((this.typ!= null)&&(!this.typ.isEmpty()))?this.getTyp():null);
-                    @SuppressWarnings("unchecked")
-                    List<String> copyTyp = ((List<String> ) strategy.copy(LocatorUtils.property(locator, "typ", sourceTyp), sourceTyp));
-                    copy.typ = null;
-                    if (copyTyp!= null) {
-                        List<String> uniqueTypl = copy.getTyp();
-                        uniqueTypl.addAll(copyTyp);
+                {
+                    Boolean nameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.name!= null));
+                    if (nameShouldBeCopiedAndSet == Boolean.TRUE) {
+                        String sourceName;
+                        sourceName = this.getName();
+                        String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName, (this.name!= null)));
+                        copy.setName(copyName);
+                    } else {
+                        if (nameShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.name = null;
+                        }
                     }
-                } else {
-                    copy.typ = null;
                 }
-                if ((this.modus!= null)&&(!this.modus.isEmpty())) {
-                    List<String> sourceModus;
-                    sourceModus = (((this.modus!= null)&&(!this.modus.isEmpty()))?this.getModus():null);
-                    @SuppressWarnings("unchecked")
-                    List<String> copyModus = ((List<String> ) strategy.copy(LocatorUtils.property(locator, "modus", sourceModus), sourceModus));
-                    copy.modus = null;
-                    if (copyModus!= null) {
-                        List<String> uniqueModusl = copy.getModus();
-                        uniqueModusl.addAll(copyModus);
+                {
+                    Boolean wertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wert!= null));
+                    if (wertShouldBeCopiedAndSet == Boolean.TRUE) {
+                        String sourceWert;
+                        sourceWert = this.getWert();
+                        String copyWert = ((String) strategy.copy(LocatorUtils.property(locator, "wert", sourceWert), sourceWert, (this.wert!= null)));
+                        copy.setWert(copyWert);
+                    } else {
+                        if (wertShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.wert = null;
+                        }
                     }
-                } else {
-                    copy.modus = null;
+                }
+                {
+                    Boolean typShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.typ!= null)&&(!this.typ.isEmpty())));
+                    if (typShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<String> sourceTyp;
+                        sourceTyp = (((this.typ!= null)&&(!this.typ.isEmpty()))?this.getTyp():null);
+                        @SuppressWarnings("unchecked")
+                        List<String> copyTyp = ((List<String> ) strategy.copy(LocatorUtils.property(locator, "typ", sourceTyp), sourceTyp, ((this.typ!= null)&&(!this.typ.isEmpty()))));
+                        copy.typ = null;
+                        if (copyTyp!= null) {
+                            List<String> uniqueTypl = copy.getTyp();
+                            uniqueTypl.addAll(copyTyp);
+                        }
+                    } else {
+                        if (typShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.typ = null;
+                        }
+                    }
+                }
+                {
+                    Boolean modusShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.modus!= null)&&(!this.modus.isEmpty())));
+                    if (modusShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<String> sourceModus;
+                        sourceModus = (((this.modus!= null)&&(!this.modus.isEmpty()))?this.getModus():null);
+                        @SuppressWarnings("unchecked")
+                        List<String> copyModus = ((List<String> ) strategy.copy(LocatorUtils.property(locator, "modus", sourceModus), sourceModus, ((this.modus!= null)&&(!this.modus.isEmpty()))));
+                        copy.modus = null;
+                        if (copyModus!= null) {
+                            List<String> uniqueModusl = copy.getModus();
+                            uniqueModusl.addAll(copyModus);
+                        }
+                    } else {
+                        if (modusShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.modus = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -381,7 +404,7 @@ public class Bewertung
             return new Bewertung.Feld();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -394,7 +417,7 @@ public class Bewertung
                 lhsName = this.getName();
                 String rhsName;
                 rhsName = that.getName();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName, (this.name!= null), (that.name!= null))) {
                     return false;
                 }
             }
@@ -403,7 +426,7 @@ public class Bewertung
                 lhsWert = this.getWert();
                 String rhsWert;
                 rhsWert = that.getWert();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "wert", lhsWert), LocatorUtils.property(thatLocator, "wert", rhsWert), lhsWert, rhsWert)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "wert", lhsWert), LocatorUtils.property(thatLocator, "wert", rhsWert), lhsWert, rhsWert, (this.wert!= null), (that.wert!= null))) {
                     return false;
                 }
             }
@@ -412,7 +435,7 @@ public class Bewertung
                 lhsTyp = (((this.typ!= null)&&(!this.typ.isEmpty()))?this.getTyp():null);
                 List<String> rhsTyp;
                 rhsTyp = (((that.typ!= null)&&(!that.typ.isEmpty()))?that.getTyp():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "typ", lhsTyp), LocatorUtils.property(thatLocator, "typ", rhsTyp), lhsTyp, rhsTyp)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "typ", lhsTyp), LocatorUtils.property(thatLocator, "typ", rhsTyp), lhsTyp, rhsTyp, ((this.typ!= null)&&(!this.typ.isEmpty())), ((that.typ!= null)&&(!that.typ.isEmpty())))) {
                     return false;
                 }
             }
@@ -421,7 +444,7 @@ public class Bewertung
                 lhsModus = (((this.modus!= null)&&(!this.modus.isEmpty()))?this.getModus():null);
                 List<String> rhsModus;
                 rhsModus = (((that.modus!= null)&&(!that.modus.isEmpty()))?that.getModus():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "modus", lhsModus), LocatorUtils.property(thatLocator, "modus", rhsModus), lhsModus, rhsModus)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "modus", lhsModus), LocatorUtils.property(thatLocator, "modus", rhsModus), lhsModus, rhsModus, ((this.modus!= null)&&(!this.modus.isEmpty())), ((that.modus!= null)&&(!that.modus.isEmpty())))) {
                     return false;
                 }
             }
@@ -429,7 +452,7 @@ public class Bewertung
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

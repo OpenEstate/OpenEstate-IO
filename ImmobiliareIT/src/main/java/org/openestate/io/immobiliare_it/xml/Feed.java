@@ -15,15 +15,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 import org.openestate.io.immobiliare_it.xml.types.Category;
@@ -376,8 +376,7 @@ import org.openestate.io.immobiliare_it.xml.types.Category;
 
 })
 @XmlRootElement(name = "feed")
-public class Feed
-    implements Cloneable, CopyTo, Equals, ToString
+public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
@@ -486,39 +485,39 @@ public class Feed
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Version theVersion;
             theVersion = this.getVersion();
-            strategy.appendField(locator, this, "version", buffer, theVersion);
+            strategy.appendField(locator, this, "version", buffer, theVersion, (this.version!= null));
         }
         {
             Feed.Metadata theMetadata;
             theMetadata = this.getMetadata();
-            strategy.appendField(locator, this, "metadata", buffer, theMetadata);
+            strategy.appendField(locator, this, "metadata", buffer, theMetadata, (this.metadata!= null));
         }
         {
             Feed.Projects theProjects;
             theProjects = this.getProjects();
-            strategy.appendField(locator, this, "projects", buffer, theProjects);
+            strategy.appendField(locator, this, "projects", buffer, theProjects, (this.projects!= null));
         }
         {
             Feed.Properties theProperties;
             theProperties = this.getProperties();
-            strategy.appendField(locator, this, "properties", buffer, theProperties);
+            strategy.appendField(locator, this, "properties", buffer, theProperties, (this.properties!= null));
         }
         return buffer;
     }
@@ -528,45 +527,65 @@ public class Feed
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Feed) {
             final Feed copy = ((Feed) draftCopy);
-            if (this.version!= null) {
-                Version sourceVersion;
-                sourceVersion = this.getVersion();
-                Version copyVersion = ((Version) strategy.copy(LocatorUtils.property(locator, "version", sourceVersion), sourceVersion));
-                copy.setVersion(copyVersion);
-            } else {
-                copy.version = null;
+            {
+                Boolean versionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.version!= null));
+                if (versionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Version sourceVersion;
+                    sourceVersion = this.getVersion();
+                    Version copyVersion = ((Version) strategy.copy(LocatorUtils.property(locator, "version", sourceVersion), sourceVersion, (this.version!= null)));
+                    copy.setVersion(copyVersion);
+                } else {
+                    if (versionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.version = null;
+                    }
+                }
             }
-            if (this.metadata!= null) {
-                Feed.Metadata sourceMetadata;
-                sourceMetadata = this.getMetadata();
-                Feed.Metadata copyMetadata = ((Feed.Metadata) strategy.copy(LocatorUtils.property(locator, "metadata", sourceMetadata), sourceMetadata));
-                copy.setMetadata(copyMetadata);
-            } else {
-                copy.metadata = null;
+            {
+                Boolean metadataShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.metadata!= null));
+                if (metadataShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Feed.Metadata sourceMetadata;
+                    sourceMetadata = this.getMetadata();
+                    Feed.Metadata copyMetadata = ((Feed.Metadata) strategy.copy(LocatorUtils.property(locator, "metadata", sourceMetadata), sourceMetadata, (this.metadata!= null)));
+                    copy.setMetadata(copyMetadata);
+                } else {
+                    if (metadataShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.metadata = null;
+                    }
+                }
             }
-            if (this.projects!= null) {
-                Feed.Projects sourceProjects;
-                sourceProjects = this.getProjects();
-                Feed.Projects copyProjects = ((Feed.Projects) strategy.copy(LocatorUtils.property(locator, "projects", sourceProjects), sourceProjects));
-                copy.setProjects(copyProjects);
-            } else {
-                copy.projects = null;
+            {
+                Boolean projectsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.projects!= null));
+                if (projectsShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Feed.Projects sourceProjects;
+                    sourceProjects = this.getProjects();
+                    Feed.Projects copyProjects = ((Feed.Projects) strategy.copy(LocatorUtils.property(locator, "projects", sourceProjects), sourceProjects, (this.projects!= null)));
+                    copy.setProjects(copyProjects);
+                } else {
+                    if (projectsShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.projects = null;
+                    }
+                }
             }
-            if (this.properties!= null) {
-                Feed.Properties sourceProperties;
-                sourceProperties = this.getProperties();
-                Feed.Properties copyProperties = ((Feed.Properties) strategy.copy(LocatorUtils.property(locator, "properties", sourceProperties), sourceProperties));
-                copy.setProperties(copyProperties);
-            } else {
-                copy.properties = null;
+            {
+                Boolean propertiesShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.properties!= null));
+                if (propertiesShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Feed.Properties sourceProperties;
+                    sourceProperties = this.getProperties();
+                    Feed.Properties copyProperties = ((Feed.Properties) strategy.copy(LocatorUtils.property(locator, "properties", sourceProperties), sourceProperties, (this.properties!= null)));
+                    copy.setProperties(copyProperties);
+                } else {
+                    if (propertiesShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.properties = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -576,7 +595,7 @@ public class Feed
         return new Feed();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -589,7 +608,7 @@ public class Feed
             lhsVersion = this.getVersion();
             Version rhsVersion;
             rhsVersion = that.getVersion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "version", lhsVersion), LocatorUtils.property(thatLocator, "version", rhsVersion), lhsVersion, rhsVersion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "version", lhsVersion), LocatorUtils.property(thatLocator, "version", rhsVersion), lhsVersion, rhsVersion, (this.version!= null), (that.version!= null))) {
                 return false;
             }
         }
@@ -598,7 +617,7 @@ public class Feed
             lhsMetadata = this.getMetadata();
             Feed.Metadata rhsMetadata;
             rhsMetadata = that.getMetadata();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "metadata", lhsMetadata), LocatorUtils.property(thatLocator, "metadata", rhsMetadata), lhsMetadata, rhsMetadata)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "metadata", lhsMetadata), LocatorUtils.property(thatLocator, "metadata", rhsMetadata), lhsMetadata, rhsMetadata, (this.metadata!= null), (that.metadata!= null))) {
                 return false;
             }
         }
@@ -607,7 +626,7 @@ public class Feed
             lhsProjects = this.getProjects();
             Feed.Projects rhsProjects;
             rhsProjects = that.getProjects();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "projects", lhsProjects), LocatorUtils.property(thatLocator, "projects", rhsProjects), lhsProjects, rhsProjects)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "projects", lhsProjects), LocatorUtils.property(thatLocator, "projects", rhsProjects), lhsProjects, rhsProjects, (this.projects!= null), (that.projects!= null))) {
                 return false;
             }
         }
@@ -616,7 +635,7 @@ public class Feed
             lhsProperties = this.getProperties();
             Feed.Properties rhsProperties;
             rhsProperties = that.getProperties();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "properties", lhsProperties), LocatorUtils.property(thatLocator, "properties", rhsProperties), lhsProperties, rhsProperties)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "properties", lhsProperties), LocatorUtils.property(thatLocator, "properties", rhsProperties), lhsProperties, rhsProperties, (this.properties!= null), (that.properties!= null))) {
                 return false;
             }
         }
@@ -624,7 +643,7 @@ public class Feed
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -665,8 +684,7 @@ public class Feed
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Metadata
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Metadata implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)
@@ -750,34 +768,34 @@ public class Feed
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 Publisher thePublisher;
                 thePublisher = this.getPublisher();
-                strategy.appendField(locator, this, "publisher", buffer, thePublisher);
+                strategy.appendField(locator, this, "publisher", buffer, thePublisher, (this.publisher!= null));
             }
             {
                 Calendar theBuildDate;
                 theBuildDate = this.getBuildDate();
-                strategy.appendField(locator, this, "buildDate", buffer, theBuildDate);
+                strategy.appendField(locator, this, "buildDate", buffer, theBuildDate, (this.buildDate!= null));
             }
             {
                 Feed.Metadata.Multipage theMultipage;
                 theMultipage = this.getMultipage();
-                strategy.appendField(locator, this, "multipage", buffer, theMultipage);
+                strategy.appendField(locator, this, "multipage", buffer, theMultipage, (this.multipage!= null));
             }
             return buffer;
         }
@@ -787,37 +805,52 @@ public class Feed
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Feed.Metadata) {
                 final Feed.Metadata copy = ((Feed.Metadata) draftCopy);
-                if (this.publisher!= null) {
-                    Publisher sourcePublisher;
-                    sourcePublisher = this.getPublisher();
-                    Publisher copyPublisher = ((Publisher) strategy.copy(LocatorUtils.property(locator, "publisher", sourcePublisher), sourcePublisher));
-                    copy.setPublisher(copyPublisher);
-                } else {
-                    copy.publisher = null;
+                {
+                    Boolean publisherShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.publisher!= null));
+                    if (publisherShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Publisher sourcePublisher;
+                        sourcePublisher = this.getPublisher();
+                        Publisher copyPublisher = ((Publisher) strategy.copy(LocatorUtils.property(locator, "publisher", sourcePublisher), sourcePublisher, (this.publisher!= null)));
+                        copy.setPublisher(copyPublisher);
+                    } else {
+                        if (publisherShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.publisher = null;
+                        }
+                    }
                 }
-                if (this.buildDate!= null) {
-                    Calendar sourceBuildDate;
-                    sourceBuildDate = this.getBuildDate();
-                    Calendar copyBuildDate = ((Calendar) strategy.copy(LocatorUtils.property(locator, "buildDate", sourceBuildDate), sourceBuildDate));
-                    copy.setBuildDate(copyBuildDate);
-                } else {
-                    copy.buildDate = null;
+                {
+                    Boolean buildDateShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.buildDate!= null));
+                    if (buildDateShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Calendar sourceBuildDate;
+                        sourceBuildDate = this.getBuildDate();
+                        Calendar copyBuildDate = ((Calendar) strategy.copy(LocatorUtils.property(locator, "buildDate", sourceBuildDate), sourceBuildDate, (this.buildDate!= null)));
+                        copy.setBuildDate(copyBuildDate);
+                    } else {
+                        if (buildDateShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.buildDate = null;
+                        }
+                    }
                 }
-                if (this.multipage!= null) {
-                    Feed.Metadata.Multipage sourceMultipage;
-                    sourceMultipage = this.getMultipage();
-                    Feed.Metadata.Multipage copyMultipage = ((Feed.Metadata.Multipage) strategy.copy(LocatorUtils.property(locator, "multipage", sourceMultipage), sourceMultipage));
-                    copy.setMultipage(copyMultipage);
-                } else {
-                    copy.multipage = null;
+                {
+                    Boolean multipageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.multipage!= null));
+                    if (multipageShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Feed.Metadata.Multipage sourceMultipage;
+                        sourceMultipage = this.getMultipage();
+                        Feed.Metadata.Multipage copyMultipage = ((Feed.Metadata.Multipage) strategy.copy(LocatorUtils.property(locator, "multipage", sourceMultipage), sourceMultipage, (this.multipage!= null)));
+                        copy.setMultipage(copyMultipage);
+                    } else {
+                        if (multipageShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.multipage = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -827,7 +860,7 @@ public class Feed
             return new Feed.Metadata();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -840,7 +873,7 @@ public class Feed
                 lhsPublisher = this.getPublisher();
                 Publisher rhsPublisher;
                 rhsPublisher = that.getPublisher();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "publisher", lhsPublisher), LocatorUtils.property(thatLocator, "publisher", rhsPublisher), lhsPublisher, rhsPublisher)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "publisher", lhsPublisher), LocatorUtils.property(thatLocator, "publisher", rhsPublisher), lhsPublisher, rhsPublisher, (this.publisher!= null), (that.publisher!= null))) {
                     return false;
                 }
             }
@@ -849,7 +882,7 @@ public class Feed
                 lhsBuildDate = this.getBuildDate();
                 Calendar rhsBuildDate;
                 rhsBuildDate = that.getBuildDate();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "buildDate", lhsBuildDate), LocatorUtils.property(thatLocator, "buildDate", rhsBuildDate), lhsBuildDate, rhsBuildDate)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "buildDate", lhsBuildDate), LocatorUtils.property(thatLocator, "buildDate", rhsBuildDate), lhsBuildDate, rhsBuildDate, (this.buildDate!= null), (that.buildDate!= null))) {
                     return false;
                 }
             }
@@ -858,7 +891,7 @@ public class Feed
                 lhsMultipage = this.getMultipage();
                 Feed.Metadata.Multipage rhsMultipage;
                 rhsMultipage = that.getMultipage();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "multipage", lhsMultipage), LocatorUtils.property(thatLocator, "multipage", rhsMultipage), lhsMultipage, rhsMultipage)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "multipage", lhsMultipage), LocatorUtils.property(thatLocator, "multipage", rhsMultipage), lhsMultipage, rhsMultipage, (this.multipage!= null), (that.multipage!= null))) {
                     return false;
                 }
             }
@@ -866,7 +899,7 @@ public class Feed
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 
@@ -895,8 +928,7 @@ public class Feed
         @XmlType(name = "", propOrder = {
 
         })
-        public static class Multipage
-            implements Cloneable, CopyTo, Equals, ToString
+        public static class Multipage implements Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlElement(required = true, type = String.class)
@@ -957,29 +989,29 @@ public class Feed
             }
 
             public String toString() {
-                final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                 final StringBuilder buffer = new StringBuilder();
                 append(null, buffer, strategy);
                 return buffer.toString();
             }
 
-            public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+            public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 strategy.appendStart(locator, this, buffer);
                 appendFields(locator, buffer, strategy);
                 strategy.appendEnd(locator, this, buffer);
                 return buffer;
             }
 
-            public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+            public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 {
                     BigInteger theCurrent;
                     theCurrent = this.getCurrent();
-                    strategy.appendField(locator, this, "current", buffer, theCurrent);
+                    strategy.appendField(locator, this, "current", buffer, theCurrent, (this.current!= null));
                 }
                 {
                     BigInteger theLast;
                     theLast = this.getLast();
-                    strategy.appendField(locator, this, "last", buffer, theLast);
+                    strategy.appendField(locator, this, "last", buffer, theLast, (this.last!= null));
                 }
                 return buffer;
             }
@@ -989,29 +1021,39 @@ public class Feed
             }
 
             public Object copyTo(Object target) {
-                final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                 return copyTo(null, target, strategy);
             }
 
-            public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+            public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                 final Object draftCopy = ((target == null)?createNewInstance():target);
                 if (draftCopy instanceof Feed.Metadata.Multipage) {
                     final Feed.Metadata.Multipage copy = ((Feed.Metadata.Multipage) draftCopy);
-                    if (this.current!= null) {
-                        BigInteger sourceCurrent;
-                        sourceCurrent = this.getCurrent();
-                        BigInteger copyCurrent = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "current", sourceCurrent), sourceCurrent));
-                        copy.setCurrent(copyCurrent);
-                    } else {
-                        copy.current = null;
+                    {
+                        Boolean currentShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.current!= null));
+                        if (currentShouldBeCopiedAndSet == Boolean.TRUE) {
+                            BigInteger sourceCurrent;
+                            sourceCurrent = this.getCurrent();
+                            BigInteger copyCurrent = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "current", sourceCurrent), sourceCurrent, (this.current!= null)));
+                            copy.setCurrent(copyCurrent);
+                        } else {
+                            if (currentShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.current = null;
+                            }
+                        }
                     }
-                    if (this.last!= null) {
-                        BigInteger sourceLast;
-                        sourceLast = this.getLast();
-                        BigInteger copyLast = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "last", sourceLast), sourceLast));
-                        copy.setLast(copyLast);
-                    } else {
-                        copy.last = null;
+                    {
+                        Boolean lastShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.last!= null));
+                        if (lastShouldBeCopiedAndSet == Boolean.TRUE) {
+                            BigInteger sourceLast;
+                            sourceLast = this.getLast();
+                            BigInteger copyLast = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "last", sourceLast), sourceLast, (this.last!= null)));
+                            copy.setLast(copyLast);
+                        } else {
+                            if (lastShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.last = null;
+                            }
+                        }
                     }
                 }
                 return draftCopy;
@@ -1021,7 +1063,7 @@ public class Feed
                 return new Feed.Metadata.Multipage();
             }
 
-            public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+            public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                 if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
@@ -1034,7 +1076,7 @@ public class Feed
                     lhsCurrent = this.getCurrent();
                     BigInteger rhsCurrent;
                     rhsCurrent = that.getCurrent();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "current", lhsCurrent), LocatorUtils.property(thatLocator, "current", rhsCurrent), lhsCurrent, rhsCurrent)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "current", lhsCurrent), LocatorUtils.property(thatLocator, "current", rhsCurrent), lhsCurrent, rhsCurrent, (this.current!= null), (that.current!= null))) {
                         return false;
                     }
                 }
@@ -1043,7 +1085,7 @@ public class Feed
                     lhsLast = this.getLast();
                     BigInteger rhsLast;
                     rhsLast = that.getLast();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "last", lhsLast), LocatorUtils.property(thatLocator, "last", rhsLast), lhsLast, rhsLast)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "last", lhsLast), LocatorUtils.property(thatLocator, "last", rhsLast), lhsLast, rhsLast, (this.last!= null), (that.last!= null))) {
                         return false;
                     }
                 }
@@ -1051,7 +1093,7 @@ public class Feed
             }
 
             public boolean equals(Object object) {
-                final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                 return equals(null, null, object, strategy);
             }
 
@@ -1236,8 +1278,7 @@ public class Feed
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Projects
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Projects implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)
@@ -1268,24 +1309,24 @@ public class Feed
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 Feed.Projects.Project theProject;
                 theProject = this.getProject();
-                strategy.appendField(locator, this, "project", buffer, theProject);
+                strategy.appendField(locator, this, "project", buffer, theProject, (this.project!= null));
             }
             return buffer;
         }
@@ -1295,21 +1336,26 @@ public class Feed
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Feed.Projects) {
                 final Feed.Projects copy = ((Feed.Projects) draftCopy);
-                if (this.project!= null) {
-                    Feed.Projects.Project sourceProject;
-                    sourceProject = this.getProject();
-                    Feed.Projects.Project copyProject = ((Feed.Projects.Project) strategy.copy(LocatorUtils.property(locator, "project", sourceProject), sourceProject));
-                    copy.setProject(copyProject);
-                } else {
-                    copy.project = null;
+                {
+                    Boolean projectShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.project!= null));
+                    if (projectShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Feed.Projects.Project sourceProject;
+                        sourceProject = this.getProject();
+                        Feed.Projects.Project copyProject = ((Feed.Projects.Project) strategy.copy(LocatorUtils.property(locator, "project", sourceProject), sourceProject, (this.project!= null)));
+                        copy.setProject(copyProject);
+                    } else {
+                        if (projectShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.project = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -1319,7 +1365,7 @@ public class Feed
             return new Feed.Projects();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -1332,7 +1378,7 @@ public class Feed
                 lhsProject = this.getProject();
                 Feed.Projects.Project rhsProject;
                 rhsProject = that.getProject();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "project", lhsProject), LocatorUtils.property(thatLocator, "project", rhsProject), lhsProject, rhsProject)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "project", lhsProject), LocatorUtils.property(thatLocator, "project", rhsProject), lhsProject, rhsProject, (this.project!= null), (that.project!= null))) {
                     return false;
                 }
             }
@@ -1340,7 +1386,7 @@ public class Feed
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 
@@ -1511,8 +1557,7 @@ public class Feed
         @XmlType(name = "", propOrder = {
 
         })
-        public static class Project
-            implements Cloneable, CopyTo, Equals, ToString
+        public static class Project implements Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlElement(name = "unique-id", required = true)
@@ -1749,64 +1794,64 @@ public class Feed
             }
 
             public String toString() {
-                final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                 final StringBuilder buffer = new StringBuilder();
                 append(null, buffer, strategy);
                 return buffer.toString();
             }
 
-            public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+            public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 strategy.appendStart(locator, this, buffer);
                 appendFields(locator, buffer, strategy);
                 strategy.appendEnd(locator, this, buffer);
                 return buffer;
             }
 
-            public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+            public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 {
                     String theUniqueId;
                     theUniqueId = this.getUniqueId();
-                    strategy.appendField(locator, this, "uniqueId", buffer, theUniqueId);
+                    strategy.appendField(locator, this, "uniqueId", buffer, theUniqueId, (this.uniqueId!= null));
                 }
                 {
                     Calendar theDateUpdated;
                     theDateUpdated = this.getDateUpdated();
-                    strategy.appendField(locator, this, "dateUpdated", buffer, theDateUpdated);
+                    strategy.appendField(locator, this, "dateUpdated", buffer, theDateUpdated, (this.dateUpdated!= null));
                 }
                 {
                     Feed.Projects.Project.Agent theAgent;
                     theAgent = this.getAgent();
-                    strategy.appendField(locator, this, "agent", buffer, theAgent);
+                    strategy.appendField(locator, this, "agent", buffer, theAgent, (this.agent!= null));
                 }
                 {
                     Feed.Projects.Project.Features theFeatures;
                     theFeatures = this.getFeatures();
-                    strategy.appendField(locator, this, "features", buffer, theFeatures);
+                    strategy.appendField(locator, this, "features", buffer, theFeatures, (this.features!= null));
                 }
                 {
                     LocationStructure theLocation;
                     theLocation = this.getLocation();
-                    strategy.appendField(locator, this, "location", buffer, theLocation);
+                    strategy.appendField(locator, this, "location", buffer, theLocation, (this.location!= null));
                 }
                 {
                     Feed.Projects.Project.Pictures thePictures;
                     thePictures = this.getPictures();
-                    strategy.appendField(locator, this, "pictures", buffer, thePictures);
+                    strategy.appendField(locator, this, "pictures", buffer, thePictures, (this.pictures!= null));
                 }
                 {
                     Feed.Projects.Project.Videos theVideos;
                     theVideos = this.getVideos();
-                    strategy.appendField(locator, this, "videos", buffer, theVideos);
+                    strategy.appendField(locator, this, "videos", buffer, theVideos, (this.videos!= null));
                 }
                 {
                     Feed.Projects.Project.Lots theLots;
                     theLots = this.getLots();
-                    strategy.appendField(locator, this, "lots", buffer, theLots);
+                    strategy.appendField(locator, this, "lots", buffer, theLots, (this.lots!= null));
                 }
                 {
                     Operation theOperation;
                     theOperation = this.getOperation();
-                    strategy.appendField(locator, this, "operation", buffer, theOperation);
+                    strategy.appendField(locator, this, "operation", buffer, theOperation, (this.operation!= null));
                 }
                 return buffer;
             }
@@ -1816,85 +1861,130 @@ public class Feed
             }
 
             public Object copyTo(Object target) {
-                final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                 return copyTo(null, target, strategy);
             }
 
-            public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+            public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                 final Object draftCopy = ((target == null)?createNewInstance():target);
                 if (draftCopy instanceof Feed.Projects.Project) {
                     final Feed.Projects.Project copy = ((Feed.Projects.Project) draftCopy);
-                    if (this.uniqueId!= null) {
-                        String sourceUniqueId;
-                        sourceUniqueId = this.getUniqueId();
-                        String copyUniqueId = ((String) strategy.copy(LocatorUtils.property(locator, "uniqueId", sourceUniqueId), sourceUniqueId));
-                        copy.setUniqueId(copyUniqueId);
-                    } else {
-                        copy.uniqueId = null;
+                    {
+                        Boolean uniqueIdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.uniqueId!= null));
+                        if (uniqueIdShouldBeCopiedAndSet == Boolean.TRUE) {
+                            String sourceUniqueId;
+                            sourceUniqueId = this.getUniqueId();
+                            String copyUniqueId = ((String) strategy.copy(LocatorUtils.property(locator, "uniqueId", sourceUniqueId), sourceUniqueId, (this.uniqueId!= null)));
+                            copy.setUniqueId(copyUniqueId);
+                        } else {
+                            if (uniqueIdShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.uniqueId = null;
+                            }
+                        }
                     }
-                    if (this.dateUpdated!= null) {
-                        Calendar sourceDateUpdated;
-                        sourceDateUpdated = this.getDateUpdated();
-                        Calendar copyDateUpdated = ((Calendar) strategy.copy(LocatorUtils.property(locator, "dateUpdated", sourceDateUpdated), sourceDateUpdated));
-                        copy.setDateUpdated(copyDateUpdated);
-                    } else {
-                        copy.dateUpdated = null;
+                    {
+                        Boolean dateUpdatedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dateUpdated!= null));
+                        if (dateUpdatedShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Calendar sourceDateUpdated;
+                            sourceDateUpdated = this.getDateUpdated();
+                            Calendar copyDateUpdated = ((Calendar) strategy.copy(LocatorUtils.property(locator, "dateUpdated", sourceDateUpdated), sourceDateUpdated, (this.dateUpdated!= null)));
+                            copy.setDateUpdated(copyDateUpdated);
+                        } else {
+                            if (dateUpdatedShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.dateUpdated = null;
+                            }
+                        }
                     }
-                    if (this.agent!= null) {
-                        Feed.Projects.Project.Agent sourceAgent;
-                        sourceAgent = this.getAgent();
-                        Feed.Projects.Project.Agent copyAgent = ((Feed.Projects.Project.Agent) strategy.copy(LocatorUtils.property(locator, "agent", sourceAgent), sourceAgent));
-                        copy.setAgent(copyAgent);
-                    } else {
-                        copy.agent = null;
+                    {
+                        Boolean agentShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.agent!= null));
+                        if (agentShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Projects.Project.Agent sourceAgent;
+                            sourceAgent = this.getAgent();
+                            Feed.Projects.Project.Agent copyAgent = ((Feed.Projects.Project.Agent) strategy.copy(LocatorUtils.property(locator, "agent", sourceAgent), sourceAgent, (this.agent!= null)));
+                            copy.setAgent(copyAgent);
+                        } else {
+                            if (agentShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.agent = null;
+                            }
+                        }
                     }
-                    if (this.features!= null) {
-                        Feed.Projects.Project.Features sourceFeatures;
-                        sourceFeatures = this.getFeatures();
-                        Feed.Projects.Project.Features copyFeatures = ((Feed.Projects.Project.Features) strategy.copy(LocatorUtils.property(locator, "features", sourceFeatures), sourceFeatures));
-                        copy.setFeatures(copyFeatures);
-                    } else {
-                        copy.features = null;
+                    {
+                        Boolean featuresShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.features!= null));
+                        if (featuresShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Projects.Project.Features sourceFeatures;
+                            sourceFeatures = this.getFeatures();
+                            Feed.Projects.Project.Features copyFeatures = ((Feed.Projects.Project.Features) strategy.copy(LocatorUtils.property(locator, "features", sourceFeatures), sourceFeatures, (this.features!= null)));
+                            copy.setFeatures(copyFeatures);
+                        } else {
+                            if (featuresShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.features = null;
+                            }
+                        }
                     }
-                    if (this.location!= null) {
-                        LocationStructure sourceLocation;
-                        sourceLocation = this.getLocation();
-                        LocationStructure copyLocation = ((LocationStructure) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation));
-                        copy.setLocation(copyLocation);
-                    } else {
-                        copy.location = null;
+                    {
+                        Boolean locationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.location!= null));
+                        if (locationShouldBeCopiedAndSet == Boolean.TRUE) {
+                            LocationStructure sourceLocation;
+                            sourceLocation = this.getLocation();
+                            LocationStructure copyLocation = ((LocationStructure) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation, (this.location!= null)));
+                            copy.setLocation(copyLocation);
+                        } else {
+                            if (locationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.location = null;
+                            }
+                        }
                     }
-                    if (this.pictures!= null) {
-                        Feed.Projects.Project.Pictures sourcePictures;
-                        sourcePictures = this.getPictures();
-                        Feed.Projects.Project.Pictures copyPictures = ((Feed.Projects.Project.Pictures) strategy.copy(LocatorUtils.property(locator, "pictures", sourcePictures), sourcePictures));
-                        copy.setPictures(copyPictures);
-                    } else {
-                        copy.pictures = null;
+                    {
+                        Boolean picturesShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pictures!= null));
+                        if (picturesShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Projects.Project.Pictures sourcePictures;
+                            sourcePictures = this.getPictures();
+                            Feed.Projects.Project.Pictures copyPictures = ((Feed.Projects.Project.Pictures) strategy.copy(LocatorUtils.property(locator, "pictures", sourcePictures), sourcePictures, (this.pictures!= null)));
+                            copy.setPictures(copyPictures);
+                        } else {
+                            if (picturesShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.pictures = null;
+                            }
+                        }
                     }
-                    if (this.videos!= null) {
-                        Feed.Projects.Project.Videos sourceVideos;
-                        sourceVideos = this.getVideos();
-                        Feed.Projects.Project.Videos copyVideos = ((Feed.Projects.Project.Videos) strategy.copy(LocatorUtils.property(locator, "videos", sourceVideos), sourceVideos));
-                        copy.setVideos(copyVideos);
-                    } else {
-                        copy.videos = null;
+                    {
+                        Boolean videosShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.videos!= null));
+                        if (videosShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Projects.Project.Videos sourceVideos;
+                            sourceVideos = this.getVideos();
+                            Feed.Projects.Project.Videos copyVideos = ((Feed.Projects.Project.Videos) strategy.copy(LocatorUtils.property(locator, "videos", sourceVideos), sourceVideos, (this.videos!= null)));
+                            copy.setVideos(copyVideos);
+                        } else {
+                            if (videosShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.videos = null;
+                            }
+                        }
                     }
-                    if (this.lots!= null) {
-                        Feed.Projects.Project.Lots sourceLots;
-                        sourceLots = this.getLots();
-                        Feed.Projects.Project.Lots copyLots = ((Feed.Projects.Project.Lots) strategy.copy(LocatorUtils.property(locator, "lots", sourceLots), sourceLots));
-                        copy.setLots(copyLots);
-                    } else {
-                        copy.lots = null;
+                    {
+                        Boolean lotsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lots!= null));
+                        if (lotsShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Projects.Project.Lots sourceLots;
+                            sourceLots = this.getLots();
+                            Feed.Projects.Project.Lots copyLots = ((Feed.Projects.Project.Lots) strategy.copy(LocatorUtils.property(locator, "lots", sourceLots), sourceLots, (this.lots!= null)));
+                            copy.setLots(copyLots);
+                        } else {
+                            if (lotsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.lots = null;
+                            }
+                        }
                     }
-                    if (this.operation!= null) {
-                        Operation sourceOperation;
-                        sourceOperation = this.getOperation();
-                        Operation copyOperation = ((Operation) strategy.copy(LocatorUtils.property(locator, "operation", sourceOperation), sourceOperation));
-                        copy.setOperation(copyOperation);
-                    } else {
-                        copy.operation = null;
+                    {
+                        Boolean operationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.operation!= null));
+                        if (operationShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Operation sourceOperation;
+                            sourceOperation = this.getOperation();
+                            Operation copyOperation = ((Operation) strategy.copy(LocatorUtils.property(locator, "operation", sourceOperation), sourceOperation, (this.operation!= null)));
+                            copy.setOperation(copyOperation);
+                        } else {
+                            if (operationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.operation = null;
+                            }
+                        }
                     }
                 }
                 return draftCopy;
@@ -1904,7 +1994,7 @@ public class Feed
                 return new Feed.Projects.Project();
             }
 
-            public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+            public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                 if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
@@ -1917,7 +2007,7 @@ public class Feed
                     lhsUniqueId = this.getUniqueId();
                     String rhsUniqueId;
                     rhsUniqueId = that.getUniqueId();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "uniqueId", lhsUniqueId), LocatorUtils.property(thatLocator, "uniqueId", rhsUniqueId), lhsUniqueId, rhsUniqueId)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "uniqueId", lhsUniqueId), LocatorUtils.property(thatLocator, "uniqueId", rhsUniqueId), lhsUniqueId, rhsUniqueId, (this.uniqueId!= null), (that.uniqueId!= null))) {
                         return false;
                     }
                 }
@@ -1926,7 +2016,7 @@ public class Feed
                     lhsDateUpdated = this.getDateUpdated();
                     Calendar rhsDateUpdated;
                     rhsDateUpdated = that.getDateUpdated();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "dateUpdated", lhsDateUpdated), LocatorUtils.property(thatLocator, "dateUpdated", rhsDateUpdated), lhsDateUpdated, rhsDateUpdated)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "dateUpdated", lhsDateUpdated), LocatorUtils.property(thatLocator, "dateUpdated", rhsDateUpdated), lhsDateUpdated, rhsDateUpdated, (this.dateUpdated!= null), (that.dateUpdated!= null))) {
                         return false;
                     }
                 }
@@ -1935,7 +2025,7 @@ public class Feed
                     lhsAgent = this.getAgent();
                     Feed.Projects.Project.Agent rhsAgent;
                     rhsAgent = that.getAgent();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "agent", lhsAgent), LocatorUtils.property(thatLocator, "agent", rhsAgent), lhsAgent, rhsAgent)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "agent", lhsAgent), LocatorUtils.property(thatLocator, "agent", rhsAgent), lhsAgent, rhsAgent, (this.agent!= null), (that.agent!= null))) {
                         return false;
                     }
                 }
@@ -1944,7 +2034,7 @@ public class Feed
                     lhsFeatures = this.getFeatures();
                     Feed.Projects.Project.Features rhsFeatures;
                     rhsFeatures = that.getFeatures();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "features", lhsFeatures), LocatorUtils.property(thatLocator, "features", rhsFeatures), lhsFeatures, rhsFeatures)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "features", lhsFeatures), LocatorUtils.property(thatLocator, "features", rhsFeatures), lhsFeatures, rhsFeatures, (this.features!= null), (that.features!= null))) {
                         return false;
                     }
                 }
@@ -1953,7 +2043,7 @@ public class Feed
                     lhsLocation = this.getLocation();
                     LocationStructure rhsLocation;
                     rhsLocation = that.getLocation();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation, (this.location!= null), (that.location!= null))) {
                         return false;
                     }
                 }
@@ -1962,7 +2052,7 @@ public class Feed
                     lhsPictures = this.getPictures();
                     Feed.Projects.Project.Pictures rhsPictures;
                     rhsPictures = that.getPictures();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "pictures", lhsPictures), LocatorUtils.property(thatLocator, "pictures", rhsPictures), lhsPictures, rhsPictures)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "pictures", lhsPictures), LocatorUtils.property(thatLocator, "pictures", rhsPictures), lhsPictures, rhsPictures, (this.pictures!= null), (that.pictures!= null))) {
                         return false;
                     }
                 }
@@ -1971,7 +2061,7 @@ public class Feed
                     lhsVideos = this.getVideos();
                     Feed.Projects.Project.Videos rhsVideos;
                     rhsVideos = that.getVideos();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "videos", lhsVideos), LocatorUtils.property(thatLocator, "videos", rhsVideos), lhsVideos, rhsVideos)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "videos", lhsVideos), LocatorUtils.property(thatLocator, "videos", rhsVideos), lhsVideos, rhsVideos, (this.videos!= null), (that.videos!= null))) {
                         return false;
                     }
                 }
@@ -1980,7 +2070,7 @@ public class Feed
                     lhsLots = this.getLots();
                     Feed.Projects.Project.Lots rhsLots;
                     rhsLots = that.getLots();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "lots", lhsLots), LocatorUtils.property(thatLocator, "lots", rhsLots), lhsLots, rhsLots)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "lots", lhsLots), LocatorUtils.property(thatLocator, "lots", rhsLots), lhsLots, rhsLots, (this.lots!= null), (that.lots!= null))) {
                         return false;
                     }
                 }
@@ -1989,7 +2079,7 @@ public class Feed
                     lhsOperation = this.getOperation();
                     Operation rhsOperation;
                     rhsOperation = that.getOperation();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "operation", lhsOperation), LocatorUtils.property(thatLocator, "operation", rhsOperation), lhsOperation, rhsOperation)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "operation", lhsOperation), LocatorUtils.property(thatLocator, "operation", rhsOperation), lhsOperation, rhsOperation, (this.operation!= null), (that.operation!= null))) {
                         return false;
                     }
                 }
@@ -1997,7 +2087,7 @@ public class Feed
             }
 
             public boolean equals(Object object) {
-                final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                 return equals(null, null, object, strategy);
             }
 
@@ -2067,8 +2157,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Agent
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Agent implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true)
@@ -2152,34 +2241,34 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         String theName;
                         theName = this.getName();
-                        strategy.appendField(locator, this, "name", buffer, theName);
+                        strategy.appendField(locator, this, "name", buffer, theName, (this.name!= null));
                     }
                     {
                         String theEmail;
                         theEmail = this.getEmail();
-                        strategy.appendField(locator, this, "email", buffer, theEmail);
+                        strategy.appendField(locator, this, "email", buffer, theEmail, (this.email!= null));
                     }
                     {
                         Feed.Projects.Project.Agent.SalesOffice theSalesOffice;
                         theSalesOffice = this.getSalesOffice();
-                        strategy.appendField(locator, this, "salesOffice", buffer, theSalesOffice);
+                        strategy.appendField(locator, this, "salesOffice", buffer, theSalesOffice, (this.salesOffice!= null));
                     }
                     return buffer;
                 }
@@ -2189,37 +2278,52 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Projects.Project.Agent) {
                         final Feed.Projects.Project.Agent copy = ((Feed.Projects.Project.Agent) draftCopy);
-                        if (this.name!= null) {
-                            String sourceName;
-                            sourceName = this.getName();
-                            String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName));
-                            copy.setName(copyName);
-                        } else {
-                            copy.name = null;
+                        {
+                            Boolean nameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.name!= null));
+                            if (nameShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceName;
+                                sourceName = this.getName();
+                                String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName, (this.name!= null)));
+                                copy.setName(copyName);
+                            } else {
+                                if (nameShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.name = null;
+                                }
+                            }
                         }
-                        if (this.email!= null) {
-                            String sourceEmail;
-                            sourceEmail = this.getEmail();
-                            String copyEmail = ((String) strategy.copy(LocatorUtils.property(locator, "email", sourceEmail), sourceEmail));
-                            copy.setEmail(copyEmail);
-                        } else {
-                            copy.email = null;
+                        {
+                            Boolean emailShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.email!= null));
+                            if (emailShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceEmail;
+                                sourceEmail = this.getEmail();
+                                String copyEmail = ((String) strategy.copy(LocatorUtils.property(locator, "email", sourceEmail), sourceEmail, (this.email!= null)));
+                                copy.setEmail(copyEmail);
+                            } else {
+                                if (emailShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.email = null;
+                                }
+                            }
                         }
-                        if (this.salesOffice!= null) {
-                            Feed.Projects.Project.Agent.SalesOffice sourceSalesOffice;
-                            sourceSalesOffice = this.getSalesOffice();
-                            Feed.Projects.Project.Agent.SalesOffice copySalesOffice = ((Feed.Projects.Project.Agent.SalesOffice) strategy.copy(LocatorUtils.property(locator, "salesOffice", sourceSalesOffice), sourceSalesOffice));
-                            copy.setSalesOffice(copySalesOffice);
-                        } else {
-                            copy.salesOffice = null;
+                        {
+                            Boolean salesOfficeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.salesOffice!= null));
+                            if (salesOfficeShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Feed.Projects.Project.Agent.SalesOffice sourceSalesOffice;
+                                sourceSalesOffice = this.getSalesOffice();
+                                Feed.Projects.Project.Agent.SalesOffice copySalesOffice = ((Feed.Projects.Project.Agent.SalesOffice) strategy.copy(LocatorUtils.property(locator, "salesOffice", sourceSalesOffice), sourceSalesOffice, (this.salesOffice!= null)));
+                                copy.setSalesOffice(copySalesOffice);
+                            } else {
+                                if (salesOfficeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.salesOffice = null;
+                                }
+                            }
                         }
                     }
                     return draftCopy;
@@ -2229,7 +2333,7 @@ public class Feed
                     return new Feed.Projects.Project.Agent();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -2242,7 +2346,7 @@ public class Feed
                         lhsName = this.getName();
                         String rhsName;
                         rhsName = that.getName();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName, (this.name!= null), (that.name!= null))) {
                             return false;
                         }
                     }
@@ -2251,7 +2355,7 @@ public class Feed
                         lhsEmail = this.getEmail();
                         String rhsEmail;
                         rhsEmail = that.getEmail();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "email", lhsEmail), LocatorUtils.property(thatLocator, "email", rhsEmail), lhsEmail, rhsEmail)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "email", lhsEmail), LocatorUtils.property(thatLocator, "email", rhsEmail), lhsEmail, rhsEmail, (this.email!= null), (that.email!= null))) {
                             return false;
                         }
                     }
@@ -2260,7 +2364,7 @@ public class Feed
                         lhsSalesOffice = this.getSalesOffice();
                         Feed.Projects.Project.Agent.SalesOffice rhsSalesOffice;
                         rhsSalesOffice = that.getSalesOffice();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "salesOffice", lhsSalesOffice), LocatorUtils.property(thatLocator, "salesOffice", rhsSalesOffice), lhsSalesOffice, rhsSalesOffice)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "salesOffice", lhsSalesOffice), LocatorUtils.property(thatLocator, "salesOffice", rhsSalesOffice), lhsSalesOffice, rhsSalesOffice, (this.salesOffice!= null), (that.salesOffice!= null))) {
                             return false;
                         }
                     }
@@ -2268,7 +2372,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -2326,8 +2430,7 @@ public class Feed
                 @XmlType(name = "", propOrder = {
 
                 })
-                public static class SalesOffice
-                    implements Cloneable, CopyTo, Equals, ToString
+                public static class SalesOffice implements Cloneable, CopyTo2, Equals2, ToString2
                 {
 
                     @XmlElement(name = "country-code", required = true)
@@ -2513,54 +2616,54 @@ public class Feed
                     }
 
                     public String toString() {
-                        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                         final StringBuilder buffer = new StringBuilder();
                         append(null, buffer, strategy);
                         return buffer.toString();
                     }
 
-                    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                         strategy.appendStart(locator, this, buffer);
                         appendFields(locator, buffer, strategy);
                         strategy.appendEnd(locator, this, buffer);
                         return buffer;
                     }
 
-                    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                         {
                             String theCountryCode;
                             theCountryCode = this.getCountryCode();
-                            strategy.appendField(locator, this, "countryCode", buffer, theCountryCode);
+                            strategy.appendField(locator, this, "countryCode", buffer, theCountryCode, (this.countryCode!= null));
                         }
                         {
                             String theAdministrativeArea;
                             theAdministrativeArea = this.getAdministrativeArea();
-                            strategy.appendField(locator, this, "administrativeArea", buffer, theAdministrativeArea);
+                            strategy.appendField(locator, this, "administrativeArea", buffer, theAdministrativeArea, (this.administrativeArea!= null));
                         }
                         {
                             String theSubAdministrativeArea;
                             theSubAdministrativeArea = this.getSubAdministrativeArea();
-                            strategy.appendField(locator, this, "subAdministrativeArea", buffer, theSubAdministrativeArea);
+                            strategy.appendField(locator, this, "subAdministrativeArea", buffer, theSubAdministrativeArea, (this.subAdministrativeArea!= null));
                         }
                         {
                             Feed.Projects.Project.Agent.SalesOffice.City theCity;
                             theCity = this.getCity();
-                            strategy.appendField(locator, this, "city", buffer, theCity);
+                            strategy.appendField(locator, this, "city", buffer, theCity, (this.city!= null));
                         }
                         {
                             Feed.Projects.Project.Agent.SalesOffice.Locality theLocality;
                             theLocality = this.getLocality();
-                            strategy.appendField(locator, this, "locality", buffer, theLocality);
+                            strategy.appendField(locator, this, "locality", buffer, theLocality, (this.locality!= null));
                         }
                         {
                             String thePhone;
                             thePhone = this.getPhone();
-                            strategy.appendField(locator, this, "phone", buffer, thePhone);
+                            strategy.appendField(locator, this, "phone", buffer, thePhone, (this.phone!= null));
                         }
                         {
                             String theMobile;
                             theMobile = this.getMobile();
-                            strategy.appendField(locator, this, "mobile", buffer, theMobile);
+                            strategy.appendField(locator, this, "mobile", buffer, theMobile, (this.mobile!= null));
                         }
                         return buffer;
                     }
@@ -2570,69 +2673,104 @@ public class Feed
                     }
 
                     public Object copyTo(Object target) {
-                        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                         return copyTo(null, target, strategy);
                     }
 
-                    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                         final Object draftCopy = ((target == null)?createNewInstance():target);
                         if (draftCopy instanceof Feed.Projects.Project.Agent.SalesOffice) {
                             final Feed.Projects.Project.Agent.SalesOffice copy = ((Feed.Projects.Project.Agent.SalesOffice) draftCopy);
-                            if (this.countryCode!= null) {
-                                String sourceCountryCode;
-                                sourceCountryCode = this.getCountryCode();
-                                String copyCountryCode = ((String) strategy.copy(LocatorUtils.property(locator, "countryCode", sourceCountryCode), sourceCountryCode));
-                                copy.setCountryCode(copyCountryCode);
-                            } else {
-                                copy.countryCode = null;
+                            {
+                                Boolean countryCodeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.countryCode!= null));
+                                if (countryCodeShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourceCountryCode;
+                                    sourceCountryCode = this.getCountryCode();
+                                    String copyCountryCode = ((String) strategy.copy(LocatorUtils.property(locator, "countryCode", sourceCountryCode), sourceCountryCode, (this.countryCode!= null)));
+                                    copy.setCountryCode(copyCountryCode);
+                                } else {
+                                    if (countryCodeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.countryCode = null;
+                                    }
+                                }
                             }
-                            if (this.administrativeArea!= null) {
-                                String sourceAdministrativeArea;
-                                sourceAdministrativeArea = this.getAdministrativeArea();
-                                String copyAdministrativeArea = ((String) strategy.copy(LocatorUtils.property(locator, "administrativeArea", sourceAdministrativeArea), sourceAdministrativeArea));
-                                copy.setAdministrativeArea(copyAdministrativeArea);
-                            } else {
-                                copy.administrativeArea = null;
+                            {
+                                Boolean administrativeAreaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.administrativeArea!= null));
+                                if (administrativeAreaShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourceAdministrativeArea;
+                                    sourceAdministrativeArea = this.getAdministrativeArea();
+                                    String copyAdministrativeArea = ((String) strategy.copy(LocatorUtils.property(locator, "administrativeArea", sourceAdministrativeArea), sourceAdministrativeArea, (this.administrativeArea!= null)));
+                                    copy.setAdministrativeArea(copyAdministrativeArea);
+                                } else {
+                                    if (administrativeAreaShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.administrativeArea = null;
+                                    }
+                                }
                             }
-                            if (this.subAdministrativeArea!= null) {
-                                String sourceSubAdministrativeArea;
-                                sourceSubAdministrativeArea = this.getSubAdministrativeArea();
-                                String copySubAdministrativeArea = ((String) strategy.copy(LocatorUtils.property(locator, "subAdministrativeArea", sourceSubAdministrativeArea), sourceSubAdministrativeArea));
-                                copy.setSubAdministrativeArea(copySubAdministrativeArea);
-                            } else {
-                                copy.subAdministrativeArea = null;
+                            {
+                                Boolean subAdministrativeAreaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.subAdministrativeArea!= null));
+                                if (subAdministrativeAreaShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourceSubAdministrativeArea;
+                                    sourceSubAdministrativeArea = this.getSubAdministrativeArea();
+                                    String copySubAdministrativeArea = ((String) strategy.copy(LocatorUtils.property(locator, "subAdministrativeArea", sourceSubAdministrativeArea), sourceSubAdministrativeArea, (this.subAdministrativeArea!= null)));
+                                    copy.setSubAdministrativeArea(copySubAdministrativeArea);
+                                } else {
+                                    if (subAdministrativeAreaShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.subAdministrativeArea = null;
+                                    }
+                                }
                             }
-                            if (this.city!= null) {
-                                Feed.Projects.Project.Agent.SalesOffice.City sourceCity;
-                                sourceCity = this.getCity();
-                                Feed.Projects.Project.Agent.SalesOffice.City copyCity = ((Feed.Projects.Project.Agent.SalesOffice.City) strategy.copy(LocatorUtils.property(locator, "city", sourceCity), sourceCity));
-                                copy.setCity(copyCity);
-                            } else {
-                                copy.city = null;
+                            {
+                                Boolean cityShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.city!= null));
+                                if (cityShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    Feed.Projects.Project.Agent.SalesOffice.City sourceCity;
+                                    sourceCity = this.getCity();
+                                    Feed.Projects.Project.Agent.SalesOffice.City copyCity = ((Feed.Projects.Project.Agent.SalesOffice.City) strategy.copy(LocatorUtils.property(locator, "city", sourceCity), sourceCity, (this.city!= null)));
+                                    copy.setCity(copyCity);
+                                } else {
+                                    if (cityShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.city = null;
+                                    }
+                                }
                             }
-                            if (this.locality!= null) {
-                                Feed.Projects.Project.Agent.SalesOffice.Locality sourceLocality;
-                                sourceLocality = this.getLocality();
-                                Feed.Projects.Project.Agent.SalesOffice.Locality copyLocality = ((Feed.Projects.Project.Agent.SalesOffice.Locality) strategy.copy(LocatorUtils.property(locator, "locality", sourceLocality), sourceLocality));
-                                copy.setLocality(copyLocality);
-                            } else {
-                                copy.locality = null;
+                            {
+                                Boolean localityShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.locality!= null));
+                                if (localityShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    Feed.Projects.Project.Agent.SalesOffice.Locality sourceLocality;
+                                    sourceLocality = this.getLocality();
+                                    Feed.Projects.Project.Agent.SalesOffice.Locality copyLocality = ((Feed.Projects.Project.Agent.SalesOffice.Locality) strategy.copy(LocatorUtils.property(locator, "locality", sourceLocality), sourceLocality, (this.locality!= null)));
+                                    copy.setLocality(copyLocality);
+                                } else {
+                                    if (localityShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.locality = null;
+                                    }
+                                }
                             }
-                            if (this.phone!= null) {
-                                String sourcePhone;
-                                sourcePhone = this.getPhone();
-                                String copyPhone = ((String) strategy.copy(LocatorUtils.property(locator, "phone", sourcePhone), sourcePhone));
-                                copy.setPhone(copyPhone);
-                            } else {
-                                copy.phone = null;
+                            {
+                                Boolean phoneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.phone!= null));
+                                if (phoneShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourcePhone;
+                                    sourcePhone = this.getPhone();
+                                    String copyPhone = ((String) strategy.copy(LocatorUtils.property(locator, "phone", sourcePhone), sourcePhone, (this.phone!= null)));
+                                    copy.setPhone(copyPhone);
+                                } else {
+                                    if (phoneShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.phone = null;
+                                    }
+                                }
                             }
-                            if (this.mobile!= null) {
-                                String sourceMobile;
-                                sourceMobile = this.getMobile();
-                                String copyMobile = ((String) strategy.copy(LocatorUtils.property(locator, "mobile", sourceMobile), sourceMobile));
-                                copy.setMobile(copyMobile);
-                            } else {
-                                copy.mobile = null;
+                            {
+                                Boolean mobileShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mobile!= null));
+                                if (mobileShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourceMobile;
+                                    sourceMobile = this.getMobile();
+                                    String copyMobile = ((String) strategy.copy(LocatorUtils.property(locator, "mobile", sourceMobile), sourceMobile, (this.mobile!= null)));
+                                    copy.setMobile(copyMobile);
+                                } else {
+                                    if (mobileShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.mobile = null;
+                                    }
+                                }
                             }
                         }
                         return draftCopy;
@@ -2642,7 +2780,7 @@ public class Feed
                         return new Feed.Projects.Project.Agent.SalesOffice();
                     }
 
-                    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                         if ((object == null)||(this.getClass()!= object.getClass())) {
                             return false;
                         }
@@ -2655,7 +2793,7 @@ public class Feed
                             lhsCountryCode = this.getCountryCode();
                             String rhsCountryCode;
                             rhsCountryCode = that.getCountryCode();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "countryCode", lhsCountryCode), LocatorUtils.property(thatLocator, "countryCode", rhsCountryCode), lhsCountryCode, rhsCountryCode)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "countryCode", lhsCountryCode), LocatorUtils.property(thatLocator, "countryCode", rhsCountryCode), lhsCountryCode, rhsCountryCode, (this.countryCode!= null), (that.countryCode!= null))) {
                                 return false;
                             }
                         }
@@ -2664,7 +2802,7 @@ public class Feed
                             lhsAdministrativeArea = this.getAdministrativeArea();
                             String rhsAdministrativeArea;
                             rhsAdministrativeArea = that.getAdministrativeArea();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "administrativeArea", lhsAdministrativeArea), LocatorUtils.property(thatLocator, "administrativeArea", rhsAdministrativeArea), lhsAdministrativeArea, rhsAdministrativeArea)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "administrativeArea", lhsAdministrativeArea), LocatorUtils.property(thatLocator, "administrativeArea", rhsAdministrativeArea), lhsAdministrativeArea, rhsAdministrativeArea, (this.administrativeArea!= null), (that.administrativeArea!= null))) {
                                 return false;
                             }
                         }
@@ -2673,7 +2811,7 @@ public class Feed
                             lhsSubAdministrativeArea = this.getSubAdministrativeArea();
                             String rhsSubAdministrativeArea;
                             rhsSubAdministrativeArea = that.getSubAdministrativeArea();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "subAdministrativeArea", lhsSubAdministrativeArea), LocatorUtils.property(thatLocator, "subAdministrativeArea", rhsSubAdministrativeArea), lhsSubAdministrativeArea, rhsSubAdministrativeArea)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "subAdministrativeArea", lhsSubAdministrativeArea), LocatorUtils.property(thatLocator, "subAdministrativeArea", rhsSubAdministrativeArea), lhsSubAdministrativeArea, rhsSubAdministrativeArea, (this.subAdministrativeArea!= null), (that.subAdministrativeArea!= null))) {
                                 return false;
                             }
                         }
@@ -2682,7 +2820,7 @@ public class Feed
                             lhsCity = this.getCity();
                             Feed.Projects.Project.Agent.SalesOffice.City rhsCity;
                             rhsCity = that.getCity();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "city", lhsCity), LocatorUtils.property(thatLocator, "city", rhsCity), lhsCity, rhsCity)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "city", lhsCity), LocatorUtils.property(thatLocator, "city", rhsCity), lhsCity, rhsCity, (this.city!= null), (that.city!= null))) {
                                 return false;
                             }
                         }
@@ -2691,7 +2829,7 @@ public class Feed
                             lhsLocality = this.getLocality();
                             Feed.Projects.Project.Agent.SalesOffice.Locality rhsLocality;
                             rhsLocality = that.getLocality();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "locality", lhsLocality), LocatorUtils.property(thatLocator, "locality", rhsLocality), lhsLocality, rhsLocality)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "locality", lhsLocality), LocatorUtils.property(thatLocator, "locality", rhsLocality), lhsLocality, rhsLocality, (this.locality!= null), (that.locality!= null))) {
                                 return false;
                             }
                         }
@@ -2700,7 +2838,7 @@ public class Feed
                             lhsPhone = this.getPhone();
                             String rhsPhone;
                             rhsPhone = that.getPhone();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "phone", lhsPhone), LocatorUtils.property(thatLocator, "phone", rhsPhone), lhsPhone, rhsPhone)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "phone", lhsPhone), LocatorUtils.property(thatLocator, "phone", rhsPhone), lhsPhone, rhsPhone, (this.phone!= null), (that.phone!= null))) {
                                 return false;
                             }
                         }
@@ -2709,7 +2847,7 @@ public class Feed
                             lhsMobile = this.getMobile();
                             String rhsMobile;
                             rhsMobile = that.getMobile();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "mobile", lhsMobile), LocatorUtils.property(thatLocator, "mobile", rhsMobile), lhsMobile, rhsMobile)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "mobile", lhsMobile), LocatorUtils.property(thatLocator, "mobile", rhsMobile), lhsMobile, rhsMobile, (this.mobile!= null), (that.mobile!= null))) {
                                 return false;
                             }
                         }
@@ -2717,7 +2855,7 @@ public class Feed
                     }
 
                     public boolean equals(Object object) {
-                        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                         return equals(null, null, object, strategy);
                     }
 
@@ -2743,8 +2881,7 @@ public class Feed
                     @XmlType(name = "", propOrder = {
                         "value"
                     })
-                    public static class City
-                        implements Cloneable, CopyTo, Equals, ToString
+                    public static class City implements Cloneable, CopyTo2, Equals2, ToString2
                     {
 
                         @XmlValue
@@ -2803,29 +2940,29 @@ public class Feed
                         }
 
                         public String toString() {
-                            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                             final StringBuilder buffer = new StringBuilder();
                             append(null, buffer, strategy);
                             return buffer.toString();
                         }
 
-                        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                             strategy.appendStart(locator, this, buffer);
                             appendFields(locator, buffer, strategy);
                             strategy.appendEnd(locator, this, buffer);
                             return buffer;
                         }
 
-                        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                             {
                                 String theValue;
                                 theValue = this.getValue();
-                                strategy.appendField(locator, this, "value", buffer, theValue);
+                                strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
                             }
                             {
                                 BigInteger theCode;
                                 theCode = this.getCode();
-                                strategy.appendField(locator, this, "code", buffer, theCode);
+                                strategy.appendField(locator, this, "code", buffer, theCode, (this.code!= null));
                             }
                             return buffer;
                         }
@@ -2835,29 +2972,39 @@ public class Feed
                         }
 
                         public Object copyTo(Object target) {
-                            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                             return copyTo(null, target, strategy);
                         }
 
-                        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                             final Object draftCopy = ((target == null)?createNewInstance():target);
                             if (draftCopy instanceof Feed.Projects.Project.Agent.SalesOffice.City) {
                                 final Feed.Projects.Project.Agent.SalesOffice.City copy = ((Feed.Projects.Project.Agent.SalesOffice.City) draftCopy);
-                                if (this.value!= null) {
-                                    String sourceValue;
-                                    sourceValue = this.getValue();
-                                    String copyValue = ((String) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
-                                    copy.setValue(copyValue);
-                                } else {
-                                    copy.value = null;
+                                {
+                                    Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
+                                    if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
+                                        String sourceValue;
+                                        sourceValue = this.getValue();
+                                        String copyValue = ((String) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                                        copy.setValue(copyValue);
+                                    } else {
+                                        if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
+                                            copy.value = null;
+                                        }
+                                    }
                                 }
-                                if (this.code!= null) {
-                                    BigInteger sourceCode;
-                                    sourceCode = this.getCode();
-                                    BigInteger copyCode = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode));
-                                    copy.setCode(copyCode);
-                                } else {
-                                    copy.code = null;
+                                {
+                                    Boolean codeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.code!= null));
+                                    if (codeShouldBeCopiedAndSet == Boolean.TRUE) {
+                                        BigInteger sourceCode;
+                                        sourceCode = this.getCode();
+                                        BigInteger copyCode = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode, (this.code!= null)));
+                                        copy.setCode(copyCode);
+                                    } else {
+                                        if (codeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                            copy.code = null;
+                                        }
+                                    }
                                 }
                             }
                             return draftCopy;
@@ -2867,7 +3014,7 @@ public class Feed
                             return new Feed.Projects.Project.Agent.SalesOffice.City();
                         }
 
-                        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                             if ((object == null)||(this.getClass()!= object.getClass())) {
                                 return false;
                             }
@@ -2880,7 +3027,7 @@ public class Feed
                                 lhsValue = this.getValue();
                                 String rhsValue;
                                 rhsValue = that.getValue();
-                                if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
+                                if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                                     return false;
                                 }
                             }
@@ -2889,7 +3036,7 @@ public class Feed
                                 lhsCode = this.getCode();
                                 BigInteger rhsCode;
                                 rhsCode = that.getCode();
-                                if (!strategy.equals(LocatorUtils.property(thisLocator, "code", lhsCode), LocatorUtils.property(thatLocator, "code", rhsCode), lhsCode, rhsCode)) {
+                                if (!strategy.equals(LocatorUtils.property(thisLocator, "code", lhsCode), LocatorUtils.property(thatLocator, "code", rhsCode), lhsCode, rhsCode, (this.code!= null), (that.code!= null))) {
                                     return false;
                                 }
                             }
@@ -2897,7 +3044,7 @@ public class Feed
                         }
 
                         public boolean equals(Object object) {
-                            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                             return equals(null, null, object, strategy);
                         }
 
@@ -2927,8 +3074,7 @@ public class Feed
                     @XmlType(name = "", propOrder = {
                         "thoroughfare"
                     })
-                    public static class Locality
-                        implements Cloneable, CopyTo, Equals, ToString
+                    public static class Locality implements Cloneable, CopyTo2, Equals2, ToString2
                     {
 
                         @XmlElement(required = true)
@@ -2959,24 +3105,24 @@ public class Feed
                         }
 
                         public String toString() {
-                            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                             final StringBuilder buffer = new StringBuilder();
                             append(null, buffer, strategy);
                             return buffer.toString();
                         }
 
-                        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                             strategy.appendStart(locator, this, buffer);
                             appendFields(locator, buffer, strategy);
                             strategy.appendEnd(locator, this, buffer);
                             return buffer;
                         }
 
-                        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                             {
                                 String theThoroughfare;
                                 theThoroughfare = this.getThoroughfare();
-                                strategy.appendField(locator, this, "thoroughfare", buffer, theThoroughfare);
+                                strategy.appendField(locator, this, "thoroughfare", buffer, theThoroughfare, (this.thoroughfare!= null));
                             }
                             return buffer;
                         }
@@ -2986,21 +3132,26 @@ public class Feed
                         }
 
                         public Object copyTo(Object target) {
-                            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                             return copyTo(null, target, strategy);
                         }
 
-                        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                             final Object draftCopy = ((target == null)?createNewInstance():target);
                             if (draftCopy instanceof Feed.Projects.Project.Agent.SalesOffice.Locality) {
                                 final Feed.Projects.Project.Agent.SalesOffice.Locality copy = ((Feed.Projects.Project.Agent.SalesOffice.Locality) draftCopy);
-                                if (this.thoroughfare!= null) {
-                                    String sourceThoroughfare;
-                                    sourceThoroughfare = this.getThoroughfare();
-                                    String copyThoroughfare = ((String) strategy.copy(LocatorUtils.property(locator, "thoroughfare", sourceThoroughfare), sourceThoroughfare));
-                                    copy.setThoroughfare(copyThoroughfare);
-                                } else {
-                                    copy.thoroughfare = null;
+                                {
+                                    Boolean thoroughfareShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.thoroughfare!= null));
+                                    if (thoroughfareShouldBeCopiedAndSet == Boolean.TRUE) {
+                                        String sourceThoroughfare;
+                                        sourceThoroughfare = this.getThoroughfare();
+                                        String copyThoroughfare = ((String) strategy.copy(LocatorUtils.property(locator, "thoroughfare", sourceThoroughfare), sourceThoroughfare, (this.thoroughfare!= null)));
+                                        copy.setThoroughfare(copyThoroughfare);
+                                    } else {
+                                        if (thoroughfareShouldBeCopiedAndSet == Boolean.FALSE) {
+                                            copy.thoroughfare = null;
+                                        }
+                                    }
                                 }
                             }
                             return draftCopy;
@@ -3010,7 +3161,7 @@ public class Feed
                             return new Feed.Projects.Project.Agent.SalesOffice.Locality();
                         }
 
-                        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                             if ((object == null)||(this.getClass()!= object.getClass())) {
                                 return false;
                             }
@@ -3023,7 +3174,7 @@ public class Feed
                                 lhsThoroughfare = this.getThoroughfare();
                                 String rhsThoroughfare;
                                 rhsThoroughfare = that.getThoroughfare();
-                                if (!strategy.equals(LocatorUtils.property(thisLocator, "thoroughfare", lhsThoroughfare), LocatorUtils.property(thatLocator, "thoroughfare", rhsThoroughfare), lhsThoroughfare, rhsThoroughfare)) {
+                                if (!strategy.equals(LocatorUtils.property(thisLocator, "thoroughfare", lhsThoroughfare), LocatorUtils.property(thatLocator, "thoroughfare", rhsThoroughfare), lhsThoroughfare, rhsThoroughfare, (this.thoroughfare!= null), (that.thoroughfare!= null))) {
                                     return false;
                                 }
                             }
@@ -3031,7 +3182,7 @@ public class Feed
                         }
 
                         public boolean equals(Object object) {
-                            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                             return equals(null, null, object, strategy);
                         }
 
@@ -3074,8 +3225,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Features
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Features implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(name = "building-status")
@@ -3344,69 +3494,69 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         String theBuildingStatus;
                         theBuildingStatus = this.getBuildingStatus();
-                        strategy.appendField(locator, this, "buildingStatus", buffer, theBuildingStatus);
+                        strategy.appendField(locator, this, "buildingStatus", buffer, theBuildingStatus, (this.buildingStatus!= null));
                     }
                     {
                         Calendar theStartDate;
                         theStartDate = this.getStartDate();
-                        strategy.appendField(locator, this, "startDate", buffer, theStartDate);
+                        strategy.appendField(locator, this, "startDate", buffer, theStartDate, (this.startDate!= null));
                     }
                     {
                         Calendar theEndDate;
                         theEndDate = this.getEndDate();
-                        strategy.appendField(locator, this, "endDate", buffer, theEndDate);
+                        strategy.appendField(locator, this, "endDate", buffer, theEndDate, (this.endDate!= null));
                     }
                     {
                         String theName;
                         theName = this.getName();
-                        strategy.appendField(locator, this, "name", buffer, theName);
+                        strategy.appendField(locator, this, "name", buffer, theName, (this.name!= null));
                     }
                     {
                         String theSpecification;
                         theSpecification = this.getSpecification();
-                        strategy.appendField(locator, this, "specification", buffer, theSpecification);
+                        strategy.appendField(locator, this, "specification", buffer, theSpecification, (this.specification!= null));
                     }
                     {
                         String theFloorplannerUrl;
                         theFloorplannerUrl = this.getFloorplannerUrl();
-                        strategy.appendField(locator, this, "floorplannerUrl", buffer, theFloorplannerUrl);
+                        strategy.appendField(locator, this, "floorplannerUrl", buffer, theFloorplannerUrl, (this.floorplannerUrl!= null));
                     }
                     {
                         String theVirtualTour;
                         theVirtualTour = this.getVirtualTour();
-                        strategy.appendField(locator, this, "virtualTour", buffer, theVirtualTour);
+                        strategy.appendField(locator, this, "virtualTour", buffer, theVirtualTour, (this.virtualTour!= null));
                     }
                     {
                         Langtxt theDescription;
                         theDescription = this.getDescription();
-                        strategy.appendField(locator, this, "description", buffer, theDescription);
+                        strategy.appendField(locator, this, "description", buffer, theDescription, (this.description!= null));
                     }
                     {
                         ClassEnergy theEnergyClass;
                         theEnergyClass = this.getEnergyClass();
-                        strategy.appendField(locator, this, "energyClass", buffer, theEnergyClass);
+                        strategy.appendField(locator, this, "energyClass", buffer, theEnergyClass, (this.energyClass!= null));
                     }
                     {
                         ClassEnergyPerformance theEnergyPerformance;
                         theEnergyPerformance = this.getEnergyPerformance();
-                        strategy.appendField(locator, this, "energyPerformance", buffer, theEnergyPerformance);
+                        strategy.appendField(locator, this, "energyPerformance", buffer, theEnergyPerformance, (this.energyPerformance!= null));
                     }
                     return buffer;
                 }
@@ -3416,93 +3566,143 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Projects.Project.Features) {
                         final Feed.Projects.Project.Features copy = ((Feed.Projects.Project.Features) draftCopy);
-                        if (this.buildingStatus!= null) {
-                            String sourceBuildingStatus;
-                            sourceBuildingStatus = this.getBuildingStatus();
-                            String copyBuildingStatus = ((String) strategy.copy(LocatorUtils.property(locator, "buildingStatus", sourceBuildingStatus), sourceBuildingStatus));
-                            copy.setBuildingStatus(copyBuildingStatus);
-                        } else {
-                            copy.buildingStatus = null;
+                        {
+                            Boolean buildingStatusShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.buildingStatus!= null));
+                            if (buildingStatusShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceBuildingStatus;
+                                sourceBuildingStatus = this.getBuildingStatus();
+                                String copyBuildingStatus = ((String) strategy.copy(LocatorUtils.property(locator, "buildingStatus", sourceBuildingStatus), sourceBuildingStatus, (this.buildingStatus!= null)));
+                                copy.setBuildingStatus(copyBuildingStatus);
+                            } else {
+                                if (buildingStatusShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.buildingStatus = null;
+                                }
+                            }
                         }
-                        if (this.startDate!= null) {
-                            Calendar sourceStartDate;
-                            sourceStartDate = this.getStartDate();
-                            Calendar copyStartDate = ((Calendar) strategy.copy(LocatorUtils.property(locator, "startDate", sourceStartDate), sourceStartDate));
-                            copy.setStartDate(copyStartDate);
-                        } else {
-                            copy.startDate = null;
+                        {
+                            Boolean startDateShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.startDate!= null));
+                            if (startDateShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Calendar sourceStartDate;
+                                sourceStartDate = this.getStartDate();
+                                Calendar copyStartDate = ((Calendar) strategy.copy(LocatorUtils.property(locator, "startDate", sourceStartDate), sourceStartDate, (this.startDate!= null)));
+                                copy.setStartDate(copyStartDate);
+                            } else {
+                                if (startDateShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.startDate = null;
+                                }
+                            }
                         }
-                        if (this.endDate!= null) {
-                            Calendar sourceEndDate;
-                            sourceEndDate = this.getEndDate();
-                            Calendar copyEndDate = ((Calendar) strategy.copy(LocatorUtils.property(locator, "endDate", sourceEndDate), sourceEndDate));
-                            copy.setEndDate(copyEndDate);
-                        } else {
-                            copy.endDate = null;
+                        {
+                            Boolean endDateShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.endDate!= null));
+                            if (endDateShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Calendar sourceEndDate;
+                                sourceEndDate = this.getEndDate();
+                                Calendar copyEndDate = ((Calendar) strategy.copy(LocatorUtils.property(locator, "endDate", sourceEndDate), sourceEndDate, (this.endDate!= null)));
+                                copy.setEndDate(copyEndDate);
+                            } else {
+                                if (endDateShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.endDate = null;
+                                }
+                            }
                         }
-                        if (this.name!= null) {
-                            String sourceName;
-                            sourceName = this.getName();
-                            String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName));
-                            copy.setName(copyName);
-                        } else {
-                            copy.name = null;
+                        {
+                            Boolean nameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.name!= null));
+                            if (nameShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceName;
+                                sourceName = this.getName();
+                                String copyName = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceName), sourceName, (this.name!= null)));
+                                copy.setName(copyName);
+                            } else {
+                                if (nameShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.name = null;
+                                }
+                            }
                         }
-                        if (this.specification!= null) {
-                            String sourceSpecification;
-                            sourceSpecification = this.getSpecification();
-                            String copySpecification = ((String) strategy.copy(LocatorUtils.property(locator, "specification", sourceSpecification), sourceSpecification));
-                            copy.setSpecification(copySpecification);
-                        } else {
-                            copy.specification = null;
+                        {
+                            Boolean specificationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.specification!= null));
+                            if (specificationShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceSpecification;
+                                sourceSpecification = this.getSpecification();
+                                String copySpecification = ((String) strategy.copy(LocatorUtils.property(locator, "specification", sourceSpecification), sourceSpecification, (this.specification!= null)));
+                                copy.setSpecification(copySpecification);
+                            } else {
+                                if (specificationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.specification = null;
+                                }
+                            }
                         }
-                        if (this.floorplannerUrl!= null) {
-                            String sourceFloorplannerUrl;
-                            sourceFloorplannerUrl = this.getFloorplannerUrl();
-                            String copyFloorplannerUrl = ((String) strategy.copy(LocatorUtils.property(locator, "floorplannerUrl", sourceFloorplannerUrl), sourceFloorplannerUrl));
-                            copy.setFloorplannerUrl(copyFloorplannerUrl);
-                        } else {
-                            copy.floorplannerUrl = null;
+                        {
+                            Boolean floorplannerUrlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.floorplannerUrl!= null));
+                            if (floorplannerUrlShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceFloorplannerUrl;
+                                sourceFloorplannerUrl = this.getFloorplannerUrl();
+                                String copyFloorplannerUrl = ((String) strategy.copy(LocatorUtils.property(locator, "floorplannerUrl", sourceFloorplannerUrl), sourceFloorplannerUrl, (this.floorplannerUrl!= null)));
+                                copy.setFloorplannerUrl(copyFloorplannerUrl);
+                            } else {
+                                if (floorplannerUrlShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.floorplannerUrl = null;
+                                }
+                            }
                         }
-                        if (this.virtualTour!= null) {
-                            String sourceVirtualTour;
-                            sourceVirtualTour = this.getVirtualTour();
-                            String copyVirtualTour = ((String) strategy.copy(LocatorUtils.property(locator, "virtualTour", sourceVirtualTour), sourceVirtualTour));
-                            copy.setVirtualTour(copyVirtualTour);
-                        } else {
-                            copy.virtualTour = null;
+                        {
+                            Boolean virtualTourShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.virtualTour!= null));
+                            if (virtualTourShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceVirtualTour;
+                                sourceVirtualTour = this.getVirtualTour();
+                                String copyVirtualTour = ((String) strategy.copy(LocatorUtils.property(locator, "virtualTour", sourceVirtualTour), sourceVirtualTour, (this.virtualTour!= null)));
+                                copy.setVirtualTour(copyVirtualTour);
+                            } else {
+                                if (virtualTourShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.virtualTour = null;
+                                }
+                            }
                         }
-                        if (this.description!= null) {
-                            Langtxt sourceDescription;
-                            sourceDescription = this.getDescription();
-                            Langtxt copyDescription = ((Langtxt) strategy.copy(LocatorUtils.property(locator, "description", sourceDescription), sourceDescription));
-                            copy.setDescription(copyDescription);
-                        } else {
-                            copy.description = null;
+                        {
+                            Boolean descriptionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.description!= null));
+                            if (descriptionShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Langtxt sourceDescription;
+                                sourceDescription = this.getDescription();
+                                Langtxt copyDescription = ((Langtxt) strategy.copy(LocatorUtils.property(locator, "description", sourceDescription), sourceDescription, (this.description!= null)));
+                                copy.setDescription(copyDescription);
+                            } else {
+                                if (descriptionShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.description = null;
+                                }
+                            }
                         }
-                        if (this.energyClass!= null) {
-                            ClassEnergy sourceEnergyClass;
-                            sourceEnergyClass = this.getEnergyClass();
-                            ClassEnergy copyEnergyClass = ((ClassEnergy) strategy.copy(LocatorUtils.property(locator, "energyClass", sourceEnergyClass), sourceEnergyClass));
-                            copy.setEnergyClass(copyEnergyClass);
-                        } else {
-                            copy.energyClass = null;
+                        {
+                            Boolean energyClassShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energyClass!= null));
+                            if (energyClassShouldBeCopiedAndSet == Boolean.TRUE) {
+                                ClassEnergy sourceEnergyClass;
+                                sourceEnergyClass = this.getEnergyClass();
+                                ClassEnergy copyEnergyClass = ((ClassEnergy) strategy.copy(LocatorUtils.property(locator, "energyClass", sourceEnergyClass), sourceEnergyClass, (this.energyClass!= null)));
+                                copy.setEnergyClass(copyEnergyClass);
+                            } else {
+                                if (energyClassShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.energyClass = null;
+                                }
+                            }
                         }
-                        if (this.energyPerformance!= null) {
-                            ClassEnergyPerformance sourceEnergyPerformance;
-                            sourceEnergyPerformance = this.getEnergyPerformance();
-                            ClassEnergyPerformance copyEnergyPerformance = ((ClassEnergyPerformance) strategy.copy(LocatorUtils.property(locator, "energyPerformance", sourceEnergyPerformance), sourceEnergyPerformance));
-                            copy.setEnergyPerformance(copyEnergyPerformance);
-                        } else {
-                            copy.energyPerformance = null;
+                        {
+                            Boolean energyPerformanceShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energyPerformance!= null));
+                            if (energyPerformanceShouldBeCopiedAndSet == Boolean.TRUE) {
+                                ClassEnergyPerformance sourceEnergyPerformance;
+                                sourceEnergyPerformance = this.getEnergyPerformance();
+                                ClassEnergyPerformance copyEnergyPerformance = ((ClassEnergyPerformance) strategy.copy(LocatorUtils.property(locator, "energyPerformance", sourceEnergyPerformance), sourceEnergyPerformance, (this.energyPerformance!= null)));
+                                copy.setEnergyPerformance(copyEnergyPerformance);
+                            } else {
+                                if (energyPerformanceShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.energyPerformance = null;
+                                }
+                            }
                         }
                     }
                     return draftCopy;
@@ -3512,7 +3712,7 @@ public class Feed
                     return new Feed.Projects.Project.Features();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -3525,7 +3725,7 @@ public class Feed
                         lhsBuildingStatus = this.getBuildingStatus();
                         String rhsBuildingStatus;
                         rhsBuildingStatus = that.getBuildingStatus();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "buildingStatus", lhsBuildingStatus), LocatorUtils.property(thatLocator, "buildingStatus", rhsBuildingStatus), lhsBuildingStatus, rhsBuildingStatus)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "buildingStatus", lhsBuildingStatus), LocatorUtils.property(thatLocator, "buildingStatus", rhsBuildingStatus), lhsBuildingStatus, rhsBuildingStatus, (this.buildingStatus!= null), (that.buildingStatus!= null))) {
                             return false;
                         }
                     }
@@ -3534,7 +3734,7 @@ public class Feed
                         lhsStartDate = this.getStartDate();
                         Calendar rhsStartDate;
                         rhsStartDate = that.getStartDate();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "startDate", lhsStartDate), LocatorUtils.property(thatLocator, "startDate", rhsStartDate), lhsStartDate, rhsStartDate)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "startDate", lhsStartDate), LocatorUtils.property(thatLocator, "startDate", rhsStartDate), lhsStartDate, rhsStartDate, (this.startDate!= null), (that.startDate!= null))) {
                             return false;
                         }
                     }
@@ -3543,7 +3743,7 @@ public class Feed
                         lhsEndDate = this.getEndDate();
                         Calendar rhsEndDate;
                         rhsEndDate = that.getEndDate();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "endDate", lhsEndDate), LocatorUtils.property(thatLocator, "endDate", rhsEndDate), lhsEndDate, rhsEndDate)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "endDate", lhsEndDate), LocatorUtils.property(thatLocator, "endDate", rhsEndDate), lhsEndDate, rhsEndDate, (this.endDate!= null), (that.endDate!= null))) {
                             return false;
                         }
                     }
@@ -3552,7 +3752,7 @@ public class Feed
                         lhsName = this.getName();
                         String rhsName;
                         rhsName = that.getName();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsName), LocatorUtils.property(thatLocator, "name", rhsName), lhsName, rhsName, (this.name!= null), (that.name!= null))) {
                             return false;
                         }
                     }
@@ -3561,7 +3761,7 @@ public class Feed
                         lhsSpecification = this.getSpecification();
                         String rhsSpecification;
                         rhsSpecification = that.getSpecification();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "specification", lhsSpecification), LocatorUtils.property(thatLocator, "specification", rhsSpecification), lhsSpecification, rhsSpecification)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "specification", lhsSpecification), LocatorUtils.property(thatLocator, "specification", rhsSpecification), lhsSpecification, rhsSpecification, (this.specification!= null), (that.specification!= null))) {
                             return false;
                         }
                     }
@@ -3570,7 +3770,7 @@ public class Feed
                         lhsFloorplannerUrl = this.getFloorplannerUrl();
                         String rhsFloorplannerUrl;
                         rhsFloorplannerUrl = that.getFloorplannerUrl();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "floorplannerUrl", lhsFloorplannerUrl), LocatorUtils.property(thatLocator, "floorplannerUrl", rhsFloorplannerUrl), lhsFloorplannerUrl, rhsFloorplannerUrl)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "floorplannerUrl", lhsFloorplannerUrl), LocatorUtils.property(thatLocator, "floorplannerUrl", rhsFloorplannerUrl), lhsFloorplannerUrl, rhsFloorplannerUrl, (this.floorplannerUrl!= null), (that.floorplannerUrl!= null))) {
                             return false;
                         }
                     }
@@ -3579,7 +3779,7 @@ public class Feed
                         lhsVirtualTour = this.getVirtualTour();
                         String rhsVirtualTour;
                         rhsVirtualTour = that.getVirtualTour();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "virtualTour", lhsVirtualTour), LocatorUtils.property(thatLocator, "virtualTour", rhsVirtualTour), lhsVirtualTour, rhsVirtualTour)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "virtualTour", lhsVirtualTour), LocatorUtils.property(thatLocator, "virtualTour", rhsVirtualTour), lhsVirtualTour, rhsVirtualTour, (this.virtualTour!= null), (that.virtualTour!= null))) {
                             return false;
                         }
                     }
@@ -3588,7 +3788,7 @@ public class Feed
                         lhsDescription = this.getDescription();
                         Langtxt rhsDescription;
                         rhsDescription = that.getDescription();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "description", lhsDescription), LocatorUtils.property(thatLocator, "description", rhsDescription), lhsDescription, rhsDescription)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "description", lhsDescription), LocatorUtils.property(thatLocator, "description", rhsDescription), lhsDescription, rhsDescription, (this.description!= null), (that.description!= null))) {
                             return false;
                         }
                     }
@@ -3597,7 +3797,7 @@ public class Feed
                         lhsEnergyClass = this.getEnergyClass();
                         ClassEnergy rhsEnergyClass;
                         rhsEnergyClass = that.getEnergyClass();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyClass", lhsEnergyClass), LocatorUtils.property(thatLocator, "energyClass", rhsEnergyClass), lhsEnergyClass, rhsEnergyClass)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyClass", lhsEnergyClass), LocatorUtils.property(thatLocator, "energyClass", rhsEnergyClass), lhsEnergyClass, rhsEnergyClass, (this.energyClass!= null), (that.energyClass!= null))) {
                             return false;
                         }
                     }
@@ -3606,7 +3806,7 @@ public class Feed
                         lhsEnergyPerformance = this.getEnergyPerformance();
                         ClassEnergyPerformance rhsEnergyPerformance;
                         rhsEnergyPerformance = that.getEnergyPerformance();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyPerformance", lhsEnergyPerformance), LocatorUtils.property(thatLocator, "energyPerformance", rhsEnergyPerformance), lhsEnergyPerformance, rhsEnergyPerformance)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyPerformance", lhsEnergyPerformance), LocatorUtils.property(thatLocator, "energyPerformance", rhsEnergyPerformance), lhsEnergyPerformance, rhsEnergyPerformance, (this.energyPerformance!= null), (that.energyPerformance!= null))) {
                             return false;
                         }
                     }
@@ -3614,7 +3814,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -3680,8 +3880,7 @@ public class Feed
                 "commercial",
                 "lot"
             })
-            public static class Lots
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Lots implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true, type = String.class)
@@ -3773,34 +3972,34 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         BigInteger theResidential;
                         theResidential = this.getResidential();
-                        strategy.appendField(locator, this, "residential", buffer, theResidential);
+                        strategy.appendField(locator, this, "residential", buffer, theResidential, (this.residential!= null));
                     }
                     {
                         BigInteger theCommercial;
                         theCommercial = this.getCommercial();
-                        strategy.appendField(locator, this, "commercial", buffer, theCommercial);
+                        strategy.appendField(locator, this, "commercial", buffer, theCommercial, (this.commercial!= null));
                     }
                     {
                         List<Feed.Projects.Project.Lots.Lot> theLot;
                         theLot = (((this.lot!= null)&&(!this.lot.isEmpty()))?this.getLot():null);
-                        strategy.appendField(locator, this, "lot", buffer, theLot);
+                        strategy.appendField(locator, this, "lot", buffer, theLot, ((this.lot!= null)&&(!this.lot.isEmpty())));
                     }
                     return buffer;
                 }
@@ -3810,42 +4009,57 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Projects.Project.Lots) {
                         final Feed.Projects.Project.Lots copy = ((Feed.Projects.Project.Lots) draftCopy);
-                        if (this.residential!= null) {
-                            BigInteger sourceResidential;
-                            sourceResidential = this.getResidential();
-                            BigInteger copyResidential = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "residential", sourceResidential), sourceResidential));
-                            copy.setResidential(copyResidential);
-                        } else {
-                            copy.residential = null;
-                        }
-                        if (this.commercial!= null) {
-                            BigInteger sourceCommercial;
-                            sourceCommercial = this.getCommercial();
-                            BigInteger copyCommercial = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "commercial", sourceCommercial), sourceCommercial));
-                            copy.setCommercial(copyCommercial);
-                        } else {
-                            copy.commercial = null;
-                        }
-                        if ((this.lot!= null)&&(!this.lot.isEmpty())) {
-                            List<Feed.Projects.Project.Lots.Lot> sourceLot;
-                            sourceLot = (((this.lot!= null)&&(!this.lot.isEmpty()))?this.getLot():null);
-                            @SuppressWarnings("unchecked")
-                            List<Feed.Projects.Project.Lots.Lot> copyLot = ((List<Feed.Projects.Project.Lots.Lot> ) strategy.copy(LocatorUtils.property(locator, "lot", sourceLot), sourceLot));
-                            copy.lot = null;
-                            if (copyLot!= null) {
-                                List<Feed.Projects.Project.Lots.Lot> uniqueLotl = copy.getLot();
-                                uniqueLotl.addAll(copyLot);
+                        {
+                            Boolean residentialShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.residential!= null));
+                            if (residentialShouldBeCopiedAndSet == Boolean.TRUE) {
+                                BigInteger sourceResidential;
+                                sourceResidential = this.getResidential();
+                                BigInteger copyResidential = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "residential", sourceResidential), sourceResidential, (this.residential!= null)));
+                                copy.setResidential(copyResidential);
+                            } else {
+                                if (residentialShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.residential = null;
+                                }
                             }
-                        } else {
-                            copy.lot = null;
+                        }
+                        {
+                            Boolean commercialShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.commercial!= null));
+                            if (commercialShouldBeCopiedAndSet == Boolean.TRUE) {
+                                BigInteger sourceCommercial;
+                                sourceCommercial = this.getCommercial();
+                                BigInteger copyCommercial = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "commercial", sourceCommercial), sourceCommercial, (this.commercial!= null)));
+                                copy.setCommercial(copyCommercial);
+                            } else {
+                                if (commercialShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.commercial = null;
+                                }
+                            }
+                        }
+                        {
+                            Boolean lotShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.lot!= null)&&(!this.lot.isEmpty())));
+                            if (lotShouldBeCopiedAndSet == Boolean.TRUE) {
+                                List<Feed.Projects.Project.Lots.Lot> sourceLot;
+                                sourceLot = (((this.lot!= null)&&(!this.lot.isEmpty()))?this.getLot():null);
+                                @SuppressWarnings("unchecked")
+                                List<Feed.Projects.Project.Lots.Lot> copyLot = ((List<Feed.Projects.Project.Lots.Lot> ) strategy.copy(LocatorUtils.property(locator, "lot", sourceLot), sourceLot, ((this.lot!= null)&&(!this.lot.isEmpty()))));
+                                copy.lot = null;
+                                if (copyLot!= null) {
+                                    List<Feed.Projects.Project.Lots.Lot> uniqueLotl = copy.getLot();
+                                    uniqueLotl.addAll(copyLot);
+                                }
+                            } else {
+                                if (lotShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.lot = null;
+                                }
+                            }
                         }
                     }
                     return draftCopy;
@@ -3855,7 +4069,7 @@ public class Feed
                     return new Feed.Projects.Project.Lots();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -3868,7 +4082,7 @@ public class Feed
                         lhsResidential = this.getResidential();
                         BigInteger rhsResidential;
                         rhsResidential = that.getResidential();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "residential", lhsResidential), LocatorUtils.property(thatLocator, "residential", rhsResidential), lhsResidential, rhsResidential)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "residential", lhsResidential), LocatorUtils.property(thatLocator, "residential", rhsResidential), lhsResidential, rhsResidential, (this.residential!= null), (that.residential!= null))) {
                             return false;
                         }
                     }
@@ -3877,7 +4091,7 @@ public class Feed
                         lhsCommercial = this.getCommercial();
                         BigInteger rhsCommercial;
                         rhsCommercial = that.getCommercial();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "commercial", lhsCommercial), LocatorUtils.property(thatLocator, "commercial", rhsCommercial), lhsCommercial, rhsCommercial)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "commercial", lhsCommercial), LocatorUtils.property(thatLocator, "commercial", rhsCommercial), lhsCommercial, rhsCommercial, (this.commercial!= null), (that.commercial!= null))) {
                             return false;
                         }
                     }
@@ -3886,7 +4100,7 @@ public class Feed
                         lhsLot = (((this.lot!= null)&&(!this.lot.isEmpty()))?this.getLot():null);
                         List<Feed.Projects.Project.Lots.Lot> rhsLot;
                         rhsLot = (((that.lot!= null)&&(!that.lot.isEmpty()))?that.getLot():null);
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "lot", lhsLot), LocatorUtils.property(thatLocator, "lot", rhsLot), lhsLot, rhsLot)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "lot", lhsLot), LocatorUtils.property(thatLocator, "lot", rhsLot), lhsLot, rhsLot, ((this.lot!= null)&&(!this.lot.isEmpty())), ((that.lot!= null)&&(!that.lot.isEmpty())))) {
                             return false;
                         }
                     }
@@ -3894,7 +4108,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -3944,8 +4158,7 @@ public class Feed
                 @XmlType(name = "", propOrder = {
 
                 })
-                public static class Lot
-                    implements Cloneable, CopyTo, Equals, ToString
+                public static class Lot implements Cloneable, CopyTo2, Equals2, ToString2
                 {
 
                     @XmlElement(name = "unique-id", required = true)
@@ -4296,84 +4509,84 @@ public class Feed
                     }
 
                     public String toString() {
-                        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                         final StringBuilder buffer = new StringBuilder();
                         append(null, buffer, strategy);
                         return buffer.toString();
                     }
 
-                    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                         strategy.appendStart(locator, this, buffer);
                         appendFields(locator, buffer, strategy);
                         strategy.appendEnd(locator, this, buffer);
                         return buffer;
                     }
 
-                    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                         {
                             String theUniqueId;
                             theUniqueId = this.getUniqueId();
-                            strategy.appendField(locator, this, "uniqueId", buffer, theUniqueId);
+                            strategy.appendField(locator, this, "uniqueId", buffer, theUniqueId, (this.uniqueId!= null));
                         }
                         {
                             PropertyTypeProject thePropertyType;
                             thePropertyType = this.getPropertyType();
-                            strategy.appendField(locator, this, "propertyType", buffer, thePropertyType);
+                            strategy.appendField(locator, this, "propertyType", buffer, thePropertyType, (this.propertyType!= null));
                         }
                         {
                             PriceType thePrice;
                             thePrice = this.getPrice();
-                            strategy.appendField(locator, this, "price", buffer, thePrice);
+                            strategy.appendField(locator, this, "price", buffer, thePrice, (this.price!= null));
                         }
                         {
                             SizeType theSize;
                             theSize = this.getSize();
-                            strategy.appendField(locator, this, "size", buffer, theSize);
+                            strategy.appendField(locator, this, "size", buffer, theSize, (this.size!= null));
                         }
                         {
                             Integer theRooms;
                             theRooms = this.getRooms();
-                            strategy.appendField(locator, this, "rooms", buffer, theRooms);
+                            strategy.appendField(locator, this, "rooms", buffer, theRooms, (this.rooms!= null));
                         }
                         {
                             BigInteger theBathrooms;
                             theBathrooms = this.getBathrooms();
-                            strategy.appendField(locator, this, "bathrooms", buffer, theBathrooms);
+                            strategy.appendField(locator, this, "bathrooms", buffer, theBathrooms, (this.bathrooms!= null));
                         }
                         {
                             FloorProject theFloor;
                             theFloor = this.getFloor();
-                            strategy.appendField(locator, this, "floor", buffer, theFloor);
+                            strategy.appendField(locator, this, "floor", buffer, theFloor, (this.floor!= null));
                         }
                         {
                             BoxProject theGarage;
                             theGarage = this.getGarage();
-                            strategy.appendField(locator, this, "garage", buffer, theGarage);
+                            strategy.appendField(locator, this, "garage", buffer, theGarage, (this.garage!= null));
                         }
                         {
                             String theDescription;
                             theDescription = this.getDescription();
-                            strategy.appendField(locator, this, "description", buffer, theDescription);
+                            strategy.appendField(locator, this, "description", buffer, theDescription, (this.description!= null));
                         }
                         {
                             String theSpecification;
                             theSpecification = this.getSpecification();
-                            strategy.appendField(locator, this, "specification", buffer, theSpecification);
+                            strategy.appendField(locator, this, "specification", buffer, theSpecification, (this.specification!= null));
                         }
                         {
                             Feed.Projects.Project.Lots.Lot.Pictures thePictures;
                             thePictures = this.getPictures();
-                            strategy.appendField(locator, this, "pictures", buffer, thePictures);
+                            strategy.appendField(locator, this, "pictures", buffer, thePictures, (this.pictures!= null));
                         }
                         {
                             BigInteger theTotal;
                             theTotal = this.getTotal();
-                            strategy.appendField(locator, this, "total", buffer, theTotal);
+                            strategy.appendField(locator, this, "total", buffer, theTotal, (this.total!= null));
                         }
                         {
                             BigInteger theForsale;
                             theForsale = this.getForsale();
-                            strategy.appendField(locator, this, "forsale", buffer, theForsale);
+                            strategy.appendField(locator, this, "forsale", buffer, theForsale, (this.forsale!= null));
                         }
                         return buffer;
                     }
@@ -4383,117 +4596,182 @@ public class Feed
                     }
 
                     public Object copyTo(Object target) {
-                        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                         return copyTo(null, target, strategy);
                     }
 
-                    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                         final Object draftCopy = ((target == null)?createNewInstance():target);
                         if (draftCopy instanceof Feed.Projects.Project.Lots.Lot) {
                             final Feed.Projects.Project.Lots.Lot copy = ((Feed.Projects.Project.Lots.Lot) draftCopy);
-                            if (this.uniqueId!= null) {
-                                String sourceUniqueId;
-                                sourceUniqueId = this.getUniqueId();
-                                String copyUniqueId = ((String) strategy.copy(LocatorUtils.property(locator, "uniqueId", sourceUniqueId), sourceUniqueId));
-                                copy.setUniqueId(copyUniqueId);
-                            } else {
-                                copy.uniqueId = null;
+                            {
+                                Boolean uniqueIdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.uniqueId!= null));
+                                if (uniqueIdShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourceUniqueId;
+                                    sourceUniqueId = this.getUniqueId();
+                                    String copyUniqueId = ((String) strategy.copy(LocatorUtils.property(locator, "uniqueId", sourceUniqueId), sourceUniqueId, (this.uniqueId!= null)));
+                                    copy.setUniqueId(copyUniqueId);
+                                } else {
+                                    if (uniqueIdShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.uniqueId = null;
+                                    }
+                                }
                             }
-                            if (this.propertyType!= null) {
-                                PropertyTypeProject sourcePropertyType;
-                                sourcePropertyType = this.getPropertyType();
-                                PropertyTypeProject copyPropertyType = ((PropertyTypeProject) strategy.copy(LocatorUtils.property(locator, "propertyType", sourcePropertyType), sourcePropertyType));
-                                copy.setPropertyType(copyPropertyType);
-                            } else {
-                                copy.propertyType = null;
+                            {
+                                Boolean propertyTypeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.propertyType!= null));
+                                if (propertyTypeShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    PropertyTypeProject sourcePropertyType;
+                                    sourcePropertyType = this.getPropertyType();
+                                    PropertyTypeProject copyPropertyType = ((PropertyTypeProject) strategy.copy(LocatorUtils.property(locator, "propertyType", sourcePropertyType), sourcePropertyType, (this.propertyType!= null)));
+                                    copy.setPropertyType(copyPropertyType);
+                                } else {
+                                    if (propertyTypeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.propertyType = null;
+                                    }
+                                }
                             }
-                            if (this.price!= null) {
-                                PriceType sourcePrice;
-                                sourcePrice = this.getPrice();
-                                PriceType copyPrice = ((PriceType) strategy.copy(LocatorUtils.property(locator, "price", sourcePrice), sourcePrice));
-                                copy.setPrice(copyPrice);
-                            } else {
-                                copy.price = null;
+                            {
+                                Boolean priceShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.price!= null));
+                                if (priceShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    PriceType sourcePrice;
+                                    sourcePrice = this.getPrice();
+                                    PriceType copyPrice = ((PriceType) strategy.copy(LocatorUtils.property(locator, "price", sourcePrice), sourcePrice, (this.price!= null)));
+                                    copy.setPrice(copyPrice);
+                                } else {
+                                    if (priceShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.price = null;
+                                    }
+                                }
                             }
-                            if (this.size!= null) {
-                                SizeType sourceSize;
-                                sourceSize = this.getSize();
-                                SizeType copySize = ((SizeType) strategy.copy(LocatorUtils.property(locator, "size", sourceSize), sourceSize));
-                                copy.setSize(copySize);
-                            } else {
-                                copy.size = null;
+                            {
+                                Boolean sizeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.size!= null));
+                                if (sizeShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    SizeType sourceSize;
+                                    sourceSize = this.getSize();
+                                    SizeType copySize = ((SizeType) strategy.copy(LocatorUtils.property(locator, "size", sourceSize), sourceSize, (this.size!= null)));
+                                    copy.setSize(copySize);
+                                } else {
+                                    if (sizeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.size = null;
+                                    }
+                                }
                             }
-                            if (this.rooms!= null) {
-                                Integer sourceRooms;
-                                sourceRooms = this.getRooms();
-                                Integer copyRooms = ((Integer) strategy.copy(LocatorUtils.property(locator, "rooms", sourceRooms), sourceRooms));
-                                copy.setRooms(copyRooms);
-                            } else {
-                                copy.rooms = null;
+                            {
+                                Boolean roomsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rooms!= null));
+                                if (roomsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    Integer sourceRooms;
+                                    sourceRooms = this.getRooms();
+                                    Integer copyRooms = ((Integer) strategy.copy(LocatorUtils.property(locator, "rooms", sourceRooms), sourceRooms, (this.rooms!= null)));
+                                    copy.setRooms(copyRooms);
+                                } else {
+                                    if (roomsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.rooms = null;
+                                    }
+                                }
                             }
-                            if (this.bathrooms!= null) {
-                                BigInteger sourceBathrooms;
-                                sourceBathrooms = this.getBathrooms();
-                                BigInteger copyBathrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms));
-                                copy.setBathrooms(copyBathrooms);
-                            } else {
-                                copy.bathrooms = null;
+                            {
+                                Boolean bathroomsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bathrooms!= null));
+                                if (bathroomsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    BigInteger sourceBathrooms;
+                                    sourceBathrooms = this.getBathrooms();
+                                    BigInteger copyBathrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms, (this.bathrooms!= null)));
+                                    copy.setBathrooms(copyBathrooms);
+                                } else {
+                                    if (bathroomsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.bathrooms = null;
+                                    }
+                                }
                             }
-                            if (this.floor!= null) {
-                                FloorProject sourceFloor;
-                                sourceFloor = this.getFloor();
-                                FloorProject copyFloor = ((FloorProject) strategy.copy(LocatorUtils.property(locator, "floor", sourceFloor), sourceFloor));
-                                copy.setFloor(copyFloor);
-                            } else {
-                                copy.floor = null;
+                            {
+                                Boolean floorShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.floor!= null));
+                                if (floorShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    FloorProject sourceFloor;
+                                    sourceFloor = this.getFloor();
+                                    FloorProject copyFloor = ((FloorProject) strategy.copy(LocatorUtils.property(locator, "floor", sourceFloor), sourceFloor, (this.floor!= null)));
+                                    copy.setFloor(copyFloor);
+                                } else {
+                                    if (floorShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.floor = null;
+                                    }
+                                }
                             }
-                            if (this.garage!= null) {
-                                BoxProject sourceGarage;
-                                sourceGarage = this.getGarage();
-                                BoxProject copyGarage = ((BoxProject) strategy.copy(LocatorUtils.property(locator, "garage", sourceGarage), sourceGarage));
-                                copy.setGarage(copyGarage);
-                            } else {
-                                copy.garage = null;
+                            {
+                                Boolean garageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.garage!= null));
+                                if (garageShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    BoxProject sourceGarage;
+                                    sourceGarage = this.getGarage();
+                                    BoxProject copyGarage = ((BoxProject) strategy.copy(LocatorUtils.property(locator, "garage", sourceGarage), sourceGarage, (this.garage!= null)));
+                                    copy.setGarage(copyGarage);
+                                } else {
+                                    if (garageShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.garage = null;
+                                    }
+                                }
                             }
-                            if (this.description!= null) {
-                                String sourceDescription;
-                                sourceDescription = this.getDescription();
-                                String copyDescription = ((String) strategy.copy(LocatorUtils.property(locator, "description", sourceDescription), sourceDescription));
-                                copy.setDescription(copyDescription);
-                            } else {
-                                copy.description = null;
+                            {
+                                Boolean descriptionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.description!= null));
+                                if (descriptionShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourceDescription;
+                                    sourceDescription = this.getDescription();
+                                    String copyDescription = ((String) strategy.copy(LocatorUtils.property(locator, "description", sourceDescription), sourceDescription, (this.description!= null)));
+                                    copy.setDescription(copyDescription);
+                                } else {
+                                    if (descriptionShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.description = null;
+                                    }
+                                }
                             }
-                            if (this.specification!= null) {
-                                String sourceSpecification;
-                                sourceSpecification = this.getSpecification();
-                                String copySpecification = ((String) strategy.copy(LocatorUtils.property(locator, "specification", sourceSpecification), sourceSpecification));
-                                copy.setSpecification(copySpecification);
-                            } else {
-                                copy.specification = null;
+                            {
+                                Boolean specificationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.specification!= null));
+                                if (specificationShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    String sourceSpecification;
+                                    sourceSpecification = this.getSpecification();
+                                    String copySpecification = ((String) strategy.copy(LocatorUtils.property(locator, "specification", sourceSpecification), sourceSpecification, (this.specification!= null)));
+                                    copy.setSpecification(copySpecification);
+                                } else {
+                                    if (specificationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.specification = null;
+                                    }
+                                }
                             }
-                            if (this.pictures!= null) {
-                                Feed.Projects.Project.Lots.Lot.Pictures sourcePictures;
-                                sourcePictures = this.getPictures();
-                                Feed.Projects.Project.Lots.Lot.Pictures copyPictures = ((Feed.Projects.Project.Lots.Lot.Pictures) strategy.copy(LocatorUtils.property(locator, "pictures", sourcePictures), sourcePictures));
-                                copy.setPictures(copyPictures);
-                            } else {
-                                copy.pictures = null;
+                            {
+                                Boolean picturesShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pictures!= null));
+                                if (picturesShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    Feed.Projects.Project.Lots.Lot.Pictures sourcePictures;
+                                    sourcePictures = this.getPictures();
+                                    Feed.Projects.Project.Lots.Lot.Pictures copyPictures = ((Feed.Projects.Project.Lots.Lot.Pictures) strategy.copy(LocatorUtils.property(locator, "pictures", sourcePictures), sourcePictures, (this.pictures!= null)));
+                                    copy.setPictures(copyPictures);
+                                } else {
+                                    if (picturesShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.pictures = null;
+                                    }
+                                }
                             }
-                            if (this.total!= null) {
-                                BigInteger sourceTotal;
-                                sourceTotal = this.getTotal();
-                                BigInteger copyTotal = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "total", sourceTotal), sourceTotal));
-                                copy.setTotal(copyTotal);
-                            } else {
-                                copy.total = null;
+                            {
+                                Boolean totalShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.total!= null));
+                                if (totalShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    BigInteger sourceTotal;
+                                    sourceTotal = this.getTotal();
+                                    BigInteger copyTotal = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "total", sourceTotal), sourceTotal, (this.total!= null)));
+                                    copy.setTotal(copyTotal);
+                                } else {
+                                    if (totalShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.total = null;
+                                    }
+                                }
                             }
-                            if (this.forsale!= null) {
-                                BigInteger sourceForsale;
-                                sourceForsale = this.getForsale();
-                                BigInteger copyForsale = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "forsale", sourceForsale), sourceForsale));
-                                copy.setForsale(copyForsale);
-                            } else {
-                                copy.forsale = null;
+                            {
+                                Boolean forsaleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.forsale!= null));
+                                if (forsaleShouldBeCopiedAndSet == Boolean.TRUE) {
+                                    BigInteger sourceForsale;
+                                    sourceForsale = this.getForsale();
+                                    BigInteger copyForsale = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "forsale", sourceForsale), sourceForsale, (this.forsale!= null)));
+                                    copy.setForsale(copyForsale);
+                                } else {
+                                    if (forsaleShouldBeCopiedAndSet == Boolean.FALSE) {
+                                        copy.forsale = null;
+                                    }
+                                }
                             }
                         }
                         return draftCopy;
@@ -4503,7 +4781,7 @@ public class Feed
                         return new Feed.Projects.Project.Lots.Lot();
                     }
 
-                    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                         if ((object == null)||(this.getClass()!= object.getClass())) {
                             return false;
                         }
@@ -4516,7 +4794,7 @@ public class Feed
                             lhsUniqueId = this.getUniqueId();
                             String rhsUniqueId;
                             rhsUniqueId = that.getUniqueId();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "uniqueId", lhsUniqueId), LocatorUtils.property(thatLocator, "uniqueId", rhsUniqueId), lhsUniqueId, rhsUniqueId)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "uniqueId", lhsUniqueId), LocatorUtils.property(thatLocator, "uniqueId", rhsUniqueId), lhsUniqueId, rhsUniqueId, (this.uniqueId!= null), (that.uniqueId!= null))) {
                                 return false;
                             }
                         }
@@ -4525,7 +4803,7 @@ public class Feed
                             lhsPropertyType = this.getPropertyType();
                             PropertyTypeProject rhsPropertyType;
                             rhsPropertyType = that.getPropertyType();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "propertyType", lhsPropertyType), LocatorUtils.property(thatLocator, "propertyType", rhsPropertyType), lhsPropertyType, rhsPropertyType)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "propertyType", lhsPropertyType), LocatorUtils.property(thatLocator, "propertyType", rhsPropertyType), lhsPropertyType, rhsPropertyType, (this.propertyType!= null), (that.propertyType!= null))) {
                                 return false;
                             }
                         }
@@ -4534,7 +4812,7 @@ public class Feed
                             lhsPrice = this.getPrice();
                             PriceType rhsPrice;
                             rhsPrice = that.getPrice();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "price", lhsPrice), LocatorUtils.property(thatLocator, "price", rhsPrice), lhsPrice, rhsPrice)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "price", lhsPrice), LocatorUtils.property(thatLocator, "price", rhsPrice), lhsPrice, rhsPrice, (this.price!= null), (that.price!= null))) {
                                 return false;
                             }
                         }
@@ -4543,7 +4821,7 @@ public class Feed
                             lhsSize = this.getSize();
                             SizeType rhsSize;
                             rhsSize = that.getSize();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "size", lhsSize), LocatorUtils.property(thatLocator, "size", rhsSize), lhsSize, rhsSize)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "size", lhsSize), LocatorUtils.property(thatLocator, "size", rhsSize), lhsSize, rhsSize, (this.size!= null), (that.size!= null))) {
                                 return false;
                             }
                         }
@@ -4552,7 +4830,7 @@ public class Feed
                             lhsRooms = this.getRooms();
                             Integer rhsRooms;
                             rhsRooms = that.getRooms();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "rooms", lhsRooms), LocatorUtils.property(thatLocator, "rooms", rhsRooms), lhsRooms, rhsRooms)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "rooms", lhsRooms), LocatorUtils.property(thatLocator, "rooms", rhsRooms), lhsRooms, rhsRooms, (this.rooms!= null), (that.rooms!= null))) {
                                 return false;
                             }
                         }
@@ -4561,7 +4839,7 @@ public class Feed
                             lhsBathrooms = this.getBathrooms();
                             BigInteger rhsBathrooms;
                             rhsBathrooms = that.getBathrooms();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "bathrooms", lhsBathrooms), LocatorUtils.property(thatLocator, "bathrooms", rhsBathrooms), lhsBathrooms, rhsBathrooms)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "bathrooms", lhsBathrooms), LocatorUtils.property(thatLocator, "bathrooms", rhsBathrooms), lhsBathrooms, rhsBathrooms, (this.bathrooms!= null), (that.bathrooms!= null))) {
                                 return false;
                             }
                         }
@@ -4570,7 +4848,7 @@ public class Feed
                             lhsFloor = this.getFloor();
                             FloorProject rhsFloor;
                             rhsFloor = that.getFloor();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "floor", lhsFloor), LocatorUtils.property(thatLocator, "floor", rhsFloor), lhsFloor, rhsFloor)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "floor", lhsFloor), LocatorUtils.property(thatLocator, "floor", rhsFloor), lhsFloor, rhsFloor, (this.floor!= null), (that.floor!= null))) {
                                 return false;
                             }
                         }
@@ -4579,7 +4857,7 @@ public class Feed
                             lhsGarage = this.getGarage();
                             BoxProject rhsGarage;
                             rhsGarage = that.getGarage();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "garage", lhsGarage), LocatorUtils.property(thatLocator, "garage", rhsGarage), lhsGarage, rhsGarage)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "garage", lhsGarage), LocatorUtils.property(thatLocator, "garage", rhsGarage), lhsGarage, rhsGarage, (this.garage!= null), (that.garage!= null))) {
                                 return false;
                             }
                         }
@@ -4588,7 +4866,7 @@ public class Feed
                             lhsDescription = this.getDescription();
                             String rhsDescription;
                             rhsDescription = that.getDescription();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "description", lhsDescription), LocatorUtils.property(thatLocator, "description", rhsDescription), lhsDescription, rhsDescription)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "description", lhsDescription), LocatorUtils.property(thatLocator, "description", rhsDescription), lhsDescription, rhsDescription, (this.description!= null), (that.description!= null))) {
                                 return false;
                             }
                         }
@@ -4597,7 +4875,7 @@ public class Feed
                             lhsSpecification = this.getSpecification();
                             String rhsSpecification;
                             rhsSpecification = that.getSpecification();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "specification", lhsSpecification), LocatorUtils.property(thatLocator, "specification", rhsSpecification), lhsSpecification, rhsSpecification)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "specification", lhsSpecification), LocatorUtils.property(thatLocator, "specification", rhsSpecification), lhsSpecification, rhsSpecification, (this.specification!= null), (that.specification!= null))) {
                                 return false;
                             }
                         }
@@ -4606,7 +4884,7 @@ public class Feed
                             lhsPictures = this.getPictures();
                             Feed.Projects.Project.Lots.Lot.Pictures rhsPictures;
                             rhsPictures = that.getPictures();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "pictures", lhsPictures), LocatorUtils.property(thatLocator, "pictures", rhsPictures), lhsPictures, rhsPictures)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "pictures", lhsPictures), LocatorUtils.property(thatLocator, "pictures", rhsPictures), lhsPictures, rhsPictures, (this.pictures!= null), (that.pictures!= null))) {
                                 return false;
                             }
                         }
@@ -4615,7 +4893,7 @@ public class Feed
                             lhsTotal = this.getTotal();
                             BigInteger rhsTotal;
                             rhsTotal = that.getTotal();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "total", lhsTotal), LocatorUtils.property(thatLocator, "total", rhsTotal), lhsTotal, rhsTotal)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "total", lhsTotal), LocatorUtils.property(thatLocator, "total", rhsTotal), lhsTotal, rhsTotal, (this.total!= null), (that.total!= null))) {
                                 return false;
                             }
                         }
@@ -4624,7 +4902,7 @@ public class Feed
                             lhsForsale = this.getForsale();
                             BigInteger rhsForsale;
                             rhsForsale = that.getForsale();
-                            if (!strategy.equals(LocatorUtils.property(thisLocator, "forsale", lhsForsale), LocatorUtils.property(thatLocator, "forsale", rhsForsale), lhsForsale, rhsForsale)) {
+                            if (!strategy.equals(LocatorUtils.property(thisLocator, "forsale", lhsForsale), LocatorUtils.property(thatLocator, "forsale", rhsForsale), lhsForsale, rhsForsale, (this.forsale!= null), (that.forsale!= null))) {
                                 return false;
                             }
                         }
@@ -4632,7 +4910,7 @@ public class Feed
                     }
 
                     public boolean equals(Object object) {
-                        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                         return equals(null, null, object, strategy);
                     }
 
@@ -4660,8 +4938,7 @@ public class Feed
                     @XmlType(name = "", propOrder = {
                         "pictureUrl"
                     })
-                    public static class Pictures
-                        implements Cloneable, CopyTo, Equals, ToString
+                    public static class Pictures implements Cloneable, CopyTo2, Equals2, ToString2
                     {
 
                         @XmlElement(name = "picture-url", required = true)
@@ -4697,24 +4974,24 @@ public class Feed
                         }
 
                         public String toString() {
-                            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                             final StringBuilder buffer = new StringBuilder();
                             append(null, buffer, strategy);
                             return buffer.toString();
                         }
 
-                        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                             strategy.appendStart(locator, this, buffer);
                             appendFields(locator, buffer, strategy);
                             strategy.appendEnd(locator, this, buffer);
                             return buffer;
                         }
 
-                        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                             {
                                 List<PictureProject> thePictureUrl;
                                 thePictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
-                                strategy.appendField(locator, this, "pictureUrl", buffer, thePictureUrl);
+                                strategy.appendField(locator, this, "pictureUrl", buffer, thePictureUrl, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())));
                             }
                             return buffer;
                         }
@@ -4724,26 +5001,31 @@ public class Feed
                         }
 
                         public Object copyTo(Object target) {
-                            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                             return copyTo(null, target, strategy);
                         }
 
-                        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                             final Object draftCopy = ((target == null)?createNewInstance():target);
                             if (draftCopy instanceof Feed.Projects.Project.Lots.Lot.Pictures) {
                                 final Feed.Projects.Project.Lots.Lot.Pictures copy = ((Feed.Projects.Project.Lots.Lot.Pictures) draftCopy);
-                                if ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())) {
-                                    List<PictureProject> sourcePictureUrl;
-                                    sourcePictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
-                                    @SuppressWarnings("unchecked")
-                                    List<PictureProject> copyPictureUrl = ((List<PictureProject> ) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl));
-                                    copy.pictureUrl = null;
-                                    if (copyPictureUrl!= null) {
-                                        List<PictureProject> uniquePictureUrll = copy.getPictureUrl();
-                                        uniquePictureUrll.addAll(copyPictureUrl);
+                                {
+                                    Boolean pictureUrlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())));
+                                    if (pictureUrlShouldBeCopiedAndSet == Boolean.TRUE) {
+                                        List<PictureProject> sourcePictureUrl;
+                                        sourcePictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
+                                        @SuppressWarnings("unchecked")
+                                        List<PictureProject> copyPictureUrl = ((List<PictureProject> ) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))));
+                                        copy.pictureUrl = null;
+                                        if (copyPictureUrl!= null) {
+                                            List<PictureProject> uniquePictureUrll = copy.getPictureUrl();
+                                            uniquePictureUrll.addAll(copyPictureUrl);
+                                        }
+                                    } else {
+                                        if (pictureUrlShouldBeCopiedAndSet == Boolean.FALSE) {
+                                            copy.pictureUrl = null;
+                                        }
                                     }
-                                } else {
-                                    copy.pictureUrl = null;
                                 }
                             }
                             return draftCopy;
@@ -4753,7 +5035,7 @@ public class Feed
                             return new Feed.Projects.Project.Lots.Lot.Pictures();
                         }
 
-                        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                             if ((object == null)||(this.getClass()!= object.getClass())) {
                                 return false;
                             }
@@ -4766,7 +5048,7 @@ public class Feed
                                 lhsPictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
                                 List<PictureProject> rhsPictureUrl;
                                 rhsPictureUrl = (((that.pictureUrl!= null)&&(!that.pictureUrl.isEmpty()))?that.getPictureUrl():null);
-                                if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrl", lhsPictureUrl), LocatorUtils.property(thatLocator, "pictureUrl", rhsPictureUrl), lhsPictureUrl, rhsPictureUrl)) {
+                                if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrl", lhsPictureUrl), LocatorUtils.property(thatLocator, "pictureUrl", rhsPictureUrl), lhsPictureUrl, rhsPictureUrl, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())), ((that.pictureUrl!= null)&&(!that.pictureUrl.isEmpty())))) {
                                     return false;
                                 }
                             }
@@ -4774,7 +5056,7 @@ public class Feed
                         }
 
                         public boolean equals(Object object) {
-                            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                             return equals(null, null, object, strategy);
                         }
 
@@ -4808,8 +5090,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
                 "pictureUrl"
             })
-            public static class Pictures
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Pictures implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(name = "picture-url", required = true)
@@ -4845,24 +5126,24 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         List<PictureProject> thePictureUrl;
                         thePictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
-                        strategy.appendField(locator, this, "pictureUrl", buffer, thePictureUrl);
+                        strategy.appendField(locator, this, "pictureUrl", buffer, thePictureUrl, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())));
                     }
                     return buffer;
                 }
@@ -4872,26 +5153,31 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Projects.Project.Pictures) {
                         final Feed.Projects.Project.Pictures copy = ((Feed.Projects.Project.Pictures) draftCopy);
-                        if ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())) {
-                            List<PictureProject> sourcePictureUrl;
-                            sourcePictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
-                            @SuppressWarnings("unchecked")
-                            List<PictureProject> copyPictureUrl = ((List<PictureProject> ) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl));
-                            copy.pictureUrl = null;
-                            if (copyPictureUrl!= null) {
-                                List<PictureProject> uniquePictureUrll = copy.getPictureUrl();
-                                uniquePictureUrll.addAll(copyPictureUrl);
+                        {
+                            Boolean pictureUrlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())));
+                            if (pictureUrlShouldBeCopiedAndSet == Boolean.TRUE) {
+                                List<PictureProject> sourcePictureUrl;
+                                sourcePictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
+                                @SuppressWarnings("unchecked")
+                                List<PictureProject> copyPictureUrl = ((List<PictureProject> ) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))));
+                                copy.pictureUrl = null;
+                                if (copyPictureUrl!= null) {
+                                    List<PictureProject> uniquePictureUrll = copy.getPictureUrl();
+                                    uniquePictureUrll.addAll(copyPictureUrl);
+                                }
+                            } else {
+                                if (pictureUrlShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.pictureUrl = null;
+                                }
                             }
-                        } else {
-                            copy.pictureUrl = null;
                         }
                     }
                     return draftCopy;
@@ -4901,7 +5187,7 @@ public class Feed
                     return new Feed.Projects.Project.Pictures();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -4914,7 +5200,7 @@ public class Feed
                         lhsPictureUrl = (((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty()))?this.getPictureUrl():null);
                         List<PictureProject> rhsPictureUrl;
                         rhsPictureUrl = (((that.pictureUrl!= null)&&(!that.pictureUrl.isEmpty()))?that.getPictureUrl():null);
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrl", lhsPictureUrl), LocatorUtils.property(thatLocator, "pictureUrl", rhsPictureUrl), lhsPictureUrl, rhsPictureUrl)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrl", lhsPictureUrl), LocatorUtils.property(thatLocator, "pictureUrl", rhsPictureUrl), lhsPictureUrl, rhsPictureUrl, ((this.pictureUrl!= null)&&(!this.pictureUrl.isEmpty())), ((that.pictureUrl!= null)&&(!that.pictureUrl.isEmpty())))) {
                             return false;
                         }
                     }
@@ -4922,7 +5208,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -4952,8 +5238,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Videos
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Videos implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true)
@@ -4984,24 +5269,24 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         VideoProject theVideo;
                         theVideo = this.getVideo();
-                        strategy.appendField(locator, this, "video", buffer, theVideo);
+                        strategy.appendField(locator, this, "video", buffer, theVideo, (this.video!= null));
                     }
                     return buffer;
                 }
@@ -5011,21 +5296,26 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Projects.Project.Videos) {
                         final Feed.Projects.Project.Videos copy = ((Feed.Projects.Project.Videos) draftCopy);
-                        if (this.video!= null) {
-                            VideoProject sourceVideo;
-                            sourceVideo = this.getVideo();
-                            VideoProject copyVideo = ((VideoProject) strategy.copy(LocatorUtils.property(locator, "video", sourceVideo), sourceVideo));
-                            copy.setVideo(copyVideo);
-                        } else {
-                            copy.video = null;
+                        {
+                            Boolean videoShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.video!= null));
+                            if (videoShouldBeCopiedAndSet == Boolean.TRUE) {
+                                VideoProject sourceVideo;
+                                sourceVideo = this.getVideo();
+                                VideoProject copyVideo = ((VideoProject) strategy.copy(LocatorUtils.property(locator, "video", sourceVideo), sourceVideo, (this.video!= null)));
+                                copy.setVideo(copyVideo);
+                            } else {
+                                if (videoShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.video = null;
+                                }
+                            }
                         }
                     }
                     return draftCopy;
@@ -5035,7 +5325,7 @@ public class Feed
                     return new Feed.Projects.Project.Videos();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -5048,7 +5338,7 @@ public class Feed
                         lhsVideo = this.getVideo();
                         VideoProject rhsVideo;
                         rhsVideo = that.getVideo();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "video", lhsVideo), LocatorUtils.property(thatLocator, "video", rhsVideo), lhsVideo, rhsVideo)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "video", lhsVideo), LocatorUtils.property(thatLocator, "video", rhsVideo), lhsVideo, rhsVideo, (this.video!= null), (that.video!= null))) {
                             return false;
                         }
                     }
@@ -5056,7 +5346,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -5214,8 +5504,7 @@ public class Feed
     @XmlType(name = "", propOrder = {
         "property"
     })
-    public static class Properties
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Properties implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         protected List<Feed.Properties.Property> property;
@@ -5250,24 +5539,24 @@ public class Feed
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 List<Feed.Properties.Property> theProperty;
                 theProperty = (((this.property!= null)&&(!this.property.isEmpty()))?this.getProperty():null);
-                strategy.appendField(locator, this, "property", buffer, theProperty);
+                strategy.appendField(locator, this, "property", buffer, theProperty, ((this.property!= null)&&(!this.property.isEmpty())));
             }
             return buffer;
         }
@@ -5277,26 +5566,31 @@ public class Feed
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Feed.Properties) {
                 final Feed.Properties copy = ((Feed.Properties) draftCopy);
-                if ((this.property!= null)&&(!this.property.isEmpty())) {
-                    List<Feed.Properties.Property> sourceProperty;
-                    sourceProperty = (((this.property!= null)&&(!this.property.isEmpty()))?this.getProperty():null);
-                    @SuppressWarnings("unchecked")
-                    List<Feed.Properties.Property> copyProperty = ((List<Feed.Properties.Property> ) strategy.copy(LocatorUtils.property(locator, "property", sourceProperty), sourceProperty));
-                    copy.property = null;
-                    if (copyProperty!= null) {
-                        List<Feed.Properties.Property> uniquePropertyl = copy.getProperty();
-                        uniquePropertyl.addAll(copyProperty);
+                {
+                    Boolean propertyShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.property!= null)&&(!this.property.isEmpty())));
+                    if (propertyShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<Feed.Properties.Property> sourceProperty;
+                        sourceProperty = (((this.property!= null)&&(!this.property.isEmpty()))?this.getProperty():null);
+                        @SuppressWarnings("unchecked")
+                        List<Feed.Properties.Property> copyProperty = ((List<Feed.Properties.Property> ) strategy.copy(LocatorUtils.property(locator, "property", sourceProperty), sourceProperty, ((this.property!= null)&&(!this.property.isEmpty()))));
+                        copy.property = null;
+                        if (copyProperty!= null) {
+                            List<Feed.Properties.Property> uniquePropertyl = copy.getProperty();
+                            uniquePropertyl.addAll(copyProperty);
+                        }
+                    } else {
+                        if (propertyShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.property = null;
+                        }
                     }
-                } else {
-                    copy.property = null;
                 }
             }
             return draftCopy;
@@ -5306,7 +5600,7 @@ public class Feed
             return new Feed.Properties();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -5319,7 +5613,7 @@ public class Feed
                 lhsProperty = (((this.property!= null)&&(!this.property.isEmpty()))?this.getProperty():null);
                 List<Feed.Properties.Property> rhsProperty;
                 rhsProperty = (((that.property!= null)&&(!that.property.isEmpty()))?that.getProperty():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "property", lhsProperty), LocatorUtils.property(thatLocator, "property", rhsProperty), lhsProperty, rhsProperty)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "property", lhsProperty), LocatorUtils.property(thatLocator, "property", rhsProperty), lhsProperty, rhsProperty, ((this.property!= null)&&(!this.property.isEmpty())), ((that.property!= null)&&(!that.property.isEmpty())))) {
                     return false;
                 }
             }
@@ -5327,7 +5621,7 @@ public class Feed
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 
@@ -5469,8 +5763,7 @@ public class Feed
         @XmlType(name = "", propOrder = {
 
         })
-        public static class Property
-            implements Cloneable, CopyTo, Equals, ToString
+        public static class Property implements Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlElement(name = "unique-id", required = true)
@@ -5892,99 +6185,99 @@ public class Feed
             }
 
             public String toString() {
-                final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                 final StringBuilder buffer = new StringBuilder();
                 append(null, buffer, strategy);
                 return buffer.toString();
             }
 
-            public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+            public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 strategy.appendStart(locator, this, buffer);
                 appendFields(locator, buffer, strategy);
                 strategy.appendEnd(locator, this, buffer);
                 return buffer;
             }
 
-            public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+            public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 {
                     String theUniqueId;
                     theUniqueId = this.getUniqueId();
-                    strategy.appendField(locator, this, "uniqueId", buffer, theUniqueId);
+                    strategy.appendField(locator, this, "uniqueId", buffer, theUniqueId, (this.uniqueId!= null));
                 }
                 {
                     Calendar theDateUpdated;
                     theDateUpdated = this.getDateUpdated();
-                    strategy.appendField(locator, this, "dateUpdated", buffer, theDateUpdated);
+                    strategy.appendField(locator, this, "dateUpdated", buffer, theDateUpdated, (this.dateUpdated!= null));
                 }
                 {
                     Calendar theDateExpiration;
                     theDateExpiration = this.getDateExpiration();
-                    strategy.appendField(locator, this, "dateExpiration", buffer, theDateExpiration);
+                    strategy.appendField(locator, this, "dateExpiration", buffer, theDateExpiration, (this.dateExpiration!= null));
                 }
                 {
                     TransactionType theTransactionType;
                     theTransactionType = this.getTransactionType();
-                    strategy.appendField(locator, this, "transactionType", buffer, theTransactionType);
+                    strategy.appendField(locator, this, "transactionType", buffer, theTransactionType, (this.transactionType!= null));
                 }
                 {
                     Building theBuilding;
                     theBuilding = this.getBuilding();
-                    strategy.appendField(locator, this, "building", buffer, theBuilding);
+                    strategy.appendField(locator, this, "building", buffer, theBuilding, (this.building!= null));
                 }
                 {
                     Category theCategory;
                     theCategory = this.getCategory();
-                    strategy.appendField(locator, this, "category", buffer, theCategory);
+                    strategy.appendField(locator, this, "category", buffer, theCategory, (this.category!= null));
                 }
                 {
                     Proptype thePropertyType;
                     thePropertyType = this.getPropertyType();
-                    strategy.appendField(locator, this, "propertyType", buffer, thePropertyType);
+                    strategy.appendField(locator, this, "propertyType", buffer, thePropertyType, (this.propertyType!= null));
                 }
                 {
                     Status theBuildingStatus;
                     theBuildingStatus = this.getBuildingStatus();
-                    strategy.appendField(locator, this, "buildingStatus", buffer, theBuildingStatus);
+                    strategy.appendField(locator, this, "buildingStatus", buffer, theBuildingStatus, (this.buildingStatus!= null));
                 }
                 {
                     Feed.Properties.Property.Agent theAgent;
                     theAgent = this.getAgent();
-                    strategy.appendField(locator, this, "agent", buffer, theAgent);
+                    strategy.appendField(locator, this, "agent", buffer, theAgent, (this.agent!= null));
                 }
                 {
                     LocationStructure theLocation;
                     theLocation = this.getLocation();
-                    strategy.appendField(locator, this, "location", buffer, theLocation);
+                    strategy.appendField(locator, this, "location", buffer, theLocation, (this.location!= null));
                 }
                 {
                     Feed.Properties.Property.Features theFeatures;
                     theFeatures = this.getFeatures();
-                    strategy.appendField(locator, this, "features", buffer, theFeatures);
+                    strategy.appendField(locator, this, "features", buffer, theFeatures, (this.features!= null));
                 }
                 {
                     Feed.Properties.Property.ExtraFeatures theExtraFeatures;
                     theExtraFeatures = this.getExtraFeatures();
-                    strategy.appendField(locator, this, "extraFeatures", buffer, theExtraFeatures);
+                    strategy.appendField(locator, this, "extraFeatures", buffer, theExtraFeatures, (this.extraFeatures!= null));
                 }
                 {
                     Feed.Properties.Property.Pictures thePictures;
                     thePictures = this.getPictures();
-                    strategy.appendField(locator, this, "pictures", buffer, thePictures);
+                    strategy.appendField(locator, this, "pictures", buffer, thePictures, (this.pictures!= null));
                 }
                 {
                     Feed.Properties.Property.Blueprints theBlueprints;
                     theBlueprints = this.getBlueprints();
-                    strategy.appendField(locator, this, "blueprints", buffer, theBlueprints);
+                    strategy.appendField(locator, this, "blueprints", buffer, theBlueprints, (this.blueprints!= null));
                 }
                 {
                     Feed.Properties.Property.Videos theVideos;
                     theVideos = this.getVideos();
-                    strategy.appendField(locator, this, "videos", buffer, theVideos);
+                    strategy.appendField(locator, this, "videos", buffer, theVideos, (this.videos!= null));
                 }
                 {
                     Operation theOperation;
                     theOperation = this.getOperation();
-                    strategy.appendField(locator, this, "operation", buffer, theOperation);
+                    strategy.appendField(locator, this, "operation", buffer, theOperation, (this.operation!= null));
                 }
                 return buffer;
             }
@@ -5994,141 +6287,221 @@ public class Feed
             }
 
             public Object copyTo(Object target) {
-                final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                 return copyTo(null, target, strategy);
             }
 
-            public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+            public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                 final Object draftCopy = ((target == null)?createNewInstance():target);
                 if (draftCopy instanceof Feed.Properties.Property) {
                     final Feed.Properties.Property copy = ((Feed.Properties.Property) draftCopy);
-                    if (this.uniqueId!= null) {
-                        String sourceUniqueId;
-                        sourceUniqueId = this.getUniqueId();
-                        String copyUniqueId = ((String) strategy.copy(LocatorUtils.property(locator, "uniqueId", sourceUniqueId), sourceUniqueId));
-                        copy.setUniqueId(copyUniqueId);
-                    } else {
-                        copy.uniqueId = null;
+                    {
+                        Boolean uniqueIdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.uniqueId!= null));
+                        if (uniqueIdShouldBeCopiedAndSet == Boolean.TRUE) {
+                            String sourceUniqueId;
+                            sourceUniqueId = this.getUniqueId();
+                            String copyUniqueId = ((String) strategy.copy(LocatorUtils.property(locator, "uniqueId", sourceUniqueId), sourceUniqueId, (this.uniqueId!= null)));
+                            copy.setUniqueId(copyUniqueId);
+                        } else {
+                            if (uniqueIdShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.uniqueId = null;
+                            }
+                        }
                     }
-                    if (this.dateUpdated!= null) {
-                        Calendar sourceDateUpdated;
-                        sourceDateUpdated = this.getDateUpdated();
-                        Calendar copyDateUpdated = ((Calendar) strategy.copy(LocatorUtils.property(locator, "dateUpdated", sourceDateUpdated), sourceDateUpdated));
-                        copy.setDateUpdated(copyDateUpdated);
-                    } else {
-                        copy.dateUpdated = null;
+                    {
+                        Boolean dateUpdatedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dateUpdated!= null));
+                        if (dateUpdatedShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Calendar sourceDateUpdated;
+                            sourceDateUpdated = this.getDateUpdated();
+                            Calendar copyDateUpdated = ((Calendar) strategy.copy(LocatorUtils.property(locator, "dateUpdated", sourceDateUpdated), sourceDateUpdated, (this.dateUpdated!= null)));
+                            copy.setDateUpdated(copyDateUpdated);
+                        } else {
+                            if (dateUpdatedShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.dateUpdated = null;
+                            }
+                        }
                     }
-                    if (this.dateExpiration!= null) {
-                        Calendar sourceDateExpiration;
-                        sourceDateExpiration = this.getDateExpiration();
-                        Calendar copyDateExpiration = ((Calendar) strategy.copy(LocatorUtils.property(locator, "dateExpiration", sourceDateExpiration), sourceDateExpiration));
-                        copy.setDateExpiration(copyDateExpiration);
-                    } else {
-                        copy.dateExpiration = null;
+                    {
+                        Boolean dateExpirationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dateExpiration!= null));
+                        if (dateExpirationShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Calendar sourceDateExpiration;
+                            sourceDateExpiration = this.getDateExpiration();
+                            Calendar copyDateExpiration = ((Calendar) strategy.copy(LocatorUtils.property(locator, "dateExpiration", sourceDateExpiration), sourceDateExpiration, (this.dateExpiration!= null)));
+                            copy.setDateExpiration(copyDateExpiration);
+                        } else {
+                            if (dateExpirationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.dateExpiration = null;
+                            }
+                        }
                     }
-                    if (this.transactionType!= null) {
-                        TransactionType sourceTransactionType;
-                        sourceTransactionType = this.getTransactionType();
-                        TransactionType copyTransactionType = ((TransactionType) strategy.copy(LocatorUtils.property(locator, "transactionType", sourceTransactionType), sourceTransactionType));
-                        copy.setTransactionType(copyTransactionType);
-                    } else {
-                        copy.transactionType = null;
+                    {
+                        Boolean transactionTypeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.transactionType!= null));
+                        if (transactionTypeShouldBeCopiedAndSet == Boolean.TRUE) {
+                            TransactionType sourceTransactionType;
+                            sourceTransactionType = this.getTransactionType();
+                            TransactionType copyTransactionType = ((TransactionType) strategy.copy(LocatorUtils.property(locator, "transactionType", sourceTransactionType), sourceTransactionType, (this.transactionType!= null)));
+                            copy.setTransactionType(copyTransactionType);
+                        } else {
+                            if (transactionTypeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.transactionType = null;
+                            }
+                        }
                     }
-                    if (this.building!= null) {
-                        Building sourceBuilding;
-                        sourceBuilding = this.getBuilding();
-                        Building copyBuilding = ((Building) strategy.copy(LocatorUtils.property(locator, "building", sourceBuilding), sourceBuilding));
-                        copy.setBuilding(copyBuilding);
-                    } else {
-                        copy.building = null;
+                    {
+                        Boolean buildingShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.building!= null));
+                        if (buildingShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Building sourceBuilding;
+                            sourceBuilding = this.getBuilding();
+                            Building copyBuilding = ((Building) strategy.copy(LocatorUtils.property(locator, "building", sourceBuilding), sourceBuilding, (this.building!= null)));
+                            copy.setBuilding(copyBuilding);
+                        } else {
+                            if (buildingShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.building = null;
+                            }
+                        }
                     }
-                    if (this.category!= null) {
-                        Category sourceCategory;
-                        sourceCategory = this.getCategory();
-                        Category copyCategory = ((Category) strategy.copy(LocatorUtils.property(locator, "category", sourceCategory), sourceCategory));
-                        copy.setCategory(copyCategory);
-                    } else {
-                        copy.category = null;
+                    {
+                        Boolean categoryShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.category!= null));
+                        if (categoryShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Category sourceCategory;
+                            sourceCategory = this.getCategory();
+                            Category copyCategory = ((Category) strategy.copy(LocatorUtils.property(locator, "category", sourceCategory), sourceCategory, (this.category!= null)));
+                            copy.setCategory(copyCategory);
+                        } else {
+                            if (categoryShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.category = null;
+                            }
+                        }
                     }
-                    if (this.propertyType!= null) {
-                        Proptype sourcePropertyType;
-                        sourcePropertyType = this.getPropertyType();
-                        Proptype copyPropertyType = ((Proptype) strategy.copy(LocatorUtils.property(locator, "propertyType", sourcePropertyType), sourcePropertyType));
-                        copy.setPropertyType(copyPropertyType);
-                    } else {
-                        copy.propertyType = null;
+                    {
+                        Boolean propertyTypeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.propertyType!= null));
+                        if (propertyTypeShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Proptype sourcePropertyType;
+                            sourcePropertyType = this.getPropertyType();
+                            Proptype copyPropertyType = ((Proptype) strategy.copy(LocatorUtils.property(locator, "propertyType", sourcePropertyType), sourcePropertyType, (this.propertyType!= null)));
+                            copy.setPropertyType(copyPropertyType);
+                        } else {
+                            if (propertyTypeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.propertyType = null;
+                            }
+                        }
                     }
-                    if (this.buildingStatus!= null) {
-                        Status sourceBuildingStatus;
-                        sourceBuildingStatus = this.getBuildingStatus();
-                        Status copyBuildingStatus = ((Status) strategy.copy(LocatorUtils.property(locator, "buildingStatus", sourceBuildingStatus), sourceBuildingStatus));
-                        copy.setBuildingStatus(copyBuildingStatus);
-                    } else {
-                        copy.buildingStatus = null;
+                    {
+                        Boolean buildingStatusShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.buildingStatus!= null));
+                        if (buildingStatusShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Status sourceBuildingStatus;
+                            sourceBuildingStatus = this.getBuildingStatus();
+                            Status copyBuildingStatus = ((Status) strategy.copy(LocatorUtils.property(locator, "buildingStatus", sourceBuildingStatus), sourceBuildingStatus, (this.buildingStatus!= null)));
+                            copy.setBuildingStatus(copyBuildingStatus);
+                        } else {
+                            if (buildingStatusShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.buildingStatus = null;
+                            }
+                        }
                     }
-                    if (this.agent!= null) {
-                        Feed.Properties.Property.Agent sourceAgent;
-                        sourceAgent = this.getAgent();
-                        Feed.Properties.Property.Agent copyAgent = ((Feed.Properties.Property.Agent) strategy.copy(LocatorUtils.property(locator, "agent", sourceAgent), sourceAgent));
-                        copy.setAgent(copyAgent);
-                    } else {
-                        copy.agent = null;
+                    {
+                        Boolean agentShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.agent!= null));
+                        if (agentShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Properties.Property.Agent sourceAgent;
+                            sourceAgent = this.getAgent();
+                            Feed.Properties.Property.Agent copyAgent = ((Feed.Properties.Property.Agent) strategy.copy(LocatorUtils.property(locator, "agent", sourceAgent), sourceAgent, (this.agent!= null)));
+                            copy.setAgent(copyAgent);
+                        } else {
+                            if (agentShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.agent = null;
+                            }
+                        }
                     }
-                    if (this.location!= null) {
-                        LocationStructure sourceLocation;
-                        sourceLocation = this.getLocation();
-                        LocationStructure copyLocation = ((LocationStructure) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation));
-                        copy.setLocation(copyLocation);
-                    } else {
-                        copy.location = null;
+                    {
+                        Boolean locationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.location!= null));
+                        if (locationShouldBeCopiedAndSet == Boolean.TRUE) {
+                            LocationStructure sourceLocation;
+                            sourceLocation = this.getLocation();
+                            LocationStructure copyLocation = ((LocationStructure) strategy.copy(LocatorUtils.property(locator, "location", sourceLocation), sourceLocation, (this.location!= null)));
+                            copy.setLocation(copyLocation);
+                        } else {
+                            if (locationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.location = null;
+                            }
+                        }
                     }
-                    if (this.features!= null) {
-                        Feed.Properties.Property.Features sourceFeatures;
-                        sourceFeatures = this.getFeatures();
-                        Feed.Properties.Property.Features copyFeatures = ((Feed.Properties.Property.Features) strategy.copy(LocatorUtils.property(locator, "features", sourceFeatures), sourceFeatures));
-                        copy.setFeatures(copyFeatures);
-                    } else {
-                        copy.features = null;
+                    {
+                        Boolean featuresShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.features!= null));
+                        if (featuresShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Properties.Property.Features sourceFeatures;
+                            sourceFeatures = this.getFeatures();
+                            Feed.Properties.Property.Features copyFeatures = ((Feed.Properties.Property.Features) strategy.copy(LocatorUtils.property(locator, "features", sourceFeatures), sourceFeatures, (this.features!= null)));
+                            copy.setFeatures(copyFeatures);
+                        } else {
+                            if (featuresShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.features = null;
+                            }
+                        }
                     }
-                    if (this.extraFeatures!= null) {
-                        Feed.Properties.Property.ExtraFeatures sourceExtraFeatures;
-                        sourceExtraFeatures = this.getExtraFeatures();
-                        Feed.Properties.Property.ExtraFeatures copyExtraFeatures = ((Feed.Properties.Property.ExtraFeatures) strategy.copy(LocatorUtils.property(locator, "extraFeatures", sourceExtraFeatures), sourceExtraFeatures));
-                        copy.setExtraFeatures(copyExtraFeatures);
-                    } else {
-                        copy.extraFeatures = null;
+                    {
+                        Boolean extraFeaturesShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.extraFeatures!= null));
+                        if (extraFeaturesShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Properties.Property.ExtraFeatures sourceExtraFeatures;
+                            sourceExtraFeatures = this.getExtraFeatures();
+                            Feed.Properties.Property.ExtraFeatures copyExtraFeatures = ((Feed.Properties.Property.ExtraFeatures) strategy.copy(LocatorUtils.property(locator, "extraFeatures", sourceExtraFeatures), sourceExtraFeatures, (this.extraFeatures!= null)));
+                            copy.setExtraFeatures(copyExtraFeatures);
+                        } else {
+                            if (extraFeaturesShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.extraFeatures = null;
+                            }
+                        }
                     }
-                    if (this.pictures!= null) {
-                        Feed.Properties.Property.Pictures sourcePictures;
-                        sourcePictures = this.getPictures();
-                        Feed.Properties.Property.Pictures copyPictures = ((Feed.Properties.Property.Pictures) strategy.copy(LocatorUtils.property(locator, "pictures", sourcePictures), sourcePictures));
-                        copy.setPictures(copyPictures);
-                    } else {
-                        copy.pictures = null;
+                    {
+                        Boolean picturesShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pictures!= null));
+                        if (picturesShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Properties.Property.Pictures sourcePictures;
+                            sourcePictures = this.getPictures();
+                            Feed.Properties.Property.Pictures copyPictures = ((Feed.Properties.Property.Pictures) strategy.copy(LocatorUtils.property(locator, "pictures", sourcePictures), sourcePictures, (this.pictures!= null)));
+                            copy.setPictures(copyPictures);
+                        } else {
+                            if (picturesShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.pictures = null;
+                            }
+                        }
                     }
-                    if (this.blueprints!= null) {
-                        Feed.Properties.Property.Blueprints sourceBlueprints;
-                        sourceBlueprints = this.getBlueprints();
-                        Feed.Properties.Property.Blueprints copyBlueprints = ((Feed.Properties.Property.Blueprints) strategy.copy(LocatorUtils.property(locator, "blueprints", sourceBlueprints), sourceBlueprints));
-                        copy.setBlueprints(copyBlueprints);
-                    } else {
-                        copy.blueprints = null;
+                    {
+                        Boolean blueprintsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.blueprints!= null));
+                        if (blueprintsShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Properties.Property.Blueprints sourceBlueprints;
+                            sourceBlueprints = this.getBlueprints();
+                            Feed.Properties.Property.Blueprints copyBlueprints = ((Feed.Properties.Property.Blueprints) strategy.copy(LocatorUtils.property(locator, "blueprints", sourceBlueprints), sourceBlueprints, (this.blueprints!= null)));
+                            copy.setBlueprints(copyBlueprints);
+                        } else {
+                            if (blueprintsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.blueprints = null;
+                            }
+                        }
                     }
-                    if (this.videos!= null) {
-                        Feed.Properties.Property.Videos sourceVideos;
-                        sourceVideos = this.getVideos();
-                        Feed.Properties.Property.Videos copyVideos = ((Feed.Properties.Property.Videos) strategy.copy(LocatorUtils.property(locator, "videos", sourceVideos), sourceVideos));
-                        copy.setVideos(copyVideos);
-                    } else {
-                        copy.videos = null;
+                    {
+                        Boolean videosShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.videos!= null));
+                        if (videosShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Feed.Properties.Property.Videos sourceVideos;
+                            sourceVideos = this.getVideos();
+                            Feed.Properties.Property.Videos copyVideos = ((Feed.Properties.Property.Videos) strategy.copy(LocatorUtils.property(locator, "videos", sourceVideos), sourceVideos, (this.videos!= null)));
+                            copy.setVideos(copyVideos);
+                        } else {
+                            if (videosShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.videos = null;
+                            }
+                        }
                     }
-                    if (this.operation!= null) {
-                        Operation sourceOperation;
-                        sourceOperation = this.getOperation();
-                        Operation copyOperation = ((Operation) strategy.copy(LocatorUtils.property(locator, "operation", sourceOperation), sourceOperation));
-                        copy.setOperation(copyOperation);
-                    } else {
-                        copy.operation = null;
+                    {
+                        Boolean operationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.operation!= null));
+                        if (operationShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Operation sourceOperation;
+                            sourceOperation = this.getOperation();
+                            Operation copyOperation = ((Operation) strategy.copy(LocatorUtils.property(locator, "operation", sourceOperation), sourceOperation, (this.operation!= null)));
+                            copy.setOperation(copyOperation);
+                        } else {
+                            if (operationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.operation = null;
+                            }
+                        }
                     }
                 }
                 return draftCopy;
@@ -6138,7 +6511,7 @@ public class Feed
                 return new Feed.Properties.Property();
             }
 
-            public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+            public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                 if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
                 }
@@ -6151,7 +6524,7 @@ public class Feed
                     lhsUniqueId = this.getUniqueId();
                     String rhsUniqueId;
                     rhsUniqueId = that.getUniqueId();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "uniqueId", lhsUniqueId), LocatorUtils.property(thatLocator, "uniqueId", rhsUniqueId), lhsUniqueId, rhsUniqueId)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "uniqueId", lhsUniqueId), LocatorUtils.property(thatLocator, "uniqueId", rhsUniqueId), lhsUniqueId, rhsUniqueId, (this.uniqueId!= null), (that.uniqueId!= null))) {
                         return false;
                     }
                 }
@@ -6160,7 +6533,7 @@ public class Feed
                     lhsDateUpdated = this.getDateUpdated();
                     Calendar rhsDateUpdated;
                     rhsDateUpdated = that.getDateUpdated();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "dateUpdated", lhsDateUpdated), LocatorUtils.property(thatLocator, "dateUpdated", rhsDateUpdated), lhsDateUpdated, rhsDateUpdated)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "dateUpdated", lhsDateUpdated), LocatorUtils.property(thatLocator, "dateUpdated", rhsDateUpdated), lhsDateUpdated, rhsDateUpdated, (this.dateUpdated!= null), (that.dateUpdated!= null))) {
                         return false;
                     }
                 }
@@ -6169,7 +6542,7 @@ public class Feed
                     lhsDateExpiration = this.getDateExpiration();
                     Calendar rhsDateExpiration;
                     rhsDateExpiration = that.getDateExpiration();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "dateExpiration", lhsDateExpiration), LocatorUtils.property(thatLocator, "dateExpiration", rhsDateExpiration), lhsDateExpiration, rhsDateExpiration)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "dateExpiration", lhsDateExpiration), LocatorUtils.property(thatLocator, "dateExpiration", rhsDateExpiration), lhsDateExpiration, rhsDateExpiration, (this.dateExpiration!= null), (that.dateExpiration!= null))) {
                         return false;
                     }
                 }
@@ -6178,7 +6551,7 @@ public class Feed
                     lhsTransactionType = this.getTransactionType();
                     TransactionType rhsTransactionType;
                     rhsTransactionType = that.getTransactionType();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "transactionType", lhsTransactionType), LocatorUtils.property(thatLocator, "transactionType", rhsTransactionType), lhsTransactionType, rhsTransactionType)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "transactionType", lhsTransactionType), LocatorUtils.property(thatLocator, "transactionType", rhsTransactionType), lhsTransactionType, rhsTransactionType, (this.transactionType!= null), (that.transactionType!= null))) {
                         return false;
                     }
                 }
@@ -6187,7 +6560,7 @@ public class Feed
                     lhsBuilding = this.getBuilding();
                     Building rhsBuilding;
                     rhsBuilding = that.getBuilding();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "building", lhsBuilding), LocatorUtils.property(thatLocator, "building", rhsBuilding), lhsBuilding, rhsBuilding)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "building", lhsBuilding), LocatorUtils.property(thatLocator, "building", rhsBuilding), lhsBuilding, rhsBuilding, (this.building!= null), (that.building!= null))) {
                         return false;
                     }
                 }
@@ -6196,7 +6569,7 @@ public class Feed
                     lhsCategory = this.getCategory();
                     Category rhsCategory;
                     rhsCategory = that.getCategory();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "category", lhsCategory), LocatorUtils.property(thatLocator, "category", rhsCategory), lhsCategory, rhsCategory)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "category", lhsCategory), LocatorUtils.property(thatLocator, "category", rhsCategory), lhsCategory, rhsCategory, (this.category!= null), (that.category!= null))) {
                         return false;
                     }
                 }
@@ -6205,7 +6578,7 @@ public class Feed
                     lhsPropertyType = this.getPropertyType();
                     Proptype rhsPropertyType;
                     rhsPropertyType = that.getPropertyType();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "propertyType", lhsPropertyType), LocatorUtils.property(thatLocator, "propertyType", rhsPropertyType), lhsPropertyType, rhsPropertyType)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "propertyType", lhsPropertyType), LocatorUtils.property(thatLocator, "propertyType", rhsPropertyType), lhsPropertyType, rhsPropertyType, (this.propertyType!= null), (that.propertyType!= null))) {
                         return false;
                     }
                 }
@@ -6214,7 +6587,7 @@ public class Feed
                     lhsBuildingStatus = this.getBuildingStatus();
                     Status rhsBuildingStatus;
                     rhsBuildingStatus = that.getBuildingStatus();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "buildingStatus", lhsBuildingStatus), LocatorUtils.property(thatLocator, "buildingStatus", rhsBuildingStatus), lhsBuildingStatus, rhsBuildingStatus)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "buildingStatus", lhsBuildingStatus), LocatorUtils.property(thatLocator, "buildingStatus", rhsBuildingStatus), lhsBuildingStatus, rhsBuildingStatus, (this.buildingStatus!= null), (that.buildingStatus!= null))) {
                         return false;
                     }
                 }
@@ -6223,7 +6596,7 @@ public class Feed
                     lhsAgent = this.getAgent();
                     Feed.Properties.Property.Agent rhsAgent;
                     rhsAgent = that.getAgent();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "agent", lhsAgent), LocatorUtils.property(thatLocator, "agent", rhsAgent), lhsAgent, rhsAgent)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "agent", lhsAgent), LocatorUtils.property(thatLocator, "agent", rhsAgent), lhsAgent, rhsAgent, (this.agent!= null), (that.agent!= null))) {
                         return false;
                     }
                 }
@@ -6232,7 +6605,7 @@ public class Feed
                     lhsLocation = this.getLocation();
                     LocationStructure rhsLocation;
                     rhsLocation = that.getLocation();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "location", lhsLocation), LocatorUtils.property(thatLocator, "location", rhsLocation), lhsLocation, rhsLocation, (this.location!= null), (that.location!= null))) {
                         return false;
                     }
                 }
@@ -6241,7 +6614,7 @@ public class Feed
                     lhsFeatures = this.getFeatures();
                     Feed.Properties.Property.Features rhsFeatures;
                     rhsFeatures = that.getFeatures();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "features", lhsFeatures), LocatorUtils.property(thatLocator, "features", rhsFeatures), lhsFeatures, rhsFeatures)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "features", lhsFeatures), LocatorUtils.property(thatLocator, "features", rhsFeatures), lhsFeatures, rhsFeatures, (this.features!= null), (that.features!= null))) {
                         return false;
                     }
                 }
@@ -6250,7 +6623,7 @@ public class Feed
                     lhsExtraFeatures = this.getExtraFeatures();
                     Feed.Properties.Property.ExtraFeatures rhsExtraFeatures;
                     rhsExtraFeatures = that.getExtraFeatures();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "extraFeatures", lhsExtraFeatures), LocatorUtils.property(thatLocator, "extraFeatures", rhsExtraFeatures), lhsExtraFeatures, rhsExtraFeatures)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "extraFeatures", lhsExtraFeatures), LocatorUtils.property(thatLocator, "extraFeatures", rhsExtraFeatures), lhsExtraFeatures, rhsExtraFeatures, (this.extraFeatures!= null), (that.extraFeatures!= null))) {
                         return false;
                     }
                 }
@@ -6259,7 +6632,7 @@ public class Feed
                     lhsPictures = this.getPictures();
                     Feed.Properties.Property.Pictures rhsPictures;
                     rhsPictures = that.getPictures();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "pictures", lhsPictures), LocatorUtils.property(thatLocator, "pictures", rhsPictures), lhsPictures, rhsPictures)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "pictures", lhsPictures), LocatorUtils.property(thatLocator, "pictures", rhsPictures), lhsPictures, rhsPictures, (this.pictures!= null), (that.pictures!= null))) {
                         return false;
                     }
                 }
@@ -6268,7 +6641,7 @@ public class Feed
                     lhsBlueprints = this.getBlueprints();
                     Feed.Properties.Property.Blueprints rhsBlueprints;
                     rhsBlueprints = that.getBlueprints();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "blueprints", lhsBlueprints), LocatorUtils.property(thatLocator, "blueprints", rhsBlueprints), lhsBlueprints, rhsBlueprints)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "blueprints", lhsBlueprints), LocatorUtils.property(thatLocator, "blueprints", rhsBlueprints), lhsBlueprints, rhsBlueprints, (this.blueprints!= null), (that.blueprints!= null))) {
                         return false;
                     }
                 }
@@ -6277,7 +6650,7 @@ public class Feed
                     lhsVideos = this.getVideos();
                     Feed.Properties.Property.Videos rhsVideos;
                     rhsVideos = that.getVideos();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "videos", lhsVideos), LocatorUtils.property(thatLocator, "videos", rhsVideos), lhsVideos, rhsVideos)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "videos", lhsVideos), LocatorUtils.property(thatLocator, "videos", rhsVideos), lhsVideos, rhsVideos, (this.videos!= null), (that.videos!= null))) {
                         return false;
                     }
                 }
@@ -6286,7 +6659,7 @@ public class Feed
                     lhsOperation = this.getOperation();
                     Operation rhsOperation;
                     rhsOperation = that.getOperation();
-                    if (!strategy.equals(LocatorUtils.property(thisLocator, "operation", lhsOperation), LocatorUtils.property(thatLocator, "operation", rhsOperation), lhsOperation, rhsOperation)) {
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "operation", lhsOperation), LocatorUtils.property(thatLocator, "operation", rhsOperation), lhsOperation, rhsOperation, (this.operation!= null), (that.operation!= null))) {
                         return false;
                     }
                 }
@@ -6294,7 +6667,7 @@ public class Feed
             }
 
             public boolean equals(Object object) {
-                final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                 return equals(null, null, object, strategy);
             }
 
@@ -6323,8 +6696,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Agent
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Agent implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(name = "office-name")
@@ -6382,29 +6754,29 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         String theOfficeName;
                         theOfficeName = this.getOfficeName();
-                        strategy.appendField(locator, this, "officeName", buffer, theOfficeName);
+                        strategy.appendField(locator, this, "officeName", buffer, theOfficeName, (this.officeName!= null));
                     }
                     {
                         String theEmail;
                         theEmail = this.getEmail();
-                        strategy.appendField(locator, this, "email", buffer, theEmail);
+                        strategy.appendField(locator, this, "email", buffer, theEmail, (this.email!= null));
                     }
                     return buffer;
                 }
@@ -6414,29 +6786,39 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Properties.Property.Agent) {
                         final Feed.Properties.Property.Agent copy = ((Feed.Properties.Property.Agent) draftCopy);
-                        if (this.officeName!= null) {
-                            String sourceOfficeName;
-                            sourceOfficeName = this.getOfficeName();
-                            String copyOfficeName = ((String) strategy.copy(LocatorUtils.property(locator, "officeName", sourceOfficeName), sourceOfficeName));
-                            copy.setOfficeName(copyOfficeName);
-                        } else {
-                            copy.officeName = null;
+                        {
+                            Boolean officeNameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.officeName!= null));
+                            if (officeNameShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceOfficeName;
+                                sourceOfficeName = this.getOfficeName();
+                                String copyOfficeName = ((String) strategy.copy(LocatorUtils.property(locator, "officeName", sourceOfficeName), sourceOfficeName, (this.officeName!= null)));
+                                copy.setOfficeName(copyOfficeName);
+                            } else {
+                                if (officeNameShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.officeName = null;
+                                }
+                            }
                         }
-                        if (this.email!= null) {
-                            String sourceEmail;
-                            sourceEmail = this.getEmail();
-                            String copyEmail = ((String) strategy.copy(LocatorUtils.property(locator, "email", sourceEmail), sourceEmail));
-                            copy.setEmail(copyEmail);
-                        } else {
-                            copy.email = null;
+                        {
+                            Boolean emailShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.email!= null));
+                            if (emailShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceEmail;
+                                sourceEmail = this.getEmail();
+                                String copyEmail = ((String) strategy.copy(LocatorUtils.property(locator, "email", sourceEmail), sourceEmail, (this.email!= null)));
+                                copy.setEmail(copyEmail);
+                            } else {
+                                if (emailShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.email = null;
+                                }
+                            }
                         }
                     }
                     return draftCopy;
@@ -6446,7 +6828,7 @@ public class Feed
                     return new Feed.Properties.Property.Agent();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -6459,7 +6841,7 @@ public class Feed
                         lhsOfficeName = this.getOfficeName();
                         String rhsOfficeName;
                         rhsOfficeName = that.getOfficeName();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "officeName", lhsOfficeName), LocatorUtils.property(thatLocator, "officeName", rhsOfficeName), lhsOfficeName, rhsOfficeName)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "officeName", lhsOfficeName), LocatorUtils.property(thatLocator, "officeName", rhsOfficeName), lhsOfficeName, rhsOfficeName, (this.officeName!= null), (that.officeName!= null))) {
                             return false;
                         }
                     }
@@ -6468,7 +6850,7 @@ public class Feed
                         lhsEmail = this.getEmail();
                         String rhsEmail;
                         rhsEmail = that.getEmail();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "email", lhsEmail), LocatorUtils.property(thatLocator, "email", rhsEmail), lhsEmail, rhsEmail)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "email", lhsEmail), LocatorUtils.property(thatLocator, "email", rhsEmail), lhsEmail, rhsEmail, (this.email!= null), (that.email!= null))) {
                             return false;
                         }
                     }
@@ -6476,7 +6858,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -6506,8 +6888,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
                 "blueprint"
             })
-            public static class Blueprints
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Blueprints implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 protected List<PictureExtended> blueprint;
@@ -6542,24 +6923,24 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         List<PictureExtended> theBlueprint;
                         theBlueprint = (((this.blueprint!= null)&&(!this.blueprint.isEmpty()))?this.getBlueprint():null);
-                        strategy.appendField(locator, this, "blueprint", buffer, theBlueprint);
+                        strategy.appendField(locator, this, "blueprint", buffer, theBlueprint, ((this.blueprint!= null)&&(!this.blueprint.isEmpty())));
                     }
                     return buffer;
                 }
@@ -6569,26 +6950,31 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Properties.Property.Blueprints) {
                         final Feed.Properties.Property.Blueprints copy = ((Feed.Properties.Property.Blueprints) draftCopy);
-                        if ((this.blueprint!= null)&&(!this.blueprint.isEmpty())) {
-                            List<PictureExtended> sourceBlueprint;
-                            sourceBlueprint = (((this.blueprint!= null)&&(!this.blueprint.isEmpty()))?this.getBlueprint():null);
-                            @SuppressWarnings("unchecked")
-                            List<PictureExtended> copyBlueprint = ((List<PictureExtended> ) strategy.copy(LocatorUtils.property(locator, "blueprint", sourceBlueprint), sourceBlueprint));
-                            copy.blueprint = null;
-                            if (copyBlueprint!= null) {
-                                List<PictureExtended> uniqueBlueprintl = copy.getBlueprint();
-                                uniqueBlueprintl.addAll(copyBlueprint);
+                        {
+                            Boolean blueprintShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.blueprint!= null)&&(!this.blueprint.isEmpty())));
+                            if (blueprintShouldBeCopiedAndSet == Boolean.TRUE) {
+                                List<PictureExtended> sourceBlueprint;
+                                sourceBlueprint = (((this.blueprint!= null)&&(!this.blueprint.isEmpty()))?this.getBlueprint():null);
+                                @SuppressWarnings("unchecked")
+                                List<PictureExtended> copyBlueprint = ((List<PictureExtended> ) strategy.copy(LocatorUtils.property(locator, "blueprint", sourceBlueprint), sourceBlueprint, ((this.blueprint!= null)&&(!this.blueprint.isEmpty()))));
+                                copy.blueprint = null;
+                                if (copyBlueprint!= null) {
+                                    List<PictureExtended> uniqueBlueprintl = copy.getBlueprint();
+                                    uniqueBlueprintl.addAll(copyBlueprint);
+                                }
+                            } else {
+                                if (blueprintShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.blueprint = null;
+                                }
                             }
-                        } else {
-                            copy.blueprint = null;
                         }
                     }
                     return draftCopy;
@@ -6598,7 +6984,7 @@ public class Feed
                     return new Feed.Properties.Property.Blueprints();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -6611,7 +6997,7 @@ public class Feed
                         lhsBlueprint = (((this.blueprint!= null)&&(!this.blueprint.isEmpty()))?this.getBlueprint():null);
                         List<PictureExtended> rhsBlueprint;
                         rhsBlueprint = (((that.blueprint!= null)&&(!that.blueprint.isEmpty()))?that.getBlueprint():null);
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "blueprint", lhsBlueprint), LocatorUtils.property(thatLocator, "blueprint", rhsBlueprint), lhsBlueprint, rhsBlueprint)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "blueprint", lhsBlueprint), LocatorUtils.property(thatLocator, "blueprint", rhsBlueprint), lhsBlueprint, rhsBlueprint, ((this.blueprint!= null)&&(!this.blueprint.isEmpty())), ((that.blueprint!= null)&&(!that.blueprint.isEmpty())))) {
                             return false;
                         }
                     }
@@ -6619,7 +7005,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -6676,8 +7062,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
 
             })
-            public static class ExtraFeatures
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class ExtraFeatures implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(type = String.class)
@@ -7427,159 +7812,159 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         BigInteger theBedrooms;
                         theBedrooms = this.getBedrooms();
-                        strategy.appendField(locator, this, "bedrooms", buffer, theBedrooms);
+                        strategy.appendField(locator, this, "bedrooms", buffer, theBedrooms, (this.bedrooms!= null));
                     }
                     {
                         BigInteger theBathrooms;
                         theBathrooms = this.getBathrooms();
-                        strategy.appendField(locator, this, "bathrooms", buffer, theBathrooms);
+                        strategy.appendField(locator, this, "bathrooms", buffer, theBathrooms, (this.bathrooms!= null));
                     }
                     {
                         Box theGarage;
                         theGarage = this.getGarage();
-                        strategy.appendField(locator, this, "garage", buffer, theGarage);
+                        strategy.appendField(locator, this, "garage", buffer, theGarage, (this.garage!= null));
                     }
                     {
                         Kitchen theKitchen;
                         theKitchen = this.getKitchen();
-                        strategy.appendField(locator, this, "kitchen", buffer, theKitchen);
+                        strategy.appendField(locator, this, "kitchen", buffer, theKitchen, (this.kitchen!= null));
                     }
                     {
                         Heat theHeating;
                         theHeating = this.getHeating();
-                        strategy.appendField(locator, this, "heating", buffer, theHeating);
+                        strategy.appendField(locator, this, "heating", buffer, theHeating, (this.heating!= null));
                     }
                     {
                         Garden theGarden;
                         theGarden = this.getGarden();
-                        strategy.appendField(locator, this, "garden", buffer, theGarden);
+                        strategy.appendField(locator, this, "garden", buffer, theGarden, (this.garden!= null));
                     }
                     {
                         Boolean theTerrace;
                         theTerrace = this.isTerrace();
-                        strategy.appendField(locator, this, "terrace", buffer, theTerrace);
+                        strategy.appendField(locator, this, "terrace", buffer, theTerrace, (this.terrace!= null));
                     }
                     {
                         Boolean theBalcony;
                         theBalcony = this.isBalcony();
-                        strategy.appendField(locator, this, "balcony", buffer, theBalcony);
+                        strategy.appendField(locator, this, "balcony", buffer, theBalcony, (this.balcony!= null));
                     }
                     {
                         Boolean theElevator;
                         theElevator = this.isElevator();
-                        strategy.appendField(locator, this, "elevator", buffer, theElevator);
+                        strategy.appendField(locator, this, "elevator", buffer, theElevator, (this.elevator!= null));
                     }
                     {
                         Boolean theAirConditioning;
                         theAirConditioning = this.isAirConditioning();
-                        strategy.appendField(locator, this, "airConditioning", buffer, theAirConditioning);
+                        strategy.appendField(locator, this, "airConditioning", buffer, theAirConditioning, (this.airConditioning!= null));
                     }
                     {
                         Floor theFloor;
                         theFloor = this.getFloor();
-                        strategy.appendField(locator, this, "floor", buffer, theFloor);
+                        strategy.appendField(locator, this, "floor", buffer, theFloor, (this.floor!= null));
                     }
                     {
                         BigInteger theNumFloors;
                         theNumFloors = this.getNumFloors();
-                        strategy.appendField(locator, this, "numFloors", buffer, theNumFloors);
+                        strategy.appendField(locator, this, "numFloors", buffer, theNumFloors, (this.numFloors!= null));
                     }
                     {
                         String theVirtualTour;
                         theVirtualTour = this.getVirtualTour();
-                        strategy.appendField(locator, this, "virtualTour", buffer, theVirtualTour);
+                        strategy.appendField(locator, this, "virtualTour", buffer, theVirtualTour, (this.virtualTour!= null));
                     }
                     {
                         Rental theRentContract;
                         theRentContract = this.getRentContract();
-                        strategy.appendField(locator, this, "rentContract", buffer, theRentContract);
+                        strategy.appendField(locator, this, "rentContract", buffer, theRentContract, (this.rentContract!= null));
                     }
                     {
                         AdditionalCostsType theAdditionalCosts;
                         theAdditionalCosts = this.getAdditionalCosts();
-                        strategy.appendField(locator, this, "additionalCosts", buffer, theAdditionalCosts);
+                        strategy.appendField(locator, this, "additionalCosts", buffer, theAdditionalCosts, (this.additionalCosts!= null));
                     }
                     {
                         Furniture theFurniture;
                         theFurniture = this.getFurniture();
-                        strategy.appendField(locator, this, "furniture", buffer, theFurniture);
+                        strategy.appendField(locator, this, "furniture", buffer, theFurniture, (this.furniture!= null));
                     }
                     {
                         Boolean theSecurityAlarm;
                         theSecurityAlarm = this.isSecurityAlarm();
-                        strategy.appendField(locator, this, "securityAlarm", buffer, theSecurityAlarm);
+                        strategy.appendField(locator, this, "securityAlarm", buffer, theSecurityAlarm, (this.securityAlarm!= null));
                     }
                     {
                         Boolean theReception;
                         theReception = this.isReception();
-                        strategy.appendField(locator, this, "reception", buffer, theReception);
+                        strategy.appendField(locator, this, "reception", buffer, theReception, (this.reception!= null));
                     }
                     {
                         Boolean theNet;
                         theNet = this.isNet();
-                        strategy.appendField(locator, this, "net", buffer, theNet);
+                        strategy.appendField(locator, this, "net", buffer, theNet, (this.net!= null));
                     }
                     {
                         LandSizeType theExternalArea;
                         theExternalArea = this.getExternalArea();
-                        strategy.appendField(locator, this, "externalArea", buffer, theExternalArea);
+                        strategy.appendField(locator, this, "externalArea", buffer, theExternalArea, (this.externalArea!= null));
                     }
                     {
                         Integer theBuildYear;
                         theBuildYear = this.getBuildYear();
-                        strategy.appendField(locator, this, "buildYear", buffer, theBuildYear);
+                        strategy.appendField(locator, this, "buildYear", buffer, theBuildYear, (this.buildYear!= null));
                     }
                     {
                         String theFreeConditions;
                         theFreeConditions = this.getFreeConditions();
-                        strategy.appendField(locator, this, "freeConditions", buffer, theFreeConditions);
+                        strategy.appendField(locator, this, "freeConditions", buffer, theFreeConditions, (this.freeConditions!= null));
                     }
                     {
                         YesNoReady theOverheadCrane;
                         theOverheadCrane = this.getOverheadCrane();
-                        strategy.appendField(locator, this, "overheadCrane", buffer, theOverheadCrane);
+                        strategy.appendField(locator, this, "overheadCrane", buffer, theOverheadCrane, (this.overheadCrane!= null));
                     }
                     {
                         BigInteger theBeamHeight;
                         theBeamHeight = this.getBeamHeight();
-                        strategy.appendField(locator, this, "beamHeight", buffer, theBeamHeight);
+                        strategy.appendField(locator, this, "beamHeight", buffer, theBeamHeight, (this.beamHeight!= null));
                     }
                     {
                         SizeType theOfficeSize;
                         theOfficeSize = this.getOfficeSize();
-                        strategy.appendField(locator, this, "officeSize", buffer, theOfficeSize);
+                        strategy.appendField(locator, this, "officeSize", buffer, theOfficeSize, (this.officeSize!= null));
                     }
                     {
                         String theFloorplannerUrl;
                         theFloorplannerUrl = this.getFloorplannerUrl();
-                        strategy.appendField(locator, this, "floorplannerUrl", buffer, theFloorplannerUrl);
+                        strategy.appendField(locator, this, "floorplannerUrl", buffer, theFloorplannerUrl, (this.floorplannerUrl!= null));
                     }
                     {
                         String theDocSpecification;
                         theDocSpecification = this.getDocSpecification();
-                        strategy.appendField(locator, this, "docSpecification", buffer, theDocSpecification);
+                        strategy.appendField(locator, this, "docSpecification", buffer, theDocSpecification, (this.docSpecification!= null));
                     }
                     {
                         String theDocDescription;
                         theDocDescription = this.getDocDescription();
-                        strategy.appendField(locator, this, "docDescription", buffer, theDocDescription);
+                        strategy.appendField(locator, this, "docDescription", buffer, theDocDescription, (this.docDescription!= null));
                     }
                     return buffer;
                 }
@@ -7589,237 +7974,377 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Properties.Property.ExtraFeatures) {
                         final Feed.Properties.Property.ExtraFeatures copy = ((Feed.Properties.Property.ExtraFeatures) draftCopy);
-                        if (this.bedrooms!= null) {
-                            BigInteger sourceBedrooms;
-                            sourceBedrooms = this.getBedrooms();
-                            BigInteger copyBedrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bedrooms", sourceBedrooms), sourceBedrooms));
-                            copy.setBedrooms(copyBedrooms);
-                        } else {
-                            copy.bedrooms = null;
+                        {
+                            Boolean bedroomsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bedrooms!= null));
+                            if (bedroomsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                BigInteger sourceBedrooms;
+                                sourceBedrooms = this.getBedrooms();
+                                BigInteger copyBedrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bedrooms", sourceBedrooms), sourceBedrooms, (this.bedrooms!= null)));
+                                copy.setBedrooms(copyBedrooms);
+                            } else {
+                                if (bedroomsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.bedrooms = null;
+                                }
+                            }
                         }
-                        if (this.bathrooms!= null) {
-                            BigInteger sourceBathrooms;
-                            sourceBathrooms = this.getBathrooms();
-                            BigInteger copyBathrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms));
-                            copy.setBathrooms(copyBathrooms);
-                        } else {
-                            copy.bathrooms = null;
+                        {
+                            Boolean bathroomsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bathrooms!= null));
+                            if (bathroomsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                BigInteger sourceBathrooms;
+                                sourceBathrooms = this.getBathrooms();
+                                BigInteger copyBathrooms = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "bathrooms", sourceBathrooms), sourceBathrooms, (this.bathrooms!= null)));
+                                copy.setBathrooms(copyBathrooms);
+                            } else {
+                                if (bathroomsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.bathrooms = null;
+                                }
+                            }
                         }
-                        if (this.garage!= null) {
-                            Box sourceGarage;
-                            sourceGarage = this.getGarage();
-                            Box copyGarage = ((Box) strategy.copy(LocatorUtils.property(locator, "garage", sourceGarage), sourceGarage));
-                            copy.setGarage(copyGarage);
-                        } else {
-                            copy.garage = null;
+                        {
+                            Boolean garageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.garage!= null));
+                            if (garageShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Box sourceGarage;
+                                sourceGarage = this.getGarage();
+                                Box copyGarage = ((Box) strategy.copy(LocatorUtils.property(locator, "garage", sourceGarage), sourceGarage, (this.garage!= null)));
+                                copy.setGarage(copyGarage);
+                            } else {
+                                if (garageShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.garage = null;
+                                }
+                            }
                         }
-                        if (this.kitchen!= null) {
-                            Kitchen sourceKitchen;
-                            sourceKitchen = this.getKitchen();
-                            Kitchen copyKitchen = ((Kitchen) strategy.copy(LocatorUtils.property(locator, "kitchen", sourceKitchen), sourceKitchen));
-                            copy.setKitchen(copyKitchen);
-                        } else {
-                            copy.kitchen = null;
+                        {
+                            Boolean kitchenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kitchen!= null));
+                            if (kitchenShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Kitchen sourceKitchen;
+                                sourceKitchen = this.getKitchen();
+                                Kitchen copyKitchen = ((Kitchen) strategy.copy(LocatorUtils.property(locator, "kitchen", sourceKitchen), sourceKitchen, (this.kitchen!= null)));
+                                copy.setKitchen(copyKitchen);
+                            } else {
+                                if (kitchenShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.kitchen = null;
+                                }
+                            }
                         }
-                        if (this.heating!= null) {
-                            Heat sourceHeating;
-                            sourceHeating = this.getHeating();
-                            Heat copyHeating = ((Heat) strategy.copy(LocatorUtils.property(locator, "heating", sourceHeating), sourceHeating));
-                            copy.setHeating(copyHeating);
-                        } else {
-                            copy.heating = null;
+                        {
+                            Boolean heatingShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.heating!= null));
+                            if (heatingShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Heat sourceHeating;
+                                sourceHeating = this.getHeating();
+                                Heat copyHeating = ((Heat) strategy.copy(LocatorUtils.property(locator, "heating", sourceHeating), sourceHeating, (this.heating!= null)));
+                                copy.setHeating(copyHeating);
+                            } else {
+                                if (heatingShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.heating = null;
+                                }
+                            }
                         }
-                        if (this.garden!= null) {
-                            Garden sourceGarden;
-                            sourceGarden = this.getGarden();
-                            Garden copyGarden = ((Garden) strategy.copy(LocatorUtils.property(locator, "garden", sourceGarden), sourceGarden));
-                            copy.setGarden(copyGarden);
-                        } else {
-                            copy.garden = null;
+                        {
+                            Boolean gardenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.garden!= null));
+                            if (gardenShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Garden sourceGarden;
+                                sourceGarden = this.getGarden();
+                                Garden copyGarden = ((Garden) strategy.copy(LocatorUtils.property(locator, "garden", sourceGarden), sourceGarden, (this.garden!= null)));
+                                copy.setGarden(copyGarden);
+                            } else {
+                                if (gardenShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.garden = null;
+                                }
+                            }
                         }
-                        if (this.terrace!= null) {
-                            Boolean sourceTerrace;
-                            sourceTerrace = this.isTerrace();
-                            Boolean copyTerrace = ((Boolean) strategy.copy(LocatorUtils.property(locator, "terrace", sourceTerrace), sourceTerrace));
-                            copy.setTerrace(copyTerrace);
-                        } else {
-                            copy.terrace = null;
+                        {
+                            Boolean terraceShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.terrace!= null));
+                            if (terraceShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Boolean sourceTerrace;
+                                sourceTerrace = this.isTerrace();
+                                Boolean copyTerrace = ((Boolean) strategy.copy(LocatorUtils.property(locator, "terrace", sourceTerrace), sourceTerrace, (this.terrace!= null)));
+                                copy.setTerrace(copyTerrace);
+                            } else {
+                                if (terraceShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.terrace = null;
+                                }
+                            }
                         }
-                        if (this.balcony!= null) {
-                            Boolean sourceBalcony;
-                            sourceBalcony = this.isBalcony();
-                            Boolean copyBalcony = ((Boolean) strategy.copy(LocatorUtils.property(locator, "balcony", sourceBalcony), sourceBalcony));
-                            copy.setBalcony(copyBalcony);
-                        } else {
-                            copy.balcony = null;
+                        {
+                            Boolean balconyShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.balcony!= null));
+                            if (balconyShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Boolean sourceBalcony;
+                                sourceBalcony = this.isBalcony();
+                                Boolean copyBalcony = ((Boolean) strategy.copy(LocatorUtils.property(locator, "balcony", sourceBalcony), sourceBalcony, (this.balcony!= null)));
+                                copy.setBalcony(copyBalcony);
+                            } else {
+                                if (balconyShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.balcony = null;
+                                }
+                            }
                         }
-                        if (this.elevator!= null) {
-                            Boolean sourceElevator;
-                            sourceElevator = this.isElevator();
-                            Boolean copyElevator = ((Boolean) strategy.copy(LocatorUtils.property(locator, "elevator", sourceElevator), sourceElevator));
-                            copy.setElevator(copyElevator);
-                        } else {
-                            copy.elevator = null;
+                        {
+                            Boolean elevatorShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.elevator!= null));
+                            if (elevatorShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Boolean sourceElevator;
+                                sourceElevator = this.isElevator();
+                                Boolean copyElevator = ((Boolean) strategy.copy(LocatorUtils.property(locator, "elevator", sourceElevator), sourceElevator, (this.elevator!= null)));
+                                copy.setElevator(copyElevator);
+                            } else {
+                                if (elevatorShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.elevator = null;
+                                }
+                            }
                         }
-                        if (this.airConditioning!= null) {
-                            Boolean sourceAirConditioning;
-                            sourceAirConditioning = this.isAirConditioning();
-                            Boolean copyAirConditioning = ((Boolean) strategy.copy(LocatorUtils.property(locator, "airConditioning", sourceAirConditioning), sourceAirConditioning));
-                            copy.setAirConditioning(copyAirConditioning);
-                        } else {
-                            copy.airConditioning = null;
+                        {
+                            Boolean airConditioningShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.airConditioning!= null));
+                            if (airConditioningShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Boolean sourceAirConditioning;
+                                sourceAirConditioning = this.isAirConditioning();
+                                Boolean copyAirConditioning = ((Boolean) strategy.copy(LocatorUtils.property(locator, "airConditioning", sourceAirConditioning), sourceAirConditioning, (this.airConditioning!= null)));
+                                copy.setAirConditioning(copyAirConditioning);
+                            } else {
+                                if (airConditioningShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.airConditioning = null;
+                                }
+                            }
                         }
-                        if (this.floor!= null) {
-                            Floor sourceFloor;
-                            sourceFloor = this.getFloor();
-                            Floor copyFloor = ((Floor) strategy.copy(LocatorUtils.property(locator, "floor", sourceFloor), sourceFloor));
-                            copy.setFloor(copyFloor);
-                        } else {
-                            copy.floor = null;
+                        {
+                            Boolean floorShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.floor!= null));
+                            if (floorShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Floor sourceFloor;
+                                sourceFloor = this.getFloor();
+                                Floor copyFloor = ((Floor) strategy.copy(LocatorUtils.property(locator, "floor", sourceFloor), sourceFloor, (this.floor!= null)));
+                                copy.setFloor(copyFloor);
+                            } else {
+                                if (floorShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.floor = null;
+                                }
+                            }
                         }
-                        if (this.numFloors!= null) {
-                            BigInteger sourceNumFloors;
-                            sourceNumFloors = this.getNumFloors();
-                            BigInteger copyNumFloors = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "numFloors", sourceNumFloors), sourceNumFloors));
-                            copy.setNumFloors(copyNumFloors);
-                        } else {
-                            copy.numFloors = null;
+                        {
+                            Boolean numFloorsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.numFloors!= null));
+                            if (numFloorsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                BigInteger sourceNumFloors;
+                                sourceNumFloors = this.getNumFloors();
+                                BigInteger copyNumFloors = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "numFloors", sourceNumFloors), sourceNumFloors, (this.numFloors!= null)));
+                                copy.setNumFloors(copyNumFloors);
+                            } else {
+                                if (numFloorsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.numFloors = null;
+                                }
+                            }
                         }
-                        if (this.virtualTour!= null) {
-                            String sourceVirtualTour;
-                            sourceVirtualTour = this.getVirtualTour();
-                            String copyVirtualTour = ((String) strategy.copy(LocatorUtils.property(locator, "virtualTour", sourceVirtualTour), sourceVirtualTour));
-                            copy.setVirtualTour(copyVirtualTour);
-                        } else {
-                            copy.virtualTour = null;
+                        {
+                            Boolean virtualTourShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.virtualTour!= null));
+                            if (virtualTourShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceVirtualTour;
+                                sourceVirtualTour = this.getVirtualTour();
+                                String copyVirtualTour = ((String) strategy.copy(LocatorUtils.property(locator, "virtualTour", sourceVirtualTour), sourceVirtualTour, (this.virtualTour!= null)));
+                                copy.setVirtualTour(copyVirtualTour);
+                            } else {
+                                if (virtualTourShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.virtualTour = null;
+                                }
+                            }
                         }
-                        if (this.rentContract!= null) {
-                            Rental sourceRentContract;
-                            sourceRentContract = this.getRentContract();
-                            Rental copyRentContract = ((Rental) strategy.copy(LocatorUtils.property(locator, "rentContract", sourceRentContract), sourceRentContract));
-                            copy.setRentContract(copyRentContract);
-                        } else {
-                            copy.rentContract = null;
+                        {
+                            Boolean rentContractShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rentContract!= null));
+                            if (rentContractShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Rental sourceRentContract;
+                                sourceRentContract = this.getRentContract();
+                                Rental copyRentContract = ((Rental) strategy.copy(LocatorUtils.property(locator, "rentContract", sourceRentContract), sourceRentContract, (this.rentContract!= null)));
+                                copy.setRentContract(copyRentContract);
+                            } else {
+                                if (rentContractShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.rentContract = null;
+                                }
+                            }
                         }
-                        if (this.additionalCosts!= null) {
-                            AdditionalCostsType sourceAdditionalCosts;
-                            sourceAdditionalCosts = this.getAdditionalCosts();
-                            AdditionalCostsType copyAdditionalCosts = ((AdditionalCostsType) strategy.copy(LocatorUtils.property(locator, "additionalCosts", sourceAdditionalCosts), sourceAdditionalCosts));
-                            copy.setAdditionalCosts(copyAdditionalCosts);
-                        } else {
-                            copy.additionalCosts = null;
+                        {
+                            Boolean additionalCostsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.additionalCosts!= null));
+                            if (additionalCostsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                AdditionalCostsType sourceAdditionalCosts;
+                                sourceAdditionalCosts = this.getAdditionalCosts();
+                                AdditionalCostsType copyAdditionalCosts = ((AdditionalCostsType) strategy.copy(LocatorUtils.property(locator, "additionalCosts", sourceAdditionalCosts), sourceAdditionalCosts, (this.additionalCosts!= null)));
+                                copy.setAdditionalCosts(copyAdditionalCosts);
+                            } else {
+                                if (additionalCostsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.additionalCosts = null;
+                                }
+                            }
                         }
-                        if (this.furniture!= null) {
-                            Furniture sourceFurniture;
-                            sourceFurniture = this.getFurniture();
-                            Furniture copyFurniture = ((Furniture) strategy.copy(LocatorUtils.property(locator, "furniture", sourceFurniture), sourceFurniture));
-                            copy.setFurniture(copyFurniture);
-                        } else {
-                            copy.furniture = null;
+                        {
+                            Boolean furnitureShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.furniture!= null));
+                            if (furnitureShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Furniture sourceFurniture;
+                                sourceFurniture = this.getFurniture();
+                                Furniture copyFurniture = ((Furniture) strategy.copy(LocatorUtils.property(locator, "furniture", sourceFurniture), sourceFurniture, (this.furniture!= null)));
+                                copy.setFurniture(copyFurniture);
+                            } else {
+                                if (furnitureShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.furniture = null;
+                                }
+                            }
                         }
-                        if (this.securityAlarm!= null) {
-                            Boolean sourceSecurityAlarm;
-                            sourceSecurityAlarm = this.isSecurityAlarm();
-                            Boolean copySecurityAlarm = ((Boolean) strategy.copy(LocatorUtils.property(locator, "securityAlarm", sourceSecurityAlarm), sourceSecurityAlarm));
-                            copy.setSecurityAlarm(copySecurityAlarm);
-                        } else {
-                            copy.securityAlarm = null;
+                        {
+                            Boolean securityAlarmShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.securityAlarm!= null));
+                            if (securityAlarmShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Boolean sourceSecurityAlarm;
+                                sourceSecurityAlarm = this.isSecurityAlarm();
+                                Boolean copySecurityAlarm = ((Boolean) strategy.copy(LocatorUtils.property(locator, "securityAlarm", sourceSecurityAlarm), sourceSecurityAlarm, (this.securityAlarm!= null)));
+                                copy.setSecurityAlarm(copySecurityAlarm);
+                            } else {
+                                if (securityAlarmShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.securityAlarm = null;
+                                }
+                            }
                         }
-                        if (this.reception!= null) {
-                            Boolean sourceReception;
-                            sourceReception = this.isReception();
-                            Boolean copyReception = ((Boolean) strategy.copy(LocatorUtils.property(locator, "reception", sourceReception), sourceReception));
-                            copy.setReception(copyReception);
-                        } else {
-                            copy.reception = null;
+                        {
+                            Boolean receptionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.reception!= null));
+                            if (receptionShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Boolean sourceReception;
+                                sourceReception = this.isReception();
+                                Boolean copyReception = ((Boolean) strategy.copy(LocatorUtils.property(locator, "reception", sourceReception), sourceReception, (this.reception!= null)));
+                                copy.setReception(copyReception);
+                            } else {
+                                if (receptionShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.reception = null;
+                                }
+                            }
                         }
-                        if (this.net!= null) {
-                            Boolean sourceNet;
-                            sourceNet = this.isNet();
-                            Boolean copyNet = ((Boolean) strategy.copy(LocatorUtils.property(locator, "net", sourceNet), sourceNet));
-                            copy.setNet(copyNet);
-                        } else {
-                            copy.net = null;
+                        {
+                            Boolean netShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.net!= null));
+                            if (netShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Boolean sourceNet;
+                                sourceNet = this.isNet();
+                                Boolean copyNet = ((Boolean) strategy.copy(LocatorUtils.property(locator, "net", sourceNet), sourceNet, (this.net!= null)));
+                                copy.setNet(copyNet);
+                            } else {
+                                if (netShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.net = null;
+                                }
+                            }
                         }
-                        if (this.externalArea!= null) {
-                            LandSizeType sourceExternalArea;
-                            sourceExternalArea = this.getExternalArea();
-                            LandSizeType copyExternalArea = ((LandSizeType) strategy.copy(LocatorUtils.property(locator, "externalArea", sourceExternalArea), sourceExternalArea));
-                            copy.setExternalArea(copyExternalArea);
-                        } else {
-                            copy.externalArea = null;
+                        {
+                            Boolean externalAreaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.externalArea!= null));
+                            if (externalAreaShouldBeCopiedAndSet == Boolean.TRUE) {
+                                LandSizeType sourceExternalArea;
+                                sourceExternalArea = this.getExternalArea();
+                                LandSizeType copyExternalArea = ((LandSizeType) strategy.copy(LocatorUtils.property(locator, "externalArea", sourceExternalArea), sourceExternalArea, (this.externalArea!= null)));
+                                copy.setExternalArea(copyExternalArea);
+                            } else {
+                                if (externalAreaShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.externalArea = null;
+                                }
+                            }
                         }
-                        if (this.buildYear!= null) {
-                            Integer sourceBuildYear;
-                            sourceBuildYear = this.getBuildYear();
-                            Integer copyBuildYear = ((Integer) strategy.copy(LocatorUtils.property(locator, "buildYear", sourceBuildYear), sourceBuildYear));
-                            copy.setBuildYear(copyBuildYear);
-                        } else {
-                            copy.buildYear = null;
+                        {
+                            Boolean buildYearShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.buildYear!= null));
+                            if (buildYearShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Integer sourceBuildYear;
+                                sourceBuildYear = this.getBuildYear();
+                                Integer copyBuildYear = ((Integer) strategy.copy(LocatorUtils.property(locator, "buildYear", sourceBuildYear), sourceBuildYear, (this.buildYear!= null)));
+                                copy.setBuildYear(copyBuildYear);
+                            } else {
+                                if (buildYearShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.buildYear = null;
+                                }
+                            }
                         }
-                        if (this.freeConditions!= null) {
-                            String sourceFreeConditions;
-                            sourceFreeConditions = this.getFreeConditions();
-                            String copyFreeConditions = ((String) strategy.copy(LocatorUtils.property(locator, "freeConditions", sourceFreeConditions), sourceFreeConditions));
-                            copy.setFreeConditions(copyFreeConditions);
-                        } else {
-                            copy.freeConditions = null;
+                        {
+                            Boolean freeConditionsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.freeConditions!= null));
+                            if (freeConditionsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceFreeConditions;
+                                sourceFreeConditions = this.getFreeConditions();
+                                String copyFreeConditions = ((String) strategy.copy(LocatorUtils.property(locator, "freeConditions", sourceFreeConditions), sourceFreeConditions, (this.freeConditions!= null)));
+                                copy.setFreeConditions(copyFreeConditions);
+                            } else {
+                                if (freeConditionsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.freeConditions = null;
+                                }
+                            }
                         }
-                        if (this.overheadCrane!= null) {
-                            YesNoReady sourceOverheadCrane;
-                            sourceOverheadCrane = this.getOverheadCrane();
-                            YesNoReady copyOverheadCrane = ((YesNoReady) strategy.copy(LocatorUtils.property(locator, "overheadCrane", sourceOverheadCrane), sourceOverheadCrane));
-                            copy.setOverheadCrane(copyOverheadCrane);
-                        } else {
-                            copy.overheadCrane = null;
+                        {
+                            Boolean overheadCraneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.overheadCrane!= null));
+                            if (overheadCraneShouldBeCopiedAndSet == Boolean.TRUE) {
+                                YesNoReady sourceOverheadCrane;
+                                sourceOverheadCrane = this.getOverheadCrane();
+                                YesNoReady copyOverheadCrane = ((YesNoReady) strategy.copy(LocatorUtils.property(locator, "overheadCrane", sourceOverheadCrane), sourceOverheadCrane, (this.overheadCrane!= null)));
+                                copy.setOverheadCrane(copyOverheadCrane);
+                            } else {
+                                if (overheadCraneShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.overheadCrane = null;
+                                }
+                            }
                         }
-                        if (this.beamHeight!= null) {
-                            BigInteger sourceBeamHeight;
-                            sourceBeamHeight = this.getBeamHeight();
-                            BigInteger copyBeamHeight = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "beamHeight", sourceBeamHeight), sourceBeamHeight));
-                            copy.setBeamHeight(copyBeamHeight);
-                        } else {
-                            copy.beamHeight = null;
+                        {
+                            Boolean beamHeightShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.beamHeight!= null));
+                            if (beamHeightShouldBeCopiedAndSet == Boolean.TRUE) {
+                                BigInteger sourceBeamHeight;
+                                sourceBeamHeight = this.getBeamHeight();
+                                BigInteger copyBeamHeight = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "beamHeight", sourceBeamHeight), sourceBeamHeight, (this.beamHeight!= null)));
+                                copy.setBeamHeight(copyBeamHeight);
+                            } else {
+                                if (beamHeightShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.beamHeight = null;
+                                }
+                            }
                         }
-                        if (this.officeSize!= null) {
-                            SizeType sourceOfficeSize;
-                            sourceOfficeSize = this.getOfficeSize();
-                            SizeType copyOfficeSize = ((SizeType) strategy.copy(LocatorUtils.property(locator, "officeSize", sourceOfficeSize), sourceOfficeSize));
-                            copy.setOfficeSize(copyOfficeSize);
-                        } else {
-                            copy.officeSize = null;
+                        {
+                            Boolean officeSizeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.officeSize!= null));
+                            if (officeSizeShouldBeCopiedAndSet == Boolean.TRUE) {
+                                SizeType sourceOfficeSize;
+                                sourceOfficeSize = this.getOfficeSize();
+                                SizeType copyOfficeSize = ((SizeType) strategy.copy(LocatorUtils.property(locator, "officeSize", sourceOfficeSize), sourceOfficeSize, (this.officeSize!= null)));
+                                copy.setOfficeSize(copyOfficeSize);
+                            } else {
+                                if (officeSizeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.officeSize = null;
+                                }
+                            }
                         }
-                        if (this.floorplannerUrl!= null) {
-                            String sourceFloorplannerUrl;
-                            sourceFloorplannerUrl = this.getFloorplannerUrl();
-                            String copyFloorplannerUrl = ((String) strategy.copy(LocatorUtils.property(locator, "floorplannerUrl", sourceFloorplannerUrl), sourceFloorplannerUrl));
-                            copy.setFloorplannerUrl(copyFloorplannerUrl);
-                        } else {
-                            copy.floorplannerUrl = null;
+                        {
+                            Boolean floorplannerUrlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.floorplannerUrl!= null));
+                            if (floorplannerUrlShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceFloorplannerUrl;
+                                sourceFloorplannerUrl = this.getFloorplannerUrl();
+                                String copyFloorplannerUrl = ((String) strategy.copy(LocatorUtils.property(locator, "floorplannerUrl", sourceFloorplannerUrl), sourceFloorplannerUrl, (this.floorplannerUrl!= null)));
+                                copy.setFloorplannerUrl(copyFloorplannerUrl);
+                            } else {
+                                if (floorplannerUrlShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.floorplannerUrl = null;
+                                }
+                            }
                         }
-                        if (this.docSpecification!= null) {
-                            String sourceDocSpecification;
-                            sourceDocSpecification = this.getDocSpecification();
-                            String copyDocSpecification = ((String) strategy.copy(LocatorUtils.property(locator, "docSpecification", sourceDocSpecification), sourceDocSpecification));
-                            copy.setDocSpecification(copyDocSpecification);
-                        } else {
-                            copy.docSpecification = null;
+                        {
+                            Boolean docSpecificationShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.docSpecification!= null));
+                            if (docSpecificationShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceDocSpecification;
+                                sourceDocSpecification = this.getDocSpecification();
+                                String copyDocSpecification = ((String) strategy.copy(LocatorUtils.property(locator, "docSpecification", sourceDocSpecification), sourceDocSpecification, (this.docSpecification!= null)));
+                                copy.setDocSpecification(copyDocSpecification);
+                            } else {
+                                if (docSpecificationShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.docSpecification = null;
+                                }
+                            }
                         }
-                        if (this.docDescription!= null) {
-                            String sourceDocDescription;
-                            sourceDocDescription = this.getDocDescription();
-                            String copyDocDescription = ((String) strategy.copy(LocatorUtils.property(locator, "docDescription", sourceDocDescription), sourceDocDescription));
-                            copy.setDocDescription(copyDocDescription);
-                        } else {
-                            copy.docDescription = null;
+                        {
+                            Boolean docDescriptionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.docDescription!= null));
+                            if (docDescriptionShouldBeCopiedAndSet == Boolean.TRUE) {
+                                String sourceDocDescription;
+                                sourceDocDescription = this.getDocDescription();
+                                String copyDocDescription = ((String) strategy.copy(LocatorUtils.property(locator, "docDescription", sourceDocDescription), sourceDocDescription, (this.docDescription!= null)));
+                                copy.setDocDescription(copyDocDescription);
+                            } else {
+                                if (docDescriptionShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.docDescription = null;
+                                }
+                            }
                         }
                     }
                     return draftCopy;
@@ -7829,7 +8354,7 @@ public class Feed
                     return new Feed.Properties.Property.ExtraFeatures();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -7842,7 +8367,7 @@ public class Feed
                         lhsBedrooms = this.getBedrooms();
                         BigInteger rhsBedrooms;
                         rhsBedrooms = that.getBedrooms();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "bedrooms", lhsBedrooms), LocatorUtils.property(thatLocator, "bedrooms", rhsBedrooms), lhsBedrooms, rhsBedrooms)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "bedrooms", lhsBedrooms), LocatorUtils.property(thatLocator, "bedrooms", rhsBedrooms), lhsBedrooms, rhsBedrooms, (this.bedrooms!= null), (that.bedrooms!= null))) {
                             return false;
                         }
                     }
@@ -7851,7 +8376,7 @@ public class Feed
                         lhsBathrooms = this.getBathrooms();
                         BigInteger rhsBathrooms;
                         rhsBathrooms = that.getBathrooms();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "bathrooms", lhsBathrooms), LocatorUtils.property(thatLocator, "bathrooms", rhsBathrooms), lhsBathrooms, rhsBathrooms)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "bathrooms", lhsBathrooms), LocatorUtils.property(thatLocator, "bathrooms", rhsBathrooms), lhsBathrooms, rhsBathrooms, (this.bathrooms!= null), (that.bathrooms!= null))) {
                             return false;
                         }
                     }
@@ -7860,7 +8385,7 @@ public class Feed
                         lhsGarage = this.getGarage();
                         Box rhsGarage;
                         rhsGarage = that.getGarage();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "garage", lhsGarage), LocatorUtils.property(thatLocator, "garage", rhsGarage), lhsGarage, rhsGarage)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "garage", lhsGarage), LocatorUtils.property(thatLocator, "garage", rhsGarage), lhsGarage, rhsGarage, (this.garage!= null), (that.garage!= null))) {
                             return false;
                         }
                     }
@@ -7869,7 +8394,7 @@ public class Feed
                         lhsKitchen = this.getKitchen();
                         Kitchen rhsKitchen;
                         rhsKitchen = that.getKitchen();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "kitchen", lhsKitchen), LocatorUtils.property(thatLocator, "kitchen", rhsKitchen), lhsKitchen, rhsKitchen)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "kitchen", lhsKitchen), LocatorUtils.property(thatLocator, "kitchen", rhsKitchen), lhsKitchen, rhsKitchen, (this.kitchen!= null), (that.kitchen!= null))) {
                             return false;
                         }
                     }
@@ -7878,7 +8403,7 @@ public class Feed
                         lhsHeating = this.getHeating();
                         Heat rhsHeating;
                         rhsHeating = that.getHeating();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "heating", lhsHeating), LocatorUtils.property(thatLocator, "heating", rhsHeating), lhsHeating, rhsHeating)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "heating", lhsHeating), LocatorUtils.property(thatLocator, "heating", rhsHeating), lhsHeating, rhsHeating, (this.heating!= null), (that.heating!= null))) {
                             return false;
                         }
                     }
@@ -7887,7 +8412,7 @@ public class Feed
                         lhsGarden = this.getGarden();
                         Garden rhsGarden;
                         rhsGarden = that.getGarden();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "garden", lhsGarden), LocatorUtils.property(thatLocator, "garden", rhsGarden), lhsGarden, rhsGarden)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "garden", lhsGarden), LocatorUtils.property(thatLocator, "garden", rhsGarden), lhsGarden, rhsGarden, (this.garden!= null), (that.garden!= null))) {
                             return false;
                         }
                     }
@@ -7896,7 +8421,7 @@ public class Feed
                         lhsTerrace = this.isTerrace();
                         Boolean rhsTerrace;
                         rhsTerrace = that.isTerrace();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "terrace", lhsTerrace), LocatorUtils.property(thatLocator, "terrace", rhsTerrace), lhsTerrace, rhsTerrace)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "terrace", lhsTerrace), LocatorUtils.property(thatLocator, "terrace", rhsTerrace), lhsTerrace, rhsTerrace, (this.terrace!= null), (that.terrace!= null))) {
                             return false;
                         }
                     }
@@ -7905,7 +8430,7 @@ public class Feed
                         lhsBalcony = this.isBalcony();
                         Boolean rhsBalcony;
                         rhsBalcony = that.isBalcony();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "balcony", lhsBalcony), LocatorUtils.property(thatLocator, "balcony", rhsBalcony), lhsBalcony, rhsBalcony)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "balcony", lhsBalcony), LocatorUtils.property(thatLocator, "balcony", rhsBalcony), lhsBalcony, rhsBalcony, (this.balcony!= null), (that.balcony!= null))) {
                             return false;
                         }
                     }
@@ -7914,7 +8439,7 @@ public class Feed
                         lhsElevator = this.isElevator();
                         Boolean rhsElevator;
                         rhsElevator = that.isElevator();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "elevator", lhsElevator), LocatorUtils.property(thatLocator, "elevator", rhsElevator), lhsElevator, rhsElevator)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "elevator", lhsElevator), LocatorUtils.property(thatLocator, "elevator", rhsElevator), lhsElevator, rhsElevator, (this.elevator!= null), (that.elevator!= null))) {
                             return false;
                         }
                     }
@@ -7923,7 +8448,7 @@ public class Feed
                         lhsAirConditioning = this.isAirConditioning();
                         Boolean rhsAirConditioning;
                         rhsAirConditioning = that.isAirConditioning();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "airConditioning", lhsAirConditioning), LocatorUtils.property(thatLocator, "airConditioning", rhsAirConditioning), lhsAirConditioning, rhsAirConditioning)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "airConditioning", lhsAirConditioning), LocatorUtils.property(thatLocator, "airConditioning", rhsAirConditioning), lhsAirConditioning, rhsAirConditioning, (this.airConditioning!= null), (that.airConditioning!= null))) {
                             return false;
                         }
                     }
@@ -7932,7 +8457,7 @@ public class Feed
                         lhsFloor = this.getFloor();
                         Floor rhsFloor;
                         rhsFloor = that.getFloor();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "floor", lhsFloor), LocatorUtils.property(thatLocator, "floor", rhsFloor), lhsFloor, rhsFloor)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "floor", lhsFloor), LocatorUtils.property(thatLocator, "floor", rhsFloor), lhsFloor, rhsFloor, (this.floor!= null), (that.floor!= null))) {
                             return false;
                         }
                     }
@@ -7941,7 +8466,7 @@ public class Feed
                         lhsNumFloors = this.getNumFloors();
                         BigInteger rhsNumFloors;
                         rhsNumFloors = that.getNumFloors();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "numFloors", lhsNumFloors), LocatorUtils.property(thatLocator, "numFloors", rhsNumFloors), lhsNumFloors, rhsNumFloors)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "numFloors", lhsNumFloors), LocatorUtils.property(thatLocator, "numFloors", rhsNumFloors), lhsNumFloors, rhsNumFloors, (this.numFloors!= null), (that.numFloors!= null))) {
                             return false;
                         }
                     }
@@ -7950,7 +8475,7 @@ public class Feed
                         lhsVirtualTour = this.getVirtualTour();
                         String rhsVirtualTour;
                         rhsVirtualTour = that.getVirtualTour();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "virtualTour", lhsVirtualTour), LocatorUtils.property(thatLocator, "virtualTour", rhsVirtualTour), lhsVirtualTour, rhsVirtualTour)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "virtualTour", lhsVirtualTour), LocatorUtils.property(thatLocator, "virtualTour", rhsVirtualTour), lhsVirtualTour, rhsVirtualTour, (this.virtualTour!= null), (that.virtualTour!= null))) {
                             return false;
                         }
                     }
@@ -7959,7 +8484,7 @@ public class Feed
                         lhsRentContract = this.getRentContract();
                         Rental rhsRentContract;
                         rhsRentContract = that.getRentContract();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "rentContract", lhsRentContract), LocatorUtils.property(thatLocator, "rentContract", rhsRentContract), lhsRentContract, rhsRentContract)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "rentContract", lhsRentContract), LocatorUtils.property(thatLocator, "rentContract", rhsRentContract), lhsRentContract, rhsRentContract, (this.rentContract!= null), (that.rentContract!= null))) {
                             return false;
                         }
                     }
@@ -7968,7 +8493,7 @@ public class Feed
                         lhsAdditionalCosts = this.getAdditionalCosts();
                         AdditionalCostsType rhsAdditionalCosts;
                         rhsAdditionalCosts = that.getAdditionalCosts();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "additionalCosts", lhsAdditionalCosts), LocatorUtils.property(thatLocator, "additionalCosts", rhsAdditionalCosts), lhsAdditionalCosts, rhsAdditionalCosts)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "additionalCosts", lhsAdditionalCosts), LocatorUtils.property(thatLocator, "additionalCosts", rhsAdditionalCosts), lhsAdditionalCosts, rhsAdditionalCosts, (this.additionalCosts!= null), (that.additionalCosts!= null))) {
                             return false;
                         }
                     }
@@ -7977,7 +8502,7 @@ public class Feed
                         lhsFurniture = this.getFurniture();
                         Furniture rhsFurniture;
                         rhsFurniture = that.getFurniture();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "furniture", lhsFurniture), LocatorUtils.property(thatLocator, "furniture", rhsFurniture), lhsFurniture, rhsFurniture)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "furniture", lhsFurniture), LocatorUtils.property(thatLocator, "furniture", rhsFurniture), lhsFurniture, rhsFurniture, (this.furniture!= null), (that.furniture!= null))) {
                             return false;
                         }
                     }
@@ -7986,7 +8511,7 @@ public class Feed
                         lhsSecurityAlarm = this.isSecurityAlarm();
                         Boolean rhsSecurityAlarm;
                         rhsSecurityAlarm = that.isSecurityAlarm();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "securityAlarm", lhsSecurityAlarm), LocatorUtils.property(thatLocator, "securityAlarm", rhsSecurityAlarm), lhsSecurityAlarm, rhsSecurityAlarm)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "securityAlarm", lhsSecurityAlarm), LocatorUtils.property(thatLocator, "securityAlarm", rhsSecurityAlarm), lhsSecurityAlarm, rhsSecurityAlarm, (this.securityAlarm!= null), (that.securityAlarm!= null))) {
                             return false;
                         }
                     }
@@ -7995,7 +8520,7 @@ public class Feed
                         lhsReception = this.isReception();
                         Boolean rhsReception;
                         rhsReception = that.isReception();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "reception", lhsReception), LocatorUtils.property(thatLocator, "reception", rhsReception), lhsReception, rhsReception)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "reception", lhsReception), LocatorUtils.property(thatLocator, "reception", rhsReception), lhsReception, rhsReception, (this.reception!= null), (that.reception!= null))) {
                             return false;
                         }
                     }
@@ -8004,7 +8529,7 @@ public class Feed
                         lhsNet = this.isNet();
                         Boolean rhsNet;
                         rhsNet = that.isNet();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "net", lhsNet), LocatorUtils.property(thatLocator, "net", rhsNet), lhsNet, rhsNet)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "net", lhsNet), LocatorUtils.property(thatLocator, "net", rhsNet), lhsNet, rhsNet, (this.net!= null), (that.net!= null))) {
                             return false;
                         }
                     }
@@ -8013,7 +8538,7 @@ public class Feed
                         lhsExternalArea = this.getExternalArea();
                         LandSizeType rhsExternalArea;
                         rhsExternalArea = that.getExternalArea();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "externalArea", lhsExternalArea), LocatorUtils.property(thatLocator, "externalArea", rhsExternalArea), lhsExternalArea, rhsExternalArea)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "externalArea", lhsExternalArea), LocatorUtils.property(thatLocator, "externalArea", rhsExternalArea), lhsExternalArea, rhsExternalArea, (this.externalArea!= null), (that.externalArea!= null))) {
                             return false;
                         }
                     }
@@ -8022,7 +8547,7 @@ public class Feed
                         lhsBuildYear = this.getBuildYear();
                         Integer rhsBuildYear;
                         rhsBuildYear = that.getBuildYear();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "buildYear", lhsBuildYear), LocatorUtils.property(thatLocator, "buildYear", rhsBuildYear), lhsBuildYear, rhsBuildYear)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "buildYear", lhsBuildYear), LocatorUtils.property(thatLocator, "buildYear", rhsBuildYear), lhsBuildYear, rhsBuildYear, (this.buildYear!= null), (that.buildYear!= null))) {
                             return false;
                         }
                     }
@@ -8031,7 +8556,7 @@ public class Feed
                         lhsFreeConditions = this.getFreeConditions();
                         String rhsFreeConditions;
                         rhsFreeConditions = that.getFreeConditions();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "freeConditions", lhsFreeConditions), LocatorUtils.property(thatLocator, "freeConditions", rhsFreeConditions), lhsFreeConditions, rhsFreeConditions)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "freeConditions", lhsFreeConditions), LocatorUtils.property(thatLocator, "freeConditions", rhsFreeConditions), lhsFreeConditions, rhsFreeConditions, (this.freeConditions!= null), (that.freeConditions!= null))) {
                             return false;
                         }
                     }
@@ -8040,7 +8565,7 @@ public class Feed
                         lhsOverheadCrane = this.getOverheadCrane();
                         YesNoReady rhsOverheadCrane;
                         rhsOverheadCrane = that.getOverheadCrane();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "overheadCrane", lhsOverheadCrane), LocatorUtils.property(thatLocator, "overheadCrane", rhsOverheadCrane), lhsOverheadCrane, rhsOverheadCrane)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "overheadCrane", lhsOverheadCrane), LocatorUtils.property(thatLocator, "overheadCrane", rhsOverheadCrane), lhsOverheadCrane, rhsOverheadCrane, (this.overheadCrane!= null), (that.overheadCrane!= null))) {
                             return false;
                         }
                     }
@@ -8049,7 +8574,7 @@ public class Feed
                         lhsBeamHeight = this.getBeamHeight();
                         BigInteger rhsBeamHeight;
                         rhsBeamHeight = that.getBeamHeight();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "beamHeight", lhsBeamHeight), LocatorUtils.property(thatLocator, "beamHeight", rhsBeamHeight), lhsBeamHeight, rhsBeamHeight)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "beamHeight", lhsBeamHeight), LocatorUtils.property(thatLocator, "beamHeight", rhsBeamHeight), lhsBeamHeight, rhsBeamHeight, (this.beamHeight!= null), (that.beamHeight!= null))) {
                             return false;
                         }
                     }
@@ -8058,7 +8583,7 @@ public class Feed
                         lhsOfficeSize = this.getOfficeSize();
                         SizeType rhsOfficeSize;
                         rhsOfficeSize = that.getOfficeSize();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "officeSize", lhsOfficeSize), LocatorUtils.property(thatLocator, "officeSize", rhsOfficeSize), lhsOfficeSize, rhsOfficeSize)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "officeSize", lhsOfficeSize), LocatorUtils.property(thatLocator, "officeSize", rhsOfficeSize), lhsOfficeSize, rhsOfficeSize, (this.officeSize!= null), (that.officeSize!= null))) {
                             return false;
                         }
                     }
@@ -8067,7 +8592,7 @@ public class Feed
                         lhsFloorplannerUrl = this.getFloorplannerUrl();
                         String rhsFloorplannerUrl;
                         rhsFloorplannerUrl = that.getFloorplannerUrl();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "floorplannerUrl", lhsFloorplannerUrl), LocatorUtils.property(thatLocator, "floorplannerUrl", rhsFloorplannerUrl), lhsFloorplannerUrl, rhsFloorplannerUrl)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "floorplannerUrl", lhsFloorplannerUrl), LocatorUtils.property(thatLocator, "floorplannerUrl", rhsFloorplannerUrl), lhsFloorplannerUrl, rhsFloorplannerUrl, (this.floorplannerUrl!= null), (that.floorplannerUrl!= null))) {
                             return false;
                         }
                     }
@@ -8076,7 +8601,7 @@ public class Feed
                         lhsDocSpecification = this.getDocSpecification();
                         String rhsDocSpecification;
                         rhsDocSpecification = that.getDocSpecification();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "docSpecification", lhsDocSpecification), LocatorUtils.property(thatLocator, "docSpecification", rhsDocSpecification), lhsDocSpecification, rhsDocSpecification)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "docSpecification", lhsDocSpecification), LocatorUtils.property(thatLocator, "docSpecification", rhsDocSpecification), lhsDocSpecification, rhsDocSpecification, (this.docSpecification!= null), (that.docSpecification!= null))) {
                             return false;
                         }
                     }
@@ -8085,7 +8610,7 @@ public class Feed
                         lhsDocDescription = this.getDocDescription();
                         String rhsDocDescription;
                         rhsDocDescription = that.getDocDescription();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "docDescription", lhsDocDescription), LocatorUtils.property(thatLocator, "docDescription", rhsDocDescription), lhsDocDescription, rhsDocDescription)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "docDescription", lhsDocDescription), LocatorUtils.property(thatLocator, "docDescription", rhsDocDescription), lhsDocDescription, rhsDocDescription, (this.docDescription!= null), (that.docDescription!= null))) {
                             return false;
                         }
                     }
@@ -8093,7 +8618,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -8133,8 +8658,7 @@ public class Feed
                 "energyClass",
                 "energyPerformance"
             })
-            public static class Features
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Features implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true, type = String.class)
@@ -8303,49 +8827,49 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         Integer theRooms;
                         theRooms = this.getRooms();
-                        strategy.appendField(locator, this, "rooms", buffer, theRooms);
+                        strategy.appendField(locator, this, "rooms", buffer, theRooms, (this.rooms!= null));
                     }
                     {
                         SizeType theSize;
                         theSize = this.getSize();
-                        strategy.appendField(locator, this, "size", buffer, theSize);
+                        strategy.appendField(locator, this, "size", buffer, theSize, (this.size!= null));
                     }
                     {
                         PriceType thePrice;
                         thePrice = this.getPrice();
-                        strategy.appendField(locator, this, "price", buffer, thePrice);
+                        strategy.appendField(locator, this, "price", buffer, thePrice, (this.price!= null));
                     }
                     {
                         List<Langtxt> theDescription;
                         theDescription = (((this.description!= null)&&(!this.description.isEmpty()))?this.getDescription():null);
-                        strategy.appendField(locator, this, "description", buffer, theDescription);
+                        strategy.appendField(locator, this, "description", buffer, theDescription, ((this.description!= null)&&(!this.description.isEmpty())));
                     }
                     {
                         ClassEnergy theEnergyClass;
                         theEnergyClass = this.getEnergyClass();
-                        strategy.appendField(locator, this, "energyClass", buffer, theEnergyClass);
+                        strategy.appendField(locator, this, "energyClass", buffer, theEnergyClass, (this.energyClass!= null));
                     }
                     {
                         ClassEnergyPerformance theEnergyPerformance;
                         theEnergyPerformance = this.getEnergyPerformance();
-                        strategy.appendField(locator, this, "energyPerformance", buffer, theEnergyPerformance);
+                        strategy.appendField(locator, this, "energyPerformance", buffer, theEnergyPerformance, (this.energyPerformance!= null));
                     }
                     return buffer;
                 }
@@ -8355,66 +8879,96 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Properties.Property.Features) {
                         final Feed.Properties.Property.Features copy = ((Feed.Properties.Property.Features) draftCopy);
-                        if (this.rooms!= null) {
-                            Integer sourceRooms;
-                            sourceRooms = this.getRooms();
-                            Integer copyRooms = ((Integer) strategy.copy(LocatorUtils.property(locator, "rooms", sourceRooms), sourceRooms));
-                            copy.setRooms(copyRooms);
-                        } else {
-                            copy.rooms = null;
-                        }
-                        if (this.size!= null) {
-                            SizeType sourceSize;
-                            sourceSize = this.getSize();
-                            SizeType copySize = ((SizeType) strategy.copy(LocatorUtils.property(locator, "size", sourceSize), sourceSize));
-                            copy.setSize(copySize);
-                        } else {
-                            copy.size = null;
-                        }
-                        if (this.price!= null) {
-                            PriceType sourcePrice;
-                            sourcePrice = this.getPrice();
-                            PriceType copyPrice = ((PriceType) strategy.copy(LocatorUtils.property(locator, "price", sourcePrice), sourcePrice));
-                            copy.setPrice(copyPrice);
-                        } else {
-                            copy.price = null;
-                        }
-                        if ((this.description!= null)&&(!this.description.isEmpty())) {
-                            List<Langtxt> sourceDescription;
-                            sourceDescription = (((this.description!= null)&&(!this.description.isEmpty()))?this.getDescription():null);
-                            @SuppressWarnings("unchecked")
-                            List<Langtxt> copyDescription = ((List<Langtxt> ) strategy.copy(LocatorUtils.property(locator, "description", sourceDescription), sourceDescription));
-                            copy.description = null;
-                            if (copyDescription!= null) {
-                                List<Langtxt> uniqueDescriptionl = copy.getDescription();
-                                uniqueDescriptionl.addAll(copyDescription);
+                        {
+                            Boolean roomsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rooms!= null));
+                            if (roomsShouldBeCopiedAndSet == Boolean.TRUE) {
+                                Integer sourceRooms;
+                                sourceRooms = this.getRooms();
+                                Integer copyRooms = ((Integer) strategy.copy(LocatorUtils.property(locator, "rooms", sourceRooms), sourceRooms, (this.rooms!= null)));
+                                copy.setRooms(copyRooms);
+                            } else {
+                                if (roomsShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.rooms = null;
+                                }
                             }
-                        } else {
-                            copy.description = null;
                         }
-                        if (this.energyClass!= null) {
-                            ClassEnergy sourceEnergyClass;
-                            sourceEnergyClass = this.getEnergyClass();
-                            ClassEnergy copyEnergyClass = ((ClassEnergy) strategy.copy(LocatorUtils.property(locator, "energyClass", sourceEnergyClass), sourceEnergyClass));
-                            copy.setEnergyClass(copyEnergyClass);
-                        } else {
-                            copy.energyClass = null;
+                        {
+                            Boolean sizeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.size!= null));
+                            if (sizeShouldBeCopiedAndSet == Boolean.TRUE) {
+                                SizeType sourceSize;
+                                sourceSize = this.getSize();
+                                SizeType copySize = ((SizeType) strategy.copy(LocatorUtils.property(locator, "size", sourceSize), sourceSize, (this.size!= null)));
+                                copy.setSize(copySize);
+                            } else {
+                                if (sizeShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.size = null;
+                                }
+                            }
                         }
-                        if (this.energyPerformance!= null) {
-                            ClassEnergyPerformance sourceEnergyPerformance;
-                            sourceEnergyPerformance = this.getEnergyPerformance();
-                            ClassEnergyPerformance copyEnergyPerformance = ((ClassEnergyPerformance) strategy.copy(LocatorUtils.property(locator, "energyPerformance", sourceEnergyPerformance), sourceEnergyPerformance));
-                            copy.setEnergyPerformance(copyEnergyPerformance);
-                        } else {
-                            copy.energyPerformance = null;
+                        {
+                            Boolean priceShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.price!= null));
+                            if (priceShouldBeCopiedAndSet == Boolean.TRUE) {
+                                PriceType sourcePrice;
+                                sourcePrice = this.getPrice();
+                                PriceType copyPrice = ((PriceType) strategy.copy(LocatorUtils.property(locator, "price", sourcePrice), sourcePrice, (this.price!= null)));
+                                copy.setPrice(copyPrice);
+                            } else {
+                                if (priceShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.price = null;
+                                }
+                            }
+                        }
+                        {
+                            Boolean descriptionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.description!= null)&&(!this.description.isEmpty())));
+                            if (descriptionShouldBeCopiedAndSet == Boolean.TRUE) {
+                                List<Langtxt> sourceDescription;
+                                sourceDescription = (((this.description!= null)&&(!this.description.isEmpty()))?this.getDescription():null);
+                                @SuppressWarnings("unchecked")
+                                List<Langtxt> copyDescription = ((List<Langtxt> ) strategy.copy(LocatorUtils.property(locator, "description", sourceDescription), sourceDescription, ((this.description!= null)&&(!this.description.isEmpty()))));
+                                copy.description = null;
+                                if (copyDescription!= null) {
+                                    List<Langtxt> uniqueDescriptionl = copy.getDescription();
+                                    uniqueDescriptionl.addAll(copyDescription);
+                                }
+                            } else {
+                                if (descriptionShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.description = null;
+                                }
+                            }
+                        }
+                        {
+                            Boolean energyClassShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energyClass!= null));
+                            if (energyClassShouldBeCopiedAndSet == Boolean.TRUE) {
+                                ClassEnergy sourceEnergyClass;
+                                sourceEnergyClass = this.getEnergyClass();
+                                ClassEnergy copyEnergyClass = ((ClassEnergy) strategy.copy(LocatorUtils.property(locator, "energyClass", sourceEnergyClass), sourceEnergyClass, (this.energyClass!= null)));
+                                copy.setEnergyClass(copyEnergyClass);
+                            } else {
+                                if (energyClassShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.energyClass = null;
+                                }
+                            }
+                        }
+                        {
+                            Boolean energyPerformanceShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energyPerformance!= null));
+                            if (energyPerformanceShouldBeCopiedAndSet == Boolean.TRUE) {
+                                ClassEnergyPerformance sourceEnergyPerformance;
+                                sourceEnergyPerformance = this.getEnergyPerformance();
+                                ClassEnergyPerformance copyEnergyPerformance = ((ClassEnergyPerformance) strategy.copy(LocatorUtils.property(locator, "energyPerformance", sourceEnergyPerformance), sourceEnergyPerformance, (this.energyPerformance!= null)));
+                                copy.setEnergyPerformance(copyEnergyPerformance);
+                            } else {
+                                if (energyPerformanceShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.energyPerformance = null;
+                                }
+                            }
                         }
                     }
                     return draftCopy;
@@ -8424,7 +8978,7 @@ public class Feed
                     return new Feed.Properties.Property.Features();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -8437,7 +8991,7 @@ public class Feed
                         lhsRooms = this.getRooms();
                         Integer rhsRooms;
                         rhsRooms = that.getRooms();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "rooms", lhsRooms), LocatorUtils.property(thatLocator, "rooms", rhsRooms), lhsRooms, rhsRooms)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "rooms", lhsRooms), LocatorUtils.property(thatLocator, "rooms", rhsRooms), lhsRooms, rhsRooms, (this.rooms!= null), (that.rooms!= null))) {
                             return false;
                         }
                     }
@@ -8446,7 +9000,7 @@ public class Feed
                         lhsSize = this.getSize();
                         SizeType rhsSize;
                         rhsSize = that.getSize();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "size", lhsSize), LocatorUtils.property(thatLocator, "size", rhsSize), lhsSize, rhsSize)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "size", lhsSize), LocatorUtils.property(thatLocator, "size", rhsSize), lhsSize, rhsSize, (this.size!= null), (that.size!= null))) {
                             return false;
                         }
                     }
@@ -8455,7 +9009,7 @@ public class Feed
                         lhsPrice = this.getPrice();
                         PriceType rhsPrice;
                         rhsPrice = that.getPrice();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "price", lhsPrice), LocatorUtils.property(thatLocator, "price", rhsPrice), lhsPrice, rhsPrice)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "price", lhsPrice), LocatorUtils.property(thatLocator, "price", rhsPrice), lhsPrice, rhsPrice, (this.price!= null), (that.price!= null))) {
                             return false;
                         }
                     }
@@ -8464,7 +9018,7 @@ public class Feed
                         lhsDescription = (((this.description!= null)&&(!this.description.isEmpty()))?this.getDescription():null);
                         List<Langtxt> rhsDescription;
                         rhsDescription = (((that.description!= null)&&(!that.description.isEmpty()))?that.getDescription():null);
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "description", lhsDescription), LocatorUtils.property(thatLocator, "description", rhsDescription), lhsDescription, rhsDescription)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "description", lhsDescription), LocatorUtils.property(thatLocator, "description", rhsDescription), lhsDescription, rhsDescription, ((this.description!= null)&&(!this.description.isEmpty())), ((that.description!= null)&&(!that.description.isEmpty())))) {
                             return false;
                         }
                     }
@@ -8473,7 +9027,7 @@ public class Feed
                         lhsEnergyClass = this.getEnergyClass();
                         ClassEnergy rhsEnergyClass;
                         rhsEnergyClass = that.getEnergyClass();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyClass", lhsEnergyClass), LocatorUtils.property(thatLocator, "energyClass", rhsEnergyClass), lhsEnergyClass, rhsEnergyClass)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyClass", lhsEnergyClass), LocatorUtils.property(thatLocator, "energyClass", rhsEnergyClass), lhsEnergyClass, rhsEnergyClass, (this.energyClass!= null), (that.energyClass!= null))) {
                             return false;
                         }
                     }
@@ -8482,7 +9036,7 @@ public class Feed
                         lhsEnergyPerformance = this.getEnergyPerformance();
                         ClassEnergyPerformance rhsEnergyPerformance;
                         rhsEnergyPerformance = that.getEnergyPerformance();
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyPerformance", lhsEnergyPerformance), LocatorUtils.property(thatLocator, "energyPerformance", rhsEnergyPerformance), lhsEnergyPerformance, rhsEnergyPerformance)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "energyPerformance", lhsEnergyPerformance), LocatorUtils.property(thatLocator, "energyPerformance", rhsEnergyPerformance), lhsEnergyPerformance, rhsEnergyPerformance, (this.energyPerformance!= null), (that.energyPerformance!= null))) {
                             return false;
                         }
                     }
@@ -8490,7 +9044,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -8521,8 +9075,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
                 "pictureUrlAndPicture"
             })
-            public static class Pictures
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Pictures implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElements({
@@ -8562,24 +9115,24 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         List<PictureProject> thePictureUrlAndPicture;
                         thePictureUrlAndPicture = (((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty()))?this.getPictureUrlAndPicture():null);
-                        strategy.appendField(locator, this, "pictureUrlAndPicture", buffer, thePictureUrlAndPicture);
+                        strategy.appendField(locator, this, "pictureUrlAndPicture", buffer, thePictureUrlAndPicture, ((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty())));
                     }
                     return buffer;
                 }
@@ -8589,26 +9142,31 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Properties.Property.Pictures) {
                         final Feed.Properties.Property.Pictures copy = ((Feed.Properties.Property.Pictures) draftCopy);
-                        if ((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty())) {
-                            List<PictureProject> sourcePictureUrlAndPicture;
-                            sourcePictureUrlAndPicture = (((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty()))?this.getPictureUrlAndPicture():null);
-                            @SuppressWarnings("unchecked")
-                            List<PictureProject> copyPictureUrlAndPicture = ((List<PictureProject> ) strategy.copy(LocatorUtils.property(locator, "pictureUrlAndPicture", sourcePictureUrlAndPicture), sourcePictureUrlAndPicture));
-                            copy.pictureUrlAndPicture = null;
-                            if (copyPictureUrlAndPicture!= null) {
-                                List<PictureProject> uniquePictureUrlAndPicturel = copy.getPictureUrlAndPicture();
-                                uniquePictureUrlAndPicturel.addAll(copyPictureUrlAndPicture);
+                        {
+                            Boolean pictureUrlAndPictureShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty())));
+                            if (pictureUrlAndPictureShouldBeCopiedAndSet == Boolean.TRUE) {
+                                List<PictureProject> sourcePictureUrlAndPicture;
+                                sourcePictureUrlAndPicture = (((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty()))?this.getPictureUrlAndPicture():null);
+                                @SuppressWarnings("unchecked")
+                                List<PictureProject> copyPictureUrlAndPicture = ((List<PictureProject> ) strategy.copy(LocatorUtils.property(locator, "pictureUrlAndPicture", sourcePictureUrlAndPicture), sourcePictureUrlAndPicture, ((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty()))));
+                                copy.pictureUrlAndPicture = null;
+                                if (copyPictureUrlAndPicture!= null) {
+                                    List<PictureProject> uniquePictureUrlAndPicturel = copy.getPictureUrlAndPicture();
+                                    uniquePictureUrlAndPicturel.addAll(copyPictureUrlAndPicture);
+                                }
+                            } else {
+                                if (pictureUrlAndPictureShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.pictureUrlAndPicture = null;
+                                }
                             }
-                        } else {
-                            copy.pictureUrlAndPicture = null;
                         }
                     }
                     return draftCopy;
@@ -8618,7 +9176,7 @@ public class Feed
                     return new Feed.Properties.Property.Pictures();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -8631,7 +9189,7 @@ public class Feed
                         lhsPictureUrlAndPicture = (((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty()))?this.getPictureUrlAndPicture():null);
                         List<PictureProject> rhsPictureUrlAndPicture;
                         rhsPictureUrlAndPicture = (((that.pictureUrlAndPicture!= null)&&(!that.pictureUrlAndPicture.isEmpty()))?that.getPictureUrlAndPicture():null);
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrlAndPicture", lhsPictureUrlAndPicture), LocatorUtils.property(thatLocator, "pictureUrlAndPicture", rhsPictureUrlAndPicture), lhsPictureUrlAndPicture, rhsPictureUrlAndPicture)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrlAndPicture", lhsPictureUrlAndPicture), LocatorUtils.property(thatLocator, "pictureUrlAndPicture", rhsPictureUrlAndPicture), lhsPictureUrlAndPicture, rhsPictureUrlAndPicture, ((this.pictureUrlAndPicture!= null)&&(!this.pictureUrlAndPicture.isEmpty())), ((that.pictureUrlAndPicture!= null)&&(!that.pictureUrlAndPicture.isEmpty())))) {
                             return false;
                         }
                     }
@@ -8639,7 +9197,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 
@@ -8669,8 +9227,7 @@ public class Feed
             @XmlType(name = "", propOrder = {
                 "video"
             })
-            public static class Videos
-                implements Cloneable, CopyTo, Equals, ToString
+            public static class Videos implements Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true)
@@ -8706,24 +9263,24 @@ public class Feed
                 }
 
                 public String toString() {
-                    final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+                    final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
                     final StringBuilder buffer = new StringBuilder();
                     append(null, buffer, strategy);
                     return buffer.toString();
                 }
 
-                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     strategy.appendStart(locator, this, buffer);
                     appendFields(locator, buffer, strategy);
                     strategy.appendEnd(locator, this, buffer);
                     return buffer;
                 }
 
-                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+                public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                     {
                         List<VideoProject> theVideo;
                         theVideo = (((this.video!= null)&&(!this.video.isEmpty()))?this.getVideo():null);
-                        strategy.appendField(locator, this, "video", buffer, theVideo);
+                        strategy.appendField(locator, this, "video", buffer, theVideo, ((this.video!= null)&&(!this.video.isEmpty())));
                     }
                     return buffer;
                 }
@@ -8733,26 +9290,31 @@ public class Feed
                 }
 
                 public Object copyTo(Object target) {
-                    final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+                    final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
                     return copyTo(null, target, strategy);
                 }
 
-                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+                public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                     final Object draftCopy = ((target == null)?createNewInstance():target);
                     if (draftCopy instanceof Feed.Properties.Property.Videos) {
                         final Feed.Properties.Property.Videos copy = ((Feed.Properties.Property.Videos) draftCopy);
-                        if ((this.video!= null)&&(!this.video.isEmpty())) {
-                            List<VideoProject> sourceVideo;
-                            sourceVideo = (((this.video!= null)&&(!this.video.isEmpty()))?this.getVideo():null);
-                            @SuppressWarnings("unchecked")
-                            List<VideoProject> copyVideo = ((List<VideoProject> ) strategy.copy(LocatorUtils.property(locator, "video", sourceVideo), sourceVideo));
-                            copy.video = null;
-                            if (copyVideo!= null) {
-                                List<VideoProject> uniqueVideol = copy.getVideo();
-                                uniqueVideol.addAll(copyVideo);
+                        {
+                            Boolean videoShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.video!= null)&&(!this.video.isEmpty())));
+                            if (videoShouldBeCopiedAndSet == Boolean.TRUE) {
+                                List<VideoProject> sourceVideo;
+                                sourceVideo = (((this.video!= null)&&(!this.video.isEmpty()))?this.getVideo():null);
+                                @SuppressWarnings("unchecked")
+                                List<VideoProject> copyVideo = ((List<VideoProject> ) strategy.copy(LocatorUtils.property(locator, "video", sourceVideo), sourceVideo, ((this.video!= null)&&(!this.video.isEmpty()))));
+                                copy.video = null;
+                                if (copyVideo!= null) {
+                                    List<VideoProject> uniqueVideol = copy.getVideo();
+                                    uniqueVideol.addAll(copyVideo);
+                                }
+                            } else {
+                                if (videoShouldBeCopiedAndSet == Boolean.FALSE) {
+                                    copy.video = null;
+                                }
                             }
-                        } else {
-                            copy.video = null;
                         }
                     }
                     return draftCopy;
@@ -8762,7 +9324,7 @@ public class Feed
                     return new Feed.Properties.Property.Videos();
                 }
 
-                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+                public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                     if ((object == null)||(this.getClass()!= object.getClass())) {
                         return false;
                     }
@@ -8775,7 +9337,7 @@ public class Feed
                         lhsVideo = (((this.video!= null)&&(!this.video.isEmpty()))?this.getVideo():null);
                         List<VideoProject> rhsVideo;
                         rhsVideo = (((that.video!= null)&&(!that.video.isEmpty()))?that.getVideo():null);
-                        if (!strategy.equals(LocatorUtils.property(thisLocator, "video", lhsVideo), LocatorUtils.property(thatLocator, "video", rhsVideo), lhsVideo, rhsVideo)) {
+                        if (!strategy.equals(LocatorUtils.property(thisLocator, "video", lhsVideo), LocatorUtils.property(thatLocator, "video", rhsVideo), lhsVideo, rhsVideo, ((this.video!= null)&&(!this.video.isEmpty())), ((that.video!= null)&&(!that.video.isEmpty())))) {
                             return false;
                         }
                     }
@@ -8783,7 +9345,7 @@ public class Feed
                 }
 
                 public boolean equals(Object object) {
-                    final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+                    final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
                     return equals(null, null, object, strategy);
                 }
 

@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -43,8 +43,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "zinshausRenditeobjekt"
 })
 @XmlRootElement(name = "objektart")
-public class Objektart
-    implements Cloneable, CopyTo, Equals, ToString
+public class Objektart implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<Zimmer> zimmer;
@@ -414,79 +413,79 @@ public class Objektart
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Zimmer> theZimmer;
             theZimmer = (((this.zimmer!= null)&&(!this.zimmer.isEmpty()))?this.getZimmer():null);
-            strategy.appendField(locator, this, "zimmer", buffer, theZimmer);
+            strategy.appendField(locator, this, "zimmer", buffer, theZimmer, ((this.zimmer!= null)&&(!this.zimmer.isEmpty())));
         }
         {
             List<Wohnung> theWohnung;
             theWohnung = (((this.wohnung!= null)&&(!this.wohnung.isEmpty()))?this.getWohnung():null);
-            strategy.appendField(locator, this, "wohnung", buffer, theWohnung);
+            strategy.appendField(locator, this, "wohnung", buffer, theWohnung, ((this.wohnung!= null)&&(!this.wohnung.isEmpty())));
         }
         {
             List<Haus> theHaus;
             theHaus = (((this.haus!= null)&&(!this.haus.isEmpty()))?this.getHaus():null);
-            strategy.appendField(locator, this, "haus", buffer, theHaus);
+            strategy.appendField(locator, this, "haus", buffer, theHaus, ((this.haus!= null)&&(!this.haus.isEmpty())));
         }
         {
             List<Grundstueck> theGrundstueck;
             theGrundstueck = (((this.grundstueck!= null)&&(!this.grundstueck.isEmpty()))?this.getGrundstueck():null);
-            strategy.appendField(locator, this, "grundstueck", buffer, theGrundstueck);
+            strategy.appendField(locator, this, "grundstueck", buffer, theGrundstueck, ((this.grundstueck!= null)&&(!this.grundstueck.isEmpty())));
         }
         {
             List<BueroPraxen> theBueroPraxen;
             theBueroPraxen = (((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty()))?this.getBueroPraxen():null);
-            strategy.appendField(locator, this, "bueroPraxen", buffer, theBueroPraxen);
+            strategy.appendField(locator, this, "bueroPraxen", buffer, theBueroPraxen, ((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty())));
         }
         {
             List<Einzelhandel> theEinzelhandel;
             theEinzelhandel = (((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty()))?this.getEinzelhandel():null);
-            strategy.appendField(locator, this, "einzelhandel", buffer, theEinzelhandel);
+            strategy.appendField(locator, this, "einzelhandel", buffer, theEinzelhandel, ((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty())));
         }
         {
             List<Gastgewerbe> theGastgewerbe;
             theGastgewerbe = (((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty()))?this.getGastgewerbe():null);
-            strategy.appendField(locator, this, "gastgewerbe", buffer, theGastgewerbe);
+            strategy.appendField(locator, this, "gastgewerbe", buffer, theGastgewerbe, ((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty())));
         }
         {
             List<HallenLagerProd> theHallenLagerProd;
             theHallenLagerProd = (((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty()))?this.getHallenLagerProd():null);
-            strategy.appendField(locator, this, "hallenLagerProd", buffer, theHallenLagerProd);
+            strategy.appendField(locator, this, "hallenLagerProd", buffer, theHallenLagerProd, ((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty())));
         }
         {
             List<LandUndForstwirtschaft> theLandUndForstwirtschaft;
             theLandUndForstwirtschaft = (((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty()))?this.getLandUndForstwirtschaft():null);
-            strategy.appendField(locator, this, "landUndForstwirtschaft", buffer, theLandUndForstwirtschaft);
+            strategy.appendField(locator, this, "landUndForstwirtschaft", buffer, theLandUndForstwirtschaft, ((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty())));
         }
         {
             List<Sonstige> theSonstige;
             theSonstige = (((this.sonstige!= null)&&(!this.sonstige.isEmpty()))?this.getSonstige():null);
-            strategy.appendField(locator, this, "sonstige", buffer, theSonstige);
+            strategy.appendField(locator, this, "sonstige", buffer, theSonstige, ((this.sonstige!= null)&&(!this.sonstige.isEmpty())));
         }
         {
             List<FreizeitimmobilieGewerblich> theFreizeitimmobilieGewerblich;
             theFreizeitimmobilieGewerblich = (((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty()))?this.getFreizeitimmobilieGewerblich():null);
-            strategy.appendField(locator, this, "freizeitimmobilieGewerblich", buffer, theFreizeitimmobilieGewerblich);
+            strategy.appendField(locator, this, "freizeitimmobilieGewerblich", buffer, theFreizeitimmobilieGewerblich, ((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty())));
         }
         {
             List<ZinshausRenditeobjekt> theZinshausRenditeobjekt;
             theZinshausRenditeobjekt = (((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty()))?this.getZinshausRenditeobjekt():null);
-            strategy.appendField(locator, this, "zinshausRenditeobjekt", buffer, theZinshausRenditeobjekt);
+            strategy.appendField(locator, this, "zinshausRenditeobjekt", buffer, theZinshausRenditeobjekt, ((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty())));
         }
         return buffer;
     }
@@ -496,169 +495,229 @@ public class Objektart
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Objektart) {
             final Objektart copy = ((Objektart) draftCopy);
-            if ((this.zimmer!= null)&&(!this.zimmer.isEmpty())) {
-                List<Zimmer> sourceZimmer;
-                sourceZimmer = (((this.zimmer!= null)&&(!this.zimmer.isEmpty()))?this.getZimmer():null);
-                @SuppressWarnings("unchecked")
-                List<Zimmer> copyZimmer = ((List<Zimmer> ) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer));
-                copy.zimmer = null;
-                if (copyZimmer!= null) {
-                    List<Zimmer> uniqueZimmerl = copy.getZimmer();
-                    uniqueZimmerl.addAll(copyZimmer);
+            {
+                Boolean zimmerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.zimmer!= null)&&(!this.zimmer.isEmpty())));
+                if (zimmerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Zimmer> sourceZimmer;
+                    sourceZimmer = (((this.zimmer!= null)&&(!this.zimmer.isEmpty()))?this.getZimmer():null);
+                    @SuppressWarnings("unchecked")
+                    List<Zimmer> copyZimmer = ((List<Zimmer> ) strategy.copy(LocatorUtils.property(locator, "zimmer", sourceZimmer), sourceZimmer, ((this.zimmer!= null)&&(!this.zimmer.isEmpty()))));
+                    copy.zimmer = null;
+                    if (copyZimmer!= null) {
+                        List<Zimmer> uniqueZimmerl = copy.getZimmer();
+                        uniqueZimmerl.addAll(copyZimmer);
+                    }
+                } else {
+                    if (zimmerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zimmer = null;
+                    }
                 }
-            } else {
-                copy.zimmer = null;
             }
-            if ((this.wohnung!= null)&&(!this.wohnung.isEmpty())) {
-                List<Wohnung> sourceWohnung;
-                sourceWohnung = (((this.wohnung!= null)&&(!this.wohnung.isEmpty()))?this.getWohnung():null);
-                @SuppressWarnings("unchecked")
-                List<Wohnung> copyWohnung = ((List<Wohnung> ) strategy.copy(LocatorUtils.property(locator, "wohnung", sourceWohnung), sourceWohnung));
-                copy.wohnung = null;
-                if (copyWohnung!= null) {
-                    List<Wohnung> uniqueWohnungl = copy.getWohnung();
-                    uniqueWohnungl.addAll(copyWohnung);
+            {
+                Boolean wohnungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.wohnung!= null)&&(!this.wohnung.isEmpty())));
+                if (wohnungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Wohnung> sourceWohnung;
+                    sourceWohnung = (((this.wohnung!= null)&&(!this.wohnung.isEmpty()))?this.getWohnung():null);
+                    @SuppressWarnings("unchecked")
+                    List<Wohnung> copyWohnung = ((List<Wohnung> ) strategy.copy(LocatorUtils.property(locator, "wohnung", sourceWohnung), sourceWohnung, ((this.wohnung!= null)&&(!this.wohnung.isEmpty()))));
+                    copy.wohnung = null;
+                    if (copyWohnung!= null) {
+                        List<Wohnung> uniqueWohnungl = copy.getWohnung();
+                        uniqueWohnungl.addAll(copyWohnung);
+                    }
+                } else {
+                    if (wohnungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wohnung = null;
+                    }
                 }
-            } else {
-                copy.wohnung = null;
             }
-            if ((this.haus!= null)&&(!this.haus.isEmpty())) {
-                List<Haus> sourceHaus;
-                sourceHaus = (((this.haus!= null)&&(!this.haus.isEmpty()))?this.getHaus():null);
-                @SuppressWarnings("unchecked")
-                List<Haus> copyHaus = ((List<Haus> ) strategy.copy(LocatorUtils.property(locator, "haus", sourceHaus), sourceHaus));
-                copy.haus = null;
-                if (copyHaus!= null) {
-                    List<Haus> uniqueHausl = copy.getHaus();
-                    uniqueHausl.addAll(copyHaus);
+            {
+                Boolean hausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.haus!= null)&&(!this.haus.isEmpty())));
+                if (hausShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Haus> sourceHaus;
+                    sourceHaus = (((this.haus!= null)&&(!this.haus.isEmpty()))?this.getHaus():null);
+                    @SuppressWarnings("unchecked")
+                    List<Haus> copyHaus = ((List<Haus> ) strategy.copy(LocatorUtils.property(locator, "haus", sourceHaus), sourceHaus, ((this.haus!= null)&&(!this.haus.isEmpty()))));
+                    copy.haus = null;
+                    if (copyHaus!= null) {
+                        List<Haus> uniqueHausl = copy.getHaus();
+                        uniqueHausl.addAll(copyHaus);
+                    }
+                } else {
+                    if (hausShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.haus = null;
+                    }
                 }
-            } else {
-                copy.haus = null;
             }
-            if ((this.grundstueck!= null)&&(!this.grundstueck.isEmpty())) {
-                List<Grundstueck> sourceGrundstueck;
-                sourceGrundstueck = (((this.grundstueck!= null)&&(!this.grundstueck.isEmpty()))?this.getGrundstueck():null);
-                @SuppressWarnings("unchecked")
-                List<Grundstueck> copyGrundstueck = ((List<Grundstueck> ) strategy.copy(LocatorUtils.property(locator, "grundstueck", sourceGrundstueck), sourceGrundstueck));
-                copy.grundstueck = null;
-                if (copyGrundstueck!= null) {
-                    List<Grundstueck> uniqueGrundstueckl = copy.getGrundstueck();
-                    uniqueGrundstueckl.addAll(copyGrundstueck);
+            {
+                Boolean grundstueckShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.grundstueck!= null)&&(!this.grundstueck.isEmpty())));
+                if (grundstueckShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Grundstueck> sourceGrundstueck;
+                    sourceGrundstueck = (((this.grundstueck!= null)&&(!this.grundstueck.isEmpty()))?this.getGrundstueck():null);
+                    @SuppressWarnings("unchecked")
+                    List<Grundstueck> copyGrundstueck = ((List<Grundstueck> ) strategy.copy(LocatorUtils.property(locator, "grundstueck", sourceGrundstueck), sourceGrundstueck, ((this.grundstueck!= null)&&(!this.grundstueck.isEmpty()))));
+                    copy.grundstueck = null;
+                    if (copyGrundstueck!= null) {
+                        List<Grundstueck> uniqueGrundstueckl = copy.getGrundstueck();
+                        uniqueGrundstueckl.addAll(copyGrundstueck);
+                    }
+                } else {
+                    if (grundstueckShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.grundstueck = null;
+                    }
                 }
-            } else {
-                copy.grundstueck = null;
             }
-            if ((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty())) {
-                List<BueroPraxen> sourceBueroPraxen;
-                sourceBueroPraxen = (((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty()))?this.getBueroPraxen():null);
-                @SuppressWarnings("unchecked")
-                List<BueroPraxen> copyBueroPraxen = ((List<BueroPraxen> ) strategy.copy(LocatorUtils.property(locator, "bueroPraxen", sourceBueroPraxen), sourceBueroPraxen));
-                copy.bueroPraxen = null;
-                if (copyBueroPraxen!= null) {
-                    List<BueroPraxen> uniqueBueroPraxenl = copy.getBueroPraxen();
-                    uniqueBueroPraxenl.addAll(copyBueroPraxen);
+            {
+                Boolean bueroPraxenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty())));
+                if (bueroPraxenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<BueroPraxen> sourceBueroPraxen;
+                    sourceBueroPraxen = (((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty()))?this.getBueroPraxen():null);
+                    @SuppressWarnings("unchecked")
+                    List<BueroPraxen> copyBueroPraxen = ((List<BueroPraxen> ) strategy.copy(LocatorUtils.property(locator, "bueroPraxen", sourceBueroPraxen), sourceBueroPraxen, ((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty()))));
+                    copy.bueroPraxen = null;
+                    if (copyBueroPraxen!= null) {
+                        List<BueroPraxen> uniqueBueroPraxenl = copy.getBueroPraxen();
+                        uniqueBueroPraxenl.addAll(copyBueroPraxen);
+                    }
+                } else {
+                    if (bueroPraxenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bueroPraxen = null;
+                    }
                 }
-            } else {
-                copy.bueroPraxen = null;
             }
-            if ((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty())) {
-                List<Einzelhandel> sourceEinzelhandel;
-                sourceEinzelhandel = (((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty()))?this.getEinzelhandel():null);
-                @SuppressWarnings("unchecked")
-                List<Einzelhandel> copyEinzelhandel = ((List<Einzelhandel> ) strategy.copy(LocatorUtils.property(locator, "einzelhandel", sourceEinzelhandel), sourceEinzelhandel));
-                copy.einzelhandel = null;
-                if (copyEinzelhandel!= null) {
-                    List<Einzelhandel> uniqueEinzelhandell = copy.getEinzelhandel();
-                    uniqueEinzelhandell.addAll(copyEinzelhandel);
+            {
+                Boolean einzelhandelShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty())));
+                if (einzelhandelShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Einzelhandel> sourceEinzelhandel;
+                    sourceEinzelhandel = (((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty()))?this.getEinzelhandel():null);
+                    @SuppressWarnings("unchecked")
+                    List<Einzelhandel> copyEinzelhandel = ((List<Einzelhandel> ) strategy.copy(LocatorUtils.property(locator, "einzelhandel", sourceEinzelhandel), sourceEinzelhandel, ((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty()))));
+                    copy.einzelhandel = null;
+                    if (copyEinzelhandel!= null) {
+                        List<Einzelhandel> uniqueEinzelhandell = copy.getEinzelhandel();
+                        uniqueEinzelhandell.addAll(copyEinzelhandel);
+                    }
+                } else {
+                    if (einzelhandelShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.einzelhandel = null;
+                    }
                 }
-            } else {
-                copy.einzelhandel = null;
             }
-            if ((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty())) {
-                List<Gastgewerbe> sourceGastgewerbe;
-                sourceGastgewerbe = (((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty()))?this.getGastgewerbe():null);
-                @SuppressWarnings("unchecked")
-                List<Gastgewerbe> copyGastgewerbe = ((List<Gastgewerbe> ) strategy.copy(LocatorUtils.property(locator, "gastgewerbe", sourceGastgewerbe), sourceGastgewerbe));
-                copy.gastgewerbe = null;
-                if (copyGastgewerbe!= null) {
-                    List<Gastgewerbe> uniqueGastgewerbel = copy.getGastgewerbe();
-                    uniqueGastgewerbel.addAll(copyGastgewerbe);
+            {
+                Boolean gastgewerbeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty())));
+                if (gastgewerbeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Gastgewerbe> sourceGastgewerbe;
+                    sourceGastgewerbe = (((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty()))?this.getGastgewerbe():null);
+                    @SuppressWarnings("unchecked")
+                    List<Gastgewerbe> copyGastgewerbe = ((List<Gastgewerbe> ) strategy.copy(LocatorUtils.property(locator, "gastgewerbe", sourceGastgewerbe), sourceGastgewerbe, ((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty()))));
+                    copy.gastgewerbe = null;
+                    if (copyGastgewerbe!= null) {
+                        List<Gastgewerbe> uniqueGastgewerbel = copy.getGastgewerbe();
+                        uniqueGastgewerbel.addAll(copyGastgewerbe);
+                    }
+                } else {
+                    if (gastgewerbeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gastgewerbe = null;
+                    }
                 }
-            } else {
-                copy.gastgewerbe = null;
             }
-            if ((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty())) {
-                List<HallenLagerProd> sourceHallenLagerProd;
-                sourceHallenLagerProd = (((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty()))?this.getHallenLagerProd():null);
-                @SuppressWarnings("unchecked")
-                List<HallenLagerProd> copyHallenLagerProd = ((List<HallenLagerProd> ) strategy.copy(LocatorUtils.property(locator, "hallenLagerProd", sourceHallenLagerProd), sourceHallenLagerProd));
-                copy.hallenLagerProd = null;
-                if (copyHallenLagerProd!= null) {
-                    List<HallenLagerProd> uniqueHallenLagerProdl = copy.getHallenLagerProd();
-                    uniqueHallenLagerProdl.addAll(copyHallenLagerProd);
+            {
+                Boolean hallenLagerProdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty())));
+                if (hallenLagerProdShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<HallenLagerProd> sourceHallenLagerProd;
+                    sourceHallenLagerProd = (((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty()))?this.getHallenLagerProd():null);
+                    @SuppressWarnings("unchecked")
+                    List<HallenLagerProd> copyHallenLagerProd = ((List<HallenLagerProd> ) strategy.copy(LocatorUtils.property(locator, "hallenLagerProd", sourceHallenLagerProd), sourceHallenLagerProd, ((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty()))));
+                    copy.hallenLagerProd = null;
+                    if (copyHallenLagerProd!= null) {
+                        List<HallenLagerProd> uniqueHallenLagerProdl = copy.getHallenLagerProd();
+                        uniqueHallenLagerProdl.addAll(copyHallenLagerProd);
+                    }
+                } else {
+                    if (hallenLagerProdShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hallenLagerProd = null;
+                    }
                 }
-            } else {
-                copy.hallenLagerProd = null;
             }
-            if ((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty())) {
-                List<LandUndForstwirtschaft> sourceLandUndForstwirtschaft;
-                sourceLandUndForstwirtschaft = (((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty()))?this.getLandUndForstwirtschaft():null);
-                @SuppressWarnings("unchecked")
-                List<LandUndForstwirtschaft> copyLandUndForstwirtschaft = ((List<LandUndForstwirtschaft> ) strategy.copy(LocatorUtils.property(locator, "landUndForstwirtschaft", sourceLandUndForstwirtschaft), sourceLandUndForstwirtschaft));
-                copy.landUndForstwirtschaft = null;
-                if (copyLandUndForstwirtschaft!= null) {
-                    List<LandUndForstwirtschaft> uniqueLandUndForstwirtschaftl = copy.getLandUndForstwirtschaft();
-                    uniqueLandUndForstwirtschaftl.addAll(copyLandUndForstwirtschaft);
+            {
+                Boolean landUndForstwirtschaftShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty())));
+                if (landUndForstwirtschaftShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<LandUndForstwirtschaft> sourceLandUndForstwirtschaft;
+                    sourceLandUndForstwirtschaft = (((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty()))?this.getLandUndForstwirtschaft():null);
+                    @SuppressWarnings("unchecked")
+                    List<LandUndForstwirtschaft> copyLandUndForstwirtschaft = ((List<LandUndForstwirtschaft> ) strategy.copy(LocatorUtils.property(locator, "landUndForstwirtschaft", sourceLandUndForstwirtschaft), sourceLandUndForstwirtschaft, ((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty()))));
+                    copy.landUndForstwirtschaft = null;
+                    if (copyLandUndForstwirtschaft!= null) {
+                        List<LandUndForstwirtschaft> uniqueLandUndForstwirtschaftl = copy.getLandUndForstwirtschaft();
+                        uniqueLandUndForstwirtschaftl.addAll(copyLandUndForstwirtschaft);
+                    }
+                } else {
+                    if (landUndForstwirtschaftShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.landUndForstwirtschaft = null;
+                    }
                 }
-            } else {
-                copy.landUndForstwirtschaft = null;
             }
-            if ((this.sonstige!= null)&&(!this.sonstige.isEmpty())) {
-                List<Sonstige> sourceSonstige;
-                sourceSonstige = (((this.sonstige!= null)&&(!this.sonstige.isEmpty()))?this.getSonstige():null);
-                @SuppressWarnings("unchecked")
-                List<Sonstige> copySonstige = ((List<Sonstige> ) strategy.copy(LocatorUtils.property(locator, "sonstige", sourceSonstige), sourceSonstige));
-                copy.sonstige = null;
-                if (copySonstige!= null) {
-                    List<Sonstige> uniqueSonstigel = copy.getSonstige();
-                    uniqueSonstigel.addAll(copySonstige);
+            {
+                Boolean sonstigeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.sonstige!= null)&&(!this.sonstige.isEmpty())));
+                if (sonstigeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Sonstige> sourceSonstige;
+                    sourceSonstige = (((this.sonstige!= null)&&(!this.sonstige.isEmpty()))?this.getSonstige():null);
+                    @SuppressWarnings("unchecked")
+                    List<Sonstige> copySonstige = ((List<Sonstige> ) strategy.copy(LocatorUtils.property(locator, "sonstige", sourceSonstige), sourceSonstige, ((this.sonstige!= null)&&(!this.sonstige.isEmpty()))));
+                    copy.sonstige = null;
+                    if (copySonstige!= null) {
+                        List<Sonstige> uniqueSonstigel = copy.getSonstige();
+                        uniqueSonstigel.addAll(copySonstige);
+                    }
+                } else {
+                    if (sonstigeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.sonstige = null;
+                    }
                 }
-            } else {
-                copy.sonstige = null;
             }
-            if ((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty())) {
-                List<FreizeitimmobilieGewerblich> sourceFreizeitimmobilieGewerblich;
-                sourceFreizeitimmobilieGewerblich = (((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty()))?this.getFreizeitimmobilieGewerblich():null);
-                @SuppressWarnings("unchecked")
-                List<FreizeitimmobilieGewerblich> copyFreizeitimmobilieGewerblich = ((List<FreizeitimmobilieGewerblich> ) strategy.copy(LocatorUtils.property(locator, "freizeitimmobilieGewerblich", sourceFreizeitimmobilieGewerblich), sourceFreizeitimmobilieGewerblich));
-                copy.freizeitimmobilieGewerblich = null;
-                if (copyFreizeitimmobilieGewerblich!= null) {
-                    List<FreizeitimmobilieGewerblich> uniqueFreizeitimmobilieGewerblichl = copy.getFreizeitimmobilieGewerblich();
-                    uniqueFreizeitimmobilieGewerblichl.addAll(copyFreizeitimmobilieGewerblich);
+            {
+                Boolean freizeitimmobilieGewerblichShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty())));
+                if (freizeitimmobilieGewerblichShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<FreizeitimmobilieGewerblich> sourceFreizeitimmobilieGewerblich;
+                    sourceFreizeitimmobilieGewerblich = (((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty()))?this.getFreizeitimmobilieGewerblich():null);
+                    @SuppressWarnings("unchecked")
+                    List<FreizeitimmobilieGewerblich> copyFreizeitimmobilieGewerblich = ((List<FreizeitimmobilieGewerblich> ) strategy.copy(LocatorUtils.property(locator, "freizeitimmobilieGewerblich", sourceFreizeitimmobilieGewerblich), sourceFreizeitimmobilieGewerblich, ((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty()))));
+                    copy.freizeitimmobilieGewerblich = null;
+                    if (copyFreizeitimmobilieGewerblich!= null) {
+                        List<FreizeitimmobilieGewerblich> uniqueFreizeitimmobilieGewerblichl = copy.getFreizeitimmobilieGewerblich();
+                        uniqueFreizeitimmobilieGewerblichl.addAll(copyFreizeitimmobilieGewerblich);
+                    }
+                } else {
+                    if (freizeitimmobilieGewerblichShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.freizeitimmobilieGewerblich = null;
+                    }
                 }
-            } else {
-                copy.freizeitimmobilieGewerblich = null;
             }
-            if ((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty())) {
-                List<ZinshausRenditeobjekt> sourceZinshausRenditeobjekt;
-                sourceZinshausRenditeobjekt = (((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty()))?this.getZinshausRenditeobjekt():null);
-                @SuppressWarnings("unchecked")
-                List<ZinshausRenditeobjekt> copyZinshausRenditeobjekt = ((List<ZinshausRenditeobjekt> ) strategy.copy(LocatorUtils.property(locator, "zinshausRenditeobjekt", sourceZinshausRenditeobjekt), sourceZinshausRenditeobjekt));
-                copy.zinshausRenditeobjekt = null;
-                if (copyZinshausRenditeobjekt!= null) {
-                    List<ZinshausRenditeobjekt> uniqueZinshausRenditeobjektl = copy.getZinshausRenditeobjekt();
-                    uniqueZinshausRenditeobjektl.addAll(copyZinshausRenditeobjekt);
+            {
+                Boolean zinshausRenditeobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty())));
+                if (zinshausRenditeobjektShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<ZinshausRenditeobjekt> sourceZinshausRenditeobjekt;
+                    sourceZinshausRenditeobjekt = (((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty()))?this.getZinshausRenditeobjekt():null);
+                    @SuppressWarnings("unchecked")
+                    List<ZinshausRenditeobjekt> copyZinshausRenditeobjekt = ((List<ZinshausRenditeobjekt> ) strategy.copy(LocatorUtils.property(locator, "zinshausRenditeobjekt", sourceZinshausRenditeobjekt), sourceZinshausRenditeobjekt, ((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty()))));
+                    copy.zinshausRenditeobjekt = null;
+                    if (copyZinshausRenditeobjekt!= null) {
+                        List<ZinshausRenditeobjekt> uniqueZinshausRenditeobjektl = copy.getZinshausRenditeobjekt();
+                        uniqueZinshausRenditeobjektl.addAll(copyZinshausRenditeobjekt);
+                    }
+                } else {
+                    if (zinshausRenditeobjektShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zinshausRenditeobjekt = null;
+                    }
                 }
-            } else {
-                copy.zinshausRenditeobjekt = null;
             }
         }
         return draftCopy;
@@ -668,7 +727,7 @@ public class Objektart
         return new Objektart();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -681,7 +740,7 @@ public class Objektart
             lhsZimmer = (((this.zimmer!= null)&&(!this.zimmer.isEmpty()))?this.getZimmer():null);
             List<Zimmer> rhsZimmer;
             rhsZimmer = (((that.zimmer!= null)&&(!that.zimmer.isEmpty()))?that.getZimmer():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmer", lhsZimmer), LocatorUtils.property(thatLocator, "zimmer", rhsZimmer), lhsZimmer, rhsZimmer)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zimmer", lhsZimmer), LocatorUtils.property(thatLocator, "zimmer", rhsZimmer), lhsZimmer, rhsZimmer, ((this.zimmer!= null)&&(!this.zimmer.isEmpty())), ((that.zimmer!= null)&&(!that.zimmer.isEmpty())))) {
                 return false;
             }
         }
@@ -690,7 +749,7 @@ public class Objektart
             lhsWohnung = (((this.wohnung!= null)&&(!this.wohnung.isEmpty()))?this.getWohnung():null);
             List<Wohnung> rhsWohnung;
             rhsWohnung = (((that.wohnung!= null)&&(!that.wohnung.isEmpty()))?that.getWohnung():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnung", lhsWohnung), LocatorUtils.property(thatLocator, "wohnung", rhsWohnung), lhsWohnung, rhsWohnung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnung", lhsWohnung), LocatorUtils.property(thatLocator, "wohnung", rhsWohnung), lhsWohnung, rhsWohnung, ((this.wohnung!= null)&&(!this.wohnung.isEmpty())), ((that.wohnung!= null)&&(!that.wohnung.isEmpty())))) {
                 return false;
             }
         }
@@ -699,7 +758,7 @@ public class Objektart
             lhsHaus = (((this.haus!= null)&&(!this.haus.isEmpty()))?this.getHaus():null);
             List<Haus> rhsHaus;
             rhsHaus = (((that.haus!= null)&&(!that.haus.isEmpty()))?that.getHaus():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "haus", lhsHaus), LocatorUtils.property(thatLocator, "haus", rhsHaus), lhsHaus, rhsHaus)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "haus", lhsHaus), LocatorUtils.property(thatLocator, "haus", rhsHaus), lhsHaus, rhsHaus, ((this.haus!= null)&&(!this.haus.isEmpty())), ((that.haus!= null)&&(!that.haus.isEmpty())))) {
                 return false;
             }
         }
@@ -708,7 +767,7 @@ public class Objektart
             lhsGrundstueck = (((this.grundstueck!= null)&&(!this.grundstueck.isEmpty()))?this.getGrundstueck():null);
             List<Grundstueck> rhsGrundstueck;
             rhsGrundstueck = (((that.grundstueck!= null)&&(!that.grundstueck.isEmpty()))?that.getGrundstueck():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstueck", lhsGrundstueck), LocatorUtils.property(thatLocator, "grundstueck", rhsGrundstueck), lhsGrundstueck, rhsGrundstueck)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstueck", lhsGrundstueck), LocatorUtils.property(thatLocator, "grundstueck", rhsGrundstueck), lhsGrundstueck, rhsGrundstueck, ((this.grundstueck!= null)&&(!this.grundstueck.isEmpty())), ((that.grundstueck!= null)&&(!that.grundstueck.isEmpty())))) {
                 return false;
             }
         }
@@ -717,7 +776,7 @@ public class Objektart
             lhsBueroPraxen = (((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty()))?this.getBueroPraxen():null);
             List<BueroPraxen> rhsBueroPraxen;
             rhsBueroPraxen = (((that.bueroPraxen!= null)&&(!that.bueroPraxen.isEmpty()))?that.getBueroPraxen():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bueroPraxen", lhsBueroPraxen), LocatorUtils.property(thatLocator, "bueroPraxen", rhsBueroPraxen), lhsBueroPraxen, rhsBueroPraxen)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bueroPraxen", lhsBueroPraxen), LocatorUtils.property(thatLocator, "bueroPraxen", rhsBueroPraxen), lhsBueroPraxen, rhsBueroPraxen, ((this.bueroPraxen!= null)&&(!this.bueroPraxen.isEmpty())), ((that.bueroPraxen!= null)&&(!that.bueroPraxen.isEmpty())))) {
                 return false;
             }
         }
@@ -726,7 +785,7 @@ public class Objektart
             lhsEinzelhandel = (((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty()))?this.getEinzelhandel():null);
             List<Einzelhandel> rhsEinzelhandel;
             rhsEinzelhandel = (((that.einzelhandel!= null)&&(!that.einzelhandel.isEmpty()))?that.getEinzelhandel():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "einzelhandel", lhsEinzelhandel), LocatorUtils.property(thatLocator, "einzelhandel", rhsEinzelhandel), lhsEinzelhandel, rhsEinzelhandel)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "einzelhandel", lhsEinzelhandel), LocatorUtils.property(thatLocator, "einzelhandel", rhsEinzelhandel), lhsEinzelhandel, rhsEinzelhandel, ((this.einzelhandel!= null)&&(!this.einzelhandel.isEmpty())), ((that.einzelhandel!= null)&&(!that.einzelhandel.isEmpty())))) {
                 return false;
             }
         }
@@ -735,7 +794,7 @@ public class Objektart
             lhsGastgewerbe = (((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty()))?this.getGastgewerbe():null);
             List<Gastgewerbe> rhsGastgewerbe;
             rhsGastgewerbe = (((that.gastgewerbe!= null)&&(!that.gastgewerbe.isEmpty()))?that.getGastgewerbe():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastgewerbe", lhsGastgewerbe), LocatorUtils.property(thatLocator, "gastgewerbe", rhsGastgewerbe), lhsGastgewerbe, rhsGastgewerbe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastgewerbe", lhsGastgewerbe), LocatorUtils.property(thatLocator, "gastgewerbe", rhsGastgewerbe), lhsGastgewerbe, rhsGastgewerbe, ((this.gastgewerbe!= null)&&(!this.gastgewerbe.isEmpty())), ((that.gastgewerbe!= null)&&(!that.gastgewerbe.isEmpty())))) {
                 return false;
             }
         }
@@ -744,7 +803,7 @@ public class Objektart
             lhsHallenLagerProd = (((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty()))?this.getHallenLagerProd():null);
             List<HallenLagerProd> rhsHallenLagerProd;
             rhsHallenLagerProd = (((that.hallenLagerProd!= null)&&(!that.hallenLagerProd.isEmpty()))?that.getHallenLagerProd():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hallenLagerProd", lhsHallenLagerProd), LocatorUtils.property(thatLocator, "hallenLagerProd", rhsHallenLagerProd), lhsHallenLagerProd, rhsHallenLagerProd)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hallenLagerProd", lhsHallenLagerProd), LocatorUtils.property(thatLocator, "hallenLagerProd", rhsHallenLagerProd), lhsHallenLagerProd, rhsHallenLagerProd, ((this.hallenLagerProd!= null)&&(!this.hallenLagerProd.isEmpty())), ((that.hallenLagerProd!= null)&&(!that.hallenLagerProd.isEmpty())))) {
                 return false;
             }
         }
@@ -753,7 +812,7 @@ public class Objektart
             lhsLandUndForstwirtschaft = (((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty()))?this.getLandUndForstwirtschaft():null);
             List<LandUndForstwirtschaft> rhsLandUndForstwirtschaft;
             rhsLandUndForstwirtschaft = (((that.landUndForstwirtschaft!= null)&&(!that.landUndForstwirtschaft.isEmpty()))?that.getLandUndForstwirtschaft():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "landUndForstwirtschaft", lhsLandUndForstwirtschaft), LocatorUtils.property(thatLocator, "landUndForstwirtschaft", rhsLandUndForstwirtschaft), lhsLandUndForstwirtschaft, rhsLandUndForstwirtschaft)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "landUndForstwirtschaft", lhsLandUndForstwirtschaft), LocatorUtils.property(thatLocator, "landUndForstwirtschaft", rhsLandUndForstwirtschaft), lhsLandUndForstwirtschaft, rhsLandUndForstwirtschaft, ((this.landUndForstwirtschaft!= null)&&(!this.landUndForstwirtschaft.isEmpty())), ((that.landUndForstwirtschaft!= null)&&(!that.landUndForstwirtschaft.isEmpty())))) {
                 return false;
             }
         }
@@ -762,7 +821,7 @@ public class Objektart
             lhsSonstige = (((this.sonstige!= null)&&(!this.sonstige.isEmpty()))?this.getSonstige():null);
             List<Sonstige> rhsSonstige;
             rhsSonstige = (((that.sonstige!= null)&&(!that.sonstige.isEmpty()))?that.getSonstige():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstige", lhsSonstige), LocatorUtils.property(thatLocator, "sonstige", rhsSonstige), lhsSonstige, rhsSonstige)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "sonstige", lhsSonstige), LocatorUtils.property(thatLocator, "sonstige", rhsSonstige), lhsSonstige, rhsSonstige, ((this.sonstige!= null)&&(!this.sonstige.isEmpty())), ((that.sonstige!= null)&&(!that.sonstige.isEmpty())))) {
                 return false;
             }
         }
@@ -771,7 +830,7 @@ public class Objektart
             lhsFreizeitimmobilieGewerblich = (((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty()))?this.getFreizeitimmobilieGewerblich():null);
             List<FreizeitimmobilieGewerblich> rhsFreizeitimmobilieGewerblich;
             rhsFreizeitimmobilieGewerblich = (((that.freizeitimmobilieGewerblich!= null)&&(!that.freizeitimmobilieGewerblich.isEmpty()))?that.getFreizeitimmobilieGewerblich():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "freizeitimmobilieGewerblich", lhsFreizeitimmobilieGewerblich), LocatorUtils.property(thatLocator, "freizeitimmobilieGewerblich", rhsFreizeitimmobilieGewerblich), lhsFreizeitimmobilieGewerblich, rhsFreizeitimmobilieGewerblich)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "freizeitimmobilieGewerblich", lhsFreizeitimmobilieGewerblich), LocatorUtils.property(thatLocator, "freizeitimmobilieGewerblich", rhsFreizeitimmobilieGewerblich), lhsFreizeitimmobilieGewerblich, rhsFreizeitimmobilieGewerblich, ((this.freizeitimmobilieGewerblich!= null)&&(!this.freizeitimmobilieGewerblich.isEmpty())), ((that.freizeitimmobilieGewerblich!= null)&&(!that.freizeitimmobilieGewerblich.isEmpty())))) {
                 return false;
             }
         }
@@ -780,7 +839,7 @@ public class Objektart
             lhsZinshausRenditeobjekt = (((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty()))?this.getZinshausRenditeobjekt():null);
             List<ZinshausRenditeobjekt> rhsZinshausRenditeobjekt;
             rhsZinshausRenditeobjekt = (((that.zinshausRenditeobjekt!= null)&&(!that.zinshausRenditeobjekt.isEmpty()))?that.getZinshausRenditeobjekt():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zinshausRenditeobjekt", lhsZinshausRenditeobjekt), LocatorUtils.property(thatLocator, "zinshausRenditeobjekt", rhsZinshausRenditeobjekt), lhsZinshausRenditeobjekt, rhsZinshausRenditeobjekt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zinshausRenditeobjekt", lhsZinshausRenditeobjekt), LocatorUtils.property(thatLocator, "zinshausRenditeobjekt", rhsZinshausRenditeobjekt), lhsZinshausRenditeobjekt, rhsZinshausRenditeobjekt, ((this.zinshausRenditeobjekt!= null)&&(!this.zinshausRenditeobjekt.isEmpty())), ((that.zinshausRenditeobjekt!= null)&&(!that.zinshausRenditeobjekt.isEmpty())))) {
                 return false;
             }
         }
@@ -788,7 +847,7 @@ public class Objektart
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "nutzungsart")
-public class Nutzungsart
-    implements Cloneable, CopyTo, Equals, ToString
+public class Nutzungsart implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "WOHNEN")
@@ -138,39 +137,39 @@ public class Nutzungsart
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theWOHNEN;
             theWOHNEN = this.isWOHNEN();
-            strategy.appendField(locator, this, "wohnen", buffer, theWOHNEN);
+            strategy.appendField(locator, this, "wohnen", buffer, theWOHNEN, (this.wohnen!= null));
         }
         {
             Boolean theGEWERBE;
             theGEWERBE = this.isGEWERBE();
-            strategy.appendField(locator, this, "gewerbe", buffer, theGEWERBE);
+            strategy.appendField(locator, this, "gewerbe", buffer, theGEWERBE, (this.gewerbe!= null));
         }
         {
             Boolean theANLAGE;
             theANLAGE = this.isANLAGE();
-            strategy.appendField(locator, this, "anlage", buffer, theANLAGE);
+            strategy.appendField(locator, this, "anlage", buffer, theANLAGE, (this.anlage!= null));
         }
         {
             Boolean theWAZ;
             theWAZ = this.isWAZ();
-            strategy.appendField(locator, this, "waz", buffer, theWAZ);
+            strategy.appendField(locator, this, "waz", buffer, theWAZ, (this.waz!= null));
         }
         return buffer;
     }
@@ -180,45 +179,65 @@ public class Nutzungsart
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Nutzungsart) {
             final Nutzungsart copy = ((Nutzungsart) draftCopy);
-            if (this.wohnen!= null) {
-                Boolean sourceWOHNEN;
-                sourceWOHNEN = this.isWOHNEN();
-                Boolean copyWOHNEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wohnen", sourceWOHNEN), sourceWOHNEN));
-                copy.setWOHNEN(copyWOHNEN);
-            } else {
-                copy.wohnen = null;
+            {
+                Boolean wohnenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wohnen!= null));
+                if (wohnenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWOHNEN;
+                    sourceWOHNEN = this.isWOHNEN();
+                    Boolean copyWOHNEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wohnen", sourceWOHNEN), sourceWOHNEN, (this.wohnen!= null)));
+                    copy.setWOHNEN(copyWOHNEN);
+                } else {
+                    if (wohnenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wohnen = null;
+                    }
+                }
             }
-            if (this.gewerbe!= null) {
-                Boolean sourceGEWERBE;
-                sourceGEWERBE = this.isGEWERBE();
-                Boolean copyGEWERBE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gewerbe", sourceGEWERBE), sourceGEWERBE));
-                copy.setGEWERBE(copyGEWERBE);
-            } else {
-                copy.gewerbe = null;
+            {
+                Boolean gewerbeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gewerbe!= null));
+                if (gewerbeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceGEWERBE;
+                    sourceGEWERBE = this.isGEWERBE();
+                    Boolean copyGEWERBE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gewerbe", sourceGEWERBE), sourceGEWERBE, (this.gewerbe!= null)));
+                    copy.setGEWERBE(copyGEWERBE);
+                } else {
+                    if (gewerbeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gewerbe = null;
+                    }
+                }
             }
-            if (this.anlage!= null) {
-                Boolean sourceANLAGE;
-                sourceANLAGE = this.isANLAGE();
-                Boolean copyANLAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "anlage", sourceANLAGE), sourceANLAGE));
-                copy.setANLAGE(copyANLAGE);
-            } else {
-                copy.anlage = null;
+            {
+                Boolean anlageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anlage!= null));
+                if (anlageShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceANLAGE;
+                    sourceANLAGE = this.isANLAGE();
+                    Boolean copyANLAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "anlage", sourceANLAGE), sourceANLAGE, (this.anlage!= null)));
+                    copy.setANLAGE(copyANLAGE);
+                } else {
+                    if (anlageShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.anlage = null;
+                    }
+                }
             }
-            if (this.waz!= null) {
-                Boolean sourceWAZ;
-                sourceWAZ = this.isWAZ();
-                Boolean copyWAZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "waz", sourceWAZ), sourceWAZ));
-                copy.setWAZ(copyWAZ);
-            } else {
-                copy.waz = null;
+            {
+                Boolean wazShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.waz!= null));
+                if (wazShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWAZ;
+                    sourceWAZ = this.isWAZ();
+                    Boolean copyWAZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "waz", sourceWAZ), sourceWAZ, (this.waz!= null)));
+                    copy.setWAZ(copyWAZ);
+                } else {
+                    if (wazShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.waz = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -228,7 +247,7 @@ public class Nutzungsart
         return new Nutzungsart();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -241,7 +260,7 @@ public class Nutzungsart
             lhsWOHNEN = this.isWOHNEN();
             Boolean rhsWOHNEN;
             rhsWOHNEN = that.isWOHNEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnen", lhsWOHNEN), LocatorUtils.property(thatLocator, "wohnen", rhsWOHNEN), lhsWOHNEN, rhsWOHNEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnen", lhsWOHNEN), LocatorUtils.property(thatLocator, "wohnen", rhsWOHNEN), lhsWOHNEN, rhsWOHNEN, (this.wohnen!= null), (that.wohnen!= null))) {
                 return false;
             }
         }
@@ -250,7 +269,7 @@ public class Nutzungsart
             lhsGEWERBE = this.isGEWERBE();
             Boolean rhsGEWERBE;
             rhsGEWERBE = that.isGEWERBE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gewerbe", lhsGEWERBE), LocatorUtils.property(thatLocator, "gewerbe", rhsGEWERBE), lhsGEWERBE, rhsGEWERBE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gewerbe", lhsGEWERBE), LocatorUtils.property(thatLocator, "gewerbe", rhsGEWERBE), lhsGEWERBE, rhsGEWERBE, (this.gewerbe!= null), (that.gewerbe!= null))) {
                 return false;
             }
         }
@@ -259,7 +278,7 @@ public class Nutzungsart
             lhsANLAGE = this.isANLAGE();
             Boolean rhsANLAGE;
             rhsANLAGE = that.isANLAGE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "anlage", lhsANLAGE), LocatorUtils.property(thatLocator, "anlage", rhsANLAGE), lhsANLAGE, rhsANLAGE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "anlage", lhsANLAGE), LocatorUtils.property(thatLocator, "anlage", rhsANLAGE), lhsANLAGE, rhsANLAGE, (this.anlage!= null), (that.anlage!= null))) {
                 return false;
             }
         }
@@ -268,7 +287,7 @@ public class Nutzungsart
             lhsWAZ = this.isWAZ();
             Boolean rhsWAZ;
             rhsWAZ = that.isWAZ();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "waz", lhsWAZ), LocatorUtils.property(thatLocator, "waz", rhsWAZ), lhsWAZ, rhsWAZ)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "waz", lhsWAZ), LocatorUtils.property(thatLocator, "waz", rhsWAZ), lhsWAZ, rhsWAZ, (this.waz!= null), (that.waz!= null))) {
                 return false;
             }
         }
@@ -276,7 +295,7 @@ public class Nutzungsart
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

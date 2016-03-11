@@ -4,15 +4,15 @@ package org.openestate.io.kyero.xml;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -75,8 +75,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "langType", propOrder = {
 
 })
-public class LangType
-    implements Cloneable, CopyTo, Equals, ToString
+public class LangType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected String ar;
@@ -981,199 +980,199 @@ public class LangType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theAr;
             theAr = this.getAr();
-            strategy.appendField(locator, this, "ar", buffer, theAr);
+            strategy.appendField(locator, this, "ar", buffer, theAr, (this.ar!= null));
         }
         {
             String theBg;
             theBg = this.getBg();
-            strategy.appendField(locator, this, "bg", buffer, theBg);
+            strategy.appendField(locator, this, "bg", buffer, theBg, (this.bg!= null));
         }
         {
             String theCa;
             theCa = this.getCa();
-            strategy.appendField(locator, this, "ca", buffer, theCa);
+            strategy.appendField(locator, this, "ca", buffer, theCa, (this.ca!= null));
         }
         {
             String theCs;
             theCs = this.getCs();
-            strategy.appendField(locator, this, "cs", buffer, theCs);
+            strategy.appendField(locator, this, "cs", buffer, theCs, (this.cs!= null));
         }
         {
             String theDe;
             theDe = this.getDe();
-            strategy.appendField(locator, this, "de", buffer, theDe);
+            strategy.appendField(locator, this, "de", buffer, theDe, (this.de!= null));
         }
         {
             String theDa;
             theDa = this.getDa();
-            strategy.appendField(locator, this, "da", buffer, theDa);
+            strategy.appendField(locator, this, "da", buffer, theDa, (this.da!= null));
         }
         {
             String theEl;
             theEl = this.getEl();
-            strategy.appendField(locator, this, "el", buffer, theEl);
+            strategy.appendField(locator, this, "el", buffer, theEl, (this.el!= null));
         }
         {
             String theEn;
             theEn = this.getEn();
-            strategy.appendField(locator, this, "en", buffer, theEn);
+            strategy.appendField(locator, this, "en", buffer, theEn, (this.en!= null));
         }
         {
             String theEs;
             theEs = this.getEs();
-            strategy.appendField(locator, this, "es", buffer, theEs);
+            strategy.appendField(locator, this, "es", buffer, theEs, (this.es!= null));
         }
         {
             String theEt;
             theEt = this.getEt();
-            strategy.appendField(locator, this, "et", buffer, theEt);
+            strategy.appendField(locator, this, "et", buffer, theEt, (this.et!= null));
         }
         {
             String theFa;
             theFa = this.getFa();
-            strategy.appendField(locator, this, "fa", buffer, theFa);
+            strategy.appendField(locator, this, "fa", buffer, theFa, (this.fa!= null));
         }
         {
             String theFi;
             theFi = this.getFi();
-            strategy.appendField(locator, this, "fi", buffer, theFi);
+            strategy.appendField(locator, this, "fi", buffer, theFi, (this.fi!= null));
         }
         {
             String theFr;
             theFr = this.getFr();
-            strategy.appendField(locator, this, "fr", buffer, theFr);
+            strategy.appendField(locator, this, "fr", buffer, theFr, (this.fr!= null));
         }
         {
             String theHe;
             theHe = this.getHe();
-            strategy.appendField(locator, this, "he", buffer, theHe);
+            strategy.appendField(locator, this, "he", buffer, theHe, (this.he!= null));
         }
         {
             String theHi;
             theHi = this.getHi();
-            strategy.appendField(locator, this, "hi", buffer, theHi);
+            strategy.appendField(locator, this, "hi", buffer, theHi, (this.hi!= null));
         }
         {
             String theHu;
             theHu = this.getHu();
-            strategy.appendField(locator, this, "hu", buffer, theHu);
+            strategy.appendField(locator, this, "hu", buffer, theHu, (this.hu!= null));
         }
         {
             String theId;
             theId = this.getId();
-            strategy.appendField(locator, this, "id", buffer, theId);
+            strategy.appendField(locator, this, "id", buffer, theId, (this.id!= null));
         }
         {
             String theIt;
             theIt = this.getIt();
-            strategy.appendField(locator, this, "it", buffer, theIt);
+            strategy.appendField(locator, this, "it", buffer, theIt, (this.it!= null));
         }
         {
             String theJa;
             theJa = this.getJa();
-            strategy.appendField(locator, this, "ja", buffer, theJa);
+            strategy.appendField(locator, this, "ja", buffer, theJa, (this.ja!= null));
         }
         {
             String theKo;
             theKo = this.getKo();
-            strategy.appendField(locator, this, "ko", buffer, theKo);
+            strategy.appendField(locator, this, "ko", buffer, theKo, (this.ko!= null));
         }
         {
             String theLt;
             theLt = this.getLt();
-            strategy.appendField(locator, this, "lt", buffer, theLt);
+            strategy.appendField(locator, this, "lt", buffer, theLt, (this.lt!= null));
         }
         {
             String theLv;
             theLv = this.getLv();
-            strategy.appendField(locator, this, "lv", buffer, theLv);
+            strategy.appendField(locator, this, "lv", buffer, theLv, (this.lv!= null));
         }
         {
             String theNl;
             theNl = this.getNl();
-            strategy.appendField(locator, this, "nl", buffer, theNl);
+            strategy.appendField(locator, this, "nl", buffer, theNl, (this.nl!= null));
         }
         {
             String theNo;
             theNo = this.getNo();
-            strategy.appendField(locator, this, "no", buffer, theNo);
+            strategy.appendField(locator, this, "no", buffer, theNo, (this.no!= null));
         }
         {
             String thePl;
             thePl = this.getPl();
-            strategy.appendField(locator, this, "pl", buffer, thePl);
+            strategy.appendField(locator, this, "pl", buffer, thePl, (this.pl!= null));
         }
         {
             String thePt;
             thePt = this.getPt();
-            strategy.appendField(locator, this, "pt", buffer, thePt);
+            strategy.appendField(locator, this, "pt", buffer, thePt, (this.pt!= null));
         }
         {
             String theRo;
             theRo = this.getRo();
-            strategy.appendField(locator, this, "ro", buffer, theRo);
+            strategy.appendField(locator, this, "ro", buffer, theRo, (this.ro!= null));
         }
         {
             String theRu;
             theRu = this.getRu();
-            strategy.appendField(locator, this, "ru", buffer, theRu);
+            strategy.appendField(locator, this, "ru", buffer, theRu, (this.ru!= null));
         }
         {
             String theSk;
             theSk = this.getSk();
-            strategy.appendField(locator, this, "sk", buffer, theSk);
+            strategy.appendField(locator, this, "sk", buffer, theSk, (this.sk!= null));
         }
         {
             String theSl;
             theSl = this.getSl();
-            strategy.appendField(locator, this, "sl", buffer, theSl);
+            strategy.appendField(locator, this, "sl", buffer, theSl, (this.sl!= null));
         }
         {
             String theSv;
             theSv = this.getSv();
-            strategy.appendField(locator, this, "sv", buffer, theSv);
+            strategy.appendField(locator, this, "sv", buffer, theSv, (this.sv!= null));
         }
         {
             String theTh;
             theTh = this.getTh();
-            strategy.appendField(locator, this, "th", buffer, theTh);
+            strategy.appendField(locator, this, "th", buffer, theTh, (this.th!= null));
         }
         {
             String theTr;
             theTr = this.getTr();
-            strategy.appendField(locator, this, "tr", buffer, theTr);
+            strategy.appendField(locator, this, "tr", buffer, theTr, (this.tr!= null));
         }
         {
             String theUk;
             theUk = this.getUk();
-            strategy.appendField(locator, this, "uk", buffer, theUk);
+            strategy.appendField(locator, this, "uk", buffer, theUk, (this.uk!= null));
         }
         {
             String theVi;
             theVi = this.getVi();
-            strategy.appendField(locator, this, "vi", buffer, theVi);
+            strategy.appendField(locator, this, "vi", buffer, theVi, (this.vi!= null));
         }
         {
             String theZh;
             theZh = this.getZh();
-            strategy.appendField(locator, this, "zh", buffer, theZh);
+            strategy.appendField(locator, this, "zh", buffer, theZh, (this.zh!= null));
         }
         return buffer;
     }
@@ -1183,301 +1182,481 @@ public class LangType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof LangType) {
             final LangType copy = ((LangType) draftCopy);
-            if (this.ar!= null) {
-                String sourceAr;
-                sourceAr = this.getAr();
-                String copyAr = ((String) strategy.copy(LocatorUtils.property(locator, "ar", sourceAr), sourceAr));
-                copy.setAr(copyAr);
-            } else {
-                copy.ar = null;
+            {
+                Boolean arShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ar!= null));
+                if (arShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceAr;
+                    sourceAr = this.getAr();
+                    String copyAr = ((String) strategy.copy(LocatorUtils.property(locator, "ar", sourceAr), sourceAr, (this.ar!= null)));
+                    copy.setAr(copyAr);
+                } else {
+                    if (arShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ar = null;
+                    }
+                }
             }
-            if (this.bg!= null) {
-                String sourceBg;
-                sourceBg = this.getBg();
-                String copyBg = ((String) strategy.copy(LocatorUtils.property(locator, "bg", sourceBg), sourceBg));
-                copy.setBg(copyBg);
-            } else {
-                copy.bg = null;
+            {
+                Boolean bgShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bg!= null));
+                if (bgShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceBg;
+                    sourceBg = this.getBg();
+                    String copyBg = ((String) strategy.copy(LocatorUtils.property(locator, "bg", sourceBg), sourceBg, (this.bg!= null)));
+                    copy.setBg(copyBg);
+                } else {
+                    if (bgShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bg = null;
+                    }
+                }
             }
-            if (this.ca!= null) {
-                String sourceCa;
-                sourceCa = this.getCa();
-                String copyCa = ((String) strategy.copy(LocatorUtils.property(locator, "ca", sourceCa), sourceCa));
-                copy.setCa(copyCa);
-            } else {
-                copy.ca = null;
+            {
+                Boolean caShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ca!= null));
+                if (caShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceCa;
+                    sourceCa = this.getCa();
+                    String copyCa = ((String) strategy.copy(LocatorUtils.property(locator, "ca", sourceCa), sourceCa, (this.ca!= null)));
+                    copy.setCa(copyCa);
+                } else {
+                    if (caShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ca = null;
+                    }
+                }
             }
-            if (this.cs!= null) {
-                String sourceCs;
-                sourceCs = this.getCs();
-                String copyCs = ((String) strategy.copy(LocatorUtils.property(locator, "cs", sourceCs), sourceCs));
-                copy.setCs(copyCs);
-            } else {
-                copy.cs = null;
+            {
+                Boolean csShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.cs!= null));
+                if (csShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceCs;
+                    sourceCs = this.getCs();
+                    String copyCs = ((String) strategy.copy(LocatorUtils.property(locator, "cs", sourceCs), sourceCs, (this.cs!= null)));
+                    copy.setCs(copyCs);
+                } else {
+                    if (csShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.cs = null;
+                    }
+                }
             }
-            if (this.de!= null) {
-                String sourceDe;
-                sourceDe = this.getDe();
-                String copyDe = ((String) strategy.copy(LocatorUtils.property(locator, "de", sourceDe), sourceDe));
-                copy.setDe(copyDe);
-            } else {
-                copy.de = null;
+            {
+                Boolean deShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.de!= null));
+                if (deShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceDe;
+                    sourceDe = this.getDe();
+                    String copyDe = ((String) strategy.copy(LocatorUtils.property(locator, "de", sourceDe), sourceDe, (this.de!= null)));
+                    copy.setDe(copyDe);
+                } else {
+                    if (deShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.de = null;
+                    }
+                }
             }
-            if (this.da!= null) {
-                String sourceDa;
-                sourceDa = this.getDa();
-                String copyDa = ((String) strategy.copy(LocatorUtils.property(locator, "da", sourceDa), sourceDa));
-                copy.setDa(copyDa);
-            } else {
-                copy.da = null;
+            {
+                Boolean daShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.da!= null));
+                if (daShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceDa;
+                    sourceDa = this.getDa();
+                    String copyDa = ((String) strategy.copy(LocatorUtils.property(locator, "da", sourceDa), sourceDa, (this.da!= null)));
+                    copy.setDa(copyDa);
+                } else {
+                    if (daShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.da = null;
+                    }
+                }
             }
-            if (this.el!= null) {
-                String sourceEl;
-                sourceEl = this.getEl();
-                String copyEl = ((String) strategy.copy(LocatorUtils.property(locator, "el", sourceEl), sourceEl));
-                copy.setEl(copyEl);
-            } else {
-                copy.el = null;
+            {
+                Boolean elShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.el!= null));
+                if (elShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEl;
+                    sourceEl = this.getEl();
+                    String copyEl = ((String) strategy.copy(LocatorUtils.property(locator, "el", sourceEl), sourceEl, (this.el!= null)));
+                    copy.setEl(copyEl);
+                } else {
+                    if (elShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.el = null;
+                    }
+                }
             }
-            if (this.en!= null) {
-                String sourceEn;
-                sourceEn = this.getEn();
-                String copyEn = ((String) strategy.copy(LocatorUtils.property(locator, "en", sourceEn), sourceEn));
-                copy.setEn(copyEn);
-            } else {
-                copy.en = null;
+            {
+                Boolean enShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.en!= null));
+                if (enShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEn;
+                    sourceEn = this.getEn();
+                    String copyEn = ((String) strategy.copy(LocatorUtils.property(locator, "en", sourceEn), sourceEn, (this.en!= null)));
+                    copy.setEn(copyEn);
+                } else {
+                    if (enShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.en = null;
+                    }
+                }
             }
-            if (this.es!= null) {
-                String sourceEs;
-                sourceEs = this.getEs();
-                String copyEs = ((String) strategy.copy(LocatorUtils.property(locator, "es", sourceEs), sourceEs));
-                copy.setEs(copyEs);
-            } else {
-                copy.es = null;
+            {
+                Boolean esShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.es!= null));
+                if (esShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEs;
+                    sourceEs = this.getEs();
+                    String copyEs = ((String) strategy.copy(LocatorUtils.property(locator, "es", sourceEs), sourceEs, (this.es!= null)));
+                    copy.setEs(copyEs);
+                } else {
+                    if (esShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.es = null;
+                    }
+                }
             }
-            if (this.et!= null) {
-                String sourceEt;
-                sourceEt = this.getEt();
-                String copyEt = ((String) strategy.copy(LocatorUtils.property(locator, "et", sourceEt), sourceEt));
-                copy.setEt(copyEt);
-            } else {
-                copy.et = null;
+            {
+                Boolean etShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.et!= null));
+                if (etShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEt;
+                    sourceEt = this.getEt();
+                    String copyEt = ((String) strategy.copy(LocatorUtils.property(locator, "et", sourceEt), sourceEt, (this.et!= null)));
+                    copy.setEt(copyEt);
+                } else {
+                    if (etShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.et = null;
+                    }
+                }
             }
-            if (this.fa!= null) {
-                String sourceFa;
-                sourceFa = this.getFa();
-                String copyFa = ((String) strategy.copy(LocatorUtils.property(locator, "fa", sourceFa), sourceFa));
-                copy.setFa(copyFa);
-            } else {
-                copy.fa = null;
+            {
+                Boolean faShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fa!= null));
+                if (faShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFa;
+                    sourceFa = this.getFa();
+                    String copyFa = ((String) strategy.copy(LocatorUtils.property(locator, "fa", sourceFa), sourceFa, (this.fa!= null)));
+                    copy.setFa(copyFa);
+                } else {
+                    if (faShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fa = null;
+                    }
+                }
             }
-            if (this.fi!= null) {
-                String sourceFi;
-                sourceFi = this.getFi();
-                String copyFi = ((String) strategy.copy(LocatorUtils.property(locator, "fi", sourceFi), sourceFi));
-                copy.setFi(copyFi);
-            } else {
-                copy.fi = null;
+            {
+                Boolean fiShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fi!= null));
+                if (fiShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFi;
+                    sourceFi = this.getFi();
+                    String copyFi = ((String) strategy.copy(LocatorUtils.property(locator, "fi", sourceFi), sourceFi, (this.fi!= null)));
+                    copy.setFi(copyFi);
+                } else {
+                    if (fiShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fi = null;
+                    }
+                }
             }
-            if (this.fr!= null) {
-                String sourceFr;
-                sourceFr = this.getFr();
-                String copyFr = ((String) strategy.copy(LocatorUtils.property(locator, "fr", sourceFr), sourceFr));
-                copy.setFr(copyFr);
-            } else {
-                copy.fr = null;
+            {
+                Boolean frShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fr!= null));
+                if (frShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFr;
+                    sourceFr = this.getFr();
+                    String copyFr = ((String) strategy.copy(LocatorUtils.property(locator, "fr", sourceFr), sourceFr, (this.fr!= null)));
+                    copy.setFr(copyFr);
+                } else {
+                    if (frShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fr = null;
+                    }
+                }
             }
-            if (this.he!= null) {
-                String sourceHe;
-                sourceHe = this.getHe();
-                String copyHe = ((String) strategy.copy(LocatorUtils.property(locator, "he", sourceHe), sourceHe));
-                copy.setHe(copyHe);
-            } else {
-                copy.he = null;
+            {
+                Boolean heShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.he!= null));
+                if (heShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHe;
+                    sourceHe = this.getHe();
+                    String copyHe = ((String) strategy.copy(LocatorUtils.property(locator, "he", sourceHe), sourceHe, (this.he!= null)));
+                    copy.setHe(copyHe);
+                } else {
+                    if (heShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.he = null;
+                    }
+                }
             }
-            if (this.hi!= null) {
-                String sourceHi;
-                sourceHi = this.getHi();
-                String copyHi = ((String) strategy.copy(LocatorUtils.property(locator, "hi", sourceHi), sourceHi));
-                copy.setHi(copyHi);
-            } else {
-                copy.hi = null;
+            {
+                Boolean hiShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hi!= null));
+                if (hiShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHi;
+                    sourceHi = this.getHi();
+                    String copyHi = ((String) strategy.copy(LocatorUtils.property(locator, "hi", sourceHi), sourceHi, (this.hi!= null)));
+                    copy.setHi(copyHi);
+                } else {
+                    if (hiShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hi = null;
+                    }
+                }
             }
-            if (this.hu!= null) {
-                String sourceHu;
-                sourceHu = this.getHu();
-                String copyHu = ((String) strategy.copy(LocatorUtils.property(locator, "hu", sourceHu), sourceHu));
-                copy.setHu(copyHu);
-            } else {
-                copy.hu = null;
+            {
+                Boolean huShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hu!= null));
+                if (huShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHu;
+                    sourceHu = this.getHu();
+                    String copyHu = ((String) strategy.copy(LocatorUtils.property(locator, "hu", sourceHu), sourceHu, (this.hu!= null)));
+                    copy.setHu(copyHu);
+                } else {
+                    if (huShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hu = null;
+                    }
+                }
             }
-            if (this.id!= null) {
-                String sourceId;
-                sourceId = this.getId();
-                String copyId = ((String) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId));
-                copy.setId(copyId);
-            } else {
-                copy.id = null;
+            {
+                Boolean idShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.id!= null));
+                if (idShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceId;
+                    sourceId = this.getId();
+                    String copyId = ((String) strategy.copy(LocatorUtils.property(locator, "id", sourceId), sourceId, (this.id!= null)));
+                    copy.setId(copyId);
+                } else {
+                    if (idShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.id = null;
+                    }
+                }
             }
-            if (this.it!= null) {
-                String sourceIt;
-                sourceIt = this.getIt();
-                String copyIt = ((String) strategy.copy(LocatorUtils.property(locator, "it", sourceIt), sourceIt));
-                copy.setIt(copyIt);
-            } else {
-                copy.it = null;
+            {
+                Boolean itShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.it!= null));
+                if (itShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceIt;
+                    sourceIt = this.getIt();
+                    String copyIt = ((String) strategy.copy(LocatorUtils.property(locator, "it", sourceIt), sourceIt, (this.it!= null)));
+                    copy.setIt(copyIt);
+                } else {
+                    if (itShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.it = null;
+                    }
+                }
             }
-            if (this.ja!= null) {
-                String sourceJa;
-                sourceJa = this.getJa();
-                String copyJa = ((String) strategy.copy(LocatorUtils.property(locator, "ja", sourceJa), sourceJa));
-                copy.setJa(copyJa);
-            } else {
-                copy.ja = null;
+            {
+                Boolean jaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ja!= null));
+                if (jaShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceJa;
+                    sourceJa = this.getJa();
+                    String copyJa = ((String) strategy.copy(LocatorUtils.property(locator, "ja", sourceJa), sourceJa, (this.ja!= null)));
+                    copy.setJa(copyJa);
+                } else {
+                    if (jaShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ja = null;
+                    }
+                }
             }
-            if (this.ko!= null) {
-                String sourceKo;
-                sourceKo = this.getKo();
-                String copyKo = ((String) strategy.copy(LocatorUtils.property(locator, "ko", sourceKo), sourceKo));
-                copy.setKo(copyKo);
-            } else {
-                copy.ko = null;
+            {
+                Boolean koShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ko!= null));
+                if (koShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceKo;
+                    sourceKo = this.getKo();
+                    String copyKo = ((String) strategy.copy(LocatorUtils.property(locator, "ko", sourceKo), sourceKo, (this.ko!= null)));
+                    copy.setKo(copyKo);
+                } else {
+                    if (koShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ko = null;
+                    }
+                }
             }
-            if (this.lt!= null) {
-                String sourceLt;
-                sourceLt = this.getLt();
-                String copyLt = ((String) strategy.copy(LocatorUtils.property(locator, "lt", sourceLt), sourceLt));
-                copy.setLt(copyLt);
-            } else {
-                copy.lt = null;
+            {
+                Boolean ltShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lt!= null));
+                if (ltShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceLt;
+                    sourceLt = this.getLt();
+                    String copyLt = ((String) strategy.copy(LocatorUtils.property(locator, "lt", sourceLt), sourceLt, (this.lt!= null)));
+                    copy.setLt(copyLt);
+                } else {
+                    if (ltShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.lt = null;
+                    }
+                }
             }
-            if (this.lv!= null) {
-                String sourceLv;
-                sourceLv = this.getLv();
-                String copyLv = ((String) strategy.copy(LocatorUtils.property(locator, "lv", sourceLv), sourceLv));
-                copy.setLv(copyLv);
-            } else {
-                copy.lv = null;
+            {
+                Boolean lvShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lv!= null));
+                if (lvShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceLv;
+                    sourceLv = this.getLv();
+                    String copyLv = ((String) strategy.copy(LocatorUtils.property(locator, "lv", sourceLv), sourceLv, (this.lv!= null)));
+                    copy.setLv(copyLv);
+                } else {
+                    if (lvShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.lv = null;
+                    }
+                }
             }
-            if (this.nl!= null) {
-                String sourceNl;
-                sourceNl = this.getNl();
-                String copyNl = ((String) strategy.copy(LocatorUtils.property(locator, "nl", sourceNl), sourceNl));
-                copy.setNl(copyNl);
-            } else {
-                copy.nl = null;
+            {
+                Boolean nlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.nl!= null));
+                if (nlShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceNl;
+                    sourceNl = this.getNl();
+                    String copyNl = ((String) strategy.copy(LocatorUtils.property(locator, "nl", sourceNl), sourceNl, (this.nl!= null)));
+                    copy.setNl(copyNl);
+                } else {
+                    if (nlShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.nl = null;
+                    }
+                }
             }
-            if (this.no!= null) {
-                String sourceNo;
-                sourceNo = this.getNo();
-                String copyNo = ((String) strategy.copy(LocatorUtils.property(locator, "no", sourceNo), sourceNo));
-                copy.setNo(copyNo);
-            } else {
-                copy.no = null;
+            {
+                Boolean noShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.no!= null));
+                if (noShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceNo;
+                    sourceNo = this.getNo();
+                    String copyNo = ((String) strategy.copy(LocatorUtils.property(locator, "no", sourceNo), sourceNo, (this.no!= null)));
+                    copy.setNo(copyNo);
+                } else {
+                    if (noShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.no = null;
+                    }
+                }
             }
-            if (this.pl!= null) {
-                String sourcePl;
-                sourcePl = this.getPl();
-                String copyPl = ((String) strategy.copy(LocatorUtils.property(locator, "pl", sourcePl), sourcePl));
-                copy.setPl(copyPl);
-            } else {
-                copy.pl = null;
+            {
+                Boolean plShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pl!= null));
+                if (plShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePl;
+                    sourcePl = this.getPl();
+                    String copyPl = ((String) strategy.copy(LocatorUtils.property(locator, "pl", sourcePl), sourcePl, (this.pl!= null)));
+                    copy.setPl(copyPl);
+                } else {
+                    if (plShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pl = null;
+                    }
+                }
             }
-            if (this.pt!= null) {
-                String sourcePt;
-                sourcePt = this.getPt();
-                String copyPt = ((String) strategy.copy(LocatorUtils.property(locator, "pt", sourcePt), sourcePt));
-                copy.setPt(copyPt);
-            } else {
-                copy.pt = null;
+            {
+                Boolean ptShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pt!= null));
+                if (ptShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePt;
+                    sourcePt = this.getPt();
+                    String copyPt = ((String) strategy.copy(LocatorUtils.property(locator, "pt", sourcePt), sourcePt, (this.pt!= null)));
+                    copy.setPt(copyPt);
+                } else {
+                    if (ptShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pt = null;
+                    }
+                }
             }
-            if (this.ro!= null) {
-                String sourceRo;
-                sourceRo = this.getRo();
-                String copyRo = ((String) strategy.copy(LocatorUtils.property(locator, "ro", sourceRo), sourceRo));
-                copy.setRo(copyRo);
-            } else {
-                copy.ro = null;
+            {
+                Boolean roShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ro!= null));
+                if (roShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceRo;
+                    sourceRo = this.getRo();
+                    String copyRo = ((String) strategy.copy(LocatorUtils.property(locator, "ro", sourceRo), sourceRo, (this.ro!= null)));
+                    copy.setRo(copyRo);
+                } else {
+                    if (roShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ro = null;
+                    }
+                }
             }
-            if (this.ru!= null) {
-                String sourceRu;
-                sourceRu = this.getRu();
-                String copyRu = ((String) strategy.copy(LocatorUtils.property(locator, "ru", sourceRu), sourceRu));
-                copy.setRu(copyRu);
-            } else {
-                copy.ru = null;
+            {
+                Boolean ruShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ru!= null));
+                if (ruShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceRu;
+                    sourceRu = this.getRu();
+                    String copyRu = ((String) strategy.copy(LocatorUtils.property(locator, "ru", sourceRu), sourceRu, (this.ru!= null)));
+                    copy.setRu(copyRu);
+                } else {
+                    if (ruShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ru = null;
+                    }
+                }
             }
-            if (this.sk!= null) {
-                String sourceSk;
-                sourceSk = this.getSk();
-                String copySk = ((String) strategy.copy(LocatorUtils.property(locator, "sk", sourceSk), sourceSk));
-                copy.setSk(copySk);
-            } else {
-                copy.sk = null;
+            {
+                Boolean skShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sk!= null));
+                if (skShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSk;
+                    sourceSk = this.getSk();
+                    String copySk = ((String) strategy.copy(LocatorUtils.property(locator, "sk", sourceSk), sourceSk, (this.sk!= null)));
+                    copy.setSk(copySk);
+                } else {
+                    if (skShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.sk = null;
+                    }
+                }
             }
-            if (this.sl!= null) {
-                String sourceSl;
-                sourceSl = this.getSl();
-                String copySl = ((String) strategy.copy(LocatorUtils.property(locator, "sl", sourceSl), sourceSl));
-                copy.setSl(copySl);
-            } else {
-                copy.sl = null;
+            {
+                Boolean slShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sl!= null));
+                if (slShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSl;
+                    sourceSl = this.getSl();
+                    String copySl = ((String) strategy.copy(LocatorUtils.property(locator, "sl", sourceSl), sourceSl, (this.sl!= null)));
+                    copy.setSl(copySl);
+                } else {
+                    if (slShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.sl = null;
+                    }
+                }
             }
-            if (this.sv!= null) {
-                String sourceSv;
-                sourceSv = this.getSv();
-                String copySv = ((String) strategy.copy(LocatorUtils.property(locator, "sv", sourceSv), sourceSv));
-                copy.setSv(copySv);
-            } else {
-                copy.sv = null;
+            {
+                Boolean svShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sv!= null));
+                if (svShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSv;
+                    sourceSv = this.getSv();
+                    String copySv = ((String) strategy.copy(LocatorUtils.property(locator, "sv", sourceSv), sourceSv, (this.sv!= null)));
+                    copy.setSv(copySv);
+                } else {
+                    if (svShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.sv = null;
+                    }
+                }
             }
-            if (this.th!= null) {
-                String sourceTh;
-                sourceTh = this.getTh();
-                String copyTh = ((String) strategy.copy(LocatorUtils.property(locator, "th", sourceTh), sourceTh));
-                copy.setTh(copyTh);
-            } else {
-                copy.th = null;
+            {
+                Boolean thShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.th!= null));
+                if (thShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTh;
+                    sourceTh = this.getTh();
+                    String copyTh = ((String) strategy.copy(LocatorUtils.property(locator, "th", sourceTh), sourceTh, (this.th!= null)));
+                    copy.setTh(copyTh);
+                } else {
+                    if (thShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.th = null;
+                    }
+                }
             }
-            if (this.tr!= null) {
-                String sourceTr;
-                sourceTr = this.getTr();
-                String copyTr = ((String) strategy.copy(LocatorUtils.property(locator, "tr", sourceTr), sourceTr));
-                copy.setTr(copyTr);
-            } else {
-                copy.tr = null;
+            {
+                Boolean trShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.tr!= null));
+                if (trShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTr;
+                    sourceTr = this.getTr();
+                    String copyTr = ((String) strategy.copy(LocatorUtils.property(locator, "tr", sourceTr), sourceTr, (this.tr!= null)));
+                    copy.setTr(copyTr);
+                } else {
+                    if (trShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.tr = null;
+                    }
+                }
             }
-            if (this.uk!= null) {
-                String sourceUk;
-                sourceUk = this.getUk();
-                String copyUk = ((String) strategy.copy(LocatorUtils.property(locator, "uk", sourceUk), sourceUk));
-                copy.setUk(copyUk);
-            } else {
-                copy.uk = null;
+            {
+                Boolean ukShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.uk!= null));
+                if (ukShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceUk;
+                    sourceUk = this.getUk();
+                    String copyUk = ((String) strategy.copy(LocatorUtils.property(locator, "uk", sourceUk), sourceUk, (this.uk!= null)));
+                    copy.setUk(copyUk);
+                } else {
+                    if (ukShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.uk = null;
+                    }
+                }
             }
-            if (this.vi!= null) {
-                String sourceVi;
-                sourceVi = this.getVi();
-                String copyVi = ((String) strategy.copy(LocatorUtils.property(locator, "vi", sourceVi), sourceVi));
-                copy.setVi(copyVi);
-            } else {
-                copy.vi = null;
+            {
+                Boolean viShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vi!= null));
+                if (viShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceVi;
+                    sourceVi = this.getVi();
+                    String copyVi = ((String) strategy.copy(LocatorUtils.property(locator, "vi", sourceVi), sourceVi, (this.vi!= null)));
+                    copy.setVi(copyVi);
+                } else {
+                    if (viShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.vi = null;
+                    }
+                }
             }
-            if (this.zh!= null) {
-                String sourceZh;
-                sourceZh = this.getZh();
-                String copyZh = ((String) strategy.copy(LocatorUtils.property(locator, "zh", sourceZh), sourceZh));
-                copy.setZh(copyZh);
-            } else {
-                copy.zh = null;
+            {
+                Boolean zhShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zh!= null));
+                if (zhShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceZh;
+                    sourceZh = this.getZh();
+                    String copyZh = ((String) strategy.copy(LocatorUtils.property(locator, "zh", sourceZh), sourceZh, (this.zh!= null)));
+                    copy.setZh(copyZh);
+                } else {
+                    if (zhShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zh = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -1487,7 +1666,7 @@ public class LangType
         return new LangType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -1500,7 +1679,7 @@ public class LangType
             lhsAr = this.getAr();
             String rhsAr;
             rhsAr = that.getAr();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ar", lhsAr), LocatorUtils.property(thatLocator, "ar", rhsAr), lhsAr, rhsAr)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ar", lhsAr), LocatorUtils.property(thatLocator, "ar", rhsAr), lhsAr, rhsAr, (this.ar!= null), (that.ar!= null))) {
                 return false;
             }
         }
@@ -1509,7 +1688,7 @@ public class LangType
             lhsBg = this.getBg();
             String rhsBg;
             rhsBg = that.getBg();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bg", lhsBg), LocatorUtils.property(thatLocator, "bg", rhsBg), lhsBg, rhsBg)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bg", lhsBg), LocatorUtils.property(thatLocator, "bg", rhsBg), lhsBg, rhsBg, (this.bg!= null), (that.bg!= null))) {
                 return false;
             }
         }
@@ -1518,7 +1697,7 @@ public class LangType
             lhsCa = this.getCa();
             String rhsCa;
             rhsCa = that.getCa();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ca", lhsCa), LocatorUtils.property(thatLocator, "ca", rhsCa), lhsCa, rhsCa)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ca", lhsCa), LocatorUtils.property(thatLocator, "ca", rhsCa), lhsCa, rhsCa, (this.ca!= null), (that.ca!= null))) {
                 return false;
             }
         }
@@ -1527,7 +1706,7 @@ public class LangType
             lhsCs = this.getCs();
             String rhsCs;
             rhsCs = that.getCs();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "cs", lhsCs), LocatorUtils.property(thatLocator, "cs", rhsCs), lhsCs, rhsCs)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "cs", lhsCs), LocatorUtils.property(thatLocator, "cs", rhsCs), lhsCs, rhsCs, (this.cs!= null), (that.cs!= null))) {
                 return false;
             }
         }
@@ -1536,7 +1715,7 @@ public class LangType
             lhsDe = this.getDe();
             String rhsDe;
             rhsDe = that.getDe();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "de", lhsDe), LocatorUtils.property(thatLocator, "de", rhsDe), lhsDe, rhsDe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "de", lhsDe), LocatorUtils.property(thatLocator, "de", rhsDe), lhsDe, rhsDe, (this.de!= null), (that.de!= null))) {
                 return false;
             }
         }
@@ -1545,7 +1724,7 @@ public class LangType
             lhsDa = this.getDa();
             String rhsDa;
             rhsDa = that.getDa();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "da", lhsDa), LocatorUtils.property(thatLocator, "da", rhsDa), lhsDa, rhsDa)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "da", lhsDa), LocatorUtils.property(thatLocator, "da", rhsDa), lhsDa, rhsDa, (this.da!= null), (that.da!= null))) {
                 return false;
             }
         }
@@ -1554,7 +1733,7 @@ public class LangType
             lhsEl = this.getEl();
             String rhsEl;
             rhsEl = that.getEl();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "el", lhsEl), LocatorUtils.property(thatLocator, "el", rhsEl), lhsEl, rhsEl)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "el", lhsEl), LocatorUtils.property(thatLocator, "el", rhsEl), lhsEl, rhsEl, (this.el!= null), (that.el!= null))) {
                 return false;
             }
         }
@@ -1563,7 +1742,7 @@ public class LangType
             lhsEn = this.getEn();
             String rhsEn;
             rhsEn = that.getEn();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "en", lhsEn), LocatorUtils.property(thatLocator, "en", rhsEn), lhsEn, rhsEn)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "en", lhsEn), LocatorUtils.property(thatLocator, "en", rhsEn), lhsEn, rhsEn, (this.en!= null), (that.en!= null))) {
                 return false;
             }
         }
@@ -1572,7 +1751,7 @@ public class LangType
             lhsEs = this.getEs();
             String rhsEs;
             rhsEs = that.getEs();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "es", lhsEs), LocatorUtils.property(thatLocator, "es", rhsEs), lhsEs, rhsEs)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "es", lhsEs), LocatorUtils.property(thatLocator, "es", rhsEs), lhsEs, rhsEs, (this.es!= null), (that.es!= null))) {
                 return false;
             }
         }
@@ -1581,7 +1760,7 @@ public class LangType
             lhsEt = this.getEt();
             String rhsEt;
             rhsEt = that.getEt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "et", lhsEt), LocatorUtils.property(thatLocator, "et", rhsEt), lhsEt, rhsEt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "et", lhsEt), LocatorUtils.property(thatLocator, "et", rhsEt), lhsEt, rhsEt, (this.et!= null), (that.et!= null))) {
                 return false;
             }
         }
@@ -1590,7 +1769,7 @@ public class LangType
             lhsFa = this.getFa();
             String rhsFa;
             rhsFa = that.getFa();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fa", lhsFa), LocatorUtils.property(thatLocator, "fa", rhsFa), lhsFa, rhsFa)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fa", lhsFa), LocatorUtils.property(thatLocator, "fa", rhsFa), lhsFa, rhsFa, (this.fa!= null), (that.fa!= null))) {
                 return false;
             }
         }
@@ -1599,7 +1778,7 @@ public class LangType
             lhsFi = this.getFi();
             String rhsFi;
             rhsFi = that.getFi();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fi", lhsFi), LocatorUtils.property(thatLocator, "fi", rhsFi), lhsFi, rhsFi)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fi", lhsFi), LocatorUtils.property(thatLocator, "fi", rhsFi), lhsFi, rhsFi, (this.fi!= null), (that.fi!= null))) {
                 return false;
             }
         }
@@ -1608,7 +1787,7 @@ public class LangType
             lhsFr = this.getFr();
             String rhsFr;
             rhsFr = that.getFr();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fr", lhsFr), LocatorUtils.property(thatLocator, "fr", rhsFr), lhsFr, rhsFr)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fr", lhsFr), LocatorUtils.property(thatLocator, "fr", rhsFr), lhsFr, rhsFr, (this.fr!= null), (that.fr!= null))) {
                 return false;
             }
         }
@@ -1617,7 +1796,7 @@ public class LangType
             lhsHe = this.getHe();
             String rhsHe;
             rhsHe = that.getHe();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "he", lhsHe), LocatorUtils.property(thatLocator, "he", rhsHe), lhsHe, rhsHe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "he", lhsHe), LocatorUtils.property(thatLocator, "he", rhsHe), lhsHe, rhsHe, (this.he!= null), (that.he!= null))) {
                 return false;
             }
         }
@@ -1626,7 +1805,7 @@ public class LangType
             lhsHi = this.getHi();
             String rhsHi;
             rhsHi = that.getHi();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hi", lhsHi), LocatorUtils.property(thatLocator, "hi", rhsHi), lhsHi, rhsHi)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hi", lhsHi), LocatorUtils.property(thatLocator, "hi", rhsHi), lhsHi, rhsHi, (this.hi!= null), (that.hi!= null))) {
                 return false;
             }
         }
@@ -1635,7 +1814,7 @@ public class LangType
             lhsHu = this.getHu();
             String rhsHu;
             rhsHu = that.getHu();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hu", lhsHu), LocatorUtils.property(thatLocator, "hu", rhsHu), lhsHu, rhsHu)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hu", lhsHu), LocatorUtils.property(thatLocator, "hu", rhsHu), lhsHu, rhsHu, (this.hu!= null), (that.hu!= null))) {
                 return false;
             }
         }
@@ -1644,7 +1823,7 @@ public class LangType
             lhsId = this.getId();
             String rhsId;
             rhsId = that.getId();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "id", lhsId), LocatorUtils.property(thatLocator, "id", rhsId), lhsId, rhsId)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "id", lhsId), LocatorUtils.property(thatLocator, "id", rhsId), lhsId, rhsId, (this.id!= null), (that.id!= null))) {
                 return false;
             }
         }
@@ -1653,7 +1832,7 @@ public class LangType
             lhsIt = this.getIt();
             String rhsIt;
             rhsIt = that.getIt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "it", lhsIt), LocatorUtils.property(thatLocator, "it", rhsIt), lhsIt, rhsIt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "it", lhsIt), LocatorUtils.property(thatLocator, "it", rhsIt), lhsIt, rhsIt, (this.it!= null), (that.it!= null))) {
                 return false;
             }
         }
@@ -1662,7 +1841,7 @@ public class LangType
             lhsJa = this.getJa();
             String rhsJa;
             rhsJa = that.getJa();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ja", lhsJa), LocatorUtils.property(thatLocator, "ja", rhsJa), lhsJa, rhsJa)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ja", lhsJa), LocatorUtils.property(thatLocator, "ja", rhsJa), lhsJa, rhsJa, (this.ja!= null), (that.ja!= null))) {
                 return false;
             }
         }
@@ -1671,7 +1850,7 @@ public class LangType
             lhsKo = this.getKo();
             String rhsKo;
             rhsKo = that.getKo();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ko", lhsKo), LocatorUtils.property(thatLocator, "ko", rhsKo), lhsKo, rhsKo)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ko", lhsKo), LocatorUtils.property(thatLocator, "ko", rhsKo), lhsKo, rhsKo, (this.ko!= null), (that.ko!= null))) {
                 return false;
             }
         }
@@ -1680,7 +1859,7 @@ public class LangType
             lhsLt = this.getLt();
             String rhsLt;
             rhsLt = that.getLt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "lt", lhsLt), LocatorUtils.property(thatLocator, "lt", rhsLt), lhsLt, rhsLt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "lt", lhsLt), LocatorUtils.property(thatLocator, "lt", rhsLt), lhsLt, rhsLt, (this.lt!= null), (that.lt!= null))) {
                 return false;
             }
         }
@@ -1689,7 +1868,7 @@ public class LangType
             lhsLv = this.getLv();
             String rhsLv;
             rhsLv = that.getLv();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "lv", lhsLv), LocatorUtils.property(thatLocator, "lv", rhsLv), lhsLv, rhsLv)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "lv", lhsLv), LocatorUtils.property(thatLocator, "lv", rhsLv), lhsLv, rhsLv, (this.lv!= null), (that.lv!= null))) {
                 return false;
             }
         }
@@ -1698,7 +1877,7 @@ public class LangType
             lhsNl = this.getNl();
             String rhsNl;
             rhsNl = that.getNl();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "nl", lhsNl), LocatorUtils.property(thatLocator, "nl", rhsNl), lhsNl, rhsNl)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "nl", lhsNl), LocatorUtils.property(thatLocator, "nl", rhsNl), lhsNl, rhsNl, (this.nl!= null), (that.nl!= null))) {
                 return false;
             }
         }
@@ -1707,7 +1886,7 @@ public class LangType
             lhsNo = this.getNo();
             String rhsNo;
             rhsNo = that.getNo();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "no", lhsNo), LocatorUtils.property(thatLocator, "no", rhsNo), lhsNo, rhsNo)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "no", lhsNo), LocatorUtils.property(thatLocator, "no", rhsNo), lhsNo, rhsNo, (this.no!= null), (that.no!= null))) {
                 return false;
             }
         }
@@ -1716,7 +1895,7 @@ public class LangType
             lhsPl = this.getPl();
             String rhsPl;
             rhsPl = that.getPl();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pl", lhsPl), LocatorUtils.property(thatLocator, "pl", rhsPl), lhsPl, rhsPl)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pl", lhsPl), LocatorUtils.property(thatLocator, "pl", rhsPl), lhsPl, rhsPl, (this.pl!= null), (that.pl!= null))) {
                 return false;
             }
         }
@@ -1725,7 +1904,7 @@ public class LangType
             lhsPt = this.getPt();
             String rhsPt;
             rhsPt = that.getPt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pt", lhsPt), LocatorUtils.property(thatLocator, "pt", rhsPt), lhsPt, rhsPt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pt", lhsPt), LocatorUtils.property(thatLocator, "pt", rhsPt), lhsPt, rhsPt, (this.pt!= null), (that.pt!= null))) {
                 return false;
             }
         }
@@ -1734,7 +1913,7 @@ public class LangType
             lhsRo = this.getRo();
             String rhsRo;
             rhsRo = that.getRo();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ro", lhsRo), LocatorUtils.property(thatLocator, "ro", rhsRo), lhsRo, rhsRo)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ro", lhsRo), LocatorUtils.property(thatLocator, "ro", rhsRo), lhsRo, rhsRo, (this.ro!= null), (that.ro!= null))) {
                 return false;
             }
         }
@@ -1743,7 +1922,7 @@ public class LangType
             lhsRu = this.getRu();
             String rhsRu;
             rhsRu = that.getRu();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ru", lhsRu), LocatorUtils.property(thatLocator, "ru", rhsRu), lhsRu, rhsRu)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ru", lhsRu), LocatorUtils.property(thatLocator, "ru", rhsRu), lhsRu, rhsRu, (this.ru!= null), (that.ru!= null))) {
                 return false;
             }
         }
@@ -1752,7 +1931,7 @@ public class LangType
             lhsSk = this.getSk();
             String rhsSk;
             rhsSk = that.getSk();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "sk", lhsSk), LocatorUtils.property(thatLocator, "sk", rhsSk), lhsSk, rhsSk)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "sk", lhsSk), LocatorUtils.property(thatLocator, "sk", rhsSk), lhsSk, rhsSk, (this.sk!= null), (that.sk!= null))) {
                 return false;
             }
         }
@@ -1761,7 +1940,7 @@ public class LangType
             lhsSl = this.getSl();
             String rhsSl;
             rhsSl = that.getSl();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "sl", lhsSl), LocatorUtils.property(thatLocator, "sl", rhsSl), lhsSl, rhsSl)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "sl", lhsSl), LocatorUtils.property(thatLocator, "sl", rhsSl), lhsSl, rhsSl, (this.sl!= null), (that.sl!= null))) {
                 return false;
             }
         }
@@ -1770,7 +1949,7 @@ public class LangType
             lhsSv = this.getSv();
             String rhsSv;
             rhsSv = that.getSv();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "sv", lhsSv), LocatorUtils.property(thatLocator, "sv", rhsSv), lhsSv, rhsSv)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "sv", lhsSv), LocatorUtils.property(thatLocator, "sv", rhsSv), lhsSv, rhsSv, (this.sv!= null), (that.sv!= null))) {
                 return false;
             }
         }
@@ -1779,7 +1958,7 @@ public class LangType
             lhsTh = this.getTh();
             String rhsTh;
             rhsTh = that.getTh();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "th", lhsTh), LocatorUtils.property(thatLocator, "th", rhsTh), lhsTh, rhsTh)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "th", lhsTh), LocatorUtils.property(thatLocator, "th", rhsTh), lhsTh, rhsTh, (this.th!= null), (that.th!= null))) {
                 return false;
             }
         }
@@ -1788,7 +1967,7 @@ public class LangType
             lhsTr = this.getTr();
             String rhsTr;
             rhsTr = that.getTr();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "tr", lhsTr), LocatorUtils.property(thatLocator, "tr", rhsTr), lhsTr, rhsTr)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "tr", lhsTr), LocatorUtils.property(thatLocator, "tr", rhsTr), lhsTr, rhsTr, (this.tr!= null), (that.tr!= null))) {
                 return false;
             }
         }
@@ -1797,7 +1976,7 @@ public class LangType
             lhsUk = this.getUk();
             String rhsUk;
             rhsUk = that.getUk();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "uk", lhsUk), LocatorUtils.property(thatLocator, "uk", rhsUk), lhsUk, rhsUk)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "uk", lhsUk), LocatorUtils.property(thatLocator, "uk", rhsUk), lhsUk, rhsUk, (this.uk!= null), (that.uk!= null))) {
                 return false;
             }
         }
@@ -1806,7 +1985,7 @@ public class LangType
             lhsVi = this.getVi();
             String rhsVi;
             rhsVi = that.getVi();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "vi", lhsVi), LocatorUtils.property(thatLocator, "vi", rhsVi), lhsVi, rhsVi)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "vi", lhsVi), LocatorUtils.property(thatLocator, "vi", rhsVi), lhsVi, rhsVi, (this.vi!= null), (that.vi!= null))) {
                 return false;
             }
         }
@@ -1815,7 +1994,7 @@ public class LangType
             lhsZh = this.getZh();
             String rhsZh;
             rhsZh = that.getZh();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zh", lhsZh), LocatorUtils.property(thatLocator, "zh", rhsZh), lhsZh, rhsZh)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zh", lhsZh), LocatorUtils.property(thatLocator, "zh", rhsZh), lhsZh, rhsZh, (this.zh!= null), (that.zh!= null))) {
                 return false;
             }
         }
@@ -1823,7 +2002,7 @@ public class LangType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

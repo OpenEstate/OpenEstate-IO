@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -71,8 +71,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "objekte"
 })
 @XmlRootElement(name = "WIS")
-public class WIS
-    implements Cloneable, CopyTo, Equals, ToString
+public class WIS implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "BENUTZER", required = true)
@@ -129,29 +128,29 @@ public class WIS
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             WIS.BENUTZER theBENUTZER;
             theBENUTZER = this.getBENUTZER();
-            strategy.appendField(locator, this, "benutzer", buffer, theBENUTZER);
+            strategy.appendField(locator, this, "benutzer", buffer, theBENUTZER, (this.benutzer!= null));
         }
         {
             WIS.OBJEKTE theOBJEKTE;
             theOBJEKTE = this.getOBJEKTE();
-            strategy.appendField(locator, this, "objekte", buffer, theOBJEKTE);
+            strategy.appendField(locator, this, "objekte", buffer, theOBJEKTE, (this.objekte!= null));
         }
         return buffer;
     }
@@ -161,29 +160,39 @@ public class WIS
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof WIS) {
             final WIS copy = ((WIS) draftCopy);
-            if (this.benutzer!= null) {
-                WIS.BENUTZER sourceBENUTZER;
-                sourceBENUTZER = this.getBENUTZER();
-                WIS.BENUTZER copyBENUTZER = ((WIS.BENUTZER) strategy.copy(LocatorUtils.property(locator, "benutzer", sourceBENUTZER), sourceBENUTZER));
-                copy.setBENUTZER(copyBENUTZER);
-            } else {
-                copy.benutzer = null;
+            {
+                Boolean benutzerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.benutzer!= null));
+                if (benutzerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    WIS.BENUTZER sourceBENUTZER;
+                    sourceBENUTZER = this.getBENUTZER();
+                    WIS.BENUTZER copyBENUTZER = ((WIS.BENUTZER) strategy.copy(LocatorUtils.property(locator, "benutzer", sourceBENUTZER), sourceBENUTZER, (this.benutzer!= null)));
+                    copy.setBENUTZER(copyBENUTZER);
+                } else {
+                    if (benutzerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.benutzer = null;
+                    }
+                }
             }
-            if (this.objekte!= null) {
-                WIS.OBJEKTE sourceOBJEKTE;
-                sourceOBJEKTE = this.getOBJEKTE();
-                WIS.OBJEKTE copyOBJEKTE = ((WIS.OBJEKTE) strategy.copy(LocatorUtils.property(locator, "objekte", sourceOBJEKTE), sourceOBJEKTE));
-                copy.setOBJEKTE(copyOBJEKTE);
-            } else {
-                copy.objekte = null;
+            {
+                Boolean objekteShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objekte!= null));
+                if (objekteShouldBeCopiedAndSet == Boolean.TRUE) {
+                    WIS.OBJEKTE sourceOBJEKTE;
+                    sourceOBJEKTE = this.getOBJEKTE();
+                    WIS.OBJEKTE copyOBJEKTE = ((WIS.OBJEKTE) strategy.copy(LocatorUtils.property(locator, "objekte", sourceOBJEKTE), sourceOBJEKTE, (this.objekte!= null)));
+                    copy.setOBJEKTE(copyOBJEKTE);
+                } else {
+                    if (objekteShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.objekte = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -193,7 +202,7 @@ public class WIS
         return new WIS();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -206,7 +215,7 @@ public class WIS
             lhsBENUTZER = this.getBENUTZER();
             WIS.BENUTZER rhsBENUTZER;
             rhsBENUTZER = that.getBENUTZER();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "benutzer", lhsBENUTZER), LocatorUtils.property(thatLocator, "benutzer", rhsBENUTZER), lhsBENUTZER, rhsBENUTZER)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "benutzer", lhsBENUTZER), LocatorUtils.property(thatLocator, "benutzer", rhsBENUTZER), lhsBENUTZER, rhsBENUTZER, (this.benutzer!= null), (that.benutzer!= null))) {
                 return false;
             }
         }
@@ -215,7 +224,7 @@ public class WIS
             lhsOBJEKTE = this.getOBJEKTE();
             WIS.OBJEKTE rhsOBJEKTE;
             rhsOBJEKTE = that.getOBJEKTE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "objekte", lhsOBJEKTE), LocatorUtils.property(thatLocator, "objekte", rhsOBJEKTE), lhsOBJEKTE, rhsOBJEKTE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "objekte", lhsOBJEKTE), LocatorUtils.property(thatLocator, "objekte", rhsOBJEKTE), lhsOBJEKTE, rhsOBJEKTE, (this.objekte!= null), (that.objekte!= null))) {
                 return false;
             }
         }
@@ -223,7 +232,7 @@ public class WIS
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -251,8 +260,7 @@ public class WIS
     @XmlType(name = "", propOrder = {
         "kdnr"
     })
-    public static class BENUTZER
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class BENUTZER implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "KDNR", required = true)
@@ -283,24 +291,24 @@ public class WIS
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theKDNR;
                 theKDNR = this.getKDNR();
-                strategy.appendField(locator, this, "kdnr", buffer, theKDNR);
+                strategy.appendField(locator, this, "kdnr", buffer, theKDNR, (this.kdnr!= null));
             }
             return buffer;
         }
@@ -310,21 +318,26 @@ public class WIS
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof WIS.BENUTZER) {
                 final WIS.BENUTZER copy = ((WIS.BENUTZER) draftCopy);
-                if (this.kdnr!= null) {
-                    String sourceKDNR;
-                    sourceKDNR = this.getKDNR();
-                    String copyKDNR = ((String) strategy.copy(LocatorUtils.property(locator, "kdnr", sourceKDNR), sourceKDNR));
-                    copy.setKDNR(copyKDNR);
-                } else {
-                    copy.kdnr = null;
+                {
+                    Boolean kdnrShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kdnr!= null));
+                    if (kdnrShouldBeCopiedAndSet == Boolean.TRUE) {
+                        String sourceKDNR;
+                        sourceKDNR = this.getKDNR();
+                        String copyKDNR = ((String) strategy.copy(LocatorUtils.property(locator, "kdnr", sourceKDNR), sourceKDNR, (this.kdnr!= null)));
+                        copy.setKDNR(copyKDNR);
+                    } else {
+                        if (kdnrShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.kdnr = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -334,7 +347,7 @@ public class WIS
             return new WIS.BENUTZER();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -347,7 +360,7 @@ public class WIS
                 lhsKDNR = this.getKDNR();
                 String rhsKDNR;
                 rhsKDNR = that.getKDNR();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "kdnr", lhsKDNR), LocatorUtils.property(thatLocator, "kdnr", rhsKDNR), lhsKDNR, rhsKDNR)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "kdnr", lhsKDNR), LocatorUtils.property(thatLocator, "kdnr", rhsKDNR), lhsKDNR, rhsKDNR, (this.kdnr!= null), (that.kdnr!= null))) {
                     return false;
                 }
             }
@@ -355,7 +368,7 @@ public class WIS
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 
@@ -387,8 +400,7 @@ public class WIS
         "anzahl",
         "objekt"
     })
-    public static class OBJEKTE
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class OBJEKTE implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "ANZAHL", required = true, type = String.class)
@@ -452,29 +464,29 @@ public class WIS
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 BigInteger theANZAHL;
                 theANZAHL = this.getANZAHL();
-                strategy.appendField(locator, this, "anzahl", buffer, theANZAHL);
+                strategy.appendField(locator, this, "anzahl", buffer, theANZAHL, (this.anzahl!= null));
             }
             {
                 List<ObjectType> theOBJEKT;
                 theOBJEKT = (((this.objekt!= null)&&(!this.objekt.isEmpty()))?this.getOBJEKT():null);
-                strategy.appendField(locator, this, "objekt", buffer, theOBJEKT);
+                strategy.appendField(locator, this, "objekt", buffer, theOBJEKT, ((this.objekt!= null)&&(!this.objekt.isEmpty())));
             }
             return buffer;
         }
@@ -484,34 +496,44 @@ public class WIS
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof WIS.OBJEKTE) {
                 final WIS.OBJEKTE copy = ((WIS.OBJEKTE) draftCopy);
-                if (this.anzahl!= null) {
-                    BigInteger sourceANZAHL;
-                    sourceANZAHL = this.getANZAHL();
-                    BigInteger copyANZAHL = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceANZAHL), sourceANZAHL));
-                    copy.setANZAHL(copyANZAHL);
-                } else {
-                    copy.anzahl = null;
-                }
-                if ((this.objekt!= null)&&(!this.objekt.isEmpty())) {
-                    List<ObjectType> sourceOBJEKT;
-                    sourceOBJEKT = (((this.objekt!= null)&&(!this.objekt.isEmpty()))?this.getOBJEKT():null);
-                    @SuppressWarnings("unchecked")
-                    List<ObjectType> copyOBJEKT = ((List<ObjectType> ) strategy.copy(LocatorUtils.property(locator, "objekt", sourceOBJEKT), sourceOBJEKT));
-                    copy.objekt = null;
-                    if (copyOBJEKT!= null) {
-                        List<ObjectType> uniqueOBJEKTl = copy.getOBJEKT();
-                        uniqueOBJEKTl.addAll(copyOBJEKT);
+                {
+                    Boolean anzahlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anzahl!= null));
+                    if (anzahlShouldBeCopiedAndSet == Boolean.TRUE) {
+                        BigInteger sourceANZAHL;
+                        sourceANZAHL = this.getANZAHL();
+                        BigInteger copyANZAHL = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "anzahl", sourceANZAHL), sourceANZAHL, (this.anzahl!= null)));
+                        copy.setANZAHL(copyANZAHL);
+                    } else {
+                        if (anzahlShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.anzahl = null;
+                        }
                     }
-                } else {
-                    copy.objekt = null;
+                }
+                {
+                    Boolean objektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.objekt!= null)&&(!this.objekt.isEmpty())));
+                    if (objektShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<ObjectType> sourceOBJEKT;
+                        sourceOBJEKT = (((this.objekt!= null)&&(!this.objekt.isEmpty()))?this.getOBJEKT():null);
+                        @SuppressWarnings("unchecked")
+                        List<ObjectType> copyOBJEKT = ((List<ObjectType> ) strategy.copy(LocatorUtils.property(locator, "objekt", sourceOBJEKT), sourceOBJEKT, ((this.objekt!= null)&&(!this.objekt.isEmpty()))));
+                        copy.objekt = null;
+                        if (copyOBJEKT!= null) {
+                            List<ObjectType> uniqueOBJEKTl = copy.getOBJEKT();
+                            uniqueOBJEKTl.addAll(copyOBJEKT);
+                        }
+                    } else {
+                        if (objektShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.objekt = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -521,7 +543,7 @@ public class WIS
             return new WIS.OBJEKTE();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -534,7 +556,7 @@ public class WIS
                 lhsANZAHL = this.getANZAHL();
                 BigInteger rhsANZAHL;
                 rhsANZAHL = that.getANZAHL();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahl", lhsANZAHL), LocatorUtils.property(thatLocator, "anzahl", rhsANZAHL), lhsANZAHL, rhsANZAHL)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahl", lhsANZAHL), LocatorUtils.property(thatLocator, "anzahl", rhsANZAHL), lhsANZAHL, rhsANZAHL, (this.anzahl!= null), (that.anzahl!= null))) {
                     return false;
                 }
             }
@@ -543,7 +565,7 @@ public class WIS
                 lhsOBJEKT = (((this.objekt!= null)&&(!this.objekt.isEmpty()))?this.getOBJEKT():null);
                 List<ObjectType> rhsOBJEKT;
                 rhsOBJEKT = (((that.objekt!= null)&&(!that.objekt.isEmpty()))?that.getOBJEKT():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "objekt", lhsOBJEKT), LocatorUtils.property(thatLocator, "objekt", rhsOBJEKT), lhsOBJEKT, rhsOBJEKT)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "objekt", lhsOBJEKT), LocatorUtils.property(thatLocator, "objekt", rhsOBJEKT), lhsOBJEKT, rhsOBJEKT, ((this.objekt!= null)&&(!this.objekt.isEmpty())), ((that.objekt!= null)&&(!that.objekt.isEmpty())))) {
                     return false;
                 }
             }
@@ -551,7 +573,7 @@ public class WIS
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
@@ -55,8 +55,7 @@ import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
 @XmlType(name = "classEnergyPerformance", propOrder = {
     "value"
 })
-public class ClassEnergyPerformance
-    implements Cloneable, CopyTo, Equals, ToString
+public class ClassEnergyPerformance implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -141,34 +140,34 @@ public class ClassEnergyPerformance
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theValue;
             theValue = this.getValue();
-            strategy.appendField(locator, this, "value", buffer, theValue);
+            strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
             Boolean theCertified;
             theCertified = this.isCertified();
-            strategy.appendField(locator, this, "certified", buffer, theCertified);
+            strategy.appendField(locator, this, "certified", buffer, theCertified, (this.certified!= null));
         }
         {
             EnergyUnit theUnit;
             theUnit = this.getUnit();
-            strategy.appendField(locator, this, "unit", buffer, theUnit);
+            strategy.appendField(locator, this, "unit", buffer, theUnit, (this.unit!= null));
         }
         return buffer;
     }
@@ -178,37 +177,52 @@ public class ClassEnergyPerformance
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ClassEnergyPerformance) {
             final ClassEnergyPerformance copy = ((ClassEnergyPerformance) draftCopy);
-            if (this.value!= null) {
-                String sourceValue;
-                sourceValue = this.getValue();
-                String copyValue = ((String) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
-                copy.setValue(copyValue);
-            } else {
-                copy.value = null;
+            {
+                Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
+                if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceValue;
+                    sourceValue = this.getValue();
+                    String copyValue = ((String) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    copy.setValue(copyValue);
+                } else {
+                    if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.value = null;
+                    }
+                }
             }
-            if (this.certified!= null) {
-                Boolean sourceCertified;
-                sourceCertified = this.isCertified();
-                Boolean copyCertified = ((Boolean) strategy.copy(LocatorUtils.property(locator, "certified", sourceCertified), sourceCertified));
-                copy.setCertified(copyCertified);
-            } else {
-                copy.certified = null;
+            {
+                Boolean certifiedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.certified!= null));
+                if (certifiedShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceCertified;
+                    sourceCertified = this.isCertified();
+                    Boolean copyCertified = ((Boolean) strategy.copy(LocatorUtils.property(locator, "certified", sourceCertified), sourceCertified, (this.certified!= null)));
+                    copy.setCertified(copyCertified);
+                } else {
+                    if (certifiedShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.certified = null;
+                    }
+                }
             }
-            if (this.unit!= null) {
-                EnergyUnit sourceUnit;
-                sourceUnit = this.getUnit();
-                EnergyUnit copyUnit = ((EnergyUnit) strategy.copy(LocatorUtils.property(locator, "unit", sourceUnit), sourceUnit));
-                copy.setUnit(copyUnit);
-            } else {
-                copy.unit = null;
+            {
+                Boolean unitShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.unit!= null));
+                if (unitShouldBeCopiedAndSet == Boolean.TRUE) {
+                    EnergyUnit sourceUnit;
+                    sourceUnit = this.getUnit();
+                    EnergyUnit copyUnit = ((EnergyUnit) strategy.copy(LocatorUtils.property(locator, "unit", sourceUnit), sourceUnit, (this.unit!= null)));
+                    copy.setUnit(copyUnit);
+                } else {
+                    if (unitShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.unit = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -218,7 +232,7 @@ public class ClassEnergyPerformance
         return new ClassEnergyPerformance();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -231,7 +245,7 @@ public class ClassEnergyPerformance
             lhsValue = this.getValue();
             String rhsValue;
             rhsValue = that.getValue();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
@@ -240,7 +254,7 @@ public class ClassEnergyPerformance
             lhsCertified = this.isCertified();
             Boolean rhsCertified;
             rhsCertified = that.isCertified();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "certified", lhsCertified), LocatorUtils.property(thatLocator, "certified", rhsCertified), lhsCertified, rhsCertified)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "certified", lhsCertified), LocatorUtils.property(thatLocator, "certified", rhsCertified), lhsCertified, rhsCertified, (this.certified!= null), (that.certified!= null))) {
                 return false;
             }
         }
@@ -249,7 +263,7 @@ public class ClassEnergyPerformance
             lhsUnit = this.getUnit();
             EnergyUnit rhsUnit;
             rhsUnit = that.getUnit();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "unit", lhsUnit), LocatorUtils.property(thatLocator, "unit", rhsUnit), lhsUnit, rhsUnit)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "unit", lhsUnit), LocatorUtils.property(thatLocator, "unit", rhsUnit), lhsUnit, rhsUnit, (this.unit!= null), (that.unit!= null))) {
                 return false;
             }
         }
@@ -257,7 +271,7 @@ public class ClassEnergyPerformance
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

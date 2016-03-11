@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -72,8 +72,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "pacht",
     "erbpacht"
 })
-public class VermarktungGrundstueckTypAlt
-    implements Cloneable, CopyTo, Equals, ToString
+public class VermarktungGrundstueckTypAlt implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
@@ -183,39 +182,39 @@ public class VermarktungGrundstueckTypAlt
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             JAXBElement<VermarktungGrundstueckTypAlt.Kauf> theKauf;
             theKauf = this.getKauf();
-            strategy.appendField(locator, this, "kauf", buffer, theKauf);
+            strategy.appendField(locator, this, "kauf", buffer, theKauf, (this.kauf!= null));
         }
         {
             JAXBElement<VermarktungGrundstueckTypAlt.Pacht> thePacht;
             thePacht = this.getPacht();
-            strategy.appendField(locator, this, "pacht", buffer, thePacht);
+            strategy.appendField(locator, this, "pacht", buffer, thePacht, (this.pacht!= null));
         }
         {
             JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> theErbpacht;
             theErbpacht = this.getErbpacht();
-            strategy.appendField(locator, this, "erbpacht", buffer, theErbpacht);
+            strategy.appendField(locator, this, "erbpacht", buffer, theErbpacht, (this.erbpacht!= null));
         }
         {
             BigDecimal thePreis;
             thePreis = this.getPreis();
-            strategy.appendField(locator, this, "preis", buffer, thePreis);
+            strategy.appendField(locator, this, "preis", buffer, thePreis, (this.preis!= null));
         }
         return buffer;
     }
@@ -225,48 +224,68 @@ public class VermarktungGrundstueckTypAlt
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof VermarktungGrundstueckTypAlt) {
             final VermarktungGrundstueckTypAlt copy = ((VermarktungGrundstueckTypAlt) draftCopy);
-            if (this.kauf!= null) {
-                JAXBElement<VermarktungGrundstueckTypAlt.Kauf> sourceKauf;
-                sourceKauf = this.getKauf();
-                @SuppressWarnings("unchecked")
-                JAXBElement<VermarktungGrundstueckTypAlt.Kauf> copyKauf = ((JAXBElement<VermarktungGrundstueckTypAlt.Kauf> ) strategy.copy(LocatorUtils.property(locator, "kauf", sourceKauf), sourceKauf));
-                copy.setKauf(copyKauf);
-            } else {
-                copy.kauf = null;
+            {
+                Boolean kaufShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kauf!= null));
+                if (kaufShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<VermarktungGrundstueckTypAlt.Kauf> sourceKauf;
+                    sourceKauf = this.getKauf();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<VermarktungGrundstueckTypAlt.Kauf> copyKauf = ((JAXBElement<VermarktungGrundstueckTypAlt.Kauf> ) strategy.copy(LocatorUtils.property(locator, "kauf", sourceKauf), sourceKauf, (this.kauf!= null)));
+                    copy.setKauf(copyKauf);
+                } else {
+                    if (kaufShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.kauf = null;
+                    }
+                }
             }
-            if (this.pacht!= null) {
-                JAXBElement<VermarktungGrundstueckTypAlt.Pacht> sourcePacht;
-                sourcePacht = this.getPacht();
-                @SuppressWarnings("unchecked")
-                JAXBElement<VermarktungGrundstueckTypAlt.Pacht> copyPacht = ((JAXBElement<VermarktungGrundstueckTypAlt.Pacht> ) strategy.copy(LocatorUtils.property(locator, "pacht", sourcePacht), sourcePacht));
-                copy.setPacht(copyPacht);
-            } else {
-                copy.pacht = null;
+            {
+                Boolean pachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pacht!= null));
+                if (pachtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<VermarktungGrundstueckTypAlt.Pacht> sourcePacht;
+                    sourcePacht = this.getPacht();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<VermarktungGrundstueckTypAlt.Pacht> copyPacht = ((JAXBElement<VermarktungGrundstueckTypAlt.Pacht> ) strategy.copy(LocatorUtils.property(locator, "pacht", sourcePacht), sourcePacht, (this.pacht!= null)));
+                    copy.setPacht(copyPacht);
+                } else {
+                    if (pachtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pacht = null;
+                    }
+                }
             }
-            if (this.erbpacht!= null) {
-                JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> sourceErbpacht;
-                sourceErbpacht = this.getErbpacht();
-                @SuppressWarnings("unchecked")
-                JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> copyErbpacht = ((JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> ) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceErbpacht), sourceErbpacht));
-                copy.setErbpacht(copyErbpacht);
-            } else {
-                copy.erbpacht = null;
+            {
+                Boolean erbpachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erbpacht!= null));
+                if (erbpachtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> sourceErbpacht;
+                    sourceErbpacht = this.getErbpacht();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> copyErbpacht = ((JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> ) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceErbpacht), sourceErbpacht, (this.erbpacht!= null)));
+                    copy.setErbpacht(copyErbpacht);
+                } else {
+                    if (erbpachtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.erbpacht = null;
+                    }
+                }
             }
-            if (this.preis!= null) {
-                BigDecimal sourcePreis;
-                sourcePreis = this.getPreis();
-                BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis));
-                copy.setPreis(copyPreis);
-            } else {
-                copy.preis = null;
+            {
+                Boolean preisShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.preis!= null));
+                if (preisShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourcePreis;
+                    sourcePreis = this.getPreis();
+                    BigDecimal copyPreis = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "preis", sourcePreis), sourcePreis, (this.preis!= null)));
+                    copy.setPreis(copyPreis);
+                } else {
+                    if (preisShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.preis = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -276,7 +295,7 @@ public class VermarktungGrundstueckTypAlt
         return new VermarktungGrundstueckTypAlt();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -289,7 +308,7 @@ public class VermarktungGrundstueckTypAlt
             lhsKauf = this.getKauf();
             JAXBElement<VermarktungGrundstueckTypAlt.Kauf> rhsKauf;
             rhsKauf = that.getKauf();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kauf", lhsKauf), LocatorUtils.property(thatLocator, "kauf", rhsKauf), lhsKauf, rhsKauf)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kauf", lhsKauf), LocatorUtils.property(thatLocator, "kauf", rhsKauf), lhsKauf, rhsKauf, (this.kauf!= null), (that.kauf!= null))) {
                 return false;
             }
         }
@@ -298,7 +317,7 @@ public class VermarktungGrundstueckTypAlt
             lhsPacht = this.getPacht();
             JAXBElement<VermarktungGrundstueckTypAlt.Pacht> rhsPacht;
             rhsPacht = that.getPacht();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pacht", lhsPacht), LocatorUtils.property(thatLocator, "pacht", rhsPacht), lhsPacht, rhsPacht)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pacht", lhsPacht), LocatorUtils.property(thatLocator, "pacht", rhsPacht), lhsPacht, rhsPacht, (this.pacht!= null), (that.pacht!= null))) {
                 return false;
             }
         }
@@ -307,7 +326,7 @@ public class VermarktungGrundstueckTypAlt
             lhsErbpacht = this.getErbpacht();
             JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> rhsErbpacht;
             rhsErbpacht = that.getErbpacht();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "erbpacht", lhsErbpacht), LocatorUtils.property(thatLocator, "erbpacht", rhsErbpacht), lhsErbpacht, rhsErbpacht)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "erbpacht", lhsErbpacht), LocatorUtils.property(thatLocator, "erbpacht", rhsErbpacht), lhsErbpacht, rhsErbpacht, (this.erbpacht!= null), (that.erbpacht!= null))) {
                 return false;
             }
         }
@@ -316,7 +335,7 @@ public class VermarktungGrundstueckTypAlt
             lhsPreis = this.getPreis();
             BigDecimal rhsPreis;
             rhsPreis = that.getPreis();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "preis", lhsPreis), LocatorUtils.property(thatLocator, "preis", rhsPreis), lhsPreis, rhsPreis, (this.preis!= null), (that.preis!= null))) {
                 return false;
             }
         }
@@ -324,7 +343,7 @@ public class VermarktungGrundstueckTypAlt
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -348,8 +367,7 @@ public class VermarktungGrundstueckTypAlt
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Erbpacht
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Erbpacht implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "DauerInJahren", required = true)
@@ -381,24 +399,24 @@ public class VermarktungGrundstueckTypAlt
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 Long theDauerInJahren;
                 theDauerInJahren = this.getDauerInJahren();
-                strategy.appendField(locator, this, "dauerInJahren", buffer, theDauerInJahren);
+                strategy.appendField(locator, this, "dauerInJahren", buffer, theDauerInJahren, (this.dauerInJahren!= null));
             }
             return buffer;
         }
@@ -408,21 +426,26 @@ public class VermarktungGrundstueckTypAlt
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof VermarktungGrundstueckTypAlt.Erbpacht) {
                 final VermarktungGrundstueckTypAlt.Erbpacht copy = ((VermarktungGrundstueckTypAlt.Erbpacht) draftCopy);
-                if (this.dauerInJahren!= null) {
-                    Long sourceDauerInJahren;
-                    sourceDauerInJahren = this.getDauerInJahren();
-                    Long copyDauerInJahren = ((Long) strategy.copy(LocatorUtils.property(locator, "dauerInJahren", sourceDauerInJahren), sourceDauerInJahren));
-                    copy.setDauerInJahren(copyDauerInJahren);
-                } else {
-                    copy.dauerInJahren = null;
+                {
+                    Boolean dauerInJahrenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dauerInJahren!= null));
+                    if (dauerInJahrenShouldBeCopiedAndSet == Boolean.TRUE) {
+                        Long sourceDauerInJahren;
+                        sourceDauerInJahren = this.getDauerInJahren();
+                        Long copyDauerInJahren = ((Long) strategy.copy(LocatorUtils.property(locator, "dauerInJahren", sourceDauerInJahren), sourceDauerInJahren, (this.dauerInJahren!= null)));
+                        copy.setDauerInJahren(copyDauerInJahren);
+                    } else {
+                        if (dauerInJahrenShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.dauerInJahren = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -432,7 +455,7 @@ public class VermarktungGrundstueckTypAlt
             return new VermarktungGrundstueckTypAlt.Erbpacht();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -445,7 +468,7 @@ public class VermarktungGrundstueckTypAlt
                 lhsDauerInJahren = this.getDauerInJahren();
                 Long rhsDauerInJahren;
                 rhsDauerInJahren = that.getDauerInJahren();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "dauerInJahren", lhsDauerInJahren), LocatorUtils.property(thatLocator, "dauerInJahren", rhsDauerInJahren), lhsDauerInJahren, rhsDauerInJahren)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "dauerInJahren", lhsDauerInJahren), LocatorUtils.property(thatLocator, "dauerInJahren", rhsDauerInJahren), lhsDauerInJahren, rhsDauerInJahren, (this.dauerInJahren!= null), (that.dauerInJahren!= null))) {
                     return false;
                 }
             }
@@ -453,7 +476,7 @@ public class VermarktungGrundstueckTypAlt
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 
@@ -478,26 +501,25 @@ public class VermarktungGrundstueckTypAlt
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Kauf
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Kauf implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             return buffer;
         }
 
@@ -506,11 +528,11 @@ public class VermarktungGrundstueckTypAlt
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             return draftCopy;
         }
@@ -519,7 +541,7 @@ public class VermarktungGrundstueckTypAlt
             return new VermarktungGrundstueckTypAlt.Kauf();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -530,7 +552,7 @@ public class VermarktungGrundstueckTypAlt
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 
@@ -555,26 +577,25 @@ public class VermarktungGrundstueckTypAlt
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Pacht
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Pacht implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             return buffer;
         }
 
@@ -583,11 +604,11 @@ public class VermarktungGrundstueckTypAlt
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             return draftCopy;
         }
@@ -596,7 +617,7 @@ public class VermarktungGrundstueckTypAlt
             return new VermarktungGrundstueckTypAlt.Pacht();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -607,7 +628,7 @@ public class VermarktungGrundstueckTypAlt
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

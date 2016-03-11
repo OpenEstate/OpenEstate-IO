@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -55,8 +55,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "ValueListsType", propOrder = {
     "valuelist"
 })
-public class ValueListsType
-    implements Cloneable, CopyTo, Equals, ToString
+public class ValueListsType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "VALUELIST")
@@ -92,24 +91,24 @@ public class ValueListsType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<ValueListsType.VALUELIST> theVALUELIST;
             theVALUELIST = (((this.valuelist!= null)&&(!this.valuelist.isEmpty()))?this.getVALUELIST():null);
-            strategy.appendField(locator, this, "valuelist", buffer, theVALUELIST);
+            strategy.appendField(locator, this, "valuelist", buffer, theVALUELIST, ((this.valuelist!= null)&&(!this.valuelist.isEmpty())));
         }
         return buffer;
     }
@@ -119,26 +118,31 @@ public class ValueListsType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ValueListsType) {
             final ValueListsType copy = ((ValueListsType) draftCopy);
-            if ((this.valuelist!= null)&&(!this.valuelist.isEmpty())) {
-                List<ValueListsType.VALUELIST> sourceVALUELIST;
-                sourceVALUELIST = (((this.valuelist!= null)&&(!this.valuelist.isEmpty()))?this.getVALUELIST():null);
-                @SuppressWarnings("unchecked")
-                List<ValueListsType.VALUELIST> copyVALUELIST = ((List<ValueListsType.VALUELIST> ) strategy.copy(LocatorUtils.property(locator, "valuelist", sourceVALUELIST), sourceVALUELIST));
-                copy.valuelist = null;
-                if (copyVALUELIST!= null) {
-                    List<ValueListsType.VALUELIST> uniqueVALUELISTl = copy.getVALUELIST();
-                    uniqueVALUELISTl.addAll(copyVALUELIST);
+            {
+                Boolean valuelistShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.valuelist!= null)&&(!this.valuelist.isEmpty())));
+                if (valuelistShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<ValueListsType.VALUELIST> sourceVALUELIST;
+                    sourceVALUELIST = (((this.valuelist!= null)&&(!this.valuelist.isEmpty()))?this.getVALUELIST():null);
+                    @SuppressWarnings("unchecked")
+                    List<ValueListsType.VALUELIST> copyVALUELIST = ((List<ValueListsType.VALUELIST> ) strategy.copy(LocatorUtils.property(locator, "valuelist", sourceVALUELIST), sourceVALUELIST, ((this.valuelist!= null)&&(!this.valuelist.isEmpty()))));
+                    copy.valuelist = null;
+                    if (copyVALUELIST!= null) {
+                        List<ValueListsType.VALUELIST> uniqueVALUELISTl = copy.getVALUELIST();
+                        uniqueVALUELISTl.addAll(copyVALUELIST);
+                    }
+                } else {
+                    if (valuelistShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.valuelist = null;
+                    }
                 }
-            } else {
-                copy.valuelist = null;
             }
         }
         return draftCopy;
@@ -148,7 +152,7 @@ public class ValueListsType
         return new ValueListsType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -161,7 +165,7 @@ public class ValueListsType
             lhsVALUELIST = (((this.valuelist!= null)&&(!this.valuelist.isEmpty()))?this.getVALUELIST():null);
             List<ValueListsType.VALUELIST> rhsVALUELIST;
             rhsVALUELIST = (((that.valuelist!= null)&&(!that.valuelist.isEmpty()))?that.getVALUELIST():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "valuelist", lhsVALUELIST), LocatorUtils.property(thatLocator, "valuelist", rhsVALUELIST), lhsVALUELIST, rhsVALUELIST)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "valuelist", lhsVALUELIST), LocatorUtils.property(thatLocator, "valuelist", rhsVALUELIST), lhsVALUELIST, rhsVALUELIST, ((this.valuelist!= null)&&(!this.valuelist.isEmpty())), ((that.valuelist!= null)&&(!that.valuelist.isEmpty())))) {
                 return false;
             }
         }
@@ -169,7 +173,7 @@ public class ValueListsType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -198,8 +202,7 @@ public class ValueListsType
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class VALUELIST
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class VALUELIST implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "VALUE")
@@ -261,29 +264,29 @@ public class ValueListsType
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 List<String> theVALUE;
                 theVALUE = (((this.value!= null)&&(!this.value.isEmpty()))?this.getVALUE():null);
-                strategy.appendField(locator, this, "value", buffer, theVALUE);
+                strategy.appendField(locator, this, "value", buffer, theVALUE, ((this.value!= null)&&(!this.value.isEmpty())));
             }
             {
                 String theNAME;
                 theNAME = this.getNAME();
-                strategy.appendField(locator, this, "name", buffer, theNAME);
+                strategy.appendField(locator, this, "name", buffer, theNAME, (this.name!= null));
             }
             return buffer;
         }
@@ -293,34 +296,44 @@ public class ValueListsType
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof ValueListsType.VALUELIST) {
                 final ValueListsType.VALUELIST copy = ((ValueListsType.VALUELIST) draftCopy);
-                if ((this.value!= null)&&(!this.value.isEmpty())) {
-                    List<String> sourceVALUE;
-                    sourceVALUE = (((this.value!= null)&&(!this.value.isEmpty()))?this.getVALUE():null);
-                    @SuppressWarnings("unchecked")
-                    List<String> copyVALUE = ((List<String> ) strategy.copy(LocatorUtils.property(locator, "value", sourceVALUE), sourceVALUE));
-                    copy.value = null;
-                    if (copyVALUE!= null) {
-                        List<String> uniqueVALUEl = copy.getVALUE();
-                        uniqueVALUEl.addAll(copyVALUE);
+                {
+                    Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.value!= null)&&(!this.value.isEmpty())));
+                    if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
+                        List<String> sourceVALUE;
+                        sourceVALUE = (((this.value!= null)&&(!this.value.isEmpty()))?this.getVALUE():null);
+                        @SuppressWarnings("unchecked")
+                        List<String> copyVALUE = ((List<String> ) strategy.copy(LocatorUtils.property(locator, "value", sourceVALUE), sourceVALUE, ((this.value!= null)&&(!this.value.isEmpty()))));
+                        copy.value = null;
+                        if (copyVALUE!= null) {
+                            List<String> uniqueVALUEl = copy.getVALUE();
+                            uniqueVALUEl.addAll(copyVALUE);
+                        }
+                    } else {
+                        if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.value = null;
+                        }
                     }
-                } else {
-                    copy.value = null;
                 }
-                if (this.name!= null) {
-                    String sourceNAME;
-                    sourceNAME = this.getNAME();
-                    String copyNAME = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceNAME), sourceNAME));
-                    copy.setNAME(copyNAME);
-                } else {
-                    copy.name = null;
+                {
+                    Boolean nameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.name!= null));
+                    if (nameShouldBeCopiedAndSet == Boolean.TRUE) {
+                        String sourceNAME;
+                        sourceNAME = this.getNAME();
+                        String copyNAME = ((String) strategy.copy(LocatorUtils.property(locator, "name", sourceNAME), sourceNAME, (this.name!= null)));
+                        copy.setNAME(copyNAME);
+                    } else {
+                        if (nameShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.name = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -330,7 +343,7 @@ public class ValueListsType
             return new ValueListsType.VALUELIST();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -343,7 +356,7 @@ public class ValueListsType
                 lhsVALUE = (((this.value!= null)&&(!this.value.isEmpty()))?this.getVALUE():null);
                 List<String> rhsVALUE;
                 rhsVALUE = (((that.value!= null)&&(!that.value.isEmpty()))?that.getVALUE():null);
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsVALUE), LocatorUtils.property(thatLocator, "value", rhsVALUE), lhsVALUE, rhsVALUE)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsVALUE), LocatorUtils.property(thatLocator, "value", rhsVALUE), lhsVALUE, rhsVALUE, ((this.value!= null)&&(!this.value.isEmpty())), ((that.value!= null)&&(!that.value.isEmpty())))) {
                     return false;
                 }
             }
@@ -352,7 +365,7 @@ public class ValueListsType
                 lhsNAME = this.getNAME();
                 String rhsNAME;
                 rhsNAME = that.getNAME();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsNAME), LocatorUtils.property(thatLocator, "name", rhsNAME), lhsNAME, rhsNAME)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "name", lhsNAME), LocatorUtils.property(thatLocator, "name", rhsNAME), lhsNAME, rhsNAME, (this.name!= null), (that.name!= null))) {
                     return false;
                 }
             }
@@ -360,7 +373,7 @@ public class ValueListsType
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

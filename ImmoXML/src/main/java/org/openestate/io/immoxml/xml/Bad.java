@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "bad")
-public class Bad
-    implements Cloneable, CopyTo, Equals, ToString
+public class Bad implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "DUSCHE")
@@ -112,34 +111,34 @@ public class Bad
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theDUSCHE;
             theDUSCHE = this.isDUSCHE();
-            strategy.appendField(locator, this, "dusche", buffer, theDUSCHE);
+            strategy.appendField(locator, this, "dusche", buffer, theDUSCHE, (this.dusche!= null));
         }
         {
             Boolean theWANNE;
             theWANNE = this.isWANNE();
-            strategy.appendField(locator, this, "wanne", buffer, theWANNE);
+            strategy.appendField(locator, this, "wanne", buffer, theWANNE, (this.wanne!= null));
         }
         {
             Boolean theFENSTER;
             theFENSTER = this.isFENSTER();
-            strategy.appendField(locator, this, "fenster", buffer, theFENSTER);
+            strategy.appendField(locator, this, "fenster", buffer, theFENSTER, (this.fenster!= null));
         }
         return buffer;
     }
@@ -149,37 +148,52 @@ public class Bad
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Bad) {
             final Bad copy = ((Bad) draftCopy);
-            if (this.dusche!= null) {
-                Boolean sourceDUSCHE;
-                sourceDUSCHE = this.isDUSCHE();
-                Boolean copyDUSCHE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dusche", sourceDUSCHE), sourceDUSCHE));
-                copy.setDUSCHE(copyDUSCHE);
-            } else {
-                copy.dusche = null;
+            {
+                Boolean duscheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dusche!= null));
+                if (duscheShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceDUSCHE;
+                    sourceDUSCHE = this.isDUSCHE();
+                    Boolean copyDUSCHE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dusche", sourceDUSCHE), sourceDUSCHE, (this.dusche!= null)));
+                    copy.setDUSCHE(copyDUSCHE);
+                } else {
+                    if (duscheShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.dusche = null;
+                    }
+                }
             }
-            if (this.wanne!= null) {
-                Boolean sourceWANNE;
-                sourceWANNE = this.isWANNE();
-                Boolean copyWANNE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wanne", sourceWANNE), sourceWANNE));
-                copy.setWANNE(copyWANNE);
-            } else {
-                copy.wanne = null;
+            {
+                Boolean wanneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wanne!= null));
+                if (wanneShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWANNE;
+                    sourceWANNE = this.isWANNE();
+                    Boolean copyWANNE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wanne", sourceWANNE), sourceWANNE, (this.wanne!= null)));
+                    copy.setWANNE(copyWANNE);
+                } else {
+                    if (wanneShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wanne = null;
+                    }
+                }
             }
-            if (this.fenster!= null) {
-                Boolean sourceFENSTER;
-                sourceFENSTER = this.isFENSTER();
-                Boolean copyFENSTER = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fenster", sourceFENSTER), sourceFENSTER));
-                copy.setFENSTER(copyFENSTER);
-            } else {
-                copy.fenster = null;
+            {
+                Boolean fensterShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fenster!= null));
+                if (fensterShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFENSTER;
+                    sourceFENSTER = this.isFENSTER();
+                    Boolean copyFENSTER = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fenster", sourceFENSTER), sourceFENSTER, (this.fenster!= null)));
+                    copy.setFENSTER(copyFENSTER);
+                } else {
+                    if (fensterShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fenster = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -189,7 +203,7 @@ public class Bad
         return new Bad();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -202,7 +216,7 @@ public class Bad
             lhsDUSCHE = this.isDUSCHE();
             Boolean rhsDUSCHE;
             rhsDUSCHE = that.isDUSCHE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "dusche", lhsDUSCHE), LocatorUtils.property(thatLocator, "dusche", rhsDUSCHE), lhsDUSCHE, rhsDUSCHE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "dusche", lhsDUSCHE), LocatorUtils.property(thatLocator, "dusche", rhsDUSCHE), lhsDUSCHE, rhsDUSCHE, (this.dusche!= null), (that.dusche!= null))) {
                 return false;
             }
         }
@@ -211,7 +225,7 @@ public class Bad
             lhsWANNE = this.isWANNE();
             Boolean rhsWANNE;
             rhsWANNE = that.isWANNE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wanne", lhsWANNE), LocatorUtils.property(thatLocator, "wanne", rhsWANNE), lhsWANNE, rhsWANNE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wanne", lhsWANNE), LocatorUtils.property(thatLocator, "wanne", rhsWANNE), lhsWANNE, rhsWANNE, (this.wanne!= null), (that.wanne!= null))) {
                 return false;
             }
         }
@@ -220,7 +234,7 @@ public class Bad
             lhsFENSTER = this.isFENSTER();
             Boolean rhsFENSTER;
             rhsFENSTER = that.isFENSTER();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fenster", lhsFENSTER), LocatorUtils.property(thatLocator, "fenster", rhsFENSTER), lhsFENSTER, rhsFENSTER)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fenster", lhsFENSTER), LocatorUtils.property(thatLocator, "fenster", rhsFENSTER), lhsFENSTER, rhsFENSTER, (this.fenster!= null), (that.fenster!= null))) {
                 return false;
             }
         }
@@ -228,7 +242,7 @@ public class Bad
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

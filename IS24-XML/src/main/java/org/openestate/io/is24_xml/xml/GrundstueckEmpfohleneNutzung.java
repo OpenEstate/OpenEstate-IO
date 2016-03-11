@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -75,8 +75,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     GrundstueckWohnenEmpfohleneNutzung.class,
     GrundstueckGewerbeEmpfohleneNutzung.class
 })
-public class GrundstueckEmpfohleneNutzung
-    implements Cloneable, CopyTo, Equals, ToString
+public class GrundstueckEmpfohleneNutzung implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "Ackerland", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
@@ -757,149 +756,149 @@ public class GrundstueckEmpfohleneNutzung
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             JAXBElement<Object> theAckerland;
             theAckerland = this.getAckerland();
-            strategy.appendField(locator, this, "ackerland", buffer, theAckerland);
+            strategy.appendField(locator, this, "ackerland", buffer, theAckerland, (this.ackerland!= null));
         }
         {
             JAXBElement<Object> theBauerwartungsland;
             theBauerwartungsland = this.getBauerwartungsland();
-            strategy.appendField(locator, this, "bauerwartungsland", buffer, theBauerwartungsland);
+            strategy.appendField(locator, this, "bauerwartungsland", buffer, theBauerwartungsland, (this.bauerwartungsland!= null));
         }
         {
             JAXBElement<Object> theBootsstaende;
             theBootsstaende = this.getBootsstaende();
-            strategy.appendField(locator, this, "bootsstaende", buffer, theBootsstaende);
+            strategy.appendField(locator, this, "bootsstaende", buffer, theBootsstaende, (this.bootsstaende!= null));
         }
         {
             JAXBElement<Object> theBuero;
             theBuero = this.getBuero();
-            strategy.appendField(locator, this, "buero", buffer, theBuero);
+            strategy.appendField(locator, this, "buero", buffer, theBuero, (this.buero!= null));
         }
         {
             JAXBElement<Object> theCamping;
             theCamping = this.getCamping();
-            strategy.appendField(locator, this, "camping", buffer, theCamping);
+            strategy.appendField(locator, this, "camping", buffer, theCamping, (this.camping!= null));
         }
         {
             JAXBElement<Object> theDoppelhaus;
             theDoppelhaus = this.getDoppelhaus();
-            strategy.appendField(locator, this, "doppelhaus", buffer, theDoppelhaus);
+            strategy.appendField(locator, this, "doppelhaus", buffer, theDoppelhaus, (this.doppelhaus!= null));
         }
         {
             JAXBElement<Object> theEinfamilienhaus;
             theEinfamilienhaus = this.getEinfamilienhaus();
-            strategy.appendField(locator, this, "einfamilienhaus", buffer, theEinfamilienhaus);
+            strategy.appendField(locator, this, "einfamilienhaus", buffer, theEinfamilienhaus, (this.einfamilienhaus!= null));
         }
         {
             JAXBElement<Object> theEinzelhandelGross;
             theEinzelhandelGross = this.getEinzelhandelGross();
-            strategy.appendField(locator, this, "einzelhandelGross", buffer, theEinzelhandelGross);
+            strategy.appendField(locator, this, "einzelhandelGross", buffer, theEinzelhandelGross, (this.einzelhandelGross!= null));
         }
         {
             JAXBElement<Object> theEinzelhandelKlein;
             theEinzelhandelKlein = this.getEinzelhandelKlein();
-            strategy.appendField(locator, this, "einzelhandelKlein", buffer, theEinzelhandelKlein);
+            strategy.appendField(locator, this, "einzelhandelKlein", buffer, theEinzelhandelKlein, (this.einzelhandelKlein!= null));
         }
         {
             JAXBElement<Object> theGaragen;
             theGaragen = this.getGaragen();
-            strategy.appendField(locator, this, "garagen", buffer, theGaragen);
+            strategy.appendField(locator, this, "garagen", buffer, theGaragen, (this.garagen!= null));
         }
         {
             JAXBElement<Object> theGarten;
             theGarten = this.getGarten();
-            strategy.appendField(locator, this, "garten", buffer, theGarten);
+            strategy.appendField(locator, this, "garten", buffer, theGarten, (this.garten!= null));
         }
         {
             JAXBElement<Object> theGastronomie;
             theGastronomie = this.getGastronomie();
-            strategy.appendField(locator, this, "gastronomie", buffer, theGastronomie);
+            strategy.appendField(locator, this, "gastronomie", buffer, theGastronomie, (this.gastronomie!= null));
         }
         {
             JAXBElement<Object> theGewerbe;
             theGewerbe = this.getGewerbe();
-            strategy.appendField(locator, this, "gewerbe", buffer, theGewerbe);
+            strategy.appendField(locator, this, "gewerbe", buffer, theGewerbe, (this.gewerbe!= null));
         }
         {
             JAXBElement<Object> theHotel;
             theHotel = this.getHotel();
-            strategy.appendField(locator, this, "hotel", buffer, theHotel);
+            strategy.appendField(locator, this, "hotel", buffer, theHotel, (this.hotel!= null));
         }
         {
             JAXBElement<Object> theIndustrie;
             theIndustrie = this.getIndustrie();
-            strategy.appendField(locator, this, "industrie", buffer, theIndustrie);
+            strategy.appendField(locator, this, "industrie", buffer, theIndustrie, (this.industrie!= null));
         }
         {
             JAXBElement<Object> theKeineBebauung;
             theKeineBebauung = this.getKeineBebauung();
-            strategy.appendField(locator, this, "keineBebauung", buffer, theKeineBebauung);
+            strategy.appendField(locator, this, "keineBebauung", buffer, theKeineBebauung, (this.keineBebauung!= null));
         }
         {
             JAXBElement<Object> theKleingewerbe;
             theKleingewerbe = this.getKleingewerbe();
-            strategy.appendField(locator, this, "kleingewerbe", buffer, theKleingewerbe);
+            strategy.appendField(locator, this, "kleingewerbe", buffer, theKleingewerbe, (this.kleingewerbe!= null));
         }
         {
             JAXBElement<Object> theLager;
             theLager = this.getLager();
-            strategy.appendField(locator, this, "lager", buffer, theLager);
+            strategy.appendField(locator, this, "lager", buffer, theLager, (this.lager!= null));
         }
         {
             JAXBElement<Object> theMehrfamilienhaus;
             theMehrfamilienhaus = this.getMehrfamilienhaus();
-            strategy.appendField(locator, this, "mehrfamilienhaus", buffer, theMehrfamilienhaus);
+            strategy.appendField(locator, this, "mehrfamilienhaus", buffer, theMehrfamilienhaus, (this.mehrfamilienhaus!= null));
         }
         {
             JAXBElement<Object> theObstpflanzung;
             theObstpflanzung = this.getObstpflanzung();
-            strategy.appendField(locator, this, "obstpflanzung", buffer, theObstpflanzung);
+            strategy.appendField(locator, this, "obstpflanzung", buffer, theObstpflanzung, (this.obstpflanzung!= null));
         }
         {
             JAXBElement<Object> theParkhaus;
             theParkhaus = this.getParkhaus();
-            strategy.appendField(locator, this, "parkhaus", buffer, theParkhaus);
+            strategy.appendField(locator, this, "parkhaus", buffer, theParkhaus, (this.parkhaus!= null));
         }
         {
             JAXBElement<Object> theProduktion;
             theProduktion = this.getProduktion();
-            strategy.appendField(locator, this, "produktion", buffer, theProduktion);
+            strategy.appendField(locator, this, "produktion", buffer, theProduktion, (this.produktion!= null));
         }
         {
             JAXBElement<Object> theReihenhaus;
             theReihenhaus = this.getReihenhaus();
-            strategy.appendField(locator, this, "reihenhaus", buffer, theReihenhaus);
+            strategy.appendField(locator, this, "reihenhaus", buffer, theReihenhaus, (this.reihenhaus!= null));
         }
         {
             JAXBElement<Object> theStellplaetze;
             theStellplaetze = this.getStellplaetze();
-            strategy.appendField(locator, this, "stellplaetze", buffer, theStellplaetze);
+            strategy.appendField(locator, this, "stellplaetze", buffer, theStellplaetze, (this.stellplaetze!= null));
         }
         {
             JAXBElement<Object> theVilla;
             theVilla = this.getVilla();
-            strategy.appendField(locator, this, "villa", buffer, theVilla);
+            strategy.appendField(locator, this, "villa", buffer, theVilla, (this.villa!= null));
         }
         {
             JAXBElement<Object> theWald;
             theWald = this.getWald();
-            strategy.appendField(locator, this, "wald", buffer, theWald);
+            strategy.appendField(locator, this, "wald", buffer, theWald, (this.wald!= null));
         }
         return buffer;
     }
@@ -909,247 +908,377 @@ public class GrundstueckEmpfohleneNutzung
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof GrundstueckEmpfohleneNutzung) {
             final GrundstueckEmpfohleneNutzung copy = ((GrundstueckEmpfohleneNutzung) draftCopy);
-            if (this.ackerland!= null) {
-                JAXBElement<Object> sourceAckerland;
-                sourceAckerland = this.getAckerland();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyAckerland = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "ackerland", sourceAckerland), sourceAckerland));
-                copy.setAckerland(copyAckerland);
-            } else {
-                copy.ackerland = null;
+            {
+                Boolean ackerlandShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ackerland!= null));
+                if (ackerlandShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceAckerland;
+                    sourceAckerland = this.getAckerland();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyAckerland = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "ackerland", sourceAckerland), sourceAckerland, (this.ackerland!= null)));
+                    copy.setAckerland(copyAckerland);
+                } else {
+                    if (ackerlandShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ackerland = null;
+                    }
+                }
             }
-            if (this.bauerwartungsland!= null) {
-                JAXBElement<Object> sourceBauerwartungsland;
-                sourceBauerwartungsland = this.getBauerwartungsland();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyBauerwartungsland = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "bauerwartungsland", sourceBauerwartungsland), sourceBauerwartungsland));
-                copy.setBauerwartungsland(copyBauerwartungsland);
-            } else {
-                copy.bauerwartungsland = null;
+            {
+                Boolean bauerwartungslandShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bauerwartungsland!= null));
+                if (bauerwartungslandShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceBauerwartungsland;
+                    sourceBauerwartungsland = this.getBauerwartungsland();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyBauerwartungsland = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "bauerwartungsland", sourceBauerwartungsland), sourceBauerwartungsland, (this.bauerwartungsland!= null)));
+                    copy.setBauerwartungsland(copyBauerwartungsland);
+                } else {
+                    if (bauerwartungslandShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bauerwartungsland = null;
+                    }
+                }
             }
-            if (this.bootsstaende!= null) {
-                JAXBElement<Object> sourceBootsstaende;
-                sourceBootsstaende = this.getBootsstaende();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyBootsstaende = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "bootsstaende", sourceBootsstaende), sourceBootsstaende));
-                copy.setBootsstaende(copyBootsstaende);
-            } else {
-                copy.bootsstaende = null;
+            {
+                Boolean bootsstaendeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bootsstaende!= null));
+                if (bootsstaendeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceBootsstaende;
+                    sourceBootsstaende = this.getBootsstaende();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyBootsstaende = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "bootsstaende", sourceBootsstaende), sourceBootsstaende, (this.bootsstaende!= null)));
+                    copy.setBootsstaende(copyBootsstaende);
+                } else {
+                    if (bootsstaendeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bootsstaende = null;
+                    }
+                }
             }
-            if (this.buero!= null) {
-                JAXBElement<Object> sourceBuero;
-                sourceBuero = this.getBuero();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyBuero = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "buero", sourceBuero), sourceBuero));
-                copy.setBuero(copyBuero);
-            } else {
-                copy.buero = null;
+            {
+                Boolean bueroShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.buero!= null));
+                if (bueroShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceBuero;
+                    sourceBuero = this.getBuero();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyBuero = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "buero", sourceBuero), sourceBuero, (this.buero!= null)));
+                    copy.setBuero(copyBuero);
+                } else {
+                    if (bueroShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.buero = null;
+                    }
+                }
             }
-            if (this.camping!= null) {
-                JAXBElement<Object> sourceCamping;
-                sourceCamping = this.getCamping();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyCamping = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "camping", sourceCamping), sourceCamping));
-                copy.setCamping(copyCamping);
-            } else {
-                copy.camping = null;
+            {
+                Boolean campingShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.camping!= null));
+                if (campingShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceCamping;
+                    sourceCamping = this.getCamping();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyCamping = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "camping", sourceCamping), sourceCamping, (this.camping!= null)));
+                    copy.setCamping(copyCamping);
+                } else {
+                    if (campingShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.camping = null;
+                    }
+                }
             }
-            if (this.doppelhaus!= null) {
-                JAXBElement<Object> sourceDoppelhaus;
-                sourceDoppelhaus = this.getDoppelhaus();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyDoppelhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "doppelhaus", sourceDoppelhaus), sourceDoppelhaus));
-                copy.setDoppelhaus(copyDoppelhaus);
-            } else {
-                copy.doppelhaus = null;
+            {
+                Boolean doppelhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.doppelhaus!= null));
+                if (doppelhausShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceDoppelhaus;
+                    sourceDoppelhaus = this.getDoppelhaus();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyDoppelhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "doppelhaus", sourceDoppelhaus), sourceDoppelhaus, (this.doppelhaus!= null)));
+                    copy.setDoppelhaus(copyDoppelhaus);
+                } else {
+                    if (doppelhausShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.doppelhaus = null;
+                    }
+                }
             }
-            if (this.einfamilienhaus!= null) {
-                JAXBElement<Object> sourceEinfamilienhaus;
-                sourceEinfamilienhaus = this.getEinfamilienhaus();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyEinfamilienhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "einfamilienhaus", sourceEinfamilienhaus), sourceEinfamilienhaus));
-                copy.setEinfamilienhaus(copyEinfamilienhaus);
-            } else {
-                copy.einfamilienhaus = null;
+            {
+                Boolean einfamilienhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.einfamilienhaus!= null));
+                if (einfamilienhausShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceEinfamilienhaus;
+                    sourceEinfamilienhaus = this.getEinfamilienhaus();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyEinfamilienhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "einfamilienhaus", sourceEinfamilienhaus), sourceEinfamilienhaus, (this.einfamilienhaus!= null)));
+                    copy.setEinfamilienhaus(copyEinfamilienhaus);
+                } else {
+                    if (einfamilienhausShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.einfamilienhaus = null;
+                    }
+                }
             }
-            if (this.einzelhandelGross!= null) {
-                JAXBElement<Object> sourceEinzelhandelGross;
-                sourceEinzelhandelGross = this.getEinzelhandelGross();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyEinzelhandelGross = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "einzelhandelGross", sourceEinzelhandelGross), sourceEinzelhandelGross));
-                copy.setEinzelhandelGross(copyEinzelhandelGross);
-            } else {
-                copy.einzelhandelGross = null;
+            {
+                Boolean einzelhandelGrossShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.einzelhandelGross!= null));
+                if (einzelhandelGrossShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceEinzelhandelGross;
+                    sourceEinzelhandelGross = this.getEinzelhandelGross();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyEinzelhandelGross = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "einzelhandelGross", sourceEinzelhandelGross), sourceEinzelhandelGross, (this.einzelhandelGross!= null)));
+                    copy.setEinzelhandelGross(copyEinzelhandelGross);
+                } else {
+                    if (einzelhandelGrossShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.einzelhandelGross = null;
+                    }
+                }
             }
-            if (this.einzelhandelKlein!= null) {
-                JAXBElement<Object> sourceEinzelhandelKlein;
-                sourceEinzelhandelKlein = this.getEinzelhandelKlein();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyEinzelhandelKlein = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "einzelhandelKlein", sourceEinzelhandelKlein), sourceEinzelhandelKlein));
-                copy.setEinzelhandelKlein(copyEinzelhandelKlein);
-            } else {
-                copy.einzelhandelKlein = null;
+            {
+                Boolean einzelhandelKleinShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.einzelhandelKlein!= null));
+                if (einzelhandelKleinShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceEinzelhandelKlein;
+                    sourceEinzelhandelKlein = this.getEinzelhandelKlein();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyEinzelhandelKlein = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "einzelhandelKlein", sourceEinzelhandelKlein), sourceEinzelhandelKlein, (this.einzelhandelKlein!= null)));
+                    copy.setEinzelhandelKlein(copyEinzelhandelKlein);
+                } else {
+                    if (einzelhandelKleinShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.einzelhandelKlein = null;
+                    }
+                }
             }
-            if (this.garagen!= null) {
-                JAXBElement<Object> sourceGaragen;
-                sourceGaragen = this.getGaragen();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyGaragen = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "garagen", sourceGaragen), sourceGaragen));
-                copy.setGaragen(copyGaragen);
-            } else {
-                copy.garagen = null;
+            {
+                Boolean garagenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.garagen!= null));
+                if (garagenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceGaragen;
+                    sourceGaragen = this.getGaragen();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyGaragen = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "garagen", sourceGaragen), sourceGaragen, (this.garagen!= null)));
+                    copy.setGaragen(copyGaragen);
+                } else {
+                    if (garagenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.garagen = null;
+                    }
+                }
             }
-            if (this.garten!= null) {
-                JAXBElement<Object> sourceGarten;
-                sourceGarten = this.getGarten();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyGarten = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "garten", sourceGarten), sourceGarten));
-                copy.setGarten(copyGarten);
-            } else {
-                copy.garten = null;
+            {
+                Boolean gartenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.garten!= null));
+                if (gartenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceGarten;
+                    sourceGarten = this.getGarten();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyGarten = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "garten", sourceGarten), sourceGarten, (this.garten!= null)));
+                    copy.setGarten(copyGarten);
+                } else {
+                    if (gartenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.garten = null;
+                    }
+                }
             }
-            if (this.gastronomie!= null) {
-                JAXBElement<Object> sourceGastronomie;
-                sourceGastronomie = this.getGastronomie();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyGastronomie = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "gastronomie", sourceGastronomie), sourceGastronomie));
-                copy.setGastronomie(copyGastronomie);
-            } else {
-                copy.gastronomie = null;
+            {
+                Boolean gastronomieShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gastronomie!= null));
+                if (gastronomieShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceGastronomie;
+                    sourceGastronomie = this.getGastronomie();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyGastronomie = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "gastronomie", sourceGastronomie), sourceGastronomie, (this.gastronomie!= null)));
+                    copy.setGastronomie(copyGastronomie);
+                } else {
+                    if (gastronomieShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gastronomie = null;
+                    }
+                }
             }
-            if (this.gewerbe!= null) {
-                JAXBElement<Object> sourceGewerbe;
-                sourceGewerbe = this.getGewerbe();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyGewerbe = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "gewerbe", sourceGewerbe), sourceGewerbe));
-                copy.setGewerbe(copyGewerbe);
-            } else {
-                copy.gewerbe = null;
+            {
+                Boolean gewerbeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gewerbe!= null));
+                if (gewerbeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceGewerbe;
+                    sourceGewerbe = this.getGewerbe();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyGewerbe = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "gewerbe", sourceGewerbe), sourceGewerbe, (this.gewerbe!= null)));
+                    copy.setGewerbe(copyGewerbe);
+                } else {
+                    if (gewerbeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gewerbe = null;
+                    }
+                }
             }
-            if (this.hotel!= null) {
-                JAXBElement<Object> sourceHotel;
-                sourceHotel = this.getHotel();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyHotel = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "hotel", sourceHotel), sourceHotel));
-                copy.setHotel(copyHotel);
-            } else {
-                copy.hotel = null;
+            {
+                Boolean hotelShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hotel!= null));
+                if (hotelShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceHotel;
+                    sourceHotel = this.getHotel();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyHotel = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "hotel", sourceHotel), sourceHotel, (this.hotel!= null)));
+                    copy.setHotel(copyHotel);
+                } else {
+                    if (hotelShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hotel = null;
+                    }
+                }
             }
-            if (this.industrie!= null) {
-                JAXBElement<Object> sourceIndustrie;
-                sourceIndustrie = this.getIndustrie();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyIndustrie = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "industrie", sourceIndustrie), sourceIndustrie));
-                copy.setIndustrie(copyIndustrie);
-            } else {
-                copy.industrie = null;
+            {
+                Boolean industrieShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.industrie!= null));
+                if (industrieShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceIndustrie;
+                    sourceIndustrie = this.getIndustrie();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyIndustrie = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "industrie", sourceIndustrie), sourceIndustrie, (this.industrie!= null)));
+                    copy.setIndustrie(copyIndustrie);
+                } else {
+                    if (industrieShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.industrie = null;
+                    }
+                }
             }
-            if (this.keineBebauung!= null) {
-                JAXBElement<Object> sourceKeineBebauung;
-                sourceKeineBebauung = this.getKeineBebauung();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyKeineBebauung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "keineBebauung", sourceKeineBebauung), sourceKeineBebauung));
-                copy.setKeineBebauung(copyKeineBebauung);
-            } else {
-                copy.keineBebauung = null;
+            {
+                Boolean keineBebauungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keineBebauung!= null));
+                if (keineBebauungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceKeineBebauung;
+                    sourceKeineBebauung = this.getKeineBebauung();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyKeineBebauung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "keineBebauung", sourceKeineBebauung), sourceKeineBebauung, (this.keineBebauung!= null)));
+                    copy.setKeineBebauung(copyKeineBebauung);
+                } else {
+                    if (keineBebauungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.keineBebauung = null;
+                    }
+                }
             }
-            if (this.kleingewerbe!= null) {
-                JAXBElement<Object> sourceKleingewerbe;
-                sourceKleingewerbe = this.getKleingewerbe();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyKleingewerbe = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "kleingewerbe", sourceKleingewerbe), sourceKleingewerbe));
-                copy.setKleingewerbe(copyKleingewerbe);
-            } else {
-                copy.kleingewerbe = null;
+            {
+                Boolean kleingewerbeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kleingewerbe!= null));
+                if (kleingewerbeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceKleingewerbe;
+                    sourceKleingewerbe = this.getKleingewerbe();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyKleingewerbe = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "kleingewerbe", sourceKleingewerbe), sourceKleingewerbe, (this.kleingewerbe!= null)));
+                    copy.setKleingewerbe(copyKleingewerbe);
+                } else {
+                    if (kleingewerbeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.kleingewerbe = null;
+                    }
+                }
             }
-            if (this.lager!= null) {
-                JAXBElement<Object> sourceLager;
-                sourceLager = this.getLager();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyLager = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "lager", sourceLager), sourceLager));
-                copy.setLager(copyLager);
-            } else {
-                copy.lager = null;
+            {
+                Boolean lagerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lager!= null));
+                if (lagerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceLager;
+                    sourceLager = this.getLager();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyLager = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "lager", sourceLager), sourceLager, (this.lager!= null)));
+                    copy.setLager(copyLager);
+                } else {
+                    if (lagerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.lager = null;
+                    }
+                }
             }
-            if (this.mehrfamilienhaus!= null) {
-                JAXBElement<Object> sourceMehrfamilienhaus;
-                sourceMehrfamilienhaus = this.getMehrfamilienhaus();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyMehrfamilienhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "mehrfamilienhaus", sourceMehrfamilienhaus), sourceMehrfamilienhaus));
-                copy.setMehrfamilienhaus(copyMehrfamilienhaus);
-            } else {
-                copy.mehrfamilienhaus = null;
+            {
+                Boolean mehrfamilienhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mehrfamilienhaus!= null));
+                if (mehrfamilienhausShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceMehrfamilienhaus;
+                    sourceMehrfamilienhaus = this.getMehrfamilienhaus();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyMehrfamilienhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "mehrfamilienhaus", sourceMehrfamilienhaus), sourceMehrfamilienhaus, (this.mehrfamilienhaus!= null)));
+                    copy.setMehrfamilienhaus(copyMehrfamilienhaus);
+                } else {
+                    if (mehrfamilienhausShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.mehrfamilienhaus = null;
+                    }
+                }
             }
-            if (this.obstpflanzung!= null) {
-                JAXBElement<Object> sourceObstpflanzung;
-                sourceObstpflanzung = this.getObstpflanzung();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyObstpflanzung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "obstpflanzung", sourceObstpflanzung), sourceObstpflanzung));
-                copy.setObstpflanzung(copyObstpflanzung);
-            } else {
-                copy.obstpflanzung = null;
+            {
+                Boolean obstpflanzungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.obstpflanzung!= null));
+                if (obstpflanzungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceObstpflanzung;
+                    sourceObstpflanzung = this.getObstpflanzung();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyObstpflanzung = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "obstpflanzung", sourceObstpflanzung), sourceObstpflanzung, (this.obstpflanzung!= null)));
+                    copy.setObstpflanzung(copyObstpflanzung);
+                } else {
+                    if (obstpflanzungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.obstpflanzung = null;
+                    }
+                }
             }
-            if (this.parkhaus!= null) {
-                JAXBElement<Object> sourceParkhaus;
-                sourceParkhaus = this.getParkhaus();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyParkhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "parkhaus", sourceParkhaus), sourceParkhaus));
-                copy.setParkhaus(copyParkhaus);
-            } else {
-                copy.parkhaus = null;
+            {
+                Boolean parkhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.parkhaus!= null));
+                if (parkhausShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceParkhaus;
+                    sourceParkhaus = this.getParkhaus();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyParkhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "parkhaus", sourceParkhaus), sourceParkhaus, (this.parkhaus!= null)));
+                    copy.setParkhaus(copyParkhaus);
+                } else {
+                    if (parkhausShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.parkhaus = null;
+                    }
+                }
             }
-            if (this.produktion!= null) {
-                JAXBElement<Object> sourceProduktion;
-                sourceProduktion = this.getProduktion();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyProduktion = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "produktion", sourceProduktion), sourceProduktion));
-                copy.setProduktion(copyProduktion);
-            } else {
-                copy.produktion = null;
+            {
+                Boolean produktionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.produktion!= null));
+                if (produktionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceProduktion;
+                    sourceProduktion = this.getProduktion();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyProduktion = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "produktion", sourceProduktion), sourceProduktion, (this.produktion!= null)));
+                    copy.setProduktion(copyProduktion);
+                } else {
+                    if (produktionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.produktion = null;
+                    }
+                }
             }
-            if (this.reihenhaus!= null) {
-                JAXBElement<Object> sourceReihenhaus;
-                sourceReihenhaus = this.getReihenhaus();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyReihenhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "reihenhaus", sourceReihenhaus), sourceReihenhaus));
-                copy.setReihenhaus(copyReihenhaus);
-            } else {
-                copy.reihenhaus = null;
+            {
+                Boolean reihenhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.reihenhaus!= null));
+                if (reihenhausShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceReihenhaus;
+                    sourceReihenhaus = this.getReihenhaus();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyReihenhaus = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "reihenhaus", sourceReihenhaus), sourceReihenhaus, (this.reihenhaus!= null)));
+                    copy.setReihenhaus(copyReihenhaus);
+                } else {
+                    if (reihenhausShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.reihenhaus = null;
+                    }
+                }
             }
-            if (this.stellplaetze!= null) {
-                JAXBElement<Object> sourceStellplaetze;
-                sourceStellplaetze = this.getStellplaetze();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyStellplaetze = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "stellplaetze", sourceStellplaetze), sourceStellplaetze));
-                copy.setStellplaetze(copyStellplaetze);
-            } else {
-                copy.stellplaetze = null;
+            {
+                Boolean stellplaetzeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.stellplaetze!= null));
+                if (stellplaetzeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceStellplaetze;
+                    sourceStellplaetze = this.getStellplaetze();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyStellplaetze = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "stellplaetze", sourceStellplaetze), sourceStellplaetze, (this.stellplaetze!= null)));
+                    copy.setStellplaetze(copyStellplaetze);
+                } else {
+                    if (stellplaetzeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.stellplaetze = null;
+                    }
+                }
             }
-            if (this.villa!= null) {
-                JAXBElement<Object> sourceVilla;
-                sourceVilla = this.getVilla();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyVilla = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "villa", sourceVilla), sourceVilla));
-                copy.setVilla(copyVilla);
-            } else {
-                copy.villa = null;
+            {
+                Boolean villaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.villa!= null));
+                if (villaShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceVilla;
+                    sourceVilla = this.getVilla();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyVilla = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "villa", sourceVilla), sourceVilla, (this.villa!= null)));
+                    copy.setVilla(copyVilla);
+                } else {
+                    if (villaShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.villa = null;
+                    }
+                }
             }
-            if (this.wald!= null) {
-                JAXBElement<Object> sourceWald;
-                sourceWald = this.getWald();
-                @SuppressWarnings("unchecked")
-                JAXBElement<Object> copyWald = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "wald", sourceWald), sourceWald));
-                copy.setWald(copyWald);
-            } else {
-                copy.wald = null;
+            {
+                Boolean waldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wald!= null));
+                if (waldShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<Object> sourceWald;
+                    sourceWald = this.getWald();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<Object> copyWald = ((JAXBElement<Object> ) strategy.copy(LocatorUtils.property(locator, "wald", sourceWald), sourceWald, (this.wald!= null)));
+                    copy.setWald(copyWald);
+                } else {
+                    if (waldShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wald = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -1159,7 +1288,7 @@ public class GrundstueckEmpfohleneNutzung
         return new GrundstueckEmpfohleneNutzung();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -1172,7 +1301,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsAckerland = this.getAckerland();
             JAXBElement<Object> rhsAckerland;
             rhsAckerland = that.getAckerland();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ackerland", lhsAckerland), LocatorUtils.property(thatLocator, "ackerland", rhsAckerland), lhsAckerland, rhsAckerland)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ackerland", lhsAckerland), LocatorUtils.property(thatLocator, "ackerland", rhsAckerland), lhsAckerland, rhsAckerland, (this.ackerland!= null), (that.ackerland!= null))) {
                 return false;
             }
         }
@@ -1181,7 +1310,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsBauerwartungsland = this.getBauerwartungsland();
             JAXBElement<Object> rhsBauerwartungsland;
             rhsBauerwartungsland = that.getBauerwartungsland();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bauerwartungsland", lhsBauerwartungsland), LocatorUtils.property(thatLocator, "bauerwartungsland", rhsBauerwartungsland), lhsBauerwartungsland, rhsBauerwartungsland)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bauerwartungsland", lhsBauerwartungsland), LocatorUtils.property(thatLocator, "bauerwartungsland", rhsBauerwartungsland), lhsBauerwartungsland, rhsBauerwartungsland, (this.bauerwartungsland!= null), (that.bauerwartungsland!= null))) {
                 return false;
             }
         }
@@ -1190,7 +1319,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsBootsstaende = this.getBootsstaende();
             JAXBElement<Object> rhsBootsstaende;
             rhsBootsstaende = that.getBootsstaende();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bootsstaende", lhsBootsstaende), LocatorUtils.property(thatLocator, "bootsstaende", rhsBootsstaende), lhsBootsstaende, rhsBootsstaende)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bootsstaende", lhsBootsstaende), LocatorUtils.property(thatLocator, "bootsstaende", rhsBootsstaende), lhsBootsstaende, rhsBootsstaende, (this.bootsstaende!= null), (that.bootsstaende!= null))) {
                 return false;
             }
         }
@@ -1199,7 +1328,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsBuero = this.getBuero();
             JAXBElement<Object> rhsBuero;
             rhsBuero = that.getBuero();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "buero", lhsBuero), LocatorUtils.property(thatLocator, "buero", rhsBuero), lhsBuero, rhsBuero)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "buero", lhsBuero), LocatorUtils.property(thatLocator, "buero", rhsBuero), lhsBuero, rhsBuero, (this.buero!= null), (that.buero!= null))) {
                 return false;
             }
         }
@@ -1208,7 +1337,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsCamping = this.getCamping();
             JAXBElement<Object> rhsCamping;
             rhsCamping = that.getCamping();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "camping", lhsCamping), LocatorUtils.property(thatLocator, "camping", rhsCamping), lhsCamping, rhsCamping)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "camping", lhsCamping), LocatorUtils.property(thatLocator, "camping", rhsCamping), lhsCamping, rhsCamping, (this.camping!= null), (that.camping!= null))) {
                 return false;
             }
         }
@@ -1217,7 +1346,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsDoppelhaus = this.getDoppelhaus();
             JAXBElement<Object> rhsDoppelhaus;
             rhsDoppelhaus = that.getDoppelhaus();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "doppelhaus", lhsDoppelhaus), LocatorUtils.property(thatLocator, "doppelhaus", rhsDoppelhaus), lhsDoppelhaus, rhsDoppelhaus)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "doppelhaus", lhsDoppelhaus), LocatorUtils.property(thatLocator, "doppelhaus", rhsDoppelhaus), lhsDoppelhaus, rhsDoppelhaus, (this.doppelhaus!= null), (that.doppelhaus!= null))) {
                 return false;
             }
         }
@@ -1226,7 +1355,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsEinfamilienhaus = this.getEinfamilienhaus();
             JAXBElement<Object> rhsEinfamilienhaus;
             rhsEinfamilienhaus = that.getEinfamilienhaus();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "einfamilienhaus", lhsEinfamilienhaus), LocatorUtils.property(thatLocator, "einfamilienhaus", rhsEinfamilienhaus), lhsEinfamilienhaus, rhsEinfamilienhaus)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "einfamilienhaus", lhsEinfamilienhaus), LocatorUtils.property(thatLocator, "einfamilienhaus", rhsEinfamilienhaus), lhsEinfamilienhaus, rhsEinfamilienhaus, (this.einfamilienhaus!= null), (that.einfamilienhaus!= null))) {
                 return false;
             }
         }
@@ -1235,7 +1364,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsEinzelhandelGross = this.getEinzelhandelGross();
             JAXBElement<Object> rhsEinzelhandelGross;
             rhsEinzelhandelGross = that.getEinzelhandelGross();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "einzelhandelGross", lhsEinzelhandelGross), LocatorUtils.property(thatLocator, "einzelhandelGross", rhsEinzelhandelGross), lhsEinzelhandelGross, rhsEinzelhandelGross)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "einzelhandelGross", lhsEinzelhandelGross), LocatorUtils.property(thatLocator, "einzelhandelGross", rhsEinzelhandelGross), lhsEinzelhandelGross, rhsEinzelhandelGross, (this.einzelhandelGross!= null), (that.einzelhandelGross!= null))) {
                 return false;
             }
         }
@@ -1244,7 +1373,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsEinzelhandelKlein = this.getEinzelhandelKlein();
             JAXBElement<Object> rhsEinzelhandelKlein;
             rhsEinzelhandelKlein = that.getEinzelhandelKlein();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "einzelhandelKlein", lhsEinzelhandelKlein), LocatorUtils.property(thatLocator, "einzelhandelKlein", rhsEinzelhandelKlein), lhsEinzelhandelKlein, rhsEinzelhandelKlein)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "einzelhandelKlein", lhsEinzelhandelKlein), LocatorUtils.property(thatLocator, "einzelhandelKlein", rhsEinzelhandelKlein), lhsEinzelhandelKlein, rhsEinzelhandelKlein, (this.einzelhandelKlein!= null), (that.einzelhandelKlein!= null))) {
                 return false;
             }
         }
@@ -1253,7 +1382,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsGaragen = this.getGaragen();
             JAXBElement<Object> rhsGaragen;
             rhsGaragen = that.getGaragen();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "garagen", lhsGaragen), LocatorUtils.property(thatLocator, "garagen", rhsGaragen), lhsGaragen, rhsGaragen)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "garagen", lhsGaragen), LocatorUtils.property(thatLocator, "garagen", rhsGaragen), lhsGaragen, rhsGaragen, (this.garagen!= null), (that.garagen!= null))) {
                 return false;
             }
         }
@@ -1262,7 +1391,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsGarten = this.getGarten();
             JAXBElement<Object> rhsGarten;
             rhsGarten = that.getGarten();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "garten", lhsGarten), LocatorUtils.property(thatLocator, "garten", rhsGarten), lhsGarten, rhsGarten)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "garten", lhsGarten), LocatorUtils.property(thatLocator, "garten", rhsGarten), lhsGarten, rhsGarten, (this.garten!= null), (that.garten!= null))) {
                 return false;
             }
         }
@@ -1271,7 +1400,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsGastronomie = this.getGastronomie();
             JAXBElement<Object> rhsGastronomie;
             rhsGastronomie = that.getGastronomie();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastronomie", lhsGastronomie), LocatorUtils.property(thatLocator, "gastronomie", rhsGastronomie), lhsGastronomie, rhsGastronomie)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gastronomie", lhsGastronomie), LocatorUtils.property(thatLocator, "gastronomie", rhsGastronomie), lhsGastronomie, rhsGastronomie, (this.gastronomie!= null), (that.gastronomie!= null))) {
                 return false;
             }
         }
@@ -1280,7 +1409,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsGewerbe = this.getGewerbe();
             JAXBElement<Object> rhsGewerbe;
             rhsGewerbe = that.getGewerbe();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gewerbe", lhsGewerbe), LocatorUtils.property(thatLocator, "gewerbe", rhsGewerbe), lhsGewerbe, rhsGewerbe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gewerbe", lhsGewerbe), LocatorUtils.property(thatLocator, "gewerbe", rhsGewerbe), lhsGewerbe, rhsGewerbe, (this.gewerbe!= null), (that.gewerbe!= null))) {
                 return false;
             }
         }
@@ -1289,7 +1418,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsHotel = this.getHotel();
             JAXBElement<Object> rhsHotel;
             rhsHotel = that.getHotel();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hotel", lhsHotel), LocatorUtils.property(thatLocator, "hotel", rhsHotel), lhsHotel, rhsHotel)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hotel", lhsHotel), LocatorUtils.property(thatLocator, "hotel", rhsHotel), lhsHotel, rhsHotel, (this.hotel!= null), (that.hotel!= null))) {
                 return false;
             }
         }
@@ -1298,7 +1427,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsIndustrie = this.getIndustrie();
             JAXBElement<Object> rhsIndustrie;
             rhsIndustrie = that.getIndustrie();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "industrie", lhsIndustrie), LocatorUtils.property(thatLocator, "industrie", rhsIndustrie), lhsIndustrie, rhsIndustrie)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "industrie", lhsIndustrie), LocatorUtils.property(thatLocator, "industrie", rhsIndustrie), lhsIndustrie, rhsIndustrie, (this.industrie!= null), (that.industrie!= null))) {
                 return false;
             }
         }
@@ -1307,7 +1436,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsKeineBebauung = this.getKeineBebauung();
             JAXBElement<Object> rhsKeineBebauung;
             rhsKeineBebauung = that.getKeineBebauung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "keineBebauung", lhsKeineBebauung), LocatorUtils.property(thatLocator, "keineBebauung", rhsKeineBebauung), lhsKeineBebauung, rhsKeineBebauung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "keineBebauung", lhsKeineBebauung), LocatorUtils.property(thatLocator, "keineBebauung", rhsKeineBebauung), lhsKeineBebauung, rhsKeineBebauung, (this.keineBebauung!= null), (that.keineBebauung!= null))) {
                 return false;
             }
         }
@@ -1316,7 +1445,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsKleingewerbe = this.getKleingewerbe();
             JAXBElement<Object> rhsKleingewerbe;
             rhsKleingewerbe = that.getKleingewerbe();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kleingewerbe", lhsKleingewerbe), LocatorUtils.property(thatLocator, "kleingewerbe", rhsKleingewerbe), lhsKleingewerbe, rhsKleingewerbe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kleingewerbe", lhsKleingewerbe), LocatorUtils.property(thatLocator, "kleingewerbe", rhsKleingewerbe), lhsKleingewerbe, rhsKleingewerbe, (this.kleingewerbe!= null), (that.kleingewerbe!= null))) {
                 return false;
             }
         }
@@ -1325,7 +1454,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsLager = this.getLager();
             JAXBElement<Object> rhsLager;
             rhsLager = that.getLager();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "lager", lhsLager), LocatorUtils.property(thatLocator, "lager", rhsLager), lhsLager, rhsLager)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "lager", lhsLager), LocatorUtils.property(thatLocator, "lager", rhsLager), lhsLager, rhsLager, (this.lager!= null), (that.lager!= null))) {
                 return false;
             }
         }
@@ -1334,7 +1463,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsMehrfamilienhaus = this.getMehrfamilienhaus();
             JAXBElement<Object> rhsMehrfamilienhaus;
             rhsMehrfamilienhaus = that.getMehrfamilienhaus();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "mehrfamilienhaus", lhsMehrfamilienhaus), LocatorUtils.property(thatLocator, "mehrfamilienhaus", rhsMehrfamilienhaus), lhsMehrfamilienhaus, rhsMehrfamilienhaus)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "mehrfamilienhaus", lhsMehrfamilienhaus), LocatorUtils.property(thatLocator, "mehrfamilienhaus", rhsMehrfamilienhaus), lhsMehrfamilienhaus, rhsMehrfamilienhaus, (this.mehrfamilienhaus!= null), (that.mehrfamilienhaus!= null))) {
                 return false;
             }
         }
@@ -1343,7 +1472,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsObstpflanzung = this.getObstpflanzung();
             JAXBElement<Object> rhsObstpflanzung;
             rhsObstpflanzung = that.getObstpflanzung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "obstpflanzung", lhsObstpflanzung), LocatorUtils.property(thatLocator, "obstpflanzung", rhsObstpflanzung), lhsObstpflanzung, rhsObstpflanzung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "obstpflanzung", lhsObstpflanzung), LocatorUtils.property(thatLocator, "obstpflanzung", rhsObstpflanzung), lhsObstpflanzung, rhsObstpflanzung, (this.obstpflanzung!= null), (that.obstpflanzung!= null))) {
                 return false;
             }
         }
@@ -1352,7 +1481,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsParkhaus = this.getParkhaus();
             JAXBElement<Object> rhsParkhaus;
             rhsParkhaus = that.getParkhaus();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "parkhaus", lhsParkhaus), LocatorUtils.property(thatLocator, "parkhaus", rhsParkhaus), lhsParkhaus, rhsParkhaus)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "parkhaus", lhsParkhaus), LocatorUtils.property(thatLocator, "parkhaus", rhsParkhaus), lhsParkhaus, rhsParkhaus, (this.parkhaus!= null), (that.parkhaus!= null))) {
                 return false;
             }
         }
@@ -1361,7 +1490,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsProduktion = this.getProduktion();
             JAXBElement<Object> rhsProduktion;
             rhsProduktion = that.getProduktion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "produktion", lhsProduktion), LocatorUtils.property(thatLocator, "produktion", rhsProduktion), lhsProduktion, rhsProduktion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "produktion", lhsProduktion), LocatorUtils.property(thatLocator, "produktion", rhsProduktion), lhsProduktion, rhsProduktion, (this.produktion!= null), (that.produktion!= null))) {
                 return false;
             }
         }
@@ -1370,7 +1499,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsReihenhaus = this.getReihenhaus();
             JAXBElement<Object> rhsReihenhaus;
             rhsReihenhaus = that.getReihenhaus();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "reihenhaus", lhsReihenhaus), LocatorUtils.property(thatLocator, "reihenhaus", rhsReihenhaus), lhsReihenhaus, rhsReihenhaus)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "reihenhaus", lhsReihenhaus), LocatorUtils.property(thatLocator, "reihenhaus", rhsReihenhaus), lhsReihenhaus, rhsReihenhaus, (this.reihenhaus!= null), (that.reihenhaus!= null))) {
                 return false;
             }
         }
@@ -1379,7 +1508,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsStellplaetze = this.getStellplaetze();
             JAXBElement<Object> rhsStellplaetze;
             rhsStellplaetze = that.getStellplaetze();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "stellplaetze", lhsStellplaetze), LocatorUtils.property(thatLocator, "stellplaetze", rhsStellplaetze), lhsStellplaetze, rhsStellplaetze)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "stellplaetze", lhsStellplaetze), LocatorUtils.property(thatLocator, "stellplaetze", rhsStellplaetze), lhsStellplaetze, rhsStellplaetze, (this.stellplaetze!= null), (that.stellplaetze!= null))) {
                 return false;
             }
         }
@@ -1388,7 +1517,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsVilla = this.getVilla();
             JAXBElement<Object> rhsVilla;
             rhsVilla = that.getVilla();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "villa", lhsVilla), LocatorUtils.property(thatLocator, "villa", rhsVilla), lhsVilla, rhsVilla)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "villa", lhsVilla), LocatorUtils.property(thatLocator, "villa", rhsVilla), lhsVilla, rhsVilla, (this.villa!= null), (that.villa!= null))) {
                 return false;
             }
         }
@@ -1397,7 +1526,7 @@ public class GrundstueckEmpfohleneNutzung
             lhsWald = this.getWald();
             JAXBElement<Object> rhsWald;
             rhsWald = that.getWald();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wald", lhsWald), LocatorUtils.property(thatLocator, "wald", rhsWald), lhsWald, rhsWald)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wald", lhsWald), LocatorUtils.property(thatLocator, "wald", rhsWald), lhsWald, rhsWald, (this.wald!= null), (that.wald!= null))) {
                 return false;
             }
         }
@@ -1405,7 +1534,7 @@ public class GrundstueckEmpfohleneNutzung
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -41,8 +41,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnergieausweisTyp")
-public class EnergieausweisTyp
-    implements Cloneable, CopyTo, Equals, ToString
+public class EnergieausweisTyp implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "Energieausweistyp")
@@ -126,34 +125,34 @@ public class EnergieausweisTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             EnergieausweistypTyp theEnergieausweistyp;
             theEnergieausweistyp = this.getEnergieausweistyp();
-            strategy.appendField(locator, this, "energieausweistyp", buffer, theEnergieausweistyp);
+            strategy.appendField(locator, this, "energieausweistyp", buffer, theEnergieausweistyp, (this.energieausweistyp!= null));
         }
         {
             BigDecimal theEnergieverbrauchskennwert;
             theEnergieverbrauchskennwert = this.getEnergieverbrauchskennwert();
-            strategy.appendField(locator, this, "energieverbrauchskennwert", buffer, theEnergieverbrauchskennwert);
+            strategy.appendField(locator, this, "energieverbrauchskennwert", buffer, theEnergieverbrauchskennwert, (this.energieverbrauchskennwert!= null));
         }
         {
             Boolean theWarmwasserEnthalten;
             theWarmwasserEnthalten = this.isWarmwasserEnthalten();
-            strategy.appendField(locator, this, "warmwasserEnthalten", buffer, theWarmwasserEnthalten);
+            strategy.appendField(locator, this, "warmwasserEnthalten", buffer, theWarmwasserEnthalten, (this.warmwasserEnthalten!= null));
         }
         return buffer;
     }
@@ -163,37 +162,52 @@ public class EnergieausweisTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof EnergieausweisTyp) {
             final EnergieausweisTyp copy = ((EnergieausweisTyp) draftCopy);
-            if (this.energieausweistyp!= null) {
-                EnergieausweistypTyp sourceEnergieausweistyp;
-                sourceEnergieausweistyp = this.getEnergieausweistyp();
-                EnergieausweistypTyp copyEnergieausweistyp = ((EnergieausweistypTyp) strategy.copy(LocatorUtils.property(locator, "energieausweistyp", sourceEnergieausweistyp), sourceEnergieausweistyp));
-                copy.setEnergieausweistyp(copyEnergieausweistyp);
-            } else {
-                copy.energieausweistyp = null;
+            {
+                Boolean energieausweistypShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energieausweistyp!= null));
+                if (energieausweistypShouldBeCopiedAndSet == Boolean.TRUE) {
+                    EnergieausweistypTyp sourceEnergieausweistyp;
+                    sourceEnergieausweistyp = this.getEnergieausweistyp();
+                    EnergieausweistypTyp copyEnergieausweistyp = ((EnergieausweistypTyp) strategy.copy(LocatorUtils.property(locator, "energieausweistyp", sourceEnergieausweistyp), sourceEnergieausweistyp, (this.energieausweistyp!= null)));
+                    copy.setEnergieausweistyp(copyEnergieausweistyp);
+                } else {
+                    if (energieausweistypShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.energieausweistyp = null;
+                    }
+                }
             }
-            if (this.energieverbrauchskennwert!= null) {
-                BigDecimal sourceEnergieverbrauchskennwert;
-                sourceEnergieverbrauchskennwert = this.getEnergieverbrauchskennwert();
-                BigDecimal copyEnergieverbrauchskennwert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "energieverbrauchskennwert", sourceEnergieverbrauchskennwert), sourceEnergieverbrauchskennwert));
-                copy.setEnergieverbrauchskennwert(copyEnergieverbrauchskennwert);
-            } else {
-                copy.energieverbrauchskennwert = null;
+            {
+                Boolean energieverbrauchskennwertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energieverbrauchskennwert!= null));
+                if (energieverbrauchskennwertShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceEnergieverbrauchskennwert;
+                    sourceEnergieverbrauchskennwert = this.getEnergieverbrauchskennwert();
+                    BigDecimal copyEnergieverbrauchskennwert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "energieverbrauchskennwert", sourceEnergieverbrauchskennwert), sourceEnergieverbrauchskennwert, (this.energieverbrauchskennwert!= null)));
+                    copy.setEnergieverbrauchskennwert(copyEnergieverbrauchskennwert);
+                } else {
+                    if (energieverbrauchskennwertShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.energieverbrauchskennwert = null;
+                    }
+                }
             }
-            if (this.warmwasserEnthalten!= null) {
-                Boolean sourceWarmwasserEnthalten;
-                sourceWarmwasserEnthalten = this.isWarmwasserEnthalten();
-                Boolean copyWarmwasserEnthalten = ((Boolean) strategy.copy(LocatorUtils.property(locator, "warmwasserEnthalten", sourceWarmwasserEnthalten), sourceWarmwasserEnthalten));
-                copy.setWarmwasserEnthalten(copyWarmwasserEnthalten);
-            } else {
-                copy.warmwasserEnthalten = null;
+            {
+                Boolean warmwasserEnthaltenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.warmwasserEnthalten!= null));
+                if (warmwasserEnthaltenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWarmwasserEnthalten;
+                    sourceWarmwasserEnthalten = this.isWarmwasserEnthalten();
+                    Boolean copyWarmwasserEnthalten = ((Boolean) strategy.copy(LocatorUtils.property(locator, "warmwasserEnthalten", sourceWarmwasserEnthalten), sourceWarmwasserEnthalten, (this.warmwasserEnthalten!= null)));
+                    copy.setWarmwasserEnthalten(copyWarmwasserEnthalten);
+                } else {
+                    if (warmwasserEnthaltenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.warmwasserEnthalten = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -203,7 +217,7 @@ public class EnergieausweisTyp
         return new EnergieausweisTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -216,7 +230,7 @@ public class EnergieausweisTyp
             lhsEnergieausweistyp = this.getEnergieausweistyp();
             EnergieausweistypTyp rhsEnergieausweistyp;
             rhsEnergieausweistyp = that.getEnergieausweistyp();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "energieausweistyp", lhsEnergieausweistyp), LocatorUtils.property(thatLocator, "energieausweistyp", rhsEnergieausweistyp), lhsEnergieausweistyp, rhsEnergieausweistyp)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "energieausweistyp", lhsEnergieausweistyp), LocatorUtils.property(thatLocator, "energieausweistyp", rhsEnergieausweistyp), lhsEnergieausweistyp, rhsEnergieausweistyp, (this.energieausweistyp!= null), (that.energieausweistyp!= null))) {
                 return false;
             }
         }
@@ -225,7 +239,7 @@ public class EnergieausweisTyp
             lhsEnergieverbrauchskennwert = this.getEnergieverbrauchskennwert();
             BigDecimal rhsEnergieverbrauchskennwert;
             rhsEnergieverbrauchskennwert = that.getEnergieverbrauchskennwert();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "energieverbrauchskennwert", lhsEnergieverbrauchskennwert), LocatorUtils.property(thatLocator, "energieverbrauchskennwert", rhsEnergieverbrauchskennwert), lhsEnergieverbrauchskennwert, rhsEnergieverbrauchskennwert)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "energieverbrauchskennwert", lhsEnergieverbrauchskennwert), LocatorUtils.property(thatLocator, "energieverbrauchskennwert", rhsEnergieverbrauchskennwert), lhsEnergieverbrauchskennwert, rhsEnergieverbrauchskennwert, (this.energieverbrauchskennwert!= null), (that.energieverbrauchskennwert!= null))) {
                 return false;
             }
         }
@@ -234,7 +248,7 @@ public class EnergieausweisTyp
             lhsWarmwasserEnthalten = this.isWarmwasserEnthalten();
             Boolean rhsWarmwasserEnthalten;
             rhsWarmwasserEnthalten = that.isWarmwasserEnthalten();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "warmwasserEnthalten", lhsWarmwasserEnthalten), LocatorUtils.property(thatLocator, "warmwasserEnthalten", rhsWarmwasserEnthalten), lhsWarmwasserEnthalten, rhsWarmwasserEnthalten)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "warmwasserEnthalten", lhsWarmwasserEnthalten), LocatorUtils.property(thatLocator, "warmwasserEnthalten", rhsWarmwasserEnthalten), lhsWarmwasserEnthalten, rhsWarmwasserEnthalten, (this.warmwasserEnthalten!= null), (that.warmwasserEnthalten!= null))) {
                 return false;
             }
         }
@@ -242,7 +256,7 @@ public class EnergieausweisTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

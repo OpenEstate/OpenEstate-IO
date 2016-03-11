@@ -1,6 +1,26 @@
 Changelog for OpenEstate-IO
 ===========================
 
+
+1.1 (11 Mar 2016)
+-----------------
+
+### bugfixes
+
+-   `xsd:positiveDecimal` / `xsd:positiveInteger` values are not printed
+    correctly in **ImmoXML** / **DaftIE** / **OpenImmo** format
+-   fixed printing of `posdecimal` / `xsd:positiveInteger` values in
+    **ImmoXML** / **OpenImmo** format
+-   numeric values are not strictly parsed in **IDX** / **ImmoXML** /
+    **IS24-CSV** / **OpenImmo** / **Trovit** format
+
+### updates
+
+-   updated `slf4j` libraries to version 1.7.18
+-   updated `jaxb2-basics` libraries to version 0.11.0 and regenerated JAXB
+    classes
+
+
 1.0 (13 Dec 2015)
 -----------------
 

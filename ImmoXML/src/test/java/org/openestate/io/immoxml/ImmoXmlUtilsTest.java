@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 OpenEstate.org.
+ * Copyright 2015-2016 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.openestate.io.immoxml;
 
 import java.math.BigDecimal;
@@ -103,9 +102,8 @@ public class ImmoXmlUtilsTest
     Assert.assertEquals(
       new BigDecimal( "2.5" ), ImmoXmlUtils.parseDecimal( "2,5" ) );
     Assert.assertEquals(
-      new BigDecimal( "2" ), ImmoXmlUtils.parseDecimal( "2 MM" ).setScale( 0 ) );
-    Assert.assertEquals(
       null, ImmoXmlUtils.parseDecimal( "" ) );
+
     try
     {
       Assert.assertEquals(
@@ -115,10 +113,20 @@ public class ImmoXmlUtilsTest
     catch (IllegalArgumentException ex)
     {
     }
+
     try
     {
       Assert.assertEquals(
-        null, ImmoXmlUtils.parseDecimal( "," ) );
+        null, ImmoXmlUtils.parseDecimal( "." ) );
+      Assert.fail( "An exception should have been thrown." );
+    }
+    catch (IllegalArgumentException ex)
+    {
+    }
+
+    try
+    {
+      ImmoXmlUtils.parseDecimal( "2 MM" );
       Assert.fail( "An exception should have been thrown." );
     }
     catch (IllegalArgumentException ex)

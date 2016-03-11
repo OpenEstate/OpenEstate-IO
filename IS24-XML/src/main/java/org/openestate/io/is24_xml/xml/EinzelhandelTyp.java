@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -64,7 +64,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 })
 public class EinzelhandelTyp
     extends GewerbeImmoBaseTyp
-    implements Cloneable, CopyTo, Equals, ToString
+    implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
@@ -388,80 +388,80 @@ public class EinzelhandelTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
             VermarktungGewerbeTyp theVermarktung;
             theVermarktung = this.getVermarktung();
-            strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung);
+            strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung, (this.vermarktung!= null));
         }
         {
             JAXBElement<HebeanlageTyp> theLastenaufzug;
             theLastenaufzug = this.getLastenaufzug();
-            strategy.appendField(locator, this, "lastenaufzug", buffer, theLastenaufzug);
+            strategy.appendField(locator, this, "lastenaufzug", buffer, theLastenaufzug, (this.lastenaufzug!= null));
         }
         {
             EinzelhandelKategorienTyp theObjektkategorie2;
             theObjektkategorie2 = this.getObjektkategorie2();
-            strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
+            strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2, (this.objektkategorie2 != null));
         }
         {
             BigDecimal theVerkaufsflaeche;
             theVerkaufsflaeche = this.getVerkaufsflaeche();
-            strategy.appendField(locator, this, "verkaufsflaeche", buffer, theVerkaufsflaeche);
+            strategy.appendField(locator, this, "verkaufsflaeche", buffer, theVerkaufsflaeche, (this.verkaufsflaeche!= null));
         }
         {
             BodenbelagTyp theBodenbelag;
             theBodenbelag = this.getBodenbelag();
-            strategy.appendField(locator, this, "bodenbelag", buffer, theBodenbelag);
+            strategy.appendField(locator, this, "bodenbelag", buffer, theBodenbelag, (this.bodenbelag!= null));
         }
         {
             BigDecimal theSchaufensterfront;
             theSchaufensterfront = this.getSchaufensterfront();
-            strategy.appendField(locator, this, "schaufensterfront", buffer, theSchaufensterfront);
+            strategy.appendField(locator, this, "schaufensterfront", buffer, theSchaufensterfront, (this.schaufensterfront!= null));
         }
         {
             BigDecimal theDeckenlast;
             theDeckenlast = this.getDeckenlast();
-            strategy.appendField(locator, this, "deckenlast", buffer, theDeckenlast);
+            strategy.appendField(locator, this, "deckenlast", buffer, theDeckenlast, (this.deckenlast!= null));
         }
         {
             LageartTyp theLageart;
             theLageart = this.getLageart();
-            strategy.appendField(locator, this, "lageart", buffer, theLageart);
+            strategy.appendField(locator, this, "lageart", buffer, theLageart, (this.lageart!= null));
         }
         {
             Boolean theRampe;
             theRampe = this.isRampe();
-            strategy.appendField(locator, this, "rampe", buffer, theRampe);
+            strategy.appendField(locator, this, "rampe", buffer, theRampe, (this.rampe!= null));
         }
         {
             ZulieferungTyp theZulieferung;
             theZulieferung = this.getZulieferung();
-            strategy.appendField(locator, this, "zulieferung", buffer, theZulieferung);
+            strategy.appendField(locator, this, "zulieferung", buffer, theZulieferung, (this.zulieferung!= null));
         }
         {
             Boolean theDenkmalschutzobjekt;
             theDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
-            strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt);
+            strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null));
         }
         {
             Boolean theKeller;
             theKeller = this.isKeller();
-            strategy.appendField(locator, this, "keller", buffer, theKeller);
+            strategy.appendField(locator, this, "keller", buffer, theKeller, (this.keller!= null));
         }
         return buffer;
     }
@@ -471,111 +471,171 @@ public class EinzelhandelTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
         if (draftCopy instanceof EinzelhandelTyp) {
             final EinzelhandelTyp copy = ((EinzelhandelTyp) draftCopy);
-            if (this.vermarktung!= null) {
-                VermarktungGewerbeTyp sourceVermarktung;
-                sourceVermarktung = this.getVermarktung();
-                VermarktungGewerbeTyp copyVermarktung = ((VermarktungGewerbeTyp) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung));
-                copy.setVermarktung(copyVermarktung);
-            } else {
-                copy.vermarktung = null;
+            {
+                Boolean vermarktungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vermarktung!= null));
+                if (vermarktungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    VermarktungGewerbeTyp sourceVermarktung;
+                    sourceVermarktung = this.getVermarktung();
+                    VermarktungGewerbeTyp copyVermarktung = ((VermarktungGewerbeTyp) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung, (this.vermarktung!= null)));
+                    copy.setVermarktung(copyVermarktung);
+                } else {
+                    if (vermarktungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.vermarktung = null;
+                    }
+                }
             }
-            if (this.lastenaufzug!= null) {
-                JAXBElement<HebeanlageTyp> sourceLastenaufzug;
-                sourceLastenaufzug = this.getLastenaufzug();
-                @SuppressWarnings("unchecked")
-                JAXBElement<HebeanlageTyp> copyLastenaufzug = ((JAXBElement<HebeanlageTyp> ) strategy.copy(LocatorUtils.property(locator, "lastenaufzug", sourceLastenaufzug), sourceLastenaufzug));
-                copy.setLastenaufzug(copyLastenaufzug);
-            } else {
-                copy.lastenaufzug = null;
+            {
+                Boolean lastenaufzugShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lastenaufzug!= null));
+                if (lastenaufzugShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<HebeanlageTyp> sourceLastenaufzug;
+                    sourceLastenaufzug = this.getLastenaufzug();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<HebeanlageTyp> copyLastenaufzug = ((JAXBElement<HebeanlageTyp> ) strategy.copy(LocatorUtils.property(locator, "lastenaufzug", sourceLastenaufzug), sourceLastenaufzug, (this.lastenaufzug!= null)));
+                    copy.setLastenaufzug(copyLastenaufzug);
+                } else {
+                    if (lastenaufzugShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.lastenaufzug = null;
+                    }
+                }
             }
-            if (this.objektkategorie2 != null) {
-                EinzelhandelKategorienTyp sourceObjektkategorie2;
-                sourceObjektkategorie2 = this.getObjektkategorie2();
-                EinzelhandelKategorienTyp copyObjektkategorie2 = ((EinzelhandelKategorienTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2));
-                copy.setObjektkategorie2(copyObjektkategorie2);
-            } else {
-                copy.objektkategorie2 = null;
+            {
+                Boolean objektkategorie2ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektkategorie2 != null));
+                if (objektkategorie2ShouldBeCopiedAndSet == Boolean.TRUE) {
+                    EinzelhandelKategorienTyp sourceObjektkategorie2;
+                    sourceObjektkategorie2 = this.getObjektkategorie2();
+                    EinzelhandelKategorienTyp copyObjektkategorie2 = ((EinzelhandelKategorienTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2, (this.objektkategorie2 != null)));
+                    copy.setObjektkategorie2(copyObjektkategorie2);
+                } else {
+                    if (objektkategorie2ShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.objektkategorie2 = null;
+                    }
+                }
             }
-            if (this.verkaufsflaeche!= null) {
-                BigDecimal sourceVerkaufsflaeche;
-                sourceVerkaufsflaeche = this.getVerkaufsflaeche();
-                BigDecimal copyVerkaufsflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verkaufsflaeche", sourceVerkaufsflaeche), sourceVerkaufsflaeche));
-                copy.setVerkaufsflaeche(copyVerkaufsflaeche);
-            } else {
-                copy.verkaufsflaeche = null;
+            {
+                Boolean verkaufsflaecheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.verkaufsflaeche!= null));
+                if (verkaufsflaecheShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceVerkaufsflaeche;
+                    sourceVerkaufsflaeche = this.getVerkaufsflaeche();
+                    BigDecimal copyVerkaufsflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verkaufsflaeche", sourceVerkaufsflaeche), sourceVerkaufsflaeche, (this.verkaufsflaeche!= null)));
+                    copy.setVerkaufsflaeche(copyVerkaufsflaeche);
+                } else {
+                    if (verkaufsflaecheShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.verkaufsflaeche = null;
+                    }
+                }
             }
-            if (this.bodenbelag!= null) {
-                BodenbelagTyp sourceBodenbelag;
-                sourceBodenbelag = this.getBodenbelag();
-                BodenbelagTyp copyBodenbelag = ((BodenbelagTyp) strategy.copy(LocatorUtils.property(locator, "bodenbelag", sourceBodenbelag), sourceBodenbelag));
-                copy.setBodenbelag(copyBodenbelag);
-            } else {
-                copy.bodenbelag = null;
+            {
+                Boolean bodenbelagShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bodenbelag!= null));
+                if (bodenbelagShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BodenbelagTyp sourceBodenbelag;
+                    sourceBodenbelag = this.getBodenbelag();
+                    BodenbelagTyp copyBodenbelag = ((BodenbelagTyp) strategy.copy(LocatorUtils.property(locator, "bodenbelag", sourceBodenbelag), sourceBodenbelag, (this.bodenbelag!= null)));
+                    copy.setBodenbelag(copyBodenbelag);
+                } else {
+                    if (bodenbelagShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bodenbelag = null;
+                    }
+                }
             }
-            if (this.schaufensterfront!= null) {
-                BigDecimal sourceSchaufensterfront;
-                sourceSchaufensterfront = this.getSchaufensterfront();
-                BigDecimal copySchaufensterfront = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "schaufensterfront", sourceSchaufensterfront), sourceSchaufensterfront));
-                copy.setSchaufensterfront(copySchaufensterfront);
-            } else {
-                copy.schaufensterfront = null;
+            {
+                Boolean schaufensterfrontShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.schaufensterfront!= null));
+                if (schaufensterfrontShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceSchaufensterfront;
+                    sourceSchaufensterfront = this.getSchaufensterfront();
+                    BigDecimal copySchaufensterfront = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "schaufensterfront", sourceSchaufensterfront), sourceSchaufensterfront, (this.schaufensterfront!= null)));
+                    copy.setSchaufensterfront(copySchaufensterfront);
+                } else {
+                    if (schaufensterfrontShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.schaufensterfront = null;
+                    }
+                }
             }
-            if (this.deckenlast!= null) {
-                BigDecimal sourceDeckenlast;
-                sourceDeckenlast = this.getDeckenlast();
-                BigDecimal copyDeckenlast = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "deckenlast", sourceDeckenlast), sourceDeckenlast));
-                copy.setDeckenlast(copyDeckenlast);
-            } else {
-                copy.deckenlast = null;
+            {
+                Boolean deckenlastShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.deckenlast!= null));
+                if (deckenlastShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceDeckenlast;
+                    sourceDeckenlast = this.getDeckenlast();
+                    BigDecimal copyDeckenlast = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "deckenlast", sourceDeckenlast), sourceDeckenlast, (this.deckenlast!= null)));
+                    copy.setDeckenlast(copyDeckenlast);
+                } else {
+                    if (deckenlastShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.deckenlast = null;
+                    }
+                }
             }
-            if (this.lageart!= null) {
-                LageartTyp sourceLageart;
-                sourceLageart = this.getLageart();
-                LageartTyp copyLageart = ((LageartTyp) strategy.copy(LocatorUtils.property(locator, "lageart", sourceLageart), sourceLageart));
-                copy.setLageart(copyLageart);
-            } else {
-                copy.lageart = null;
+            {
+                Boolean lageartShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lageart!= null));
+                if (lageartShouldBeCopiedAndSet == Boolean.TRUE) {
+                    LageartTyp sourceLageart;
+                    sourceLageart = this.getLageart();
+                    LageartTyp copyLageart = ((LageartTyp) strategy.copy(LocatorUtils.property(locator, "lageart", sourceLageart), sourceLageart, (this.lageart!= null)));
+                    copy.setLageart(copyLageart);
+                } else {
+                    if (lageartShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.lageart = null;
+                    }
+                }
             }
-            if (this.rampe!= null) {
-                Boolean sourceRampe;
-                sourceRampe = this.isRampe();
-                Boolean copyRampe = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rampe", sourceRampe), sourceRampe));
-                copy.setRampe(copyRampe);
-            } else {
-                copy.rampe = null;
+            {
+                Boolean rampeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rampe!= null));
+                if (rampeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceRampe;
+                    sourceRampe = this.isRampe();
+                    Boolean copyRampe = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rampe", sourceRampe), sourceRampe, (this.rampe!= null)));
+                    copy.setRampe(copyRampe);
+                } else {
+                    if (rampeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.rampe = null;
+                    }
+                }
             }
-            if (this.zulieferung!= null) {
-                ZulieferungTyp sourceZulieferung;
-                sourceZulieferung = this.getZulieferung();
-                ZulieferungTyp copyZulieferung = ((ZulieferungTyp) strategy.copy(LocatorUtils.property(locator, "zulieferung", sourceZulieferung), sourceZulieferung));
-                copy.setZulieferung(copyZulieferung);
-            } else {
-                copy.zulieferung = null;
+            {
+                Boolean zulieferungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zulieferung!= null));
+                if (zulieferungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    ZulieferungTyp sourceZulieferung;
+                    sourceZulieferung = this.getZulieferung();
+                    ZulieferungTyp copyZulieferung = ((ZulieferungTyp) strategy.copy(LocatorUtils.property(locator, "zulieferung", sourceZulieferung), sourceZulieferung, (this.zulieferung!= null)));
+                    copy.setZulieferung(copyZulieferung);
+                } else {
+                    if (zulieferungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zulieferung = null;
+                    }
+                }
             }
-            if (this.denkmalschutzobjekt!= null) {
-                Boolean sourceDenkmalschutzobjekt;
-                sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
-                Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt));
-                copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
-            } else {
-                copy.denkmalschutzobjekt = null;
+            {
+                Boolean denkmalschutzobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalschutzobjekt!= null));
+                if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceDenkmalschutzobjekt;
+                    sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+                    Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null)));
+                    copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
+                } else {
+                    if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.denkmalschutzobjekt = null;
+                    }
+                }
             }
-            if (this.keller!= null) {
-                Boolean sourceKeller;
-                sourceKeller = this.isKeller();
-                Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller));
-                copy.setKeller(copyKeller);
-            } else {
-                copy.keller = null;
+            {
+                Boolean kellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keller!= null));
+                if (kellerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceKeller;
+                    sourceKeller = this.isKeller();
+                    Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller, (this.keller!= null)));
+                    copy.setKeller(copyKeller);
+                } else {
+                    if (kellerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.keller = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -585,7 +645,7 @@ public class EinzelhandelTyp
         return new EinzelhandelTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -601,7 +661,7 @@ public class EinzelhandelTyp
             lhsVermarktung = this.getVermarktung();
             VermarktungGewerbeTyp rhsVermarktung;
             rhsVermarktung = that.getVermarktung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung, (this.vermarktung!= null), (that.vermarktung!= null))) {
                 return false;
             }
         }
@@ -610,7 +670,7 @@ public class EinzelhandelTyp
             lhsLastenaufzug = this.getLastenaufzug();
             JAXBElement<HebeanlageTyp> rhsLastenaufzug;
             rhsLastenaufzug = that.getLastenaufzug();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "lastenaufzug", lhsLastenaufzug), LocatorUtils.property(thatLocator, "lastenaufzug", rhsLastenaufzug), lhsLastenaufzug, rhsLastenaufzug)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "lastenaufzug", lhsLastenaufzug), LocatorUtils.property(thatLocator, "lastenaufzug", rhsLastenaufzug), lhsLastenaufzug, rhsLastenaufzug, (this.lastenaufzug!= null), (that.lastenaufzug!= null))) {
                 return false;
             }
         }
@@ -619,7 +679,7 @@ public class EinzelhandelTyp
             lhsObjektkategorie2 = this.getObjektkategorie2();
             EinzelhandelKategorienTyp rhsObjektkategorie2;
             rhsObjektkategorie2 = that.getObjektkategorie2();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2, (this.objektkategorie2 != null), (that.objektkategorie2 != null))) {
                 return false;
             }
         }
@@ -628,7 +688,7 @@ public class EinzelhandelTyp
             lhsVerkaufsflaeche = this.getVerkaufsflaeche();
             BigDecimal rhsVerkaufsflaeche;
             rhsVerkaufsflaeche = that.getVerkaufsflaeche();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "verkaufsflaeche", lhsVerkaufsflaeche), LocatorUtils.property(thatLocator, "verkaufsflaeche", rhsVerkaufsflaeche), lhsVerkaufsflaeche, rhsVerkaufsflaeche)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "verkaufsflaeche", lhsVerkaufsflaeche), LocatorUtils.property(thatLocator, "verkaufsflaeche", rhsVerkaufsflaeche), lhsVerkaufsflaeche, rhsVerkaufsflaeche, (this.verkaufsflaeche!= null), (that.verkaufsflaeche!= null))) {
                 return false;
             }
         }
@@ -637,7 +697,7 @@ public class EinzelhandelTyp
             lhsBodenbelag = this.getBodenbelag();
             BodenbelagTyp rhsBodenbelag;
             rhsBodenbelag = that.getBodenbelag();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bodenbelag", lhsBodenbelag), LocatorUtils.property(thatLocator, "bodenbelag", rhsBodenbelag), lhsBodenbelag, rhsBodenbelag)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bodenbelag", lhsBodenbelag), LocatorUtils.property(thatLocator, "bodenbelag", rhsBodenbelag), lhsBodenbelag, rhsBodenbelag, (this.bodenbelag!= null), (that.bodenbelag!= null))) {
                 return false;
             }
         }
@@ -646,7 +706,7 @@ public class EinzelhandelTyp
             lhsSchaufensterfront = this.getSchaufensterfront();
             BigDecimal rhsSchaufensterfront;
             rhsSchaufensterfront = that.getSchaufensterfront();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "schaufensterfront", lhsSchaufensterfront), LocatorUtils.property(thatLocator, "schaufensterfront", rhsSchaufensterfront), lhsSchaufensterfront, rhsSchaufensterfront)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "schaufensterfront", lhsSchaufensterfront), LocatorUtils.property(thatLocator, "schaufensterfront", rhsSchaufensterfront), lhsSchaufensterfront, rhsSchaufensterfront, (this.schaufensterfront!= null), (that.schaufensterfront!= null))) {
                 return false;
             }
         }
@@ -655,7 +715,7 @@ public class EinzelhandelTyp
             lhsDeckenlast = this.getDeckenlast();
             BigDecimal rhsDeckenlast;
             rhsDeckenlast = that.getDeckenlast();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "deckenlast", lhsDeckenlast), LocatorUtils.property(thatLocator, "deckenlast", rhsDeckenlast), lhsDeckenlast, rhsDeckenlast)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "deckenlast", lhsDeckenlast), LocatorUtils.property(thatLocator, "deckenlast", rhsDeckenlast), lhsDeckenlast, rhsDeckenlast, (this.deckenlast!= null), (that.deckenlast!= null))) {
                 return false;
             }
         }
@@ -664,7 +724,7 @@ public class EinzelhandelTyp
             lhsLageart = this.getLageart();
             LageartTyp rhsLageart;
             rhsLageart = that.getLageart();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "lageart", lhsLageart), LocatorUtils.property(thatLocator, "lageart", rhsLageart), lhsLageart, rhsLageart)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "lageart", lhsLageart), LocatorUtils.property(thatLocator, "lageart", rhsLageart), lhsLageart, rhsLageart, (this.lageart!= null), (that.lageart!= null))) {
                 return false;
             }
         }
@@ -673,7 +733,7 @@ public class EinzelhandelTyp
             lhsRampe = this.isRampe();
             Boolean rhsRampe;
             rhsRampe = that.isRampe();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "rampe", lhsRampe), LocatorUtils.property(thatLocator, "rampe", rhsRampe), lhsRampe, rhsRampe)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "rampe", lhsRampe), LocatorUtils.property(thatLocator, "rampe", rhsRampe), lhsRampe, rhsRampe, (this.rampe!= null), (that.rampe!= null))) {
                 return false;
             }
         }
@@ -682,7 +742,7 @@ public class EinzelhandelTyp
             lhsZulieferung = this.getZulieferung();
             ZulieferungTyp rhsZulieferung;
             rhsZulieferung = that.getZulieferung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zulieferung", lhsZulieferung), LocatorUtils.property(thatLocator, "zulieferung", rhsZulieferung), lhsZulieferung, rhsZulieferung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zulieferung", lhsZulieferung), LocatorUtils.property(thatLocator, "zulieferung", rhsZulieferung), lhsZulieferung, rhsZulieferung, (this.zulieferung!= null), (that.zulieferung!= null))) {
                 return false;
             }
         }
@@ -691,7 +751,7 @@ public class EinzelhandelTyp
             lhsDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
             Boolean rhsDenkmalschutzobjekt;
             rhsDenkmalschutzobjekt = that.isDenkmalschutzobjekt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null), (that.denkmalschutzobjekt!= null))) {
                 return false;
             }
         }
@@ -700,7 +760,7 @@ public class EinzelhandelTyp
             lhsKeller = this.isKeller();
             Boolean rhsKeller;
             rhsKeller = that.isKeller();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller, (this.keller!= null), (that.keller!= null))) {
                 return false;
             }
         }
@@ -708,7 +768,7 @@ public class EinzelhandelTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 OpenEstate.org.
+ * Copyright 2015-2016 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.openestate.io.examples;
 
 import java.io.File;
@@ -227,9 +226,9 @@ public class OpenImmoWritingExample
     Uebertragung uebertragung = FACTORY.createUebertragung();
     uebertragung.setArt( Uebertragung.Art.OFFLINE );
     uebertragung.setModus( Uebertragung.Modus.NEW );
-    uebertragung.setSendersoftware( "OpenEstate.org" );
-    uebertragung.setSenderversion( "1.0-SNAPSHOT" );
-    uebertragung.setTechnEmail( "info@openestate.org" );
+    uebertragung.setSendersoftware( "OpenEstate-IO" );
+    uebertragung.setSenderversion( "1.1" );
+    uebertragung.setTechnEmail( "test@test.org" );
     uebertragung.setTimestamp( Calendar.getInstance() );
     uebertragung.setUmfang( Uebertragung.Umfang.VOLL );
     return uebertragung;

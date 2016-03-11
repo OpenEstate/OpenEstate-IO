@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -52,8 +52,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "fgeeklasse"
 })
 @XmlRootElement(name = "energiepass")
-public class Energiepass
-    implements Cloneable, CopyTo, Equals, ToString
+public class Energiepass implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected Energiepass.Epart epart;
@@ -512,109 +511,109 @@ public class Energiepass
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Energiepass.Epart theEpart;
             theEpart = this.getEpart();
-            strategy.appendField(locator, this, "epart", buffer, theEpart);
+            strategy.appendField(locator, this, "epart", buffer, theEpart, (this.epart!= null));
         }
         {
             String theGueltigBis;
             theGueltigBis = this.getGueltigBis();
-            strategy.appendField(locator, this, "gueltigBis", buffer, theGueltigBis);
+            strategy.appendField(locator, this, "gueltigBis", buffer, theGueltigBis, (this.gueltigBis!= null));
         }
         {
             String theEnergieverbrauchkennwert;
             theEnergieverbrauchkennwert = this.getEnergieverbrauchkennwert();
-            strategy.appendField(locator, this, "energieverbrauchkennwert", buffer, theEnergieverbrauchkennwert);
+            strategy.appendField(locator, this, "energieverbrauchkennwert", buffer, theEnergieverbrauchkennwert, (this.energieverbrauchkennwert!= null));
         }
         {
             Boolean theMitwarmwasser;
             theMitwarmwasser = this.isMitwarmwasser();
-            strategy.appendField(locator, this, "mitwarmwasser", buffer, theMitwarmwasser);
+            strategy.appendField(locator, this, "mitwarmwasser", buffer, theMitwarmwasser, (this.mitwarmwasser!= null));
         }
         {
             String theEndenergiebedarf;
             theEndenergiebedarf = this.getEndenergiebedarf();
-            strategy.appendField(locator, this, "endenergiebedarf", buffer, theEndenergiebedarf);
+            strategy.appendField(locator, this, "endenergiebedarf", buffer, theEndenergiebedarf, (this.endenergiebedarf!= null));
         }
         {
             String thePrimaerenergietraeger;
             thePrimaerenergietraeger = this.getPrimaerenergietraeger();
-            strategy.appendField(locator, this, "primaerenergietraeger", buffer, thePrimaerenergietraeger);
+            strategy.appendField(locator, this, "primaerenergietraeger", buffer, thePrimaerenergietraeger, (this.primaerenergietraeger!= null));
         }
         {
             String theStromwert;
             theStromwert = this.getStromwert();
-            strategy.appendField(locator, this, "stromwert", buffer, theStromwert);
+            strategy.appendField(locator, this, "stromwert", buffer, theStromwert, (this.stromwert!= null));
         }
         {
             String theWaermewert;
             theWaermewert = this.getWaermewert();
-            strategy.appendField(locator, this, "waermewert", buffer, theWaermewert);
+            strategy.appendField(locator, this, "waermewert", buffer, theWaermewert, (this.waermewert!= null));
         }
         {
             String theWertklasse;
             theWertklasse = this.getWertklasse();
-            strategy.appendField(locator, this, "wertklasse", buffer, theWertklasse);
+            strategy.appendField(locator, this, "wertklasse", buffer, theWertklasse, (this.wertklasse!= null));
         }
         {
             String theBaujahr;
             theBaujahr = this.getBaujahr();
-            strategy.appendField(locator, this, "baujahr", buffer, theBaujahr);
+            strategy.appendField(locator, this, "baujahr", buffer, theBaujahr, (this.baujahr!= null));
         }
         {
             Calendar theAusstelldatum;
             theAusstelldatum = this.getAusstelldatum();
-            strategy.appendField(locator, this, "ausstelldatum", buffer, theAusstelldatum);
+            strategy.appendField(locator, this, "ausstelldatum", buffer, theAusstelldatum, (this.ausstelldatum!= null));
         }
         {
             Energiepass.Jahrgang theJahrgang;
             theJahrgang = this.getJahrgang();
-            strategy.appendField(locator, this, "jahrgang", buffer, theJahrgang);
+            strategy.appendField(locator, this, "jahrgang", buffer, theJahrgang, (this.jahrgang!= null));
         }
         {
             Energiepass.Gebaeudeart theGebaeudeart;
             theGebaeudeart = this.getGebaeudeart();
-            strategy.appendField(locator, this, "gebaeudeart", buffer, theGebaeudeart);
+            strategy.appendField(locator, this, "gebaeudeart", buffer, theGebaeudeart, (this.gebaeudeart!= null));
         }
         {
             String theEpasstext;
             theEpasstext = this.getEpasstext();
-            strategy.appendField(locator, this, "epasstext", buffer, theEpasstext);
+            strategy.appendField(locator, this, "epasstext", buffer, theEpasstext, (this.epasstext!= null));
         }
         {
             String theHwbwert;
             theHwbwert = this.getHwbwert();
-            strategy.appendField(locator, this, "hwbwert", buffer, theHwbwert);
+            strategy.appendField(locator, this, "hwbwert", buffer, theHwbwert, (this.hwbwert!= null));
         }
         {
             String theHwbklasse;
             theHwbklasse = this.getHwbklasse();
-            strategy.appendField(locator, this, "hwbklasse", buffer, theHwbklasse);
+            strategy.appendField(locator, this, "hwbklasse", buffer, theHwbklasse, (this.hwbklasse!= null));
         }
         {
             String theFgeewert;
             theFgeewert = this.getFgeewert();
-            strategy.appendField(locator, this, "fgeewert", buffer, theFgeewert);
+            strategy.appendField(locator, this, "fgeewert", buffer, theFgeewert, (this.fgeewert!= null));
         }
         {
             String theFgeeklasse;
             theFgeeklasse = this.getFgeeklasse();
-            strategy.appendField(locator, this, "fgeeklasse", buffer, theFgeeklasse);
+            strategy.appendField(locator, this, "fgeeklasse", buffer, theFgeeklasse, (this.fgeeklasse!= null));
         }
         return buffer;
     }
@@ -624,157 +623,247 @@ public class Energiepass
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Energiepass) {
             final Energiepass copy = ((Energiepass) draftCopy);
-            if (this.epart!= null) {
-                Energiepass.Epart sourceEpart;
-                sourceEpart = this.getEpart();
-                Energiepass.Epart copyEpart = ((Energiepass.Epart) strategy.copy(LocatorUtils.property(locator, "epart", sourceEpart), sourceEpart));
-                copy.setEpart(copyEpart);
-            } else {
-                copy.epart = null;
+            {
+                Boolean epartShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.epart!= null));
+                if (epartShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Energiepass.Epart sourceEpart;
+                    sourceEpart = this.getEpart();
+                    Energiepass.Epart copyEpart = ((Energiepass.Epart) strategy.copy(LocatorUtils.property(locator, "epart", sourceEpart), sourceEpart, (this.epart!= null)));
+                    copy.setEpart(copyEpart);
+                } else {
+                    if (epartShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.epart = null;
+                    }
+                }
             }
-            if (this.gueltigBis!= null) {
-                String sourceGueltigBis;
-                sourceGueltigBis = this.getGueltigBis();
-                String copyGueltigBis = ((String) strategy.copy(LocatorUtils.property(locator, "gueltigBis", sourceGueltigBis), sourceGueltigBis));
-                copy.setGueltigBis(copyGueltigBis);
-            } else {
-                copy.gueltigBis = null;
+            {
+                Boolean gueltigBisShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gueltigBis!= null));
+                if (gueltigBisShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceGueltigBis;
+                    sourceGueltigBis = this.getGueltigBis();
+                    String copyGueltigBis = ((String) strategy.copy(LocatorUtils.property(locator, "gueltigBis", sourceGueltigBis), sourceGueltigBis, (this.gueltigBis!= null)));
+                    copy.setGueltigBis(copyGueltigBis);
+                } else {
+                    if (gueltigBisShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gueltigBis = null;
+                    }
+                }
             }
-            if (this.energieverbrauchkennwert!= null) {
-                String sourceEnergieverbrauchkennwert;
-                sourceEnergieverbrauchkennwert = this.getEnergieverbrauchkennwert();
-                String copyEnergieverbrauchkennwert = ((String) strategy.copy(LocatorUtils.property(locator, "energieverbrauchkennwert", sourceEnergieverbrauchkennwert), sourceEnergieverbrauchkennwert));
-                copy.setEnergieverbrauchkennwert(copyEnergieverbrauchkennwert);
-            } else {
-                copy.energieverbrauchkennwert = null;
+            {
+                Boolean energieverbrauchkennwertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energieverbrauchkennwert!= null));
+                if (energieverbrauchkennwertShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEnergieverbrauchkennwert;
+                    sourceEnergieverbrauchkennwert = this.getEnergieverbrauchkennwert();
+                    String copyEnergieverbrauchkennwert = ((String) strategy.copy(LocatorUtils.property(locator, "energieverbrauchkennwert", sourceEnergieverbrauchkennwert), sourceEnergieverbrauchkennwert, (this.energieverbrauchkennwert!= null)));
+                    copy.setEnergieverbrauchkennwert(copyEnergieverbrauchkennwert);
+                } else {
+                    if (energieverbrauchkennwertShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.energieverbrauchkennwert = null;
+                    }
+                }
             }
-            if (this.mitwarmwasser!= null) {
-                Boolean sourceMitwarmwasser;
-                sourceMitwarmwasser = this.isMitwarmwasser();
-                Boolean copyMitwarmwasser = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mitwarmwasser", sourceMitwarmwasser), sourceMitwarmwasser));
-                copy.setMitwarmwasser(copyMitwarmwasser);
-            } else {
-                copy.mitwarmwasser = null;
+            {
+                Boolean mitwarmwasserShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mitwarmwasser!= null));
+                if (mitwarmwasserShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceMitwarmwasser;
+                    sourceMitwarmwasser = this.isMitwarmwasser();
+                    Boolean copyMitwarmwasser = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mitwarmwasser", sourceMitwarmwasser), sourceMitwarmwasser, (this.mitwarmwasser!= null)));
+                    copy.setMitwarmwasser(copyMitwarmwasser);
+                } else {
+                    if (mitwarmwasserShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.mitwarmwasser = null;
+                    }
+                }
             }
-            if (this.endenergiebedarf!= null) {
-                String sourceEndenergiebedarf;
-                sourceEndenergiebedarf = this.getEndenergiebedarf();
-                String copyEndenergiebedarf = ((String) strategy.copy(LocatorUtils.property(locator, "endenergiebedarf", sourceEndenergiebedarf), sourceEndenergiebedarf));
-                copy.setEndenergiebedarf(copyEndenergiebedarf);
-            } else {
-                copy.endenergiebedarf = null;
+            {
+                Boolean endenergiebedarfShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.endenergiebedarf!= null));
+                if (endenergiebedarfShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEndenergiebedarf;
+                    sourceEndenergiebedarf = this.getEndenergiebedarf();
+                    String copyEndenergiebedarf = ((String) strategy.copy(LocatorUtils.property(locator, "endenergiebedarf", sourceEndenergiebedarf), sourceEndenergiebedarf, (this.endenergiebedarf!= null)));
+                    copy.setEndenergiebedarf(copyEndenergiebedarf);
+                } else {
+                    if (endenergiebedarfShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.endenergiebedarf = null;
+                    }
+                }
             }
-            if (this.primaerenergietraeger!= null) {
-                String sourcePrimaerenergietraeger;
-                sourcePrimaerenergietraeger = this.getPrimaerenergietraeger();
-                String copyPrimaerenergietraeger = ((String) strategy.copy(LocatorUtils.property(locator, "primaerenergietraeger", sourcePrimaerenergietraeger), sourcePrimaerenergietraeger));
-                copy.setPrimaerenergietraeger(copyPrimaerenergietraeger);
-            } else {
-                copy.primaerenergietraeger = null;
+            {
+                Boolean primaerenergietraegerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.primaerenergietraeger!= null));
+                if (primaerenergietraegerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePrimaerenergietraeger;
+                    sourcePrimaerenergietraeger = this.getPrimaerenergietraeger();
+                    String copyPrimaerenergietraeger = ((String) strategy.copy(LocatorUtils.property(locator, "primaerenergietraeger", sourcePrimaerenergietraeger), sourcePrimaerenergietraeger, (this.primaerenergietraeger!= null)));
+                    copy.setPrimaerenergietraeger(copyPrimaerenergietraeger);
+                } else {
+                    if (primaerenergietraegerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.primaerenergietraeger = null;
+                    }
+                }
             }
-            if (this.stromwert!= null) {
-                String sourceStromwert;
-                sourceStromwert = this.getStromwert();
-                String copyStromwert = ((String) strategy.copy(LocatorUtils.property(locator, "stromwert", sourceStromwert), sourceStromwert));
-                copy.setStromwert(copyStromwert);
-            } else {
-                copy.stromwert = null;
+            {
+                Boolean stromwertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.stromwert!= null));
+                if (stromwertShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceStromwert;
+                    sourceStromwert = this.getStromwert();
+                    String copyStromwert = ((String) strategy.copy(LocatorUtils.property(locator, "stromwert", sourceStromwert), sourceStromwert, (this.stromwert!= null)));
+                    copy.setStromwert(copyStromwert);
+                } else {
+                    if (stromwertShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.stromwert = null;
+                    }
+                }
             }
-            if (this.waermewert!= null) {
-                String sourceWaermewert;
-                sourceWaermewert = this.getWaermewert();
-                String copyWaermewert = ((String) strategy.copy(LocatorUtils.property(locator, "waermewert", sourceWaermewert), sourceWaermewert));
-                copy.setWaermewert(copyWaermewert);
-            } else {
-                copy.waermewert = null;
+            {
+                Boolean waermewertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.waermewert!= null));
+                if (waermewertShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceWaermewert;
+                    sourceWaermewert = this.getWaermewert();
+                    String copyWaermewert = ((String) strategy.copy(LocatorUtils.property(locator, "waermewert", sourceWaermewert), sourceWaermewert, (this.waermewert!= null)));
+                    copy.setWaermewert(copyWaermewert);
+                } else {
+                    if (waermewertShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.waermewert = null;
+                    }
+                }
             }
-            if (this.wertklasse!= null) {
-                String sourceWertklasse;
-                sourceWertklasse = this.getWertklasse();
-                String copyWertklasse = ((String) strategy.copy(LocatorUtils.property(locator, "wertklasse", sourceWertklasse), sourceWertklasse));
-                copy.setWertklasse(copyWertklasse);
-            } else {
-                copy.wertklasse = null;
+            {
+                Boolean wertklasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wertklasse!= null));
+                if (wertklasseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceWertklasse;
+                    sourceWertklasse = this.getWertklasse();
+                    String copyWertklasse = ((String) strategy.copy(LocatorUtils.property(locator, "wertklasse", sourceWertklasse), sourceWertklasse, (this.wertklasse!= null)));
+                    copy.setWertklasse(copyWertklasse);
+                } else {
+                    if (wertklasseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wertklasse = null;
+                    }
+                }
             }
-            if (this.baujahr!= null) {
-                String sourceBaujahr;
-                sourceBaujahr = this.getBaujahr();
-                String copyBaujahr = ((String) strategy.copy(LocatorUtils.property(locator, "baujahr", sourceBaujahr), sourceBaujahr));
-                copy.setBaujahr(copyBaujahr);
-            } else {
-                copy.baujahr = null;
+            {
+                Boolean baujahrShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.baujahr!= null));
+                if (baujahrShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceBaujahr;
+                    sourceBaujahr = this.getBaujahr();
+                    String copyBaujahr = ((String) strategy.copy(LocatorUtils.property(locator, "baujahr", sourceBaujahr), sourceBaujahr, (this.baujahr!= null)));
+                    copy.setBaujahr(copyBaujahr);
+                } else {
+                    if (baujahrShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.baujahr = null;
+                    }
+                }
             }
-            if (this.ausstelldatum!= null) {
-                Calendar sourceAusstelldatum;
-                sourceAusstelldatum = this.getAusstelldatum();
-                Calendar copyAusstelldatum = ((Calendar) strategy.copy(LocatorUtils.property(locator, "ausstelldatum", sourceAusstelldatum), sourceAusstelldatum));
-                copy.setAusstelldatum(copyAusstelldatum);
-            } else {
-                copy.ausstelldatum = null;
+            {
+                Boolean ausstelldatumShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ausstelldatum!= null));
+                if (ausstelldatumShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceAusstelldatum;
+                    sourceAusstelldatum = this.getAusstelldatum();
+                    Calendar copyAusstelldatum = ((Calendar) strategy.copy(LocatorUtils.property(locator, "ausstelldatum", sourceAusstelldatum), sourceAusstelldatum, (this.ausstelldatum!= null)));
+                    copy.setAusstelldatum(copyAusstelldatum);
+                } else {
+                    if (ausstelldatumShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ausstelldatum = null;
+                    }
+                }
             }
-            if (this.jahrgang!= null) {
-                Energiepass.Jahrgang sourceJahrgang;
-                sourceJahrgang = this.getJahrgang();
-                Energiepass.Jahrgang copyJahrgang = ((Energiepass.Jahrgang) strategy.copy(LocatorUtils.property(locator, "jahrgang", sourceJahrgang), sourceJahrgang));
-                copy.setJahrgang(copyJahrgang);
-            } else {
-                copy.jahrgang = null;
+            {
+                Boolean jahrgangShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.jahrgang!= null));
+                if (jahrgangShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Energiepass.Jahrgang sourceJahrgang;
+                    sourceJahrgang = this.getJahrgang();
+                    Energiepass.Jahrgang copyJahrgang = ((Energiepass.Jahrgang) strategy.copy(LocatorUtils.property(locator, "jahrgang", sourceJahrgang), sourceJahrgang, (this.jahrgang!= null)));
+                    copy.setJahrgang(copyJahrgang);
+                } else {
+                    if (jahrgangShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.jahrgang = null;
+                    }
+                }
             }
-            if (this.gebaeudeart!= null) {
-                Energiepass.Gebaeudeart sourceGebaeudeart;
-                sourceGebaeudeart = this.getGebaeudeart();
-                Energiepass.Gebaeudeart copyGebaeudeart = ((Energiepass.Gebaeudeart) strategy.copy(LocatorUtils.property(locator, "gebaeudeart", sourceGebaeudeart), sourceGebaeudeart));
-                copy.setGebaeudeart(copyGebaeudeart);
-            } else {
-                copy.gebaeudeart = null;
+            {
+                Boolean gebaeudeartShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gebaeudeart!= null));
+                if (gebaeudeartShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Energiepass.Gebaeudeart sourceGebaeudeart;
+                    sourceGebaeudeart = this.getGebaeudeart();
+                    Energiepass.Gebaeudeart copyGebaeudeart = ((Energiepass.Gebaeudeart) strategy.copy(LocatorUtils.property(locator, "gebaeudeart", sourceGebaeudeart), sourceGebaeudeart, (this.gebaeudeart!= null)));
+                    copy.setGebaeudeart(copyGebaeudeart);
+                } else {
+                    if (gebaeudeartShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.gebaeudeart = null;
+                    }
+                }
             }
-            if (this.epasstext!= null) {
-                String sourceEpasstext;
-                sourceEpasstext = this.getEpasstext();
-                String copyEpasstext = ((String) strategy.copy(LocatorUtils.property(locator, "epasstext", sourceEpasstext), sourceEpasstext));
-                copy.setEpasstext(copyEpasstext);
-            } else {
-                copy.epasstext = null;
+            {
+                Boolean epasstextShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.epasstext!= null));
+                if (epasstextShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceEpasstext;
+                    sourceEpasstext = this.getEpasstext();
+                    String copyEpasstext = ((String) strategy.copy(LocatorUtils.property(locator, "epasstext", sourceEpasstext), sourceEpasstext, (this.epasstext!= null)));
+                    copy.setEpasstext(copyEpasstext);
+                } else {
+                    if (epasstextShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.epasstext = null;
+                    }
+                }
             }
-            if (this.hwbwert!= null) {
-                String sourceHwbwert;
-                sourceHwbwert = this.getHwbwert();
-                String copyHwbwert = ((String) strategy.copy(LocatorUtils.property(locator, "hwbwert", sourceHwbwert), sourceHwbwert));
-                copy.setHwbwert(copyHwbwert);
-            } else {
-                copy.hwbwert = null;
+            {
+                Boolean hwbwertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hwbwert!= null));
+                if (hwbwertShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHwbwert;
+                    sourceHwbwert = this.getHwbwert();
+                    String copyHwbwert = ((String) strategy.copy(LocatorUtils.property(locator, "hwbwert", sourceHwbwert), sourceHwbwert, (this.hwbwert!= null)));
+                    copy.setHwbwert(copyHwbwert);
+                } else {
+                    if (hwbwertShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hwbwert = null;
+                    }
+                }
             }
-            if (this.hwbklasse!= null) {
-                String sourceHwbklasse;
-                sourceHwbklasse = this.getHwbklasse();
-                String copyHwbklasse = ((String) strategy.copy(LocatorUtils.property(locator, "hwbklasse", sourceHwbklasse), sourceHwbklasse));
-                copy.setHwbklasse(copyHwbklasse);
-            } else {
-                copy.hwbklasse = null;
+            {
+                Boolean hwbklasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hwbklasse!= null));
+                if (hwbklasseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHwbklasse;
+                    sourceHwbklasse = this.getHwbklasse();
+                    String copyHwbklasse = ((String) strategy.copy(LocatorUtils.property(locator, "hwbklasse", sourceHwbklasse), sourceHwbklasse, (this.hwbklasse!= null)));
+                    copy.setHwbklasse(copyHwbklasse);
+                } else {
+                    if (hwbklasseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hwbklasse = null;
+                    }
+                }
             }
-            if (this.fgeewert!= null) {
-                String sourceFgeewert;
-                sourceFgeewert = this.getFgeewert();
-                String copyFgeewert = ((String) strategy.copy(LocatorUtils.property(locator, "fgeewert", sourceFgeewert), sourceFgeewert));
-                copy.setFgeewert(copyFgeewert);
-            } else {
-                copy.fgeewert = null;
+            {
+                Boolean fgeewertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fgeewert!= null));
+                if (fgeewertShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFgeewert;
+                    sourceFgeewert = this.getFgeewert();
+                    String copyFgeewert = ((String) strategy.copy(LocatorUtils.property(locator, "fgeewert", sourceFgeewert), sourceFgeewert, (this.fgeewert!= null)));
+                    copy.setFgeewert(copyFgeewert);
+                } else {
+                    if (fgeewertShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fgeewert = null;
+                    }
+                }
             }
-            if (this.fgeeklasse!= null) {
-                String sourceFgeeklasse;
-                sourceFgeeklasse = this.getFgeeklasse();
-                String copyFgeeklasse = ((String) strategy.copy(LocatorUtils.property(locator, "fgeeklasse", sourceFgeeklasse), sourceFgeeklasse));
-                copy.setFgeeklasse(copyFgeeklasse);
-            } else {
-                copy.fgeeklasse = null;
+            {
+                Boolean fgeeklasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fgeeklasse!= null));
+                if (fgeeklasseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFgeeklasse;
+                    sourceFgeeklasse = this.getFgeeklasse();
+                    String copyFgeeklasse = ((String) strategy.copy(LocatorUtils.property(locator, "fgeeklasse", sourceFgeeklasse), sourceFgeeklasse, (this.fgeeklasse!= null)));
+                    copy.setFgeeklasse(copyFgeeklasse);
+                } else {
+                    if (fgeeklasseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fgeeklasse = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -784,7 +873,7 @@ public class Energiepass
         return new Energiepass();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -797,7 +886,7 @@ public class Energiepass
             lhsEpart = this.getEpart();
             Energiepass.Epart rhsEpart;
             rhsEpart = that.getEpart();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "epart", lhsEpart), LocatorUtils.property(thatLocator, "epart", rhsEpart), lhsEpart, rhsEpart)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "epart", lhsEpart), LocatorUtils.property(thatLocator, "epart", rhsEpart), lhsEpart, rhsEpart, (this.epart!= null), (that.epart!= null))) {
                 return false;
             }
         }
@@ -806,7 +895,7 @@ public class Energiepass
             lhsGueltigBis = this.getGueltigBis();
             String rhsGueltigBis;
             rhsGueltigBis = that.getGueltigBis();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gueltigBis", lhsGueltigBis), LocatorUtils.property(thatLocator, "gueltigBis", rhsGueltigBis), lhsGueltigBis, rhsGueltigBis)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gueltigBis", lhsGueltigBis), LocatorUtils.property(thatLocator, "gueltigBis", rhsGueltigBis), lhsGueltigBis, rhsGueltigBis, (this.gueltigBis!= null), (that.gueltigBis!= null))) {
                 return false;
             }
         }
@@ -815,7 +904,7 @@ public class Energiepass
             lhsEnergieverbrauchkennwert = this.getEnergieverbrauchkennwert();
             String rhsEnergieverbrauchkennwert;
             rhsEnergieverbrauchkennwert = that.getEnergieverbrauchkennwert();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "energieverbrauchkennwert", lhsEnergieverbrauchkennwert), LocatorUtils.property(thatLocator, "energieverbrauchkennwert", rhsEnergieverbrauchkennwert), lhsEnergieverbrauchkennwert, rhsEnergieverbrauchkennwert)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "energieverbrauchkennwert", lhsEnergieverbrauchkennwert), LocatorUtils.property(thatLocator, "energieverbrauchkennwert", rhsEnergieverbrauchkennwert), lhsEnergieverbrauchkennwert, rhsEnergieverbrauchkennwert, (this.energieverbrauchkennwert!= null), (that.energieverbrauchkennwert!= null))) {
                 return false;
             }
         }
@@ -824,7 +913,7 @@ public class Energiepass
             lhsMitwarmwasser = this.isMitwarmwasser();
             Boolean rhsMitwarmwasser;
             rhsMitwarmwasser = that.isMitwarmwasser();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "mitwarmwasser", lhsMitwarmwasser), LocatorUtils.property(thatLocator, "mitwarmwasser", rhsMitwarmwasser), lhsMitwarmwasser, rhsMitwarmwasser)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "mitwarmwasser", lhsMitwarmwasser), LocatorUtils.property(thatLocator, "mitwarmwasser", rhsMitwarmwasser), lhsMitwarmwasser, rhsMitwarmwasser, (this.mitwarmwasser!= null), (that.mitwarmwasser!= null))) {
                 return false;
             }
         }
@@ -833,7 +922,7 @@ public class Energiepass
             lhsEndenergiebedarf = this.getEndenergiebedarf();
             String rhsEndenergiebedarf;
             rhsEndenergiebedarf = that.getEndenergiebedarf();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "endenergiebedarf", lhsEndenergiebedarf), LocatorUtils.property(thatLocator, "endenergiebedarf", rhsEndenergiebedarf), lhsEndenergiebedarf, rhsEndenergiebedarf)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "endenergiebedarf", lhsEndenergiebedarf), LocatorUtils.property(thatLocator, "endenergiebedarf", rhsEndenergiebedarf), lhsEndenergiebedarf, rhsEndenergiebedarf, (this.endenergiebedarf!= null), (that.endenergiebedarf!= null))) {
                 return false;
             }
         }
@@ -842,7 +931,7 @@ public class Energiepass
             lhsPrimaerenergietraeger = this.getPrimaerenergietraeger();
             String rhsPrimaerenergietraeger;
             rhsPrimaerenergietraeger = that.getPrimaerenergietraeger();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "primaerenergietraeger", lhsPrimaerenergietraeger), LocatorUtils.property(thatLocator, "primaerenergietraeger", rhsPrimaerenergietraeger), lhsPrimaerenergietraeger, rhsPrimaerenergietraeger)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "primaerenergietraeger", lhsPrimaerenergietraeger), LocatorUtils.property(thatLocator, "primaerenergietraeger", rhsPrimaerenergietraeger), lhsPrimaerenergietraeger, rhsPrimaerenergietraeger, (this.primaerenergietraeger!= null), (that.primaerenergietraeger!= null))) {
                 return false;
             }
         }
@@ -851,7 +940,7 @@ public class Energiepass
             lhsStromwert = this.getStromwert();
             String rhsStromwert;
             rhsStromwert = that.getStromwert();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "stromwert", lhsStromwert), LocatorUtils.property(thatLocator, "stromwert", rhsStromwert), lhsStromwert, rhsStromwert)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "stromwert", lhsStromwert), LocatorUtils.property(thatLocator, "stromwert", rhsStromwert), lhsStromwert, rhsStromwert, (this.stromwert!= null), (that.stromwert!= null))) {
                 return false;
             }
         }
@@ -860,7 +949,7 @@ public class Energiepass
             lhsWaermewert = this.getWaermewert();
             String rhsWaermewert;
             rhsWaermewert = that.getWaermewert();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "waermewert", lhsWaermewert), LocatorUtils.property(thatLocator, "waermewert", rhsWaermewert), lhsWaermewert, rhsWaermewert)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "waermewert", lhsWaermewert), LocatorUtils.property(thatLocator, "waermewert", rhsWaermewert), lhsWaermewert, rhsWaermewert, (this.waermewert!= null), (that.waermewert!= null))) {
                 return false;
             }
         }
@@ -869,7 +958,7 @@ public class Energiepass
             lhsWertklasse = this.getWertklasse();
             String rhsWertklasse;
             rhsWertklasse = that.getWertklasse();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wertklasse", lhsWertklasse), LocatorUtils.property(thatLocator, "wertklasse", rhsWertklasse), lhsWertklasse, rhsWertklasse)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wertklasse", lhsWertklasse), LocatorUtils.property(thatLocator, "wertklasse", rhsWertklasse), lhsWertklasse, rhsWertklasse, (this.wertklasse!= null), (that.wertklasse!= null))) {
                 return false;
             }
         }
@@ -878,7 +967,7 @@ public class Energiepass
             lhsBaujahr = this.getBaujahr();
             String rhsBaujahr;
             rhsBaujahr = that.getBaujahr();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "baujahr", lhsBaujahr), LocatorUtils.property(thatLocator, "baujahr", rhsBaujahr), lhsBaujahr, rhsBaujahr)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "baujahr", lhsBaujahr), LocatorUtils.property(thatLocator, "baujahr", rhsBaujahr), lhsBaujahr, rhsBaujahr, (this.baujahr!= null), (that.baujahr!= null))) {
                 return false;
             }
         }
@@ -887,7 +976,7 @@ public class Energiepass
             lhsAusstelldatum = this.getAusstelldatum();
             Calendar rhsAusstelldatum;
             rhsAusstelldatum = that.getAusstelldatum();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ausstelldatum", lhsAusstelldatum), LocatorUtils.property(thatLocator, "ausstelldatum", rhsAusstelldatum), lhsAusstelldatum, rhsAusstelldatum)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ausstelldatum", lhsAusstelldatum), LocatorUtils.property(thatLocator, "ausstelldatum", rhsAusstelldatum), lhsAusstelldatum, rhsAusstelldatum, (this.ausstelldatum!= null), (that.ausstelldatum!= null))) {
                 return false;
             }
         }
@@ -896,7 +985,7 @@ public class Energiepass
             lhsJahrgang = this.getJahrgang();
             Energiepass.Jahrgang rhsJahrgang;
             rhsJahrgang = that.getJahrgang();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "jahrgang", lhsJahrgang), LocatorUtils.property(thatLocator, "jahrgang", rhsJahrgang), lhsJahrgang, rhsJahrgang)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "jahrgang", lhsJahrgang), LocatorUtils.property(thatLocator, "jahrgang", rhsJahrgang), lhsJahrgang, rhsJahrgang, (this.jahrgang!= null), (that.jahrgang!= null))) {
                 return false;
             }
         }
@@ -905,7 +994,7 @@ public class Energiepass
             lhsGebaeudeart = this.getGebaeudeart();
             Energiepass.Gebaeudeart rhsGebaeudeart;
             rhsGebaeudeart = that.getGebaeudeart();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "gebaeudeart", lhsGebaeudeart), LocatorUtils.property(thatLocator, "gebaeudeart", rhsGebaeudeart), lhsGebaeudeart, rhsGebaeudeart)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "gebaeudeart", lhsGebaeudeart), LocatorUtils.property(thatLocator, "gebaeudeart", rhsGebaeudeart), lhsGebaeudeart, rhsGebaeudeart, (this.gebaeudeart!= null), (that.gebaeudeart!= null))) {
                 return false;
             }
         }
@@ -914,7 +1003,7 @@ public class Energiepass
             lhsEpasstext = this.getEpasstext();
             String rhsEpasstext;
             rhsEpasstext = that.getEpasstext();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "epasstext", lhsEpasstext), LocatorUtils.property(thatLocator, "epasstext", rhsEpasstext), lhsEpasstext, rhsEpasstext)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "epasstext", lhsEpasstext), LocatorUtils.property(thatLocator, "epasstext", rhsEpasstext), lhsEpasstext, rhsEpasstext, (this.epasstext!= null), (that.epasstext!= null))) {
                 return false;
             }
         }
@@ -923,7 +1012,7 @@ public class Energiepass
             lhsHwbwert = this.getHwbwert();
             String rhsHwbwert;
             rhsHwbwert = that.getHwbwert();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hwbwert", lhsHwbwert), LocatorUtils.property(thatLocator, "hwbwert", rhsHwbwert), lhsHwbwert, rhsHwbwert)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hwbwert", lhsHwbwert), LocatorUtils.property(thatLocator, "hwbwert", rhsHwbwert), lhsHwbwert, rhsHwbwert, (this.hwbwert!= null), (that.hwbwert!= null))) {
                 return false;
             }
         }
@@ -932,7 +1021,7 @@ public class Energiepass
             lhsHwbklasse = this.getHwbklasse();
             String rhsHwbklasse;
             rhsHwbklasse = that.getHwbklasse();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hwbklasse", lhsHwbklasse), LocatorUtils.property(thatLocator, "hwbklasse", rhsHwbklasse), lhsHwbklasse, rhsHwbklasse)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hwbklasse", lhsHwbklasse), LocatorUtils.property(thatLocator, "hwbklasse", rhsHwbklasse), lhsHwbklasse, rhsHwbklasse, (this.hwbklasse!= null), (that.hwbklasse!= null))) {
                 return false;
             }
         }
@@ -941,7 +1030,7 @@ public class Energiepass
             lhsFgeewert = this.getFgeewert();
             String rhsFgeewert;
             rhsFgeewert = that.getFgeewert();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fgeewert", lhsFgeewert), LocatorUtils.property(thatLocator, "fgeewert", rhsFgeewert), lhsFgeewert, rhsFgeewert)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fgeewert", lhsFgeewert), LocatorUtils.property(thatLocator, "fgeewert", rhsFgeewert), lhsFgeewert, rhsFgeewert, (this.fgeewert!= null), (that.fgeewert!= null))) {
                 return false;
             }
         }
@@ -950,7 +1039,7 @@ public class Energiepass
             lhsFgeeklasse = this.getFgeeklasse();
             String rhsFgeeklasse;
             rhsFgeeklasse = that.getFgeeklasse();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fgeeklasse", lhsFgeeklasse), LocatorUtils.property(thatLocator, "fgeeklasse", rhsFgeeklasse), lhsFgeeklasse, rhsFgeeklasse)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fgeeklasse", lhsFgeeklasse), LocatorUtils.property(thatLocator, "fgeeklasse", rhsFgeeklasse), lhsFgeeklasse, rhsFgeeklasse, (this.fgeeklasse!= null), (that.fgeeklasse!= null))) {
                 return false;
             }
         }
@@ -958,7 +1047,7 @@ public class Energiepass
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

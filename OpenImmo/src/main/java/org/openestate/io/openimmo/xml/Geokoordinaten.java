@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -31,8 +31,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "geokoordinaten")
-public class Geokoordinaten
-    implements Cloneable, CopyTo, Equals, ToString
+public class Geokoordinaten implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "breitengrad", required = true)
@@ -93,29 +92,29 @@ public class Geokoordinaten
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigDecimal theBreitengrad;
             theBreitengrad = this.getBreitengrad();
-            strategy.appendField(locator, this, "breitengrad", buffer, theBreitengrad);
+            strategy.appendField(locator, this, "breitengrad", buffer, theBreitengrad, (this.breitengrad!= null));
         }
         {
             BigDecimal theLaengengrad;
             theLaengengrad = this.getLaengengrad();
-            strategy.appendField(locator, this, "laengengrad", buffer, theLaengengrad);
+            strategy.appendField(locator, this, "laengengrad", buffer, theLaengengrad, (this.laengengrad!= null));
         }
         return buffer;
     }
@@ -125,29 +124,39 @@ public class Geokoordinaten
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Geokoordinaten) {
             final Geokoordinaten copy = ((Geokoordinaten) draftCopy);
-            if (this.breitengrad!= null) {
-                BigDecimal sourceBreitengrad;
-                sourceBreitengrad = this.getBreitengrad();
-                BigDecimal copyBreitengrad = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "breitengrad", sourceBreitengrad), sourceBreitengrad));
-                copy.setBreitengrad(copyBreitengrad);
-            } else {
-                copy.breitengrad = null;
+            {
+                Boolean breitengradShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.breitengrad!= null));
+                if (breitengradShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceBreitengrad;
+                    sourceBreitengrad = this.getBreitengrad();
+                    BigDecimal copyBreitengrad = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "breitengrad", sourceBreitengrad), sourceBreitengrad, (this.breitengrad!= null)));
+                    copy.setBreitengrad(copyBreitengrad);
+                } else {
+                    if (breitengradShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.breitengrad = null;
+                    }
+                }
             }
-            if (this.laengengrad!= null) {
-                BigDecimal sourceLaengengrad;
-                sourceLaengengrad = this.getLaengengrad();
-                BigDecimal copyLaengengrad = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "laengengrad", sourceLaengengrad), sourceLaengengrad));
-                copy.setLaengengrad(copyLaengengrad);
-            } else {
-                copy.laengengrad = null;
+            {
+                Boolean laengengradShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.laengengrad!= null));
+                if (laengengradShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceLaengengrad;
+                    sourceLaengengrad = this.getLaengengrad();
+                    BigDecimal copyLaengengrad = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "laengengrad", sourceLaengengrad), sourceLaengengrad, (this.laengengrad!= null)));
+                    copy.setLaengengrad(copyLaengengrad);
+                } else {
+                    if (laengengradShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.laengengrad = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -157,7 +166,7 @@ public class Geokoordinaten
         return new Geokoordinaten();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -170,7 +179,7 @@ public class Geokoordinaten
             lhsBreitengrad = this.getBreitengrad();
             BigDecimal rhsBreitengrad;
             rhsBreitengrad = that.getBreitengrad();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "breitengrad", lhsBreitengrad), LocatorUtils.property(thatLocator, "breitengrad", rhsBreitengrad), lhsBreitengrad, rhsBreitengrad)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "breitengrad", lhsBreitengrad), LocatorUtils.property(thatLocator, "breitengrad", rhsBreitengrad), lhsBreitengrad, rhsBreitengrad, (this.breitengrad!= null), (that.breitengrad!= null))) {
                 return false;
             }
         }
@@ -179,7 +188,7 @@ public class Geokoordinaten
             lhsLaengengrad = this.getLaengengrad();
             BigDecimal rhsLaengengrad;
             rhsLaengengrad = that.getLaengengrad();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "laengengrad", lhsLaengengrad), LocatorUtils.property(thatLocator, "laengengrad", rhsLaengengrad), lhsLaengengrad, rhsLaengengrad)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "laengengrad", lhsLaengengrad), LocatorUtils.property(thatLocator, "laengengrad", rhsLaengengrad), lhsLaengengrad, rhsLaengengrad, (this.laengengrad!= null), (that.laengengrad!= null))) {
                 return false;
             }
         }
@@ -187,7 +196,7 @@ public class Geokoordinaten
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

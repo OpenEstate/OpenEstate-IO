@@ -1,4 +1,4 @@
-OpenEstate-IO-Examples 1.0
+OpenEstate-IO-Examples 1.1
 ==========================
 
 *OpenEstate-IO-Examples* is a Java library, that provides some example classes
@@ -21,7 +21,7 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Examples</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
@@ -40,11 +40,11 @@ Dependencies
     (optional; for processing of CSV formats)
 -   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
--   [jaxb2-basics-runtime 0.9.5](https://github.com/highsource/jaxb2-basics)
+-   [jaxb2-basics-runtime 0.11.0](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.13](http://www.slf4j.org/)
+-   [SLF4J 1.7.18](http://www.slf4j.org/)
 -   [log4j 1.2.17](http://logging.apache.org/log4j/1.2/)
 
 
@@ -52,7 +52,7 @@ Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 for the full changelog.
 
 
@@ -62,7 +62,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.1/LICENSE.txt)
 for the license text.
 
 
@@ -71,5 +71,5 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)

@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "dachform")
-public class Dachform
-    implements Cloneable, CopyTo, Equals, ToString
+public class Dachform implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "KRUEPPELWALMDACH")
@@ -216,54 +215,54 @@ public class Dachform
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theKRUEPPELWALMDACH;
             theKRUEPPELWALMDACH = this.isKRUEPPELWALMDACH();
-            strategy.appendField(locator, this, "krueppelwalmdach", buffer, theKRUEPPELWALMDACH);
+            strategy.appendField(locator, this, "krueppelwalmdach", buffer, theKRUEPPELWALMDACH, (this.krueppelwalmdach!= null));
         }
         {
             Boolean theMANSARDDACH;
             theMANSARDDACH = this.isMANSARDDACH();
-            strategy.appendField(locator, this, "mansarddach", buffer, theMANSARDDACH);
+            strategy.appendField(locator, this, "mansarddach", buffer, theMANSARDDACH, (this.mansarddach!= null));
         }
         {
             Boolean thePULTDACH;
             thePULTDACH = this.isPULTDACH();
-            strategy.appendField(locator, this, "pultdach", buffer, thePULTDACH);
+            strategy.appendField(locator, this, "pultdach", buffer, thePULTDACH, (this.pultdach!= null));
         }
         {
             Boolean theSATTELDACH;
             theSATTELDACH = this.isSATTELDACH();
-            strategy.appendField(locator, this, "satteldach", buffer, theSATTELDACH);
+            strategy.appendField(locator, this, "satteldach", buffer, theSATTELDACH, (this.satteldach!= null));
         }
         {
             Boolean theWALMDACH;
             theWALMDACH = this.isWALMDACH();
-            strategy.appendField(locator, this, "walmdach", buffer, theWALMDACH);
+            strategy.appendField(locator, this, "walmdach", buffer, theWALMDACH, (this.walmdach!= null));
         }
         {
             Boolean theFLACHDACH;
             theFLACHDACH = this.isFLACHDACH();
-            strategy.appendField(locator, this, "flachdach", buffer, theFLACHDACH);
+            strategy.appendField(locator, this, "flachdach", buffer, theFLACHDACH, (this.flachdach!= null));
         }
         {
             Boolean thePYRAMIDENDACH;
             thePYRAMIDENDACH = this.isPYRAMIDENDACH();
-            strategy.appendField(locator, this, "pyramidendach", buffer, thePYRAMIDENDACH);
+            strategy.appendField(locator, this, "pyramidendach", buffer, thePYRAMIDENDACH, (this.pyramidendach!= null));
         }
         return buffer;
     }
@@ -273,69 +272,104 @@ public class Dachform
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Dachform) {
             final Dachform copy = ((Dachform) draftCopy);
-            if (this.krueppelwalmdach!= null) {
-                Boolean sourceKRUEPPELWALMDACH;
-                sourceKRUEPPELWALMDACH = this.isKRUEPPELWALMDACH();
-                Boolean copyKRUEPPELWALMDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "krueppelwalmdach", sourceKRUEPPELWALMDACH), sourceKRUEPPELWALMDACH));
-                copy.setKRUEPPELWALMDACH(copyKRUEPPELWALMDACH);
-            } else {
-                copy.krueppelwalmdach = null;
+            {
+                Boolean krueppelwalmdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.krueppelwalmdach!= null));
+                if (krueppelwalmdachShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceKRUEPPELWALMDACH;
+                    sourceKRUEPPELWALMDACH = this.isKRUEPPELWALMDACH();
+                    Boolean copyKRUEPPELWALMDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "krueppelwalmdach", sourceKRUEPPELWALMDACH), sourceKRUEPPELWALMDACH, (this.krueppelwalmdach!= null)));
+                    copy.setKRUEPPELWALMDACH(copyKRUEPPELWALMDACH);
+                } else {
+                    if (krueppelwalmdachShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.krueppelwalmdach = null;
+                    }
+                }
             }
-            if (this.mansarddach!= null) {
-                Boolean sourceMANSARDDACH;
-                sourceMANSARDDACH = this.isMANSARDDACH();
-                Boolean copyMANSARDDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mansarddach", sourceMANSARDDACH), sourceMANSARDDACH));
-                copy.setMANSARDDACH(copyMANSARDDACH);
-            } else {
-                copy.mansarddach = null;
+            {
+                Boolean mansarddachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mansarddach!= null));
+                if (mansarddachShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceMANSARDDACH;
+                    sourceMANSARDDACH = this.isMANSARDDACH();
+                    Boolean copyMANSARDDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mansarddach", sourceMANSARDDACH), sourceMANSARDDACH, (this.mansarddach!= null)));
+                    copy.setMANSARDDACH(copyMANSARDDACH);
+                } else {
+                    if (mansarddachShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.mansarddach = null;
+                    }
+                }
             }
-            if (this.pultdach!= null) {
-                Boolean sourcePULTDACH;
-                sourcePULTDACH = this.isPULTDACH();
-                Boolean copyPULTDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pultdach", sourcePULTDACH), sourcePULTDACH));
-                copy.setPULTDACH(copyPULTDACH);
-            } else {
-                copy.pultdach = null;
+            {
+                Boolean pultdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pultdach!= null));
+                if (pultdachShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourcePULTDACH;
+                    sourcePULTDACH = this.isPULTDACH();
+                    Boolean copyPULTDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pultdach", sourcePULTDACH), sourcePULTDACH, (this.pultdach!= null)));
+                    copy.setPULTDACH(copyPULTDACH);
+                } else {
+                    if (pultdachShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pultdach = null;
+                    }
+                }
             }
-            if (this.satteldach!= null) {
-                Boolean sourceSATTELDACH;
-                sourceSATTELDACH = this.isSATTELDACH();
-                Boolean copySATTELDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "satteldach", sourceSATTELDACH), sourceSATTELDACH));
-                copy.setSATTELDACH(copySATTELDACH);
-            } else {
-                copy.satteldach = null;
+            {
+                Boolean satteldachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.satteldach!= null));
+                if (satteldachShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceSATTELDACH;
+                    sourceSATTELDACH = this.isSATTELDACH();
+                    Boolean copySATTELDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "satteldach", sourceSATTELDACH), sourceSATTELDACH, (this.satteldach!= null)));
+                    copy.setSATTELDACH(copySATTELDACH);
+                } else {
+                    if (satteldachShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.satteldach = null;
+                    }
+                }
             }
-            if (this.walmdach!= null) {
-                Boolean sourceWALMDACH;
-                sourceWALMDACH = this.isWALMDACH();
-                Boolean copyWALMDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "walmdach", sourceWALMDACH), sourceWALMDACH));
-                copy.setWALMDACH(copyWALMDACH);
-            } else {
-                copy.walmdach = null;
+            {
+                Boolean walmdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.walmdach!= null));
+                if (walmdachShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWALMDACH;
+                    sourceWALMDACH = this.isWALMDACH();
+                    Boolean copyWALMDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "walmdach", sourceWALMDACH), sourceWALMDACH, (this.walmdach!= null)));
+                    copy.setWALMDACH(copyWALMDACH);
+                } else {
+                    if (walmdachShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.walmdach = null;
+                    }
+                }
             }
-            if (this.flachdach!= null) {
-                Boolean sourceFLACHDACH;
-                sourceFLACHDACH = this.isFLACHDACH();
-                Boolean copyFLACHDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "flachdach", sourceFLACHDACH), sourceFLACHDACH));
-                copy.setFLACHDACH(copyFLACHDACH);
-            } else {
-                copy.flachdach = null;
+            {
+                Boolean flachdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.flachdach!= null));
+                if (flachdachShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFLACHDACH;
+                    sourceFLACHDACH = this.isFLACHDACH();
+                    Boolean copyFLACHDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "flachdach", sourceFLACHDACH), sourceFLACHDACH, (this.flachdach!= null)));
+                    copy.setFLACHDACH(copyFLACHDACH);
+                } else {
+                    if (flachdachShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.flachdach = null;
+                    }
+                }
             }
-            if (this.pyramidendach!= null) {
-                Boolean sourcePYRAMIDENDACH;
-                sourcePYRAMIDENDACH = this.isPYRAMIDENDACH();
-                Boolean copyPYRAMIDENDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pyramidendach", sourcePYRAMIDENDACH), sourcePYRAMIDENDACH));
-                copy.setPYRAMIDENDACH(copyPYRAMIDENDACH);
-            } else {
-                copy.pyramidendach = null;
+            {
+                Boolean pyramidendachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pyramidendach!= null));
+                if (pyramidendachShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourcePYRAMIDENDACH;
+                    sourcePYRAMIDENDACH = this.isPYRAMIDENDACH();
+                    Boolean copyPYRAMIDENDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pyramidendach", sourcePYRAMIDENDACH), sourcePYRAMIDENDACH, (this.pyramidendach!= null)));
+                    copy.setPYRAMIDENDACH(copyPYRAMIDENDACH);
+                } else {
+                    if (pyramidendachShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pyramidendach = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -345,7 +379,7 @@ public class Dachform
         return new Dachform();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -358,7 +392,7 @@ public class Dachform
             lhsKRUEPPELWALMDACH = this.isKRUEPPELWALMDACH();
             Boolean rhsKRUEPPELWALMDACH;
             rhsKRUEPPELWALMDACH = that.isKRUEPPELWALMDACH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "krueppelwalmdach", lhsKRUEPPELWALMDACH), LocatorUtils.property(thatLocator, "krueppelwalmdach", rhsKRUEPPELWALMDACH), lhsKRUEPPELWALMDACH, rhsKRUEPPELWALMDACH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "krueppelwalmdach", lhsKRUEPPELWALMDACH), LocatorUtils.property(thatLocator, "krueppelwalmdach", rhsKRUEPPELWALMDACH), lhsKRUEPPELWALMDACH, rhsKRUEPPELWALMDACH, (this.krueppelwalmdach!= null), (that.krueppelwalmdach!= null))) {
                 return false;
             }
         }
@@ -367,7 +401,7 @@ public class Dachform
             lhsMANSARDDACH = this.isMANSARDDACH();
             Boolean rhsMANSARDDACH;
             rhsMANSARDDACH = that.isMANSARDDACH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "mansarddach", lhsMANSARDDACH), LocatorUtils.property(thatLocator, "mansarddach", rhsMANSARDDACH), lhsMANSARDDACH, rhsMANSARDDACH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "mansarddach", lhsMANSARDDACH), LocatorUtils.property(thatLocator, "mansarddach", rhsMANSARDDACH), lhsMANSARDDACH, rhsMANSARDDACH, (this.mansarddach!= null), (that.mansarddach!= null))) {
                 return false;
             }
         }
@@ -376,7 +410,7 @@ public class Dachform
             lhsPULTDACH = this.isPULTDACH();
             Boolean rhsPULTDACH;
             rhsPULTDACH = that.isPULTDACH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pultdach", lhsPULTDACH), LocatorUtils.property(thatLocator, "pultdach", rhsPULTDACH), lhsPULTDACH, rhsPULTDACH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pultdach", lhsPULTDACH), LocatorUtils.property(thatLocator, "pultdach", rhsPULTDACH), lhsPULTDACH, rhsPULTDACH, (this.pultdach!= null), (that.pultdach!= null))) {
                 return false;
             }
         }
@@ -385,7 +419,7 @@ public class Dachform
             lhsSATTELDACH = this.isSATTELDACH();
             Boolean rhsSATTELDACH;
             rhsSATTELDACH = that.isSATTELDACH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "satteldach", lhsSATTELDACH), LocatorUtils.property(thatLocator, "satteldach", rhsSATTELDACH), lhsSATTELDACH, rhsSATTELDACH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "satteldach", lhsSATTELDACH), LocatorUtils.property(thatLocator, "satteldach", rhsSATTELDACH), lhsSATTELDACH, rhsSATTELDACH, (this.satteldach!= null), (that.satteldach!= null))) {
                 return false;
             }
         }
@@ -394,7 +428,7 @@ public class Dachform
             lhsWALMDACH = this.isWALMDACH();
             Boolean rhsWALMDACH;
             rhsWALMDACH = that.isWALMDACH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "walmdach", lhsWALMDACH), LocatorUtils.property(thatLocator, "walmdach", rhsWALMDACH), lhsWALMDACH, rhsWALMDACH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "walmdach", lhsWALMDACH), LocatorUtils.property(thatLocator, "walmdach", rhsWALMDACH), lhsWALMDACH, rhsWALMDACH, (this.walmdach!= null), (that.walmdach!= null))) {
                 return false;
             }
         }
@@ -403,7 +437,7 @@ public class Dachform
             lhsFLACHDACH = this.isFLACHDACH();
             Boolean rhsFLACHDACH;
             rhsFLACHDACH = that.isFLACHDACH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "flachdach", lhsFLACHDACH), LocatorUtils.property(thatLocator, "flachdach", rhsFLACHDACH), lhsFLACHDACH, rhsFLACHDACH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "flachdach", lhsFLACHDACH), LocatorUtils.property(thatLocator, "flachdach", rhsFLACHDACH), lhsFLACHDACH, rhsFLACHDACH, (this.flachdach!= null), (that.flachdach!= null))) {
                 return false;
             }
         }
@@ -412,7 +446,7 @@ public class Dachform
             lhsPYRAMIDENDACH = this.isPYRAMIDENDACH();
             Boolean rhsPYRAMIDENDACH;
             rhsPYRAMIDENDACH = that.isPYRAMIDENDACH();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "pyramidendach", lhsPYRAMIDENDACH), LocatorUtils.property(thatLocator, "pyramidendach", rhsPYRAMIDENDACH), lhsPYRAMIDENDACH, rhsPYRAMIDENDACH)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pyramidendach", lhsPYRAMIDENDACH), LocatorUtils.property(thatLocator, "pyramidendach", rhsPYRAMIDENDACH), lhsPYRAMIDENDACH, rhsPYRAMIDENDACH, (this.pyramidendach!= null), (that.pyramidendach!= null))) {
                 return false;
             }
         }
@@ -420,7 +454,7 @@ public class Dachform
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

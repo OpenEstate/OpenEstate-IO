@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 OpenEstate.org.
+ * Copyright 2015-2016 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.openestate.io.immoxml;
 
 import java.io.File;
@@ -23,8 +22,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -35,6 +32,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
+import org.openestate.io.core.NumberUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.immoxml.xml.ObjectFactory;
@@ -318,15 +316,9 @@ public class ImmoXmlUtils
     }
     try
     {
-      NumberFormat format = NumberFormat.getNumberInstance( Locale.GERMANY );
-      return BigDecimal.valueOf( format.parse( value ).doubleValue() );
+      return BigDecimal.valueOf( NumberUtils.parseNumber( value, Locale.GERMANY ).doubleValue() );
     }
     catch (NumberFormatException ex)
-    {
-      //LOGGER.warn( "Can't parse value '" + value + "' as decimal!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-    }
-    catch (ParseException ex)
     {
       //LOGGER.warn( "Can't parse value '" + value + "' as decimal!" );
       //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
@@ -392,14 +384,16 @@ public class ImmoXmlUtils
 
   public static String printPositiveDecimal( BigDecimal value )
   {
-    if (value==null || value.compareTo( BigDecimal.ZERO )>=0)
+    // ImmoXML specifies positive decimal values including 0
+    if (value==null || value.compareTo( BigDecimal.ZERO )<0)
       throw new IllegalArgumentException( "Can't print positive decimal value!" );
     return printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
   public static String printPositiveInteger( BigInteger value )
   {
-    if (value==null || value.compareTo( BigInteger.ZERO )>0)
+    // ImmoXML specifies positive integer values excluding 0
+    if (value==null || value.compareTo( BigInteger.ZERO )<1)
       throw new IllegalArgumentException( "Can't print positive integer value!" );
     else
       return printInteger( value );

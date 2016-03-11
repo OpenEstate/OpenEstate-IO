@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -47,8 +47,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedAnyfield"
 })
 @XmlRootElement(name = "verwaltung_techn")
-public class VerwaltungTechn
-    implements Cloneable, CopyTo, Equals, ToString
+public class VerwaltungTechn implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "objektnr_intern")
@@ -407,84 +406,84 @@ public class VerwaltungTechn
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theObjektnrIntern;
             theObjektnrIntern = this.getObjektnrIntern();
-            strategy.appendField(locator, this, "objektnrIntern", buffer, theObjektnrIntern);
+            strategy.appendField(locator, this, "objektnrIntern", buffer, theObjektnrIntern, (this.objektnrIntern!= null));
         }
         {
             String theObjektnrExtern;
             theObjektnrExtern = this.getObjektnrExtern();
-            strategy.appendField(locator, this, "objektnrExtern", buffer, theObjektnrExtern);
+            strategy.appendField(locator, this, "objektnrExtern", buffer, theObjektnrExtern, (this.objektnrExtern!= null));
         }
         {
             Aktion theAktion;
             theAktion = this.getAktion();
-            strategy.appendField(locator, this, "aktion", buffer, theAktion);
+            strategy.appendField(locator, this, "aktion", buffer, theAktion, (this.aktion!= null));
         }
         {
             Calendar theAktivVon;
             theAktivVon = this.getAktivVon();
-            strategy.appendField(locator, this, "aktivVon", buffer, theAktivVon);
+            strategy.appendField(locator, this, "aktivVon", buffer, theAktivVon, (this.aktivVon!= null));
         }
         {
             Calendar theAktivBis;
             theAktivBis = this.getAktivBis();
-            strategy.appendField(locator, this, "aktivBis", buffer, theAktivBis);
+            strategy.appendField(locator, this, "aktivBis", buffer, theAktivBis, (this.aktivBis!= null));
         }
         {
             String theImmoxmlObid;
             theImmoxmlObid = this.getImmoxmlObid();
-            strategy.appendField(locator, this, "immoxmlObid", buffer, theImmoxmlObid);
+            strategy.appendField(locator, this, "immoxmlObid", buffer, theImmoxmlObid, (this.immoxmlObid!= null));
         }
         {
             String theKennungUrsprung;
             theKennungUrsprung = this.getKennungUrsprung();
-            strategy.appendField(locator, this, "kennungUrsprung", buffer, theKennungUrsprung);
+            strategy.appendField(locator, this, "kennungUrsprung", buffer, theKennungUrsprung, (this.kennungUrsprung!= null));
         }
         {
             Calendar theStandVom;
             theStandVom = this.getStandVom();
-            strategy.appendField(locator, this, "standVom", buffer, theStandVom);
+            strategy.appendField(locator, this, "standVom", buffer, theStandVom, (this.standVom!= null));
         }
         {
             Boolean theWeitergabeGenerell;
             theWeitergabeGenerell = this.isWeitergabeGenerell();
-            strategy.appendField(locator, this, "weitergabeGenerell", buffer, theWeitergabeGenerell);
+            strategy.appendField(locator, this, "weitergabeGenerell", buffer, theWeitergabeGenerell, (this.weitergabeGenerell!= null));
         }
         {
             String theWeitergabePositiv;
             theWeitergabePositiv = this.getWeitergabePositiv();
-            strategy.appendField(locator, this, "weitergabePositiv", buffer, theWeitergabePositiv);
+            strategy.appendField(locator, this, "weitergabePositiv", buffer, theWeitergabePositiv, (this.weitergabePositiv!= null));
         }
         {
             String theWeitergabeNegativ;
             theWeitergabeNegativ = this.getWeitergabeNegativ();
-            strategy.appendField(locator, this, "weitergabeNegativ", buffer, theWeitergabeNegativ);
+            strategy.appendField(locator, this, "weitergabeNegativ", buffer, theWeitergabeNegativ, (this.weitergabeNegativ!= null));
         }
         {
             List<UserDefinedSimplefield> theUserDefinedSimplefield;
             theUserDefinedSimplefield = (((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty()))?this.getUserDefinedSimplefield():null);
-            strategy.appendField(locator, this, "userDefinedSimplefield", buffer, theUserDefinedSimplefield);
+            strategy.appendField(locator, this, "userDefinedSimplefield", buffer, theUserDefinedSimplefield, ((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty())));
         }
         {
             List<UserDefinedAnyfield> theUserDefinedAnyfield;
             theUserDefinedAnyfield = (((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty()))?this.getUserDefinedAnyfield():null);
-            strategy.appendField(locator, this, "userDefinedAnyfield", buffer, theUserDefinedAnyfield);
+            strategy.appendField(locator, this, "userDefinedAnyfield", buffer, theUserDefinedAnyfield, ((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty())));
         }
         return buffer;
     }
@@ -494,127 +493,192 @@ public class VerwaltungTechn
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof VerwaltungTechn) {
             final VerwaltungTechn copy = ((VerwaltungTechn) draftCopy);
-            if (this.objektnrIntern!= null) {
-                String sourceObjektnrIntern;
-                sourceObjektnrIntern = this.getObjektnrIntern();
-                String copyObjektnrIntern = ((String) strategy.copy(LocatorUtils.property(locator, "objektnrIntern", sourceObjektnrIntern), sourceObjektnrIntern));
-                copy.setObjektnrIntern(copyObjektnrIntern);
-            } else {
-                copy.objektnrIntern = null;
-            }
-            if (this.objektnrExtern!= null) {
-                String sourceObjektnrExtern;
-                sourceObjektnrExtern = this.getObjektnrExtern();
-                String copyObjektnrExtern = ((String) strategy.copy(LocatorUtils.property(locator, "objektnrExtern", sourceObjektnrExtern), sourceObjektnrExtern));
-                copy.setObjektnrExtern(copyObjektnrExtern);
-            } else {
-                copy.objektnrExtern = null;
-            }
-            if (this.aktion!= null) {
-                Aktion sourceAktion;
-                sourceAktion = this.getAktion();
-                Aktion copyAktion = ((Aktion) strategy.copy(LocatorUtils.property(locator, "aktion", sourceAktion), sourceAktion));
-                copy.setAktion(copyAktion);
-            } else {
-                copy.aktion = null;
-            }
-            if (this.aktivVon!= null) {
-                Calendar sourceAktivVon;
-                sourceAktivVon = this.getAktivVon();
-                Calendar copyAktivVon = ((Calendar) strategy.copy(LocatorUtils.property(locator, "aktivVon", sourceAktivVon), sourceAktivVon));
-                copy.setAktivVon(copyAktivVon);
-            } else {
-                copy.aktivVon = null;
-            }
-            if (this.aktivBis!= null) {
-                Calendar sourceAktivBis;
-                sourceAktivBis = this.getAktivBis();
-                Calendar copyAktivBis = ((Calendar) strategy.copy(LocatorUtils.property(locator, "aktivBis", sourceAktivBis), sourceAktivBis));
-                copy.setAktivBis(copyAktivBis);
-            } else {
-                copy.aktivBis = null;
-            }
-            if (this.immoxmlObid!= null) {
-                String sourceImmoxmlObid;
-                sourceImmoxmlObid = this.getImmoxmlObid();
-                String copyImmoxmlObid = ((String) strategy.copy(LocatorUtils.property(locator, "immoxmlObid", sourceImmoxmlObid), sourceImmoxmlObid));
-                copy.setImmoxmlObid(copyImmoxmlObid);
-            } else {
-                copy.immoxmlObid = null;
-            }
-            if (this.kennungUrsprung!= null) {
-                String sourceKennungUrsprung;
-                sourceKennungUrsprung = this.getKennungUrsprung();
-                String copyKennungUrsprung = ((String) strategy.copy(LocatorUtils.property(locator, "kennungUrsprung", sourceKennungUrsprung), sourceKennungUrsprung));
-                copy.setKennungUrsprung(copyKennungUrsprung);
-            } else {
-                copy.kennungUrsprung = null;
-            }
-            if (this.standVom!= null) {
-                Calendar sourceStandVom;
-                sourceStandVom = this.getStandVom();
-                Calendar copyStandVom = ((Calendar) strategy.copy(LocatorUtils.property(locator, "standVom", sourceStandVom), sourceStandVom));
-                copy.setStandVom(copyStandVom);
-            } else {
-                copy.standVom = null;
-            }
-            if (this.weitergabeGenerell!= null) {
-                Boolean sourceWeitergabeGenerell;
-                sourceWeitergabeGenerell = this.isWeitergabeGenerell();
-                Boolean copyWeitergabeGenerell = ((Boolean) strategy.copy(LocatorUtils.property(locator, "weitergabeGenerell", sourceWeitergabeGenerell), sourceWeitergabeGenerell));
-                copy.setWeitergabeGenerell(copyWeitergabeGenerell);
-            } else {
-                copy.weitergabeGenerell = null;
-            }
-            if (this.weitergabePositiv!= null) {
-                String sourceWeitergabePositiv;
-                sourceWeitergabePositiv = this.getWeitergabePositiv();
-                String copyWeitergabePositiv = ((String) strategy.copy(LocatorUtils.property(locator, "weitergabePositiv", sourceWeitergabePositiv), sourceWeitergabePositiv));
-                copy.setWeitergabePositiv(copyWeitergabePositiv);
-            } else {
-                copy.weitergabePositiv = null;
-            }
-            if (this.weitergabeNegativ!= null) {
-                String sourceWeitergabeNegativ;
-                sourceWeitergabeNegativ = this.getWeitergabeNegativ();
-                String copyWeitergabeNegativ = ((String) strategy.copy(LocatorUtils.property(locator, "weitergabeNegativ", sourceWeitergabeNegativ), sourceWeitergabeNegativ));
-                copy.setWeitergabeNegativ(copyWeitergabeNegativ);
-            } else {
-                copy.weitergabeNegativ = null;
-            }
-            if ((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty())) {
-                List<UserDefinedSimplefield> sourceUserDefinedSimplefield;
-                sourceUserDefinedSimplefield = (((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty()))?this.getUserDefinedSimplefield():null);
-                @SuppressWarnings("unchecked")
-                List<UserDefinedSimplefield> copyUserDefinedSimplefield = ((List<UserDefinedSimplefield> ) strategy.copy(LocatorUtils.property(locator, "userDefinedSimplefield", sourceUserDefinedSimplefield), sourceUserDefinedSimplefield));
-                copy.userDefinedSimplefield = null;
-                if (copyUserDefinedSimplefield!= null) {
-                    List<UserDefinedSimplefield> uniqueUserDefinedSimplefieldl = copy.getUserDefinedSimplefield();
-                    uniqueUserDefinedSimplefieldl.addAll(copyUserDefinedSimplefield);
+            {
+                Boolean objektnrInternShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektnrIntern!= null));
+                if (objektnrInternShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceObjektnrIntern;
+                    sourceObjektnrIntern = this.getObjektnrIntern();
+                    String copyObjektnrIntern = ((String) strategy.copy(LocatorUtils.property(locator, "objektnrIntern", sourceObjektnrIntern), sourceObjektnrIntern, (this.objektnrIntern!= null)));
+                    copy.setObjektnrIntern(copyObjektnrIntern);
+                } else {
+                    if (objektnrInternShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.objektnrIntern = null;
+                    }
                 }
-            } else {
-                copy.userDefinedSimplefield = null;
             }
-            if ((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty())) {
-                List<UserDefinedAnyfield> sourceUserDefinedAnyfield;
-                sourceUserDefinedAnyfield = (((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty()))?this.getUserDefinedAnyfield():null);
-                @SuppressWarnings("unchecked")
-                List<UserDefinedAnyfield> copyUserDefinedAnyfield = ((List<UserDefinedAnyfield> ) strategy.copy(LocatorUtils.property(locator, "userDefinedAnyfield", sourceUserDefinedAnyfield), sourceUserDefinedAnyfield));
-                copy.userDefinedAnyfield = null;
-                if (copyUserDefinedAnyfield!= null) {
-                    List<UserDefinedAnyfield> uniqueUserDefinedAnyfieldl = copy.getUserDefinedAnyfield();
-                    uniqueUserDefinedAnyfieldl.addAll(copyUserDefinedAnyfield);
+            {
+                Boolean objektnrExternShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektnrExtern!= null));
+                if (objektnrExternShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceObjektnrExtern;
+                    sourceObjektnrExtern = this.getObjektnrExtern();
+                    String copyObjektnrExtern = ((String) strategy.copy(LocatorUtils.property(locator, "objektnrExtern", sourceObjektnrExtern), sourceObjektnrExtern, (this.objektnrExtern!= null)));
+                    copy.setObjektnrExtern(copyObjektnrExtern);
+                } else {
+                    if (objektnrExternShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.objektnrExtern = null;
+                    }
                 }
-            } else {
-                copy.userDefinedAnyfield = null;
+            }
+            {
+                Boolean aktionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.aktion!= null));
+                if (aktionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Aktion sourceAktion;
+                    sourceAktion = this.getAktion();
+                    Aktion copyAktion = ((Aktion) strategy.copy(LocatorUtils.property(locator, "aktion", sourceAktion), sourceAktion, (this.aktion!= null)));
+                    copy.setAktion(copyAktion);
+                } else {
+                    if (aktionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.aktion = null;
+                    }
+                }
+            }
+            {
+                Boolean aktivVonShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.aktivVon!= null));
+                if (aktivVonShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceAktivVon;
+                    sourceAktivVon = this.getAktivVon();
+                    Calendar copyAktivVon = ((Calendar) strategy.copy(LocatorUtils.property(locator, "aktivVon", sourceAktivVon), sourceAktivVon, (this.aktivVon!= null)));
+                    copy.setAktivVon(copyAktivVon);
+                } else {
+                    if (aktivVonShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.aktivVon = null;
+                    }
+                }
+            }
+            {
+                Boolean aktivBisShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.aktivBis!= null));
+                if (aktivBisShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceAktivBis;
+                    sourceAktivBis = this.getAktivBis();
+                    Calendar copyAktivBis = ((Calendar) strategy.copy(LocatorUtils.property(locator, "aktivBis", sourceAktivBis), sourceAktivBis, (this.aktivBis!= null)));
+                    copy.setAktivBis(copyAktivBis);
+                } else {
+                    if (aktivBisShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.aktivBis = null;
+                    }
+                }
+            }
+            {
+                Boolean immoxmlObidShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.immoxmlObid!= null));
+                if (immoxmlObidShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceImmoxmlObid;
+                    sourceImmoxmlObid = this.getImmoxmlObid();
+                    String copyImmoxmlObid = ((String) strategy.copy(LocatorUtils.property(locator, "immoxmlObid", sourceImmoxmlObid), sourceImmoxmlObid, (this.immoxmlObid!= null)));
+                    copy.setImmoxmlObid(copyImmoxmlObid);
+                } else {
+                    if (immoxmlObidShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.immoxmlObid = null;
+                    }
+                }
+            }
+            {
+                Boolean kennungUrsprungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kennungUrsprung!= null));
+                if (kennungUrsprungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceKennungUrsprung;
+                    sourceKennungUrsprung = this.getKennungUrsprung();
+                    String copyKennungUrsprung = ((String) strategy.copy(LocatorUtils.property(locator, "kennungUrsprung", sourceKennungUrsprung), sourceKennungUrsprung, (this.kennungUrsprung!= null)));
+                    copy.setKennungUrsprung(copyKennungUrsprung);
+                } else {
+                    if (kennungUrsprungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.kennungUrsprung = null;
+                    }
+                }
+            }
+            {
+                Boolean standVomShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.standVom!= null));
+                if (standVomShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceStandVom;
+                    sourceStandVom = this.getStandVom();
+                    Calendar copyStandVom = ((Calendar) strategy.copy(LocatorUtils.property(locator, "standVom", sourceStandVom), sourceStandVom, (this.standVom!= null)));
+                    copy.setStandVom(copyStandVom);
+                } else {
+                    if (standVomShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.standVom = null;
+                    }
+                }
+            }
+            {
+                Boolean weitergabeGenerellShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.weitergabeGenerell!= null));
+                if (weitergabeGenerellShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWeitergabeGenerell;
+                    sourceWeitergabeGenerell = this.isWeitergabeGenerell();
+                    Boolean copyWeitergabeGenerell = ((Boolean) strategy.copy(LocatorUtils.property(locator, "weitergabeGenerell", sourceWeitergabeGenerell), sourceWeitergabeGenerell, (this.weitergabeGenerell!= null)));
+                    copy.setWeitergabeGenerell(copyWeitergabeGenerell);
+                } else {
+                    if (weitergabeGenerellShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.weitergabeGenerell = null;
+                    }
+                }
+            }
+            {
+                Boolean weitergabePositivShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.weitergabePositiv!= null));
+                if (weitergabePositivShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceWeitergabePositiv;
+                    sourceWeitergabePositiv = this.getWeitergabePositiv();
+                    String copyWeitergabePositiv = ((String) strategy.copy(LocatorUtils.property(locator, "weitergabePositiv", sourceWeitergabePositiv), sourceWeitergabePositiv, (this.weitergabePositiv!= null)));
+                    copy.setWeitergabePositiv(copyWeitergabePositiv);
+                } else {
+                    if (weitergabePositivShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.weitergabePositiv = null;
+                    }
+                }
+            }
+            {
+                Boolean weitergabeNegativShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.weitergabeNegativ!= null));
+                if (weitergabeNegativShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceWeitergabeNegativ;
+                    sourceWeitergabeNegativ = this.getWeitergabeNegativ();
+                    String copyWeitergabeNegativ = ((String) strategy.copy(LocatorUtils.property(locator, "weitergabeNegativ", sourceWeitergabeNegativ), sourceWeitergabeNegativ, (this.weitergabeNegativ!= null)));
+                    copy.setWeitergabeNegativ(copyWeitergabeNegativ);
+                } else {
+                    if (weitergabeNegativShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.weitergabeNegativ = null;
+                    }
+                }
+            }
+            {
+                Boolean userDefinedSimplefieldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty())));
+                if (userDefinedSimplefieldShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<UserDefinedSimplefield> sourceUserDefinedSimplefield;
+                    sourceUserDefinedSimplefield = (((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty()))?this.getUserDefinedSimplefield():null);
+                    @SuppressWarnings("unchecked")
+                    List<UserDefinedSimplefield> copyUserDefinedSimplefield = ((List<UserDefinedSimplefield> ) strategy.copy(LocatorUtils.property(locator, "userDefinedSimplefield", sourceUserDefinedSimplefield), sourceUserDefinedSimplefield, ((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty()))));
+                    copy.userDefinedSimplefield = null;
+                    if (copyUserDefinedSimplefield!= null) {
+                        List<UserDefinedSimplefield> uniqueUserDefinedSimplefieldl = copy.getUserDefinedSimplefield();
+                        uniqueUserDefinedSimplefieldl.addAll(copyUserDefinedSimplefield);
+                    }
+                } else {
+                    if (userDefinedSimplefieldShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.userDefinedSimplefield = null;
+                    }
+                }
+            }
+            {
+                Boolean userDefinedAnyfieldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty())));
+                if (userDefinedAnyfieldShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<UserDefinedAnyfield> sourceUserDefinedAnyfield;
+                    sourceUserDefinedAnyfield = (((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty()))?this.getUserDefinedAnyfield():null);
+                    @SuppressWarnings("unchecked")
+                    List<UserDefinedAnyfield> copyUserDefinedAnyfield = ((List<UserDefinedAnyfield> ) strategy.copy(LocatorUtils.property(locator, "userDefinedAnyfield", sourceUserDefinedAnyfield), sourceUserDefinedAnyfield, ((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty()))));
+                    copy.userDefinedAnyfield = null;
+                    if (copyUserDefinedAnyfield!= null) {
+                        List<UserDefinedAnyfield> uniqueUserDefinedAnyfieldl = copy.getUserDefinedAnyfield();
+                        uniqueUserDefinedAnyfieldl.addAll(copyUserDefinedAnyfield);
+                    }
+                } else {
+                    if (userDefinedAnyfieldShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.userDefinedAnyfield = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -624,7 +688,7 @@ public class VerwaltungTechn
         return new VerwaltungTechn();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -637,7 +701,7 @@ public class VerwaltungTechn
             lhsObjektnrIntern = this.getObjektnrIntern();
             String rhsObjektnrIntern;
             rhsObjektnrIntern = that.getObjektnrIntern();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektnrIntern", lhsObjektnrIntern), LocatorUtils.property(thatLocator, "objektnrIntern", rhsObjektnrIntern), lhsObjektnrIntern, rhsObjektnrIntern)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektnrIntern", lhsObjektnrIntern), LocatorUtils.property(thatLocator, "objektnrIntern", rhsObjektnrIntern), lhsObjektnrIntern, rhsObjektnrIntern, (this.objektnrIntern!= null), (that.objektnrIntern!= null))) {
                 return false;
             }
         }
@@ -646,7 +710,7 @@ public class VerwaltungTechn
             lhsObjektnrExtern = this.getObjektnrExtern();
             String rhsObjektnrExtern;
             rhsObjektnrExtern = that.getObjektnrExtern();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektnrExtern", lhsObjektnrExtern), LocatorUtils.property(thatLocator, "objektnrExtern", rhsObjektnrExtern), lhsObjektnrExtern, rhsObjektnrExtern)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektnrExtern", lhsObjektnrExtern), LocatorUtils.property(thatLocator, "objektnrExtern", rhsObjektnrExtern), lhsObjektnrExtern, rhsObjektnrExtern, (this.objektnrExtern!= null), (that.objektnrExtern!= null))) {
                 return false;
             }
         }
@@ -655,7 +719,7 @@ public class VerwaltungTechn
             lhsAktion = this.getAktion();
             Aktion rhsAktion;
             rhsAktion = that.getAktion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktion", lhsAktion), LocatorUtils.property(thatLocator, "aktion", rhsAktion), lhsAktion, rhsAktion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktion", lhsAktion), LocatorUtils.property(thatLocator, "aktion", rhsAktion), lhsAktion, rhsAktion, (this.aktion!= null), (that.aktion!= null))) {
                 return false;
             }
         }
@@ -664,7 +728,7 @@ public class VerwaltungTechn
             lhsAktivVon = this.getAktivVon();
             Calendar rhsAktivVon;
             rhsAktivVon = that.getAktivVon();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktivVon", lhsAktivVon), LocatorUtils.property(thatLocator, "aktivVon", rhsAktivVon), lhsAktivVon, rhsAktivVon)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktivVon", lhsAktivVon), LocatorUtils.property(thatLocator, "aktivVon", rhsAktivVon), lhsAktivVon, rhsAktivVon, (this.aktivVon!= null), (that.aktivVon!= null))) {
                 return false;
             }
         }
@@ -673,7 +737,7 @@ public class VerwaltungTechn
             lhsAktivBis = this.getAktivBis();
             Calendar rhsAktivBis;
             rhsAktivBis = that.getAktivBis();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktivBis", lhsAktivBis), LocatorUtils.property(thatLocator, "aktivBis", rhsAktivBis), lhsAktivBis, rhsAktivBis)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktivBis", lhsAktivBis), LocatorUtils.property(thatLocator, "aktivBis", rhsAktivBis), lhsAktivBis, rhsAktivBis, (this.aktivBis!= null), (that.aktivBis!= null))) {
                 return false;
             }
         }
@@ -682,7 +746,7 @@ public class VerwaltungTechn
             lhsImmoxmlObid = this.getImmoxmlObid();
             String rhsImmoxmlObid;
             rhsImmoxmlObid = that.getImmoxmlObid();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "immoxmlObid", lhsImmoxmlObid), LocatorUtils.property(thatLocator, "immoxmlObid", rhsImmoxmlObid), lhsImmoxmlObid, rhsImmoxmlObid)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "immoxmlObid", lhsImmoxmlObid), LocatorUtils.property(thatLocator, "immoxmlObid", rhsImmoxmlObid), lhsImmoxmlObid, rhsImmoxmlObid, (this.immoxmlObid!= null), (that.immoxmlObid!= null))) {
                 return false;
             }
         }
@@ -691,7 +755,7 @@ public class VerwaltungTechn
             lhsKennungUrsprung = this.getKennungUrsprung();
             String rhsKennungUrsprung;
             rhsKennungUrsprung = that.getKennungUrsprung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kennungUrsprung", lhsKennungUrsprung), LocatorUtils.property(thatLocator, "kennungUrsprung", rhsKennungUrsprung), lhsKennungUrsprung, rhsKennungUrsprung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kennungUrsprung", lhsKennungUrsprung), LocatorUtils.property(thatLocator, "kennungUrsprung", rhsKennungUrsprung), lhsKennungUrsprung, rhsKennungUrsprung, (this.kennungUrsprung!= null), (that.kennungUrsprung!= null))) {
                 return false;
             }
         }
@@ -700,7 +764,7 @@ public class VerwaltungTechn
             lhsStandVom = this.getStandVom();
             Calendar rhsStandVom;
             rhsStandVom = that.getStandVom();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "standVom", lhsStandVom), LocatorUtils.property(thatLocator, "standVom", rhsStandVom), lhsStandVom, rhsStandVom)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "standVom", lhsStandVom), LocatorUtils.property(thatLocator, "standVom", rhsStandVom), lhsStandVom, rhsStandVom, (this.standVom!= null), (that.standVom!= null))) {
                 return false;
             }
         }
@@ -709,7 +773,7 @@ public class VerwaltungTechn
             lhsWeitergabeGenerell = this.isWeitergabeGenerell();
             Boolean rhsWeitergabeGenerell;
             rhsWeitergabeGenerell = that.isWeitergabeGenerell();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "weitergabeGenerell", lhsWeitergabeGenerell), LocatorUtils.property(thatLocator, "weitergabeGenerell", rhsWeitergabeGenerell), lhsWeitergabeGenerell, rhsWeitergabeGenerell)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "weitergabeGenerell", lhsWeitergabeGenerell), LocatorUtils.property(thatLocator, "weitergabeGenerell", rhsWeitergabeGenerell), lhsWeitergabeGenerell, rhsWeitergabeGenerell, (this.weitergabeGenerell!= null), (that.weitergabeGenerell!= null))) {
                 return false;
             }
         }
@@ -718,7 +782,7 @@ public class VerwaltungTechn
             lhsWeitergabePositiv = this.getWeitergabePositiv();
             String rhsWeitergabePositiv;
             rhsWeitergabePositiv = that.getWeitergabePositiv();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "weitergabePositiv", lhsWeitergabePositiv), LocatorUtils.property(thatLocator, "weitergabePositiv", rhsWeitergabePositiv), lhsWeitergabePositiv, rhsWeitergabePositiv)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "weitergabePositiv", lhsWeitergabePositiv), LocatorUtils.property(thatLocator, "weitergabePositiv", rhsWeitergabePositiv), lhsWeitergabePositiv, rhsWeitergabePositiv, (this.weitergabePositiv!= null), (that.weitergabePositiv!= null))) {
                 return false;
             }
         }
@@ -727,7 +791,7 @@ public class VerwaltungTechn
             lhsWeitergabeNegativ = this.getWeitergabeNegativ();
             String rhsWeitergabeNegativ;
             rhsWeitergabeNegativ = that.getWeitergabeNegativ();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "weitergabeNegativ", lhsWeitergabeNegativ), LocatorUtils.property(thatLocator, "weitergabeNegativ", rhsWeitergabeNegativ), lhsWeitergabeNegativ, rhsWeitergabeNegativ)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "weitergabeNegativ", lhsWeitergabeNegativ), LocatorUtils.property(thatLocator, "weitergabeNegativ", rhsWeitergabeNegativ), lhsWeitergabeNegativ, rhsWeitergabeNegativ, (this.weitergabeNegativ!= null), (that.weitergabeNegativ!= null))) {
                 return false;
             }
         }
@@ -736,7 +800,7 @@ public class VerwaltungTechn
             lhsUserDefinedSimplefield = (((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty()))?this.getUserDefinedSimplefield():null);
             List<UserDefinedSimplefield> rhsUserDefinedSimplefield;
             rhsUserDefinedSimplefield = (((that.userDefinedSimplefield!= null)&&(!that.userDefinedSimplefield.isEmpty()))?that.getUserDefinedSimplefield():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "userDefinedSimplefield", lhsUserDefinedSimplefield), LocatorUtils.property(thatLocator, "userDefinedSimplefield", rhsUserDefinedSimplefield), lhsUserDefinedSimplefield, rhsUserDefinedSimplefield)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "userDefinedSimplefield", lhsUserDefinedSimplefield), LocatorUtils.property(thatLocator, "userDefinedSimplefield", rhsUserDefinedSimplefield), lhsUserDefinedSimplefield, rhsUserDefinedSimplefield, ((this.userDefinedSimplefield!= null)&&(!this.userDefinedSimplefield.isEmpty())), ((that.userDefinedSimplefield!= null)&&(!that.userDefinedSimplefield.isEmpty())))) {
                 return false;
             }
         }
@@ -745,7 +809,7 @@ public class VerwaltungTechn
             lhsUserDefinedAnyfield = (((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty()))?this.getUserDefinedAnyfield():null);
             List<UserDefinedAnyfield> rhsUserDefinedAnyfield;
             rhsUserDefinedAnyfield = (((that.userDefinedAnyfield!= null)&&(!that.userDefinedAnyfield.isEmpty()))?that.getUserDefinedAnyfield():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "userDefinedAnyfield", lhsUserDefinedAnyfield), LocatorUtils.property(thatLocator, "userDefinedAnyfield", rhsUserDefinedAnyfield), lhsUserDefinedAnyfield, rhsUserDefinedAnyfield)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "userDefinedAnyfield", lhsUserDefinedAnyfield), LocatorUtils.property(thatLocator, "userDefinedAnyfield", rhsUserDefinedAnyfield), lhsUserDefinedAnyfield, rhsUserDefinedAnyfield, ((this.userDefinedAnyfield!= null)&&(!this.userDefinedAnyfield.isEmpty())), ((that.userDefinedAnyfield!= null)&&(!that.userDefinedAnyfield.isEmpty())))) {
                 return false;
             }
         }
@@ -753,7 +817,7 @@ public class VerwaltungTechn
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "bauweise")
-public class Bauweise
-    implements Cloneable, CopyTo, Equals, ToString
+public class Bauweise implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "MASSIV")
@@ -112,34 +111,34 @@ public class Bauweise
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theMASSIV;
             theMASSIV = this.isMASSIV();
-            strategy.appendField(locator, this, "massiv", buffer, theMASSIV);
+            strategy.appendField(locator, this, "massiv", buffer, theMASSIV, (this.massiv!= null));
         }
         {
             Boolean theFERTIGTEILE;
             theFERTIGTEILE = this.isFERTIGTEILE();
-            strategy.appendField(locator, this, "fertigteile", buffer, theFERTIGTEILE);
+            strategy.appendField(locator, this, "fertigteile", buffer, theFERTIGTEILE, (this.fertigteile!= null));
         }
         {
             Boolean theHOLZ;
             theHOLZ = this.isHOLZ();
-            strategy.appendField(locator, this, "holz", buffer, theHOLZ);
+            strategy.appendField(locator, this, "holz", buffer, theHOLZ, (this.holz!= null));
         }
         return buffer;
     }
@@ -149,37 +148,52 @@ public class Bauweise
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Bauweise) {
             final Bauweise copy = ((Bauweise) draftCopy);
-            if (this.massiv!= null) {
-                Boolean sourceMASSIV;
-                sourceMASSIV = this.isMASSIV();
-                Boolean copyMASSIV = ((Boolean) strategy.copy(LocatorUtils.property(locator, "massiv", sourceMASSIV), sourceMASSIV));
-                copy.setMASSIV(copyMASSIV);
-            } else {
-                copy.massiv = null;
+            {
+                Boolean massivShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.massiv!= null));
+                if (massivShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceMASSIV;
+                    sourceMASSIV = this.isMASSIV();
+                    Boolean copyMASSIV = ((Boolean) strategy.copy(LocatorUtils.property(locator, "massiv", sourceMASSIV), sourceMASSIV, (this.massiv!= null)));
+                    copy.setMASSIV(copyMASSIV);
+                } else {
+                    if (massivShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.massiv = null;
+                    }
+                }
             }
-            if (this.fertigteile!= null) {
-                Boolean sourceFERTIGTEILE;
-                sourceFERTIGTEILE = this.isFERTIGTEILE();
-                Boolean copyFERTIGTEILE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fertigteile", sourceFERTIGTEILE), sourceFERTIGTEILE));
-                copy.setFERTIGTEILE(copyFERTIGTEILE);
-            } else {
-                copy.fertigteile = null;
+            {
+                Boolean fertigteileShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fertigteile!= null));
+                if (fertigteileShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFERTIGTEILE;
+                    sourceFERTIGTEILE = this.isFERTIGTEILE();
+                    Boolean copyFERTIGTEILE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fertigteile", sourceFERTIGTEILE), sourceFERTIGTEILE, (this.fertigteile!= null)));
+                    copy.setFERTIGTEILE(copyFERTIGTEILE);
+                } else {
+                    if (fertigteileShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fertigteile = null;
+                    }
+                }
             }
-            if (this.holz!= null) {
-                Boolean sourceHOLZ;
-                sourceHOLZ = this.isHOLZ();
-                Boolean copyHOLZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "holz", sourceHOLZ), sourceHOLZ));
-                copy.setHOLZ(copyHOLZ);
-            } else {
-                copy.holz = null;
+            {
+                Boolean holzShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.holz!= null));
+                if (holzShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceHOLZ;
+                    sourceHOLZ = this.isHOLZ();
+                    Boolean copyHOLZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "holz", sourceHOLZ), sourceHOLZ, (this.holz!= null)));
+                    copy.setHOLZ(copyHOLZ);
+                } else {
+                    if (holzShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.holz = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -189,7 +203,7 @@ public class Bauweise
         return new Bauweise();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -202,7 +216,7 @@ public class Bauweise
             lhsMASSIV = this.isMASSIV();
             Boolean rhsMASSIV;
             rhsMASSIV = that.isMASSIV();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "massiv", lhsMASSIV), LocatorUtils.property(thatLocator, "massiv", rhsMASSIV), lhsMASSIV, rhsMASSIV)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "massiv", lhsMASSIV), LocatorUtils.property(thatLocator, "massiv", rhsMASSIV), lhsMASSIV, rhsMASSIV, (this.massiv!= null), (that.massiv!= null))) {
                 return false;
             }
         }
@@ -211,7 +225,7 @@ public class Bauweise
             lhsFERTIGTEILE = this.isFERTIGTEILE();
             Boolean rhsFERTIGTEILE;
             rhsFERTIGTEILE = that.isFERTIGTEILE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fertigteile", lhsFERTIGTEILE), LocatorUtils.property(thatLocator, "fertigteile", rhsFERTIGTEILE), lhsFERTIGTEILE, rhsFERTIGTEILE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fertigteile", lhsFERTIGTEILE), LocatorUtils.property(thatLocator, "fertigteile", rhsFERTIGTEILE), lhsFERTIGTEILE, rhsFERTIGTEILE, (this.fertigteile!= null), (that.fertigteile!= null))) {
                 return false;
             }
         }
@@ -220,7 +234,7 @@ public class Bauweise
             lhsHOLZ = this.isHOLZ();
             Boolean rhsHOLZ;
             rhsHOLZ = that.isHOLZ();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "holz", lhsHOLZ), LocatorUtils.property(thatLocator, "holz", rhsHOLZ), lhsHOLZ, rhsHOLZ)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "holz", lhsHOLZ), LocatorUtils.property(thatLocator, "holz", rhsHOLZ), lhsHOLZ, rhsHOLZ, (this.holz!= null), (that.holz!= null))) {
                 return false;
             }
         }
@@ -228,7 +242,7 @@ public class Bauweise
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

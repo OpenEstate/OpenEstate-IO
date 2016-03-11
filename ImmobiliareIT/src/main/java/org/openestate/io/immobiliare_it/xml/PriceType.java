@@ -10,15 +10,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -57,8 +57,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "priceType", propOrder = {
     "value"
 })
-public class PriceType
-    implements Cloneable, CopyTo, Equals, ToString
+public class PriceType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -145,34 +144,34 @@ public class PriceType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigInteger theValue;
             theValue = this.getValue();
-            strategy.appendField(locator, this, "value", buffer, theValue);
+            strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
             Currency theCurrency;
             theCurrency = this.getCurrency();
-            strategy.appendField(locator, this, "currency", buffer, theCurrency);
+            strategy.appendField(locator, this, "currency", buffer, theCurrency, (this.currency!= null));
         }
         {
             Boolean theReserved;
             theReserved = this.isReserved();
-            strategy.appendField(locator, this, "reserved", buffer, theReserved);
+            strategy.appendField(locator, this, "reserved", buffer, theReserved, (this.reserved!= null));
         }
         return buffer;
     }
@@ -182,37 +181,52 @@ public class PriceType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof PriceType) {
             final PriceType copy = ((PriceType) draftCopy);
-            if (this.value!= null) {
-                BigInteger sourceValue;
-                sourceValue = this.getValue();
-                BigInteger copyValue = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
-                copy.setValue(copyValue);
-            } else {
-                copy.value = null;
+            {
+                Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
+                if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigInteger sourceValue;
+                    sourceValue = this.getValue();
+                    BigInteger copyValue = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    copy.setValue(copyValue);
+                } else {
+                    if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.value = null;
+                    }
+                }
             }
-            if (this.currency!= null) {
-                Currency sourceCurrency;
-                sourceCurrency = this.getCurrency();
-                Currency copyCurrency = ((Currency) strategy.copy(LocatorUtils.property(locator, "currency", sourceCurrency), sourceCurrency));
-                copy.setCurrency(copyCurrency);
-            } else {
-                copy.currency = null;
+            {
+                Boolean currencyShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.currency!= null));
+                if (currencyShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Currency sourceCurrency;
+                    sourceCurrency = this.getCurrency();
+                    Currency copyCurrency = ((Currency) strategy.copy(LocatorUtils.property(locator, "currency", sourceCurrency), sourceCurrency, (this.currency!= null)));
+                    copy.setCurrency(copyCurrency);
+                } else {
+                    if (currencyShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.currency = null;
+                    }
+                }
             }
-            if (this.reserved!= null) {
-                Boolean sourceReserved;
-                sourceReserved = this.isReserved();
-                Boolean copyReserved = ((Boolean) strategy.copy(LocatorUtils.property(locator, "reserved", sourceReserved), sourceReserved));
-                copy.setReserved(copyReserved);
-            } else {
-                copy.reserved = null;
+            {
+                Boolean reservedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.reserved!= null));
+                if (reservedShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceReserved;
+                    sourceReserved = this.isReserved();
+                    Boolean copyReserved = ((Boolean) strategy.copy(LocatorUtils.property(locator, "reserved", sourceReserved), sourceReserved, (this.reserved!= null)));
+                    copy.setReserved(copyReserved);
+                } else {
+                    if (reservedShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.reserved = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -222,7 +236,7 @@ public class PriceType
         return new PriceType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -235,7 +249,7 @@ public class PriceType
             lhsValue = this.getValue();
             BigInteger rhsValue;
             rhsValue = that.getValue();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
@@ -244,7 +258,7 @@ public class PriceType
             lhsCurrency = this.getCurrency();
             Currency rhsCurrency;
             rhsCurrency = that.getCurrency();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "currency", lhsCurrency), LocatorUtils.property(thatLocator, "currency", rhsCurrency), lhsCurrency, rhsCurrency)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "currency", lhsCurrency), LocatorUtils.property(thatLocator, "currency", rhsCurrency), lhsCurrency, rhsCurrency, (this.currency!= null), (that.currency!= null))) {
                 return false;
             }
         }
@@ -253,7 +267,7 @@ public class PriceType
             lhsReserved = this.isReserved();
             Boolean rhsReserved;
             rhsReserved = that.isReserved();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "reserved", lhsReserved), LocatorUtils.property(thatLocator, "reserved", rhsReserved), lhsReserved, rhsReserved)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "reserved", lhsReserved), LocatorUtils.property(thatLocator, "reserved", rhsReserved), lhsReserved, rhsReserved, (this.reserved!= null), (that.reserved!= null))) {
                 return false;
             }
         }
@@ -261,7 +275,7 @@ public class PriceType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

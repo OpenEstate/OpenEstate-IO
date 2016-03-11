@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -30,8 +30,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "bebaubar_nach")
-public class BebaubarNach
-    implements Cloneable, CopyTo, Equals, ToString
+public class BebaubarNach implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "bebaubar_attr")
@@ -62,24 +61,24 @@ public class BebaubarNach
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BebaubarNach.BebaubarAttr theBebaubarAttr;
             theBebaubarAttr = this.getBebaubarAttr();
-            strategy.appendField(locator, this, "bebaubarAttr", buffer, theBebaubarAttr);
+            strategy.appendField(locator, this, "bebaubarAttr", buffer, theBebaubarAttr, (this.bebaubarAttr!= null));
         }
         return buffer;
     }
@@ -89,21 +88,26 @@ public class BebaubarNach
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof BebaubarNach) {
             final BebaubarNach copy = ((BebaubarNach) draftCopy);
-            if (this.bebaubarAttr!= null) {
-                BebaubarNach.BebaubarAttr sourceBebaubarAttr;
-                sourceBebaubarAttr = this.getBebaubarAttr();
-                BebaubarNach.BebaubarAttr copyBebaubarAttr = ((BebaubarNach.BebaubarAttr) strategy.copy(LocatorUtils.property(locator, "bebaubarAttr", sourceBebaubarAttr), sourceBebaubarAttr));
-                copy.setBebaubarAttr(copyBebaubarAttr);
-            } else {
-                copy.bebaubarAttr = null;
+            {
+                Boolean bebaubarAttrShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bebaubarAttr!= null));
+                if (bebaubarAttrShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BebaubarNach.BebaubarAttr sourceBebaubarAttr;
+                    sourceBebaubarAttr = this.getBebaubarAttr();
+                    BebaubarNach.BebaubarAttr copyBebaubarAttr = ((BebaubarNach.BebaubarAttr) strategy.copy(LocatorUtils.property(locator, "bebaubarAttr", sourceBebaubarAttr), sourceBebaubarAttr, (this.bebaubarAttr!= null)));
+                    copy.setBebaubarAttr(copyBebaubarAttr);
+                } else {
+                    if (bebaubarAttrShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bebaubarAttr = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -113,7 +117,7 @@ public class BebaubarNach
         return new BebaubarNach();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -126,7 +130,7 @@ public class BebaubarNach
             lhsBebaubarAttr = this.getBebaubarAttr();
             BebaubarNach.BebaubarAttr rhsBebaubarAttr;
             rhsBebaubarAttr = that.getBebaubarAttr();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bebaubarAttr", lhsBebaubarAttr), LocatorUtils.property(thatLocator, "bebaubarAttr", rhsBebaubarAttr), lhsBebaubarAttr, rhsBebaubarAttr)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bebaubarAttr", lhsBebaubarAttr), LocatorUtils.property(thatLocator, "bebaubarAttr", rhsBebaubarAttr), lhsBebaubarAttr, rhsBebaubarAttr, (this.bebaubarAttr!= null), (that.bebaubarAttr!= null))) {
                 return false;
             }
         }
@@ -134,7 +138,7 @@ public class BebaubarNach
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

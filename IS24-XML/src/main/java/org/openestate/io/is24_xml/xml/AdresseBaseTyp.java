@@ -7,15 +7,15 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -52,8 +52,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     KontaktAdresseTyp.class,
     ImmobilienAdresseBaseTyp.class
 })
-public abstract class AdresseBaseTyp
-    implements Cloneable, CopyTo, Equals, ToString
+public abstract class AdresseBaseTyp implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "Strasse")
@@ -192,44 +191,44 @@ public abstract class AdresseBaseTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theStrasse;
             theStrasse = this.getStrasse();
-            strategy.appendField(locator, this, "strasse", buffer, theStrasse);
+            strategy.appendField(locator, this, "strasse", buffer, theStrasse, (this.strasse!= null));
         }
         {
             String theHausnummer;
             theHausnummer = this.getHausnummer();
-            strategy.appendField(locator, this, "hausnummer", buffer, theHausnummer);
+            strategy.appendField(locator, this, "hausnummer", buffer, theHausnummer, (this.hausnummer!= null));
         }
         {
             String thePostleitzahl;
             thePostleitzahl = this.getPostleitzahl();
-            strategy.appendField(locator, this, "postleitzahl", buffer, thePostleitzahl);
+            strategy.appendField(locator, this, "postleitzahl", buffer, thePostleitzahl, (this.postleitzahl!= null));
         }
         {
             String theOrt;
             theOrt = this.getOrt();
-            strategy.appendField(locator, this, "ort", buffer, theOrt);
+            strategy.appendField(locator, this, "ort", buffer, theOrt, (this.ort!= null));
         }
         {
             ISOLaenderCodeTyp theLaenderkennzeichen;
             theLaenderkennzeichen = this.getLaenderkennzeichen();
-            strategy.appendField(locator, this, "laenderkennzeichen", buffer, theLaenderkennzeichen);
+            strategy.appendField(locator, this, "laenderkennzeichen", buffer, theLaenderkennzeichen, (this.laenderkennzeichen!= null));
         }
         return buffer;
     }
@@ -239,61 +238,86 @@ public abstract class AdresseBaseTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         if (null == target) {
             throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
         }
         if (target instanceof AdresseBaseTyp) {
             final AdresseBaseTyp copy = ((AdresseBaseTyp) target);
-            if (this.strasse!= null) {
-                String sourceStrasse;
-                sourceStrasse = this.getStrasse();
-                String copyStrasse = ((String) strategy.copy(LocatorUtils.property(locator, "strasse", sourceStrasse), sourceStrasse));
-                copy.setStrasse(copyStrasse);
-            } else {
-                copy.strasse = null;
+            {
+                Boolean strasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.strasse!= null));
+                if (strasseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceStrasse;
+                    sourceStrasse = this.getStrasse();
+                    String copyStrasse = ((String) strategy.copy(LocatorUtils.property(locator, "strasse", sourceStrasse), sourceStrasse, (this.strasse!= null)));
+                    copy.setStrasse(copyStrasse);
+                } else {
+                    if (strasseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.strasse = null;
+                    }
+                }
             }
-            if (this.hausnummer!= null) {
-                String sourceHausnummer;
-                sourceHausnummer = this.getHausnummer();
-                String copyHausnummer = ((String) strategy.copy(LocatorUtils.property(locator, "hausnummer", sourceHausnummer), sourceHausnummer));
-                copy.setHausnummer(copyHausnummer);
-            } else {
-                copy.hausnummer = null;
+            {
+                Boolean hausnummerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hausnummer!= null));
+                if (hausnummerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHausnummer;
+                    sourceHausnummer = this.getHausnummer();
+                    String copyHausnummer = ((String) strategy.copy(LocatorUtils.property(locator, "hausnummer", sourceHausnummer), sourceHausnummer, (this.hausnummer!= null)));
+                    copy.setHausnummer(copyHausnummer);
+                } else {
+                    if (hausnummerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hausnummer = null;
+                    }
+                }
             }
-            if (this.postleitzahl!= null) {
-                String sourcePostleitzahl;
-                sourcePostleitzahl = this.getPostleitzahl();
-                String copyPostleitzahl = ((String) strategy.copy(LocatorUtils.property(locator, "postleitzahl", sourcePostleitzahl), sourcePostleitzahl));
-                copy.setPostleitzahl(copyPostleitzahl);
-            } else {
-                copy.postleitzahl = null;
+            {
+                Boolean postleitzahlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.postleitzahl!= null));
+                if (postleitzahlShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourcePostleitzahl;
+                    sourcePostleitzahl = this.getPostleitzahl();
+                    String copyPostleitzahl = ((String) strategy.copy(LocatorUtils.property(locator, "postleitzahl", sourcePostleitzahl), sourcePostleitzahl, (this.postleitzahl!= null)));
+                    copy.setPostleitzahl(copyPostleitzahl);
+                } else {
+                    if (postleitzahlShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.postleitzahl = null;
+                    }
+                }
             }
-            if (this.ort!= null) {
-                String sourceOrt;
-                sourceOrt = this.getOrt();
-                String copyOrt = ((String) strategy.copy(LocatorUtils.property(locator, "ort", sourceOrt), sourceOrt));
-                copy.setOrt(copyOrt);
-            } else {
-                copy.ort = null;
+            {
+                Boolean ortShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ort!= null));
+                if (ortShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceOrt;
+                    sourceOrt = this.getOrt();
+                    String copyOrt = ((String) strategy.copy(LocatorUtils.property(locator, "ort", sourceOrt), sourceOrt, (this.ort!= null)));
+                    copy.setOrt(copyOrt);
+                } else {
+                    if (ortShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ort = null;
+                    }
+                }
             }
-            if (this.laenderkennzeichen!= null) {
-                ISOLaenderCodeTyp sourceLaenderkennzeichen;
-                sourceLaenderkennzeichen = this.getLaenderkennzeichen();
-                ISOLaenderCodeTyp copyLaenderkennzeichen = ((ISOLaenderCodeTyp) strategy.copy(LocatorUtils.property(locator, "laenderkennzeichen", sourceLaenderkennzeichen), sourceLaenderkennzeichen));
-                copy.setLaenderkennzeichen(copyLaenderkennzeichen);
-            } else {
-                copy.laenderkennzeichen = null;
+            {
+                Boolean laenderkennzeichenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.laenderkennzeichen!= null));
+                if (laenderkennzeichenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    ISOLaenderCodeTyp sourceLaenderkennzeichen;
+                    sourceLaenderkennzeichen = this.getLaenderkennzeichen();
+                    ISOLaenderCodeTyp copyLaenderkennzeichen = ((ISOLaenderCodeTyp) strategy.copy(LocatorUtils.property(locator, "laenderkennzeichen", sourceLaenderkennzeichen), sourceLaenderkennzeichen, (this.laenderkennzeichen!= null)));
+                    copy.setLaenderkennzeichen(copyLaenderkennzeichen);
+                } else {
+                    if (laenderkennzeichenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.laenderkennzeichen = null;
+                    }
+                }
             }
         }
         return target;
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -306,7 +330,7 @@ public abstract class AdresseBaseTyp
             lhsStrasse = this.getStrasse();
             String rhsStrasse;
             rhsStrasse = that.getStrasse();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "strasse", lhsStrasse), LocatorUtils.property(thatLocator, "strasse", rhsStrasse), lhsStrasse, rhsStrasse)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "strasse", lhsStrasse), LocatorUtils.property(thatLocator, "strasse", rhsStrasse), lhsStrasse, rhsStrasse, (this.strasse!= null), (that.strasse!= null))) {
                 return false;
             }
         }
@@ -315,7 +339,7 @@ public abstract class AdresseBaseTyp
             lhsHausnummer = this.getHausnummer();
             String rhsHausnummer;
             rhsHausnummer = that.getHausnummer();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hausnummer", lhsHausnummer), LocatorUtils.property(thatLocator, "hausnummer", rhsHausnummer), lhsHausnummer, rhsHausnummer)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hausnummer", lhsHausnummer), LocatorUtils.property(thatLocator, "hausnummer", rhsHausnummer), lhsHausnummer, rhsHausnummer, (this.hausnummer!= null), (that.hausnummer!= null))) {
                 return false;
             }
         }
@@ -324,7 +348,7 @@ public abstract class AdresseBaseTyp
             lhsPostleitzahl = this.getPostleitzahl();
             String rhsPostleitzahl;
             rhsPostleitzahl = that.getPostleitzahl();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "postleitzahl", lhsPostleitzahl), LocatorUtils.property(thatLocator, "postleitzahl", rhsPostleitzahl), lhsPostleitzahl, rhsPostleitzahl)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "postleitzahl", lhsPostleitzahl), LocatorUtils.property(thatLocator, "postleitzahl", rhsPostleitzahl), lhsPostleitzahl, rhsPostleitzahl, (this.postleitzahl!= null), (that.postleitzahl!= null))) {
                 return false;
             }
         }
@@ -333,7 +357,7 @@ public abstract class AdresseBaseTyp
             lhsOrt = this.getOrt();
             String rhsOrt;
             rhsOrt = that.getOrt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ort", lhsOrt), LocatorUtils.property(thatLocator, "ort", rhsOrt), lhsOrt, rhsOrt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ort", lhsOrt), LocatorUtils.property(thatLocator, "ort", rhsOrt), lhsOrt, rhsOrt, (this.ort!= null), (that.ort!= null))) {
                 return false;
             }
         }
@@ -342,7 +366,7 @@ public abstract class AdresseBaseTyp
             lhsLaenderkennzeichen = this.getLaenderkennzeichen();
             ISOLaenderCodeTyp rhsLaenderkennzeichen;
             rhsLaenderkennzeichen = that.getLaenderkennzeichen();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "laenderkennzeichen", lhsLaenderkennzeichen), LocatorUtils.property(thatLocator, "laenderkennzeichen", rhsLaenderkennzeichen), lhsLaenderkennzeichen, rhsLaenderkennzeichen)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "laenderkennzeichen", lhsLaenderkennzeichen), LocatorUtils.property(thatLocator, "laenderkennzeichen", rhsLaenderkennzeichen), lhsLaenderkennzeichen, rhsLaenderkennzeichen, (this.laenderkennzeichen!= null), (that.laenderkennzeichen!= null))) {
                 return false;
             }
         }
@@ -350,7 +374,7 @@ public abstract class AdresseBaseTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

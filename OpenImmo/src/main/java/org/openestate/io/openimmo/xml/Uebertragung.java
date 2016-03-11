@@ -10,15 +10,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -32,8 +32,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "uebertragung")
-public class Uebertragung
-    implements Cloneable, CopyTo, Equals, ToString
+public class Uebertragung implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "art", required = true)
@@ -274,64 +273,64 @@ public class Uebertragung
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Uebertragung.Art theArt;
             theArt = this.getArt();
-            strategy.appendField(locator, this, "art", buffer, theArt);
+            strategy.appendField(locator, this, "art", buffer, theArt, (this.art!= null));
         }
         {
             Uebertragung.Umfang theUmfang;
             theUmfang = this.getUmfang();
-            strategy.appendField(locator, this, "umfang", buffer, theUmfang);
+            strategy.appendField(locator, this, "umfang", buffer, theUmfang, (this.umfang!= null));
         }
         {
             Uebertragung.Modus theModus;
             theModus = this.getModus();
-            strategy.appendField(locator, this, "modus", buffer, theModus);
+            strategy.appendField(locator, this, "modus", buffer, theModus, (this.modus!= null));
         }
         {
             String theVersion;
             theVersion = this.getVersion();
-            strategy.appendField(locator, this, "version", buffer, theVersion);
+            strategy.appendField(locator, this, "version", buffer, theVersion, (this.version!= null));
         }
         {
             String theSendersoftware;
             theSendersoftware = this.getSendersoftware();
-            strategy.appendField(locator, this, "sendersoftware", buffer, theSendersoftware);
+            strategy.appendField(locator, this, "sendersoftware", buffer, theSendersoftware, (this.sendersoftware!= null));
         }
         {
             String theSenderversion;
             theSenderversion = this.getSenderversion();
-            strategy.appendField(locator, this, "senderversion", buffer, theSenderversion);
+            strategy.appendField(locator, this, "senderversion", buffer, theSenderversion, (this.senderversion!= null));
         }
         {
             String theTechnEmail;
             theTechnEmail = this.getTechnEmail();
-            strategy.appendField(locator, this, "technEmail", buffer, theTechnEmail);
+            strategy.appendField(locator, this, "technEmail", buffer, theTechnEmail, (this.technEmail!= null));
         }
         {
             String theRegiId;
             theRegiId = this.getRegiId();
-            strategy.appendField(locator, this, "regiId", buffer, theRegiId);
+            strategy.appendField(locator, this, "regiId", buffer, theRegiId, (this.regiId!= null));
         }
         {
             Calendar theTimestamp;
             theTimestamp = this.getTimestamp();
-            strategy.appendField(locator, this, "timestamp", buffer, theTimestamp);
+            strategy.appendField(locator, this, "timestamp", buffer, theTimestamp, (this.timestamp!= null));
         }
         return buffer;
     }
@@ -341,85 +340,130 @@ public class Uebertragung
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Uebertragung) {
             final Uebertragung copy = ((Uebertragung) draftCopy);
-            if (this.art!= null) {
-                Uebertragung.Art sourceArt;
-                sourceArt = this.getArt();
-                Uebertragung.Art copyArt = ((Uebertragung.Art) strategy.copy(LocatorUtils.property(locator, "art", sourceArt), sourceArt));
-                copy.setArt(copyArt);
-            } else {
-                copy.art = null;
+            {
+                Boolean artShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.art!= null));
+                if (artShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Uebertragung.Art sourceArt;
+                    sourceArt = this.getArt();
+                    Uebertragung.Art copyArt = ((Uebertragung.Art) strategy.copy(LocatorUtils.property(locator, "art", sourceArt), sourceArt, (this.art!= null)));
+                    copy.setArt(copyArt);
+                } else {
+                    if (artShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.art = null;
+                    }
+                }
             }
-            if (this.umfang!= null) {
-                Uebertragung.Umfang sourceUmfang;
-                sourceUmfang = this.getUmfang();
-                Uebertragung.Umfang copyUmfang = ((Uebertragung.Umfang) strategy.copy(LocatorUtils.property(locator, "umfang", sourceUmfang), sourceUmfang));
-                copy.setUmfang(copyUmfang);
-            } else {
-                copy.umfang = null;
+            {
+                Boolean umfangShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.umfang!= null));
+                if (umfangShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Uebertragung.Umfang sourceUmfang;
+                    sourceUmfang = this.getUmfang();
+                    Uebertragung.Umfang copyUmfang = ((Uebertragung.Umfang) strategy.copy(LocatorUtils.property(locator, "umfang", sourceUmfang), sourceUmfang, (this.umfang!= null)));
+                    copy.setUmfang(copyUmfang);
+                } else {
+                    if (umfangShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.umfang = null;
+                    }
+                }
             }
-            if (this.modus!= null) {
-                Uebertragung.Modus sourceModus;
-                sourceModus = this.getModus();
-                Uebertragung.Modus copyModus = ((Uebertragung.Modus) strategy.copy(LocatorUtils.property(locator, "modus", sourceModus), sourceModus));
-                copy.setModus(copyModus);
-            } else {
-                copy.modus = null;
+            {
+                Boolean modusShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.modus!= null));
+                if (modusShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Uebertragung.Modus sourceModus;
+                    sourceModus = this.getModus();
+                    Uebertragung.Modus copyModus = ((Uebertragung.Modus) strategy.copy(LocatorUtils.property(locator, "modus", sourceModus), sourceModus, (this.modus!= null)));
+                    copy.setModus(copyModus);
+                } else {
+                    if (modusShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.modus = null;
+                    }
+                }
             }
-            if (this.version!= null) {
-                String sourceVersion;
-                sourceVersion = this.getVersion();
-                String copyVersion = ((String) strategy.copy(LocatorUtils.property(locator, "version", sourceVersion), sourceVersion));
-                copy.setVersion(copyVersion);
-            } else {
-                copy.version = null;
+            {
+                Boolean versionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.version!= null));
+                if (versionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceVersion;
+                    sourceVersion = this.getVersion();
+                    String copyVersion = ((String) strategy.copy(LocatorUtils.property(locator, "version", sourceVersion), sourceVersion, (this.version!= null)));
+                    copy.setVersion(copyVersion);
+                } else {
+                    if (versionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.version = null;
+                    }
+                }
             }
-            if (this.sendersoftware!= null) {
-                String sourceSendersoftware;
-                sourceSendersoftware = this.getSendersoftware();
-                String copySendersoftware = ((String) strategy.copy(LocatorUtils.property(locator, "sendersoftware", sourceSendersoftware), sourceSendersoftware));
-                copy.setSendersoftware(copySendersoftware);
-            } else {
-                copy.sendersoftware = null;
+            {
+                Boolean sendersoftwareShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sendersoftware!= null));
+                if (sendersoftwareShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSendersoftware;
+                    sourceSendersoftware = this.getSendersoftware();
+                    String copySendersoftware = ((String) strategy.copy(LocatorUtils.property(locator, "sendersoftware", sourceSendersoftware), sourceSendersoftware, (this.sendersoftware!= null)));
+                    copy.setSendersoftware(copySendersoftware);
+                } else {
+                    if (sendersoftwareShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.sendersoftware = null;
+                    }
+                }
             }
-            if (this.senderversion!= null) {
-                String sourceSenderversion;
-                sourceSenderversion = this.getSenderversion();
-                String copySenderversion = ((String) strategy.copy(LocatorUtils.property(locator, "senderversion", sourceSenderversion), sourceSenderversion));
-                copy.setSenderversion(copySenderversion);
-            } else {
-                copy.senderversion = null;
+            {
+                Boolean senderversionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.senderversion!= null));
+                if (senderversionShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSenderversion;
+                    sourceSenderversion = this.getSenderversion();
+                    String copySenderversion = ((String) strategy.copy(LocatorUtils.property(locator, "senderversion", sourceSenderversion), sourceSenderversion, (this.senderversion!= null)));
+                    copy.setSenderversion(copySenderversion);
+                } else {
+                    if (senderversionShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.senderversion = null;
+                    }
+                }
             }
-            if (this.technEmail!= null) {
-                String sourceTechnEmail;
-                sourceTechnEmail = this.getTechnEmail();
-                String copyTechnEmail = ((String) strategy.copy(LocatorUtils.property(locator, "technEmail", sourceTechnEmail), sourceTechnEmail));
-                copy.setTechnEmail(copyTechnEmail);
-            } else {
-                copy.technEmail = null;
+            {
+                Boolean technEmailShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.technEmail!= null));
+                if (technEmailShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTechnEmail;
+                    sourceTechnEmail = this.getTechnEmail();
+                    String copyTechnEmail = ((String) strategy.copy(LocatorUtils.property(locator, "technEmail", sourceTechnEmail), sourceTechnEmail, (this.technEmail!= null)));
+                    copy.setTechnEmail(copyTechnEmail);
+                } else {
+                    if (technEmailShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.technEmail = null;
+                    }
+                }
             }
-            if (this.regiId!= null) {
-                String sourceRegiId;
-                sourceRegiId = this.getRegiId();
-                String copyRegiId = ((String) strategy.copy(LocatorUtils.property(locator, "regiId", sourceRegiId), sourceRegiId));
-                copy.setRegiId(copyRegiId);
-            } else {
-                copy.regiId = null;
+            {
+                Boolean regiIdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.regiId!= null));
+                if (regiIdShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceRegiId;
+                    sourceRegiId = this.getRegiId();
+                    String copyRegiId = ((String) strategy.copy(LocatorUtils.property(locator, "regiId", sourceRegiId), sourceRegiId, (this.regiId!= null)));
+                    copy.setRegiId(copyRegiId);
+                } else {
+                    if (regiIdShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.regiId = null;
+                    }
+                }
             }
-            if (this.timestamp!= null) {
-                Calendar sourceTimestamp;
-                sourceTimestamp = this.getTimestamp();
-                Calendar copyTimestamp = ((Calendar) strategy.copy(LocatorUtils.property(locator, "timestamp", sourceTimestamp), sourceTimestamp));
-                copy.setTimestamp(copyTimestamp);
-            } else {
-                copy.timestamp = null;
+            {
+                Boolean timestampShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.timestamp!= null));
+                if (timestampShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceTimestamp;
+                    sourceTimestamp = this.getTimestamp();
+                    Calendar copyTimestamp = ((Calendar) strategy.copy(LocatorUtils.property(locator, "timestamp", sourceTimestamp), sourceTimestamp, (this.timestamp!= null)));
+                    copy.setTimestamp(copyTimestamp);
+                } else {
+                    if (timestampShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.timestamp = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -429,7 +473,7 @@ public class Uebertragung
         return new Uebertragung();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -442,7 +486,7 @@ public class Uebertragung
             lhsArt = this.getArt();
             Uebertragung.Art rhsArt;
             rhsArt = that.getArt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "art", lhsArt), LocatorUtils.property(thatLocator, "art", rhsArt), lhsArt, rhsArt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "art", lhsArt), LocatorUtils.property(thatLocator, "art", rhsArt), lhsArt, rhsArt, (this.art!= null), (that.art!= null))) {
                 return false;
             }
         }
@@ -451,7 +495,7 @@ public class Uebertragung
             lhsUmfang = this.getUmfang();
             Uebertragung.Umfang rhsUmfang;
             rhsUmfang = that.getUmfang();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "umfang", lhsUmfang), LocatorUtils.property(thatLocator, "umfang", rhsUmfang), lhsUmfang, rhsUmfang)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "umfang", lhsUmfang), LocatorUtils.property(thatLocator, "umfang", rhsUmfang), lhsUmfang, rhsUmfang, (this.umfang!= null), (that.umfang!= null))) {
                 return false;
             }
         }
@@ -460,7 +504,7 @@ public class Uebertragung
             lhsModus = this.getModus();
             Uebertragung.Modus rhsModus;
             rhsModus = that.getModus();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "modus", lhsModus), LocatorUtils.property(thatLocator, "modus", rhsModus), lhsModus, rhsModus)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "modus", lhsModus), LocatorUtils.property(thatLocator, "modus", rhsModus), lhsModus, rhsModus, (this.modus!= null), (that.modus!= null))) {
                 return false;
             }
         }
@@ -469,7 +513,7 @@ public class Uebertragung
             lhsVersion = this.getVersion();
             String rhsVersion;
             rhsVersion = that.getVersion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "version", lhsVersion), LocatorUtils.property(thatLocator, "version", rhsVersion), lhsVersion, rhsVersion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "version", lhsVersion), LocatorUtils.property(thatLocator, "version", rhsVersion), lhsVersion, rhsVersion, (this.version!= null), (that.version!= null))) {
                 return false;
             }
         }
@@ -478,7 +522,7 @@ public class Uebertragung
             lhsSendersoftware = this.getSendersoftware();
             String rhsSendersoftware;
             rhsSendersoftware = that.getSendersoftware();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "sendersoftware", lhsSendersoftware), LocatorUtils.property(thatLocator, "sendersoftware", rhsSendersoftware), lhsSendersoftware, rhsSendersoftware)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "sendersoftware", lhsSendersoftware), LocatorUtils.property(thatLocator, "sendersoftware", rhsSendersoftware), lhsSendersoftware, rhsSendersoftware, (this.sendersoftware!= null), (that.sendersoftware!= null))) {
                 return false;
             }
         }
@@ -487,7 +531,7 @@ public class Uebertragung
             lhsSenderversion = this.getSenderversion();
             String rhsSenderversion;
             rhsSenderversion = that.getSenderversion();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "senderversion", lhsSenderversion), LocatorUtils.property(thatLocator, "senderversion", rhsSenderversion), lhsSenderversion, rhsSenderversion)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "senderversion", lhsSenderversion), LocatorUtils.property(thatLocator, "senderversion", rhsSenderversion), lhsSenderversion, rhsSenderversion, (this.senderversion!= null), (that.senderversion!= null))) {
                 return false;
             }
         }
@@ -496,7 +540,7 @@ public class Uebertragung
             lhsTechnEmail = this.getTechnEmail();
             String rhsTechnEmail;
             rhsTechnEmail = that.getTechnEmail();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "technEmail", lhsTechnEmail), LocatorUtils.property(thatLocator, "technEmail", rhsTechnEmail), lhsTechnEmail, rhsTechnEmail)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "technEmail", lhsTechnEmail), LocatorUtils.property(thatLocator, "technEmail", rhsTechnEmail), lhsTechnEmail, rhsTechnEmail, (this.technEmail!= null), (that.technEmail!= null))) {
                 return false;
             }
         }
@@ -505,7 +549,7 @@ public class Uebertragung
             lhsRegiId = this.getRegiId();
             String rhsRegiId;
             rhsRegiId = that.getRegiId();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "regiId", lhsRegiId), LocatorUtils.property(thatLocator, "regiId", rhsRegiId), lhsRegiId, rhsRegiId)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "regiId", lhsRegiId), LocatorUtils.property(thatLocator, "regiId", rhsRegiId), lhsRegiId, rhsRegiId, (this.regiId!= null), (that.regiId!= null))) {
                 return false;
             }
         }
@@ -514,7 +558,7 @@ public class Uebertragung
             lhsTimestamp = this.getTimestamp();
             Calendar rhsTimestamp;
             rhsTimestamp = that.getTimestamp();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "timestamp", lhsTimestamp), LocatorUtils.property(thatLocator, "timestamp", rhsTimestamp), lhsTimestamp, rhsTimestamp)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "timestamp", lhsTimestamp), LocatorUtils.property(thatLocator, "timestamp", rhsTimestamp), lhsTimestamp, rhsTimestamp, (this.timestamp!= null), (that.timestamp!= null))) {
                 return false;
             }
         }
@@ -522,7 +566,7 @@ public class Uebertragung
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

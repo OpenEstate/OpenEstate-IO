@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -50,8 +50,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "businessElement", propOrder = {
     "value"
 })
-public class BusinessElement
-    implements Cloneable, CopyTo, Equals, ToString
+public class BusinessElement implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -108,29 +107,29 @@ public class BusinessElement
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             PropertyTypeBusiness theValue;
             theValue = this.getValue();
-            strategy.appendField(locator, this, "value", buffer, theValue);
+            strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
             BusinessElement.BusinessElementCategory theCategory;
             theCategory = this.getCategory();
-            strategy.appendField(locator, this, "category", buffer, theCategory);
+            strategy.appendField(locator, this, "category", buffer, theCategory, (this.category!= null));
         }
         return buffer;
     }
@@ -140,29 +139,39 @@ public class BusinessElement
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof BusinessElement) {
             final BusinessElement copy = ((BusinessElement) draftCopy);
-            if (this.value!= null) {
-                PropertyTypeBusiness sourceValue;
-                sourceValue = this.getValue();
-                PropertyTypeBusiness copyValue = ((PropertyTypeBusiness) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
-                copy.setValue(copyValue);
-            } else {
-                copy.value = null;
+            {
+                Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
+                if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
+                    PropertyTypeBusiness sourceValue;
+                    sourceValue = this.getValue();
+                    PropertyTypeBusiness copyValue = ((PropertyTypeBusiness) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    copy.setValue(copyValue);
+                } else {
+                    if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.value = null;
+                    }
+                }
             }
-            if (this.category!= null) {
-                BusinessElement.BusinessElementCategory sourceCategory;
-                sourceCategory = this.getCategory();
-                BusinessElement.BusinessElementCategory copyCategory = ((BusinessElement.BusinessElementCategory) strategy.copy(LocatorUtils.property(locator, "category", sourceCategory), sourceCategory));
-                copy.setCategory(copyCategory);
-            } else {
-                copy.category = null;
+            {
+                Boolean categoryShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.category!= null));
+                if (categoryShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BusinessElement.BusinessElementCategory sourceCategory;
+                    sourceCategory = this.getCategory();
+                    BusinessElement.BusinessElementCategory copyCategory = ((BusinessElement.BusinessElementCategory) strategy.copy(LocatorUtils.property(locator, "category", sourceCategory), sourceCategory, (this.category!= null)));
+                    copy.setCategory(copyCategory);
+                } else {
+                    if (categoryShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.category = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -172,7 +181,7 @@ public class BusinessElement
         return new BusinessElement();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -185,7 +194,7 @@ public class BusinessElement
             lhsValue = this.getValue();
             PropertyTypeBusiness rhsValue;
             rhsValue = that.getValue();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
@@ -194,7 +203,7 @@ public class BusinessElement
             lhsCategory = this.getCategory();
             BusinessElement.BusinessElementCategory rhsCategory;
             rhsCategory = that.getCategory();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "category", lhsCategory), LocatorUtils.property(thatLocator, "category", rhsCategory), lhsCategory, rhsCategory)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "category", lhsCategory), LocatorUtils.property(thatLocator, "category", rhsCategory), lhsCategory, rhsCategory, (this.category!= null), (that.category!= null))) {
                 return false;
             }
         }
@@ -202,7 +211,7 @@ public class BusinessElement
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

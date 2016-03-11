@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -35,8 +35,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "fehler"
 })
 @XmlRootElement(name = "fehlerliste")
-public class Fehlerliste
-    implements Cloneable, CopyTo, Equals, ToString
+public class Fehlerliste implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<Fehlerliste.Fehler> fehler;
@@ -71,24 +70,24 @@ public class Fehlerliste
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Fehlerliste.Fehler> theFehler;
             theFehler = (((this.fehler!= null)&&(!this.fehler.isEmpty()))?this.getFehler():null);
-            strategy.appendField(locator, this, "fehler", buffer, theFehler);
+            strategy.appendField(locator, this, "fehler", buffer, theFehler, ((this.fehler!= null)&&(!this.fehler.isEmpty())));
         }
         return buffer;
     }
@@ -98,26 +97,31 @@ public class Fehlerliste
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Fehlerliste) {
             final Fehlerliste copy = ((Fehlerliste) draftCopy);
-            if ((this.fehler!= null)&&(!this.fehler.isEmpty())) {
-                List<Fehlerliste.Fehler> sourceFehler;
-                sourceFehler = (((this.fehler!= null)&&(!this.fehler.isEmpty()))?this.getFehler():null);
-                @SuppressWarnings("unchecked")
-                List<Fehlerliste.Fehler> copyFehler = ((List<Fehlerliste.Fehler> ) strategy.copy(LocatorUtils.property(locator, "fehler", sourceFehler), sourceFehler));
-                copy.fehler = null;
-                if (copyFehler!= null) {
-                    List<Fehlerliste.Fehler> uniqueFehlerl = copy.getFehler();
-                    uniqueFehlerl.addAll(copyFehler);
+            {
+                Boolean fehlerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.fehler!= null)&&(!this.fehler.isEmpty())));
+                if (fehlerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Fehlerliste.Fehler> sourceFehler;
+                    sourceFehler = (((this.fehler!= null)&&(!this.fehler.isEmpty()))?this.getFehler():null);
+                    @SuppressWarnings("unchecked")
+                    List<Fehlerliste.Fehler> copyFehler = ((List<Fehlerliste.Fehler> ) strategy.copy(LocatorUtils.property(locator, "fehler", sourceFehler), sourceFehler, ((this.fehler!= null)&&(!this.fehler.isEmpty()))));
+                    copy.fehler = null;
+                    if (copyFehler!= null) {
+                        List<Fehlerliste.Fehler> uniqueFehlerl = copy.getFehler();
+                        uniqueFehlerl.addAll(copyFehler);
+                    }
+                } else {
+                    if (fehlerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fehler = null;
+                    }
                 }
-            } else {
-                copy.fehler = null;
             }
         }
         return draftCopy;
@@ -127,7 +131,7 @@ public class Fehlerliste
         return new Fehlerliste();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -140,7 +144,7 @@ public class Fehlerliste
             lhsFehler = (((this.fehler!= null)&&(!this.fehler.isEmpty()))?this.getFehler():null);
             List<Fehlerliste.Fehler> rhsFehler;
             rhsFehler = (((that.fehler!= null)&&(!that.fehler.isEmpty()))?that.getFehler():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fehler", lhsFehler), LocatorUtils.property(thatLocator, "fehler", rhsFehler), lhsFehler, rhsFehler)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fehler", lhsFehler), LocatorUtils.property(thatLocator, "fehler", rhsFehler), lhsFehler, rhsFehler, ((this.fehler!= null)&&(!this.fehler.isEmpty())), ((that.fehler!= null)&&(!that.fehler.isEmpty())))) {
                 return false;
             }
         }
@@ -148,7 +152,7 @@ public class Fehlerliste
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
@@ -165,8 +169,7 @@ public class Fehlerliste
         "fehlernr",
         "text"
     })
-    public static class Fehler
-        implements Cloneable, CopyTo, Equals, ToString
+    public static class Fehler implements Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "objekt_id")
@@ -250,34 +253,34 @@ public class Fehlerliste
         }
 
         public String toString() {
-            final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
             strategy.appendEnd(locator, this, buffer);
             return buffer;
         }
 
-        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theObjektId;
                 theObjektId = this.getObjektId();
-                strategy.appendField(locator, this, "objektId", buffer, theObjektId);
+                strategy.appendField(locator, this, "objektId", buffer, theObjektId, (this.objektId!= null));
             }
             {
                 BigInteger theFehlernr;
                 theFehlernr = this.getFehlernr();
-                strategy.appendField(locator, this, "fehlernr", buffer, theFehlernr);
+                strategy.appendField(locator, this, "fehlernr", buffer, theFehlernr, (this.fehlernr!= null));
             }
             {
                 String theText;
                 theText = this.getText();
-                strategy.appendField(locator, this, "text", buffer, theText);
+                strategy.appendField(locator, this, "text", buffer, theText, (this.text!= null));
             }
             return buffer;
         }
@@ -287,37 +290,52 @@ public class Fehlerliste
         }
 
         public Object copyTo(Object target) {
-            final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
-        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Fehlerliste.Fehler) {
                 final Fehlerliste.Fehler copy = ((Fehlerliste.Fehler) draftCopy);
-                if (this.objektId!= null) {
-                    String sourceObjektId;
-                    sourceObjektId = this.getObjektId();
-                    String copyObjektId = ((String) strategy.copy(LocatorUtils.property(locator, "objektId", sourceObjektId), sourceObjektId));
-                    copy.setObjektId(copyObjektId);
-                } else {
-                    copy.objektId = null;
+                {
+                    Boolean objektIdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektId!= null));
+                    if (objektIdShouldBeCopiedAndSet == Boolean.TRUE) {
+                        String sourceObjektId;
+                        sourceObjektId = this.getObjektId();
+                        String copyObjektId = ((String) strategy.copy(LocatorUtils.property(locator, "objektId", sourceObjektId), sourceObjektId, (this.objektId!= null)));
+                        copy.setObjektId(copyObjektId);
+                    } else {
+                        if (objektIdShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.objektId = null;
+                        }
+                    }
                 }
-                if (this.fehlernr!= null) {
-                    BigInteger sourceFehlernr;
-                    sourceFehlernr = this.getFehlernr();
-                    BigInteger copyFehlernr = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "fehlernr", sourceFehlernr), sourceFehlernr));
-                    copy.setFehlernr(copyFehlernr);
-                } else {
-                    copy.fehlernr = null;
+                {
+                    Boolean fehlernrShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fehlernr!= null));
+                    if (fehlernrShouldBeCopiedAndSet == Boolean.TRUE) {
+                        BigInteger sourceFehlernr;
+                        sourceFehlernr = this.getFehlernr();
+                        BigInteger copyFehlernr = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "fehlernr", sourceFehlernr), sourceFehlernr, (this.fehlernr!= null)));
+                        copy.setFehlernr(copyFehlernr);
+                    } else {
+                        if (fehlernrShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.fehlernr = null;
+                        }
+                    }
                 }
-                if (this.text!= null) {
-                    String sourceText;
-                    sourceText = this.getText();
-                    String copyText = ((String) strategy.copy(LocatorUtils.property(locator, "text", sourceText), sourceText));
-                    copy.setText(copyText);
-                } else {
-                    copy.text = null;
+                {
+                    Boolean textShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.text!= null));
+                    if (textShouldBeCopiedAndSet == Boolean.TRUE) {
+                        String sourceText;
+                        sourceText = this.getText();
+                        String copyText = ((String) strategy.copy(LocatorUtils.property(locator, "text", sourceText), sourceText, (this.text!= null)));
+                        copy.setText(copyText);
+                    } else {
+                        if (textShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.text = null;
+                        }
+                    }
                 }
             }
             return draftCopy;
@@ -327,7 +345,7 @@ public class Fehlerliste
             return new Fehlerliste.Fehler();
         }
 
-        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
             }
@@ -340,7 +358,7 @@ public class Fehlerliste
                 lhsObjektId = this.getObjektId();
                 String rhsObjektId;
                 rhsObjektId = that.getObjektId();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "objektId", lhsObjektId), LocatorUtils.property(thatLocator, "objektId", rhsObjektId), lhsObjektId, rhsObjektId)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "objektId", lhsObjektId), LocatorUtils.property(thatLocator, "objektId", rhsObjektId), lhsObjektId, rhsObjektId, (this.objektId!= null), (that.objektId!= null))) {
                     return false;
                 }
             }
@@ -349,7 +367,7 @@ public class Fehlerliste
                 lhsFehlernr = this.getFehlernr();
                 BigInteger rhsFehlernr;
                 rhsFehlernr = that.getFehlernr();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "fehlernr", lhsFehlernr), LocatorUtils.property(thatLocator, "fehlernr", rhsFehlernr), lhsFehlernr, rhsFehlernr)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "fehlernr", lhsFehlernr), LocatorUtils.property(thatLocator, "fehlernr", rhsFehlernr), lhsFehlernr, rhsFehlernr, (this.fehlernr!= null), (that.fehlernr!= null))) {
                     return false;
                 }
             }
@@ -358,7 +376,7 @@ public class Fehlerliste
                 lhsText = this.getText();
                 String rhsText;
                 rhsText = that.getText();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "text", lhsText), LocatorUtils.property(thatLocator, "text", rhsText), lhsText, rhsText)) {
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "text", lhsText), LocatorUtils.property(thatLocator, "text", rhsText), lhsText, rhsText, (this.text!= null), (that.text!= null))) {
                     return false;
                 }
             }
@@ -366,7 +384,7 @@ public class Fehlerliste
         }
 
         public boolean equals(Object object) {
-            final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
         }
 

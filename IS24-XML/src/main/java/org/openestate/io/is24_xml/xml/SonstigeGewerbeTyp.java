@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -56,7 +56,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 })
 public class SonstigeGewerbeTyp
     extends GewerbeImmoBaseTyp
-    implements Cloneable, CopyTo, Equals, ToString
+    implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
@@ -249,55 +249,55 @@ public class SonstigeGewerbeTyp
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
             VermarktungGewerbeTyp2 theVermarktung;
             theVermarktung = this.getVermarktung();
-            strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung);
+            strategy.appendField(locator, this, "vermarktung", buffer, theVermarktung, (this.vermarktung!= null));
         }
         {
             SonstigeGewerbeKategorieTyp theObjektkategorie2;
             theObjektkategorie2 = this.getObjektkategorie2();
-            strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2);
+            strategy.appendField(locator, this, "objektkategorie2", buffer, theObjektkategorie2, (this.objektkategorie2 != null));
         }
         {
             BigDecimal theHauptflaeche;
             theHauptflaeche = this.getHauptflaeche();
-            strategy.appendField(locator, this, "hauptflaeche", buffer, theHauptflaeche);
+            strategy.appendField(locator, this, "hauptflaeche", buffer, theHauptflaeche, (this.hauptflaeche!= null));
         }
         {
             BigDecimal theGrundstuecksFlaeche;
             theGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-            strategy.appendField(locator, this, "grundstuecksFlaeche", buffer, theGrundstuecksFlaeche);
+            strategy.appendField(locator, this, "grundstuecksFlaeche", buffer, theGrundstuecksFlaeche, (this.grundstuecksFlaeche!= null));
         }
         {
             BodenbelagTyp theBodenbelag;
             theBodenbelag = this.getBodenbelag();
-            strategy.appendField(locator, this, "bodenbelag", buffer, theBodenbelag);
+            strategy.appendField(locator, this, "bodenbelag", buffer, theBodenbelag, (this.bodenbelag!= null));
         }
         {
             Boolean theDenkmalschutzobjekt;
             theDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
-            strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt);
+            strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null));
         }
         {
             Boolean theKeller;
             theKeller = this.isKeller();
-            strategy.appendField(locator, this, "keller", buffer, theKeller);
+            strategy.appendField(locator, this, "keller", buffer, theKeller, (this.keller!= null));
         }
         return buffer;
     }
@@ -307,70 +307,105 @@ public class SonstigeGewerbeTyp
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
         if (draftCopy instanceof SonstigeGewerbeTyp) {
             final SonstigeGewerbeTyp copy = ((SonstigeGewerbeTyp) draftCopy);
-            if (this.vermarktung!= null) {
-                VermarktungGewerbeTyp2 sourceVermarktung;
-                sourceVermarktung = this.getVermarktung();
-                VermarktungGewerbeTyp2 copyVermarktung = ((VermarktungGewerbeTyp2) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung));
-                copy.setVermarktung(copyVermarktung);
-            } else {
-                copy.vermarktung = null;
+            {
+                Boolean vermarktungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vermarktung!= null));
+                if (vermarktungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    VermarktungGewerbeTyp2 sourceVermarktung;
+                    sourceVermarktung = this.getVermarktung();
+                    VermarktungGewerbeTyp2 copyVermarktung = ((VermarktungGewerbeTyp2) strategy.copy(LocatorUtils.property(locator, "vermarktung", sourceVermarktung), sourceVermarktung, (this.vermarktung!= null)));
+                    copy.setVermarktung(copyVermarktung);
+                } else {
+                    if (vermarktungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.vermarktung = null;
+                    }
+                }
             }
-            if (this.objektkategorie2 != null) {
-                SonstigeGewerbeKategorieTyp sourceObjektkategorie2;
-                sourceObjektkategorie2 = this.getObjektkategorie2();
-                SonstigeGewerbeKategorieTyp copyObjektkategorie2 = ((SonstigeGewerbeKategorieTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2));
-                copy.setObjektkategorie2(copyObjektkategorie2);
-            } else {
-                copy.objektkategorie2 = null;
+            {
+                Boolean objektkategorie2ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektkategorie2 != null));
+                if (objektkategorie2ShouldBeCopiedAndSet == Boolean.TRUE) {
+                    SonstigeGewerbeKategorieTyp sourceObjektkategorie2;
+                    sourceObjektkategorie2 = this.getObjektkategorie2();
+                    SonstigeGewerbeKategorieTyp copyObjektkategorie2 = ((SonstigeGewerbeKategorieTyp) strategy.copy(LocatorUtils.property(locator, "objektkategorie2", sourceObjektkategorie2), sourceObjektkategorie2, (this.objektkategorie2 != null)));
+                    copy.setObjektkategorie2(copyObjektkategorie2);
+                } else {
+                    if (objektkategorie2ShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.objektkategorie2 = null;
+                    }
+                }
             }
-            if (this.hauptflaeche!= null) {
-                BigDecimal sourceHauptflaeche;
-                sourceHauptflaeche = this.getHauptflaeche();
-                BigDecimal copyHauptflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hauptflaeche", sourceHauptflaeche), sourceHauptflaeche));
-                copy.setHauptflaeche(copyHauptflaeche);
-            } else {
-                copy.hauptflaeche = null;
+            {
+                Boolean hauptflaecheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hauptflaeche!= null));
+                if (hauptflaecheShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceHauptflaeche;
+                    sourceHauptflaeche = this.getHauptflaeche();
+                    BigDecimal copyHauptflaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "hauptflaeche", sourceHauptflaeche), sourceHauptflaeche, (this.hauptflaeche!= null)));
+                    copy.setHauptflaeche(copyHauptflaeche);
+                } else {
+                    if (hauptflaecheShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hauptflaeche = null;
+                    }
+                }
             }
-            if (this.grundstuecksFlaeche!= null) {
-                BigDecimal sourceGrundstuecksFlaeche;
-                sourceGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
-                BigDecimal copyGrundstuecksFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche));
-                copy.setGrundstuecksFlaeche(copyGrundstuecksFlaeche);
-            } else {
-                copy.grundstuecksFlaeche = null;
+            {
+                Boolean grundstuecksFlaecheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.grundstuecksFlaeche!= null));
+                if (grundstuecksFlaecheShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceGrundstuecksFlaeche;
+                    sourceGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
+                    BigDecimal copyGrundstuecksFlaeche = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "grundstuecksFlaeche", sourceGrundstuecksFlaeche), sourceGrundstuecksFlaeche, (this.grundstuecksFlaeche!= null)));
+                    copy.setGrundstuecksFlaeche(copyGrundstuecksFlaeche);
+                } else {
+                    if (grundstuecksFlaecheShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.grundstuecksFlaeche = null;
+                    }
+                }
             }
-            if (this.bodenbelag!= null) {
-                BodenbelagTyp sourceBodenbelag;
-                sourceBodenbelag = this.getBodenbelag();
-                BodenbelagTyp copyBodenbelag = ((BodenbelagTyp) strategy.copy(LocatorUtils.property(locator, "bodenbelag", sourceBodenbelag), sourceBodenbelag));
-                copy.setBodenbelag(copyBodenbelag);
-            } else {
-                copy.bodenbelag = null;
+            {
+                Boolean bodenbelagShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bodenbelag!= null));
+                if (bodenbelagShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BodenbelagTyp sourceBodenbelag;
+                    sourceBodenbelag = this.getBodenbelag();
+                    BodenbelagTyp copyBodenbelag = ((BodenbelagTyp) strategy.copy(LocatorUtils.property(locator, "bodenbelag", sourceBodenbelag), sourceBodenbelag, (this.bodenbelag!= null)));
+                    copy.setBodenbelag(copyBodenbelag);
+                } else {
+                    if (bodenbelagShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.bodenbelag = null;
+                    }
+                }
             }
-            if (this.denkmalschutzobjekt!= null) {
-                Boolean sourceDenkmalschutzobjekt;
-                sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
-                Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt));
-                copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
-            } else {
-                copy.denkmalschutzobjekt = null;
+            {
+                Boolean denkmalschutzobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalschutzobjekt!= null));
+                if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceDenkmalschutzobjekt;
+                    sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+                    Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null)));
+                    copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
+                } else {
+                    if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.denkmalschutzobjekt = null;
+                    }
+                }
             }
-            if (this.keller!= null) {
-                Boolean sourceKeller;
-                sourceKeller = this.isKeller();
-                Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller));
-                copy.setKeller(copyKeller);
-            } else {
-                copy.keller = null;
+            {
+                Boolean kellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keller!= null));
+                if (kellerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceKeller;
+                    sourceKeller = this.isKeller();
+                    Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller, (this.keller!= null)));
+                    copy.setKeller(copyKeller);
+                } else {
+                    if (kellerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.keller = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -380,7 +415,7 @@ public class SonstigeGewerbeTyp
         return new SonstigeGewerbeTyp();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -396,7 +431,7 @@ public class SonstigeGewerbeTyp
             lhsVermarktung = this.getVermarktung();
             VermarktungGewerbeTyp2 rhsVermarktung;
             rhsVermarktung = that.getVermarktung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "vermarktung", lhsVermarktung), LocatorUtils.property(thatLocator, "vermarktung", rhsVermarktung), lhsVermarktung, rhsVermarktung, (this.vermarktung!= null), (that.vermarktung!= null))) {
                 return false;
             }
         }
@@ -405,7 +440,7 @@ public class SonstigeGewerbeTyp
             lhsObjektkategorie2 = this.getObjektkategorie2();
             SonstigeGewerbeKategorieTyp rhsObjektkategorie2;
             rhsObjektkategorie2 = that.getObjektkategorie2();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "objektkategorie2", lhsObjektkategorie2), LocatorUtils.property(thatLocator, "objektkategorie2", rhsObjektkategorie2), lhsObjektkategorie2, rhsObjektkategorie2, (this.objektkategorie2 != null), (that.objektkategorie2 != null))) {
                 return false;
             }
         }
@@ -414,7 +449,7 @@ public class SonstigeGewerbeTyp
             lhsHauptflaeche = this.getHauptflaeche();
             BigDecimal rhsHauptflaeche;
             rhsHauptflaeche = that.getHauptflaeche();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "hauptflaeche", lhsHauptflaeche), LocatorUtils.property(thatLocator, "hauptflaeche", rhsHauptflaeche), lhsHauptflaeche, rhsHauptflaeche)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hauptflaeche", lhsHauptflaeche), LocatorUtils.property(thatLocator, "hauptflaeche", rhsHauptflaeche), lhsHauptflaeche, rhsHauptflaeche, (this.hauptflaeche!= null), (that.hauptflaeche!= null))) {
                 return false;
             }
         }
@@ -423,7 +458,7 @@ public class SonstigeGewerbeTyp
             lhsGrundstuecksFlaeche = this.getGrundstuecksFlaeche();
             BigDecimal rhsGrundstuecksFlaeche;
             rhsGrundstuecksFlaeche = that.getGrundstuecksFlaeche();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksFlaeche", lhsGrundstuecksFlaeche), LocatorUtils.property(thatLocator, "grundstuecksFlaeche", rhsGrundstuecksFlaeche), lhsGrundstuecksFlaeche, rhsGrundstuecksFlaeche)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "grundstuecksFlaeche", lhsGrundstuecksFlaeche), LocatorUtils.property(thatLocator, "grundstuecksFlaeche", rhsGrundstuecksFlaeche), lhsGrundstuecksFlaeche, rhsGrundstuecksFlaeche, (this.grundstuecksFlaeche!= null), (that.grundstuecksFlaeche!= null))) {
                 return false;
             }
         }
@@ -432,7 +467,7 @@ public class SonstigeGewerbeTyp
             lhsBodenbelag = this.getBodenbelag();
             BodenbelagTyp rhsBodenbelag;
             rhsBodenbelag = that.getBodenbelag();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "bodenbelag", lhsBodenbelag), LocatorUtils.property(thatLocator, "bodenbelag", rhsBodenbelag), lhsBodenbelag, rhsBodenbelag)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "bodenbelag", lhsBodenbelag), LocatorUtils.property(thatLocator, "bodenbelag", rhsBodenbelag), lhsBodenbelag, rhsBodenbelag, (this.bodenbelag!= null), (that.bodenbelag!= null))) {
                 return false;
             }
         }
@@ -441,7 +476,7 @@ public class SonstigeGewerbeTyp
             lhsDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
             Boolean rhsDenkmalschutzobjekt;
             rhsDenkmalschutzobjekt = that.isDenkmalschutzobjekt();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null), (that.denkmalschutzobjekt!= null))) {
                 return false;
             }
         }
@@ -450,7 +485,7 @@ public class SonstigeGewerbeTyp
             lhsKeller = this.isKeller();
             Boolean rhsKeller;
             rhsKeller = that.isKeller();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller, (this.keller!= null), (that.keller!= null))) {
                 return false;
             }
         }
@@ -458,7 +493,7 @@ public class SonstigeGewerbeTyp
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "heizungsart")
-public class Heizungsart
-    implements Cloneable, CopyTo, Equals, ToString
+public class Heizungsart implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "OFEN")
@@ -164,44 +163,44 @@ public class Heizungsart
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theOFEN;
             theOFEN = this.isOFEN();
-            strategy.appendField(locator, this, "ofen", buffer, theOFEN);
+            strategy.appendField(locator, this, "ofen", buffer, theOFEN, (this.ofen!= null));
         }
         {
             Boolean theETAGE;
             theETAGE = this.isETAGE();
-            strategy.appendField(locator, this, "etage", buffer, theETAGE);
+            strategy.appendField(locator, this, "etage", buffer, theETAGE, (this.etage!= null));
         }
         {
             Boolean theZENTRAL;
             theZENTRAL = this.isZENTRAL();
-            strategy.appendField(locator, this, "zentral", buffer, theZENTRAL);
+            strategy.appendField(locator, this, "zentral", buffer, theZENTRAL, (this.zentral!= null));
         }
         {
             Boolean theFERN;
             theFERN = this.isFERN();
-            strategy.appendField(locator, this, "fern", buffer, theFERN);
+            strategy.appendField(locator, this, "fern", buffer, theFERN, (this.fern!= null));
         }
         {
             Boolean theFUSSBODEN;
             theFUSSBODEN = this.isFUSSBODEN();
-            strategy.appendField(locator, this, "fussboden", buffer, theFUSSBODEN);
+            strategy.appendField(locator, this, "fussboden", buffer, theFUSSBODEN, (this.fussboden!= null));
         }
         return buffer;
     }
@@ -211,53 +210,78 @@ public class Heizungsart
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Heizungsart) {
             final Heizungsart copy = ((Heizungsart) draftCopy);
-            if (this.ofen!= null) {
-                Boolean sourceOFEN;
-                sourceOFEN = this.isOFEN();
-                Boolean copyOFEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ofen", sourceOFEN), sourceOFEN));
-                copy.setOFEN(copyOFEN);
-            } else {
-                copy.ofen = null;
+            {
+                Boolean ofenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ofen!= null));
+                if (ofenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceOFEN;
+                    sourceOFEN = this.isOFEN();
+                    Boolean copyOFEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ofen", sourceOFEN), sourceOFEN, (this.ofen!= null)));
+                    copy.setOFEN(copyOFEN);
+                } else {
+                    if (ofenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.ofen = null;
+                    }
+                }
             }
-            if (this.etage!= null) {
-                Boolean sourceETAGE;
-                sourceETAGE = this.isETAGE();
-                Boolean copyETAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "etage", sourceETAGE), sourceETAGE));
-                copy.setETAGE(copyETAGE);
-            } else {
-                copy.etage = null;
+            {
+                Boolean etageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.etage!= null));
+                if (etageShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceETAGE;
+                    sourceETAGE = this.isETAGE();
+                    Boolean copyETAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "etage", sourceETAGE), sourceETAGE, (this.etage!= null)));
+                    copy.setETAGE(copyETAGE);
+                } else {
+                    if (etageShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.etage = null;
+                    }
+                }
             }
-            if (this.zentral!= null) {
-                Boolean sourceZENTRAL;
-                sourceZENTRAL = this.isZENTRAL();
-                Boolean copyZENTRAL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "zentral", sourceZENTRAL), sourceZENTRAL));
-                copy.setZENTRAL(copyZENTRAL);
-            } else {
-                copy.zentral = null;
+            {
+                Boolean zentralShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zentral!= null));
+                if (zentralShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceZENTRAL;
+                    sourceZENTRAL = this.isZENTRAL();
+                    Boolean copyZENTRAL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "zentral", sourceZENTRAL), sourceZENTRAL, (this.zentral!= null)));
+                    copy.setZENTRAL(copyZENTRAL);
+                } else {
+                    if (zentralShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zentral = null;
+                    }
+                }
             }
-            if (this.fern!= null) {
-                Boolean sourceFERN;
-                sourceFERN = this.isFERN();
-                Boolean copyFERN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fern", sourceFERN), sourceFERN));
-                copy.setFERN(copyFERN);
-            } else {
-                copy.fern = null;
+            {
+                Boolean fernShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fern!= null));
+                if (fernShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFERN;
+                    sourceFERN = this.isFERN();
+                    Boolean copyFERN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fern", sourceFERN), sourceFERN, (this.fern!= null)));
+                    copy.setFERN(copyFERN);
+                } else {
+                    if (fernShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fern = null;
+                    }
+                }
             }
-            if (this.fussboden!= null) {
-                Boolean sourceFUSSBODEN;
-                sourceFUSSBODEN = this.isFUSSBODEN();
-                Boolean copyFUSSBODEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fussboden", sourceFUSSBODEN), sourceFUSSBODEN));
-                copy.setFUSSBODEN(copyFUSSBODEN);
-            } else {
-                copy.fussboden = null;
+            {
+                Boolean fussbodenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fussboden!= null));
+                if (fussbodenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFUSSBODEN;
+                    sourceFUSSBODEN = this.isFUSSBODEN();
+                    Boolean copyFUSSBODEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fussboden", sourceFUSSBODEN), sourceFUSSBODEN, (this.fussboden!= null)));
+                    copy.setFUSSBODEN(copyFUSSBODEN);
+                } else {
+                    if (fussbodenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.fussboden = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -267,7 +291,7 @@ public class Heizungsart
         return new Heizungsart();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -280,7 +304,7 @@ public class Heizungsart
             lhsOFEN = this.isOFEN();
             Boolean rhsOFEN;
             rhsOFEN = that.isOFEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "ofen", lhsOFEN), LocatorUtils.property(thatLocator, "ofen", rhsOFEN), lhsOFEN, rhsOFEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "ofen", lhsOFEN), LocatorUtils.property(thatLocator, "ofen", rhsOFEN), lhsOFEN, rhsOFEN, (this.ofen!= null), (that.ofen!= null))) {
                 return false;
             }
         }
@@ -289,7 +313,7 @@ public class Heizungsart
             lhsETAGE = this.isETAGE();
             Boolean rhsETAGE;
             rhsETAGE = that.isETAGE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "etage", lhsETAGE), LocatorUtils.property(thatLocator, "etage", rhsETAGE), lhsETAGE, rhsETAGE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "etage", lhsETAGE), LocatorUtils.property(thatLocator, "etage", rhsETAGE), lhsETAGE, rhsETAGE, (this.etage!= null), (that.etage!= null))) {
                 return false;
             }
         }
@@ -298,7 +322,7 @@ public class Heizungsart
             lhsZENTRAL = this.isZENTRAL();
             Boolean rhsZENTRAL;
             rhsZENTRAL = that.isZENTRAL();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zentral", lhsZENTRAL), LocatorUtils.property(thatLocator, "zentral", rhsZENTRAL), lhsZENTRAL, rhsZENTRAL)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zentral", lhsZENTRAL), LocatorUtils.property(thatLocator, "zentral", rhsZENTRAL), lhsZENTRAL, rhsZENTRAL, (this.zentral!= null), (that.zentral!= null))) {
                 return false;
             }
         }
@@ -307,7 +331,7 @@ public class Heizungsart
             lhsFERN = this.isFERN();
             Boolean rhsFERN;
             rhsFERN = that.isFERN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fern", lhsFERN), LocatorUtils.property(thatLocator, "fern", rhsFERN), lhsFERN, rhsFERN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fern", lhsFERN), LocatorUtils.property(thatLocator, "fern", rhsFERN), lhsFERN, rhsFERN, (this.fern!= null), (that.fern!= null))) {
                 return false;
             }
         }
@@ -316,7 +340,7 @@ public class Heizungsart
             lhsFUSSBODEN = this.isFUSSBODEN();
             Boolean rhsFUSSBODEN;
             rhsFUSSBODEN = that.isFUSSBODEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "fussboden", lhsFUSSBODEN), LocatorUtils.property(thatLocator, "fussboden", rhsFUSSBODEN), lhsFUSSBODEN, rhsFUSSBODEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "fussboden", lhsFUSSBODEN), LocatorUtils.property(thatLocator, "fussboden", rhsFUSSBODEN), lhsFUSSBODEN, rhsFUSSBODEN, (this.fussboden!= null), (that.fussboden!= null))) {
                 return false;
             }
         }
@@ -324,7 +348,7 @@ public class Heizungsart
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

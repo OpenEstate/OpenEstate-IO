@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -49,8 +49,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "valuelists"
 })
 @XmlRootElement(name = "FMPXMLLAYOUT")
-public class FMPXMLLAYOUT
-    implements Cloneable, CopyTo, Equals, ToString
+public class FMPXMLLAYOUT implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "ERRORCODE", required = true)
@@ -159,39 +158,39 @@ public class FMPXMLLAYOUT
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theERRORCODE;
             theERRORCODE = this.getERRORCODE();
-            strategy.appendField(locator, this, "errorcode", buffer, theERRORCODE);
+            strategy.appendField(locator, this, "errorcode", buffer, theERRORCODE, (this.errorcode!= null));
         }
         {
             ProductType thePRODUCT;
             thePRODUCT = this.getPRODUCT();
-            strategy.appendField(locator, this, "product", buffer, thePRODUCT);
+            strategy.appendField(locator, this, "product", buffer, thePRODUCT, (this.product!= null));
         }
         {
             LayoutType theLAYOUT;
             theLAYOUT = this.getLAYOUT();
-            strategy.appendField(locator, this, "layout", buffer, theLAYOUT);
+            strategy.appendField(locator, this, "layout", buffer, theLAYOUT, (this.layout!= null));
         }
         {
             ValueListsType theVALUELISTS;
             theVALUELISTS = this.getVALUELISTS();
-            strategy.appendField(locator, this, "valuelists", buffer, theVALUELISTS);
+            strategy.appendField(locator, this, "valuelists", buffer, theVALUELISTS, (this.valuelists!= null));
         }
         return buffer;
     }
@@ -201,45 +200,65 @@ public class FMPXMLLAYOUT
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof FMPXMLLAYOUT) {
             final FMPXMLLAYOUT copy = ((FMPXMLLAYOUT) draftCopy);
-            if (this.errorcode!= null) {
-                String sourceERRORCODE;
-                sourceERRORCODE = this.getERRORCODE();
-                String copyERRORCODE = ((String) strategy.copy(LocatorUtils.property(locator, "errorcode", sourceERRORCODE), sourceERRORCODE));
-                copy.setERRORCODE(copyERRORCODE);
-            } else {
-                copy.errorcode = null;
+            {
+                Boolean errorcodeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.errorcode!= null));
+                if (errorcodeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceERRORCODE;
+                    sourceERRORCODE = this.getERRORCODE();
+                    String copyERRORCODE = ((String) strategy.copy(LocatorUtils.property(locator, "errorcode", sourceERRORCODE), sourceERRORCODE, (this.errorcode!= null)));
+                    copy.setERRORCODE(copyERRORCODE);
+                } else {
+                    if (errorcodeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.errorcode = null;
+                    }
+                }
             }
-            if (this.product!= null) {
-                ProductType sourcePRODUCT;
-                sourcePRODUCT = this.getPRODUCT();
-                ProductType copyPRODUCT = ((ProductType) strategy.copy(LocatorUtils.property(locator, "product", sourcePRODUCT), sourcePRODUCT));
-                copy.setPRODUCT(copyPRODUCT);
-            } else {
-                copy.product = null;
+            {
+                Boolean productShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.product!= null));
+                if (productShouldBeCopiedAndSet == Boolean.TRUE) {
+                    ProductType sourcePRODUCT;
+                    sourcePRODUCT = this.getPRODUCT();
+                    ProductType copyPRODUCT = ((ProductType) strategy.copy(LocatorUtils.property(locator, "product", sourcePRODUCT), sourcePRODUCT, (this.product!= null)));
+                    copy.setPRODUCT(copyPRODUCT);
+                } else {
+                    if (productShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.product = null;
+                    }
+                }
             }
-            if (this.layout!= null) {
-                LayoutType sourceLAYOUT;
-                sourceLAYOUT = this.getLAYOUT();
-                LayoutType copyLAYOUT = ((LayoutType) strategy.copy(LocatorUtils.property(locator, "layout", sourceLAYOUT), sourceLAYOUT));
-                copy.setLAYOUT(copyLAYOUT);
-            } else {
-                copy.layout = null;
+            {
+                Boolean layoutShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.layout!= null));
+                if (layoutShouldBeCopiedAndSet == Boolean.TRUE) {
+                    LayoutType sourceLAYOUT;
+                    sourceLAYOUT = this.getLAYOUT();
+                    LayoutType copyLAYOUT = ((LayoutType) strategy.copy(LocatorUtils.property(locator, "layout", sourceLAYOUT), sourceLAYOUT, (this.layout!= null)));
+                    copy.setLAYOUT(copyLAYOUT);
+                } else {
+                    if (layoutShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.layout = null;
+                    }
+                }
             }
-            if (this.valuelists!= null) {
-                ValueListsType sourceVALUELISTS;
-                sourceVALUELISTS = this.getVALUELISTS();
-                ValueListsType copyVALUELISTS = ((ValueListsType) strategy.copy(LocatorUtils.property(locator, "valuelists", sourceVALUELISTS), sourceVALUELISTS));
-                copy.setVALUELISTS(copyVALUELISTS);
-            } else {
-                copy.valuelists = null;
+            {
+                Boolean valuelistsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.valuelists!= null));
+                if (valuelistsShouldBeCopiedAndSet == Boolean.TRUE) {
+                    ValueListsType sourceVALUELISTS;
+                    sourceVALUELISTS = this.getVALUELISTS();
+                    ValueListsType copyVALUELISTS = ((ValueListsType) strategy.copy(LocatorUtils.property(locator, "valuelists", sourceVALUELISTS), sourceVALUELISTS, (this.valuelists!= null)));
+                    copy.setVALUELISTS(copyVALUELISTS);
+                } else {
+                    if (valuelistsShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.valuelists = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -249,7 +268,7 @@ public class FMPXMLLAYOUT
         return new FMPXMLLAYOUT();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -262,7 +281,7 @@ public class FMPXMLLAYOUT
             lhsERRORCODE = this.getERRORCODE();
             String rhsERRORCODE;
             rhsERRORCODE = that.getERRORCODE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "errorcode", lhsERRORCODE), LocatorUtils.property(thatLocator, "errorcode", rhsERRORCODE), lhsERRORCODE, rhsERRORCODE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "errorcode", lhsERRORCODE), LocatorUtils.property(thatLocator, "errorcode", rhsERRORCODE), lhsERRORCODE, rhsERRORCODE, (this.errorcode!= null), (that.errorcode!= null))) {
                 return false;
             }
         }
@@ -271,7 +290,7 @@ public class FMPXMLLAYOUT
             lhsPRODUCT = this.getPRODUCT();
             ProductType rhsPRODUCT;
             rhsPRODUCT = that.getPRODUCT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "product", lhsPRODUCT), LocatorUtils.property(thatLocator, "product", rhsPRODUCT), lhsPRODUCT, rhsPRODUCT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "product", lhsPRODUCT), LocatorUtils.property(thatLocator, "product", rhsPRODUCT), lhsPRODUCT, rhsPRODUCT, (this.product!= null), (that.product!= null))) {
                 return false;
             }
         }
@@ -280,7 +299,7 @@ public class FMPXMLLAYOUT
             lhsLAYOUT = this.getLAYOUT();
             LayoutType rhsLAYOUT;
             rhsLAYOUT = that.getLAYOUT();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "layout", lhsLAYOUT), LocatorUtils.property(thatLocator, "layout", rhsLAYOUT), lhsLAYOUT, rhsLAYOUT)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "layout", lhsLAYOUT), LocatorUtils.property(thatLocator, "layout", rhsLAYOUT), lhsLAYOUT, rhsLAYOUT, (this.layout!= null), (that.layout!= null))) {
                 return false;
             }
         }
@@ -289,7 +308,7 @@ public class FMPXMLLAYOUT
             lhsVALUELISTS = this.getVALUELISTS();
             ValueListsType rhsVALUELISTS;
             rhsVALUELISTS = that.getVALUELISTS();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "valuelists", lhsVALUELISTS), LocatorUtils.property(thatLocator, "valuelists", rhsVALUELISTS), lhsVALUELISTS, rhsVALUELISTS)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "valuelists", lhsVALUELISTS), LocatorUtils.property(thatLocator, "valuelists", rhsVALUELISTS), lhsVALUELISTS, rhsVALUELISTS, (this.valuelists!= null), (that.valuelists!= null))) {
                 return false;
             }
         }
@@ -297,7 +316,7 @@ public class FMPXMLLAYOUT
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

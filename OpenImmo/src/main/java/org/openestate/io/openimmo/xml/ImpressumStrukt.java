@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -39,8 +39,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "weiteres"
 })
 @XmlRootElement(name = "impressum_strukt")
-public class ImpressumStrukt
-    implements Cloneable, CopyTo, Equals, ToString
+public class ImpressumStrukt implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
@@ -305,69 +304,69 @@ public class ImpressumStrukt
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theFirmenname;
             theFirmenname = this.getFirmenname();
-            strategy.appendField(locator, this, "firmenname", buffer, theFirmenname);
+            strategy.appendField(locator, this, "firmenname", buffer, theFirmenname, (this.firmenname!= null));
         }
         {
             String theFirmenanschrift;
             theFirmenanschrift = this.getFirmenanschrift();
-            strategy.appendField(locator, this, "firmenanschrift", buffer, theFirmenanschrift);
+            strategy.appendField(locator, this, "firmenanschrift", buffer, theFirmenanschrift, (this.firmenanschrift!= null));
         }
         {
             String theTelefon;
             theTelefon = this.getTelefon();
-            strategy.appendField(locator, this, "telefon", buffer, theTelefon);
+            strategy.appendField(locator, this, "telefon", buffer, theTelefon, (this.telefon!= null));
         }
         {
             String theVertretungsberechtigter;
             theVertretungsberechtigter = this.getVertretungsberechtigter();
-            strategy.appendField(locator, this, "vertretungsberechtigter", buffer, theVertretungsberechtigter);
+            strategy.appendField(locator, this, "vertretungsberechtigter", buffer, theVertretungsberechtigter, (this.vertretungsberechtigter!= null));
         }
         {
             String theBerufsaufsichtsbehoerde;
             theBerufsaufsichtsbehoerde = this.getBerufsaufsichtsbehoerde();
-            strategy.appendField(locator, this, "berufsaufsichtsbehoerde", buffer, theBerufsaufsichtsbehoerde);
+            strategy.appendField(locator, this, "berufsaufsichtsbehoerde", buffer, theBerufsaufsichtsbehoerde, (this.berufsaufsichtsbehoerde!= null));
         }
         {
             String theHandelsregister;
             theHandelsregister = this.getHandelsregister();
-            strategy.appendField(locator, this, "handelsregister", buffer, theHandelsregister);
+            strategy.appendField(locator, this, "handelsregister", buffer, theHandelsregister, (this.handelsregister!= null));
         }
         {
             String theHandelsregisterNr;
             theHandelsregisterNr = this.getHandelsregisterNr();
-            strategy.appendField(locator, this, "handelsregisterNr", buffer, theHandelsregisterNr);
+            strategy.appendField(locator, this, "handelsregisterNr", buffer, theHandelsregisterNr, (this.handelsregisterNr!= null));
         }
         {
             String theUmsstId;
             theUmsstId = this.getUmsstId();
-            strategy.appendField(locator, this, "umsstId", buffer, theUmsstId);
+            strategy.appendField(locator, this, "umsstId", buffer, theUmsstId, (this.umsstId!= null));
         }
         {
             String theSteuernummer;
             theSteuernummer = this.getSteuernummer();
-            strategy.appendField(locator, this, "steuernummer", buffer, theSteuernummer);
+            strategy.appendField(locator, this, "steuernummer", buffer, theSteuernummer, (this.steuernummer!= null));
         }
         {
             String theWeiteres;
             theWeiteres = this.getWeiteres();
-            strategy.appendField(locator, this, "weiteres", buffer, theWeiteres);
+            strategy.appendField(locator, this, "weiteres", buffer, theWeiteres, (this.weiteres!= null));
         }
         return buffer;
     }
@@ -377,93 +376,143 @@ public class ImpressumStrukt
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ImpressumStrukt) {
             final ImpressumStrukt copy = ((ImpressumStrukt) draftCopy);
-            if (this.firmenname!= null) {
-                String sourceFirmenname;
-                sourceFirmenname = this.getFirmenname();
-                String copyFirmenname = ((String) strategy.copy(LocatorUtils.property(locator, "firmenname", sourceFirmenname), sourceFirmenname));
-                copy.setFirmenname(copyFirmenname);
-            } else {
-                copy.firmenname = null;
+            {
+                Boolean firmennameShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.firmenname!= null));
+                if (firmennameShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFirmenname;
+                    sourceFirmenname = this.getFirmenname();
+                    String copyFirmenname = ((String) strategy.copy(LocatorUtils.property(locator, "firmenname", sourceFirmenname), sourceFirmenname, (this.firmenname!= null)));
+                    copy.setFirmenname(copyFirmenname);
+                } else {
+                    if (firmennameShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.firmenname = null;
+                    }
+                }
             }
-            if (this.firmenanschrift!= null) {
-                String sourceFirmenanschrift;
-                sourceFirmenanschrift = this.getFirmenanschrift();
-                String copyFirmenanschrift = ((String) strategy.copy(LocatorUtils.property(locator, "firmenanschrift", sourceFirmenanschrift), sourceFirmenanschrift));
-                copy.setFirmenanschrift(copyFirmenanschrift);
-            } else {
-                copy.firmenanschrift = null;
+            {
+                Boolean firmenanschriftShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.firmenanschrift!= null));
+                if (firmenanschriftShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceFirmenanschrift;
+                    sourceFirmenanschrift = this.getFirmenanschrift();
+                    String copyFirmenanschrift = ((String) strategy.copy(LocatorUtils.property(locator, "firmenanschrift", sourceFirmenanschrift), sourceFirmenanschrift, (this.firmenanschrift!= null)));
+                    copy.setFirmenanschrift(copyFirmenanschrift);
+                } else {
+                    if (firmenanschriftShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.firmenanschrift = null;
+                    }
+                }
             }
-            if (this.telefon!= null) {
-                String sourceTelefon;
-                sourceTelefon = this.getTelefon();
-                String copyTelefon = ((String) strategy.copy(LocatorUtils.property(locator, "telefon", sourceTelefon), sourceTelefon));
-                copy.setTelefon(copyTelefon);
-            } else {
-                copy.telefon = null;
+            {
+                Boolean telefonShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.telefon!= null));
+                if (telefonShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceTelefon;
+                    sourceTelefon = this.getTelefon();
+                    String copyTelefon = ((String) strategy.copy(LocatorUtils.property(locator, "telefon", sourceTelefon), sourceTelefon, (this.telefon!= null)));
+                    copy.setTelefon(copyTelefon);
+                } else {
+                    if (telefonShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.telefon = null;
+                    }
+                }
             }
-            if (this.vertretungsberechtigter!= null) {
-                String sourceVertretungsberechtigter;
-                sourceVertretungsberechtigter = this.getVertretungsberechtigter();
-                String copyVertretungsberechtigter = ((String) strategy.copy(LocatorUtils.property(locator, "vertretungsberechtigter", sourceVertretungsberechtigter), sourceVertretungsberechtigter));
-                copy.setVertretungsberechtigter(copyVertretungsberechtigter);
-            } else {
-                copy.vertretungsberechtigter = null;
+            {
+                Boolean vertretungsberechtigterShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vertretungsberechtigter!= null));
+                if (vertretungsberechtigterShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceVertretungsberechtigter;
+                    sourceVertretungsberechtigter = this.getVertretungsberechtigter();
+                    String copyVertretungsberechtigter = ((String) strategy.copy(LocatorUtils.property(locator, "vertretungsberechtigter", sourceVertretungsberechtigter), sourceVertretungsberechtigter, (this.vertretungsberechtigter!= null)));
+                    copy.setVertretungsberechtigter(copyVertretungsberechtigter);
+                } else {
+                    if (vertretungsberechtigterShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.vertretungsberechtigter = null;
+                    }
+                }
             }
-            if (this.berufsaufsichtsbehoerde!= null) {
-                String sourceBerufsaufsichtsbehoerde;
-                sourceBerufsaufsichtsbehoerde = this.getBerufsaufsichtsbehoerde();
-                String copyBerufsaufsichtsbehoerde = ((String) strategy.copy(LocatorUtils.property(locator, "berufsaufsichtsbehoerde", sourceBerufsaufsichtsbehoerde), sourceBerufsaufsichtsbehoerde));
-                copy.setBerufsaufsichtsbehoerde(copyBerufsaufsichtsbehoerde);
-            } else {
-                copy.berufsaufsichtsbehoerde = null;
+            {
+                Boolean berufsaufsichtsbehoerdeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.berufsaufsichtsbehoerde!= null));
+                if (berufsaufsichtsbehoerdeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceBerufsaufsichtsbehoerde;
+                    sourceBerufsaufsichtsbehoerde = this.getBerufsaufsichtsbehoerde();
+                    String copyBerufsaufsichtsbehoerde = ((String) strategy.copy(LocatorUtils.property(locator, "berufsaufsichtsbehoerde", sourceBerufsaufsichtsbehoerde), sourceBerufsaufsichtsbehoerde, (this.berufsaufsichtsbehoerde!= null)));
+                    copy.setBerufsaufsichtsbehoerde(copyBerufsaufsichtsbehoerde);
+                } else {
+                    if (berufsaufsichtsbehoerdeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.berufsaufsichtsbehoerde = null;
+                    }
+                }
             }
-            if (this.handelsregister!= null) {
-                String sourceHandelsregister;
-                sourceHandelsregister = this.getHandelsregister();
-                String copyHandelsregister = ((String) strategy.copy(LocatorUtils.property(locator, "handelsregister", sourceHandelsregister), sourceHandelsregister));
-                copy.setHandelsregister(copyHandelsregister);
-            } else {
-                copy.handelsregister = null;
+            {
+                Boolean handelsregisterShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.handelsregister!= null));
+                if (handelsregisterShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHandelsregister;
+                    sourceHandelsregister = this.getHandelsregister();
+                    String copyHandelsregister = ((String) strategy.copy(LocatorUtils.property(locator, "handelsregister", sourceHandelsregister), sourceHandelsregister, (this.handelsregister!= null)));
+                    copy.setHandelsregister(copyHandelsregister);
+                } else {
+                    if (handelsregisterShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.handelsregister = null;
+                    }
+                }
             }
-            if (this.handelsregisterNr!= null) {
-                String sourceHandelsregisterNr;
-                sourceHandelsregisterNr = this.getHandelsregisterNr();
-                String copyHandelsregisterNr = ((String) strategy.copy(LocatorUtils.property(locator, "handelsregisterNr", sourceHandelsregisterNr), sourceHandelsregisterNr));
-                copy.setHandelsregisterNr(copyHandelsregisterNr);
-            } else {
-                copy.handelsregisterNr = null;
+            {
+                Boolean handelsregisterNrShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.handelsregisterNr!= null));
+                if (handelsregisterNrShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHandelsregisterNr;
+                    sourceHandelsregisterNr = this.getHandelsregisterNr();
+                    String copyHandelsregisterNr = ((String) strategy.copy(LocatorUtils.property(locator, "handelsregisterNr", sourceHandelsregisterNr), sourceHandelsregisterNr, (this.handelsregisterNr!= null)));
+                    copy.setHandelsregisterNr(copyHandelsregisterNr);
+                } else {
+                    if (handelsregisterNrShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.handelsregisterNr = null;
+                    }
+                }
             }
-            if (this.umsstId!= null) {
-                String sourceUmsstId;
-                sourceUmsstId = this.getUmsstId();
-                String copyUmsstId = ((String) strategy.copy(LocatorUtils.property(locator, "umsstId", sourceUmsstId), sourceUmsstId));
-                copy.setUmsstId(copyUmsstId);
-            } else {
-                copy.umsstId = null;
+            {
+                Boolean umsstIdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.umsstId!= null));
+                if (umsstIdShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceUmsstId;
+                    sourceUmsstId = this.getUmsstId();
+                    String copyUmsstId = ((String) strategy.copy(LocatorUtils.property(locator, "umsstId", sourceUmsstId), sourceUmsstId, (this.umsstId!= null)));
+                    copy.setUmsstId(copyUmsstId);
+                } else {
+                    if (umsstIdShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.umsstId = null;
+                    }
+                }
             }
-            if (this.steuernummer!= null) {
-                String sourceSteuernummer;
-                sourceSteuernummer = this.getSteuernummer();
-                String copySteuernummer = ((String) strategy.copy(LocatorUtils.property(locator, "steuernummer", sourceSteuernummer), sourceSteuernummer));
-                copy.setSteuernummer(copySteuernummer);
-            } else {
-                copy.steuernummer = null;
+            {
+                Boolean steuernummerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.steuernummer!= null));
+                if (steuernummerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSteuernummer;
+                    sourceSteuernummer = this.getSteuernummer();
+                    String copySteuernummer = ((String) strategy.copy(LocatorUtils.property(locator, "steuernummer", sourceSteuernummer), sourceSteuernummer, (this.steuernummer!= null)));
+                    copy.setSteuernummer(copySteuernummer);
+                } else {
+                    if (steuernummerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.steuernummer = null;
+                    }
+                }
             }
-            if (this.weiteres!= null) {
-                String sourceWeiteres;
-                sourceWeiteres = this.getWeiteres();
-                String copyWeiteres = ((String) strategy.copy(LocatorUtils.property(locator, "weiteres", sourceWeiteres), sourceWeiteres));
-                copy.setWeiteres(copyWeiteres);
-            } else {
-                copy.weiteres = null;
+            {
+                Boolean weiteresShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.weiteres!= null));
+                if (weiteresShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceWeiteres;
+                    sourceWeiteres = this.getWeiteres();
+                    String copyWeiteres = ((String) strategy.copy(LocatorUtils.property(locator, "weiteres", sourceWeiteres), sourceWeiteres, (this.weiteres!= null)));
+                    copy.setWeiteres(copyWeiteres);
+                } else {
+                    if (weiteresShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.weiteres = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -473,7 +522,7 @@ public class ImpressumStrukt
         return new ImpressumStrukt();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -486,7 +535,7 @@ public class ImpressumStrukt
             lhsFirmenname = this.getFirmenname();
             String rhsFirmenname;
             rhsFirmenname = that.getFirmenname();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "firmenname", lhsFirmenname), LocatorUtils.property(thatLocator, "firmenname", rhsFirmenname), lhsFirmenname, rhsFirmenname)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "firmenname", lhsFirmenname), LocatorUtils.property(thatLocator, "firmenname", rhsFirmenname), lhsFirmenname, rhsFirmenname, (this.firmenname!= null), (that.firmenname!= null))) {
                 return false;
             }
         }
@@ -495,7 +544,7 @@ public class ImpressumStrukt
             lhsFirmenanschrift = this.getFirmenanschrift();
             String rhsFirmenanschrift;
             rhsFirmenanschrift = that.getFirmenanschrift();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "firmenanschrift", lhsFirmenanschrift), LocatorUtils.property(thatLocator, "firmenanschrift", rhsFirmenanschrift), lhsFirmenanschrift, rhsFirmenanschrift)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "firmenanschrift", lhsFirmenanschrift), LocatorUtils.property(thatLocator, "firmenanschrift", rhsFirmenanschrift), lhsFirmenanschrift, rhsFirmenanschrift, (this.firmenanschrift!= null), (that.firmenanschrift!= null))) {
                 return false;
             }
         }
@@ -504,7 +553,7 @@ public class ImpressumStrukt
             lhsTelefon = this.getTelefon();
             String rhsTelefon;
             rhsTelefon = that.getTelefon();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "telefon", lhsTelefon), LocatorUtils.property(thatLocator, "telefon", rhsTelefon), lhsTelefon, rhsTelefon)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "telefon", lhsTelefon), LocatorUtils.property(thatLocator, "telefon", rhsTelefon), lhsTelefon, rhsTelefon, (this.telefon!= null), (that.telefon!= null))) {
                 return false;
             }
         }
@@ -513,7 +562,7 @@ public class ImpressumStrukt
             lhsVertretungsberechtigter = this.getVertretungsberechtigter();
             String rhsVertretungsberechtigter;
             rhsVertretungsberechtigter = that.getVertretungsberechtigter();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "vertretungsberechtigter", lhsVertretungsberechtigter), LocatorUtils.property(thatLocator, "vertretungsberechtigter", rhsVertretungsberechtigter), lhsVertretungsberechtigter, rhsVertretungsberechtigter)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "vertretungsberechtigter", lhsVertretungsberechtigter), LocatorUtils.property(thatLocator, "vertretungsberechtigter", rhsVertretungsberechtigter), lhsVertretungsberechtigter, rhsVertretungsberechtigter, (this.vertretungsberechtigter!= null), (that.vertretungsberechtigter!= null))) {
                 return false;
             }
         }
@@ -522,7 +571,7 @@ public class ImpressumStrukt
             lhsBerufsaufsichtsbehoerde = this.getBerufsaufsichtsbehoerde();
             String rhsBerufsaufsichtsbehoerde;
             rhsBerufsaufsichtsbehoerde = that.getBerufsaufsichtsbehoerde();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "berufsaufsichtsbehoerde", lhsBerufsaufsichtsbehoerde), LocatorUtils.property(thatLocator, "berufsaufsichtsbehoerde", rhsBerufsaufsichtsbehoerde), lhsBerufsaufsichtsbehoerde, rhsBerufsaufsichtsbehoerde)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "berufsaufsichtsbehoerde", lhsBerufsaufsichtsbehoerde), LocatorUtils.property(thatLocator, "berufsaufsichtsbehoerde", rhsBerufsaufsichtsbehoerde), lhsBerufsaufsichtsbehoerde, rhsBerufsaufsichtsbehoerde, (this.berufsaufsichtsbehoerde!= null), (that.berufsaufsichtsbehoerde!= null))) {
                 return false;
             }
         }
@@ -531,7 +580,7 @@ public class ImpressumStrukt
             lhsHandelsregister = this.getHandelsregister();
             String rhsHandelsregister;
             rhsHandelsregister = that.getHandelsregister();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "handelsregister", lhsHandelsregister), LocatorUtils.property(thatLocator, "handelsregister", rhsHandelsregister), lhsHandelsregister, rhsHandelsregister)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "handelsregister", lhsHandelsregister), LocatorUtils.property(thatLocator, "handelsregister", rhsHandelsregister), lhsHandelsregister, rhsHandelsregister, (this.handelsregister!= null), (that.handelsregister!= null))) {
                 return false;
             }
         }
@@ -540,7 +589,7 @@ public class ImpressumStrukt
             lhsHandelsregisterNr = this.getHandelsregisterNr();
             String rhsHandelsregisterNr;
             rhsHandelsregisterNr = that.getHandelsregisterNr();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "handelsregisterNr", lhsHandelsregisterNr), LocatorUtils.property(thatLocator, "handelsregisterNr", rhsHandelsregisterNr), lhsHandelsregisterNr, rhsHandelsregisterNr)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "handelsregisterNr", lhsHandelsregisterNr), LocatorUtils.property(thatLocator, "handelsregisterNr", rhsHandelsregisterNr), lhsHandelsregisterNr, rhsHandelsregisterNr, (this.handelsregisterNr!= null), (that.handelsregisterNr!= null))) {
                 return false;
             }
         }
@@ -549,7 +598,7 @@ public class ImpressumStrukt
             lhsUmsstId = this.getUmsstId();
             String rhsUmsstId;
             rhsUmsstId = that.getUmsstId();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "umsstId", lhsUmsstId), LocatorUtils.property(thatLocator, "umsstId", rhsUmsstId), lhsUmsstId, rhsUmsstId)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "umsstId", lhsUmsstId), LocatorUtils.property(thatLocator, "umsstId", rhsUmsstId), lhsUmsstId, rhsUmsstId, (this.umsstId!= null), (that.umsstId!= null))) {
                 return false;
             }
         }
@@ -558,7 +607,7 @@ public class ImpressumStrukt
             lhsSteuernummer = this.getSteuernummer();
             String rhsSteuernummer;
             rhsSteuernummer = that.getSteuernummer();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "steuernummer", lhsSteuernummer), LocatorUtils.property(thatLocator, "steuernummer", rhsSteuernummer), lhsSteuernummer, rhsSteuernummer)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "steuernummer", lhsSteuernummer), LocatorUtils.property(thatLocator, "steuernummer", rhsSteuernummer), lhsSteuernummer, rhsSteuernummer, (this.steuernummer!= null), (that.steuernummer!= null))) {
                 return false;
             }
         }
@@ -567,7 +616,7 @@ public class ImpressumStrukt
             lhsWeiteres = this.getWeiteres();
             String rhsWeiteres;
             rhsWeiteres = that.getWeiteres();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "weiteres", lhsWeiteres), LocatorUtils.property(thatLocator, "weiteres", rhsWeiteres), lhsWeiteres, rhsWeiteres)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "weiteres", lhsWeiteres), LocatorUtils.property(thatLocator, "weiteres", rhsWeiteres), lhsWeiteres, rhsWeiteres, (this.weiteres!= null), (that.weiteres!= null))) {
                 return false;
             }
         }
@@ -575,7 +624,7 @@ public class ImpressumStrukt
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "sicherheitstechnik")
-public class Sicherheitstechnik
-    implements Cloneable, CopyTo, Equals, ToString
+public class Sicherheitstechnik implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "ALARMANLAGE")
@@ -112,34 +111,34 @@ public class Sicherheitstechnik
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theALARMANLAGE;
             theALARMANLAGE = this.isALARMANLAGE();
-            strategy.appendField(locator, this, "alarmanlage", buffer, theALARMANLAGE);
+            strategy.appendField(locator, this, "alarmanlage", buffer, theALARMANLAGE, (this.alarmanlage!= null));
         }
         {
             Boolean theKAMERA;
             theKAMERA = this.isKAMERA();
-            strategy.appendField(locator, this, "kamera", buffer, theKAMERA);
+            strategy.appendField(locator, this, "kamera", buffer, theKAMERA, (this.kamera!= null));
         }
         {
             Boolean thePOLIZEIRUF;
             thePOLIZEIRUF = this.isPOLIZEIRUF();
-            strategy.appendField(locator, this, "polizeiruf", buffer, thePOLIZEIRUF);
+            strategy.appendField(locator, this, "polizeiruf", buffer, thePOLIZEIRUF, (this.polizeiruf!= null));
         }
         return buffer;
     }
@@ -149,37 +148,52 @@ public class Sicherheitstechnik
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Sicherheitstechnik) {
             final Sicherheitstechnik copy = ((Sicherheitstechnik) draftCopy);
-            if (this.alarmanlage!= null) {
-                Boolean sourceALARMANLAGE;
-                sourceALARMANLAGE = this.isALARMANLAGE();
-                Boolean copyALARMANLAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alarmanlage", sourceALARMANLAGE), sourceALARMANLAGE));
-                copy.setALARMANLAGE(copyALARMANLAGE);
-            } else {
-                copy.alarmanlage = null;
+            {
+                Boolean alarmanlageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.alarmanlage!= null));
+                if (alarmanlageShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceALARMANLAGE;
+                    sourceALARMANLAGE = this.isALARMANLAGE();
+                    Boolean copyALARMANLAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alarmanlage", sourceALARMANLAGE), sourceALARMANLAGE, (this.alarmanlage!= null)));
+                    copy.setALARMANLAGE(copyALARMANLAGE);
+                } else {
+                    if (alarmanlageShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.alarmanlage = null;
+                    }
+                }
             }
-            if (this.kamera!= null) {
-                Boolean sourceKAMERA;
-                sourceKAMERA = this.isKAMERA();
-                Boolean copyKAMERA = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kamera", sourceKAMERA), sourceKAMERA));
-                copy.setKAMERA(copyKAMERA);
-            } else {
-                copy.kamera = null;
+            {
+                Boolean kameraShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kamera!= null));
+                if (kameraShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceKAMERA;
+                    sourceKAMERA = this.isKAMERA();
+                    Boolean copyKAMERA = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kamera", sourceKAMERA), sourceKAMERA, (this.kamera!= null)));
+                    copy.setKAMERA(copyKAMERA);
+                } else {
+                    if (kameraShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.kamera = null;
+                    }
+                }
             }
-            if (this.polizeiruf!= null) {
-                Boolean sourcePOLIZEIRUF;
-                sourcePOLIZEIRUF = this.isPOLIZEIRUF();
-                Boolean copyPOLIZEIRUF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "polizeiruf", sourcePOLIZEIRUF), sourcePOLIZEIRUF));
-                copy.setPOLIZEIRUF(copyPOLIZEIRUF);
-            } else {
-                copy.polizeiruf = null;
+            {
+                Boolean polizeirufShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.polizeiruf!= null));
+                if (polizeirufShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourcePOLIZEIRUF;
+                    sourcePOLIZEIRUF = this.isPOLIZEIRUF();
+                    Boolean copyPOLIZEIRUF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "polizeiruf", sourcePOLIZEIRUF), sourcePOLIZEIRUF, (this.polizeiruf!= null)));
+                    copy.setPOLIZEIRUF(copyPOLIZEIRUF);
+                } else {
+                    if (polizeirufShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.polizeiruf = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -189,7 +203,7 @@ public class Sicherheitstechnik
         return new Sicherheitstechnik();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -202,7 +216,7 @@ public class Sicherheitstechnik
             lhsALARMANLAGE = this.isALARMANLAGE();
             Boolean rhsALARMANLAGE;
             rhsALARMANLAGE = that.isALARMANLAGE();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "alarmanlage", lhsALARMANLAGE), LocatorUtils.property(thatLocator, "alarmanlage", rhsALARMANLAGE), lhsALARMANLAGE, rhsALARMANLAGE)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "alarmanlage", lhsALARMANLAGE), LocatorUtils.property(thatLocator, "alarmanlage", rhsALARMANLAGE), lhsALARMANLAGE, rhsALARMANLAGE, (this.alarmanlage!= null), (that.alarmanlage!= null))) {
                 return false;
             }
         }
@@ -211,7 +225,7 @@ public class Sicherheitstechnik
             lhsKAMERA = this.isKAMERA();
             Boolean rhsKAMERA;
             rhsKAMERA = that.isKAMERA();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "kamera", lhsKAMERA), LocatorUtils.property(thatLocator, "kamera", rhsKAMERA), lhsKAMERA, rhsKAMERA)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "kamera", lhsKAMERA), LocatorUtils.property(thatLocator, "kamera", rhsKAMERA), lhsKAMERA, rhsKAMERA, (this.kamera!= null), (that.kamera!= null))) {
                 return false;
             }
         }
@@ -220,7 +234,7 @@ public class Sicherheitstechnik
             lhsPOLIZEIRUF = this.isPOLIZEIRUF();
             Boolean rhsPOLIZEIRUF;
             rhsPOLIZEIRUF = that.isPOLIZEIRUF();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "polizeiruf", lhsPOLIZEIRUF), LocatorUtils.property(thatLocator, "polizeiruf", rhsPOLIZEIRUF), lhsPOLIZEIRUF, rhsPOLIZEIRUF)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "polizeiruf", lhsPOLIZEIRUF), LocatorUtils.property(thatLocator, "polizeiruf", rhsPOLIZEIRUF), lhsPOLIZEIRUF, rhsPOLIZEIRUF, (this.polizeiruf!= null), (that.polizeiruf!= null))) {
                 return false;
             }
         }
@@ -228,7 +242,7 @@ public class Sicherheitstechnik
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

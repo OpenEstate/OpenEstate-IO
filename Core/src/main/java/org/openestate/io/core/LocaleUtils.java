@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 OpenEstate.org.
+ * Copyright 2015-2016 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.openestate.io.core;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -29,8 +28,12 @@ import org.apache.commons.lang3.StringUtils;
 @SuppressFBWarnings(
   value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS",
   justification = "This behaviour is intended.")
-public class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
+public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
 {
+  private LocaleUtils()
+  {
+  }
+
   /**
    * Return an ISO-2 country code from a country name.
    *

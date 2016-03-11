@@ -1,4 +1,4 @@
-OpenEstate-IO 1.0
+OpenEstate-IO 1.1
 =================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate
@@ -55,73 +55,73 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IDX</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Trovit</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-WisIT</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
 
@@ -139,11 +139,11 @@ Dependencies
     (optional; for processing of CSV formats)
 -   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
--   [jaxb2-basics-runtime 0.10.0](https://github.com/highsource/jaxb2-basics)
+-   [jaxb2-basics-runtime 0.11.0](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.13](http://www.slf4j.org/)
+-   [SLF4J 1.7.18](http://www.slf4j.org/)
 -   [log4j 1.2.17](http://logging.apache.org/log4j/1.2/)
     (optional; may be replaced by another logging system
     [via SLF4J](http://www.slf4j.org/manual.html))
@@ -174,6 +174,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.0/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for common XML formats](http://validator.openestate.org/)

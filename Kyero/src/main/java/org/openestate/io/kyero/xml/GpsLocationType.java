@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -45,8 +45,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "gpsLocationType", propOrder = {
 
 })
-public class GpsLocationType
-    implements Cloneable, CopyTo, Equals, ToString
+public class GpsLocationType implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true, type = String.class)
@@ -107,29 +106,29 @@ public class GpsLocationType
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigDecimal theLongitude;
             theLongitude = this.getLongitude();
-            strategy.appendField(locator, this, "longitude", buffer, theLongitude);
+            strategy.appendField(locator, this, "longitude", buffer, theLongitude, (this.longitude!= null));
         }
         {
             BigDecimal theLatitude;
             theLatitude = this.getLatitude();
-            strategy.appendField(locator, this, "latitude", buffer, theLatitude);
+            strategy.appendField(locator, this, "latitude", buffer, theLatitude, (this.latitude!= null));
         }
         return buffer;
     }
@@ -139,29 +138,39 @@ public class GpsLocationType
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof GpsLocationType) {
             final GpsLocationType copy = ((GpsLocationType) draftCopy);
-            if (this.longitude!= null) {
-                BigDecimal sourceLongitude;
-                sourceLongitude = this.getLongitude();
-                BigDecimal copyLongitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude));
-                copy.setLongitude(copyLongitude);
-            } else {
-                copy.longitude = null;
+            {
+                Boolean longitudeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.longitude!= null));
+                if (longitudeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceLongitude;
+                    sourceLongitude = this.getLongitude();
+                    BigDecimal copyLongitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "longitude", sourceLongitude), sourceLongitude, (this.longitude!= null)));
+                    copy.setLongitude(copyLongitude);
+                } else {
+                    if (longitudeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.longitude = null;
+                    }
+                }
             }
-            if (this.latitude!= null) {
-                BigDecimal sourceLatitude;
-                sourceLatitude = this.getLatitude();
-                BigDecimal copyLatitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude));
-                copy.setLatitude(copyLatitude);
-            } else {
-                copy.latitude = null;
+            {
+                Boolean latitudeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.latitude!= null));
+                if (latitudeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceLatitude;
+                    sourceLatitude = this.getLatitude();
+                    BigDecimal copyLatitude = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "latitude", sourceLatitude), sourceLatitude, (this.latitude!= null)));
+                    copy.setLatitude(copyLatitude);
+                } else {
+                    if (latitudeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.latitude = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -171,7 +180,7 @@ public class GpsLocationType
         return new GpsLocationType();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -184,7 +193,7 @@ public class GpsLocationType
             lhsLongitude = this.getLongitude();
             BigDecimal rhsLongitude;
             rhsLongitude = that.getLongitude();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "longitude", lhsLongitude), LocatorUtils.property(thatLocator, "longitude", rhsLongitude), lhsLongitude, rhsLongitude)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "longitude", lhsLongitude), LocatorUtils.property(thatLocator, "longitude", rhsLongitude), lhsLongitude, rhsLongitude, (this.longitude!= null), (that.longitude!= null))) {
                 return false;
             }
         }
@@ -193,7 +202,7 @@ public class GpsLocationType
             lhsLatitude = this.getLatitude();
             BigDecimal rhsLatitude;
             rhsLatitude = that.getLatitude();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "latitude", lhsLatitude), LocatorUtils.property(thatLocator, "latitude", rhsLatitude), lhsLatitude, rhsLatitude)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "latitude", lhsLatitude), LocatorUtils.property(thatLocator, "latitude", rhsLatitude), lhsLatitude, rhsLatitude, (this.latitude!= null), (that.latitude!= null))) {
                 return false;
             }
         }
@@ -201,7 +210,7 @@ public class GpsLocationType
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

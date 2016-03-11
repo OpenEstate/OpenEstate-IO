@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -28,8 +28,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "serviceleistungen")
-public class Serviceleistungen
-    implements Cloneable, CopyTo, Equals, ToString
+public class Serviceleistungen implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "BETREUTES_WOHNEN")
@@ -164,44 +163,44 @@ public class Serviceleistungen
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theBETREUTESWOHNEN;
             theBETREUTESWOHNEN = this.isBETREUTESWOHNEN();
-            strategy.appendField(locator, this, "betreuteswohnen", buffer, theBETREUTESWOHNEN);
+            strategy.appendField(locator, this, "betreuteswohnen", buffer, theBETREUTESWOHNEN, (this.betreuteswohnen!= null));
         }
         {
             Boolean theCATERING;
             theCATERING = this.isCATERING();
-            strategy.appendField(locator, this, "catering", buffer, theCATERING);
+            strategy.appendField(locator, this, "catering", buffer, theCATERING, (this.catering!= null));
         }
         {
             Boolean theREINIGUNG;
             theREINIGUNG = this.isREINIGUNG();
-            strategy.appendField(locator, this, "reinigung", buffer, theREINIGUNG);
+            strategy.appendField(locator, this, "reinigung", buffer, theREINIGUNG, (this.reinigung!= null));
         }
         {
             Boolean theEINKAUF;
             theEINKAUF = this.isEINKAUF();
-            strategy.appendField(locator, this, "einkauf", buffer, theEINKAUF);
+            strategy.appendField(locator, this, "einkauf", buffer, theEINKAUF, (this.einkauf!= null));
         }
         {
             Boolean theWACHDIENST;
             theWACHDIENST = this.isWACHDIENST();
-            strategy.appendField(locator, this, "wachdienst", buffer, theWACHDIENST);
+            strategy.appendField(locator, this, "wachdienst", buffer, theWACHDIENST, (this.wachdienst!= null));
         }
         return buffer;
     }
@@ -211,53 +210,78 @@ public class Serviceleistungen
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Serviceleistungen) {
             final Serviceleistungen copy = ((Serviceleistungen) draftCopy);
-            if (this.betreuteswohnen!= null) {
-                Boolean sourceBETREUTESWOHNEN;
-                sourceBETREUTESWOHNEN = this.isBETREUTESWOHNEN();
-                Boolean copyBETREUTESWOHNEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "betreuteswohnen", sourceBETREUTESWOHNEN), sourceBETREUTESWOHNEN));
-                copy.setBETREUTESWOHNEN(copyBETREUTESWOHNEN);
-            } else {
-                copy.betreuteswohnen = null;
+            {
+                Boolean betreuteswohnenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.betreuteswohnen!= null));
+                if (betreuteswohnenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceBETREUTESWOHNEN;
+                    sourceBETREUTESWOHNEN = this.isBETREUTESWOHNEN();
+                    Boolean copyBETREUTESWOHNEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "betreuteswohnen", sourceBETREUTESWOHNEN), sourceBETREUTESWOHNEN, (this.betreuteswohnen!= null)));
+                    copy.setBETREUTESWOHNEN(copyBETREUTESWOHNEN);
+                } else {
+                    if (betreuteswohnenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.betreuteswohnen = null;
+                    }
+                }
             }
-            if (this.catering!= null) {
-                Boolean sourceCATERING;
-                sourceCATERING = this.isCATERING();
-                Boolean copyCATERING = ((Boolean) strategy.copy(LocatorUtils.property(locator, "catering", sourceCATERING), sourceCATERING));
-                copy.setCATERING(copyCATERING);
-            } else {
-                copy.catering = null;
+            {
+                Boolean cateringShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.catering!= null));
+                if (cateringShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceCATERING;
+                    sourceCATERING = this.isCATERING();
+                    Boolean copyCATERING = ((Boolean) strategy.copy(LocatorUtils.property(locator, "catering", sourceCATERING), sourceCATERING, (this.catering!= null)));
+                    copy.setCATERING(copyCATERING);
+                } else {
+                    if (cateringShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.catering = null;
+                    }
+                }
             }
-            if (this.reinigung!= null) {
-                Boolean sourceREINIGUNG;
-                sourceREINIGUNG = this.isREINIGUNG();
-                Boolean copyREINIGUNG = ((Boolean) strategy.copy(LocatorUtils.property(locator, "reinigung", sourceREINIGUNG), sourceREINIGUNG));
-                copy.setREINIGUNG(copyREINIGUNG);
-            } else {
-                copy.reinigung = null;
+            {
+                Boolean reinigungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.reinigung!= null));
+                if (reinigungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceREINIGUNG;
+                    sourceREINIGUNG = this.isREINIGUNG();
+                    Boolean copyREINIGUNG = ((Boolean) strategy.copy(LocatorUtils.property(locator, "reinigung", sourceREINIGUNG), sourceREINIGUNG, (this.reinigung!= null)));
+                    copy.setREINIGUNG(copyREINIGUNG);
+                } else {
+                    if (reinigungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.reinigung = null;
+                    }
+                }
             }
-            if (this.einkauf!= null) {
-                Boolean sourceEINKAUF;
-                sourceEINKAUF = this.isEINKAUF();
-                Boolean copyEINKAUF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "einkauf", sourceEINKAUF), sourceEINKAUF));
-                copy.setEINKAUF(copyEINKAUF);
-            } else {
-                copy.einkauf = null;
+            {
+                Boolean einkaufShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.einkauf!= null));
+                if (einkaufShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceEINKAUF;
+                    sourceEINKAUF = this.isEINKAUF();
+                    Boolean copyEINKAUF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "einkauf", sourceEINKAUF), sourceEINKAUF, (this.einkauf!= null)));
+                    copy.setEINKAUF(copyEINKAUF);
+                } else {
+                    if (einkaufShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.einkauf = null;
+                    }
+                }
             }
-            if (this.wachdienst!= null) {
-                Boolean sourceWACHDIENST;
-                sourceWACHDIENST = this.isWACHDIENST();
-                Boolean copyWACHDIENST = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wachdienst", sourceWACHDIENST), sourceWACHDIENST));
-                copy.setWACHDIENST(copyWACHDIENST);
-            } else {
-                copy.wachdienst = null;
+            {
+                Boolean wachdienstShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wachdienst!= null));
+                if (wachdienstShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceWACHDIENST;
+                    sourceWACHDIENST = this.isWACHDIENST();
+                    Boolean copyWACHDIENST = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wachdienst", sourceWACHDIENST), sourceWACHDIENST, (this.wachdienst!= null)));
+                    copy.setWACHDIENST(copyWACHDIENST);
+                } else {
+                    if (wachdienstShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.wachdienst = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -267,7 +291,7 @@ public class Serviceleistungen
         return new Serviceleistungen();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -280,7 +304,7 @@ public class Serviceleistungen
             lhsBETREUTESWOHNEN = this.isBETREUTESWOHNEN();
             Boolean rhsBETREUTESWOHNEN;
             rhsBETREUTESWOHNEN = that.isBETREUTESWOHNEN();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "betreuteswohnen", lhsBETREUTESWOHNEN), LocatorUtils.property(thatLocator, "betreuteswohnen", rhsBETREUTESWOHNEN), lhsBETREUTESWOHNEN, rhsBETREUTESWOHNEN)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "betreuteswohnen", lhsBETREUTESWOHNEN), LocatorUtils.property(thatLocator, "betreuteswohnen", rhsBETREUTESWOHNEN), lhsBETREUTESWOHNEN, rhsBETREUTESWOHNEN, (this.betreuteswohnen!= null), (that.betreuteswohnen!= null))) {
                 return false;
             }
         }
@@ -289,7 +313,7 @@ public class Serviceleistungen
             lhsCATERING = this.isCATERING();
             Boolean rhsCATERING;
             rhsCATERING = that.isCATERING();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "catering", lhsCATERING), LocatorUtils.property(thatLocator, "catering", rhsCATERING), lhsCATERING, rhsCATERING)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "catering", lhsCATERING), LocatorUtils.property(thatLocator, "catering", rhsCATERING), lhsCATERING, rhsCATERING, (this.catering!= null), (that.catering!= null))) {
                 return false;
             }
         }
@@ -298,7 +322,7 @@ public class Serviceleistungen
             lhsREINIGUNG = this.isREINIGUNG();
             Boolean rhsREINIGUNG;
             rhsREINIGUNG = that.isREINIGUNG();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "reinigung", lhsREINIGUNG), LocatorUtils.property(thatLocator, "reinigung", rhsREINIGUNG), lhsREINIGUNG, rhsREINIGUNG)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "reinigung", lhsREINIGUNG), LocatorUtils.property(thatLocator, "reinigung", rhsREINIGUNG), lhsREINIGUNG, rhsREINIGUNG, (this.reinigung!= null), (that.reinigung!= null))) {
                 return false;
             }
         }
@@ -307,7 +331,7 @@ public class Serviceleistungen
             lhsEINKAUF = this.isEINKAUF();
             Boolean rhsEINKAUF;
             rhsEINKAUF = that.isEINKAUF();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "einkauf", lhsEINKAUF), LocatorUtils.property(thatLocator, "einkauf", rhsEINKAUF), lhsEINKAUF, rhsEINKAUF)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "einkauf", lhsEINKAUF), LocatorUtils.property(thatLocator, "einkauf", rhsEINKAUF), lhsEINKAUF, rhsEINKAUF, (this.einkauf!= null), (that.einkauf!= null))) {
                 return false;
             }
         }
@@ -316,7 +340,7 @@ public class Serviceleistungen
             lhsWACHDIENST = this.isWACHDIENST();
             Boolean rhsWACHDIENST;
             rhsWACHDIENST = that.isWACHDIENST();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "wachdienst", lhsWACHDIENST), LocatorUtils.property(thatLocator, "wachdienst", rhsWACHDIENST), lhsWACHDIENST, rhsWACHDIENST)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "wachdienst", lhsWACHDIENST), LocatorUtils.property(thatLocator, "wachdienst", rhsWACHDIENST), lhsWACHDIENST, rhsWACHDIENST, (this.wachdienst!= null), (that.wachdienst!= null))) {
                 return false;
             }
         }
@@ -324,7 +348,7 @@ public class Serviceleistungen
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

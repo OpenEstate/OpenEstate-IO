@@ -10,15 +10,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -39,8 +39,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "verkehrswert"
 })
 @XmlRootElement(name = "versteigerung")
-public class Versteigerung
-    implements Cloneable, CopyTo, Equals, ToString
+public class Versteigerung implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected Boolean zwangsversteigerung;
@@ -204,49 +203,49 @@ public class Versteigerung
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theZwangsversteigerung;
             theZwangsversteigerung = this.isZwangsversteigerung();
-            strategy.appendField(locator, this, "zwangsversteigerung", buffer, theZwangsversteigerung);
+            strategy.appendField(locator, this, "zwangsversteigerung", buffer, theZwangsversteigerung, (this.zwangsversteigerung!= null));
         }
         {
             String theAktenzeichen;
             theAktenzeichen = this.getAktenzeichen();
-            strategy.appendField(locator, this, "aktenzeichen", buffer, theAktenzeichen);
+            strategy.appendField(locator, this, "aktenzeichen", buffer, theAktenzeichen, (this.aktenzeichen!= null));
         }
         {
             Calendar theZvtermin;
             theZvtermin = this.getZvtermin();
-            strategy.appendField(locator, this, "zvtermin", buffer, theZvtermin);
+            strategy.appendField(locator, this, "zvtermin", buffer, theZvtermin, (this.zvtermin!= null));
         }
         {
             Calendar theZusatztermin;
             theZusatztermin = this.getZusatztermin();
-            strategy.appendField(locator, this, "zusatztermin", buffer, theZusatztermin);
+            strategy.appendField(locator, this, "zusatztermin", buffer, theZusatztermin, (this.zusatztermin!= null));
         }
         {
             String theAmtsgericht;
             theAmtsgericht = this.getAmtsgericht();
-            strategy.appendField(locator, this, "amtsgericht", buffer, theAmtsgericht);
+            strategy.appendField(locator, this, "amtsgericht", buffer, theAmtsgericht, (this.amtsgericht!= null));
         }
         {
             BigDecimal theVerkehrswert;
             theVerkehrswert = this.getVerkehrswert();
-            strategy.appendField(locator, this, "verkehrswert", buffer, theVerkehrswert);
+            strategy.appendField(locator, this, "verkehrswert", buffer, theVerkehrswert, (this.verkehrswert!= null));
         }
         return buffer;
     }
@@ -256,61 +255,91 @@ public class Versteigerung
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Versteigerung) {
             final Versteigerung copy = ((Versteigerung) draftCopy);
-            if (this.zwangsversteigerung!= null) {
-                Boolean sourceZwangsversteigerung;
-                sourceZwangsversteigerung = this.isZwangsversteigerung();
-                Boolean copyZwangsversteigerung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "zwangsversteigerung", sourceZwangsversteigerung), sourceZwangsversteigerung));
-                copy.setZwangsversteigerung(copyZwangsversteigerung);
-            } else {
-                copy.zwangsversteigerung = null;
+            {
+                Boolean zwangsversteigerungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zwangsversteigerung!= null));
+                if (zwangsversteigerungShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceZwangsversteigerung;
+                    sourceZwangsversteigerung = this.isZwangsversteigerung();
+                    Boolean copyZwangsversteigerung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "zwangsversteigerung", sourceZwangsversteigerung), sourceZwangsversteigerung, (this.zwangsversteigerung!= null)));
+                    copy.setZwangsversteigerung(copyZwangsversteigerung);
+                } else {
+                    if (zwangsversteigerungShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zwangsversteigerung = null;
+                    }
+                }
             }
-            if (this.aktenzeichen!= null) {
-                String sourceAktenzeichen;
-                sourceAktenzeichen = this.getAktenzeichen();
-                String copyAktenzeichen = ((String) strategy.copy(LocatorUtils.property(locator, "aktenzeichen", sourceAktenzeichen), sourceAktenzeichen));
-                copy.setAktenzeichen(copyAktenzeichen);
-            } else {
-                copy.aktenzeichen = null;
+            {
+                Boolean aktenzeichenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.aktenzeichen!= null));
+                if (aktenzeichenShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceAktenzeichen;
+                    sourceAktenzeichen = this.getAktenzeichen();
+                    String copyAktenzeichen = ((String) strategy.copy(LocatorUtils.property(locator, "aktenzeichen", sourceAktenzeichen), sourceAktenzeichen, (this.aktenzeichen!= null)));
+                    copy.setAktenzeichen(copyAktenzeichen);
+                } else {
+                    if (aktenzeichenShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.aktenzeichen = null;
+                    }
+                }
             }
-            if (this.zvtermin!= null) {
-                Calendar sourceZvtermin;
-                sourceZvtermin = this.getZvtermin();
-                Calendar copyZvtermin = ((Calendar) strategy.copy(LocatorUtils.property(locator, "zvtermin", sourceZvtermin), sourceZvtermin));
-                copy.setZvtermin(copyZvtermin);
-            } else {
-                copy.zvtermin = null;
+            {
+                Boolean zvterminShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zvtermin!= null));
+                if (zvterminShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceZvtermin;
+                    sourceZvtermin = this.getZvtermin();
+                    Calendar copyZvtermin = ((Calendar) strategy.copy(LocatorUtils.property(locator, "zvtermin", sourceZvtermin), sourceZvtermin, (this.zvtermin!= null)));
+                    copy.setZvtermin(copyZvtermin);
+                } else {
+                    if (zvterminShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zvtermin = null;
+                    }
+                }
             }
-            if (this.zusatztermin!= null) {
-                Calendar sourceZusatztermin;
-                sourceZusatztermin = this.getZusatztermin();
-                Calendar copyZusatztermin = ((Calendar) strategy.copy(LocatorUtils.property(locator, "zusatztermin", sourceZusatztermin), sourceZusatztermin));
-                copy.setZusatztermin(copyZusatztermin);
-            } else {
-                copy.zusatztermin = null;
+            {
+                Boolean zusatzterminShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zusatztermin!= null));
+                if (zusatzterminShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Calendar sourceZusatztermin;
+                    sourceZusatztermin = this.getZusatztermin();
+                    Calendar copyZusatztermin = ((Calendar) strategy.copy(LocatorUtils.property(locator, "zusatztermin", sourceZusatztermin), sourceZusatztermin, (this.zusatztermin!= null)));
+                    copy.setZusatztermin(copyZusatztermin);
+                } else {
+                    if (zusatzterminShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.zusatztermin = null;
+                    }
+                }
             }
-            if (this.amtsgericht!= null) {
-                String sourceAmtsgericht;
-                sourceAmtsgericht = this.getAmtsgericht();
-                String copyAmtsgericht = ((String) strategy.copy(LocatorUtils.property(locator, "amtsgericht", sourceAmtsgericht), sourceAmtsgericht));
-                copy.setAmtsgericht(copyAmtsgericht);
-            } else {
-                copy.amtsgericht = null;
+            {
+                Boolean amtsgerichtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.amtsgericht!= null));
+                if (amtsgerichtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceAmtsgericht;
+                    sourceAmtsgericht = this.getAmtsgericht();
+                    String copyAmtsgericht = ((String) strategy.copy(LocatorUtils.property(locator, "amtsgericht", sourceAmtsgericht), sourceAmtsgericht, (this.amtsgericht!= null)));
+                    copy.setAmtsgericht(copyAmtsgericht);
+                } else {
+                    if (amtsgerichtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.amtsgericht = null;
+                    }
+                }
             }
-            if (this.verkehrswert!= null) {
-                BigDecimal sourceVerkehrswert;
-                sourceVerkehrswert = this.getVerkehrswert();
-                BigDecimal copyVerkehrswert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verkehrswert", sourceVerkehrswert), sourceVerkehrswert));
-                copy.setVerkehrswert(copyVerkehrswert);
-            } else {
-                copy.verkehrswert = null;
+            {
+                Boolean verkehrswertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.verkehrswert!= null));
+                if (verkehrswertShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceVerkehrswert;
+                    sourceVerkehrswert = this.getVerkehrswert();
+                    BigDecimal copyVerkehrswert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "verkehrswert", sourceVerkehrswert), sourceVerkehrswert, (this.verkehrswert!= null)));
+                    copy.setVerkehrswert(copyVerkehrswert);
+                } else {
+                    if (verkehrswertShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.verkehrswert = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -320,7 +349,7 @@ public class Versteigerung
         return new Versteigerung();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -333,7 +362,7 @@ public class Versteigerung
             lhsZwangsversteigerung = this.isZwangsversteigerung();
             Boolean rhsZwangsversteigerung;
             rhsZwangsversteigerung = that.isZwangsversteigerung();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zwangsversteigerung", lhsZwangsversteigerung), LocatorUtils.property(thatLocator, "zwangsversteigerung", rhsZwangsversteigerung), lhsZwangsversteigerung, rhsZwangsversteigerung)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zwangsversteigerung", lhsZwangsversteigerung), LocatorUtils.property(thatLocator, "zwangsversteigerung", rhsZwangsversteigerung), lhsZwangsversteigerung, rhsZwangsversteigerung, (this.zwangsversteigerung!= null), (that.zwangsversteigerung!= null))) {
                 return false;
             }
         }
@@ -342,7 +371,7 @@ public class Versteigerung
             lhsAktenzeichen = this.getAktenzeichen();
             String rhsAktenzeichen;
             rhsAktenzeichen = that.getAktenzeichen();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktenzeichen", lhsAktenzeichen), LocatorUtils.property(thatLocator, "aktenzeichen", rhsAktenzeichen), lhsAktenzeichen, rhsAktenzeichen)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "aktenzeichen", lhsAktenzeichen), LocatorUtils.property(thatLocator, "aktenzeichen", rhsAktenzeichen), lhsAktenzeichen, rhsAktenzeichen, (this.aktenzeichen!= null), (that.aktenzeichen!= null))) {
                 return false;
             }
         }
@@ -351,7 +380,7 @@ public class Versteigerung
             lhsZvtermin = this.getZvtermin();
             Calendar rhsZvtermin;
             rhsZvtermin = that.getZvtermin();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zvtermin", lhsZvtermin), LocatorUtils.property(thatLocator, "zvtermin", rhsZvtermin), lhsZvtermin, rhsZvtermin)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zvtermin", lhsZvtermin), LocatorUtils.property(thatLocator, "zvtermin", rhsZvtermin), lhsZvtermin, rhsZvtermin, (this.zvtermin!= null), (that.zvtermin!= null))) {
                 return false;
             }
         }
@@ -360,7 +389,7 @@ public class Versteigerung
             lhsZusatztermin = this.getZusatztermin();
             Calendar rhsZusatztermin;
             rhsZusatztermin = that.getZusatztermin();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "zusatztermin", lhsZusatztermin), LocatorUtils.property(thatLocator, "zusatztermin", rhsZusatztermin), lhsZusatztermin, rhsZusatztermin)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "zusatztermin", lhsZusatztermin), LocatorUtils.property(thatLocator, "zusatztermin", rhsZusatztermin), lhsZusatztermin, rhsZusatztermin, (this.zusatztermin!= null), (that.zusatztermin!= null))) {
                 return false;
             }
         }
@@ -369,7 +398,7 @@ public class Versteigerung
             lhsAmtsgericht = this.getAmtsgericht();
             String rhsAmtsgericht;
             rhsAmtsgericht = that.getAmtsgericht();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "amtsgericht", lhsAmtsgericht), LocatorUtils.property(thatLocator, "amtsgericht", rhsAmtsgericht), lhsAmtsgericht, rhsAmtsgericht)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "amtsgericht", lhsAmtsgericht), LocatorUtils.property(thatLocator, "amtsgericht", rhsAmtsgericht), lhsAmtsgericht, rhsAmtsgericht, (this.amtsgericht!= null), (that.amtsgericht!= null))) {
                 return false;
             }
         }
@@ -378,7 +407,7 @@ public class Versteigerung
             lhsVerkehrswert = this.getVerkehrswert();
             BigDecimal rhsVerkehrswert;
             rhsVerkehrswert = that.getVerkehrswert();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "verkehrswert", lhsVerkehrswert), LocatorUtils.property(thatLocator, "verkehrswert", rhsVerkehrswert), lhsVerkehrswert, rhsVerkehrswert)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "verkehrswert", lhsVerkehrswert), LocatorUtils.property(thatLocator, "verkehrswert", rhsVerkehrswert), lhsVerkehrswert, rhsVerkehrswert, (this.verkehrswert!= null), (that.verkehrswert!= null))) {
                 return false;
             }
         }
@@ -386,7 +415,7 @@ public class Versteigerung
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

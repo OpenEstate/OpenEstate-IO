@@ -10,15 +10,15 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
@@ -34,8 +34,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "value"
 })
 @XmlRootElement(name = "kaufpreis")
-public class Kaufpreis
-    implements Cloneable, CopyTo, Equals, ToString
+public class Kaufpreis implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
@@ -94,29 +93,29 @@ public class Kaufpreis
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigDecimal theValue;
             theValue = this.getValue();
-            strategy.appendField(locator, this, "value", buffer, theValue);
+            strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
             Boolean theAufAnfrage;
             theAufAnfrage = this.isAufAnfrage();
-            strategy.appendField(locator, this, "aufAnfrage", buffer, theAufAnfrage);
+            strategy.appendField(locator, this, "aufAnfrage", buffer, theAufAnfrage, (this.aufAnfrage!= null));
         }
         return buffer;
     }
@@ -126,29 +125,39 @@ public class Kaufpreis
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Kaufpreis) {
             final Kaufpreis copy = ((Kaufpreis) draftCopy);
-            if (this.value!= null) {
-                BigDecimal sourceValue;
-                sourceValue = this.getValue();
-                BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue));
-                copy.setValue(copyValue);
-            } else {
-                copy.value = null;
+            {
+                Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
+                if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceValue;
+                    sourceValue = this.getValue();
+                    BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    copy.setValue(copyValue);
+                } else {
+                    if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.value = null;
+                    }
+                }
             }
-            if (this.aufAnfrage!= null) {
-                Boolean sourceAufAnfrage;
-                sourceAufAnfrage = this.isAufAnfrage();
-                Boolean copyAufAnfrage = ((Boolean) strategy.copy(LocatorUtils.property(locator, "aufAnfrage", sourceAufAnfrage), sourceAufAnfrage));
-                copy.setAufAnfrage(copyAufAnfrage);
-            } else {
-                copy.aufAnfrage = null;
+            {
+                Boolean aufAnfrageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.aufAnfrage!= null));
+                if (aufAnfrageShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceAufAnfrage;
+                    sourceAufAnfrage = this.isAufAnfrage();
+                    Boolean copyAufAnfrage = ((Boolean) strategy.copy(LocatorUtils.property(locator, "aufAnfrage", sourceAufAnfrage), sourceAufAnfrage, (this.aufAnfrage!= null)));
+                    copy.setAufAnfrage(copyAufAnfrage);
+                } else {
+                    if (aufAnfrageShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.aufAnfrage = null;
+                    }
+                }
             }
         }
         return draftCopy;
@@ -158,7 +167,7 @@ public class Kaufpreis
         return new Kaufpreis();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -171,7 +180,7 @@ public class Kaufpreis
             lhsValue = this.getValue();
             BigDecimal rhsValue;
             rhsValue = that.getValue();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
@@ -180,7 +189,7 @@ public class Kaufpreis
             lhsAufAnfrage = this.isAufAnfrage();
             Boolean rhsAufAnfrage;
             rhsAufAnfrage = that.isAufAnfrage();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "aufAnfrage", lhsAufAnfrage), LocatorUtils.property(thatLocator, "aufAnfrage", rhsAufAnfrage), lhsAufAnfrage, rhsAufAnfrage)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "aufAnfrage", lhsAufAnfrage), LocatorUtils.property(thatLocator, "aufAnfrage", rhsAufAnfrage), lhsAufAnfrage, rhsAufAnfrage, (this.aufAnfrage!= null), (that.aufAnfrage!= null))) {
                 return false;
             }
         }
@@ -188,7 +197,7 @@ public class Kaufpreis
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 

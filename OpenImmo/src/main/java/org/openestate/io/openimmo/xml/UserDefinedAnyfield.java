@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.jvnet.jaxb2_commons.lang.CopyStrategy;
-import org.jvnet.jaxb2_commons.lang.CopyTo;
-import org.jvnet.jaxb2_commons.lang.Equals;
-import org.jvnet.jaxb2_commons.lang.EqualsStrategy;
+import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
+import org.jvnet.jaxb2_commons.lang.CopyTo2;
+import org.jvnet.jaxb2_commons.lang.Equals2;
+import org.jvnet.jaxb2_commons.lang.EqualsStrategy2;
 import org.jvnet.jaxb2_commons.lang.JAXBCopyStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBEqualsStrategy;
 import org.jvnet.jaxb2_commons.lang.JAXBToStringStrategy;
-import org.jvnet.jaxb2_commons.lang.ToString;
-import org.jvnet.jaxb2_commons.lang.ToStringStrategy;
+import org.jvnet.jaxb2_commons.lang.ToString2;
+import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 import org.w3c.dom.Element;
@@ -34,8 +34,7 @@ import org.w3c.dom.Element;
     "content"
 })
 @XmlRootElement(name = "user_defined_anyfield")
-public class UserDefinedAnyfield
-    implements Cloneable, CopyTo, Equals, ToString
+public class UserDefinedAnyfield implements Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlMixed
@@ -61,8 +60,8 @@ public class UserDefinedAnyfield
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * {@link Element }
      * {@link Object }
+     * {@link Element }
      * 
      * 
      */
@@ -74,24 +73,24 @@ public class UserDefinedAnyfield
     }
 
     public String toString() {
-        final ToStringStrategy strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
         strategy.appendEnd(locator, this, buffer);
         return buffer;
     }
 
-    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy strategy) {
+    public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Object> theContent;
             theContent = (((this.content!= null)&&(!this.content.isEmpty()))?this.getContent():null);
-            strategy.appendField(locator, this, "content", buffer, theContent);
+            strategy.appendField(locator, this, "content", buffer, theContent, ((this.content!= null)&&(!this.content.isEmpty())));
         }
         return buffer;
     }
@@ -101,26 +100,31 @@ public class UserDefinedAnyfield
     }
 
     public Object copyTo(Object target) {
-        final CopyStrategy strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy strategy) {
+    public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof UserDefinedAnyfield) {
             final UserDefinedAnyfield copy = ((UserDefinedAnyfield) draftCopy);
-            if ((this.content!= null)&&(!this.content.isEmpty())) {
-                List<Object> sourceContent;
-                sourceContent = (((this.content!= null)&&(!this.content.isEmpty()))?this.getContent():null);
-                @SuppressWarnings("unchecked")
-                List<Object> copyContent = ((List<Object> ) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent));
-                copy.content = null;
-                if (copyContent!= null) {
-                    List<Object> uniqueContentl = copy.getContent();
-                    uniqueContentl.addAll(copyContent);
+            {
+                Boolean contentShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.content!= null)&&(!this.content.isEmpty())));
+                if (contentShouldBeCopiedAndSet == Boolean.TRUE) {
+                    List<Object> sourceContent;
+                    sourceContent = (((this.content!= null)&&(!this.content.isEmpty()))?this.getContent():null);
+                    @SuppressWarnings("unchecked")
+                    List<Object> copyContent = ((List<Object> ) strategy.copy(LocatorUtils.property(locator, "content", sourceContent), sourceContent, ((this.content!= null)&&(!this.content.isEmpty()))));
+                    copy.content = null;
+                    if (copyContent!= null) {
+                        List<Object> uniqueContentl = copy.getContent();
+                        uniqueContentl.addAll(copyContent);
+                    }
+                } else {
+                    if (contentShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.content = null;
+                    }
                 }
-            } else {
-                copy.content = null;
             }
         }
         return draftCopy;
@@ -130,7 +134,7 @@ public class UserDefinedAnyfield
         return new UserDefinedAnyfield();
     }
 
-    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy strategy) {
+    public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
         }
@@ -143,7 +147,7 @@ public class UserDefinedAnyfield
             lhsContent = (((this.content!= null)&&(!this.content.isEmpty()))?this.getContent():null);
             List<Object> rhsContent;
             rhsContent = (((that.content!= null)&&(!that.content.isEmpty()))?that.getContent():null);
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent)) {
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "content", lhsContent), LocatorUtils.property(thatLocator, "content", rhsContent), lhsContent, rhsContent, ((this.content!= null)&&(!this.content.isEmpty())), ((that.content!= null)&&(!that.content.isEmpty())))) {
                 return false;
             }
         }
@@ -151,7 +155,7 @@ public class UserDefinedAnyfield
     }
 
     public boolean equals(Object object) {
-        final EqualsStrategy strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
     }
 
