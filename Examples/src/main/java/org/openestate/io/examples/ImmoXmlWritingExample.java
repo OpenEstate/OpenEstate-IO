@@ -210,8 +210,8 @@ public class ImmoXmlWritingExample
     // create an example transfer
     Uebertragung uebertragung = FACTORY.createUebertragung();
     uebertragung.setArt( Uebertragung.Art.OFFLINE );
-    uebertragung.setSendersoftware( "OpenEstate.org" );
-    uebertragung.setTechnEmail( "info@openestate.org" );
+    uebertragung.setSendersoftware( "OpenEstate-IO" );
+    uebertragung.setTechnEmail( "test@test.org" );
     uebertragung.setUmfang( Uebertragung.Umfang.VOLL );
     return uebertragung;
   }

@@ -226,9 +226,9 @@ public class OpenImmoWritingExample
     Uebertragung uebertragung = FACTORY.createUebertragung();
     uebertragung.setArt( Uebertragung.Art.OFFLINE );
     uebertragung.setModus( Uebertragung.Modus.NEW );
-    uebertragung.setSendersoftware( "OpenEstate.org" );
-    uebertragung.setSenderversion( "1.0-SNAPSHOT" );
-    uebertragung.setTechnEmail( "info@openestate.org" );
+    uebertragung.setSendersoftware( "OpenEstate-IO" );
+    uebertragung.setSenderversion( "1.1-SNAPSHOT" );
+    uebertragung.setTechnEmail( "test@test.org" );
     uebertragung.setTimestamp( Calendar.getInstance() );
     uebertragung.setUmfang( Uebertragung.Umfang.VOLL );
     return uebertragung;

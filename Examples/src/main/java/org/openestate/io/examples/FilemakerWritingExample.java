@@ -168,8 +168,8 @@ public class FilemakerWritingExample
   {
     ProductType product = FACTORY.createProductType();
     product.setNAME( "OpenEstate-IO" );
-    product.setVERSION( "1.0" );
-    product.setBUILD( "123");
+    product.setVERSION( "1.1-SNAPSHOT" );
+    product.setBUILD( "123" );
     return product;
   }
 
