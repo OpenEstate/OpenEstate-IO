@@ -334,7 +334,7 @@ public class KyeroUtils
   public static Boolean parseBoolType( String value )
   {
     value = StringUtils.trimToNull( value );
-    return DatatypeConverter.parseBoolean( value );
+    return (value!=null)? DatatypeConverter.parseBoolean( value ): null;
   }
 
   public static Calendar parseDateType( String value )
@@ -477,7 +477,7 @@ public class KyeroUtils
     else if (Boolean.FALSE.equals( value ))
       return "0";
     else
-      throw new IllegalArgumentException( "Can't print boolean value!" );
+      return StringUtils.EMPTY;
   }
 
   public static String printDateType( Calendar value )
@@ -527,7 +527,7 @@ public class KyeroUtils
     if (value==null || !isValidImageUrlType( value ))
       throw new IllegalArgumentException( "Can't print image-url value!" );
     else
-      return value.toString();
+      return value.toExternalForm();
   }
 
   public static String printInteger( BigInteger value )
@@ -540,11 +540,7 @@ public class KyeroUtils
 
   public static String printLocationType( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null)
-      throw new IllegalArgumentException( "Can't print location value!" );
-    else
-      return StringUtils.abbreviate( value, 50 );
+    return StringUtils.abbreviate( StringUtils.trimToEmpty( value ), 50 );
   }
 
   public static String printNonNegativeInteger( BigInteger value )
@@ -593,6 +589,6 @@ public class KyeroUtils
     if (value==null || !isValidUrlDataType( value ))
       throw new IllegalArgumentException( "Can't print url-data value!" );
     else
-      return value.toString();
+      return value.toExternalForm();
   }
 }
