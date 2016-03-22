@@ -593,7 +593,7 @@ public class Is24XmlUtils
     if (value==null || StringUtils.isBlank( value.getHost() ))
       throw new IllegalArgumentException( "Can't print URL value '" + value + "'!" );
     else
-      return value.toString();
+      return value.toExternalForm();
   }
 
   public static String printZahl2( Long value )
