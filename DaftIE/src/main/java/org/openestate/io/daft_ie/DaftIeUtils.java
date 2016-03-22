@@ -410,6 +410,6 @@ public class DaftIeUtils
     if (value==null)
       throw new IllegalArgumentException( "Can't print URL value!" );
     else
-      return value.toString();
+      return value.toExternalForm();
   }
 }
