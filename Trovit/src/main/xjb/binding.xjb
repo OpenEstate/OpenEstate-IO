@@ -4,14 +4,6 @@
                jaxb:extensionBindingPrefixes="xjc"
                version="2.0">
 
-  <!--
-  <jaxb:globalBindings>
-    <jaxb:javaType  name="java.util.Calendar" xmlType="xsd:date"
-      parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
-      printMethod="javax.xml.bind.DatatypeConverter.printDate" />
-  </jaxb:globalBindings>
-  -->
-
   <jaxb:bindings schemaLocation="../xsd/homes.xsd" node="/xsd:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="org.openestate.io.trovit.xml">
