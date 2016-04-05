@@ -5,7 +5,9 @@ Changelog for OpenEstate-IO
 1.2 (not released yet)
 ----------------------
 
-...
+### updates
+
+-   Updated `slf4j` libraries to version 1.7.21.
 
 
 1.1 (11 Mar 2016)

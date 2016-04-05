@@ -93,7 +93,7 @@ Dependencies
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
 -   [jaxb2-basics-runtime 0.11.0](https://github.com/highsource/jaxb2-basics)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
--   [SLF4J 1.7.18](http://www.slf4j.org/)
+-   [SLF4J 1.7.21](http://www.slf4j.org/)
 
 
 Changelog

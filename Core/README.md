@@ -43,7 +43,7 @@ Dependencies
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.18](http://www.slf4j.org/)
+-   [SLF4J 1.7.21](http://www.slf4j.org/)
 
 
 Changelog
