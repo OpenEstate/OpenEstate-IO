@@ -38,7 +38,7 @@ Dependencies
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-csv 1.2](http://commons.apache.org/proper/commons-csv/)
     (optional; for processing of CSV formats)
--   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
+-   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
 -   [jaxb2-basics-runtime 0.11.0](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)

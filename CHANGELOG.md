@@ -7,6 +7,7 @@ Changelog for OpenEstate-IO
 
 ### updates
 
+-   Updated `commons-io` library to version 2.5.
 -   Updated `slf4j` libraries to version 1.7.21.
 
 
