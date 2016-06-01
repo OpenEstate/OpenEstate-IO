@@ -36,7 +36,7 @@ Dependencies
 
 -   Java 6 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
--   [commons-csv 1.2](http://commons.apache.org/proper/commons-csv/)
+-   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
     (optional; for processing of CSV formats)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
