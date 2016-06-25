@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
@@ -42,7 +43,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "energyRatingType", propOrder = {
 
 })
-public class EnergyRatingType implements Cloneable, CopyTo2, Equals2, ToString2
+public class EnergyRatingType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlSchemaType(name = "string")

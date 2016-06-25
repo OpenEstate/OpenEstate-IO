@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -47,7 +48,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     PictureExtended.class
 })
-public class PictureProject implements Cloneable, CopyTo2, Equals2, ToString2
+public class PictureProject implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

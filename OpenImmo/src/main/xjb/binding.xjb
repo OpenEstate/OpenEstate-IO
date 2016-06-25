@@ -7,6 +7,7 @@
   <!-- global customizations -->
 
   <jaxb:globalBindings>
+    <jaxb:serializable />
     <jaxb:javaType name="java.util.Calendar" xmlType="xsd:date"
                    parseMethod="org.openestate.io.openimmo.OpenImmoUtils.parseDate"
                    printMethod="org.openestate.io.openimmo.OpenImmoUtils.printDate" />

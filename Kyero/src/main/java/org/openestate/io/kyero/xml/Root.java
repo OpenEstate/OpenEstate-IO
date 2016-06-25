@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +74,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "property"
 })
 @XmlRootElement(name = "root")
-public class Root implements Cloneable, CopyTo2, Equals2, ToString2
+public class Root implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
@@ -335,7 +336,7 @@ public class Root implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Agent implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Agent implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(type = String.class)

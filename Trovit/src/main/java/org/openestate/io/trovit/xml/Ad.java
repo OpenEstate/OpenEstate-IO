@@ -1,6 +1,7 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Calendar;
@@ -82,7 +83,7 @@ import org.openestate.io.trovit.xml.types.IntBool;
 
 })
 @XmlRootElement(name = "ad")
-public class Ad implements Cloneable, CopyTo2, Equals2, ToString2
+public class Ad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)

@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -39,7 +40,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "verkehrswert"
 })
 @XmlRootElement(name = "versteigerung")
-public class Versteigerung implements Cloneable, CopyTo2, Equals2, ToString2
+public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected Boolean zwangsversteigerung;

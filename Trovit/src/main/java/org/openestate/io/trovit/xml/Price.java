@@ -1,6 +1,7 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -45,7 +46,7 @@ import org.openestate.io.trovit.xml.types.PriceInterval;
     "value"
 })
 @XmlRootElement(name = "price")
-public class Price implements Cloneable, CopyTo2, Equals2, ToString2
+public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

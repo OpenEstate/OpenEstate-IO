@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -75,7 +76,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     GrundstueckWohnenEmpfohleneNutzung.class,
     GrundstueckGewerbeEmpfohleneNutzung.class
 })
-public class GrundstueckEmpfohleneNutzung implements Cloneable, CopyTo2, Equals2, ToString2
+public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "Ackerland", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)

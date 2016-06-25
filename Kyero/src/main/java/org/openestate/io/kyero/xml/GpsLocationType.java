@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -45,7 +46,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "gpsLocationType", propOrder = {
 
 })
-public class GpsLocationType implements Cloneable, CopyTo2, Equals2, ToString2
+public class GpsLocationType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true, type = String.class)

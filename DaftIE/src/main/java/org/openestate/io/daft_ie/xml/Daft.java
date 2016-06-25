@@ -1,6 +1,7 @@
 
 package org.openestate.io.daft_ie.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -68,7 +69,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 })
 @XmlRootElement(name = "daft")
-public class Daft implements Cloneable, CopyTo2, Equals2, ToString2
+public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "overseas_sales")
@@ -310,7 +311,7 @@ public class Daft implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "overseasRentalAd"
     })
-    public static class OverseasRental implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class OverseasRental implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "overseas_rental_ad")
@@ -458,7 +459,7 @@ public class Daft implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "overseasSaleAd"
     })
-    public static class OverseasSales implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class OverseasSales implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "overseas_sale_ad")

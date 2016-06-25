@@ -1,6 +1,7 @@
 
 package org.openestate.io.filemaker.xml.result;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +59,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "MetaDataType", propOrder = {
     "field"
 })
-public class MetaDataType implements Cloneable, CopyTo2, Equals2, ToString2
+public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "FIELD")
@@ -203,7 +204,7 @@ public class MetaDataType implements Cloneable, CopyTo2, Equals2, ToString2
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class FIELD implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class FIELD implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "NAME", required = true)

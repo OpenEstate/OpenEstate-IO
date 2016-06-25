@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -34,7 +35,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "regiId"
 })
 @XmlRootElement(name = "sender")
-public class Sender implements Cloneable, CopyTo2, Equals2, ToString2
+public class Sender implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)

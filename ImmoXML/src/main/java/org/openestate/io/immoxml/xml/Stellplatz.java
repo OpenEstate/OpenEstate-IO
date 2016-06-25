@@ -1,6 +1,7 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -34,7 +35,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     StpSonstige.class
 })
-public class Stellplatz implements Cloneable, CopyTo2, Equals2, ToString2
+public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "stellplatzmiete")

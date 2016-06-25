@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -32,7 +33,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "feld"
 })
 @XmlRootElement(name = "user_defined_extend")
-public class UserDefinedExtend implements Cloneable, CopyTo2, Equals2, ToString2
+public class UserDefinedExtend implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<UserDefinedExtend.Feld> feld;
@@ -167,7 +168,7 @@ public class UserDefinedExtend implements Cloneable, CopyTo2, Equals2, ToString2
         "typ",
         "modus"
     })
-    public static class Feld implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Feld implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)

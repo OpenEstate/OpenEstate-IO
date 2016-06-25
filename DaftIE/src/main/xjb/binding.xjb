@@ -5,6 +5,7 @@
                version="2.0">
 
   <jaxb:globalBindings>
+    <jaxb:serializable />
     <jaxb:javaType name="java.util.Calendar" xmlType="xsd:date"
                    parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseDate"
                    printMethod="org.openestate.io.daft_ie.DaftIeUtils.printDate" />

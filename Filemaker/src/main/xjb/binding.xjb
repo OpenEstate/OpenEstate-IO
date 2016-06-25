@@ -4,6 +4,10 @@
                jaxb:extensionBindingPrefixes="xjc"
                version="2.0">
 
+  <jaxb:globalBindings>
+    <jaxb:serializable />
+  </jaxb:globalBindings>
+
   <jaxb:bindings schemaLocation="../xsd/fmpxmllayout.xsd" node="/xsd:schema">
 
     <jaxb:schemaBindings>

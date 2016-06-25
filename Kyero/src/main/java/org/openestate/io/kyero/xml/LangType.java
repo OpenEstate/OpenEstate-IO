@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -75,7 +76,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "langType", propOrder = {
 
 })
-public class LangType implements Cloneable, CopyTo2, Equals2, ToString2
+public class LangType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected String ar;

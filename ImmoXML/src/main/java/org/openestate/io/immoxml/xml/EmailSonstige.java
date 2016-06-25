@@ -1,6 +1,7 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -32,7 +33,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "value"
 })
 @XmlRootElement(name = "email_sonstige")
-public class EmailSonstige implements Cloneable, CopyTo2, Equals2, ToString2
+public class EmailSonstige implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

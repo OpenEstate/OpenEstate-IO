@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -45,7 +46,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "objektartZusatz"
 })
 @XmlRootElement(name = "objektart")
-public class Objektart implements Cloneable, CopyTo2, Equals2, ToString2
+public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<Zimmer> zimmer;

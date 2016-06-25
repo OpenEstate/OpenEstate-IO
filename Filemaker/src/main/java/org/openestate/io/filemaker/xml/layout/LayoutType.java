@@ -1,6 +1,7 @@
 
 package org.openestate.io.filemaker.xml.layout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -66,7 +67,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "LayoutType", propOrder = {
     "field"
 })
-public class LayoutType implements Cloneable, CopyTo2, Equals2, ToString2
+public class LayoutType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "FIELD")
@@ -328,7 +329,7 @@ public class LayoutType implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "style"
     })
-    public static class FIELD implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class FIELD implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "STYLE", required = true)
@@ -514,7 +515,7 @@ public class LayoutType implements Cloneable, CopyTo2, Equals2, ToString2
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "")
-        public static class STYLE implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class STYLE implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlAttribute(name = "TYPE")

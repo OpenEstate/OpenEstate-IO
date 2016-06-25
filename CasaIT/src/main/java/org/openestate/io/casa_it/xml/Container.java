@@ -1,6 +1,7 @@
 
 package org.openestate.io.casa_it.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -414,7 +415,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "realestateitems"
 })
 @XmlRootElement(name = "container")
-public class Container implements Cloneable, CopyTo2, Equals2, ToString2
+public class Container implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected Container.Realestateitems realestateitems;
@@ -903,7 +904,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "realestate"
     })
-    public static class Realestateitems implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Realestateitems implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)
@@ -1401,7 +1402,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
             "googlemapcoordinate",
             "images"
         })
-        public static class Realestate implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class Realestate implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             protected Container.Realestateitems.Realestate.Address address;
@@ -2797,7 +2798,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Address implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Address implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "city", required = true)
@@ -3160,7 +3161,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Box implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "size")
@@ -3375,7 +3376,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Building implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Building implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "age")
@@ -3723,7 +3724,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Configuration implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Configuration implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "isaddressvisibleonsite")
@@ -3981,7 +3982,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Description implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Description implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "value", required = true)
@@ -4131,7 +4132,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Garden implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Garden implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "size")
@@ -4322,7 +4323,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Googlemapcoordinate implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Googlemapcoordinate implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "latitude")
@@ -4696,7 +4697,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
                 "advertismentimage"
             })
-            public static class Images implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Images implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true)
@@ -4846,7 +4847,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "")
-                public static class Advertismentimage implements Cloneable, CopyTo2, Equals2, ToString2
+                public static class Advertismentimage implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 {
 
                     @XmlAttribute(name = "path", required = true)
@@ -5055,7 +5056,7 @@ public class Container implements Cloneable, CopyTo2, Equals2, ToString2
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "")
-            public static class Price implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlAttribute(name = "value")

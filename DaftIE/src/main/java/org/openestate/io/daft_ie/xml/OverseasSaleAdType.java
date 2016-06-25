@@ -1,6 +1,7 @@
 
 package org.openestate.io.daft_ie.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -128,7 +129,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "features",
     "pdfs"
 })
-public class OverseasSaleAdType implements Cloneable, CopyTo2, Equals2, ToString2
+public class OverseasSaleAdType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true, type = java.lang.String.class)

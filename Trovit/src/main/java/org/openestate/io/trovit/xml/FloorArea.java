@@ -1,6 +1,7 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -45,7 +46,7 @@ import org.openestate.io.trovit.xml.types.Unit;
     "value"
 })
 @XmlRootElement(name = "floor_area")
-public class FloorArea implements Cloneable, CopyTo2, Equals2, ToString2
+public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

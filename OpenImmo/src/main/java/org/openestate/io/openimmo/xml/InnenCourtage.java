@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -31,7 +32,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "content"
 })
 @XmlRootElement(name = "innen_courtage")
-public class InnenCourtage implements Cloneable, CopyTo2, Equals2, ToString2
+public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

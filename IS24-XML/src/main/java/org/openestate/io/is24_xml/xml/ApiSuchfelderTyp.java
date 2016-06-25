@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -46,7 +47,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "apiSuchfeld2",
     "apiSuchfeld3"
 })
-public class ApiSuchfelderTyp implements Cloneable, CopyTo2, Equals2, ToString2
+public class ApiSuchfelderTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "ApiSuchfeld1", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)

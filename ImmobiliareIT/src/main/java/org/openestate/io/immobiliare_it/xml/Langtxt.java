@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,7 +41,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "langtxt", propOrder = {
     "value"
 })
-public class Langtxt implements Cloneable, CopyTo2, Equals2, ToString2
+public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

@@ -1,6 +1,7 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -37,7 +38,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedAnyfield"
 })
 @XmlRootElement(name = "infrastruktur")
-public class Infrastruktur implements Cloneable, CopyTo2, Equals2, ToString2
+public class Infrastruktur implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected Boolean zulieferung;

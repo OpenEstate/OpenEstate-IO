@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSeeAlso;
@@ -39,7 +40,7 @@ import org.jvnet.jaxb2_commons.locator.ObjectLocator;
     org.openestate.io.is24_xml.xml.WazTyp.Pauschalmiete.class,
     org.openestate.io.is24_xml.xml.WazTyp.Monatsmiete.class
 })
-public class WazMieteBaseTyp implements Cloneable, CopyTo2, Equals2, ToString2
+public class WazMieteBaseTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
 
