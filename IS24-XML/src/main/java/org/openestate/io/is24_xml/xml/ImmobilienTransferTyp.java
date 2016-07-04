@@ -402,8 +402,8 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link JAXBElement }{@code <}{@link TypenHaus }{@code >}
          * {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}
+         * {@link JAXBElement }{@code <}{@link TypenHaus }{@code >}
          * 
          * 
          */
@@ -433,25 +433,25 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
          * <p>
          * Objects of the following type(s) are allowed in the list
          * {@link GrundstueckGewerbe }
-         * {@link Zwangsversteigerung }
-         * {@link HausKauf }
-         * {@link Anlageobjekt }
-         * {@link WAZ }
          * {@link Einzelhandel }
+         * {@link Gastronomie }
+         * {@link SonstigeGewerbe }
+         * {@link Zwangsversteigerung }
+         * {@link BueroPraxis }
+         * {@link WGZimmer }
+         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
+         * {@link WAZ }
+         * {@link HausKauf }
+         * {@link GrundstueckWohnenMiete }
+         * {@link GarageMiete }
+         * {@link Anlageobjekt }
+         * {@link WohnungMiete }
+         * {@link WohnungKauf }
+         * {@link GrundstueckWohnenKauf }
+         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
+         * {@link HausMiete }
          * {@link HalleProduktion }
          * {@link GarageKauf }
-         * {@link SonstigeGewerbe }
-         * {@link Gastronomie }
-         * {@link WohnungMiete }
-         * {@link BueroPraxis }
-         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link GrundstueckWohnenMiete }
-         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
-         * {@link WGZimmer }
-         * {@link GrundstueckWohnenKauf }
-         * {@link WohnungKauf }
-         * {@link HausMiete }
-         * {@link GarageMiete }
          * 
          * 
          */
