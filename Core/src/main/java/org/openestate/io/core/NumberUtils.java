@@ -21,6 +21,8 @@ import java.text.ParseException;
 import java.util.Locale;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * NumberUtils.
@@ -30,6 +32,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public final class NumberUtils
 {
+  private static final Logger LOGGER = LoggerFactory.getLogger( NumberUtils.class );
 
   /**
    * Test, if a string contains a parsable number.
@@ -63,10 +66,10 @@ public final class NumberUtils
         fraction = true;
         continue;
       }
-      //if (c==symbols.getGroupingSeparator() && !fraction)
-      //{
-      //  continue;
-      //}
+      if (c==symbols.getGroupingSeparator() && !fraction)
+      {
+        continue;
+      }
       if (!Character.isDigit( c ))
       {
         return false;
@@ -149,12 +152,12 @@ public final class NumberUtils
     {
       // check, if the value is completely numeric for the locale
       if (!isNumeric( value, locale )) continue;
+      NumberFormat format = NumberFormat.getNumberInstance( locale );
       try
       {
-        NumberFormat format = NumberFormat.getNumberInstance( locale );
         format.setMinimumFractionDigits( 0 );
-        format.setGroupingUsed( false );
         format.setParseIntegerOnly( integerOnly );
+        format.setGroupingUsed( value.indexOf( DecimalFormatSymbols.getInstance( locale ).getGroupingSeparator() )>-1 );
         return format.parse( value );
       }
       catch (ParseException ex)

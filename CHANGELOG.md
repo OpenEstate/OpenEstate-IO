@@ -11,6 +11,7 @@ Changelog for OpenEstate-IO
 -   Updated `commons-io` library to version 2.5.
 -   Updated `slf4j` libraries to version 1.7.21.
 -   Generated JAXB classes implement `java.io.Serializable`.
+-   Improved parsing of numeric values according to a certain locale.
 
 
 1.1 (11 Mar 2016)
