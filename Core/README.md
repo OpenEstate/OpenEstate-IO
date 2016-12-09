@@ -40,7 +40,7 @@ Dependencies
 -   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
     (optional; for processing of CSV formats)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
+-   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
     (optional; for processing of XML formats)
 -   [SLF4J 1.7.21](http://www.slf4j.org/)
