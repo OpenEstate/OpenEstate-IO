@@ -15,8 +15,6 @@
  */
 package org.openestate.io.openimmo;
 
-import javax.xml.bind.JAXBException;
-import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlUtils;
@@ -25,6 +23,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * OpenImmo-XML document with a &lt;openimmo_feedback&gt; root element.
@@ -230,6 +231,6 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
   public OpenimmoFeedback toObject() throws JAXBException
   {
     this.upgradeToLatestVersion();
-    return (OpenimmoFeedback) OpenImmoUtils.createUnmarshaller().unmarshal( this.getDocument() );
+    return OpenImmoUtils.createUnmarshaller().unmarshal( this.getDocument(), OpenimmoFeedback.class ).getValue();
   }
 }
