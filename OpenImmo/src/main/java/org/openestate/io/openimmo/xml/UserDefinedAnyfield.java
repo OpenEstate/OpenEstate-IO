@@ -61,8 +61,8 @@ public class UserDefinedAnyfield implements Serializable, Cloneable, CopyTo2, Eq
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Element }
-     * {@link String }
      * {@link Object }
+     * {@link String }
      * 
      * 
      */

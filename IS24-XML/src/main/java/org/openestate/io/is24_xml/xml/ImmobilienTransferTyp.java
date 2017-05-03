@@ -402,8 +402,8 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}
          * {@link JAXBElement }{@code <}{@link TypenHaus }{@code >}
+         * {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}
          * 
          * 
          */
@@ -432,26 +432,26 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link GrundstueckGewerbe }
-         * {@link Einzelhandel }
-         * {@link Gastronomie }
          * {@link SonstigeGewerbe }
-         * {@link Zwangsversteigerung }
-         * {@link BueroPraxis }
-         * {@link WGZimmer }
-         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link WAZ }
-         * {@link HausKauf }
-         * {@link GrundstueckWohnenMiete }
-         * {@link GarageMiete }
          * {@link Anlageobjekt }
-         * {@link WohnungMiete }
-         * {@link WohnungKauf }
-         * {@link GrundstueckWohnenKauf }
+         * {@link Gastronomie }
+         * {@link WAZ }
+         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
+         * {@link GrundstueckGewerbe }
          * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
          * {@link HausMiete }
-         * {@link HalleProduktion }
+         * {@link GrundstueckWohnenKauf }
+         * {@link Einzelhandel }
+         * {@link Zwangsversteigerung }
+         * {@link GarageMiete }
+         * {@link WGZimmer }
+         * {@link BueroPraxis }
          * {@link GarageKauf }
+         * {@link WohnungKauf }
+         * {@link WohnungMiete }
+         * {@link GrundstueckWohnenMiete }
+         * {@link HausKauf }
+         * {@link HalleProduktion }
          * 
          * 
          */
