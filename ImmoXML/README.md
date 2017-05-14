@@ -1,5 +1,5 @@
-OpenEstate-IO-ImmoXML 1.2-SNAPSHOT
-==================================
+OpenEstate-IO-ImmoXML 1.2
+=========================
 
 *OpenEstate-IO-ImmoXML* is a Java library to read and write real estate data in
 the *ImmoXML* format (version 3.0), that is mostly used by
@@ -10,9 +10,9 @@ Features
 --------
 
 -   read XML data according to the specifications of *ImmoXML* 3.0
-    (see [`ImmoXmlReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/ImmoXmlReadingExample.java))
+    (see [`ImmoXmlReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/ImmoXmlReadingExample.java))
 -   write XML data according to the specifications of *ImmoXML* 3.0
-    (see [`ImmoXmlWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/ImmoXmlWritingExample.java))
+    (see [`ImmoXmlWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/ImmoXmlWritingExample.java))
 
 
 How to use
@@ -31,7 +31,7 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 ```
 
@@ -93,14 +93,14 @@ Dependencies
 -   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
--   [SLF4J 1.7.21](http://www.slf4j.org/)
+-   [SLF4J 1.7.25](http://www.slf4j.org/)
 
 
 Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 for the full changelog.
 
 
@@ -110,7 +110,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
 for the license text.
 
 
@@ -119,6 +119,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for *ImmoXML*](http://validator.openestate.org/)

@@ -1,5 +1,5 @@
-OpenEstate-IO 1.2-SNAPSHOT
-==========================
+OpenEstate-IO 1.2
+=================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate
 data in common formats. These libraries are used within
@@ -23,7 +23,7 @@ Supported Formats
 | [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                     | XML  | rev189438 |
 | [`Kyero`](Kyero)                 | [*Kyero.com*](http://kyero.com) XML feed                         | XML  | 3         |
 |                                  |                                                                  |      | 2.1       |
-| [`OpenImmo`](OpenImmo)           | *OpenImmo* format                                                | XML  | 1.2.7     |
+| [`OpenImmo`](OpenImmo)           | [*OpenImmo*]((http://www.openimmo.de/)) format                   | XML  | 1.2.7     |
 |                                  |                                                                  |      | 1.2.6     |
 |                                  |                                                                  |      | 1.2.5     |
 |                                  |                                                                  |      | 1.2.4     |
@@ -55,73 +55,73 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IDX</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Trovit</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-WisIT</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
 </dependency>
 ```
 
@@ -143,7 +143,7 @@ Dependencies
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.21](http://www.slf4j.org/)
+-   [SLF4J 1.7.25](http://www.slf4j.org/)
 -   [log4j 1.2.17](http://logging.apache.org/log4j/1.2/)
     (optional; may be replaced by another logging system
     [via SLF4J](http://www.slf4j.org/manual.html))
@@ -160,7 +160,9 @@ License
 
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
-Take a look at [`LICENSE.txt`](LICENSE.txt) for the license text.
+Take a look at
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
+for the license text.
 
 
 Todo
@@ -174,6 +176,6 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for common XML formats](http://validator.openestate.org/)
