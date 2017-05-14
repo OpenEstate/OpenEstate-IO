@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +60,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "imagesType", propOrder = {
     "image"
 })
-public class ImagesType implements Cloneable, CopyTo2, Equals2, ToString2
+public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<ImagesType.Image> image;
@@ -206,7 +207,7 @@ public class ImagesType implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Image implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Image implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(type = String.class)

@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -38,7 +39,7 @@ import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 @XmlType(name = "ImmobilienAdresseTyp")
 public class ImmobilienAdresseTyp
     extends ImmobilienAdresseBaseTyp
-    implements Cloneable, CopyTo2, Equals2, ToString2
+    implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
 

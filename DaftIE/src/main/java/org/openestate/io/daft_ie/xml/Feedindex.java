@@ -1,6 +1,7 @@
 
 package org.openestate.io.daft_ie.xml;
 
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -60,7 +61,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "feed"
 })
 @XmlRootElement(name = "feedindex")
-public class Feedindex implements Cloneable, CopyTo2, Equals2, ToString2
+public class Feedindex implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<Feedindex.Feed> feed;
@@ -206,7 +207,7 @@ public class Feedindex implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Feed implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Feed implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true, type = String.class)

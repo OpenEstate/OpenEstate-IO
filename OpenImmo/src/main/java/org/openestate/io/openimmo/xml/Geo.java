@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +59,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedExtend"
 })
 @XmlRootElement(name = "geo")
-public class Geo implements Cloneable, CopyTo2, Equals2, ToString2
+public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)

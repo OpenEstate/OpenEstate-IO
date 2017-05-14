@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Currency;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -57,7 +58,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "priceType", propOrder = {
     "value"
 })
-public class PriceType implements Cloneable, CopyTo2, Equals2, ToString2
+public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

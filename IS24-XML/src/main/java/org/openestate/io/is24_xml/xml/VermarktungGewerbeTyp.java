@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -67,7 +68,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "miete",
     "kauf"
 })
-public class VermarktungGewerbeTyp implements Cloneable, CopyTo2, Equals2, ToString2
+public class VermarktungGewerbeTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "Miete", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
@@ -362,7 +363,7 @@ public class VermarktungGewerbeTyp implements Cloneable, CopyTo2, Equals2, ToStr
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Kauf implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Kauf implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "Preis", required = true)
@@ -499,7 +500,7 @@ public class VermarktungGewerbeTyp implements Cloneable, CopyTo2, Equals2, ToStr
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Miete implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Miete implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "Pro")

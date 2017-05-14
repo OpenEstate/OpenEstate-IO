@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -50,7 +51,7 @@ import org.openestate.io.immobiliare_it.xml.types.SizeUnit;
 @XmlType(name = "sizeType", propOrder = {
     "value"
 })
-public class SizeType implements Cloneable, CopyTo2, Equals2, ToString2
+public class SizeType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

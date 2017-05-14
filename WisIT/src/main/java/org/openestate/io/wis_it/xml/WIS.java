@@ -1,6 +1,7 @@
 
 package org.openestate.io.wis_it.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +72,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "objekte"
 })
 @XmlRootElement(name = "WIS")
-public class WIS implements Cloneable, CopyTo2, Equals2, ToString2
+public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "BENUTZER", required = true)
@@ -260,7 +261,7 @@ public class WIS implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "kdnr"
     })
-    public static class BENUTZER implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class BENUTZER implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "KDNR", required = true)
@@ -400,7 +401,7 @@ public class WIS implements Cloneable, CopyTo2, Equals2, ToString2
         "anzahl",
         "objekt"
     })
-    public static class OBJEKTE implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class OBJEKTE implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "ANZAHL", required = true, type = String.class)

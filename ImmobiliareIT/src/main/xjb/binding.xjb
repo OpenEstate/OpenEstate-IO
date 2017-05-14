@@ -4,6 +4,7 @@
                xmlns:immobiliare="http://feed.immobiliare.it"
                jaxb:version="2.0">
   <jaxb:globalBindings>
+    <jaxb:serializable />
 
     <!-- parsers & writers for global simpletypes -->
 

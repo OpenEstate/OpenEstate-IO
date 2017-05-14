@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -43,7 +44,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "featuresType", propOrder = {
     "feature"
 })
-public class FeaturesType implements Cloneable, CopyTo2, Equals2, ToString2
+public class FeaturesType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)

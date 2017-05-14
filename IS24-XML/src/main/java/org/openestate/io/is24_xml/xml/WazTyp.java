@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -103,7 +104,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 })
 public class WazTyp
     extends ImmobilieBaseTyp
-    implements Cloneable, CopyTo2, Equals2, ToString2
+    implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Pauschalmiete", required = true)
@@ -1851,7 +1852,7 @@ public class WazTyp
     @XmlType(name = "")
     public static class Monatsmiete
         extends WazMieteBaseTyp
-        implements Cloneable, CopyTo2, Equals2, ToString2
+        implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "Kaltmiete")
@@ -2048,7 +2049,7 @@ public class WazTyp
     @XmlType(name = "")
     public static class Pauschalmiete
         extends WazMieteBaseTyp
-        implements Cloneable, CopyTo2, Equals2, ToString2
+        implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "MietePauschal", required = true)

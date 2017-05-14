@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "fehler"
 })
 @XmlRootElement(name = "fehlerliste")
-public class Fehlerliste implements Cloneable, CopyTo2, Equals2, ToString2
+public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected List<Fehlerliste.Fehler> fehler;
@@ -169,7 +170,7 @@ public class Fehlerliste implements Cloneable, CopyTo2, Equals2, ToString2
         "fehlernr",
         "text"
     })
-    public static class Fehler implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Fehler implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "objekt_id")

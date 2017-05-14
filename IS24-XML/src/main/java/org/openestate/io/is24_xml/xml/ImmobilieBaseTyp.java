@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +77,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     ZwangsversteigerungTyp.class,
     WGZimmerTyp.class
 })
-public abstract class ImmobilieBaseTyp implements Cloneable, CopyTo2, Equals2, ToString2
+public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Adresse", required = true)

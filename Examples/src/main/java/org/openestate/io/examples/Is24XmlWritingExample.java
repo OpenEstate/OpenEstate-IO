@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 OpenEstate.org.
+ * Copyright 2015-2017 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,7 @@ public class Is24XmlWritingExample
     ImmobilienTransferTyp transfer = FACTORY.createImmobilienTransferTyp();
     transfer.setEmailBeiFehler( "test@test.org" );
     transfer.setErstellerSoftware( "OpenEstate-IO" );
-    transfer.setErstellerSoftwareVersion( "1.1" );
+    transfer.setErstellerSoftwareVersion( "1.2" );
     transfer.setAnbieter( createAnbieter() );
 
     // convert the ImmobilienTransferTyp object into a XML document

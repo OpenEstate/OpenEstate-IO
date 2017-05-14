@@ -3,8 +3,9 @@
                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                jaxb:version="2.0">
   <jaxb:globalBindings>
+    <jaxb:serializable />
 
-    <!-- parsers & writers for global simpletypes -->
+    <!-- parsers & writers for global xsd simpletypes -->
 
     <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:integer"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseInteger"
@@ -15,6 +16,9 @@
     <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:decimal"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseDecimal"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printDecimal" />
+
+
+    <!-- parsers & writers for global kyero simpletypes -->
 
     <jaxb:javaType name="java.lang.Boolean" xmlType="boolType"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseBoolType"
@@ -50,9 +54,6 @@
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseUrlDataType"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printUrlDataType" />
 
-
-
-
   </jaxb:globalBindings>
 
   <jaxb:bindings schemaLocation="../xsd/kyeroV3.0.xsd" node="/xsd:schema">
@@ -74,16 +75,6 @@
 
     <!-- enumeration types -->
 
-    <!--
-    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='boolType']">
-      <jaxb:typesafeEnumClass name="BoolType">
-        <jaxb:typesafeEnumMember value="" name="EMPTY" />
-        <jaxb:typesafeEnumMember value="0" name="FALSE" />
-        <jaxb:typesafeEnumMember value="1" name="TRUE" />
-      </jaxb:typesafeEnumClass>
-    </jaxb:bindings>
-    -->
-
     <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='currencyType']">
       <jaxb:typesafeEnumClass name="CurrencyType" />
     </jaxb:bindings>
@@ -95,8 +86,6 @@
     <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='priceFreqType']">
       <jaxb:typesafeEnumClass name="PriceFreqType" />
     </jaxb:bindings>
-
-
 
   </jaxb:bindings>
 </jaxb:bindings>

@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -36,7 +37,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "value"
 })
 @XmlRootElement(name = "check")
-public class Check implements Cloneable, CopyTo2, Equals2, ToString2
+public class Check implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue

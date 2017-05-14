@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 OpenEstate.org.
+ * Copyright 2015-2017 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,17 @@
  */
 package org.openestate.io.core;
 
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
 
 /**
  * A general CSV record, that is read by a {@link CsvParser} and written by a
@@ -39,6 +44,56 @@ public abstract class CsvRecord
   protected CsvRecord()
   {
     this.values = new HashMap<Integer, String>();
+  }
+
+  /**
+   * Write content of the record in a human readable form.
+   *
+   * @param writer
+   * where the data is written to
+   *
+   * @throws IOException
+   * if the record can't be written
+   */
+  public void dump( Writer writer ) throws IOException
+  {
+    this.dump( writer, "<br>" );
+  }
+
+  /**
+   * Write content of the record in a human readable form.
+   *
+   * @param writer
+   * where the data is written to
+   *
+   * @param lineSeparator
+   * line separator for multi line values
+   *
+   * @throws IOException
+   * if the record can't be written
+   */
+  public void dump( Writer writer, String lineSeparator ) throws IOException
+  {
+    for (int i=0; i<this.getRecordLenth(); i++)
+    {
+      StringBuilder txt = new StringBuilder();
+      StringReader reader = null;
+      try
+      {
+        reader  = new StringReader( StringUtils.trimToEmpty( this.get( i ) ) );
+        for (String line : IOUtils.readLines( reader ))
+        {
+          if (txt.length()>0) txt.append( lineSeparator );
+          txt.append( line );
+        }
+      }
+      finally
+      {
+        IOUtils.closeQuietly( reader );
+      }
+      writer.write( i + ":" + txt.toString() );
+      writer.write( SystemUtils.LINE_SEPARATOR );
+    }
   }
 
   /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 OpenEstate.org.
+ * Copyright 2015-2017 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -510,20 +510,12 @@ public class TrovitUtils
 
   public static String printString100( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null)
-      throw new IllegalArgumentException( "Can't print string value!" );
-    else
-      return StringUtils.abbreviate( value, 100 );
+    return StringUtils.abbreviate( StringUtils.trimToEmpty( value ), 100 );
   }
 
   public static String printString255( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if (value==null)
-      throw new IllegalArgumentException( "Can't print string value!" );
-    else
-      return StringUtils.abbreviate( value, 255 );
+    return StringUtils.abbreviate( StringUtils.trimToEmpty( value ), 255 );
   }
 
   public static String printTime( Calendar value )

@@ -1,6 +1,7 @@
 
 package org.openestate.io.wis_it.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Calendar;
@@ -25,9 +26,9 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 /**
  * <p>Java class for ObjectType complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="ObjectType"&gt;
  *   &lt;complexContent&gt;
@@ -84,8 +85,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ObjectType", propOrder = {
@@ -136,7 +137,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "download2",
     "download3"
 })
-public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
+public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "ID", required = true)
@@ -266,11 +267,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the id property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getID() {
         return id;
@@ -278,11 +279,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the id property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setID(String value) {
         this.id = value;
@@ -290,11 +291,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the loeschen property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isLOESCHEN() {
         return loeschen;
@@ -302,11 +303,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the loeschen property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setLOESCHEN(Boolean value) {
         this.loeschen = value;
@@ -314,11 +315,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the gueltigbis property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Calendar getGUELTIGBIS() {
         return gueltigbis;
@@ -326,11 +327,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the gueltigbis property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setGUELTIGBIS(Calendar value) {
         this.gueltigbis = value;
@@ -338,11 +339,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the immobilienart property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link PropertyType }
-     *
+     *     
      */
     public PropertyType getIMMOBILIENART() {
         return immobilienart;
@@ -350,11 +351,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the immobilienart property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link PropertyType }
-     *
+     *     
      */
     public void setIMMOBILIENART(PropertyType value) {
         this.immobilienart = value;
@@ -362,11 +363,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the ort property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getORT() {
         return ort;
@@ -374,11 +375,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the ort property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setORT(String value) {
         this.ort = value;
@@ -386,11 +387,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the fraktion property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getFRAKTION() {
         return fraktion;
@@ -398,11 +399,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the fraktion property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setFRAKTION(String value) {
         this.fraktion = value;
@@ -410,11 +411,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the mietekauf property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link MarketingType }
-     *
+     *     
      */
     public MarketingType getMIETEKAUF() {
         return mietekauf;
@@ -422,11 +423,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the mietekauf property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link MarketingType }
-     *
+     *     
      */
     public void setMIETEKAUF(MarketingType value) {
         this.mietekauf = value;
@@ -434,11 +435,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the preis property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public BigDecimal getPREIS() {
         return preis;
@@ -446,11 +447,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the preis property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setPREIS(BigDecimal value) {
         this.preis = value;
@@ -458,11 +459,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the aufanfrage property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isAUFANFRAGE() {
         return aufanfrage;
@@ -470,11 +471,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the aufanfrage property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAUFANFRAGE(Boolean value) {
         this.aufanfrage = value;
@@ -482,11 +483,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the nutzflaeche property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public BigDecimal getNUTZFLAECHE() {
         return nutzflaeche;
@@ -494,11 +495,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the nutzflaeche property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setNUTZFLAECHE(BigDecimal value) {
         this.nutzflaeche = value;
@@ -506,11 +507,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the flaecheart property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link AreaType }
-     *
+     *     
      */
     public AreaType getFLAECHEART() {
         return flaecheart;
@@ -518,11 +519,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the flaecheart property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link AreaType }
-     *
+     *     
      */
     public void setFLAECHEART(AreaType value) {
         this.flaecheart = value;
@@ -530,11 +531,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the foerderbar property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isFOERDERBAR() {
         return foerderbar;
@@ -542,11 +543,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the foerderbar property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setFOERDERBAR(Boolean value) {
         this.foerderbar = value;
@@ -554,11 +555,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the konventioniert property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isKONVENTIONIERT() {
         return konventioniert;
@@ -566,11 +567,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the konventioniert property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setKONVENTIONIERT(Boolean value) {
         this.konventioniert = value;
@@ -578,11 +579,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the kubatur property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public BigDecimal getKUBATUR() {
         return kubatur;
@@ -590,11 +591,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the kubatur property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setKUBATUR(BigDecimal value) {
         this.kubatur = value;
@@ -602,11 +603,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the zustand property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ConditionType }
-     *
+     *     
      */
     public ConditionType getZUSTAND() {
         return zustand;
@@ -614,11 +615,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the zustand property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ConditionType }
-     *
+     *     
      */
     public void setZUSTAND(ConditionType value) {
         this.zustand = value;
@@ -626,11 +627,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the zimmer property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public BigInteger getZIMMER() {
         return zimmer;
@@ -638,11 +639,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the zimmer property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setZIMMER(BigInteger value) {
         this.zimmer = value;
@@ -650,11 +651,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the stockwerke property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public BigInteger getSTOCKWERKE() {
         return stockwerke;
@@ -662,11 +663,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the stockwerke property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSTOCKWERKE(BigInteger value) {
         this.stockwerke = value;
@@ -674,11 +675,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the stockwerk property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public BigInteger getSTOCKWERK() {
         return stockwerk;
@@ -686,11 +687,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the stockwerk property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSTOCKWERK(BigInteger value) {
         this.stockwerk = value;
@@ -698,11 +699,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the aufzug property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isAUFZUG() {
         return aufzug;
@@ -710,11 +711,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the aufzug property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAUFZUG(Boolean value) {
         this.aufzug = value;
@@ -722,11 +723,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the garage property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isGARAGE() {
         return garage;
@@ -734,11 +735,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the garage property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setGARAGE(Boolean value) {
         this.garage = value;
@@ -746,11 +747,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the abstellplatz property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isABSTELLPLATZ() {
         return abstellplatz;
@@ -758,11 +759,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the abstellplatz property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setABSTELLPLATZ(Boolean value) {
         this.abstellplatz = value;
@@ -770,11 +771,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the gruenflaeche property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isGRUENFLAECHE() {
         return gruenflaeche;
@@ -782,11 +783,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the gruenflaeche property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setGRUENFLAECHE(Boolean value) {
         this.gruenflaeche = value;
@@ -794,11 +795,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the keller property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isKELLER() {
         return keller;
@@ -806,11 +807,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the keller property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setKELLER(Boolean value) {
         this.keller = value;
@@ -818,11 +819,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the terrasse property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isTERRASSE() {
         return terrasse;
@@ -830,11 +831,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the terrasse property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTERRASSE(Boolean value) {
         this.terrasse = value;
@@ -842,11 +843,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the loggia property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isLOGGIA() {
         return loggia;
@@ -854,11 +855,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the loggia property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setLOGGIA(Boolean value) {
         this.loggia = value;
@@ -866,11 +867,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the balkon property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isBALKON() {
         return balkon;
@@ -878,11 +879,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the balkon property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBALKON(Boolean value) {
         this.balkon = value;
@@ -890,11 +891,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the dachboden property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public Boolean isDACHBODEN() {
         return dachboden;
@@ -902,11 +903,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the dachboden property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setDACHBODEN(Boolean value) {
         this.dachboden = value;
@@ -914,11 +915,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the heizung property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link HeatingType }
-     *
+     *     
      */
     public HeatingType getHEIZUNG() {
         return heizung;
@@ -926,11 +927,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the heizung property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link HeatingType }
-     *
+     *     
      */
     public void setHEIZUNG(HeatingType value) {
         this.heizung = value;
@@ -938,11 +939,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the klimahaus property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EnergyStandard }
-     *
+     *     
      */
     public EnergyStandard getKLIMAHAUS() {
         return klimahaus;
@@ -950,11 +951,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the klimahaus property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EnergyStandard }
-     *
+     *     
      */
     public void setKLIMAHAUS(EnergyStandard value) {
         this.klimahaus = value;
@@ -962,11 +963,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the uebergabezeitpunkt property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUEBERGABEZEITPUNKT() {
         return uebergabezeitpunkt;
@@ -974,11 +975,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the uebergabezeitpunkt property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUEBERGABEZEITPUNKT(String value) {
         this.uebergabezeitpunkt = value;
@@ -986,11 +987,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the baujahr property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBAUJAHR() {
         return baujahr;
@@ -998,11 +999,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the baujahr property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBAUJAHR(String value) {
         this.baujahr = value;
@@ -1010,11 +1011,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the infode property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getINFODE() {
         return infode;
@@ -1022,11 +1023,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the infode property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setINFODE(String value) {
         this.infode = value;
@@ -1034,11 +1035,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the infoit property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getINFOIT() {
         return infoit;
@@ -1046,11 +1047,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the infoit property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setINFOIT(String value) {
         this.infoit = value;
@@ -1058,11 +1059,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild1 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD1() {
         return bild1;
@@ -1070,11 +1071,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild1 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD1(String value) {
         this.bild1 = value;
@@ -1082,11 +1083,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild2 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD2() {
         return bild2;
@@ -1094,11 +1095,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild2 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD2(String value) {
         this.bild2 = value;
@@ -1106,11 +1107,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild3 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD3() {
         return bild3;
@@ -1118,11 +1119,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild3 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD3(String value) {
         this.bild3 = value;
@@ -1130,11 +1131,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild4 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD4() {
         return bild4;
@@ -1142,11 +1143,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild4 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD4(String value) {
         this.bild4 = value;
@@ -1154,11 +1155,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild5 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD5() {
         return bild5;
@@ -1166,11 +1167,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild5 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD5(String value) {
         this.bild5 = value;
@@ -1178,11 +1179,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild6 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD6() {
         return bild6;
@@ -1190,11 +1191,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild6 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD6(String value) {
         this.bild6 = value;
@@ -1202,11 +1203,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild7 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD7() {
         return bild7;
@@ -1214,11 +1215,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild7 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD7(String value) {
         this.bild7 = value;
@@ -1226,11 +1227,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild8 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD8() {
         return bild8;
@@ -1238,11 +1239,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild8 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD8(String value) {
         this.bild8 = value;
@@ -1250,11 +1251,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild9 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD9() {
         return bild9;
@@ -1262,11 +1263,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild9 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD9(String value) {
         this.bild9 = value;
@@ -1274,11 +1275,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the bild10 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getBILD10() {
         return bild10;
@@ -1286,11 +1287,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the bild10 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setBILD10(String value) {
         this.bild10 = value;
@@ -1298,11 +1299,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the download1 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getDOWNLOAD1() {
         return download1;
@@ -1310,11 +1311,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the download1 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setDOWNLOAD1(String value) {
         this.download1 = value;
@@ -1322,11 +1323,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the download2 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getDOWNLOAD2() {
         return download2;
@@ -1334,11 +1335,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the download2 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setDOWNLOAD2(String value) {
         this.download2 = value;
@@ -1346,11 +1347,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Gets the value of the download3 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getDOWNLOAD3() {
         return download3;
@@ -1358,11 +1359,11 @@ public class ObjectType implements Cloneable, CopyTo2, Equals2, ToString2
 
     /**
      * Sets the value of the download3 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setDOWNLOAD3(String value) {
         this.download3 = value;

@@ -1,6 +1,7 @@
 
 package org.openestate.io.daft_ie.xml;
 
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "photosType", propOrder = {
     "photo"
 })
-public class PhotosType implements Cloneable, CopyTo2, Equals2, ToString2
+public class PhotosType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(type = String.class)

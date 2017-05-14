@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -106,7 +107,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedExtend"
 })
 @XmlRootElement(name = "preise")
-public class Preise implements Cloneable, CopyTo2, Equals2, ToString2
+public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     protected Kaufpreis kaufpreis;

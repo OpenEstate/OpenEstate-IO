@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 OpenEstate.org.
+ * Copyright 2015-2017 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -410,6 +410,6 @@ public class DaftIeUtils
     if (value==null)
       throw new IllegalArgumentException( "Can't print URL value!" );
     else
-      return value.toString();
+      return value.toExternalForm();
   }
 }

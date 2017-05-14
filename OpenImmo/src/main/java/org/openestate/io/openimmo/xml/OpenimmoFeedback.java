@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -36,7 +37,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "status"
 })
 @XmlRootElement(name = "openimmo_feedback")
-public class OpenimmoFeedback implements Cloneable, CopyTo2, Equals2, ToString2
+public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)

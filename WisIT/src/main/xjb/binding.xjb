@@ -5,6 +5,7 @@
                version="2.0">
 
   <jaxb:globalBindings>
+    <jaxb:serializable />
 
     <jaxb:javaType  name="java.math.BigInteger" xmlType="xsd:nonNegativeInteger"
       parseMethod="org.openestate.io.wis_it.WisItUtils.parseNonNegativeInteger"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2016 OpenEstate.org.
+ * Copyright 2015-2017 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,7 +168,7 @@ public class FilemakerWritingExample
   {
     ProductType product = FACTORY.createProductType();
     product.setNAME( "OpenEstate-IO" );
-    product.setVERSION( "1.1" );
+    product.setVERSION( "1.2" );
     product.setBUILD( "123" );
     return product;
   }

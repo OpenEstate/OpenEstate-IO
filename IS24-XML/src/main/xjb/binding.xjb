@@ -5,6 +5,7 @@
                jaxb:extensionBindingPrefixes="xjc"
                version="2.0">
   <jaxb:globalBindings>
+    <jaxb:serializable />
     <!--<jaxb:javaType name="java.util.Calendar" xmlType="xsd:date" parseMethod="javax.xml.bind.DatatypeConverter.parseDate" printMethod="javax.xml.bind.DatatypeConverter.printDate" />-->
     <jaxb:javaType name="java.util.Calendar" xmlType="xsd:date"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseDate"

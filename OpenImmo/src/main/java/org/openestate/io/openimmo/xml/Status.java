@@ -1,6 +1,7 @@
 
 package org.openestate.io.openimmo.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -34,7 +35,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "text"
 })
 @XmlRootElement(name = "status")
-public class Status implements Cloneable, CopyTo2, Equals2, ToString2
+public class Status implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(type = String.class)

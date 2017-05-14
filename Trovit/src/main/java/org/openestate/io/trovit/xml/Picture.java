@@ -1,6 +1,7 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -45,7 +46,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 })
 @XmlRootElement(name = "picture")
-public class Picture implements Cloneable, CopyTo2, Equals2, ToString2
+public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "picture_url", required = true)

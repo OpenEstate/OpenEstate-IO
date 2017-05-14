@@ -1,6 +1,7 @@
 
 package org.openestate.io.filemaker.xml.layout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -55,7 +56,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "ValueListsType", propOrder = {
     "valuelist"
 })
-public class ValueListsType implements Cloneable, CopyTo2, Equals2, ToString2
+public class ValueListsType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "VALUELIST")
@@ -202,7 +203,7 @@ public class ValueListsType implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class VALUELIST implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class VALUELIST implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "VALUE")

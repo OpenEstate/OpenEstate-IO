@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -63,7 +64,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "kauf",
     "erbpacht"
 })
-public class VermarktungGrundstueckWohnenKaufTyp implements Cloneable, CopyTo2, Equals2, ToString2
+public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
@@ -304,7 +305,7 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Cloneable, CopyTo2, 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Erbpacht implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Erbpacht implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "DauerInJahren", required = true)
@@ -438,7 +439,7 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Cloneable, CopyTo2, 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    public static class Kauf implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Kauf implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
 

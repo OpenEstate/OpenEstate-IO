@@ -1,6 +1,7 @@
 
 package org.openestate.io.immoxml.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -47,7 +48,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedAnyfield"
 })
 @XmlRootElement(name = "verwaltung_techn")
-public class VerwaltungTechn implements Cloneable, CopyTo2, Equals2, ToString2
+public class VerwaltungTechn implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "objektnr_intern")

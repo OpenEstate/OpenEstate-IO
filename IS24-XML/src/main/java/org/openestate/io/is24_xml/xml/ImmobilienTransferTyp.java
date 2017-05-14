@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBElement;
@@ -73,7 +74,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "ImmobilienTransferTyp", propOrder = {
     "anbieter"
 })
-public class ImmobilienTransferTyp implements Cloneable, CopyTo2, Equals2, ToString2
+public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Anbieter", required = true)
@@ -375,7 +376,7 @@ public class ImmobilienTransferTyp implements Cloneable, CopyTo2, Equals2, ToStr
     })
     public static class Anbieter
         extends AnbieterTyp
-        implements Cloneable, CopyTo2, Equals2, ToString2
+        implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElementRef(name = "VirtuelleImmobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
@@ -401,8 +402,8 @@ public class ImmobilienTransferTyp implements Cloneable, CopyTo2, Equals2, ToStr
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}
          * {@link JAXBElement }{@code <}{@link TypenHaus }{@code >}
+         * {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}
          * 
          * 
          */
@@ -431,26 +432,26 @@ public class ImmobilienTransferTyp implements Cloneable, CopyTo2, Equals2, ToStr
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link BueroPraxis }
-         * {@link WohnungMiete }
-         * {@link HausMiete }
-         * {@link GarageMiete }
-         * {@link Gastronomie }
-         * {@link GrundstueckWohnenMiete }
-         * {@link Anlageobjekt }
          * {@link SonstigeGewerbe }
-         * {@link GarageKauf }
-         * {@link WGZimmer }
-         * {@link WohnungKauf }
-         * {@link HausKauf }
-         * {@link Einzelhandel }
-         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link Zwangsversteigerung }
-         * {@link GrundstueckWohnenKauf }
-         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
-         * {@link GrundstueckGewerbe }
-         * {@link HalleProduktion }
+         * {@link Anlageobjekt }
+         * {@link Gastronomie }
          * {@link WAZ }
+         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
+         * {@link GrundstueckGewerbe }
+         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
+         * {@link HausMiete }
+         * {@link GrundstueckWohnenKauf }
+         * {@link Einzelhandel }
+         * {@link Zwangsversteigerung }
+         * {@link GarageMiete }
+         * {@link WGZimmer }
+         * {@link BueroPraxis }
+         * {@link GarageKauf }
+         * {@link WohnungKauf }
+         * {@link WohnungMiete }
+         * {@link GrundstueckWohnenMiete }
+         * {@link HausKauf }
+         * {@link HalleProduktion }
          * 
          * 
          */

@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -120,7 +121,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "locationStructure", propOrder = {
 
 })
-public class LocationStructure implements Cloneable, CopyTo2, Equals2, ToString2
+public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "country-code", required = true)
@@ -466,7 +467,7 @@ public class LocationStructure implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class City implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class City implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlValue
@@ -694,7 +695,7 @@ public class LocationStructure implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Locality implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Locality implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         protected LocationStructure.Locality.Neighbourhood neighbourhood;
@@ -1051,7 +1052,7 @@ public class LocationStructure implements Cloneable, CopyTo2, Equals2, ToString2
         @XmlType(name = "", propOrder = {
             "value"
         })
-        public static class Neighbourhood implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class Neighbourhood implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlValue
@@ -1349,7 +1350,7 @@ public class LocationStructure implements Cloneable, CopyTo2, Equals2, ToString2
         @XmlType(name = "", propOrder = {
             "value"
         })
-        public static class Thoroughfare implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class Thoroughfare implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlValue
@@ -1541,7 +1542,7 @@ public class LocationStructure implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "value"
     })
-    public static class SubAdministrativeArea implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class SubAdministrativeArea implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlValue

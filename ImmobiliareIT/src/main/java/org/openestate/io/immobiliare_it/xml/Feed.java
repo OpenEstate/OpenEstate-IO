@@ -1,6 +1,7 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -376,7 +377,7 @@ import org.openestate.io.immobiliare_it.xml.types.Category;
 
 })
 @XmlRootElement(name = "feed")
-public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
+public class Feed implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
@@ -684,7 +685,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Metadata implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)
@@ -928,7 +929,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
         @XmlType(name = "", propOrder = {
 
         })
-        public static class Multipage implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class Multipage implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlElement(required = true, type = String.class)
@@ -1278,7 +1279,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
 
     })
-    public static class Projects implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Projects implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)
@@ -1557,7 +1558,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
         @XmlType(name = "", propOrder = {
 
         })
-        public static class Project implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class Project implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlElement(name = "unique-id", required = true)
@@ -2157,7 +2158,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Agent implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Agent implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true)
@@ -2430,7 +2431,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
                 @XmlType(name = "", propOrder = {
 
                 })
-                public static class SalesOffice implements Cloneable, CopyTo2, Equals2, ToString2
+                public static class SalesOffice implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 {
 
                     @XmlElement(name = "country-code", required = true)
@@ -2881,7 +2882,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
                     @XmlType(name = "", propOrder = {
                         "value"
                     })
-                    public static class City implements Cloneable, CopyTo2, Equals2, ToString2
+                    public static class City implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                     {
 
                         @XmlValue
@@ -3074,7 +3075,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
                     @XmlType(name = "", propOrder = {
                         "thoroughfare"
                     })
-                    public static class Locality implements Cloneable, CopyTo2, Equals2, ToString2
+                    public static class Locality implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                     {
 
                         @XmlElement(required = true)
@@ -3225,7 +3226,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Features implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Features implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(name = "building-status")
@@ -3880,7 +3881,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
                 "commercial",
                 "lot"
             })
-            public static class Lots implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Lots implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true, type = String.class)
@@ -4158,7 +4159,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
                 @XmlType(name = "", propOrder = {
 
                 })
-                public static class Lot implements Cloneable, CopyTo2, Equals2, ToString2
+                public static class Lot implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 {
 
                     @XmlElement(name = "unique-id", required = true)
@@ -4938,7 +4939,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
                     @XmlType(name = "", propOrder = {
                         "pictureUrl"
                     })
-                    public static class Pictures implements Cloneable, CopyTo2, Equals2, ToString2
+                    public static class Pictures implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                     {
 
                         @XmlElement(name = "picture-url", required = true)
@@ -5090,7 +5091,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
                 "pictureUrl"
             })
-            public static class Pictures implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Pictures implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(name = "picture-url", required = true)
@@ -5238,7 +5239,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Videos implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Videos implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true)
@@ -5504,7 +5505,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "property"
     })
-    public static class Properties implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class Properties implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         protected List<Feed.Properties.Property> property;
@@ -5763,7 +5764,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
         @XmlType(name = "", propOrder = {
 
         })
-        public static class Property implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class Property implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlElement(name = "unique-id", required = true)
@@ -6696,7 +6697,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
 
             })
-            public static class Agent implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Agent implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(name = "office-name")
@@ -6888,7 +6889,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
                 "blueprint"
             })
-            public static class Blueprints implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Blueprints implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 protected List<PictureExtended> blueprint;
@@ -7062,7 +7063,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
 
             })
-            public static class ExtraFeatures implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class ExtraFeatures implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(type = String.class)
@@ -8658,7 +8659,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
                 "energyClass",
                 "energyPerformance"
             })
-            public static class Features implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Features implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true, type = String.class)
@@ -9075,7 +9076,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
                 "pictureUrlAndPicture"
             })
-            public static class Pictures implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Pictures implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElements({
@@ -9227,7 +9228,7 @@ public class Feed implements Cloneable, CopyTo2, Equals2, ToString2
             @XmlType(name = "", propOrder = {
                 "video"
             })
-            public static class Videos implements Cloneable, CopyTo2, Equals2, ToString2
+            public static class Videos implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
 
                 @XmlElement(required = true)

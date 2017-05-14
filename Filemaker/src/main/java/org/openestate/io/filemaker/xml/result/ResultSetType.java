@@ -1,6 +1,7 @@
 
 package org.openestate.io.filemaker.xml.result;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +70,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "ResultSetType", propOrder = {
     "row"
 })
-public class ResultSetType implements Cloneable, CopyTo2, Equals2, ToString2
+public class ResultSetType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "ROW")
@@ -281,7 +282,7 @@ public class ResultSetType implements Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "col"
     })
-    public static class ROW implements Cloneable, CopyTo2, Equals2, ToString2
+    public static class ROW implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "COL")
@@ -533,7 +534,7 @@ public class ResultSetType implements Cloneable, CopyTo2, Equals2, ToString2
         @XmlType(name = "", propOrder = {
             "data"
         })
-        public static class COL implements Cloneable, CopyTo2, Equals2, ToString2
+        public static class COL implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlElement(name = "DATA")

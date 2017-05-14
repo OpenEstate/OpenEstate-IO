@@ -1,6 +1,7 @@
 
 package org.openestate.io.daft_ie.xml;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Calendar;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -128,7 +129,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "photos",
     "features"
 })
-public class OverseasRentalAdType implements Cloneable, CopyTo2, Equals2, ToString2
+public class OverseasRentalAdType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true, type = java.lang.String.class)

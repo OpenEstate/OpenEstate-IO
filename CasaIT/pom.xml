@@ -7,12 +7,12 @@
   <parent>
     <groupId>org.openestate.io</groupId>
     <artifactId>ALL</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
   </parent>
 
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.1</version>
+  <version>1.2</version>
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-CasaIT</name>
@@ -265,13 +265,6 @@
             <argument>-Xequals</argument>
           </arguments>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.jvnet.jaxb2_commons</groupId>
-            <artifactId>jaxb2-basics</artifactId>
-            <version>0.11.0</version>
-          </dependency>
-        </dependencies>
       </plugin>
 
       <!-- findbugs -->

@@ -1,4 +1,4 @@
-OpenEstate-IO-IS24-CSV 1.1
+OpenEstate-IO-IS24-CSV 1.2
 ==========================
 
 *OpenEstate-IO-IS24-CSV* is a Java library to read and write real estate data in
@@ -22,9 +22,9 @@ Features
 --------
 
 -   read CSV data according to the specifications of *IS24-CSV* 1.4.0.4
-    (see [`Is24CsvReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.1/Examples/src/main/java/org/openestate/io/examples/Is24CsvReadingExample.java))
+    (see [`Is24CsvReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/Is24CsvReadingExample.java))
 -   write CSV data according to the specifications of *IS24-CSV* 1.4.0.4
-    (see [`Is24CsvWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.1/Examples/src/main/java/org/openestate/io/examples/Is24CsvWritingExample.java))
+    (see [`Is24CsvWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/Is24CsvWritingExample.java))
 
 
 How to use
@@ -43,7 +43,7 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.1</version>
+  <version>1.2</version>
 </dependency>
 ```
 
@@ -65,10 +65,10 @@ Dependencies
 
 -   Java 6 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
--   [commons-csv 1.2](http://commons.apache.org/proper/commons-csv/)
--   [commons-io 2.4](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.4](http://commons.apache.org/proper/commons-lang/)
--   [SLF4J 1.7.18](http://www.slf4j.org/)
+-   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
+-   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
+-   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
+-   [SLF4J 1.7.25](http://www.slf4j.org/)
 
 
 Changelog
@@ -85,7 +85,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.1/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
 for the license text.
 
 

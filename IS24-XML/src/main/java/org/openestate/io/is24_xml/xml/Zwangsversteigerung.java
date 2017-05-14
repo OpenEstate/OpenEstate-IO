@@ -1,6 +1,7 @@
 
 package org.openestate.io.is24_xml.xml;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import javax.xml.bind.JAXBElement;
@@ -81,7 +82,7 @@ public class Zwangsversteigerung
     })
     public static class Type
         extends ZwangsversteigerungTyp
-        implements Cloneable, CopyTo2, Equals2, ToString2
+        implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "Aenderungsdatum", type = String.class)
