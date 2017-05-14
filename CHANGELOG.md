@@ -2,17 +2,21 @@ Changelog for OpenEstate-IO
 ===========================
 
 
-1.2 (not released yet)
-----------------------
+1.2 (14 May 2017)
+-----------------
 
 ### updates
 
+-   Generated JAXB classes implement `java.io.Serializable`.
+-   Improved parsing of numeric values according to a certain locale.
+-   Improved processing of certain simple types in **Kyero** / **Trovit** /
+    **daft.ie** / **IS24-XML** format.
+-   Dump CSV records into a human readable form.
 -   Updated `commons-csv` library to version 1.4.
 -   Updated `commons-io` library to version 2.5.
 -   Updated `commons-lang` library to version 3.5.
--   Updated `slf4j` libraries to version 1.7.21.
--   Generated JAXB classes implement `java.io.Serializable`.
--   Improved parsing of numeric values according to a certain locale.
+-   Updated `jaxb2-basics` library to version 0.11.1.
+-   Updated `slf4j` libraries to version 1.7.25.
 
 
 1.1 (11 Mar 2016)

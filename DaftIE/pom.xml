@@ -7,12 +7,12 @@
   <parent>
     <groupId>org.openestate.io</groupId>
     <artifactId>ALL</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
   </parent>
 
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-DaftIE</name>
