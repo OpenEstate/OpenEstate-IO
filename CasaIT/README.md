@@ -1,5 +1,5 @@
-OpenEstate-IO-CasaIT 1.2
-========================
+OpenEstate-IO-CasaIT 1.3-SNAPSHOT
+=================================
 
 *OpenEstate-IO-CasaIT* is a Java library to read and write real estate data in
 the XML format of [*casa.it*](http://casa.it).
@@ -18,10 +18,10 @@ Features
 
 -   read XML data according to the specifications of
     [*casa.it*](http://casa.it)
-    (see [`CasaItReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/CasaItReadingExample.java))
+    (see [`CasaItReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/CasaItReadingExample.java))
 -   write XML data according to the specifications of
     [*casa.it*](http://casa.it)
-    (see [`CasaItWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/CasaItWritingExample.java))
+    (see [`CasaItWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/CasaItWritingExample.java))
 
 
 How to use
@@ -40,7 +40,7 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.2</version>
+  <version>1.3-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -73,7 +73,7 @@ Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 for the full changelog.
 
 
@@ -83,7 +83,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
 for the license text.
 
 
@@ -92,5 +92,5 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)

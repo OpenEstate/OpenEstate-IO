@@ -85,7 +85,7 @@ public class Is24XmlWritingExample
     ImmobilienTransferTyp transfer = FACTORY.createImmobilienTransferTyp();
     transfer.setEmailBeiFehler( "test@test.org" );
     transfer.setErstellerSoftware( "OpenEstate-IO" );
-    transfer.setErstellerSoftwareVersion( "1.2" );
+    transfer.setErstellerSoftwareVersion( "1.3-SNAPSHOT" );
     transfer.setAnbieter( createAnbieter() );
 
     // convert the ImmobilienTransferTyp object into a XML document
