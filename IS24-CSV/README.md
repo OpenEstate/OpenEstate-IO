@@ -67,7 +67,7 @@ Dependencies
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
+-   [commons-lang 3.6](http://commons.apache.org/proper/commons-lang/)
 -   [SLF4J 1.7.25](http://www.slf4j.org/)
 
 
