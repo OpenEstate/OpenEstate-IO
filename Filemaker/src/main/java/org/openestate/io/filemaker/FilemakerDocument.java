@@ -28,7 +28,7 @@ import org.w3c.dom.Document;
  * {@link Document} is mapped to
  *
  * @since 1.0
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public abstract class FilemakerDocument<JavaType> extends XmlDocument<JavaType>
 {

@@ -39,7 +39,7 @@ import org.xml.sax.SAXException;
  * FilemakerReadingExample.
  *
  * @since 1.0
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public class FilemakerReadingExample
 {

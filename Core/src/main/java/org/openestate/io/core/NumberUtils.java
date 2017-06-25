@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  * NumberUtils.
  *
  * @since 1.1
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public final class NumberUtils
 {

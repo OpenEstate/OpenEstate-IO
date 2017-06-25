@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  * {@link FMPXMLRESULT}.
  *
  * @since 1.0
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public class FilemakerResultMapping
 {

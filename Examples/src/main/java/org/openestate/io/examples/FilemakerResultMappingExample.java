@@ -29,7 +29,7 @@ import org.w3c.dom.Document;
  * FilemakerResultMappingExample.
  *
  * @since 1.0
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public class FilemakerResultMappingExample
 {
