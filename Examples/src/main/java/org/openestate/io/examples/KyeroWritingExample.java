@@ -29,6 +29,7 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
 import org.openestate.io.kyero.KyeroVersion;
@@ -167,7 +168,7 @@ public class KyeroWritingExample
    */
   protected static PropertyType createProperty()
   {
-    final String id = RandomStringUtils.randomAlphanumeric( 5 );
+    final String id = RandomStringUtils.random( 5 );
     int imageCount = 0;
 
     // create an example real estate
@@ -186,7 +187,7 @@ public class KyeroWritingExample
     obj.setPrice( RandomUtils.nextLong( 10000, 9999999 ) );
     obj.setPriceFreq( PriceFreqType.SALE );
     obj.setProvince( "Berlin" );
-    obj.setRef( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setRef( RandomStringUtils.random( 5 ) );
     obj.setTown( "Berlin" );
     obj.setType( "house" );
 

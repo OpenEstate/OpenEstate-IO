@@ -27,6 +27,7 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
 import org.openestate.io.trovit.xml.Ad;
@@ -134,7 +135,7 @@ public class TrovitWritingExample
     ad.setExpirationDate( Calendar.getInstance() );
     ad.setFloorNumber( "number of floors" );
     ad.setForeclosure( "notes about foreclosure" );
-    ad.setId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    ad.setId( RandomStringUtils.random( 5 ) );
     ad.setIsFurnished( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
     ad.setIsNew( TypeNew.NEW );
     ad.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );

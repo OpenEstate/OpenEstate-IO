@@ -28,6 +28,7 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
 import org.openestate.io.immobiliare_it.xml.Box;
@@ -152,7 +153,7 @@ public class ImmobiliareItWritingExample
     obj.setDateExpiration( Calendar.getInstance() );
     obj.setDateUpdated( Calendar.getInstance() );
     obj.setOperation( Operation.WRITE );
-    obj.setUniqueId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setUniqueId( RandomStringUtils.random( 5 ) );
 
     obj.setAgent( FACTORY.createFeedPropertiesPropertyAgent() );
     obj.getAgent().setEmail( "agency@test.org" );
@@ -256,7 +257,7 @@ public class ImmobiliareItWritingExample
     obj.getLocation().getLocality().getThoroughfare().setValue( "about thoroughfare" );
 
     obj.getLocation().setSubAdministrativeArea( FACTORY.createLocationStructureSubAdministrativeArea() );
-    obj.getLocation().getSubAdministrativeArea().setCode( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.getLocation().getSubAdministrativeArea().setCode( RandomStringUtils.random( 5 ) );
     obj.getLocation().getSubAdministrativeArea().setValue( "Berlin" );
 
     obj.setPictures( FACTORY.createFeedPropertiesPropertyPictures() );

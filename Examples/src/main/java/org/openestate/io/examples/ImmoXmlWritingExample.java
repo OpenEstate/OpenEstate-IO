@@ -26,6 +26,7 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlUtils;
 import org.openestate.io.immoxml.xml.Aktion;

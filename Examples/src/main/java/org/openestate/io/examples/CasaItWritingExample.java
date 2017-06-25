@@ -32,6 +32,7 @@ import org.openestate.io.casa_it.xml.Container;
 import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate;
 import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate.Images.Advertismentimage;
 import org.openestate.io.casa_it.xml.ObjectFactory;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -130,7 +131,7 @@ public class CasaItWritingExample
     obj.setHousetypology( BigInteger.ONE );
     obj.setOccupationstate( BigInteger.ONE );
     obj.setRealestatetype( BigInteger.ONE );
-    obj.setReference( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setReference( RandomStringUtils.random( 5 ) );
     obj.setReferenceID( RandomUtils.nextInt( 1, 1000 ) );
     obj.setRooms( BigInteger.valueOf( RandomUtils.nextLong( 1, 10 ) ) );
     obj.setSize( BigInteger.valueOf( RandomUtils.nextLong( 50, 5000 ) ));
