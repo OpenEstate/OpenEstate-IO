@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Auswahl.
@@ -29,6 +31,7 @@ public enum Auswahl
   NEIN( "N" ),
   NACH_VEREINBARUNG( "V" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Auswahl.class );
   private final String value;
 
   private Auswahl( String value )

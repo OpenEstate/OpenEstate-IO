@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Zulieferung.
@@ -34,6 +36,7 @@ public enum Zulieferung
   GANZTAEGIG( 6 ),
   VORMITTAGS( 7 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Zulieferung.class );
   private final int value;
 
   private Zulieferung( int value )

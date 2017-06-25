@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ObjektkategorieGewerbeGastronomieHotel.
@@ -37,6 +39,7 @@ public enum ObjektkategorieGewerbeGastronomieHotel
   RESTAURANT( 87 ),
   FERIENBUNGALOW( 104 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieGewerbeGastronomieHotel.class );
   private final int value;
 
   private ObjektkategorieGewerbeGastronomieHotel( int value )

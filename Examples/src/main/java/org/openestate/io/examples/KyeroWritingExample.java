@@ -28,7 +28,6 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
@@ -299,6 +298,12 @@ public class KyeroWritingExample
   /**
    * Create an {@link Image} object with some example data.
    *
+   * @param id
+   * property id
+   *
+   * @param pos
+   * index position within the property images
+   *
    * @return
    * created example object
    */
@@ -444,7 +449,7 @@ public class KyeroWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

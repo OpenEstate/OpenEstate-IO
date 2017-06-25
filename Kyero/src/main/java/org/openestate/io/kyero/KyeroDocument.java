@@ -35,7 +35,7 @@ import org.w3c.dom.Element;
  */
 public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion>
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger(KyeroDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( KyeroDocument.class );
 
   /**
    * Create from a {@link Document}.

@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * BebaubarNach.
@@ -30,6 +32,7 @@ public enum BebaubarNach
   NACHBARBEBAUUNG( "N" ),
   AUSSENGEBIET( "A" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( BebaubarNach.class );
   private final String value;
 
   private BebaubarNach( String value )

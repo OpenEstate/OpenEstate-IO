@@ -16,6 +16,8 @@
 package org.openestate.io.idx.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * PriceUnit.
@@ -26,6 +28,8 @@ import org.apache.commons.lang3.StringUtils;
 public enum PriceUnit
 {
   SELL, SELLM2, YEARLY, M2YEARLY, MONTHLY, WEEKLY, DAILY;
+
+  private final static Logger LOGGER = LoggerFactory.getLogger( PriceUnit.class );
 
   public static PriceUnit parse( String value )
   {

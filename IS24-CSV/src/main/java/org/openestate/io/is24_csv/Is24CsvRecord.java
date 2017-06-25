@@ -23,7 +23,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.openestate.io.core.CsvRecord;
 import org.openestate.io.is24_csv.types.Datei;
 import org.openestate.io.is24_csv.types.DateiSuffix;
@@ -695,7 +694,7 @@ public abstract class Is24CsvRecord extends CsvRecord
 
   public Datei[] getDateien()
   {
-    List<Datei> dateien = new ArrayList<Datei>();
+    List<Datei> dateien = new ArrayList<>();
     for (int i=1; i<=FILE_LIMIT; i++)
     {
       Datei datei = this.getDatei( i );
@@ -934,7 +933,7 @@ public abstract class Is24CsvRecord extends CsvRecord
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     Matcher m = LINEBREAK.matcher( value );
-    return (m.find())? m.replaceAll( SystemUtils.LINE_SEPARATOR ): value;
+    return (m.find())? m.replaceAll( System.lineSeparator() ): value;
   }
 
   public void setAdressdruck( boolean value )
@@ -1198,7 +1197,10 @@ public abstract class Is24CsvRecord extends CsvRecord
         if (pos>FILE_LIMIT) break;
       }
     }
-    for (int i=pos; i<=FILE_LIMIT; i++) this.setDatei( null, i );
+    for (int i=pos; i<=FILE_LIMIT; i++)
+    {
+      this.setDatei( null, i );
+    }
   }
 
   public void setGruppierungId( Number value )

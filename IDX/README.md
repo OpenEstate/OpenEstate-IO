@@ -51,7 +51,7 @@ The specifications for this format are placed in the [`specs`](specs) folder.
 Dependencies
 ------------
 
--   Java 6 or newer
+-   Java 7 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)

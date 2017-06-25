@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Objektdarstellung.
@@ -37,6 +39,7 @@ public enum Objektdarstellung
   IS24_HOMEPAGE_WAHLGRUPPEN( 9 ),
   WAHLGRUPPEN( 10 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Objektdarstellung.class );
   private final int value;
 
   private Objektdarstellung( int value )

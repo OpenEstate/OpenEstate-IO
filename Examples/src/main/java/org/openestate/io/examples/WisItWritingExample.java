@@ -26,7 +26,6 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.wis_it.WisItDocument;
 import org.openestate.io.wis_it.WisItUtils;
@@ -270,7 +269,7 @@ public class WisItWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ObjektkategorieGewerbeBueroPraxen.
@@ -40,6 +42,7 @@ public enum ObjektkategorieGewerbeBueroPraxen
   WOHN_GESCHAEFTSGEBAEUDE( 138 ),
   BUERO_GESCHAEFTSGEBAEUDE( 139 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieGewerbeBueroPraxen.class );
   private final int value;
 
   private ObjektkategorieGewerbeBueroPraxen( int value )

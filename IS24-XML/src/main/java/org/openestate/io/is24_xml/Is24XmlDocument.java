@@ -21,6 +21,8 @@ import org.openestate.io.core.XmlDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.is24_xml.xml.IS24ImmobilienTransfer;
 import org.openestate.io.is24_xml.xml.ImmobilienTransferTyp;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -32,7 +34,7 @@ import org.w3c.dom.Element;
  */
 public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( WisItDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( Is24XmlDocument.class );
 
   /**
    * Create from a {@link Document}.

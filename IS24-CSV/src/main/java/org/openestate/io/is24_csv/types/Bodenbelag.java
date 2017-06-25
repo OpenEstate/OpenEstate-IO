@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Bodenbelag.
@@ -39,6 +41,7 @@ public enum Bodenbelag
   NACH_MIETERWUNSCH( 11 ),
   OHNE_BELAG( 12 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Bodenbelag.class );
   private final int value;
 
   private Bodenbelag( int value )

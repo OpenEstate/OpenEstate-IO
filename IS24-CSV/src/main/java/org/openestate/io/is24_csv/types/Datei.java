@@ -15,6 +15,9 @@
  */
 package org.openestate.io.is24_csv.types;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Datei.
  *
@@ -23,6 +26,7 @@ package org.openestate.io.is24_csv.types;
  */
 public class Datei
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( Datei.class );
   private String name;
   private String text;
   private DateiSuffix suffix;

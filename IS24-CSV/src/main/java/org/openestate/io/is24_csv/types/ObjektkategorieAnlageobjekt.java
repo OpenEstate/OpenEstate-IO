@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ObjektkategorieAnlageobjekt.
@@ -45,6 +47,7 @@ public enum ObjektkategorieAnlageobjekt
   WOHN_GESCHAEFTSHAUS( 115 ),
   WOHNANLAGE( 116 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieAnlageobjekt.class );
   private final int value;
 
   private ObjektkategorieAnlageobjekt( int value )

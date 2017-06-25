@@ -19,6 +19,8 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.openestate.io.core.XmlConverter;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItVersion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Converter for version 2.5.
@@ -28,7 +30,7 @@ import org.openestate.io.immobiliare_it.ImmobiliareItVersion;
  */
 public class ImmobiliareIt_2_5 extends XmlConverter<ImmobiliareItDocument, ImmobiliareItVersion>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareIT_2_5.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareIt_2_5.class );
 
   @Override
   public ImmobiliareItVersion getVersion()

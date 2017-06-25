@@ -16,6 +16,8 @@
 package org.openestate.io.idx.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Language.
@@ -27,6 +29,7 @@ public enum Language
 {
   GERMAN( 1 ), FRENCH( 2 ), ITALIAN( 3 ), ENGLISH( 4 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Language.class );
   private final int value;
 
   private Language( int value )

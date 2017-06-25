@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * DateiTyp.
@@ -32,6 +34,7 @@ public enum DateiTyp
   GRUNDRISS_BILD( "GB" ),
   GRUNDRISS_PDF( "GP" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( DateiTyp.class );
   private final String value;
 
   private DateiTyp( String value )

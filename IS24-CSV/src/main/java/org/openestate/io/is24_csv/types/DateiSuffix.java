@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * DateiSuffix.
@@ -44,6 +46,7 @@ public enum DateiSuffix
   AVI( ".AVI" ),
   PDF( ".PDF" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( DateiSuffix.class );
   private final String value;
 
   private DateiSuffix( String value )
@@ -104,8 +107,8 @@ public enum DateiSuffix
     else if ("image/png".equals( mimeType ))
       return PNG;
 
-    else if ("video/quicktime".equals( mimeType ))
-      return QT;
+    //else if ("video/quicktime".equals( mimeType ))
+    //  return QT;
 
     //else if ("video/quicktime".equals( mimeType ))
     //  return QTL;

@@ -27,7 +27,6 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_xml.Is24XmlDocument;
 import org.openestate.io.is24_xml.Is24XmlUtils;
@@ -406,7 +405,7 @@ public class Is24XmlWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

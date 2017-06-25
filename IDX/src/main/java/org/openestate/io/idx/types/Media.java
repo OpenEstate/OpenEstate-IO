@@ -17,6 +17,8 @@ package org.openestate.io.idx.types;
 
 import java.io.Serializable;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Media.
@@ -27,6 +29,7 @@ import org.apache.commons.lang3.StringUtils;
 public class Media implements Serializable
 {
   private final static long serialVersionUID = 5668966682578880420L;
+  private final static Logger LOGGER = LoggerFactory.getLogger( Media.class );
 
   private String fileName;
   private String title;

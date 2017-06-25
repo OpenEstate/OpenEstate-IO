@@ -22,6 +22,8 @@ import java.io.Writer;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.CsvPrinter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Printer for the IS24-CSV format.
@@ -31,6 +33,8 @@ import org.openestate.io.core.CsvPrinter;
  */
 public class Is24CsvPrinter extends CsvPrinter<Is24CsvRecord>
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvPrinter.class );
+
   /**
    * Create with specifications of a {@link CSVPrinter}.
    *

@@ -25,10 +25,9 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.immoxml.ImmoXmlUtils;
 import org.openestate.io.immoxml.ImmoXmlDocument;
+import org.openestate.io.immoxml.ImmoXmlUtils;
 import org.openestate.io.immoxml.xml.Aktion;
 import org.openestate.io.immoxml.xml.Anbieter;
 import org.openestate.io.immoxml.xml.Haus;
@@ -304,7 +303,7 @@ public class ImmoXmlWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

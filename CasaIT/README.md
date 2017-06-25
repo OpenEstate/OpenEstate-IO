@@ -60,7 +60,7 @@ The specifications for this format are placed in the [`specs`](specs) folder.
 Dependencies
 ------------
 
--   Java 6 or newer
+-   Java 7 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.6](http://commons.apache.org/proper/commons-lang/)

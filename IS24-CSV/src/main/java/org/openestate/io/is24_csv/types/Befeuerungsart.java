@@ -18,6 +18,8 @@ package org.openestate.io.is24_csv.types;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Befeuerungsart.
@@ -37,6 +39,7 @@ public enum Befeuerungsart
   STROM( 8 ),
   KOHLE( 9 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Befeuerungsart.class );
   private final int value;
 
   private Befeuerungsart( int value )
@@ -59,7 +62,7 @@ public enum Befeuerungsart
   {
     String[] values = StringUtils.split( valueList, ";" );
     if (values==null) return new Befeuerungsart[]{};
-    List<Befeuerungsart> arten = new ArrayList<Befeuerungsart>();
+    List<Befeuerungsart> arten = new ArrayList<>();
     for (String value : values)
     {
       Befeuerungsart art = Befeuerungsart.parse( value );
@@ -77,7 +80,7 @@ public enum Befeuerungsart
   public static String printMultiple( Iterable<Befeuerungsart> arten )
   {
     if (arten==null) return null;
-    List<String> values = new ArrayList<String>();
+    List<String> values = new ArrayList<>();
     for (Befeuerungsart art : arten)
     {
       if (Befeuerungsart.KEINE_ANGABE.equals( art )) continue;

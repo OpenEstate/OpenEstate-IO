@@ -36,6 +36,8 @@ import org.openestate.io.core.NumberUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.immoxml.xml.ObjectFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -48,7 +50,7 @@ import org.xml.sax.SAXException;
  */
 public class ImmoXmlUtils
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlUtils.class );
   private static JAXBContext JAXB = null;
 
   /**

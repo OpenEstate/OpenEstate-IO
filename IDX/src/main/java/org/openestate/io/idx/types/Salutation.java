@@ -16,6 +16,8 @@
 package org.openestate.io.idx.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Salutation.
@@ -27,6 +29,7 @@ public enum Salutation
 {
   FEMALE( 1 ), MALE( 2 ), COMPANY( 3 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Salutation.class );
   private final int value;
 
   private Salutation( int value )

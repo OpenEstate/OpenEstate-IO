@@ -40,6 +40,8 @@ import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
 import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
 import org.openestate.io.immobiliare_it.xml.types.SizeUnit;
 import org.openestate.io.immobiliare_it.xml.types.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -52,7 +54,7 @@ import org.xml.sax.SAXException;
  */
 public class ImmobiliareItUtils
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItUtils.class );
   private static JAXBContext JAXB = null;
 
   /**

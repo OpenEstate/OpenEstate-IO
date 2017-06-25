@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * KaltmietePro.
@@ -28,6 +30,7 @@ public enum KaltmietePro
   MONAT( "M" ),
   QUADRATMETER( "Q" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( KaltmietePro.class );
   private final String value;
 
   private KaltmietePro( String value )

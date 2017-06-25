@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Energieausweistyp.
@@ -29,6 +31,7 @@ public enum EnergieausweisTyp
   ENDENERGIEBEDARF( 2 ),
   ENERGIEVERBRAUCHSKENNWERT( 3 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( EnergieausweisTyp.class );
   private final int value;
 
   private EnergieausweisTyp( int value )

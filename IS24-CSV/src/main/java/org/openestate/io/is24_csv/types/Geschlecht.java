@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Geschlecht.
@@ -28,6 +30,7 @@ public enum Geschlecht
   NUR_MAENNER( 0 ),
   NUR_FRAUEN( 1 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Geschlecht.class );
   private final int value;
 
   private Geschlecht( int value )

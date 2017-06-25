@@ -22,6 +22,8 @@ import java.io.Reader;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.core.CsvParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Parser for the IDX format.
@@ -31,6 +33,8 @@ import org.openestate.io.core.CsvParser;
  */
 public class IdxParser extends CsvParser<IdxRecord>
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( IdxParser.class );
+
   /**
    * Create with specifications of a {@link CSVParser}.
    *

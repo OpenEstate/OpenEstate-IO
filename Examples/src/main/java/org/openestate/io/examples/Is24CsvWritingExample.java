@@ -27,7 +27,6 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_csv.Is24CsvPrinter;
 import org.openestate.io.is24_csv.Is24CsvRecord;
@@ -77,7 +76,7 @@ public class Is24CsvWritingExample
       Is24CsvWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
     // create some CSV records
-    List<Is24CsvRecord> records = new ArrayList<Is24CsvRecord>();
+    List<Is24CsvRecord> records = new ArrayList<>();
     records.add( createHausKaufRecord() );
     records.add( createHausKaufRecord() );
     records.add( createWohnungMieteRecord() );
@@ -352,7 +351,7 @@ public class Is24CsvWritingExample
       printer = Is24CsvPrinter.create( csv );
       printer.printRecords( records );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + csv.toString() );
+        + System.lineSeparator() + csv.toString() );
     }
     catch (Exception ex)
     {

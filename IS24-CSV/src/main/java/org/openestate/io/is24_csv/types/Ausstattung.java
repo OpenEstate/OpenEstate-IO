@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Ausstattung.
@@ -31,6 +33,7 @@ public enum Ausstattung
   NORMAL( 4 ),
   EINFACH( 5 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Ausstattung.class );
   private final int value;
 
   private Ausstattung( int value )

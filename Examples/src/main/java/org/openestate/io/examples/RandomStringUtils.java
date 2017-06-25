@@ -19,6 +19,8 @@ package org.openestate.io.examples;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.text.CharacterPredicates;
 import org.apache.commons.text.RandomStringGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Helper classes for the example classes to generate random strings.
@@ -28,6 +30,8 @@ import org.apache.commons.text.RandomStringGenerator;
  */
 public class RandomStringUtils
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( RandomStringUtils.class );
+
   private RandomStringUtils()
   {
   }

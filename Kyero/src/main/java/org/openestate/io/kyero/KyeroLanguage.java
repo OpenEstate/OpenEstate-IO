@@ -276,7 +276,7 @@ public enum KyeroLanguage
    */
   public static KyeroLanguage[] getLanguages( LangType container )
   {
-    List<KyeroLanguage> languages = new ArrayList<KyeroLanguage>();
+    List<KyeroLanguage> languages = new ArrayList<>();
 
     if (StringUtils.isNotBlank( container.getAr() ))
       languages.add( AR );

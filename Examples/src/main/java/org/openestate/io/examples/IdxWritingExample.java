@@ -29,7 +29,6 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxPrinter;
 import org.openestate.io.idx.IdxRecord;
@@ -70,7 +69,7 @@ public class IdxWritingExample
       IdxWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
     // create some CSV records
-    List<IdxRecord> records = new ArrayList<IdxRecord>();
+    List<IdxRecord> records = new ArrayList<>();
     records.add( createRecord() );
     records.add( createRecord() );
     records.add( createRecord() );
@@ -172,7 +171,7 @@ public class IdxWritingExample
     obj.setNumberOfRooms( RandomUtils.nextDouble( 1, 10 ) );
     obj.setObjectCity( "Berlin" );
     obj.setObjectCountry( Locale.GERMANY.getCountry() );
-    obj.setObjectDescription( "some description" + SystemUtils.LINE_SEPARATOR + " about the object" );
+    obj.setObjectDescription( "some description" + System.lineSeparator() + " about the object" );
     obj.setObjectSituation( "some description about the location" );
     obj.setObjectState( "BE" );
     obj.setObjectStreet( "example street 124" );
@@ -352,7 +351,7 @@ public class IdxWritingExample
       printer = IdxPrinter.create( csv );
       printer.printRecords( records );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + csv.toString() );
+        + System.lineSeparator() + csv.toString() );
     }
     catch (Exception ex)
     {

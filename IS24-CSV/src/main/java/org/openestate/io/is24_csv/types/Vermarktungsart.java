@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Vermarktungsart.
@@ -30,6 +32,7 @@ public enum Vermarktungsart
   PACHT( "P" ),
   ERBPACHT( "E" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Vermarktungsart.class );
   private final String value;
 
   private Vermarktungsart( String value )

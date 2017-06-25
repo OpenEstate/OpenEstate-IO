@@ -16,6 +16,8 @@
 package org.openestate.io.trovit.xml.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Action.
@@ -28,6 +30,7 @@ public enum Action
   FOR_RENT( new String[]{ "FOR RENT", "ALQUILER" } ),
   FOR_SALE( new String[]{ "FOR SALE", "VENTA" } );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Action.class );
   private final String[] aliases;
 
   private Action( String[] aliases )

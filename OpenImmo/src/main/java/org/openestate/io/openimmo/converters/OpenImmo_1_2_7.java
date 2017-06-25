@@ -505,7 +505,7 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
    */
   protected void upgradeEnergiepassElements( Document doc ) throws JaxenException
   {
-    Map<String,String> fields = new HashMap<String,String>();
+    Map<String,String> fields = new HashMap<>();
     fields.put( "stromwert", "user_defined_simplefield[@feldname='epass_stromwert']" );
     fields.put( "waermewert", "user_defined_simplefield[@feldname='epass_waermewert']" );
     fields.put( "wertklasse", "user_defined_simplefield[@feldname='epass_wertklasse']" );

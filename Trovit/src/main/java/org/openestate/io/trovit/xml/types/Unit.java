@@ -16,6 +16,8 @@
 package org.openestate.io.trovit.xml.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Unit.
@@ -27,6 +29,8 @@ public enum Unit
 {
   FEET,
   METERS;
+
+  private final static Logger LOGGER = LoggerFactory.getLogger( Unit.class );
 
   public static Unit fromXmlValue( String name )
   {

@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Importmodus.
@@ -30,6 +32,7 @@ public enum Importmodus
   LOESCHEN( "D" ),
   IGNORIEREN( "N" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Importmodus.class );
   private final String value;
 
   private Importmodus( String value )

@@ -16,6 +16,8 @@
 package org.openestate.io.openimmo;
 
 import org.openestate.io.core.XmlConvertableDocument;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
@@ -30,7 +32,7 @@ import org.w3c.dom.Document;
  */
 public abstract class OpenImmoDocument<JavaType> extends XmlConvertableDocument<JavaType, OpenImmoVersion>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoDocument.class );
 
   /**
    * Create from a {@link Document}.

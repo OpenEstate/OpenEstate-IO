@@ -18,6 +18,8 @@ package org.openestate.io.is24_csv.types;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * NutzungGrundstueckWohnen.
@@ -40,6 +42,7 @@ public enum NutzungGrundstueckWohnen
   VILLA( 25 ),
   WALD( 26 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( NutzungGrundstueckWohnen.class );
   private final int value;
 
   private NutzungGrundstueckWohnen( int value )
@@ -62,7 +65,7 @@ public enum NutzungGrundstueckWohnen
   {
     String[] values = StringUtils.split( valueList, ";" );
     if (values==null) return new NutzungGrundstueckWohnen[]{};
-    List<NutzungGrundstueckWohnen> nutzungen = new ArrayList<NutzungGrundstueckWohnen>();
+    List<NutzungGrundstueckWohnen> nutzungen = new ArrayList<>();
     for (String value : values)
     {
       NutzungGrundstueckWohnen nutzung = NutzungGrundstueckWohnen.parse( value );
@@ -80,7 +83,7 @@ public enum NutzungGrundstueckWohnen
   public static String printMultiple( Iterable<NutzungGrundstueckWohnen> arten )
   {
     if (arten==null) return null;
-    List<String> values = new ArrayList<String>();
+    List<String> values = new ArrayList<>();
     for (NutzungGrundstueckWohnen art : arten)
     {
       String value = art.print();

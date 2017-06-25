@@ -4,6 +4,7 @@ Changelog for OpenEstate-IO
 1.3 (not released yet)
 ----------------------
 
+-   Updated to Java 7.
 -   Updated `commons-lang` library to version 3.6.
 -   Add dependency to `commons-text` library in version 1.1.
 
