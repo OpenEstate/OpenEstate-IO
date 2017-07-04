@@ -48,6 +48,7 @@ public class ObjectFactory {
     private final static QName _KartenMikro_QNAME = new QName("", "karten_mikro");
     private final static QName _Virtuelletour_QNAME = new QName("", "virtuelletour");
     private final static QName _Luftbildern_QNAME = new QName("", "luftbildern");
+    private final static QName _ReferenzId_QNAME = new QName("", "referenz_id");
     private final static QName _Vorname_QNAME = new QName("", "vorname");
     private final static QName _Name_QNAME = new QName("", "name");
     private final static QName _Titel_QNAME = new QName("", "titel");
@@ -1406,6 +1407,15 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "referenz_id")
+    public JAXBElement<String> createReferenzId(String value) {
+        return new JAXBElement<String>(_ReferenzId_QNAME, String.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "vorname")
     public JAXBElement<String> createVorname(String value) {
         return new JAXBElement<String>(_Vorname_QNAME, String.class, null, value);
@@ -1466,12 +1476,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "zusatzfeld")
-    public JAXBElement<Object> createZusatzfeld(Object value) {
-        return new JAXBElement<Object>(_Zusatzfeld_QNAME, Object.class, null, value);
+    public JAXBElement<String> createZusatzfeld(String value) {
+        return new JAXBElement<String>(_Zusatzfeld_QNAME, String.class, null, value);
     }
 
     /**
@@ -2411,13 +2421,13 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "anzahl_stellplaetze")
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<BigDecimal> createAnzahlStellplaetze(BigDecimal value) {
-        return new JAXBElement<BigDecimal>(_AnzahlStellplaetze_QNAME, BigDecimal.class, null, value);
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    public JAXBElement<BigInteger> createAnzahlStellplaetze(BigInteger value) {
+        return new JAXBElement<BigInteger>(_AnzahlStellplaetze_QNAME, BigInteger.class, null, value);
     }
 
     /**
@@ -2807,13 +2817,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "stromanschlusswert")
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    public JAXBElement<BigDecimal> createStromanschlusswert(BigDecimal value) {
-        return new JAXBElement<BigDecimal>(_Stromanschlusswert_QNAME, BigDecimal.class, null, value);
+    public JAXBElement<String> createStromanschlusswert(String value) {
+        return new JAXBElement<String>(_Stromanschlusswert_QNAME, String.class, null, value);
     }
 
     /**

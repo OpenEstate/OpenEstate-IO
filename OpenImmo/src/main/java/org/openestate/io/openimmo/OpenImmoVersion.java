@@ -28,6 +28,7 @@ import org.openestate.io.openimmo.converters.OpenImmo_1_2_4;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_5;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_6;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_7;
+import org.openestate.io.openimmo.converters.OpenImmo_1_2_7b;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,7 +83,14 @@ public enum OpenImmoVersion implements XmlVersion
   /**
    * Version 1.2.7
    */
-  V1_2_7( OpenImmo_1_2_7.class, "1.2.7" );
+  V1_2_7( OpenImmo_1_2_7.class, "1.2.7" ),
+
+  /**
+   * Version 1.2.7b
+   *
+   * @since 1.3
+   */
+  V1_2_7B( OpenImmo_1_2_7b.class, "1.2.7b", "1.2.7B" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoVersion.class );
   private final Class converterClass;

@@ -34,7 +34,7 @@
 
   <!-- customizations for openimmo_127.xsd -->
 
-  <jaxb:bindings schemaLocation="../xsd/openimmo_127.xsd" node="/xsd:schema">
+  <jaxb:bindings schemaLocation="../xsd/openimmo_127b.xsd" node="/xsd:schema">
 
     <jaxb:schemaBindings>
       <jaxb:package name="org.openestate.io.openimmo.xml">
