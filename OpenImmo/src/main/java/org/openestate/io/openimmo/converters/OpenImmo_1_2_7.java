@@ -76,7 +76,7 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
       }
       catch (Exception ex)
       {
-        LOGGER.error( "Can't remove odd <objekt_text> elements!" );
+        LOGGER.error( "Can't remove unsupported <objekt_text> elements!" );
         LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       }
 
