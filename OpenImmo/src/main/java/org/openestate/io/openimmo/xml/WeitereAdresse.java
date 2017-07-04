@@ -75,7 +75,7 @@ public class WeitereAdresse implements Serializable, Cloneable, CopyTo2, Equals2
     @XmlElement(name = "anrede_brief")
     protected String anredeBrief;
     protected String firma;
-    protected Object zusatzfeld;
+    protected String zusatzfeld;
     protected String strasse;
     protected String hausnummer;
     protected String plz;
@@ -268,10 +268,10 @@ public class WeitereAdresse implements Serializable, Cloneable, CopyTo2, Equals2
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public Object getZusatzfeld() {
+    public String getZusatzfeld() {
         return zusatzfeld;
     }
 
@@ -280,10 +280,10 @@ public class WeitereAdresse implements Serializable, Cloneable, CopyTo2, Equals2
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public void setZusatzfeld(Object value) {
+    public void setZusatzfeld(String value) {
         this.zusatzfeld = value;
     }
 
@@ -982,7 +982,7 @@ public class WeitereAdresse implements Serializable, Cloneable, CopyTo2, Equals2
             strategy.appendField(locator, this, "firma", buffer, theFirma, (this.firma!= null));
         }
         {
-            Object theZusatzfeld;
+            String theZusatzfeld;
             theZusatzfeld = this.getZusatzfeld();
             strategy.appendField(locator, this, "zusatzfeld", buffer, theZusatzfeld, (this.zusatzfeld!= null));
         }
@@ -1213,9 +1213,9 @@ public class WeitereAdresse implements Serializable, Cloneable, CopyTo2, Equals2
             {
                 Boolean zusatzfeldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zusatzfeld!= null));
                 if (zusatzfeldShouldBeCopiedAndSet == Boolean.TRUE) {
-                    Object sourceZusatzfeld;
+                    String sourceZusatzfeld;
                     sourceZusatzfeld = this.getZusatzfeld();
-                    Object copyZusatzfeld = ((Object) strategy.copy(LocatorUtils.property(locator, "zusatzfeld", sourceZusatzfeld), sourceZusatzfeld, (this.zusatzfeld!= null)));
+                    String copyZusatzfeld = ((String) strategy.copy(LocatorUtils.property(locator, "zusatzfeld", sourceZusatzfeld), sourceZusatzfeld, (this.zusatzfeld!= null)));
                     copy.setZusatzfeld(copyZusatzfeld);
                 } else {
                     if (zusatzfeldShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -1657,9 +1657,9 @@ public class WeitereAdresse implements Serializable, Cloneable, CopyTo2, Equals2
             }
         }
         {
-            Object lhsZusatzfeld;
+            String lhsZusatzfeld;
             lhsZusatzfeld = this.getZusatzfeld();
-            Object rhsZusatzfeld;
+            String rhsZusatzfeld;
             rhsZusatzfeld = that.getZusatzfeld();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zusatzfeld", lhsZusatzfeld), LocatorUtils.property(thatLocator, "zusatzfeld", rhsZusatzfeld), lhsZusatzfeld, rhsZusatzfeld, (this.zusatzfeld!= null), (that.zusatzfeld!= null))) {
                 return false;

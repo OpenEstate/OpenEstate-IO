@@ -62,6 +62,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "personennummer",
     "immobilientreuhaenderid",
     "foto",
+    "referenzId",
     "freitextfeld",
     "userDefinedSimplefield",
     "userDefinedAnyfield",
@@ -92,7 +93,7 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
     @XmlElement(name = "anrede_brief")
     protected String anredeBrief;
     protected String firma;
-    protected Object zusatzfeld;
+    protected String zusatzfeld;
     protected String strasse;
     protected String hausnummer;
     protected String plz;
@@ -118,6 +119,8 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
     protected String personennummer;
     protected String immobilientreuhaenderid;
     protected Foto foto;
+    @XmlElement(name = "referenz_id")
+    protected String referenzId;
     protected String freitextfeld;
     @XmlElement(name = "user_defined_simplefield")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
@@ -443,10 +446,10 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public Object getZusatzfeld() {
+    public String getZusatzfeld() {
         return zusatzfeld;
     }
 
@@ -455,10 +458,10 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public void setZusatzfeld(Object value) {
+    public void setZusatzfeld(String value) {
         this.zusatzfeld = value;
     }
 
@@ -905,6 +908,30 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
     }
 
     /**
+     * Gets the value of the referenzId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReferenzId() {
+        return referenzId;
+    }
+
+    /**
+     * Sets the value of the referenzId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setReferenzId(String value) {
+        this.referenzId = value;
+    }
+
+    /**
      * Gets the value of the freitextfeld property.
      * 
      * @return
@@ -1096,7 +1123,7 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
             strategy.appendField(locator, this, "firma", buffer, theFirma, (this.firma!= null));
         }
         {
-            Object theZusatzfeld;
+            String theZusatzfeld;
             theZusatzfeld = this.getZusatzfeld();
             strategy.appendField(locator, this, "zusatzfeld", buffer, theZusatzfeld, (this.zusatzfeld!= null));
         }
@@ -1189,6 +1216,11 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
             Foto theFoto;
             theFoto = this.getFoto();
             strategy.appendField(locator, this, "foto", buffer, theFoto, (this.foto!= null));
+        }
+        {
+            String theReferenzId;
+            theReferenzId = this.getReferenzId();
+            strategy.appendField(locator, this, "referenzId", buffer, theReferenzId, (this.referenzId!= null));
         }
         {
             String theFreitextfeld;
@@ -1398,9 +1430,9 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
             {
                 Boolean zusatzfeldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zusatzfeld!= null));
                 if (zusatzfeldShouldBeCopiedAndSet == Boolean.TRUE) {
-                    Object sourceZusatzfeld;
+                    String sourceZusatzfeld;
                     sourceZusatzfeld = this.getZusatzfeld();
-                    Object copyZusatzfeld = ((Object) strategy.copy(LocatorUtils.property(locator, "zusatzfeld", sourceZusatzfeld), sourceZusatzfeld, (this.zusatzfeld!= null)));
+                    String copyZusatzfeld = ((String) strategy.copy(LocatorUtils.property(locator, "zusatzfeld", sourceZusatzfeld), sourceZusatzfeld, (this.zusatzfeld!= null)));
                     copy.setZusatzfeld(copyZusatzfeld);
                 } else {
                     if (zusatzfeldShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -1653,6 +1685,19 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
                 }
             }
             {
+                Boolean referenzIdShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.referenzId!= null));
+                if (referenzIdShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceReferenzId;
+                    sourceReferenzId = this.getReferenzId();
+                    String copyReferenzId = ((String) strategy.copy(LocatorUtils.property(locator, "referenzId", sourceReferenzId), sourceReferenzId, (this.referenzId!= null)));
+                    copy.setReferenzId(copyReferenzId);
+                } else {
+                    if (referenzIdShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.referenzId = null;
+                    }
+                }
+            }
+            {
                 Boolean freitextfeldShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.freitextfeld!= null));
                 if (freitextfeldShouldBeCopiedAndSet == Boolean.TRUE) {
                     String sourceFreitextfeld;
@@ -1853,9 +1898,9 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
             }
         }
         {
-            Object lhsZusatzfeld;
+            String lhsZusatzfeld;
             lhsZusatzfeld = this.getZusatzfeld();
-            Object rhsZusatzfeld;
+            String rhsZusatzfeld;
             rhsZusatzfeld = that.getZusatzfeld();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zusatzfeld", lhsZusatzfeld), LocatorUtils.property(thatLocator, "zusatzfeld", rhsZusatzfeld), lhsZusatzfeld, rhsZusatzfeld, (this.zusatzfeld!= null), (that.zusatzfeld!= null))) {
                 return false;
@@ -2020,6 +2065,15 @@ public class Kontaktperson implements Serializable, Cloneable, CopyTo2, Equals2,
             Foto rhsFoto;
             rhsFoto = that.getFoto();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "foto", lhsFoto), LocatorUtils.property(thatLocator, "foto", rhsFoto), lhsFoto, rhsFoto, (this.foto!= null), (that.foto!= null))) {
+                return false;
+            }
+        }
+        {
+            String lhsReferenzId;
+            lhsReferenzId = this.getReferenzId();
+            String rhsReferenzId;
+            rhsReferenzId = that.getReferenzId();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "referenzId", lhsReferenzId), LocatorUtils.property(thatLocator, "referenzId", rhsReferenzId), lhsReferenzId, rhsReferenzId, (this.referenzId!= null), (that.referenzId!= null))) {
                 return false;
             }
         }

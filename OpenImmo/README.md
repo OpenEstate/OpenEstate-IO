@@ -2,18 +2,18 @@ OpenEstate-IO-OpenImmo 1.3-SNAPSHOT
 ===================================
 
 *OpenEstate-IO-OpenImmo* is a Java library to read and write real estate data in
-the *OpenImmo* format (version 1.2.7 down to 1.1), that is used by a variety of
-real estate software in Germany.
+the *OpenImmo* format (version 1.2.7b down to 1.1), that is used by a variety of
+real estate software in Germany, Austria and Switzerland.
 
 
 Features
 --------
 
 -   read XML data according to the specifications of
-    *OpenImmo* 1.2.7 down to 1.1
+    *OpenImmo* 1.2.7b down to 1.1
     (see [`OpenImmoReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/OpenImmoReadingExample.java))
 -   write XML data according to the specifications of
-    *OpenImmo* 1.2.7 down to 1.1
+    *OpenImmo* 1.2.7b down to 1.1
     (see [`OpenImmoWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/OpenImmoWritingExample.java))
 
 
@@ -56,19 +56,10 @@ to publish the specifications. Get in contact with
 ### Modifications to the original specification
 
 In order to improve the generated Java classes, we've made the following
-modifications to the original `openimmo_127.xsd` schema:
+modifications to the original `openimmo_127b.xsd` schema:
 
 -   added `<xsd:include schemaLocation="openimmo-feedback_125.xsd"/>`
     before `<xsd:element name="openimmo">`
-
--   replaced `<xsd:element name="anzahl_stellplaetze">`
-    with `<xsd:element name="anzahl_stellplaetze" type="xsd:decimal">`
-
--   replaced `<xsd:element name="hallenhoehe">`
-    with `<xsd:element name="hallenhoehe" type="xsd:decimal">`
-
--   replaced `<xsd:element name="stromanschlusswert">`
-    with `<xsd:element name="stromanschlusswert" type="xsd:decimal">`
 
 -   removed `<xsd:choice>` from `<xsd:element name="geo">`
     and move its child elements into the parent `<xsd:sequence>`
@@ -83,7 +74,7 @@ schema:
     because it is also defined in `openimmo_127.xsd`
 
 To generate the Java classes via JAXB for yourself, copy the modified
-`openimmo_127.xsd` and `openimmo-feedback_125.xsd` into `src/main/xsd` and run
+`openimmo_127b.xsd` and `openimmo-feedback_125.xsd` into `src/main/xsd` and run
 `mvn-jaxb-xjc.sh`.
 
 

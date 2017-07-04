@@ -254,7 +254,7 @@
         <artifactId>jaxb2-maven-plugin</artifactId>
         <configuration>
           <sources>
-            <source>${project.basedir}/src/main/xsd/openimmo_127.xsd</source>
+            <source>${project.basedir}/src/main/xsd/openimmo_127b.xsd</source>
             <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
           </sources>
           <bindingFiles>binding.xjb</bindingFiles>
