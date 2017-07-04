@@ -56,7 +56,7 @@ public class OpenImmoUtils
   /**
    * the latest implemented version of this format
    */
-  public final static OpenImmoVersion VERSION = OpenImmoVersion.V1_2_7;
+  public final static OpenImmoVersion VERSION = OpenImmoVersion.V1_2_7B;
 
   /**
    * the XML target namespace of this format
