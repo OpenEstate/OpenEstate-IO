@@ -51,7 +51,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *             &lt;complexContent&gt;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *                 &lt;sequence&gt;
- *                   &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/&gt;
+ *                   &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/&gt;
  *                   &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *                 &lt;/sequence&gt;
  *               &lt;/restriction&gt;
@@ -386,7 +386,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *   &lt;complexContent&gt;
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
      *       &lt;sequence&gt;
-     *         &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger"/&gt;
+     *         &lt;element name="ANZAHL" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/&gt;
      *         &lt;element name="OBJEKT" type="{}ObjectType" maxOccurs="unbounded" minOccurs="0"/&gt;
      *       &lt;/sequence&gt;
      *     &lt;/restriction&gt;
@@ -405,8 +405,8 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "ANZAHL", required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter1 .class)
-        @XmlSchemaType(name = "nonNegativeInteger")
+        @XmlJavaTypeAdapter(Adapter2 .class)
+        @XmlSchemaType(name = "positiveInteger")
         protected BigInteger anzahl;
         @XmlElement(name = "OBJEKT")
         protected List<ObjectType> objekt;
