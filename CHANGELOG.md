@@ -1,8 +1,8 @@
 Changelog for OpenEstate-IO
 ===========================
 
-1.3 (not released yet)
-----------------------
+1.3 (29 Jul 2017)
+-----------------
 
 -   Updated to Java 7.
 -   Updated `commons-lang` library to version 3.6.
