@@ -34,7 +34,7 @@ import org.w3c.dom.Element;
  */
 public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoFeedbackDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoFeedbackDocument.class );
 
   /**
    * Create from a {@link Document}.

@@ -16,6 +16,8 @@
 package org.openestate.io.idx.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ObjectType.
@@ -333,6 +335,7 @@ public enum ObjectType
   /** Estrichabteil / Attic compartment */
   SECONDARY_ATTIC_COMPARTMENT( ObjectCategory.SECONDARY, 2 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( ObjectType.class );
   private final ObjectCategory category;
   private final int value;
 

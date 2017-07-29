@@ -17,6 +17,8 @@ package org.openestate.io.trovit.xml.types;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * IntBool.
@@ -27,6 +29,7 @@ import java.math.BigInteger;
 public class IntBool implements Serializable
 {
   private final static long serialVersionUID = 425176874298955006L;
+  private final static Logger LOGGER = LoggerFactory.getLogger( IntBool.class );
   public BigInteger intValue;
   public Boolean boolValue;
 

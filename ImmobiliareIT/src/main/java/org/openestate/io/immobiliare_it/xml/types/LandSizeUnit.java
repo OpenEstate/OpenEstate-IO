@@ -15,6 +15,9 @@
  */
 package org.openestate.io.immobiliare_it.xml.types;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * LandSizeUnit.
  *
@@ -25,6 +28,7 @@ public enum LandSizeUnit
 {
   HA( "ha" ), M2( "m2" ), SFT( "sft" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( LandSizeUnit.class );
   private final String xmlValue;
 
   private LandSizeUnit( String xmlValue )

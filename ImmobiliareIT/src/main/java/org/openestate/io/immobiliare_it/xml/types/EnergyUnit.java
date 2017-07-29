@@ -15,6 +15,9 @@
  */
 package org.openestate.io.immobiliare_it.xml.types;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * EnergyUnit.
  *
@@ -25,6 +28,7 @@ public enum EnergyUnit
 {
   KWH_M2ANNO( "kWh/m2anno" ), KWH_M3ANNO( "kWh/m3anno" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( EnergyUnit.class );
   private final String xmlValue;
 
   private EnergyUnit( String xmlValue )

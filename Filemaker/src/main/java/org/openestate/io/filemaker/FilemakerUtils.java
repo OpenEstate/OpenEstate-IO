@@ -27,6 +27,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -39,7 +41,7 @@ import org.xml.sax.SAXException;
  */
 public class FilemakerUtils
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerUtils.class );
   private static JAXBContext JAXB = null;
 
   /**

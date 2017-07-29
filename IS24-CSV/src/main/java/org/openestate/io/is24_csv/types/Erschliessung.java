@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Erschliessung.
@@ -29,6 +31,7 @@ public enum Erschliessung
   TEILERSCHLOSSEN( "T" ),
   UNERSCHLOSSEN( "U" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Erschliessung.class );
   private final String value;
 
   private Erschliessung( String value )

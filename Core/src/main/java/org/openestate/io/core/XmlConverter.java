@@ -15,6 +15,9 @@
  */
 package org.openestate.io.core;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * A general class, that converts a {@link XmlConvertableDocument} into another
  * {@link XmlVersion}.
@@ -30,7 +33,7 @@ package org.openestate.io.core;
  */
 public abstract class XmlConverter<DocumentType extends XmlConvertableDocument, VersionType extends XmlVersion>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( XmlConverter.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( XmlConverter.class );
 
   /**
    * Downgrade a {@link XmlConvertableDocument} from the current version to the

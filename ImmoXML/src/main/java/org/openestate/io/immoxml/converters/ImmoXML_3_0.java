@@ -19,6 +19,8 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.openestate.io.core.XmlConverter;
 import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlVersion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Converter for version 3.0.
@@ -28,7 +30,7 @@ import org.openestate.io.immoxml.ImmoXmlVersion;
  */
 public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXML_1_1.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXML_3_0.class );
 
   @Override
   public ImmoXmlVersion getVersion()

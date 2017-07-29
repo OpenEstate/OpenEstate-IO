@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Immobilienart.
@@ -40,6 +42,7 @@ public enum Immobilienart
   STELLPLATZ_KAUF( 17 ),
   STELLPLATZ_MIETE( 18 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Immobilienart.class );
   private final int value;
 
   private Immobilienart( int value )

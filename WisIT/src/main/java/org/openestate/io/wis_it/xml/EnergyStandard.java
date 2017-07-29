@@ -6,6 +6,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * Java enum for &lt;KLIMAHAUS&gt; elements.
+ * 
  * <p>Java class for energyStandard.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

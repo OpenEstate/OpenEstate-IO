@@ -1,4 +1,4 @@
-OpenEstate-IO-DaftIE 1.2
+OpenEstate-IO-DaftIE 1.3
 ========================
 
 *OpenEstate-IO-DaftIE* is a Java library to read and write real estate data in
@@ -10,10 +10,10 @@ Features
 
 -   read XML data according to the specifications of
     [*daft.ie*](http://daft.ie) in version 2.7
-    (see [`DaftIeReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/DaftIeReadingExample.java))
+    (see [`DaftIeReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/Examples/src/main/java/org/openestate/io/examples/DaftIeReadingExample.java))
 -   write XML data according to the specifications of
     [*daft.ie*](http://daft.ie) in version 2.7
-    (see [`DaftIeWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/DaftIeWritingExample.java))
+    (see [`DaftIeWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/Examples/src/main/java/org/openestate/io/examples/DaftIeWritingExample.java))
 
 
 How to use
@@ -32,14 +32,14 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 ```
 
 You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-DaftIE).
 Some example classes for this format are available in the
-[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
+[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/v1.3/Examples)
 module.
 
 
@@ -55,10 +55,10 @@ documentations in the [PDF file](specs/Daft_Overseas_Webfeed_Spec_v2.7.pdf).
 Dependencies
 ------------
 
--   Java 6 or newer
+-   Java 7 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
+-   [commons-lang 3.6](http://commons.apache.org/proper/commons-lang/)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
 -   [SLF4J 1.7.25](http://www.slf4j.org/)
@@ -78,7 +78,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/LICENSE.txt)
 for the license text.
 
 

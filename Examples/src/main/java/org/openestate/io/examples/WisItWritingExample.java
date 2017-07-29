@@ -24,11 +24,10 @@ import java.math.BigInteger;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.wis_it.WisItDocument;
 import org.openestate.io.wis_it.WisItUtils;
 import org.openestate.io.wis_it.xml.AreaType;
@@ -143,7 +142,7 @@ public class WisItWritingExample
     obj.setGRUENFLAECHE( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setGUELTIGBIS( Calendar.getInstance() );
     obj.setHEIZUNG( HeatingType.ZENTRAL );
-    obj.setID( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setID( RandomStringUtils.random( 5 ) );
     obj.setIMMOBILIENART( PropertyType.EINFAMILIENHAUS );
     obj.setINFODE( "some description in german language" );
     obj.setINFOIT( "some description in italian language" );
@@ -271,7 +270,7 @@ public class WisItWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

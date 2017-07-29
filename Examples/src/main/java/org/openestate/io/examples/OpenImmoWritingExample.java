@@ -24,11 +24,10 @@ import java.util.Calendar;
 import java.util.Locale;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
@@ -227,7 +226,7 @@ public class OpenImmoWritingExample
     uebertragung.setArt( Uebertragung.Art.OFFLINE );
     uebertragung.setModus( Uebertragung.Modus.NEW );
     uebertragung.setSendersoftware( "OpenEstate-IO" );
-    uebertragung.setSenderversion( "1.2" );
+    uebertragung.setSenderversion( "1.3" );
     uebertragung.setTechnEmail( "test@test.org" );
     uebertragung.setTimestamp( Calendar.getInstance() );
     uebertragung.setUmfang( Uebertragung.Umfang.VOLL );
@@ -323,7 +322,7 @@ public class OpenImmoWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

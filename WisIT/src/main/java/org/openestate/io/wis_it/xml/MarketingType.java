@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * Java enum for &lt;MIETEKAUF&gt; elements.
+ * 
  * <p>Java class for marketingType.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

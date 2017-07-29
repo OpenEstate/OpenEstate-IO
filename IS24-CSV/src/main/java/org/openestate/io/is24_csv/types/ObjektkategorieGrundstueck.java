@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ObjektkategorieGrundstueck.
@@ -30,6 +32,7 @@ public enum ObjektkategorieGrundstueck
   GEWERBE_LAND_FORSTWIRTSCHAFT( 58 ),
   GEWERBE_FREIZEIT( 59 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieGrundstueck.class );
   private final int value;
 
   private ObjektkategorieGrundstueck( int value )

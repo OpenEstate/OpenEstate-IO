@@ -21,6 +21,8 @@ import java.util.Iterator;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A general CSV parser, that is bound to a {@link CsvFormat} and reads CSV data
@@ -34,6 +36,7 @@ import org.apache.commons.io.IOUtils;
  */
 public abstract class CsvParser<Record extends CsvRecord> implements Closeable
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( CsvParser.class );
   private final CSVParser parser;
   private Iterator<CSVRecord> iterator = null;
 

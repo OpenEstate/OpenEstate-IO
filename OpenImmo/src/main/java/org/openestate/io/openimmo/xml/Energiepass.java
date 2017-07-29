@@ -47,6 +47,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "jahrgang",
     "gebaeudeart",
     "epasstext",
+    "geg2018",
     "hwbwert",
     "hwbklasse",
     "fgeewert",
@@ -74,6 +75,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
     protected Energiepass.Jahrgang jahrgang;
     protected Energiepass.Gebaeudeart gebaeudeart;
     protected String epasstext;
+    protected String geg2018;
     protected String hwbwert;
     protected String hwbklasse;
     protected String fgeewert;
@@ -416,6 +418,30 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
     }
 
     /**
+     * Gets the value of the geg2018 property.
+     *
+     * @return
+     *     possible object is
+     *     {@link String }
+     *
+     */
+    public String getGeg2018() {
+        return geg2018;
+    }
+
+    /**
+     * Sets the value of the geg2018 property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *
+     */
+    public void setGeg2018(String value) {
+        this.geg2018 = value;
+    }
+
+    /**
      * Gets the value of the hwbwert property.
      *
      * @return
@@ -595,6 +621,11 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
             String theEpasstext;
             theEpasstext = this.getEpasstext();
             strategy.appendField(locator, this, "epasstext", buffer, theEpasstext, (this.epasstext!= null));
+        }
+        {
+            String theGeg2018;
+            theGeg2018 = this.getGeg2018();
+            strategy.appendField(locator, this, "geg2018", buffer, theGeg2018, (this.geg2018 != null));
         }
         {
             String theHwbwert;
@@ -815,6 +846,19 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
                 }
             }
             {
+                Boolean geg2018ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.geg2018 != null));
+                if (geg2018ShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceGeg2018;
+                    sourceGeg2018 = this.getGeg2018();
+                    String copyGeg2018 = ((String) strategy.copy(LocatorUtils.property(locator, "geg2018", sourceGeg2018), sourceGeg2018, (this.geg2018 != null)));
+                    copy.setGeg2018(copyGeg2018);
+                } else {
+                    if (geg2018ShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.geg2018 = null;
+                    }
+                }
+            }
+            {
                 Boolean hwbwertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hwbwert!= null));
                 if (hwbwertShouldBeCopiedAndSet == Boolean.TRUE) {
                     String sourceHwbwert;
@@ -1009,6 +1053,15 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
             }
         }
         {
+            String lhsGeg2018;
+            lhsGeg2018 = this.getGeg2018();
+            String rhsGeg2018;
+            rhsGeg2018 = that.getGeg2018();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "geg2018", lhsGeg2018), LocatorUtils.property(thatLocator, "geg2018", rhsGeg2018), lhsGeg2018, rhsGeg2018, (this.geg2018 != null), (that.geg2018 != null))) {
+                return false;
+            }
+        }
+        {
             String lhsHwbwert;
             lhsHwbwert = this.getHwbwert();
             String rhsHwbwert;
@@ -1124,7 +1177,9 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         @XmlEnumValue("ohne")
         OHNE("ohne"),
         @XmlEnumValue("nicht_noetig")
-        NICHT_NOETIG("nicht_noetig");
+        NICHT_NOETIG("nicht_noetig"),
+        @XmlEnumValue("bei_besichtigung")
+        BEI_BESICHTIGUNG("bei_besichtigung");
         private final String value;
 
         Jahrgang(String v) {

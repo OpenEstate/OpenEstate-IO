@@ -23,6 +23,8 @@ import java.util.regex.Pattern;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A general CSV printer, that is bound to a {@link CsvFormat} and writes CSV
@@ -36,7 +38,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable, Flushable
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( CsvPrinter.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( CsvPrinter.class );
   private final static Pattern LINES = Pattern.compile( "^(.*)$", Pattern.MULTILINE );
   private final CSVPrinter printer;
 

@@ -7,12 +7,12 @@
   <parent>
     <groupId>org.openestate.io</groupId>
     <artifactId>ALL</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
   </parent>
 
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
   <packaging>jar</packaging>
 
   <name>OpenEstate-IO-OpenImmo</name>
@@ -76,6 +76,11 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-text</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -181,8 +186,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.7</source>
+          <target>1.7</target>
           <showDeprecation>true</showDeprecation>
           <debug>false</debug>
         </configuration>
@@ -249,7 +254,7 @@
         <artifactId>jaxb2-maven-plugin</artifactId>
         <configuration>
           <sources>
-            <source>${project.basedir}/src/main/xsd/openimmo_127.xsd</source>
+            <source>${project.basedir}/src/main/xsd/openimmo_127b.xsd</source>
             <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
           </sources>
           <bindingFiles>binding.xjb</bindingFiles>

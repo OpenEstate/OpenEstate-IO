@@ -19,6 +19,8 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.openestate.io.core.XmlConverter;
 import org.openestate.io.daft_ie.DaftIeDocument;
 import org.openestate.io.daft_ie.DaftIeVersion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Converter for version 2.7.
@@ -28,7 +30,7 @@ import org.openestate.io.daft_ie.DaftIeVersion;
  */
 public class DaftIe_2_7 extends XmlConverter<DaftIeDocument, DaftIeVersion>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmo_1_1.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( DaftIe_2_7.class );
 
   @Override
   public DaftIeVersion getVersion()

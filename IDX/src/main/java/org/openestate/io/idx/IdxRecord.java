@@ -26,7 +26,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.openestate.io.core.CsvRecord;
 import org.openestate.io.idx.types.GrossPremium;
 import org.openestate.io.idx.types.Language;
@@ -1315,7 +1314,7 @@ public class IdxRecord extends CsvRecord
 
   public Media[] getPictures()
   {
-    List<Media> pictures = new ArrayList<Media>();
+    List<Media> pictures = new ArrayList<>();
     for (int i=1; i<=PICTURE_LIMIT; i++)
     {
       Media picture = this.getPicture( i );
@@ -1817,7 +1816,7 @@ public class IdxRecord extends CsvRecord
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     Matcher m = LINEBREAK.matcher( value );
-    return (m.find())? m.replaceAll( SystemUtils.LINE_SEPARATOR ): value;
+    return (m.find())? m.replaceAll( System.lineSeparator() ): value;
   }
 
   @Override
@@ -2707,7 +2706,10 @@ public class IdxRecord extends CsvRecord
         if (pos>PICTURE_LIMIT) break;
       }
     }
-    for (int i=pos; i<=PICTURE_LIMIT; i++) this.setPicture( null, i );
+    for (int i=pos; i<=PICTURE_LIMIT; i++)
+    {
+      this.setPicture( null, i );
+    }
   }
 
   public void setPowerSupply( boolean value )

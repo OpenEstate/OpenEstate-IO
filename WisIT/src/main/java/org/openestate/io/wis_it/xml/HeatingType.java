@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * Java enum for &lt;HEIZUNG&gt; elements.
+ * 
  * <p>Java class for heatingType.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

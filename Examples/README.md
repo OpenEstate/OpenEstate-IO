@@ -1,4 +1,4 @@
-OpenEstate-IO-Examples 1.2
+OpenEstate-IO-Examples 1.3
 ==========================
 
 *OpenEstate-IO-Examples* is a Java library, that provides some example classes
@@ -21,7 +21,7 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Examples</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 ```
 
@@ -34,12 +34,13 @@ folder of this module. You can find further informations in the
 Dependencies
 ------------
 
--   Java 6 or newer
+-   Java 7 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
     (optional; for processing of CSV formats)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
+-   [commons-lang 3.6](http://commons.apache.org/proper/commons-lang/)
+-   [commons-text 1.1](http://commons.apache.org/proper/commons-text/)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
@@ -62,7 +63,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/LICENSE.txt)
 for the license text.
 
 

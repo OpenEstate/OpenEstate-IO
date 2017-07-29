@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * Java enum for &lt;FLAECHEART&gt; elements.
+ * 
  * <p>Java class for areaType.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

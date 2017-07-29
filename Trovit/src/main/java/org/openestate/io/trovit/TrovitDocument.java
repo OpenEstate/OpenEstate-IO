@@ -20,6 +20,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.trovit.xml.Trovit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -31,7 +33,7 @@ import org.w3c.dom.Element;
  */
 public class TrovitDocument extends XmlDocument<Trovit>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( TrovitDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( TrovitDocument.class );
 
   /**
    * Create from a {@link Document}.

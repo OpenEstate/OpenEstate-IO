@@ -24,11 +24,10 @@ import java.math.BigInteger;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
 import org.openestate.io.trovit.xml.Ad;
@@ -136,7 +135,7 @@ public class TrovitWritingExample
     ad.setExpirationDate( Calendar.getInstance() );
     ad.setFloorNumber( "number of floors" );
     ad.setForeclosure( "notes about foreclosure" );
-    ad.setId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    ad.setId( RandomStringUtils.random( 5 ) );
     ad.setIsFurnished( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
     ad.setIsNew( TypeNew.NEW );
     ad.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
@@ -275,7 +274,7 @@ public class TrovitWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

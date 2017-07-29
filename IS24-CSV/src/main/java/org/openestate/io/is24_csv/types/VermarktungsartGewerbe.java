@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * VermarktungsartGewerbe.
@@ -28,6 +30,7 @@ public enum VermarktungsartGewerbe
   KAUF( "K" ),
   MIETE( "M" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( VermarktungsartGewerbe.class );
   private final String value;
 
   private VermarktungsartGewerbe( String value )

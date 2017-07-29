@@ -19,6 +19,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.filemaker.xml.result.FMPXMLRESULT;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -31,7 +33,7 @@ import org.w3c.dom.Element;
  */
 public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerResultDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerResultDocument.class );
 
   /**
    * Create from a {@link Document}.

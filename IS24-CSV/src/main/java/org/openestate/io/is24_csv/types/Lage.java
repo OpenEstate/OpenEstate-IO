@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Lage.
@@ -30,6 +32,7 @@ public enum Lage
   B_LAGE( 2 ),
   EINKAUFSZENTRUM( 3 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Lage.class );
   private final int value;
 
   private Lage( int value )

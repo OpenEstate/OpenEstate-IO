@@ -1,4 +1,4 @@
-OpenEstate-IO 1.2
+OpenEstate-IO 1.3
 =================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate
@@ -23,7 +23,8 @@ Supported Formats
 | [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                     | XML  | rev189438 |
 | [`Kyero`](Kyero)                 | [*Kyero.com*](http://kyero.com) XML feed                         | XML  | 3         |
 |                                  |                                                                  |      | 2.1       |
-| [`OpenImmo`](OpenImmo)           | [*OpenImmo*]((http://www.openimmo.de/)) format                   | XML  | 1.2.7     |
+| [`OpenImmo`](OpenImmo)           | [*OpenImmo*]((http://www.openimmo.de/)) format                   | XML  | 1.2.7b    |
+|                                  |                                                                  |      | 1.2.7     |
 |                                  |                                                                  |      | 1.2.6     |
 |                                  |                                                                  |      | 1.2.5     |
 |                                  |                                                                  |      | 1.2.4     |
@@ -33,7 +34,7 @@ Supported Formats
 |                                  |                                                                  |      | 1.2       |
 |                                  |                                                                  |      | 1.1       |
 | [`Trovit`](Trovit)               | [*Trovit.com*](http://trovit.com) Homes Feed                     | XML  | ?         |
-| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](http://wohnen-in-suedtirol.it) format | XML  | ?         |
+| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](http://wohnen-in-suedtirol.it) format | XML  | 2.2       |
 
 Open a module subfolder to get more informations about the specific format.
 
@@ -55,73 +56,73 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IDX</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Trovit</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-WisIT</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 ```
 
@@ -133,12 +134,14 @@ classes for each format are available in the [`Examples`](Examples) module.
 Dependencies
 ------------
 
--   Java 6 or newer
+-   Java 7 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
     (optional; for processing of CSV formats)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
+-   [commons-lang 3.6](http://commons.apache.org/proper/commons-lang/)
+-   [commons-text 1.1](http://commons.apache.org/proper/commons-text/)
+    (optional; for examples and some unit tests)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
@@ -161,7 +164,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/LICENSE.txt)
 for the license text.
 
 

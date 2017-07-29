@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Stellplatz.
@@ -37,6 +39,7 @@ public enum Stellplatz
   @Deprecated
   NEIN( 'N' );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Stellplatz.class );
   private final char value;
 
   private Stellplatz( char value )

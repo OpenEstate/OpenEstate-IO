@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Rauchen.
@@ -28,6 +30,7 @@ public enum Rauchen
   NUR_NICHTRAUCHER( 0 ),
   KEINE_EINSCHRAENKUNG( 1 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Rauchen.class );
   private final int value;
 
   private Rauchen( int value )

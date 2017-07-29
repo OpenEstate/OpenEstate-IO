@@ -37,6 +37,8 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.wis_it.xml.ObjectFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -49,7 +51,7 @@ import org.xml.sax.SAXException;
  */
 public class WisItUtils
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( WisItUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( WisItUtils.class );
   private static JAXBContext JAXB = null;
 
   /**
@@ -306,7 +308,13 @@ public class WisItUtils
     return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
   }
 
-  public static BigInteger parseNonNegativeInteger( String value )
+  public static BigDecimal parseDouble( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
+  }
+
+  public static BigInteger parsePositiveInteger( String value )
   {
     value = StringUtils.trimToNull( value );
     return (value!=null)? DatatypeConverter.parseInteger( value ): null;
@@ -341,10 +349,18 @@ public class WisItUtils
       return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
   }
 
-  public static String printNonNegativeInteger( BigInteger value )
+  public static String printDouble( BigDecimal value )
   {
-    if (value==null || value.compareTo( BigInteger.ZERO )==-1)
-      throw new IllegalArgumentException( "Can't print integer value!" );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print double value!" );
+    else
+      return DatatypeConverter.printDecimal( value );
+  }
+
+  public static String printPositiveInteger( BigInteger value )
+  {
+    if (value==null || value.compareTo( BigInteger.ZERO )<1)
+      throw new IllegalArgumentException( "Can't print positive integer value!" );
     else
       return DatatypeConverter.printInteger( value );
   }

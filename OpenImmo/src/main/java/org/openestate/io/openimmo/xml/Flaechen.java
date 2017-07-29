@@ -3,6 +3,7 @@ package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -212,9 +213,9 @@ public class Flaechen implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
     @XmlSchemaType(name = "decimal")
     protected BigDecimal beheizbareFlaeche;
     @XmlElement(name = "anzahl_stellplaetze", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "decimal")
-    protected BigDecimal anzahlStellplaetze;
+    @XmlJavaTypeAdapter(Adapter6 .class)
+    @XmlSchemaType(name = "positiveInteger")
+    protected BigInteger anzahlStellplaetze;
     @XmlElement(name = "plaetze_gastraum", type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
@@ -1087,7 +1088,7 @@ public class Flaechen implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link String }
      *     
      */
-    public BigDecimal getAnzahlStellplaetze() {
+    public BigInteger getAnzahlStellplaetze() {
         return anzahlStellplaetze;
     }
 
@@ -1099,7 +1100,7 @@ public class Flaechen implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link String }
      *     
      */
-    public void setAnzahlStellplaetze(BigDecimal value) {
+    public void setAnzahlStellplaetze(BigInteger value) {
         this.anzahlStellplaetze = value;
     }
 
@@ -1640,7 +1641,7 @@ public class Flaechen implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             strategy.appendField(locator, this, "beheizbareFlaeche", buffer, theBeheizbareFlaeche, (this.beheizbareFlaeche!= null));
         }
         {
-            BigDecimal theAnzahlStellplaetze;
+            BigInteger theAnzahlStellplaetze;
             theAnzahlStellplaetze = this.getAnzahlStellplaetze();
             strategy.appendField(locator, this, "anzahlStellplaetze", buffer, theAnzahlStellplaetze, (this.anzahlStellplaetze!= null));
         }
@@ -2175,9 +2176,9 @@ public class Flaechen implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             {
                 Boolean anzahlStellplaetzeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anzahlStellplaetze!= null));
                 if (anzahlStellplaetzeShouldBeCopiedAndSet == Boolean.TRUE) {
-                    BigDecimal sourceAnzahlStellplaetze;
+                    BigInteger sourceAnzahlStellplaetze;
                     sourceAnzahlStellplaetze = this.getAnzahlStellplaetze();
-                    BigDecimal copyAnzahlStellplaetze = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "anzahlStellplaetze", sourceAnzahlStellplaetze), sourceAnzahlStellplaetze, (this.anzahlStellplaetze!= null)));
+                    BigInteger copyAnzahlStellplaetze = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "anzahlStellplaetze", sourceAnzahlStellplaetze), sourceAnzahlStellplaetze, (this.anzahlStellplaetze!= null)));
                     copy.setAnzahlStellplaetze(copyAnzahlStellplaetze);
                 } else {
                     if (anzahlStellplaetzeShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -2705,9 +2706,9 @@ public class Flaechen implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             }
         }
         {
-            BigDecimal lhsAnzahlStellplaetze;
+            BigInteger lhsAnzahlStellplaetze;
             lhsAnzahlStellplaetze = this.getAnzahlStellplaetze();
-            BigDecimal rhsAnzahlStellplaetze;
+            BigInteger rhsAnzahlStellplaetze;
             rhsAnzahlStellplaetze = that.getAnzahlStellplaetze();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anzahlStellplaetze", lhsAnzahlStellplaetze), LocatorUtils.property(thatLocator, "anzahlStellplaetze", rhsAnzahlStellplaetze), lhsAnzahlStellplaetze, rhsAnzahlStellplaetze, (this.anzahlStellplaetze!= null), (that.anzahlStellplaetze!= null))) {
                 return false;

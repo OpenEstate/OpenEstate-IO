@@ -19,6 +19,8 @@ import org.apache.commons.csv.CSVRecord;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.types.ObjektkategorieGrundstueck;
 import org.openestate.io.is24_csv.types.Vermarktungsart;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * General record from the IS24-CSV format for plots.
@@ -28,6 +30,8 @@ import org.openestate.io.is24_csv.types.Vermarktungsart;
  */
 public abstract class Grundstueck extends Is24CsvRecord
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( Grundstueck.class );
+
   /** Vermarktungsart, Text 1 */
   protected final static int FIELD_VERMARKTUNGSART = 60;
 

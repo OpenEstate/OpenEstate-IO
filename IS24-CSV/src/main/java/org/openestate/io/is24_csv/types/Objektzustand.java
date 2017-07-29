@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Objektzustand.
@@ -39,6 +41,7 @@ public enum Objektzustand
   UNRENOVIERT( 10 ),
   ABBRUCHREIF( 11 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Objektzustand.class );
   private final int value;
 
   private Objektzustand( int value )

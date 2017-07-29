@@ -15,6 +15,9 @@
  */
 package org.openestate.io.immobiliare_it.xml.types;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Transaction.
  *
@@ -25,6 +28,7 @@ public enum Transaction
 {
   SALE( "S" ), RENT ( "R" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Transaction.class );
   private final String xmlValue;
 
   private Transaction( String xmlValue )

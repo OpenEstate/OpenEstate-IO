@@ -30,6 +30,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.core.CsvFormat;
 import org.openestate.io.core.LocaleUtils;
 import org.openestate.io.core.NumberUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Specification of the IS24-CSV format.
@@ -39,6 +41,8 @@ import org.openestate.io.core.NumberUtils;
  */
 public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvFormat.class );
+
   /**
    * the implemented version of this format
    */

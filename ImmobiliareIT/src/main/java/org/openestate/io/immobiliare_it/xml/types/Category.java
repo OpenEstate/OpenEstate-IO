@@ -15,6 +15,9 @@
  */
 package org.openestate.io.immobiliare_it.xml.types;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Category.
  *
@@ -25,6 +28,7 @@ public enum Category
 {
   COMMERCIALE( "C" ), RESIDENZIALE( "R" ), VACANZE( "V" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Category.class );
   private final String xmlValue;
 
   private Category( String xmlValue )

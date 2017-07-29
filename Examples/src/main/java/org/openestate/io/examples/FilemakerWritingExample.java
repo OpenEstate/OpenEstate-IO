@@ -23,7 +23,6 @@ import java.math.BigInteger;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.filemaker.FilemakerResultDocument;
 import org.openestate.io.filemaker.FilemakerUtils;
@@ -41,7 +40,7 @@ import org.slf4j.LoggerFactory;
  * FilemakerWritingExample.
  *
  * @since 1.0
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public class FilemakerWritingExample
 {
@@ -168,7 +167,7 @@ public class FilemakerWritingExample
   {
     ProductType product = FACTORY.createProductType();
     product.setNAME( "OpenEstate-IO" );
-    product.setVERSION( "1.2" );
+    product.setVERSION( "1.3" );
     product.setBUILD( "123" );
     return product;
   }
@@ -325,7 +324,7 @@ public class FilemakerWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

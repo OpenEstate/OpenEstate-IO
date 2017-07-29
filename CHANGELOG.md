@@ -1,6 +1,16 @@
 Changelog for OpenEstate-IO
 ===========================
 
+1.3 (29 Jul 2017)
+-----------------
+
+-   Updated to Java 7.
+-   Updated `commons-lang` library to version 3.6.
+-   Add dependency to `commons-text` library in version 1.1.
+-   Support **OpenImmo** format in version 1.2.7b.
+-   Update XML format of
+    [wohnen-in-suedtirol.it](https://wohnen-in-suedtirol.it/) to version 2.2.
+
 
 1.2 (14 May 2017)
 -----------------

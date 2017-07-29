@@ -27,6 +27,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
+ * OpenImmo_1_2_7Test.
  *
  * @author Andreas Rudolph
  */

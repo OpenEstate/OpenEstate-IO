@@ -1,20 +1,20 @@
-OpenEstate-IO-OpenImmo 1.2
+OpenEstate-IO-OpenImmo 1.3
 ==========================
 
 *OpenEstate-IO-OpenImmo* is a Java library to read and write real estate data in
-the *OpenImmo* format (version 1.2.7 down to 1.1), that is used by a variety of
-real estate software in Germany.
+the *OpenImmo* format (version 1.2.7b down to 1.1), that is used by a variety of
+real estate software in Germany, Austria and Switzerland.
 
 
 Features
 --------
 
 -   read XML data according to the specifications of
-    *OpenImmo* 1.2.7 down to 1.1
-    (see [`OpenImmoReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/OpenImmoReadingExample.java))
+    *OpenImmo* 1.2.7b down to 1.1
+    (see [`OpenImmoReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/Examples/src/main/java/org/openestate/io/examples/OpenImmoReadingExample.java))
 -   write XML data according to the specifications of
-    *OpenImmo* 1.2.7 down to 1.1
-    (see [`OpenImmoWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/Examples/src/main/java/org/openestate/io/examples/OpenImmoWritingExample.java))
+    *OpenImmo* 1.2.7b down to 1.1
+    (see [`OpenImmoWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/Examples/src/main/java/org/openestate/io/examples/OpenImmoWritingExample.java))
 
 
 How to use
@@ -33,14 +33,14 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 ```
 
 You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-OpenImmo).
 Some example classes for this format are available in the
-[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
+[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/v1.3/Examples)
 module.
 
 
@@ -56,19 +56,10 @@ to publish the specifications. Get in contact with
 ### Modifications to the original specification
 
 In order to improve the generated Java classes, we've made the following
-modifications to the original `openimmo_127.xsd` schema:
+modifications to the original `openimmo_127b.xsd` schema:
 
 -   added `<xsd:include schemaLocation="openimmo-feedback_125.xsd"/>`
     before `<xsd:element name="openimmo">`
-
--   replaced `<xsd:element name="anzahl_stellplaetze">`
-    with `<xsd:element name="anzahl_stellplaetze" type="xsd:decimal">`
-
--   replaced `<xsd:element name="hallenhoehe">`
-    with `<xsd:element name="hallenhoehe" type="xsd:decimal">`
-
--   replaced `<xsd:element name="stromanschlusswert">`
-    with `<xsd:element name="stromanschlusswert" type="xsd:decimal">`
 
 -   removed `<xsd:choice>` from `<xsd:element name="geo">`
     and move its child elements into the parent `<xsd:sequence>`
@@ -83,17 +74,17 @@ schema:
     because it is also defined in `openimmo_127.xsd`
 
 To generate the Java classes via JAXB for yourself, copy the modified
-`openimmo_127.xsd` and `openimmo-feedback_125.xsd` into `src/main/xsd` and run
+`openimmo_127b.xsd` and `openimmo-feedback_125.xsd` into `src/main/xsd` and run
 `mvn-jaxb-xjc.sh`.
 
 
 Dependencies
 ------------
 
--   Java 6 or newer
+-   Java 7 or newer
 -   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
 -   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.5](http://commons.apache.org/proper/commons-lang/)
+-   [commons-lang 3.6](http://commons.apache.org/proper/commons-lang/)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
 -   [SLF4J 1.7.25](http://www.slf4j.org/)
@@ -113,7 +104,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.2/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/LICENSE.txt)
 for the license text.
 
 

@@ -1,21 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+      XML specifications of Import Interface V2
+      for https://wohnen-in-suedtirol.it/
+      based on Document version 2.2, Christoph Dolar, Oktober 2015
+
+      This inofficial XML schema was created by Andreas Rudolph and is licensed
+      under the terms of Apache License 2.0
+      (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
+    </xsd:documentation>
+    <xsd:documentation xml:lang="de">
+      XML-Spezifikationen der Import-Schnittstelle V2
+      von https://wohnen-in-suedtirol.it/
+      basierend auf Dokument-Version 2.2, Christoph Dolar, Oktober 2015
+
+      Dieses inoffizielle XML-Schema wurde von Andreas Rudolph erstellt und
+      unter den Bedingungen der Apache License 2.0 veröffentlicht
+      (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
+    </xsd:documentation>
+  </xsd:annotation>
 
   <xsd:element name="WIS">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Sorrunding tags.
+      </xsd:documentation>
+      <xsd:documentation xml:lang="de">
+        Umschließende Tags.
+      </xsd:documentation>
+    </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="BENUTZER" minOccurs="1" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              User information. Additional fields will be added in the future.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+              Informationen zum Benutzer, dem die importierten Objekten
+              zugeordnet werden sollen. Hier können in zukunft weitere Werte
+              hinzukommen.
+            </xsd:documentation>
+          </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="KDNR" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+              <xsd:element name="KDNR" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Customer number. The customer number will be allocated
+                    manually to users. Only users with a working interface have
+                    user numbers. Please ask WIS for your clients’ user number.
+                  </xsd:documentation>
+                  <xsd:documentation xml:lang="de">
+                    Wichtig ist die Definition der Kundennummer, da diese
+                    bestimmt, welchem Benutzer die Objekte zugeordnet werden.
+                    Muss vorhanden sein.
+
+                    Es findet eine interne Prüfung der Datenherkunft zu
+                    Kundennummer statt, sodass eine Zuordnung zu anderen
+                    Benutzern nicht möglich ist.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
         <xsd:element name="OBJEKTE" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Contains all objects which will be inserted, updated or deleted.
+              Can be removed from the file at all, if only user data is being
+              transmitted.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+              Beinhaltet allgemeine Angaben zu den Objekten und die einzelnen
+              Objekte.
+
+              Muss nicht vorhanden sein, wenn nur Kundendaten übertragen werden.
+            </xsd:documentation>
+          </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="ANZAHL" type="xsd:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
-              <xsd:element name="OBJEKT" type="ObjectType" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element name="ANZAHL" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Number of objects which follow. Mandatory if the
+                    &lt;OBJEKTE&gt;&lt;/OBJEKTE&gt; Tag is used.
+                  </xsd:documentation>
+                  <xsd:documentation xml:lang="de">
+                    Anzahl der Datensätze die folgen. Dient zur Kontrolle der
+                    Vollständigkeit des Imports. Muss vorhanden sein.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="OBJEKT" type="ObjectType" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    One object. There has to be at least one object in the
+                    file. If you don’t want to transmit object data, please
+                    remove the whole &lt;OBJEKTE&gt;&lt;/OBJEKTE&gt; tag from
+                    the file.
+                  </xsd:documentation>
+                  <xsd:documentation xml:lang="de">
+                    Direkt auf die Anzahl folgen die einzelnen Objekte.
+                    Mindestens ein Objekt muss vorhanden sein.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
@@ -25,52 +117,804 @@
 
   <xsd:complexType name="ObjectType">
     <xsd:sequence>
-      <xsd:element name="ID" type="xsd:string" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="LOESCHEN" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="GUELTIGBIS" type="dateTimeType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="IMMOBILIENART" type="propertyType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="ORT" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="FRAKTION" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="MIETEKAUF" type="marketingType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="PREIS" type="decimalType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="AUFANFRAGE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="NUTZFLAECHE" type="decimalType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="FLAECHEART" type="areaType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="FOERDERBAR" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="KONVENTIONIERT" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="KUBATUR" type="decimalType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="ZUSTAND" type="conditionType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="ZIMMER" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="STOCKWERKE" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="STOCKWERK" type="xsd:nonNegativeInteger" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="AUFZUG" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="GARAGE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="ABSTELLPLATZ" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="GRUENFLAECHE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="KELLER" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="TERRASSE" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="LOGGIA" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BALKON" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="DACHBODEN" type="yesNoType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="HEIZUNG" type="heatingType" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="KLIMAHAUS" type="energyStandard" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="UEBERGABEZEITPUNKT" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BAUJAHR" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="INFODE" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="INFOIT" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD3" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD4" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD5" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD6" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD7" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD8" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD9" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="BILD10" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="DOWNLOAD1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="DOWNLOAD2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
-      <xsd:element name="DOWNLOAD3" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ID" type="xsd:string" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Unique reference ID for this object in the customers software. An
+            object with the same ID will be updated (if it is already on WIS).
+            If there’s no object with this ID the object will be inserted.
+
+            Valid data format: Character Data.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Eindeutige Kennung des Objekts im System des Kunden. Falls bereits
+            ein Objekt des Kunden mit dieser Kennung existiert wird dieses
+            abgeändert, ansonsten neu angelegt. Dieses Feld kann nicht leer
+            sein.
+
+            Gültige Werte: Character Data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LOESCHEN" type="yesNoType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Shall the object be deleted? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Zeigt an ob das übertragene Objekt aus dem System gelöscht werden
+            soll.
+
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GUELTIGBIS" type="dateTimeType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Object valid until. Date can be a maximum of 6 months in the future.
+            If no date is set, valid until will not be touched.
+
+            Valid data format: YYYY-MM-DD HH:MM:SS
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Zeigt an bis zu welchem Datum das Objekt gültig sein soll. Maximal 6
+            Monate in der Zukunft. Falls leer wird das Ablaufdatum nicht
+            verändert.
+
+            Gültige Werte: Datums-/Zeitangaben der Form YYYY-MM-DD HH:MM:SS
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="IMMOBILIENART" type="propertyType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Type of object. Please always use german values.
+
+            Valid data format: bauernhof (farm) / baugrund (building area) /
+            buero (office) / einfamilienhaus (detatched house) /
+            garage (garage) / gastgewerbeobjekt (pub/retaurant/hotel) /
+            geschaeft (shop) / gewerbehalle (commercial space) /
+            kulturgrund (acreage) / reihenhaus (townhouse) / wald (wood) /
+            wohnung (flat)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Zeigt an, unter welcher Kategorie das Objekt eingeordnet wird.
+            Kategorien können in weitere Folge hinzukommen. Die Dokumentation
+            zum Download befindet sich immer am neuesten Stand.
+
+            Gültige Werte: bauernhof / baugrund / buero / einfamilienhaus /
+            garage / gastgewerbeobjekt / geschaeft / gewerbehalle /
+            kulturgrund / reihenhaus / wald / wohnung
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ORT" type="xsd:string" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            City/town/village. A list of al valid names can be found in the
+            attached .csv file. If you need additional values please contact
+            christoph.dolar@vitd.at.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Möglich sind alle Orte wie in der beiliegenden gemeinden.csv
+            genannt. Falls Sie keine gemeinden.csv mit dieser
+            Schnittstellendefinition erhalten haben, wenden sie sich bitte an
+            Christoph Dolar (christoph.dolar@vitd.at).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FRAKTION" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            City district.
+
+            Valid data format: Character Data.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: Character Data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MIETEKAUF" type="marketingType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Valid data format: miete (for rent) / kauf (to buy)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: miete / kauf
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PREIS" type="decimalType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Monthly rent or buying price.
+
+            Valid data format: positive decimals with max. 10.2 Please use the
+            dot as comm separator (english number format).
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Monatliche Miete oder Kaufpreis des Objekts.
+
+            Gültige Werte: Positive Dezimalzahlen mit max. 2 Nachkommastellen.
+            Punkt als Kommatrenner.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AUFANFRAGE" type="yesNoType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Hide price. „On demand“ will be shown if set to „ja“.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Zeigt an, ob der Preis ausgeblendet werden soll
+            („Preis auf Anfrage“) oder nicht.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NUTZFLAECHE" type="decimalType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Area in m2.
+
+            Valid data format: positive decimals with max. 10.2 or 0. Please use
+            the dot as comm separator (english number format).
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Fläche des Objekts in m2.
+
+            Gültige Werte: Positive Dezimalzahlen mit max. 2 Nachkommastellen
+            oder 0. Punkt als Kommatrenner.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FLAECHEART" type="areaType" minOccurs="1" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Type of area.
+
+            Valid data format: netto (net) / brutto (gross) /
+            verkauf (selling area)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Art der angegebenen Fläche.
+
+            Gültige Werte: netto / brutto / verkauf
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STRASSE" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Street address.
+
+            Valid data format: Character Data.
+
+            Address information is used to localize the object via Google Maps
+            web service.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: Character Data.
+
+            Die Orts- und Adress-Informationen werden beim Import dazu verwendet
+            das Objekt per Web-Service des OpenStreetMap-Projekts zu verorten.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HAUSNUMMER" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Street number.
+
+            Valid data format: Character Data.
+
+            Address information is used to localize the object via Google Maps
+            web service.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: Character Data.
+
+            Die Orts- und Adress-Informationen werden beim Import dazu verwendet
+            das Objekt per Web-Service des OpenStreetMap-Projekts zu verorten.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STIEGE" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Stair number.
+
+            Valid data format: Character Data.
+
+            Address information is used to localize the object via Google Maps
+            web service.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: Character Data.
+
+            Die Orts- und Adress-Informationen werden beim Import dazu verwendet
+            das Objekt per Web-Service des OpenStreetMap-Projekts zu verorten.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LAT" type="xsd:double" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Latitude of the object.
+
+            Valid data format: Float
+
+            If latitude and longitude are provided, no localization of the
+            object will be done on import.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Breitengrad, auf dem die Immobilie liegt.
+
+            Gültige Werte: Float
+
+            Wenn Längen- und Breitengrad angegeben sind, findet keine Verortung
+            statt. Sind diese Felder nicht befüllt, wird versucht über die
+            Adressangabe eine Verortung zu bewerkstelligen.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LNG" type="xsd:double" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Longitude of the object.
+
+            Valid data format: Float
+
+            If latitude and longitude are provided, no localization of the
+            object will be done on import.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Längengrad, auf dem die Immobilie liegt.
+
+            Gültige Werte: Float
+
+            Wenn Längen- und Breitengrad angegeben sind, findet keine Verortung
+            statt. Sind diese Felder nicht befüllt, wird versucht über die
+            Adressangabe eine Verortung zu bewerkstelligen.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FOERDERBAR" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Property promotion possible?
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KONVENTIONIERT" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            conventioned object?
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ENERGIEEFFIZIENZKLASSE" type="energyEfficencyClass" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Energy efficiency class
+
+            All object types except building area, agricultural area and wood
+            must have an energy efficiency class. If there is no valid data
+            found in this field, „G“ is automatically set.
+
+            Valid data format: A gold / A Gold / A+++ / A++ / A+ / A / B / C /
+            D / E / F / G
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Alle Immobilienarten außer Baugrund, Kulturgrund und Wald müssen auf
+            Wohnen in Südtirol eine Energieeffizienzklasse haben. Sollte hier
+            ein ungültiger oder kein Wert übergeben werden, wird automatisch „G“
+            angenommen.
+
+            Gültige Werte: A gold / A Gold / A+++ / A++ / A+ / A / B / C / D /
+            E / F / G
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KUBATUR" type="decimalType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Surrounded room in m3.
+
+            Valid data format: positive decimals with max. 10.2 or 0. Please use
+            the dot as comm separator (english number format).
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Fläche des Objekts in m3.
+
+            Gültige Werte: Positive Dezimalzahlen mit max. 2 Nachkommastellen
+            oder 0. Punkt als Kommatrenner.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ZUSTAND" type="conditionType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            New or used object? Please use german values.
+
+            Valid data format: neu (new) / gebraucht (used)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: neu / gebraucht
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ZIMMER" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Room number. Please use german values.
+
+            Valid data format: positive integer value
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Anzahl der Zimmer
+
+            Gültige Werte: Positiver Integer-Wert
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STOCKWERKE" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Number of floors.
+
+            Valid data format: positive integer value
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Anzahl der Stockwerke, die die Immobilie umfasst.
+
+            Gültige Werte: Positiver Integer-Wert
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="STOCKWERK" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Floor number where the object is located, or the number of the first
+            floor the object is located (if the object has more floors, e.g. a
+            two floor flat).
+
+            1 = ground floor
+            2 = first floor (international counting)
+            ...
+
+            Valid data format: positive integer value
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Stockwerk, in dem die Immobilie liegt, bzw. bei mehrstöckigen
+            Immobilien (zum Beispiel zweistöckigen Wohnungen) das Stockwerk in
+            dem die Immobilie (Wohnung) beginnt.
+
+            1 = Erdgeschoß
+            2 = erstes Obergeschoß
+            ...
+
+            Gültige Werte: Positiver Integer-Wert
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="AUFZUG" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Is there an elevator? Please use german values.
+
+            Valid data format: ja (yes) / nein (no)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GARAGE" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does the object have a garage? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ABSTELLPLATZ" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does the object have a parking spot?
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="GRUENFLAECHE" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does he object have a garden? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KELLER" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does the object have a cellar? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TERRASSE" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does the object have a terrace? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="LOGGIA" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does the boject have a loggia? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BALKON" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does the object have a balcony? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DACHBODEN" type="yesNoType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Does the object have an attic? Please use german values.
+
+            Valid data format: ja (yes) / nein (nein)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: ja / nein
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HEIZUNG" type="heatingType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Is heating autonomous or central heating? Please use german values.
+
+            Valid data format: zentral (central heating) /
+            autonom (autonomous heating)
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Art der verbauten Heizung
+
+            Gültige Werte: zentral / autonom
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="KLIMAHAUS" type="energyStandard" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Clima house classification
+
+            Valid data format: A / B
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Einstufung als Klimahaus der Klasse...
+
+            Gültige Werte: A / B
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UEBERGABEZEITPUNKT" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            When can the object be handed over?
+
+            Valid data format: Character Data.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Voraussichtlicher Übergabezeitpunkt der Immobilie
+
+            Gültige Werte: Character Data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BAUJAHR" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            When was / will be the start of construction?
+
+            Valid data format: Character Data.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Gültige Werte: Character Data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="INFODE" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Informational text, German.
+
+            Valid data format: Character Data.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Allgemeiner Beschreibungstext des Objekts, deutsch.
+
+            Gültige Werte: Character Data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="INFOIT" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Informational text, Italian.
+
+            Valid data format: Character Data.
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Allgemeiner Beschreibungstext des Objekts, italienisch.
+
+            Gültige Werte: Character Data.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD1" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD2" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD3" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD4" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD5" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD6" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD7" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD8" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD9" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BILD10" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Images 1-10. A maximum of 99 images can be delivered per object.
+            Image files must be located at the same FTP folder as WIS_IMPORT.XML
+
+            Valid formats: .jpg / .png
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Bilder 1-10. Es sind max. 99 Bilder pro Objekt möglich. Die Dateien
+            müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .jpg / .png
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DOWNLOAD1" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Download 1-3. A maximum of 3 downloads can be delivered per object.
+            Download files must be located at the same FTP folder as
+            WIS_IMPORT.XML
+
+            Valid formats: .pdf / .doc / .docx
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Download 1-3. Es sind max. 3 Downloads pro Objekt möglich. Die
+            Dateien müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .pdf / .doc / .docx
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DOWNLOAD2" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Download 1-3. A maximum of 3 downloads can be delivered per object.
+            Download files must be located at the same FTP folder as
+            WIS_IMPORT.XML
+
+            Valid formats: .pdf / .doc / .docx
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Download 1-3. Es sind max. 3 Downloads pro Objekt möglich. Die
+            Dateien müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .pdf / .doc / .docx
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DOWNLOAD3" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Download 1-3. A maximum of 3 downloads can be delivered per object.
+            Download files must be located at the same FTP folder as
+            WIS_IMPORT.XML
+
+            Valid formats: .pdf / .doc / .docx
+          </xsd:documentation>
+          <xsd:documentation xml:lang="de">
+            Download 1-3. Es sind max. 3 Downloads pro Objekt möglich. Die
+            Dateien müssen im selben Verzeichnis wie die WIS_IMPORT.XML liegen.
+
+            Erlaubte Formate: .pdf / .doc / .docx
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
 
@@ -97,8 +941,26 @@
 
   <xsd:simpleType name="decimalType">
     <xsd:restriction base="xsd:decimal">
+      <xsd:totalDigits value="10"/>
       <xsd:fractionDigits value="2"/>
       <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="energyEfficencyClass">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="A gold"/>
+      <xsd:enumeration value="A Gold"/>
+      <xsd:enumeration value="A+++"/>
+      <xsd:enumeration value="A++"/>
+      <xsd:enumeration value="A+"/>
+      <xsd:enumeration value="A"/>
+      <xsd:enumeration value="B"/>
+      <xsd:enumeration value="C"/>
+      <xsd:enumeration value="D"/>
+      <xsd:enumeration value="E"/>
+      <xsd:enumeration value="F"/>
+      <xsd:enumeration value="G"/>
     </xsd:restriction>
   </xsd:simpleType>
 

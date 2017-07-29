@@ -19,6 +19,8 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.openestate.io.core.XmlConverter;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroVersion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Converter for version 2.1.
@@ -28,7 +30,7 @@ import org.openestate.io.kyero.KyeroVersion;
  */
 public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( Kyero_2_1.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( Kyero_2_1.class );
 
   @Override
   public KyeroVersion getVersion()

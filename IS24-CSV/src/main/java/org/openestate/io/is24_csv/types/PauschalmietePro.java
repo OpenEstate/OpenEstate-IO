@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * PauschalmietePro.
@@ -29,6 +31,7 @@ public enum PauschalmietePro
   WOCHE( "W" ),
   MONAT( "M" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( PauschalmietePro.class );
   private final String value;
 
   private PauschalmietePro( String value )

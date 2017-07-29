@@ -23,10 +23,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.casa_it.CasaItDocument;
 import org.openestate.io.casa_it.CasaItUtils;
@@ -34,6 +32,7 @@ import org.openestate.io.casa_it.xml.Container;
 import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate;
 import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate.Images.Advertismentimage;
 import org.openestate.io.casa_it.xml.ObjectFactory;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -132,7 +131,7 @@ public class CasaItWritingExample
     obj.setHousetypology( BigInteger.ONE );
     obj.setOccupationstate( BigInteger.ONE );
     obj.setRealestatetype( BigInteger.ONE );
-    obj.setReference( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setReference( RandomStringUtils.random( 5 ) );
     obj.setReferenceID( RandomUtils.nextInt( 1, 1000 ) );
     obj.setRooms( BigInteger.valueOf( RandomUtils.nextLong( 1, 10 ) ) );
     obj.setSize( BigInteger.valueOf( RandomUtils.nextLong( 50, 5000 ) ));
@@ -290,7 +289,7 @@ public class CasaItWritingExample
     {
       String xml = doc.toXmlString( PRETTY_PRINT );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + xml );
+        + System.lineSeparator() + xml );
     }
     catch (Exception ex)
     {

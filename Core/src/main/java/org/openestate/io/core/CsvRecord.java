@@ -25,7 +25,8 @@ import java.util.Map;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A general CSV record, that is read by a {@link CsvParser} and written by a
@@ -36,6 +37,7 @@ import org.apache.commons.lang3.SystemUtils;
  */
 public abstract class CsvRecord
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( CsvRecord.class );
   private final Map<Integer,String> values;
 
   /**
@@ -43,7 +45,7 @@ public abstract class CsvRecord
    */
   protected CsvRecord()
   {
-    this.values = new HashMap<Integer, String>();
+    this.values = new HashMap<>();
   }
 
   /**
@@ -92,7 +94,7 @@ public abstract class CsvRecord
         IOUtils.closeQuietly( reader );
       }
       writer.write( i + ":" + txt.toString() );
-      writer.write( SystemUtils.LINE_SEPARATOR );
+      writer.write( System.lineSeparator() );
     }
   }
 
@@ -175,7 +177,7 @@ public abstract class CsvRecord
   protected Iterable<String> print()
   {
     final int length = this.getRecordLenth();
-    List<String> row = new ArrayList<String>();
+    List<String> row = new ArrayList<>();
     for (int i=0; i<length; i++)
     {
       row.add( this.get( i ) );

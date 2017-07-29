@@ -23,6 +23,8 @@ import java.io.Writer;
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
@@ -38,7 +40,7 @@ import org.w3c.dom.Document;
  */
 public abstract class XmlDocument<JavaType>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( XmlDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( XmlDocument.class );
   private final Document document;
   private boolean textWrittenAsCDATA = false;
 

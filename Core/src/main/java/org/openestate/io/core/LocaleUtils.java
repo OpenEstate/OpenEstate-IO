@@ -18,6 +18,8 @@ package org.openestate.io.core;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Some helper functions for localizations.
@@ -30,6 +32,8 @@ import org.apache.commons.lang3.StringUtils;
   justification = "This behaviour is intended.")
 public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( LocaleUtils.class );
+
   private LocaleUtils()
   {
   }

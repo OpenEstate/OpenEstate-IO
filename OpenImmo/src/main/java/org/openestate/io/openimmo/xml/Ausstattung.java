@@ -130,10 +130,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
     protected Boolean hebebuehne;
     protected Boolean kran;
     protected Boolean gastterrasse;
-    @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "decimal")
-    protected BigDecimal stromanschlusswert;
+    protected String stromanschlusswert;
     @XmlElement(name = "kantine_cafeteria")
     protected Boolean kantineCafeteria;
     protected Boolean teekueche;
@@ -859,7 +856,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
-    public BigDecimal getStromanschlusswert() {
+    public String getStromanschlusswert() {
         return stromanschlusswert;
     }
 
@@ -871,7 +868,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
-    public void setStromanschlusswert(BigDecimal value) {
+    public void setStromanschlusswert(String value) {
         this.stromanschlusswert = value;
     }
 
@@ -1723,7 +1720,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
             strategy.appendField(locator, this, "gastterrasse", buffer, theGastterrasse, (this.gastterrasse!= null));
         }
         {
-            BigDecimal theStromanschlusswert;
+            String theStromanschlusswert;
             theStromanschlusswert = this.getStromanschlusswert();
             strategy.appendField(locator, this, "stromanschlusswert", buffer, theStromanschlusswert, (this.stromanschlusswert!= null));
         }
@@ -2255,9 +2252,9 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
             {
                 Boolean stromanschlusswertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.stromanschlusswert!= null));
                 if (stromanschlusswertShouldBeCopiedAndSet == Boolean.TRUE) {
-                    BigDecimal sourceStromanschlusswert;
+                    String sourceStromanschlusswert;
                     sourceStromanschlusswert = this.getStromanschlusswert();
-                    BigDecimal copyStromanschlusswert = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "stromanschlusswert", sourceStromanschlusswert), sourceStromanschlusswert, (this.stromanschlusswert!= null)));
+                    String copyStromanschlusswert = ((String) strategy.copy(LocatorUtils.property(locator, "stromanschlusswert", sourceStromanschlusswert), sourceStromanschlusswert, (this.stromanschlusswert!= null)));
                     copy.setStromanschlusswert(copyStromanschlusswert);
                 } else {
                     if (stromanschlusswertShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -2918,9 +2915,9 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
             }
         }
         {
-            BigDecimal lhsStromanschlusswert;
+            String lhsStromanschlusswert;
             lhsStromanschlusswert = this.getStromanschlusswert();
-            BigDecimal rhsStromanschlusswert;
+            String rhsStromanschlusswert;
             rhsStromanschlusswert = that.getStromanschlusswert();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "stromanschlusswert", lhsStromanschlusswert), LocatorUtils.property(thatLocator, "stromanschlusswert", rhsStromanschlusswert), lhsStromanschlusswert, rhsStromanschlusswert, (this.stromanschlusswert!= null), (that.stromanschlusswert!= null))) {
                 return false;

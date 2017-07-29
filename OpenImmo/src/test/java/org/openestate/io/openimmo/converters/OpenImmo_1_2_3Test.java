@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
+ * OpenImmo_1_2_3Test.
  *
  * @author Andreas Rudolph
  */

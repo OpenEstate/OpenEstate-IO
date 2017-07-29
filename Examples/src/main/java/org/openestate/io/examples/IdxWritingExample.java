@@ -27,11 +27,10 @@ import java.util.Locale;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.SystemUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.idx.IdxPrinter;
 import org.openestate.io.idx.IdxRecord;
 import org.openestate.io.idx.types.GrossPremium;
@@ -71,7 +70,7 @@ public class IdxWritingExample
       IdxWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
 
     // create some CSV records
-    List<IdxRecord> records = new ArrayList<IdxRecord>();
+    List<IdxRecord> records = new ArrayList<>();
     records.add( createRecord() );
     records.add( createRecord() );
     records.add( createRecord() );
@@ -109,16 +108,16 @@ public class IdxWritingExample
   {
     // create an example real estate
     IdxRecord obj = new IdxRecord();
-    obj.setAdvertisementId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setAdvertisementId( RandomStringUtils.random( 5 ) );
     obj.setAgencyCity( "Berlin" );
     obj.setAgencyCountry( Locale.GERMANY.getCountry() );
     obj.setAgencyEmail( "tester@test.org" );
     obj.setAgencyFax( "030/123456" );
-    obj.setAgencyId( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setAgencyId( RandomStringUtils.random( 5 ) );
     obj.setAgencyName( "agency name" );
     obj.setAgencyName2( "additional agency name" );
     obj.setAgencyPhone( "030/123457" );
-    obj.setAgencyReference( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setAgencyReference( RandomStringUtils.random( 5 ) );
     obj.setAgencyStreet( "example street 123" );
     obj.setAgencyZip( "12345" );
     obj.setAnimalAllowed( RandomUtils.nextInt( 0, 2 )==1 );
@@ -173,7 +172,7 @@ public class IdxWritingExample
     obj.setNumberOfRooms( RandomUtils.nextDouble( 1, 10 ) );
     obj.setObjectCity( "Berlin" );
     obj.setObjectCountry( Locale.GERMANY.getCountry() );
-    obj.setObjectDescription( "some description" + SystemUtils.LINE_SEPARATOR + " about the object" );
+    obj.setObjectDescription( "some description" + System.lineSeparator() + " about the object" );
     obj.setObjectSituation( "some description about the location" );
     obj.setObjectState( "BE" );
     obj.setObjectStreet( "example street 124" );
@@ -189,9 +188,9 @@ public class IdxWritingExample
     obj.setRailwayTerminal( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setRaisedGroundFloor( RandomUtils.nextInt( 0, 2 )==1 );
     obj.setRamp( RandomUtils.nextInt( 0, 2 )==1 );
-    obj.setRefHouse( RandomStringUtils.randomAlphanumeric( 5 ) );
-    obj.setRefObject( RandomStringUtils.randomAlphanumeric( 5 ) );
-    obj.setRefProperty( RandomStringUtils.randomAlphanumeric( 5 ) );
+    obj.setRefHouse( RandomStringUtils.random( 5 ) );
+    obj.setRefObject( RandomStringUtils.random( 5 ) );
+    obj.setRefProperty( RandomStringUtils.random( 5 ) );
     obj.setRentExtra( RandomUtils.nextLong( 100, 1000 ) );
     obj.setRentNet( RandomUtils.nextLong( 100, 1000 ) );
     obj.setRestrooms( RandomUtils.nextInt( 0, 2 )==1 );
@@ -353,7 +352,7 @@ public class IdxWritingExample
       printer = IdxPrinter.create( csv );
       printer.printRecords( records );
       LOGGER.info( StringUtils.repeat( "-", 50 )
-        + SystemUtils.LINE_SEPARATOR + csv.toString() );
+        + System.lineSeparator() + csv.toString() );
     }
     catch (Exception ex)
     {

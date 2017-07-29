@@ -16,6 +16,8 @@
 package org.openestate.io.filemaker;
 
 import org.openestate.io.core.XmlDocument;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
@@ -26,11 +28,11 @@ import org.w3c.dom.Document;
  * {@link Document} is mapped to
  *
  * @since 1.0
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public abstract class FilemakerDocument<JavaType> extends XmlDocument<JavaType>
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerDocument.class );
 
   /**
    * Create from a {@link Document}.

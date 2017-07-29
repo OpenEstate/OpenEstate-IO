@@ -30,6 +30,8 @@ import java.io.Writer;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A general CSV format specification, that supports reading through
@@ -46,6 +48,7 @@ import org.apache.commons.csv.CSVPrinter;
  */
 public abstract class CsvFormat<Parser extends CsvParser, Printer extends CsvPrinter>
 {
+  private final static Logger LOGGER = LoggerFactory.getLogger( CsvFormat.class );
   private final CSVFormat format;
 
   /**

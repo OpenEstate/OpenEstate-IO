@@ -15,8 +15,6 @@
  */
 package org.openestate.io.trovit;
 
-import org.openestate.io.trovit.xml.types.IntBool;
-import org.openestate.io.trovit.xml.types.Unit;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,9 +38,13 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.openestate.io.core.NumberUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
-import org.openestate.io.trovit.xml.types.Action;
-import org.openestate.io.trovit.xml.types.PriceInterval;
 import org.openestate.io.trovit.xml.ObjectFactory;
+import org.openestate.io.trovit.xml.types.Action;
+import org.openestate.io.trovit.xml.types.IntBool;
+import org.openestate.io.trovit.xml.types.PriceInterval;
+import org.openestate.io.trovit.xml.types.Unit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -54,7 +56,7 @@ import org.xml.sax.SAXException;
  */
 public class TrovitUtils
 {
-  //private final static Logger LOGGER = LoggerFactory.getLogger( TrovitUtils.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( TrovitUtils.class );
   private static JAXBContext JAXB = null;
 
   /**

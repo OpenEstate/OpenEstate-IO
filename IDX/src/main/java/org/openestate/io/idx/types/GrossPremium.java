@@ -16,6 +16,8 @@
 package org.openestate.io.idx.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * GrossPremium.
@@ -33,6 +35,7 @@ public enum GrossPremium
   FROM_7_UNTIL_8( "7-8" ),
   FROM_8( "8+" );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( GrossPremium.class );
   private final String value;
 
   private GrossPremium( String value )

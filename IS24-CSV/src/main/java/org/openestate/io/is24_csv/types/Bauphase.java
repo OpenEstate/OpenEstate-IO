@@ -16,6 +16,8 @@
 package org.openestate.io.is24_csv.types;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Bauphase.
@@ -30,6 +32,7 @@ public enum Bauphase
   IM_BAU( 3 ),
   FERTIG_GESTELLT( 4 );
 
+  private final static Logger LOGGER = LoggerFactory.getLogger( Bauphase.class );
   private final int value;
 
   private Bauphase( int value )

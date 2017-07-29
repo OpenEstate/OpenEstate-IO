@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  * {@link FMPXMLRESULT}.
  *
  * @since 1.0
- * @author Andreas Rudolph<andy@openindex.de>
+ * @author Andreas Rudolph
  */
 public class FilemakerResultMapping
 {
@@ -51,10 +51,10 @@ public class FilemakerResultMapping
     {
       throw new IllegalArgumentException( "No metadata is present in the xml result!" );
     }
-    this.fields = new ArrayList<MetaDataType.FIELD>();
+    this.fields = new ArrayList<>();
     this.fields.addAll( result.getMETADATA().getFIELD() );
 
-    this.rows = new ArrayList<Row>();
+    this.rows = new ArrayList<>();
     if (result.getRESULTSET()!=null)
     {
       for (ResultSetType.ROW row : result.getRESULTSET().getROW())
@@ -97,7 +97,7 @@ public class FilemakerResultMapping
    */
   public String[] getFieldNames()
   {
-    List<String> names = new ArrayList<String>();
+    List<String> names = new ArrayList<>();
     for (MetaDataType.FIELD field : this.fields)
     {
       names.add( field.getNAME() );
@@ -213,7 +213,7 @@ public class FilemakerResultMapping
     {
       this.recordId = (recordId!=null)? recordId.longValue(): 0;
       this.modId = (modId!=null)? modId.longValue(): 0;
-      this.columns = new HashMap<String,Column>();
+      this.columns = new HashMap<>();
 
       int i = 0;
       for (ResultSetType.ROW.COL col : row.getCOL())

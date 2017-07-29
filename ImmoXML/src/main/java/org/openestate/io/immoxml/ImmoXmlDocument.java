@@ -35,7 +35,7 @@ import org.w3c.dom.Element;
  */
 public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVersion>
 {
-  private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlDocument.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlDocument.class );
 
   /**
    * Create from a {@link Document}.

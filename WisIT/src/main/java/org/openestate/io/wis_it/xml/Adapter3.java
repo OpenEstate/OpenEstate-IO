@@ -1,20 +1,20 @@
 
 package org.openestate.io.wis_it.xml;
 
-import java.math.BigDecimal;
+import java.util.Calendar;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter3
-    extends XmlAdapter<String, BigDecimal>
+    extends XmlAdapter<String, Calendar>
 {
 
 
-    public BigDecimal unmarshal(String value) {
-        return (org.openestate.io.wis_it.WisItUtils.parseDecimal(value));
+    public Calendar unmarshal(String value) {
+        return (org.openestate.io.wis_it.WisItUtils.parseDateTime(value));
     }
 
-    public String marshal(BigDecimal value) {
-        return (org.openestate.io.wis_it.WisItUtils.printDecimal(value));
+    public String marshal(Calendar value) {
+        return (org.openestate.io.wis_it.WisItUtils.printDateTime(value));
     }
 
 }
