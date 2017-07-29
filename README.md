@@ -34,7 +34,7 @@ Supported Formats
 |                                  |                                                                  |      | 1.2       |
 |                                  |                                                                  |      | 1.1       |
 | [`Trovit`](Trovit)               | [*Trovit.com*](http://trovit.com) Homes Feed                     | XML  | ?         |
-| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](http://wohnen-in-suedtirol.it) format | XML  | ?         |
+| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](http://wohnen-in-suedtirol.it) format | XML  | 2.2       |
 
 Open a module subfolder to get more informations about the specific format.
 

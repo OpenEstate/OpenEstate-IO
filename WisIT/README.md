@@ -2,7 +2,8 @@ OpenEstate-IO-WisIT 1.3
 =======================
 
 *OpenEstate-IO-WisIT* is a Java library to read and write real estate data in
-the XML format of [*wohnen-in-suedtirol.it*](http://wohnen-in-suedtirol.it).
+the XML format of [*wohnen-in-suedtirol.it*](http://wohnen-in-suedtirol.it)
+(version 2.2, specified at October 2015).
 
 
 Features
@@ -52,10 +53,9 @@ The specifications for this format are placed in the [`specs`](specs) folder.
 ### Modifications to the original specification
 
 [*Wohnen-in-Suedtirol.it*](http://wohnen-in-suedtirol.it) only provided a
-[DTD specification](specs/wis.dtd). We've converted this spefification into an
-[inofficial XSD](specs/inofficial.xsd) file, that is compatible with the
-official DTD file. The inofficial XSD file was used for generation of Java
-classes via JAXB.
+written documentation for the XML format. Based on this documentation we've
+created an [inofficial XSD](specs/inofficial.xsd) file. The inofficial XSD file
+was used for generation of Java classes via JAXB.
 
 
 Dependencies

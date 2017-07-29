@@ -35,23 +35,29 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="LOESCHEN" type="{}yesNoType" minOccurs="0"/&gt;
- *         &lt;element name="GUELTIGBIS" type="{}dateTimeType" minOccurs="0"/&gt;
- *         &lt;element name="IMMOBILIENART" type="{}propertyType" minOccurs="0"/&gt;
- *         &lt;element name="ORT" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="LOESCHEN" type="{}yesNoType"/&gt;
+ *         &lt;element name="GUELTIGBIS" type="{}dateTimeType"/&gt;
+ *         &lt;element name="IMMOBILIENART" type="{}propertyType"/&gt;
+ *         &lt;element name="ORT" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="FRAKTION" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="MIETEKAUF" type="{}marketingType" minOccurs="0"/&gt;
- *         &lt;element name="PREIS" type="{}decimalType" minOccurs="0"/&gt;
- *         &lt;element name="AUFANFRAGE" type="{}yesNoType" minOccurs="0"/&gt;
- *         &lt;element name="NUTZFLAECHE" type="{}decimalType" minOccurs="0"/&gt;
- *         &lt;element name="FLAECHEART" type="{}areaType" minOccurs="0"/&gt;
+ *         &lt;element name="MIETEKAUF" type="{}marketingType"/&gt;
+ *         &lt;element name="PREIS" type="{}decimalType"/&gt;
+ *         &lt;element name="AUFANFRAGE" type="{}yesNoType"/&gt;
+ *         &lt;element name="NUTZFLAECHE" type="{}decimalType"/&gt;
+ *         &lt;element name="FLAECHEART" type="{}areaType"/&gt;
+ *         &lt;element name="STRASSE" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="HAUSNUMMER" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="STIEGE" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="LAT" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
+ *         &lt;element name="LNG" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="FOERDERBAR" type="{}yesNoType" minOccurs="0"/&gt;
  *         &lt;element name="KONVENTIONIERT" type="{}yesNoType" minOccurs="0"/&gt;
+ *         &lt;element name="ENERGIEEFFIZIENZKLASSE" type="{}energyEfficencyClass" minOccurs="0"/&gt;
  *         &lt;element name="KUBATUR" type="{}decimalType" minOccurs="0"/&gt;
  *         &lt;element name="ZUSTAND" type="{}conditionType" minOccurs="0"/&gt;
- *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
- *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
- *         &lt;element name="STOCKWERK" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
+ *         &lt;element name="ZIMMER" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="STOCKWERKE" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/&gt;
+ *         &lt;element name="STOCKWERK" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/&gt;
  *         &lt;element name="AUFZUG" type="{}yesNoType" minOccurs="0"/&gt;
  *         &lt;element name="GARAGE" type="{}yesNoType" minOccurs="0"/&gt;
  *         &lt;element name="ABSTELLPLATZ" type="{}yesNoType" minOccurs="0"/&gt;
@@ -101,8 +107,14 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "aufanfrage",
     "nutzflaeche",
     "flaecheart",
+    "strasse",
+    "hausnummer",
+    "stiege",
+    "lat",
+    "lng",
     "foerderbar",
     "konventioniert",
+    "energieeffizienzklasse",
     "kubatur",
     "zustand",
     "zimmer",
@@ -142,87 +154,104 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
 
     @XmlElement(name = "ID", required = true)
     protected String id;
-    @XmlElement(name = "LOESCHEN", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlElement(name = "LOESCHEN", required = true, type = String.class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean loeschen;
-    @XmlElement(name = "GUELTIGBIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlElement(name = "GUELTIGBIS", required = true, type = String.class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
     protected Calendar gueltigbis;
-    @XmlElement(name = "IMMOBILIENART")
+    @XmlElement(name = "IMMOBILIENART", required = true)
     @XmlSchemaType(name = "string")
     protected PropertyType immobilienart;
-    @XmlElement(name = "ORT")
+    @XmlElement(name = "ORT", required = true)
     protected String ort;
     @XmlElement(name = "FRAKTION")
     protected String fraktion;
-    @XmlElement(name = "MIETEKAUF")
+    @XmlElement(name = "MIETEKAUF", required = true)
     @XmlSchemaType(name = "string")
     protected MarketingType mietekauf;
-    @XmlElement(name = "PREIS", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlElement(name = "PREIS", required = true, type = String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "decimal")
     protected BigDecimal preis;
-    @XmlElement(name = "AUFANFRAGE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlElement(name = "AUFANFRAGE", required = true, type = String.class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean aufanfrage;
-    @XmlElement(name = "NUTZFLAECHE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlElement(name = "NUTZFLAECHE", required = true, type = String.class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "decimal")
     protected BigDecimal nutzflaeche;
-    @XmlElement(name = "FLAECHEART")
+    @XmlElement(name = "FLAECHEART", required = true)
     @XmlSchemaType(name = "string")
     protected AreaType flaecheart;
+    @XmlElement(name = "STRASSE")
+    protected String strasse;
+    @XmlElement(name = "HAUSNUMMER")
+    protected String hausnummer;
+    @XmlElement(name = "STIEGE")
+    protected String stiege;
+    @XmlElement(name = "LAT", type = String.class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlSchemaType(name = "double")
+    protected BigDecimal lat;
+    @XmlElement(name = "LNG", type = String.class)
+    @XmlJavaTypeAdapter(Adapter1 .class)
+    @XmlSchemaType(name = "double")
+    protected BigDecimal lng;
     @XmlElement(name = "FOERDERBAR", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean foerderbar;
     @XmlElement(name = "KONVENTIONIERT", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean konventioniert;
+    @XmlElement(name = "ENERGIEEFFIZIENZKLASSE")
+    @XmlSchemaType(name = "string")
+    protected EnergyEfficencyClass energieeffizienzklasse;
     @XmlElement(name = "KUBATUR", type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
+    @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "decimal")
     protected BigDecimal kubatur;
     @XmlElement(name = "ZUSTAND")
     @XmlSchemaType(name = "string")
     protected ConditionType zustand;
     @XmlElement(name = "ZIMMER", type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
-    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "positiveInteger")
     protected BigInteger zimmer;
     @XmlElement(name = "STOCKWERKE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
-    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "positiveInteger")
     protected BigInteger stockwerke;
     @XmlElement(name = "STOCKWERK", type = String.class)
-    @XmlJavaTypeAdapter(Adapter1 .class)
-    @XmlSchemaType(name = "nonNegativeInteger")
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "positiveInteger")
     protected BigInteger stockwerk;
     @XmlElement(name = "AUFZUG", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean aufzug;
     @XmlElement(name = "GARAGE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean garage;
     @XmlElement(name = "ABSTELLPLATZ", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean abstellplatz;
     @XmlElement(name = "GRUENFLAECHE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean gruenflaeche;
     @XmlElement(name = "KELLER", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean keller;
     @XmlElement(name = "TERRASSE", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean terrasse;
     @XmlElement(name = "LOGGIA", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean loggia;
     @XmlElement(name = "BALKON", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean balkon;
     @XmlElement(name = "DACHBODEN", type = String.class)
-    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlJavaTypeAdapter(Adapter5 .class)
     protected Boolean dachboden;
     @XmlElement(name = "HEIZUNG")
     @XmlSchemaType(name = "string")
@@ -530,6 +559,126 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
     }
 
     /**
+     * Gets the value of the strasse property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSTRASSE() {
+        return strasse;
+    }
+
+    /**
+     * Sets the value of the strasse property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSTRASSE(String value) {
+        this.strasse = value;
+    }
+
+    /**
+     * Gets the value of the hausnummer property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getHAUSNUMMER() {
+        return hausnummer;
+    }
+
+    /**
+     * Sets the value of the hausnummer property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setHAUSNUMMER(String value) {
+        this.hausnummer = value;
+    }
+
+    /**
+     * Gets the value of the stiege property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSTIEGE() {
+        return stiege;
+    }
+
+    /**
+     * Sets the value of the stiege property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSTIEGE(String value) {
+        this.stiege = value;
+    }
+
+    /**
+     * Gets the value of the lat property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public BigDecimal getLAT() {
+        return lat;
+    }
+
+    /**
+     * Sets the value of the lat property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLAT(BigDecimal value) {
+        this.lat = value;
+    }
+
+    /**
+     * Gets the value of the lng property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public BigDecimal getLNG() {
+        return lng;
+    }
+
+    /**
+     * Sets the value of the lng property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLNG(BigDecimal value) {
+        this.lng = value;
+    }
+
+    /**
      * Gets the value of the foerderbar property.
      * 
      * @return
@@ -575,6 +724,30 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
      */
     public void setKONVENTIONIERT(Boolean value) {
         this.konventioniert = value;
+    }
+
+    /**
+     * Gets the value of the energieeffizienzklasse property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EnergyEfficencyClass }
+     *     
+     */
+    public EnergyEfficencyClass getENERGIEEFFIZIENZKLASSE() {
+        return energieeffizienzklasse;
+    }
+
+    /**
+     * Sets the value of the energieeffizienzklasse property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EnergyEfficencyClass }
+     *     
+     */
+    public void setENERGIEEFFIZIENZKLASSE(EnergyEfficencyClass value) {
+        this.energieeffizienzklasse = value;
     }
 
     /**
@@ -1440,6 +1613,31 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
             strategy.appendField(locator, this, "flaecheart", buffer, theFLAECHEART, (this.flaecheart!= null));
         }
         {
+            String theSTRASSE;
+            theSTRASSE = this.getSTRASSE();
+            strategy.appendField(locator, this, "strasse", buffer, theSTRASSE, (this.strasse!= null));
+        }
+        {
+            String theHAUSNUMMER;
+            theHAUSNUMMER = this.getHAUSNUMMER();
+            strategy.appendField(locator, this, "hausnummer", buffer, theHAUSNUMMER, (this.hausnummer!= null));
+        }
+        {
+            String theSTIEGE;
+            theSTIEGE = this.getSTIEGE();
+            strategy.appendField(locator, this, "stiege", buffer, theSTIEGE, (this.stiege!= null));
+        }
+        {
+            BigDecimal theLAT;
+            theLAT = this.getLAT();
+            strategy.appendField(locator, this, "lat", buffer, theLAT, (this.lat!= null));
+        }
+        {
+            BigDecimal theLNG;
+            theLNG = this.getLNG();
+            strategy.appendField(locator, this, "lng", buffer, theLNG, (this.lng!= null));
+        }
+        {
             Boolean theFOERDERBAR;
             theFOERDERBAR = this.isFOERDERBAR();
             strategy.appendField(locator, this, "foerderbar", buffer, theFOERDERBAR, (this.foerderbar!= null));
@@ -1448,6 +1646,11 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
             Boolean theKONVENTIONIERT;
             theKONVENTIONIERT = this.isKONVENTIONIERT();
             strategy.appendField(locator, this, "konventioniert", buffer, theKONVENTIONIERT, (this.konventioniert!= null));
+        }
+        {
+            EnergyEfficencyClass theENERGIEEFFIZIENZKLASSE;
+            theENERGIEEFFIZIENZKLASSE = this.getENERGIEEFFIZIENZKLASSE();
+            strategy.appendField(locator, this, "energieeffizienzklasse", buffer, theENERGIEEFFIZIENZKLASSE, (this.energieeffizienzklasse!= null));
         }
         {
             BigDecimal theKUBATUR;
@@ -1774,6 +1977,71 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
                 }
             }
             {
+                Boolean strasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.strasse!= null));
+                if (strasseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSTRASSE;
+                    sourceSTRASSE = this.getSTRASSE();
+                    String copySTRASSE = ((String) strategy.copy(LocatorUtils.property(locator, "strasse", sourceSTRASSE), sourceSTRASSE, (this.strasse!= null)));
+                    copy.setSTRASSE(copySTRASSE);
+                } else {
+                    if (strasseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.strasse = null;
+                    }
+                }
+            }
+            {
+                Boolean hausnummerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hausnummer!= null));
+                if (hausnummerShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceHAUSNUMMER;
+                    sourceHAUSNUMMER = this.getHAUSNUMMER();
+                    String copyHAUSNUMMER = ((String) strategy.copy(LocatorUtils.property(locator, "hausnummer", sourceHAUSNUMMER), sourceHAUSNUMMER, (this.hausnummer!= null)));
+                    copy.setHAUSNUMMER(copyHAUSNUMMER);
+                } else {
+                    if (hausnummerShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.hausnummer = null;
+                    }
+                }
+            }
+            {
+                Boolean stiegeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.stiege!= null));
+                if (stiegeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceSTIEGE;
+                    sourceSTIEGE = this.getSTIEGE();
+                    String copySTIEGE = ((String) strategy.copy(LocatorUtils.property(locator, "stiege", sourceSTIEGE), sourceSTIEGE, (this.stiege!= null)));
+                    copy.setSTIEGE(copySTIEGE);
+                } else {
+                    if (stiegeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.stiege = null;
+                    }
+                }
+            }
+            {
+                Boolean latShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lat!= null));
+                if (latShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceLAT;
+                    sourceLAT = this.getLAT();
+                    BigDecimal copyLAT = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "lat", sourceLAT), sourceLAT, (this.lat!= null)));
+                    copy.setLAT(copyLAT);
+                } else {
+                    if (latShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.lat = null;
+                    }
+                }
+            }
+            {
+                Boolean lngShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.lng!= null));
+                if (lngShouldBeCopiedAndSet == Boolean.TRUE) {
+                    BigDecimal sourceLNG;
+                    sourceLNG = this.getLNG();
+                    BigDecimal copyLNG = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "lng", sourceLNG), sourceLNG, (this.lng!= null)));
+                    copy.setLNG(copyLNG);
+                } else {
+                    if (lngShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.lng = null;
+                    }
+                }
+            }
+            {
                 Boolean foerderbarShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.foerderbar!= null));
                 if (foerderbarShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFOERDERBAR;
@@ -1796,6 +2064,19 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
                 } else {
                     if (konventioniertShouldBeCopiedAndSet == Boolean.FALSE) {
                         copy.konventioniert = null;
+                    }
+                }
+            }
+            {
+                Boolean energieeffizienzklasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.energieeffizienzklasse!= null));
+                if (energieeffizienzklasseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    EnergyEfficencyClass sourceENERGIEEFFIZIENZKLASSE;
+                    sourceENERGIEEFFIZIENZKLASSE = this.getENERGIEEFFIZIENZKLASSE();
+                    EnergyEfficencyClass copyENERGIEEFFIZIENZKLASSE = ((EnergyEfficencyClass) strategy.copy(LocatorUtils.property(locator, "energieeffizienzklasse", sourceENERGIEEFFIZIENZKLASSE), sourceENERGIEEFFIZIENZKLASSE, (this.energieeffizienzklasse!= null)));
+                    copy.setENERGIEEFFIZIENZKLASSE(copyENERGIEEFFIZIENZKLASSE);
+                } else {
+                    if (energieeffizienzklasseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.energieeffizienzklasse = null;
                     }
                 }
             }
@@ -2344,6 +2625,51 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
             }
         }
         {
+            String lhsSTRASSE;
+            lhsSTRASSE = this.getSTRASSE();
+            String rhsSTRASSE;
+            rhsSTRASSE = that.getSTRASSE();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "strasse", lhsSTRASSE), LocatorUtils.property(thatLocator, "strasse", rhsSTRASSE), lhsSTRASSE, rhsSTRASSE, (this.strasse!= null), (that.strasse!= null))) {
+                return false;
+            }
+        }
+        {
+            String lhsHAUSNUMMER;
+            lhsHAUSNUMMER = this.getHAUSNUMMER();
+            String rhsHAUSNUMMER;
+            rhsHAUSNUMMER = that.getHAUSNUMMER();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "hausnummer", lhsHAUSNUMMER), LocatorUtils.property(thatLocator, "hausnummer", rhsHAUSNUMMER), lhsHAUSNUMMER, rhsHAUSNUMMER, (this.hausnummer!= null), (that.hausnummer!= null))) {
+                return false;
+            }
+        }
+        {
+            String lhsSTIEGE;
+            lhsSTIEGE = this.getSTIEGE();
+            String rhsSTIEGE;
+            rhsSTIEGE = that.getSTIEGE();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "stiege", lhsSTIEGE), LocatorUtils.property(thatLocator, "stiege", rhsSTIEGE), lhsSTIEGE, rhsSTIEGE, (this.stiege!= null), (that.stiege!= null))) {
+                return false;
+            }
+        }
+        {
+            BigDecimal lhsLAT;
+            lhsLAT = this.getLAT();
+            BigDecimal rhsLAT;
+            rhsLAT = that.getLAT();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "lat", lhsLAT), LocatorUtils.property(thatLocator, "lat", rhsLAT), lhsLAT, rhsLAT, (this.lat!= null), (that.lat!= null))) {
+                return false;
+            }
+        }
+        {
+            BigDecimal lhsLNG;
+            lhsLNG = this.getLNG();
+            BigDecimal rhsLNG;
+            rhsLNG = that.getLNG();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "lng", lhsLNG), LocatorUtils.property(thatLocator, "lng", rhsLNG), lhsLNG, rhsLNG, (this.lng!= null), (that.lng!= null))) {
+                return false;
+            }
+        }
+        {
             Boolean lhsFOERDERBAR;
             lhsFOERDERBAR = this.isFOERDERBAR();
             Boolean rhsFOERDERBAR;
@@ -2358,6 +2684,15 @@ public class ObjectType implements Serializable, Cloneable, CopyTo2, Equals2, To
             Boolean rhsKONVENTIONIERT;
             rhsKONVENTIONIERT = that.isKONVENTIONIERT();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "konventioniert", lhsKONVENTIONIERT), LocatorUtils.property(thatLocator, "konventioniert", rhsKONVENTIONIERT), lhsKONVENTIONIERT, rhsKONVENTIONIERT, (this.konventioniert!= null), (that.konventioniert!= null))) {
+                return false;
+            }
+        }
+        {
+            EnergyEfficencyClass lhsENERGIEEFFIZIENZKLASSE;
+            lhsENERGIEEFFIZIENZKLASSE = this.getENERGIEEFFIZIENZKLASSE();
+            EnergyEfficencyClass rhsENERGIEEFFIZIENZKLASSE;
+            rhsENERGIEEFFIZIENZKLASSE = that.getENERGIEEFFIZIENZKLASSE();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "energieeffizienzklasse", lhsENERGIEEFFIZIENZKLASSE), LocatorUtils.property(thatLocator, "energieeffizienzklasse", rhsENERGIEEFFIZIENZKLASSE), lhsENERGIEEFFIZIENZKLASSE, rhsENERGIEEFFIZIENZKLASSE, (this.energieeffizienzklasse!= null), (that.energieeffizienzklasse!= null))) {
                 return false;
             }
         }
