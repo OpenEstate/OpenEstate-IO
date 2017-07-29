@@ -1,5 +1,5 @@
-OpenEstate-IO-IS24-CSV 1.3-SNAPSHOT
-===================================
+OpenEstate-IO-IS24-CSV 1.3
+==========================
 
 *OpenEstate-IO-IS24-CSV* is a Java library to read and write real estate data in
 the *IS24-CSV* format (version 1.4.0.4), that was used by
@@ -22,9 +22,9 @@ Features
 --------
 
 -   read CSV data according to the specifications of *IS24-CSV* 1.4.0.4
-    (see [`Is24CsvReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/Is24CsvReadingExample.java))
+    (see [`Is24CsvReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/Examples/src/main/java/org/openestate/io/examples/Is24CsvReadingExample.java))
 -   write CSV data according to the specifications of *IS24-CSV* 1.4.0.4
-    (see [`Is24CsvWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/Is24CsvWritingExample.java))
+    (see [`Is24CsvWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/Examples/src/main/java/org/openestate/io/examples/Is24CsvWritingExample.java))
 
 
 How to use
@@ -43,14 +43,14 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.3-SNAPSHOT</version>
+  <version>1.3</version>
 </dependency>
 ```
 
 You can find further informations in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-IS24-CSV).
 Some example classes for this format are available in the
-[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
+[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/v1.3/Examples)
 module.
 
 
@@ -75,7 +75,7 @@ Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 for the full changelog.
 
 
@@ -85,7 +85,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.3/LICENSE.txt)
 for the license text.
 
 
@@ -94,5 +94,5 @@ Further informations
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/master/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
