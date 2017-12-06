@@ -75,10 +75,10 @@
     </xsd:simpleType>
 	<xsd:simpleType name="typeAd">
 		<xsd:annotation>
-			<xsd:documentation>Type of add. For rent or For sale or Venta or Alquiler</xsd:documentation>
+			<xsd:documentation>Type of add. Office for rent or Office for sale or For rent or For sale or Venta or Alquiler</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="((f|F)(o|O)(r|R) (((r|R)(e|E)(n|N)(t|T))|((s|S)(a|A)(l|L)(e|E))))|((v|V)(e|E)(n|N)(t|T)(a|A))|((a|A)(l|L)(q|Q)(u|U)(i|I)(l|L)(e|E)(r|R))"/>
+			<xsd:pattern value="(((o|O)(f|F)(f|F)(i|I)(c|C)(e|E) )?(f|F)(o|O)(r|R) (((r|R)(e|E)(n|N)(t|T))|((s|S)(a|A)(l|L)(e|E))))|((v|V)(e|E)(n|N)(t|T)(a|A))|((a|A)(l|L)(q|Q)(u|U)(i|I)(l|L)(e|E)(r|R))"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="typeDate">
@@ -259,7 +259,7 @@
 	</xsd:element>
 	<xsd:element name="type" type="typeAd">
 		<xsd:annotation>
-			<xsd:documentation>Mandatory: type of the ad ("For rent" or "For sale")</xsd:documentation>
+			<xsd:documentation>Mandatory: type of the ad ("For rent" or "For sale" or "Office for rent" or "Office for sale")</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:element name="content" type="xsd:string">
