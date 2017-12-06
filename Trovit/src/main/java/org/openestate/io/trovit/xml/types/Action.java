@@ -28,7 +28,9 @@ import org.slf4j.LoggerFactory;
 public enum Action
 {
   FOR_RENT( new String[]{ "FOR RENT", "ALQUILER" } ),
-  FOR_SALE( new String[]{ "FOR SALE", "VENTA" } );
+  FOR_SALE( new String[]{ "FOR SALE", "VENTA" } ),
+  OFFICE_FOR_RENT( new String[]{ "OFFICE FOR RENT" } ),
+  OFFICE_FOR_SALE( new String[]{ "OFFICE FOR SALE" } );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( Action.class );
   private final String[] aliases;
