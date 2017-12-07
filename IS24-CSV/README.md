@@ -64,10 +64,10 @@ Dependencies
 ------------
 
 -   Java 7 or newer
--   [commons-codec 1.10](http://commons.apache.org/proper/commons-codec/)
--   [commons-csv 1.4](http://commons.apache.org/proper/commons-csv/)
--   [commons-io 2.5](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.6](http://commons.apache.org/proper/commons-lang/)
+-   [commons-codec 1.11](http://commons.apache.org/proper/commons-codec/)
+-   [commons-csv 1.5](http://commons.apache.org/proper/commons-csv/)
+-   [commons-io 2.6](http://commons.apache.org/proper/commons-io/)
+-   [commons-lang 3.7](http://commons.apache.org/proper/commons-lang/)
 -   [SLF4J 1.7.25](http://www.slf4j.org/)
 
 
