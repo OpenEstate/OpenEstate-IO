@@ -79,19 +79,13 @@ public abstract class CsvRecord
     for (int i=0; i<this.getRecordLenth(); i++)
     {
       StringBuilder txt = new StringBuilder();
-      StringReader reader = null;
-      try
+      try (StringReader reader = new StringReader( StringUtils.trimToEmpty( this.get( i ) ) ))
       {
-        reader  = new StringReader( StringUtils.trimToEmpty( this.get( i ) ) );
         for (String line : IOUtils.readLines( reader ))
         {
           if (txt.length()>0) txt.append( lineSeparator );
           txt.append( line );
         }
-      }
-      finally
-      {
-        IOUtils.closeQuietly( reader );
       }
       writer.write( i + ":" + txt.toString() );
       writer.write( System.lineSeparator() );

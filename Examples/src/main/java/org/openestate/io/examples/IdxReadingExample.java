@@ -18,7 +18,6 @@ package org.openestate.io.examples;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxParser;
 import org.openestate.io.idx.IdxRecord;
@@ -102,18 +101,12 @@ public class IdxReadingExample
       LOGGER.warn( "> The provided file is invalid!" );
       return;
     }
-    IdxParser parser = null;
-    try
+    try (IdxParser parser = IdxParser.create( csvFile ))
     {
-      parser = IdxParser.create( csvFile );
       if (parser==null)
         LOGGER.warn( "> Can't create parser!" );
       else
         printToConsole( parser );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( parser );
     }
   }
 
@@ -130,18 +123,12 @@ public class IdxReadingExample
   protected static void read( InputStream csvInputStream ) throws IOException
   {
     LOGGER.info( "process example file" );
-    IdxParser parser = null;
-    try
+    try (IdxParser parser = IdxParser.create( csvInputStream ))
     {
-      parser = IdxParser.create( csvInputStream );
       if (parser==null)
         LOGGER.warn( "> Can't create parser!" );
       else
         printToConsole( parser );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( parser );
     }
   }
 

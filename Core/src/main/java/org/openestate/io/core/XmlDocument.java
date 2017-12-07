@@ -22,7 +22,6 @@ import java.io.StringWriter;
 import java.io.Writer;
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -272,16 +271,10 @@ public abstract class XmlDocument<JavaType>
    */
   public final String toXmlString( boolean prettyPrint ) throws TransformerException, IOException
   {
-    StringWriter w = null;
-    try
+    try (StringWriter w = new StringWriter())
     {
-      w = new StringWriter();
       this.toXml( w, prettyPrint );
       return w.toString();
-    }
-    finally
-    {
-      IOUtils.closeQuietly( w );
     }
   }
 }

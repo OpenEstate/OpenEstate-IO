@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.csv.CSVPrinter;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,14 +63,6 @@ public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable,
   public void close() throws IOException
   {
     this.printer.close();
-  }
-
-  /**
-   * Closes the printer instance without throwing exceptions.
-   */
-  public final void closeQuietly()
-  {
-    IOUtils.closeQuietly( this );
   }
 
   /**

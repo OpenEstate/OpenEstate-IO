@@ -35,7 +35,6 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.jaxen.JaxenException;
@@ -787,15 +786,9 @@ public final class XmlUtils
    */
   public static void write( Document doc, File file, boolean prettyPrint ) throws TransformerException, IOException
   {
-    OutputStream output = null;
-    try
+    try (OutputStream output = new FileOutputStream( file ))
     {
-      output = new FileOutputStream( file );
       XmlUtils.write( doc, output, prettyPrint );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( output );
     }
   }
 

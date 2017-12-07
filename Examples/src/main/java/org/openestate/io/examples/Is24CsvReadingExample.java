@@ -18,7 +18,6 @@ package org.openestate.io.examples;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_csv.Is24CsvParser;
 import org.openestate.io.is24_csv.Is24CsvRecord;
@@ -103,18 +102,12 @@ public class Is24CsvReadingExample
       LOGGER.warn( "> The provided file is invalid!" );
       return;
     }
-    Is24CsvParser parser = null;
-    try
+    try (Is24CsvParser parser = Is24CsvParser.create( csvFile ))
     {
-      parser = Is24CsvParser.create( csvFile );
       if (parser==null)
         LOGGER.warn( "> Can't create parser!" );
       else
         printToConsole( parser );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( parser );
     }
   }
 
@@ -131,18 +124,12 @@ public class Is24CsvReadingExample
   protected static void read( InputStream csvInputStream ) throws IOException
   {
     LOGGER.info( "process example file" );
-    Is24CsvParser parser = null;
-    try
+    try (Is24CsvParser parser = Is24CsvParser.create( csvInputStream ))
     {
-      parser = Is24CsvParser.create( csvInputStream );
       if (parser==null)
         LOGGER.warn( "> Can't create parser!" );
       else
         printToConsole( parser );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( parser );
     }
   }
 

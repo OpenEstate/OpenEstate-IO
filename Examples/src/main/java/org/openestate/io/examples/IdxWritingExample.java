@@ -24,7 +24,6 @@ import java.util.Calendar;
 import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
@@ -264,10 +263,8 @@ public class IdxWritingExample
   protected static void write( List<IdxRecord> records, File file )
   {
     LOGGER.info( "writing document" );
-    IdxPrinter printer = null;
-    try
+    try (IdxPrinter printer = IdxPrinter.create( file ))
     {
-      printer = IdxPrinter.create( file );
       printer.printRecords( records );
       LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
@@ -276,10 +273,6 @@ public class IdxWritingExample
       LOGGER.error( "Can't write document into a file!" );
       LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( printer );
     }
   }
 
@@ -345,11 +338,9 @@ public class IdxWritingExample
   protected static void writeToConsole( List<IdxRecord> records )
   {
     LOGGER.info( "writing document" );
-    IdxPrinter printer = null;
-    try
+    StringBuilder csv = new StringBuilder();
+    try (IdxPrinter printer = IdxPrinter.create( csv ))
     {
-      StringBuilder csv = new StringBuilder();
-      printer = IdxPrinter.create( csv );
       printer.printRecords( records );
       LOGGER.info( StringUtils.repeat( "-", 50 )
         + System.lineSeparator() + csv.toString() );
@@ -359,10 +350,6 @@ public class IdxWritingExample
       LOGGER.error( "Can't write document into a string!" );
       LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( printer );
     }
   }
 }

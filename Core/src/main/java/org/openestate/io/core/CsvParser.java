@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.util.Iterator;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,14 +61,6 @@ public abstract class CsvParser<Record extends CsvRecord> implements Closeable
   public void close() throws IOException
   {
     this.parser.close();
-  }
-
-  /**
-   * Closes the parser instance without throwing exceptions.
-   */
-  public final void closeQuietly()
-  {
-    IOUtils.closeQuietly( this );
   }
 
   /**

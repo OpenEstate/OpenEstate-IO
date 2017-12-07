@@ -22,7 +22,6 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
@@ -264,10 +263,8 @@ public class Is24CsvWritingExample
   protected static void write( List<Is24CsvRecord> records, File file )
   {
     LOGGER.info( "writing document" );
-    Is24CsvPrinter printer = null;
-    try
+    try (Is24CsvPrinter printer = Is24CsvPrinter.create( file ))
     {
-      printer = Is24CsvPrinter.create( file );
       printer.printRecords( records );
       LOGGER.info( "> written to: " + file.getAbsolutePath() );
     }
@@ -276,10 +273,6 @@ public class Is24CsvWritingExample
       LOGGER.error( "Can't write document into a file!" );
       LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( printer );
     }
   }
 
@@ -345,11 +338,9 @@ public class Is24CsvWritingExample
   protected static void writeToConsole( List<Is24CsvRecord> records )
   {
     LOGGER.info( "writing document" );
-    Is24CsvPrinter printer = null;
-    try
+    StringBuilder csv = new StringBuilder();
+    try (Is24CsvPrinter printer = Is24CsvPrinter.create( csv ))
     {
-      StringBuilder csv = new StringBuilder();
-      printer = Is24CsvPrinter.create( csv );
       printer.printRecords( records );
       LOGGER.info( StringUtils.repeat( "-", 50 )
         + System.lineSeparator() + csv.toString() );
@@ -359,10 +350,6 @@ public class Is24CsvWritingExample
       LOGGER.error( "Can't write document into a string!" );
       LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
       System.exit( 1 );
-    }
-    finally
-    {
-      IOUtils.closeQuietly( printer );
     }
   }
 }
