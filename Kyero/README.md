@@ -2,17 +2,17 @@ OpenEstate-IO-Kyero 1.4-SNAPSHOT
 ================================
 
 *OpenEstate-IO-Kyero* is a Java library to read and write real estate data in
-the XML format of [*kyero.com*](http://kyero.com) (version 3 and 2.1).
+the XML format of [*kyero.com*](https://www.kyero.com) (version 3 and 2.1).
 
 
 Features
 --------
 
 -   read XML data according to the specifications of
-    [*kyero.com*](http://kyero.com) in version 3 and 2.1
+    [*kyero.com*](https://www.kyero.com) in version 3 and 2.1
     (see [`KyeroReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/KyeroReadingExample.java))
 -   write XML data according to the specifications of
-    [*kyero.com*](http://kyero.com) in version 3 and 2.1
+    [*kyero.com*](https://www.kyero.com) in version 3 and 2.1
     (see [`KyeroWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/KyeroWritingExample.java))
 
 
@@ -47,8 +47,8 @@ Specifications
 --------------
 
 The specifications for this format are placed in the [`specs`](specs) folder.
-[*Kyero.com*](http://kyero.com) also provides some
-[further documentations](http://agents.kyero.com/kyero-import-specification).
+[*Kyero.com*](https://www.kyero.com) also provides some
+[further documentations](http://help.kyero.com/article/354-xml-import-specification).
 
 
 ### Modifications to the original specification
@@ -99,4 +99,4 @@ Further informations
 -   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for *kyero.com* XML](http://validator.openestate.org/)
--   [XML import specifications](http://agents.kyero.com/kyero-import-specification)
+-   [XML import specifications](http://help.kyero.com/article/354-xml-import-specification)

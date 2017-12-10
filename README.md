@@ -21,9 +21,9 @@ Supported Formats
 | [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](http://immobiliare.it) format                 | XML  | 2.5       |
 | [`IS24-CSV`](IS24-CSV)           | *IS24-CSV* format (*legacy*)                                     | CSV  | 1.4.0.4   |
 | [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                     | XML  | rev189438 |
-| [`Kyero`](Kyero)                 | [*Kyero.com*](http://kyero.com) XML feed                         | XML  | 3         |
+| [`Kyero`](Kyero)                 | [*Kyero.com*](https://www.kyero.com) XML feed                    | XML  | 3         |
 |                                  |                                                                  |      | 2.1       |
-| [`OpenImmo`](OpenImmo)           | [*OpenImmo*]((http://www.openimmo.de/)) format                   | XML  | 1.2.7b    |
+| [`OpenImmo`](OpenImmo)           | [*OpenImmo*](http://www.openimmo.de) format                      | XML  | 1.2.7b    |
 |                                  |                                                                  |      | 1.2.7     |
 |                                  |                                                                  |      | 1.2.6     |
 |                                  |                                                                  |      | 1.2.5     |
