@@ -175,6 +175,7 @@ public class KyeroWritingExample
     PropertyType obj = FACTORY.createPropertyType();
     obj.setBaths( BigInteger.valueOf( RandomUtils.nextLong( 0, 5 ) ) );
     obj.setBeds( BigInteger.valueOf( RandomUtils.nextLong( 0, 5 ) ) );
+    obj.setCountry( "Germany" );
     obj.setCurrency( CurrencyType.EUR );
     obj.setDate( Calendar.getInstance() );
     obj.setId( id );
@@ -192,42 +193,19 @@ public class KyeroWritingExample
     obj.setType( "house" );
 
     obj.setDesc( FACTORY.createLangType() );
-    obj.getDesc().setAr( "Arabic property description" );
-    obj.getDesc().setBg( "Bulgarian property description" );
     obj.getDesc().setCa( "Catalan property description" );
-    obj.getDesc().setCs( "Czech property description" );
     obj.getDesc().setDa( "Danish property description" );
     obj.getDesc().setDe( "German property description" );
-    obj.getDesc().setEl( "Greek property description" );
     obj.getDesc().setEn( "English property description" );
     obj.getDesc().setEs( "Spanish property description" );
-    obj.getDesc().setEt( "Estonian property description" );
-    obj.getDesc().setFa( "Farsi property description" );
     obj.getDesc().setFi( "Finnish property description" );
     obj.getDesc().setFr( "French property description" );
-    obj.getDesc().setHe( "Hebrew property description" );
-    obj.getDesc().setHi( "Hindi property description" );
-    obj.getDesc().setHu( "Hungarian property description" );
-    obj.getDesc().setId( "Indonesian property description" );
     obj.getDesc().setIt( "Italian property description" );
-    obj.getDesc().setJa( "Japanese property description" );
-    obj.getDesc().setKo( "Korean property description" );
-    obj.getDesc().setLt( "Lithuanian property description" );
-    obj.getDesc().setLv( "Latvian property description" );
     obj.getDesc().setNl( "Dutch property description" );
     obj.getDesc().setNo( "Norwegian property description" );
-    obj.getDesc().setPl( "Polish property description" );
     obj.getDesc().setPt( "Portuguese property description" );
-    obj.getDesc().setRo( "Romanian property description" );
     obj.getDesc().setRu( "Russian property description" );
-    obj.getDesc().setSk( "Slovak property description" );
-    obj.getDesc().setSl( "Slovenian property description" );
     obj.getDesc().setSv( "Swedish property description" );
-    obj.getDesc().setTh( "Thai property description" );
-    obj.getDesc().setTr( "Turkish property description" );
-    obj.getDesc().setUk( "Ukranian property description" );
-    obj.getDesc().setVi( "Vietnamese property description" );
-    obj.getDesc().setZh( "Simplified Chinese property description" );
 
     obj.setEnergyRating( FACTORY.createEnergyRatingType() );
     obj.getEnergyRating().setConsumption( EnergyRatingMarkType.C );
@@ -253,42 +231,19 @@ public class KyeroWritingExample
     obj.setUrl( FACTORY.createUrlType() );
     try
     {
-      obj.getUrl().setAr( new URL( "http://arabic.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setBg( new URL( "http://bulgarian.website.com/property/"+id+".htm" ) );
       obj.getUrl().setCa( new URL( "http://catalan.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setCs( new URL( "http://czech.website.com/property/"+id+".htm" ) );
       obj.getUrl().setDa( new URL( "http://danish.website.com/property/"+id+".htm" ) );
       obj.getUrl().setDe( new URL( "http://german.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setEl( new URL( "http://greek.website.com/property/"+id+".htm" ) );
       obj.getUrl().setEn( new URL( "http://english.website.com/property/"+id+".htm" ) );
       obj.getUrl().setEs( new URL( "http://spanish.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setEt( new URL( "http://estonian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setFa( new URL( "http://farsi.website.com/property/"+id+".htm" ) );
       obj.getUrl().setFi( new URL( "http://finnish.website.com/property/"+id+".htm" ) );
       obj.getUrl().setFr( new URL( "http://french.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setHe( new URL( "http://hebrew.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setHi( new URL( "http://hindi.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setHu( new URL( "http://hungarian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setId( new URL( "http://indonesian.website.com/property/"+id+".htm" ) );
       obj.getUrl().setIt( new URL( "http://italian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setJa( new URL( "http://japanese.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setKo( new URL( "http://korean.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setLt( new URL( "http://lithunain.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setLv( new URL( "http://latvian.website.com/property/"+id+".htm" ) );
       obj.getUrl().setNl( new URL( "http://dutch.website.com/property/"+id+".htm" ) );
       obj.getUrl().setNo( new URL( "http://norwegian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setPl( new URL( "http://polish.website.com/property/"+id+".htm" ) );
       obj.getUrl().setPt( new URL( "http://portuguese.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setRo( new URL( "http://romanian.website.com/property/"+id+".htm" ) );
       obj.getUrl().setRu( new URL( "http://russian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setSk( new URL( "http://slovak.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setSl( new URL( "http://slovenian.website.com/property/"+id+".htm" ) );
       obj.getUrl().setSv( new URL( "http://swedish.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setTh( new URL( "http://thai.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setTr( new URL( "http://turkish.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setUk( new URL( "http://ukranian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setVi( new URL( "http://vietnamese.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setZh( new URL( "http://chinese_simplified.website.com/property/"+id+".htm" ) );
     }
     catch (MalformedURLException ex)
     {}
@@ -319,44 +274,6 @@ public class KyeroWritingExample
     }
     catch (MalformedURLException ex)
     {}
-
-    img.setTitle( FACTORY.createLangType() );
-    img.getTitle().setAr( "Arabic image title" );
-    img.getTitle().setBg( "Bulgarian image title" );
-    img.getTitle().setCa( "Catalan image title" );
-    img.getTitle().setCs( "Czech image title" );
-    img.getTitle().setDa( "Danish image title" );
-    img.getTitle().setDe( "German image title" );
-    img.getTitle().setEl( "Greek image title" );
-    img.getTitle().setEn( "English image title" );
-    img.getTitle().setEs( "Spanish image title" );
-    img.getTitle().setEt( "Estonian image title" );
-    img.getTitle().setFa( "Farsi image title" );
-    img.getTitle().setFi( "Finnish image title" );
-    img.getTitle().setFr( "French image title" );
-    img.getTitle().setHe( "Hebrew image title" );
-    img.getTitle().setHi( "Hindi image title" );
-    img.getTitle().setHu( "Hungarian image title" );
-    img.getTitle().setId( "Indonesian image title" );
-    img.getTitle().setIt( "Italian image title" );
-    img.getTitle().setJa( "Japanese image title" );
-    img.getTitle().setKo( "Korean image title" );
-    img.getTitle().setLt( "Lithuanian image title" );
-    img.getTitle().setLv( "Latvian image title" );
-    img.getTitle().setNl( "Dutch image title" );
-    img.getTitle().setNo( "Norwegian image title" );
-    img.getTitle().setPl( "Polish image title" );
-    img.getTitle().setPt( "Portuguese image title" );
-    img.getTitle().setRo( "Romanian image title" );
-    img.getTitle().setRu( "Russian image title" );
-    img.getTitle().setSk( "Slovak image title" );
-    img.getTitle().setSl( "Slovenian image title" );
-    img.getTitle().setSv( "Swedish image title" );
-    img.getTitle().setTh( "Thai image title" );
-    img.getTitle().setTr( "Turkish image title" );
-    img.getTitle().setUk( "Ukranian image title" );
-    img.getTitle().setVi( "Vietnamese image title" );
-    img.getTitle().setZh( "Simplified Chinese image title" );
 
     return img;
   }
