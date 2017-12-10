@@ -21,9 +21,9 @@
     <jaxb:javaType name="Boolean" xmlType="bool"
                    parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseBoolean"
                    printMethod="org.openestate.io.daft_ie.DaftIeUtils.printBoolean"/>
-    <jaxb:javaType name="java.net.URL" xmlType="xsd:anyURI"
-                   parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseURL"
-                   printMethod="org.openestate.io.daft_ie.DaftIeUtils.printURL" />
+    <jaxb:javaType name="java.net.URI" xmlType="xsd:anyURI"
+                   parseMethod="org.openestate.io.daft_ie.DaftIeUtils.parseURI"
+                   printMethod="org.openestate.io.daft_ie.DaftIeUtils.printURI" />
   </jaxb:globalBindings>
 
   <jaxb:bindings schemaLocation="../xsd/v2.7.xsd" node="/xsd:schema">

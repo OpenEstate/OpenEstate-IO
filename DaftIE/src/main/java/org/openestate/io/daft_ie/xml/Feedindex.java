@@ -2,7 +2,7 @@
 package org.openestate.io.daft_ie.xml;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -213,7 +213,7 @@ public class Feedindex implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         @XmlElement(required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter3 .class)
         @XmlSchemaType(name = "anyURI")
-        protected URL loc;
+        protected URI loc;
         @XmlElement(type = String.class)
         @XmlJavaTypeAdapter(Adapter1 .class)
         @XmlSchemaType(name = "dateTime")
@@ -227,7 +227,7 @@ public class Feedindex implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          *     {@link String }
          *     
          */
-        public URL getLoc() {
+        public URI getLoc() {
             return loc;
         }
 
@@ -239,7 +239,7 @@ public class Feedindex implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          *     {@link String }
          *     
          */
-        public void setLoc(URL value) {
+        public void setLoc(URI value) {
             this.loc = value;
         }
 
@@ -283,7 +283,7 @@ public class Feedindex implements Serializable, Cloneable, CopyTo2, Equals2, ToS
 
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
-                URL theLoc;
+                URI theLoc;
                 theLoc = this.getLoc();
                 strategy.appendField(locator, this, "loc", buffer, theLoc, (this.loc!= null));
             }
@@ -311,9 +311,9 @@ public class Feedindex implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 {
                     Boolean locShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.loc!= null));
                     if (locShouldBeCopiedAndSet == Boolean.TRUE) {
-                        URL sourceLoc;
+                        URI sourceLoc;
                         sourceLoc = this.getLoc();
-                        URL copyLoc = ((URL) strategy.copy(LocatorUtils.property(locator, "loc", sourceLoc), sourceLoc, (this.loc!= null)));
+                        URI copyLoc = ((URI) strategy.copy(LocatorUtils.property(locator, "loc", sourceLoc), sourceLoc, (this.loc!= null)));
                         copy.setLoc(copyLoc);
                     } else {
                         if (locShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -351,9 +351,9 @@ public class Feedindex implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             }
             final Feedindex.Feed that = ((Feedindex.Feed) object);
             {
-                URL lhsLoc;
+                URI lhsLoc;
                 lhsLoc = this.getLoc();
-                URL rhsLoc;
+                URI rhsLoc;
                 rhsLoc = that.getLoc();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "loc", lhsLoc), LocatorUtils.property(thatLocator, "loc", rhsLoc), lhsLoc, rhsLoc, (this.loc!= null), (that.loc!= null))) {
                     return false;

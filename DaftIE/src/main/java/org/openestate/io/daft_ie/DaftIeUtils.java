@@ -20,8 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -328,20 +328,22 @@ public class DaftIeUtils
     return (value!=null)? DatatypeConverter.parseInteger( value ): null;
   }
 
-  public static URL parseURL( String value )
+  public static URI parseURI( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     try
     {
-      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
-        return new URL( "http://" + value );
+      if (StringUtils.startsWithIgnoreCase( value, "http://" ))
+        return new URI( value );
+      else if (StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URI( value );
       else
-        return new URL( value );
+        return new URI( "http://" + value );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {
-      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
+      throw new IllegalArgumentException( "Can't parse URI value '" + value + "'!", ex );
     }
   }
 
@@ -405,11 +407,11 @@ public class DaftIeUtils
       return DatatypeConverter.printInteger( value );
   }
 
-  public static String printURL( URL value )
+  public static String printURI( URI value )
   {
-    if (value==null)
-      throw new IllegalArgumentException( "Can't print URL value!" );
+    if (value==null || StringUtils.isBlank( value.getHost() ))
+      throw new IllegalArgumentException( "Can't print URI value!" );
     else
-      return value.toExternalForm();
+      return value.toString();
   }
 }

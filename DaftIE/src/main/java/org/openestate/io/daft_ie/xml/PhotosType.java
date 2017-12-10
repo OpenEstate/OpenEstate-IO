@@ -2,7 +2,7 @@
 package org.openestate.io.daft_ie.xml;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -53,7 +53,7 @@ public class PhotosType implements Serializable, Cloneable, CopyTo2, Equals2, To
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "anyURI")
-    protected List<URL> photo;
+    protected List<URI> photo;
 
     /**
      * Gets the value of the photo property.
@@ -77,9 +77,9 @@ public class PhotosType implements Serializable, Cloneable, CopyTo2, Equals2, To
      * 
      * 
      */
-    public List<URL> getPhoto() {
+    public List<URI> getPhoto() {
         if (photo == null) {
-            photo = new ArrayList<URL>();
+            photo = new ArrayList<URI>();
         }
         return this.photo;
     }
@@ -100,7 +100,7 @@ public class PhotosType implements Serializable, Cloneable, CopyTo2, Equals2, To
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            List<URL> thePhoto;
+            List<URI> thePhoto;
             thePhoto = (((this.photo!= null)&&(!this.photo.isEmpty()))?this.getPhoto():null);
             strategy.appendField(locator, this, "photo", buffer, thePhoto, ((this.photo!= null)&&(!this.photo.isEmpty())));
         }
@@ -123,13 +123,13 @@ public class PhotosType implements Serializable, Cloneable, CopyTo2, Equals2, To
             {
                 Boolean photoShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.photo!= null)&&(!this.photo.isEmpty())));
                 if (photoShouldBeCopiedAndSet == Boolean.TRUE) {
-                    List<URL> sourcePhoto;
+                    List<URI> sourcePhoto;
                     sourcePhoto = (((this.photo!= null)&&(!this.photo.isEmpty()))?this.getPhoto():null);
                     @SuppressWarnings("unchecked")
-                    List<URL> copyPhoto = ((List<URL> ) strategy.copy(LocatorUtils.property(locator, "photo", sourcePhoto), sourcePhoto, ((this.photo!= null)&&(!this.photo.isEmpty()))));
+                    List<URI> copyPhoto = ((List<URI> ) strategy.copy(LocatorUtils.property(locator, "photo", sourcePhoto), sourcePhoto, ((this.photo!= null)&&(!this.photo.isEmpty()))));
                     copy.photo = null;
                     if (copyPhoto!= null) {
-                        List<URL> uniquePhotol = copy.getPhoto();
+                        List<URI> uniquePhotol = copy.getPhoto();
                         uniquePhotol.addAll(copyPhoto);
                     }
                 } else {
@@ -155,9 +155,9 @@ public class PhotosType implements Serializable, Cloneable, CopyTo2, Equals2, To
         }
         final PhotosType that = ((PhotosType) object);
         {
-            List<URL> lhsPhoto;
+            List<URI> lhsPhoto;
             lhsPhoto = (((this.photo!= null)&&(!this.photo.isEmpty()))?this.getPhoto():null);
-            List<URL> rhsPhoto;
+            List<URI> rhsPhoto;
             rhsPhoto = (((that.photo!= null)&&(!that.photo.isEmpty()))?that.getPhoto():null);
             if (!strategy.equals(LocatorUtils.property(thisLocator, "photo", lhsPhoto), LocatorUtils.property(thatLocator, "photo", rhsPhoto), lhsPhoto, rhsPhoto, ((this.photo!= null)&&(!this.photo.isEmpty())), ((that.photo!= null)&&(!that.photo.isEmpty())))) {
                 return false;

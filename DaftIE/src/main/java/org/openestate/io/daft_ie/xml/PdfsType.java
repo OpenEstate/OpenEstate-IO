@@ -2,7 +2,7 @@
 package org.openestate.io.daft_ie.xml;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -53,7 +53,7 @@ public class PdfsType implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "anyURI")
-    protected List<URL> pdf;
+    protected List<URI> pdf;
 
     /**
      * Gets the value of the pdf property.
@@ -77,9 +77,9 @@ public class PdfsType implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      * 
      * 
      */
-    public List<URL> getPdf() {
+    public List<URI> getPdf() {
         if (pdf == null) {
-            pdf = new ArrayList<URL>();
+            pdf = new ArrayList<URI>();
         }
         return this.pdf;
     }
@@ -100,7 +100,7 @@ public class PdfsType implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            List<URL> thePdf;
+            List<URI> thePdf;
             thePdf = (((this.pdf!= null)&&(!this.pdf.isEmpty()))?this.getPdf():null);
             strategy.appendField(locator, this, "pdf", buffer, thePdf, ((this.pdf!= null)&&(!this.pdf.isEmpty())));
         }
@@ -123,13 +123,13 @@ public class PdfsType implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             {
                 Boolean pdfShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.pdf!= null)&&(!this.pdf.isEmpty())));
                 if (pdfShouldBeCopiedAndSet == Boolean.TRUE) {
-                    List<URL> sourcePdf;
+                    List<URI> sourcePdf;
                     sourcePdf = (((this.pdf!= null)&&(!this.pdf.isEmpty()))?this.getPdf():null);
                     @SuppressWarnings("unchecked")
-                    List<URL> copyPdf = ((List<URL> ) strategy.copy(LocatorUtils.property(locator, "pdf", sourcePdf), sourcePdf, ((this.pdf!= null)&&(!this.pdf.isEmpty()))));
+                    List<URI> copyPdf = ((List<URI> ) strategy.copy(LocatorUtils.property(locator, "pdf", sourcePdf), sourcePdf, ((this.pdf!= null)&&(!this.pdf.isEmpty()))));
                     copy.pdf = null;
                     if (copyPdf!= null) {
-                        List<URL> uniquePdfl = copy.getPdf();
+                        List<URI> uniquePdfl = copy.getPdf();
                         uniquePdfl.addAll(copyPdf);
                     }
                 } else {
@@ -155,9 +155,9 @@ public class PdfsType implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         }
         final PdfsType that = ((PdfsType) object);
         {
-            List<URL> lhsPdf;
+            List<URI> lhsPdf;
             lhsPdf = (((this.pdf!= null)&&(!this.pdf.isEmpty()))?this.getPdf():null);
-            List<URL> rhsPdf;
+            List<URI> rhsPdf;
             rhsPdf = (((that.pdf!= null)&&(!that.pdf.isEmpty()))?that.getPdf():null);
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pdf", lhsPdf), LocatorUtils.property(thatLocator, "pdf", rhsPdf), lhsPdf, rhsPdf, ((this.pdf!= null)&&(!this.pdf.isEmpty())), ((that.pdf!= null)&&(!that.pdf.isEmpty())))) {
                 return false;

@@ -21,8 +21,8 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
@@ -171,11 +171,11 @@ public class DaftIeWritingExample
     ad.setPhotos( FACTORY.createPhotosType() );
     try
     {
-      ad.getPhotos().getPhoto().add( new URL( "http://www.mywebsite.org/image1.jpg" ) );
-      ad.getPhotos().getPhoto().add( new URL( "http://www.mywebsite.org/image2.jpg" ) );
-      ad.getPhotos().getPhoto().add( new URL( "http://www.mywebsite.org/image3.jpg" ) );
+      ad.getPhotos().getPhoto().add( new URI( "http://www.mywebsite.org/image1.jpg" ) );
+      ad.getPhotos().getPhoto().add( new URI( "http://www.mywebsite.org/image2.jpg" ) );
+      ad.getPhotos().getPhoto().add( new URI( "http://www.mywebsite.org/image3.jpg" ) );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {
     }
 
@@ -232,10 +232,10 @@ public class DaftIeWritingExample
     ad.setPdfs( FACTORY.createPdfsType() );
     try
     {
-      ad.getPdfs().getPdf().add( new URL( "http://www.mywebsite.org/document1.pdf" ) );
-      ad.getPdfs().getPdf().add( new URL( "http://www.mywebsite.org/document2.pdf" ) );
+      ad.getPdfs().getPdf().add( new URI( "http://www.mywebsite.org/document1.pdf" ) );
+      ad.getPdfs().getPdf().add( new URI( "http://www.mywebsite.org/document2.pdf" ) );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {
     }
 
@@ -243,11 +243,11 @@ public class DaftIeWritingExample
     ad.setPhotos( FACTORY.createPhotosType() );
     try
     {
-      ad.getPhotos().getPhoto().add( new URL( "http://www.mywebsite.org/image1.jpg" ) );
-      ad.getPhotos().getPhoto().add( new URL( "http://www.mywebsite.org/image2.jpg" ) );
-      ad.getPhotos().getPhoto().add( new URL( "http://www.mywebsite.org/image3.jpg" ) );
+      ad.getPhotos().getPhoto().add( new URI( "http://www.mywebsite.org/image1.jpg" ) );
+      ad.getPhotos().getPhoto().add( new URI( "http://www.mywebsite.org/image2.jpg" ) );
+      ad.getPhotos().getPhoto().add( new URI( "http://www.mywebsite.org/image3.jpg" ) );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {
     }
 
