@@ -21,8 +21,8 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomUtils;
@@ -305,9 +305,9 @@ public class Is24XmlWritingExample
     immobilie.getKontaktperson().setVorname( "Max" );
     try
     {
-      immobilie.getKontaktperson().setHomepage( new URL( "http://mywebsite.com" ) );
+      immobilie.getKontaktperson().setHomepage( new URI( "http://mywebsite.com" ) );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {}
 
     immobilie.setManuelleGeoCodierung( FACTORY.createManuellGeoCodingTyp() );

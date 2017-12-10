@@ -55,7 +55,7 @@
     <jaxb:javaType name="java.lang.String" xmlType="is24:EmailTyp"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseEmail"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printEmail" />
-    <jaxb:javaType name="java.net.URL" xmlType="is24:WebUrlTyp"
+    <jaxb:javaType name="java.net.URI" xmlType="is24:WebUrlTyp"
                    parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseWebUrl"
                    printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printWebUrl" />
     <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl2i0Typ"

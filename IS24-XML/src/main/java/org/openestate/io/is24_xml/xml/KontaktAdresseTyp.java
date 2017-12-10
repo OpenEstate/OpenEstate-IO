@@ -2,7 +2,7 @@
 package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -75,7 +75,7 @@ public class KontaktAdresseTyp
     protected String eMail;
     @XmlAttribute(name = "Homepage")
     @XmlJavaTypeAdapter(Adapter17 .class)
-    protected URL homepage;
+    protected URI homepage;
 
     /**
      * Gets the value of the anrede property.
@@ -253,7 +253,7 @@ public class KontaktAdresseTyp
      *     {@link String }
      *     
      */
-    public URL getHomepage() {
+    public URI getHomepage() {
         return homepage;
     }
 
@@ -265,7 +265,7 @@ public class KontaktAdresseTyp
      *     {@link String }
      *     
      */
-    public void setHomepage(URL value) {
+    public void setHomepage(URI value) {
         this.homepage = value;
     }
 
@@ -321,7 +321,7 @@ public class KontaktAdresseTyp
             strategy.appendField(locator, this, "eMail", buffer, theEMail, (this.eMail!= null));
         }
         {
-            URL theHomepage;
+            URI theHomepage;
             theHomepage = this.getHomepage();
             strategy.appendField(locator, this, "homepage", buffer, theHomepage, (this.homepage!= null));
         }
@@ -436,9 +436,9 @@ public class KontaktAdresseTyp
             {
                 Boolean homepageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.homepage!= null));
                 if (homepageShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceHomepage;
+                    URI sourceHomepage;
                     sourceHomepage = this.getHomepage();
-                    URL copyHomepage = ((URL) strategy.copy(LocatorUtils.property(locator, "homepage", sourceHomepage), sourceHomepage, (this.homepage!= null)));
+                    URI copyHomepage = ((URI) strategy.copy(LocatorUtils.property(locator, "homepage", sourceHomepage), sourceHomepage, (this.homepage!= null)));
                     copy.setHomepage(copyHomepage);
                 } else {
                     if (homepageShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -529,9 +529,9 @@ public class KontaktAdresseTyp
             }
         }
         {
-            URL lhsHomepage;
+            URI lhsHomepage;
             lhsHomepage = this.getHomepage();
-            URL rhsHomepage;
+            URI rhsHomepage;
             rhsHomepage = that.getHomepage();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "homepage", lhsHomepage), LocatorUtils.property(thatLocator, "homepage", rhsHomepage), lhsHomepage, rhsHomepage, (this.homepage!= null), (that.homepage!= null))) {
                 return false;

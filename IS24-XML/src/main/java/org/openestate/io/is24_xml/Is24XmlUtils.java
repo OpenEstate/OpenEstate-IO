@@ -20,8 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -366,20 +366,22 @@ public class Is24XmlUtils
     return parseText( value, 2000 );
   }
 
-  public static URL parseWebUrl( String value )
+  public static URI parseWebUrl( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     try
     {
-      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
-        return new URL( "http://" + value );
+      if (StringUtils.startsWithIgnoreCase( value, "http://" ))
+        return new URI( value );
+      else if (StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URI( value );
       else
-        return new URL( value );
+        return new URI( "http://" + value );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {
-      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
+      throw new IllegalArgumentException( "Can't parse URI value '" + value + "'!", ex );
     }
   }
 
@@ -590,12 +592,12 @@ public class Is24XmlUtils
     return printText( value, 2000 );
   }
 
-  public static String printWebUrl( URL value )
+  public static String printWebUrl( URI value )
   {
     if (value==null || StringUtils.isBlank( value.getHost() ))
-      throw new IllegalArgumentException( "Can't print URL value '" + value + "'!" );
+      throw new IllegalArgumentException( "Can't print URI value '" + value + "'!" );
     else
-      return value.toExternalForm();
+      return value.toString();
   }
 
   public static String printZahl2( Long value )
