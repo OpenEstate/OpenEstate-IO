@@ -33,24 +33,9 @@ import org.slf4j.LoggerFactory;
 public enum KyeroLanguage
 {
   /**
-   * Arabic
-   */
-  AR,
-
-  /**
-   * Bulgarian
-   */
-  BG,
-
-  /**
    * Catalan
    */
   CA,
-
-  /**
-   * Czech
-   */
-  CS,
 
   /**
    * Danish
@@ -63,11 +48,6 @@ public enum KyeroLanguage
   DE,
 
   /**
-   * Greek
-   */
-  EL,
-
-  /**
    * English
    */
   EN,
@@ -76,16 +56,6 @@ public enum KyeroLanguage
    * Spanish
    */
   ES,
-
-  /**
-   * Estonian
-   */
-  ET,
-
-  /**
-   * Farsi
-   */
-  FA,
 
   /**
    * Finnish
@@ -98,49 +68,9 @@ public enum KyeroLanguage
   FR,
 
   /**
-   * Hebrew
-   */
-  HE,
-
-  /**
-   * Hindi
-   */
-  HI,
-
-  /**
-   * Hungarian
-   */
-  HU,
-
-  /**
-   * Indonesian
-   */
-  ID,
-
-  /**
    * Italian
    */
   IT,
-
-  /**
-   * Japanese
-   */
-  JA,
-
-  /**
-   * Korean
-   */
-  KO,
-
-  /**
-   * Lithuanian
-   */
-  LT,
-
-  /**
-   * Latvian
-   */
-  LV,
 
   /**
    * Dutch
@@ -153,19 +83,9 @@ public enum KyeroLanguage
   NO,
 
   /**
-   * Polish
-   */
-  PL,
-
-  /**
    * Portuguese
    */
   PT,
-
-  /**
-   * Romanian
-   */
-  RO,
 
   /**
    * Russian
@@ -173,44 +93,9 @@ public enum KyeroLanguage
   RU,
 
   /**
-   * Slovak
-   */
-  SK,
-
-  /**
-   * Slovenian
-   */
-  SL,
-
-  /**
    * Swedish
    */
-  SV,
-
-  /**
-   * Thai
-   */
-  TH,
-
-  /**
-   * Turkish
-   */
-  TR,
-
-  /**
-   * Ukranian
-   */
-  UK,
-
-  /**
-   * Vietnamese
-   */
-  VI,
-
-  /**
-   * Simplified Chinese
-   */
-  ZH;
+  SV;
 
   private final static Logger LOGGER = LoggerFactory.getLogger( KyeroLanguage.class );
 
@@ -278,17 +163,8 @@ public enum KyeroLanguage
   {
     List<KyeroLanguage> languages = new ArrayList<>();
 
-    if (StringUtils.isNotBlank( container.getAr() ))
-      languages.add( AR );
-
-    if (StringUtils.isNotBlank( container.getBg() ))
-      languages.add( BG );
-
     if (StringUtils.isNotBlank( container.getCa() ))
       languages.add( CA );
-
-    if (StringUtils.isNotBlank( container.getCs() ))
-      languages.add( CS );
 
     if (StringUtils.isNotBlank( container.getDa() ))
       languages.add( DA );
@@ -296,20 +172,11 @@ public enum KyeroLanguage
     if (StringUtils.isNotBlank( container.getDe() ))
       languages.add( DE );
 
-    if (StringUtils.isNotBlank( container.getEl() ))
-      languages.add( EL );
-
     if (StringUtils.isNotBlank( container.getEn() ))
       languages.add( EN );
 
     if (StringUtils.isNotBlank( container.getEs() ))
       languages.add( ES );
-
-    if (StringUtils.isNotBlank( container.getEt() ))
-      languages.add( ET );
-
-    if (StringUtils.isNotBlank( container.getFa() ))
-      languages.add( FA );
 
     if (StringUtils.isNotBlank( container.getFi() ))
       languages.add( FI );
@@ -317,32 +184,8 @@ public enum KyeroLanguage
     if (StringUtils.isNotBlank( container.getFr() ))
       languages.add( FR );
 
-    if (StringUtils.isNotBlank( container.getHe() ))
-      languages.add( HE );
-
-    if (StringUtils.isNotBlank( container.getHi() ))
-      languages.add( HI );
-
-    if (StringUtils.isNotBlank( container.getHu() ))
-      languages.add( HU );
-
-    if (StringUtils.isNotBlank( container.getId() ))
-      languages.add( ID );
-
     if (StringUtils.isNotBlank( container.getIt() ))
       languages.add( IT );
-
-    if (StringUtils.isNotBlank( container.getJa() ))
-      languages.add( JA );
-
-    if (StringUtils.isNotBlank( container.getKo() ))
-      languages.add( KO );
-
-    if (StringUtils.isNotBlank( container.getLt() ))
-      languages.add( LT );
-
-    if (StringUtils.isNotBlank( container.getLv() ))
-      languages.add( LV );
 
     if (StringUtils.isNotBlank( container.getNl() ))
       languages.add( NL );
@@ -350,43 +193,16 @@ public enum KyeroLanguage
     if (StringUtils.isNotBlank( container.getNo() ))
       languages.add( NO );
 
-    if (StringUtils.isNotBlank( container.getPl() ))
-      languages.add( PL );
-
     if (StringUtils.isNotBlank( container.getPt() ))
       languages.add( PT );
-
-    if (StringUtils.isNotBlank( container.getRo() ))
-      languages.add( RO );
 
     if (StringUtils.isNotBlank( container.getRu() ))
       languages.add( RU );
 
-    if (StringUtils.isNotBlank( container.getSk() ))
-      languages.add( SK );
-
-    if (StringUtils.isNotBlank( container.getSl() ))
-      languages.add( SL );
-
     if (StringUtils.isNotBlank( container.getSv() ))
       languages.add( SV );
 
-    if (StringUtils.isNotBlank( container.getTh() ))
-      languages.add( TH );
-
-    if (StringUtils.isNotBlank( container.getTr() ))
-      languages.add( TR );
-
-    if (StringUtils.isNotBlank( container.getUk() ))
-      languages.add( UK );
-
-    if (StringUtils.isNotBlank( container.getVi() ))
-      languages.add( VI );
-
-    if (StringUtils.isNotBlank( container.getZh() ))
-      languages.add( ZH );
-
-    return languages.toArray(new KyeroLanguage[languages.size()] );
+    return languages.toArray (new KyeroLanguage[languages.size()] );
   }
 
   /**
@@ -404,17 +220,8 @@ public enum KyeroLanguage
     if (container==null) return null;
     switch (this)
     {
-      case AR:
-        return StringUtils.trimToNull( container.getAr() );
-
-      case BG:
-        return StringUtils.trimToNull( container.getBg() );
-
       case CA:
         return StringUtils.trimToNull( container.getCa() );
-
-      case CS:
-        return StringUtils.trimToNull( container.getCs() );
 
       case DA:
         return StringUtils.trimToNull( container.getDa() );
@@ -422,20 +229,11 @@ public enum KyeroLanguage
       case DE:
         return StringUtils.trimToNull( container.getDe() );
 
-      case EL:
-        return StringUtils.trimToNull( container.getEl() );
-
       case EN:
         return StringUtils.trimToNull( container.getEn() );
 
       case ES:
         return StringUtils.trimToNull( container.getEs() );
-
-      case ET:
-        return StringUtils.trimToNull( container.getEt() );
-
-      case FA:
-        return StringUtils.trimToNull( container.getFa() );
 
       case FI:
         return StringUtils.trimToNull( container.getFi() );
@@ -443,32 +241,8 @@ public enum KyeroLanguage
       case FR:
         return StringUtils.trimToNull( container.getFr() );
 
-      case HE:
-        return StringUtils.trimToNull( container.getHe() );
-
-      case HI:
-        return StringUtils.trimToNull( container.getHi() );
-
-      case HU:
-        return StringUtils.trimToNull( container.getHu() );
-
-      case ID:
-        return StringUtils.trimToNull( container.getId() );
-
       case IT:
         return StringUtils.trimToNull( container.getIt() );
-
-      case JA:
-        return StringUtils.trimToNull( container.getJa() );
-
-      case KO:
-        return StringUtils.trimToNull( container.getKo() );
-
-      case LT:
-        return StringUtils.trimToNull( container.getLt() );
-
-      case LV:
-        return StringUtils.trimToNull( container.getLv() );
 
       case NL:
         return StringUtils.trimToNull( container.getNl() );
@@ -476,41 +250,14 @@ public enum KyeroLanguage
       case NO:
         return StringUtils.trimToNull( container.getNo() );
 
-      case PL:
-        return StringUtils.trimToNull( container.getPl() );
-
       case PT:
         return StringUtils.trimToNull( container.getPt() );
-
-      case RO:
-        return StringUtils.trimToNull( container.getRo() );
 
       case RU:
         return StringUtils.trimToNull( container.getRu() );
 
-      case SK:
-        return StringUtils.trimToNull( container.getSk() );
-
-      case SL:
-        return StringUtils.trimToNull( container.getSl() );
-
       case SV:
         return StringUtils.trimToNull( container.getSv() );
-
-      case TH:
-        return StringUtils.trimToNull( container.getTh() );
-
-      case TR:
-        return StringUtils.trimToNull( container.getTr() );
-
-      case UK:
-        return StringUtils.trimToNull( container.getUk() );
-
-      case VI:
-        return StringUtils.trimToNull( container.getVi() );
-
-      case ZH:
-        return StringUtils.trimToNull( container.getZh() );
 
       default:
         LOGGER.warn( "unsupported language: " + this );
@@ -549,20 +296,8 @@ public enum KyeroLanguage
     if (container==null) return;
     switch (this)
     {
-      case AR:
-        container.setAr( StringUtils.trimToNull( txt ) );
-        break;
-
-      case BG:
-        container.setBg( StringUtils.trimToNull( txt ) );
-        break;
-
       case CA:
         container.setCa( StringUtils.trimToNull( txt ) );
-        break;
-
-      case CS:
-        container.setCs( StringUtils.trimToNull( txt ) );
         break;
 
       case DA:
@@ -573,24 +308,12 @@ public enum KyeroLanguage
         container.setDe( StringUtils.trimToNull( txt ) );
         break;
 
-      case EL:
-        container.setEl( StringUtils.trimToNull( txt ) );
-        break;
-
       case EN:
         container.setEn( StringUtils.trimToNull( txt ) );
         break;
 
       case ES:
         container.setEs( StringUtils.trimToNull( txt ) );
-        break;
-
-      case ET:
-        container.setEt( StringUtils.trimToNull( txt ) );
-        break;
-
-      case FA:
-        container.setFa( StringUtils.trimToNull( txt ) );
         break;
 
       case FI:
@@ -601,40 +324,8 @@ public enum KyeroLanguage
         container.setFr( StringUtils.trimToNull( txt ) );
         break;
 
-      case HE:
-        container.setHe( StringUtils.trimToNull( txt ) );
-        break;
-
-      case HI:
-        container.setHi( StringUtils.trimToNull( txt ) );
-        break;
-
-      case HU:
-        container.setHu( StringUtils.trimToNull( txt ) );
-        break;
-
-      case ID:
-        container.setId( StringUtils.trimToNull( txt ) );
-        break;
-
       case IT:
         container.setIt( StringUtils.trimToNull( txt ) );
-        break;
-
-      case JA:
-        container.setJa( StringUtils.trimToNull( txt ) );
-        break;
-
-      case KO:
-        container.setKo( StringUtils.trimToNull( txt ) );
-        break;
-
-      case LT:
-        container.setLt( StringUtils.trimToNull( txt ) );
-        break;
-
-      case LV:
-        container.setLv( StringUtils.trimToNull( txt ) );
         break;
 
       case NL:
@@ -645,52 +336,16 @@ public enum KyeroLanguage
         container.setNo( StringUtils.trimToNull( txt ) );
         break;
 
-      case PL:
-        container.setPl( StringUtils.trimToNull( txt ) );
-        break;
-
       case PT:
         container.setPt( StringUtils.trimToNull( txt ) );
-        break;
-
-      case RO:
-        container.setRo( StringUtils.trimToNull( txt ) );
         break;
 
       case RU:
         container.setRu( StringUtils.trimToNull( txt ) );
         break;
 
-      case SK:
-        container.setSk( StringUtils.trimToNull( txt ) );
-        break;
-
-      case SL:
-        container.setSl( StringUtils.trimToNull( txt ) );
-        break;
-
       case SV:
         container.setSv( StringUtils.trimToNull( txt ) );
-        break;
-
-      case TH:
-        container.setTh( StringUtils.trimToNull( txt ) );
-        break;
-
-      case TR:
-        container.setTr( StringUtils.trimToNull( txt ) );
-        break;
-
-      case UK:
-        container.setUk( StringUtils.trimToNull( txt ) );
-        break;
-
-      case VI:
-        container.setVi( StringUtils.trimToNull( txt ) );
-        break;
-
-      case ZH:
-        container.setZh( StringUtils.trimToNull( txt ) );
         break;
 
       default:

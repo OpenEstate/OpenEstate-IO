@@ -57,7 +57,7 @@ public class KyeroType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
 {
 
     @XmlElement(name = "feed_version", required = true)
-    @XmlJavaTypeAdapter(Adapter15 .class)
+    @XmlJavaTypeAdapter(Adapter16 .class)
     protected String feedVersion;
     @XmlElement(name = "feed_generated", type = String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)

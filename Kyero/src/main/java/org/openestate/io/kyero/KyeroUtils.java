@@ -339,6 +339,11 @@ public class KyeroUtils
     return (value!=null)? DatatypeConverter.parseBoolean( value ): null;
   }
 
+  public static String parseCountryType( String value )
+  {
+    return StringUtils.trimToNull( value );
+  }
+
   public static Calendar parseDateType( String value )
   {
     value = StringUtils.trimToNull( value );
@@ -405,10 +410,14 @@ public class KyeroUtils
     if (value==null) return null;
     try
     {
-      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
-        return new URL( "http://" + value );
-      else
+      if (StringUtils.startsWithIgnoreCase( value, "http://" ))
         return new URL( value );
+      else if (StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URL( value );
+      else if (StringUtils.startsWithIgnoreCase( value, "ftp://" ))
+        return new URL( value );
+      else
+        return new URL( "http://" + value );
     }
     catch (MalformedURLException ex)
     {
@@ -461,10 +470,12 @@ public class KyeroUtils
     if (value==null) return null;
     try
     {
-      if (!StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
-        return new URL( "http://" + value );
-      else
+      if (StringUtils.startsWithIgnoreCase( value, "http://" ))
         return new URL( value );
+      else if (StringUtils.startsWithIgnoreCase( value, "https://" ))
+        return new URL( value );
+      else
+        return new URL( "http://" + value );
     }
     catch (MalformedURLException ex)
     {
@@ -480,6 +491,11 @@ public class KyeroUtils
       return "0";
     else
       return StringUtils.EMPTY;
+  }
+
+  public static String printCountryType( String value )
+  {
+    return StringUtils.abbreviate( StringUtils.trimToEmpty( value ), 50 );
   }
 
   public static String printDateType( Calendar value )
@@ -565,7 +581,7 @@ public class KyeroUtils
     if (value==null || !isValidRefType( value ))
       throw new IllegalArgumentException( "Can't print ref value!" );
     else
-      return StringUtils.abbreviate( value, 15 );
+      return StringUtils.abbreviate( value, 255 );
   }
 
   public static String printRequiredType( String value )

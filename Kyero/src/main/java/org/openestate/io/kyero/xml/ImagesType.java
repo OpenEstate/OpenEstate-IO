@@ -41,7 +41,6 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *                 &lt;all&gt;
  *                   &lt;element name="url" type="{}imageUrlType" minOccurs="0"/&gt;
- *                   &lt;element name="title" type="{}langType" minOccurs="0"/&gt;
  *                 &lt;/all&gt;
  *                 &lt;attribute name="id" use="required" type="{}imageAttributeType" /&gt;
  *               &lt;/restriction&gt;
@@ -193,7 +192,6 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
      *       &lt;all&gt;
      *         &lt;element name="url" type="{}imageUrlType" minOccurs="0"/&gt;
-     *         &lt;element name="title" type="{}langType" minOccurs="0"/&gt;
      *       &lt;/all&gt;
      *       &lt;attribute name="id" use="required" type="{}imageAttributeType" /&gt;
      *     &lt;/restriction&gt;
@@ -211,12 +209,11 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
     {
 
         @XmlElement(type = String.class)
-        @XmlJavaTypeAdapter(Adapter13 .class)
+        @XmlJavaTypeAdapter(Adapter14 .class)
         @XmlSchemaType(name = "token")
         protected URL url;
-        protected LangType title;
         @XmlAttribute(name = "id", required = true)
-        @XmlJavaTypeAdapter(Adapter14 .class)
+        @XmlJavaTypeAdapter(Adapter15 .class)
         protected Integer id;
 
         /**
@@ -241,30 +238,6 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
          */
         public void setUrl(URL value) {
             this.url = value;
-        }
-
-        /**
-         * Gets the value of the title property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link LangType }
-         *     
-         */
-        public LangType getTitle() {
-            return title;
-        }
-
-        /**
-         * Sets the value of the title property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link LangType }
-         *     
-         */
-        public void setTitle(LangType value) {
-            this.title = value;
         }
 
         /**
@@ -312,11 +285,6 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
                 strategy.appendField(locator, this, "url", buffer, theUrl, (this.url!= null));
             }
             {
-                LangType theTitle;
-                theTitle = this.getTitle();
-                strategy.appendField(locator, this, "title", buffer, theTitle, (this.title!= null));
-            }
-            {
                 Integer theId;
                 theId = this.getId();
                 strategy.appendField(locator, this, "id", buffer, theId, (this.id!= null));
@@ -347,19 +315,6 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
                     } else {
                         if (urlShouldBeCopiedAndSet == Boolean.FALSE) {
                             copy.url = null;
-                        }
-                    }
-                }
-                {
-                    Boolean titleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.title!= null));
-                    if (titleShouldBeCopiedAndSet == Boolean.TRUE) {
-                        LangType sourceTitle;
-                        sourceTitle = this.getTitle();
-                        LangType copyTitle = ((LangType) strategy.copy(LocatorUtils.property(locator, "title", sourceTitle), sourceTitle, (this.title!= null)));
-                        copy.setTitle(copyTitle);
-                    } else {
-                        if (titleShouldBeCopiedAndSet == Boolean.FALSE) {
-                            copy.title = null;
                         }
                     }
                 }
@@ -398,15 +353,6 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
                 URL rhsUrl;
                 rhsUrl = that.getUrl();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "url", lhsUrl), LocatorUtils.property(thatLocator, "url", rhsUrl), lhsUrl, rhsUrl, (this.url!= null), (that.url!= null))) {
-                    return false;
-                }
-            }
-            {
-                LangType lhsTitle;
-                lhsTitle = this.getTitle();
-                LangType rhsTitle;
-                rhsTitle = that.getTitle();
-                if (!strategy.equals(LocatorUtils.property(thisLocator, "title", lhsTitle), LocatorUtils.property(thatLocator, "title", rhsTitle), lhsTitle, rhsTitle, (this.title!= null), (that.title!= null))) {
                     return false;
                 }
             }

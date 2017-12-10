@@ -45,6 +45,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *         &lt;element name="type" type="{}typeDataType"/&gt;
  *         &lt;element name="town" type="{}requiredType"/&gt;
  *         &lt;element name="province" type="{}requiredType"/&gt;
+ *         &lt;element name="country" type="{}countryType" minOccurs="0"/&gt;
  *         &lt;element name="location" type="{}gpsLocationType" minOccurs="0"/&gt;
  *         &lt;element name="location_detail" type="{}locationType" minOccurs="0"/&gt;
  *         &lt;element name="beds" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/&gt;
@@ -53,9 +54,9 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *         &lt;element name="surface_area" type="{}surfaceType" minOccurs="0"/&gt;
  *         &lt;element name="energy_rating" type="{}energyRatingType" minOccurs="0"/&gt;
  *         &lt;element name="url" type="{}urlType" minOccurs="0"/&gt;
- *         &lt;element name="desc" type="{}langType" minOccurs="0"/&gt;
- *         &lt;element name="features" type="{}featuresType"/&gt;
- *         &lt;element name="images" type="{}imagesType" minOccurs="0"/&gt;
+ *         &lt;element name="desc" type="{}langType"/&gt;
+ *         &lt;element name="features" type="{}featuresType" minOccurs="0"/&gt;
+ *         &lt;element name="images" type="{}imagesType"/&gt;
  *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
@@ -108,9 +109,11 @@ public class PropertyType implements Serializable, Cloneable, CopyTo2, Equals2, 
     @XmlElement(required = true)
     @XmlJavaTypeAdapter(Adapter5 .class)
     protected String province;
+    @XmlJavaTypeAdapter(Adapter11 .class)
+    protected String country;
     protected GpsLocationType location;
     @XmlElement(name = "location_detail")
-    @XmlJavaTypeAdapter(Adapter11 .class)
+    @XmlJavaTypeAdapter(Adapter12 .class)
     protected String locationDetail;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
@@ -128,9 +131,10 @@ public class PropertyType implements Serializable, Cloneable, CopyTo2, Equals2, 
     @XmlElement(name = "energy_rating")
     protected EnergyRatingType energyRating;
     protected UrlType url;
-    protected LangType desc;
     @XmlElement(required = true)
+    protected LangType desc;
     protected FeaturesType features;
+    @XmlElement(required = true)
     protected ImagesType images;
     protected String notes;
 
@@ -420,6 +424,30 @@ public class PropertyType implements Serializable, Cloneable, CopyTo2, Equals2, 
      */
     public void setProvince(String value) {
         this.province = value;
+    }
+
+    /**
+     * Gets the value of the country property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * Sets the value of the country property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCountry(String value) {
+        this.country = value;
     }
 
     /**
@@ -786,6 +814,11 @@ public class PropertyType implements Serializable, Cloneable, CopyTo2, Equals2, 
             strategy.appendField(locator, this, "province", buffer, theProvince, (this.province!= null));
         }
         {
+            String theCountry;
+            theCountry = this.getCountry();
+            strategy.appendField(locator, this, "country", buffer, theCountry, (this.country!= null));
+        }
+        {
             GpsLocationType theLocation;
             theLocation = this.getLocation();
             strategy.appendField(locator, this, "location", buffer, theLocation, (this.location!= null));
@@ -1014,6 +1047,19 @@ public class PropertyType implements Serializable, Cloneable, CopyTo2, Equals2, 
                 } else {
                     if (provinceShouldBeCopiedAndSet == Boolean.FALSE) {
                         copy.province = null;
+                    }
+                }
+            }
+            {
+                Boolean countryShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.country!= null));
+                if (countryShouldBeCopiedAndSet == Boolean.TRUE) {
+                    String sourceCountry;
+                    sourceCountry = this.getCountry();
+                    String copyCountry = ((String) strategy.copy(LocatorUtils.property(locator, "country", sourceCountry), sourceCountry, (this.country!= null)));
+                    copy.setCountry(copyCountry);
+                } else {
+                    if (countryShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.country = null;
                     }
                 }
             }
@@ -1294,6 +1340,15 @@ public class PropertyType implements Serializable, Cloneable, CopyTo2, Equals2, 
             String rhsProvince;
             rhsProvince = that.getProvince();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "province", lhsProvince), LocatorUtils.property(thatLocator, "province", rhsProvince), lhsProvince, rhsProvince, (this.province!= null), (that.province!= null))) {
+                return false;
+            }
+        }
+        {
+            String lhsCountry;
+            lhsCountry = this.getCountry();
+            String rhsCountry;
+            rhsCountry = that.getCountry();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "country", lhsCountry), LocatorUtils.property(thatLocator, "country", rhsCountry), lhsCountry, rhsCountry, (this.country!= null), (that.country!= null))) {
                 return false;
             }
         }

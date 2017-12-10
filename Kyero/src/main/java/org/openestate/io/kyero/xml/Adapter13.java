@@ -10,11 +10,11 @@ public class Adapter13
 
 
     public URL unmarshal(String value) {
-        return (org.openestate.io.kyero.KyeroUtils.parseImageUrlType(value));
+        return (org.openestate.io.kyero.KyeroUtils.parseUrlDataType(value));
     }
 
     public String marshal(URL value) {
-        return (org.openestate.io.kyero.KyeroUtils.printImageUrlType(value));
+        return (org.openestate.io.kyero.KyeroUtils.printUrlDataType(value));
     }
 
 }

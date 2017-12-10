@@ -35,6 +35,9 @@
     <jaxb:javaType name="java.net.URL" xmlType="imageUrlType"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseImageUrlType"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printImageUrlType" />
+    <jaxb:javaType name="java.lang.String" xmlType="countryType"
+                   parseMethod="org.openestate.io.kyero.KyeroUtils.parseCountryType"
+                   printMethod="org.openestate.io.kyero.KyeroUtils.printCountryType" />
     <jaxb:javaType name="java.lang.String" xmlType="locationType"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseLocationType"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printLocationType" />

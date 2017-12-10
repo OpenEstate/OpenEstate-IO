@@ -39,7 +39,7 @@ public enum KyeroVersion implements XmlVersion
   /**
    * Version v3
    */
-  V3( Kyero_3.class, "3", "3", "3.0", "3.1" );
+  V3( Kyero_3.class, "3", "3", "3.0", "3.1", "3.2", "3.3", "3.4" );
 
   private final static Logger LOGGER = LoggerFactory.getLogger( KyeroVersion.class );
   private final Class converterClass;
