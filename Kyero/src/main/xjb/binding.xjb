@@ -32,7 +32,7 @@
     <jaxb:javaType name="java.lang.Integer" xmlType="imageAttributeType"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseImageAttributeType"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printImageAttributeType" />
-    <jaxb:javaType name="java.net.URL" xmlType="imageUrlType"
+    <jaxb:javaType name="java.net.URI" xmlType="imageUrlType"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseImageUrlType"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printImageUrlType" />
     <jaxb:javaType name="java.lang.String" xmlType="countryType"
@@ -53,7 +53,7 @@
     <jaxb:javaType name="java.lang.String" xmlType="typeDataType"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseTypeDataType"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printTypeDataType" />
-    <jaxb:javaType name="java.net.URL" xmlType="urlDataType"
+    <jaxb:javaType name="java.net.URI" xmlType="urlDataType"
                    parseMethod="org.openestate.io.kyero.KyeroUtils.parseUrlDataType"
                    printMethod="org.openestate.io.kyero.KyeroUtils.printUrlDataType" />
 

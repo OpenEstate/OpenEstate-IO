@@ -1,19 +1,19 @@
 
 package org.openestate.io.kyero.xml;
 
-import java.net.URL;
+import java.net.URI;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter13
-    extends XmlAdapter<String, URL>
+    extends XmlAdapter<String, URI>
 {
 
 
-    public URL unmarshal(String value) {
+    public URI unmarshal(String value) {
         return (org.openestate.io.kyero.KyeroUtils.parseUrlDataType(value));
     }
 
-    public String marshal(URL value) {
+    public String marshal(URI value) {
         return (org.openestate.io.kyero.KyeroUtils.printUrlDataType(value));
     }
 

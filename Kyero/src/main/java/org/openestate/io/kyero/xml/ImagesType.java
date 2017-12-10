@@ -2,7 +2,7 @@
 package org.openestate.io.kyero.xml;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -211,7 +211,7 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
         @XmlElement(type = String.class)
         @XmlJavaTypeAdapter(Adapter14 .class)
         @XmlSchemaType(name = "token")
-        protected URL url;
+        protected URI url;
         @XmlAttribute(name = "id", required = true)
         @XmlJavaTypeAdapter(Adapter15 .class)
         protected Integer id;
@@ -224,7 +224,7 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
          *     {@link String }
          *     
          */
-        public URL getUrl() {
+        public URI getUrl() {
             return url;
         }
 
@@ -236,7 +236,7 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
          *     {@link String }
          *     
          */
-        public void setUrl(URL value) {
+        public void setUrl(URI value) {
             this.url = value;
         }
 
@@ -280,7 +280,7 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
 
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
-                URL theUrl;
+                URI theUrl;
                 theUrl = this.getUrl();
                 strategy.appendField(locator, this, "url", buffer, theUrl, (this.url!= null));
             }
@@ -308,9 +308,9 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
                 {
                     Boolean urlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.url!= null));
                     if (urlShouldBeCopiedAndSet == Boolean.TRUE) {
-                        URL sourceUrl;
+                        URI sourceUrl;
                         sourceUrl = this.getUrl();
-                        URL copyUrl = ((URL) strategy.copy(LocatorUtils.property(locator, "url", sourceUrl), sourceUrl, (this.url!= null)));
+                        URI copyUrl = ((URI) strategy.copy(LocatorUtils.property(locator, "url", sourceUrl), sourceUrl, (this.url!= null)));
                         copy.setUrl(copyUrl);
                     } else {
                         if (urlShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -348,9 +348,9 @@ public class ImagesType implements Serializable, Cloneable, CopyTo2, Equals2, To
             }
             final ImagesType.Image that = ((ImagesType.Image) object);
             {
-                URL lhsUrl;
+                URI lhsUrl;
                 lhsUrl = this.getUrl();
-                URL rhsUrl;
+                URI rhsUrl;
                 rhsUrl = that.getUrl();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "url", lhsUrl), LocatorUtils.property(thatLocator, "url", rhsUrl), lhsUrl, rhsUrl, (this.url!= null), (that.url!= null))) {
                     return false;

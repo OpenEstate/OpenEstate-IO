@@ -20,8 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -294,11 +294,13 @@ public class KyeroUtils
     return value!=null && value>=0 && value<=100;
   }
 
-  public static boolean isValidImageUrlType( URL value )
+  public static boolean isValidImageUrlType( URI value )
   {
-    if (value==null)
+    if (value==null || StringUtils.isBlank( value.getHost() ))
       return false;
-    if (!"http".equals( value.getProtocol() ) && !"ftp".equals( value.getProtocol() ))
+
+    String scheme = StringUtils.trimToEmpty( value.getScheme() ).toLowerCase();
+    if (!"http".equals( scheme ) && !"https".equals( scheme ) && !"ftp".equals( scheme ))
       return false;
 
     String path = StringUtils.trimToEmpty( value.getPath() ).toLowerCase();
@@ -323,14 +325,16 @@ public class KyeroUtils
     return value!=null && value.matches( "([a-zA-Z&\\s\\(\\)/\\-]+)" );
   }
 
-  public static boolean isValidUrlDataType( URL value )
+  public static boolean isValidUrlDataType( URI value )
   {
-    if (value==null)
+    if (value==null || StringUtils.isBlank( value.getHost() ))
       return false;
-    else if (!"http".equals( value.getProtocol() ))
+
+    String scheme = StringUtils.trimToEmpty( value.getScheme() ).toLowerCase();
+    if (!"http".equals( scheme ) && !"https".equals( scheme ))
       return false;
-    else
-      return value.toString().length()<256;
+
+    return true;
   }
 
   public static Boolean parseBoolType( String value )
@@ -404,24 +408,24 @@ public class KyeroUtils
     return (value!=null)? DatatypeConverter.parseInt( value ): null;
   }
 
-  public static URL parseImageUrlType( String value )
+  public static URI parseImageUrlType( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     try
     {
       if (StringUtils.startsWithIgnoreCase( value, "http://" ))
-        return new URL( value );
+        return new URI( value );
       else if (StringUtils.startsWithIgnoreCase( value, "https://" ))
-        return new URL( value );
+        return new URI( value );
       else if (StringUtils.startsWithIgnoreCase( value, "ftp://" ))
-        return new URL( value );
+        return new URI( value );
       else
-        return new URL( "http://" + value );
+        return new URI( "http://" + value );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {
-      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
+      throw new IllegalArgumentException( "Can't parse URI value '" + value + "'!", ex );
     }
   }
 
@@ -464,22 +468,22 @@ public class KyeroUtils
     return StringUtils.trimToNull( value );
   }
 
-  public static URL parseUrlDataType( String value )
+  public static URI parseUrlDataType( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
     try
     {
       if (StringUtils.startsWithIgnoreCase( value, "http://" ))
-        return new URL( value );
+        return new URI( value );
       else if (StringUtils.startsWithIgnoreCase( value, "https://" ))
-        return new URL( value );
+        return new URI( value );
       else
-        return new URL( "http://" + value );
+        return new URI( "http://" + value );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {
-      throw new IllegalArgumentException( "Can't parse URL value '" + value + "'!", ex );
+      throw new IllegalArgumentException( "Can't parse URI value '" + value + "'!", ex );
     }
   }
 
@@ -540,12 +544,12 @@ public class KyeroUtils
       return DatatypeConverter.printInt( value );
   }
 
-  public static String printImageUrlType( URL value )
+  public static String printImageUrlType( URI value )
   {
     if (value==null || !isValidImageUrlType( value ))
       throw new IllegalArgumentException( "Can't print image-url value!" );
     else
-      return value.toExternalForm();
+      return value.toString();
   }
 
   public static String printInteger( BigInteger value )
@@ -602,11 +606,11 @@ public class KyeroUtils
       return value;
   }
 
-  public static String printUrlDataType( URL value )
+  public static String printUrlDataType( URI value )
   {
     if (value==null || !isValidUrlDataType( value ))
       throw new IllegalArgumentException( "Can't print url-data value!" );
     else
-      return value.toExternalForm();
+      return value.toString();
   }
 }

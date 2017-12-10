@@ -21,8 +21,8 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
@@ -231,21 +231,21 @@ public class KyeroWritingExample
     obj.setUrl( FACTORY.createUrlType() );
     try
     {
-      obj.getUrl().setCa( new URL( "http://catalan.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setDa( new URL( "http://danish.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setDe( new URL( "http://german.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setEn( new URL( "http://english.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setEs( new URL( "http://spanish.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setFi( new URL( "http://finnish.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setFr( new URL( "http://french.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setIt( new URL( "http://italian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setNl( new URL( "http://dutch.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setNo( new URL( "http://norwegian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setPt( new URL( "http://portuguese.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setRu( new URL( "http://russian.website.com/property/"+id+".htm" ) );
-      obj.getUrl().setSv( new URL( "http://swedish.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setCa( new URI( "http://catalan.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setDa( new URI( "http://danish.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setDe( new URI( "http://german.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setEn( new URI( "http://english.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setEs( new URI( "http://spanish.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setFi( new URI( "http://finnish.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setFr( new URI( "http://french.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setIt( new URI( "http://italian.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setNl( new URI( "http://dutch.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setNo( new URI( "http://norwegian.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setPt( new URI( "http://portuguese.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setRu( new URI( "http://russian.website.com/property/"+id+".htm" ) );
+      obj.getUrl().setSv( new URI( "http://swedish.website.com/property/"+id+".htm" ) );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {}
 
     return obj;
@@ -270,9 +270,9 @@ public class KyeroWritingExample
     img.setId( pos );
     try
     {
-      img.setUrl( new URL( "http://website.com/property/" + id + "/image_" + pos + ".jpg" ) );
+      img.setUrl( new URI( "http://website.com/property/" + id + "/image_" + pos + ".jpg" ) );
     }
-    catch (MalformedURLException ex)
+    catch (URISyntaxException ex)
     {}
 
     return img;

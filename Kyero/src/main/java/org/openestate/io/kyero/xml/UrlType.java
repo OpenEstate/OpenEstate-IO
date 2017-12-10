@@ -2,7 +2,7 @@
 package org.openestate.io.kyero.xml;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,55 +63,55 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL ca;
+    protected URI ca;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL de;
+    protected URI de;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL da;
+    protected URI da;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL en;
+    protected URI en;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL es;
+    protected URI es;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL fi;
+    protected URI fi;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL fr;
+    protected URI fr;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL it;
+    protected URI it;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL nl;
+    protected URI nl;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL no;
+    protected URI no;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL pt;
+    protected URI pt;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL ru;
+    protected URI ru;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
     @XmlSchemaType(name = "token")
-    protected URL sv;
+    protected URI sv;
 
     /**
      * Gets the value of the ca property.
@@ -121,7 +121,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getCa() {
+    public URI getCa() {
         return ca;
     }
 
@@ -133,7 +133,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setCa(URL value) {
+    public void setCa(URI value) {
         this.ca = value;
     }
 
@@ -145,7 +145,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getDe() {
+    public URI getDe() {
         return de;
     }
 
@@ -157,7 +157,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setDe(URL value) {
+    public void setDe(URI value) {
         this.de = value;
     }
 
@@ -169,7 +169,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getDa() {
+    public URI getDa() {
         return da;
     }
 
@@ -181,7 +181,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setDa(URL value) {
+    public void setDa(URI value) {
         this.da = value;
     }
 
@@ -193,7 +193,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getEn() {
+    public URI getEn() {
         return en;
     }
 
@@ -205,7 +205,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setEn(URL value) {
+    public void setEn(URI value) {
         this.en = value;
     }
 
@@ -217,7 +217,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getEs() {
+    public URI getEs() {
         return es;
     }
 
@@ -229,7 +229,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setEs(URL value) {
+    public void setEs(URI value) {
         this.es = value;
     }
 
@@ -241,7 +241,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getFi() {
+    public URI getFi() {
         return fi;
     }
 
@@ -253,7 +253,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setFi(URL value) {
+    public void setFi(URI value) {
         this.fi = value;
     }
 
@@ -265,7 +265,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getFr() {
+    public URI getFr() {
         return fr;
     }
 
@@ -277,7 +277,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setFr(URL value) {
+    public void setFr(URI value) {
         this.fr = value;
     }
 
@@ -289,7 +289,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getIt() {
+    public URI getIt() {
         return it;
     }
 
@@ -301,7 +301,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setIt(URL value) {
+    public void setIt(URI value) {
         this.it = value;
     }
 
@@ -313,7 +313,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getNl() {
+    public URI getNl() {
         return nl;
     }
 
@@ -325,7 +325,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setNl(URL value) {
+    public void setNl(URI value) {
         this.nl = value;
     }
 
@@ -337,7 +337,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getNo() {
+    public URI getNo() {
         return no;
     }
 
@@ -349,7 +349,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setNo(URL value) {
+    public void setNo(URI value) {
         this.no = value;
     }
 
@@ -361,7 +361,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getPt() {
+    public URI getPt() {
         return pt;
     }
 
@@ -373,7 +373,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setPt(URL value) {
+    public void setPt(URI value) {
         this.pt = value;
     }
 
@@ -385,7 +385,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getRu() {
+    public URI getRu() {
         return ru;
     }
 
@@ -397,7 +397,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setRu(URL value) {
+    public void setRu(URI value) {
         this.ru = value;
     }
 
@@ -409,7 +409,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public URL getSv() {
+    public URI getSv() {
         return sv;
     }
 
@@ -421,7 +421,7 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setSv(URL value) {
+    public void setSv(URI value) {
         this.sv = value;
     }
 
@@ -441,67 +441,67 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            URL theCa;
+            URI theCa;
             theCa = this.getCa();
             strategy.appendField(locator, this, "ca", buffer, theCa, (this.ca!= null));
         }
         {
-            URL theDe;
+            URI theDe;
             theDe = this.getDe();
             strategy.appendField(locator, this, "de", buffer, theDe, (this.de!= null));
         }
         {
-            URL theDa;
+            URI theDa;
             theDa = this.getDa();
             strategy.appendField(locator, this, "da", buffer, theDa, (this.da!= null));
         }
         {
-            URL theEn;
+            URI theEn;
             theEn = this.getEn();
             strategy.appendField(locator, this, "en", buffer, theEn, (this.en!= null));
         }
         {
-            URL theEs;
+            URI theEs;
             theEs = this.getEs();
             strategy.appendField(locator, this, "es", buffer, theEs, (this.es!= null));
         }
         {
-            URL theFi;
+            URI theFi;
             theFi = this.getFi();
             strategy.appendField(locator, this, "fi", buffer, theFi, (this.fi!= null));
         }
         {
-            URL theFr;
+            URI theFr;
             theFr = this.getFr();
             strategy.appendField(locator, this, "fr", buffer, theFr, (this.fr!= null));
         }
         {
-            URL theIt;
+            URI theIt;
             theIt = this.getIt();
             strategy.appendField(locator, this, "it", buffer, theIt, (this.it!= null));
         }
         {
-            URL theNl;
+            URI theNl;
             theNl = this.getNl();
             strategy.appendField(locator, this, "nl", buffer, theNl, (this.nl!= null));
         }
         {
-            URL theNo;
+            URI theNo;
             theNo = this.getNo();
             strategy.appendField(locator, this, "no", buffer, theNo, (this.no!= null));
         }
         {
-            URL thePt;
+            URI thePt;
             thePt = this.getPt();
             strategy.appendField(locator, this, "pt", buffer, thePt, (this.pt!= null));
         }
         {
-            URL theRu;
+            URI theRu;
             theRu = this.getRu();
             strategy.appendField(locator, this, "ru", buffer, theRu, (this.ru!= null));
         }
         {
-            URL theSv;
+            URI theSv;
             theSv = this.getSv();
             strategy.appendField(locator, this, "sv", buffer, theSv, (this.sv!= null));
         }
@@ -524,9 +524,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean caShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ca!= null));
                 if (caShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceCa;
+                    URI sourceCa;
                     sourceCa = this.getCa();
-                    URL copyCa = ((URL) strategy.copy(LocatorUtils.property(locator, "ca", sourceCa), sourceCa, (this.ca!= null)));
+                    URI copyCa = ((URI) strategy.copy(LocatorUtils.property(locator, "ca", sourceCa), sourceCa, (this.ca!= null)));
                     copy.setCa(copyCa);
                 } else {
                     if (caShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -537,9 +537,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean deShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.de!= null));
                 if (deShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceDe;
+                    URI sourceDe;
                     sourceDe = this.getDe();
-                    URL copyDe = ((URL) strategy.copy(LocatorUtils.property(locator, "de", sourceDe), sourceDe, (this.de!= null)));
+                    URI copyDe = ((URI) strategy.copy(LocatorUtils.property(locator, "de", sourceDe), sourceDe, (this.de!= null)));
                     copy.setDe(copyDe);
                 } else {
                     if (deShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -550,9 +550,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean daShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.da!= null));
                 if (daShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceDa;
+                    URI sourceDa;
                     sourceDa = this.getDa();
-                    URL copyDa = ((URL) strategy.copy(LocatorUtils.property(locator, "da", sourceDa), sourceDa, (this.da!= null)));
+                    URI copyDa = ((URI) strategy.copy(LocatorUtils.property(locator, "da", sourceDa), sourceDa, (this.da!= null)));
                     copy.setDa(copyDa);
                 } else {
                     if (daShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -563,9 +563,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean enShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.en!= null));
                 if (enShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceEn;
+                    URI sourceEn;
                     sourceEn = this.getEn();
-                    URL copyEn = ((URL) strategy.copy(LocatorUtils.property(locator, "en", sourceEn), sourceEn, (this.en!= null)));
+                    URI copyEn = ((URI) strategy.copy(LocatorUtils.property(locator, "en", sourceEn), sourceEn, (this.en!= null)));
                     copy.setEn(copyEn);
                 } else {
                     if (enShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -576,9 +576,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean esShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.es!= null));
                 if (esShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceEs;
+                    URI sourceEs;
                     sourceEs = this.getEs();
-                    URL copyEs = ((URL) strategy.copy(LocatorUtils.property(locator, "es", sourceEs), sourceEs, (this.es!= null)));
+                    URI copyEs = ((URI) strategy.copy(LocatorUtils.property(locator, "es", sourceEs), sourceEs, (this.es!= null)));
                     copy.setEs(copyEs);
                 } else {
                     if (esShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -589,9 +589,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean fiShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fi!= null));
                 if (fiShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceFi;
+                    URI sourceFi;
                     sourceFi = this.getFi();
-                    URL copyFi = ((URL) strategy.copy(LocatorUtils.property(locator, "fi", sourceFi), sourceFi, (this.fi!= null)));
+                    URI copyFi = ((URI) strategy.copy(LocatorUtils.property(locator, "fi", sourceFi), sourceFi, (this.fi!= null)));
                     copy.setFi(copyFi);
                 } else {
                     if (fiShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -602,9 +602,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean frShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fr!= null));
                 if (frShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceFr;
+                    URI sourceFr;
                     sourceFr = this.getFr();
-                    URL copyFr = ((URL) strategy.copy(LocatorUtils.property(locator, "fr", sourceFr), sourceFr, (this.fr!= null)));
+                    URI copyFr = ((URI) strategy.copy(LocatorUtils.property(locator, "fr", sourceFr), sourceFr, (this.fr!= null)));
                     copy.setFr(copyFr);
                 } else {
                     if (frShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -615,9 +615,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean itShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.it!= null));
                 if (itShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceIt;
+                    URI sourceIt;
                     sourceIt = this.getIt();
-                    URL copyIt = ((URL) strategy.copy(LocatorUtils.property(locator, "it", sourceIt), sourceIt, (this.it!= null)));
+                    URI copyIt = ((URI) strategy.copy(LocatorUtils.property(locator, "it", sourceIt), sourceIt, (this.it!= null)));
                     copy.setIt(copyIt);
                 } else {
                     if (itShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -628,9 +628,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean nlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.nl!= null));
                 if (nlShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceNl;
+                    URI sourceNl;
                     sourceNl = this.getNl();
-                    URL copyNl = ((URL) strategy.copy(LocatorUtils.property(locator, "nl", sourceNl), sourceNl, (this.nl!= null)));
+                    URI copyNl = ((URI) strategy.copy(LocatorUtils.property(locator, "nl", sourceNl), sourceNl, (this.nl!= null)));
                     copy.setNl(copyNl);
                 } else {
                     if (nlShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -641,9 +641,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean noShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.no!= null));
                 if (noShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceNo;
+                    URI sourceNo;
                     sourceNo = this.getNo();
-                    URL copyNo = ((URL) strategy.copy(LocatorUtils.property(locator, "no", sourceNo), sourceNo, (this.no!= null)));
+                    URI copyNo = ((URI) strategy.copy(LocatorUtils.property(locator, "no", sourceNo), sourceNo, (this.no!= null)));
                     copy.setNo(copyNo);
                 } else {
                     if (noShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -654,9 +654,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean ptShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pt!= null));
                 if (ptShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourcePt;
+                    URI sourcePt;
                     sourcePt = this.getPt();
-                    URL copyPt = ((URL) strategy.copy(LocatorUtils.property(locator, "pt", sourcePt), sourcePt, (this.pt!= null)));
+                    URI copyPt = ((URI) strategy.copy(LocatorUtils.property(locator, "pt", sourcePt), sourcePt, (this.pt!= null)));
                     copy.setPt(copyPt);
                 } else {
                     if (ptShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -667,9 +667,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean ruShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ru!= null));
                 if (ruShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceRu;
+                    URI sourceRu;
                     sourceRu = this.getRu();
-                    URL copyRu = ((URL) strategy.copy(LocatorUtils.property(locator, "ru", sourceRu), sourceRu, (this.ru!= null)));
+                    URI copyRu = ((URI) strategy.copy(LocatorUtils.property(locator, "ru", sourceRu), sourceRu, (this.ru!= null)));
                     copy.setRu(copyRu);
                 } else {
                     if (ruShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -680,9 +680,9 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean svShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sv!= null));
                 if (svShouldBeCopiedAndSet == Boolean.TRUE) {
-                    URL sourceSv;
+                    URI sourceSv;
                     sourceSv = this.getSv();
-                    URL copySv = ((URL) strategy.copy(LocatorUtils.property(locator, "sv", sourceSv), sourceSv, (this.sv!= null)));
+                    URI copySv = ((URI) strategy.copy(LocatorUtils.property(locator, "sv", sourceSv), sourceSv, (this.sv!= null)));
                     copy.setSv(copySv);
                 } else {
                     if (svShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -707,117 +707,117 @@ public class UrlType implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
         }
         final UrlType that = ((UrlType) object);
         {
-            URL lhsCa;
+            URI lhsCa;
             lhsCa = this.getCa();
-            URL rhsCa;
+            URI rhsCa;
             rhsCa = that.getCa();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ca", lhsCa), LocatorUtils.property(thatLocator, "ca", rhsCa), lhsCa, rhsCa, (this.ca!= null), (that.ca!= null))) {
                 return false;
             }
         }
         {
-            URL lhsDe;
+            URI lhsDe;
             lhsDe = this.getDe();
-            URL rhsDe;
+            URI rhsDe;
             rhsDe = that.getDe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "de", lhsDe), LocatorUtils.property(thatLocator, "de", rhsDe), lhsDe, rhsDe, (this.de!= null), (that.de!= null))) {
                 return false;
             }
         }
         {
-            URL lhsDa;
+            URI lhsDa;
             lhsDa = this.getDa();
-            URL rhsDa;
+            URI rhsDa;
             rhsDa = that.getDa();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "da", lhsDa), LocatorUtils.property(thatLocator, "da", rhsDa), lhsDa, rhsDa, (this.da!= null), (that.da!= null))) {
                 return false;
             }
         }
         {
-            URL lhsEn;
+            URI lhsEn;
             lhsEn = this.getEn();
-            URL rhsEn;
+            URI rhsEn;
             rhsEn = that.getEn();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "en", lhsEn), LocatorUtils.property(thatLocator, "en", rhsEn), lhsEn, rhsEn, (this.en!= null), (that.en!= null))) {
                 return false;
             }
         }
         {
-            URL lhsEs;
+            URI lhsEs;
             lhsEs = this.getEs();
-            URL rhsEs;
+            URI rhsEs;
             rhsEs = that.getEs();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "es", lhsEs), LocatorUtils.property(thatLocator, "es", rhsEs), lhsEs, rhsEs, (this.es!= null), (that.es!= null))) {
                 return false;
             }
         }
         {
-            URL lhsFi;
+            URI lhsFi;
             lhsFi = this.getFi();
-            URL rhsFi;
+            URI rhsFi;
             rhsFi = that.getFi();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fi", lhsFi), LocatorUtils.property(thatLocator, "fi", rhsFi), lhsFi, rhsFi, (this.fi!= null), (that.fi!= null))) {
                 return false;
             }
         }
         {
-            URL lhsFr;
+            URI lhsFr;
             lhsFr = this.getFr();
-            URL rhsFr;
+            URI rhsFr;
             rhsFr = that.getFr();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fr", lhsFr), LocatorUtils.property(thatLocator, "fr", rhsFr), lhsFr, rhsFr, (this.fr!= null), (that.fr!= null))) {
                 return false;
             }
         }
         {
-            URL lhsIt;
+            URI lhsIt;
             lhsIt = this.getIt();
-            URL rhsIt;
+            URI rhsIt;
             rhsIt = that.getIt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "it", lhsIt), LocatorUtils.property(thatLocator, "it", rhsIt), lhsIt, rhsIt, (this.it!= null), (that.it!= null))) {
                 return false;
             }
         }
         {
-            URL lhsNl;
+            URI lhsNl;
             lhsNl = this.getNl();
-            URL rhsNl;
+            URI rhsNl;
             rhsNl = that.getNl();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nl", lhsNl), LocatorUtils.property(thatLocator, "nl", rhsNl), lhsNl, rhsNl, (this.nl!= null), (that.nl!= null))) {
                 return false;
             }
         }
         {
-            URL lhsNo;
+            URI lhsNo;
             lhsNo = this.getNo();
-            URL rhsNo;
+            URI rhsNo;
             rhsNo = that.getNo();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "no", lhsNo), LocatorUtils.property(thatLocator, "no", rhsNo), lhsNo, rhsNo, (this.no!= null), (that.no!= null))) {
                 return false;
             }
         }
         {
-            URL lhsPt;
+            URI lhsPt;
             lhsPt = this.getPt();
-            URL rhsPt;
+            URI rhsPt;
             rhsPt = that.getPt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pt", lhsPt), LocatorUtils.property(thatLocator, "pt", rhsPt), lhsPt, rhsPt, (this.pt!= null), (that.pt!= null))) {
                 return false;
             }
         }
         {
-            URL lhsRu;
+            URI lhsRu;
             lhsRu = this.getRu();
-            URL rhsRu;
+            URI rhsRu;
             rhsRu = that.getRu();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ru", lhsRu), LocatorUtils.property(thatLocator, "ru", rhsRu), lhsRu, rhsRu, (this.ru!= null), (that.ru!= null))) {
                 return false;
             }
         }
         {
-            URL lhsSv;
+            URI lhsSv;
             lhsSv = this.getSv();
-            URL rhsSv;
+            URI rhsSv;
             rhsSv = that.getSv();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sv", lhsSv), LocatorUtils.property(thatLocator, "sv", rhsSv), lhsSv, rhsSv, (this.sv!= null), (that.sv!= null))) {
                 return false;
