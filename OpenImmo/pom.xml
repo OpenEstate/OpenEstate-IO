@@ -264,6 +264,7 @@
           <extension>true</extension>
           <generateEpisode>false</generateEpisode>
           <noGeneratedHeaderComments>true</noGeneratedHeaderComments>
+          <locale>en</locale>
           <arguments>
             <argument>-XtoString</argument>
             <argument>-Xcopyable</argument>
