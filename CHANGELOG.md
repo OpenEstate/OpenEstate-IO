@@ -4,8 +4,19 @@ Changelog for OpenEstate-IO
 1.4 (not released yet)
 ----------------------
 
-...
-
+-   Updated `commons-codec` library to version 1.11.
+-   Updated `commons-csv` library to version 1.5.
+-   Updated `commons-io` library to version 2.6.
+-   Updated `commons-lang` library to version 3.7.
+-   **API change:** The XML format of *kyero.com* has been updated to the latest
+    version 3.4 (11th August 2017). This update adds some XML elements and
+    removes some languages. Take a look at
+    [their specification](http://help.kyero.com/article/354-xml-import-specification)
+    for more information.
+-   **API change:** We're using `java.net.URI` instead of `java.net.URL`
+    in the XML formats of *daft.ie*, *kyero.com* and *IS24* whenever possible.
+    See [Always read the documentation/code – a.k.a. java.net.URL is evil](https://sworddance.com/blog/2007/09/09/code-review-4-always-read-the-documentationcode-aka-javaneturl-is-evil/)
+    for more information.
 
 
 1.3 (29 Jul 2017)
