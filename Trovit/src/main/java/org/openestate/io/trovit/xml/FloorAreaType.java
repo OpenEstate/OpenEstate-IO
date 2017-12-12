@@ -2,11 +2,10 @@
 package org.openestate.io.trovit.xml;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -21,19 +20,23 @@ import org.jvnet.jaxb2_commons.lang.ToString2;
 import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
-import org.openestate.io.trovit.xml.types.PriceInterval;
+import org.openestate.io.trovit.xml.types.AreaUnitValue;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * 
+ *         Der Fl\u00e4che eines Objekts.
+ *       
+ * 
+ * <p>Java class for FloorAreaType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType&gt;
+ * &lt;complexType name="FloorAreaType"&gt;
  *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;&gt;typePriceString"&gt;
- *       &lt;attribute name="period" type="{}typePrice" /&gt;
+ *     &lt;extension base="&lt;&gt;FloorAreaValue"&gt;
+ *       &lt;attribute name="unit" type="{}AreaUnitValue" /&gt;
  *     &lt;/extension&gt;
  *   &lt;/simpleContent&gt;
  * &lt;/complexType&gt;
@@ -42,29 +45,30 @@ import org.openestate.io.trovit.xml.types.PriceInterval;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "FloorAreaType", propOrder = {
     "value"
 })
-@XmlRootElement(name = "price")
-public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
+public class FloorAreaType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter4 .class)
-    protected BigDecimal value;
-    @XmlAttribute(name = "period")
-    @XmlJavaTypeAdapter(Adapter5 .class)
-    protected PriceInterval period;
+    @XmlJavaTypeAdapter(Adapter10 .class)
+    protected BigInteger value;
+    @XmlAttribute(name = "unit")
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    protected AreaUnitValue unit;
 
     /**
-     * Pattern for prices
+     * 
+     *         Wert der Fl\u00e4che (von 20 bis 50000)
+     *       
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public BigDecimal getValue() {
+    public BigInteger getValue() {
         return value;
     }
 
@@ -76,32 +80,32 @@ public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link String }
      *     
      */
-    public void setValue(BigDecimal value) {
+    public void setValue(BigInteger value) {
         this.value = value;
     }
 
     /**
-     * Gets the value of the period property.
+     * Gets the value of the unit property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public PriceInterval getPeriod() {
-        return period;
+    public AreaUnitValue getUnit() {
+        return unit;
     }
 
     /**
-     * Sets the value of the period property.
+     * Sets the value of the unit property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPeriod(PriceInterval value) {
-        this.period = value;
+    public void setUnit(AreaUnitValue value) {
+        this.unit = value;
     }
 
     public String toString() {
@@ -120,14 +124,14 @@ public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            BigDecimal theValue;
+            BigInteger theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            PriceInterval thePeriod;
-            thePeriod = this.getPeriod();
-            strategy.appendField(locator, this, "period", buffer, thePeriod, (this.period!= null));
+            AreaUnitValue theUnit;
+            theUnit = this.getUnit();
+            strategy.appendField(locator, this, "unit", buffer, theUnit, (this.unit!= null));
         }
         return buffer;
     }
@@ -143,14 +147,14 @@ public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
 
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
-        if (draftCopy instanceof Price) {
-            final Price copy = ((Price) draftCopy);
+        if (draftCopy instanceof FloorAreaType) {
+            final FloorAreaType copy = ((FloorAreaType) draftCopy);
             {
                 Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
                 if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
-                    BigDecimal sourceValue;
+                    BigInteger sourceValue;
                     sourceValue = this.getValue();
-                    BigDecimal copyValue = ((BigDecimal) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    BigInteger copyValue = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
                     copy.setValue(copyValue);
                 } else {
                     if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -159,15 +163,15 @@ public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
                 }
             }
             {
-                Boolean periodShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.period!= null));
-                if (periodShouldBeCopiedAndSet == Boolean.TRUE) {
-                    PriceInterval sourcePeriod;
-                    sourcePeriod = this.getPeriod();
-                    PriceInterval copyPeriod = ((PriceInterval) strategy.copy(LocatorUtils.property(locator, "period", sourcePeriod), sourcePeriod, (this.period!= null)));
-                    copy.setPeriod(copyPeriod);
+                Boolean unitShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.unit!= null));
+                if (unitShouldBeCopiedAndSet == Boolean.TRUE) {
+                    AreaUnitValue sourceUnit;
+                    sourceUnit = this.getUnit();
+                    AreaUnitValue copyUnit = ((AreaUnitValue) strategy.copy(LocatorUtils.property(locator, "unit", sourceUnit), sourceUnit, (this.unit!= null)));
+                    copy.setUnit(copyUnit);
                 } else {
-                    if (periodShouldBeCopiedAndSet == Boolean.FALSE) {
-                        copy.period = null;
+                    if (unitShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.unit = null;
                     }
                 }
             }
@@ -176,7 +180,7 @@ public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
     }
 
     public Object createNewInstance() {
-        return new Price();
+        return new FloorAreaType();
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
@@ -186,22 +190,22 @@ public class Price implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
         if (this == object) {
             return true;
         }
-        final Price that = ((Price) object);
+        final FloorAreaType that = ((FloorAreaType) object);
         {
-            BigDecimal lhsValue;
+            BigInteger lhsValue;
             lhsValue = this.getValue();
-            BigDecimal rhsValue;
+            BigInteger rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
         {
-            PriceInterval lhsPeriod;
-            lhsPeriod = this.getPeriod();
-            PriceInterval rhsPeriod;
-            rhsPeriod = that.getPeriod();
-            if (!strategy.equals(LocatorUtils.property(thisLocator, "period", lhsPeriod), LocatorUtils.property(thatLocator, "period", rhsPeriod), lhsPeriod, rhsPeriod, (this.period!= null), (that.period!= null))) {
+            AreaUnitValue lhsUnit;
+            lhsUnit = this.getUnit();
+            AreaUnitValue rhsUnit;
+            rhsUnit = that.getUnit();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "unit", lhsUnit), LocatorUtils.property(thatLocator, "unit", rhsUnit), lhsUnit, rhsUnit, (this.unit!= null), (that.unit!= null))) {
                 return false;
             }
         }

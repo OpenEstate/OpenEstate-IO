@@ -10,11 +10,11 @@ public class Adapter14
 
 
     public BigInteger unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseLong(value));
+        return (org.openestate.io.trovit.TrovitUtils.parseYearValue(value));
     }
 
     public String marshal(BigInteger value) {
-        return (org.openestate.io.trovit.TrovitUtils.printLong(value));
+        return (org.openestate.io.trovit.TrovitUtils.printYearValue(value));
     }
 
 }

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
@@ -32,7 +31,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element ref="{}ad" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="ad" type="{}AdType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -49,8 +48,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 public class Trovit implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @XmlElement(required = true)
-    protected List<Ad> ad;
+    protected List<AdType> ad;
 
     /**
      * Gets the value of the ad property.
@@ -70,13 +68,13 @@ public class Trovit implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Ad }
+     * {@link AdType }
      * 
      * 
      */
-    public List<Ad> getAd() {
+    public List<AdType> getAd() {
         if (ad == null) {
-            ad = new ArrayList<Ad>();
+            ad = new ArrayList<AdType>();
         }
         return this.ad;
     }
@@ -97,7 +95,7 @@ public class Trovit implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            List<Ad> theAd;
+            List<AdType> theAd;
             theAd = (((this.ad!= null)&&(!this.ad.isEmpty()))?this.getAd():null);
             strategy.appendField(locator, this, "ad", buffer, theAd, ((this.ad!= null)&&(!this.ad.isEmpty())));
         }
@@ -120,13 +118,13 @@ public class Trovit implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
             {
                 Boolean adShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, ((this.ad!= null)&&(!this.ad.isEmpty())));
                 if (adShouldBeCopiedAndSet == Boolean.TRUE) {
-                    List<Ad> sourceAd;
+                    List<AdType> sourceAd;
                     sourceAd = (((this.ad!= null)&&(!this.ad.isEmpty()))?this.getAd():null);
                     @SuppressWarnings("unchecked")
-                    List<Ad> copyAd = ((List<Ad> ) strategy.copy(LocatorUtils.property(locator, "ad", sourceAd), sourceAd, ((this.ad!= null)&&(!this.ad.isEmpty()))));
+                    List<AdType> copyAd = ((List<AdType> ) strategy.copy(LocatorUtils.property(locator, "ad", sourceAd), sourceAd, ((this.ad!= null)&&(!this.ad.isEmpty()))));
                     copy.ad = null;
                     if (copyAd!= null) {
-                        List<Ad> uniqueAdl = copy.getAd();
+                        List<AdType> uniqueAdl = copy.getAd();
                         uniqueAdl.addAll(copyAd);
                     }
                 } else {
@@ -152,9 +150,9 @@ public class Trovit implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         }
         final Trovit that = ((Trovit) object);
         {
-            List<Ad> lhsAd;
+            List<AdType> lhsAd;
             lhsAd = (((this.ad!= null)&&(!this.ad.isEmpty()))?this.getAd():null);
-            List<Ad> rhsAd;
+            List<AdType> rhsAd;
             rhsAd = (((that.ad!= null)&&(!that.ad.isEmpty()))?that.getAd():null);
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ad", lhsAd), LocatorUtils.property(thatLocator, "ad", rhsAd), lhsAd, rhsAd, ((this.ad!= null)&&(!this.ad.isEmpty())), ((that.ad!= null)&&(!that.ad.isEmpty())))) {
                 return false;

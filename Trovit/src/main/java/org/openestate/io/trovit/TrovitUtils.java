@@ -20,13 +20,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Currency;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -35,14 +39,14 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.openestate.io.core.NumberUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.trovit.xml.ObjectFactory;
-import org.openestate.io.trovit.xml.types.Action;
-import org.openestate.io.trovit.xml.types.IntBool;
-import org.openestate.io.trovit.xml.types.PriceInterval;
-import org.openestate.io.trovit.xml.types.Unit;
+import org.openestate.io.trovit.xml.types.AreaUnitValue;
+import org.openestate.io.trovit.xml.types.ForeclosureTypeValue;
+import org.openestate.io.trovit.xml.types.OrientationValue;
+import org.openestate.io.trovit.xml.types.PricePeriodValue;
+import org.openestate.io.trovit.xml.types.TypeValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -57,6 +61,7 @@ import org.xml.sax.SAXException;
 public class TrovitUtils
 {
   private final static Logger LOGGER = LoggerFactory.getLogger( TrovitUtils.class );
+  private final static Pattern ROOMS_INTERVAL = Pattern.compile( "^(\\d+)\\-(\\d+)$" );
   private static JAXBContext JAXB = null;
 
   /**
@@ -240,17 +245,6 @@ public class TrovitUtils
   }
 
   /**
-   * Returns the preferred date format for this format.
-   *
-   * @return
-   * date format
-   */
-  public static DateFormat getDateFormat()
-  {
-    return new SimpleDateFormat( "dd/MM/yyyy" );
-  }
-
-  /**
    * Returns the {@link ObjectFactory} for this format.
    *
    * @return
@@ -259,17 +253,6 @@ public class TrovitUtils
   public synchronized static ObjectFactory getFactory()
   {
     return FACTORY;
-  }
-
-  /**
-   * Returns the preferred time format for this format.
-   *
-   * @return
-   * date format
-   */
-  public static DateFormat getTimeFormat()
-  {
-    return new SimpleDateFormat( "HH:mm:ss" );
   }
 
   /**
@@ -286,261 +269,837 @@ public class TrovitUtils
     JAXB = JAXBContext.newInstance( PACKAGE, classloader );
   }
 
-  public static Action parseAction( String value )
+  /**
+   * Read a {@link AreaUnitValue} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static AreaUnitValue parseAreaUnitValue( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
 
-    Action action = Action.fromXmlValue( value );
-    if (action==null)
-      throw new IllegalArgumentException( "Can't parse action value '" + value + "'!" );
+    final AreaUnitValue unit = AreaUnitValue.fromXmlValue( value );
+    if (unit!=null) return unit;
 
-    return action;
+    throw new IllegalArgumentException( "Can't parse foreclosure type value '" + value + "'!" );
   }
 
-  public static Boolean parseBool( String value )
+  /**
+   * Read a {@link Boolean} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static Boolean parseBooleanValue( String value )
   {
-    value = StringUtils.trimToNull( value );
-    if ("si".equalsIgnoreCase( value ) || "yes".equalsIgnoreCase( value ))
-      return Boolean.TRUE;
-    else if ("no".equalsIgnoreCase( value ))
-      return Boolean.FALSE;
-    else if (value!=null)
-      return DatatypeConverter.parseBoolean( value );
-    else
-      throw new IllegalArgumentException( "Can't parse boolean value '" + value + "'!" );
-  }
-
-  public static Calendar parseDate( String value )
-  {
-    return XmlUtils.parseDate( value );
-  }
-
-  public static BigDecimal parseFloat( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
-  }
-
-  public static BigInteger parseInt( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
-  }
-
-  public static IntBool parseIntBool( String value )
-  {
-    value = StringUtils.trimToNull( value );
-
-    if (value==null)
-      return null;
-    else if ("0".equalsIgnoreCase( value ))
-      return new IntBool( BigInteger.ZERO );
-    else if ("1".equalsIgnoreCase( value ))
-      return new IntBool( BigInteger.ONE );
-
-    try
+    value = StringUtils.lowerCase( StringUtils.trimToEmpty( value ), Locale.ENGLISH );
+    switch (value)
     {
-      Boolean boolValue = parseBool( value );
-      if (boolValue!=null) return new IntBool( boolValue );
-    }
-    catch (Exception ex)
-    {
-    }
+      case "true":
+      case "yes":
+      case "si":
+      case "1":
+        return Boolean.TRUE;
 
-    try
-    {
-      BigInteger intValue = DatatypeConverter.parseInteger( value );
-      if (intValue!=null) return new IntBool( intValue );
-    }
-    catch (Exception ex)
-    {
-    }
+      case "false":
+      case "no":
+      case "0":
+        return Boolean.FALSE;
 
-    throw new IllegalArgumentException( "Can't parse int-bool value '"+value+"'!" );
+      default:
+        throw new IllegalArgumentException( "Can't parse boolean value '" + value + "'!" );
+    }
   }
 
-  public static BigInteger parseLong( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseInteger( value ): null;
-  }
-
-  public static PriceInterval parsePriceInterval( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    PriceInterval priceInterval = PriceInterval.fromXmlValue( value );
-    if (priceInterval==null)
-      throw new IllegalArgumentException( "Can't parse price-interval value '" + value + "'!" );
-
-    return priceInterval;
-  }
-
-  public static BigDecimal parsePriceValue( String value )
-  {
-    Number number = NumberUtils.parseNumber( value, Locale.ENGLISH, Locale.GERMANY );
-    if (number==null)
-      throw new IllegalArgumentException( "Can't parse price value '"+value+"'!" );
-    return BigDecimal.valueOf( number.doubleValue() );
-  }
-
-  public static String parseString100( String value )
+  /**
+   * Read a {@link String} value from XML for description.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static String parseContentValue( String value )
   {
     return StringUtils.trimToNull( value );
   }
 
-  public static String parseString255( String value )
+  /**
+   * Read a {@link String} value from XML for a country code.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static String parseCountryValue( String value )
   {
     return StringUtils.trimToNull( value );
   }
 
-  public static Calendar parseTime( String value )
+  /**
+   * Read a {@link Calendar} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static Calendar parseDateValue( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
+
+    final String[] patterns = new String[]{
+      "dd/MM/yyyy",
+      "dd/MM/yyyy hh:mm:ss",
+      "dd-MM-yyyy",
+      "dd-MM-yyyy hh:mm:ss",
+      "yyyy/MM/dd",
+      "yyyy/MM/dd hh:mm:ss",
+      "yyyy-MM-dd",
+      "yyyy-MM-dd hh:mm:ss"
+    };
+
     try
     {
-      Date date = DateUtils.parseDateStrictly( value, new String[]{
-        "HH:mm:ss", "HH:mm" } );
-      Calendar cal = Calendar.getInstance();
+      Date date = DateUtils.parseDateStrictly( value, Locale.ENGLISH, patterns );
+      Calendar cal = Calendar.getInstance( Locale.getDefault() );
       cal.setTime( date );
       return cal;
     }
     catch (ParseException ex)
     {
-      //LOGGER.warn( "Can't parse value '" + value + "' as date!" );
-      //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
+      throw new IllegalArgumentException( "Can't parse date value '" + value + "'!", ex );
     }
-    throw new IllegalArgumentException( "Can't parse time value '"+value+"'!" );
   }
 
-  public static Unit parseUnit( String value )
+  /**
+   * Read a {@link BigInteger} value from XML for a floor area.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static BigInteger parseFloorAreaValue( String value )
+  {
+    try
+    {
+      value = StringUtils.trimToNull( value );
+      return (value!=null)? DatatypeConverter.parseInteger( value ): null;
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse floor area value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read a {@link ForeclosureTypeValue} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static ForeclosureTypeValue parseForeclosureTypeValue( String value )
   {
     value = StringUtils.trimToNull( value );
     if (value==null) return null;
 
-    Unit unit = Unit.fromXmlValue( value );
-    if (unit==null)
-      throw new IllegalArgumentException( "Can't parse unit value '" + value + "'!" );
+    final ForeclosureTypeValue foreclosure = ForeclosureTypeValue.fromXmlValue( value );
+    if (foreclosure!=null) return foreclosure;
 
-    return unit;
+    throw new IllegalArgumentException( "Can't parse foreclosure type value '" + value + "'!" );
   }
 
-  public static Integer parseYear( String value )
+  /**
+   * Read a {@link BigDecimal} value from XML
+   * with a valid latitude range.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static BigDecimal parseLatitudeValue( String value )
+  {
+    try
+    {
+      value = StringUtils.trimToNull( value );
+      return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse latitude value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read a {@link BigDecimal} value from XML
+   * with a valid longitude range.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static BigDecimal parseLongitudeValue( String value )
+  {
+    try
+    {
+      value = StringUtils.trimToNull( value );
+      return (value!=null)? DatatypeConverter.parseDecimal( value ): null;
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse longitude value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read a {@link OrientationValue} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static OrientationValue parseOrientationValue( String value )
   {
     value = StringUtils.trimToNull( value );
-    return (value!=null)? DatatypeConverter.parseInt( value ): null;
+    if (value==null) return null;
+
+    final OrientationValue orientation = OrientationValue.fromXmlValue( value );
+    if (orientation!=null) return orientation;
+
+    throw new IllegalArgumentException( "Can't parse orientation value '" + value + "'!" );
   }
 
-  public static String printAction( Action value )
+  /**
+   * Read a {@link BigInteger} value from XML for a plot area.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static BigInteger parsePlotAreaValue( String value )
+  {
+    try
+    {
+      value = StringUtils.trimToNull( value );
+      return (value!=null)? DatatypeConverter.parseInteger( value ): null;
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse plot area value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read a {@link Currency} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static Currency parsePriceCurrencyValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    try
+    {
+      return Currency.getInstance( value.toUpperCase() );
+    }
+    catch (IllegalArgumentException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse price currency value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read a {@link PricePeriodValue} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static PricePeriodValue parsePricePeriodValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    final PricePeriodValue period = PricePeriodValue.fromXmlValue( value );
+    if (period!=null) return period;
+
+    throw new IllegalArgumentException( "Can't parse price period value '" + value + "'!" );
+  }
+
+  /**
+   * Read a {@link BigDecimal} value from XML for a price.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static BigDecimal parsePriceValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+    try
+    {
+      return DatatypeConverter.parseDecimal( value );
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse price value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read a {@link BigDecimal} value from XML for a number of rooms.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static BigDecimal parseRoomsValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    final Matcher m = ROOMS_INTERVAL.matcher( value );
+    if (m.find())
+    {
+      final int from = Integer.parseInt( m.group( 1 ) );
+      final int to = Integer.parseInt( m.group( 2 ) );
+      if ((to-from)!=-1)
+      {
+        throw new IllegalArgumentException( "Can't parse rooms value '" + value + "' because of an invalid interval!" );
+      }
+      return DatatypeConverter.parseDecimal( to + ".5" );
+    }
+
+    try
+    {
+      return DatatypeConverter.parseDecimal( value );
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse rooms value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read an {@link URI} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static URI parseUriValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+
+    if (value!=null && !StringUtils.startsWithIgnoreCase( value, "http://" ) && !StringUtils.startsWithIgnoreCase( value, "https://" ))
+      value = "http://" + value;
+
+    try
+    {
+      return (value!=null)? new URI( value ): null;
+    }
+    catch (URISyntaxException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse URI '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Read a {@link TypeValue} value from XML.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static TypeValue parseTypeValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null) return null;
+
+    final TypeValue type = TypeValue.fromXmlValue( value );
+    if (type!=null) return type;
+
+    throw new IllegalArgumentException( "Can't parse type value '" + value + "'!" );
+  }
+
+  /**
+   * Read a {@link BigInteger} value from XML for a year number.
+   *
+   * @param value
+   * XML string
+   *
+   * @return
+   * parsed value or null, if the value is invalid
+   */
+  public static BigInteger parseYearValue( String value )
+  {
+    try
+    {
+      value = StringUtils.trimToNull( value );
+      return (value!=null)? DatatypeConverter.parseInteger( value ): null;
+    }
+    catch (NumberFormatException ex)
+    {
+      throw new IllegalArgumentException( "Can't parse year value '" + value + "'!", ex );
+    }
+  }
+
+  /**
+   * Write a {@link AreaUnitValue} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printAreaUnitValue( AreaUnitValue value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print action value!" );
-    else
-      return value.write();
+      throw new IllegalArgumentException( "Can't print empty area unit value!" );
+
+    return value.write();
   }
 
-  public static String printBool( Boolean value )
+  /**
+   * Write a {@link Boolean} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printBooleanValue( Boolean value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print boolean value!" );
-    else
-      return DatatypeConverter.printBoolean( value );
+      throw new IllegalArgumentException( "Can't print empty boolean value!" );
+
+    return DatatypeConverter.printBoolean( value );
   }
 
-  public static String printDate( Calendar value )
+  /**
+   * Write a {@link String} value for a description into XML output.
+   *
+   * The description must contain at least 30 characters.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printContentValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty content value!" );
+    if (value.length()<30)
+      throw new IllegalArgumentException( "Can't print content value '" + value + "' because it is shorter than 30 characters!" );
+
+    return value;
+  }
+
+  /**
+   * Write a {@link String} value for a country code into XML output.
+   *
+   * The country has to be represendet by a ISO-Code wirh two or three
+   * characters.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printCountryValue( String value )
+  {
+    value = StringUtils.trimToNull( value );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty country value!" );
+    if (value.length()!=2 && value.length()!=3)
+      throw new IllegalArgumentException( "Can't print country value '" + value + "' because it is neither an ISO-2-Code nor an ISO-3-Code!" );
+
+    return StringUtils.upperCase( value, Locale.ENGLISH );
+  }
+
+  /**
+   * Write a {@link Calendar} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printDateValue( Calendar value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print date value!" );
-    else
-      return getDateFormat().format( value.getTime() );
+      throw new IllegalArgumentException( "Can't print empty date value!" );
+
+    return new SimpleDateFormat( "dd-MM-yyyy hh:mm:ss", Locale.ENGLISH )
+      .format( value.getTime() );
   }
 
-  public static String printFloat( BigDecimal value )
+  /**
+   * Write a {@link BigInteger} value into XML output for a floor area.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printFloorAreaValue( BigInteger value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print float value!" );
-    else
-      return DatatypeConverter.printDecimal( value );
+      throw new IllegalArgumentException( "Can't print empty floor area value!" );
+    if (value.compareTo( BigInteger.valueOf( 20L ) )<0)
+      throw new IllegalArgumentException( "Can't print floor area value '" + value + "' because it is below 20!" );
+    if (value.compareTo( BigInteger.valueOf( 50000L ) )>0)
+      throw new IllegalArgumentException( "Can't print floor area value '" + value + "' because it is above 50000!" );
+
+    return DatatypeConverter.printInteger( value );
   }
 
-  public static String printInt( BigInteger value )
+  /**
+   * Write a {@link ForeclosureTypeValue} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printForeclosureTypeValue( ForeclosureTypeValue value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print integer value!" );
-    else
-      return DatatypeConverter.printInteger( value );
+      throw new IllegalArgumentException( "Can't print empty foreclosure type value!" );
+
+    return value.write();
   }
 
-  public static String printIntBool( IntBool value )
-  {
-    Boolean boolValue = (value!=null)? value.getBoolValue(): null;
-    BigInteger intValue = (value!=null)? value.getIntValue(): null;
-    if (boolValue!=null)
-      return DatatypeConverter.printBoolean( boolValue );
-    else if (intValue!=null)
-      return DatatypeConverter.printInteger( intValue );
-    else
-      throw new IllegalArgumentException( "Can't print int-bool value!" );
-  }
-
-  public static String printLong( BigInteger value )
-  {
-    if (value==null)
-      throw new IllegalArgumentException( "Can't print long value!" );
-    else
-      return DatatypeConverter.printInteger( value );
-  }
-
-  public static String printPriceInterval( PriceInterval value )
+  /**
+   * Write a {@link BigDecimal} value into XML output
+   * with a valid latitude range.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printLatitudeValue( BigDecimal value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print price-interval value!" );
-    else
-      return value.write();
+      throw new IllegalArgumentException( "Can't print empty latitude value!" );
+    if (value.compareTo( new BigDecimal( "-90" ) )<0)
+      throw new IllegalArgumentException( "Can't print latitude value '" + value + "' because it is below -90!" );
+    if (value.compareTo( new BigDecimal( "90" ) )>0)
+      throw new IllegalArgumentException( "Can't print latitude value '" + value + "' because it is above 90!" );
+
+    value = value.setScale( 10, BigDecimal.ROUND_HALF_UP );
+    return DatatypeConverter.printDecimal( value );
   }
 
+  /**
+   * Write a {@link BigDecimal} value into XML output
+   * with a valid longitude range.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printLongitudeValue( BigDecimal value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty longitude value!" );
+    if (value.compareTo( new BigDecimal( "-180" ) )<0)
+      throw new IllegalArgumentException( "Can't print longitude value '" + value + "' because it is below -180!" );
+    if (value.compareTo( new BigDecimal( "180" ) )>0)
+      throw new IllegalArgumentException( "Can't print longitude value '" + value + "' because it is above 180!" );
+
+    value = value.setScale( 10, BigDecimal.ROUND_HALF_UP );
+    return DatatypeConverter.printDecimal( value );
+  }
+
+  /**
+   * Write a {@link OrientationValue} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printOrientationValue( OrientationValue value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty orientation value!" );
+
+    return value.write();
+  }
+
+  /**
+   * Write a {@link BigInteger} value into XML output for a plot area.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printPlotAreaValue( BigInteger value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty plot area value!" );
+    if (value.compareTo( BigInteger.ONE )<0)
+      throw new IllegalArgumentException( "Can't print floor plot value '" + value + "' because it is below 1!" );
+    if (value.compareTo( BigInteger.valueOf( 1000000000L ) )>0)
+      throw new IllegalArgumentException( "Can't print floor plot value '" + value + "' because it is above 1000000000!" );
+
+    return DatatypeConverter.printInteger( value );
+  }
+
+  /**
+   * Write a {@link Currency} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printPriceCurrencyValue( Currency value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty price currency value!" );
+
+    return value.getCurrencyCode();
+  }
+
+  /**
+   * Write a {@link PricePeriodValue} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printPricePeriodValue( PricePeriodValue value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty price period value!" );
+
+    return value.write();
+  }
+
+  /**
+   * Write a {@link BigDecimal} value into XML output for a price.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
   public static String printPriceValue( BigDecimal value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print price value!" );
-    else
-      return DatatypeConverter.printDecimal( value.setScale( 2, BigDecimal.ROUND_HALF_UP ) );
+      throw new IllegalArgumentException( "Can't print empty price value!" );
+    if (value.compareTo( BigDecimal.ZERO )<0)
+      throw new IllegalArgumentException( "Can't print price value '" + value + "' because it is below 0!" );
+    if (value.compareTo( new BigDecimal( "1000000000" ) )>0)
+      throw new IllegalArgumentException( "Can't print price value '" + value + "' because it is above 1000000000!" );
+
+    value = value.setScale( 2, BigDecimal.ROUND_HALF_UP );
+    return DatatypeConverter.printDecimal( value );
   }
 
-  public static String printString100( String value )
-  {
-    return StringUtils.abbreviate( StringUtils.trimToEmpty( value ), 100 );
-  }
-
-  public static String printString255( String value )
-  {
-    return StringUtils.abbreviate( StringUtils.trimToEmpty( value ), 255 );
-  }
-
-  public static String printTime( Calendar value )
+  /**
+   * Write a {@link BigDecimal} value into XML output for a room number.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printRoomsValue( BigDecimal value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print time value!" );
-    else
-      return getTimeFormat().format( value.getTime() );
+      throw new IllegalArgumentException( "Can't print empty rooms value!" );
+    if (value.compareTo( BigDecimal.ZERO )<0)
+      throw new IllegalArgumentException( "Can't print rooms value '" + value + "' because it is below 0!" );
+    if (value.compareTo( new BigDecimal( "20" ) )>0)
+      throw new IllegalArgumentException( "Can't print rooms value '" + value + "' because it is above 20!" );
+
+    value = value.setScale( 1, BigDecimal.ROUND_HALF_UP );
+    //return DatatypeConverter.printDecimal( value );
+
+    final BigInteger integerPart = value.toBigInteger();
+    final BigInteger decimalPart = value.subtract( new BigDecimal( integerPart, 1 ) ).multiply( BigDecimal.TEN ).toBigInteger();
+    if (decimalPart.compareTo( BigInteger.ZERO )!=0)
+      return integerPart.toString() + ".5";
+
+    return DatatypeConverter.printInteger( integerPart );
   }
 
-  public static String printUnit( Unit value )
+  /**
+   * Write a {@link TypeValue} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printTypeValue( TypeValue value )
   {
     if (value==null)
-      throw new IllegalArgumentException( "Can't print unit value!" );
-    else
-      return value.write();
+      throw new IllegalArgumentException( "Can't print empty type value!" );
+
+    return value.write();
   }
 
-  public static String printYear( Integer value )
+  /**
+   * Write an {@link URI} value into XML output.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printUriValue( URI value )
   {
-    if (value==null || value<1000 || value>9999)
-      throw new IllegalArgumentException( "Can't print year value!" );
-    else
-      return DatatypeConverter.printInt( value );
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty URI value!" );
+    if ("http".equalsIgnoreCase( value.getScheme() ))
+      return value.toString();
+    if ("https".equalsIgnoreCase( value.getScheme() ))
+      return value.toString();
+
+    throw new IllegalArgumentException( "Can't print URI '" + value + "' because of an unsupported scheme!" );
+  }
+
+  /**
+   * Write a {@link BigInteger} value into XML output for a year number.
+   *
+   * @param value
+   * value to write
+   *
+   * @return
+   * XML string
+   *
+   * @throws IllegalArgumentException
+   * if a validation error occured
+   */
+  public static String printYearValue( BigInteger value )
+  {
+    if (value==null)
+      throw new IllegalArgumentException( "Can't print empty year value!" );
+    if (value.compareTo( BigInteger.valueOf( 1700L ) )<0)
+      throw new IllegalArgumentException( "Can't print year value '" + value + "' because it is below 1700!" );
+    if (value.compareTo( BigInteger.valueOf( 9999L ) )>0)
+      throw new IllegalArgumentException( "Can't print year value '" + value + "' because it is above 9999!" );
+
+    return DatatypeConverter.printInteger( value );
   }
 }

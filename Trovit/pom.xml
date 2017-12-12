@@ -249,7 +249,7 @@
         <artifactId>jaxb2-maven-plugin</artifactId>
         <configuration>
           <sources>
-            <source>${project.basedir}/src/main/xsd/homes.xsd</source>
+            <source>${project.basedir}/src/main/xsd/inofficial.xsd</source>
             <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
           </sources>
           <bindingFiles>binding.xjb</bindingFiles>

@@ -2,10 +2,12 @@
 package org.openestate.io.trovit.xml;
 
 import java.io.Serializable;
+import java.net.URI;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
@@ -22,18 +24,23 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * 
+ *         Ein einzuf\u00fcgendes oder zu aktualisierendes Bild.
+ *       
+ * 
+ * <p>Java class for PictureType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType&gt;
+ * &lt;complexType name="PictureType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="picture_url" type="{}typeString"/&gt;
- *         &lt;element name="picture_title" type="{}typeString" minOccurs="0"/&gt;
+ *         &lt;element name="picture_url" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *         &lt;element name="picture_title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/all&gt;
+ *       &lt;attribute name="featured" type="{}BooleanValue" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -42,19 +49,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "PictureType", propOrder = {
 
 })
-@XmlRootElement(name = "picture")
-public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
+public class PictureType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @XmlElement(name = "picture_url", required = true)
+    @XmlElement(name = "picture_url", required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
-    protected String pictureUrl;
+    @XmlSchemaType(name = "anyURI")
+    protected URI pictureUrl;
     @XmlElement(name = "picture_title")
-    @XmlJavaTypeAdapter(Adapter1 .class)
     protected String pictureTitle;
+    @XmlAttribute(name = "featured")
+    @XmlJavaTypeAdapter(Adapter16 .class)
+    protected Boolean featured;
 
     /**
      * Gets the value of the pictureUrl property.
@@ -64,7 +73,7 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public String getPictureUrl() {
+    public URI getPictureUrl() {
         return pictureUrl;
     }
 
@@ -76,7 +85,7 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    public void setPictureUrl(String value) {
+    public void setPictureUrl(URI value) {
         this.pictureUrl = value;
     }
 
@@ -104,6 +113,30 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
         this.pictureTitle = value;
     }
 
+    /**
+     * Gets the value of the featured property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public Boolean isFeatured() {
+        return featured;
+    }
+
+    /**
+     * Sets the value of the featured property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFeatured(Boolean value) {
+        this.featured = value;
+    }
+
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -120,7 +153,7 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            String thePictureUrl;
+            URI thePictureUrl;
             thePictureUrl = this.getPictureUrl();
             strategy.appendField(locator, this, "pictureUrl", buffer, thePictureUrl, (this.pictureUrl!= null));
         }
@@ -128,6 +161,11 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             String thePictureTitle;
             thePictureTitle = this.getPictureTitle();
             strategy.appendField(locator, this, "pictureTitle", buffer, thePictureTitle, (this.pictureTitle!= null));
+        }
+        {
+            Boolean theFeatured;
+            theFeatured = this.isFeatured();
+            strategy.appendField(locator, this, "featured", buffer, theFeatured, (this.featured!= null));
         }
         return buffer;
     }
@@ -143,14 +181,14 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
 
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
-        if (draftCopy instanceof Picture) {
-            final Picture copy = ((Picture) draftCopy);
+        if (draftCopy instanceof PictureType) {
+            final PictureType copy = ((PictureType) draftCopy);
             {
                 Boolean pictureUrlShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pictureUrl!= null));
                 if (pictureUrlShouldBeCopiedAndSet == Boolean.TRUE) {
-                    String sourcePictureUrl;
+                    URI sourcePictureUrl;
                     sourcePictureUrl = this.getPictureUrl();
-                    String copyPictureUrl = ((String) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl, (this.pictureUrl!= null)));
+                    URI copyPictureUrl = ((URI) strategy.copy(LocatorUtils.property(locator, "pictureUrl", sourcePictureUrl), sourcePictureUrl, (this.pictureUrl!= null)));
                     copy.setPictureUrl(copyPictureUrl);
                 } else {
                     if (pictureUrlShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -171,12 +209,25 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
                     }
                 }
             }
+            {
+                Boolean featuredShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.featured!= null));
+                if (featuredShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceFeatured;
+                    sourceFeatured = this.isFeatured();
+                    Boolean copyFeatured = ((Boolean) strategy.copy(LocatorUtils.property(locator, "featured", sourceFeatured), sourceFeatured, (this.featured!= null)));
+                    copy.setFeatured(copyFeatured);
+                } else {
+                    if (featuredShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.featured = null;
+                    }
+                }
+            }
         }
         return draftCopy;
     }
 
     public Object createNewInstance() {
-        return new Picture();
+        return new PictureType();
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
@@ -186,11 +237,11 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
         if (this == object) {
             return true;
         }
-        final Picture that = ((Picture) object);
+        final PictureType that = ((PictureType) object);
         {
-            String lhsPictureUrl;
+            URI lhsPictureUrl;
             lhsPictureUrl = this.getPictureUrl();
-            String rhsPictureUrl;
+            URI rhsPictureUrl;
             rhsPictureUrl = that.getPictureUrl();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureUrl", lhsPictureUrl), LocatorUtils.property(thatLocator, "pictureUrl", rhsPictureUrl), lhsPictureUrl, rhsPictureUrl, (this.pictureUrl!= null), (that.pictureUrl!= null))) {
                 return false;
@@ -202,6 +253,15 @@ public class Picture implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             String rhsPictureTitle;
             rhsPictureTitle = that.getPictureTitle();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pictureTitle", lhsPictureTitle), LocatorUtils.property(thatLocator, "pictureTitle", rhsPictureTitle), lhsPictureTitle, rhsPictureTitle, (this.pictureTitle!= null), (that.pictureTitle!= null))) {
+                return false;
+            }
+        }
+        {
+            Boolean lhsFeatured;
+            lhsFeatured = this.isFeatured();
+            Boolean rhsFeatured;
+            rhsFeatured = that.isFeatured();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "featured", lhsFeatured), LocatorUtils.property(thatLocator, "featured", rhsFeatured), lhsFeatured, rhsFeatured, (this.featured!= null), (that.featured!= null))) {
                 return false;
             }
         }

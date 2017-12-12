@@ -1,20 +1,20 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.trovit.xml.types.IntBool;
 
 public class Adapter10
-    extends XmlAdapter<String, IntBool>
+    extends XmlAdapter<String, BigInteger>
 {
 
 
-    public IntBool unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseIntBool(value));
+    public BigInteger unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseFloorAreaValue(value));
     }
 
-    public String marshal(IntBool value) {
-        return (org.openestate.io.trovit.TrovitUtils.printIntBool(value));
+    public String marshal(BigInteger value) {
+        return (org.openestate.io.trovit.TrovitUtils.printFloorAreaValue(value));
     }
 
 }

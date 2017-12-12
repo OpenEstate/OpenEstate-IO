@@ -1,20 +1,20 @@
 
 package org.openestate.io.trovit.xml;
 
-import java.util.Calendar;
+import java.util.Currency;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter6
-    extends XmlAdapter<String, Calendar>
+    extends XmlAdapter<String, Currency>
 {
 
 
-    public Calendar unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseTime(value));
+    public Currency unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parsePriceCurrencyValue(value));
     }
 
-    public String marshal(Calendar value) {
-        return (org.openestate.io.trovit.TrovitUtils.printTime(value));
+    public String marshal(Currency value) {
+        return (org.openestate.io.trovit.TrovitUtils.printPriceCurrencyValue(value));
     }
 
 }

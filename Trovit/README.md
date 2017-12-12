@@ -2,17 +2,17 @@ OpenEstate-IO-Trovit 1.4-SNAPSHOT
 =================================
 
 *OpenEstate-IO-Trovit* is a Java library to read and write real estate data in
-the XML format of [*trovit.com*](http://trovit.com).
+the XML format of [*trovit.com*](https://www.trovit.com).
 
 
 Features
 --------
 
 -   read XML data according to the specifications of
-    [*trovit.com*](http://trovit.com)
+    [*trovit.com*](https://www.trovit.com)
     (see [`TrovitReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/TrovitReadingExample.java))
 -   write XML data according to the specifications of
-    [*trovit.com*](http://trovit.com)
+    [*trovit.com*](https://www.trovit.com)
     (see [`TrovitWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/TrovitWritingExample.java))
 
 
@@ -47,23 +47,14 @@ Specifications
 --------------
 
 The specifications for this format are placed in the [`specs`](specs) folder.
-[*Trovit.com*](http://trovit.com) also provides some
-[further documentations](http://about.trovit.com/your-ads-on-trovit/uk/feed-uk-homes/).
 
 
 ### Modifications to the original specification
 
-In order to make the XML schema readable by JAXB, we had to fix the following
-problems in the original `homes.xsd`:
-
--   removed invalid `<xsd:fractionDigits value="100"/>` from
-    `<xsd:simpleType name="typeLong">`
-
--   changed type of `<xsd:element name="latitude">` from `typeLong` to
-    `typeFloat`
-
--   changed type of `<xsd:element name="longitude">` from `typeLong` to
-    `typeFloat`
+[*Trovit.com*](https://www.trovit.com) only provided a written documentation for
+the XML format. Based on this documentation we've created an
+[inofficial XSD](specs/inofficial.xsd) file. The inofficial XSD file was used
+for generation of Java classes via JAXB.
 
 
 Dependencies
@@ -104,5 +95,5 @@ Further informations
 -   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
 -   [Validator for *trovit.com* XML](http://validator.openestate.org/)
--   [Homes Feed specifications](http://agents.kyero.com/kyero-import-specification)
--   [Alternative validator](http://about.trovit.com/validator/)
+-   [Homes Feed specifications](https://corporate.trovit.com/feed-us-homes/)
+-   [Official validator](https://corporate.trovit.com/validator/)

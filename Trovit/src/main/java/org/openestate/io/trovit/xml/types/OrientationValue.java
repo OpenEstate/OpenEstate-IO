@@ -20,31 +20,43 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * PriceInterval.
+ * OrientationValue.
  *
- * @since 1.0
+ * @since 1.4
  * @author Andreas Rudolph
  */
-public enum PriceInterval
+public enum OrientationValue
 {
-  MONTHLY,
-  WEEKLY;
+  NORTH( new String[]{ "North", "Nord", "Norden" } ),
+  SOUTH( new String[]{ "South", "Süd", "Süden" } ),
+  EAST( new String[]{ "East", "Ost", "Osten" } ),
+  WEST( new String[]{ "West", "Westen" } );
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( PriceInterval.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( OrientationValue.class );
+  private final String[] aliases;
 
-  public static PriceInterval fromXmlValue( String name )
+  private OrientationValue( String[] aliases )
+  {
+    this.aliases = aliases;
+  }
+
+  public static OrientationValue fromXmlValue( String name )
   {
     name = StringUtils.trimToNull( name );
     if (name==null) return null;
-    for (PriceInterval value : PriceInterval.values())
+    for (OrientationValue value : OrientationValue.values())
     {
       if (value.name().equalsIgnoreCase( name )) return value;
+      for (String alias : value.aliases)
+      {
+        if (alias.equalsIgnoreCase( name )) return value;
+      }
     }
     return null;
   }
 
   public String write()
   {
-    return this.name();
+    return this.aliases[0];
   }
 }

@@ -2,19 +2,19 @@
 package org.openestate.io.trovit.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.trovit.xml.types.PriceInterval;
+import org.openestate.io.trovit.xml.types.PricePeriodValue;
 
 public class Adapter5
-    extends XmlAdapter<String, PriceInterval>
+    extends XmlAdapter<String, PricePeriodValue>
 {
 
 
-    public PriceInterval unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parsePriceInterval(value));
+    public PricePeriodValue unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parsePricePeriodValue(value));
     }
 
-    public String marshal(PriceInterval value) {
-        return (org.openestate.io.trovit.TrovitUtils.printPriceInterval(value));
+    public String marshal(PricePeriodValue value) {
+        return (org.openestate.io.trovit.TrovitUtils.printPricePeriodValue(value));
     }
 
 }

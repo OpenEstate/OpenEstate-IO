@@ -20,31 +20,43 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Unit.
+ * AreaUnitValue.
  *
- * @since 1.0
+ * @since 1.4
  * @author Andreas Rudolph
  */
-public enum Unit
+public enum AreaUnitValue
 {
-  FEET,
-  METERS;
+  FEET( new String[]{ "feet" } ),
+  ACRES( new String[]{ "acres" } ),
+  METERS( new String[]{ "meters" } ),
+  HECTARES( new String[]{ "hectares" } );
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Unit.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( AreaUnitValue.class );
+  private final String[] aliases;
 
-  public static Unit fromXmlValue( String name )
+  private AreaUnitValue( String[] aliases )
+  {
+    this.aliases = aliases;
+  }
+
+  public static AreaUnitValue fromXmlValue( String name )
   {
     name = StringUtils.trimToNull( name );
     if (name==null) return null;
-    for (Unit value : Unit.values())
+    for (AreaUnitValue value : AreaUnitValue.values())
     {
       if (value.name().equalsIgnoreCase( name )) return value;
+      for (String alias : value.aliases)
+      {
+        if (alias.equalsIgnoreCase( name )) return value;
+      }
     }
     return null;
   }
 
   public String write()
   {
-    return this.name();
+    return this.aliases[0];
   }
 }

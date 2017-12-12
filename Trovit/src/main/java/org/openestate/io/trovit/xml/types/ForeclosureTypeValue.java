@@ -20,29 +20,30 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Action.
+ * ForeclosureTypeValue.
  *
- * @since 1.0
+ * @since 1.4
  * @author Andreas Rudolph
  */
-public enum Action
+public enum ForeclosureTypeValue
 {
-  FOR_RENT( new String[]{ "FOR RENT", "ALQUILER" } ),
-  FOR_SALE( new String[]{ "FOR SALE", "VENTA" } );
+  PRE_FORECLOSURE( new String[]{ "Pre Foreclosure" } ),
+  AUCTION( new String[]{ "Auction" } ),
+  BANK_OWNED( new String[]{ "Bank Owned" } );
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Action.class );
+  private final static Logger LOGGER = LoggerFactory.getLogger( ForeclosureTypeValue.class );
   private final String[] aliases;
 
-  private Action( String[] aliases )
+  private ForeclosureTypeValue( String[] aliases )
   {
     this.aliases = aliases;
   }
 
-  public static Action fromXmlValue( String name )
+  public static ForeclosureTypeValue fromXmlValue( String name )
   {
     name = StringUtils.trimToNull( name );
     if (name==null) return null;
-    for (Action value : Action.values())
+    for (ForeclosureTypeValue value : ForeclosureTypeValue.values())
     {
       if (value.name().equalsIgnoreCase( name )) return value;
       for (String alias : value.aliases)

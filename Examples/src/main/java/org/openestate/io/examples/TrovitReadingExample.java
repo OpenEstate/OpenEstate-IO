@@ -24,7 +24,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
-import org.openestate.io.trovit.xml.Ad;
+import org.openestate.io.trovit.xml.AdType;
 import org.openestate.io.trovit.xml.Trovit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -174,7 +174,7 @@ public class TrovitReadingExample
     Trovit trovit = doc.toObject();
 
     // process ads
-    for (Ad ad : trovit.getAd())
+    for (AdType ad : trovit.getAd())
     {
       // get object nr
       String objectNr = StringUtils.trimToNull( ad.getId() );

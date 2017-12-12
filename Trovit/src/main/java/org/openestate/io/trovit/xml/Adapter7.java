@@ -2,18 +2,19 @@
 package org.openestate.io.trovit.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import org.openestate.io.trovit.xml.types.ForeclosureTypeValue;
 
 public class Adapter7
-    extends XmlAdapter<String, String>
+    extends XmlAdapter<String, ForeclosureTypeValue>
 {
 
 
-    public String unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseString100(value));
+    public ForeclosureTypeValue unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseForeclosureTypeValue(value));
     }
 
-    public String marshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.printString100(value));
+    public String marshal(ForeclosureTypeValue value) {
+        return (org.openestate.io.trovit.TrovitUtils.printForeclosureTypeValue(value));
     }
 
 }

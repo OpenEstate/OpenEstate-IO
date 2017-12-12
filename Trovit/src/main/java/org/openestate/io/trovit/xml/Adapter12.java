@@ -2,18 +2,19 @@
 package org.openestate.io.trovit.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import org.openestate.io.trovit.xml.types.AreaUnitValue;
 
 public class Adapter12
-    extends XmlAdapter<String, Integer>
+    extends XmlAdapter<String, AreaUnitValue>
 {
 
 
-    public Integer unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseYear(value));
+    public AreaUnitValue unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseAreaUnitValue(value));
     }
 
-    public String marshal(Integer value) {
-        return (org.openestate.io.trovit.TrovitUtils.printYear(value));
+    public String marshal(AreaUnitValue value) {
+        return (org.openestate.io.trovit.TrovitUtils.printAreaUnitValue(value));
     }
 
 }

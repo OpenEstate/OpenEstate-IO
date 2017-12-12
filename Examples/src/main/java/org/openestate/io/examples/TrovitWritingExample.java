@@ -21,6 +21,8 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
@@ -30,15 +32,15 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
-import org.openestate.io.trovit.xml.Ad;
+import org.openestate.io.trovit.xml.AdType;
 import org.openestate.io.trovit.xml.ObjectFactory;
-import org.openestate.io.trovit.xml.Picture;
+import org.openestate.io.trovit.xml.PictureType;
 import org.openestate.io.trovit.xml.Trovit;
-import org.openestate.io.trovit.xml.TypeNew;
-import org.openestate.io.trovit.xml.types.Action;
-import org.openestate.io.trovit.xml.types.IntBool;
-import org.openestate.io.trovit.xml.types.PriceInterval;
-import org.openestate.io.trovit.xml.types.Unit;
+import org.openestate.io.trovit.xml.types.AreaUnitValue;
+import org.openestate.io.trovit.xml.types.ForeclosureTypeValue;
+import org.openestate.io.trovit.xml.types.OrientationValue;
+import org.openestate.io.trovit.xml.types.PricePeriodValue;
+import org.openestate.io.trovit.xml.types.TypeValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -120,53 +122,72 @@ public class TrovitWritingExample
    * @return
    * created example object
    */
-  protected static Ad createAd()
+  protected static AdType createAd()
   {
     // create an example real estate
-    Ad ad = FACTORY.createAd();
+    AdType ad = FACTORY.createAdType();
     ad.setAddress( "object address" );
     ad.setAgency( "name of the agency" );
     ad.setBathrooms( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 5 ) ) );
+    ad.setByOwner( RandomUtils.nextInt( 0, 2 )==1 );
     ad.setCity( "name of the city" );
     ad.setCityArea( "name of the district" );
     ad.setCondition( "some notes about the condition" );
+    ad.setContactEmail( "test@mywebsite.org" );
+    ad.setContactName( "John Smith" );
+    ad.setContactTelephone( "0049301234567" );
     ad.setContent( "some more descriptions" );
+    ad.setCountry( "DE" );
     ad.setDate( Calendar.getInstance() );
+    ad.setEcoScore( "A" );
     ad.setExpirationDate( Calendar.getInstance() );
     ad.setFloorNumber( "number of floors" );
-    ad.setForeclosure( "notes about foreclosure" );
+    ad.setForeclosure( RandomUtils.nextInt( 0, 2 )==1 );
+    ad.setForeclosureType( ForeclosureTypeValue.values()[RandomUtils.nextInt( 0, ForeclosureTypeValue.values().length )] );
     ad.setId( RandomStringUtils.random( 5 ) );
-    ad.setIsFurnished( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
-    ad.setIsNew( TypeNew.NEW );
-    ad.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
-    ad.setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 90 ) ) );
+    ad.setIsFurnished( RandomUtils.nextInt( 0, 2 )==1 );
+    ad.setIsNew( RandomUtils.nextInt( 0, 2 )==1 );
+    ad.setIsRentToOwn( RandomUtils.nextInt( 0, 2 )==1 );
+    ad.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( -90, 90 ) ) );
+    ad.setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( -180, 180 ) ) );
     ad.setMlsDatabase( "notes about mls database" );
-    ad.setOrientation( "notes about orientation" );
-    ad.setParking( new IntBool( RandomUtils.nextInt( 0, 2 )==1 ) );
-    ad.setPlotArea( BigInteger.valueOf( RandomUtils.nextInt( 100, 5000 ) ) );
+    ad.setNeighborhood( "notes about the neighborhood" );
+    ad.setOrientation( OrientationValue.values()[RandomUtils.nextInt( 0, OrientationValue.values().length )] );
+    ad.setParking( RandomUtils.nextInt( 0, 2 )==1 );
     ad.setPostcode( "postcode" );
     ad.setPropertyType( "notes about the property type" );
     ad.setRegion( "notes about the region" );
     ad.setRooms( BigDecimal.valueOf( RandomUtils.nextDouble( 1, 10 ) ) );
-    ad.setTime( Calendar.getInstance() );
     ad.setTitle( "title of the object" );
-    ad.setType( Action.FOR_RENT );
-    ad.setUrl( "http://mywebsite.org/" );
-    ad.setVirtualTour( "notes about virtual tour" );
-    ad.setYear( RandomUtils.nextInt( 1990, 2010 ) );
+    ad.setType( TypeValue.values()[RandomUtils.nextInt( 0, TypeValue.values().length )] );
+    ad.setYear( BigInteger.valueOf( RandomUtils.nextInt( 1700, 2017 ) ) );
 
-    ad.setFloorArea( FACTORY.createFloorArea() );
-    ad.getFloorArea().setUnit( Unit.METERS );
+    ad.setFloorArea( FACTORY.createFloorAreaType() );
+    ad.getFloorArea().setUnit( AreaUnitValue.values()[RandomUtils.nextInt( 0, AreaUnitValue.values().length )] );
     ad.getFloorArea().setValue( BigInteger.valueOf( RandomUtils.nextInt( 10, 10000 ) ) );
 
-    ad.setPictures( FACTORY.createPictures() );
-    ad.getPictures().getPicture().add( createPicture() );
-    ad.getPictures().getPicture().add( createPicture() );
-    ad.getPictures().getPicture().add( createPicture() );
+    ad.setPictures( FACTORY.createAdTypePictures() );
+    ad.getPictures().getPicture().add( createPicture( 0 ) );
+    ad.getPictures().getPicture().add( createPicture( 1 ) );
+    ad.getPictures().getPicture().add( createPicture( 2 ) );
 
-    ad.setPrice( FACTORY.createPrice() );
-    ad.getPrice().setPeriod( PriceInterval.MONTHLY );
+    ad.setPlotArea( FACTORY.createPlotAreaType() );
+    ad.getPlotArea().setUnit( AreaUnitValue.values()[RandomUtils.nextInt( 0, AreaUnitValue.values().length )] );
+    ad.getPlotArea().setValue( BigInteger.valueOf( RandomUtils.nextInt( 10, 10000 ) ) );
+
+    ad.setPrice( FACTORY.createPriceType());
+    ad.getPrice().setPeriod( PricePeriodValue.values()[RandomUtils.nextInt( 0, PricePeriodValue.values().length )] );
     ad.getPrice().setValue( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 2000 ) ) );
+
+    try
+    {
+      ad.setUrl( new URI( "http://mywebsite.org/" ) );
+      ad.setMobileUrl( new URI( "http://mobile.mywebsite.org/" ) );
+      ad.setVirtualTour( new URI( "http://tour.mywebsite.org/" ) );
+    }
+    catch (URISyntaxException ex)
+    {
+    }
 
     return ad;
   }
@@ -174,15 +195,26 @@ public class TrovitWritingExample
   /**
    * Create an {@link Picture} with some example data.
    *
+   * @param pos
+   * image position
+   *
    * @return
    * created example object
    */
-  protected static Picture createPicture()
+  protected static PictureType createPicture( int pos )
   {
-    Picture pic = FACTORY.createPicture();
-    pic.setPictureTitle( "some descriptive title" );
-    pic.setPictureUrl( "http://mywebsite.org/image" + RandomStringUtils.randomNumeric( 5 ) + ".jpg" );
-    return pic;
+    try
+    {
+      PictureType pic = FACTORY.createPictureType();
+      pic.setPictureTitle( "some descriptive title" );
+      pic.setPictureUrl( new URI( "http://mywebsite.org/image" + pos + ".jpg" ) );
+      pic.setFeatured( pos==0 );
+      return pic;
+    }
+    catch (URISyntaxException ex)
+    {
+      return null;
+    }
   }
 
   /**

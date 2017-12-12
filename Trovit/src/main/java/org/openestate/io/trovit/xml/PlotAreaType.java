@@ -6,7 +6,6 @@ import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -21,19 +20,23 @@ import org.jvnet.jaxb2_commons.lang.ToString2;
 import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
-import org.openestate.io.trovit.xml.types.Unit;
+import org.openestate.io.trovit.xml.types.AreaUnitValue;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * 
+ *         Der Grundst\u00fccksfl\u00e4che eines Objekts.
+ *       
+ * 
+ * <p>Java class for PlotAreaType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType&gt;
+ * &lt;complexType name="PlotAreaType"&gt;
  *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;&gt;typeInt"&gt;
- *       &lt;attribute name="unit" type="{}typeUnit" /&gt;
+ *     &lt;extension base="&lt;&gt;PlotAreaValue"&gt;
+ *       &lt;attribute name="unit" type="{}AreaUnitValue" /&gt;
  *     &lt;/extension&gt;
  *   &lt;/simpleContent&gt;
  * &lt;/complexType&gt;
@@ -42,22 +45,23 @@ import org.openestate.io.trovit.xml.types.Unit;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "PlotAreaType", propOrder = {
     "value"
 })
-@XmlRootElement(name = "floor_area")
-public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
+public class PlotAreaType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter8 .class)
+    @XmlJavaTypeAdapter(Adapter11 .class)
     protected BigInteger value;
     @XmlAttribute(name = "unit")
-    @XmlJavaTypeAdapter(Adapter9 .class)
-    protected Unit unit;
+    @XmlJavaTypeAdapter(Adapter12 .class)
+    protected AreaUnitValue unit;
 
     /**
-     * Integer positive or empty value
+     * 
+     *         Wert der Grundst\u00fccksfl\u00e4che (von 1 bis 1000000000
+     *       
      * 
      * @return
      *     possible object is
@@ -88,7 +92,7 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
-    public Unit getUnit() {
+    public AreaUnitValue getUnit() {
         return unit;
     }
 
@@ -100,7 +104,7 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
-    public void setUnit(Unit value) {
+    public void setUnit(AreaUnitValue value) {
         this.unit = value;
     }
 
@@ -125,7 +129,7 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            Unit theUnit;
+            AreaUnitValue theUnit;
             theUnit = this.getUnit();
             strategy.appendField(locator, this, "unit", buffer, theUnit, (this.unit!= null));
         }
@@ -143,8 +147,8 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
 
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
-        if (draftCopy instanceof FloorArea) {
-            final FloorArea copy = ((FloorArea) draftCopy);
+        if (draftCopy instanceof PlotAreaType) {
+            final PlotAreaType copy = ((PlotAreaType) draftCopy);
             {
                 Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
                 if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
@@ -161,9 +165,9 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             {
                 Boolean unitShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.unit!= null));
                 if (unitShouldBeCopiedAndSet == Boolean.TRUE) {
-                    Unit sourceUnit;
+                    AreaUnitValue sourceUnit;
                     sourceUnit = this.getUnit();
-                    Unit copyUnit = ((Unit) strategy.copy(LocatorUtils.property(locator, "unit", sourceUnit), sourceUnit, (this.unit!= null)));
+                    AreaUnitValue copyUnit = ((AreaUnitValue) strategy.copy(LocatorUtils.property(locator, "unit", sourceUnit), sourceUnit, (this.unit!= null)));
                     copy.setUnit(copyUnit);
                 } else {
                     if (unitShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -176,7 +180,7 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
     }
 
     public Object createNewInstance() {
-        return new FloorArea();
+        return new PlotAreaType();
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
@@ -186,7 +190,7 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         if (this == object) {
             return true;
         }
-        final FloorArea that = ((FloorArea) object);
+        final PlotAreaType that = ((PlotAreaType) object);
         {
             BigInteger lhsValue;
             lhsValue = this.getValue();
@@ -197,9 +201,9 @@ public class FloorArea implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             }
         }
         {
-            Unit lhsUnit;
+            AreaUnitValue lhsUnit;
             lhsUnit = this.getUnit();
-            Unit rhsUnit;
+            AreaUnitValue rhsUnit;
             rhsUnit = that.getUnit();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "unit", lhsUnit), LocatorUtils.property(thatLocator, "unit", rhsUnit), lhsUnit, rhsUnit, (this.unit!= null), (that.unit!= null))) {
                 return false;

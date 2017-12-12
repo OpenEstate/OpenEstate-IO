@@ -21,7 +21,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openestate.io.core.XmlUtils;
-import org.openestate.io.trovit.xml.Ad;
+import org.openestate.io.trovit.xml.AdType;
 import org.openestate.io.trovit.xml.Trovit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,7 +72,6 @@ public class TrovitDocumentTest
       + "    </pictures>\n"
       + "    <virtual_tour><![CDATA[...]]></virtual_tour>\n"
       + "    <date><![CDATA[...]]></date>\n"
-      + "    <time><![CDATA[...]]></time>\n"
       + "    <expiration_date><![CDATA[...]]></expiration_date>\n"
       + "    <plot_area><![CDATA[...]]></plot_area>\n"
       + "    <floor_number><![CDATA[...]]></floor_number>\n"
@@ -109,7 +108,7 @@ public class TrovitDocumentTest
   @Ignore
   public void testToXml()
   {
-    Ad ad = TrovitUtils.getFactory().createAd();
+    AdType ad = TrovitUtils.getFactory().createAdType();
     ad.setTitle( "an example property" );
     ad.setCity( "Berlin" );
 

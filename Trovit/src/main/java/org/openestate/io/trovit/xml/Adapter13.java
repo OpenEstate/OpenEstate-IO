@@ -1,19 +1,20 @@
 
 package org.openestate.io.trovit.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter13
-    extends XmlAdapter<String, Boolean>
+    extends XmlAdapter<String, BigDecimal>
 {
 
 
-    public Boolean unmarshal(String value) {
-        return (org.openestate.io.trovit.TrovitUtils.parseBool(value));
+    public BigDecimal unmarshal(String value) {
+        return (org.openestate.io.trovit.TrovitUtils.parseRoomsValue(value));
     }
 
-    public String marshal(Boolean value) {
-        return (org.openestate.io.trovit.TrovitUtils.printBool(value));
+    public String marshal(BigDecimal value) {
+        return (org.openestate.io.trovit.TrovitUtils.printRoomsValue(value));
     }
 
 }
