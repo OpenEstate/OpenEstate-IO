@@ -10,31 +10,32 @@ projects in order to process real estate data.
 Supported Formats
 -----------------
 
-| Module                           | Format                                                           | Type | Version   |
-| -------------------------------- | ---------------------------------------------------------------- | ---- | --------- |
-| [`CasaIT`](CasaIT)               | [*Casa.it*](http://casa.it) format (*experimental*)              | XML  | ?         |
-| [`DaftIE`](DaftIE)               | [*Daft.ie*](http://daft.ie) Overseas Webfeed                     | XML  | 2.7       |
-| [`Filemaker`](Filemaker)         | [*Filemaker*](http://www.filemaker.com) FMPXMLLAYOUT             | XML  | ?         |
-|                                  | [*Filemaker*](http://www.filemaker.com) FMPXMLRESULT             | XML  | ?         |
-| [`IDX`](IDX)                     | *IDX* format                                                     | CSV  | 3.01      |
-| [`ImmoXML`](ImmoXML)             | *ImmoXML* format                                                 | XML  | 3.0       |
-| [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](http://immobiliare.it) format                 | XML  | 2.5       |
-| [`IS24-CSV`](IS24-CSV)           | *IS24-CSV* format (*legacy*)                                     | CSV  | 1.4.0.4   |
-| [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                     | XML  | rev189438 |
-| [`Kyero`](Kyero)                 | [*Kyero.com*](https://www.kyero.com) XML feed                    | XML  | 3         |
-|                                  |                                                                  |      | 2.1       |
-| [`OpenImmo`](OpenImmo)           | [*OpenImmo*](http://www.openimmo.de) format                      | XML  | 1.2.7b    |
-|                                  |                                                                  |      | 1.2.7     |
-|                                  |                                                                  |      | 1.2.6     |
-|                                  |                                                                  |      | 1.2.5     |
-|                                  |                                                                  |      | 1.2.4     |
-|                                  |                                                                  |      | 1.2.3     |
-|                                  |                                                                  |      | 1.2.2     |
-|                                  |                                                                  |      | 1.2.1     |
-|                                  |                                                                  |      | 1.2       |
-|                                  |                                                                  |      | 1.1       |
-| [`Trovit`](Trovit)               | [*Trovit.com*](https://www.trovit.com) Homes Feed                | XML  | ?         |
-| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](http://wohnen-in-suedtirol.it) format | XML  | 2.2       |
+| Module                           | Format                                                           | Type | Version    |
+| -------------------------------- | ---------------------------------------------------------------- | ---- | ---------- |
+| [`CasaIT`](CasaIT)               | [*Casa.it*](http://casa.it) format (*experimental*)              | XML  | ?          |
+| [`DaftIE`](DaftIE)               | [*Daft.ie*](http://daft.ie) Overseas Webfeed                     | XML  | 2.7        |
+| [`Filemaker`](Filemaker)         | [*Filemaker*](http://www.filemaker.com) FMPXMLLAYOUT             | XML  | ?          |
+|                                  | [*Filemaker*](http://www.filemaker.com) FMPXMLRESULT             | XML  | ?          |
+| [`IDX`](IDX)                     | *IDX* format                                                     | CSV  | 3.01       |
+| [`ImmoXML`](ImmoXML)             | *ImmoXML* format                                                 | XML  | 3.0        |
+| [`ImmobarIT`](ImmobarIT)         | [*immobar.it*](https://www.immobar.it) format                    | XML  | 21/04/2015 |
+| [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](http://immobiliare.it) format                 | XML  | 2.5        |
+| [`IS24-CSV`](IS24-CSV)           | *IS24-CSV* format (*legacy*)                                     | CSV  | 1.4.0.4    |
+| [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                     | XML  | rev189438  |
+| [`Kyero`](Kyero)                 | [*Kyero.com*](https://www.kyero.com) XML feed                    | XML  | 3          |
+|                                  |                                                                  |      | 2.1        |
+| [`OpenImmo`](OpenImmo)           | [*OpenImmo*](http://www.openimmo.de) format                      | XML  | 1.2.7b     |
+|                                  |                                                                  |      | 1.2.7      |
+|                                  |                                                                  |      | 1.2.6      |
+|                                  |                                                                  |      | 1.2.5      |
+|                                  |                                                                  |      | 1.2.4      |
+|                                  |                                                                  |      | 1.2.3      |
+|                                  |                                                                  |      | 1.2.2      |
+|                                  |                                                                  |      | 1.2.1      |
+|                                  |                                                                  |      | 1.2        |
+|                                  |                                                                  |      | 1.1        |
+| [`Trovit`](Trovit)               | [*Trovit.com*](https://www.trovit.com) Homes Feed                | XML  | ?          |
+| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](http://wohnen-in-suedtirol.it) format | XML  | 2.2        |
 
 Open a module subfolder to get more informations about the specific format.
 
@@ -74,6 +75,12 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IDX</artifactId>
+  <version>1.4-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-ImmobarIT</artifactId>
   <version>1.4-SNAPSHOT</version>
 </dependency>
 
