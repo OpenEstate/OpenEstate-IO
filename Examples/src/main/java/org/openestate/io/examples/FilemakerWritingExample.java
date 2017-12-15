@@ -189,7 +189,8 @@ public class FilemakerWritingExample
   }
 
   /**
-   * Create a {@link ResultSetType.ROW} with some example data.
+   * Create a {@link org.openestate.io.filemaker.xml.result.ResultSetType.ROW}
+   * with some example data.
    *
    * @param id
    * id of the record

@@ -21,6 +21,7 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Calendar;
@@ -117,7 +118,7 @@ public class TrovitWritingExample
   }
 
   /**
-   * Create an {@link Ad} with some example data.
+   * Create an {@link AdType} with some example data.
    *
    * @return
    * created example object
@@ -148,8 +149,8 @@ public class TrovitWritingExample
     ad.setIsFurnished( RandomUtils.nextInt( 0, 2 )==1 );
     ad.setIsNew( RandomUtils.nextInt( 0, 2 )==1 );
     ad.setIsRentToOwn( RandomUtils.nextInt( 0, 2 )==1 );
-    ad.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( -90, 90 ) ) );
-    ad.setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( -180, 180 ) ) );
+    ad.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 180 ) - 90 ) );
+    ad.setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 360 ) - 180 ) );
     ad.setMlsDatabase( "notes about mls database" );
     ad.setNeighborhood( "notes about the neighborhood" );
     ad.setOrientation( OrientationValue.values()[RandomUtils.nextInt( 0, OrientationValue.values().length )] );
@@ -177,7 +178,7 @@ public class TrovitWritingExample
 
     ad.setPrice( FACTORY.createPriceType());
     ad.getPrice().setPeriod( PricePeriodValue.values()[RandomUtils.nextInt( 0, PricePeriodValue.values().length )] );
-    ad.getPrice().setValue( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 2000 ) ) );
+    ad.getPrice().setValue( BigDecimal.valueOf( RandomUtils.nextDouble( 100, 2000 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
 
     try
     {
@@ -193,7 +194,7 @@ public class TrovitWritingExample
   }
 
   /**
-   * Create an {@link Picture} with some example data.
+   * Create a {@link PictureType} with some example data.
    *
    * @param pos
    * image position
