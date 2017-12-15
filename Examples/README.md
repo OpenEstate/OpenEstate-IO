@@ -40,7 +40,7 @@ Dependencies
     (optional; for processing of CSV formats)
 -   [commons-io 2.6](http://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.7](http://commons.apache.org/proper/commons-lang/)
--   [commons-text 1.1](http://commons.apache.org/proper/commons-text/)
+-   [commons-text 1.2](http://commons.apache.org/proper/commons-text/)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](http://jaxen.codehaus.org/)
