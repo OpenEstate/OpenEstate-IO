@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
 
   <xsd:annotation>
@@ -11,11 +11,11 @@
       (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
     </xsd:documentation>
     <xsd:documentation xml:lang="de">
-      XML-Schema des XML-Feeds von https://www.immobar.it/ gemäß den
+      XML-Schema des XML-Feeds von https://www.immobar.it/ gemÃ¤ÃŸ den
       Spezifikationen unter: https://www.immobar.it/static/immo_xml
 
       Dieses inoffizielle XML-Schema wurde von Andreas Rudolph erstellt und
-      unter den Bedingungen der Apache License 2.0 veröffentlicht
+      unter den Bedingungen der Apache License 2.0 verÃ¶ffentlicht
       (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
     </xsd:documentation>
   </xsd:annotation>
@@ -26,7 +26,7 @@
         Sorrunding tags.
       </xsd:documentation>
       <xsd:documentation xml:lang="de">
-        Umschließende Tags.
+        UmschlieÃŸende Tags.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -37,7 +37,7 @@
               List of companies to transfer.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-              Liste von zu übertragenden Firmen.
+              Liste von zu Ã¼bertragenden Firmen.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -51,7 +51,7 @@
         A company to transfer.
       </xsd:documentation>
       <xsd:documentation xml:lang="de">
-        Eine zu übertragende Firma.
+        Eine zu Ã¼bertragende Firma.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -71,7 +71,7 @@
             german company address (street, street nr)
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            deutsche Firmenanschrift (Straße, Haus-Nr)
+            deutsche Firmenanschrift (StraÃŸe, Haus-Nr)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -101,7 +101,7 @@
             italian company addresse (street, street nr)
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            italienische Firmenanschrift (Straße, Haus-Nr)
+            italienische Firmenanschrift (StraÃŸe, Haus-Nr)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -211,7 +211,7 @@
             List of properties to transfer.
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Liste von zu übertragenden Immobilien.
+            Liste von zu Ã¼bertragenden Immobilien.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -224,7 +224,7 @@
         A property to transfer.
       </xsd:documentation>
       <xsd:documentation xml:lang="de">
-        Eine zu übertragende Immobilie.
+        Eine zu Ã¼bertragende Immobilie.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -274,7 +274,7 @@
             german property address (street, street nr)
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            deutsche Immobilienanschrift (Straße, Haus-Nr)
+            deutsche Immobilienanschrift (StraÃŸe, Haus-Nr)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -284,7 +284,7 @@
             italian property address (street, street nr)
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            italienische Immobilienanschrift (Straße, Haus-Nr)
+            italienische Immobilienanschrift (StraÃŸe, Haus-Nr)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -374,7 +374,7 @@
             property longitude
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Längengrad der Immobilie
+            LÃ¤ngengrad der Immobilie
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -424,7 +424,7 @@
             sales area in square meters
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Verkaufsfläche in Quadratmeter
+            VerkaufsflÃ¤che in Quadratmeter
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -434,7 +434,7 @@
             net area in square meters
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Nettofläche in Quadratmeter
+            NettoflÃ¤che in Quadratmeter
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -444,7 +444,7 @@
             gross area in square meters
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Bruttofläche in Quadratmeter
+            BruttoflÃ¤che in Quadratmeter
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -514,7 +514,7 @@
             german notes about the kitchen
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            deutsche Anmerkungen zur Küche
+            deutsche Anmerkungen zur KÃ¼che
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -524,7 +524,7 @@
             italian notes about the kitchen
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            italienische Anmerkungen zur Küche
+            italienische Anmerkungen zur KÃ¼che
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -554,7 +554,7 @@
             cellar area in square meters
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Kellerfläche in Quadratmeter
+            KellerflÃ¤che in Quadratmeter
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -574,7 +574,7 @@
             garden area in square meters
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Gartenfläche in Quadratmeter
+            GartenflÃ¤che in Quadratmeter
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -594,7 +594,7 @@
             number of parking lots
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Anzahl der Parkflächen
+            Anzahl der ParkflÃ¤chen
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -604,7 +604,7 @@
             german notes about parking lots
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            deutsche Anmerkungen zu Parkflächen
+            deutsche Anmerkungen zu ParkflÃ¤chen
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -614,7 +614,7 @@
             italian notes about parking lots
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            italienische Anmerkungen zu Parkflächen
+            italienische Anmerkungen zu ParkflÃ¤chen
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -664,7 +664,7 @@
             furnished
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            möbliert
+            mÃ¶bliert
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -822,7 +822,7 @@
         longitude value (from -180.0 to 180.0)
       </xsd:documentation>
       <xsd:documentation xml:lang="de">
-        Wert des Längengrads (von -180.0 bis 180.0)
+        Wert des LÃ¤ngengrads (von -180.0 bis 180.0)
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:decimal">
@@ -873,7 +873,7 @@
             row house
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Reihenhaus, Doppelhaushälfe, Reicheneckhaus
+            Reihenhaus, DoppelhaushÃ¤lfe, Reicheneckhaus
           </xsd:documentation>
           <xsd:documentation xml:lang="it">
             portione di casa
@@ -886,7 +886,7 @@
             plot area
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Grundstück, Baugrund
+            GrundstÃ¼ck, Baugrund
           </xsd:documentation>
           <xsd:documentation xml:lang="it">
             terreno privato
@@ -912,7 +912,7 @@
             commercial plot area
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Gewerbegrundstück
+            GewerbegrundstÃ¼ck
           </xsd:documentation>
           <xsd:documentation xml:lang="it">
             terreno commerciale
@@ -938,7 +938,7 @@
             store
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Geschäft
+            GeschÃ¤ft
           </xsd:documentation>
           <xsd:documentation xml:lang="it">
             negozio
@@ -951,7 +951,7 @@
             office / surgery
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Büro, Praxis
+            BÃ¼ro, Praxis
           </xsd:documentation>
           <xsd:documentation xml:lang="it">
             ufficio, studio
@@ -964,7 +964,7 @@
             industrial property
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Betriebsobjekt, Hallen für Handwerk und Industrie
+            Betriebsobjekt, Hallen fÃ¼r Handwerk und Industrie
           </xsd:documentation>
           <xsd:documentation xml:lang="it">
             artigianato, industria
@@ -1016,7 +1016,7 @@
             warehouse
           </xsd:documentation>
           <xsd:documentation xml:lang="de">
-            Magazin &amp; Lagerräume
+            Magazin &amp; LagerrÃ¤ume
           </xsd:documentation>
           <xsd:documentation xml:lang="it">
             magazzino
