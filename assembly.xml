@@ -47,7 +47,7 @@
     </fileSet>
     <fileSet>
       <directory>${basedir}/target/javadoc</directory>
-      <outputDirectory>javadoc</outputDirectory>
+      <outputDirectory>docs/javadoc</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
@@ -97,7 +97,14 @@
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
-      <directory>${basedir}/ImmobiliareIT/release</directory>
+      <directory>${basedir}/IS24-CSV/release</directory>
+      <outputDirectory></outputDirectory>
+      <directoryMode>0755</directoryMode>
+      <fileMode>0644</fileMode>
+      <filtered>false</filtered>
+    </fileSet>
+    <fileSet>
+      <directory>${basedir}/IS24-XML/release</directory>
       <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
@@ -111,7 +118,7 @@
       <filtered>false</filtered>
     </fileSet>
     <fileSet>
-      <directory>${basedir}/IS24-XML/release</directory>
+      <directory>${basedir}/ImmobiliareIT/release</directory>
       <outputDirectory></outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>

@@ -61,7 +61,7 @@
 
   <scm>
     <connection>scm:git:https://github.com/OpenEstate/OpenEstate-IO.git</connection>
-    <developerConnection>scm:git:[fetch=]https://github.com/OpenEstate/OpenEstate-IO.git[push=]ssh://git@github.com:OpenEstate/OpenEstate-IO.git</developerConnection>
+    <developerConnection>scm:git:ssh://git@github.com:OpenEstate/OpenEstate-IO.git</developerConnection>
     <url>https://github.com/OpenEstate/OpenEstate-IO</url>
   </scm>
 

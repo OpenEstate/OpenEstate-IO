@@ -32,6 +32,7 @@
       <excludes>
         <exclude>${groupId}:*</exclude>
         <exclude>com.google.code.findbugs:*</exclude>
+        <exclude>net.jcip:*</exclude>
       </excludes>
     </dependencySet>
   </dependencySets>
@@ -47,7 +48,7 @@
 
     <fileSet>
       <directory>${basedir}/specs</directory>
-      <outputDirectory>specs/Trovit</outputDirectory>
+      <outputDirectory>docs/specs/Trovit</outputDirectory>
       <directoryMode>0755</directoryMode>
       <fileMode>0644</fileMode>
       <filtered>false</filtered>
