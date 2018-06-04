@@ -26,5 +26,5 @@ export LANG=en
 set -e
 
 cd $PROJECT_DIR
-$MVN -Prelease clean install javadoc:aggregate
-$MVN -Prelease --non-recursive assembly:single
+$MVN -Possrh-release clean install javadoc:aggregate
+$MVN -Possrh-release --non-recursive assembly:single

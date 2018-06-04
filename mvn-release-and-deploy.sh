@@ -26,5 +26,5 @@ export LANG=en
 set -e
 
 cd $PROJECT_DIR
-$MVN -Prelease clean javadoc:aggregate deploy
-$MVN -Prelease --non-recursive assembly:single
+$MVN -Possrh-release clean javadoc:aggregate deploy
+$MVN -Possrh-release --non-recursive assembly:single

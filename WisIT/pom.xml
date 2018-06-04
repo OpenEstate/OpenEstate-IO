@@ -6,7 +6,7 @@
 
   <parent>
     <groupId>org.openestate.io</groupId>
-    <artifactId>ALL</artifactId>
+    <artifactId>OpenEstate-IO</artifactId>
     <version>1.4-SNAPSHOT</version>
   </parent>
 
@@ -17,10 +17,10 @@
 
   <name>OpenEstate-IO-WisIT</name>
   <description>OpenEstate-IO-WisIT is a Java library to read and write real estate data in the XML format of wohnen-in-suedtirol.it.</description>
-  <url>http://www.openestate.org</url>
+  <url>https://openestate.org</url>
   <organization>
     <name>OpenEstate</name>
-    <url>http://openestate.org/</url>
+    <url>https://openestate.org/</url>
   </organization>
   <licenses>
     <license>
@@ -37,14 +37,14 @@
       <name>Andreas Rudolph</name>
       <email>andy@openindex.de</email>
       <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
+      <organizationUrl>https://openindex.de/</organizationUrl>
     </developer>
     <developer>
       <id>walter</id>
       <name>Walter Wagner</name>
       <email>walter@openindex.de</email>
       <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
+      <organizationUrl>https://openindex.de/</organizationUrl>
     </developer>
   </developers>
 

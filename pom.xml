@@ -5,16 +5,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.openestate.io</groupId>
-  <artifactId>ALL</artifactId>
+  <artifactId>OpenEstate-IO</artifactId>
   <version>1.4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>ALL-OpenEstate-IO</name>
+  <name>OpenEstate-IO</name>
   <description>OpenEstate-IO provides a set of Java libraries to read and write real estate data in common formats.</description>
-  <url>http://openestate.org</url>
+  <url>https://openestate.org</url>
   <organization>
     <name>OpenEstate</name>
-    <url>http://openestate.org/</url>
+    <url>https://openestate.org/</url>
   </organization>
   <licenses>
     <license>
@@ -31,14 +31,14 @@
       <name>Andreas Rudolph</name>
       <email>andy@openindex.de</email>
       <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
+      <organizationUrl>https://openindex.de/</organizationUrl>
     </developer>
     <developer>
       <id>walter</id>
       <name>Walter Wagner</name>
       <email>walter@openindex.de</email>
       <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
+      <organizationUrl>https://openindex.de/</organizationUrl>
     </developer>
   </developers>
 
@@ -64,12 +64,6 @@
     <developerConnection>scm:git:[fetch=]https://github.com/OpenEstate/OpenEstate-IO.git[push=]ssh://git@github.com:OpenEstate/OpenEstate-IO.git</developerConnection>
     <url>https://github.com/OpenEstate/OpenEstate-IO</url>
   </scm>
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -443,9 +437,9 @@
       </properties>
     </profile>
 
-    <!-- release profile -->
+    <!-- release profile for oss.sonatype.org -->
     <profile>
-      <id>release</id>
+      <id>ossrh-release</id>
       <properties>
         <createChecksum>true</createChecksum>
         <maven.javadoc.skip>false</maven.javadoc.skip>
@@ -453,6 +447,12 @@
         <source.skip>false</source.skip>
         <staging.skip>false</staging.skip>
       </properties>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>openestate-ossrh</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+      </distributionManagement>
     </profile>
 
   </profiles>
