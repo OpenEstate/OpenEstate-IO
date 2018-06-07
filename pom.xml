@@ -33,13 +33,6 @@
       <organization>OpenIndex</organization>
       <organizationUrl>https://openindex.de/</organizationUrl>
     </developer>
-    <developer>
-      <id>walter</id>
-      <name>Walter Wagner</name>
-      <email>walter@openindex.de</email>
-      <organization>OpenIndex</organization>
-      <organizationUrl>https://openindex.de/</organizationUrl>
-    </developer>
   </developers>
 
   <modules>
@@ -57,6 +50,7 @@
     <module>OpenImmo</module>
     <module>Trovit</module>
     <module>WisIT</module>
+    <module>release</module>
   </modules>
 
   <scm>
@@ -68,7 +62,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.baseName>OpenEstate-IO</project.baseName>
-    <project.releaseDir>${basedir}/release</project.releaseDir>
+    <project.javadocDir>${project.basedir}/apidocs</project.javadocDir>
+    <project.packageDir>${project.basedir}/package</project.packageDir>
+    <createChecksum>true</createChecksum>
+
+    <!-- Set this value to true, in order to skip GPG signing during the release phase. -->
+    <gpg.skip>false</gpg.skip>
   </properties>
 
   <dependencyManagement>
@@ -87,6 +86,11 @@
       <dependency>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO-DaftIE</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO-Examples</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -215,7 +219,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -225,7 +229,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -234,8 +243,14 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>2.10.4</version>
+          <!-- Version 3.0.0 leads to errors when packaging releases with assembly plugin. -->
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -260,12 +275,6 @@
             </dependency>
           </dependencies>
         </plugin>
-
-        <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.8</version>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -274,11 +283,16 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
+        <inherited>false</inherited>
         <configuration>
           <failOnError>false</failOnError>
           <filesets>
             <fileset>
-              <directory>${project.releaseDir}</directory>
+              <directory>${project.packageDir}</directory>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+            <fileset>
+              <directory>${project.javadocDir}</directory>
               <followSymlinks>false</followSymlinks>
             </fileset>
           </filesets>
@@ -290,133 +304,11 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
           <source>1.7</source>
           <target>1.7</target>
           <showDeprecation>true</showDeprecation>
           <debug>false</debug>
-        </configuration>
-      </plugin>
-
-      <!-- javadoc -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <finalName>${project.baseName}-v${project.version}</finalName>
-          <doctitle>${project.baseName} v${project.version} API</doctitle>
-          <windowtitle>${project.baseName}-v${project.version}</windowtitle>
-          <reportOutputDirectory>${basedir}/target</reportOutputDirectory>
-          <destDir>javadoc</destDir>
-          <quiet>true</quiet>
-          <links>
-            <link>http://docs.oracle.com/javase/6/docs/api/</link>
-          </links>
-          <groups>
-            <group>
-              <title>core classes</title>
-              <packages>org.openestate.io.core</packages>
-            </group>
-            <group>
-              <title>casa.it</title>
-              <packages>org.openestate.io.casa_it:org.openestate.io.casa_it.*</packages>
-            </group>
-            <group>
-              <title>daft.ie</title>
-              <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
-            </group>
-            <group>
-              <title>Filemaker</title>
-              <packages>org.openestate.io.filemaker:org.openestate.io.filemaker.*</packages>
-            </group>
-            <group>
-              <title>IDX</title>
-              <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
-            </group>
-            <group>
-              <title>immobiliare.it</title>
-              <packages>org.openestate.io.immobiliare_it:org.openestate.io.immobiliare_it.*</packages>
-            </group>
-            <group>
-              <title>ImmoXML</title>
-              <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
-            </group>
-            <group>
-              <title>IS24-CSV</title>
-              <packages>org.openestate.io.is24_csv:org.openestate.io.is24_csv.*</packages>
-            </group>
-            <group>
-              <title>IS24-XML</title>
-              <packages>org.openestate.io.is24_xml:org.openestate.io.is24_xml.*</packages>
-            </group>
-            <group>
-              <title>Kyero</title>
-              <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
-            </group>
-            <group>
-              <title>OpenImmo</title>
-              <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
-            </group>
-            <group>
-              <title>Trovit</title>
-              <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
-            </group>
-            <group>
-              <title>wohnen-in-suedtirol.it</title>
-              <packages>org.openestate.io.wis_it:org.openestate.io.wis_it.*</packages>
-            </group>
-            <group>
-              <title>example classes</title>
-              <packages>org.openestate.io.examples:org.openestate.io.examples.*</packages>
-            </group>
-          </groups>
-        </configuration>
-      </plugin>
-
-      <!-- assembly -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <finalName>${project.baseName}-${project.version}-release</finalName>
-          <outputDirectory>${project.releaseDir}</outputDirectory>
-          <appendAssemblyId>false</appendAssemblyId>
-          <attach>false</attach>
-          <useAllReactorProjects>true</useAllReactorProjects>
-          <tarLongFileMode>posix</tarLongFileMode>
-          <descriptors>
-            <descriptor>assembly.xml</descriptor>
-          </descriptors>
-        </configuration>
-      </plugin>
-
-      <!-- signing -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- distribution -->
-      <!-- see http://books.sonatype.com/nexus-book/reference/staging-deployment.html -->
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
-          <skipStaging>${staging.skip}</skipStaging>
         </configuration>
       </plugin>
 
@@ -425,34 +317,159 @@
 
   <profiles>
 
-    <!-- development profile -->
-    <profile>
-      <id>development</id>
-      <properties>
-        <createChecksum>true</createChecksum>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-        <gpg.skip>true</gpg.skip>
-        <source.skip>true</source.skip>
-        <staging.skip>true</staging.skip>
-      </properties>
-    </profile>
-
     <!-- release profile for oss.sonatype.org -->
     <profile>
       <id>ossrh-release</id>
-      <properties>
-        <createChecksum>true</createChecksum>
-        <maven.javadoc.skip>false</maven.javadoc.skip>
-        <gpg.skip>false</gpg.skip>
-        <source.skip>false</source.skip>
-        <staging.skip>false</staging.skip>
-      </properties>
+
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+
       <distributionManagement>
         <snapshotRepository>
           <id>openestate-ossrh</id>
           <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+          <id>openestate-ossrh</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
       </distributionManagement>
+
+      <build>
+        <plugins>
+
+          <!-- source -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- signing -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+                <configuration>
+                  <keyname>${gpg.keyname}</keyname>
+                  <passphraseServerId>${gpg.passphrase}</passphraseServerId>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- javadoc -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <configuration>
+                  <quiet>true</quiet>
+                  <encoding>${project.build.sourceEncoding}</encoding>
+                  <docencoding>${project.build.sourceEncoding}</docencoding>
+                </configuration>
+              </execution>
+              <execution>
+                <id>aggregate-javadocs</id>
+                <inherited>false</inherited>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>aggregate</goal>
+                </goals>
+                <configuration>
+                  <reportOutputDirectory>${project.basedir}</reportOutputDirectory>
+                  <encoding>${project.build.sourceEncoding}</encoding>
+                  <docencoding>${project.build.sourceEncoding}</docencoding>
+                  <keywords>true</keywords>
+                  <quiet>true</quiet>
+                  <links>
+                    <link>https://docs.oracle.com/javase/7/docs/api/</link>
+                  </links>
+                  <groups>
+                    <group>
+                      <title>core classes</title>
+                      <packages>org.openestate.io.core</packages>
+                    </group>
+                    <group>
+                      <title>casa.it</title>
+                      <packages>org.openestate.io.casa_it:org.openestate.io.casa_it.*</packages>
+                    </group>
+                    <group>
+                      <title>daft.ie</title>
+                      <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
+                    </group>
+                    <group>
+                      <title>Filemaker</title>
+                      <packages>org.openestate.io.filemaker:org.openestate.io.filemaker.*</packages>
+                    </group>
+                    <group>
+                      <title>IDX</title>
+                      <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
+                    </group>
+                    <group>
+                      <title>immobiliare.it</title>
+                      <packages>org.openestate.io.immobiliare_it:org.openestate.io.immobiliare_it.*</packages>
+                    </group>
+                    <group>
+                      <title>ImmoXML</title>
+                      <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
+                    </group>
+                    <group>
+                      <title>IS24-CSV</title>
+                      <packages>org.openestate.io.is24_csv:org.openestate.io.is24_csv.*</packages>
+                    </group>
+                    <group>
+                      <title>IS24-XML</title>
+                      <packages>org.openestate.io.is24_xml:org.openestate.io.is24_xml.*</packages>
+                    </group>
+                    <group>
+                      <title>Kyero</title>
+                      <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
+                    </group>
+                    <group>
+                      <title>OpenImmo</title>
+                      <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
+                    </group>
+                    <group>
+                      <title>Trovit</title>
+                      <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
+                    </group>
+                    <group>
+                      <title>wohnen-in-suedtirol.it</title>
+                      <packages>org.openestate.io.wis_it:org.openestate.io.wis_it.*</packages>
+                    </group>
+                    <group>
+                      <title>example classes</title>
+                      <packages>org.openestate.io.examples:org.openestate.io.examples.*</packages>
+                    </group>
+                  </groups>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+
     </profile>
 
   </profiles>

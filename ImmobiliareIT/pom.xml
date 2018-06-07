@@ -39,19 +39,7 @@
       <organization>OpenIndex</organization>
       <organizationUrl>https://openindex.de/</organizationUrl>
     </developer>
-    <developer>
-      <id>walter</id>
-      <name>Walter Wagner</name>
-      <email>walter@openindex.de</email>
-      <organization>OpenIndex</organization>
-      <organizationUrl>https://openindex.de/</organizationUrl>
-    </developer>
   </developers>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.releaseDir>${basedir}/release</project.releaseDir>
-  </properties>
 
   <dependencies>
 
@@ -120,129 +108,6 @@
   <build>
     <plugins>
 
-      <!-- clean -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <configuration>
-          <failOnError>false</failOnError>
-          <filesets>
-            <fileset>
-              <directory>${project.releaseDir}</directory>
-              <followSymlinks>false</followSymlinks>
-            </fileset>
-          </filesets>
-        </configuration>
-      </plugin>
-
-      <!-- dependency -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-dependency-sources</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
-              <overWriteReleases>false</overWriteReleases>
-              <overWriteSnapshots>false</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <includeScope>runtime</includeScope>
-              <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip</excludeGroupIds>
-              <classifier>sources</classifier>
-            </configuration>
-          </execution>
-
-          <execution>
-            <id>copy-dependency-javadocs</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
-              <overWriteReleases>false</overWriteReleases>
-              <overWriteSnapshots>false</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <includeScope>runtime</includeScope>
-              <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip</excludeGroupIds>
-              <classifier>javadoc</classifier>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- compiler -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-          <showDeprecation>true</showDeprecation>
-          <debug>false</debug>
-        </configuration>
-      </plugin>
-
-      <!-- source -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- javadoc -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <quiet>true</quiet>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- assembly -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>release</id>
-            <phase>install</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <finalName>release</finalName>
-              <outputDirectory>${basedir}</outputDirectory>
-              <appendAssemblyId>false</appendAssemblyId>
-              <attach>false</attach>
-              <descriptors>
-                <descriptor>assembly.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
       <!-- JAXB -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -274,7 +139,7 @@
         <artifactId>findbugs-maven-plugin</artifactId>
         <configuration>
           <failOnError>false</failOnError>
-          <excludeFilterFile>${basedir}/findbugs-exclude.xml</excludeFilterFile>
+          <excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>
         </configuration>
       </plugin>
 
