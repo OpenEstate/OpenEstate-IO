@@ -16,11 +16,11 @@
 #
 
 MVN="mvn"
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 set -e
 export LANG=en
-cd $PROJECT_DIR
+cd "$DIR"
 rm -f jaxb.timestamp
 rm -f src/main/java/org/openestate/io/immobiliare_it/xml/*.*
-$MVN jaxb2:xjc
+"$MVN" jaxb2:xjc

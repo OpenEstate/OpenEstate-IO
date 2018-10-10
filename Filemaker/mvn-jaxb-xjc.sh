@@ -16,12 +16,12 @@
 #
 
 MVN="mvn"
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 set -e
 export LANG=en
-cd $PROJECT_DIR
+cd "$DIR"
 rm -f jaxb.timestamp
 rm -f src/main/java/org/openestate/io/filemaker/xml/layout/*.*
 rm -f src/main/java/org/openestate/io/filemaker/xml/result/*.*
-$MVN jaxb2:xjc
+"$MVN" jaxb2:xjc

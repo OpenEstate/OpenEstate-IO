@@ -16,12 +16,12 @@
 #
 
 MVN="mvn"
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # force an update of submodules
-$PROJECT_DIR/git-submodule-update.sh
+"$DIR"/git-submodule-update.sh
 
 set -e
 export LANG=en
-cd $PROJECT_DIR
-$MVN -Possrh-release clean deploy
+cd "$DIR"
+"$MVN" -Possrh-release clean deploy

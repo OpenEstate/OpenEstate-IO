@@ -16,9 +16,9 @@
 #
 
 MVN="mvn"
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 set -e
 export LANG=en
-cd $PROJECT_DIR
-$MVN clean install
+cd "$DIR"
+"$MVN" clean install

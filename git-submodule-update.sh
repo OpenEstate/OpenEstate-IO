@@ -16,9 +16,9 @@
 #
 
 GIT="git"
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 set -e
 export LANG=en
-cd $PROJECT_DIR
-$GIT submodule update --init
+cd "$DIR"
+"$GIT" submodule update --init
