@@ -8,7 +8,7 @@ Changelog for OpenEstate-IO
 -   Updated `commons-csv` library to version 1.6.
 -   Updated `commons-io` library to version 2.6.
 -   Updated `commons-lang` library to version 3.8.1.
--   Updated `commons-text` library to version 1.2.
+-   Updated `commons-text` library to version 1.3.
 -   **API change:** The XML format of *trovit.com* was rewritten from scratch.
     Because *trovit.com* does not provide a XML schema anymore we've created
     our own unofficial XML schema, that is used for generation of Java classes
