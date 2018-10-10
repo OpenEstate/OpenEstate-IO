@@ -5,7 +5,7 @@ Changelog for OpenEstate-IO
 ----------------------
 
 -   Updated `commons-codec` library to version 1.11.
--   Updated `commons-csv` library to version 1.5.
+-   Updated `commons-csv` library to version 1.6.
 -   Updated `commons-io` library to version 2.6.
 -   Updated `commons-lang` library to version 3.7.
 -   Updated `commons-text` library to version 1.2.
