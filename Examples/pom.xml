@@ -138,6 +138,19 @@
   <build>
     <plugins>
 
+      <!-- jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>org.openestate.io.examples</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
       <!-- findbugs -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
