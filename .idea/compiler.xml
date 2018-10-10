@@ -6,15 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="OpenEstate-IO-CasaIT" />
         <module name="OpenEstate-IO-Core" />
-        <module name="OpenEstate-IO-DaftIE" />
         <module name="OpenEstate-IO-Examples" />
-        <module name="OpenEstate-IO-Filemaker" />
         <module name="OpenEstate-IO-IDX" />
+        <module name="OpenEstate-IO-IS24-CSV" />
+      </profile>
+      <profile name="Annotation profile for OpenEstate-IO" enabled="true">
+        <sourceOutputDir name="src/main/jaxb" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="OpenEstate-IO-CasaIT" />
+        <module name="OpenEstate-IO-DaftIE" />
+        <module name="OpenEstate-IO-Filemaker" />
         <module name="OpenEstate-IO-ImmobiliareIT" />
         <module name="OpenEstate-IO-ImmoXML" />
-        <module name="OpenEstate-IO-IS24-CSV" />
         <module name="OpenEstate-IO-IS24-XML" />
         <module name="OpenEstate-IO-Kyero" />
         <module name="OpenEstate-IO-OpenImmo" />
