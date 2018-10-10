@@ -65,7 +65,7 @@ public class VermarktungGewerbeTyp2 implements Serializable, Cloneable, CopyTo2,
 
     @XmlElement(name = "Miete")
     protected VermarktungGewerbeTyp2 .Miete miete;
-    @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> kauf;
     @XmlAttribute(name = "Nebenkosten")
     @XmlJavaTypeAdapter(Adapter35 .class)

@@ -70,7 +70,7 @@ public class EinzelhandelTyp
 
     @XmlElement(name = "Vermarktung", required = true)
     protected VermarktungGewerbeTyp vermarktung;
-    @XmlElementRef(name = "Lastenaufzug", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Lastenaufzug", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<HebeanlageTyp> lastenaufzug;
     @XmlAttribute(name = "Objektkategorie2")
     protected EinzelhandelKategorienTyp objektkategorie2;

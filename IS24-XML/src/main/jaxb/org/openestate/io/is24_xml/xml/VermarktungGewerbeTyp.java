@@ -71,9 +71,9 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 public class VermarktungGewerbeTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @XmlElementRef(name = "Miete", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Miete", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<VermarktungGewerbeTyp.Miete> miete;
-    @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<VermarktungGewerbeTyp.Kauf> kauf;
     @XmlAttribute(name = "PreisParkflaeche")
     @XmlJavaTypeAdapter(Adapter35 .class)

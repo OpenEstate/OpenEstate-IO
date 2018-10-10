@@ -28,15 +28,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for VirtuelleImmobilieBaseTyp complex type.
+ * <p>Java class for ImmobilieBaseTyp complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VirtuelleImmobilieBaseTyp"&gt;
+ * &lt;complexType name="ImmobilieBaseTyp"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="Adresse" type="{http://www.immobilienscout24.de/immobilientransfer}ImmobilienAdresseTyp"/&gt;
  *         &lt;element name="ManuelleGeoCodierung" type="{http://www.immobilienscout24.de/immobilientransfer}ManuellGeoCodingTyp" minOccurs="0"/&gt;
  *         &lt;element name="Kontaktperson" type="{http://www.immobilienscout24.de/immobilientransfer}KontaktAdresseTyp" minOccurs="0"/&gt;
  *         &lt;element name="ApiSuchfelder" type="{http://www.immobilienscout24.de/immobilientransfer}ApiSuchfelderTyp" minOccurs="0"/&gt;
@@ -55,7 +56,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "VirtuelleImmobilieBaseTyp", propOrder = {
+@XmlType(name = "ImmobilieBaseTyp", propOrder = {
+    "adresse",
     "manuelleGeoCodierung",
     "kontaktperson",
     "apiSuchfelder",
@@ -66,16 +68,25 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "multimediaAnhang"
 })
 @XmlSeeAlso({
-    TypenHausTyp.class
+    WohnungTyp.class,
+    HausTyp.class,
+    WazTyp.class,
+    GrundstueckTypBase.class,
+    GewerbeImmoBaseTyp.class,
+    GarageTyp.class,
+    ZwangsversteigerungTyp.class,
+    WGZimmerTyp.class
 })
-public abstract class VirtuelleImmobilieBaseTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
+public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
+    @XmlElement(name = "Adresse", required = true)
+    protected ImmobilienAdresseTyp adresse;
     @XmlElement(name = "ManuelleGeoCodierung")
     protected ManuellGeoCodingTyp manuelleGeoCodierung;
     @XmlElement(name = "Kontaktperson")
     protected KontaktAdresseTyp kontaktperson;
-    @XmlElementRef(name = "ApiSuchfelder", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "ApiSuchfelder", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<ApiSuchfelderTyp> apiSuchfelder;
     @XmlElement(name = "Objektbeschreibung")
     @XmlJavaTypeAdapter(Adapter15 .class)
@@ -125,6 +136,30 @@ public abstract class VirtuelleImmobilieBaseTyp implements Serializable, Cloneab
     protected String provisionshinweis;
     @XmlAttribute(name = "Waehrung")
     protected WaehrungTyp waehrung;
+
+    /**
+     * Gets the value of the adresse property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ImmobilienAdresseTyp }
+     *     
+     */
+    public ImmobilienAdresseTyp getAdresse() {
+        return adresse;
+    }
+
+    /**
+     * Sets the value of the adresse property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ImmobilienAdresseTyp }
+     *     
+     */
+    public void setAdresse(ImmobilienAdresseTyp value) {
+        this.adresse = value;
+    }
 
     /**
      * Gets the value of the manuelleGeoCodierung property.
@@ -699,6 +734,11 @@ public abstract class VirtuelleImmobilieBaseTyp implements Serializable, Cloneab
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
+            ImmobilienAdresseTyp theAdresse;
+            theAdresse = this.getAdresse();
+            strategy.appendField(locator, this, "adresse", buffer, theAdresse, (this.adresse!= null));
+        }
+        {
             ManuellGeoCodingTyp theManuelleGeoCodierung;
             theManuelleGeoCodierung = this.getManuelleGeoCodierung();
             strategy.appendField(locator, this, "manuelleGeoCodierung", buffer, theManuelleGeoCodierung, (this.manuelleGeoCodierung!= null));
@@ -824,8 +864,21 @@ public abstract class VirtuelleImmobilieBaseTyp implements Serializable, Cloneab
         if (null == target) {
             throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
         }
-        if (target instanceof VirtuelleImmobilieBaseTyp) {
-            final VirtuelleImmobilieBaseTyp copy = ((VirtuelleImmobilieBaseTyp) target);
+        if (target instanceof ImmobilieBaseTyp) {
+            final ImmobilieBaseTyp copy = ((ImmobilieBaseTyp) target);
+            {
+                Boolean adresseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.adresse!= null));
+                if (adresseShouldBeCopiedAndSet == Boolean.TRUE) {
+                    ImmobilienAdresseTyp sourceAdresse;
+                    sourceAdresse = this.getAdresse();
+                    ImmobilienAdresseTyp copyAdresse = ((ImmobilienAdresseTyp) strategy.copy(LocatorUtils.property(locator, "adresse", sourceAdresse), sourceAdresse, (this.adresse!= null)));
+                    copy.setAdresse(copyAdresse);
+                } else {
+                    if (adresseShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.adresse = null;
+                    }
+                }
+            }
             {
                 Boolean manuelleGeoCodierungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.manuelleGeoCodierung!= null));
                 if (manuelleGeoCodierungShouldBeCopiedAndSet == Boolean.TRUE) {
@@ -1129,7 +1182,16 @@ public abstract class VirtuelleImmobilieBaseTyp implements Serializable, Cloneab
         if (this == object) {
             return true;
         }
-        final VirtuelleImmobilieBaseTyp that = ((VirtuelleImmobilieBaseTyp) object);
+        final ImmobilieBaseTyp that = ((ImmobilieBaseTyp) object);
+        {
+            ImmobilienAdresseTyp lhsAdresse;
+            lhsAdresse = this.getAdresse();
+            ImmobilienAdresseTyp rhsAdresse;
+            rhsAdresse = that.getAdresse();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "adresse", lhsAdresse), LocatorUtils.property(thatLocator, "adresse", rhsAdresse), lhsAdresse, rhsAdresse, (this.adresse!= null), (that.adresse!= null))) {
+                return false;
+            }
+        }
         {
             ManuellGeoCodingTyp lhsManuelleGeoCodierung;
             lhsManuelleGeoCodierung = this.getManuelleGeoCodierung();

@@ -54,23 +54,23 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 public class BefeuerungsArtTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @XmlElementRef(name = "KeineAngabe", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "KeineAngabe", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> keineAngabe;
-    @XmlElementRef(name = "Erdwaerme", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Erdwaerme", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> erdwaerme;
-    @XmlElementRef(name = "Solarheizung", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Solarheizung", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> solarheizung;
-    @XmlElementRef(name = "Pelletheizung", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Pelletheizung", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> pelletheizung;
-    @XmlElementRef(name = "Gas", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Gas", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> gas;
-    @XmlElementRef(name = "Oel", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Oel", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> oel;
-    @XmlElementRef(name = "Fernwaerme", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Fernwaerme", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> fernwaerme;
-    @XmlElementRef(name = "Strom", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Strom", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> strom;
-    @XmlElementRef(name = "Kohle", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "Kohle", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<Object> kohle;
 
     /**

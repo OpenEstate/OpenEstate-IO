@@ -51,8 +51,10 @@ public enum HausKategorienTyp {
     VILLA("Villa"),
 
     /**
-     * aus Kompatibilitaetsgruenden weiter vorhanden: Benutze stattdessen 'Reihenmittelhaus' oder 'Reiheneckhaus'
-     *             (wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     * aus Kompatibilitaetsgruenden weiter vorhanden: Benutze stattdessen
+     *                         'Reihenmittelhaus' oder 'Reiheneckhaus'
+     *                         (wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     *                     
      * 
      */
     @XmlEnumValue("Reihenhaus")
@@ -63,8 +65,10 @@ public enum HausKategorienTyp {
     REIHENECKHAUS("Reiheneckhaus"),
 
     /**
-     * aus Kompatibilitaetsgruenden weiter vorhanden: Benutze stattdessen 'Mehrfamilienhaus'
-     *             (wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     * aus Kompatibilitaetsgruenden weiter vorhanden: Benutze stattdessen
+     *                         'Mehrfamilienhaus'
+     *                         (wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     *                     
      * 
      */
     @XmlEnumValue("Zweifamilienhaus")

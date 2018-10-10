@@ -49,8 +49,8 @@ public enum StellplatzKategorieTyp {
 
     /**
      * entspricht 'keineAngabe' = Kategorie nicht naeher definiert
-     *             (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
-     *           
+     *                         (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     *                     
      * 
      */
     @XmlEnumValue("true")
@@ -58,8 +58,8 @@ public enum StellplatzKategorieTyp {
 
     /**
      * entspricht 'keineAngabe' = kein Garage vorhanden
-     *             (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
-     *           
+     *                         (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     *                     
      * 
      */
     @XmlEnumValue("false")

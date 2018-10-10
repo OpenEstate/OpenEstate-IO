@@ -379,9 +379,9 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
         implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
-        @XmlElementRef(name = "VirtuelleImmobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+        @XmlElementRef(name = "VirtuelleImmobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
         protected List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> virtuelleImmobilie;
-        @XmlElementRef(name = "Immobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+        @XmlElementRef(name = "Immobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
         protected List<JAXBElement<? extends ImmobilieBaseTyp>> immobilie;
 
         /**
@@ -432,26 +432,26 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link Zwangsversteigerung }
-         * {@link WAZ }
-         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
-         * {@link Einzelhandel }
-         * {@link HausKauf }
-         * {@link GarageKauf }
-         * {@link Gastronomie }
          * {@link SonstigeGewerbe }
+         * {@link WAZ }
          * {@link HalleProduktion }
-         * {@link WohnungMiete }
-         * {@link GrundstueckGewerbe }
-         * {@link GrundstueckWohnenKauf }
-         * {@link WohnungKauf }
-         * {@link GrundstueckWohnenMiete }
          * {@link BueroPraxis }
+         * {@link Gastronomie }
+         * {@link Zwangsversteigerung }
+         * {@link HausKauf }
+         * {@link Anlageobjekt }
+         * {@link Einzelhandel }
+         * {@link WohnungMiete }
+         * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
+         * {@link GrundstueckWohnenMiete }
+         * {@link HausMiete }
+         * {@link GrundstueckGewerbe }
+         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
+         * {@link WohnungKauf }
+         * {@link GrundstueckWohnenKauf }
          * {@link WGZimmer }
          * {@link GarageMiete }
-         * {@link Anlageobjekt }
-         * {@link HausMiete }
-         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
+         * {@link GarageKauf }
          * 
          * 
          */

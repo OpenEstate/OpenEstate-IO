@@ -4,261 +4,262 @@
                xmlns:is24="http://www.immobilienscout24.de/immobilientransfer"
                jaxb:extensionBindingPrefixes="xjc"
                version="2.0">
-  <jaxb:globalBindings>
-    <jaxb:serializable />
-    <!--<jaxb:javaType name="java.util.Calendar" xmlType="xsd:date" parseMethod="javax.xml.bind.DatatypeConverter.parseDate" printMethod="javax.xml.bind.DatatypeConverter.printDate" />-->
-    <jaxb:javaType name="java.util.Calendar" xmlType="xsd:date"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseDate"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printDate" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text4Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText4"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText4" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text15Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText15"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText15" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text20Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText20"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText20" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text30Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText30"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText30" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text40Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText40"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText40" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text50Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText50"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText50" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text80Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText80"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText80" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text100Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText100"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText100" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text150Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText150"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText150" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text200Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText200"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText200" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text255Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText255"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText255" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text300Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText300"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText300" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Text500Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText500"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText500" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:Freitext2000Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText2000"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText2000" />
-    <jaxb:javaType name="java.lang.String" xmlType="is24:EmailTyp"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseEmail"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printEmail" />
-    <jaxb:javaType name="java.net.URI" xmlType="is24:WebUrlTyp"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseWebUrl"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printWebUrl" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl2i0Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl2"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl2Including0" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl3i0Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl3"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl3Including0" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl2Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl2"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl2" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl3Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl3"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl3" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl4Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl4"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl4" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl5Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl5"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl5" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl8Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl8"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl8" />
-    <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl10Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl10"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl10" />
-    <jaxb:javaType name="java.math.BigInteger" xmlType="is24:Zahl20Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl20"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl20" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl31Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl31"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl31" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl32Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl32"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl32" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl42Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl42"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl42" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl52Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl52"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl52" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl62Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl62"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl62" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl72Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl72"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl72" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl102Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl102"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl102" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl152Typ"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl152"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl152" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:ZimmeranzahlTyp"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZimmeranzahl"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZimmeranzahl" />
-    <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:PreisAufAnfrage"
-                   parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parsePreisAufAnfrage"
-                   printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printPreisAufAnfrage" />
-  </jaxb:globalBindings>
+    <jaxb:globalBindings>
+        <jaxb:serializable/>
+        <!--<jaxb:javaType name="java.util.Calendar" xmlType="xsd:date" parseMethod="javax.xml.bind.DatatypeConverter.parseDate" printMethod="javax.xml.bind.DatatypeConverter.printDate" />-->
+        <jaxb:javaType name="java.util.Calendar" xmlType="xsd:date"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseDate"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printDate"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text4Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText4"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText4"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text15Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText15"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText15"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text20Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText20"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText20"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text30Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText30"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText30"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text40Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText40"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText40"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text50Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText50"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText50"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text80Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText80"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText80"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text100Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText100"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText100"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text150Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText150"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText150"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text200Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText200"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText200"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text255Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText255"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText255"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text300Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText300"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText300"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Text500Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText500"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText500"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:Freitext2000Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseText2000"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printText2000"/>
+        <jaxb:javaType name="java.lang.String" xmlType="is24:EmailTyp"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseEmail"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printEmail"/>
+        <jaxb:javaType name="java.net.URI" xmlType="is24:WebUrlTyp"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseWebUrl"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printWebUrl"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl2i0Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl2"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl2Including0"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl3i0Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl3"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl3Including0"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl2Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl2"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl2"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl3Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl3"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl3"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl4Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl4"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl4"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl5Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl5"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl5"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl8Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl8"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl8"/>
+        <jaxb:javaType name="java.lang.Long" xmlType="is24:Zahl10Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl10"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl10"/>
+        <jaxb:javaType name="java.math.BigInteger" xmlType="is24:Zahl20Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl20"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl20"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl31Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl31"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl31"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl32Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl32"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl32"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl42Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl42"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl42"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl52Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl52"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl52"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl62Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl62"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl62"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl72Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl72"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl72"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl102Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl102"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl102"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:Zahl152Typ"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZahl152"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZahl152"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:ZimmeranzahlTyp"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parseZimmeranzahl"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printZimmeranzahl"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="is24:PreisAufAnfrage"
+                       parseMethod="org.openestate.io.is24_xml.Is24XmlUtils.parsePreisAufAnfrage"
+                       printMethod="org.openestate.io.is24_xml.Is24XmlUtils.printPreisAufAnfrage"/>
+    </jaxb:globalBindings>
 
-  <jaxb:bindings schemaLocation="../xsd/is24immotransfer.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="../xsd/is24immotransfer.xsd" node="/xsd:schema">
 
-    <jaxb:schemaBindings>
-      <jaxb:package name="org.openestate.io.is24_xml.xml">
-        <jaxb:javadoc><![CDATA[<body>Generated JAXB classes to read and write IS24-XML files.</body>]]></jaxb:javadoc>
-      </jaxb:package>
-    </jaxb:schemaBindings>
+        <jaxb:schemaBindings>
+            <jaxb:package name="org.openestate.io.is24_xml.xml">
+                <jaxb:javadoc>
+                    <![CDATA[<body>Generated JAXB classes to read and write IS24-XML files.</body>]]></jaxb:javadoc>
+            </jaxb:package>
+        </jaxb:schemaBindings>
 
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='IS24ImmobilienTransfer']">
-      <jaxb:class name="IS24ImmobilienTransfer" />
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='IS24ImmobilienTransfer']">
+            <jaxb:class name="IS24ImmobilienTransfer"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='WohnungKauf']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='WohnungMiete']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='HausKauf']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='HausMiete']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='WAZ']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='GrundstueckWohnenKauf']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='GrundstueckWohnenMiete']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='GrundstueckGewerbe']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='BueroPraxis']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='Einzelhandel']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='Gastronomie']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='HalleProduktion']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='SonstigeGewerbe']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='Anlageobjekt']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='GarageMiete']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='GarageKauf']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='Zwangsversteigerung']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='WGZimmer']">
+            <jaxb:class/>
+        </jaxb:bindings>
+
+        <!--
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='ImmobilienTransferTyp']//xsd:element[@name='Anbieter']//xsd:choice">
+          <jaxb:property name="Immobilien" />
+        </jaxb:bindings>
+        -->
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='BebaubarNachTyp']">
+            <jaxb:typesafeEnumClass name="BebaubarNachTyp">
+                <jaxb:typesafeEnumMember value="Unbekannt" name="UNBEKANNT"/>
+                <jaxb:typesafeEnumMember value="§30BauGB" name="BAUGB_30"/>
+                <jaxb:typesafeEnumMember value="§34BauGB" name="BAUGB_34"/>
+                <jaxb:typesafeEnumMember value="§35BauGB" name="BAUGB_35"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='MindestmietdauerTyp']">
+            <jaxb:typesafeEnumClass name="MindestmietdauerTyp">
+                <jaxb:typesafeEnumMember value="1" name="MONTHS_01"/>
+                <jaxb:typesafeEnumMember value="2" name="MONTHS_02"/>
+                <jaxb:typesafeEnumMember value="3" name="MONTHS_03"/>
+                <jaxb:typesafeEnumMember value="4" name="MONTHS_04"/>
+                <jaxb:typesafeEnumMember value="5" name="MONTHS_05"/>
+                <jaxb:typesafeEnumMember value="6" name="MONTHS_06"/>
+                <jaxb:typesafeEnumMember value="7" name="MONTHS_07"/>
+                <jaxb:typesafeEnumMember value="8" name="MONTHS_08"/>
+                <jaxb:typesafeEnumMember value="9" name="MONTHS_09"/>
+                <jaxb:typesafeEnumMember value="10" name="MONTHS_10"/>
+                <jaxb:typesafeEnumMember value="11" name="MONTHS_11"/>
+                <jaxb:typesafeEnumMember value="12+" name="MONTHS_12_PLUS"/>
+                <jaxb:typesafeEnumMember value="Unbefristet" name="UNBEFRISTET"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='WGGroesse']">
+            <jaxb:typesafeEnumClass name="WGGroesse">
+                <jaxb:typesafeEnumMember value="2" name="PERSONS_02"/>
+                <jaxb:typesafeEnumMember value="3" name="PERSONS_03"/>
+                <jaxb:typesafeEnumMember value="4" name="PERSONS_04"/>
+                <jaxb:typesafeEnumMember value="5" name="PERSONS_05"/>
+                <jaxb:typesafeEnumMember value="6" name="PERSONS_06"/>
+                <jaxb:typesafeEnumMember value="7" name="PERSONS_07"/>
+                <jaxb:typesafeEnumMember value="8" name="PERSONS_08"/>
+                <jaxb:typesafeEnumMember value="9" name="PERSONS_09"/>
+                <jaxb:typesafeEnumMember value="10" name="PERSONS_10"/>
+                <jaxb:typesafeEnumMember value="11+" name="PERSONS_11_PLUS"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='ZwangsversteigerungKategorieTyp']">
+            <jaxb:typesafeEnumClass name="ZwangsversteigerungKategorieTyp">
+                <jaxb:typesafeEnumMember value="Eigentumswohnung" name="EIGENTUMSWOHNUNG"/>
+                <jaxb:typesafeEnumMember value="Ein/Mehrfamilienhaus" name="EFH_MFH"/>
+                <jaxb:typesafeEnumMember value="Gewerbe/Anlage" name="GEWERBE_ANLAGE"/>
+                <jaxb:typesafeEnumMember value="Grundstueck" name="GRUNDSTUECK"/>
+                <jaxb:typesafeEnumMember value="Garage/Sonstige" name="GARAGE_SONSTIGES"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
     </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='WohnungKauf']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='WohnungMiete']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='HausKauf']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='HausMiete']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='WAZ']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='GrundstueckWohnenKauf']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='GrundstueckWohnenMiete']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='GrundstueckGewerbe']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='BueroPraxis']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='Einzelhandel']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='Gastronomie']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='HalleProduktion']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='SonstigeGewerbe']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='Anlageobjekt']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='GarageMiete']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='GarageKauf']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='Zwangsversteigerung']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:element[@name='WGZimmer']">
-      <jaxb:class/>
-    </jaxb:bindings>
-
-    <!--
-    <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='ImmobilienTransferTyp']//xsd:element[@name='Anbieter']//xsd:choice">
-      <jaxb:property name="Immobilien" />
-    </jaxb:bindings>
-    -->
-
-    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='BebaubarNachTyp']">
-      <jaxb:typesafeEnumClass name="BebaubarNachTyp">
-        <jaxb:typesafeEnumMember value="Unbekannt" name="UNBEKANNT" />
-        <jaxb:typesafeEnumMember value="§30BauGB" name="BAUGB_30" />
-        <jaxb:typesafeEnumMember value="§34BauGB" name="BAUGB_34" />
-        <jaxb:typesafeEnumMember value="§35BauGB" name="BAUGB_35" />
-      </jaxb:typesafeEnumClass>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='MindestmietdauerTyp']">
-      <jaxb:typesafeEnumClass name="MindestmietdauerTyp">
-        <jaxb:typesafeEnumMember value="1" name="MONTHS_01" />
-        <jaxb:typesafeEnumMember value="2" name="MONTHS_02" />
-        <jaxb:typesafeEnumMember value="3" name="MONTHS_03" />
-        <jaxb:typesafeEnumMember value="4" name="MONTHS_04" />
-        <jaxb:typesafeEnumMember value="5" name="MONTHS_05" />
-        <jaxb:typesafeEnumMember value="6" name="MONTHS_06" />
-        <jaxb:typesafeEnumMember value="7" name="MONTHS_07" />
-        <jaxb:typesafeEnumMember value="8" name="MONTHS_08" />
-        <jaxb:typesafeEnumMember value="9" name="MONTHS_09" />
-        <jaxb:typesafeEnumMember value="10" name="MONTHS_10" />
-        <jaxb:typesafeEnumMember value="11" name="MONTHS_11" />
-        <jaxb:typesafeEnumMember value="12+" name="MONTHS_12_PLUS" />
-        <jaxb:typesafeEnumMember value="Unbefristet" name="UNBEFRISTET" />
-      </jaxb:typesafeEnumClass>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='WGGroesse']">
-      <jaxb:typesafeEnumClass name="WGGroesse">
-        <jaxb:typesafeEnumMember value="2" name="PERSONS_02" />
-        <jaxb:typesafeEnumMember value="3" name="PERSONS_03" />
-        <jaxb:typesafeEnumMember value="4" name="PERSONS_04" />
-        <jaxb:typesafeEnumMember value="5" name="PERSONS_05" />
-        <jaxb:typesafeEnumMember value="6" name="PERSONS_06" />
-        <jaxb:typesafeEnumMember value="7" name="PERSONS_07" />
-        <jaxb:typesafeEnumMember value="8" name="PERSONS_08" />
-        <jaxb:typesafeEnumMember value="9" name="PERSONS_09" />
-        <jaxb:typesafeEnumMember value="10" name="PERSONS_10" />
-        <jaxb:typesafeEnumMember value="11+" name="PERSONS_11_PLUS" />
-      </jaxb:typesafeEnumClass>
-    </jaxb:bindings>
-
-    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='ZwangsversteigerungKategorieTyp']">
-      <jaxb:typesafeEnumClass name="ZwangsversteigerungKategorieTyp">
-        <jaxb:typesafeEnumMember value="Eigentumswohnung" name="EIGENTUMSWOHNUNG" />
-        <jaxb:typesafeEnumMember value="Ein/Mehrfamilienhaus" name="EFH_MFH" />
-        <jaxb:typesafeEnumMember value="Gewerbe/Anlage" name="GEWERBE_ANLAGE" />
-        <jaxb:typesafeEnumMember value="Grundstueck" name="GRUNDSTUECK" />
-        <jaxb:typesafeEnumMember value="Garage/Sonstige" name="GARAGE_SONSTIGES" />
-      </jaxb:typesafeEnumClass>
-    </jaxb:bindings>
-
-  </jaxb:bindings>
 
 </jaxb:bindings>

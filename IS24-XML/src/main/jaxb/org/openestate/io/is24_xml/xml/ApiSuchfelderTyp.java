@@ -50,11 +50,11 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 public class ApiSuchfelderTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @XmlElementRef(name = "ApiSuchfeld1", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "ApiSuchfeld1", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<String> apiSuchfeld1;
-    @XmlElementRef(name = "ApiSuchfeld2", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "ApiSuchfeld2", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<String> apiSuchfeld2;
-    @XmlElementRef(name = "ApiSuchfeld3", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
+    @XmlElementRef(name = "ApiSuchfeld3", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
     protected JAXBElement<String> apiSuchfeld3;
 
     /**

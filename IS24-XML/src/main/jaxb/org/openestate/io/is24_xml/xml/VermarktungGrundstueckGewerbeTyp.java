@@ -24,16 +24,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 
 /**
- * <p>Java class for VermarktungGrundstueckWohnenKaufTyp complex type.
+ * <p>Java class for VermarktungGrundstueckGewerbeTyp complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VermarktungGrundstueckWohnenKaufTyp"&gt;
+ * &lt;complexType name="VermarktungGrundstueckGewerbeTyp"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;choice&gt;
  *         &lt;element name="Kauf"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Pacht"&gt;
  *           &lt;complexType&gt;
  *             &lt;complexContent&gt;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
@@ -50,6 +58,14 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *             &lt;/complexContent&gt;
  *           &lt;/complexType&gt;
  *         &lt;/element&gt;
+ *         &lt;element name="Miete"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
  *       &lt;/choice&gt;
  *       &lt;attribute name="Preis" use="required" type="{http://www.immobilienscout24.de/immobilientransfer}PreisAufAnfrage" /&gt;
  *     &lt;/restriction&gt;
@@ -60,17 +76,23 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "VermarktungGrundstueckWohnenKaufTyp", propOrder = {
+@XmlType(name = "VermarktungGrundstueckGewerbeTyp", propOrder = {
     "kauf",
-    "erbpacht"
+    "pacht",
+    "erbpacht",
+    "miete"
 })
-public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
+public class VermarktungGrundstueckGewerbeTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
-    protected JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> kauf;
-    @XmlElementRef(name = "Erbpacht", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class)
-    protected JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> erbpacht;
+    @XmlElementRef(name = "Kauf", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+    protected JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> kauf;
+    @XmlElementRef(name = "Pacht", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+    protected JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> pacht;
+    @XmlElementRef(name = "Erbpacht", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+    protected JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> erbpacht;
+    @XmlElementRef(name = "Miete", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+    protected JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> miete;
     @XmlAttribute(name = "Preis", required = true)
     @XmlJavaTypeAdapter(Adapter36 .class)
     protected BigDecimal preis;
@@ -80,10 +102,10 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Kauf }{@code >}
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Kauf }{@code >}
      *     
      */
-    public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> getKauf() {
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> getKauf() {
         return kauf;
     }
 
@@ -92,11 +114,35 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Kauf }{@code >}
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Kauf }{@code >}
      *     
      */
-    public void setKauf(JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> value) {
+    public void setKauf(JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> value) {
         this.kauf = value;
+    }
+
+    /**
+     * Gets the value of the pacht property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Pacht }{@code >}
+     *     
+     */
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> getPacht() {
+        return pacht;
+    }
+
+    /**
+     * Sets the value of the pacht property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Pacht }{@code >}
+     *     
+     */
+    public void setPacht(JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> value) {
+        this.pacht = value;
     }
 
     /**
@@ -104,10 +150,10 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Erbpacht }{@code >}
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Erbpacht }{@code >}
      *     
      */
-    public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> getErbpacht() {
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> getErbpacht() {
         return erbpacht;
     }
 
@@ -116,11 +162,35 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Erbpacht }{@code >}
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Erbpacht }{@code >}
      *     
      */
-    public void setErbpacht(JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> value) {
+    public void setErbpacht(JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> value) {
         this.erbpacht = value;
+    }
+
+    /**
+     * Gets the value of the miete property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Miete }{@code >}
+     *     
+     */
+    public JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> getMiete() {
+        return miete;
+    }
+
+    /**
+     * Sets the value of the miete property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Miete }{@code >}
+     *     
+     */
+    public void setMiete(JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> value) {
+        this.miete = value;
     }
 
     /**
@@ -163,14 +233,24 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
 
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> theKauf;
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> theKauf;
             theKauf = this.getKauf();
             strategy.appendField(locator, this, "kauf", buffer, theKauf, (this.kauf!= null));
         }
         {
-            JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> theErbpacht;
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> thePacht;
+            thePacht = this.getPacht();
+            strategy.appendField(locator, this, "pacht", buffer, thePacht, (this.pacht!= null));
+        }
+        {
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> theErbpacht;
             theErbpacht = this.getErbpacht();
             strategy.appendField(locator, this, "erbpacht", buffer, theErbpacht, (this.erbpacht!= null));
+        }
+        {
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> theMiete;
+            theMiete = this.getMiete();
+            strategy.appendField(locator, this, "miete", buffer, theMiete, (this.miete!= null));
         }
         {
             BigDecimal thePreis;
@@ -191,15 +271,15 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
 
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
-        if (draftCopy instanceof VermarktungGrundstueckWohnenKaufTyp) {
-            final VermarktungGrundstueckWohnenKaufTyp copy = ((VermarktungGrundstueckWohnenKaufTyp) draftCopy);
+        if (draftCopy instanceof VermarktungGrundstueckGewerbeTyp) {
+            final VermarktungGrundstueckGewerbeTyp copy = ((VermarktungGrundstueckGewerbeTyp) draftCopy);
             {
                 Boolean kaufShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kauf!= null));
                 if (kaufShouldBeCopiedAndSet == Boolean.TRUE) {
-                    JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> sourceKauf;
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> sourceKauf;
                     sourceKauf = this.getKauf();
                     @SuppressWarnings("unchecked")
-                    JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> copyKauf = ((JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> ) strategy.copy(LocatorUtils.property(locator, "kauf", sourceKauf), sourceKauf, (this.kauf!= null)));
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> copyKauf = ((JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> ) strategy.copy(LocatorUtils.property(locator, "kauf", sourceKauf), sourceKauf, (this.kauf!= null)));
                     copy.setKauf(copyKauf);
                 } else {
                     if (kaufShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -208,16 +288,44 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
                 }
             }
             {
+                Boolean pachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pacht!= null));
+                if (pachtShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> sourcePacht;
+                    sourcePacht = this.getPacht();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> copyPacht = ((JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> ) strategy.copy(LocatorUtils.property(locator, "pacht", sourcePacht), sourcePacht, (this.pacht!= null)));
+                    copy.setPacht(copyPacht);
+                } else {
+                    if (pachtShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.pacht = null;
+                    }
+                }
+            }
+            {
                 Boolean erbpachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erbpacht!= null));
                 if (erbpachtShouldBeCopiedAndSet == Boolean.TRUE) {
-                    JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> sourceErbpacht;
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> sourceErbpacht;
                     sourceErbpacht = this.getErbpacht();
                     @SuppressWarnings("unchecked")
-                    JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> copyErbpacht = ((JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> ) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceErbpacht), sourceErbpacht, (this.erbpacht!= null)));
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> copyErbpacht = ((JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> ) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceErbpacht), sourceErbpacht, (this.erbpacht!= null)));
                     copy.setErbpacht(copyErbpacht);
                 } else {
                     if (erbpachtShouldBeCopiedAndSet == Boolean.FALSE) {
                         copy.erbpacht = null;
+                    }
+                }
+            }
+            {
+                Boolean mieteShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.miete!= null));
+                if (mieteShouldBeCopiedAndSet == Boolean.TRUE) {
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> sourceMiete;
+                    sourceMiete = this.getMiete();
+                    @SuppressWarnings("unchecked")
+                    JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> copyMiete = ((JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> ) strategy.copy(LocatorUtils.property(locator, "miete", sourceMiete), sourceMiete, (this.miete!= null)));
+                    copy.setMiete(copyMiete);
+                } else {
+                    if (mieteShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy.miete = null;
                     }
                 }
             }
@@ -239,7 +347,7 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
     }
 
     public Object createNewInstance() {
-        return new VermarktungGrundstueckWohnenKaufTyp();
+        return new VermarktungGrundstueckGewerbeTyp();
     }
 
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
@@ -249,22 +357,40 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
         if (this == object) {
             return true;
         }
-        final VermarktungGrundstueckWohnenKaufTyp that = ((VermarktungGrundstueckWohnenKaufTyp) object);
+        final VermarktungGrundstueckGewerbeTyp that = ((VermarktungGrundstueckGewerbeTyp) object);
         {
-            JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> lhsKauf;
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> lhsKauf;
             lhsKauf = this.getKauf();
-            JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> rhsKauf;
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> rhsKauf;
             rhsKauf = that.getKauf();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kauf", lhsKauf), LocatorUtils.property(thatLocator, "kauf", rhsKauf), lhsKauf, rhsKauf, (this.kauf!= null), (that.kauf!= null))) {
                 return false;
             }
         }
         {
-            JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> lhsErbpacht;
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> lhsPacht;
+            lhsPacht = this.getPacht();
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> rhsPacht;
+            rhsPacht = that.getPacht();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "pacht", lhsPacht), LocatorUtils.property(thatLocator, "pacht", rhsPacht), lhsPacht, rhsPacht, (this.pacht!= null), (that.pacht!= null))) {
+                return false;
+            }
+        }
+        {
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> lhsErbpacht;
             lhsErbpacht = this.getErbpacht();
-            JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> rhsErbpacht;
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> rhsErbpacht;
             rhsErbpacht = that.getErbpacht();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "erbpacht", lhsErbpacht), LocatorUtils.property(thatLocator, "erbpacht", rhsErbpacht), lhsErbpacht, rhsErbpacht, (this.erbpacht!= null), (that.erbpacht!= null))) {
+                return false;
+            }
+        }
+        {
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> lhsMiete;
+            lhsMiete = this.getMiete();
+            JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> rhsMiete;
+            rhsMiete = that.getMiete();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "miete", lhsMiete), LocatorUtils.property(thatLocator, "miete", rhsMiete), lhsMiete, rhsMiete, (this.miete!= null), (that.miete!= null))) {
                 return false;
             }
         }
@@ -370,8 +496,8 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
 
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
-            if (draftCopy instanceof VermarktungGrundstueckWohnenKaufTyp.Erbpacht) {
-                final VermarktungGrundstueckWohnenKaufTyp.Erbpacht copy = ((VermarktungGrundstueckWohnenKaufTyp.Erbpacht) draftCopy);
+            if (draftCopy instanceof VermarktungGrundstueckGewerbeTyp.Erbpacht) {
+                final VermarktungGrundstueckGewerbeTyp.Erbpacht copy = ((VermarktungGrundstueckGewerbeTyp.Erbpacht) draftCopy);
                 {
                     Boolean dauerInJahrenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dauerInJahren!= null));
                     if (dauerInJahrenShouldBeCopiedAndSet == Boolean.TRUE) {
@@ -390,7 +516,7 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
         }
 
         public Object createNewInstance() {
-            return new VermarktungGrundstueckWohnenKaufTyp.Erbpacht();
+            return new VermarktungGrundstueckGewerbeTyp.Erbpacht();
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
@@ -400,7 +526,7 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
             if (this == object) {
                 return true;
             }
-            final VermarktungGrundstueckWohnenKaufTyp.Erbpacht that = ((VermarktungGrundstueckWohnenKaufTyp.Erbpacht) object);
+            final VermarktungGrundstueckGewerbeTyp.Erbpacht that = ((VermarktungGrundstueckGewerbeTyp.Erbpacht) object);
             {
                 Long lhsDauerInJahren;
                 lhsDauerInJahren = this.getDauerInJahren();
@@ -476,7 +602,159 @@ public class VermarktungGrundstueckWohnenKaufTyp implements Serializable, Clonea
         }
 
         public Object createNewInstance() {
-            return new VermarktungGrundstueckWohnenKaufTyp.Kauf();
+            return new VermarktungGrundstueckGewerbeTyp.Kauf();
+        }
+
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
+                return false;
+            }
+            if (this == object) {
+                return true;
+            }
+            return true;
+        }
+
+        public boolean equals(Object object) {
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            return equals(null, null, object, strategy);
+        }
+
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "")
+    public static class Miete implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
+    {
+
+
+        public String toString() {
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final StringBuilder buffer = new StringBuilder();
+            append(null, buffer, strategy);
+            return buffer.toString();
+        }
+
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
+            strategy.appendStart(locator, this, buffer);
+            appendFields(locator, buffer, strategy);
+            strategy.appendEnd(locator, this, buffer);
+            return buffer;
+        }
+
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
+            return buffer;
+        }
+
+        public Object clone() {
+            return copyTo(createNewInstance());
+        }
+
+        public Object copyTo(Object target) {
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            return copyTo(null, target, strategy);
+        }
+
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
+            final Object draftCopy = ((target == null)?createNewInstance():target);
+            return draftCopy;
+        }
+
+        public Object createNewInstance() {
+            return new VermarktungGrundstueckGewerbeTyp.Miete();
+        }
+
+        public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
+            if ((object == null)||(this.getClass()!= object.getClass())) {
+                return false;
+            }
+            if (this == object) {
+                return true;
+            }
+            return true;
+        }
+
+        public boolean equals(Object object) {
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            return equals(null, null, object, strategy);
+        }
+
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "")
+    public static class Pacht implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
+    {
+
+
+        public String toString() {
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final StringBuilder buffer = new StringBuilder();
+            append(null, buffer, strategy);
+            return buffer.toString();
+        }
+
+        public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
+            strategy.appendStart(locator, this, buffer);
+            appendFields(locator, buffer, strategy);
+            strategy.appendEnd(locator, this, buffer);
+            return buffer;
+        }
+
+        public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
+            return buffer;
+        }
+
+        public Object clone() {
+            return copyTo(createNewInstance());
+        }
+
+        public Object copyTo(Object target) {
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            return copyTo(null, target, strategy);
+        }
+
+        public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
+            final Object draftCopy = ((target == null)?createNewInstance():target);
+            return draftCopy;
+        }
+
+        public Object createNewInstance() {
+            return new VermarktungGrundstueckGewerbeTyp.Pacht();
         }
 
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {

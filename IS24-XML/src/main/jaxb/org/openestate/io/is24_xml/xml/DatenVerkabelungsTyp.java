@@ -36,8 +36,8 @@ public enum DatenVerkabelungsTyp {
 
     /**
      * entspricht 'ja'
-     *             (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
-     *           
+     *                         (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     *                     
      * 
      */
     @XmlEnumValue("true")
@@ -47,8 +47,8 @@ public enum DatenVerkabelungsTyp {
 
     /**
      * entspricht 'nein'
-     *             (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
-     *           
+     *                         (aus Kompatibilitaetsgruenden, wird in zukuenftigen Versionen nicht mehr unterstuetzt)
+     *                     
      * 
      */
     @XmlEnumValue("false")

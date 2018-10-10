@@ -7,17 +7,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ObjektZustandTyp.
+ * <p>Java class for WazObjektZustandTyp.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ObjektZustandTyp"&gt;
+ * &lt;simpleType name="WazObjektZustandTyp"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="keineAngabe"/&gt;
+ *     &lt;enumeration value="Unbekannt"/&gt;
  *     &lt;enumeration value="Erstbezug"/&gt;
  *     &lt;enumeration value="Neuwertig"/&gt;
- *     &lt;enumeration value="VollstaendigReonviert"/&gt;
+ *     &lt;enumeration value="VollstaendigRenoviert"/&gt;
  *     &lt;enumeration value="Renovierungsbeduerftig"/&gt;
  *     &lt;enumeration value="Modernisiert"/&gt;
  *     &lt;enumeration value="NachVereinbarung"/&gt;
@@ -31,18 +31,18 @@ import javax.xml.bind.annotation.XmlType;
  * </pre>
  * 
  */
-@XmlType(name = "ObjektZustandTyp")
+@XmlType(name = "WazObjektZustandTyp")
 @XmlEnum
-public enum ObjektZustandTyp {
+public enum WazObjektZustandTyp {
 
-    @XmlEnumValue("keineAngabe")
-    KEINE_ANGABE("keineAngabe"),
+    @XmlEnumValue("Unbekannt")
+    UNBEKANNT("Unbekannt"),
     @XmlEnumValue("Erstbezug")
     ERSTBEZUG("Erstbezug"),
     @XmlEnumValue("Neuwertig")
     NEUWERTIG("Neuwertig"),
-    @XmlEnumValue("VollstaendigReonviert")
-    VOLLSTAENDIG_REONVIERT("VollstaendigReonviert"),
+    @XmlEnumValue("VollstaendigRenoviert")
+    VOLLSTAENDIG_RENOVIERT("VollstaendigRenoviert"),
     @XmlEnumValue("Renovierungsbeduerftig")
     RENOVIERUNGSBEDUERFTIG("Renovierungsbeduerftig"),
     @XmlEnumValue("Modernisiert")
@@ -58,6 +58,7 @@ public enum ObjektZustandTyp {
 
     /**
      * Nicht weiter unterstuetzt: Zu ersetzen durch Renovierungsbeduerftig
+     *                     
      * 
      */
     @XmlEnumValue("Unrenoviert")
@@ -66,7 +67,7 @@ public enum ObjektZustandTyp {
     ABBRUCHREIF("Abbruchreif");
     private final String value;
 
-    ObjektZustandTyp(String v) {
+    WazObjektZustandTyp(String v) {
         value = v;
     }
 
@@ -74,8 +75,8 @@ public enum ObjektZustandTyp {
         return value;
     }
 
-    public static ObjektZustandTyp fromValue(String v) {
-        for (ObjektZustandTyp c: ObjektZustandTyp.values()) {
+    public static WazObjektZustandTyp fromValue(String v) {
+        for (WazObjektZustandTyp c: WazObjektZustandTyp.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
