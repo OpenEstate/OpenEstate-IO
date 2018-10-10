@@ -13,17 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.openestate.io.daftie;
+package org.openestate.io.daft_ie;
 
-import org.openestate.io.daft_ie.DaftIeDocument;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openestate.io.core.XmlUtils;
-import org.openestate.io.daft_ie.DaftIeUtils;
-import org.openestate.io.daft_ie.DaftIeVersion;
 import org.openestate.io.daft_ie.xml.Daft;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
