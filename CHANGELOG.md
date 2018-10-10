@@ -24,6 +24,7 @@ Changelog for OpenEstate-IO
     in the XML formats of *daft.ie*, *kyero.com* and *IS24* whenever possible.
     See [Always read the documentation/code – a.k.a. java.net.URL is evil](https://sworddance.com/blog/2007/09/09/code-review-4-always-read-the-documentationcode-aka-javaneturl-is-evil/)
     for more information.
+-   Migrated project to IntelliJ IDEA.
 
 
 1.3 (29 Jul 2017)
