@@ -11,7 +11,7 @@ Changelog for OpenEstate-IO
 -   Updated `commons-text` library to version 1.2.
 -   **API change:** The XML format of *trovit.com* was rewritten from scratch.
     Because *trovit.com* does not provide a XML schema anymore we've created
-    our own inofficial XML schema, that is used for generation of Java classes
+    our own unofficial XML schema, that is used for generation of Java classes
     via JAXB. The new implementation contains some additions (e.g. new XML
     elements, new property types). Due to the new schema some of the generated
     JAXB classes were renamed, improved and simplified.
@@ -81,7 +81,7 @@ Changelog for OpenEstate-IO
 
 -   The library is available through [Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
     from this release on. See [documentation page about Maven](https://github.com/OpenEstate/OpenEstate-IO/wiki/Integration-with-Maven)
-    for more informations.
+    for more information.
 -   implemented *FMPXMLLAYOUT* & *FMPXMLRESULT* format of *Filemaker* databases
 
 ### updates
