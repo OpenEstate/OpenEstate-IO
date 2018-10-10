@@ -21,93 +21,78 @@ import org.slf4j.LoggerFactory;
 /**
  * Datei.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class Datei
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( Datei.class );
-  private String name;
-  private String text;
-  private DateiSuffix suffix;
-  private DateiTyp typ;
-  private int abspieldauer;
+public class Datei {
+    private final static Logger LOGGER = LoggerFactory.getLogger(Datei.class);
+    private String name;
+    private String text;
+    private DateiSuffix suffix;
+    private DateiTyp typ;
+    private int abspieldauer;
 
-  public Datei( String name, DateiTyp art, DateiSuffix typ )
-  {
-    this( name, art, typ, null, 0 );
-  }
+    public Datei(String name, DateiTyp art, DateiSuffix typ) {
+        this(name, art, typ, null, 0);
+    }
 
-  public Datei( String name, DateiTyp art, DateiSuffix typ, String text )
-  {
-    this( name, art, typ, text, 0 );
-  }
+    public Datei(String name, DateiTyp art, DateiSuffix typ, String text) {
+        this(name, art, typ, text, 0);
+    }
 
-  public Datei( String name, DateiTyp art, DateiSuffix typ, String text, int abspieldauer )
-  {
-    this.name = name;
-    this.suffix = typ;
-    this.typ = art;
-    this.text = text;
-    this.abspieldauer = abspieldauer;
-  }
+    public Datei(String name, DateiTyp art, DateiSuffix typ, String text, int abspieldauer) {
+        this.name = name;
+        this.suffix = typ;
+        this.typ = art;
+        this.text = text;
+        this.abspieldauer = abspieldauer;
+    }
 
-  public int getAbspieldauer()
-  {
-    return this.abspieldauer;
-  }
+    public int getAbspieldauer() {
+        return this.abspieldauer;
+    }
 
-  public String getName()
-  {
-    return this.name;
-  }
+    public String getName() {
+        return this.name;
+    }
 
-  public DateiSuffix getSuffix()
-  {
-    return this.suffix;
-  }
+    public DateiSuffix getSuffix() {
+        return this.suffix;
+    }
 
-  public String getText()
-  {
-    return this.text;
-  }
+    public String getText() {
+        return this.text;
+    }
 
-  public DateiTyp getTyp()
-  {
-    return this.typ;
-  }
+    public DateiTyp getTyp() {
+        return this.typ;
+    }
 
-  public String guessMimeType()
-  {
-    DateiSuffix suffixToLookup = this.suffix;
-    if (suffixToLookup==null)
-      suffixToLookup = DateiSuffix.fromFileName( this.name );
-    return (suffixToLookup!=null)?
-      suffixToLookup.getMimeType(): "application/octet-stream";
-  }
+    public String guessMimeType() {
+        DateiSuffix suffixToLookup = this.suffix;
+        if (suffixToLookup == null)
+            suffixToLookup = DateiSuffix.fromFileName(this.name);
+        return (suffixToLookup != null) ?
+                suffixToLookup.getMimeType() : "application/octet-stream";
+    }
 
-  public void setAbspieldauer( int value )
-  {
-    this.abspieldauer = value;
-  }
+    public void setAbspieldauer(int value) {
+        this.abspieldauer = value;
+    }
 
-  public void setName( String value )
-  {
-    this.name = value;
-  }
+    public void setName(String value) {
+        this.name = value;
+    }
 
-  public void setSuffix( DateiSuffix value )
-  {
-    this.suffix = value;
-  }
+    public void setSuffix(DateiSuffix value) {
+        this.suffix = value;
+    }
 
-  public void setText( String value )
-  {
-    this.text = value;
-  }
+    public void setText(String value) {
+        this.text = value;
+    }
 
-  public void setTyp( DateiTyp value )
-  {
-    this.typ = value;
-  }
+    public void setTyp(DateiTyp value) {
+        this.typ = value;
+    }
 }

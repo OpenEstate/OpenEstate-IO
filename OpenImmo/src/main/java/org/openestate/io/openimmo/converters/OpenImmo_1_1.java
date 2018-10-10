@@ -25,46 +25,42 @@ import org.slf4j.LoggerFactory;
 /**
  * Converter for version 1.1.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class OpenImmo_1_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmo_1_1.class );
+public class OpenImmo_1_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_1.class);
 
-  @Override
-  public OpenImmoVersion getVersion()
-  {
-    return OpenImmoVersion.V1_1;
-  }
+    @Override
+    public OpenImmoVersion getVersion() {
+        return OpenImmoVersion.V1_1;
+    }
 
-  /**
-   * Downgrade an OpenImmo document from version 1.1.
-   * <p>
-   * Versions before 1.1 are not supported. Therefore this method always throws
-   * a {@link NotImplementedException}.
-   *
-   * @param doc OpenImmo document in version 1.1
-   */
-  @Override
-  public void downgradeToPreviousVersion( OpenImmoDocument doc )
-  {
-    throw new NotImplementedException(
-      "OpenImmo versions before 1.1 are not supported!" );
-  }
+    /**
+     * Downgrade an OpenImmo document from version 1.1.
+     * <p>
+     * Versions before 1.1 are not supported. Therefore this method always throws
+     * a {@link NotImplementedException}.
+     *
+     * @param doc OpenImmo document in version 1.1
+     */
+    @Override
+    public void downgradeToPreviousVersion(OpenImmoDocument doc) {
+        throw new NotImplementedException(
+                "OpenImmo versions before 1.1 are not supported!");
+    }
 
-  /**
-   * Downgrade an OpenImmo document to version 1.1.
-   * <p>
-   * Versions before 1.1 are not supported. Therefore this method always throws
-   * a {@link NotImplementedException}.
-   *
-   * @param doc OpenImmo document
-   */
-  @Override
-  public void upgradeFromPreviousVersion( OpenImmoDocument doc )
-  {
-    throw new NotImplementedException(
-      "OpenImmo versions before 1.1 are not supported!" );
-  }
+    /**
+     * Downgrade an OpenImmo document to version 1.1.
+     * <p>
+     * Versions before 1.1 are not supported. Therefore this method always throws
+     * a {@link NotImplementedException}.
+     *
+     * @param doc OpenImmo document
+     */
+    @Override
+    public void upgradeFromPreviousVersion(OpenImmoDocument doc) {
+        throw new NotImplementedException(
+                "OpenImmo versions before 1.1 are not supported!");
+    }
 }

@@ -23,51 +23,41 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class DaftIeUtilsTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeUtilsTest.class );
+@RunWith(JUnit4.class)
+public class DaftIeUtilsTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeUtilsTest.class);
 
-  @Test
-  public void testCreateDocument()
-  {
-    String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<daft version=\"" + DaftIeUtils.VERSION.toReadableVersion() + "\">\n"
-      + "  <overseas_sales>\n"
-      + "  </overseas_sales>\n"
-      + "</daft>";
+    @Test
+    public void testCreateDocument() {
+        String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<daft version=\"" + DaftIeUtils.VERSION.toReadableVersion() + "\">\n"
+                + "  <overseas_sales>\n"
+                + "  </overseas_sales>\n"
+                + "</daft>";
 
-    DaftIeDocument doc;
-    try
-    {
-      doc = DaftIeUtils.createDocument( transferXml );
-      Assert.assertNotNull(
-        "Transfer was processed.", doc );
-      Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof DaftIeDocument );
+        DaftIeDocument doc;
+        try {
+            doc = DaftIeUtils.createDocument(transferXml);
+            Assert.assertNotNull(
+                    "Transfer was processed.", doc);
+            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof DaftIeDocument);
+        } catch (Exception ex) {
+            LOGGER.error("Test of DaftIeUtils.createDocument failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of DaftIeUtils.createDocument failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of DaftIeUtils.createDocument failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of DaftIeUtils.createDocument failed!" );
-    }
-  }
 
-  @Test
-  public void testGetContext()
-  {
-    try
-    {
-      Assert.assertNotNull("JAXB context must be creatable.", DaftIeUtils.getContext() );
+    @Test
+    public void testGetContext() {
+        try {
+            Assert.assertNotNull("JAXB context must be creatable.", DaftIeUtils.getContext());
+        } catch (Exception ex) {
+            LOGGER.error("Test of DaftIeUtils.getContext failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of DaftIeUtils.getContext failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of DaftIeUtils.getContext failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of DaftIeUtils.getContext failed!" );
-    }
-  }
 }

@@ -27,68 +27,57 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class CasaItDocumentTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(CasaItDocumentTest.class );
+@RunWith(JUnit4.class)
+public class CasaItDocumentTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(CasaItDocumentTest.class);
 
-  private static Document buildExampleDocument() throws Exception
-  {
-    return XmlUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<container>\n"
-      + "  <realestateitems>\n"
-      + "    <realestate>\n"
-      + "    </realestate>\n"
-      + "  </realestateitems>\n"
-      + "</container>" );
-  }
-
-  @Test
-  public void testToObject()
-  {
-    try
-    {
-      CasaItDocument doc = new CasaItDocument( buildExampleDocument() );
-
-      Container obj = doc.toObject();
-      Assert.assertNotNull(
-        "Created object for transfer document.", obj );
+    private static Document buildExampleDocument() throws Exception {
+        return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<container>\n"
+                + "  <realestateitems>\n"
+                + "    <realestate>\n"
+                + "    </realestate>\n"
+                + "  </realestateitems>\n"
+                + "</container>");
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of CasaITDocument.toObject failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of CasaITDocument.toObject failed!" );
+
+    @Test
+    public void testToObject() {
+        try {
+            CasaItDocument doc = new CasaItDocument(buildExampleDocument());
+
+            Container obj = doc.toObject();
+            Assert.assertNotNull(
+                    "Created object for transfer document.", obj);
+        } catch (Exception ex) {
+            LOGGER.error("Test of CasaITDocument.toObject failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of CasaITDocument.toObject failed!");
+        }
     }
-  }
 
-  @Test
-  @Ignore
-  public void testToXml()
-  {
-    Container.Realestateitems.Realestate obj = CasaItUtils.getFactory().createContainerRealestateitemsRealestate();
-    obj.setDescription( CasaItUtils.getFactory().createContainerRealestateitemsRealestateDescription() );
-    obj.getDescription().setValue( "an example property" );
+    @Test
+    @Ignore
+    public void testToXml() {
+        Container.Realestateitems.Realestate obj = CasaItUtils.getFactory().createContainerRealestateitemsRealestate();
+        obj.setDescription(CasaItUtils.getFactory().createContainerRealestateitemsRealestateDescription());
+        obj.getDescription().setValue("an example property");
 
-    Container containier = CasaItUtils.getFactory().createContainer();
-    containier.setRealestateitems( CasaItUtils.getFactory().createContainerRealestateitems() );
-    containier.getRealestateitems().getRealestate().add( obj );
+        Container containier = CasaItUtils.getFactory().createContainer();
+        containier.setRealestateitems(CasaItUtils.getFactory().createContainerRealestateitems());
+        containier.getRealestateitems().getRealestate().add(obj);
 
-    try
-    {
-      CasaItDocument doc = CasaItDocument.newDocument( containier );
+        try {
+            CasaItDocument doc = CasaItDocument.newDocument(containier);
 
-      String xml = doc.toXmlString( true );
-      LOGGER.info( "XML: " + xml );
+            String xml = doc.toXmlString(true);
+            LOGGER.info("XML: " + xml);
+        } catch (Exception ex) {
+            LOGGER.error("Test of CasaITDocument.toXml failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of CasaITDocument.toXml failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of CasaITDocument.toXml failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of CasaITDocument.toXml failed!" );
-    }
-  }
 }

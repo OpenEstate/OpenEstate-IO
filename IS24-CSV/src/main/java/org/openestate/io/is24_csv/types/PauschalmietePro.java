@@ -22,36 +22,31 @@ import org.slf4j.LoggerFactory;
 /**
  * PauschalmietePro.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum PauschalmietePro
-{
-  TAG( "T" ),
-  WOCHE( "W" ),
-  MONAT( "M" );
+public enum PauschalmietePro {
+    TAG("T"),
+    WOCHE("W"),
+    MONAT("M");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( PauschalmietePro.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(PauschalmietePro.class);
+    private final String value;
 
-  private PauschalmietePro( String value )
-  {
-    this.value = value;
-  }
-
-  public static PauschalmietePro parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (PauschalmietePro s : PauschalmietePro.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private PauschalmietePro(String value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static PauschalmietePro parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (PauschalmietePro s : PauschalmietePro.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

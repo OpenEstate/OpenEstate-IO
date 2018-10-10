@@ -17,7 +17,7 @@
 /**
  * Convert ImmoXML data between different versions.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.immoxml.converters;

@@ -28,126 +28,92 @@ import org.slf4j.LoggerFactory;
 /**
  * Printer for the IDX format.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class IdxPrinter extends CsvPrinter<IdxRecord>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( IdxPrinter.class );
+public class IdxPrinter extends CsvPrinter<IdxRecord> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(IdxPrinter.class);
 
-  /**
-   * Create with specifications of a {@link CSVPrinter}.
-   *
-   * @param printer
-   * the CSV printer from
-   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
-   */
-  protected IdxPrinter( CSVPrinter printer )
-  {
-    super( printer );
-  }
+    /**
+     * Create with specifications of a {@link CSVPrinter}.
+     *
+     * @param printer the CSV printer from
+     *                <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+     */
+    protected IdxPrinter(CSVPrinter printer) {
+        super(printer);
+    }
 
-  /**
-   * Creates a {@link IdxPrinter}, that writes CSV data into a
-   * {@link StringBuffer}.
-   *
-   * @param csvString
-   * where CSV is written to
-   *
-   * @return
-   * created printer
-   *
-   * @throws IOException
-   * if CSV is not writable
-   */
-  public static IdxPrinter create( StringBuffer csvString ) throws IOException
-  {
-    return new IdxFormat().print( csvString );
-  }
+    /**
+     * Creates a {@link IdxPrinter}, that writes CSV data into a
+     * {@link StringBuffer}.
+     *
+     * @param csvString where CSV is written to
+     * @return created printer
+     * @throws IOException if CSV is not writable
+     */
+    public static IdxPrinter create(StringBuffer csvString) throws IOException {
+        return new IdxFormat().print(csvString);
+    }
 
-  /**
-   * Creates a {@link IdxPrinter}, that writes CSV data into a
-   * {@link StringBuilder}.
-   *
-   * @param csvString
-   * where CSV is written to
-   *
-   * @return
-   * created printer
-   *
-   * @throws IOException
-   * if CSV is not writable
-   */
-  public static IdxPrinter create( StringBuilder csvString ) throws IOException
-  {
-    return new IdxFormat().print( csvString );
-  }
+    /**
+     * Creates a {@link IdxPrinter}, that writes CSV data into a
+     * {@link StringBuilder}.
+     *
+     * @param csvString where CSV is written to
+     * @return created printer
+     * @throws IOException if CSV is not writable
+     */
+    public static IdxPrinter create(StringBuilder csvString) throws IOException {
+        return new IdxFormat().print(csvString);
+    }
 
-  /**
-   * Creates a {@link IdxPrinter}, that writes CSV data into a {@link File}.
-   *
-   * @param csvFile
-   * where CSV is written to
-   *
-   * @return
-   * created printer
-   *
-   * @throws IOException
-   * if CSV is not writable
-   */
-  public static IdxPrinter create( File csvFile ) throws IOException
-  {
-    return new IdxFormat().print( csvFile );
-  }
+    /**
+     * Creates a {@link IdxPrinter}, that writes CSV data into a {@link File}.
+     *
+     * @param csvFile where CSV is written to
+     * @return created printer
+     * @throws IOException if CSV is not writable
+     */
+    public static IdxPrinter create(File csvFile) throws IOException {
+        return new IdxFormat().print(csvFile);
+    }
 
-  /**
-   * Creates a {@link IdxPrinter}, that writes CSV data into an
-   * {@link OutputStream}.
-   *
-   * @param output
-   * where CSV is written to
-   *
-   * @return
-   * created printer
-   *
-   * @throws IOException
-   * if CSV is not writable
-   */
-  public static IdxPrinter create( OutputStream output ) throws IOException
-  {
-    return new IdxFormat().print( output );
-  }
+    /**
+     * Creates a {@link IdxPrinter}, that writes CSV data into an
+     * {@link OutputStream}.
+     *
+     * @param output where CSV is written to
+     * @return created printer
+     * @throws IOException if CSV is not writable
+     */
+    public static IdxPrinter create(OutputStream output) throws IOException {
+        return new IdxFormat().print(output);
+    }
 
-  /**
-   * Creates a {@link IdxPrinter}, that writes CSV data into a {@link Writer}.
-   *
-   * @param output
-   * where CSV is written to
-   *
-   * @return
-   * created printer
-   *
-   * @throws IOException
-   * if CSV is not writable
-   */
-  public static IdxPrinter create( Writer output ) throws IOException
-  {
-    return new IdxFormat().print( output );
-  }
+    /**
+     * Creates a {@link IdxPrinter}, that writes CSV data into a {@link Writer}.
+     *
+     * @param output where CSV is written to
+     * @return created printer
+     * @throws IOException if CSV is not writable
+     */
+    public static IdxPrinter create(Writer output) throws IOException {
+        return new IdxFormat().print(output);
+    }
 
-  @Override
-  protected void print( String value ) throws IOException
-  {
-    value = StringUtils.trimToNull( value );
+    @Override
+    protected void print(String value) throws IOException {
+        value = StringUtils.trimToNull(value);
 
-    // We're not sure, if escaping of the separator is supported by IDX.
-    // Therefore the separator (#) is removed from the value before it is
-    // written to CSV.
-    value = StringUtils.replace( value, "#", StringUtils.EMPTY );
+        // We're not sure, if escaping of the separator is supported by IDX.
+        // Therefore the separator (#) is removed from the value before it is
+        // written to CSV.
+        value = StringUtils.replace(value, "#", StringUtils.EMPTY);
 
-    // Replace any line breaks from the value with <br>
-    value = CsvPrinter.replaceLineBreaks( value, "<br>" );
+        // Replace any line breaks from the value with <br>
+        value = CsvPrinter.replaceLineBreaks(value, "<br>");
 
-    super.print( value );
-  }
+        super.print(value);
+    }
 }

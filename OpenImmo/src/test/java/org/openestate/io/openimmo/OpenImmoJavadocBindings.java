@@ -33,146 +33,123 @@ import org.apache.commons.lang3.StringUtils;
  *
  * @author Andreas Rudolph
  */
-public class OpenImmoJavadocBindings
-{
-  public static void main( String[] args )
-  {
-    String[] feedbackNames = new String[]{
-      "fehlerliste",
-      "interessent",
-      "objekt",
-      "openimmo_feedback",
-      "sender",
-      "status",
-    };
+public class OpenImmoJavadocBindings {
+    public static void main(String[] args) {
+        String[] feedbackNames = new String[]{
+                "fehlerliste",
+                "interessent",
+                "objekt",
+                "openimmo_feedback",
+                "sender",
+                "status",
+        };
 
-    TreeSet<String> elementNames = new TreeSet<String>();
-    TreeMap<String,String> typeNames = new TreeMap<String,String>();
-    for (Class clazz : ClassFinder.find( OpenImmoUtils.PACKAGE ))
-    {
-      XmlRootElement element = (XmlRootElement) clazz.getAnnotation( XmlRootElement.class );
-      if (element!=null)
-      {
-        elementNames.add( element.name() );
-        continue;
-      }
+        TreeSet<String> elementNames = new TreeSet<String>();
+        TreeMap<String, String> typeNames = new TreeMap<String, String>();
+        for (Class clazz : ClassFinder.find(OpenImmoUtils.PACKAGE)) {
+            XmlRootElement element = (XmlRootElement) clazz.getAnnotation(XmlRootElement.class);
+            if (element != null) {
+                elementNames.add(element.name());
+                continue;
+            }
 
-      XmlType type = (XmlType) clazz.getAnnotation( XmlType.class );
-      if (type!=null)
-      {
-        typeNames.put( type.name(), clazz.getSimpleName() );
-        continue;
-      }
-    }
-
-    System.out.println( StringUtils.repeat( "-", 50 ) );
-    System.out.println( "XML elements in openimmo.xsd" );
-    System.out.println( StringUtils.repeat( "-", 50 ) );
-    for (String name : elementNames)
-    {
-      if (ArrayUtils.contains( feedbackNames , name )) continue;
-      System.out.println( "\n"
-        + "<jaxb:bindings node=\"/xsd:schema/xsd:element[@name='" + name + "']\">\n"
-        + "  <jaxb:class>\n"
-        + "    <jaxb:javadoc><![CDATA[Java class for &lt;" + name + "&gt; element.]]></jaxb:javadoc>\n"
-        + "  </jaxb:class>\n"
-        + "</jaxb:bindings>" );
-    }
-    System.out.println( "" );
-
-    System.out.println( StringUtils.repeat( "-", 50 ) );
-    System.out.println( "XML elements in openimmo_feedback.xsd" );
-    System.out.println( StringUtils.repeat( "-", 50 ) );
-    for (String name : elementNames)
-    {
-      if (!ArrayUtils.contains( feedbackNames , name )) continue;
-      System.out.println( "\n"
-        + "<jaxb:bindings node=\"/xsd:schema/xsd:element[@name='" + name + "']\">\n"
-        + "  <jaxb:class>\n"
-        + "    <jaxb:javadoc><![CDATA[Java class for &lt;" + name + "&gt; element.]]></jaxb:javadoc>\n"
-        + "  </jaxb:class>\n"
-        + "</jaxb:bindings>" );
-    }
-    System.out.println( "" );
-
-    System.out.println( StringUtils.repeat( "-", 50 ) );
-    System.out.println( "XML types" );
-    System.out.println( StringUtils.repeat( "-", 50 ) );
-    for (String name : typeNames.keySet())
-    {
-      System.out.println( "\n"
-        + "<jaxb:bindings node=\"/xsd:schema/xsd:complexType[@name='" + name + "']\">\n"
-        + "  <jaxb:class name=\"" + typeNames.get( name ) + "\">\n"
-        + "    <jaxb:javadoc><![CDATA[Java class for \"" + name + "\" complex type.]]></jaxb:javadoc>\n"
-        + "  </jaxb:class>\n"
-        + "</jaxb:bindings>" );
-    }
-    System.out.println( "" );
-  }
-
-  private final static class ClassFinder
-  {
-    private final static char DOT = '.';
-    private final static char SLASH = '/';
-    private final static String CLASS_SUFFIX = ".class";
-    private final static String BAD_PACKAGE_ERROR
-      = "Unable to get resources from path '%s'. Are you sure the given '%s' package exists?";
-
-    public final static List<Class<?>> find( final String scannedPackage )
-    {
-      return find( scannedPackage, Thread.currentThread().getContextClassLoader() );
-    }
-
-    public final static List<Class<?>> find( final String scannedPackage, final ClassLoader classLoader )
-    {
-      final String scannedPath = scannedPackage.replace( DOT, SLASH );
-      final Enumeration<URL> resources;
-      try
-      {
-        resources = classLoader.getResources( scannedPath );
-      }
-      catch (IOException e)
-      {
-        throw new IllegalArgumentException( String.format( BAD_PACKAGE_ERROR, scannedPath, scannedPackage ), e );
-      }
-      final List<Class<?>> classes = new LinkedList<Class<?>>();
-      while (resources.hasMoreElements())
-      {
-        final File file = new File( resources.nextElement().getFile() );
-        classes.addAll( find( file, scannedPackage ) );
-      }
-      return classes;
-    }
-
-    private final static List<Class<?>> find( final File file, final String scannedPackage )
-    {
-      final List<Class<?>> classes = new LinkedList<Class<?>>();
-      if (file.isDirectory())
-      {
-        for (File nestedFile : file.listFiles())
-        {
-          classes.addAll( find( nestedFile, scannedPackage ) );
+            XmlType type = (XmlType) clazz.getAnnotation(XmlType.class);
+            if (type != null) {
+                typeNames.put(type.name(), clazz.getSimpleName());
+                continue;
+            }
         }
-        //File names with the $1, $2 holds the anonymous inner classes, we are not interested on them.
-      }
-      else if (file.getName().endsWith( CLASS_SUFFIX )
-        &&!file.getName().contains( "$" ))
-      {
 
-        final int beginIndex = 0;
-        final int endIndex = file.getName().length()-CLASS_SUFFIX.length();
-        final String className
-          = file.getName().substring( beginIndex, endIndex );
-        try
-        {
-          final String resource = scannedPackage+DOT+className;
-          classes.add( Class.forName( resource ) );
+        System.out.println(StringUtils.repeat("-", 50));
+        System.out.println("XML elements in openimmo.xsd");
+        System.out.println(StringUtils.repeat("-", 50));
+        for (String name : elementNames) {
+            if (ArrayUtils.contains(feedbackNames, name)) continue;
+            System.out.println("\n"
+                    + "<jaxb:bindings node=\"/xsd:schema/xsd:element[@name='" + name + "']\">\n"
+                    + "  <jaxb:class>\n"
+                    + "    <jaxb:javadoc><![CDATA[Java class for &lt;" + name + "&gt; element.]]></jaxb:javadoc>\n"
+                    + "  </jaxb:class>\n"
+                    + "</jaxb:bindings>");
         }
-        catch (ClassNotFoundException ignore)
-        {
+        System.out.println("");
+
+        System.out.println(StringUtils.repeat("-", 50));
+        System.out.println("XML elements in openimmo_feedback.xsd");
+        System.out.println(StringUtils.repeat("-", 50));
+        for (String name : elementNames) {
+            if (!ArrayUtils.contains(feedbackNames, name)) continue;
+            System.out.println("\n"
+                    + "<jaxb:bindings node=\"/xsd:schema/xsd:element[@name='" + name + "']\">\n"
+                    + "  <jaxb:class>\n"
+                    + "    <jaxb:javadoc><![CDATA[Java class for &lt;" + name + "&gt; element.]]></jaxb:javadoc>\n"
+                    + "  </jaxb:class>\n"
+                    + "</jaxb:bindings>");
         }
-      }
-      return classes;
+        System.out.println("");
+
+        System.out.println(StringUtils.repeat("-", 50));
+        System.out.println("XML types");
+        System.out.println(StringUtils.repeat("-", 50));
+        for (String name : typeNames.keySet()) {
+            System.out.println("\n"
+                    + "<jaxb:bindings node=\"/xsd:schema/xsd:complexType[@name='" + name + "']\">\n"
+                    + "  <jaxb:class name=\"" + typeNames.get(name) + "\">\n"
+                    + "    <jaxb:javadoc><![CDATA[Java class for \"" + name + "\" complex type.]]></jaxb:javadoc>\n"
+                    + "  </jaxb:class>\n"
+                    + "</jaxb:bindings>");
+        }
+        System.out.println("");
     }
-  }
+
+    private final static class ClassFinder {
+        private final static char DOT = '.';
+        private final static char SLASH = '/';
+        private final static String CLASS_SUFFIX = ".class";
+        private final static String BAD_PACKAGE_ERROR
+                = "Unable to get resources from path '%s'. Are you sure the given '%s' package exists?";
+
+        public final static List<Class<?>> find(final String scannedPackage) {
+            return find(scannedPackage, Thread.currentThread().getContextClassLoader());
+        }
+
+        public final static List<Class<?>> find(final String scannedPackage, final ClassLoader classLoader) {
+            final String scannedPath = scannedPackage.replace(DOT, SLASH);
+            final Enumeration<URL> resources;
+            try {
+                resources = classLoader.getResources(scannedPath);
+            } catch (IOException e) {
+                throw new IllegalArgumentException(String.format(BAD_PACKAGE_ERROR, scannedPath, scannedPackage), e);
+            }
+            final List<Class<?>> classes = new LinkedList<Class<?>>();
+            while (resources.hasMoreElements()) {
+                final File file = new File(resources.nextElement().getFile());
+                classes.addAll(find(file, scannedPackage));
+            }
+            return classes;
+        }
+
+        private final static List<Class<?>> find(final File file, final String scannedPackage) {
+            final List<Class<?>> classes = new LinkedList<Class<?>>();
+            if (file.isDirectory()) {
+                for (File nestedFile : file.listFiles()) {
+                    classes.addAll(find(nestedFile, scannedPackage));
+                }
+                //File names with the $1, $2 holds the anonymous inner classes, we are not interested on them.
+            } else if (file.getName().endsWith(CLASS_SUFFIX)
+                    && !file.getName().contains("$")) {
+
+                final int beginIndex = 0;
+                final int endIndex = file.getName().length() - CLASS_SUFFIX.length();
+                final String className
+                        = file.getName().substring(beginIndex, endIndex);
+                try {
+                    final String resource = scannedPackage + DOT + className;
+                    classes.add(Class.forName(resource));
+                } catch (ClassNotFoundException ignore) {
+                }
+            }
+            return classes;
+        }
+    }
 }

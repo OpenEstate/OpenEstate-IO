@@ -22,37 +22,32 @@ import org.slf4j.LoggerFactory;
 /**
  * Lage.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Lage
-{
-  KEINE_ANGABE( 0 ),
-  A_LAGE( 1 ),
-  B_LAGE( 2 ),
-  EINKAUFSZENTRUM( 3 );
+public enum Lage {
+    KEINE_ANGABE(0),
+    A_LAGE(1),
+    B_LAGE(2),
+    EINKAUFSZENTRUM(3);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Lage.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Lage.class);
+    private final int value;
 
-  private Lage( int value )
-  {
-    this.value = value;
-  }
-
-  public static Lage parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Lage s : Lage.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Lage(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Lage parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Lage s : Lage.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

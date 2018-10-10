@@ -22,36 +22,31 @@ import org.slf4j.LoggerFactory;
 /**
  * HeizungsartWohnenAufZeit.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum HeizungsartWohnenAufZeit
-{
-  ETAGENHEIZUNG( 0 ),
-  OFENHEIZUNG( 1 ),
-  ZENTRALHEIZUNG( 2 );
+public enum HeizungsartWohnenAufZeit {
+    ETAGENHEIZUNG(0),
+    OFENHEIZUNG(1),
+    ZENTRALHEIZUNG(2);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( HeizungsartWohnenAufZeit.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(HeizungsartWohnenAufZeit.class);
+    private final int value;
 
-  private HeizungsartWohnenAufZeit( int value )
-  {
-    this.value = value;
-  }
-
-  public static HeizungsartWohnenAufZeit parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (HeizungsartWohnenAufZeit s : HeizungsartWohnenAufZeit.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private HeizungsartWohnenAufZeit(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static HeizungsartWohnenAufZeit parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (HeizungsartWohnenAufZeit s : HeizungsartWohnenAufZeit.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

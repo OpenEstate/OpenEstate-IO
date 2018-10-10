@@ -17,7 +17,7 @@
 /**
  * Convert Kyero-XML data between different versions.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.kyero.converters;

@@ -22,40 +22,34 @@ import org.slf4j.LoggerFactory;
 /**
  * ForeclosureTypeValue.
  *
- * @since 1.4
  * @author Andreas Rudolph
+ * @since 1.4
  */
-public enum ForeclosureTypeValue
-{
-  PRE_FORECLOSURE( new String[]{ "Pre Foreclosure" } ),
-  AUCTION( new String[]{ "Auction" } ),
-  BANK_OWNED( new String[]{ "Bank Owned" } );
+public enum ForeclosureTypeValue {
+    PRE_FORECLOSURE(new String[]{"Pre Foreclosure"}),
+    AUCTION(new String[]{"Auction"}),
+    BANK_OWNED(new String[]{"Bank Owned"});
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ForeclosureTypeValue.class );
-  private final String[] aliases;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ForeclosureTypeValue.class);
+    private final String[] aliases;
 
-  private ForeclosureTypeValue( String[] aliases )
-  {
-    this.aliases = aliases;
-  }
-
-  public static ForeclosureTypeValue fromXmlValue( String name )
-  {
-    name = StringUtils.trimToNull( name );
-    if (name==null) return null;
-    for (ForeclosureTypeValue value : ForeclosureTypeValue.values())
-    {
-      if (value.name().equalsIgnoreCase( name )) return value;
-      for (String alias : value.aliases)
-      {
-        if (alias.equalsIgnoreCase( name )) return value;
-      }
+    private ForeclosureTypeValue(String[] aliases) {
+        this.aliases = aliases;
     }
-    return null;
-  }
 
-  public String write()
-  {
-    return this.aliases[0];
-  }
+    public static ForeclosureTypeValue fromXmlValue(String name) {
+        name = StringUtils.trimToNull(name);
+        if (name == null) return null;
+        for (ForeclosureTypeValue value : ForeclosureTypeValue.values()) {
+            if (value.name().equalsIgnoreCase(name)) return value;
+            for (String alias : value.aliases) {
+                if (alias.equalsIgnoreCase(name)) return value;
+            }
+        }
+        return null;
+    }
+
+    public String write() {
+        return this.aliases[0];
+    }
 }

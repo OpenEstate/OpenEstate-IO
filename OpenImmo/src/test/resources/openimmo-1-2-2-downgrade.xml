@@ -1,241 +1,241 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openimmo>
-  <uebertragung version="1.2.2" timestamp="2002-05-30T09:00:00" />
-  <anbieter>
-    <firma>first agency</firma>
-    <openimmo_anid/>
-    <immobilie>
-      <ausstattung>
-        <boden FERTIGPARKETT="true" KUNSTSTOFF="true" />
-        <befeuerung OEL="true" LUFTWP="false" />
-      </ausstattung>
-      <zustand_angaben>
-        <energiepass>
-          <epart>BEDARF</epart>
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-    <immobilie>
-      <ausstattung>
-        <boden PARKETT="true" LAMINAT="true" />
-        <befeuerung ERDWAERME="true" LUFTWP="true" />
-      </ausstattung>
-      <zustand_angaben>
-        <energiepass>
-          <epart>VERBRAUCH</epart>
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-    <immobilie>
-      <ausstattung>
-        <ausstatt_kategorie>STANDARD</ausstatt_kategorie>
-        <dachform></dachform>
-        <bauweise PULTDACH="true" MANSARDDACH="true" />
-        <ausbaustufe AUSBAUHAUS="true" BAUSATZHAUS="true" />
-      </ausstattung>
-    </immobilie>
-    <immobilie>
-      <preise>
-        <provisionspflichtig>true</provisionspflichtig>
-      </preise>
-      <versteigerung>
-        <zwangsversteigerung>true</zwangsversteigerung>
-      </versteigerung>
-      <ausstattung>
-        <boden PARKETT="true" LINOLEUM="true" />
-        <befeuerung LUFTWP="true" />
-      </ausstattung>
-      <zustand_angaben>
-        <energiepass>
-          <epart />
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <buero_praxen buero_typ="BUEROZENTRUM" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <buero_praxen buero_typ="LOFT_ATELIER" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <buero_praxen buero_typ="PRAXISFLAECHE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <buero_praxen buero_typ="PRAXISHAUS" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <einzelhandel handel_typ="KAUFHAUS" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <einzelhandel handel_typ="FACTORY_OUTLET" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <einzelhandel handel_typ="KIOSK" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <einzelhandel handel_typ="VERKAUFSFLAECHE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <einzelhandel handel_typ="AUSSTELLUNGSFLAECHE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <freizeitimmobilie_gewerblich freizeit_typ="FREIZEITANLAGE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <gastgewerbe gastgew_typ="BAR" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <gastgewerbe gastgew_typ="CAFE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <gastgewerbe gastgew_typ="DISCOTHEK" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <gastgewerbe gastgew_typ="RESTAURANT" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <gastgewerbe gastgew_typ="RAUCHERLOKAL" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <gastgewerbe gastgew_typ="EINRAUMLOKAL" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <grundstueck grundst_typ="GEWERBEPARK" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <hallen_lager_prod hallen_typ="INDUSTRIEHALLE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <hallen_lager_prod hallen_typ="LAGERFLAECHEN" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <hallen_lager_prod hallen_typ="LAGER_MIT_FREIFLAECHE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <hallen_lager_prod hallen_typ="SPEDITIONSLAGER" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <hallen_lager_prod hallen_typ="KUEHLHAUS" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <haus haustyp="KEINE_ANGABE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <land_und_forstwirtschaft land_typ="ANWESEN" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <wohnung wohnungtyp="KEINE_ANGABE" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie class="multicat">
-      <objektkategorie>
-        <objektart>
-          <zimmer />
-          <zimmer />
-          <sonstige />
-          <zimmer />
-          <sonstige />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-  </anbieter>
+    <uebertragung version="1.2.2" timestamp="2002-05-30T09:00:00"/>
+    <anbieter>
+        <firma>first agency</firma>
+        <openimmo_anid/>
+        <immobilie>
+            <ausstattung>
+                <boden FERTIGPARKETT="true" KUNSTSTOFF="true"/>
+                <befeuerung OEL="true" LUFTWP="false"/>
+            </ausstattung>
+            <zustand_angaben>
+                <energiepass>
+                    <epart>BEDARF</epart>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+        <immobilie>
+            <ausstattung>
+                <boden PARKETT="true" LAMINAT="true"/>
+                <befeuerung ERDWAERME="true" LUFTWP="true"/>
+            </ausstattung>
+            <zustand_angaben>
+                <energiepass>
+                    <epart>VERBRAUCH</epart>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+        <immobilie>
+            <ausstattung>
+                <ausstatt_kategorie>STANDARD</ausstatt_kategorie>
+                <dachform></dachform>
+                <bauweise PULTDACH="true" MANSARDDACH="true"/>
+                <ausbaustufe AUSBAUHAUS="true" BAUSATZHAUS="true"/>
+            </ausstattung>
+        </immobilie>
+        <immobilie>
+            <preise>
+                <provisionspflichtig>true</provisionspflichtig>
+            </preise>
+            <versteigerung>
+                <zwangsversteigerung>true</zwangsversteigerung>
+            </versteigerung>
+            <ausstattung>
+                <boden PARKETT="true" LINOLEUM="true"/>
+                <befeuerung LUFTWP="true"/>
+            </ausstattung>
+            <zustand_angaben>
+                <energiepass>
+                    <epart/>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <buero_praxen buero_typ="BUEROZENTRUM"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <buero_praxen buero_typ="LOFT_ATELIER"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <buero_praxen buero_typ="PRAXISFLAECHE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <buero_praxen buero_typ="PRAXISHAUS"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <einzelhandel handel_typ="KAUFHAUS"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <einzelhandel handel_typ="FACTORY_OUTLET"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <einzelhandel handel_typ="KIOSK"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <einzelhandel handel_typ="VERKAUFSFLAECHE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <einzelhandel handel_typ="AUSSTELLUNGSFLAECHE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <freizeitimmobilie_gewerblich freizeit_typ="FREIZEITANLAGE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <gastgewerbe gastgew_typ="BAR"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <gastgewerbe gastgew_typ="CAFE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <gastgewerbe gastgew_typ="DISCOTHEK"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <gastgewerbe gastgew_typ="RESTAURANT"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <gastgewerbe gastgew_typ="RAUCHERLOKAL"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <gastgewerbe gastgew_typ="EINRAUMLOKAL"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <grundstueck grundst_typ="GEWERBEPARK"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <hallen_lager_prod hallen_typ="INDUSTRIEHALLE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <hallen_lager_prod hallen_typ="LAGERFLAECHEN"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <hallen_lager_prod hallen_typ="LAGER_MIT_FREIFLAECHE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <hallen_lager_prod hallen_typ="SPEDITIONSLAGER"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <hallen_lager_prod hallen_typ="KUEHLHAUS"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <haus haustyp="KEINE_ANGABE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <land_und_forstwirtschaft land_typ="ANWESEN"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <wohnung wohnungtyp="KEINE_ANGABE"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie class="multicat">
+            <objektkategorie>
+                <objektart>
+                    <zimmer/>
+                    <zimmer/>
+                    <sonstige/>
+                    <zimmer/>
+                    <sonstige/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+    </anbieter>
 </openimmo>

@@ -23,51 +23,41 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class ImmobiliareItUtilsTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItUtilsTest.class );
+@RunWith(JUnit4.class)
+public class ImmobiliareItUtilsTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItUtilsTest.class);
 
-  @Test
-  public void testCreateDocument()
-  {
-    String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<feed xmlns=\"" + ImmobiliareItUtils.NAMESPACE + "\">\n"
-      + "  <version>" + ImmobiliareItUtils.VERSION.toReadableVersion() + "</version>\n"
-      + "</feed>";
+    @Test
+    public void testCreateDocument() {
+        String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<feed xmlns=\"" + ImmobiliareItUtils.NAMESPACE + "\">\n"
+                + "  <version>" + ImmobiliareItUtils.VERSION.toReadableVersion() + "</version>\n"
+                + "</feed>";
 
-    ImmobiliareItDocument doc;
-    try
-    {
-      doc = ImmobiliareItUtils.createDocument( transferXml );
-      Assert.assertNotNull(
-        "Transfer was processed.", doc );
-      Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof ImmobiliareItDocument );
+        ImmobiliareItDocument doc;
+        try {
+            doc = ImmobiliareItUtils.createDocument(transferXml);
+            Assert.assertNotNull(
+                    "Transfer was processed.", doc);
+            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof ImmobiliareItDocument);
+        } catch (Exception ex) {
+            LOGGER.error("Test of TrovitUtils.createDocument failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of TrovitUtils.createDocument failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of TrovitUtils.createDocument failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of TrovitUtils.createDocument failed!" );
-    }
-  }
 
-  @Test
-  public void testGetContext()
-  {
-    try
-    {
-      Assert.assertNotNull(
-        "JAXB context must be creatable.", ImmobiliareItUtils.getContext() );
+    @Test
+    public void testGetContext() {
+        try {
+            Assert.assertNotNull(
+                    "JAXB context must be creatable.", ImmobiliareItUtils.getContext());
+        } catch (Exception ex) {
+            LOGGER.error("Test of TrovitUtils.getContext failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of TrovitUtils.getContext failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of TrovitUtils.getContext failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of TrovitUtils.getContext failed!" );
-    }
-  }
 }

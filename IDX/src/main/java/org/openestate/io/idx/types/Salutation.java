@@ -22,35 +22,30 @@ import org.slf4j.LoggerFactory;
 /**
  * Salutation.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Salutation
-{
-  FEMALE( 1 ), MALE( 2 ), COMPANY( 3 );
+public enum Salutation {
+    FEMALE(1), MALE(2), COMPANY(3);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Salutation.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Salutation.class);
+    private final int value;
 
-  private Salutation( int value )
-  {
-    this.value = value;
-  }
-
-  public static Salutation parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (Salutation s : Salutation.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Salutation(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Salutation parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (Salutation s : Salutation.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

@@ -17,7 +17,7 @@
 /**
  * Some example classes, that illustrate the general usage of this library.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.examples;

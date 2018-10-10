@@ -26,103 +26,86 @@ import org.slf4j.LoggerFactory;
  * Implemented versions of the XML format by
  * <a href="http://immobiliare.it/">immobiliare.it</a>.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ImmobiliareItVersion implements XmlVersion
-{
-  /**
-   * Version 2.5
-   */
-  V2_5( ImmobiliareIt_2_5.class, "2.5", "2.5.0" );
+public enum ImmobiliareItVersion implements XmlVersion {
+    /**
+     * Version 2.5
+     */
+    V2_5(ImmobiliareIt_2_5.class, "2.5", "2.5.0");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItVersion.class );
-  private final Class converterClass;
-  private final String readableVersion;
-  private final String[] alias;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItVersion.class);
+    private final Class converterClass;
+    private final String readableVersion;
+    private final String[] alias;
 
-  private ImmobiliareItVersion( Class converterClass, String readableVersion, String...alias )
-  {
-    this.converterClass = converterClass;
-    this.readableVersion = readableVersion;
-    this.alias = alias;
-  }
+    private ImmobiliareItVersion(Class converterClass, String readableVersion, String... alias) {
+        this.converterClass = converterClass;
+        this.readableVersion = readableVersion;
+        this.alias = alias;
+    }
 
-  public static ImmobiliareItVersion detectFromString( String version )
-  {
-    if (version!=null)
-    {
-      for (ImmobiliareItVersion v : ImmobiliareItVersion.values())
-      {
-        if (v.toReadableVersion().equalsIgnoreCase( version )) return v;
-        if (v.alias!=null)
-        {
-          for (String a : v.alias)
-          {
-            if (a.equalsIgnoreCase( version )) return v;
-          }
+    public static ImmobiliareItVersion detectFromString(String version) {
+        if (version != null) {
+            for (ImmobiliareItVersion v : ImmobiliareItVersion.values()) {
+                if (v.toReadableVersion().equalsIgnoreCase(version)) return v;
+                if (v.alias != null) {
+                    for (String a : v.alias) {
+                        if (a.equalsIgnoreCase(version)) return v;
+                    }
+                }
+            }
         }
-      }
+        return null;
     }
-    return null;
-  }
 
-  @Override
-  public XmlConverter getConverter()
-  {
-    try
-    {
-      return (XmlConverter) this.converterClass.newInstance();
+    @Override
+    public XmlConverter getConverter() {
+        try {
+            return (XmlConverter) this.converterClass.newInstance();
+        } catch (Exception ex) {
+            LOGGER.error("Can't create converter!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Can't create converter!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @Override
+    public ImmobiliareItVersion getNextVersion() {
+        ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
+        int pos = ArrayUtils.indexOf(versions, this);
+        pos++;
+        return (versions.length > pos) ? versions[pos] : null;
     }
-  }
 
-  @Override
-  public ImmobiliareItVersion getNextVersion()
-  {
-    ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
-    int pos = ArrayUtils.indexOf( versions, this );
-    pos++;
-    return (versions.length>pos)? versions[pos]: null;
-  }
+    @Override
+    public ImmobiliareItVersion getPreviousVersion() {
+        ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
+        int pos = ArrayUtils.indexOf(versions, this);
+        pos--;
+        return (pos >= 0) ? versions[pos] : null;
+    }
 
-  @Override
-  public ImmobiliareItVersion getPreviousVersion()
-  {
-    ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
-    int pos = ArrayUtils.indexOf( versions, this );
-    pos--;
-    return (pos>=0)? versions[pos]: null;
-  }
+    @Override
+    public boolean isLatestVersion() {
+        return ImmobiliareItUtils.VERSION.equals(this);
+    }
 
-  @Override
-  public boolean isLatestVersion()
-  {
-    return ImmobiliareItUtils.VERSION.equals( this );
-  }
+    @Override
+    public boolean isNewerThen(XmlVersion v) {
+        ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
+        return ArrayUtils.indexOf(versions, this) > ArrayUtils.indexOf(versions, v);
+    }
 
-  @Override
-  public boolean isNewerThen( XmlVersion v )
-  {
-    ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
-    return ArrayUtils.indexOf( versions, this ) > ArrayUtils.indexOf( versions, v );
-  }
+    @Override
+    public boolean isOlderThen(XmlVersion v) {
+        ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
+        return ArrayUtils.indexOf(versions, this) < ArrayUtils.indexOf(versions, v);
+    }
 
-  @Override
-  public boolean isOlderThen( XmlVersion v )
-  {
-    ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
-    return ArrayUtils.indexOf( versions, this ) < ArrayUtils.indexOf( versions, v );
-  }
-
-  @Override
-  public String toReadableVersion()
-  {
-    return this.readableVersion;
-  }
+    @Override
+    public String toReadableVersion() {
+        return this.readableVersion;
+    }
 }

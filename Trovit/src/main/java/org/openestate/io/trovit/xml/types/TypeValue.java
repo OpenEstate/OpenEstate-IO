@@ -22,55 +22,49 @@ import org.slf4j.LoggerFactory;
 /**
  * TypeValue.
  *
- * @since 1.4
  * @author Andreas Rudolph
+ * @since 1.4
  */
-public enum TypeValue
-{
-  FOR_RENT( new String[]{ "For Rent", "Alquiler" } ),
-  FOR_SALE( new String[]{ "For Sale", "Venta" } ),
-  RENTALS( new String[]{ "Rentals" } ),
-  ROOMMATE( new String[]{ "Roommate" } ),
-  PARKING_FOR_RENT( new String[]{ "Parking For Rent" } ),
-  PARKING_FOR_SALE( new String[]{ "Parking For Sale" } ),
-  OFFICE_FOR_RENT( new String[]{ "Office For Rent" } ),
-  OFFICE_FOR_SALE( new String[]{ "Office For Sale" } ),
-  LAND_FOR_SALE( new String[]{ "Land For Sale" } ),
-  LOCAL_FOR_RENT( new String[]{ "For Rent Local" } ),
-  LOCAL_FOR_SALE( new String[]{ "For Sale Local" } ),
-  LOCAL_FOR_TRANSFER( new String[]{ "Transfer Local" } ),
-  COUNTRY_HOUSE_RENTALS( new String[]{ "Country House Rentals" } ),
-  WAREHOUSE_FOR_RENT( new String[]{ "Warehouse For Rent" } ),
-  WAREHOUSE_FOR_SALE( new String[]{ "Warehouse For Sale" } ),
-  OVERSEAS( new String[]{ "Overseas" } ),
-  SHORT_TERM_RENTALS( new String[]{ "Short Term Rentals" } ),
-  UNLISTED_FORECLOSURE( new String[]{ "Unlisted Foreclosure" } );
+public enum TypeValue {
+    FOR_RENT(new String[]{"For Rent", "Alquiler"}),
+    FOR_SALE(new String[]{"For Sale", "Venta"}),
+    RENTALS(new String[]{"Rentals"}),
+    ROOMMATE(new String[]{"Roommate"}),
+    PARKING_FOR_RENT(new String[]{"Parking For Rent"}),
+    PARKING_FOR_SALE(new String[]{"Parking For Sale"}),
+    OFFICE_FOR_RENT(new String[]{"Office For Rent"}),
+    OFFICE_FOR_SALE(new String[]{"Office For Sale"}),
+    LAND_FOR_SALE(new String[]{"Land For Sale"}),
+    LOCAL_FOR_RENT(new String[]{"For Rent Local"}),
+    LOCAL_FOR_SALE(new String[]{"For Sale Local"}),
+    LOCAL_FOR_TRANSFER(new String[]{"Transfer Local"}),
+    COUNTRY_HOUSE_RENTALS(new String[]{"Country House Rentals"}),
+    WAREHOUSE_FOR_RENT(new String[]{"Warehouse For Rent"}),
+    WAREHOUSE_FOR_SALE(new String[]{"Warehouse For Sale"}),
+    OVERSEAS(new String[]{"Overseas"}),
+    SHORT_TERM_RENTALS(new String[]{"Short Term Rentals"}),
+    UNLISTED_FORECLOSURE(new String[]{"Unlisted Foreclosure"});
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( TypeValue.class );
-  private final String[] aliases;
+    private final static Logger LOGGER = LoggerFactory.getLogger(TypeValue.class);
+    private final String[] aliases;
 
-  private TypeValue( String[] aliases )
-  {
-    this.aliases = aliases;
-  }
-
-  public static TypeValue fromXmlValue( String name )
-  {
-    name = StringUtils.trimToNull( name );
-    if (name==null) return null;
-    for (TypeValue value : TypeValue.values())
-    {
-      if (value.name().equalsIgnoreCase( name )) return value;
-      for (String alias : value.aliases)
-      {
-        if (alias.equalsIgnoreCase( name )) return value;
-      }
+    private TypeValue(String[] aliases) {
+        this.aliases = aliases;
     }
-    return null;
-  }
 
-  public String write()
-  {
-    return this.aliases[0];
-  }
+    public static TypeValue fromXmlValue(String name) {
+        name = StringUtils.trimToNull(name);
+        if (name == null) return null;
+        for (TypeValue value : TypeValue.values()) {
+            if (value.name().equalsIgnoreCase(name)) return value;
+            for (String alias : value.aliases) {
+                if (alias.equalsIgnoreCase(name)) return value;
+            }
+        }
+        return null;
+    }
+
+    public String write() {
+        return this.aliases[0];
+    }
 }

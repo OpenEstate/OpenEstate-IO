@@ -30,301 +30,277 @@ import org.slf4j.LoggerFactory;
 /**
  * Record from the IS24-CSV format for plots with commercial use.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class GrundstueckGewerbe extends Grundstueck
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( GrundstueckGewerbe.class );
+public class GrundstueckGewerbe extends Grundstueck {
+    private final static Logger LOGGER = LoggerFactory.getLogger(GrundstueckGewerbe.class);
 
-  /** Grundstücksfläche, Zahl 10,2 */
-  protected final static int FIELD_GRUNDSTUECKSFLAECHE = 62;
+    /**
+     * Grundstücksfläche, Zahl 10,2
+     */
+    protected final static int FIELD_GRUNDSTUECKSFLAECHE = 62;
 
-  /** Fläche teilbar ab (in m²), Zahl 8 */
-  protected final static int FIELD_FLAECHE_TEILBAR_AB = 63;
+    /**
+     * Fläche teilbar ab (in m²), Zahl 8
+     */
+    protected final static int FIELD_FLAECHE_TEILBAR_AB = 63;
 
-  /** Empfohlene Nutzung, Zahl 2 (Mehrfachauswahl möglich, wenn Eingaben durch Semikolon getrennt werden. Jeder mögliche Wert darf max. einmal erscheinen.) */
-  protected final static int FIELD_EMPFOHLENE_NUTZUNG = 64;
+    /**
+     * Empfohlene Nutzung, Zahl 2 (Mehrfachauswahl möglich, wenn Eingaben durch Semikolon getrennt werden. Jeder mögliche Wert darf max. einmal erscheinen.)
+     */
+    protected final static int FIELD_EMPFOHLENE_NUTZUNG = 64;
 
-  /** bebaubar nach, Text 1 */
-  protected final static int FIELD_BEBAUBAR_NACH = 65;
+    /**
+     * bebaubar nach, Text 1
+     */
+    protected final static int FIELD_BEBAUBAR_NACH = 65;
 
-  /** Erbpachtdauer in Jahren (Heimfall nach), Zahl 3 */
-  protected final static int FIELD_ERBPACHTDAUER = 66;
+    /**
+     * Erbpachtdauer in Jahren (Heimfall nach), Zahl 3
+     */
+    protected final static int FIELD_ERBPACHTDAUER = 66;
 
-  /** Baugenehmigung vorhanden, Text 1 */
-  protected final static int FIELD_BAUGENEHMIGUNG_VORHANDEN = 67;
+    /**
+     * Baugenehmigung vorhanden, Text 1
+     */
+    protected final static int FIELD_BAUGENEHMIGUNG_VORHANDEN = 67;
 
-  /** Abriss erforderlich, Text 1 */
-  protected final static int FIELD_ABRISS_ERFORDERLICH = 68;
+    /**
+     * Abriss erforderlich, Text 1
+     */
+    protected final static int FIELD_ABRISS_ERFORDERLICH = 68;
 
-  /** Grundflächenzahl (GRZ), Zahl 3,2 */
-  protected final static int FIELD_GRUNDFLAECHENZAHL = 69;
+    /**
+     * Grundflächenzahl (GRZ), Zahl 3,2
+     */
+    protected final static int FIELD_GRUNDFLAECHENZAHL = 69;
 
-  /** Geschoßflächenzahl (GFZ), Zahl 3,2 */
-  protected final static int FIELD_GESCHOSSFLAECHENZAHL = 70;
+    /**
+     * Geschoßflächenzahl (GFZ), Zahl 3,2
+     */
+    protected final static int FIELD_GESCHOSSFLAECHENZAHL = 70;
 
-  /** Erschließung, Text 1 */
-  protected final static int FIELD_ERSCHLIESSUNG = 71;
+    /**
+     * Erschließung, Text 1
+     */
+    protected final static int FIELD_ERSCHLIESSUNG = 71;
 
-  /** kurzfristig bebaubar, Text 1 */
-  protected final static int FIELD_KURZFRISTIG_BEBAUBAR = 72;
+    /**
+     * kurzfristig bebaubar, Text 1
+     */
+    protected final static int FIELD_KURZFRISTIG_BEBAUBAR = 72;
 
-  /** Frei ab/Verfügbar ab/Antrittstermin, Text 50 */
-  protected final static int FIELD_VERFUEGBAR_AB = 73;
+    /**
+     * Frei ab/Verfügbar ab/Antrittstermin, Text 50
+     */
+    protected final static int FIELD_VERFUEGBAR_AB = 73;
 
-  /** Kaufpreis / Erbpacht pro Jahr / Miete / Pacht, Zahl 15,2 */
-  protected final static int FIELD_PREIS = 90;
+    /**
+     * Kaufpreis / Erbpacht pro Jahr / Miete / Pacht, Zahl 15,2
+     */
+    protected final static int FIELD_PREIS = 90;
 
-  public GrundstueckGewerbe()
-  {
-    super();
-    this.setImmobilienart( Immobilienart.GRUNDSTUECKE );
-    this.setObjektkategorie( ObjektkategorieGrundstueck.GEWERBE );
-  }
-
-  public Boolean getAbrissErforderlich()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_ABRISS_ERFORDERLICH ) );
-  }
-
-  public Boolean getBaugenehmigungVorhanden()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_BAUGENEHMIGUNG_VORHANDEN ) );
-  }
-
-  public BebaubarNach getBebaubarNach()
-  {
-    return BebaubarNach.parse(
-      this.get( FIELD_BEBAUBAR_NACH ) );
-  }
-
-  public NutzungGrundstueckGewerbe[] getEmpfohleneNutzung()
-  {
-    return NutzungGrundstueckGewerbe.parseMultiple(
-      this.get( FIELD_EMPFOHLENE_NUTZUNG ) );
-  }
-
-  public Integer getErbpachtdauer()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_ERBPACHTDAUER ) );
+    public GrundstueckGewerbe() {
+        super();
+        this.setImmobilienart(Immobilienart.GRUNDSTUECKE);
+        this.setObjektkategorie(ObjektkategorieGrundstueck.GEWERBE);
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Erbpachtdauer'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Boolean getAbrissErforderlich() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_ABRISS_ERFORDERLICH));
     }
-  }
 
-  public Erschliessung getErschliessung()
-  {
-    return Erschliessung.parse(
-      this.get( FIELD_ERSCHLIESSUNG ) );
-  }
-
-  public Long getFlaecheTeilbarAb()
-  {
-    try
-    {
-      return Is24CsvFormat.parseLong(
-        this.get( FIELD_FLAECHE_TEILBAR_AB ) );
+    public Boolean getBaugenehmigungVorhanden() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_BAUGENEHMIGUNG_VORHANDEN));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Flaeche teilbar ab'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public BebaubarNach getBebaubarNach() {
+        return BebaubarNach.parse(
+                this.get(FIELD_BEBAUBAR_NACH));
     }
-  }
 
-  public BigDecimal getGeschossflaechenzahl()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_GESCHOSSFLAECHENZAHL ) );
+    public NutzungGrundstueckGewerbe[] getEmpfohleneNutzung() {
+        return NutzungGrundstueckGewerbe.parseMultiple(
+                this.get(FIELD_EMPFOHLENE_NUTZUNG));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Geschossflaechenzahl'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Integer getErbpachtdauer() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_ERBPACHTDAUER));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Erbpachtdauer'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public BigDecimal getGrundflaechenzahl()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_GRUNDFLAECHENZAHL ) );
+    public Erschliessung getErschliessung() {
+        return Erschliessung.parse(
+                this.get(FIELD_ERSCHLIESSUNG));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Grundflaechenzahl'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Long getFlaecheTeilbarAb() {
+        try {
+            return Is24CsvFormat.parseLong(
+                    this.get(FIELD_FLAECHE_TEILBAR_AB));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Flaeche teilbar ab'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public BigDecimal getGrundstuecksflaeche()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_GRUNDSTUECKSFLAECHE ) );
+    public BigDecimal getGeschossflaechenzahl() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_GESCHOSSFLAECHENZAHL));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Geschossflaechenzahl'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Grundstuecksflaeche'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public BigDecimal getGrundflaechenzahl() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_GRUNDFLAECHENZAHL));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Grundflaechenzahl'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Boolean getKurzfristigBebaubar()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_KURZFRISTIG_BEBAUBAR ) );
-  }
-
-  public BigDecimal getPreis()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_PREIS ) );
+    public BigDecimal getGrundstuecksflaeche() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_GRUNDSTUECKSFLAECHE));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Grundstuecksflaeche'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Preis'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Boolean getKurzfristigBebaubar() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_KURZFRISTIG_BEBAUBAR));
     }
-  }
 
-  public String getVerfuegbarAb()
-  {
-    return this.get( FIELD_VERFUEGBAR_AB );
-  }
+    public BigDecimal getPreis() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_PREIS));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Preis'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
+    }
 
-  public static GrundstueckGewerbe newRecord( CSVRecord record )
-  {
-    GrundstueckGewerbe is24Record = new GrundstueckGewerbe();
-    is24Record.parse( record );
-    return is24Record;
-  }
+    public String getVerfuegbarAb() {
+        return this.get(FIELD_VERFUEGBAR_AB);
+    }
 
-  @Override
-  protected Iterable<String> print()
-  {
-    this.setImmobilienart( Immobilienart.GRUNDSTUECKE );
+    public static GrundstueckGewerbe newRecord(CSVRecord record) {
+        GrundstueckGewerbe is24Record = new GrundstueckGewerbe();
+        is24Record.parse(record);
+        return is24Record;
+    }
 
-    ObjektkategorieGrundstueck kat = this.getObjektkategorie();
-    if (kat==null) this.setObjektkategorie( ObjektkategorieGrundstueck.GEWERBE );
+    @Override
+    protected Iterable<String> print() {
+        this.setImmobilienart(Immobilienart.GRUNDSTUECKE);
 
-    Vermarktungsart art = this.getVermarktungsart();
-    if (!Vermarktungsart.ERBPACHT.equals( art )) this.setErbpachtdauer( null );
+        ObjektkategorieGrundstueck kat = this.getObjektkategorie();
+        if (kat == null) this.setObjektkategorie(ObjektkategorieGrundstueck.GEWERBE);
 
-    return super.print();
-  }
+        Vermarktungsart art = this.getVermarktungsart();
+        if (!Vermarktungsart.ERBPACHT.equals(art)) this.setErbpachtdauer(null);
 
-  public void setAbrissErforderlich( Boolean value )
-  {
-    this.set( FIELD_ABRISS_ERFORDERLICH,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+        return super.print();
+    }
 
-  public void setBaugenehmigungVorhanden( Boolean value )
-  {
-    this.set( FIELD_BAUGENEHMIGUNG_VORHANDEN,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+    public void setAbrissErforderlich(Boolean value) {
+        this.set(FIELD_ABRISS_ERFORDERLICH,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-  public void setBebaubarNach( BebaubarNach value )
-  {
-    this.set( FIELD_BEBAUBAR_NACH,
-      (value!=null)? value.print(): null );
-  }
+    public void setBaugenehmigungVorhanden(Boolean value) {
+        this.set(FIELD_BAUGENEHMIGUNG_VORHANDEN,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-  public void setEmpfohleneNutzung( NutzungGrundstueckGewerbe value )
-  {
-    this.set( FIELD_EMPFOHLENE_NUTZUNG,
-      (value!=null)? value.print(): null );
-  }
+    public void setBebaubarNach(BebaubarNach value) {
+        this.set(FIELD_BEBAUBAR_NACH,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setEmpfohleneNutzung( Iterable<NutzungGrundstueckGewerbe> values )
-  {
-    this.set( FIELD_EMPFOHLENE_NUTZUNG,
-      NutzungGrundstueckGewerbe.printMultiple( values ) );
-  }
+    public void setEmpfohleneNutzung(NutzungGrundstueckGewerbe value) {
+        this.set(FIELD_EMPFOHLENE_NUTZUNG,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setErbpachtdauer( Number value )
-  {
-    this.set( FIELD_ERBPACHTDAUER,
-      Is24CsvFormat.printNumber( value, 3 ) );
-  }
+    public void setEmpfohleneNutzung(Iterable<NutzungGrundstueckGewerbe> values) {
+        this.set(FIELD_EMPFOHLENE_NUTZUNG,
+                NutzungGrundstueckGewerbe.printMultiple(values));
+    }
 
-  public void setErschliessung( Erschliessung value )
-  {
-    this.set( FIELD_ERSCHLIESSUNG,
-      (value!=null)? value.print(): null );
-  }
+    public void setErbpachtdauer(Number value) {
+        this.set(FIELD_ERBPACHTDAUER,
+                Is24CsvFormat.printNumber(value, 3));
+    }
 
-  public void setFlaecheTeilbarAb( Number value )
-  {
-    this.set( FIELD_FLAECHE_TEILBAR_AB,
-      Is24CsvFormat.printNumber( value, 8 ) );
-  }
+    public void setErschliessung(Erschliessung value) {
+        this.set(FIELD_ERSCHLIESSUNG,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setGeschossflaechenzahl( Number value )
-  {
-    this.set( FIELD_GESCHOSSFLAECHENZAHL,
-      Is24CsvFormat.printNumber( value, 3, 2 ) );
-  }
+    public void setFlaecheTeilbarAb(Number value) {
+        this.set(FIELD_FLAECHE_TEILBAR_AB,
+                Is24CsvFormat.printNumber(value, 8));
+    }
 
-  public void setGrundflaechenzahl( Number value )
-  {
-    this.set( FIELD_GRUNDFLAECHENZAHL,
-      Is24CsvFormat.printNumber( value, 3, 2 ) );
-  }
+    public void setGeschossflaechenzahl(Number value) {
+        this.set(FIELD_GESCHOSSFLAECHENZAHL,
+                Is24CsvFormat.printNumber(value, 3, 2));
+    }
 
-  public void setGrundstuecksflaeche( Number value )
-  {
-    this.set( FIELD_GRUNDSTUECKSFLAECHE,
-      Is24CsvFormat.printNumber( value, 10, 2 ) );
-  }
+    public void setGrundflaechenzahl(Number value) {
+        this.set(FIELD_GRUNDFLAECHENZAHL,
+                Is24CsvFormat.printNumber(value, 3, 2));
+    }
 
-  public void setKurzfristigBebaubar( Boolean value )
-  {
-    this.set( FIELD_KURZFRISTIG_BEBAUBAR,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+    public void setGrundstuecksflaeche(Number value) {
+        this.set(FIELD_GRUNDSTUECKSFLAECHE,
+                Is24CsvFormat.printNumber(value, 10, 2));
+    }
 
-  @Override
-  public void setObjektkategorie( ObjektkategorieGrundstueck value )
-  {
-    if (ObjektkategorieGrundstueck.WOHNEN.equals( value ))
-      throw new IllegalArgumentException( "The provided value (" + value +") is not supported by this record." );
+    public void setKurzfristigBebaubar(Boolean value) {
+        this.set(FIELD_KURZFRISTIG_BEBAUBAR,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-    super.setObjektkategorie( (value!=null)? value: ObjektkategorieGrundstueck.GEWERBE );
-  }
+    @Override
+    public void setObjektkategorie(ObjektkategorieGrundstueck value) {
+        if (ObjektkategorieGrundstueck.WOHNEN.equals(value))
+            throw new IllegalArgumentException("The provided value (" + value + ") is not supported by this record.");
 
-  public void setPreis( Number value )
-  {
-    this.set( FIELD_PREIS,
-      Is24CsvFormat.printNumber( value, 15, 2 ) );
-  }
+        super.setObjektkategorie((value != null) ? value : ObjektkategorieGrundstueck.GEWERBE);
+    }
 
-  public void setVerfuegbarAb( String value )
-  {
-    this.set( FIELD_VERFUEGBAR_AB,
-      Is24CsvFormat.printString( value, 50 ) );
-  }
+    public void setPreis(Number value) {
+        this.set(FIELD_PREIS,
+                Is24CsvFormat.printNumber(value, 15, 2));
+    }
+
+    public void setVerfuegbarAb(String value) {
+        this.set(FIELD_VERFUEGBAR_AB,
+                Is24CsvFormat.printString(value, 50));
+    }
 }

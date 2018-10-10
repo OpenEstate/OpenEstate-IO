@@ -22,31 +22,25 @@ import org.slf4j.LoggerFactory;
 /**
  * OfferType.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum OfferType
-{
-  RENT, SALE;
+public enum OfferType {
+    RENT, SALE;
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( OfferType.class );
+    private final static Logger LOGGER = LoggerFactory.getLogger(OfferType.class);
 
-  public static OfferType parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    try
-    {
-      return OfferType.valueOf( value );
+    public static OfferType parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        try {
+            return OfferType.valueOf(value);
+        } catch (Exception ex) {
+            return null;
+        }
     }
-    catch (Exception ex)
-    {
-      return null;
-    }
-  }
 
-  public String print()
-  {
-    return this.name();
-  }
+    public String print() {
+        return this.name();
+    }
 }

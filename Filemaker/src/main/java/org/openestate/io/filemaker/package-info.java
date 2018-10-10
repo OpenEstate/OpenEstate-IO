@@ -17,7 +17,7 @@
 /**
  * Read and write XML data of <a href="http://www.filemaker.com/">Filemaker</a>.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.filemaker;

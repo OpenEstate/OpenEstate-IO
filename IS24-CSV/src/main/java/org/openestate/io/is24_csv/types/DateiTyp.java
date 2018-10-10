@@ -22,40 +22,35 @@ import org.slf4j.LoggerFactory;
 /**
  * DateiTyp.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum DateiTyp
-{
-  BILD( "B" ),
-  VIDEO( "V" ),
-  SOUNDFILE( "S" ),
-  LINK( "L" ),
-  GRUNDRISS_BILD( "GB" ),
-  GRUNDRISS_PDF( "GP" );
+public enum DateiTyp {
+    BILD("B"),
+    VIDEO("V"),
+    SOUNDFILE("S"),
+    LINK("L"),
+    GRUNDRISS_BILD("GB"),
+    GRUNDRISS_PDF("GP");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( DateiTyp.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(DateiTyp.class);
+    private final String value;
 
-  private DateiTyp( String value )
-  {
-    this.value = value;
-  }
-
-  public static DateiTyp parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (DateiTyp t : DateiTyp.values())
-    {
-      if (t.value.equalsIgnoreCase( value )) return t;
+    private DateiTyp(String value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static DateiTyp parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (DateiTyp t : DateiTyp.values()) {
+            if (t.value.equalsIgnoreCase(value)) return t;
+        }
+        return null;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

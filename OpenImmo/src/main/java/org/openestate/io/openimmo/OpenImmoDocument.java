@@ -23,56 +23,46 @@ import org.w3c.dom.Document;
 /**
  * A general OpenImmo-XML document.
  *
- * @param <JavaType>
- * the class of a (via JAXB generated) Java object, that the contained
- * {@link Document} is mapped to
- *
- * @since 1.0
+ * @param <JavaType> the class of a (via JAXB generated) Java object, that the contained
+ *                   {@link Document} is mapped to
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public abstract class OpenImmoDocument<JavaType> extends XmlConvertableDocument<JavaType, OpenImmoVersion>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoDocument.class );
+public abstract class OpenImmoDocument<JavaType> extends XmlConvertableDocument<JavaType, OpenImmoVersion> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoDocument.class);
 
-  /**
-   * Create from a {@link Document}.
-   *
-   * @param document
-   * the document to create from
-   */
-  protected OpenImmoDocument( Document document )
-  {
-    super( document );
-  }
+    /**
+     * Create from a {@link Document}.
+     *
+     * @param document the document to create from
+     */
+    protected OpenImmoDocument(Document document) {
+        super(document);
+    }
 
-  @Override
-  public abstract OpenImmoVersion getDocumentVersion();
+    @Override
+    public abstract OpenImmoVersion getDocumentVersion();
 
-  @Override
-  public OpenImmoVersion getLatestVersion()
-  {
-    return OpenImmoUtils.VERSION;
-  }
+    @Override
+    public OpenImmoVersion getLatestVersion() {
+        return OpenImmoUtils.VERSION;
+    }
 
-  /**
-   * Checks, if the current document is a {@link OpenImmoFeedbackDocument}.
-   *
-   * @return
-   * true, if the current document is a {@link OpenImmoFeedbackDocument}
-   */
-  public boolean isFeedback()
-  {
-    return this instanceof OpenImmoFeedbackDocument;
-  }
+    /**
+     * Checks, if the current document is a {@link OpenImmoFeedbackDocument}.
+     *
+     * @return true, if the current document is a {@link OpenImmoFeedbackDocument}
+     */
+    public boolean isFeedback() {
+        return this instanceof OpenImmoFeedbackDocument;
+    }
 
-  /**
-   * Checks, if the current document is a {@link OpenImmoTransferDocument}.
-   *
-   * @return
-   * true, if the current document is a {@link OpenImmoTransferDocument}
-   */
-  public boolean isTransfer()
-  {
-    return this instanceof OpenImmoTransferDocument;
-  }
+    /**
+     * Checks, if the current document is a {@link OpenImmoTransferDocument}.
+     *
+     * @return true, if the current document is a {@link OpenImmoTransferDocument}
+     */
+    public boolean isTransfer() {
+        return this instanceof OpenImmoTransferDocument;
+    }
 }

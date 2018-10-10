@@ -22,45 +22,40 @@ import org.slf4j.LoggerFactory;
 /**
  * Objektdarstellung.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Objektdarstellung
-{
-  IS24_HOMEPAGE_ALLEGRUPPEN( 0 ),
-  VBM_ALLEGRUPPEN( 1 ),
-  IS24_VBM_HOMEPAGE_ALLEGRUPPEN( 2 ),
-  HOMEPAGE_ALLEGRUPPEN( 3 ),
-  IS24( 4 ),
-  VBM_HOMEPAGE_ALLEGRUPPEN( 5 ),
-  IS24_VBM_ALLEGRUPPEN( 6 ),
-  IS24_WAHLGRUPPEN( 7 ),
-  HOMEPAGE_WAHLGRUPPEN( 8 ),
-  IS24_HOMEPAGE_WAHLGRUPPEN( 9 ),
-  WAHLGRUPPEN( 10 );
+public enum Objektdarstellung {
+    IS24_HOMEPAGE_ALLEGRUPPEN(0),
+    VBM_ALLEGRUPPEN(1),
+    IS24_VBM_HOMEPAGE_ALLEGRUPPEN(2),
+    HOMEPAGE_ALLEGRUPPEN(3),
+    IS24(4),
+    VBM_HOMEPAGE_ALLEGRUPPEN(5),
+    IS24_VBM_ALLEGRUPPEN(6),
+    IS24_WAHLGRUPPEN(7),
+    HOMEPAGE_WAHLGRUPPEN(8),
+    IS24_HOMEPAGE_WAHLGRUPPEN(9),
+    WAHLGRUPPEN(10);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Objektdarstellung.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Objektdarstellung.class);
+    private final int value;
 
-  private Objektdarstellung( int value )
-  {
-    this.value = value;
-  }
-
-  public static Objektdarstellung parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (Objektdarstellung s : Objektdarstellung.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Objektdarstellung(int value) {
+        this.value = value;
     }
-    return IS24_HOMEPAGE_ALLEGRUPPEN;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Objektdarstellung parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (Objektdarstellung s : Objektdarstellung.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return IS24_HOMEPAGE_ALLEGRUPPEN;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

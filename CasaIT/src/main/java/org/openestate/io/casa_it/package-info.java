@@ -23,8 +23,7 @@
  * This implementation is experimental and not used in productive environments
  * so far!
  *
- *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.casa_it;

@@ -26,86 +26,71 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class ImmoXmlDocumentNamespaceTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlDocumentNamespaceTest.class );
+@RunWith(JUnit4.class)
+public class ImmoXmlDocumentNamespaceTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlDocumentNamespaceTest.class);
 
-  private static Document buildExampleDocument( String version ) throws Exception
-  {
-    return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<imo:immoxml xmlns:imo=\"" + ImmoXmlUtils.NAMESPACE + "\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openimmo.de openimmo.xsd\">\n"
-      + "  <imo:uebertragung version=\"" + ImmoXmlUtils.VERSION.toReadableVersion() + "\" "
-      + "                    sendersoftware=\"OpenEstate.org\" "
-      + "                    techn_email=\"test@openestate.org\" "
-      + "                    umfang=\"VOLL\" art=\"OFFLINE\"/>\n"
-      + "  <imo:anbieter>\n"
-      + "  </imo:anbieter>\n"
-      + "</imo:immoxml>" );
-  }
-
-  @Test
-  public void testDowngrade()
-  {
-    try
-    {
-      String version = ImmoXmlUtils.VERSION.toReadableVersion();
-      ImmoXmlDocument doc = new ImmoXmlDocument( buildExampleDocument( version ) );
-
-      doc.downgrade( ImmoXmlVersion.V3_0 );
-      Assert.assertEquals("downgrade from "+version+" to 3.0", ImmoXmlVersion.V3_0, doc.getDocumentVersion() );
+    private static Document buildExampleDocument(String version) throws Exception {
+        return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<imo:immoxml xmlns:imo=\"" + ImmoXmlUtils.NAMESPACE + "\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openimmo.de openimmo.xsd\">\n"
+                + "  <imo:uebertragung version=\"" + ImmoXmlUtils.VERSION.toReadableVersion() + "\" "
+                + "                    sendersoftware=\"OpenEstate.org\" "
+                + "                    techn_email=\"test@openestate.org\" "
+                + "                    umfang=\"VOLL\" art=\"OFFLINE\"/>\n"
+                + "  <imo:anbieter>\n"
+                + "  </imo:anbieter>\n"
+                + "</imo:immoxml>");
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of ImmoXmlDocument.downgrade failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of ImmoXmlDocument.downgrade failed!" );
-    }
-  }
 
-  @Test
-  public void testToObject()
-  {
-    try
-    {
-      String version = ImmoXmlUtils.VERSION.toReadableVersion();
+    @Test
+    public void testDowngrade() {
+        try {
+            String version = ImmoXmlUtils.VERSION.toReadableVersion();
+            ImmoXmlDocument doc = new ImmoXmlDocument(buildExampleDocument(version));
 
-      ImmoXmlDocument doc = new ImmoXmlDocument( buildExampleDocument( version ) );
-      Assert.assertEquals(version, ImmoXmlUtils.VERSION, doc.getDocumentVersion() );
+            doc.downgrade(ImmoXmlVersion.V3_0);
+            Assert.assertEquals("downgrade from " + version + " to 3.0", ImmoXmlVersion.V3_0, doc.getDocumentVersion());
+        } catch (Exception ex) {
+            LOGGER.error("Test of ImmoXmlDocument.downgrade failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of ImmoXmlDocument.downgrade failed!");
+        }
+    }
 
-      Immoxml obj = doc.toObject();
-      Assert.assertNotNull(
-        "Created object for transfer document.", obj );
-      Assert.assertEquals(
-        "Matching version between document and object.", doc.getDocumentVersion().toReadableVersion(), obj.getUebertragung().getVersion() );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of ImmoXmlDocument.toObject failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of ImmoXmlDocument.toObject failed!" );
-    }
-  }
+    @Test
+    public void testToObject() {
+        try {
+            String version = ImmoXmlUtils.VERSION.toReadableVersion();
 
-  @Test
-  public void testUpgrade()
-  {
-    try
-    {
-      String version = ImmoXmlUtils.VERSION.toReadableVersion();
-      ImmoXmlDocument doc = new ImmoXmlDocument( buildExampleDocument( "1.1" ) );
+            ImmoXmlDocument doc = new ImmoXmlDocument(buildExampleDocument(version));
+            Assert.assertEquals(version, ImmoXmlUtils.VERSION, doc.getDocumentVersion());
 
-      doc.upgrade( ImmoXmlUtils.VERSION );
-      Assert.assertEquals("upgrade from 1.1 to "+version, ImmoXmlUtils.VERSION, doc.getDocumentVersion() );
+            Immoxml obj = doc.toObject();
+            Assert.assertNotNull(
+                    "Created object for transfer document.", obj);
+            Assert.assertEquals(
+                    "Matching version between document and object.", doc.getDocumentVersion().toReadableVersion(), obj.getUebertragung().getVersion());
+        } catch (Exception ex) {
+            LOGGER.error("Test of ImmoXmlDocument.toObject failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of ImmoXmlDocument.toObject failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of ImmoXmlDocument.upgrade failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of ImmoXmlDocument.upgrade failed!" );
+
+    @Test
+    public void testUpgrade() {
+        try {
+            String version = ImmoXmlUtils.VERSION.toReadableVersion();
+            ImmoXmlDocument doc = new ImmoXmlDocument(buildExampleDocument("1.1"));
+
+            doc.upgrade(ImmoXmlUtils.VERSION);
+            Assert.assertEquals("upgrade from 1.1 to " + version, ImmoXmlUtils.VERSION, doc.getDocumentVersion());
+        } catch (Exception ex) {
+            LOGGER.error("Test of ImmoXmlDocument.upgrade failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of ImmoXmlDocument.upgrade failed!");
+        }
     }
-  }
 }

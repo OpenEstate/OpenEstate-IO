@@ -22,41 +22,36 @@ import org.slf4j.LoggerFactory;
 /**
  * Zulieferung.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Zulieferung
-{
-  KEINE_ANGABE( 0 ),
-  DIREKT( 1 ),
-  INDIREKT( 2 ),
-  PKW( 3 ),
-  VON_VORN( 4 ),
-  VON_HINTEN( 5 ),
-  GANZTAEGIG( 6 ),
-  VORMITTAGS( 7 );
+public enum Zulieferung {
+    KEINE_ANGABE(0),
+    DIREKT(1),
+    INDIREKT(2),
+    PKW(3),
+    VON_VORN(4),
+    VON_HINTEN(5),
+    GANZTAEGIG(6),
+    VORMITTAGS(7);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Zulieferung.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Zulieferung.class);
+    private final int value;
 
-  private Zulieferung( int value )
-  {
-    this.value = value;
-  }
-
-  public static Zulieferung parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Zulieferung s : Zulieferung.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Zulieferung(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Zulieferung parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Zulieferung s : Zulieferung.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

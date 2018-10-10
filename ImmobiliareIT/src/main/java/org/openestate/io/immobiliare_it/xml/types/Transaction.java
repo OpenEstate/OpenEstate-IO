@@ -21,32 +21,27 @@ import org.slf4j.LoggerFactory;
 /**
  * Transaction.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Transaction
-{
-  SALE( "S" ), RENT ( "R" );
+public enum Transaction {
+    SALE("S"), RENT("R");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Transaction.class );
-  private final String xmlValue;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Transaction.class);
+    private final String xmlValue;
 
-  private Transaction( String xmlValue )
-  {
-    this.xmlValue = xmlValue;
-  }
-
-  public String getXmlValue()
-  {
-    return xmlValue;
-  }
-
-  public static Transaction fromXmlValue( String xmlValue )
-  {
-    for (Transaction val : Transaction.values())
-    {
-      if (val.xmlValue.equalsIgnoreCase( xmlValue )) return val;
+    private Transaction(String xmlValue) {
+        this.xmlValue = xmlValue;
     }
-    return null;
-  }
+
+    public String getXmlValue() {
+        return xmlValue;
+    }
+
+    public static Transaction fromXmlValue(String xmlValue) {
+        for (Transaction val : Transaction.values()) {
+            if (val.xmlValue.equalsIgnoreCase(xmlValue)) return val;
+        }
+        return null;
+    }
 }

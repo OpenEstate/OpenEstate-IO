@@ -22,35 +22,30 @@ import org.slf4j.LoggerFactory;
 /**
  * KaltmietePro.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum KaltmietePro
-{
-  MONAT( "M" ),
-  QUADRATMETER( "Q" );
+public enum KaltmietePro {
+    MONAT("M"),
+    QUADRATMETER("Q");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( KaltmietePro.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(KaltmietePro.class);
+    private final String value;
 
-  private KaltmietePro( String value )
-  {
-    this.value = value;
-  }
-
-  public static KaltmietePro parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (KaltmietePro s : KaltmietePro.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private KaltmietePro(String value) {
+        this.value = value;
     }
-    return MONAT;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static KaltmietePro parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (KaltmietePro s : KaltmietePro.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return MONAT;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

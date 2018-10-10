@@ -23,45 +23,35 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class KyeroUtilsTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(KyeroUtilsTest.class );
+@RunWith(JUnit4.class)
+public class KyeroUtilsTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(KyeroUtilsTest.class);
 
-  @Test
-  public void testCreateDocument()
-  {
-    KyeroDocument doc;
-    try
-    {
-      doc = KyeroUtils.createDocument( KyeroUtilsTest.class.getResourceAsStream( "/kyero.xml" ) );
-      Assert.assertNotNull(
-        "Transfer was processed.", doc );
-      Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof KyeroDocument );
+    @Test
+    public void testCreateDocument() {
+        KyeroDocument doc;
+        try {
+            doc = KyeroUtils.createDocument(KyeroUtilsTest.class.getResourceAsStream("/kyero.xml"));
+            Assert.assertNotNull(
+                    "Transfer was processed.", doc);
+            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof KyeroDocument);
+        } catch (Exception ex) {
+            LOGGER.error("Test of KyeroUtils.createDocument failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of KyeroUtils.createDocument failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of KyeroUtils.createDocument failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of KyeroUtils.createDocument failed!" );
-    }
-  }
 
-  @Test
-  public void testGetContext()
-  {
-    try
-    {
-      Assert.assertNotNull("JAXB context must be creatable.", KyeroUtils.getContext() );
+    @Test
+    public void testGetContext() {
+        try {
+            Assert.assertNotNull("JAXB context must be creatable.", KyeroUtils.getContext());
+        } catch (Exception ex) {
+            LOGGER.error("Test of KyeroUtils.getContext failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of KyeroUtils.getContext failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of KyeroUtils.getContext failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of KyeroUtils.getContext failed!" );
-    }
-  }
 }

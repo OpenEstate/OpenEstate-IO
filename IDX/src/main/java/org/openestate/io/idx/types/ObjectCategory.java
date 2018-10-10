@@ -22,56 +22,68 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjectCategory.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjectCategory
-{
-  /** Landwirtschaft / Agriculture */
-  AGRI,
+public enum ObjectCategory {
+    /**
+     * Landwirtschaft / Agriculture
+     */
+    AGRI,
 
-  /** Wohnung / Apartment */
-  APPT,
+    /**
+     * Wohnung / Apartment
+     */
+    APPT,
 
-  /** Gastronomie / Gastronomy */
-  GASTRO,
+    /**
+     * Gastronomie / Gastronomy
+     */
+    GASTRO,
 
-  /** Haus / House */
-  HOUSE,
+    /**
+     * Haus / House
+     */
+    HOUSE,
 
-  /** Gewerbe/Industrie / Industrial Objects */
-  INDUS,
+    /**
+     * Gewerbe/Industrie / Industrial Objects
+     */
+    INDUS,
 
-  /** Parkplatz / Parking space */
-  PARK,
+    /**
+     * Parkplatz / Parking space
+     */
+    PARK,
 
-  /** Grundstück / Plot */
-  PROP,
+    /**
+     * Grundstück / Plot
+     */
+    PROP,
 
-  /** Wohnnebenräume / Secondary rooms */
-  SECONDARY,
+    /**
+     * Wohnnebenräume / Secondary rooms
+     */
+    SECONDARY,
 
-  /** Garten / Garden */
-  GARDEN;
+    /**
+     * Garten / Garden
+     */
+    GARDEN;
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjectCategory.class );
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjectCategory.class);
 
-  public static ObjectCategory parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    try
-    {
-      return ObjectCategory.valueOf( value );
+    public static ObjectCategory parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        try {
+            return ObjectCategory.valueOf(value);
+        } catch (Exception ex) {
+            return null;
+        }
     }
-    catch (Exception ex)
-    {
-      return null;
-    }
-  }
 
-  public String print()
-  {
-    return this.name();
-  }
+    public String print() {
+        return this.name();
+    }
 }

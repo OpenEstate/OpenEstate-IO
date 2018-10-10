@@ -21,32 +21,27 @@ import org.slf4j.LoggerFactory;
 /**
  * SizeUnit.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum SizeUnit
-{
-  M2( "m2" ), SFT( "sft" );
+public enum SizeUnit {
+    M2("m2"), SFT("sft");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( SizeUnit.class );
-  private final String xmlValue;
+    private final static Logger LOGGER = LoggerFactory.getLogger(SizeUnit.class);
+    private final String xmlValue;
 
-  private SizeUnit( String xmlValue )
-  {
-    this.xmlValue = xmlValue;
-  }
-
-  public String getXmlValue()
-  {
-    return xmlValue;
-  }
-
-  public static SizeUnit fromXmlValue( String xmlValue )
-  {
-    for (SizeUnit val : SizeUnit.values())
-    {
-      if (val.xmlValue.equalsIgnoreCase( xmlValue )) return val;
+    private SizeUnit(String xmlValue) {
+        this.xmlValue = xmlValue;
     }
-    return null;
-  }
+
+    public String getXmlValue() {
+        return xmlValue;
+    }
+
+    public static SizeUnit fromXmlValue(String xmlValue) {
+        for (SizeUnit val : SizeUnit.values()) {
+            if (val.xmlValue.equalsIgnoreCase(xmlValue)) return val;
+        }
+        return null;
+    }
 }

@@ -18,7 +18,7 @@
  * Convert XML data for <a href="http://daft.ie/">daft.ie</a> between different
  * versions.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.daft_ie.converters;

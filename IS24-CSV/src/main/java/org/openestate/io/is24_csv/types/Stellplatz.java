@@ -22,44 +22,39 @@ import org.slf4j.LoggerFactory;
 /**
  * Stellplatz.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Stellplatz
-{
-  KEINE_ANGABE( '1' ),
-  GARAGE( '2' ),
-  AUSSEN_STELLPLATZ( '3' ),
-  CARPORT( '4' ),
-  DUPLEX( '5' ),
-  PARKHAUS( '6' ),
-  TIEFGARAGE( '7' ),
-  @Deprecated
-  JA( 'J' ),
-  @Deprecated
-  NEIN( 'N' );
+public enum Stellplatz {
+    KEINE_ANGABE('1'),
+    GARAGE('2'),
+    AUSSEN_STELLPLATZ('3'),
+    CARPORT('4'),
+    DUPLEX('5'),
+    PARKHAUS('6'),
+    TIEFGARAGE('7'),
+    @Deprecated
+    JA('J'),
+    @Deprecated
+    NEIN('N');
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Stellplatz.class );
-  private final char value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Stellplatz.class);
+    private final char value;
 
-  private Stellplatz( char value )
-  {
-    this.value = value;
-  }
-
-  public static Stellplatz parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Stellplatz s : Stellplatz.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Stellplatz(char value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Stellplatz parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Stellplatz s : Stellplatz.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

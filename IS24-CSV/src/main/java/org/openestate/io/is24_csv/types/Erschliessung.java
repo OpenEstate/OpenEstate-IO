@@ -22,36 +22,31 @@ import org.slf4j.LoggerFactory;
 /**
  * Erschliessung.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Erschliessung
-{
-  ERSCHLOSSEN( "E" ),
-  TEILERSCHLOSSEN( "T" ),
-  UNERSCHLOSSEN( "U" );
+public enum Erschliessung {
+    ERSCHLOSSEN("E"),
+    TEILERSCHLOSSEN("T"),
+    UNERSCHLOSSEN("U");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Erschliessung.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Erschliessung.class);
+    private final String value;
 
-  private Erschliessung( String value )
-  {
-    this.value = value;
-  }
-
-  public static Erschliessung parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Erschliessung s : Erschliessung.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Erschliessung(String value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static Erschliessung parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Erschliessung s : Erschliessung.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

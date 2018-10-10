@@ -22,41 +22,35 @@ import org.slf4j.LoggerFactory;
 /**
  * OrientationValue.
  *
- * @since 1.4
  * @author Andreas Rudolph
+ * @since 1.4
  */
-public enum OrientationValue
-{
-  NORTH( new String[]{ "North", "Nord", "Norden" } ),
-  SOUTH( new String[]{ "South", "Süd", "Süden" } ),
-  EAST( new String[]{ "East", "Ost", "Osten" } ),
-  WEST( new String[]{ "West", "Westen" } );
+public enum OrientationValue {
+    NORTH(new String[]{"North", "Nord", "Norden"}),
+    SOUTH(new String[]{"South", "Süd", "Süden"}),
+    EAST(new String[]{"East", "Ost", "Osten"}),
+    WEST(new String[]{"West", "Westen"});
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( OrientationValue.class );
-  private final String[] aliases;
+    private final static Logger LOGGER = LoggerFactory.getLogger(OrientationValue.class);
+    private final String[] aliases;
 
-  private OrientationValue( String[] aliases )
-  {
-    this.aliases = aliases;
-  }
-
-  public static OrientationValue fromXmlValue( String name )
-  {
-    name = StringUtils.trimToNull( name );
-    if (name==null) return null;
-    for (OrientationValue value : OrientationValue.values())
-    {
-      if (value.name().equalsIgnoreCase( name )) return value;
-      for (String alias : value.aliases)
-      {
-        if (alias.equalsIgnoreCase( name )) return value;
-      }
+    private OrientationValue(String[] aliases) {
+        this.aliases = aliases;
     }
-    return null;
-  }
 
-  public String write()
-  {
-    return this.aliases[0];
-  }
+    public static OrientationValue fromXmlValue(String name) {
+        name = StringUtils.trimToNull(name);
+        if (name == null) return null;
+        for (OrientationValue value : OrientationValue.values()) {
+            if (value.name().equalsIgnoreCase(name)) return value;
+            for (String alias : value.aliases) {
+                if (alias.equalsIgnoreCase(name)) return value;
+            }
+        }
+        return null;
+    }
+
+    public String write() {
+        return this.aliases[0];
+    }
 }

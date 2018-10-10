@@ -28,93 +28,68 @@ import org.w3c.dom.Element;
 /**
  * Trovit-XML document with a &lt;trovit&gt; root element.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class TrovitDocument extends XmlDocument<Trovit>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( TrovitDocument.class );
+public class TrovitDocument extends XmlDocument<Trovit> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(TrovitDocument.class);
 
-  /**
-   * Create from a {@link Document}.
-   *
-   * @param document
-   * the document to create from
-   */
-  public TrovitDocument( Document document )
-  {
-    super( document );
-    if (!isReadable( document ))
-      throw new IllegalArgumentException( "The provided document is invalid!" );
-    this.setTextWrittenAsCDATA( true );
-  }
+    /**
+     * Create from a {@link Document}.
+     *
+     * @param document the document to create from
+     */
+    public TrovitDocument(Document document) {
+        super(document);
+        if (!isReadable(document))
+            throw new IllegalArgumentException("The provided document is invalid!");
+        this.setTextWrittenAsCDATA(true);
+    }
 
-  /**
-   * Checks, if a {@link Document} is readable as a {@link TrovitDocument}.
-   *
-   * @param doc
-   * document to check
-   *
-   * @return
-   * true, if the document is usable, otherwise false
-   */
-  public static boolean isReadable( Document doc )
-  {
-    Element root = XmlUtils.getRootElement( doc );
-    return "trovit".equals( root.getLocalName() );
-  }
+    /**
+     * Checks, if a {@link Document} is readable as a {@link TrovitDocument}.
+     *
+     * @param doc document to check
+     * @return true, if the document is usable, otherwise false
+     */
+    public static boolean isReadable(Document doc) {
+        Element root = XmlUtils.getRootElement(doc);
+        return "trovit".equals(root.getLocalName());
+    }
 
-  /**
-   * Creates an empty {@link TrovitDocument}.
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static TrovitDocument newDocument() throws ParserConfigurationException, JAXBException
-  {
-    return newDocument( TrovitUtils.getFactory().createTrovit());
-  }
+    /**
+     * Creates an empty {@link TrovitDocument}.
+     *
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occured
+     */
+    public static TrovitDocument newDocument() throws ParserConfigurationException, JAXBException {
+        return newDocument(TrovitUtils.getFactory().createTrovit());
+    }
 
-  /**
-   * Creates a {@link TrovitDocument} from a {@link Trovit} object.
-   *
-   * @param trovit
-   * Java object, that represents the &lt;trovit&gt; root element
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static TrovitDocument newDocument( Trovit trovit ) throws ParserConfigurationException, JAXBException
-  {
-    Document document = XmlUtils.newDocument();
-    TrovitUtils.createMarshaller( "UTF-8", true ).marshal( trovit, document );
-    return new TrovitDocument( document );
-  }
+    /**
+     * Creates a {@link TrovitDocument} from a {@link Trovit} object.
+     *
+     * @param trovit Java object, that represents the &lt;trovit&gt; root element
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occured
+     */
+    public static TrovitDocument newDocument(Trovit trovit) throws ParserConfigurationException, JAXBException {
+        Document document = XmlUtils.newDocument();
+        TrovitUtils.createMarshaller("UTF-8", true).marshal(trovit, document);
+        return new TrovitDocument(document);
+    }
 
-  /**
-   * Creates a {@link Trovit} object from the contained {@link Document}.
-   *
-   * @return
-   * created object, that represents the &lt;trovit&gt; root element
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  @Override
-  public Trovit toObject() throws JAXBException
-  {
-    return (Trovit) TrovitUtils.createUnmarshaller().unmarshal( this.getDocument() );
-  }
+    /**
+     * Creates a {@link Trovit} object from the contained {@link Document}.
+     *
+     * @return created object, that represents the &lt;trovit&gt; root element
+     * @throws JAXBException if a problem with JAXB occured
+     */
+    @Override
+    public Trovit toObject() throws JAXBException {
+        return (Trovit) TrovitUtils.createUnmarshaller().unmarshal(this.getDocument());
+    }
 }

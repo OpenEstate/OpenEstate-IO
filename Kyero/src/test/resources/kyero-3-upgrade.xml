@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <kyero>
-    <feed_version>2_1</feed_version>
-  </kyero>
-  <agent>
-    <id>123</id>
-    <name>company name</name>
-    <custom id="1">
-      <title>
-        <en>first custom value for the agent</en>
-      </title>
-    </custom>
-    <custom id="2">
-      <title>
-        <en>second custom value for the agent</en>
-      </title>
-    </custom>
-    <custom id="3">
-      <title>
-        <en>third custom value for the agent</en>
-      </title>
-    </custom>
-  </agent>
-  <property>
-    <id>234</id>
-    <custom id="1">1</custom>
-    <custom id="2">0</custom>
-    <custom id="3">0</custom>
-  </property>
-  <property>
-    <id>235</id>
-    <currency>AUD</currency>
-    <price_freq>new_build</price_freq>
-    <type>
-      <es>casa</es>
-      <de>haus</de>
-      <en>house</en>
-    </type>
-    <url>http://english.website.com/property/123456.htm</url>
-  </property>
-  <property>
-    <id>236</id>
-    <currency>QAR</currency>
-    <price_freq>sale</price_freq>
-    <type>
-      <en>house</en>
-    </type>
-    <url>http://english.website.com/property/123457.htm</url>
-  </property>
-  <property>
-    <id>237</id>
-    <currency>EUR</currency>
-    <price_freq>month</price_freq>
-    <type>
-      <de>haus</de>
-      <es>casa</es>
-    </type>
-    <url />
-  </property>
+    <kyero>
+        <feed_version>2_1</feed_version>
+    </kyero>
+    <agent>
+        <id>123</id>
+        <name>company name</name>
+        <custom id="1">
+            <title>
+                <en>first custom value for the agent</en>
+            </title>
+        </custom>
+        <custom id="2">
+            <title>
+                <en>second custom value for the agent</en>
+            </title>
+        </custom>
+        <custom id="3">
+            <title>
+                <en>third custom value for the agent</en>
+            </title>
+        </custom>
+    </agent>
+    <property>
+        <id>234</id>
+        <custom id="1">1</custom>
+        <custom id="2">0</custom>
+        <custom id="3">0</custom>
+    </property>
+    <property>
+        <id>235</id>
+        <currency>AUD</currency>
+        <price_freq>new_build</price_freq>
+        <type>
+            <es>casa</es>
+            <de>haus</de>
+            <en>house</en>
+        </type>
+        <url>http://english.website.com/property/123456.htm</url>
+    </property>
+    <property>
+        <id>236</id>
+        <currency>QAR</currency>
+        <price_freq>sale</price_freq>
+        <type>
+            <en>house</en>
+        </type>
+        <url>http://english.website.com/property/123457.htm</url>
+    </property>
+    <property>
+        <id>237</id>
+        <currency>EUR</currency>
+        <price_freq>month</price_freq>
+        <type>
+            <de>haus</de>
+            <es>casa</es>
+        </type>
+        <url/>
+    </property>
 </root>

@@ -21,32 +21,27 @@ import org.slf4j.LoggerFactory;
 /**
  * EnergyUnit.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum EnergyUnit
-{
-  KWH_M2ANNO( "kWh/m2anno" ), KWH_M3ANNO( "kWh/m3anno" );
+public enum EnergyUnit {
+    KWH_M2ANNO("kWh/m2anno"), KWH_M3ANNO("kWh/m3anno");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( EnergyUnit.class );
-  private final String xmlValue;
+    private final static Logger LOGGER = LoggerFactory.getLogger(EnergyUnit.class);
+    private final String xmlValue;
 
-  private EnergyUnit( String xmlValue )
-  {
-    this.xmlValue = xmlValue;
-  }
-
-  public String getXmlValue()
-  {
-    return xmlValue;
-  }
-
-  public static EnergyUnit fromXmlValue( String xmlValue )
-  {
-    for (EnergyUnit val : EnergyUnit.values())
-    {
-      if (val.xmlValue.equalsIgnoreCase( xmlValue )) return val;
+    private EnergyUnit(String xmlValue) {
+        this.xmlValue = xmlValue;
     }
-    return null;
-  }
+
+    public String getXmlValue() {
+        return xmlValue;
+    }
+
+    public static EnergyUnit fromXmlValue(String xmlValue) {
+        for (EnergyUnit val : EnergyUnit.values()) {
+            if (val.xmlValue.equalsIgnoreCase(xmlValue)) return val;
+        }
+        return null;
+    }
 }

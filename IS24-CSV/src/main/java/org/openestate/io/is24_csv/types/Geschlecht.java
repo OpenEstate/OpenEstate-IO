@@ -22,35 +22,30 @@ import org.slf4j.LoggerFactory;
 /**
  * Geschlecht.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Geschlecht
-{
-  NUR_MAENNER( 0 ),
-  NUR_FRAUEN( 1 );
+public enum Geschlecht {
+    NUR_MAENNER(0),
+    NUR_FRAUEN(1);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Geschlecht.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Geschlecht.class);
+    private final int value;
 
-  private Geschlecht( int value )
-  {
-    this.value = value;
-  }
-
-  public static Geschlecht parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Geschlecht s : Geschlecht.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Geschlecht(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Geschlecht parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Geschlecht s : Geschlecht.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

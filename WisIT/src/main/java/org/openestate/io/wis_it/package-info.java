@@ -18,7 +18,7 @@
  * Read and write XML data for
  * <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.wis_it;

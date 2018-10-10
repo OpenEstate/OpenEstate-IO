@@ -22,35 +22,30 @@ import org.slf4j.LoggerFactory;
 /**
  * Language.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Language
-{
-  GERMAN( 1 ), FRENCH( 2 ), ITALIAN( 3 ), ENGLISH( 4 );
+public enum Language {
+    GERMAN(1), FRENCH(2), ITALIAN(3), ENGLISH(4);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Language.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Language.class);
+    private final int value;
 
-  private Language( int value )
-  {
-    this.value = value;
-  }
-
-  public static Language parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (Language l : Language.values())
-    {
-      if (String.valueOf( l.value ).equalsIgnoreCase( value )) return l;
+    private Language(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Language parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (Language l : Language.values()) {
+            if (String.valueOf(l.value).equalsIgnoreCase(value)) return l;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

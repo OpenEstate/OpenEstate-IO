@@ -22,42 +22,37 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjektkategorieGewerbeSonstiges.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjektkategorieGewerbeSonstiges
-{
-  ANWESEN( 44 ),
-  BAUERNHOF( 45 ),
-  REITERHOF( 49 ),
-  WEINGUT( 52 ),
-  WERKSTATT( 99 ),
-  FREIZEITANLAGE( 100 ),
-  GEWERBEFLAECHE( 102 ),
-  SPEZIALOBJEKT( 103 ),
-  GEWERBEPARK( 105 );
+public enum ObjektkategorieGewerbeSonstiges {
+    ANWESEN(44),
+    BAUERNHOF(45),
+    REITERHOF(49),
+    WEINGUT(52),
+    WERKSTATT(99),
+    FREIZEITANLAGE(100),
+    GEWERBEFLAECHE(102),
+    SPEZIALOBJEKT(103),
+    GEWERBEPARK(105);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieGewerbeSonstiges.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieGewerbeSonstiges.class);
+    private final int value;
 
-  private ObjektkategorieGewerbeSonstiges( int value )
-  {
-    this.value = value;
-  }
-
-  public static ObjektkategorieGewerbeSonstiges parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (ObjektkategorieGewerbeSonstiges s : ObjektkategorieGewerbeSonstiges.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private ObjektkategorieGewerbeSonstiges(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static ObjektkategorieGewerbeSonstiges parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (ObjektkategorieGewerbeSonstiges s : ObjektkategorieGewerbeSonstiges.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

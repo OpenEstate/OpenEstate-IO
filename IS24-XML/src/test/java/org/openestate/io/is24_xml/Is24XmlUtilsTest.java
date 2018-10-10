@@ -23,47 +23,37 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class Is24XmlUtilsTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( Is24XmlUtilsTest.class );
+@RunWith(JUnit4.class)
+public class Is24XmlUtilsTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlUtilsTest.class);
 
-  @Test
-  public void testCreateDocument()
-  {
-    Is24XmlDocument doc;
-    try
-    {
-      doc = Is24XmlUtils.createDocument( Is24XmlUtilsTest.class.getResourceAsStream( "/is24.xml" ) );
-      Assert.assertNotNull(
-        "Transfer was processed.", doc );
-      Assert.assertTrue(
-        "Transfer was processed as Is24XmlDocument.", doc instanceof Is24XmlDocument );
+    @Test
+    public void testCreateDocument() {
+        Is24XmlDocument doc;
+        try {
+            doc = Is24XmlUtils.createDocument(Is24XmlUtilsTest.class.getResourceAsStream("/is24.xml"));
+            Assert.assertNotNull(
+                    "Transfer was processed.", doc);
+            Assert.assertTrue(
+                    "Transfer was processed as Is24XmlDocument.", doc instanceof Is24XmlDocument);
+        } catch (Exception ex) {
+            LOGGER.error("Test of Is24XmlUtils.createDocument failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of Is24XmlUtils.createDocument failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of Is24XmlUtils.createDocument failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of Is24XmlUtils.createDocument failed!" );
-    }
-  }
 
-  @Test
-  public void testGetContext()
-  {
-    try
-    {
-      Assert.assertNotNull(
-        "JAXB context must be creatable.", Is24XmlUtils.getContext() );
+    @Test
+    public void testGetContext() {
+        try {
+            Assert.assertNotNull(
+                    "JAXB context must be creatable.", Is24XmlUtils.getContext());
+        } catch (Exception ex) {
+            LOGGER.error("Test of Is24XmlUtils.getContext failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of Is24XmlUtils.getContext failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of Is24XmlUtils.getContext failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of Is24XmlUtils.getContext failed!" );
-    }
-  }
 }

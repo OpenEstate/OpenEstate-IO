@@ -17,7 +17,7 @@
 /**
  * Read and write XML data in ImmoXML format.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.immoxml;

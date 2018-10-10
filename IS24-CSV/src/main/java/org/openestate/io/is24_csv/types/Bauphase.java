@@ -22,37 +22,32 @@ import org.slf4j.LoggerFactory;
 /**
  * Bauphase.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Bauphase
-{
-  KEINE_ANGABE( 1 ),
-  IN_PLANUNG( 2 ),
-  IM_BAU( 3 ),
-  FERTIG_GESTELLT( 4 );
+public enum Bauphase {
+    KEINE_ANGABE(1),
+    IN_PLANUNG(2),
+    IM_BAU(3),
+    FERTIG_GESTELLT(4);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Bauphase.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Bauphase.class);
+    private final int value;
 
-  private Bauphase( int value )
-  {
-    this.value = value;
-  }
-
-  public static Bauphase parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Bauphase s : Bauphase.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Bauphase(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Bauphase parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Bauphase s : Bauphase.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

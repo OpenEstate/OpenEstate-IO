@@ -25,46 +25,42 @@ import org.slf4j.LoggerFactory;
 /**
  * Converter for version 2.1.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( Kyero_2_1.class );
+public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(Kyero_2_1.class);
 
-  @Override
-  public KyeroVersion getVersion()
-  {
-    return KyeroVersion.V2_1;
-  }
+    @Override
+    public KyeroVersion getVersion() {
+        return KyeroVersion.V2_1;
+    }
 
-  /**
-   * Downgrade an ImmoXML document from version 1.1.
-   * <p>
-   * Versions before 1.1 are not supported. Therefore this method always throws
-   * a {@link NotImplementedException}.
-   *
-   * @param doc ImmoXML document in version 1.1
-   */
-  @Override
-  public void downgradeToPreviousVersion( KyeroDocument doc )
-  {
-    throw new NotImplementedException(
-      "Kyero versions before 2.1 are not supported!" );
-  }
+    /**
+     * Downgrade an ImmoXML document from version 1.1.
+     * <p>
+     * Versions before 1.1 are not supported. Therefore this method always throws
+     * a {@link NotImplementedException}.
+     *
+     * @param doc ImmoXML document in version 1.1
+     */
+    @Override
+    public void downgradeToPreviousVersion(KyeroDocument doc) {
+        throw new NotImplementedException(
+                "Kyero versions before 2.1 are not supported!");
+    }
 
-  /**
-   * Downgrade an ImmoXML document to version 1.1.
-   * <p>
-   * Versions before 1.1 are not supported. Therefore this method always throws
-   * a {@link NotImplementedException}.
-   *
-   * @param doc ImmoXML document
-   */
-  @Override
-  public void upgradeFromPreviousVersion( KyeroDocument doc )
-  {
-    throw new NotImplementedException(
-      "Kyero versions before 2.1 are not supported!" );
-  }
+    /**
+     * Downgrade an ImmoXML document to version 1.1.
+     * <p>
+     * Versions before 1.1 are not supported. Therefore this method always throws
+     * a {@link NotImplementedException}.
+     *
+     * @param doc ImmoXML document
+     */
+    @Override
+    public void upgradeFromPreviousVersion(KyeroDocument doc) {
+        throw new NotImplementedException(
+                "Kyero versions before 2.1 are not supported!");
+    }
 }

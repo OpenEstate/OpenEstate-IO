@@ -46,163 +46,130 @@ import org.slf4j.LoggerFactory;
 /**
  * Parser for the IS24-CSV format.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class Is24CsvParser extends CsvParser<Is24CsvRecord>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvParser.class );
+public class Is24CsvParser extends CsvParser<Is24CsvRecord> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvParser.class);
 
-  /**
-   * Create with specifications of a {@link CSVParser}.
-   *
-   * @param parser
-   * the CSV parser from
-   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
-   */
-  protected Is24CsvParser( CSVParser parser )
-  {
-    super( parser );
-  }
-
-  /**
-   * Creates a {@link Is24CsvParser} from a {@link String} with CSV data.
-   *
-   * @param csvString
-   * CSV string
-   *
-   * @return
-   * created parser
-   *
-   * @throws IOException
-   * if CSV is not readable
-   */
-  public static Is24CsvParser create( String csvString ) throws IOException
-  {
-    return new Is24CsvFormat().parse( csvString );
-  }
-
-  /**
-   * Creates a {@link Is24CsvParser} from a {@link File} with CSV data.
-   *
-   * @param csvFile
-   * CSV file
-   *
-   * @return
-   * created parser
-   *
-   * @throws IOException
-   * if CSV is not readable
-   */
-  public static Is24CsvParser create( File csvFile ) throws IOException
-  {
-    return new Is24CsvFormat().parse( csvFile );
-  }
-
-  /**
-   * Creates a {@link Is24CsvParser} from an {@link InputStream} with CSV data.
-   *
-   * @param input
-   * CSV input
-   *
-   * @return
-   * created parser
-   *
-   * @throws IOException
-   * if CSV is not readable
-   */
-  public static Is24CsvParser create( InputStream input ) throws IOException
-  {
-    return new Is24CsvFormat().parse( input );
-  }
-
-  /**
-   * Creates a {@link Is24CsvParser} from a {@link Reader} with CSV data.
-   *
-   * @param input
-   * CSV input
-   *
-   * @return
-   * created parser
-   *
-   * @throws IOException
-   * if CSV is not readable
-   */
-  public static Is24CsvParser create( Reader input ) throws IOException
-  {
-    return new Is24CsvFormat().parse( input );
-  }
-
-  /**
-   * Creates a record, according to the object category, that is provided in
-   * a {@link CSVRecord}.
-   *
-   * @param record
-   * the record to process
-   *
-   * @return
-   * created record or null, if no matching record was found
-   */
-  public static Is24CsvRecord createRecord( CSVRecord record )
-  {
-    Immobilienart art = Is24CsvRecord.getImmobilienart( record );
-
-    if (Immobilienart.ANLAGE.equals( art ))
-      return Anlageobjekt.newRecord( record );
-
-    else if (Immobilienart.GEWERBE_BUERO_PRAXEN.equals( art ))
-      return GewerbeBueroPraxis.newRecord( record );
-
-    else if (Immobilienart.GEWERBE_EINZELHANDEL.equals( art ))
-      return GewerbeEinzelhandel.newRecord( record );
-
-    else if (Immobilienart.GEWERBE_GASTRONOMIE_HOTEL.equals( art ))
-      return GewerbeGastronomieHotel.newRecord( record );
-
-    else if (Immobilienart.GEWERBE_HALLE_PRODUKTION.equals( art ))
-      return GewerbeHalleProduktion.newRecord( record );
-
-    else if (Immobilienart.GEWERBE_SONSTIGES.equals( art ))
-      return GewerbeSonstiges.newRecord( record );
-
-    else if (Immobilienart.HAUS_KAUF.equals( art ))
-      return HausKauf.newRecord( record );
-
-    else if (Immobilienart.HAUS_MIETE.equals( art ))
-      return HausMiete.newRecord( record );
-
-    else if (Immobilienart.STELLPLATZ_KAUF.equals( art ))
-      return StellplatzKauf.newRecord( record );
-
-    else if (Immobilienart.STELLPLATZ_MIETE.equals( art ))
-      return StellplatzMiete.newRecord( record );
-
-    else if (Immobilienart.WOHNEN_AUF_ZEIT.equals( art ))
-      return WohnenAufZeit.newRecord( record );
-
-    else if (Immobilienart.WOHNUNG_KAUF.equals( art ))
-      return WohnungKauf.newRecord( record );
-
-    else if (Immobilienart.WOHNUNG_MIETE.equals( art ))
-      return WohnungMiete.newRecord( record );
-
-    // Immobilienart für Grundstücke wird abhängig zur Objektkategorie erzeugt
-    else if (Immobilienart.GRUNDSTUECKE.equals( art ))
-    {
-      ObjektkategorieGrundstueck cat = Grundstueck.getObjektkategorie( record );
-      if (ObjektkategorieGrundstueck.WOHNEN.equals( cat ))
-        return GrundstueckWohnen.newRecord( record );
-      else
-        return GrundstueckGewerbe.newRecord( record );
+    /**
+     * Create with specifications of a {@link CSVParser}.
+     *
+     * @param parser the CSV parser from
+     *               <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+     */
+    protected Is24CsvParser(CSVParser parser) {
+        super(parser);
     }
 
-    LOGGER.warn( "Unsupported 'Immobilienart' value: " + record.get( Is24CsvRecord.FIELD_IMMOBILIENART ) );
-    return null;
-  }
+    /**
+     * Creates a {@link Is24CsvParser} from a {@link String} with CSV data.
+     *
+     * @param csvString CSV string
+     * @return created parser
+     * @throws IOException if CSV is not readable
+     */
+    public static Is24CsvParser create(String csvString) throws IOException {
+        return new Is24CsvFormat().parse(csvString);
+    }
 
-  @Override
-  protected Is24CsvRecord newRecord( CSVRecord record )
-  {
-    return Is24CsvParser.createRecord( record );
-  }
+    /**
+     * Creates a {@link Is24CsvParser} from a {@link File} with CSV data.
+     *
+     * @param csvFile CSV file
+     * @return created parser
+     * @throws IOException if CSV is not readable
+     */
+    public static Is24CsvParser create(File csvFile) throws IOException {
+        return new Is24CsvFormat().parse(csvFile);
+    }
+
+    /**
+     * Creates a {@link Is24CsvParser} from an {@link InputStream} with CSV data.
+     *
+     * @param input CSV input
+     * @return created parser
+     * @throws IOException if CSV is not readable
+     */
+    public static Is24CsvParser create(InputStream input) throws IOException {
+        return new Is24CsvFormat().parse(input);
+    }
+
+    /**
+     * Creates a {@link Is24CsvParser} from a {@link Reader} with CSV data.
+     *
+     * @param input CSV input
+     * @return created parser
+     * @throws IOException if CSV is not readable
+     */
+    public static Is24CsvParser create(Reader input) throws IOException {
+        return new Is24CsvFormat().parse(input);
+    }
+
+    /**
+     * Creates a record, according to the object category, that is provided in
+     * a {@link CSVRecord}.
+     *
+     * @param record the record to process
+     * @return created record or null, if no matching record was found
+     */
+    public static Is24CsvRecord createRecord(CSVRecord record) {
+        Immobilienart art = Is24CsvRecord.getImmobilienart(record);
+
+        if (Immobilienart.ANLAGE.equals(art))
+            return Anlageobjekt.newRecord(record);
+
+        else if (Immobilienart.GEWERBE_BUERO_PRAXEN.equals(art))
+            return GewerbeBueroPraxis.newRecord(record);
+
+        else if (Immobilienart.GEWERBE_EINZELHANDEL.equals(art))
+            return GewerbeEinzelhandel.newRecord(record);
+
+        else if (Immobilienart.GEWERBE_GASTRONOMIE_HOTEL.equals(art))
+            return GewerbeGastronomieHotel.newRecord(record);
+
+        else if (Immobilienart.GEWERBE_HALLE_PRODUKTION.equals(art))
+            return GewerbeHalleProduktion.newRecord(record);
+
+        else if (Immobilienart.GEWERBE_SONSTIGES.equals(art))
+            return GewerbeSonstiges.newRecord(record);
+
+        else if (Immobilienart.HAUS_KAUF.equals(art))
+            return HausKauf.newRecord(record);
+
+        else if (Immobilienart.HAUS_MIETE.equals(art))
+            return HausMiete.newRecord(record);
+
+        else if (Immobilienart.STELLPLATZ_KAUF.equals(art))
+            return StellplatzKauf.newRecord(record);
+
+        else if (Immobilienart.STELLPLATZ_MIETE.equals(art))
+            return StellplatzMiete.newRecord(record);
+
+        else if (Immobilienart.WOHNEN_AUF_ZEIT.equals(art))
+            return WohnenAufZeit.newRecord(record);
+
+        else if (Immobilienart.WOHNUNG_KAUF.equals(art))
+            return WohnungKauf.newRecord(record);
+
+        else if (Immobilienart.WOHNUNG_MIETE.equals(art))
+            return WohnungMiete.newRecord(record);
+
+            // Immobilienart für Grundstücke wird abhängig zur Objektkategorie erzeugt
+        else if (Immobilienart.GRUNDSTUECKE.equals(art)) {
+            ObjektkategorieGrundstueck cat = Grundstueck.getObjektkategorie(record);
+            if (ObjektkategorieGrundstueck.WOHNEN.equals(cat))
+                return GrundstueckWohnen.newRecord(record);
+            else
+                return GrundstueckGewerbe.newRecord(record);
+        }
+
+        LOGGER.warn("Unsupported 'Immobilienart' value: " + record.get(Is24CsvRecord.FIELD_IMMOBILIENART));
+        return null;
+    }
+
+    @Override
+    protected Is24CsvRecord newRecord(CSVRecord record) {
+        return Is24CsvParser.createRecord(record);
+    }
 }

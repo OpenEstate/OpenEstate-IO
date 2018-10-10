@@ -18,7 +18,7 @@
  * Convert XML data for <a href="http://immobiliare.it/">immobiliare.it</a>
  * between different versions.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.immobiliare_it.converters;

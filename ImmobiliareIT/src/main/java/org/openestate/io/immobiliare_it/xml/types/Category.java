@@ -21,32 +21,27 @@ import org.slf4j.LoggerFactory;
 /**
  * Category.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Category
-{
-  COMMERCIALE( "C" ), RESIDENZIALE( "R" ), VACANZE( "V" );
+public enum Category {
+    COMMERCIALE("C"), RESIDENZIALE("R"), VACANZE("V");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Category.class );
-  private final String xmlValue;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Category.class);
+    private final String xmlValue;
 
-  private Category( String xmlValue )
-  {
-    this.xmlValue = xmlValue;
-  }
-
-  public String getXmlValue()
-  {
-    return xmlValue;
-  }
-
-  public static Category fromXmlValue( String xmlValue )
-  {
-    for (Category val : Category.values())
-    {
-      if (val.xmlValue.equalsIgnoreCase( xmlValue )) return val;
+    private Category(String xmlValue) {
+        this.xmlValue = xmlValue;
     }
-    return null;
-  }
+
+    public String getXmlValue() {
+        return xmlValue;
+    }
+
+    public static Category fromXmlValue(String xmlValue) {
+        for (Category val : Category.values()) {
+            if (val.xmlValue.equalsIgnoreCase(xmlValue)) return val;
+        }
+        return null;
+    }
 }

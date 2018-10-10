@@ -25,46 +25,42 @@ import org.slf4j.LoggerFactory;
 /**
  * Converter for version 3.0.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXML_3_0.class );
+public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXML_3_0.class);
 
-  @Override
-  public ImmoXmlVersion getVersion()
-  {
-    return ImmoXmlVersion.V3_0;
-  }
+    @Override
+    public ImmoXmlVersion getVersion() {
+        return ImmoXmlVersion.V3_0;
+    }
 
-  /**
-   * Downgrade an ImmoXML document from version 3.0.
-   * <p>
-   * Versions before 3.0 are not supported. Therefore this method always throws
-   * a {@link NotImplementedException}.
-   *
-   * @param doc ImmoXML document in version 3.0
-   */
-  @Override
-  public void downgradeToPreviousVersion( ImmoXmlDocument doc )
-  {
-    throw new NotImplementedException(
-      "ImmoXML versions before 3.0 are not supported!" );
-  }
+    /**
+     * Downgrade an ImmoXML document from version 3.0.
+     * <p>
+     * Versions before 3.0 are not supported. Therefore this method always throws
+     * a {@link NotImplementedException}.
+     *
+     * @param doc ImmoXML document in version 3.0
+     */
+    @Override
+    public void downgradeToPreviousVersion(ImmoXmlDocument doc) {
+        throw new NotImplementedException(
+                "ImmoXML versions before 3.0 are not supported!");
+    }
 
-  /**
-   * Downgrade an ImmoXML document to version 3.0.
-   * <p>
-   * Versions before 3.0 are not supported. Therefore this method always throws
-   * a {@link NotImplementedException}.
-   *
-   * @param doc ImmoXML document
-   */
-  @Override
-  public void upgradeFromPreviousVersion( ImmoXmlDocument doc )
-  {
-    throw new NotImplementedException(
-      "ImmoXML versions before 3.0 are not supported!" );
-  }
+    /**
+     * Downgrade an ImmoXML document to version 3.0.
+     * <p>
+     * Versions before 3.0 are not supported. Therefore this method always throws
+     * a {@link NotImplementedException}.
+     *
+     * @param doc ImmoXML document
+     */
+    @Override
+    public void upgradeFromPreviousVersion(ImmoXmlDocument doc) {
+        throw new NotImplementedException(
+                "ImmoXML versions before 3.0 are not supported!");
+    }
 }

@@ -17,7 +17,7 @@
 /**
  * Data types for the IDX format.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.idx.types;

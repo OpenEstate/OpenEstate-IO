@@ -27,32 +27,30 @@ import org.slf4j.LoggerFactory;
 /**
  * NumberUtilsTest.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-@RunWith( JUnit4.class )
-public class NumberUtilsTest
-{
-  private static final Logger LOGGER = LoggerFactory.getLogger( NumberUtilsTest.class );
+@RunWith(JUnit4.class)
+public class NumberUtilsTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(NumberUtilsTest.class);
 
-  @Test
-  public void testParseNumber()
-  {
-    NumberFormat format = NumberFormat.getNumberInstance( Locale.ENGLISH );
-    format.setGroupingUsed( false );
-    format.setMinimumFractionDigits( 0 );
+    @Test
+    public void testParseNumber() {
+        NumberFormat format = NumberFormat.getNumberInstance(Locale.ENGLISH);
+        format.setGroupingUsed(false);
+        format.setMinimumFractionDigits(0);
 
-    Assert.assertEquals( "1400", format.format( NumberUtils.parseNumber( "1400", false ) ) );
-    Assert.assertEquals( "1400", format.format( NumberUtils.parseNumber( "1400", true ) ) );
+        Assert.assertEquals("1400", format.format(NumberUtils.parseNumber("1400", false)));
+        Assert.assertEquals("1400", format.format(NumberUtils.parseNumber("1400", true)));
 
-    Assert.assertEquals( "1400", format.format( NumberUtils.parseNumber( "1.400", true, Locale.GERMAN ) ) );
-    Assert.assertEquals( "1400", format.format( NumberUtils.parseNumber( "1.400", false, Locale.GERMAN ) ) );
-    Assert.assertEquals( "1.4", format.format( NumberUtils.parseNumber( "1,400", false, Locale.GERMAN ) ) );
-    Assert.assertEquals( "1400.15", format.format( NumberUtils.parseNumber( "1.400,15", false, Locale.GERMAN ) ) );
+        Assert.assertEquals("1400", format.format(NumberUtils.parseNumber("1.400", true, Locale.GERMAN)));
+        Assert.assertEquals("1400", format.format(NumberUtils.parseNumber("1.400", false, Locale.GERMAN)));
+        Assert.assertEquals("1.4", format.format(NumberUtils.parseNumber("1,400", false, Locale.GERMAN)));
+        Assert.assertEquals("1400.15", format.format(NumberUtils.parseNumber("1.400,15", false, Locale.GERMAN)));
 
-    Assert.assertEquals( "1.4", format.format( NumberUtils.parseNumber( "1.400", false, Locale.ENGLISH ) ) );
-    Assert.assertEquals( "1400", format.format( NumberUtils.parseNumber( "1,400", true, Locale.ENGLISH ) ) );
-    Assert.assertEquals( "1400", format.format( NumberUtils.parseNumber( "1,400", false, Locale.ENGLISH ) ) );
-    Assert.assertEquals( "1400.15", format.format( NumberUtils.parseNumber( "1,400.15", false, Locale.ENGLISH ) ) );
-  }
+        Assert.assertEquals("1.4", format.format(NumberUtils.parseNumber("1.400", false, Locale.ENGLISH)));
+        Assert.assertEquals("1400", format.format(NumberUtils.parseNumber("1,400", true, Locale.ENGLISH)));
+        Assert.assertEquals("1400", format.format(NumberUtils.parseNumber("1,400", false, Locale.ENGLISH)));
+        Assert.assertEquals("1400.15", format.format(NumberUtils.parseNumber("1,400.15", false, Locale.ENGLISH)));
+    }
 }

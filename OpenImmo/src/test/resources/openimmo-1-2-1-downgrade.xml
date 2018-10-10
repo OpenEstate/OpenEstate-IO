@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openimmo>
-  <uebertragung version="1.2.1"/>
-  <anbieter>
-    <firma>first agency</firma>
-    <openimmo_anid/>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <haus haustyp="BUNGALOW" />
-          <objektart_zusatz>some text</objektart_zusatz>
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <objektart_zusatz>some more text</objektart_zusatz>
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <zustand_angaben>
-        <energiepass>
-          <art>VERBRAUCH</art>
-          <mitwarmwasser>true</mitwarmwasser>
-          <energieverbrauchkennwert>123</energieverbrauchkennwert>
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-    <immobilie>
-      <zustand_angaben>
-        <energiepass>
-          <art>BEDARF</art>
-          <endenergiebedarf>456</endenergiebedarf>
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-  </anbieter>
+    <uebertragung version="1.2.1"/>
+    <anbieter>
+        <firma>first agency</firma>
+        <openimmo_anid/>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <haus haustyp="BUNGALOW"/>
+                    <objektart_zusatz>some text</objektart_zusatz>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <objektart_zusatz>some more text</objektart_zusatz>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <zustand_angaben>
+                <energiepass>
+                    <art>VERBRAUCH</art>
+                    <mitwarmwasser>true</mitwarmwasser>
+                    <energieverbrauchkennwert>123</energieverbrauchkennwert>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+        <immobilie>
+            <zustand_angaben>
+                <energiepass>
+                    <art>BEDARF</art>
+                    <endenergiebedarf>456</endenergiebedarf>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+    </anbieter>
 </openimmo>

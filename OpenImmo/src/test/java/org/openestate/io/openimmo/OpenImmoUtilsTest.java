@@ -30,137 +30,117 @@ import org.slf4j.LoggerFactory;
  *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class OpenImmoUtilsTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( OpenImmoUtilsTest.class );
+@RunWith(JUnit4.class)
+public class OpenImmoUtilsTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoUtilsTest.class);
 
-  @Test
-  public void testCreateDocument()
-  {
-    String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<openimmo>\n"
-      + "  <uebertragung version=\"" + OpenImmoUtils.VERSION.toReadableVersion() + "\" "
-      + "                sendersoftware=\"OpenEstate.org\" "
-      + "                senderversion=\"1.0\" "
-      + "                techn_email=\"test@openestate.org\" "
-      + "                modus=\"NEW\" umfang=\"VOLL\" art=\"OFFLINE\"/>\n"
-      + "  <anbieter>\n"
-      + "  </anbieter>\n"
-      + "</openimmo>";
+    @Test
+    public void testCreateDocument() {
+        String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<openimmo>\n"
+                + "  <uebertragung version=\"" + OpenImmoUtils.VERSION.toReadableVersion() + "\" "
+                + "                sendersoftware=\"OpenEstate.org\" "
+                + "                senderversion=\"1.0\" "
+                + "                techn_email=\"test@openestate.org\" "
+                + "                modus=\"NEW\" umfang=\"VOLL\" art=\"OFFLINE\"/>\n"
+                + "  <anbieter>\n"
+                + "  </anbieter>\n"
+                + "</openimmo>";
 
-    String feedbackXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<openimmo_feedback>\n"
-      + "  <version>" + OpenImmoUtils.VERSION.toReadableVersion() + "</version>\n"
-      + "</openimmo_feedback>";
+        String feedbackXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<openimmo_feedback>\n"
+                + "  <version>" + OpenImmoUtils.VERSION.toReadableVersion() + "</version>\n"
+                + "</openimmo_feedback>";
 
-    OpenImmoDocument doc;
-    try
-    {
-      doc = OpenImmoUtils.createDocument( transferXml );
-      Assert.assertNotNull(
-        "Transfer was processed.", doc );
-      Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof OpenImmoTransferDocument );
+        OpenImmoDocument doc;
+        try {
+            doc = OpenImmoUtils.createDocument(transferXml);
+            Assert.assertNotNull(
+                    "Transfer was processed.", doc);
+            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof OpenImmoTransferDocument);
 
-      doc = OpenImmoUtils.createDocument( feedbackXml );
-      Assert.assertNotNull(
-        "Feedback was processed.", doc );
-      Assert.assertTrue("Feedback was processed as FeedbackDocument.", doc instanceof OpenImmoFeedbackDocument );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of OpenImmoUtils.createDocument failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of OpenImmoUtils.createDocument failed!" );
-    }
-  }
-
-  @Test
-  public void testGetContext()
-  {
-    try
-    {
-      Assert.assertNotNull(
-        "JAXB context must be creatable.", OpenImmoUtils.getContext() );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of OpenImmoUtils.getContext failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of OpenImmoUtils.getContext failed!" );
-    }
-  }
-
-  @Test
-  public void testParseDate()
-  {
-    DateFormat formatter = DateFormat.getDateInstance( DateFormat.MEDIUM );
-    Calendar target = Calendar.getInstance();
-    target.set( 2015, Calendar.JANUARY, 30, 0, 0, 0 );
-
-    Assert.assertEquals(
-      formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "30.01.2015" ).getTime() ) );
-
-    Assert.assertEquals(
-      formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "30-01-2015" ).getTime() ) );
-
-    Assert.assertEquals(
-      formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-30" ).getTime() ) );
-
-    Assert.assertEquals(
-      formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-30T05:06:07" ).getTime() ) );
-
-    Assert.assertEquals(
-      formatter.format( target.getTime() ),
-      formatter.format( OpenImmoUtils.parseDate( "2015-01-30 05:06:07" ).getTime() ) );
-
-    Assert.assertNotNull(
-      OpenImmoUtils.parseDate( "2015-03-17 19:05:00" ) );
-  }
-
-  @Test
-  public void testParseDecimal()
-  {
-    Assert.assertEquals(
-      new BigDecimal( "2" ), OpenImmoUtils.parseDecimal( "2" ) );
-    Assert.assertEquals(
-      new BigDecimal( "2.5" ), OpenImmoUtils.parseDecimal( "2.5" ) );
-    Assert.assertEquals(
-      new BigDecimal( "2.5" ), OpenImmoUtils.parseDecimal( "2,5" ) );
-    Assert.assertEquals(
-      null, OpenImmoUtils.parseDecimal( "" ) );
-
-    try
-    {
-      Assert.assertEquals(
-        null, OpenImmoUtils.parseDecimal( "," ) );
-      Assert.fail( "An exception should have been thrown." );
-    }
-    catch (IllegalArgumentException ex)
-    {
+            doc = OpenImmoUtils.createDocument(feedbackXml);
+            Assert.assertNotNull(
+                    "Feedback was processed.", doc);
+            Assert.assertTrue("Feedback was processed as FeedbackDocument.", doc instanceof OpenImmoFeedbackDocument);
+        } catch (Exception ex) {
+            LOGGER.error("Test of OpenImmoUtils.createDocument failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of OpenImmoUtils.createDocument failed!");
+        }
     }
 
-    try
-    {
-      Assert.assertEquals(
-        null, OpenImmoUtils.parseDecimal( "." ) );
-      Assert.fail( "An exception should have been thrown." );
-    }
-    catch (IllegalArgumentException ex)
-    {
+    @Test
+    public void testGetContext() {
+        try {
+            Assert.assertNotNull(
+                    "JAXB context must be creatable.", OpenImmoUtils.getContext());
+        } catch (Exception ex) {
+            LOGGER.error("Test of OpenImmoUtils.getContext failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of OpenImmoUtils.getContext failed!");
+        }
     }
 
-    try
-    {
-      OpenImmoUtils.parseDecimal( "2 MM" );
-      Assert.fail( "An exception should have been thrown." );
+    @Test
+    public void testParseDate() {
+        DateFormat formatter = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        Calendar target = Calendar.getInstance();
+        target.set(2015, Calendar.JANUARY, 30, 0, 0, 0);
+
+        Assert.assertEquals(
+                formatter.format(target.getTime()),
+                formatter.format(OpenImmoUtils.parseDate("30.01.2015").getTime()));
+
+        Assert.assertEquals(
+                formatter.format(target.getTime()),
+                formatter.format(OpenImmoUtils.parseDate("30-01-2015").getTime()));
+
+        Assert.assertEquals(
+                formatter.format(target.getTime()),
+                formatter.format(OpenImmoUtils.parseDate("2015-01-30").getTime()));
+
+        Assert.assertEquals(
+                formatter.format(target.getTime()),
+                formatter.format(OpenImmoUtils.parseDate("2015-01-30T05:06:07").getTime()));
+
+        Assert.assertEquals(
+                formatter.format(target.getTime()),
+                formatter.format(OpenImmoUtils.parseDate("2015-01-30 05:06:07").getTime()));
+
+        Assert.assertNotNull(
+                OpenImmoUtils.parseDate("2015-03-17 19:05:00"));
     }
-    catch (IllegalArgumentException ex)
-    {
+
+    @Test
+    public void testParseDecimal() {
+        Assert.assertEquals(
+                new BigDecimal("2"), OpenImmoUtils.parseDecimal("2"));
+        Assert.assertEquals(
+                new BigDecimal("2.5"), OpenImmoUtils.parseDecimal("2.5"));
+        Assert.assertEquals(
+                new BigDecimal("2.5"), OpenImmoUtils.parseDecimal("2,5"));
+        Assert.assertEquals(
+                null, OpenImmoUtils.parseDecimal(""));
+
+        try {
+            Assert.assertEquals(
+                    null, OpenImmoUtils.parseDecimal(","));
+            Assert.fail("An exception should have been thrown.");
+        } catch (IllegalArgumentException ex) {
+        }
+
+        try {
+            Assert.assertEquals(
+                    null, OpenImmoUtils.parseDecimal("."));
+            Assert.fail("An exception should have been thrown.");
+        } catch (IllegalArgumentException ex) {
+        }
+
+        try {
+            OpenImmoUtils.parseDecimal("2 MM");
+            Assert.fail("An exception should have been thrown.");
+        } catch (IllegalArgumentException ex) {
+        }
     }
-  }
 }

@@ -22,44 +22,39 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjektkategorieWohnen.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjektkategorieWohnung
-{
-  KEINE_ANGABE( 0 ),
-  DACHGESCHOSS( 3 ),
-  LOFT( 6 ),
-  MAISONETTE( 7 ),
-  PENTHOUSE( 8 ),
-  TERRASSE( 40 ),
-  SONSTIGE( 113 ),
-  ERDGESCHOSS( 117 ),
-  ETAGE( 118 ),
-  HOCHPARTERRE( 127 ),
-  SOUTERRAIN( 128 );
+public enum ObjektkategorieWohnung {
+    KEINE_ANGABE(0),
+    DACHGESCHOSS(3),
+    LOFT(6),
+    MAISONETTE(7),
+    PENTHOUSE(8),
+    TERRASSE(40),
+    SONSTIGE(113),
+    ERDGESCHOSS(117),
+    ETAGE(118),
+    HOCHPARTERRE(127),
+    SOUTERRAIN(128);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieWohnung.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieWohnung.class);
+    private final int value;
 
-  private ObjektkategorieWohnung( int value )
-  {
-    this.value = value;
-  }
-
-  public static ObjektkategorieWohnung parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (ObjektkategorieWohnung s : ObjektkategorieWohnung.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private ObjektkategorieWohnung(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static ObjektkategorieWohnung parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (ObjektkategorieWohnung s : ObjektkategorieWohnung.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

@@ -22,38 +22,33 @@ import org.slf4j.LoggerFactory;
 /**
  * Importmodus.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Importmodus
-{
-  IMPORTIEREN( "I" ),
-  AKTUALISIEREN( "U" ),
-  LOESCHEN( "D" ),
-  IGNORIEREN( "N" );
+public enum Importmodus {
+    IMPORTIEREN("I"),
+    AKTUALISIEREN("U"),
+    LOESCHEN("D"),
+    IGNORIEREN("N");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Importmodus.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Importmodus.class);
+    private final String value;
 
-  private Importmodus( String value )
-  {
-    this.value = value;
-  }
-
-  public static Importmodus parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (Importmodus s : Importmodus.values())
-    {
-      if (s.value.equalsIgnoreCase( value )) return s;
+    private Importmodus(String value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static Importmodus parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (Importmodus s : Importmodus.values()) {
+            if (s.value.equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

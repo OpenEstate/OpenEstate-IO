@@ -22,36 +22,31 @@ import org.slf4j.LoggerFactory;
 /**
  * Energieausweistyp.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum EnergieausweisTyp
-{
-  KEINE_ANGABE( 1 ),
-  ENDENERGIEBEDARF( 2 ),
-  ENERGIEVERBRAUCHSKENNWERT( 3 );
+public enum EnergieausweisTyp {
+    KEINE_ANGABE(1),
+    ENDENERGIEBEDARF(2),
+    ENERGIEVERBRAUCHSKENNWERT(3);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( EnergieausweisTyp.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(EnergieausweisTyp.class);
+    private final int value;
 
-  private EnergieausweisTyp( int value )
-  {
-    this.value = value;
-  }
-
-  public static EnergieausweisTyp parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (EnergieausweisTyp s : EnergieausweisTyp.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private EnergieausweisTyp(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static EnergieausweisTyp parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (EnergieausweisTyp s : EnergieausweisTyp.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

@@ -22,37 +22,32 @@ import org.slf4j.LoggerFactory;
 /**
  * BebaubarNach.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum BebaubarNach
-{
-  UNBEKANNT( "U" ),
-  BEBAUUNGSPLAN( "B" ),
-  NACHBARBEBAUUNG( "N" ),
-  AUSSENGEBIET( "A" );
+public enum BebaubarNach {
+    UNBEKANNT("U"),
+    BEBAUUNGSPLAN("B"),
+    NACHBARBEBAUUNG("N"),
+    AUSSENGEBIET("A");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( BebaubarNach.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(BebaubarNach.class);
+    private final String value;
 
-  private BebaubarNach( String value )
-  {
-    this.value = value;
-  }
-
-  public static BebaubarNach parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (BebaubarNach s : BebaubarNach.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private BebaubarNach(String value) {
+        this.value = value;
     }
-    return UNBEKANNT;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static BebaubarNach parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (BebaubarNach s : BebaubarNach.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return UNBEKANNT;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

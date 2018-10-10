@@ -21,32 +21,27 @@ import org.slf4j.LoggerFactory;
 /**
  * LandSizeUnit.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum LandSizeUnit
-{
-  HA( "ha" ), M2( "m2" ), SFT( "sft" );
+public enum LandSizeUnit {
+    HA("ha"), M2("m2"), SFT("sft");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( LandSizeUnit.class );
-  private final String xmlValue;
+    private final static Logger LOGGER = LoggerFactory.getLogger(LandSizeUnit.class);
+    private final String xmlValue;
 
-  private LandSizeUnit( String xmlValue )
-  {
-    this.xmlValue = xmlValue;
-  }
-
-  public String getXmlValue()
-  {
-    return xmlValue;
-  }
-
-  public static LandSizeUnit fromXmlValue( String xmlValue )
-  {
-    for (LandSizeUnit val : LandSizeUnit.values())
-    {
-      if (val.xmlValue.equalsIgnoreCase( xmlValue )) return val;
+    private LandSizeUnit(String xmlValue) {
+        this.xmlValue = xmlValue;
     }
-    return null;
-  }
+
+    public String getXmlValue() {
+        return xmlValue;
+    }
+
+    public static LandSizeUnit fromXmlValue(String xmlValue) {
+        for (LandSizeUnit val : LandSizeUnit.values()) {
+            if (val.xmlValue.equalsIgnoreCase(xmlValue)) return val;
+        }
+        return null;
+    }
 }

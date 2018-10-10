@@ -28,106 +28,77 @@ import org.w3c.dom.Element;
  * XML document from <a href="http://www.filemaker.com/">Filemaker</a> with a
  * &lt;FMPXMLRESULT&gt; root element.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerResultDocument.class );
+public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultDocument.class);
 
-  /**
-   * Create from a {@link Document}.
-   *
-   * @param document
-   * the document to create from
-   */
-  public FilemakerResultDocument( Document document )
-  {
-    super( document );
-    if (!isReadable( document ))
-      throw new IllegalArgumentException( "The provided document is invalid!" );
-  }
+    /**
+     * Create from a {@link Document}.
+     *
+     * @param document the document to create from
+     */
+    public FilemakerResultDocument(Document document) {
+        super(document);
+        if (!isReadable(document))
+            throw new IllegalArgumentException("The provided document is invalid!");
+    }
 
-  /**
-   * Checks, if a {@link Document} is readable as a {@link FilemakerResultDocument}.
-   *
-   * @param doc
-   * document to check
-   *
-   * @return
-   * true, if the document is usable, otherwise false
-   */
-  public static boolean isReadable( Document doc )
-  {
-    Element root = XmlUtils.getRootElement( doc );
-    return "FMPXMLRESULT".equals( root.getLocalName() );
-  }
+    /**
+     * Checks, if a {@link Document} is readable as a {@link FilemakerResultDocument}.
+     *
+     * @param doc document to check
+     * @return true, if the document is usable, otherwise false
+     */
+    public static boolean isReadable(Document doc) {
+        Element root = XmlUtils.getRootElement(doc);
+        return "FMPXMLRESULT".equals(root.getLocalName());
+    }
 
-  /**
-   * Creates an empty {@link FilemakerResultDocument}.
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static FilemakerResultDocument newDocument() throws ParserConfigurationException, JAXBException
-  {
-    return newDocument( FilemakerUtils.getFactoryForResult().createFMPXMLRESULT() );
-  }
+    /**
+     * Creates an empty {@link FilemakerResultDocument}.
+     *
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occured
+     */
+    public static FilemakerResultDocument newDocument() throws ParserConfigurationException, JAXBException {
+        return newDocument(FilemakerUtils.getFactoryForResult().createFMPXMLRESULT());
+    }
 
-  /**
-   * Creates a {@link FilemakerResultDocument} from a {@link FMPXMLRESULT} object.
-   *
-   * @param xmlResult
-   * Java object, that represents the &lt;FMPXMLRESULT&gt; root element
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static FilemakerResultDocument newDocument( FMPXMLRESULT xmlResult ) throws ParserConfigurationException, JAXBException
-  {
-    Document document = XmlUtils.newDocument();
-    FilemakerUtils.createMarshaller( "UTF-8", true ).marshal( xmlResult, document );
-    return new FilemakerResultDocument( document );
-  }
+    /**
+     * Creates a {@link FilemakerResultDocument} from a {@link FMPXMLRESULT} object.
+     *
+     * @param xmlResult Java object, that represents the &lt;FMPXMLRESULT&gt; root element
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occured
+     */
+    public static FilemakerResultDocument newDocument(FMPXMLRESULT xmlResult) throws ParserConfigurationException, JAXBException {
+        Document document = XmlUtils.newDocument();
+        FilemakerUtils.createMarshaller("UTF-8", true).marshal(xmlResult, document);
+        return new FilemakerResultDocument(document);
+    }
 
-  /**
-   * Creates a {@link FilemakerResultMapping} object from the contained {@link Document}.
-   *
-   * @return
-   * created mapping, that contains the values from the {@link FMPXMLRESULT}
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public FilemakerResultMapping toMapping() throws JAXBException
-  {
-    return new FilemakerResultMapping( this.toObject() );
-  }
+    /**
+     * Creates a {@link FilemakerResultMapping} object from the contained {@link Document}.
+     *
+     * @return created mapping, that contains the values from the {@link FMPXMLRESULT}
+     * @throws JAXBException if a problem with JAXB occured
+     */
+    public FilemakerResultMapping toMapping() throws JAXBException {
+        return new FilemakerResultMapping(this.toObject());
+    }
 
-  /**
-   * Creates a {@link FMPXMLRESULT} object from the contained {@link Document}.
-   *
-   * @return
-   * created object, that represents the &lt;FMPXMLRESULT&gt; root element
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  @Override
-  public FMPXMLRESULT toObject() throws JAXBException
-  {
-    return (FMPXMLRESULT) FilemakerUtils.createUnmarshaller().unmarshal( this.getDocument() );
-  }
+    /**
+     * Creates a {@link FMPXMLRESULT} object from the contained {@link Document}.
+     *
+     * @return created object, that represents the &lt;FMPXMLRESULT&gt; root element
+     * @throws JAXBException if a problem with JAXB occured
+     */
+    @Override
+    public FMPXMLRESULT toObject() throws JAXBException {
+        return (FMPXMLRESULT) FilemakerUtils.createUnmarshaller().unmarshal(this.getDocument());
+    }
 }

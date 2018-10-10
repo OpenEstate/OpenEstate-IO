@@ -32,177 +32,140 @@ import org.w3c.dom.Element;
  * XML document from <a href="http://immobiliare.it/">immobiliare.it</a> with a
  * &lt;feed&gt; root element.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, ImmobiliareItVersion>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( ImmobiliareItDocument.class );
+public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, ImmobiliareItVersion> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItDocument.class);
 
-  /**
-   * Create from a {@link Document}.
-   *
-   * @param document
-   * the document to create from
-   */
-  public ImmobiliareItDocument( Document document )
-  {
-    super( document );
-    if (!isReadable( document ))
-      throw new IllegalArgumentException( "The provided document is invalid!" );
-  }
-
-  @Override
-  public ImmobiliareItVersion getDocumentVersion()
-  {
-    String version;
-    try
-    {
-      Document doc = this.getDocument();
-      version = StringUtils.trimToNull(XmlUtils
-        .newXPath( "/io:feed/io:version/text()", doc )
-        .stringValueOf( doc ) );
-      if (version==null)
-      {
-        LOGGER.warn( "Can't find version informations in the XML document!" );
-        //System.out.println( "----------------------------" );
-        //try
-        //{
-        //  DocumentUtils.write( doc, System.out );
-        //}
-        //catch (Exception ex)
-        //{
-        //  LOGGER.error( "Can't write XML document!" );
-        //  LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-        //}
-        //System.out.println( "----------------------------" );
-        return null;
-      }
-    }
-    catch (JaxenException ex)
-    {
-      LOGGER.error( "Can't evaluate XPath expression!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+    /**
+     * Create from a {@link Document}.
+     *
+     * @param document the document to create from
+     */
+    public ImmobiliareItDocument(Document document) {
+        super(document);
+        if (!isReadable(document))
+            throw new IllegalArgumentException("The provided document is invalid!");
     }
 
-    ImmobiliareItVersion v = ImmobiliareItVersion.detectFromString( version );
-    if (v!=null) return v;
-
-    LOGGER.warn( "The provided version (" + version + ") is not supported!" );
-    return null;
-  }
-
-  @Override
-  public ImmobiliareItVersion getLatestVersion()
-  {
-    return ImmobiliareItUtils.VERSION;
-  }
-
-  /**
-   * Checks, if a {@link Document} is readable as a
-   * {@link ImmobiliareItDocument}.
-   *
-   * @param doc
-   * document to check
-   *
-   * @return
-   * true, if the document is usable, otherwise false
-   */
-  public static boolean isReadable( Document doc )
-  {
-    Element root = XmlUtils.getRootElement( doc );
-    return "feed".equals( root.getLocalName() );
-  }
-
-  /**
-   * Creates an empty {@link ImmobiliareItDocument}.
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static ImmobiliareItDocument newDocument() throws ParserConfigurationException, JAXBException
-  {
-    return newDocument( ImmobiliareItUtils.getFactory().createFeed() );
-  }
-
-  /**
-   * Creates a {@link ImmobiliareItDocument} from a {@link Feed} object.
-   *
-   * @param feed
-   * Java object, that represents the &lt;feed&gt; root element
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static ImmobiliareItDocument newDocument( Feed feed ) throws ParserConfigurationException, JAXBException
-  {
-    if (feed.getVersion()==null)
-      feed.setVersion( Version.V2_5 );
-
-    Document document = XmlUtils.newDocument();
-    ImmobiliareItUtils.createMarshaller( "UTF-8", true ).marshal( feed, document );
-    return new ImmobiliareItDocument( document );
-  }
-
-  @Override
-  public void setDocumentVersion( ImmobiliareItVersion version )
-  {
-    try
-    {
-      Document doc = this.getDocument();
-
-      Element node = (Element) XmlUtils
-        .newXPath( "/io:feed/io:version", doc )
-        .selectSingleNode( doc );
-      if (node==null)
-      {
-        Element parentNode = (Element) XmlUtils
-          .newXPath( "/io:feed", doc )
-          .selectSingleNode( doc );
-        if (parentNode==null)
-        {
-          LOGGER.warn( "Can't find a <feed> element in the document!" );
-          return;
+    @Override
+    public ImmobiliareItVersion getDocumentVersion() {
+        String version;
+        try {
+            Document doc = this.getDocument();
+            version = StringUtils.trimToNull(XmlUtils
+                    .newXPath("/io:feed/io:version/text()", doc)
+                    .stringValueOf(doc));
+            if (version == null) {
+                LOGGER.warn("Can't find version informations in the XML document!");
+                //System.out.println( "----------------------------" );
+                //try
+                //{
+                //  DocumentUtils.write( doc, System.out );
+                //}
+                //catch (Exception ex)
+                //{
+                //  LOGGER.error( "Can't write XML document!" );
+                //  LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
+                //}
+                //System.out.println( "----------------------------" );
+                return null;
+            }
+        } catch (JaxenException ex) {
+            LOGGER.error("Can't evaluate XPath expression!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            return null;
         }
-        node = doc.createElement( "version" );
-        parentNode.insertBefore( node, parentNode.getFirstChild() );
-      }
 
-      node.setTextContent( version.toReadableVersion() );
-    }
-    catch (JaxenException ex)
-    {
-      LOGGER.error( "Can't evaluate XPath expression!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-    }
-  }
+        ImmobiliareItVersion v = ImmobiliareItVersion.detectFromString(version);
+        if (v != null) return v;
 
-  /**
-   * Creates a {@link Feed} object from the contained {@link Document}.
-   *
-   * @return
-   * created object, that represents the &lt;feed&gt; root element
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  @Override
-  public Feed toObject() throws JAXBException
-  {
-    this.upgradeToLatestVersion();
-    return (Feed) ImmobiliareItUtils.createUnmarshaller().unmarshal( this.getDocument() );
-  }
+        LOGGER.warn("The provided version (" + version + ") is not supported!");
+        return null;
+    }
+
+    @Override
+    public ImmobiliareItVersion getLatestVersion() {
+        return ImmobiliareItUtils.VERSION;
+    }
+
+    /**
+     * Checks, if a {@link Document} is readable as a
+     * {@link ImmobiliareItDocument}.
+     *
+     * @param doc document to check
+     * @return true, if the document is usable, otherwise false
+     */
+    public static boolean isReadable(Document doc) {
+        Element root = XmlUtils.getRootElement(doc);
+        return "feed".equals(root.getLocalName());
+    }
+
+    /**
+     * Creates an empty {@link ImmobiliareItDocument}.
+     *
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occured
+     */
+    public static ImmobiliareItDocument newDocument() throws ParserConfigurationException, JAXBException {
+        return newDocument(ImmobiliareItUtils.getFactory().createFeed());
+    }
+
+    /**
+     * Creates a {@link ImmobiliareItDocument} from a {@link Feed} object.
+     *
+     * @param feed Java object, that represents the &lt;feed&gt; root element
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occured
+     */
+    public static ImmobiliareItDocument newDocument(Feed feed) throws ParserConfigurationException, JAXBException {
+        if (feed.getVersion() == null)
+            feed.setVersion(Version.V2_5);
+
+        Document document = XmlUtils.newDocument();
+        ImmobiliareItUtils.createMarshaller("UTF-8", true).marshal(feed, document);
+        return new ImmobiliareItDocument(document);
+    }
+
+    @Override
+    public void setDocumentVersion(ImmobiliareItVersion version) {
+        try {
+            Document doc = this.getDocument();
+
+            Element node = (Element) XmlUtils
+                    .newXPath("/io:feed/io:version", doc)
+                    .selectSingleNode(doc);
+            if (node == null) {
+                Element parentNode = (Element) XmlUtils
+                        .newXPath("/io:feed", doc)
+                        .selectSingleNode(doc);
+                if (parentNode == null) {
+                    LOGGER.warn("Can't find a <feed> element in the document!");
+                    return;
+                }
+                node = doc.createElement("version");
+                parentNode.insertBefore(node, parentNode.getFirstChild());
+            }
+
+            node.setTextContent(version.toReadableVersion());
+        } catch (JaxenException ex) {
+            LOGGER.error("Can't evaluate XPath expression!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+        }
+    }
+
+    /**
+     * Creates a {@link Feed} object from the contained {@link Document}.
+     *
+     * @return created object, that represents the &lt;feed&gt; root element
+     * @throws JAXBException if a problem with JAXB occured
+     */
+    @Override
+    public Feed toObject() throws JAXBException {
+        this.upgradeToLatestVersion();
+        return (Feed) ImmobiliareItUtils.createUnmarshaller().unmarshal(this.getDocument());
+    }
 }

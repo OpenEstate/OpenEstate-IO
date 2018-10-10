@@ -22,37 +22,32 @@ import org.slf4j.LoggerFactory;
 /**
  * Vermarktungsart.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Vermarktungsart
-{
-  KAUF( "K" ),
-  MIETE( "M" ),
-  PACHT( "P" ),
-  ERBPACHT( "E" );
+public enum Vermarktungsart {
+    KAUF("K"),
+    MIETE("M"),
+    PACHT("P"),
+    ERBPACHT("E");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Vermarktungsart.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Vermarktungsart.class);
+    private final String value;
 
-  private Vermarktungsart( String value )
-  {
-    this.value = value;
-  }
-
-  public static Vermarktungsart parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Vermarktungsart s : Vermarktungsart.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Vermarktungsart(String value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static Vermarktungsart parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Vermarktungsart s : Vermarktungsart.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

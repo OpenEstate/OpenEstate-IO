@@ -22,47 +22,42 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjektkategorieGewerbeBueroPraxen.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjektkategorieGewerbeHalleProduktion
-{
-  KEINE_ANGABE( 0 ),
-  AUSSTELLUNGSFLAECHE( 69 ),
-  HALLE( 88 ),
-  HOCHREGALLAGER( 89 ),
-  INDUSTRIEHALLE( 90 ),
-  INDUSTRIEHALLE_MIT_FREIFLAECHE( 91 ),
-  KUEHLHAUS( 92 ),
-  KUEHLREGALLAGER( 93 ),
-  LAGER_MIT_FREIFLAECHE( 94 ),
-  LAGERFLAECHE( 95 ),
-  LAGERHALLE( 96 ),
-  SERVICEFLAECHE( 97 ),
-  SPEDITIONSLAGER( 98 ),
-  WERKSTATT( 99 );
+public enum ObjektkategorieGewerbeHalleProduktion {
+    KEINE_ANGABE(0),
+    AUSSTELLUNGSFLAECHE(69),
+    HALLE(88),
+    HOCHREGALLAGER(89),
+    INDUSTRIEHALLE(90),
+    INDUSTRIEHALLE_MIT_FREIFLAECHE(91),
+    KUEHLHAUS(92),
+    KUEHLREGALLAGER(93),
+    LAGER_MIT_FREIFLAECHE(94),
+    LAGERFLAECHE(95),
+    LAGERHALLE(96),
+    SERVICEFLAECHE(97),
+    SPEDITIONSLAGER(98),
+    WERKSTATT(99);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieGewerbeHalleProduktion.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieGewerbeHalleProduktion.class);
+    private final int value;
 
-  private ObjektkategorieGewerbeHalleProduktion( int value )
-  {
-    this.value = value;
-  }
-
-  public static ObjektkategorieGewerbeHalleProduktion parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (ObjektkategorieGewerbeHalleProduktion s : ObjektkategorieGewerbeHalleProduktion.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private ObjektkategorieGewerbeHalleProduktion(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static ObjektkategorieGewerbeHalleProduktion parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (ObjektkategorieGewerbeHalleProduktion s : ObjektkategorieGewerbeHalleProduktion.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

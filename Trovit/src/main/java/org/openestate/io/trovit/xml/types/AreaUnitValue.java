@@ -22,41 +22,35 @@ import org.slf4j.LoggerFactory;
 /**
  * AreaUnitValue.
  *
- * @since 1.4
  * @author Andreas Rudolph
+ * @since 1.4
  */
-public enum AreaUnitValue
-{
-  FEET( new String[]{ "feet" } ),
-  ACRES( new String[]{ "acres" } ),
-  METERS( new String[]{ "meters" } ),
-  HECTARES( new String[]{ "hectares" } );
+public enum AreaUnitValue {
+    FEET(new String[]{"feet"}),
+    ACRES(new String[]{"acres"}),
+    METERS(new String[]{"meters"}),
+    HECTARES(new String[]{"hectares"});
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( AreaUnitValue.class );
-  private final String[] aliases;
+    private final static Logger LOGGER = LoggerFactory.getLogger(AreaUnitValue.class);
+    private final String[] aliases;
 
-  private AreaUnitValue( String[] aliases )
-  {
-    this.aliases = aliases;
-  }
-
-  public static AreaUnitValue fromXmlValue( String name )
-  {
-    name = StringUtils.trimToNull( name );
-    if (name==null) return null;
-    for (AreaUnitValue value : AreaUnitValue.values())
-    {
-      if (value.name().equalsIgnoreCase( name )) return value;
-      for (String alias : value.aliases)
-      {
-        if (alias.equalsIgnoreCase( name )) return value;
-      }
+    private AreaUnitValue(String[] aliases) {
+        this.aliases = aliases;
     }
-    return null;
-  }
 
-  public String write()
-  {
-    return this.aliases[0];
-  }
+    public static AreaUnitValue fromXmlValue(String name) {
+        name = StringUtils.trimToNull(name);
+        if (name == null) return null;
+        for (AreaUnitValue value : AreaUnitValue.values()) {
+            if (value.name().equalsIgnoreCase(name)) return value;
+            for (String alias : value.aliases) {
+                if (alias.equalsIgnoreCase(name)) return value;
+            }
+        }
+        return null;
+    }
+
+    public String write() {
+        return this.aliases[0];
+    }
 }

@@ -36,181 +36,155 @@ import org.slf4j.LoggerFactory;
 /**
  * Specification of the IS24-CSV format.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( Is24CsvFormat.class );
+public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
+    private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvFormat.class);
 
-  /**
-   * the implemented version of this format
-   */
-  public final static String VERSION = "1.4.0.4";
+    /**
+     * the implemented version of this format
+     */
+    public final static String VERSION = "1.4.0.4";
 
-  /**
-   * the encoding of this format
-   */
-  public final static String ENCODING = "CP1252";
+    /**
+     * the encoding of this format
+     */
+    public final static String ENCODING = "CP1252";
 
-  /**
-   * the record separator of this format
-   */
-  public final static String RECORD_SEPARATOR = "\r\n";
+    /**
+     * the record separator of this format
+     */
+    public final static String RECORD_SEPARATOR = "\r\n";
 
-  /**
-   * Create IS24-CSV format.
-   */
-  public Is24CsvFormat()
-  {
-    super( CSVFormat.newFormat( '|' )
-      .withRecordSeparator( RECORD_SEPARATOR )
-      .withNullString( StringUtils.EMPTY ) );
-  }
+    /**
+     * Create IS24-CSV format.
+     */
+    public Is24CsvFormat() {
+        super(CSVFormat.newFormat('|')
+                .withRecordSeparator(RECORD_SEPARATOR)
+                .withNullString(StringUtils.EMPTY));
+    }
 
-  /**
-   * Returns a country code, as it is preferred by this format.
-   *
-   * @param country
-   * country name to convert
-   *
-   * @return
-   * converted country code or null, if no matching country was found
-   */
-  public static String getCountryCode( String country )
-  {
-    return LocaleUtils.getCountryISO3( country );
-  }
+    /**
+     * Returns a country code, as it is preferred by this format.
+     *
+     * @param country country name to convert
+     * @return converted country code or null, if no matching country was found
+     */
+    public static String getCountryCode(String country) {
+        return LocaleUtils.getCountryISO3(country);
+    }
 
-  /**
-   * Returns the preferred date format for this format.
-   *
-   * @return
-   * date format
-   */
-  private static DateFormat getDateFormat()
-  {
-    return new SimpleDateFormat( "dd.MM.yyyy" );
-  }
+    /**
+     * Returns the preferred date format for this format.
+     *
+     * @return date format
+     */
+    private static DateFormat getDateFormat() {
+        return new SimpleDateFormat("dd.MM.yyyy");
+    }
 
-  @Override
-  public String getEncoding()
-  {
-    return ENCODING;
-  }
+    @Override
+    public String getEncoding() {
+        return ENCODING;
+    }
 
-  @Override
-  protected Is24CsvParser newParser( CSVParser parser )
-  {
-    return new Is24CsvParser( parser );
-  }
+    @Override
+    protected Is24CsvParser newParser(CSVParser parser) {
+        return new Is24CsvParser(parser);
+    }
 
-  @Override
-  protected Is24CsvPrinter newPrinter( CSVPrinter printer )
-  {
-    return new Is24CsvPrinter( printer );
-  }
+    @Override
+    protected Is24CsvPrinter newPrinter(CSVPrinter printer) {
+        return new Is24CsvPrinter(printer);
+    }
 
-  @SuppressFBWarnings(
-    value = "NP_BOOLEAN_RETURN_NULL",
-    justification = "This behaviour is intended.")
-  public static Boolean parseBoolean( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if ("J".equalsIgnoreCase( value ))
-      return true;
-    else if ("N".equalsIgnoreCase( value ))
-      return false;
-    else
-      return null;
-  }
+    @SuppressFBWarnings(
+            value = "NP_BOOLEAN_RETURN_NULL",
+            justification = "This behaviour is intended.")
+    public static Boolean parseBoolean(String value) {
+        value = StringUtils.trimToNull(value);
+        if ("J".equalsIgnoreCase(value))
+            return true;
+        else if ("N".equalsIgnoreCase(value))
+            return false;
+        else
+            return null;
+    }
 
-  public static Date parseDate( String value ) throws ParseException
-  {
-    value = StringUtils.trimToNull( value );
-    return (value!=null)? getDateFormat().parse( value ): null;
-  }
+    public static Date parseDate(String value) throws ParseException {
+        value = StringUtils.trimToNull(value);
+        return (value != null) ? getDateFormat().parse(value) : null;
+    }
 
-  public static Calendar parseDateAsCalendar( String value ) throws ParseException
-  {
-    Date date = parseDate( value );
-    if (date==null) return null;
-    Calendar cal = Calendar.getInstance();
-    cal.setTime( date );
-    return cal;
-  }
+    public static Calendar parseDateAsCalendar(String value) throws ParseException {
+        Date date = parseDate(value);
+        if (date == null) return null;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal;
+    }
 
-  public static BigDecimal parseDecimal( String value ) throws NumberFormatException
-  {
-    Number number = parseNumber( value, false );
-    return (number!=null)? BigDecimal.valueOf( number.doubleValue() ): null;
-  }
+    public static BigDecimal parseDecimal(String value) throws NumberFormatException {
+        Number number = parseNumber(value, false);
+        return (number != null) ? BigDecimal.valueOf(number.doubleValue()) : null;
+    }
 
-  public static Integer parseInteger( String value ) throws NumberFormatException
-  {
-    Number number = parseNumber( value, false );
-    return (number!=null)? number.intValue(): null;
-  }
+    public static Integer parseInteger(String value) throws NumberFormatException {
+        Number number = parseNumber(value, false);
+        return (number != null) ? number.intValue() : null;
+    }
 
-  public static Long parseLong( String value ) throws NumberFormatException
-  {
-    Number number = parseNumber( value, false );
-    return (number!=null)? number.longValue(): null;
-  }
+    public static Long parseLong(String value) throws NumberFormatException {
+        Number number = parseNumber(value, false);
+        return (number != null) ? number.longValue() : null;
+    }
 
-  public static Number parseNumber( String value ) throws NumberFormatException
-  {
-    return parseNumber( value, false );
-  }
+    public static Number parseNumber(String value) throws NumberFormatException {
+        return parseNumber(value, false);
+    }
 
-  public static Number parseNumber( String value, boolean integerOnly ) throws NumberFormatException
-  {
-    return NumberUtils.parseNumber( value, integerOnly, Locale.GERMANY, Locale.ENGLISH );
-  }
+    public static Number parseNumber(String value, boolean integerOnly) throws NumberFormatException {
+        return NumberUtils.parseNumber(value, integerOnly, Locale.GERMANY, Locale.ENGLISH);
+    }
 
-  public static String printBoolean( Boolean value )
-  {
-    if (Boolean.TRUE.equals( value ))
-      return "J";
-    else if (Boolean.FALSE.equals( value ))
-      return "N";
-    else
-      return StringUtils.EMPTY;
-  }
+    public static String printBoolean(Boolean value) {
+        if (Boolean.TRUE.equals(value))
+            return "J";
+        else if (Boolean.FALSE.equals(value))
+            return "N";
+        else
+            return StringUtils.EMPTY;
+    }
 
-  public static String printDate( Calendar value )
-  {
-    return printDate( (value!=null)? value.getTime(): null );
-  }
+    public static String printDate(Calendar value) {
+        return printDate((value != null) ? value.getTime() : null);
+    }
 
-  public static String printDate( Date value )
-  {
-    return (value!=null)? getDateFormat().format( value ): null;
-  }
+    public static String printDate(Date value) {
+        return (value != null) ? getDateFormat().format(value) : null;
+    }
 
-  public static String printNumber( Number value, int integerDigits )
-  {
-    return printNumber( value, integerDigits, 0 );
-  }
+    public static String printNumber(Number value, int integerDigits) {
+        return printNumber(value, integerDigits, 0);
+    }
 
-  public static String printNumber( Number value, int integerDigits, int fractionDigits )
-  {
-    return NumberUtils.printNumber( value, integerDigits, fractionDigits, Locale.GERMANY );
-  }
+    public static String printNumber(Number value, int integerDigits, int fractionDigits) {
+        return NumberUtils.printNumber(value, integerDigits, fractionDigits, Locale.GERMANY);
+    }
 
-  public static String printString( String value )
-  {
-    return printString( value, 0 );
-  }
+    public static String printString(String value) {
+        return printString(value, 0);
+    }
 
-  public static String printString( String value, int maxLength )
-  {
-    value = StringUtils.trimToNull( value );
-    if (maxLength<1)
-      return value;
-    else if (maxLength<4)
-      return StringUtils.left( value, maxLength );
-    else
-      return StringUtils.abbreviate( value, maxLength );
-  }
+    public static String printString(String value, int maxLength) {
+        value = StringUtils.trimToNull(value);
+        if (maxLength < 1)
+            return value;
+        else if (maxLength < 4)
+            return StringUtils.left(value, maxLength);
+        else
+            return StringUtils.abbreviate(value, maxLength);
+    }
 }
