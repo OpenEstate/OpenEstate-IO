@@ -4,41 +4,41 @@
                jaxb:extensionBindingPrefixes="xjc"
                version="2.0">
 
-  <jaxb:globalBindings>
-    <jaxb:serializable />
-  </jaxb:globalBindings>
+    <jaxb:globalBindings>
+        <jaxb:serializable/>
+    </jaxb:globalBindings>
 
-  <jaxb:bindings schemaLocation="../xsd/fmpxmllayout.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="../xsd/fmpxmllayout.xsd" node="/xsd:schema">
 
-    <jaxb:schemaBindings>
-      <jaxb:package name="org.openestate.io.filemaker.xml.layout">
-        <jaxb:javadoc><![CDATA[<body>
+        <jaxb:schemaBindings>
+            <jaxb:package name="org.openestate.io.filemaker.xml.layout">
+                <jaxb:javadoc><![CDATA[<body>
 Generated JAXB classes to read and write FMPXMLLAYOUT files of <a href="http://www.filemaker.com/">Filemaker</a>.
 See <a href="http://etutorials.org/XML/filemaker+pro+6+developers+guide+to+xml_xsl/Chapter+4+FileMaker+Pro+XML+Schema+or+Grammar+Formats+DTDs/4.1+FMPXMLLAYOUT+Schema+Grammar/">this documentation</a> for more informations.
 </body>]]></jaxb:javadoc>
-      </jaxb:package>
-    </jaxb:schemaBindings>
+            </jaxb:package>
+        </jaxb:schemaBindings>
 
-  </jaxb:bindings>
+    </jaxb:bindings>
 
-  <jaxb:bindings schemaLocation="../xsd/fmpxmlresult.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="../xsd/fmpxmlresult.xsd" node="/xsd:schema">
 
-    <jaxb:schemaBindings>
-      <jaxb:package name="org.openestate.io.filemaker.xml.result">
-        <jaxb:javadoc><![CDATA[<body>
+        <jaxb:schemaBindings>
+            <jaxb:package name="org.openestate.io.filemaker.xml.result">
+                <jaxb:javadoc><![CDATA[<body>
 Generated JAXB classes to read and write FMPXMLRESULT files of <a href="http://www.filemaker.com/">Filemaker</a>.
 See <a href="http://etutorials.org/XML/filemaker+pro+6+developers+guide+to+xml_xsl/Chapter+4+FileMaker+Pro+XML+Schema+or+Grammar+Formats+DTDs/4.2+FMPXMLRESULT+Schema+Grammar/">this documentation</a> for more informations.
 </body>]]></jaxb:javadoc>
-      </jaxb:package>
+            </jaxb:package>
 
-    </jaxb:schemaBindings>
+        </jaxb:schemaBindings>
 
-    <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='BooleanType']">
-      <jaxb:javaType name="java.lang.Boolean"
-                     parseMethod="org.openestate.io.filemaker.FilemakerUtils.parseBoolean"
-                     printMethod="org.openestate.io.filemaker.FilemakerUtils.printBoolean" />
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='BooleanType']">
+            <jaxb:javaType name="java.lang.Boolean"
+                           parseMethod="org.openestate.io.filemaker.FilemakerUtils.parseBoolean"
+                           printMethod="org.openestate.io.filemaker.FilemakerUtils.printBoolean"/>
+        </jaxb:bindings>
+
     </jaxb:bindings>
-
-  </jaxb:bindings>
 
 </jaxb:bindings>
