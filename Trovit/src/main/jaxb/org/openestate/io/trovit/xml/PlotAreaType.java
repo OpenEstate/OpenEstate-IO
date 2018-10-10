@@ -25,8 +25,8 @@ import org.openestate.io.trovit.xml.types.AreaUnitValue;
 
 /**
  * 
- *         Der Grundst\u00fccksfl\u00e4che eines Objekts.
- *       
+ *                 Der Grundst\u00fccksfl\u00e4che eines Objekts.
+ *             
  * 
  * <p>Java class for PlotAreaType complex type.
  * 
@@ -60,8 +60,8 @@ public class PlotAreaType implements Serializable, Cloneable, CopyTo2, Equals2, 
 
     /**
      * 
-     *         Wert der Grundst\u00fccksfl\u00e4che (von 1 bis 1000000000
-     *       
+     *                 Wert der Grundst\u00fccksfl\u00e4che (von 1 bis 1000000000
+     *             
      * 
      * @return
      *     possible object is

@@ -26,8 +26,8 @@ import org.openestate.io.trovit.xml.types.PricePeriodValue;
 
 /**
  * 
- *         Der Preis eines Objekts.
- *       
+ *                 Der Preis eines Objekts.
+ *             
  * 
  * <p>Java class for PriceType complex type.
  * 
@@ -65,9 +65,9 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
 
     /**
      * 
-     *         Der Preis eines Objekts h\u00e4ngt von der gew\u00e4hlten Art ab.
-     *         siehe https://corporate.trovit.com/specs-us-homes/
-     *       
+     *                 Der Preis eines Objekts h\u00e4ngt von der gew\u00e4hlten Art ab.
+     *                 siehe https://corporate.trovit.com/specs-us-homes/
+     *             
      * 
      * @return
      *     possible object is

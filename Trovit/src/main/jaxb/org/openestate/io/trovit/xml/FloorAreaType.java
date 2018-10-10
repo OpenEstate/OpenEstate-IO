@@ -25,8 +25,8 @@ import org.openestate.io.trovit.xml.types.AreaUnitValue;
 
 /**
  * 
- *         Der Fl\u00e4che eines Objekts.
- *       
+ *                 Der Fl\u00e4che eines Objekts.
+ *             
  * 
  * <p>Java class for FloorAreaType complex type.
  * 
@@ -60,8 +60,8 @@ public class FloorAreaType implements Serializable, Cloneable, CopyTo2, Equals2,
 
     /**
      * 
-     *         Wert der Fl\u00e4che (von 20 bis 50000)
-     *       
+     *                 Wert der Fl\u00e4che (von 20 bis 50000)
+     *             
      * 
      * @return
      *     possible object is

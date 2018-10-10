@@ -32,8 +32,8 @@ import org.openestate.io.trovit.xml.types.TypeValue;
 
 /**
  * 
- *         Ein einzuf\u00fcgendes oder zu aktualisierendes Objekt.
- *       
+ *                 Ein einzuf\u00fcgendes oder zu aktualisierendes Objekt.
+ *             
  * 
  * <p>Java class for AdType complex type.
  * 

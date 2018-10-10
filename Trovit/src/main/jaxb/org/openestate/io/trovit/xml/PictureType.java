@@ -25,8 +25,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 /**
  * 
- *         Ein einzuf\u00fcgendes oder zu aktualisierendes Bild.
- *       
+ *                 Ein einzuf\u00fcgendes oder zu aktualisierendes Bild.
+ *             
  * 
  * <p>Java class for PictureType complex type.
  * 

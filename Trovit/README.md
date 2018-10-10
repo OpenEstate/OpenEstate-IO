@@ -53,7 +53,7 @@ The specifications for this format are placed in the [`specs`](specs) folder.
 
 [*Trovit.com*](https://www.trovit.com) only provided a written documentation for
 the XML format. Based on this documentation we've created an
-[inofficial XSD](specs/inofficial.xsd) file. The inofficial XSD file was used
+[unofficial XSD](specs/unofficial.xsd) file. The unofficial XSD file was used
 for generation of Java classes via JAXB.
 
 
