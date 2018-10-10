@@ -21,7 +21,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 set -e
 export LANG=en
 cd "$DIR"
-rm -f jaxb.timestamp
-rm -f src/main/java/org/openestate/io/immoxml/xml/*.*
-"$MVN" jaxb2:xjc
+"$MVN" org.codehaus.mojo:jaxb2-maven-plugin:xjc
 ./mvn-jaxb-cleanup.py

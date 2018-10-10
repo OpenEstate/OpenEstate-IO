@@ -19,7 +19,7 @@
 import os
 
 DIR = os.path.dirname(__file__)
-XML_DIR = os.path.join(DIR, 'src/main/java/org/openestate/io/immoxml/xml')
+XML_DIR = os.path.join(DIR, 'src/main/jaxb/org/openestate/io/immoxml/xml')
 
 
 def cleanup(file):
