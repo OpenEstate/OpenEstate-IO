@@ -110,13 +110,23 @@
     <build>
         <plugins>
 
-            <!-- compiler -->
+            <!-- add generated JAXB sources -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <generatedSourcesDirectory>${project.basedir}/src/main/jaxb</generatedSourcesDirectory>
-                </configuration>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/main/jaxb</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
             <!-- jar -->
