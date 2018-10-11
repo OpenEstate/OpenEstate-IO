@@ -23,4 +23,25 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xlint:unchecked" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="OpenEstate-IO" options="" />
+      <module name="OpenEstate-IO-CasaIT" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-Core" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-DaftIE" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-Examples" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-Filemaker" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-IDX" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-IS24-CSV" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-IS24-XML" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-ImmoXML" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-ImmobiliareIT" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-Kyero" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-OpenImmo" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-Trovit" options="-Xlint:unchecked" />
+      <module name="OpenEstate-IO-WisIT" options="-Xlint:unchecked" />
+      <module name="release" options="" />
+    </option>
+  </component>
 </project>

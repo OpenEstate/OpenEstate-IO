@@ -229,6 +229,16 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.0</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                        <showDeprecation>true</showDeprecation>
+                        <debug>false</debug>
+                        <compilerArgs>
+                            <arg>-Xlint:unchecked</arg>
+                        </compilerArgs>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -310,19 +320,6 @@
                             <followSymlinks>false</followSymlinks>
                         </fileset>
                     </filesets>
-                </configuration>
-            </plugin>
-
-            <!-- compiler -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <showDeprecation>true</showDeprecation>
-                    <debug>false</debug>
                 </configuration>
             </plugin>
 
