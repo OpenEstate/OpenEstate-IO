@@ -2,165 +2,167 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.openestate.io</groupId>
-    <artifactId>OpenEstate-IO</artifactId>
+    <parent>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO</artifactId>
+        <version>1.4-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>OpenEstate-IO-Examples</artifactId>
     <version>1.4-SNAPSHOT</version>
-  </parent>
+    <packaging>jar</packaging>
 
-  <groupId>org.openestate.io</groupId>
-  <artifactId>OpenEstate-IO-Examples</artifactId>
-  <version>1.4-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <name>OpenEstate-IO-Examples</name>
+    <description>
+        OpenEstate-IO-Examples is a Java library, that provides some example classes to illustrate usage of the formats
+        implemented by OpenEstate-IO.
+    </description>
+    <url>https://openestate.org</url>
+    <organization>
+        <name>OpenEstate</name>
+        <url>https://openestate.org/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
 
-  <name>OpenEstate-IO-Examples</name>
-  <description>OpenEstate-IO-Examples is a Java library, that provides some example classes to illustrate usage of the formats implemented OpenEstate-IO.</description>
-  <url>https://openestate.org</url>
-  <organization>
-    <name>OpenEstate</name>
-    <url>https://openestate.org/</url>
-  </organization>
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
+    <developers>
+        <developer>
+            <id>andy</id>
+            <name>Andreas Rudolph</name>
+            <email>andy@openindex.de</email>
+            <organization>OpenIndex</organization>
+            <organizationUrl>https://openindex.de/</organizationUrl>
+        </developer>
+    </developers>
 
-  <developers>
-    <developer>
-      <id>andy</id>
-      <name>Andreas Rudolph</name>
-      <email>andy@openindex.de</email>
-      <organization>OpenIndex</organization>
-      <organizationUrl>https://openindex.de/</organizationUrl>
-    </developer>
-  </developers>
+    <dependencies>
 
-  <dependencies>
+        <!-- compile -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-CasaIT</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-DaftIE</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Filemaker</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-IDX</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-IS24-XML</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Kyero</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-OpenImmo</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Trovit</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-WisIT</artifactId>
+            <scope>compile</scope>
+        </dependency>
 
-    <!-- compile -->
-    <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>annotations</artifactId>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-text</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-CasaIT</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-DaftIE</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Filemaker</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IDX</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Kyero</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Trovit</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-WisIT</artifactId>
-      <scope>compile</scope>
-    </dependency>
+        <!-- test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-    <!-- test -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+    </dependencies>
 
-  </dependencies>
+    <build>
+        <plugins>
 
-  <build>
-    <plugins>
+            <!-- jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Automatic-Module-Name>org.openestate.io.examples</Automatic-Module-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
 
-      <!-- jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifestEntries>
-              <Automatic-Module-Name>org.openestate.io.examples</Automatic-Module-Name>
-            </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
+            <!-- findbugs -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>
+                </configuration>
+            </plugin>
 
-      <!-- findbugs -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <configuration>
-          <failOnError>false</failOnError>
-          <excludeFilterFile>${project.basedir}/findbugs-exclude.xml</excludeFilterFile>
-        </configuration>
-      </plugin>
-
-    </plugins>
-  </build>
+        </plugins>
+    </build>
 </project>
