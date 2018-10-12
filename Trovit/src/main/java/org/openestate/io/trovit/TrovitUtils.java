@@ -148,7 +148,7 @@ public class TrovitUtils {
      * Creates a {@link Marshaller} to write JAXB objects into XML.
      *
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
@@ -161,7 +161,7 @@ public class TrovitUtils {
      * @param encoding  encoding of written XML
      * @param formatted if written XML is pretty printed
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
@@ -176,7 +176,7 @@ public class TrovitUtils {
      * Creates a {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         Unmarshaller m = getContext().createUnmarshaller();
@@ -188,7 +188,7 @@ public class TrovitUtils {
      * Returns the {@link JAXBContext} for this format.
      *
      * @return context
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
         if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
@@ -205,10 +205,10 @@ public class TrovitUtils {
     }
 
     /**
-     * Intializes the {@link JAXBContext} for this format.
+     * Initializes the {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
         JAXB = JAXBContext.newInstance(PACKAGE, classloader);
@@ -531,7 +531,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printAreaUnitValue(AreaUnitValue value) {
         if (value == null)
@@ -545,7 +545,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printBooleanValue(Boolean value) {
         if (value == null)
@@ -561,7 +561,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printContentValue(String value) {
         value = StringUtils.trimToNull(value);
@@ -581,7 +581,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printCountryValue(String value) {
         value = StringUtils.trimToNull(value);
@@ -598,7 +598,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printDateValue(Calendar value) {
         if (value == null)
@@ -613,7 +613,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printFloorAreaValue(BigInteger value) {
         if (value == null)
@@ -631,7 +631,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printForeclosureTypeValue(ForeclosureTypeValue value) {
         if (value == null)
@@ -646,7 +646,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printLatitudeValue(BigDecimal value) {
         if (value == null)
@@ -666,7 +666,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printLongitudeValue(BigDecimal value) {
         if (value == null)
@@ -685,7 +685,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printOrientationValue(OrientationValue value) {
         if (value == null)
@@ -699,7 +699,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printPlotAreaValue(BigInteger value) {
         if (value == null)
@@ -717,7 +717,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printPriceCurrencyValue(Currency value) {
         if (value == null)
@@ -731,7 +731,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printPricePeriodValue(PricePeriodValue value) {
         if (value == null)
@@ -745,7 +745,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printPriceValue(BigDecimal value) {
         if (value == null)
@@ -764,7 +764,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printRoomsValue(BigDecimal value) {
         if (value == null)
@@ -790,7 +790,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printTypeValue(TypeValue value) {
         if (value == null)
@@ -804,7 +804,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printUriValue(URI value) {
         if (value == null)
@@ -822,7 +822,7 @@ public class TrovitUtils {
      *
      * @param value value to write
      * @return XML string
-     * @throws IllegalArgumentException if a validation error occured
+     * @throws IllegalArgumentException if a validation error occurred
      */
     public static String printYearValue(BigInteger value) {
         if (value == null)

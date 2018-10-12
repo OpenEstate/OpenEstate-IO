@@ -137,7 +137,7 @@ public class KyeroUtils {
      * Creates a {@link Marshaller} to write JAXB objects into XML.
      *
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
@@ -150,7 +150,7 @@ public class KyeroUtils {
      * @param encoding  encoding of written XML
      * @param formatted if written XML is pretty printed
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
@@ -165,7 +165,7 @@ public class KyeroUtils {
      * Creates a {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         Unmarshaller m = getContext().createUnmarshaller();
@@ -177,7 +177,7 @@ public class KyeroUtils {
      * Returns the {@link JAXBContext} for this format.
      *
      * @return context
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
         if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
@@ -212,10 +212,10 @@ public class KyeroUtils {
     }
 
     /**
-     * Intializes the {@link JAXBContext} for this format.
+     * Initializes the {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
         JAXB = JAXBContext.newInstance(PACKAGE, classloader);
