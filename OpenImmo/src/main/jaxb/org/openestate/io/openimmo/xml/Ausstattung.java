@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -92,83 +93,141 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedExtend"
 })
 @XmlRootElement(name = "ausstattung")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "ausstatt_kategorie")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected AusstattKategorie ausstattKategorie;
     @XmlElement(name = "wg_geeignet")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean wgGeeignet;
     @XmlElement(name = "raeume_veraenderbar")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean raeumeVeraenderbar;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Bad bad;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Kueche kueche;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boden boden;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kamin;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Heizungsart heizungsart;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Befeuerung befeuerung;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean klimatisiert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Fahrstuhl fahrstuhl;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<Stellplatzart> stellplatzart;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gartennutzung;
     @XmlElement(name = "ausricht_balkon_terrasse")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected AusrichtBalkonTerrasse ausrichtBalkonTerrasse;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Moebliert moebliert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean rollstuhlgerecht;
     @XmlElement(name = "kabel_sat_tv")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kabelSatTv;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean dvbt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean barrierefrei;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean sauna;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean swimmingpool;
     @XmlElement(name = "wasch_trockenraum")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean waschTrockenraum;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean wintergarten;
     @XmlElement(name = "dv_verkabelung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean dvVerkabelung;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean rampe;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean hebebuehne;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kran;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gastterrasse;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String stromanschlusswert;
     @XmlElement(name = "kantine_cafeteria")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kantineCafeteria;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean teekueche;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal hallenhoehe;
     @XmlElement(name = "angeschl_gastronomie")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected AngeschlGastronomie angeschlGastronomie;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean brauereibindung;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean sporteinrichtungen;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean wellnessbereich;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<Serviceleistungen> serviceleistungen;
     @XmlElement(name = "telefon_ferienimmobilie")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean telefonFerienimmobilie;
     @XmlElement(name = "breitband_zugang")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BreitbandZugang breitbandZugang;
     @XmlElement(name = "umts_empfang")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean umtsEmpfang;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Sicherheitstechnik sicherheitstechnik;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Unterkellert unterkellert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean abstellraum;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean fahrradraum;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean rolladen;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Dachform dachform;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Bauweise bauweise;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Ausbaustufe ausbaustufe;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Energietyp energietyp;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean bibliothek;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean dachboden;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gaestewc;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kabelkanaele;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean seniorengerecht;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
     @XmlElement(name = "user_defined_extend")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedExtend> userDefinedExtend;
 
     /**
@@ -179,6 +238,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link AusstattKategorie }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public AusstattKategorie getAusstattKategorie() {
         return ausstattKategorie;
     }
@@ -191,6 +251,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link AusstattKategorie }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAusstattKategorie(AusstattKategorie value) {
         this.ausstattKategorie = value;
     }
@@ -203,7 +264,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isWgGeeignet() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWgGeeignet() {
         return wgGeeignet;
     }
 
@@ -215,6 +277,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWgGeeignet(Boolean value) {
         this.wgGeeignet = value;
     }
@@ -227,7 +290,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isRaeumeVeraenderbar() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRaeumeVeraenderbar() {
         return raeumeVeraenderbar;
     }
 
@@ -239,6 +303,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setRaeumeVeraenderbar(Boolean value) {
         this.raeumeVeraenderbar = value;
     }
@@ -251,6 +316,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Bad }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Bad getBad() {
         return bad;
     }
@@ -263,6 +329,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Bad }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBad(Bad value) {
         this.bad = value;
     }
@@ -275,6 +342,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Kueche }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Kueche getKueche() {
         return kueche;
     }
@@ -287,6 +355,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Kueche }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKueche(Kueche value) {
         this.kueche = value;
     }
@@ -299,6 +368,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boden }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Boden getBoden() {
         return boden;
     }
@@ -311,6 +381,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boden }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBoden(Boden value) {
         this.boden = value;
     }
@@ -323,7 +394,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isKamin() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKamin() {
         return kamin;
     }
 
@@ -335,6 +407,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKamin(Boolean value) {
         this.kamin = value;
     }
@@ -347,6 +420,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Heizungsart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Heizungsart getHeizungsart() {
         return heizungsart;
     }
@@ -359,6 +433,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Heizungsart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHeizungsart(Heizungsart value) {
         this.heizungsart = value;
     }
@@ -371,6 +446,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Befeuerung }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Befeuerung getBefeuerung() {
         return befeuerung;
     }
@@ -383,6 +459,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Befeuerung }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBefeuerung(Befeuerung value) {
         this.befeuerung = value;
     }
@@ -395,7 +472,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isKlimatisiert() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKlimatisiert() {
         return klimatisiert;
     }
 
@@ -407,6 +485,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKlimatisiert(Boolean value) {
         this.klimatisiert = value;
     }
@@ -419,6 +498,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Fahrstuhl }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Fahrstuhl getFahrstuhl() {
         return fahrstuhl;
     }
@@ -431,6 +511,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Fahrstuhl }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFahrstuhl(Fahrstuhl value) {
         this.fahrstuhl = value;
     }
@@ -457,6 +538,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<Stellplatzart> getStellplatzart() {
         if (stellplatzart == null) {
             stellplatzart = new ArrayList<Stellplatzart>();
@@ -472,7 +554,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isGartennutzung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGartennutzung() {
         return gartennutzung;
     }
 
@@ -484,6 +567,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGartennutzung(Boolean value) {
         this.gartennutzung = value;
     }
@@ -496,6 +580,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link AusrichtBalkonTerrasse }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public AusrichtBalkonTerrasse getAusrichtBalkonTerrasse() {
         return ausrichtBalkonTerrasse;
     }
@@ -508,6 +593,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link AusrichtBalkonTerrasse }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAusrichtBalkonTerrasse(AusrichtBalkonTerrasse value) {
         this.ausrichtBalkonTerrasse = value;
     }
@@ -520,6 +606,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Moebliert }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Moebliert getMoebliert() {
         return moebliert;
     }
@@ -532,6 +619,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Moebliert }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMoebliert(Moebliert value) {
         this.moebliert = value;
     }
@@ -544,7 +632,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isRollstuhlgerecht() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRollstuhlgerecht() {
         return rollstuhlgerecht;
     }
 
@@ -556,6 +645,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setRollstuhlgerecht(Boolean value) {
         this.rollstuhlgerecht = value;
     }
@@ -568,7 +658,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isKabelSatTv() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKabelSatTv() {
         return kabelSatTv;
     }
 
@@ -580,6 +671,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKabelSatTv(Boolean value) {
         this.kabelSatTv = value;
     }
@@ -592,7 +684,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isDvbt() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDvbt() {
         return dvbt;
     }
 
@@ -604,6 +697,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDvbt(Boolean value) {
         this.dvbt = value;
     }
@@ -616,7 +710,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isBarrierefrei() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBarrierefrei() {
         return barrierefrei;
     }
 
@@ -628,6 +723,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBarrierefrei(Boolean value) {
         this.barrierefrei = value;
     }
@@ -640,7 +736,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isSauna() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSauna() {
         return sauna;
     }
 
@@ -652,6 +749,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSauna(Boolean value) {
         this.sauna = value;
     }
@@ -664,7 +762,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isSwimmingpool() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSwimmingpool() {
         return swimmingpool;
     }
 
@@ -676,6 +775,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSwimmingpool(Boolean value) {
         this.swimmingpool = value;
     }
@@ -688,7 +788,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isWaschTrockenraum() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWaschTrockenraum() {
         return waschTrockenraum;
     }
 
@@ -700,6 +801,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWaschTrockenraum(Boolean value) {
         this.waschTrockenraum = value;
     }
@@ -712,7 +814,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isWintergarten() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWintergarten() {
         return wintergarten;
     }
 
@@ -724,6 +827,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWintergarten(Boolean value) {
         this.wintergarten = value;
     }
@@ -736,7 +840,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isDvVerkabelung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDvVerkabelung() {
         return dvVerkabelung;
     }
 
@@ -748,6 +853,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDvVerkabelung(Boolean value) {
         this.dvVerkabelung = value;
     }
@@ -760,7 +866,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isRampe() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRampe() {
         return rampe;
     }
 
@@ -772,6 +879,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setRampe(Boolean value) {
         this.rampe = value;
     }
@@ -784,7 +892,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isHebebuehne() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHebebuehne() {
         return hebebuehne;
     }
 
@@ -796,6 +905,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHebebuehne(Boolean value) {
         this.hebebuehne = value;
     }
@@ -808,7 +918,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isKran() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKran() {
         return kran;
     }
 
@@ -820,6 +931,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKran(Boolean value) {
         this.kran = value;
     }
@@ -832,7 +944,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isGastterrasse() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGastterrasse() {
         return gastterrasse;
     }
 
@@ -844,6 +957,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGastterrasse(Boolean value) {
         this.gastterrasse = value;
     }
@@ -856,6 +970,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getStromanschlusswert() {
         return stromanschlusswert;
     }
@@ -868,6 +983,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setStromanschlusswert(String value) {
         this.stromanschlusswert = value;
     }
@@ -880,7 +996,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isKantineCafeteria() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKantineCafeteria() {
         return kantineCafeteria;
     }
 
@@ -892,6 +1009,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKantineCafeteria(Boolean value) {
         this.kantineCafeteria = value;
     }
@@ -904,7 +1022,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isTeekueche() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getTeekueche() {
         return teekueche;
     }
 
@@ -916,6 +1035,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setTeekueche(Boolean value) {
         this.teekueche = value;
     }
@@ -928,6 +1048,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getHallenhoehe() {
         return hallenhoehe;
     }
@@ -940,6 +1061,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHallenhoehe(BigDecimal value) {
         this.hallenhoehe = value;
     }
@@ -952,6 +1074,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link AngeschlGastronomie }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public AngeschlGastronomie getAngeschlGastronomie() {
         return angeschlGastronomie;
     }
@@ -964,6 +1087,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link AngeschlGastronomie }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAngeschlGastronomie(AngeschlGastronomie value) {
         this.angeschlGastronomie = value;
     }
@@ -976,7 +1100,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isBrauereibindung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBrauereibindung() {
         return brauereibindung;
     }
 
@@ -988,6 +1113,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBrauereibindung(Boolean value) {
         this.brauereibindung = value;
     }
@@ -1000,7 +1126,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isSporteinrichtungen() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSporteinrichtungen() {
         return sporteinrichtungen;
     }
 
@@ -1012,6 +1139,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSporteinrichtungen(Boolean value) {
         this.sporteinrichtungen = value;
     }
@@ -1024,7 +1152,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isWellnessbereich() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWellnessbereich() {
         return wellnessbereich;
     }
 
@@ -1036,6 +1165,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWellnessbereich(Boolean value) {
         this.wellnessbereich = value;
     }
@@ -1062,6 +1192,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<Serviceleistungen> getServiceleistungen() {
         if (serviceleistungen == null) {
             serviceleistungen = new ArrayList<Serviceleistungen>();
@@ -1077,7 +1208,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isTelefonFerienimmobilie() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getTelefonFerienimmobilie() {
         return telefonFerienimmobilie;
     }
 
@@ -1089,6 +1221,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setTelefonFerienimmobilie(Boolean value) {
         this.telefonFerienimmobilie = value;
     }
@@ -1101,6 +1234,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link BreitbandZugang }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BreitbandZugang getBreitbandZugang() {
         return breitbandZugang;
     }
@@ -1113,6 +1247,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link BreitbandZugang }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBreitbandZugang(BreitbandZugang value) {
         this.breitbandZugang = value;
     }
@@ -1125,7 +1260,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isUmtsEmpfang() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getUmtsEmpfang() {
         return umtsEmpfang;
     }
 
@@ -1137,6 +1273,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setUmtsEmpfang(Boolean value) {
         this.umtsEmpfang = value;
     }
@@ -1149,6 +1286,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Sicherheitstechnik }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Sicherheitstechnik getSicherheitstechnik() {
         return sicherheitstechnik;
     }
@@ -1161,6 +1299,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Sicherheitstechnik }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSicherheitstechnik(Sicherheitstechnik value) {
         this.sicherheitstechnik = value;
     }
@@ -1173,6 +1312,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Unterkellert }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Unterkellert getUnterkellert() {
         return unterkellert;
     }
@@ -1185,6 +1325,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Unterkellert }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setUnterkellert(Unterkellert value) {
         this.unterkellert = value;
     }
@@ -1197,7 +1338,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isAbstellraum() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAbstellraum() {
         return abstellraum;
     }
 
@@ -1209,6 +1351,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAbstellraum(Boolean value) {
         this.abstellraum = value;
     }
@@ -1221,7 +1364,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isFahrradraum() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFahrradraum() {
         return fahrradraum;
     }
 
@@ -1233,6 +1377,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFahrradraum(Boolean value) {
         this.fahrradraum = value;
     }
@@ -1245,7 +1390,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isRolladen() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRolladen() {
         return rolladen;
     }
 
@@ -1257,6 +1403,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setRolladen(Boolean value) {
         this.rolladen = value;
     }
@@ -1269,6 +1416,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Dachform }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Dachform getDachform() {
         return dachform;
     }
@@ -1281,6 +1429,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Dachform }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDachform(Dachform value) {
         this.dachform = value;
     }
@@ -1293,6 +1442,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Bauweise }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Bauweise getBauweise() {
         return bauweise;
     }
@@ -1305,6 +1455,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Bauweise }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBauweise(Bauweise value) {
         this.bauweise = value;
     }
@@ -1317,6 +1468,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Ausbaustufe }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Ausbaustufe getAusbaustufe() {
         return ausbaustufe;
     }
@@ -1329,6 +1481,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Ausbaustufe }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAusbaustufe(Ausbaustufe value) {
         this.ausbaustufe = value;
     }
@@ -1341,6 +1494,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energietyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Energietyp getEnergietyp() {
         return energietyp;
     }
@@ -1353,6 +1507,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energietyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEnergietyp(Energietyp value) {
         this.energietyp = value;
     }
@@ -1365,7 +1520,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isBibliothek() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBibliothek() {
         return bibliothek;
     }
 
@@ -1377,6 +1533,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBibliothek(Boolean value) {
         this.bibliothek = value;
     }
@@ -1389,7 +1546,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isDachboden() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDachboden() {
         return dachboden;
     }
 
@@ -1401,6 +1559,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDachboden(Boolean value) {
         this.dachboden = value;
     }
@@ -1413,7 +1572,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isGaestewc() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGaestewc() {
         return gaestewc;
     }
 
@@ -1425,6 +1585,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGaestewc(Boolean value) {
         this.gaestewc = value;
     }
@@ -1437,7 +1598,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isKabelkanaele() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKabelkanaele() {
         return kabelkanaele;
     }
 
@@ -1449,6 +1611,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKabelkanaele(Boolean value) {
         this.kabelkanaele = value;
     }
@@ -1461,7 +1624,8 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isSeniorengerecht() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSeniorengerecht() {
         return seniorengerecht;
     }
 
@@ -1473,6 +1637,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSeniorengerecht(Boolean value) {
         this.seniorengerecht = value;
     }
@@ -1499,6 +1664,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -1528,6 +1694,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -1557,6 +1724,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedExtend> getUserDefinedExtend() {
         if (userDefinedExtend == null) {
             userDefinedExtend = new ArrayList<UserDefinedExtend>();
@@ -1564,6 +1732,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         return this.userDefinedExtend;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -1571,6 +1740,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -1578,6 +1748,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             AusstattKategorie theAusstattKategorie;
@@ -1586,12 +1757,12 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theWgGeeignet;
-            theWgGeeignet = this.isWgGeeignet();
+            theWgGeeignet = this.getWgGeeignet();
             strategy.appendField(locator, this, "wgGeeignet", buffer, theWgGeeignet, (this.wgGeeignet!= null));
         }
         {
             Boolean theRaeumeVeraenderbar;
-            theRaeumeVeraenderbar = this.isRaeumeVeraenderbar();
+            theRaeumeVeraenderbar = this.getRaeumeVeraenderbar();
             strategy.appendField(locator, this, "raeumeVeraenderbar", buffer, theRaeumeVeraenderbar, (this.raeumeVeraenderbar!= null));
         }
         {
@@ -1611,7 +1782,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theKamin;
-            theKamin = this.isKamin();
+            theKamin = this.getKamin();
             strategy.appendField(locator, this, "kamin", buffer, theKamin, (this.kamin!= null));
         }
         {
@@ -1626,7 +1797,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theKlimatisiert;
-            theKlimatisiert = this.isKlimatisiert();
+            theKlimatisiert = this.getKlimatisiert();
             strategy.appendField(locator, this, "klimatisiert", buffer, theKlimatisiert, (this.klimatisiert!= null));
         }
         {
@@ -1641,7 +1812,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theGartennutzung;
-            theGartennutzung = this.isGartennutzung();
+            theGartennutzung = this.getGartennutzung();
             strategy.appendField(locator, this, "gartennutzung", buffer, theGartennutzung, (this.gartennutzung!= null));
         }
         {
@@ -1656,67 +1827,67 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theRollstuhlgerecht;
-            theRollstuhlgerecht = this.isRollstuhlgerecht();
+            theRollstuhlgerecht = this.getRollstuhlgerecht();
             strategy.appendField(locator, this, "rollstuhlgerecht", buffer, theRollstuhlgerecht, (this.rollstuhlgerecht!= null));
         }
         {
             Boolean theKabelSatTv;
-            theKabelSatTv = this.isKabelSatTv();
+            theKabelSatTv = this.getKabelSatTv();
             strategy.appendField(locator, this, "kabelSatTv", buffer, theKabelSatTv, (this.kabelSatTv!= null));
         }
         {
             Boolean theDvbt;
-            theDvbt = this.isDvbt();
+            theDvbt = this.getDvbt();
             strategy.appendField(locator, this, "dvbt", buffer, theDvbt, (this.dvbt!= null));
         }
         {
             Boolean theBarrierefrei;
-            theBarrierefrei = this.isBarrierefrei();
+            theBarrierefrei = this.getBarrierefrei();
             strategy.appendField(locator, this, "barrierefrei", buffer, theBarrierefrei, (this.barrierefrei!= null));
         }
         {
             Boolean theSauna;
-            theSauna = this.isSauna();
+            theSauna = this.getSauna();
             strategy.appendField(locator, this, "sauna", buffer, theSauna, (this.sauna!= null));
         }
         {
             Boolean theSwimmingpool;
-            theSwimmingpool = this.isSwimmingpool();
+            theSwimmingpool = this.getSwimmingpool();
             strategy.appendField(locator, this, "swimmingpool", buffer, theSwimmingpool, (this.swimmingpool!= null));
         }
         {
             Boolean theWaschTrockenraum;
-            theWaschTrockenraum = this.isWaschTrockenraum();
+            theWaschTrockenraum = this.getWaschTrockenraum();
             strategy.appendField(locator, this, "waschTrockenraum", buffer, theWaschTrockenraum, (this.waschTrockenraum!= null));
         }
         {
             Boolean theWintergarten;
-            theWintergarten = this.isWintergarten();
+            theWintergarten = this.getWintergarten();
             strategy.appendField(locator, this, "wintergarten", buffer, theWintergarten, (this.wintergarten!= null));
         }
         {
             Boolean theDvVerkabelung;
-            theDvVerkabelung = this.isDvVerkabelung();
+            theDvVerkabelung = this.getDvVerkabelung();
             strategy.appendField(locator, this, "dvVerkabelung", buffer, theDvVerkabelung, (this.dvVerkabelung!= null));
         }
         {
             Boolean theRampe;
-            theRampe = this.isRampe();
+            theRampe = this.getRampe();
             strategy.appendField(locator, this, "rampe", buffer, theRampe, (this.rampe!= null));
         }
         {
             Boolean theHebebuehne;
-            theHebebuehne = this.isHebebuehne();
+            theHebebuehne = this.getHebebuehne();
             strategy.appendField(locator, this, "hebebuehne", buffer, theHebebuehne, (this.hebebuehne!= null));
         }
         {
             Boolean theKran;
-            theKran = this.isKran();
+            theKran = this.getKran();
             strategy.appendField(locator, this, "kran", buffer, theKran, (this.kran!= null));
         }
         {
             Boolean theGastterrasse;
-            theGastterrasse = this.isGastterrasse();
+            theGastterrasse = this.getGastterrasse();
             strategy.appendField(locator, this, "gastterrasse", buffer, theGastterrasse, (this.gastterrasse!= null));
         }
         {
@@ -1726,12 +1897,12 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theKantineCafeteria;
-            theKantineCafeteria = this.isKantineCafeteria();
+            theKantineCafeteria = this.getKantineCafeteria();
             strategy.appendField(locator, this, "kantineCafeteria", buffer, theKantineCafeteria, (this.kantineCafeteria!= null));
         }
         {
             Boolean theTeekueche;
-            theTeekueche = this.isTeekueche();
+            theTeekueche = this.getTeekueche();
             strategy.appendField(locator, this, "teekueche", buffer, theTeekueche, (this.teekueche!= null));
         }
         {
@@ -1746,17 +1917,17 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theBrauereibindung;
-            theBrauereibindung = this.isBrauereibindung();
+            theBrauereibindung = this.getBrauereibindung();
             strategy.appendField(locator, this, "brauereibindung", buffer, theBrauereibindung, (this.brauereibindung!= null));
         }
         {
             Boolean theSporteinrichtungen;
-            theSporteinrichtungen = this.isSporteinrichtungen();
+            theSporteinrichtungen = this.getSporteinrichtungen();
             strategy.appendField(locator, this, "sporteinrichtungen", buffer, theSporteinrichtungen, (this.sporteinrichtungen!= null));
         }
         {
             Boolean theWellnessbereich;
-            theWellnessbereich = this.isWellnessbereich();
+            theWellnessbereich = this.getWellnessbereich();
             strategy.appendField(locator, this, "wellnessbereich", buffer, theWellnessbereich, (this.wellnessbereich!= null));
         }
         {
@@ -1766,7 +1937,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theTelefonFerienimmobilie;
-            theTelefonFerienimmobilie = this.isTelefonFerienimmobilie();
+            theTelefonFerienimmobilie = this.getTelefonFerienimmobilie();
             strategy.appendField(locator, this, "telefonFerienimmobilie", buffer, theTelefonFerienimmobilie, (this.telefonFerienimmobilie!= null));
         }
         {
@@ -1776,7 +1947,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theUmtsEmpfang;
-            theUmtsEmpfang = this.isUmtsEmpfang();
+            theUmtsEmpfang = this.getUmtsEmpfang();
             strategy.appendField(locator, this, "umtsEmpfang", buffer, theUmtsEmpfang, (this.umtsEmpfang!= null));
         }
         {
@@ -1791,17 +1962,17 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theAbstellraum;
-            theAbstellraum = this.isAbstellraum();
+            theAbstellraum = this.getAbstellraum();
             strategy.appendField(locator, this, "abstellraum", buffer, theAbstellraum, (this.abstellraum!= null));
         }
         {
             Boolean theFahrradraum;
-            theFahrradraum = this.isFahrradraum();
+            theFahrradraum = this.getFahrradraum();
             strategy.appendField(locator, this, "fahrradraum", buffer, theFahrradraum, (this.fahrradraum!= null));
         }
         {
             Boolean theRolladen;
-            theRolladen = this.isRolladen();
+            theRolladen = this.getRolladen();
             strategy.appendField(locator, this, "rolladen", buffer, theRolladen, (this.rolladen!= null));
         }
         {
@@ -1826,27 +1997,27 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theBibliothek;
-            theBibliothek = this.isBibliothek();
+            theBibliothek = this.getBibliothek();
             strategy.appendField(locator, this, "bibliothek", buffer, theBibliothek, (this.bibliothek!= null));
         }
         {
             Boolean theDachboden;
-            theDachboden = this.isDachboden();
+            theDachboden = this.getDachboden();
             strategy.appendField(locator, this, "dachboden", buffer, theDachboden, (this.dachboden!= null));
         }
         {
             Boolean theGaestewc;
-            theGaestewc = this.isGaestewc();
+            theGaestewc = this.getGaestewc();
             strategy.appendField(locator, this, "gaestewc", buffer, theGaestewc, (this.gaestewc!= null));
         }
         {
             Boolean theKabelkanaele;
-            theKabelkanaele = this.isKabelkanaele();
+            theKabelkanaele = this.getKabelkanaele();
             strategy.appendField(locator, this, "kabelkanaele", buffer, theKabelkanaele, (this.kabelkanaele!= null));
         }
         {
             Boolean theSeniorengerecht;
-            theSeniorengerecht = this.isSeniorengerecht();
+            theSeniorengerecht = this.getSeniorengerecht();
             strategy.appendField(locator, this, "seniorengerecht", buffer, theSeniorengerecht, (this.seniorengerecht!= null));
         }
         {
@@ -1867,15 +2038,18 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Ausstattung) {
@@ -1897,7 +2071,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean wgGeeignetShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wgGeeignet!= null));
                 if (wgGeeignetShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWgGeeignet;
-                    sourceWgGeeignet = this.isWgGeeignet();
+                    sourceWgGeeignet = this.getWgGeeignet();
                     Boolean copyWgGeeignet = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wgGeeignet", sourceWgGeeignet), sourceWgGeeignet, (this.wgGeeignet!= null)));
                     copy.setWgGeeignet(copyWgGeeignet);
                 } else {
@@ -1910,7 +2084,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean raeumeVeraenderbarShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.raeumeVeraenderbar!= null));
                 if (raeumeVeraenderbarShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRaeumeVeraenderbar;
-                    sourceRaeumeVeraenderbar = this.isRaeumeVeraenderbar();
+                    sourceRaeumeVeraenderbar = this.getRaeumeVeraenderbar();
                     Boolean copyRaeumeVeraenderbar = ((Boolean) strategy.copy(LocatorUtils.property(locator, "raeumeVeraenderbar", sourceRaeumeVeraenderbar), sourceRaeumeVeraenderbar, (this.raeumeVeraenderbar!= null)));
                     copy.setRaeumeVeraenderbar(copyRaeumeVeraenderbar);
                 } else {
@@ -1962,7 +2136,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean kaminShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kamin!= null));
                 if (kaminShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKamin;
-                    sourceKamin = this.isKamin();
+                    sourceKamin = this.getKamin();
                     Boolean copyKamin = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kamin", sourceKamin), sourceKamin, (this.kamin!= null)));
                     copy.setKamin(copyKamin);
                 } else {
@@ -2001,7 +2175,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean klimatisiertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.klimatisiert!= null));
                 if (klimatisiertShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKlimatisiert;
-                    sourceKlimatisiert = this.isKlimatisiert();
+                    sourceKlimatisiert = this.getKlimatisiert();
                     Boolean copyKlimatisiert = ((Boolean) strategy.copy(LocatorUtils.property(locator, "klimatisiert", sourceKlimatisiert), sourceKlimatisiert, (this.klimatisiert!= null)));
                     copy.setKlimatisiert(copyKlimatisiert);
                 } else {
@@ -2045,7 +2219,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean gartennutzungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gartennutzung!= null));
                 if (gartennutzungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGartennutzung;
-                    sourceGartennutzung = this.isGartennutzung();
+                    sourceGartennutzung = this.getGartennutzung();
                     Boolean copyGartennutzung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gartennutzung", sourceGartennutzung), sourceGartennutzung, (this.gartennutzung!= null)));
                     copy.setGartennutzung(copyGartennutzung);
                 } else {
@@ -2084,7 +2258,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean rollstuhlgerechtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rollstuhlgerecht!= null));
                 if (rollstuhlgerechtShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRollstuhlgerecht;
-                    sourceRollstuhlgerecht = this.isRollstuhlgerecht();
+                    sourceRollstuhlgerecht = this.getRollstuhlgerecht();
                     Boolean copyRollstuhlgerecht = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rollstuhlgerecht", sourceRollstuhlgerecht), sourceRollstuhlgerecht, (this.rollstuhlgerecht!= null)));
                     copy.setRollstuhlgerecht(copyRollstuhlgerecht);
                 } else {
@@ -2097,7 +2271,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean kabelSatTvShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kabelSatTv!= null));
                 if (kabelSatTvShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKabelSatTv;
-                    sourceKabelSatTv = this.isKabelSatTv();
+                    sourceKabelSatTv = this.getKabelSatTv();
                     Boolean copyKabelSatTv = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kabelSatTv", sourceKabelSatTv), sourceKabelSatTv, (this.kabelSatTv!= null)));
                     copy.setKabelSatTv(copyKabelSatTv);
                 } else {
@@ -2110,7 +2284,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean dvbtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dvbt!= null));
                 if (dvbtShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDvbt;
-                    sourceDvbt = this.isDvbt();
+                    sourceDvbt = this.getDvbt();
                     Boolean copyDvbt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dvbt", sourceDvbt), sourceDvbt, (this.dvbt!= null)));
                     copy.setDvbt(copyDvbt);
                 } else {
@@ -2123,7 +2297,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean barrierefreiShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.barrierefrei!= null));
                 if (barrierefreiShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBarrierefrei;
-                    sourceBarrierefrei = this.isBarrierefrei();
+                    sourceBarrierefrei = this.getBarrierefrei();
                     Boolean copyBarrierefrei = ((Boolean) strategy.copy(LocatorUtils.property(locator, "barrierefrei", sourceBarrierefrei), sourceBarrierefrei, (this.barrierefrei!= null)));
                     copy.setBarrierefrei(copyBarrierefrei);
                 } else {
@@ -2136,7 +2310,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean saunaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sauna!= null));
                 if (saunaShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSauna;
-                    sourceSauna = this.isSauna();
+                    sourceSauna = this.getSauna();
                     Boolean copySauna = ((Boolean) strategy.copy(LocatorUtils.property(locator, "sauna", sourceSauna), sourceSauna, (this.sauna!= null)));
                     copy.setSauna(copySauna);
                 } else {
@@ -2149,7 +2323,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean swimmingpoolShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.swimmingpool!= null));
                 if (swimmingpoolShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSwimmingpool;
-                    sourceSwimmingpool = this.isSwimmingpool();
+                    sourceSwimmingpool = this.getSwimmingpool();
                     Boolean copySwimmingpool = ((Boolean) strategy.copy(LocatorUtils.property(locator, "swimmingpool", sourceSwimmingpool), sourceSwimmingpool, (this.swimmingpool!= null)));
                     copy.setSwimmingpool(copySwimmingpool);
                 } else {
@@ -2162,7 +2336,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean waschTrockenraumShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.waschTrockenraum!= null));
                 if (waschTrockenraumShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWaschTrockenraum;
-                    sourceWaschTrockenraum = this.isWaschTrockenraum();
+                    sourceWaschTrockenraum = this.getWaschTrockenraum();
                     Boolean copyWaschTrockenraum = ((Boolean) strategy.copy(LocatorUtils.property(locator, "waschTrockenraum", sourceWaschTrockenraum), sourceWaschTrockenraum, (this.waschTrockenraum!= null)));
                     copy.setWaschTrockenraum(copyWaschTrockenraum);
                 } else {
@@ -2175,7 +2349,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean wintergartenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wintergarten!= null));
                 if (wintergartenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWintergarten;
-                    sourceWintergarten = this.isWintergarten();
+                    sourceWintergarten = this.getWintergarten();
                     Boolean copyWintergarten = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wintergarten", sourceWintergarten), sourceWintergarten, (this.wintergarten!= null)));
                     copy.setWintergarten(copyWintergarten);
                 } else {
@@ -2188,7 +2362,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean dvVerkabelungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dvVerkabelung!= null));
                 if (dvVerkabelungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDvVerkabelung;
-                    sourceDvVerkabelung = this.isDvVerkabelung();
+                    sourceDvVerkabelung = this.getDvVerkabelung();
                     Boolean copyDvVerkabelung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dvVerkabelung", sourceDvVerkabelung), sourceDvVerkabelung, (this.dvVerkabelung!= null)));
                     copy.setDvVerkabelung(copyDvVerkabelung);
                 } else {
@@ -2201,7 +2375,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean rampeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rampe!= null));
                 if (rampeShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRampe;
-                    sourceRampe = this.isRampe();
+                    sourceRampe = this.getRampe();
                     Boolean copyRampe = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rampe", sourceRampe), sourceRampe, (this.rampe!= null)));
                     copy.setRampe(copyRampe);
                 } else {
@@ -2214,7 +2388,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean hebebuehneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hebebuehne!= null));
                 if (hebebuehneShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHebebuehne;
-                    sourceHebebuehne = this.isHebebuehne();
+                    sourceHebebuehne = this.getHebebuehne();
                     Boolean copyHebebuehne = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hebebuehne", sourceHebebuehne), sourceHebebuehne, (this.hebebuehne!= null)));
                     copy.setHebebuehne(copyHebebuehne);
                 } else {
@@ -2227,7 +2401,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean kranShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kran!= null));
                 if (kranShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKran;
-                    sourceKran = this.isKran();
+                    sourceKran = this.getKran();
                     Boolean copyKran = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kran", sourceKran), sourceKran, (this.kran!= null)));
                     copy.setKran(copyKran);
                 } else {
@@ -2240,7 +2414,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean gastterrasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gastterrasse!= null));
                 if (gastterrasseShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGastterrasse;
-                    sourceGastterrasse = this.isGastterrasse();
+                    sourceGastterrasse = this.getGastterrasse();
                     Boolean copyGastterrasse = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gastterrasse", sourceGastterrasse), sourceGastterrasse, (this.gastterrasse!= null)));
                     copy.setGastterrasse(copyGastterrasse);
                 } else {
@@ -2266,7 +2440,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean kantineCafeteriaShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kantineCafeteria!= null));
                 if (kantineCafeteriaShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKantineCafeteria;
-                    sourceKantineCafeteria = this.isKantineCafeteria();
+                    sourceKantineCafeteria = this.getKantineCafeteria();
                     Boolean copyKantineCafeteria = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kantineCafeteria", sourceKantineCafeteria), sourceKantineCafeteria, (this.kantineCafeteria!= null)));
                     copy.setKantineCafeteria(copyKantineCafeteria);
                 } else {
@@ -2279,7 +2453,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean teekuecheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.teekueche!= null));
                 if (teekuecheShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceTeekueche;
-                    sourceTeekueche = this.isTeekueche();
+                    sourceTeekueche = this.getTeekueche();
                     Boolean copyTeekueche = ((Boolean) strategy.copy(LocatorUtils.property(locator, "teekueche", sourceTeekueche), sourceTeekueche, (this.teekueche!= null)));
                     copy.setTeekueche(copyTeekueche);
                 } else {
@@ -2318,7 +2492,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean brauereibindungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.brauereibindung!= null));
                 if (brauereibindungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBrauereibindung;
-                    sourceBrauereibindung = this.isBrauereibindung();
+                    sourceBrauereibindung = this.getBrauereibindung();
                     Boolean copyBrauereibindung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "brauereibindung", sourceBrauereibindung), sourceBrauereibindung, (this.brauereibindung!= null)));
                     copy.setBrauereibindung(copyBrauereibindung);
                 } else {
@@ -2331,7 +2505,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean sporteinrichtungenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sporteinrichtungen!= null));
                 if (sporteinrichtungenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSporteinrichtungen;
-                    sourceSporteinrichtungen = this.isSporteinrichtungen();
+                    sourceSporteinrichtungen = this.getSporteinrichtungen();
                     Boolean copySporteinrichtungen = ((Boolean) strategy.copy(LocatorUtils.property(locator, "sporteinrichtungen", sourceSporteinrichtungen), sourceSporteinrichtungen, (this.sporteinrichtungen!= null)));
                     copy.setSporteinrichtungen(copySporteinrichtungen);
                 } else {
@@ -2344,7 +2518,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean wellnessbereichShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wellnessbereich!= null));
                 if (wellnessbereichShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWellnessbereich;
-                    sourceWellnessbereich = this.isWellnessbereich();
+                    sourceWellnessbereich = this.getWellnessbereich();
                     Boolean copyWellnessbereich = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wellnessbereich", sourceWellnessbereich), sourceWellnessbereich, (this.wellnessbereich!= null)));
                     copy.setWellnessbereich(copyWellnessbereich);
                 } else {
@@ -2375,7 +2549,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean telefonFerienimmobilieShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.telefonFerienimmobilie!= null));
                 if (telefonFerienimmobilieShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceTelefonFerienimmobilie;
-                    sourceTelefonFerienimmobilie = this.isTelefonFerienimmobilie();
+                    sourceTelefonFerienimmobilie = this.getTelefonFerienimmobilie();
                     Boolean copyTelefonFerienimmobilie = ((Boolean) strategy.copy(LocatorUtils.property(locator, "telefonFerienimmobilie", sourceTelefonFerienimmobilie), sourceTelefonFerienimmobilie, (this.telefonFerienimmobilie!= null)));
                     copy.setTelefonFerienimmobilie(copyTelefonFerienimmobilie);
                 } else {
@@ -2401,7 +2575,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean umtsEmpfangShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.umtsEmpfang!= null));
                 if (umtsEmpfangShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceUmtsEmpfang;
-                    sourceUmtsEmpfang = this.isUmtsEmpfang();
+                    sourceUmtsEmpfang = this.getUmtsEmpfang();
                     Boolean copyUmtsEmpfang = ((Boolean) strategy.copy(LocatorUtils.property(locator, "umtsEmpfang", sourceUmtsEmpfang), sourceUmtsEmpfang, (this.umtsEmpfang!= null)));
                     copy.setUmtsEmpfang(copyUmtsEmpfang);
                 } else {
@@ -2440,7 +2614,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean abstellraumShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.abstellraum!= null));
                 if (abstellraumShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceAbstellraum;
-                    sourceAbstellraum = this.isAbstellraum();
+                    sourceAbstellraum = this.getAbstellraum();
                     Boolean copyAbstellraum = ((Boolean) strategy.copy(LocatorUtils.property(locator, "abstellraum", sourceAbstellraum), sourceAbstellraum, (this.abstellraum!= null)));
                     copy.setAbstellraum(copyAbstellraum);
                 } else {
@@ -2453,7 +2627,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean fahrradraumShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fahrradraum!= null));
                 if (fahrradraumShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFahrradraum;
-                    sourceFahrradraum = this.isFahrradraum();
+                    sourceFahrradraum = this.getFahrradraum();
                     Boolean copyFahrradraum = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fahrradraum", sourceFahrradraum), sourceFahrradraum, (this.fahrradraum!= null)));
                     copy.setFahrradraum(copyFahrradraum);
                 } else {
@@ -2466,7 +2640,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean rolladenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rolladen!= null));
                 if (rolladenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRolladen;
-                    sourceRolladen = this.isRolladen();
+                    sourceRolladen = this.getRolladen();
                     Boolean copyRolladen = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rolladen", sourceRolladen), sourceRolladen, (this.rolladen!= null)));
                     copy.setRolladen(copyRolladen);
                 } else {
@@ -2531,7 +2705,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean bibliothekShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bibliothek!= null));
                 if (bibliothekShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBibliothek;
-                    sourceBibliothek = this.isBibliothek();
+                    sourceBibliothek = this.getBibliothek();
                     Boolean copyBibliothek = ((Boolean) strategy.copy(LocatorUtils.property(locator, "bibliothek", sourceBibliothek), sourceBibliothek, (this.bibliothek!= null)));
                     copy.setBibliothek(copyBibliothek);
                 } else {
@@ -2544,7 +2718,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean dachbodenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dachboden!= null));
                 if (dachbodenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDachboden;
-                    sourceDachboden = this.isDachboden();
+                    sourceDachboden = this.getDachboden();
                     Boolean copyDachboden = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dachboden", sourceDachboden), sourceDachboden, (this.dachboden!= null)));
                     copy.setDachboden(copyDachboden);
                 } else {
@@ -2557,7 +2731,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean gaestewcShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gaestewc!= null));
                 if (gaestewcShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGaestewc;
-                    sourceGaestewc = this.isGaestewc();
+                    sourceGaestewc = this.getGaestewc();
                     Boolean copyGaestewc = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gaestewc", sourceGaestewc), sourceGaestewc, (this.gaestewc!= null)));
                     copy.setGaestewc(copyGaestewc);
                 } else {
@@ -2570,7 +2744,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean kabelkanaeleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kabelkanaele!= null));
                 if (kabelkanaeleShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKabelkanaele;
-                    sourceKabelkanaele = this.isKabelkanaele();
+                    sourceKabelkanaele = this.getKabelkanaele();
                     Boolean copyKabelkanaele = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kabelkanaele", sourceKabelkanaele), sourceKabelkanaele, (this.kabelkanaele!= null)));
                     copy.setKabelkanaele(copyKabelkanaele);
                 } else {
@@ -2583,7 +2757,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean seniorengerechtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.seniorengerecht!= null));
                 if (seniorengerechtShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSeniorengerecht;
-                    sourceSeniorengerecht = this.isSeniorengerecht();
+                    sourceSeniorengerecht = this.getSeniorengerecht();
                     Boolean copySeniorengerecht = ((Boolean) strategy.copy(LocatorUtils.property(locator, "seniorengerecht", sourceSeniorengerecht), sourceSeniorengerecht, (this.seniorengerecht!= null)));
                     copy.setSeniorengerecht(copySeniorengerecht);
                 } else {
@@ -2650,10 +2824,12 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Ausstattung();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -2673,18 +2849,18 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsWgGeeignet;
-            lhsWgGeeignet = this.isWgGeeignet();
+            lhsWgGeeignet = this.getWgGeeignet();
             Boolean rhsWgGeeignet;
-            rhsWgGeeignet = that.isWgGeeignet();
+            rhsWgGeeignet = that.getWgGeeignet();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wgGeeignet", lhsWgGeeignet), LocatorUtils.property(thatLocator, "wgGeeignet", rhsWgGeeignet), lhsWgGeeignet, rhsWgGeeignet, (this.wgGeeignet!= null), (that.wgGeeignet!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsRaeumeVeraenderbar;
-            lhsRaeumeVeraenderbar = this.isRaeumeVeraenderbar();
+            lhsRaeumeVeraenderbar = this.getRaeumeVeraenderbar();
             Boolean rhsRaeumeVeraenderbar;
-            rhsRaeumeVeraenderbar = that.isRaeumeVeraenderbar();
+            rhsRaeumeVeraenderbar = that.getRaeumeVeraenderbar();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "raeumeVeraenderbar", lhsRaeumeVeraenderbar), LocatorUtils.property(thatLocator, "raeumeVeraenderbar", rhsRaeumeVeraenderbar), lhsRaeumeVeraenderbar, rhsRaeumeVeraenderbar, (this.raeumeVeraenderbar!= null), (that.raeumeVeraenderbar!= null))) {
                 return false;
             }
@@ -2718,9 +2894,9 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsKamin;
-            lhsKamin = this.isKamin();
+            lhsKamin = this.getKamin();
             Boolean rhsKamin;
-            rhsKamin = that.isKamin();
+            rhsKamin = that.getKamin();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kamin", lhsKamin), LocatorUtils.property(thatLocator, "kamin", rhsKamin), lhsKamin, rhsKamin, (this.kamin!= null), (that.kamin!= null))) {
                 return false;
             }
@@ -2745,9 +2921,9 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsKlimatisiert;
-            lhsKlimatisiert = this.isKlimatisiert();
+            lhsKlimatisiert = this.getKlimatisiert();
             Boolean rhsKlimatisiert;
-            rhsKlimatisiert = that.isKlimatisiert();
+            rhsKlimatisiert = that.getKlimatisiert();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "klimatisiert", lhsKlimatisiert), LocatorUtils.property(thatLocator, "klimatisiert", rhsKlimatisiert), lhsKlimatisiert, rhsKlimatisiert, (this.klimatisiert!= null), (that.klimatisiert!= null))) {
                 return false;
             }
@@ -2772,9 +2948,9 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsGartennutzung;
-            lhsGartennutzung = this.isGartennutzung();
+            lhsGartennutzung = this.getGartennutzung();
             Boolean rhsGartennutzung;
-            rhsGartennutzung = that.isGartennutzung();
+            rhsGartennutzung = that.getGartennutzung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gartennutzung", lhsGartennutzung), LocatorUtils.property(thatLocator, "gartennutzung", rhsGartennutzung), lhsGartennutzung, rhsGartennutzung, (this.gartennutzung!= null), (that.gartennutzung!= null))) {
                 return false;
             }
@@ -2799,117 +2975,117 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsRollstuhlgerecht;
-            lhsRollstuhlgerecht = this.isRollstuhlgerecht();
+            lhsRollstuhlgerecht = this.getRollstuhlgerecht();
             Boolean rhsRollstuhlgerecht;
-            rhsRollstuhlgerecht = that.isRollstuhlgerecht();
+            rhsRollstuhlgerecht = that.getRollstuhlgerecht();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rollstuhlgerecht", lhsRollstuhlgerecht), LocatorUtils.property(thatLocator, "rollstuhlgerecht", rhsRollstuhlgerecht), lhsRollstuhlgerecht, rhsRollstuhlgerecht, (this.rollstuhlgerecht!= null), (that.rollstuhlgerecht!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKabelSatTv;
-            lhsKabelSatTv = this.isKabelSatTv();
+            lhsKabelSatTv = this.getKabelSatTv();
             Boolean rhsKabelSatTv;
-            rhsKabelSatTv = that.isKabelSatTv();
+            rhsKabelSatTv = that.getKabelSatTv();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kabelSatTv", lhsKabelSatTv), LocatorUtils.property(thatLocator, "kabelSatTv", rhsKabelSatTv), lhsKabelSatTv, rhsKabelSatTv, (this.kabelSatTv!= null), (that.kabelSatTv!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsDvbt;
-            lhsDvbt = this.isDvbt();
+            lhsDvbt = this.getDvbt();
             Boolean rhsDvbt;
-            rhsDvbt = that.isDvbt();
+            rhsDvbt = that.getDvbt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "dvbt", lhsDvbt), LocatorUtils.property(thatLocator, "dvbt", rhsDvbt), lhsDvbt, rhsDvbt, (this.dvbt!= null), (that.dvbt!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsBarrierefrei;
-            lhsBarrierefrei = this.isBarrierefrei();
+            lhsBarrierefrei = this.getBarrierefrei();
             Boolean rhsBarrierefrei;
-            rhsBarrierefrei = that.isBarrierefrei();
+            rhsBarrierefrei = that.getBarrierefrei();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "barrierefrei", lhsBarrierefrei), LocatorUtils.property(thatLocator, "barrierefrei", rhsBarrierefrei), lhsBarrierefrei, rhsBarrierefrei, (this.barrierefrei!= null), (that.barrierefrei!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSauna;
-            lhsSauna = this.isSauna();
+            lhsSauna = this.getSauna();
             Boolean rhsSauna;
-            rhsSauna = that.isSauna();
+            rhsSauna = that.getSauna();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sauna", lhsSauna), LocatorUtils.property(thatLocator, "sauna", rhsSauna), lhsSauna, rhsSauna, (this.sauna!= null), (that.sauna!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSwimmingpool;
-            lhsSwimmingpool = this.isSwimmingpool();
+            lhsSwimmingpool = this.getSwimmingpool();
             Boolean rhsSwimmingpool;
-            rhsSwimmingpool = that.isSwimmingpool();
+            rhsSwimmingpool = that.getSwimmingpool();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "swimmingpool", lhsSwimmingpool), LocatorUtils.property(thatLocator, "swimmingpool", rhsSwimmingpool), lhsSwimmingpool, rhsSwimmingpool, (this.swimmingpool!= null), (that.swimmingpool!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWaschTrockenraum;
-            lhsWaschTrockenraum = this.isWaschTrockenraum();
+            lhsWaschTrockenraum = this.getWaschTrockenraum();
             Boolean rhsWaschTrockenraum;
-            rhsWaschTrockenraum = that.isWaschTrockenraum();
+            rhsWaschTrockenraum = that.getWaschTrockenraum();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "waschTrockenraum", lhsWaschTrockenraum), LocatorUtils.property(thatLocator, "waschTrockenraum", rhsWaschTrockenraum), lhsWaschTrockenraum, rhsWaschTrockenraum, (this.waschTrockenraum!= null), (that.waschTrockenraum!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWintergarten;
-            lhsWintergarten = this.isWintergarten();
+            lhsWintergarten = this.getWintergarten();
             Boolean rhsWintergarten;
-            rhsWintergarten = that.isWintergarten();
+            rhsWintergarten = that.getWintergarten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wintergarten", lhsWintergarten), LocatorUtils.property(thatLocator, "wintergarten", rhsWintergarten), lhsWintergarten, rhsWintergarten, (this.wintergarten!= null), (that.wintergarten!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsDvVerkabelung;
-            lhsDvVerkabelung = this.isDvVerkabelung();
+            lhsDvVerkabelung = this.getDvVerkabelung();
             Boolean rhsDvVerkabelung;
-            rhsDvVerkabelung = that.isDvVerkabelung();
+            rhsDvVerkabelung = that.getDvVerkabelung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "dvVerkabelung", lhsDvVerkabelung), LocatorUtils.property(thatLocator, "dvVerkabelung", rhsDvVerkabelung), lhsDvVerkabelung, rhsDvVerkabelung, (this.dvVerkabelung!= null), (that.dvVerkabelung!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsRampe;
-            lhsRampe = this.isRampe();
+            lhsRampe = this.getRampe();
             Boolean rhsRampe;
-            rhsRampe = that.isRampe();
+            rhsRampe = that.getRampe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rampe", lhsRampe), LocatorUtils.property(thatLocator, "rampe", rhsRampe), lhsRampe, rhsRampe, (this.rampe!= null), (that.rampe!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsHebebuehne;
-            lhsHebebuehne = this.isHebebuehne();
+            lhsHebebuehne = this.getHebebuehne();
             Boolean rhsHebebuehne;
-            rhsHebebuehne = that.isHebebuehne();
+            rhsHebebuehne = that.getHebebuehne();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hebebuehne", lhsHebebuehne), LocatorUtils.property(thatLocator, "hebebuehne", rhsHebebuehne), lhsHebebuehne, rhsHebebuehne, (this.hebebuehne!= null), (that.hebebuehne!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKran;
-            lhsKran = this.isKran();
+            lhsKran = this.getKran();
             Boolean rhsKran;
-            rhsKran = that.isKran();
+            rhsKran = that.getKran();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kran", lhsKran), LocatorUtils.property(thatLocator, "kran", rhsKran), lhsKran, rhsKran, (this.kran!= null), (that.kran!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsGastterrasse;
-            lhsGastterrasse = this.isGastterrasse();
+            lhsGastterrasse = this.getGastterrasse();
             Boolean rhsGastterrasse;
-            rhsGastterrasse = that.isGastterrasse();
+            rhsGastterrasse = that.getGastterrasse();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gastterrasse", lhsGastterrasse), LocatorUtils.property(thatLocator, "gastterrasse", rhsGastterrasse), lhsGastterrasse, rhsGastterrasse, (this.gastterrasse!= null), (that.gastterrasse!= null))) {
                 return false;
             }
@@ -2925,18 +3101,18 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsKantineCafeteria;
-            lhsKantineCafeteria = this.isKantineCafeteria();
+            lhsKantineCafeteria = this.getKantineCafeteria();
             Boolean rhsKantineCafeteria;
-            rhsKantineCafeteria = that.isKantineCafeteria();
+            rhsKantineCafeteria = that.getKantineCafeteria();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kantineCafeteria", lhsKantineCafeteria), LocatorUtils.property(thatLocator, "kantineCafeteria", rhsKantineCafeteria), lhsKantineCafeteria, rhsKantineCafeteria, (this.kantineCafeteria!= null), (that.kantineCafeteria!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsTeekueche;
-            lhsTeekueche = this.isTeekueche();
+            lhsTeekueche = this.getTeekueche();
             Boolean rhsTeekueche;
-            rhsTeekueche = that.isTeekueche();
+            rhsTeekueche = that.getTeekueche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "teekueche", lhsTeekueche), LocatorUtils.property(thatLocator, "teekueche", rhsTeekueche), lhsTeekueche, rhsTeekueche, (this.teekueche!= null), (that.teekueche!= null))) {
                 return false;
             }
@@ -2961,27 +3137,27 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsBrauereibindung;
-            lhsBrauereibindung = this.isBrauereibindung();
+            lhsBrauereibindung = this.getBrauereibindung();
             Boolean rhsBrauereibindung;
-            rhsBrauereibindung = that.isBrauereibindung();
+            rhsBrauereibindung = that.getBrauereibindung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "brauereibindung", lhsBrauereibindung), LocatorUtils.property(thatLocator, "brauereibindung", rhsBrauereibindung), lhsBrauereibindung, rhsBrauereibindung, (this.brauereibindung!= null), (that.brauereibindung!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSporteinrichtungen;
-            lhsSporteinrichtungen = this.isSporteinrichtungen();
+            lhsSporteinrichtungen = this.getSporteinrichtungen();
             Boolean rhsSporteinrichtungen;
-            rhsSporteinrichtungen = that.isSporteinrichtungen();
+            rhsSporteinrichtungen = that.getSporteinrichtungen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sporteinrichtungen", lhsSporteinrichtungen), LocatorUtils.property(thatLocator, "sporteinrichtungen", rhsSporteinrichtungen), lhsSporteinrichtungen, rhsSporteinrichtungen, (this.sporteinrichtungen!= null), (that.sporteinrichtungen!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWellnessbereich;
-            lhsWellnessbereich = this.isWellnessbereich();
+            lhsWellnessbereich = this.getWellnessbereich();
             Boolean rhsWellnessbereich;
-            rhsWellnessbereich = that.isWellnessbereich();
+            rhsWellnessbereich = that.getWellnessbereich();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wellnessbereich", lhsWellnessbereich), LocatorUtils.property(thatLocator, "wellnessbereich", rhsWellnessbereich), lhsWellnessbereich, rhsWellnessbereich, (this.wellnessbereich!= null), (that.wellnessbereich!= null))) {
                 return false;
             }
@@ -2997,9 +3173,9 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsTelefonFerienimmobilie;
-            lhsTelefonFerienimmobilie = this.isTelefonFerienimmobilie();
+            lhsTelefonFerienimmobilie = this.getTelefonFerienimmobilie();
             Boolean rhsTelefonFerienimmobilie;
-            rhsTelefonFerienimmobilie = that.isTelefonFerienimmobilie();
+            rhsTelefonFerienimmobilie = that.getTelefonFerienimmobilie();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "telefonFerienimmobilie", lhsTelefonFerienimmobilie), LocatorUtils.property(thatLocator, "telefonFerienimmobilie", rhsTelefonFerienimmobilie), lhsTelefonFerienimmobilie, rhsTelefonFerienimmobilie, (this.telefonFerienimmobilie!= null), (that.telefonFerienimmobilie!= null))) {
                 return false;
             }
@@ -3015,9 +3191,9 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsUmtsEmpfang;
-            lhsUmtsEmpfang = this.isUmtsEmpfang();
+            lhsUmtsEmpfang = this.getUmtsEmpfang();
             Boolean rhsUmtsEmpfang;
-            rhsUmtsEmpfang = that.isUmtsEmpfang();
+            rhsUmtsEmpfang = that.getUmtsEmpfang();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "umtsEmpfang", lhsUmtsEmpfang), LocatorUtils.property(thatLocator, "umtsEmpfang", rhsUmtsEmpfang), lhsUmtsEmpfang, rhsUmtsEmpfang, (this.umtsEmpfang!= null), (that.umtsEmpfang!= null))) {
                 return false;
             }
@@ -3042,27 +3218,27 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsAbstellraum;
-            lhsAbstellraum = this.isAbstellraum();
+            lhsAbstellraum = this.getAbstellraum();
             Boolean rhsAbstellraum;
-            rhsAbstellraum = that.isAbstellraum();
+            rhsAbstellraum = that.getAbstellraum();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "abstellraum", lhsAbstellraum), LocatorUtils.property(thatLocator, "abstellraum", rhsAbstellraum), lhsAbstellraum, rhsAbstellraum, (this.abstellraum!= null), (that.abstellraum!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFahrradraum;
-            lhsFahrradraum = this.isFahrradraum();
+            lhsFahrradraum = this.getFahrradraum();
             Boolean rhsFahrradraum;
-            rhsFahrradraum = that.isFahrradraum();
+            rhsFahrradraum = that.getFahrradraum();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fahrradraum", lhsFahrradraum), LocatorUtils.property(thatLocator, "fahrradraum", rhsFahrradraum), lhsFahrradraum, rhsFahrradraum, (this.fahrradraum!= null), (that.fahrradraum!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsRolladen;
-            lhsRolladen = this.isRolladen();
+            lhsRolladen = this.getRolladen();
             Boolean rhsRolladen;
-            rhsRolladen = that.isRolladen();
+            rhsRolladen = that.getRolladen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rolladen", lhsRolladen), LocatorUtils.property(thatLocator, "rolladen", rhsRolladen), lhsRolladen, rhsRolladen, (this.rolladen!= null), (that.rolladen!= null))) {
                 return false;
             }
@@ -3105,45 +3281,45 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsBibliothek;
-            lhsBibliothek = this.isBibliothek();
+            lhsBibliothek = this.getBibliothek();
             Boolean rhsBibliothek;
-            rhsBibliothek = that.isBibliothek();
+            rhsBibliothek = that.getBibliothek();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bibliothek", lhsBibliothek), LocatorUtils.property(thatLocator, "bibliothek", rhsBibliothek), lhsBibliothek, rhsBibliothek, (this.bibliothek!= null), (that.bibliothek!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsDachboden;
-            lhsDachboden = this.isDachboden();
+            lhsDachboden = this.getDachboden();
             Boolean rhsDachboden;
-            rhsDachboden = that.isDachboden();
+            rhsDachboden = that.getDachboden();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "dachboden", lhsDachboden), LocatorUtils.property(thatLocator, "dachboden", rhsDachboden), lhsDachboden, rhsDachboden, (this.dachboden!= null), (that.dachboden!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsGaestewc;
-            lhsGaestewc = this.isGaestewc();
+            lhsGaestewc = this.getGaestewc();
             Boolean rhsGaestewc;
-            rhsGaestewc = that.isGaestewc();
+            rhsGaestewc = that.getGaestewc();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gaestewc", lhsGaestewc), LocatorUtils.property(thatLocator, "gaestewc", rhsGaestewc), lhsGaestewc, rhsGaestewc, (this.gaestewc!= null), (that.gaestewc!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKabelkanaele;
-            lhsKabelkanaele = this.isKabelkanaele();
+            lhsKabelkanaele = this.getKabelkanaele();
             Boolean rhsKabelkanaele;
-            rhsKabelkanaele = that.isKabelkanaele();
+            rhsKabelkanaele = that.getKabelkanaele();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kabelkanaele", lhsKabelkanaele), LocatorUtils.property(thatLocator, "kabelkanaele", rhsKabelkanaele), lhsKabelkanaele, rhsKabelkanaele, (this.kabelkanaele!= null), (that.kabelkanaele!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSeniorengerecht;
-            lhsSeniorengerecht = this.isSeniorengerecht();
+            lhsSeniorengerecht = this.getSeniorengerecht();
             Boolean rhsSeniorengerecht;
-            rhsSeniorengerecht = that.isSeniorengerecht();
+            rhsSeniorengerecht = that.getSeniorengerecht();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "seniorengerecht", lhsSeniorengerecht), LocatorUtils.property(thatLocator, "seniorengerecht", rhsSeniorengerecht), lhsSeniorengerecht, rhsSeniorengerecht, (this.seniorengerecht!= null), (that.seniorengerecht!= null))) {
                 return false;
             }
@@ -3178,6 +3354,7 @@ public class Ausstattung implements Serializable, Cloneable, CopyTo2, Equals2, T
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

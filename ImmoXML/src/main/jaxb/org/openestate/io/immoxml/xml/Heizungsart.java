@@ -2,6 +2,7 @@
 package org.openestate.io.immoxml.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,18 +30,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "heizungsart")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "OFEN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean ofen;
     @XmlAttribute(name = "ETAGE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean etage;
     @XmlAttribute(name = "ZENTRAL")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean zentral;
     @XmlAttribute(name = "FERN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean fern;
     @XmlAttribute(name = "FUSSBODEN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean fussboden;
 
     /**
@@ -51,7 +58,8 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isOFEN() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getOFEN() {
         return ofen;
     }
 
@@ -63,6 +71,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setOFEN(Boolean value) {
         this.ofen = value;
     }
@@ -75,7 +84,8 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isETAGE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getETAGE() {
         return etage;
     }
 
@@ -87,6 +97,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setETAGE(Boolean value) {
         this.etage = value;
     }
@@ -99,7 +110,8 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isZENTRAL() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getZENTRAL() {
         return zentral;
     }
 
@@ -111,6 +123,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setZENTRAL(Boolean value) {
         this.zentral = value;
     }
@@ -123,7 +136,8 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isFERN() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFERN() {
         return fern;
     }
 
@@ -135,6 +149,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setFERN(Boolean value) {
         this.fern = value;
     }
@@ -147,7 +162,8 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isFUSSBODEN() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFUSSBODEN() {
         return fussboden;
     }
 
@@ -159,10 +175,12 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setFUSSBODEN(Boolean value) {
         this.fussboden = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -170,6 +188,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -177,44 +196,48 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theOFEN;
-            theOFEN = this.isOFEN();
+            theOFEN = this.getOFEN();
             strategy.appendField(locator, this, "ofen", buffer, theOFEN, (this.ofen!= null));
         }
         {
             Boolean theETAGE;
-            theETAGE = this.isETAGE();
+            theETAGE = this.getETAGE();
             strategy.appendField(locator, this, "etage", buffer, theETAGE, (this.etage!= null));
         }
         {
             Boolean theZENTRAL;
-            theZENTRAL = this.isZENTRAL();
+            theZENTRAL = this.getZENTRAL();
             strategy.appendField(locator, this, "zentral", buffer, theZENTRAL, (this.zentral!= null));
         }
         {
             Boolean theFERN;
-            theFERN = this.isFERN();
+            theFERN = this.getFERN();
             strategy.appendField(locator, this, "fern", buffer, theFERN, (this.fern!= null));
         }
         {
             Boolean theFUSSBODEN;
-            theFUSSBODEN = this.isFUSSBODEN();
+            theFUSSBODEN = this.getFUSSBODEN();
             strategy.appendField(locator, this, "fussboden", buffer, theFUSSBODEN, (this.fussboden!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Heizungsart) {
@@ -223,7 +246,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean ofenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ofen!= null));
                 if (ofenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceOFEN;
-                    sourceOFEN = this.isOFEN();
+                    sourceOFEN = this.getOFEN();
                     Boolean copyOFEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ofen", sourceOFEN), sourceOFEN, (this.ofen!= null)));
                     copy.setOFEN(copyOFEN);
                 } else {
@@ -236,7 +259,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean etageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.etage!= null));
                 if (etageShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceETAGE;
-                    sourceETAGE = this.isETAGE();
+                    sourceETAGE = this.getETAGE();
                     Boolean copyETAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "etage", sourceETAGE), sourceETAGE, (this.etage!= null)));
                     copy.setETAGE(copyETAGE);
                 } else {
@@ -249,7 +272,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean zentralShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zentral!= null));
                 if (zentralShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceZENTRAL;
-                    sourceZENTRAL = this.isZENTRAL();
+                    sourceZENTRAL = this.getZENTRAL();
                     Boolean copyZENTRAL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "zentral", sourceZENTRAL), sourceZENTRAL, (this.zentral!= null)));
                     copy.setZENTRAL(copyZENTRAL);
                 } else {
@@ -262,7 +285,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean fernShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fern!= null));
                 if (fernShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFERN;
-                    sourceFERN = this.isFERN();
+                    sourceFERN = this.getFERN();
                     Boolean copyFERN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fern", sourceFERN), sourceFERN, (this.fern!= null)));
                     copy.setFERN(copyFERN);
                 } else {
@@ -275,7 +298,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean fussbodenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fussboden!= null));
                 if (fussbodenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFUSSBODEN;
-                    sourceFUSSBODEN = this.isFUSSBODEN();
+                    sourceFUSSBODEN = this.getFUSSBODEN();
                     Boolean copyFUSSBODEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fussboden", sourceFUSSBODEN), sourceFUSSBODEN, (this.fussboden!= null)));
                     copy.setFUSSBODEN(copyFUSSBODEN);
                 } else {
@@ -288,10 +311,12 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Heizungsart();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -302,45 +327,45 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         final Heizungsart that = ((Heizungsart) object);
         {
             Boolean lhsOFEN;
-            lhsOFEN = this.isOFEN();
+            lhsOFEN = this.getOFEN();
             Boolean rhsOFEN;
-            rhsOFEN = that.isOFEN();
+            rhsOFEN = that.getOFEN();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ofen", lhsOFEN), LocatorUtils.property(thatLocator, "ofen", rhsOFEN), lhsOFEN, rhsOFEN, (this.ofen!= null), (that.ofen!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsETAGE;
-            lhsETAGE = this.isETAGE();
+            lhsETAGE = this.getETAGE();
             Boolean rhsETAGE;
-            rhsETAGE = that.isETAGE();
+            rhsETAGE = that.getETAGE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "etage", lhsETAGE), LocatorUtils.property(thatLocator, "etage", rhsETAGE), lhsETAGE, rhsETAGE, (this.etage!= null), (that.etage!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsZENTRAL;
-            lhsZENTRAL = this.isZENTRAL();
+            lhsZENTRAL = this.getZENTRAL();
             Boolean rhsZENTRAL;
-            rhsZENTRAL = that.isZENTRAL();
+            rhsZENTRAL = that.getZENTRAL();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zentral", lhsZENTRAL), LocatorUtils.property(thatLocator, "zentral", rhsZENTRAL), lhsZENTRAL, rhsZENTRAL, (this.zentral!= null), (that.zentral!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFERN;
-            lhsFERN = this.isFERN();
+            lhsFERN = this.getFERN();
             Boolean rhsFERN;
-            rhsFERN = that.isFERN();
+            rhsFERN = that.getFERN();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fern", lhsFERN), LocatorUtils.property(thatLocator, "fern", rhsFERN), lhsFERN, rhsFERN, (this.fern!= null), (that.fern!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFUSSBODEN;
-            lhsFUSSBODEN = this.isFUSSBODEN();
+            lhsFUSSBODEN = this.getFUSSBODEN();
             Boolean rhsFUSSBODEN;
-            rhsFUSSBODEN = that.isFUSSBODEN();
+            rhsFUSSBODEN = that.getFUSSBODEN();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fussboden", lhsFUSSBODEN), LocatorUtils.property(thatLocator, "fussboden", rhsFUSSBODEN), lhsFUSSBODEN, rhsFUSSBODEN, (this.fussboden!= null), (that.fussboden!= null))) {
                 return false;
             }
@@ -348,6 +373,7 @@ public class Heizungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

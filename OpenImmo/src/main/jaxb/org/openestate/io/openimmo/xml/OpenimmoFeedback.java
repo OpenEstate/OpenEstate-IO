@@ -4,6 +4,7 @@ package org.openestate.io.openimmo.xml;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,15 +38,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "status"
 })
 @XmlRootElement(name = "openimmo_feedback")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String version;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Sender sender;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<Objekt> objekt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<Fehlerliste> fehlerliste;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<Status> status;
 
     /**
@@ -56,6 +63,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getVersion() {
         return version;
     }
@@ -68,6 +76,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setVersion(String value) {
         this.version = value;
     }
@@ -80,6 +89,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Sender }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Sender getSender() {
         return sender;
     }
@@ -92,6 +102,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Sender }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSender(Sender value) {
         this.sender = value;
     }
@@ -118,6 +129,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<Objekt> getObjekt() {
         if (objekt == null) {
             objekt = new ArrayList<Objekt>();
@@ -147,6 +159,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<Fehlerliste> getFehlerliste() {
         if (fehlerliste == null) {
             fehlerliste = new ArrayList<Fehlerliste>();
@@ -176,6 +189,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<Status> getStatus() {
         if (status == null) {
             status = new ArrayList<Status>();
@@ -183,6 +197,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
         return this.status;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -190,6 +205,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -197,6 +213,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theVersion;
@@ -226,15 +243,18 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof OpenimmoFeedback) {
@@ -323,10 +343,12 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new OpenimmoFeedback();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -383,6 +405,7 @@ public class OpenimmoFeedback implements Serializable, Cloneable, CopyTo2, Equal
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

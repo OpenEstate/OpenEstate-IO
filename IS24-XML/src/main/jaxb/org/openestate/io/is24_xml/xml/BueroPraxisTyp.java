@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -60,35 +61,48 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     org.openestate.io.is24_xml.xml.BueroPraxis.Type.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class BueroPraxisTyp
     extends GewerbeImmoBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected VermarktungGewerbeTyp vermarktung;
     @XmlAttribute(name = "Objektkategorie2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BueroPraxisKategorienTyp objektkategorie2;
     @XmlAttribute(name = "BueroPraxisFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal bueroPraxisFlaeche;
     @XmlAttribute(name = "Bodenbelag")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "DatenVerkabelung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected DatenVerkabelungsTyp datenVerkabelung;
     @XmlAttribute(name = "Klimaanlage")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected JaNeinVereinbarungTyp klimaanlage;
     @XmlAttribute(name = "Kantine")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kantine;
     @XmlAttribute(name = "Denkmalschutzobjekt")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean denkmalschutzobjekt;
     @XmlAttribute(name = "Keller")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean keller;
     @XmlAttribute(name = "Barrierefrei")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean barrierefrei;
     @XmlAttribute(name = "KuecheVorhanden")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kuecheVorhanden;
     @XmlAttribute(name = "Starkstrom")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean starkstrom;
 
     /**
@@ -99,6 +113,7 @@ public class BueroPraxisTyp
      *     {@link VermarktungGewerbeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public VermarktungGewerbeTyp getVermarktung() {
         return vermarktung;
     }
@@ -111,6 +126,7 @@ public class BueroPraxisTyp
      *     {@link VermarktungGewerbeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setVermarktung(VermarktungGewerbeTyp value) {
         this.vermarktung = value;
     }
@@ -123,6 +139,7 @@ public class BueroPraxisTyp
      *     {@link BueroPraxisKategorienTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BueroPraxisKategorienTyp getObjektkategorie2() {
         if (objektkategorie2 == null) {
             return BueroPraxisKategorienTyp.KEINE_ANGABE;
@@ -139,6 +156,7 @@ public class BueroPraxisTyp
      *     {@link BueroPraxisKategorienTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektkategorie2(BueroPraxisKategorienTyp value) {
         this.objektkategorie2 = value;
     }
@@ -151,6 +169,7 @@ public class BueroPraxisTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getBueroPraxisFlaeche() {
         return bueroPraxisFlaeche;
     }
@@ -163,6 +182,7 @@ public class BueroPraxisTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBueroPraxisFlaeche(BigDecimal value) {
         this.bueroPraxisFlaeche = value;
     }
@@ -175,6 +195,7 @@ public class BueroPraxisTyp
      *     {@link BodenbelagTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BodenbelagTyp getBodenbelag() {
         if (bodenbelag == null) {
             return BodenbelagTyp.KEINE_ANGABE;
@@ -191,6 +212,7 @@ public class BueroPraxisTyp
      *     {@link BodenbelagTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBodenbelag(BodenbelagTyp value) {
         this.bodenbelag = value;
     }
@@ -203,6 +225,7 @@ public class BueroPraxisTyp
      *     {@link DatenVerkabelungsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public DatenVerkabelungsTyp getDatenVerkabelung() {
         if (datenVerkabelung == null) {
             return DatenVerkabelungsTyp.KEINE_ANGABE;
@@ -219,6 +242,7 @@ public class BueroPraxisTyp
      *     {@link DatenVerkabelungsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setDatenVerkabelung(DatenVerkabelungsTyp value) {
         this.datenVerkabelung = value;
     }
@@ -231,6 +255,7 @@ public class BueroPraxisTyp
      *     {@link JaNeinVereinbarungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public JaNeinVereinbarungTyp getKlimaanlage() {
         if (klimaanlage == null) {
             return JaNeinVereinbarungTyp.KEINE_ANGABE;
@@ -247,6 +272,7 @@ public class BueroPraxisTyp
      *     {@link JaNeinVereinbarungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKlimaanlage(JaNeinVereinbarungTyp value) {
         this.klimaanlage = value;
     }
@@ -259,7 +285,8 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isKantine() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKantine() {
         return kantine;
     }
 
@@ -271,6 +298,7 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKantine(Boolean value) {
         this.kantine = value;
     }
@@ -283,7 +311,8 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isDenkmalschutzobjekt() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDenkmalschutzobjekt() {
         return denkmalschutzobjekt;
     }
 
@@ -295,6 +324,7 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setDenkmalschutzobjekt(Boolean value) {
         this.denkmalschutzobjekt = value;
     }
@@ -307,7 +337,8 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isKeller() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKeller() {
         return keller;
     }
 
@@ -319,6 +350,7 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKeller(Boolean value) {
         this.keller = value;
     }
@@ -331,7 +363,8 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isBarrierefrei() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBarrierefrei() {
         return barrierefrei;
     }
 
@@ -343,6 +376,7 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBarrierefrei(Boolean value) {
         this.barrierefrei = value;
     }
@@ -355,7 +389,8 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isKuecheVorhanden() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKuecheVorhanden() {
         return kuecheVorhanden;
     }
 
@@ -367,6 +402,7 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKuecheVorhanden(Boolean value) {
         this.kuecheVorhanden = value;
     }
@@ -379,7 +415,8 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isStarkstrom() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getStarkstrom() {
         return starkstrom;
     }
 
@@ -391,10 +428,12 @@ public class BueroPraxisTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setStarkstrom(Boolean value) {
         this.starkstrom = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -402,6 +441,7 @@ public class BueroPraxisTyp
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -409,6 +449,7 @@ public class BueroPraxisTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -443,46 +484,49 @@ public class BueroPraxisTyp
         }
         {
             Boolean theKantine;
-            theKantine = this.isKantine();
+            theKantine = this.getKantine();
             strategy.appendField(locator, this, "kantine", buffer, theKantine, (this.kantine!= null));
         }
         {
             Boolean theDenkmalschutzobjekt;
-            theDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            theDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null));
         }
         {
             Boolean theKeller;
-            theKeller = this.isKeller();
+            theKeller = this.getKeller();
             strategy.appendField(locator, this, "keller", buffer, theKeller, (this.keller!= null));
         }
         {
             Boolean theBarrierefrei;
-            theBarrierefrei = this.isBarrierefrei();
+            theBarrierefrei = this.getBarrierefrei();
             strategy.appendField(locator, this, "barrierefrei", buffer, theBarrierefrei, (this.barrierefrei!= null));
         }
         {
             Boolean theKuecheVorhanden;
-            theKuecheVorhanden = this.isKuecheVorhanden();
+            theKuecheVorhanden = this.getKuecheVorhanden();
             strategy.appendField(locator, this, "kuecheVorhanden", buffer, theKuecheVorhanden, (this.kuecheVorhanden!= null));
         }
         {
             Boolean theStarkstrom;
-            theStarkstrom = this.isStarkstrom();
+            theStarkstrom = this.getStarkstrom();
             strategy.appendField(locator, this, "starkstrom", buffer, theStarkstrom, (this.starkstrom!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
@@ -570,7 +614,7 @@ public class BueroPraxisTyp
                 Boolean kantineShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kantine!= null));
                 if (kantineShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKantine;
-                    sourceKantine = this.isKantine();
+                    sourceKantine = this.getKantine();
                     Boolean copyKantine = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kantine", sourceKantine), sourceKantine, (this.kantine!= null)));
                     copy.setKantine(copyKantine);
                 } else {
@@ -583,7 +627,7 @@ public class BueroPraxisTyp
                 Boolean denkmalschutzobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalschutzobjekt!= null));
                 if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDenkmalschutzobjekt;
-                    sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+                    sourceDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
                     Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null)));
                     copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
                 } else {
@@ -596,7 +640,7 @@ public class BueroPraxisTyp
                 Boolean kellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keller!= null));
                 if (kellerShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKeller;
-                    sourceKeller = this.isKeller();
+                    sourceKeller = this.getKeller();
                     Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller, (this.keller!= null)));
                     copy.setKeller(copyKeller);
                 } else {
@@ -609,7 +653,7 @@ public class BueroPraxisTyp
                 Boolean barrierefreiShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.barrierefrei!= null));
                 if (barrierefreiShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBarrierefrei;
-                    sourceBarrierefrei = this.isBarrierefrei();
+                    sourceBarrierefrei = this.getBarrierefrei();
                     Boolean copyBarrierefrei = ((Boolean) strategy.copy(LocatorUtils.property(locator, "barrierefrei", sourceBarrierefrei), sourceBarrierefrei, (this.barrierefrei!= null)));
                     copy.setBarrierefrei(copyBarrierefrei);
                 } else {
@@ -622,7 +666,7 @@ public class BueroPraxisTyp
                 Boolean kuecheVorhandenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kuecheVorhanden!= null));
                 if (kuecheVorhandenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKuecheVorhanden;
-                    sourceKuecheVorhanden = this.isKuecheVorhanden();
+                    sourceKuecheVorhanden = this.getKuecheVorhanden();
                     Boolean copyKuecheVorhanden = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kuecheVorhanden", sourceKuecheVorhanden), sourceKuecheVorhanden, (this.kuecheVorhanden!= null)));
                     copy.setKuecheVorhanden(copyKuecheVorhanden);
                 } else {
@@ -635,7 +679,7 @@ public class BueroPraxisTyp
                 Boolean starkstromShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.starkstrom!= null));
                 if (starkstromShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceStarkstrom;
-                    sourceStarkstrom = this.isStarkstrom();
+                    sourceStarkstrom = this.getStarkstrom();
                     Boolean copyStarkstrom = ((Boolean) strategy.copy(LocatorUtils.property(locator, "starkstrom", sourceStarkstrom), sourceStarkstrom, (this.starkstrom!= null)));
                     copy.setStarkstrom(copyStarkstrom);
                 } else {
@@ -648,10 +692,12 @@ public class BueroPraxisTyp
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new BueroPraxisTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -719,54 +765,54 @@ public class BueroPraxisTyp
         }
         {
             Boolean lhsKantine;
-            lhsKantine = this.isKantine();
+            lhsKantine = this.getKantine();
             Boolean rhsKantine;
-            rhsKantine = that.isKantine();
+            rhsKantine = that.getKantine();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kantine", lhsKantine), LocatorUtils.property(thatLocator, "kantine", rhsKantine), lhsKantine, rhsKantine, (this.kantine!= null), (that.kantine!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsDenkmalschutzobjekt;
-            lhsDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            lhsDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             Boolean rhsDenkmalschutzobjekt;
-            rhsDenkmalschutzobjekt = that.isDenkmalschutzobjekt();
+            rhsDenkmalschutzobjekt = that.getDenkmalschutzobjekt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null), (that.denkmalschutzobjekt!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKeller;
-            lhsKeller = this.isKeller();
+            lhsKeller = this.getKeller();
             Boolean rhsKeller;
-            rhsKeller = that.isKeller();
+            rhsKeller = that.getKeller();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller, (this.keller!= null), (that.keller!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsBarrierefrei;
-            lhsBarrierefrei = this.isBarrierefrei();
+            lhsBarrierefrei = this.getBarrierefrei();
             Boolean rhsBarrierefrei;
-            rhsBarrierefrei = that.isBarrierefrei();
+            rhsBarrierefrei = that.getBarrierefrei();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "barrierefrei", lhsBarrierefrei), LocatorUtils.property(thatLocator, "barrierefrei", rhsBarrierefrei), lhsBarrierefrei, rhsBarrierefrei, (this.barrierefrei!= null), (that.barrierefrei!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKuecheVorhanden;
-            lhsKuecheVorhanden = this.isKuecheVorhanden();
+            lhsKuecheVorhanden = this.getKuecheVorhanden();
             Boolean rhsKuecheVorhanden;
-            rhsKuecheVorhanden = that.isKuecheVorhanden();
+            rhsKuecheVorhanden = that.getKuecheVorhanden();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kuecheVorhanden", lhsKuecheVorhanden), LocatorUtils.property(thatLocator, "kuecheVorhanden", rhsKuecheVorhanden), lhsKuecheVorhanden, rhsKuecheVorhanden, (this.kuecheVorhanden!= null), (that.kuecheVorhanden!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsStarkstrom;
-            lhsStarkstrom = this.isStarkstrom();
+            lhsStarkstrom = this.getStarkstrom();
             Boolean rhsStarkstrom;
-            rhsStarkstrom = that.isStarkstrom();
+            rhsStarkstrom = that.getStarkstrom();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "starkstrom", lhsStarkstrom), LocatorUtils.property(thatLocator, "starkstrom", rhsStarkstrom), lhsStarkstrom, rhsStarkstrom, (this.starkstrom!= null), (that.starkstrom!= null))) {
                 return false;
             }
@@ -774,6 +820,7 @@ public class BueroPraxisTyp
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

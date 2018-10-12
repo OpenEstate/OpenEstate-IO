@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,16 +30,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "lage_im_bau")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "LINKS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean links;
     @XmlAttribute(name = "RECHTS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean rechts;
     @XmlAttribute(name = "VORNE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean vorne;
     @XmlAttribute(name = "HINTEN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean hinten;
 
     /**
@@ -49,7 +55,8 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
-    public Boolean isLINKS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getLINKS() {
         return links;
     }
 
@@ -61,6 +68,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLINKS(Boolean value) {
         this.links = value;
     }
@@ -73,7 +81,8 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
-    public Boolean isRECHTS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRECHTS() {
         return rechts;
     }
 
@@ -85,6 +94,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setRECHTS(Boolean value) {
         this.rechts = value;
     }
@@ -97,7 +107,8 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
-    public Boolean isVORNE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getVORNE() {
         return vorne;
     }
 
@@ -109,6 +120,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setVORNE(Boolean value) {
         this.vorne = value;
     }
@@ -121,7 +133,8 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
-    public Boolean isHINTEN() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHINTEN() {
         return hinten;
     }
 
@@ -133,10 +146,12 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHINTEN(Boolean value) {
         this.hinten = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -144,6 +159,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -151,39 +167,43 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theLINKS;
-            theLINKS = this.isLINKS();
+            theLINKS = this.getLINKS();
             strategy.appendField(locator, this, "links", buffer, theLINKS, (this.links!= null));
         }
         {
             Boolean theRECHTS;
-            theRECHTS = this.isRECHTS();
+            theRECHTS = this.getRECHTS();
             strategy.appendField(locator, this, "rechts", buffer, theRECHTS, (this.rechts!= null));
         }
         {
             Boolean theVORNE;
-            theVORNE = this.isVORNE();
+            theVORNE = this.getVORNE();
             strategy.appendField(locator, this, "vorne", buffer, theVORNE, (this.vorne!= null));
         }
         {
             Boolean theHINTEN;
-            theHINTEN = this.isHINTEN();
+            theHINTEN = this.getHINTEN();
             strategy.appendField(locator, this, "hinten", buffer, theHINTEN, (this.hinten!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof LageImBau) {
@@ -192,7 +212,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 Boolean linksShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.links!= null));
                 if (linksShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceLINKS;
-                    sourceLINKS = this.isLINKS();
+                    sourceLINKS = this.getLINKS();
                     Boolean copyLINKS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "links", sourceLINKS), sourceLINKS, (this.links!= null)));
                     copy.setLINKS(copyLINKS);
                 } else {
@@ -205,7 +225,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 Boolean rechtsShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rechts!= null));
                 if (rechtsShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRECHTS;
-                    sourceRECHTS = this.isRECHTS();
+                    sourceRECHTS = this.getRECHTS();
                     Boolean copyRECHTS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rechts", sourceRECHTS), sourceRECHTS, (this.rechts!= null)));
                     copy.setRECHTS(copyRECHTS);
                 } else {
@@ -218,7 +238,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 Boolean vorneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vorne!= null));
                 if (vorneShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceVORNE;
-                    sourceVORNE = this.isVORNE();
+                    sourceVORNE = this.getVORNE();
                     Boolean copyVORNE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "vorne", sourceVORNE), sourceVORNE, (this.vorne!= null)));
                     copy.setVORNE(copyVORNE);
                 } else {
@@ -231,7 +251,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 Boolean hintenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hinten!= null));
                 if (hintenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHINTEN;
-                    sourceHINTEN = this.isHINTEN();
+                    sourceHINTEN = this.getHINTEN();
                     Boolean copyHINTEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hinten", sourceHINTEN), sourceHINTEN, (this.hinten!= null)));
                     copy.setHINTEN(copyHINTEN);
                 } else {
@@ -244,10 +264,12 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new LageImBau();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -258,36 +280,36 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         final LageImBau that = ((LageImBau) object);
         {
             Boolean lhsLINKS;
-            lhsLINKS = this.isLINKS();
+            lhsLINKS = this.getLINKS();
             Boolean rhsLINKS;
-            rhsLINKS = that.isLINKS();
+            rhsLINKS = that.getLINKS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "links", lhsLINKS), LocatorUtils.property(thatLocator, "links", rhsLINKS), lhsLINKS, rhsLINKS, (this.links!= null), (that.links!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsRECHTS;
-            lhsRECHTS = this.isRECHTS();
+            lhsRECHTS = this.getRECHTS();
             Boolean rhsRECHTS;
-            rhsRECHTS = that.isRECHTS();
+            rhsRECHTS = that.getRECHTS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rechts", lhsRECHTS), LocatorUtils.property(thatLocator, "rechts", rhsRECHTS), lhsRECHTS, rhsRECHTS, (this.rechts!= null), (that.rechts!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsVORNE;
-            lhsVORNE = this.isVORNE();
+            lhsVORNE = this.getVORNE();
             Boolean rhsVORNE;
-            rhsVORNE = that.isVORNE();
+            rhsVORNE = that.getVORNE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "vorne", lhsVORNE), LocatorUtils.property(thatLocator, "vorne", rhsVORNE), lhsVORNE, rhsVORNE, (this.vorne!= null), (that.vorne!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsHINTEN;
-            lhsHINTEN = this.isHINTEN();
+            lhsHINTEN = this.getHINTEN();
             Boolean rhsHINTEN;
-            rhsHINTEN = that.isHINTEN();
+            rhsHINTEN = that.getHINTEN();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hinten", lhsHINTEN), LocatorUtils.property(thatLocator, "hinten", rhsHINTEN), lhsHINTEN, rhsHINTEN, (this.hinten!= null), (that.hinten!= null))) {
                 return false;
             }
@@ -295,6 +317,7 @@ public class LageImBau implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

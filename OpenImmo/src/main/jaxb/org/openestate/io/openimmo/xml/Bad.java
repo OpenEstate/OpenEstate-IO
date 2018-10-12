@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,18 +30,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "bad")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "DUSCHE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean dusche;
     @XmlAttribute(name = "WANNE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean wanne;
     @XmlAttribute(name = "FENSTER")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean fenster;
     @XmlAttribute(name = "BIDET")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean bidet;
     @XmlAttribute(name = "PISSOIR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean pissoir;
 
     /**
@@ -51,7 +58,8 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isDUSCHE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDUSCHE() {
         return dusche;
     }
 
@@ -63,6 +71,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDUSCHE(Boolean value) {
         this.dusche = value;
     }
@@ -75,7 +84,8 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isWANNE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWANNE() {
         return wanne;
     }
 
@@ -87,6 +97,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWANNE(Boolean value) {
         this.wanne = value;
     }
@@ -99,7 +110,8 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isFENSTER() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFENSTER() {
         return fenster;
     }
 
@@ -111,6 +123,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFENSTER(Boolean value) {
         this.fenster = value;
     }
@@ -123,7 +136,8 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isBIDET() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBIDET() {
         return bidet;
     }
 
@@ -135,6 +149,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBIDET(Boolean value) {
         this.bidet = value;
     }
@@ -147,7 +162,8 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isPISSOIR() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPISSOIR() {
         return pissoir;
     }
 
@@ -159,10 +175,12 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPISSOIR(Boolean value) {
         this.pissoir = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -170,6 +188,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -177,44 +196,48 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theDUSCHE;
-            theDUSCHE = this.isDUSCHE();
+            theDUSCHE = this.getDUSCHE();
             strategy.appendField(locator, this, "dusche", buffer, theDUSCHE, (this.dusche!= null));
         }
         {
             Boolean theWANNE;
-            theWANNE = this.isWANNE();
+            theWANNE = this.getWANNE();
             strategy.appendField(locator, this, "wanne", buffer, theWANNE, (this.wanne!= null));
         }
         {
             Boolean theFENSTER;
-            theFENSTER = this.isFENSTER();
+            theFENSTER = this.getFENSTER();
             strategy.appendField(locator, this, "fenster", buffer, theFENSTER, (this.fenster!= null));
         }
         {
             Boolean theBIDET;
-            theBIDET = this.isBIDET();
+            theBIDET = this.getBIDET();
             strategy.appendField(locator, this, "bidet", buffer, theBIDET, (this.bidet!= null));
         }
         {
             Boolean thePISSOIR;
-            thePISSOIR = this.isPISSOIR();
+            thePISSOIR = this.getPISSOIR();
             strategy.appendField(locator, this, "pissoir", buffer, thePISSOIR, (this.pissoir!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Bad) {
@@ -223,7 +246,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean duscheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.dusche!= null));
                 if (duscheShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDUSCHE;
-                    sourceDUSCHE = this.isDUSCHE();
+                    sourceDUSCHE = this.getDUSCHE();
                     Boolean copyDUSCHE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "dusche", sourceDUSCHE), sourceDUSCHE, (this.dusche!= null)));
                     copy.setDUSCHE(copyDUSCHE);
                 } else {
@@ -236,7 +259,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean wanneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wanne!= null));
                 if (wanneShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWANNE;
-                    sourceWANNE = this.isWANNE();
+                    sourceWANNE = this.getWANNE();
                     Boolean copyWANNE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wanne", sourceWANNE), sourceWANNE, (this.wanne!= null)));
                     copy.setWANNE(copyWANNE);
                 } else {
@@ -249,7 +272,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean fensterShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fenster!= null));
                 if (fensterShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFENSTER;
-                    sourceFENSTER = this.isFENSTER();
+                    sourceFENSTER = this.getFENSTER();
                     Boolean copyFENSTER = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fenster", sourceFENSTER), sourceFENSTER, (this.fenster!= null)));
                     copy.setFENSTER(copyFENSTER);
                 } else {
@@ -262,7 +285,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean bidetShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bidet!= null));
                 if (bidetShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBIDET;
-                    sourceBIDET = this.isBIDET();
+                    sourceBIDET = this.getBIDET();
                     Boolean copyBIDET = ((Boolean) strategy.copy(LocatorUtils.property(locator, "bidet", sourceBIDET), sourceBIDET, (this.bidet!= null)));
                     copy.setBIDET(copyBIDET);
                 } else {
@@ -275,7 +298,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean pissoirShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pissoir!= null));
                 if (pissoirShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePISSOIR;
-                    sourcePISSOIR = this.isPISSOIR();
+                    sourcePISSOIR = this.getPISSOIR();
                     Boolean copyPISSOIR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pissoir", sourcePISSOIR), sourcePISSOIR, (this.pissoir!= null)));
                     copy.setPISSOIR(copyPISSOIR);
                 } else {
@@ -288,10 +311,12 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Bad();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -302,45 +327,45 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         final Bad that = ((Bad) object);
         {
             Boolean lhsDUSCHE;
-            lhsDUSCHE = this.isDUSCHE();
+            lhsDUSCHE = this.getDUSCHE();
             Boolean rhsDUSCHE;
-            rhsDUSCHE = that.isDUSCHE();
+            rhsDUSCHE = that.getDUSCHE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "dusche", lhsDUSCHE), LocatorUtils.property(thatLocator, "dusche", rhsDUSCHE), lhsDUSCHE, rhsDUSCHE, (this.dusche!= null), (that.dusche!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWANNE;
-            lhsWANNE = this.isWANNE();
+            lhsWANNE = this.getWANNE();
             Boolean rhsWANNE;
-            rhsWANNE = that.isWANNE();
+            rhsWANNE = that.getWANNE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wanne", lhsWANNE), LocatorUtils.property(thatLocator, "wanne", rhsWANNE), lhsWANNE, rhsWANNE, (this.wanne!= null), (that.wanne!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFENSTER;
-            lhsFENSTER = this.isFENSTER();
+            lhsFENSTER = this.getFENSTER();
             Boolean rhsFENSTER;
-            rhsFENSTER = that.isFENSTER();
+            rhsFENSTER = that.getFENSTER();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fenster", lhsFENSTER), LocatorUtils.property(thatLocator, "fenster", rhsFENSTER), lhsFENSTER, rhsFENSTER, (this.fenster!= null), (that.fenster!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsBIDET;
-            lhsBIDET = this.isBIDET();
+            lhsBIDET = this.getBIDET();
             Boolean rhsBIDET;
-            rhsBIDET = that.isBIDET();
+            rhsBIDET = that.getBIDET();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bidet", lhsBIDET), LocatorUtils.property(thatLocator, "bidet", rhsBIDET), lhsBIDET, rhsBIDET, (this.bidet!= null), (that.bidet!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsPISSOIR;
-            lhsPISSOIR = this.isPISSOIR();
+            lhsPISSOIR = this.getPISSOIR();
             Boolean rhsPISSOIR;
-            rhsPISSOIR = that.isPISSOIR();
+            rhsPISSOIR = that.getPISSOIR();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pissoir", lhsPISSOIR), LocatorUtils.property(thatLocator, "pissoir", rhsPISSOIR), lhsPISSOIR, rhsPISSOIR, (this.pissoir!= null), (that.pissoir!= null))) {
                 return false;
             }
@@ -348,6 +373,7 @@ public class Bad implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

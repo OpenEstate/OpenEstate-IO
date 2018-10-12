@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -46,27 +47,35 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VermarktungWGZimmerTyp")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "Kaltmiete", required = true)
     @XmlJavaTypeAdapter(Adapter35 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal kaltmiete;
     @XmlAttribute(name = "Warmmiete")
     @XmlJavaTypeAdapter(Adapter35 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal warmmiete;
     @XmlAttribute(name = "Nebenkosten")
     @XmlJavaTypeAdapter(Adapter35 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal nebenkosten;
     @XmlAttribute(name = "Heizkosten")
     @XmlJavaTypeAdapter(Adapter35 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal heizkosten;
     @XmlAttribute(name = "HeizkostenInWarmmieteEnthalten")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean heizkostenInWarmmieteEnthalten;
     @XmlAttribute(name = "Mindestmietdauer")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected MindestmietdauerTyp mindestmietdauer;
     @XmlAttribute(name = "Kaution")
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String kaution;
 
     /**
@@ -77,6 +86,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getKaltmiete() {
         return kaltmiete;
     }
@@ -89,6 +99,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKaltmiete(BigDecimal value) {
         this.kaltmiete = value;
     }
@@ -101,6 +112,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getWarmmiete() {
         return warmmiete;
     }
@@ -113,6 +125,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setWarmmiete(BigDecimal value) {
         this.warmmiete = value;
     }
@@ -125,6 +138,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getNebenkosten() {
         return nebenkosten;
     }
@@ -137,6 +151,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setNebenkosten(BigDecimal value) {
         this.nebenkosten = value;
     }
@@ -149,6 +164,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getHeizkosten() {
         return heizkosten;
     }
@@ -161,6 +177,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHeizkosten(BigDecimal value) {
         this.heizkosten = value;
     }
@@ -173,7 +190,8 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isHeizkostenInWarmmieteEnthalten() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHeizkostenInWarmmieteEnthalten() {
         return heizkostenInWarmmieteEnthalten;
     }
 
@@ -185,6 +203,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHeizkostenInWarmmieteEnthalten(Boolean value) {
         this.heizkostenInWarmmieteEnthalten = value;
     }
@@ -197,6 +216,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link MindestmietdauerTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public MindestmietdauerTyp getMindestmietdauer() {
         return mindestmietdauer;
     }
@@ -209,6 +229,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link MindestmietdauerTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setMindestmietdauer(MindestmietdauerTyp value) {
         this.mindestmietdauer = value;
     }
@@ -221,6 +242,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getKaution() {
         return kaution;
     }
@@ -233,10 +255,12 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKaution(String value) {
         this.kaution = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -244,6 +268,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -251,6 +276,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigDecimal theKaltmiete;
@@ -274,7 +300,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
         }
         {
             Boolean theHeizkostenInWarmmieteEnthalten;
-            theHeizkostenInWarmmieteEnthalten = this.isHeizkostenInWarmmieteEnthalten();
+            theHeizkostenInWarmmieteEnthalten = this.getHeizkostenInWarmmieteEnthalten();
             strategy.appendField(locator, this, "heizkostenInWarmmieteEnthalten", buffer, theHeizkostenInWarmmieteEnthalten, (this.heizkostenInWarmmieteEnthalten!= null));
         }
         {
@@ -290,15 +316,18 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof VermarktungWGZimmerTyp) {
@@ -359,7 +388,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
                 Boolean heizkostenInWarmmieteEnthaltenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.heizkostenInWarmmieteEnthalten!= null));
                 if (heizkostenInWarmmieteEnthaltenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHeizkostenInWarmmieteEnthalten;
-                    sourceHeizkostenInWarmmieteEnthalten = this.isHeizkostenInWarmmieteEnthalten();
+                    sourceHeizkostenInWarmmieteEnthalten = this.getHeizkostenInWarmmieteEnthalten();
                     Boolean copyHeizkostenInWarmmieteEnthalten = ((Boolean) strategy.copy(LocatorUtils.property(locator, "heizkostenInWarmmieteEnthalten", sourceHeizkostenInWarmmieteEnthalten), sourceHeizkostenInWarmmieteEnthalten, (this.heizkostenInWarmmieteEnthalten!= null)));
                     copy.setHeizkostenInWarmmieteEnthalten(copyHeizkostenInWarmmieteEnthalten);
                 } else {
@@ -398,10 +427,12 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new VermarktungWGZimmerTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -448,9 +479,9 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
         }
         {
             Boolean lhsHeizkostenInWarmmieteEnthalten;
-            lhsHeizkostenInWarmmieteEnthalten = this.isHeizkostenInWarmmieteEnthalten();
+            lhsHeizkostenInWarmmieteEnthalten = this.getHeizkostenInWarmmieteEnthalten();
             Boolean rhsHeizkostenInWarmmieteEnthalten;
-            rhsHeizkostenInWarmmieteEnthalten = that.isHeizkostenInWarmmieteEnthalten();
+            rhsHeizkostenInWarmmieteEnthalten = that.getHeizkostenInWarmmieteEnthalten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "heizkostenInWarmmieteEnthalten", lhsHeizkostenInWarmmieteEnthalten), LocatorUtils.property(thatLocator, "heizkostenInWarmmieteEnthalten", rhsHeizkostenInWarmmieteEnthalten), lhsHeizkostenInWarmmieteEnthalten, rhsHeizkostenInWarmmieteEnthalten, (this.heizkostenInWarmmieteEnthalten!= null), (that.heizkostenInWarmmieteEnthalten!= null))) {
                 return false;
             }
@@ -476,6 +507,7 @@ public class VermarktungWGZimmerTyp implements Serializable, Cloneable, CopyTo2,
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

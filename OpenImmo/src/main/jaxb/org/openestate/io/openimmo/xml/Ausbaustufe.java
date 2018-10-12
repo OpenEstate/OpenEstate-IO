@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,18 +30,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "ausbaustufe")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "BAUSATZHAUS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean bausatzhaus;
     @XmlAttribute(name = "AUSBAUHAUS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean ausbauhaus;
     @XmlAttribute(name = "SCHLUESSELFERTIGMITKELLER")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean schluesselfertigmitkeller;
     @XmlAttribute(name = "SCHLUESSELFERTIGOHNEBODENPLATTE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean schluesselfertigohnebodenplatte;
     @XmlAttribute(name = "SCHLUESSELFERTIGMITBODENPLATTE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean schluesselfertigmitbodenplatte;
 
     /**
@@ -51,7 +58,8 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isBAUSATZHAUS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBAUSATZHAUS() {
         return bausatzhaus;
     }
 
@@ -63,6 +71,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBAUSATZHAUS(Boolean value) {
         this.bausatzhaus = value;
     }
@@ -75,7 +84,8 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isAUSBAUHAUS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAUSBAUHAUS() {
         return ausbauhaus;
     }
 
@@ -87,6 +97,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAUSBAUHAUS(Boolean value) {
         this.ausbauhaus = value;
     }
@@ -99,7 +110,8 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isSCHLUESSELFERTIGMITKELLER() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSCHLUESSELFERTIGMITKELLER() {
         return schluesselfertigmitkeller;
     }
 
@@ -111,6 +123,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSCHLUESSELFERTIGMITKELLER(Boolean value) {
         this.schluesselfertigmitkeller = value;
     }
@@ -123,7 +136,8 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isSCHLUESSELFERTIGOHNEBODENPLATTE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSCHLUESSELFERTIGOHNEBODENPLATTE() {
         return schluesselfertigohnebodenplatte;
     }
 
@@ -135,6 +149,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSCHLUESSELFERTIGOHNEBODENPLATTE(Boolean value) {
         this.schluesselfertigohnebodenplatte = value;
     }
@@ -147,7 +162,8 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isSCHLUESSELFERTIGMITBODENPLATTE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSCHLUESSELFERTIGMITBODENPLATTE() {
         return schluesselfertigmitbodenplatte;
     }
 
@@ -159,10 +175,12 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSCHLUESSELFERTIGMITBODENPLATTE(Boolean value) {
         this.schluesselfertigmitbodenplatte = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -170,6 +188,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -177,44 +196,48 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theBAUSATZHAUS;
-            theBAUSATZHAUS = this.isBAUSATZHAUS();
+            theBAUSATZHAUS = this.getBAUSATZHAUS();
             strategy.appendField(locator, this, "bausatzhaus", buffer, theBAUSATZHAUS, (this.bausatzhaus!= null));
         }
         {
             Boolean theAUSBAUHAUS;
-            theAUSBAUHAUS = this.isAUSBAUHAUS();
+            theAUSBAUHAUS = this.getAUSBAUHAUS();
             strategy.appendField(locator, this, "ausbauhaus", buffer, theAUSBAUHAUS, (this.ausbauhaus!= null));
         }
         {
             Boolean theSCHLUESSELFERTIGMITKELLER;
-            theSCHLUESSELFERTIGMITKELLER = this.isSCHLUESSELFERTIGMITKELLER();
+            theSCHLUESSELFERTIGMITKELLER = this.getSCHLUESSELFERTIGMITKELLER();
             strategy.appendField(locator, this, "schluesselfertigmitkeller", buffer, theSCHLUESSELFERTIGMITKELLER, (this.schluesselfertigmitkeller!= null));
         }
         {
             Boolean theSCHLUESSELFERTIGOHNEBODENPLATTE;
-            theSCHLUESSELFERTIGOHNEBODENPLATTE = this.isSCHLUESSELFERTIGOHNEBODENPLATTE();
+            theSCHLUESSELFERTIGOHNEBODENPLATTE = this.getSCHLUESSELFERTIGOHNEBODENPLATTE();
             strategy.appendField(locator, this, "schluesselfertigohnebodenplatte", buffer, theSCHLUESSELFERTIGOHNEBODENPLATTE, (this.schluesselfertigohnebodenplatte!= null));
         }
         {
             Boolean theSCHLUESSELFERTIGMITBODENPLATTE;
-            theSCHLUESSELFERTIGMITBODENPLATTE = this.isSCHLUESSELFERTIGMITBODENPLATTE();
+            theSCHLUESSELFERTIGMITBODENPLATTE = this.getSCHLUESSELFERTIGMITBODENPLATTE();
             strategy.appendField(locator, this, "schluesselfertigmitbodenplatte", buffer, theSCHLUESSELFERTIGMITBODENPLATTE, (this.schluesselfertigmitbodenplatte!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Ausbaustufe) {
@@ -223,7 +246,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean bausatzhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.bausatzhaus!= null));
                 if (bausatzhausShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBAUSATZHAUS;
-                    sourceBAUSATZHAUS = this.isBAUSATZHAUS();
+                    sourceBAUSATZHAUS = this.getBAUSATZHAUS();
                     Boolean copyBAUSATZHAUS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "bausatzhaus", sourceBAUSATZHAUS), sourceBAUSATZHAUS, (this.bausatzhaus!= null)));
                     copy.setBAUSATZHAUS(copyBAUSATZHAUS);
                 } else {
@@ -236,7 +259,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean ausbauhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ausbauhaus!= null));
                 if (ausbauhausShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceAUSBAUHAUS;
-                    sourceAUSBAUHAUS = this.isAUSBAUHAUS();
+                    sourceAUSBAUHAUS = this.getAUSBAUHAUS();
                     Boolean copyAUSBAUHAUS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ausbauhaus", sourceAUSBAUHAUS), sourceAUSBAUHAUS, (this.ausbauhaus!= null)));
                     copy.setAUSBAUHAUS(copyAUSBAUHAUS);
                 } else {
@@ -249,7 +272,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean schluesselfertigmitkellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.schluesselfertigmitkeller!= null));
                 if (schluesselfertigmitkellerShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSCHLUESSELFERTIGMITKELLER;
-                    sourceSCHLUESSELFERTIGMITKELLER = this.isSCHLUESSELFERTIGMITKELLER();
+                    sourceSCHLUESSELFERTIGMITKELLER = this.getSCHLUESSELFERTIGMITKELLER();
                     Boolean copySCHLUESSELFERTIGMITKELLER = ((Boolean) strategy.copy(LocatorUtils.property(locator, "schluesselfertigmitkeller", sourceSCHLUESSELFERTIGMITKELLER), sourceSCHLUESSELFERTIGMITKELLER, (this.schluesselfertigmitkeller!= null)));
                     copy.setSCHLUESSELFERTIGMITKELLER(copySCHLUESSELFERTIGMITKELLER);
                 } else {
@@ -262,7 +285,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean schluesselfertigohnebodenplatteShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.schluesselfertigohnebodenplatte!= null));
                 if (schluesselfertigohnebodenplatteShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSCHLUESSELFERTIGOHNEBODENPLATTE;
-                    sourceSCHLUESSELFERTIGOHNEBODENPLATTE = this.isSCHLUESSELFERTIGOHNEBODENPLATTE();
+                    sourceSCHLUESSELFERTIGOHNEBODENPLATTE = this.getSCHLUESSELFERTIGOHNEBODENPLATTE();
                     Boolean copySCHLUESSELFERTIGOHNEBODENPLATTE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "schluesselfertigohnebodenplatte", sourceSCHLUESSELFERTIGOHNEBODENPLATTE), sourceSCHLUESSELFERTIGOHNEBODENPLATTE, (this.schluesselfertigohnebodenplatte!= null)));
                     copy.setSCHLUESSELFERTIGOHNEBODENPLATTE(copySCHLUESSELFERTIGOHNEBODENPLATTE);
                 } else {
@@ -275,7 +298,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean schluesselfertigmitbodenplatteShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.schluesselfertigmitbodenplatte!= null));
                 if (schluesselfertigmitbodenplatteShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSCHLUESSELFERTIGMITBODENPLATTE;
-                    sourceSCHLUESSELFERTIGMITBODENPLATTE = this.isSCHLUESSELFERTIGMITBODENPLATTE();
+                    sourceSCHLUESSELFERTIGMITBODENPLATTE = this.getSCHLUESSELFERTIGMITBODENPLATTE();
                     Boolean copySCHLUESSELFERTIGMITBODENPLATTE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "schluesselfertigmitbodenplatte", sourceSCHLUESSELFERTIGMITBODENPLATTE), sourceSCHLUESSELFERTIGMITBODENPLATTE, (this.schluesselfertigmitbodenplatte!= null)));
                     copy.setSCHLUESSELFERTIGMITBODENPLATTE(copySCHLUESSELFERTIGMITBODENPLATTE);
                 } else {
@@ -288,10 +311,12 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Ausbaustufe();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -302,45 +327,45 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
         final Ausbaustufe that = ((Ausbaustufe) object);
         {
             Boolean lhsBAUSATZHAUS;
-            lhsBAUSATZHAUS = this.isBAUSATZHAUS();
+            lhsBAUSATZHAUS = this.getBAUSATZHAUS();
             Boolean rhsBAUSATZHAUS;
-            rhsBAUSATZHAUS = that.isBAUSATZHAUS();
+            rhsBAUSATZHAUS = that.getBAUSATZHAUS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "bausatzhaus", lhsBAUSATZHAUS), LocatorUtils.property(thatLocator, "bausatzhaus", rhsBAUSATZHAUS), lhsBAUSATZHAUS, rhsBAUSATZHAUS, (this.bausatzhaus!= null), (that.bausatzhaus!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsAUSBAUHAUS;
-            lhsAUSBAUHAUS = this.isAUSBAUHAUS();
+            lhsAUSBAUHAUS = this.getAUSBAUHAUS();
             Boolean rhsAUSBAUHAUS;
-            rhsAUSBAUHAUS = that.isAUSBAUHAUS();
+            rhsAUSBAUHAUS = that.getAUSBAUHAUS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ausbauhaus", lhsAUSBAUHAUS), LocatorUtils.property(thatLocator, "ausbauhaus", rhsAUSBAUHAUS), lhsAUSBAUHAUS, rhsAUSBAUHAUS, (this.ausbauhaus!= null), (that.ausbauhaus!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSCHLUESSELFERTIGMITKELLER;
-            lhsSCHLUESSELFERTIGMITKELLER = this.isSCHLUESSELFERTIGMITKELLER();
+            lhsSCHLUESSELFERTIGMITKELLER = this.getSCHLUESSELFERTIGMITKELLER();
             Boolean rhsSCHLUESSELFERTIGMITKELLER;
-            rhsSCHLUESSELFERTIGMITKELLER = that.isSCHLUESSELFERTIGMITKELLER();
+            rhsSCHLUESSELFERTIGMITKELLER = that.getSCHLUESSELFERTIGMITKELLER();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "schluesselfertigmitkeller", lhsSCHLUESSELFERTIGMITKELLER), LocatorUtils.property(thatLocator, "schluesselfertigmitkeller", rhsSCHLUESSELFERTIGMITKELLER), lhsSCHLUESSELFERTIGMITKELLER, rhsSCHLUESSELFERTIGMITKELLER, (this.schluesselfertigmitkeller!= null), (that.schluesselfertigmitkeller!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSCHLUESSELFERTIGOHNEBODENPLATTE;
-            lhsSCHLUESSELFERTIGOHNEBODENPLATTE = this.isSCHLUESSELFERTIGOHNEBODENPLATTE();
+            lhsSCHLUESSELFERTIGOHNEBODENPLATTE = this.getSCHLUESSELFERTIGOHNEBODENPLATTE();
             Boolean rhsSCHLUESSELFERTIGOHNEBODENPLATTE;
-            rhsSCHLUESSELFERTIGOHNEBODENPLATTE = that.isSCHLUESSELFERTIGOHNEBODENPLATTE();
+            rhsSCHLUESSELFERTIGOHNEBODENPLATTE = that.getSCHLUESSELFERTIGOHNEBODENPLATTE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "schluesselfertigohnebodenplatte", lhsSCHLUESSELFERTIGOHNEBODENPLATTE), LocatorUtils.property(thatLocator, "schluesselfertigohnebodenplatte", rhsSCHLUESSELFERTIGOHNEBODENPLATTE), lhsSCHLUESSELFERTIGOHNEBODENPLATTE, rhsSCHLUESSELFERTIGOHNEBODENPLATTE, (this.schluesselfertigohnebodenplatte!= null), (that.schluesselfertigohnebodenplatte!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSCHLUESSELFERTIGMITBODENPLATTE;
-            lhsSCHLUESSELFERTIGMITBODENPLATTE = this.isSCHLUESSELFERTIGMITBODENPLATTE();
+            lhsSCHLUESSELFERTIGMITBODENPLATTE = this.getSCHLUESSELFERTIGMITBODENPLATTE();
             Boolean rhsSCHLUESSELFERTIGMITBODENPLATTE;
-            rhsSCHLUESSELFERTIGMITBODENPLATTE = that.isSCHLUESSELFERTIGMITBODENPLATTE();
+            rhsSCHLUESSELFERTIGMITBODENPLATTE = that.getSCHLUESSELFERTIGMITBODENPLATTE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "schluesselfertigmitbodenplatte", lhsSCHLUESSELFERTIGMITBODENPLATTE), LocatorUtils.property(thatLocator, "schluesselfertigmitbodenplatte", rhsSCHLUESSELFERTIGMITBODENPLATTE), lhsSCHLUESSELFERTIGMITBODENPLATTE, rhsSCHLUESSELFERTIGMITBODENPLATTE, (this.schluesselfertigmitbodenplatte!= null), (that.schluesselfertigmitbodenplatte!= null))) {
                 return false;
             }
@@ -348,6 +373,7 @@ public class Ausbaustufe implements Serializable, Cloneable, CopyTo2, Equals2, T
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

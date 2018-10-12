@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -59,10 +60,12 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "MetaDataType", propOrder = {
     "field"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
 public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "FIELD")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     protected List<MetaDataType.FIELD> field;
 
     /**
@@ -87,6 +90,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public List<MetaDataType.FIELD> getFIELD() {
         if (field == null) {
             field = new ArrayList<MetaDataType.FIELD>();
@@ -94,6 +98,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return this.field;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -101,6 +106,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -108,6 +114,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<MetaDataType.FIELD> theFIELD;
@@ -117,15 +124,18 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof MetaDataType) {
@@ -152,10 +162,12 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new MetaDataType();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -176,6 +188,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -204,18 +217,23 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public static class FIELD implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "NAME", required = true)
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         protected String name;
         @XmlAttribute(name = "TYPE", required = true)
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         protected FieldType type;
         @XmlAttribute(name = "EMPTYOK", required = true)
         @XmlJavaTypeAdapter(Adapter1 .class)
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         protected Boolean emptyok;
         @XmlAttribute(name = "MAXREPEAT", required = true)
         @XmlSchemaType(name = "nonNegativeInteger")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         protected BigInteger maxrepeat;
 
         /**
@@ -226,6 +244,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public String getNAME() {
             return name;
         }
@@ -238,6 +257,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public void setNAME(String value) {
             this.name = value;
         }
@@ -250,6 +270,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link FieldType }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public FieldType getTYPE() {
             return type;
         }
@@ -262,6 +283,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link FieldType }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public void setTYPE(FieldType value) {
             this.type = value;
         }
@@ -274,7 +296,8 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link String }
          *     
          */
-        public Boolean isEMPTYOK() {
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
+        public Boolean getEMPTYOK() {
             return emptyok;
         }
 
@@ -286,6 +309,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public void setEMPTYOK(Boolean value) {
             this.emptyok = value;
         }
@@ -298,6 +322,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link BigInteger }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public BigInteger getMAXREPEAT() {
             return maxrepeat;
         }
@@ -310,10 +335,12 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
          *     {@link BigInteger }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public void setMAXREPEAT(BigInteger value) {
             this.maxrepeat = value;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
@@ -321,6 +348,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
             return buffer.toString();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -328,6 +356,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theNAME;
@@ -341,7 +370,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
             }
             {
                 Boolean theEMPTYOK;
-                theEMPTYOK = this.isEMPTYOK();
+                theEMPTYOK = this.getEMPTYOK();
                 strategy.appendField(locator, this, "emptyok", buffer, theEMPTYOK, (this.emptyok!= null));
             }
             {
@@ -352,15 +381,18 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof MetaDataType.FIELD) {
@@ -395,7 +427,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
                     Boolean emptyokShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.emptyok!= null));
                     if (emptyokShouldBeCopiedAndSet == Boolean.TRUE) {
                         Boolean sourceEMPTYOK;
-                        sourceEMPTYOK = this.isEMPTYOK();
+                        sourceEMPTYOK = this.getEMPTYOK();
                         Boolean copyEMPTYOK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "emptyok", sourceEMPTYOK), sourceEMPTYOK, (this.emptyok!= null)));
                         copy.setEMPTYOK(copyEMPTYOK);
                     } else {
@@ -421,10 +453,12 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
             return draftCopy;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public Object createNewInstance() {
             return new MetaDataType.FIELD();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -453,9 +487,9 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
             }
             {
                 Boolean lhsEMPTYOK;
-                lhsEMPTYOK = this.isEMPTYOK();
+                lhsEMPTYOK = this.getEMPTYOK();
                 Boolean rhsEMPTYOK;
-                rhsEMPTYOK = that.isEMPTYOK();
+                rhsEMPTYOK = that.getEMPTYOK();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "emptyok", lhsEMPTYOK), LocatorUtils.property(thatLocator, "emptyok", rhsEMPTYOK), lhsEMPTYOK, rhsEMPTYOK, (this.emptyok!= null), (that.emptyok!= null))) {
                     return false;
                 }
@@ -472,6 +506,7 @@ public class MetaDataType implements Serializable, Cloneable, CopyTo2, Equals2, 
             return true;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);

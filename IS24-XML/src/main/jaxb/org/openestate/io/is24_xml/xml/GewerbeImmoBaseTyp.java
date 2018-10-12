@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -72,58 +73,77 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     SonstigeGewerbeTyp.class,
     AnlageObjektTyp.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public abstract class GewerbeImmoBaseTyp
     extends ImmobilieBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "BefeuerungsArt")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BefeuerungsArtTyp befeuerungsArt;
     @XmlElement(name = "Energieausweis")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected EnergieausweisTyp energieausweis;
     @XmlAttribute(name = "Gesamtflaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal gesamtflaeche;
     @XmlAttribute(name = "Nebenflaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal nebenflaeche;
     @XmlAttribute(name = "TeilbarAb")
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal teilbarAb;
     @XmlAttribute(name = "Etagen")
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String etagen;
     @XmlAttribute(name = "FreiAb")
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String freiAb;
     @XmlAttribute(name = "Baujahr")
     @XmlJavaTypeAdapter(Adapter22 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long baujahr;
     @XmlAttribute(name = "Objektzustand")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ObjektZustandTyp objektzustand;
     @XmlAttribute(name = "Personenaufzug")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean personenaufzug;
     @XmlAttribute(name = "AnzahlParkflaechen")
     @XmlJavaTypeAdapter(Adapter23 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long anzahlParkflaechen;
     @XmlAttribute(name = "FusswegOeNV")
     @XmlJavaTypeAdapter(Adapter19 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long fusswegOeNV;
     @XmlAttribute(name = "FahrzeitBHf")
     @XmlJavaTypeAdapter(Adapter19 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long fahrzeitBHf;
     @XmlAttribute(name = "FahrzeitBAB")
     @XmlJavaTypeAdapter(Adapter21 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long fahrzeitBAB;
     @XmlAttribute(name = "FahrzeitFlughafen")
     @XmlJavaTypeAdapter(Adapter21 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long fahrzeitFlughafen;
     @XmlAttribute(name = "Heizungsart")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected HeizungsartTyp heizungsart;
     @XmlAttribute(name = "JahrLetzteModernisierung")
     @XmlJavaTypeAdapter(Adapter22 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long jahrLetzteModernisierung;
     @XmlAttribute(name = "Ausstattungsqualitaet")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected AusstattungsqualitaetsTyp ausstattungsqualitaet;
 
     /**
@@ -134,6 +154,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link BefeuerungsArtTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BefeuerungsArtTyp getBefeuerungsArt() {
         return befeuerungsArt;
     }
@@ -146,6 +167,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link BefeuerungsArtTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBefeuerungsArt(BefeuerungsArtTyp value) {
         this.befeuerungsArt = value;
     }
@@ -158,6 +180,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link EnergieausweisTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public EnergieausweisTyp getEnergieausweis() {
         return energieausweis;
     }
@@ -170,6 +193,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link EnergieausweisTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEnergieausweis(EnergieausweisTyp value) {
         this.energieausweis = value;
     }
@@ -182,6 +206,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getGesamtflaeche() {
         return gesamtflaeche;
     }
@@ -194,6 +219,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGesamtflaeche(BigDecimal value) {
         this.gesamtflaeche = value;
     }
@@ -206,6 +232,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getNebenflaeche() {
         return nebenflaeche;
     }
@@ -218,6 +245,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setNebenflaeche(BigDecimal value) {
         this.nebenflaeche = value;
     }
@@ -230,6 +258,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getTeilbarAb() {
         return teilbarAb;
     }
@@ -242,6 +271,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setTeilbarAb(BigDecimal value) {
         this.teilbarAb = value;
     }
@@ -254,6 +284,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getEtagen() {
         return etagen;
     }
@@ -266,6 +297,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEtagen(String value) {
         this.etagen = value;
     }
@@ -278,6 +310,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getFreiAb() {
         return freiAb;
     }
@@ -290,6 +323,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFreiAb(String value) {
         this.freiAb = value;
     }
@@ -302,6 +336,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getBaujahr() {
         return baujahr;
     }
@@ -314,6 +349,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBaujahr(Long value) {
         this.baujahr = value;
     }
@@ -326,6 +362,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link ObjektZustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ObjektZustandTyp getObjektzustand() {
         if (objektzustand == null) {
             return ObjektZustandTyp.KEINE_ANGABE;
@@ -342,6 +379,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link ObjektZustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektzustand(ObjektZustandTyp value) {
         this.objektzustand = value;
     }
@@ -354,7 +392,8 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isPersonenaufzug() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPersonenaufzug() {
         return personenaufzug;
     }
 
@@ -366,6 +405,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setPersonenaufzug(Boolean value) {
         this.personenaufzug = value;
     }
@@ -378,6 +418,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getAnzahlParkflaechen() {
         return anzahlParkflaechen;
     }
@@ -390,6 +431,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAnzahlParkflaechen(Long value) {
         this.anzahlParkflaechen = value;
     }
@@ -402,6 +444,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getFusswegOeNV() {
         return fusswegOeNV;
     }
@@ -414,6 +457,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFusswegOeNV(Long value) {
         this.fusswegOeNV = value;
     }
@@ -426,6 +470,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getFahrzeitBHf() {
         return fahrzeitBHf;
     }
@@ -438,6 +483,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFahrzeitBHf(Long value) {
         this.fahrzeitBHf = value;
     }
@@ -450,6 +496,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getFahrzeitBAB() {
         return fahrzeitBAB;
     }
@@ -462,6 +509,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFahrzeitBAB(Long value) {
         this.fahrzeitBAB = value;
     }
@@ -474,6 +522,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getFahrzeitFlughafen() {
         return fahrzeitFlughafen;
     }
@@ -486,6 +535,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFahrzeitFlughafen(Long value) {
         this.fahrzeitFlughafen = value;
     }
@@ -498,6 +548,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link HeizungsartTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public HeizungsartTyp getHeizungsart() {
         return heizungsart;
     }
@@ -510,6 +561,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link HeizungsartTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHeizungsart(HeizungsartTyp value) {
         this.heizungsart = value;
     }
@@ -522,6 +574,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getJahrLetzteModernisierung() {
         return jahrLetzteModernisierung;
     }
@@ -534,6 +587,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setJahrLetzteModernisierung(Long value) {
         this.jahrLetzteModernisierung = value;
     }
@@ -546,6 +600,7 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link AusstattungsqualitaetsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public AusstattungsqualitaetsTyp getAusstattungsqualitaet() {
         if (ausstattungsqualitaet == null) {
             return AusstattungsqualitaetsTyp.KEINE_ANGABE;
@@ -562,10 +617,12 @@ public abstract class GewerbeImmoBaseTyp
      *     {@link AusstattungsqualitaetsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAusstattungsqualitaet(AusstattungsqualitaetsTyp value) {
         this.ausstattungsqualitaet = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -573,6 +630,7 @@ public abstract class GewerbeImmoBaseTyp
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -580,6 +638,7 @@ public abstract class GewerbeImmoBaseTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -629,7 +688,7 @@ public abstract class GewerbeImmoBaseTyp
         }
         {
             Boolean thePersonenaufzug;
-            thePersonenaufzug = this.isPersonenaufzug();
+            thePersonenaufzug = this.getPersonenaufzug();
             strategy.appendField(locator, this, "personenaufzug", buffer, thePersonenaufzug, (this.personenaufzug!= null));
         }
         {
@@ -675,15 +734,18 @@ public abstract class GewerbeImmoBaseTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         if (null == target) {
             throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
@@ -812,7 +874,7 @@ public abstract class GewerbeImmoBaseTyp
                 Boolean personenaufzugShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.personenaufzug!= null));
                 if (personenaufzugShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePersonenaufzug;
-                    sourcePersonenaufzug = this.isPersonenaufzug();
+                    sourcePersonenaufzug = this.getPersonenaufzug();
                     Boolean copyPersonenaufzug = ((Boolean) strategy.copy(LocatorUtils.property(locator, "personenaufzug", sourcePersonenaufzug), sourcePersonenaufzug, (this.personenaufzug!= null)));
                     copy.setPersonenaufzug(copyPersonenaufzug);
                 } else {
@@ -929,6 +991,7 @@ public abstract class GewerbeImmoBaseTyp
         return target;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -1023,9 +1086,9 @@ public abstract class GewerbeImmoBaseTyp
         }
         {
             Boolean lhsPersonenaufzug;
-            lhsPersonenaufzug = this.isPersonenaufzug();
+            lhsPersonenaufzug = this.getPersonenaufzug();
             Boolean rhsPersonenaufzug;
-            rhsPersonenaufzug = that.isPersonenaufzug();
+            rhsPersonenaufzug = that.getPersonenaufzug();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "personenaufzug", lhsPersonenaufzug), LocatorUtils.property(thatLocator, "personenaufzug", rhsPersonenaufzug), lhsPersonenaufzug, rhsPersonenaufzug, (this.personenaufzug!= null), (that.personenaufzug!= null))) {
                 return false;
             }
@@ -1105,6 +1168,7 @@ public abstract class GewerbeImmoBaseTyp
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

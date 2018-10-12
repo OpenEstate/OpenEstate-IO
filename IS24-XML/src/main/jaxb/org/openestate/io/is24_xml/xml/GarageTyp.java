@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -52,32 +53,41 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     org.openestate.io.is24_xml.xml.GarageMiete.Type.class,
     org.openestate.io.is24_xml.xml.GarageKauf.Type.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class GarageTyp
     extends ImmobilieBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "ObjektKategorie2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected GaragenKategorieTyp objektKategorie2;
     @XmlAttribute(name = "Objektzustand")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ObjektZustandTyp objektzustand;
     @XmlAttribute(name = "Hoehe")
     @XmlJavaTypeAdapter(Adapter29 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal hoehe;
     @XmlAttribute(name = "Laenge")
     @XmlJavaTypeAdapter(Adapter30 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal laenge;
     @XmlAttribute(name = "Breite")
     @XmlJavaTypeAdapter(Adapter30 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal breite;
     @XmlAttribute(name = "Flaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal flaeche;
     @XmlAttribute(name = "Baujahr")
     @XmlJavaTypeAdapter(Adapter22 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long baujahr;
     @XmlAttribute(name = "JahrLetzteModernisierung")
     @XmlJavaTypeAdapter(Adapter22 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long jahrLetzteModernisierung;
 
     /**
@@ -88,6 +98,7 @@ public class GarageTyp
      *     {@link GaragenKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public GaragenKategorieTyp getObjektKategorie2() {
         if (objektKategorie2 == null) {
             return GaragenKategorieTyp.KEINE_ANGABE;
@@ -104,6 +115,7 @@ public class GarageTyp
      *     {@link GaragenKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektKategorie2(GaragenKategorieTyp value) {
         this.objektKategorie2 = value;
     }
@@ -116,6 +128,7 @@ public class GarageTyp
      *     {@link ObjektZustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ObjektZustandTyp getObjektzustand() {
         if (objektzustand == null) {
             return ObjektZustandTyp.KEINE_ANGABE;
@@ -132,6 +145,7 @@ public class GarageTyp
      *     {@link ObjektZustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektzustand(ObjektZustandTyp value) {
         this.objektzustand = value;
     }
@@ -144,6 +158,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getHoehe() {
         return hoehe;
     }
@@ -156,6 +171,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHoehe(BigDecimal value) {
         this.hoehe = value;
     }
@@ -168,6 +184,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getLaenge() {
         return laenge;
     }
@@ -180,6 +197,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setLaenge(BigDecimal value) {
         this.laenge = value;
     }
@@ -192,6 +210,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getBreite() {
         return breite;
     }
@@ -204,6 +223,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBreite(BigDecimal value) {
         this.breite = value;
     }
@@ -216,6 +236,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getFlaeche() {
         return flaeche;
     }
@@ -228,6 +249,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFlaeche(BigDecimal value) {
         this.flaeche = value;
     }
@@ -240,6 +262,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getBaujahr() {
         return baujahr;
     }
@@ -252,6 +275,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBaujahr(Long value) {
         this.baujahr = value;
     }
@@ -264,6 +288,7 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getJahrLetzteModernisierung() {
         return jahrLetzteModernisierung;
     }
@@ -276,10 +301,12 @@ public class GarageTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setJahrLetzteModernisierung(Long value) {
         this.jahrLetzteModernisierung = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -287,6 +314,7 @@ public class GarageTyp
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -294,6 +322,7 @@ public class GarageTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -339,15 +368,18 @@ public class GarageTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
@@ -461,10 +493,12 @@ public class GarageTyp
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new GarageTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -551,6 +585,7 @@ public class GarageTyp
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

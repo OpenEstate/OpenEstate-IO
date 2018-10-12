@@ -21,5 +21,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 set -e
 export LANG=en
 cd "$DIR"
-"$MVN" org.codehaus.mojo:jaxb2-maven-plugin:xjc
+"$MVN" org.jvnet.jaxb2.maven2:maven-jaxb22-plugin:generate
 ./mvn-jaxb-cleanup.py

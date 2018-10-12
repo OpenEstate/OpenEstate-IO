@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -34,14 +35,18 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "daten"
 })
 @XmlRootElement(name = "foto")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String format;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Daten daten;
     @XmlAttribute(name = "location", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Foto.Location location;
 
     /**
@@ -52,6 +57,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getFormat() {
         return format;
     }
@@ -64,6 +70,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFormat(String value) {
         this.format = value;
     }
@@ -76,6 +83,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Daten }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Daten getDaten() {
         return daten;
     }
@@ -88,6 +96,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Daten }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDaten(Daten value) {
         this.daten = value;
     }
@@ -100,6 +109,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Foto.Location }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Foto.Location getLocation() {
         return location;
     }
@@ -112,10 +122,12 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Foto.Location }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLocation(Foto.Location value) {
         this.location = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -123,6 +135,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -130,6 +143,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theFormat;
@@ -149,15 +163,18 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Foto) {
@@ -205,10 +222,12 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Foto();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -247,6 +266,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -273,6 +293,7 @@ public class Foto implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      */
     @XmlType(name = "")
     @XmlEnum
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public enum Location {
 
         EXTERN,

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,47 +60,72 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedExtend"
 })
 @XmlRootElement(name = "geo")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String plz;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String ort;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Geokoordinaten geokoordinaten;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String strasse;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String hausnummer;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String bundesland;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Land land;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String gemeindecode;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String flur;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String flurstueck;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String gemarkung;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger etage;
     @XmlElement(name = "anzahl_etagen", type = String.class)
     @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger anzahlEtagen;
     @XmlElement(name = "lage_im_bau")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected LageImBau lageImBau;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String wohnungsnr;
     @XmlElement(name = "lage_gebiet")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected LageGebiet lageGebiet;
     @XmlElement(name = "regionaler_zusatz")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String regionalerZusatz;
     @XmlElement(name = "karten_makro")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kartenMakro;
     @XmlElement(name = "karten_mikro")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kartenMikro;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean virtuelletour;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean luftbildern;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
     @XmlElement(name = "user_defined_extend")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedExtend> userDefinedExtend;
 
     /**
@@ -110,6 +136,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getPlz() {
         return plz;
     }
@@ -122,6 +149,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPlz(String value) {
         this.plz = value;
     }
@@ -134,6 +162,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getOrt() {
         return ort;
     }
@@ -146,6 +175,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setOrt(String value) {
         this.ort = value;
     }
@@ -158,6 +188,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Geokoordinaten }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Geokoordinaten getGeokoordinaten() {
         return geokoordinaten;
     }
@@ -170,6 +201,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Geokoordinaten }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGeokoordinaten(Geokoordinaten value) {
         this.geokoordinaten = value;
     }
@@ -182,6 +214,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getStrasse() {
         return strasse;
     }
@@ -194,6 +227,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setStrasse(String value) {
         this.strasse = value;
     }
@@ -206,6 +240,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getHausnummer() {
         return hausnummer;
     }
@@ -218,6 +253,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHausnummer(String value) {
         this.hausnummer = value;
     }
@@ -230,6 +266,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getBundesland() {
         return bundesland;
     }
@@ -242,6 +279,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBundesland(String value) {
         this.bundesland = value;
     }
@@ -254,6 +292,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Land }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Land getLand() {
         return land;
     }
@@ -266,6 +305,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Land }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLand(Land value) {
         this.land = value;
     }
@@ -278,6 +318,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getGemeindecode() {
         return gemeindecode;
     }
@@ -290,6 +331,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGemeindecode(String value) {
         this.gemeindecode = value;
     }
@@ -302,6 +344,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getFlur() {
         return flur;
     }
@@ -314,6 +357,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFlur(String value) {
         this.flur = value;
     }
@@ -326,6 +370,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getFlurstueck() {
         return flurstueck;
     }
@@ -338,6 +383,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFlurstueck(String value) {
         this.flurstueck = value;
     }
@@ -350,6 +396,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getGemarkung() {
         return gemarkung;
     }
@@ -362,6 +409,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGemarkung(String value) {
         this.gemarkung = value;
     }
@@ -374,6 +422,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getEtage() {
         return etage;
     }
@@ -386,6 +435,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEtage(BigInteger value) {
         this.etage = value;
     }
@@ -398,6 +448,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getAnzahlEtagen() {
         return anzahlEtagen;
     }
@@ -410,6 +461,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAnzahlEtagen(BigInteger value) {
         this.anzahlEtagen = value;
     }
@@ -422,6 +474,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link LageImBau }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public LageImBau getLageImBau() {
         return lageImBau;
     }
@@ -434,6 +487,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link LageImBau }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLageImBau(LageImBau value) {
         this.lageImBau = value;
     }
@@ -446,6 +500,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getWohnungsnr() {
         return wohnungsnr;
     }
@@ -458,6 +513,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWohnungsnr(String value) {
         this.wohnungsnr = value;
     }
@@ -470,6 +526,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link LageGebiet }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public LageGebiet getLageGebiet() {
         return lageGebiet;
     }
@@ -482,6 +539,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link LageGebiet }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLageGebiet(LageGebiet value) {
         this.lageGebiet = value;
     }
@@ -494,6 +552,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getRegionalerZusatz() {
         return regionalerZusatz;
     }
@@ -506,6 +565,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setRegionalerZusatz(String value) {
         this.regionalerZusatz = value;
     }
@@ -518,7 +578,8 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isKartenMakro() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKartenMakro() {
         return kartenMakro;
     }
 
@@ -530,6 +591,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKartenMakro(Boolean value) {
         this.kartenMakro = value;
     }
@@ -542,7 +604,8 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isKartenMikro() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKartenMikro() {
         return kartenMikro;
     }
 
@@ -554,6 +617,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKartenMikro(Boolean value) {
         this.kartenMikro = value;
     }
@@ -566,7 +630,8 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isVirtuelletour() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getVirtuelletour() {
         return virtuelletour;
     }
 
@@ -578,6 +643,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setVirtuelletour(Boolean value) {
         this.virtuelletour = value;
     }
@@ -590,7 +656,8 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
-    public Boolean isLuftbildern() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getLuftbildern() {
         return luftbildern;
     }
 
@@ -602,6 +669,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLuftbildern(Boolean value) {
         this.luftbildern = value;
     }
@@ -628,6 +696,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -657,6 +726,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -686,6 +756,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedExtend> getUserDefinedExtend() {
         if (userDefinedExtend == null) {
             userDefinedExtend = new ArrayList<UserDefinedExtend>();
@@ -693,6 +764,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return this.userDefinedExtend;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -700,6 +772,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -707,6 +780,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String thePlz;
@@ -795,22 +869,22 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         }
         {
             Boolean theKartenMakro;
-            theKartenMakro = this.isKartenMakro();
+            theKartenMakro = this.getKartenMakro();
             strategy.appendField(locator, this, "kartenMakro", buffer, theKartenMakro, (this.kartenMakro!= null));
         }
         {
             Boolean theKartenMikro;
-            theKartenMikro = this.isKartenMikro();
+            theKartenMikro = this.getKartenMikro();
             strategy.appendField(locator, this, "kartenMikro", buffer, theKartenMikro, (this.kartenMikro!= null));
         }
         {
             Boolean theVirtuelletour;
-            theVirtuelletour = this.isVirtuelletour();
+            theVirtuelletour = this.getVirtuelletour();
             strategy.appendField(locator, this, "virtuelletour", buffer, theVirtuelletour, (this.virtuelletour!= null));
         }
         {
             Boolean theLuftbildern;
-            theLuftbildern = this.isLuftbildern();
+            theLuftbildern = this.getLuftbildern();
             strategy.appendField(locator, this, "luftbildern", buffer, theLuftbildern, (this.luftbildern!= null));
         }
         {
@@ -831,15 +905,18 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Geo) {
@@ -1069,7 +1146,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean kartenMakroShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kartenMakro!= null));
                 if (kartenMakroShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKartenMakro;
-                    sourceKartenMakro = this.isKartenMakro();
+                    sourceKartenMakro = this.getKartenMakro();
                     Boolean copyKartenMakro = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kartenMakro", sourceKartenMakro), sourceKartenMakro, (this.kartenMakro!= null)));
                     copy.setKartenMakro(copyKartenMakro);
                 } else {
@@ -1082,7 +1159,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean kartenMikroShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kartenMikro!= null));
                 if (kartenMikroShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKartenMikro;
-                    sourceKartenMikro = this.isKartenMikro();
+                    sourceKartenMikro = this.getKartenMikro();
                     Boolean copyKartenMikro = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kartenMikro", sourceKartenMikro), sourceKartenMikro, (this.kartenMikro!= null)));
                     copy.setKartenMikro(copyKartenMikro);
                 } else {
@@ -1095,7 +1172,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean virtuelletourShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.virtuelletour!= null));
                 if (virtuelletourShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceVirtuelletour;
-                    sourceVirtuelletour = this.isVirtuelletour();
+                    sourceVirtuelletour = this.getVirtuelletour();
                     Boolean copyVirtuelletour = ((Boolean) strategy.copy(LocatorUtils.property(locator, "virtuelletour", sourceVirtuelletour), sourceVirtuelletour, (this.virtuelletour!= null)));
                     copy.setVirtuelletour(copyVirtuelletour);
                 } else {
@@ -1108,7 +1185,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
                 Boolean luftbildernShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.luftbildern!= null));
                 if (luftbildernShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceLuftbildern;
-                    sourceLuftbildern = this.isLuftbildern();
+                    sourceLuftbildern = this.getLuftbildern();
                     Boolean copyLuftbildern = ((Boolean) strategy.copy(LocatorUtils.property(locator, "luftbildern", sourceLuftbildern), sourceLuftbildern, (this.luftbildern!= null)));
                     copy.setLuftbildern(copyLuftbildern);
                 } else {
@@ -1175,10 +1252,12 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Geo();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -1342,36 +1421,36 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         }
         {
             Boolean lhsKartenMakro;
-            lhsKartenMakro = this.isKartenMakro();
+            lhsKartenMakro = this.getKartenMakro();
             Boolean rhsKartenMakro;
-            rhsKartenMakro = that.isKartenMakro();
+            rhsKartenMakro = that.getKartenMakro();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kartenMakro", lhsKartenMakro), LocatorUtils.property(thatLocator, "kartenMakro", rhsKartenMakro), lhsKartenMakro, rhsKartenMakro, (this.kartenMakro!= null), (that.kartenMakro!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKartenMikro;
-            lhsKartenMikro = this.isKartenMikro();
+            lhsKartenMikro = this.getKartenMikro();
             Boolean rhsKartenMikro;
-            rhsKartenMikro = that.isKartenMikro();
+            rhsKartenMikro = that.getKartenMikro();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kartenMikro", lhsKartenMikro), LocatorUtils.property(thatLocator, "kartenMikro", rhsKartenMikro), lhsKartenMikro, rhsKartenMikro, (this.kartenMikro!= null), (that.kartenMikro!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsVirtuelletour;
-            lhsVirtuelletour = this.isVirtuelletour();
+            lhsVirtuelletour = this.getVirtuelletour();
             Boolean rhsVirtuelletour;
-            rhsVirtuelletour = that.isVirtuelletour();
+            rhsVirtuelletour = that.getVirtuelletour();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "virtuelletour", lhsVirtuelletour), LocatorUtils.property(thatLocator, "virtuelletour", rhsVirtuelletour), lhsVirtuelletour, rhsVirtuelletour, (this.virtuelletour!= null), (that.virtuelletour!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsLuftbildern;
-            lhsLuftbildern = this.isLuftbildern();
+            lhsLuftbildern = this.getLuftbildern();
             Boolean rhsLuftbildern;
-            rhsLuftbildern = that.isLuftbildern();
+            rhsLuftbildern = that.getLuftbildern();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "luftbildern", lhsLuftbildern), LocatorUtils.property(thatLocator, "luftbildern", rhsLuftbildern), lhsLuftbildern, rhsLuftbildern, (this.luftbildern!= null), (that.luftbildern!= null))) {
                 return false;
             }
@@ -1406,6 +1485,7 @@ public class Geo implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

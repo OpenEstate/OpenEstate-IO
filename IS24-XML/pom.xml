@@ -144,28 +144,37 @@
 
             <!-- JAXB -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb22-plugin</artifactId>
                 <configuration>
-                    <sources>
-                        <source>${project.basedir}/src/main/xsd/is24immotransfer.xsd</source>
-                        <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
-                    </sources>
-                    <xjbSources>
-                        <xjbSource>${project.basedir}/src/main/xjb/binding.xjb</xjbSource>
-                    </xjbSources>
-                    <outputDirectory>${project.basedir}/src/main/jaxb</outputDirectory>
-                    <clearOutputDir>true</clearOutputDir>
-                    <target>2.2</target>
-                    <extension>true</extension>
-                    <generateEpisode>true</generateEpisode>
-                    <noGeneratedHeaderComments>true</noGeneratedHeaderComments>
+                    <generateDirectory>${project.basedir}/src/main/jaxb</generateDirectory>
+                    <schemaDirectory>${project.basedir}/src/main/schema</schemaDirectory>
+                    <scanDependenciesForBindings>false</scanDependenciesForBindings>
+
+                    <readOnly>false</readOnly>
+                    <noFileHeader>true</noFileHeader>
+                    <enableIntrospection>true</enableIntrospection>
+                    <markGenerated>true</markGenerated>
+                    <removeOldOutput>true</removeOldOutput>
+                    <cleanPackageDirectories>true</cleanPackageDirectories>
+                    <forceRegenerate>false</forceRegenerate>
+
+                    <episode>true</episode>
+                    <episodeFile>${project.basedir}/src/main/jaxb/META-INF/sun-jaxb.episode</episodeFile>
+
+                    <encoding>${project.build.sourceEncoding}</encoding>
                     <locale>en</locale>
-                    <arguments>
-                        <argument>-XtoString</argument>
-                        <argument>-Xcopyable</argument>
-                        <argument>-Xequals</argument>
-                    </arguments>
+                    <debug>false</debug>
+                    <verbose>false</verbose>
+
+                    <specVersion>2.2</specVersion>
+                    <extension>true</extension>
+                    <strict>true</strict>
+                    <args>
+                        <arg>-XtoString</arg>
+                        <arg>-Xcopyable</arg>
+                        <arg>-Xequals</arg>
+                    </args>
                 </configuration>
             </plugin>
 

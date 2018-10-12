@@ -2,6 +2,7 @@
 package org.openestate.io.immobiliare_it.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -49,15 +50,19 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "transactionType", propOrder = {
     "value"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
 public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected String value;
     @XmlAttribute(name = "auction")
     @XmlJavaTypeAdapter(Adapter21 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean auction;
     @XmlAttribute(name = "ownership")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected OwnershipType ownership;
 
     /**
@@ -68,6 +73,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public String getValue() {
         return value;
     }
@@ -80,6 +86,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setValue(String value) {
         this.value = value;
     }
@@ -92,7 +99,8 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
-    public Boolean isAuction() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAuction() {
         return auction;
     }
 
@@ -104,6 +112,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setAuction(Boolean value) {
         this.auction = value;
     }
@@ -116,6 +125,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link OwnershipType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public OwnershipType getOwnership() {
         return ownership;
     }
@@ -128,10 +138,12 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link OwnershipType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setOwnership(OwnershipType value) {
         this.ownership = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -139,6 +151,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -146,6 +159,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theValue;
@@ -154,7 +168,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
         }
         {
             Boolean theAuction;
-            theAuction = this.isAuction();
+            theAuction = this.getAuction();
             strategy.appendField(locator, this, "auction", buffer, theAuction, (this.auction!= null));
         }
         {
@@ -165,15 +179,18 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof TransactionType) {
@@ -195,7 +212,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
                 Boolean auctionShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.auction!= null));
                 if (auctionShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceAuction;
-                    sourceAuction = this.isAuction();
+                    sourceAuction = this.getAuction();
                     Boolean copyAuction = ((Boolean) strategy.copy(LocatorUtils.property(locator, "auction", sourceAuction), sourceAuction, (this.auction!= null)));
                     copy.setAuction(copyAuction);
                 } else {
@@ -221,10 +238,12 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new TransactionType();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -244,9 +263,9 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
         }
         {
             Boolean lhsAuction;
-            lhsAuction = this.isAuction();
+            lhsAuction = this.getAuction();
             Boolean rhsAuction;
-            rhsAuction = that.isAuction();
+            rhsAuction = that.getAuction();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "auction", lhsAuction), LocatorUtils.property(thatLocator, "auction", rhsAuction), lhsAuction, rhsAuction, (this.auction!= null), (that.auction!= null))) {
                 return false;
             }
@@ -263,6 +282,7 @@ public class TransactionType implements Serializable, Cloneable, CopyTo2, Equals
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

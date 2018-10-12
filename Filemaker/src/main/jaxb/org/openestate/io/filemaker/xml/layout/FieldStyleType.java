@@ -1,6 +1,7 @@
 
 package org.openestate.io.filemaker.xml.layout;
 
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
@@ -27,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "FieldStyleType")
 @XmlEnum
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
 public enum FieldStyleType {
 
     POPUPLIST,

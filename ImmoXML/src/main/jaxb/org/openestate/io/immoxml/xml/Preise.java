@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,126 +75,165 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedAnyfield"
 })
 @XmlRootElement(name = "preise")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal kaufpreis;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal nettokaltmiete;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal kaltmiete;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal warmmiete;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal nebenkosten;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal heizkosten;
     @XmlElement(name = "zzg_mehrwertsteuer")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean zzgMehrwertsteuer;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal mietzuschlaege;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal pacht;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal erbpacht;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal hausgeld;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal abstand;
     @XmlElement(name = "preis_zeitraum_von", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar preisZeitraumVon;
     @XmlElement(name = "preis_zeitraum_bis", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar preisZeitraumBis;
     @XmlElement(name = "preis_zeiteinheit")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected PreisZeiteinheit preisZeiteinheit;
     @XmlElement(name = "mietpreis_pro_qm", type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal mietpreisProQm;
     @XmlElement(name = "kaufpreis_pro_qm", type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal kaufpreisProQm;
     @XmlElement(name = "innen_courtage")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected InnenCourtage innenCourtage;
     @XmlElement(name = "aussen_courtage")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected AussenCourtage aussenCourtage;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Waehrung waehrung;
     @XmlElement(name = "mwst_satz", type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal mwstSatz;
     @XmlElement(name = "freitext_preis")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected String freitextPreis;
     @XmlElement(name = "x_fache")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected String xFache;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal nettorendite;
     @XmlElement(name = "mieteinnahmen_ist", type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal mieteinnahmenIst;
     @XmlElement(name = "mieteinnahmen_soll", type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal mieteinnahmenSoll;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal erschliessungskosten;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal kaution;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal geschaeftsguthaben;
     @XmlElement(name = "stp_carport")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Stellplatz stpCarport;
     @XmlElement(name = "stp_duplex")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Stellplatz stpDuplex;
     @XmlElement(name = "stp_freiplatz")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Stellplatz stpFreiplatz;
     @XmlElement(name = "stp_garage")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Stellplatz stpGarage;
     @XmlElement(name = "stp_parkhaus")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Stellplatz stpParkhaus;
     @XmlElement(name = "stp_tiefgarage")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Stellplatz stpTiefgarage;
     @XmlElement(name = "stp_sonstige")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<StpSonstige> stpSonstige;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
 
     /**
@@ -204,6 +244,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getKaufpreis() {
         return kaufpreis;
     }
@@ -216,6 +257,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setKaufpreis(BigDecimal value) {
         this.kaufpreis = value;
     }
@@ -228,6 +270,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getNettokaltmiete() {
         return nettokaltmiete;
     }
@@ -240,6 +283,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setNettokaltmiete(BigDecimal value) {
         this.nettokaltmiete = value;
     }
@@ -252,6 +296,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getKaltmiete() {
         return kaltmiete;
     }
@@ -264,6 +309,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setKaltmiete(BigDecimal value) {
         this.kaltmiete = value;
     }
@@ -276,6 +322,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getWarmmiete() {
         return warmmiete;
     }
@@ -288,6 +335,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setWarmmiete(BigDecimal value) {
         this.warmmiete = value;
     }
@@ -300,6 +348,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getNebenkosten() {
         return nebenkosten;
     }
@@ -312,6 +361,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setNebenkosten(BigDecimal value) {
         this.nebenkosten = value;
     }
@@ -324,6 +374,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getHeizkosten() {
         return heizkosten;
     }
@@ -336,6 +387,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setHeizkosten(BigDecimal value) {
         this.heizkosten = value;
     }
@@ -348,7 +400,8 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
-    public Boolean isZzgMehrwertsteuer() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getZzgMehrwertsteuer() {
         return zzgMehrwertsteuer;
     }
 
@@ -360,6 +413,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setZzgMehrwertsteuer(Boolean value) {
         this.zzgMehrwertsteuer = value;
     }
@@ -372,6 +426,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getMietzuschlaege() {
         return mietzuschlaege;
     }
@@ -384,6 +439,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMietzuschlaege(BigDecimal value) {
         this.mietzuschlaege = value;
     }
@@ -396,6 +452,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getPacht() {
         return pacht;
     }
@@ -408,6 +465,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setPacht(BigDecimal value) {
         this.pacht = value;
     }
@@ -420,6 +478,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getErbpacht() {
         return erbpacht;
     }
@@ -432,6 +491,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setErbpacht(BigDecimal value) {
         this.erbpacht = value;
     }
@@ -444,6 +504,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getHausgeld() {
         return hausgeld;
     }
@@ -456,6 +517,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setHausgeld(BigDecimal value) {
         this.hausgeld = value;
     }
@@ -468,6 +530,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getAbstand() {
         return abstand;
     }
@@ -480,6 +543,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setAbstand(BigDecimal value) {
         this.abstand = value;
     }
@@ -492,6 +556,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getPreisZeitraumVon() {
         return preisZeitraumVon;
     }
@@ -504,6 +569,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setPreisZeitraumVon(Calendar value) {
         this.preisZeitraumVon = value;
     }
@@ -516,6 +582,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getPreisZeitraumBis() {
         return preisZeitraumBis;
     }
@@ -528,6 +595,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setPreisZeitraumBis(Calendar value) {
         this.preisZeitraumBis = value;
     }
@@ -540,6 +608,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link PreisZeiteinheit }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public PreisZeiteinheit getPreisZeiteinheit() {
         return preisZeiteinheit;
     }
@@ -552,6 +621,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link PreisZeiteinheit }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setPreisZeiteinheit(PreisZeiteinheit value) {
         this.preisZeiteinheit = value;
     }
@@ -564,6 +634,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getMietpreisProQm() {
         return mietpreisProQm;
     }
@@ -576,6 +647,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMietpreisProQm(BigDecimal value) {
         this.mietpreisProQm = value;
     }
@@ -588,6 +660,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getKaufpreisProQm() {
         return kaufpreisProQm;
     }
@@ -600,6 +673,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setKaufpreisProQm(BigDecimal value) {
         this.kaufpreisProQm = value;
     }
@@ -612,6 +686,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link InnenCourtage }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public InnenCourtage getInnenCourtage() {
         return innenCourtage;
     }
@@ -624,6 +699,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link InnenCourtage }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setInnenCourtage(InnenCourtage value) {
         this.innenCourtage = value;
     }
@@ -636,6 +712,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link AussenCourtage }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public AussenCourtage getAussenCourtage() {
         return aussenCourtage;
     }
@@ -648,6 +725,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link AussenCourtage }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setAussenCourtage(AussenCourtage value) {
         this.aussenCourtage = value;
     }
@@ -660,6 +738,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Waehrung }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Waehrung getWaehrung() {
         return waehrung;
     }
@@ -672,6 +751,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Waehrung }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setWaehrung(Waehrung value) {
         this.waehrung = value;
     }
@@ -684,6 +764,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getMwstSatz() {
         return mwstSatz;
     }
@@ -696,6 +777,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMwstSatz(BigDecimal value) {
         this.mwstSatz = value;
     }
@@ -708,6 +790,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String getFreitextPreis() {
         return freitextPreis;
     }
@@ -720,6 +803,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setFreitextPreis(String value) {
         this.freitextPreis = value;
     }
@@ -732,6 +816,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String getXFache() {
         return xFache;
     }
@@ -744,6 +829,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setXFache(String value) {
         this.xFache = value;
     }
@@ -756,6 +842,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getNettorendite() {
         return nettorendite;
     }
@@ -768,6 +855,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setNettorendite(BigDecimal value) {
         this.nettorendite = value;
     }
@@ -780,6 +868,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getMieteinnahmenIst() {
         return mieteinnahmenIst;
     }
@@ -792,6 +881,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMieteinnahmenIst(BigDecimal value) {
         this.mieteinnahmenIst = value;
     }
@@ -804,6 +894,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getMieteinnahmenSoll() {
         return mieteinnahmenSoll;
     }
@@ -816,6 +907,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMieteinnahmenSoll(BigDecimal value) {
         this.mieteinnahmenSoll = value;
     }
@@ -828,6 +920,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getErschliessungskosten() {
         return erschliessungskosten;
     }
@@ -840,6 +933,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setErschliessungskosten(BigDecimal value) {
         this.erschliessungskosten = value;
     }
@@ -852,6 +946,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getKaution() {
         return kaution;
     }
@@ -864,6 +959,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setKaution(BigDecimal value) {
         this.kaution = value;
     }
@@ -876,6 +972,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getGeschaeftsguthaben() {
         return geschaeftsguthaben;
     }
@@ -888,6 +985,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setGeschaeftsguthaben(BigDecimal value) {
         this.geschaeftsguthaben = value;
     }
@@ -900,6 +998,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Stellplatz getStpCarport() {
         return stpCarport;
     }
@@ -912,6 +1011,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setStpCarport(Stellplatz value) {
         this.stpCarport = value;
     }
@@ -924,6 +1024,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Stellplatz getStpDuplex() {
         return stpDuplex;
     }
@@ -936,6 +1037,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setStpDuplex(Stellplatz value) {
         this.stpDuplex = value;
     }
@@ -948,6 +1050,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Stellplatz getStpFreiplatz() {
         return stpFreiplatz;
     }
@@ -960,6 +1063,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setStpFreiplatz(Stellplatz value) {
         this.stpFreiplatz = value;
     }
@@ -972,6 +1076,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Stellplatz getStpGarage() {
         return stpGarage;
     }
@@ -984,6 +1089,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setStpGarage(Stellplatz value) {
         this.stpGarage = value;
     }
@@ -996,6 +1102,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Stellplatz getStpParkhaus() {
         return stpParkhaus;
     }
@@ -1008,6 +1115,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setStpParkhaus(Stellplatz value) {
         this.stpParkhaus = value;
     }
@@ -1020,6 +1128,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Stellplatz getStpTiefgarage() {
         return stpTiefgarage;
     }
@@ -1032,6 +1141,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Stellplatz }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setStpTiefgarage(Stellplatz value) {
         this.stpTiefgarage = value;
     }
@@ -1058,6 +1168,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<StpSonstige> getStpSonstige() {
         if (stpSonstige == null) {
             stpSonstige = new ArrayList<StpSonstige>();
@@ -1087,6 +1198,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -1116,6 +1228,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -1123,6 +1236,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return this.userDefinedAnyfield;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -1130,6 +1244,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -1137,6 +1252,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigDecimal theKaufpreis;
@@ -1170,7 +1286,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         }
         {
             Boolean theZzgMehrwertsteuer;
-            theZzgMehrwertsteuer = this.isZzgMehrwertsteuer();
+            theZzgMehrwertsteuer = this.getZzgMehrwertsteuer();
             strategy.appendField(locator, this, "zzgMehrwertsteuer", buffer, theZzgMehrwertsteuer, (this.zzgMehrwertsteuer!= null));
         }
         {
@@ -1331,15 +1447,18 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Preise) {
@@ -1426,7 +1545,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
                 Boolean zzgMehrwertsteuerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zzgMehrwertsteuer!= null));
                 if (zzgMehrwertsteuerShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceZzgMehrwertsteuer;
-                    sourceZzgMehrwertsteuer = this.isZzgMehrwertsteuer();
+                    sourceZzgMehrwertsteuer = this.getZzgMehrwertsteuer();
                     Boolean copyZzgMehrwertsteuer = ((Boolean) strategy.copy(LocatorUtils.property(locator, "zzgMehrwertsteuer", sourceZzgMehrwertsteuer), sourceZzgMehrwertsteuer, (this.zzgMehrwertsteuer!= null)));
                     copy.setZzgMehrwertsteuer(copyZzgMehrwertsteuer);
                 } else {
@@ -1857,10 +1976,12 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Preise();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -1925,9 +2046,9 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         }
         {
             Boolean lhsZzgMehrwertsteuer;
-            lhsZzgMehrwertsteuer = this.isZzgMehrwertsteuer();
+            lhsZzgMehrwertsteuer = this.getZzgMehrwertsteuer();
             Boolean rhsZzgMehrwertsteuer;
-            rhsZzgMehrwertsteuer = that.isZzgMehrwertsteuer();
+            rhsZzgMehrwertsteuer = that.getZzgMehrwertsteuer();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zzgMehrwertsteuer", lhsZzgMehrwertsteuer), LocatorUtils.property(thatLocator, "zzgMehrwertsteuer", rhsZzgMehrwertsteuer), lhsZzgMehrwertsteuer, rhsZzgMehrwertsteuer, (this.zzgMehrwertsteuer!= null), (that.zzgMehrwertsteuer!= null))) {
                 return false;
             }
@@ -2214,6 +2335,7 @@ public class Preise implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

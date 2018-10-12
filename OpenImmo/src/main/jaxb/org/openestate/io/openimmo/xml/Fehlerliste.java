@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -36,9 +37,11 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "fehler"
 })
 @XmlRootElement(name = "fehlerliste")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<Fehlerliste.Fehler> fehler;
 
     /**
@@ -63,6 +66,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<Fehlerliste.Fehler> getFehler() {
         if (fehler == null) {
             fehler = new ArrayList<Fehlerliste.Fehler>();
@@ -70,6 +74,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
         return this.fehler;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -77,6 +82,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -84,6 +90,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Fehlerliste.Fehler> theFehler;
@@ -93,15 +100,18 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Fehlerliste) {
@@ -128,10 +138,12 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Fehlerliste();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -152,6 +164,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -170,15 +183,19 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
         "fehlernr",
         "text"
     })
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public static class Fehler implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "objekt_id")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         protected String objektId;
         @XmlElement(type = String.class)
         @XmlJavaTypeAdapter(Adapter5 .class)
         @XmlSchemaType(name = "int")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         protected BigInteger fehlernr;
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         protected String text;
 
         /**
@@ -189,6 +206,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public String getObjektId() {
             return objektId;
         }
@@ -201,6 +219,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public void setObjektId(String value) {
             this.objektId = value;
         }
@@ -213,6 +232,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public BigInteger getFehlernr() {
             return fehlernr;
         }
@@ -225,6 +245,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public void setFehlernr(BigInteger value) {
             this.fehlernr = value;
         }
@@ -237,6 +258,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public String getText() {
             return text;
         }
@@ -249,10 +271,12 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public void setText(String value) {
             this.text = value;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
@@ -260,6 +284,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
             return buffer.toString();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -267,6 +292,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theObjektId;
@@ -286,15 +312,18 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Fehlerliste.Fehler) {
@@ -342,10 +371,12 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
             return draftCopy;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public Object createNewInstance() {
             return new Fehlerliste.Fehler();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -384,6 +415,7 @@ public class Fehlerliste implements Serializable, Cloneable, CopyTo2, Equals2, T
             return true;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);

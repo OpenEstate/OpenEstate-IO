@@ -1,6 +1,7 @@
 
 package org.openestate.io.kyero.xml;
 
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
@@ -24,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "priceFreqType")
 @XmlEnum
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T01:43:04+02:00", comments = "JAXB RI v2.2.11")
 public enum PriceFreqType {
 
     @XmlEnumValue("sale")

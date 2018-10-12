@@ -4,6 +4,7 @@ package org.openestate.io.immoxml.xml;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,18 +38,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedAnyfield"
 })
 @XmlRootElement(name = "objektkategorie")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Nutzungsart nutzungsart;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Vermarktungsart vermarktungsart;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Objektart objektart;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
 
     /**
@@ -59,6 +66,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Nutzungsart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Nutzungsart getNutzungsart() {
         return nutzungsart;
     }
@@ -71,6 +79,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Nutzungsart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setNutzungsart(Nutzungsart value) {
         this.nutzungsart = value;
     }
@@ -83,6 +92,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Vermarktungsart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Vermarktungsart getVermarktungsart() {
         return vermarktungsart;
     }
@@ -95,6 +105,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Vermarktungsart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setVermarktungsart(Vermarktungsart value) {
         this.vermarktungsart = value;
     }
@@ -107,6 +118,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Objektart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Objektart getObjektart() {
         return objektart;
     }
@@ -119,6 +131,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Objektart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektart(Objektart value) {
         this.objektart = value;
     }
@@ -145,6 +158,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -174,6 +188,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -181,6 +196,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
         return this.userDefinedAnyfield;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -188,6 +204,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -195,6 +212,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Nutzungsart theNutzungsart;
@@ -224,15 +242,18 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Objektkategorie) {
@@ -316,10 +337,12 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Objektkategorie();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -376,6 +399,7 @@ public class Objektkategorie implements Serializable, Cloneable, CopyTo2, Equals
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

@@ -2,6 +2,7 @@
 package org.openestate.io.filemaker.xml.layout;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,16 +51,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "valuelists"
 })
 @XmlRootElement(name = "FMPXMLLAYOUT")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
 public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "ERRORCODE", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     protected String errorcode;
     @XmlElement(name = "PRODUCT", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     protected ProductType product;
     @XmlElement(name = "LAYOUT", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     protected LayoutType layout;
     @XmlElement(name = "VALUELISTS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     protected ValueListsType valuelists;
 
     /**
@@ -70,6 +76,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public String getERRORCODE() {
         return errorcode;
     }
@@ -82,6 +89,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public void setERRORCODE(String value) {
         this.errorcode = value;
     }
@@ -94,6 +102,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link ProductType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public ProductType getPRODUCT() {
         return product;
     }
@@ -106,6 +115,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link ProductType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public void setPRODUCT(ProductType value) {
         this.product = value;
     }
@@ -118,6 +128,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link LayoutType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public LayoutType getLAYOUT() {
         return layout;
     }
@@ -130,6 +141,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link LayoutType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public void setLAYOUT(LayoutType value) {
         this.layout = value;
     }
@@ -142,6 +154,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link ValueListsType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public ValueListsType getVALUELISTS() {
         return valuelists;
     }
@@ -154,10 +167,12 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link ValueListsType }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public void setVALUELISTS(ValueListsType value) {
         this.valuelists = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -165,6 +180,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -172,6 +188,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theERRORCODE;
@@ -196,15 +213,18 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof FMPXMLLAYOUT) {
@@ -265,10 +285,12 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new FMPXMLLAYOUT();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -316,6 +338,7 @@ public class FMPXMLLAYOUT implements Serializable, Cloneable, CopyTo2, Equals2, 
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:42:33+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

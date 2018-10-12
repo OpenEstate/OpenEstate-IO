@@ -2,6 +2,7 @@
 package org.openestate.io.immobiliare_it.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,13 +50,17 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "businessType",
     "terrains"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
 public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlSchemaType(name = "string")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected PropertyTypeSimple type;
     @XmlElement(name = "business-type")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected BusinessElement businessType;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected Terrains terrains;
 
     /**
@@ -66,6 +71,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link PropertyTypeSimple }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public PropertyTypeSimple getType() {
         return type;
     }
@@ -78,6 +84,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link PropertyTypeSimple }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setType(PropertyTypeSimple value) {
         this.type = value;
     }
@@ -90,6 +97,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link BusinessElement }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public BusinessElement getBusinessType() {
         return businessType;
     }
@@ -102,6 +110,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link BusinessElement }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setBusinessType(BusinessElement value) {
         this.businessType = value;
     }
@@ -114,6 +123,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Terrains }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Terrains getTerrains() {
         return terrains;
     }
@@ -126,10 +136,12 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Terrains }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setTerrains(Terrains value) {
         this.terrains = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -137,6 +149,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -144,6 +157,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             PropertyTypeSimple theType;
@@ -163,15 +177,18 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Proptype) {
@@ -219,10 +236,12 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Proptype();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -261,6 +280,7 @@ public class Proptype implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

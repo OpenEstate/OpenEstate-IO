@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -46,40 +47,51 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedExtend"
 })
 @XmlRootElement(name = "bieterverfahren")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "beginn_angebotsphase", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar beginnAngebotsphase;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar besichtigungstermin;
     @XmlElement(name = "besichtigungstermin_2", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar besichtigungstermin2;
     @XmlElement(name = "beginn_bietzeit", type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar beginnBietzeit;
     @XmlElement(name = "ende_bietzeit", type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar endeBietzeit;
     @XmlElement(name = "hoechstgebot_zeigen")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean hoechstgebotZeigen;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal mindestpreis;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
     @XmlElement(name = "user_defined_extend")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedExtend> userDefinedExtend;
 
     /**
@@ -90,6 +102,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getBeginnAngebotsphase() {
         return beginnAngebotsphase;
     }
@@ -102,6 +115,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBeginnAngebotsphase(Calendar value) {
         this.beginnAngebotsphase = value;
     }
@@ -114,6 +128,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getBesichtigungstermin() {
         return besichtigungstermin;
     }
@@ -126,6 +141,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBesichtigungstermin(Calendar value) {
         this.besichtigungstermin = value;
     }
@@ -138,6 +154,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getBesichtigungstermin2() {
         return besichtigungstermin2;
     }
@@ -150,6 +167,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBesichtigungstermin2(Calendar value) {
         this.besichtigungstermin2 = value;
     }
@@ -162,6 +180,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getBeginnBietzeit() {
         return beginnBietzeit;
     }
@@ -174,6 +193,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBeginnBietzeit(Calendar value) {
         this.beginnBietzeit = value;
     }
@@ -186,6 +206,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getEndeBietzeit() {
         return endeBietzeit;
     }
@@ -198,6 +219,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEndeBietzeit(Calendar value) {
         this.endeBietzeit = value;
     }
@@ -210,7 +232,8 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
-    public Boolean isHoechstgebotZeigen() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHoechstgebotZeigen() {
         return hoechstgebotZeigen;
     }
 
@@ -222,6 +245,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHoechstgebotZeigen(Boolean value) {
         this.hoechstgebotZeigen = value;
     }
@@ -234,6 +258,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getMindestpreis() {
         return mindestpreis;
     }
@@ -246,6 +271,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMindestpreis(BigDecimal value) {
         this.mindestpreis = value;
     }
@@ -272,6 +298,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -301,6 +328,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -330,6 +358,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedExtend> getUserDefinedExtend() {
         if (userDefinedExtend == null) {
             userDefinedExtend = new ArrayList<UserDefinedExtend>();
@@ -337,6 +366,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         return this.userDefinedExtend;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -344,6 +374,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -351,6 +382,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Calendar theBeginnAngebotsphase;
@@ -379,7 +411,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         }
         {
             Boolean theHoechstgebotZeigen;
-            theHoechstgebotZeigen = this.isHoechstgebotZeigen();
+            theHoechstgebotZeigen = this.getHoechstgebotZeigen();
             strategy.appendField(locator, this, "hoechstgebotZeigen", buffer, theHoechstgebotZeigen, (this.hoechstgebotZeigen!= null));
         }
         {
@@ -405,15 +437,18 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Bieterverfahren) {
@@ -487,7 +522,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
                 Boolean hoechstgebotZeigenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hoechstgebotZeigen!= null));
                 if (hoechstgebotZeigenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHoechstgebotZeigen;
-                    sourceHoechstgebotZeigen = this.isHoechstgebotZeigen();
+                    sourceHoechstgebotZeigen = this.getHoechstgebotZeigen();
                     Boolean copyHoechstgebotZeigen = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hoechstgebotZeigen", sourceHoechstgebotZeigen), sourceHoechstgebotZeigen, (this.hoechstgebotZeigen!= null)));
                     copy.setHoechstgebotZeigen(copyHoechstgebotZeigen);
                 } else {
@@ -567,10 +602,12 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Bieterverfahren();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -626,9 +663,9 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         }
         {
             Boolean lhsHoechstgebotZeigen;
-            lhsHoechstgebotZeigen = this.isHoechstgebotZeigen();
+            lhsHoechstgebotZeigen = this.getHoechstgebotZeigen();
             Boolean rhsHoechstgebotZeigen;
-            rhsHoechstgebotZeigen = that.isHoechstgebotZeigen();
+            rhsHoechstgebotZeigen = that.getHoechstgebotZeigen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hoechstgebotZeigen", lhsHoechstgebotZeigen), LocatorUtils.property(thatLocator, "hoechstgebotZeigen", rhsHoechstgebotZeigen), lhsHoechstgebotZeigen, rhsHoechstgebotZeigen, (this.hoechstgebotZeigen!= null), (that.hoechstgebotZeigen!= null))) {
                 return false;
             }
@@ -672,6 +709,7 @@ public class Bieterverfahren implements Serializable, Cloneable, CopyTo2, Equals
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

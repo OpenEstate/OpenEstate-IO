@@ -58,9 +58,6 @@ to publish the specifications. Get in contact with
 In order to improve the generated Java classes, we've made the following
 modifications to the original `openimmo_127b.xsd` schema:
 
--   added `<xsd:include schemaLocation="openimmo-feedback_125.xsd"/>`
-    before `<xsd:element name="openimmo">`
-
 -   removed `<xsd:choice>` from `<xsd:element name="geo">`
     and move its child elements into the parent `<xsd:sequence>`
 
@@ -69,6 +66,9 @@ modifications to the original `openimmo_127b.xsd` schema:
 
 The following changes were made to the original `openimmo-feedback_125.xsd`
 schema:
+
+-   added `<xsd:include schemaLocation="openimmo_127b.xsd"/>`
+    before `<xsd:element name="openimmo_feedback">`
 
 -   removed `<xsd:element name="user_defined_extend"> ... </xsd:element>`
     because it is also defined in `openimmo_127.xsd`

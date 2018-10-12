@@ -2,6 +2,7 @@
 package org.openestate.io.immoxml.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,16 +30,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "ausricht_balkon_terrasse")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "NORD")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean nord;
     @XmlAttribute(name = "OST")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean ost;
     @XmlAttribute(name = "SUED")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean sued;
     @XmlAttribute(name = "WEST")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean west;
 
     /**
@@ -49,7 +55,8 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isNORD() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getNORD() {
         return nord;
     }
 
@@ -61,6 +68,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setNORD(Boolean value) {
         this.nord = value;
     }
@@ -73,7 +81,8 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isOST() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getOST() {
         return ost;
     }
 
@@ -85,6 +94,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setOST(Boolean value) {
         this.ost = value;
     }
@@ -97,7 +107,8 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isSUED() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSUED() {
         return sued;
     }
 
@@ -109,6 +120,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setSUED(Boolean value) {
         this.sued = value;
     }
@@ -121,7 +133,8 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isWEST() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWEST() {
         return west;
     }
 
@@ -133,10 +146,12 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setWEST(Boolean value) {
         this.west = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -144,6 +159,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -151,39 +167,43 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theNORD;
-            theNORD = this.isNORD();
+            theNORD = this.getNORD();
             strategy.appendField(locator, this, "nord", buffer, theNORD, (this.nord!= null));
         }
         {
             Boolean theOST;
-            theOST = this.isOST();
+            theOST = this.getOST();
             strategy.appendField(locator, this, "ost", buffer, theOST, (this.ost!= null));
         }
         {
             Boolean theSUED;
-            theSUED = this.isSUED();
+            theSUED = this.getSUED();
             strategy.appendField(locator, this, "sued", buffer, theSUED, (this.sued!= null));
         }
         {
             Boolean theWEST;
-            theWEST = this.isWEST();
+            theWEST = this.getWEST();
             strategy.appendField(locator, this, "west", buffer, theWEST, (this.west!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof AusrichtBalkonTerrasse) {
@@ -192,7 +212,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
                 Boolean nordShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.nord!= null));
                 if (nordShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceNORD;
-                    sourceNORD = this.isNORD();
+                    sourceNORD = this.getNORD();
                     Boolean copyNORD = ((Boolean) strategy.copy(LocatorUtils.property(locator, "nord", sourceNORD), sourceNORD, (this.nord!= null)));
                     copy.setNORD(copyNORD);
                 } else {
@@ -205,7 +225,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
                 Boolean ostShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ost!= null));
                 if (ostShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceOST;
-                    sourceOST = this.isOST();
+                    sourceOST = this.getOST();
                     Boolean copyOST = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ost", sourceOST), sourceOST, (this.ost!= null)));
                     copy.setOST(copyOST);
                 } else {
@@ -218,7 +238,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
                 Boolean suedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.sued!= null));
                 if (suedShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSUED;
-                    sourceSUED = this.isSUED();
+                    sourceSUED = this.getSUED();
                     Boolean copySUED = ((Boolean) strategy.copy(LocatorUtils.property(locator, "sued", sourceSUED), sourceSUED, (this.sued!= null)));
                     copy.setSUED(copySUED);
                 } else {
@@ -231,7 +251,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
                 Boolean westShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.west!= null));
                 if (westShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWEST;
-                    sourceWEST = this.isWEST();
+                    sourceWEST = this.getWEST();
                     Boolean copyWEST = ((Boolean) strategy.copy(LocatorUtils.property(locator, "west", sourceWEST), sourceWEST, (this.west!= null)));
                     copy.setWEST(copyWEST);
                 } else {
@@ -244,10 +264,12 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new AusrichtBalkonTerrasse();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -258,36 +280,36 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
         final AusrichtBalkonTerrasse that = ((AusrichtBalkonTerrasse) object);
         {
             Boolean lhsNORD;
-            lhsNORD = this.isNORD();
+            lhsNORD = this.getNORD();
             Boolean rhsNORD;
-            rhsNORD = that.isNORD();
+            rhsNORD = that.getNORD();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nord", lhsNORD), LocatorUtils.property(thatLocator, "nord", rhsNORD), lhsNORD, rhsNORD, (this.nord!= null), (that.nord!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsOST;
-            lhsOST = this.isOST();
+            lhsOST = this.getOST();
             Boolean rhsOST;
-            rhsOST = that.isOST();
+            rhsOST = that.getOST();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ost", lhsOST), LocatorUtils.property(thatLocator, "ost", rhsOST), lhsOST, rhsOST, (this.ost!= null), (that.ost!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSUED;
-            lhsSUED = this.isSUED();
+            lhsSUED = this.getSUED();
             Boolean rhsSUED;
-            rhsSUED = that.isSUED();
+            rhsSUED = that.getSUED();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "sued", lhsSUED), LocatorUtils.property(thatLocator, "sued", rhsSUED), lhsSUED, rhsSUED, (this.sued!= null), (that.sued!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWEST;
-            lhsWEST = this.isWEST();
+            lhsWEST = this.getWEST();
             Boolean rhsWEST;
-            rhsWEST = that.isWEST();
+            rhsWEST = that.getWEST();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "west", lhsWEST), LocatorUtils.property(thatLocator, "west", rhsWEST), lhsWEST, rhsWEST, (this.west!= null), (that.west!= null))) {
                 return false;
             }
@@ -295,6 +317,7 @@ public class AusrichtBalkonTerrasse implements Serializable, Cloneable, CopyTo2,
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

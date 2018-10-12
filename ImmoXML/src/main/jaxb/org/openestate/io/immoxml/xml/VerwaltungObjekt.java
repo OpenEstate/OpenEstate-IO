@@ -7,6 +7,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,55 +61,79 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedAnyfield"
 })
 @XmlRootElement(name = "verwaltung_objekt")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "objektadresse_freigeben")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean objektadresseFreigeben;
     @XmlElement(name = "verfuegbar_ab")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected String verfuegbarAb;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar abdatum;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar bisdatum;
     @XmlElement(name = "min_mietdauer")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected MinMietdauer minMietdauer;
     @XmlElement(name = "max_mietdauer")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected MaxMietdauer maxMietdauer;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar versteigerungstermin;
     @XmlElement(name = "wbs_sozialwohnung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean wbsSozialwohnung;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean vermietet;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected String gruppennummer;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected String zugang;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal laufzeit;
     @XmlElement(name = "max_personen", type = String.class)
     @XmlJavaTypeAdapter(Adapter6 .class)
     @XmlSchemaType(name = "positiveInteger")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger maxPersonen;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean nichtraucher;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean haustiere;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Geschlecht geschlecht;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean denkmalgeschuetzt;
     @XmlElement(name = "als_ferien")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean alsFerien;
     @XmlElement(name = "gewerbliche_nutzung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gewerblicheNutzung;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected String branchen;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean hochhaus;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
 
     /**
@@ -119,7 +144,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isObjektadresseFreigeben() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getObjektadresseFreigeben() {
         return objektadresseFreigeben;
     }
 
@@ -131,6 +157,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektadresseFreigeben(Boolean value) {
         this.objektadresseFreigeben = value;
     }
@@ -143,6 +170,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String getVerfuegbarAb() {
         return verfuegbarAb;
     }
@@ -155,6 +183,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setVerfuegbarAb(String value) {
         this.verfuegbarAb = value;
     }
@@ -167,6 +196,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getAbdatum() {
         return abdatum;
     }
@@ -179,6 +209,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setAbdatum(Calendar value) {
         this.abdatum = value;
     }
@@ -191,6 +222,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getBisdatum() {
         return bisdatum;
     }
@@ -203,6 +235,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setBisdatum(Calendar value) {
         this.bisdatum = value;
     }
@@ -215,6 +248,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link MinMietdauer }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public MinMietdauer getMinMietdauer() {
         return minMietdauer;
     }
@@ -227,6 +261,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link MinMietdauer }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMinMietdauer(MinMietdauer value) {
         this.minMietdauer = value;
     }
@@ -239,6 +274,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link MaxMietdauer }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public MaxMietdauer getMaxMietdauer() {
         return maxMietdauer;
     }
@@ -251,6 +287,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link MaxMietdauer }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMaxMietdauer(MaxMietdauer value) {
         this.maxMietdauer = value;
     }
@@ -263,6 +300,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getVersteigerungstermin() {
         return versteigerungstermin;
     }
@@ -275,6 +313,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setVersteigerungstermin(Calendar value) {
         this.versteigerungstermin = value;
     }
@@ -287,7 +326,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isWbsSozialwohnung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWbsSozialwohnung() {
         return wbsSozialwohnung;
     }
 
@@ -299,6 +339,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setWbsSozialwohnung(Boolean value) {
         this.wbsSozialwohnung = value;
     }
@@ -311,7 +352,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isVermietet() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getVermietet() {
         return vermietet;
     }
 
@@ -323,6 +365,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setVermietet(Boolean value) {
         this.vermietet = value;
     }
@@ -335,6 +378,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String getGruppennummer() {
         return gruppennummer;
     }
@@ -347,6 +391,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setGruppennummer(String value) {
         this.gruppennummer = value;
     }
@@ -359,6 +404,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String getZugang() {
         return zugang;
     }
@@ -371,6 +417,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setZugang(String value) {
         this.zugang = value;
     }
@@ -383,6 +430,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getLaufzeit() {
         return laufzeit;
     }
@@ -395,6 +443,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setLaufzeit(BigDecimal value) {
         this.laufzeit = value;
     }
@@ -407,6 +456,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getMaxPersonen() {
         return maxPersonen;
     }
@@ -419,6 +469,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMaxPersonen(BigInteger value) {
         this.maxPersonen = value;
     }
@@ -431,7 +482,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isNichtraucher() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getNichtraucher() {
         return nichtraucher;
     }
 
@@ -443,6 +495,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setNichtraucher(Boolean value) {
         this.nichtraucher = value;
     }
@@ -455,7 +508,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isHaustiere() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHaustiere() {
         return haustiere;
     }
 
@@ -467,6 +521,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setHaustiere(Boolean value) {
         this.haustiere = value;
     }
@@ -479,6 +534,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Geschlecht }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Geschlecht getGeschlecht() {
         return geschlecht;
     }
@@ -491,6 +547,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Geschlecht }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setGeschlecht(Geschlecht value) {
         this.geschlecht = value;
     }
@@ -503,7 +560,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isDenkmalgeschuetzt() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDenkmalgeschuetzt() {
         return denkmalgeschuetzt;
     }
 
@@ -515,6 +573,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setDenkmalgeschuetzt(Boolean value) {
         this.denkmalgeschuetzt = value;
     }
@@ -527,7 +586,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isAlsFerien() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAlsFerien() {
         return alsFerien;
     }
 
@@ -539,6 +599,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setAlsFerien(Boolean value) {
         this.alsFerien = value;
     }
@@ -551,7 +612,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isGewerblicheNutzung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGewerblicheNutzung() {
         return gewerblicheNutzung;
     }
 
@@ -563,6 +625,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setGewerblicheNutzung(Boolean value) {
         this.gewerblicheNutzung = value;
     }
@@ -575,6 +638,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String getBranchen() {
         return branchen;
     }
@@ -587,6 +651,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setBranchen(String value) {
         this.branchen = value;
     }
@@ -599,7 +664,8 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
-    public Boolean isHochhaus() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHochhaus() {
         return hochhaus;
     }
 
@@ -611,6 +677,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setHochhaus(Boolean value) {
         this.hochhaus = value;
     }
@@ -637,6 +704,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -666,6 +734,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -673,6 +742,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         return this.userDefinedAnyfield;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -680,6 +750,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -687,10 +758,11 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theObjektadresseFreigeben;
-            theObjektadresseFreigeben = this.isObjektadresseFreigeben();
+            theObjektadresseFreigeben = this.getObjektadresseFreigeben();
             strategy.appendField(locator, this, "objektadresseFreigeben", buffer, theObjektadresseFreigeben, (this.objektadresseFreigeben!= null));
         }
         {
@@ -725,12 +797,12 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean theWbsSozialwohnung;
-            theWbsSozialwohnung = this.isWbsSozialwohnung();
+            theWbsSozialwohnung = this.getWbsSozialwohnung();
             strategy.appendField(locator, this, "wbsSozialwohnung", buffer, theWbsSozialwohnung, (this.wbsSozialwohnung!= null));
         }
         {
             Boolean theVermietet;
-            theVermietet = this.isVermietet();
+            theVermietet = this.getVermietet();
             strategy.appendField(locator, this, "vermietet", buffer, theVermietet, (this.vermietet!= null));
         }
         {
@@ -755,12 +827,12 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean theNichtraucher;
-            theNichtraucher = this.isNichtraucher();
+            theNichtraucher = this.getNichtraucher();
             strategy.appendField(locator, this, "nichtraucher", buffer, theNichtraucher, (this.nichtraucher!= null));
         }
         {
             Boolean theHaustiere;
-            theHaustiere = this.isHaustiere();
+            theHaustiere = this.getHaustiere();
             strategy.appendField(locator, this, "haustiere", buffer, theHaustiere, (this.haustiere!= null));
         }
         {
@@ -770,17 +842,17 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean theDenkmalgeschuetzt;
-            theDenkmalgeschuetzt = this.isDenkmalgeschuetzt();
+            theDenkmalgeschuetzt = this.getDenkmalgeschuetzt();
             strategy.appendField(locator, this, "denkmalgeschuetzt", buffer, theDenkmalgeschuetzt, (this.denkmalgeschuetzt!= null));
         }
         {
             Boolean theAlsFerien;
-            theAlsFerien = this.isAlsFerien();
+            theAlsFerien = this.getAlsFerien();
             strategy.appendField(locator, this, "alsFerien", buffer, theAlsFerien, (this.alsFerien!= null));
         }
         {
             Boolean theGewerblicheNutzung;
-            theGewerblicheNutzung = this.isGewerblicheNutzung();
+            theGewerblicheNutzung = this.getGewerblicheNutzung();
             strategy.appendField(locator, this, "gewerblicheNutzung", buffer, theGewerblicheNutzung, (this.gewerblicheNutzung!= null));
         }
         {
@@ -790,7 +862,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean theHochhaus;
-            theHochhaus = this.isHochhaus();
+            theHochhaus = this.getHochhaus();
             strategy.appendField(locator, this, "hochhaus", buffer, theHochhaus, (this.hochhaus!= null));
         }
         {
@@ -806,15 +878,18 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof VerwaltungObjekt) {
@@ -823,7 +898,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean objektadresseFreigebenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.objektadresseFreigeben!= null));
                 if (objektadresseFreigebenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceObjektadresseFreigeben;
-                    sourceObjektadresseFreigeben = this.isObjektadresseFreigeben();
+                    sourceObjektadresseFreigeben = this.getObjektadresseFreigeben();
                     Boolean copyObjektadresseFreigeben = ((Boolean) strategy.copy(LocatorUtils.property(locator, "objektadresseFreigeben", sourceObjektadresseFreigeben), sourceObjektadresseFreigeben, (this.objektadresseFreigeben!= null)));
                     copy.setObjektadresseFreigeben(copyObjektadresseFreigeben);
                 } else {
@@ -914,7 +989,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean wbsSozialwohnungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wbsSozialwohnung!= null));
                 if (wbsSozialwohnungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWbsSozialwohnung;
-                    sourceWbsSozialwohnung = this.isWbsSozialwohnung();
+                    sourceWbsSozialwohnung = this.getWbsSozialwohnung();
                     Boolean copyWbsSozialwohnung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wbsSozialwohnung", sourceWbsSozialwohnung), sourceWbsSozialwohnung, (this.wbsSozialwohnung!= null)));
                     copy.setWbsSozialwohnung(copyWbsSozialwohnung);
                 } else {
@@ -927,7 +1002,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean vermietetShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vermietet!= null));
                 if (vermietetShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceVermietet;
-                    sourceVermietet = this.isVermietet();
+                    sourceVermietet = this.getVermietet();
                     Boolean copyVermietet = ((Boolean) strategy.copy(LocatorUtils.property(locator, "vermietet", sourceVermietet), sourceVermietet, (this.vermietet!= null)));
                     copy.setVermietet(copyVermietet);
                 } else {
@@ -992,7 +1067,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean nichtraucherShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.nichtraucher!= null));
                 if (nichtraucherShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceNichtraucher;
-                    sourceNichtraucher = this.isNichtraucher();
+                    sourceNichtraucher = this.getNichtraucher();
                     Boolean copyNichtraucher = ((Boolean) strategy.copy(LocatorUtils.property(locator, "nichtraucher", sourceNichtraucher), sourceNichtraucher, (this.nichtraucher!= null)));
                     copy.setNichtraucher(copyNichtraucher);
                 } else {
@@ -1005,7 +1080,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean haustiereShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.haustiere!= null));
                 if (haustiereShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHaustiere;
-                    sourceHaustiere = this.isHaustiere();
+                    sourceHaustiere = this.getHaustiere();
                     Boolean copyHaustiere = ((Boolean) strategy.copy(LocatorUtils.property(locator, "haustiere", sourceHaustiere), sourceHaustiere, (this.haustiere!= null)));
                     copy.setHaustiere(copyHaustiere);
                 } else {
@@ -1031,7 +1106,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean denkmalgeschuetztShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalgeschuetzt!= null));
                 if (denkmalgeschuetztShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDenkmalgeschuetzt;
-                    sourceDenkmalgeschuetzt = this.isDenkmalgeschuetzt();
+                    sourceDenkmalgeschuetzt = this.getDenkmalgeschuetzt();
                     Boolean copyDenkmalgeschuetzt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalgeschuetzt", sourceDenkmalgeschuetzt), sourceDenkmalgeschuetzt, (this.denkmalgeschuetzt!= null)));
                     copy.setDenkmalgeschuetzt(copyDenkmalgeschuetzt);
                 } else {
@@ -1044,7 +1119,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean alsFerienShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.alsFerien!= null));
                 if (alsFerienShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceAlsFerien;
-                    sourceAlsFerien = this.isAlsFerien();
+                    sourceAlsFerien = this.getAlsFerien();
                     Boolean copyAlsFerien = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alsFerien", sourceAlsFerien), sourceAlsFerien, (this.alsFerien!= null)));
                     copy.setAlsFerien(copyAlsFerien);
                 } else {
@@ -1057,7 +1132,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean gewerblicheNutzungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gewerblicheNutzung!= null));
                 if (gewerblicheNutzungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGewerblicheNutzung;
-                    sourceGewerblicheNutzung = this.isGewerblicheNutzung();
+                    sourceGewerblicheNutzung = this.getGewerblicheNutzung();
                     Boolean copyGewerblicheNutzung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gewerblicheNutzung", sourceGewerblicheNutzung), sourceGewerblicheNutzung, (this.gewerblicheNutzung!= null)));
                     copy.setGewerblicheNutzung(copyGewerblicheNutzung);
                 } else {
@@ -1083,7 +1158,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
                 Boolean hochhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hochhaus!= null));
                 if (hochhausShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHochhaus;
-                    sourceHochhaus = this.isHochhaus();
+                    sourceHochhaus = this.getHochhaus();
                     Boolean copyHochhaus = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hochhaus", sourceHochhaus), sourceHochhaus, (this.hochhaus!= null)));
                     copy.setHochhaus(copyHochhaus);
                 } else {
@@ -1132,10 +1207,12 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new VerwaltungObjekt();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -1146,9 +1223,9 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         final VerwaltungObjekt that = ((VerwaltungObjekt) object);
         {
             Boolean lhsObjektadresseFreigeben;
-            lhsObjektadresseFreigeben = this.isObjektadresseFreigeben();
+            lhsObjektadresseFreigeben = this.getObjektadresseFreigeben();
             Boolean rhsObjektadresseFreigeben;
-            rhsObjektadresseFreigeben = that.isObjektadresseFreigeben();
+            rhsObjektadresseFreigeben = that.getObjektadresseFreigeben();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "objektadresseFreigeben", lhsObjektadresseFreigeben), LocatorUtils.property(thatLocator, "objektadresseFreigeben", rhsObjektadresseFreigeben), lhsObjektadresseFreigeben, rhsObjektadresseFreigeben, (this.objektadresseFreigeben!= null), (that.objektadresseFreigeben!= null))) {
                 return false;
             }
@@ -1209,18 +1286,18 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean lhsWbsSozialwohnung;
-            lhsWbsSozialwohnung = this.isWbsSozialwohnung();
+            lhsWbsSozialwohnung = this.getWbsSozialwohnung();
             Boolean rhsWbsSozialwohnung;
-            rhsWbsSozialwohnung = that.isWbsSozialwohnung();
+            rhsWbsSozialwohnung = that.getWbsSozialwohnung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wbsSozialwohnung", lhsWbsSozialwohnung), LocatorUtils.property(thatLocator, "wbsSozialwohnung", rhsWbsSozialwohnung), lhsWbsSozialwohnung, rhsWbsSozialwohnung, (this.wbsSozialwohnung!= null), (that.wbsSozialwohnung!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsVermietet;
-            lhsVermietet = this.isVermietet();
+            lhsVermietet = this.getVermietet();
             Boolean rhsVermietet;
-            rhsVermietet = that.isVermietet();
+            rhsVermietet = that.getVermietet();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "vermietet", lhsVermietet), LocatorUtils.property(thatLocator, "vermietet", rhsVermietet), lhsVermietet, rhsVermietet, (this.vermietet!= null), (that.vermietet!= null))) {
                 return false;
             }
@@ -1263,18 +1340,18 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean lhsNichtraucher;
-            lhsNichtraucher = this.isNichtraucher();
+            lhsNichtraucher = this.getNichtraucher();
             Boolean rhsNichtraucher;
-            rhsNichtraucher = that.isNichtraucher();
+            rhsNichtraucher = that.getNichtraucher();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "nichtraucher", lhsNichtraucher), LocatorUtils.property(thatLocator, "nichtraucher", rhsNichtraucher), lhsNichtraucher, rhsNichtraucher, (this.nichtraucher!= null), (that.nichtraucher!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsHaustiere;
-            lhsHaustiere = this.isHaustiere();
+            lhsHaustiere = this.getHaustiere();
             Boolean rhsHaustiere;
-            rhsHaustiere = that.isHaustiere();
+            rhsHaustiere = that.getHaustiere();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "haustiere", lhsHaustiere), LocatorUtils.property(thatLocator, "haustiere", rhsHaustiere), lhsHaustiere, rhsHaustiere, (this.haustiere!= null), (that.haustiere!= null))) {
                 return false;
             }
@@ -1290,27 +1367,27 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean lhsDenkmalgeschuetzt;
-            lhsDenkmalgeschuetzt = this.isDenkmalgeschuetzt();
+            lhsDenkmalgeschuetzt = this.getDenkmalgeschuetzt();
             Boolean rhsDenkmalgeschuetzt;
-            rhsDenkmalgeschuetzt = that.isDenkmalgeschuetzt();
+            rhsDenkmalgeschuetzt = that.getDenkmalgeschuetzt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalgeschuetzt", lhsDenkmalgeschuetzt), LocatorUtils.property(thatLocator, "denkmalgeschuetzt", rhsDenkmalgeschuetzt), lhsDenkmalgeschuetzt, rhsDenkmalgeschuetzt, (this.denkmalgeschuetzt!= null), (that.denkmalgeschuetzt!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsAlsFerien;
-            lhsAlsFerien = this.isAlsFerien();
+            lhsAlsFerien = this.getAlsFerien();
             Boolean rhsAlsFerien;
-            rhsAlsFerien = that.isAlsFerien();
+            rhsAlsFerien = that.getAlsFerien();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "alsFerien", lhsAlsFerien), LocatorUtils.property(thatLocator, "alsFerien", rhsAlsFerien), lhsAlsFerien, rhsAlsFerien, (this.alsFerien!= null), (that.alsFerien!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsGewerblicheNutzung;
-            lhsGewerblicheNutzung = this.isGewerblicheNutzung();
+            lhsGewerblicheNutzung = this.getGewerblicheNutzung();
             Boolean rhsGewerblicheNutzung;
-            rhsGewerblicheNutzung = that.isGewerblicheNutzung();
+            rhsGewerblicheNutzung = that.getGewerblicheNutzung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gewerblicheNutzung", lhsGewerblicheNutzung), LocatorUtils.property(thatLocator, "gewerblicheNutzung", rhsGewerblicheNutzung), lhsGewerblicheNutzung, rhsGewerblicheNutzung, (this.gewerblicheNutzung!= null), (that.gewerblicheNutzung!= null))) {
                 return false;
             }
@@ -1326,9 +1403,9 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         }
         {
             Boolean lhsHochhaus;
-            lhsHochhaus = this.isHochhaus();
+            lhsHochhaus = this.getHochhaus();
             Boolean rhsHochhaus;
-            rhsHochhaus = that.isHochhaus();
+            rhsHochhaus = that.getHochhaus();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hochhaus", lhsHochhaus), LocatorUtils.property(thatLocator, "hochhaus", rhsHochhaus), lhsHochhaus, rhsHochhaus, (this.hochhaus!= null), (that.hochhaus!= null))) {
                 return false;
             }
@@ -1354,6 +1431,7 @@ public class VerwaltungObjekt implements Serializable, Cloneable, CopyTo2, Equal
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

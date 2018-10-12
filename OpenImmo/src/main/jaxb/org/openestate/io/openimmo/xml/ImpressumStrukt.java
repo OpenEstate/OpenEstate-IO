@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -40,28 +41,39 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "weiteres"
 })
 @XmlRootElement(name = "impressum_strukt")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String firmenname;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String firmenanschrift;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String telefon;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String vertretungsberechtigter;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String berufsaufsichtsbehoerde;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String handelsregister;
     @XmlElement(name = "handelsregister_nr", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String handelsregisterNr;
     @XmlElement(name = "umsst-id", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String umsstId;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String steuernummer;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String weiteres;
 
     /**
@@ -72,6 +84,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getFirmenname() {
         return firmenname;
     }
@@ -84,6 +97,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFirmenname(String value) {
         this.firmenname = value;
     }
@@ -96,6 +110,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getFirmenanschrift() {
         return firmenanschrift;
     }
@@ -108,6 +123,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFirmenanschrift(String value) {
         this.firmenanschrift = value;
     }
@@ -120,6 +136,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getTelefon() {
         return telefon;
     }
@@ -132,6 +149,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setTelefon(String value) {
         this.telefon = value;
     }
@@ -144,6 +162,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getVertretungsberechtigter() {
         return vertretungsberechtigter;
     }
@@ -156,6 +175,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setVertretungsberechtigter(String value) {
         this.vertretungsberechtigter = value;
     }
@@ -168,6 +188,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getBerufsaufsichtsbehoerde() {
         return berufsaufsichtsbehoerde;
     }
@@ -180,6 +201,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBerufsaufsichtsbehoerde(String value) {
         this.berufsaufsichtsbehoerde = value;
     }
@@ -192,6 +214,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getHandelsregister() {
         return handelsregister;
     }
@@ -204,6 +227,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHandelsregister(String value) {
         this.handelsregister = value;
     }
@@ -216,6 +240,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getHandelsregisterNr() {
         return handelsregisterNr;
     }
@@ -228,6 +253,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHandelsregisterNr(String value) {
         this.handelsregisterNr = value;
     }
@@ -240,6 +266,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getUmsstId() {
         return umsstId;
     }
@@ -252,6 +279,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setUmsstId(String value) {
         this.umsstId = value;
     }
@@ -264,6 +292,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getSteuernummer() {
         return steuernummer;
     }
@@ -276,6 +305,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSteuernummer(String value) {
         this.steuernummer = value;
     }
@@ -288,6 +318,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getWeiteres() {
         return weiteres;
     }
@@ -300,10 +331,12 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWeiteres(String value) {
         this.weiteres = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -311,6 +344,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -318,6 +352,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theFirmenname;
@@ -372,15 +407,18 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ImpressumStrukt) {
@@ -519,10 +557,12 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new ImpressumStrukt();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -624,6 +664,7 @@ public class ImpressumStrukt implements Serializable, Cloneable, CopyTo2, Equals
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

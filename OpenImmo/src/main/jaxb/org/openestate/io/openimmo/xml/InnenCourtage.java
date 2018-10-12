@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -32,12 +33,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "content"
 })
 @XmlRootElement(name = "innen_courtage")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String content;
     @XmlAttribute(name = "mit_mwst")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean mitMwst;
 
     /**
@@ -48,6 +52,7 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getContent() {
         return content;
     }
@@ -60,6 +65,7 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setContent(String value) {
         this.content = value;
     }
@@ -72,7 +78,8 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isMitMwst() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getMitMwst() {
         return mitMwst;
     }
 
@@ -84,10 +91,12 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMitMwst(Boolean value) {
         this.mitMwst = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -95,6 +104,7 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -102,6 +112,7 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theContent;
@@ -110,21 +121,24 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
         }
         {
             Boolean theMitMwst;
-            theMitMwst = this.isMitMwst();
+            theMitMwst = this.getMitMwst();
             strategy.appendField(locator, this, "mitMwst", buffer, theMitMwst, (this.mitMwst!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof InnenCourtage) {
@@ -146,7 +160,7 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean mitMwstShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mitMwst!= null));
                 if (mitMwstShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceMitMwst;
-                    sourceMitMwst = this.isMitMwst();
+                    sourceMitMwst = this.getMitMwst();
                     Boolean copyMitMwst = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mitMwst", sourceMitMwst), sourceMitMwst, (this.mitMwst!= null)));
                     copy.setMitMwst(copyMitMwst);
                 } else {
@@ -159,10 +173,12 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new InnenCourtage();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -182,9 +198,9 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
         }
         {
             Boolean lhsMitMwst;
-            lhsMitMwst = this.isMitMwst();
+            lhsMitMwst = this.getMitMwst();
             Boolean rhsMitMwst;
-            rhsMitMwst = that.isMitMwst();
+            rhsMitMwst = that.getMitMwst();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mitMwst", lhsMitMwst), LocatorUtils.property(thatLocator, "mitMwst", rhsMitMwst), lhsMitMwst, rhsMitMwst, (this.mitMwst!= null), (that.mitMwst!= null))) {
                 return false;
             }
@@ -192,6 +208,7 @@ public class InnenCourtage implements Serializable, Cloneable, CopyTo2, Equals2,
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

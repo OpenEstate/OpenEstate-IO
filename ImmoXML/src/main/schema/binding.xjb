@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               xmlns:immoxml="http://www.immoxml.de"
+               jaxb:version="2.0">
+
+    <!-- global customizations -->
+
+    <jaxb:globalBindings>
+        <jaxb:serializable/>
+        <jaxb:javaType name="java.util.Calendar" xmlType="xsd:date"
+                       parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseDate"
+                       printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printDate"/>
+        <jaxb:javaType name="java.util.Calendar" xmlType="xsd:dateTime"
+                       parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseDateTime"
+                       printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printDateTime"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:decimal"
+                       parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseDecimal"
+                       printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printDecimal"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:float"
+                       parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseDecimal"
+                       printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printDecimal"/>
+        <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:int"
+                       parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parseInteger"
+                       printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printInteger"/>
+        <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:positiveInteger"
+                       parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parsePositiveInteger"
+                       printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printPositiveInteger"/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="immoxml:posdecimal"
+                       parseMethod="org.openestate.io.immoxml.ImmoXmlUtils.parsePositiveDecimal"
+                       printMethod="org.openestate.io.immoxml.ImmoXmlUtils.printPositiveDecimal"/>
+    </jaxb:globalBindings>
+
+
+    <!-- customizations for immoxml.xsd -->
+
+    <jaxb:bindings schemaLocation="immoxml.xsd" node="/xsd:schema">
+
+        <jaxb:schemaBindings>
+            <jaxb:package name="org.openestate.io.immoxml.xml">
+                <jaxb:javadoc>
+                    <![CDATA[<body>Generated JAXB classes to read and write ImmoXML data.</body>]]></jaxb:javadoc>
+            </jaxb:package>
+        </jaxb:schemaBindings>
+
+
+        <!-- choices with better names -->
+        <!--
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='geo']//xsd:choice">
+          <jaxb:property name="Anschrift" />
+        </jaxb:bindings>
+        -->
+        <!--
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='kontaktperson']//xsd:choice">
+          <jaxb:property name="Kontakte" />
+        </jaxb:bindings>
+        -->
+
+
+        <!-- use enumeration classes -->
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='uebertragung']//xsd:attribute[@name='art']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Art">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>art</em> attribute in &lt;uebertragung&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='uebertragung']//xsd:attribute[@name='umfang']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Umfang">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>umfang</em> attribute in &lt;uebertragung&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='lage_gebiet']//xsd:attribute[@name='gebiete']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Gebiete">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>gebiete</em> attribute in &lt;lage_gebiet&gt; elements.]]></jaxb:javadoc>
+                <jaxb:typesafeEnumMember value="1A" name="A_LAGE"/>
+                <jaxb:typesafeEnumMember value="1B" name="B_LAGE"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='email_sonstige']//xsd:attribute[@name='emailart']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Emailart">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>emailart</em> attribute in &lt;email_sonstige&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='tel_sonstige']//xsd:attribute[@name='telefonart']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Telefonart">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>telefonart</em> attribute in &lt;tel_sonstige&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='preis_zeiteinheit']//xsd:attribute[@name='zeiteinheit']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Zeiteinheit">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>zeiteinheit</em> attribute in &lt;preis_zeiteinheit&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='stp_sonstige']//xsd:attribute[@name='platzart']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Platzart">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>platzart</em> attribute in &lt;stp_sonstige&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='unterkellert']//xsd:attribute[@name='keller']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Keller">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>keller</em> attribute in &lt;unterkellert&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='zustand']//xsd:attribute[@name='zustand_art']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="ZustandArt">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>zustand</em> attribute in &lt;zustand_art&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='alter']//xsd:attribute[@name='alter_attr']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="AlterAttr">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>alter_attr</em> attribute in &lt;alter&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='bebaubar_nach']//xsd:attribute[@name='bebaubar_attr']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="BebaubarAttr">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>bebaubar_attr</em> attribute in &lt;bebaubar_nach&gt; elements.]]></jaxb:javadoc>
+                <jaxb:typesafeEnumMember value="34_NACHBARSCHAFT" name="NACHBARSCHAFT"/>
+                <jaxb:typesafeEnumMember value="35_AUSSENGEBIET" name="AUSSENGEBIET"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='erschliessung']//xsd:attribute[@name='erschl_attr']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="ErschlAttr">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>erschl_attr</em> attribute in &lt;erschliessung&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='ausblick']//xsd:attribute[@name='blick']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Blick">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>blick</em> attribute in &lt;ausblick&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='distanzen']//xsd:attribute[@name='distanz_zu']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="DistanzZu">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>distanz_zu</em> attribute in &lt;distanzen&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='distanzen_sport']//xsd:attribute[@name='distanz_zu_sport']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="DistanzZuSport">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>distanz_zu_sport</em> attribute in &lt;distanzen_sport&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='anhang']//xsd:attribute[@name='location']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Location">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>location</em> attribute in &lt;anhang&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='anhang']//xsd:attribute[@name='gruppe']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Gruppe">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>gruppe</em> attribute in &lt;anhang&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='min_mietdauer']//xsd:attribute[@name='min_dauer']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="MinDauer">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>min_dauer</em> attribute in &lt;min_mietdauer&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='max_mietdauer']//xsd:attribute[@name='max_dauer']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="MaxDauer">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>max_dauer</em> attribute in &lt;max_mietdauer&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='geschlecht']//xsd:attribute[@name='geschl_attr']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="GeschlAttr">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>geschl_attr</em> attribute in &lt;geschlecht&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='aktion']//xsd:attribute[@name='aktionart']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="AktionArt">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>aktionart</em> attribute in &lt;aktion&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='zimmer']//xsd:attribute[@name='zimmertyp']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Zimmertyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>zimmertyp</em> attribute in &lt;zimmer&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='wohnung']//xsd:attribute[@name='wohnungtyp']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Wohnungtyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>wohnungtyp</em> attribute in &lt;wohnung&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='haus']//xsd:attribute[@name='haustyp']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Haustyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>haustyp</em> attribute in &lt;haus&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='grundstueck']//xsd:attribute[@name='grundst_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="GrundstTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>grundst_typ</em> attribute in &lt;grundstueck&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='buero_praxen']//xsd:attribute[@name='buero_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="BueroTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>buero_typ</em> attribute in &lt;buero_praxen&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='einzelhandel']//xsd:attribute[@name='handel_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="HandelTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>handel_typ</em> attribute in &lt;einzelhandel&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='gastgewerbe']//xsd:attribute[@name='gastgew_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="GastgewTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>gastgew_typ</em> attribute in &lt;gastgewerbe&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='hallen_lager_prod']//xsd:attribute[@name='hallen_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="HallenTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>hallen_typ</em> attribute in &lt;hallen_lager_prod&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='land_und_forstwirtschaft']//xsd:attribute[@name='land_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="LandTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>land_typ</em> attribute in &lt;land_und_forstwirtschaft&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='sonstige']//xsd:attribute[@name='sonstige_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="SonstigeTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>sonstige_typ</em> attribute in &lt;sonstige&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='freizeitimmobilie_gewerblich']//xsd:attribute[@name='freizeit_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="FreizeitTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>freizeit_typ</em> attribute in &lt;freizeitimmobilie_gewerblich&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings
+                node="/xsd:schema/xsd:element[@name='zinshaus_renditeobjekt']//xsd:attribute[@name='zins_typ']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="ZinsTyp">
+                <jaxb:javadoc>
+                    <![CDATA[Java enum for <em>zins_typ</em> attribute in &lt;zinshaus_renditeobjekt&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <!--
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='waehrung']//xsd:attribute[@name='iso_waehrung']/xsd:simpleType">
+          <jaxb:typesafeEnumClass name="IsoWaehrung">
+            <jaxb:javadoc><![CDATA[Java enum for <em>iso_waehrung</em> attribute in &lt;waehrung&gt; elements.]]></jaxb:javadoc>
+          </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+        -->
+
+        <!--
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='land']//xsd:attribute[@name='iso_land']/xsd:simpleType">
+          <jaxb:typesafeEnumClass name="IsoLand">
+            <jaxb:javadoc><![CDATA[Java enum for <em>iso_land</em> attribute in &lt;land&gt; elements.]]></jaxb:javadoc>
+          </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+        -->
+
+
+        <!-- custom javadocs -->
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='aktion']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;aktion&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='alter']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;alter&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='anbieter']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;anbieter&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='angeschl_gastronomie']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;angeschl_gastronomie&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='anhaenge']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;anhaenge&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='anhang']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;anhang&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='ausblick']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;ausblick&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='ausricht_balkon_terrasse']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;ausricht_balkon_terrasse&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='aussen_courtage']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;aussen_courtage&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='ausstattung']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;ausstattung&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='bad']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;bad&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='bebaubar_nach']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;bebaubar_nach&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='befeuerung']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;befeuerung&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='boden']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;boden&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='buero_praxen']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;buero_praxen&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='daten']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;daten&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='distanzen']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;distanzen&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='distanzen_sport']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;distanzen_sport&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='einzelhandel']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;einzelhandel&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='email_sonstige']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;email_sonstige&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='erschliessung']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;erschliessung&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='fahrstuhl']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;fahrstuhl&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='flaechen']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;flaechen&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='freitexte']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;freitexte&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='freizeitimmobilie_gewerblich']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;freizeitimmobilie_gewerblich&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='gastgewerbe']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;gastgewerbe&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='geo']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;geo&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='geokoordinaten']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;geokoordinaten&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='geschlecht']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;geschlecht&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='grundstueck']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;grundstueck&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='hallen_lager_prod']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;hallen_lager_prod&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='haus']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;haus&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='heizungsart']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;heizungsart&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='immobilie']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;immobilie&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='immoxml']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;immoxml&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='infrastruktur']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;infrastruktur&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='innen_courtage']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;innen_courtage&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='kontaktperson']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;kontaktperson&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='kueche']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;kueche&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='lage_gebiet']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;lage_gebiet&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='lage_im_bau']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;lage_im_bau&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='land']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;land&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='land_und_forstwirtschaft']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;land_und_forstwirtschaft&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='max_mietdauer']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;max_mietdauer&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='min_mietdauer']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;min_mietdauer&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='moebliert']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;moebliert&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='nutzungsart']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;nutzungsart&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='objektart']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;objektart&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='objektkategorie']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;objektkategorie&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='preis_zeiteinheit']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;preis_zeiteinheit&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='preise']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;preise&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='serviceleistungen']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;serviceleistungen&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='sicherheitstechnik']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;sicherheitstechnik&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='sonstige']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;sonstige&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='stellplatzart']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;stellplatzart&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='stp_sonstige']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;stp_sonstige&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='tel_sonstige']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;tel_sonstige&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='uebertragung']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;uebertragung&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='unterkellert']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;unterkellert&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='user_defined_anyfield']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;user_defined_anyfield&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='user_defined_simplefield']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;user_defined_simplefield&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='vermarktungsart']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;vermarktungsart&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='verwaltung_objekt']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;verwaltung_objekt&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='verwaltung_techn']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;verwaltung_techn&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='waehrung']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;waehrung&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='weitere_adresse']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;weitere_adresse&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='wohnung']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;wohnung&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='zimmer']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;zimmer&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='zinshaus_renditeobjekt']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;zinshaus_renditeobjekt&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='zustand']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;zustand&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='zustand_angaben']">
+            <jaxb:class>
+                <jaxb:javadoc><![CDATA[Java class for &lt;zustand_angaben&gt; element.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='stellplatz']">
+            <jaxb:class name="Stellplatz">
+                <jaxb:javadoc><![CDATA[Java class for "stellplatz" complex type.]]></jaxb:javadoc>
+            </jaxb:class>
+        </jaxb:bindings>
+
+    </jaxb:bindings>
+
+</jaxb:bindings>

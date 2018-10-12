@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -62,39 +63,52 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     org.openestate.io.is24_xml.xml.HalleProduktion.Type.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class HalleProduktionTyp
     extends GewerbeImmoBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected VermarktungGewerbeTyp vermarktung;
     @XmlElement(name = "Lastenaufzug")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected HebeanlageTyp lastenaufzug;
     @XmlElement(name = "Kranbahn")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected HebeanlageTyp kranbahn;
     @XmlAttribute(name = "Objektkategorie2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected HalleProduktionKategorieTyp objektkategorie2;
     @XmlAttribute(name = "LagerProduktionsFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal lagerProduktionsFlaeche;
     @XmlAttribute(name = "Bodenbelag")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Hebebuehne")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean hebebuehne;
     @XmlAttribute(name = "Hallenhoehe")
     @XmlJavaTypeAdapter(Adapter30 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal hallenhoehe;
     @XmlAttribute(name = "Rampe")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean rampe;
     @XmlAttribute(name = "Bodenbelastung")
     @XmlJavaTypeAdapter(Adapter33 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal bodenbelastung;
     @XmlAttribute(name = "GrundstuecksFlaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal grundstuecksFlaeche;
     @XmlAttribute(name = "Stromanschlusswert")
     @XmlJavaTypeAdapter(Adapter23 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long stromanschlusswert;
 
     /**
@@ -105,6 +119,7 @@ public class HalleProduktionTyp
      *     {@link VermarktungGewerbeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public VermarktungGewerbeTyp getVermarktung() {
         return vermarktung;
     }
@@ -117,6 +132,7 @@ public class HalleProduktionTyp
      *     {@link VermarktungGewerbeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setVermarktung(VermarktungGewerbeTyp value) {
         this.vermarktung = value;
     }
@@ -129,6 +145,7 @@ public class HalleProduktionTyp
      *     {@link HebeanlageTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public HebeanlageTyp getLastenaufzug() {
         return lastenaufzug;
     }
@@ -141,6 +158,7 @@ public class HalleProduktionTyp
      *     {@link HebeanlageTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setLastenaufzug(HebeanlageTyp value) {
         this.lastenaufzug = value;
     }
@@ -153,6 +171,7 @@ public class HalleProduktionTyp
      *     {@link HebeanlageTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public HebeanlageTyp getKranbahn() {
         return kranbahn;
     }
@@ -165,6 +184,7 @@ public class HalleProduktionTyp
      *     {@link HebeanlageTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKranbahn(HebeanlageTyp value) {
         this.kranbahn = value;
     }
@@ -177,6 +197,7 @@ public class HalleProduktionTyp
      *     {@link HalleProduktionKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public HalleProduktionKategorieTyp getObjektkategorie2() {
         if (objektkategorie2 == null) {
             return HalleProduktionKategorieTyp.KEINE_ANGABE;
@@ -193,6 +214,7 @@ public class HalleProduktionTyp
      *     {@link HalleProduktionKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektkategorie2(HalleProduktionKategorieTyp value) {
         this.objektkategorie2 = value;
     }
@@ -205,6 +227,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getLagerProduktionsFlaeche() {
         return lagerProduktionsFlaeche;
     }
@@ -217,6 +240,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setLagerProduktionsFlaeche(BigDecimal value) {
         this.lagerProduktionsFlaeche = value;
     }
@@ -229,6 +253,7 @@ public class HalleProduktionTyp
      *     {@link BodenbelagTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BodenbelagTyp getBodenbelag() {
         return bodenbelag;
     }
@@ -241,6 +266,7 @@ public class HalleProduktionTyp
      *     {@link BodenbelagTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBodenbelag(BodenbelagTyp value) {
         this.bodenbelag = value;
     }
@@ -253,7 +279,8 @@ public class HalleProduktionTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isHebebuehne() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHebebuehne() {
         return hebebuehne;
     }
 
@@ -265,6 +292,7 @@ public class HalleProduktionTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHebebuehne(Boolean value) {
         this.hebebuehne = value;
     }
@@ -277,6 +305,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getHallenhoehe() {
         return hallenhoehe;
     }
@@ -289,6 +318,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHallenhoehe(BigDecimal value) {
         this.hallenhoehe = value;
     }
@@ -301,7 +331,8 @@ public class HalleProduktionTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isRampe() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRampe() {
         return rampe;
     }
 
@@ -313,6 +344,7 @@ public class HalleProduktionTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setRampe(Boolean value) {
         this.rampe = value;
     }
@@ -325,6 +357,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getBodenbelastung() {
         return bodenbelastung;
     }
@@ -337,6 +370,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBodenbelastung(BigDecimal value) {
         this.bodenbelastung = value;
     }
@@ -349,6 +383,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getGrundstuecksFlaeche() {
         return grundstuecksFlaeche;
     }
@@ -361,6 +396,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGrundstuecksFlaeche(BigDecimal value) {
         this.grundstuecksFlaeche = value;
     }
@@ -373,6 +409,7 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getStromanschlusswert() {
         return stromanschlusswert;
     }
@@ -385,10 +422,12 @@ public class HalleProduktionTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setStromanschlusswert(Long value) {
         this.stromanschlusswert = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -396,6 +435,7 @@ public class HalleProduktionTyp
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -403,6 +443,7 @@ public class HalleProduktionTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -437,7 +478,7 @@ public class HalleProduktionTyp
         }
         {
             Boolean theHebebuehne;
-            theHebebuehne = this.isHebebuehne();
+            theHebebuehne = this.getHebebuehne();
             strategy.appendField(locator, this, "hebebuehne", buffer, theHebebuehne, (this.hebebuehne!= null));
         }
         {
@@ -447,7 +488,7 @@ public class HalleProduktionTyp
         }
         {
             Boolean theRampe;
-            theRampe = this.isRampe();
+            theRampe = this.getRampe();
             strategy.appendField(locator, this, "rampe", buffer, theRampe, (this.rampe!= null));
         }
         {
@@ -468,15 +509,18 @@ public class HalleProduktionTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
@@ -564,7 +608,7 @@ public class HalleProduktionTyp
                 Boolean hebebuehneShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.hebebuehne!= null));
                 if (hebebuehneShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHebebuehne;
-                    sourceHebebuehne = this.isHebebuehne();
+                    sourceHebebuehne = this.getHebebuehne();
                     Boolean copyHebebuehne = ((Boolean) strategy.copy(LocatorUtils.property(locator, "hebebuehne", sourceHebebuehne), sourceHebebuehne, (this.hebebuehne!= null)));
                     copy.setHebebuehne(copyHebebuehne);
                 } else {
@@ -590,7 +634,7 @@ public class HalleProduktionTyp
                 Boolean rampeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rampe!= null));
                 if (rampeShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRampe;
-                    sourceRampe = this.isRampe();
+                    sourceRampe = this.getRampe();
                     Boolean copyRampe = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rampe", sourceRampe), sourceRampe, (this.rampe!= null)));
                     copy.setRampe(copyRampe);
                 } else {
@@ -642,10 +686,12 @@ public class HalleProduktionTyp
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new HalleProduktionTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -713,9 +759,9 @@ public class HalleProduktionTyp
         }
         {
             Boolean lhsHebebuehne;
-            lhsHebebuehne = this.isHebebuehne();
+            lhsHebebuehne = this.getHebebuehne();
             Boolean rhsHebebuehne;
-            rhsHebebuehne = that.isHebebuehne();
+            rhsHebebuehne = that.getHebebuehne();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "hebebuehne", lhsHebebuehne), LocatorUtils.property(thatLocator, "hebebuehne", rhsHebebuehne), lhsHebebuehne, rhsHebebuehne, (this.hebebuehne!= null), (that.hebebuehne!= null))) {
                 return false;
             }
@@ -731,9 +777,9 @@ public class HalleProduktionTyp
         }
         {
             Boolean lhsRampe;
-            lhsRampe = this.isRampe();
+            lhsRampe = this.getRampe();
             Boolean rhsRampe;
-            rhsRampe = that.isRampe();
+            rhsRampe = that.getRampe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rampe", lhsRampe), LocatorUtils.property(thatLocator, "rampe", rhsRampe), lhsRampe, rhsRampe, (this.rampe!= null), (that.rampe!= null))) {
                 return false;
             }
@@ -768,6 +814,7 @@ public class HalleProduktionTyp
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

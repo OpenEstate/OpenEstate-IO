@@ -4,6 +4,7 @@ package org.openestate.io.is24_xml.xml;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -74,19 +75,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "ImmobilienTransferTyp", propOrder = {
     "anbieter"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Anbieter", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ImmobilienTransferTyp.Anbieter anbieter;
     @XmlAttribute(name = "EmailBeiFehler", required = true)
     @XmlJavaTypeAdapter(Adapter16 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String emailBeiFehler;
     @XmlAttribute(name = "ErstellerSoftware", required = true)
     @XmlJavaTypeAdapter(Adapter9 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String erstellerSoftware;
     @XmlAttribute(name = "ErstellerSoftwareVersion", required = true)
     @XmlJavaTypeAdapter(Adapter9 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String erstellerSoftwareVersion;
 
     /**
@@ -97,6 +103,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link ImmobilienTransferTyp.Anbieter }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ImmobilienTransferTyp.Anbieter getAnbieter() {
         return anbieter;
     }
@@ -109,6 +116,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link ImmobilienTransferTyp.Anbieter }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAnbieter(ImmobilienTransferTyp.Anbieter value) {
         this.anbieter = value;
     }
@@ -121,6 +129,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getEmailBeiFehler() {
         return emailBeiFehler;
     }
@@ -133,6 +142,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEmailBeiFehler(String value) {
         this.emailBeiFehler = value;
     }
@@ -145,6 +155,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getErstellerSoftware() {
         return erstellerSoftware;
     }
@@ -157,6 +168,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setErstellerSoftware(String value) {
         this.erstellerSoftware = value;
     }
@@ -169,6 +181,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getErstellerSoftwareVersion() {
         return erstellerSoftwareVersion;
     }
@@ -181,10 +194,12 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setErstellerSoftwareVersion(String value) {
         this.erstellerSoftwareVersion = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -192,6 +207,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -199,6 +215,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             ImmobilienTransferTyp.Anbieter theAnbieter;
@@ -223,15 +240,18 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ImmobilienTransferTyp) {
@@ -292,10 +312,12 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new ImmobilienTransferTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -343,6 +365,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -374,14 +397,17 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
         "virtuelleImmobilie",
         "immobilie"
     })
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public static class Anbieter
         extends AnbieterTyp
         implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElementRef(name = "VirtuelleImmobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         protected List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> virtuelleImmobilie;
         @XmlElementRef(name = "Immobilie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         protected List<JAXBElement<? extends ImmobilieBaseTyp>> immobilie;
 
         /**
@@ -407,6 +433,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
          * 
          * 
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public List<JAXBElement<? extends VirtuelleImmobilieBaseTyp>> getVirtuelleImmobilie() {
             if (virtuelleImmobilie == null) {
                 virtuelleImmobilie = new ArrayList<JAXBElement<? extends VirtuelleImmobilieBaseTyp>>();
@@ -432,29 +459,30 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link SonstigeGewerbe }
-         * {@link WAZ }
-         * {@link HalleProduktion }
-         * {@link BueroPraxis }
-         * {@link Gastronomie }
          * {@link Zwangsversteigerung }
-         * {@link HausKauf }
-         * {@link Anlageobjekt }
+         * {@link WGZimmer }
+         * {@link GrundstueckGewerbe }
+         * {@link Gastronomie }
+         * {@link SonstigeGewerbe }
          * {@link Einzelhandel }
+         * {@link GarageKauf }
+         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
          * {@link WohnungMiete }
+         * {@link GrundstueckWohnenKauf }
+         * {@link WAZ }
+         * {@link GarageMiete }
+         * {@link Anlageobjekt }
+         * {@link WohnungKauf }
+         * {@link HausMiete }
+         * {@link BueroPraxis }
+         * {@link HalleProduktion }
          * {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
          * {@link GrundstueckWohnenMiete }
-         * {@link HausMiete }
-         * {@link GrundstueckGewerbe }
-         * {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
-         * {@link WohnungKauf }
-         * {@link GrundstueckWohnenKauf }
-         * {@link WGZimmer }
-         * {@link GarageMiete }
-         * {@link GarageKauf }
+         * {@link HausKauf }
          * 
          * 
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public List<JAXBElement<? extends ImmobilieBaseTyp>> getImmobilie() {
             if (immobilie == null) {
                 immobilie = new ArrayList<JAXBElement<? extends ImmobilieBaseTyp>>();
@@ -462,6 +490,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
             return this.immobilie;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
@@ -469,6 +498,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
             return buffer.toString();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -476,6 +506,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             super.appendFields(locator, buffer, strategy);
             {
@@ -491,15 +522,18 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             super.copyTo(locator, draftCopy, strategy);
@@ -545,10 +579,12 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
             return draftCopy;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public Object createNewInstance() {
             return new ImmobilienTransferTyp.Anbieter();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -581,6 +617,7 @@ public class ImmobilienTransferTyp implements Serializable, Cloneable, CopyTo2, 
             return true;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);

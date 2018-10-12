@@ -2,6 +2,7 @@
 package org.openestate.io.immoxml.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,16 +30,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "vermarktungsart")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "KAUF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kauf;
     @XmlAttribute(name = "MIETE_PACHT")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean mietepacht;
     @XmlAttribute(name = "ERBPACHT")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean erbpacht;
     @XmlAttribute(name = "LEASING")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean leasing;
 
     /**
@@ -49,7 +55,8 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
-    public Boolean isKAUF() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKAUF() {
         return kauf;
     }
 
@@ -61,6 +68,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setKAUF(Boolean value) {
         this.kauf = value;
     }
@@ -73,7 +81,8 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
-    public Boolean isMIETEPACHT() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getMIETEPACHT() {
         return mietepacht;
     }
 
@@ -85,6 +94,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setMIETEPACHT(Boolean value) {
         this.mietepacht = value;
     }
@@ -97,7 +107,8 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
-    public Boolean isERBPACHT() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getERBPACHT() {
         return erbpacht;
     }
 
@@ -109,6 +120,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setERBPACHT(Boolean value) {
         this.erbpacht = value;
     }
@@ -121,7 +133,8 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
-    public Boolean isLEASING() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getLEASING() {
         return leasing;
     }
 
@@ -133,10 +146,12 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setLEASING(Boolean value) {
         this.leasing = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -144,6 +159,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -151,39 +167,43 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theKAUF;
-            theKAUF = this.isKAUF();
+            theKAUF = this.getKAUF();
             strategy.appendField(locator, this, "kauf", buffer, theKAUF, (this.kauf!= null));
         }
         {
             Boolean theMIETEPACHT;
-            theMIETEPACHT = this.isMIETEPACHT();
+            theMIETEPACHT = this.getMIETEPACHT();
             strategy.appendField(locator, this, "mietepacht", buffer, theMIETEPACHT, (this.mietepacht!= null));
         }
         {
             Boolean theERBPACHT;
-            theERBPACHT = this.isERBPACHT();
+            theERBPACHT = this.getERBPACHT();
             strategy.appendField(locator, this, "erbpacht", buffer, theERBPACHT, (this.erbpacht!= null));
         }
         {
             Boolean theLEASING;
-            theLEASING = this.isLEASING();
+            theLEASING = this.getLEASING();
             strategy.appendField(locator, this, "leasing", buffer, theLEASING, (this.leasing!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Vermarktungsart) {
@@ -192,7 +212,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
                 Boolean kaufShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kauf!= null));
                 if (kaufShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKAUF;
-                    sourceKAUF = this.isKAUF();
+                    sourceKAUF = this.getKAUF();
                     Boolean copyKAUF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kauf", sourceKAUF), sourceKAUF, (this.kauf!= null)));
                     copy.setKAUF(copyKAUF);
                 } else {
@@ -205,7 +225,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
                 Boolean mietepachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mietepacht!= null));
                 if (mietepachtShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceMIETEPACHT;
-                    sourceMIETEPACHT = this.isMIETEPACHT();
+                    sourceMIETEPACHT = this.getMIETEPACHT();
                     Boolean copyMIETEPACHT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mietepacht", sourceMIETEPACHT), sourceMIETEPACHT, (this.mietepacht!= null)));
                     copy.setMIETEPACHT(copyMIETEPACHT);
                 } else {
@@ -218,7 +238,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
                 Boolean erbpachtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erbpacht!= null));
                 if (erbpachtShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceERBPACHT;
-                    sourceERBPACHT = this.isERBPACHT();
+                    sourceERBPACHT = this.getERBPACHT();
                     Boolean copyERBPACHT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "erbpacht", sourceERBPACHT), sourceERBPACHT, (this.erbpacht!= null)));
                     copy.setERBPACHT(copyERBPACHT);
                 } else {
@@ -231,7 +251,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
                 Boolean leasingShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.leasing!= null));
                 if (leasingShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceLEASING;
-                    sourceLEASING = this.isLEASING();
+                    sourceLEASING = this.getLEASING();
                     Boolean copyLEASING = ((Boolean) strategy.copy(LocatorUtils.property(locator, "leasing", sourceLEASING), sourceLEASING, (this.leasing!= null)));
                     copy.setLEASING(copyLEASING);
                 } else {
@@ -244,10 +264,12 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Vermarktungsart();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -258,36 +280,36 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
         final Vermarktungsart that = ((Vermarktungsart) object);
         {
             Boolean lhsKAUF;
-            lhsKAUF = this.isKAUF();
+            lhsKAUF = this.getKAUF();
             Boolean rhsKAUF;
-            rhsKAUF = that.isKAUF();
+            rhsKAUF = that.getKAUF();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kauf", lhsKAUF), LocatorUtils.property(thatLocator, "kauf", rhsKAUF), lhsKAUF, rhsKAUF, (this.kauf!= null), (that.kauf!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsMIETEPACHT;
-            lhsMIETEPACHT = this.isMIETEPACHT();
+            lhsMIETEPACHT = this.getMIETEPACHT();
             Boolean rhsMIETEPACHT;
-            rhsMIETEPACHT = that.isMIETEPACHT();
+            rhsMIETEPACHT = that.getMIETEPACHT();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mietepacht", lhsMIETEPACHT), LocatorUtils.property(thatLocator, "mietepacht", rhsMIETEPACHT), lhsMIETEPACHT, rhsMIETEPACHT, (this.mietepacht!= null), (that.mietepacht!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsERBPACHT;
-            lhsERBPACHT = this.isERBPACHT();
+            lhsERBPACHT = this.getERBPACHT();
             Boolean rhsERBPACHT;
-            rhsERBPACHT = that.isERBPACHT();
+            rhsERBPACHT = that.getERBPACHT();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "erbpacht", lhsERBPACHT), LocatorUtils.property(thatLocator, "erbpacht", rhsERBPACHT), lhsERBPACHT, rhsERBPACHT, (this.erbpacht!= null), (that.erbpacht!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsLEASING;
-            lhsLEASING = this.isLEASING();
+            lhsLEASING = this.getLEASING();
             Boolean rhsLEASING;
-            rhsLEASING = that.isLEASING();
+            rhsLEASING = that.getLEASING();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "leasing", lhsLEASING), LocatorUtils.property(thatLocator, "leasing", rhsLEASING), lhsLEASING, rhsLEASING, (this.leasing!= null), (that.leasing!= null))) {
                 return false;
             }
@@ -295,6 +317,7 @@ public class Vermarktungsart implements Serializable, Cloneable, CopyTo2, Equals
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

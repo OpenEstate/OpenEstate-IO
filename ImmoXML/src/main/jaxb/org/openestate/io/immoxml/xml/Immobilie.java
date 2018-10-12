@@ -4,6 +4,7 @@ package org.openestate.io.immoxml.xml;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -47,32 +48,48 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedAnyfield"
 })
 @XmlRootElement(name = "immobilie")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Objektkategorie objektkategorie;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Geo geo;
     @XmlElement(required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Kontaktperson kontaktperson;
     @XmlElement(name = "weitere_adresse")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<WeitereAdresse> weitereAdresse;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Preise preise;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Flaechen flaechen;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Ausstattung ausstattung;
     @XmlElement(name = "zustand_angaben")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected ZustandAngaben zustandAngaben;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Infrastruktur infrastruktur;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Freitexte freitexte;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Anhaenge anhaenge;
     @XmlElement(name = "verwaltung_objekt")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected VerwaltungObjekt verwaltungObjekt;
     @XmlElement(name = "verwaltung_techn", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected VerwaltungTechn verwaltungTechn;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
 
     /**
@@ -83,6 +100,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Objektkategorie }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Objektkategorie getObjektkategorie() {
         return objektkategorie;
     }
@@ -95,6 +113,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Objektkategorie }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektkategorie(Objektkategorie value) {
         this.objektkategorie = value;
     }
@@ -107,6 +126,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Geo }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Geo getGeo() {
         return geo;
     }
@@ -119,6 +139,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Geo }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setGeo(Geo value) {
         this.geo = value;
     }
@@ -131,6 +152,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Kontaktperson }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Kontaktperson getKontaktperson() {
         return kontaktperson;
     }
@@ -143,6 +165,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Kontaktperson }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setKontaktperson(Kontaktperson value) {
         this.kontaktperson = value;
     }
@@ -169,6 +192,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<WeitereAdresse> getWeitereAdresse() {
         if (weitereAdresse == null) {
             weitereAdresse = new ArrayList<WeitereAdresse>();
@@ -184,6 +208,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Preise }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Preise getPreise() {
         return preise;
     }
@@ -196,6 +221,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Preise }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setPreise(Preise value) {
         this.preise = value;
     }
@@ -208,6 +234,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Flaechen }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Flaechen getFlaechen() {
         return flaechen;
     }
@@ -220,6 +247,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Flaechen }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setFlaechen(Flaechen value) {
         this.flaechen = value;
     }
@@ -232,6 +260,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Ausstattung }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Ausstattung getAusstattung() {
         return ausstattung;
     }
@@ -244,6 +273,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Ausstattung }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setAusstattung(Ausstattung value) {
         this.ausstattung = value;
     }
@@ -256,6 +286,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link ZustandAngaben }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public ZustandAngaben getZustandAngaben() {
         return zustandAngaben;
     }
@@ -268,6 +299,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link ZustandAngaben }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setZustandAngaben(ZustandAngaben value) {
         this.zustandAngaben = value;
     }
@@ -280,6 +312,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Infrastruktur }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Infrastruktur getInfrastruktur() {
         return infrastruktur;
     }
@@ -292,6 +325,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Infrastruktur }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setInfrastruktur(Infrastruktur value) {
         this.infrastruktur = value;
     }
@@ -304,6 +338,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Freitexte }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Freitexte getFreitexte() {
         return freitexte;
     }
@@ -316,6 +351,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Freitexte }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setFreitexte(Freitexte value) {
         this.freitexte = value;
     }
@@ -328,6 +364,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Anhaenge }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Anhaenge getAnhaenge() {
         return anhaenge;
     }
@@ -340,6 +377,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Anhaenge }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setAnhaenge(Anhaenge value) {
         this.anhaenge = value;
     }
@@ -352,6 +390,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link VerwaltungObjekt }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public VerwaltungObjekt getVerwaltungObjekt() {
         return verwaltungObjekt;
     }
@@ -364,6 +403,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link VerwaltungObjekt }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setVerwaltungObjekt(VerwaltungObjekt value) {
         this.verwaltungObjekt = value;
     }
@@ -376,6 +416,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link VerwaltungTechn }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public VerwaltungTechn getVerwaltungTechn() {
         return verwaltungTechn;
     }
@@ -388,6 +429,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link VerwaltungTechn }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setVerwaltungTechn(VerwaltungTechn value) {
         this.verwaltungTechn = value;
     }
@@ -414,6 +456,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -443,6 +486,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -450,6 +494,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return this.userDefinedAnyfield;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -457,6 +502,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -464,6 +510,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Objektkategorie theObjektkategorie;
@@ -543,15 +590,18 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Immobilie) {
@@ -770,10 +820,12 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Immobilie();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -920,6 +972,7 @@ public class Immobilie implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

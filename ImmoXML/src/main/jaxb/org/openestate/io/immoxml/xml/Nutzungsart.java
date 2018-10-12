@@ -2,6 +2,7 @@
 package org.openestate.io.immoxml.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,16 +30,21 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "nutzungsart")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "WOHNEN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean wohnen;
     @XmlAttribute(name = "GEWERBE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gewerbe;
     @XmlAttribute(name = "ANLAGE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean anlage;
     @XmlAttribute(name = "WAZ")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean waz;
 
     /**
@@ -49,7 +55,8 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isWOHNEN() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWOHNEN() {
         return wohnen;
     }
 
@@ -61,6 +68,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setWOHNEN(Boolean value) {
         this.wohnen = value;
     }
@@ -73,7 +81,8 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isGEWERBE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGEWERBE() {
         return gewerbe;
     }
 
@@ -85,6 +94,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setGEWERBE(Boolean value) {
         this.gewerbe = value;
     }
@@ -97,7 +107,8 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isANLAGE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getANLAGE() {
         return anlage;
     }
 
@@ -109,6 +120,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setANLAGE(Boolean value) {
         this.anlage = value;
     }
@@ -121,7 +133,8 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isWAZ() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWAZ() {
         return waz;
     }
 
@@ -133,10 +146,12 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setWAZ(Boolean value) {
         this.waz = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -144,6 +159,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -151,39 +167,43 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theWOHNEN;
-            theWOHNEN = this.isWOHNEN();
+            theWOHNEN = this.getWOHNEN();
             strategy.appendField(locator, this, "wohnen", buffer, theWOHNEN, (this.wohnen!= null));
         }
         {
             Boolean theGEWERBE;
-            theGEWERBE = this.isGEWERBE();
+            theGEWERBE = this.getGEWERBE();
             strategy.appendField(locator, this, "gewerbe", buffer, theGEWERBE, (this.gewerbe!= null));
         }
         {
             Boolean theANLAGE;
-            theANLAGE = this.isANLAGE();
+            theANLAGE = this.getANLAGE();
             strategy.appendField(locator, this, "anlage", buffer, theANLAGE, (this.anlage!= null));
         }
         {
             Boolean theWAZ;
-            theWAZ = this.isWAZ();
+            theWAZ = this.getWAZ();
             strategy.appendField(locator, this, "waz", buffer, theWAZ, (this.waz!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Nutzungsart) {
@@ -192,7 +212,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean wohnenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wohnen!= null));
                 if (wohnenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWOHNEN;
-                    sourceWOHNEN = this.isWOHNEN();
+                    sourceWOHNEN = this.getWOHNEN();
                     Boolean copyWOHNEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wohnen", sourceWOHNEN), sourceWOHNEN, (this.wohnen!= null)));
                     copy.setWOHNEN(copyWOHNEN);
                 } else {
@@ -205,7 +225,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean gewerbeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gewerbe!= null));
                 if (gewerbeShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGEWERBE;
-                    sourceGEWERBE = this.isGEWERBE();
+                    sourceGEWERBE = this.getGEWERBE();
                     Boolean copyGEWERBE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gewerbe", sourceGEWERBE), sourceGEWERBE, (this.gewerbe!= null)));
                     copy.setGEWERBE(copyGEWERBE);
                 } else {
@@ -218,7 +238,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean anlageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.anlage!= null));
                 if (anlageShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceANLAGE;
-                    sourceANLAGE = this.isANLAGE();
+                    sourceANLAGE = this.getANLAGE();
                     Boolean copyANLAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "anlage", sourceANLAGE), sourceANLAGE, (this.anlage!= null)));
                     copy.setANLAGE(copyANLAGE);
                 } else {
@@ -231,7 +251,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean wazShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.waz!= null));
                 if (wazShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWAZ;
-                    sourceWAZ = this.isWAZ();
+                    sourceWAZ = this.getWAZ();
                     Boolean copyWAZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "waz", sourceWAZ), sourceWAZ, (this.waz!= null)));
                     copy.setWAZ(copyWAZ);
                 } else {
@@ -244,10 +264,12 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Nutzungsart();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -258,36 +280,36 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         final Nutzungsart that = ((Nutzungsart) object);
         {
             Boolean lhsWOHNEN;
-            lhsWOHNEN = this.isWOHNEN();
+            lhsWOHNEN = this.getWOHNEN();
             Boolean rhsWOHNEN;
-            rhsWOHNEN = that.isWOHNEN();
+            rhsWOHNEN = that.getWOHNEN();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wohnen", lhsWOHNEN), LocatorUtils.property(thatLocator, "wohnen", rhsWOHNEN), lhsWOHNEN, rhsWOHNEN, (this.wohnen!= null), (that.wohnen!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsGEWERBE;
-            lhsGEWERBE = this.isGEWERBE();
+            lhsGEWERBE = this.getGEWERBE();
             Boolean rhsGEWERBE;
-            rhsGEWERBE = that.isGEWERBE();
+            rhsGEWERBE = that.getGEWERBE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gewerbe", lhsGEWERBE), LocatorUtils.property(thatLocator, "gewerbe", rhsGEWERBE), lhsGEWERBE, rhsGEWERBE, (this.gewerbe!= null), (that.gewerbe!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsANLAGE;
-            lhsANLAGE = this.isANLAGE();
+            lhsANLAGE = this.getANLAGE();
             Boolean rhsANLAGE;
-            rhsANLAGE = that.isANLAGE();
+            rhsANLAGE = that.getANLAGE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "anlage", lhsANLAGE), LocatorUtils.property(thatLocator, "anlage", rhsANLAGE), lhsANLAGE, rhsANLAGE, (this.anlage!= null), (that.anlage!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWAZ;
-            lhsWAZ = this.isWAZ();
+            lhsWAZ = this.getWAZ();
             Boolean rhsWAZ;
-            rhsWAZ = that.isWAZ();
+            rhsWAZ = that.getWAZ();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "waz", lhsWAZ), LocatorUtils.property(thatLocator, "waz", rhsWAZ), lhsWAZ, rhsWAZ, (this.waz!= null), (that.waz!= null))) {
                 return false;
             }
@@ -295,6 +317,7 @@ public class Nutzungsart implements Serializable, Cloneable, CopyTo2, Equals2, T
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

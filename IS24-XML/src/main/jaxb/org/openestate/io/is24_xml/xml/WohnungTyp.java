@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -86,89 +87,124 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     org.openestate.io.is24_xml.xml.WohnungKauf.Type.class,
     org.openestate.io.is24_xml.xml.WohnungMiete.Type.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class WohnungTyp
     extends ImmobilieBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Mietpreise")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected VermarktungWohnMieteTyp mietpreise;
     @XmlElement(name = "Kaufpreise")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected VermarktungWohnKaufTyp kaufpreise;
     @XmlElement(name = "BefeuerungsArt")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BefeuerungsArtTyp befeuerungsArt;
     @XmlElement(name = "Energieausweis")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected EnergieausweisTyp energieausweis;
     @XmlAttribute(name = "WohnungKategorie")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected WohnungKategorienTyp wohnungKategorie;
     @XmlAttribute(name = "Wohnflaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal wohnflaeche;
     @XmlAttribute(name = "Nutzflaeche")
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal nutzflaeche;
     @XmlAttribute(name = "Zimmer", required = true)
     @XmlJavaTypeAdapter(Adapter32 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal zimmer;
     @XmlAttribute(name = "AnzahlBadezimmer")
     @XmlJavaTypeAdapter(Adapter19 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long anzahlBadezimmer;
     @XmlAttribute(name = "AnzahlSchlafzimmer")
     @XmlJavaTypeAdapter(Adapter19 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long anzahlSchlafzimmer;
     @XmlAttribute(name = "Etage")
     @XmlJavaTypeAdapter(Adapter20 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long etage;
     @XmlAttribute(name = "Etagenzahl")
     @XmlJavaTypeAdapter(Adapter21 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long etagenzahl;
     @XmlAttribute(name = "Baujahr")
     @XmlJavaTypeAdapter(Adapter22 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long baujahr;
     @XmlAttribute(name = "JahrLetzteModernisierung")
     @XmlJavaTypeAdapter(Adapter22 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long jahrLetzteModernisierung;
     @XmlAttribute(name = "Objektzustand")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ObjektZustandTyp objektzustand;
     @XmlAttribute(name = "Heizungsart")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected HeizungsartTyp heizungsart;
     @XmlAttribute(name = "Aufzug")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean aufzug;
     @XmlAttribute(name = "Haustiere")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected GenehmigungTyp haustiere;
     @XmlAttribute(name = "BalkonTerrasse")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean balkonTerrasse;
     @XmlAttribute(name = "GartenBenutzung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gartenBenutzung;
     @XmlAttribute(name = "Einbaukueche")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean einbaukueche;
     @XmlAttribute(name = "BetreutesWohnen")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean betreutesWohnen;
     @XmlAttribute(name = "Foerderung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean foerderung;
     @XmlAttribute(name = "Vermietet")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean vermietet;
     @XmlAttribute(name = "Denkmalschutzobjekt")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean denkmalschutzobjekt;
     @XmlAttribute(name = "GaesteWC")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gaesteWC;
     @XmlAttribute(name = "Keller")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean keller;
     @XmlAttribute(name = "Barrierefrei")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean barrierefrei;
     @XmlAttribute(name = "AlsFerienwohnungGeeignet")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean alsFerienwohnungGeeignet;
     @XmlAttribute(name = "Parkplatz")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected StellplatzKategorieTyp parkplatz;
     @XmlAttribute(name = "AnzahlGaragenStellplaetze")
     @XmlJavaTypeAdapter(Adapter19 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long anzahlGaragenStellplaetze;
     @XmlAttribute(name = "Rollstuhlgerecht")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean rollstuhlgerecht;
     @XmlAttribute(name = "FreiAb")
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String freiAb;
     @XmlAttribute(name = "Ausstattungsqualitaet")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected AusstattungsqualitaetsTyp ausstattungsqualitaet;
 
     /**
@@ -179,6 +215,7 @@ public class WohnungTyp
      *     {@link VermarktungWohnMieteTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public VermarktungWohnMieteTyp getMietpreise() {
         return mietpreise;
     }
@@ -191,6 +228,7 @@ public class WohnungTyp
      *     {@link VermarktungWohnMieteTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setMietpreise(VermarktungWohnMieteTyp value) {
         this.mietpreise = value;
     }
@@ -203,6 +241,7 @@ public class WohnungTyp
      *     {@link VermarktungWohnKaufTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public VermarktungWohnKaufTyp getKaufpreise() {
         return kaufpreise;
     }
@@ -215,6 +254,7 @@ public class WohnungTyp
      *     {@link VermarktungWohnKaufTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKaufpreise(VermarktungWohnKaufTyp value) {
         this.kaufpreise = value;
     }
@@ -227,6 +267,7 @@ public class WohnungTyp
      *     {@link BefeuerungsArtTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BefeuerungsArtTyp getBefeuerungsArt() {
         return befeuerungsArt;
     }
@@ -239,6 +280,7 @@ public class WohnungTyp
      *     {@link BefeuerungsArtTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBefeuerungsArt(BefeuerungsArtTyp value) {
         this.befeuerungsArt = value;
     }
@@ -251,6 +293,7 @@ public class WohnungTyp
      *     {@link EnergieausweisTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public EnergieausweisTyp getEnergieausweis() {
         return energieausweis;
     }
@@ -263,6 +306,7 @@ public class WohnungTyp
      *     {@link EnergieausweisTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEnergieausweis(EnergieausweisTyp value) {
         this.energieausweis = value;
     }
@@ -275,6 +319,7 @@ public class WohnungTyp
      *     {@link WohnungKategorienTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public WohnungKategorienTyp getWohnungKategorie() {
         if (wohnungKategorie == null) {
             return WohnungKategorienTyp.KEINE_ANGABE;
@@ -291,6 +336,7 @@ public class WohnungTyp
      *     {@link WohnungKategorienTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setWohnungKategorie(WohnungKategorienTyp value) {
         this.wohnungKategorie = value;
     }
@@ -303,6 +349,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getWohnflaeche() {
         return wohnflaeche;
     }
@@ -315,6 +362,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setWohnflaeche(BigDecimal value) {
         this.wohnflaeche = value;
     }
@@ -327,6 +375,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getNutzflaeche() {
         return nutzflaeche;
     }
@@ -339,6 +388,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setNutzflaeche(BigDecimal value) {
         this.nutzflaeche = value;
     }
@@ -351,6 +401,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getZimmer() {
         return zimmer;
     }
@@ -363,6 +414,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setZimmer(BigDecimal value) {
         this.zimmer = value;
     }
@@ -375,6 +427,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getAnzahlBadezimmer() {
         return anzahlBadezimmer;
     }
@@ -387,6 +440,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAnzahlBadezimmer(Long value) {
         this.anzahlBadezimmer = value;
     }
@@ -399,6 +453,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getAnzahlSchlafzimmer() {
         return anzahlSchlafzimmer;
     }
@@ -411,6 +466,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAnzahlSchlafzimmer(Long value) {
         this.anzahlSchlafzimmer = value;
     }
@@ -423,6 +479,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getEtage() {
         return etage;
     }
@@ -435,6 +492,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEtage(Long value) {
         this.etage = value;
     }
@@ -447,6 +505,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getEtagenzahl() {
         return etagenzahl;
     }
@@ -459,6 +518,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEtagenzahl(Long value) {
         this.etagenzahl = value;
     }
@@ -471,6 +531,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getBaujahr() {
         return baujahr;
     }
@@ -483,6 +544,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBaujahr(Long value) {
         this.baujahr = value;
     }
@@ -495,6 +557,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getJahrLetzteModernisierung() {
         return jahrLetzteModernisierung;
     }
@@ -507,6 +570,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setJahrLetzteModernisierung(Long value) {
         this.jahrLetzteModernisierung = value;
     }
@@ -519,6 +583,7 @@ public class WohnungTyp
      *     {@link ObjektZustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ObjektZustandTyp getObjektzustand() {
         return objektzustand;
     }
@@ -531,6 +596,7 @@ public class WohnungTyp
      *     {@link ObjektZustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektzustand(ObjektZustandTyp value) {
         this.objektzustand = value;
     }
@@ -543,6 +609,7 @@ public class WohnungTyp
      *     {@link HeizungsartTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public HeizungsartTyp getHeizungsart() {
         return heizungsart;
     }
@@ -555,6 +622,7 @@ public class WohnungTyp
      *     {@link HeizungsartTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHeizungsart(HeizungsartTyp value) {
         this.heizungsart = value;
     }
@@ -567,7 +635,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isAufzug() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAufzug() {
         return aufzug;
     }
 
@@ -579,6 +648,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAufzug(Boolean value) {
         this.aufzug = value;
     }
@@ -591,6 +661,7 @@ public class WohnungTyp
      *     {@link GenehmigungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public GenehmigungTyp getHaustiere() {
         return haustiere;
     }
@@ -603,6 +674,7 @@ public class WohnungTyp
      *     {@link GenehmigungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHaustiere(GenehmigungTyp value) {
         this.haustiere = value;
     }
@@ -615,7 +687,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isBalkonTerrasse() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBalkonTerrasse() {
         return balkonTerrasse;
     }
 
@@ -627,6 +700,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBalkonTerrasse(Boolean value) {
         this.balkonTerrasse = value;
     }
@@ -639,7 +713,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isGartenBenutzung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGartenBenutzung() {
         return gartenBenutzung;
     }
 
@@ -651,6 +726,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGartenBenutzung(Boolean value) {
         this.gartenBenutzung = value;
     }
@@ -663,7 +739,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isEinbaukueche() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getEinbaukueche() {
         return einbaukueche;
     }
 
@@ -675,6 +752,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEinbaukueche(Boolean value) {
         this.einbaukueche = value;
     }
@@ -687,7 +765,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isBetreutesWohnen() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBetreutesWohnen() {
         return betreutesWohnen;
     }
 
@@ -699,6 +778,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBetreutesWohnen(Boolean value) {
         this.betreutesWohnen = value;
     }
@@ -711,7 +791,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isFoerderung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFoerderung() {
         return foerderung;
     }
 
@@ -723,6 +804,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFoerderung(Boolean value) {
         this.foerderung = value;
     }
@@ -735,7 +817,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isVermietet() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getVermietet() {
         return vermietet;
     }
 
@@ -747,6 +830,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setVermietet(Boolean value) {
         this.vermietet = value;
     }
@@ -759,7 +843,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isDenkmalschutzobjekt() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDenkmalschutzobjekt() {
         return denkmalschutzobjekt;
     }
 
@@ -771,6 +856,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setDenkmalschutzobjekt(Boolean value) {
         this.denkmalschutzobjekt = value;
     }
@@ -783,7 +869,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isGaesteWC() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGaesteWC() {
         return gaesteWC;
     }
 
@@ -795,6 +882,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGaesteWC(Boolean value) {
         this.gaesteWC = value;
     }
@@ -807,7 +895,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isKeller() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKeller() {
         return keller;
     }
 
@@ -819,6 +908,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKeller(Boolean value) {
         this.keller = value;
     }
@@ -831,7 +921,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isBarrierefrei() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBarrierefrei() {
         return barrierefrei;
     }
 
@@ -843,6 +934,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBarrierefrei(Boolean value) {
         this.barrierefrei = value;
     }
@@ -855,7 +947,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isAlsFerienwohnungGeeignet() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAlsFerienwohnungGeeignet() {
         return alsFerienwohnungGeeignet;
     }
 
@@ -867,6 +960,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAlsFerienwohnungGeeignet(Boolean value) {
         this.alsFerienwohnungGeeignet = value;
     }
@@ -879,6 +973,7 @@ public class WohnungTyp
      *     {@link StellplatzKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StellplatzKategorieTyp getParkplatz() {
         if (parkplatz == null) {
             return StellplatzKategorieTyp.KEINE_ANGABE;
@@ -895,6 +990,7 @@ public class WohnungTyp
      *     {@link StellplatzKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setParkplatz(StellplatzKategorieTyp value) {
         this.parkplatz = value;
     }
@@ -907,6 +1003,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getAnzahlGaragenStellplaetze() {
         return anzahlGaragenStellplaetze;
     }
@@ -919,6 +1016,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAnzahlGaragenStellplaetze(Long value) {
         this.anzahlGaragenStellplaetze = value;
     }
@@ -931,7 +1029,8 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isRollstuhlgerecht() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRollstuhlgerecht() {
         return rollstuhlgerecht;
     }
 
@@ -943,6 +1042,7 @@ public class WohnungTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setRollstuhlgerecht(Boolean value) {
         this.rollstuhlgerecht = value;
     }
@@ -955,6 +1055,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getFreiAb() {
         return freiAb;
     }
@@ -967,6 +1068,7 @@ public class WohnungTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFreiAb(String value) {
         this.freiAb = value;
     }
@@ -979,6 +1081,7 @@ public class WohnungTyp
      *     {@link AusstattungsqualitaetsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public AusstattungsqualitaetsTyp getAusstattungsqualitaet() {
         if (ausstattungsqualitaet == null) {
             return AusstattungsqualitaetsTyp.KEINE_ANGABE;
@@ -995,10 +1098,12 @@ public class WohnungTyp
      *     {@link AusstattungsqualitaetsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAusstattungsqualitaet(AusstattungsqualitaetsTyp value) {
         this.ausstattungsqualitaet = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -1006,6 +1111,7 @@ public class WohnungTyp
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -1013,6 +1119,7 @@ public class WohnungTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -1097,7 +1204,7 @@ public class WohnungTyp
         }
         {
             Boolean theAufzug;
-            theAufzug = this.isAufzug();
+            theAufzug = this.getAufzug();
             strategy.appendField(locator, this, "aufzug", buffer, theAufzug, (this.aufzug!= null));
         }
         {
@@ -1107,57 +1214,57 @@ public class WohnungTyp
         }
         {
             Boolean theBalkonTerrasse;
-            theBalkonTerrasse = this.isBalkonTerrasse();
+            theBalkonTerrasse = this.getBalkonTerrasse();
             strategy.appendField(locator, this, "balkonTerrasse", buffer, theBalkonTerrasse, (this.balkonTerrasse!= null));
         }
         {
             Boolean theGartenBenutzung;
-            theGartenBenutzung = this.isGartenBenutzung();
+            theGartenBenutzung = this.getGartenBenutzung();
             strategy.appendField(locator, this, "gartenBenutzung", buffer, theGartenBenutzung, (this.gartenBenutzung!= null));
         }
         {
             Boolean theEinbaukueche;
-            theEinbaukueche = this.isEinbaukueche();
+            theEinbaukueche = this.getEinbaukueche();
             strategy.appendField(locator, this, "einbaukueche", buffer, theEinbaukueche, (this.einbaukueche!= null));
         }
         {
             Boolean theBetreutesWohnen;
-            theBetreutesWohnen = this.isBetreutesWohnen();
+            theBetreutesWohnen = this.getBetreutesWohnen();
             strategy.appendField(locator, this, "betreutesWohnen", buffer, theBetreutesWohnen, (this.betreutesWohnen!= null));
         }
         {
             Boolean theFoerderung;
-            theFoerderung = this.isFoerderung();
+            theFoerderung = this.getFoerderung();
             strategy.appendField(locator, this, "foerderung", buffer, theFoerderung, (this.foerderung!= null));
         }
         {
             Boolean theVermietet;
-            theVermietet = this.isVermietet();
+            theVermietet = this.getVermietet();
             strategy.appendField(locator, this, "vermietet", buffer, theVermietet, (this.vermietet!= null));
         }
         {
             Boolean theDenkmalschutzobjekt;
-            theDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            theDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null));
         }
         {
             Boolean theGaesteWC;
-            theGaesteWC = this.isGaesteWC();
+            theGaesteWC = this.getGaesteWC();
             strategy.appendField(locator, this, "gaesteWC", buffer, theGaesteWC, (this.gaesteWC!= null));
         }
         {
             Boolean theKeller;
-            theKeller = this.isKeller();
+            theKeller = this.getKeller();
             strategy.appendField(locator, this, "keller", buffer, theKeller, (this.keller!= null));
         }
         {
             Boolean theBarrierefrei;
-            theBarrierefrei = this.isBarrierefrei();
+            theBarrierefrei = this.getBarrierefrei();
             strategy.appendField(locator, this, "barrierefrei", buffer, theBarrierefrei, (this.barrierefrei!= null));
         }
         {
             Boolean theAlsFerienwohnungGeeignet;
-            theAlsFerienwohnungGeeignet = this.isAlsFerienwohnungGeeignet();
+            theAlsFerienwohnungGeeignet = this.getAlsFerienwohnungGeeignet();
             strategy.appendField(locator, this, "alsFerienwohnungGeeignet", buffer, theAlsFerienwohnungGeeignet, (this.alsFerienwohnungGeeignet!= null));
         }
         {
@@ -1172,7 +1279,7 @@ public class WohnungTyp
         }
         {
             Boolean theRollstuhlgerecht;
-            theRollstuhlgerecht = this.isRollstuhlgerecht();
+            theRollstuhlgerecht = this.getRollstuhlgerecht();
             strategy.appendField(locator, this, "rollstuhlgerecht", buffer, theRollstuhlgerecht, (this.rollstuhlgerecht!= null));
         }
         {
@@ -1188,15 +1295,18 @@ public class WohnungTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
@@ -1414,7 +1524,7 @@ public class WohnungTyp
                 Boolean aufzugShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.aufzug!= null));
                 if (aufzugShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceAufzug;
-                    sourceAufzug = this.isAufzug();
+                    sourceAufzug = this.getAufzug();
                     Boolean copyAufzug = ((Boolean) strategy.copy(LocatorUtils.property(locator, "aufzug", sourceAufzug), sourceAufzug, (this.aufzug!= null)));
                     copy.setAufzug(copyAufzug);
                 } else {
@@ -1440,7 +1550,7 @@ public class WohnungTyp
                 Boolean balkonTerrasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.balkonTerrasse!= null));
                 if (balkonTerrasseShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBalkonTerrasse;
-                    sourceBalkonTerrasse = this.isBalkonTerrasse();
+                    sourceBalkonTerrasse = this.getBalkonTerrasse();
                     Boolean copyBalkonTerrasse = ((Boolean) strategy.copy(LocatorUtils.property(locator, "balkonTerrasse", sourceBalkonTerrasse), sourceBalkonTerrasse, (this.balkonTerrasse!= null)));
                     copy.setBalkonTerrasse(copyBalkonTerrasse);
                 } else {
@@ -1453,7 +1563,7 @@ public class WohnungTyp
                 Boolean gartenBenutzungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gartenBenutzung!= null));
                 if (gartenBenutzungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGartenBenutzung;
-                    sourceGartenBenutzung = this.isGartenBenutzung();
+                    sourceGartenBenutzung = this.getGartenBenutzung();
                     Boolean copyGartenBenutzung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gartenBenutzung", sourceGartenBenutzung), sourceGartenBenutzung, (this.gartenBenutzung!= null)));
                     copy.setGartenBenutzung(copyGartenBenutzung);
                 } else {
@@ -1466,7 +1576,7 @@ public class WohnungTyp
                 Boolean einbaukuecheShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.einbaukueche!= null));
                 if (einbaukuecheShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceEinbaukueche;
-                    sourceEinbaukueche = this.isEinbaukueche();
+                    sourceEinbaukueche = this.getEinbaukueche();
                     Boolean copyEinbaukueche = ((Boolean) strategy.copy(LocatorUtils.property(locator, "einbaukueche", sourceEinbaukueche), sourceEinbaukueche, (this.einbaukueche!= null)));
                     copy.setEinbaukueche(copyEinbaukueche);
                 } else {
@@ -1479,7 +1589,7 @@ public class WohnungTyp
                 Boolean betreutesWohnenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.betreutesWohnen!= null));
                 if (betreutesWohnenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBetreutesWohnen;
-                    sourceBetreutesWohnen = this.isBetreutesWohnen();
+                    sourceBetreutesWohnen = this.getBetreutesWohnen();
                     Boolean copyBetreutesWohnen = ((Boolean) strategy.copy(LocatorUtils.property(locator, "betreutesWohnen", sourceBetreutesWohnen), sourceBetreutesWohnen, (this.betreutesWohnen!= null)));
                     copy.setBetreutesWohnen(copyBetreutesWohnen);
                 } else {
@@ -1492,7 +1602,7 @@ public class WohnungTyp
                 Boolean foerderungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.foerderung!= null));
                 if (foerderungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFoerderung;
-                    sourceFoerderung = this.isFoerderung();
+                    sourceFoerderung = this.getFoerderung();
                     Boolean copyFoerderung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "foerderung", sourceFoerderung), sourceFoerderung, (this.foerderung!= null)));
                     copy.setFoerderung(copyFoerderung);
                 } else {
@@ -1505,7 +1615,7 @@ public class WohnungTyp
                 Boolean vermietetShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.vermietet!= null));
                 if (vermietetShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceVermietet;
-                    sourceVermietet = this.isVermietet();
+                    sourceVermietet = this.getVermietet();
                     Boolean copyVermietet = ((Boolean) strategy.copy(LocatorUtils.property(locator, "vermietet", sourceVermietet), sourceVermietet, (this.vermietet!= null)));
                     copy.setVermietet(copyVermietet);
                 } else {
@@ -1518,7 +1628,7 @@ public class WohnungTyp
                 Boolean denkmalschutzobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalschutzobjekt!= null));
                 if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDenkmalschutzobjekt;
-                    sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+                    sourceDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
                     Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null)));
                     copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
                 } else {
@@ -1531,7 +1641,7 @@ public class WohnungTyp
                 Boolean gaesteWCShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gaesteWC!= null));
                 if (gaesteWCShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGaesteWC;
-                    sourceGaesteWC = this.isGaesteWC();
+                    sourceGaesteWC = this.getGaesteWC();
                     Boolean copyGaesteWC = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gaesteWC", sourceGaesteWC), sourceGaesteWC, (this.gaesteWC!= null)));
                     copy.setGaesteWC(copyGaesteWC);
                 } else {
@@ -1544,7 +1654,7 @@ public class WohnungTyp
                 Boolean kellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keller!= null));
                 if (kellerShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKeller;
-                    sourceKeller = this.isKeller();
+                    sourceKeller = this.getKeller();
                     Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller, (this.keller!= null)));
                     copy.setKeller(copyKeller);
                 } else {
@@ -1557,7 +1667,7 @@ public class WohnungTyp
                 Boolean barrierefreiShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.barrierefrei!= null));
                 if (barrierefreiShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBarrierefrei;
-                    sourceBarrierefrei = this.isBarrierefrei();
+                    sourceBarrierefrei = this.getBarrierefrei();
                     Boolean copyBarrierefrei = ((Boolean) strategy.copy(LocatorUtils.property(locator, "barrierefrei", sourceBarrierefrei), sourceBarrierefrei, (this.barrierefrei!= null)));
                     copy.setBarrierefrei(copyBarrierefrei);
                 } else {
@@ -1570,7 +1680,7 @@ public class WohnungTyp
                 Boolean alsFerienwohnungGeeignetShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.alsFerienwohnungGeeignet!= null));
                 if (alsFerienwohnungGeeignetShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceAlsFerienwohnungGeeignet;
-                    sourceAlsFerienwohnungGeeignet = this.isAlsFerienwohnungGeeignet();
+                    sourceAlsFerienwohnungGeeignet = this.getAlsFerienwohnungGeeignet();
                     Boolean copyAlsFerienwohnungGeeignet = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alsFerienwohnungGeeignet", sourceAlsFerienwohnungGeeignet), sourceAlsFerienwohnungGeeignet, (this.alsFerienwohnungGeeignet!= null)));
                     copy.setAlsFerienwohnungGeeignet(copyAlsFerienwohnungGeeignet);
                 } else {
@@ -1609,7 +1719,7 @@ public class WohnungTyp
                 Boolean rollstuhlgerechtShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rollstuhlgerecht!= null));
                 if (rollstuhlgerechtShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRollstuhlgerecht;
-                    sourceRollstuhlgerecht = this.isRollstuhlgerecht();
+                    sourceRollstuhlgerecht = this.getRollstuhlgerecht();
                     Boolean copyRollstuhlgerecht = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rollstuhlgerecht", sourceRollstuhlgerecht), sourceRollstuhlgerecht, (this.rollstuhlgerecht!= null)));
                     copy.setRollstuhlgerecht(copyRollstuhlgerecht);
                 } else {
@@ -1648,10 +1758,12 @@ public class WohnungTyp
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new WohnungTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -1809,9 +1921,9 @@ public class WohnungTyp
         }
         {
             Boolean lhsAufzug;
-            lhsAufzug = this.isAufzug();
+            lhsAufzug = this.getAufzug();
             Boolean rhsAufzug;
-            rhsAufzug = that.isAufzug();
+            rhsAufzug = that.getAufzug();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "aufzug", lhsAufzug), LocatorUtils.property(thatLocator, "aufzug", rhsAufzug), lhsAufzug, rhsAufzug, (this.aufzug!= null), (that.aufzug!= null))) {
                 return false;
             }
@@ -1827,99 +1939,99 @@ public class WohnungTyp
         }
         {
             Boolean lhsBalkonTerrasse;
-            lhsBalkonTerrasse = this.isBalkonTerrasse();
+            lhsBalkonTerrasse = this.getBalkonTerrasse();
             Boolean rhsBalkonTerrasse;
-            rhsBalkonTerrasse = that.isBalkonTerrasse();
+            rhsBalkonTerrasse = that.getBalkonTerrasse();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "balkonTerrasse", lhsBalkonTerrasse), LocatorUtils.property(thatLocator, "balkonTerrasse", rhsBalkonTerrasse), lhsBalkonTerrasse, rhsBalkonTerrasse, (this.balkonTerrasse!= null), (that.balkonTerrasse!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsGartenBenutzung;
-            lhsGartenBenutzung = this.isGartenBenutzung();
+            lhsGartenBenutzung = this.getGartenBenutzung();
             Boolean rhsGartenBenutzung;
-            rhsGartenBenutzung = that.isGartenBenutzung();
+            rhsGartenBenutzung = that.getGartenBenutzung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gartenBenutzung", lhsGartenBenutzung), LocatorUtils.property(thatLocator, "gartenBenutzung", rhsGartenBenutzung), lhsGartenBenutzung, rhsGartenBenutzung, (this.gartenBenutzung!= null), (that.gartenBenutzung!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsEinbaukueche;
-            lhsEinbaukueche = this.isEinbaukueche();
+            lhsEinbaukueche = this.getEinbaukueche();
             Boolean rhsEinbaukueche;
-            rhsEinbaukueche = that.isEinbaukueche();
+            rhsEinbaukueche = that.getEinbaukueche();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "einbaukueche", lhsEinbaukueche), LocatorUtils.property(thatLocator, "einbaukueche", rhsEinbaukueche), lhsEinbaukueche, rhsEinbaukueche, (this.einbaukueche!= null), (that.einbaukueche!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsBetreutesWohnen;
-            lhsBetreutesWohnen = this.isBetreutesWohnen();
+            lhsBetreutesWohnen = this.getBetreutesWohnen();
             Boolean rhsBetreutesWohnen;
-            rhsBetreutesWohnen = that.isBetreutesWohnen();
+            rhsBetreutesWohnen = that.getBetreutesWohnen();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "betreutesWohnen", lhsBetreutesWohnen), LocatorUtils.property(thatLocator, "betreutesWohnen", rhsBetreutesWohnen), lhsBetreutesWohnen, rhsBetreutesWohnen, (this.betreutesWohnen!= null), (that.betreutesWohnen!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFoerderung;
-            lhsFoerderung = this.isFoerderung();
+            lhsFoerderung = this.getFoerderung();
             Boolean rhsFoerderung;
-            rhsFoerderung = that.isFoerderung();
+            rhsFoerderung = that.getFoerderung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "foerderung", lhsFoerderung), LocatorUtils.property(thatLocator, "foerderung", rhsFoerderung), lhsFoerderung, rhsFoerderung, (this.foerderung!= null), (that.foerderung!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsVermietet;
-            lhsVermietet = this.isVermietet();
+            lhsVermietet = this.getVermietet();
             Boolean rhsVermietet;
-            rhsVermietet = that.isVermietet();
+            rhsVermietet = that.getVermietet();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "vermietet", lhsVermietet), LocatorUtils.property(thatLocator, "vermietet", rhsVermietet), lhsVermietet, rhsVermietet, (this.vermietet!= null), (that.vermietet!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsDenkmalschutzobjekt;
-            lhsDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            lhsDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             Boolean rhsDenkmalschutzobjekt;
-            rhsDenkmalschutzobjekt = that.isDenkmalschutzobjekt();
+            rhsDenkmalschutzobjekt = that.getDenkmalschutzobjekt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null), (that.denkmalschutzobjekt!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsGaesteWC;
-            lhsGaesteWC = this.isGaesteWC();
+            lhsGaesteWC = this.getGaesteWC();
             Boolean rhsGaesteWC;
-            rhsGaesteWC = that.isGaesteWC();
+            rhsGaesteWC = that.getGaesteWC();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gaesteWC", lhsGaesteWC), LocatorUtils.property(thatLocator, "gaesteWC", rhsGaesteWC), lhsGaesteWC, rhsGaesteWC, (this.gaesteWC!= null), (that.gaesteWC!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKeller;
-            lhsKeller = this.isKeller();
+            lhsKeller = this.getKeller();
             Boolean rhsKeller;
-            rhsKeller = that.isKeller();
+            rhsKeller = that.getKeller();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller, (this.keller!= null), (that.keller!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsBarrierefrei;
-            lhsBarrierefrei = this.isBarrierefrei();
+            lhsBarrierefrei = this.getBarrierefrei();
             Boolean rhsBarrierefrei;
-            rhsBarrierefrei = that.isBarrierefrei();
+            rhsBarrierefrei = that.getBarrierefrei();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "barrierefrei", lhsBarrierefrei), LocatorUtils.property(thatLocator, "barrierefrei", rhsBarrierefrei), lhsBarrierefrei, rhsBarrierefrei, (this.barrierefrei!= null), (that.barrierefrei!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsAlsFerienwohnungGeeignet;
-            lhsAlsFerienwohnungGeeignet = this.isAlsFerienwohnungGeeignet();
+            lhsAlsFerienwohnungGeeignet = this.getAlsFerienwohnungGeeignet();
             Boolean rhsAlsFerienwohnungGeeignet;
-            rhsAlsFerienwohnungGeeignet = that.isAlsFerienwohnungGeeignet();
+            rhsAlsFerienwohnungGeeignet = that.getAlsFerienwohnungGeeignet();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "alsFerienwohnungGeeignet", lhsAlsFerienwohnungGeeignet), LocatorUtils.property(thatLocator, "alsFerienwohnungGeeignet", rhsAlsFerienwohnungGeeignet), lhsAlsFerienwohnungGeeignet, rhsAlsFerienwohnungGeeignet, (this.alsFerienwohnungGeeignet!= null), (that.alsFerienwohnungGeeignet!= null))) {
                 return false;
             }
@@ -1944,9 +2056,9 @@ public class WohnungTyp
         }
         {
             Boolean lhsRollstuhlgerecht;
-            lhsRollstuhlgerecht = this.isRollstuhlgerecht();
+            lhsRollstuhlgerecht = this.getRollstuhlgerecht();
             Boolean rhsRollstuhlgerecht;
-            rhsRollstuhlgerecht = that.isRollstuhlgerecht();
+            rhsRollstuhlgerecht = that.getRollstuhlgerecht();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rollstuhlgerecht", lhsRollstuhlgerecht), LocatorUtils.property(thatLocator, "rollstuhlgerecht", rhsRollstuhlgerecht), lhsRollstuhlgerecht, rhsRollstuhlgerecht, (this.rollstuhlgerecht!= null), (that.rollstuhlgerecht!= null))) {
                 return false;
             }
@@ -1972,6 +2084,7 @@ public class WohnungTyp
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

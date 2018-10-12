@@ -3,6 +3,7 @@ package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,31 +55,51 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "fgeeklasse"
 })
 @XmlRootElement(name = "energiepass")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Energiepass.Epart epart;
     @XmlElement(name = "gueltig_bis")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String gueltigBis;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String energieverbrauchkennwert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean mitwarmwasser;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String endenergiebedarf;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String primaerenergietraeger;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String stromwert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String waermewert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String wertklasse;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String baujahr;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter4 .class)
     @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar ausstelldatum;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Energiepass.Jahrgang jahrgang;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Energiepass.Gebaeudeart gebaeudeart;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String epasstext;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String geg2018;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String hwbwert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String hwbklasse;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String fgeewert;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String fgeeklasse;
 
     /**
@@ -89,6 +110,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energiepass.Epart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Energiepass.Epart getEpart() {
         return epart;
     }
@@ -101,6 +123,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energiepass.Epart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEpart(Energiepass.Epart value) {
         this.epart = value;
     }
@@ -113,6 +136,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getGueltigBis() {
         return gueltigBis;
     }
@@ -125,6 +149,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGueltigBis(String value) {
         this.gueltigBis = value;
     }
@@ -137,6 +162,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getEnergieverbrauchkennwert() {
         return energieverbrauchkennwert;
     }
@@ -149,6 +175,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEnergieverbrauchkennwert(String value) {
         this.energieverbrauchkennwert = value;
     }
@@ -161,7 +188,8 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    public Boolean isMitwarmwasser() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getMitwarmwasser() {
         return mitwarmwasser;
     }
 
@@ -173,6 +201,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMitwarmwasser(Boolean value) {
         this.mitwarmwasser = value;
     }
@@ -185,6 +214,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getEndenergiebedarf() {
         return endenergiebedarf;
     }
@@ -197,6 +227,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEndenergiebedarf(String value) {
         this.endenergiebedarf = value;
     }
@@ -209,6 +240,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getPrimaerenergietraeger() {
         return primaerenergietraeger;
     }
@@ -221,6 +253,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPrimaerenergietraeger(String value) {
         this.primaerenergietraeger = value;
     }
@@ -233,6 +266,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getStromwert() {
         return stromwert;
     }
@@ -245,6 +279,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setStromwert(String value) {
         this.stromwert = value;
     }
@@ -257,6 +292,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getWaermewert() {
         return waermewert;
     }
@@ -269,6 +305,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWaermewert(String value) {
         this.waermewert = value;
     }
@@ -281,6 +318,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getWertklasse() {
         return wertklasse;
     }
@@ -293,6 +331,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWertklasse(String value) {
         this.wertklasse = value;
     }
@@ -305,6 +344,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getBaujahr() {
         return baujahr;
     }
@@ -317,6 +357,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBaujahr(String value) {
         this.baujahr = value;
     }
@@ -329,6 +370,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getAusstelldatum() {
         return ausstelldatum;
     }
@@ -341,6 +383,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAusstelldatum(Calendar value) {
         this.ausstelldatum = value;
     }
@@ -353,6 +396,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energiepass.Jahrgang }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Energiepass.Jahrgang getJahrgang() {
         return jahrgang;
     }
@@ -365,6 +409,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energiepass.Jahrgang }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setJahrgang(Energiepass.Jahrgang value) {
         this.jahrgang = value;
     }
@@ -377,6 +422,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energiepass.Gebaeudeart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Energiepass.Gebaeudeart getGebaeudeart() {
         return gebaeudeart;
     }
@@ -389,6 +435,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Energiepass.Gebaeudeart }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGebaeudeart(Energiepass.Gebaeudeart value) {
         this.gebaeudeart = value;
     }
@@ -401,6 +448,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getEpasstext() {
         return epasstext;
     }
@@ -413,6 +461,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEpasstext(String value) {
         this.epasstext = value;
     }
@@ -425,6 +474,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getGeg2018() {
         return geg2018;
     }
@@ -437,6 +487,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGeg2018(String value) {
         this.geg2018 = value;
     }
@@ -449,6 +500,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getHwbwert() {
         return hwbwert;
     }
@@ -461,6 +513,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHwbwert(String value) {
         this.hwbwert = value;
     }
@@ -473,6 +526,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getHwbklasse() {
         return hwbklasse;
     }
@@ -485,6 +539,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHwbklasse(String value) {
         this.hwbklasse = value;
     }
@@ -497,6 +552,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getFgeewert() {
         return fgeewert;
     }
@@ -509,6 +565,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFgeewert(String value) {
         this.fgeewert = value;
     }
@@ -521,6 +578,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getFgeeklasse() {
         return fgeeklasse;
     }
@@ -533,10 +591,12 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFgeeklasse(String value) {
         this.fgeeklasse = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -544,6 +604,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -551,6 +612,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Energiepass.Epart theEpart;
@@ -569,7 +631,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean theMitwarmwasser;
-            theMitwarmwasser = this.isMitwarmwasser();
+            theMitwarmwasser = this.getMitwarmwasser();
             strategy.appendField(locator, this, "mitwarmwasser", buffer, theMitwarmwasser, (this.mitwarmwasser!= null));
         }
         {
@@ -650,15 +712,18 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Energiepass) {
@@ -706,7 +771,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
                 Boolean mitwarmwasserShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mitwarmwasser!= null));
                 if (mitwarmwasserShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceMitwarmwasser;
-                    sourceMitwarmwasser = this.isMitwarmwasser();
+                    sourceMitwarmwasser = this.getMitwarmwasser();
                     Boolean copyMitwarmwasser = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mitwarmwasser", sourceMitwarmwasser), sourceMitwarmwasser, (this.mitwarmwasser!= null)));
                     copy.setMitwarmwasser(copyMitwarmwasser);
                 } else {
@@ -914,10 +979,12 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Energiepass();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -955,9 +1022,9 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         }
         {
             Boolean lhsMitwarmwasser;
-            lhsMitwarmwasser = this.isMitwarmwasser();
+            lhsMitwarmwasser = this.getMitwarmwasser();
             Boolean rhsMitwarmwasser;
-            rhsMitwarmwasser = that.isMitwarmwasser();
+            rhsMitwarmwasser = that.getMitwarmwasser();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mitwarmwasser", lhsMitwarmwasser), LocatorUtils.property(thatLocator, "mitwarmwasser", rhsMitwarmwasser), lhsMitwarmwasser, rhsMitwarmwasser, (this.mitwarmwasser!= null), (that.mitwarmwasser!= null))) {
                 return false;
             }
@@ -1100,6 +1167,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -1126,6 +1194,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      */
     @XmlType(name = "")
     @XmlEnum
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public enum Epart {
 
         BEDARF,
@@ -1162,6 +1231,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      */
     @XmlType(name = "")
     @XmlEnum
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public enum Gebaeudeart {
 
         @XmlEnumValue("wohn")
@@ -1213,6 +1283,7 @@ public class Energiepass implements Serializable, Cloneable, CopyTo2, Equals2, T
      */
     @XmlType(name = "")
     @XmlEnum
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public enum Jahrgang {
 
         @XmlEnumValue("2008")

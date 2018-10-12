@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -56,29 +57,38 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     org.openestate.io.is24_xml.xml.Gastronomie.Type.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class GastronomieTyp
     extends GewerbeImmoBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected VermarktungGewerbeTyp2 vermarktung;
     @XmlAttribute(name = "GastraumFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal gastraumFlaeche;
     @XmlAttribute(name = "GastraumPlaetze")
     @XmlJavaTypeAdapter(Adapter23 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long gastraumPlaetze;
     @XmlAttribute(name = "AnzahlBetten")
     @XmlJavaTypeAdapter(Adapter23 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long anzahlBetten;
     @XmlAttribute(name = "Gastterrasse")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gastterrasse;
     @XmlAttribute(name = "Denkmalschutzobjekt")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean denkmalschutzobjekt;
     @XmlAttribute(name = "Keller")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean keller;
     @XmlAttribute(name = "Objektkategorie2", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected GastroKategorieTyp objektkategorie2;
 
     /**
@@ -89,6 +99,7 @@ public class GastronomieTyp
      *     {@link VermarktungGewerbeTyp2 }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public VermarktungGewerbeTyp2 getVermarktung() {
         return vermarktung;
     }
@@ -101,6 +112,7 @@ public class GastronomieTyp
      *     {@link VermarktungGewerbeTyp2 }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setVermarktung(VermarktungGewerbeTyp2 value) {
         this.vermarktung = value;
     }
@@ -113,6 +125,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getGastraumFlaeche() {
         return gastraumFlaeche;
     }
@@ -125,6 +138,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGastraumFlaeche(BigDecimal value) {
         this.gastraumFlaeche = value;
     }
@@ -137,6 +151,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getGastraumPlaetze() {
         return gastraumPlaetze;
     }
@@ -149,6 +164,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGastraumPlaetze(Long value) {
         this.gastraumPlaetze = value;
     }
@@ -161,6 +177,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getAnzahlBetten() {
         return anzahlBetten;
     }
@@ -173,6 +190,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAnzahlBetten(Long value) {
         this.anzahlBetten = value;
     }
@@ -185,7 +203,8 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isGastterrasse() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGastterrasse() {
         return gastterrasse;
     }
 
@@ -197,6 +216,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGastterrasse(Boolean value) {
         this.gastterrasse = value;
     }
@@ -209,7 +229,8 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isDenkmalschutzobjekt() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDenkmalschutzobjekt() {
         return denkmalschutzobjekt;
     }
 
@@ -221,6 +242,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setDenkmalschutzobjekt(Boolean value) {
         this.denkmalschutzobjekt = value;
     }
@@ -233,7 +255,8 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isKeller() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKeller() {
         return keller;
     }
 
@@ -245,6 +268,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKeller(Boolean value) {
         this.keller = value;
     }
@@ -257,6 +281,7 @@ public class GastronomieTyp
      *     {@link GastroKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public GastroKategorieTyp getObjektkategorie2() {
         return objektkategorie2;
     }
@@ -269,10 +294,12 @@ public class GastronomieTyp
      *     {@link GastroKategorieTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektkategorie2(GastroKategorieTyp value) {
         this.objektkategorie2 = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -280,6 +307,7 @@ public class GastronomieTyp
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -287,6 +315,7 @@ public class GastronomieTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -311,17 +340,17 @@ public class GastronomieTyp
         }
         {
             Boolean theGastterrasse;
-            theGastterrasse = this.isGastterrasse();
+            theGastterrasse = this.getGastterrasse();
             strategy.appendField(locator, this, "gastterrasse", buffer, theGastterrasse, (this.gastterrasse!= null));
         }
         {
             Boolean theDenkmalschutzobjekt;
-            theDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            theDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null));
         }
         {
             Boolean theKeller;
-            theKeller = this.isKeller();
+            theKeller = this.getKeller();
             strategy.appendField(locator, this, "keller", buffer, theKeller, (this.keller!= null));
         }
         {
@@ -332,15 +361,18 @@ public class GastronomieTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
@@ -402,7 +434,7 @@ public class GastronomieTyp
                 Boolean gastterrasseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gastterrasse!= null));
                 if (gastterrasseShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGastterrasse;
-                    sourceGastterrasse = this.isGastterrasse();
+                    sourceGastterrasse = this.getGastterrasse();
                     Boolean copyGastterrasse = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gastterrasse", sourceGastterrasse), sourceGastterrasse, (this.gastterrasse!= null)));
                     copy.setGastterrasse(copyGastterrasse);
                 } else {
@@ -415,7 +447,7 @@ public class GastronomieTyp
                 Boolean denkmalschutzobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalschutzobjekt!= null));
                 if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDenkmalschutzobjekt;
-                    sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+                    sourceDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
                     Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null)));
                     copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
                 } else {
@@ -428,7 +460,7 @@ public class GastronomieTyp
                 Boolean kellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keller!= null));
                 if (kellerShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKeller;
-                    sourceKeller = this.isKeller();
+                    sourceKeller = this.getKeller();
                     Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller, (this.keller!= null)));
                     copy.setKeller(copyKeller);
                 } else {
@@ -454,10 +486,12 @@ public class GastronomieTyp
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new GastronomieTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -507,27 +541,27 @@ public class GastronomieTyp
         }
         {
             Boolean lhsGastterrasse;
-            lhsGastterrasse = this.isGastterrasse();
+            lhsGastterrasse = this.getGastterrasse();
             Boolean rhsGastterrasse;
-            rhsGastterrasse = that.isGastterrasse();
+            rhsGastterrasse = that.getGastterrasse();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gastterrasse", lhsGastterrasse), LocatorUtils.property(thatLocator, "gastterrasse", rhsGastterrasse), lhsGastterrasse, rhsGastterrasse, (this.gastterrasse!= null), (that.gastterrasse!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsDenkmalschutzobjekt;
-            lhsDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            lhsDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             Boolean rhsDenkmalschutzobjekt;
-            rhsDenkmalschutzobjekt = that.isDenkmalschutzobjekt();
+            rhsDenkmalschutzobjekt = that.getDenkmalschutzobjekt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null), (that.denkmalschutzobjekt!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKeller;
-            lhsKeller = this.isKeller();
+            lhsKeller = this.getKeller();
             Boolean rhsKeller;
-            rhsKeller = that.isKeller();
+            rhsKeller = that.getKeller();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller, (this.keller!= null), (that.keller!= null))) {
                 return false;
             }
@@ -544,6 +578,7 @@ public class GastronomieTyp
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

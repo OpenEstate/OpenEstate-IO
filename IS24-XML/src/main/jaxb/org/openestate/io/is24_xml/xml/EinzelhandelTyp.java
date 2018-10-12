@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -63,37 +64,50 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     org.openestate.io.is24_xml.xml.Einzelhandel.Type.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class EinzelhandelTyp
     extends GewerbeImmoBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected VermarktungGewerbeTyp vermarktung;
     @XmlElementRef(name = "Lastenaufzug", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected JAXBElement<HebeanlageTyp> lastenaufzug;
     @XmlAttribute(name = "Objektkategorie2")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected EinzelhandelKategorienTyp objektkategorie2;
     @XmlAttribute(name = "Verkaufsflaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal verkaufsflaeche;
     @XmlAttribute(name = "Bodenbelag")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BodenbelagTyp bodenbelag;
     @XmlAttribute(name = "Schaufensterfront")
     @XmlJavaTypeAdapter(Adapter30 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal schaufensterfront;
     @XmlAttribute(name = "Deckenlast")
     @XmlJavaTypeAdapter(Adapter33 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal deckenlast;
     @XmlAttribute(name = "Lageart")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected LageartTyp lageart;
     @XmlAttribute(name = "Rampe")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean rampe;
     @XmlAttribute(name = "Zulieferung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ZulieferungTyp zulieferung;
     @XmlAttribute(name = "Denkmalschutzobjekt")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean denkmalschutzobjekt;
     @XmlAttribute(name = "Keller")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean keller;
 
     /**
@@ -104,6 +118,7 @@ public class EinzelhandelTyp
      *     {@link VermarktungGewerbeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public VermarktungGewerbeTyp getVermarktung() {
         return vermarktung;
     }
@@ -116,6 +131,7 @@ public class EinzelhandelTyp
      *     {@link VermarktungGewerbeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setVermarktung(VermarktungGewerbeTyp value) {
         this.vermarktung = value;
     }
@@ -128,6 +144,7 @@ public class EinzelhandelTyp
      *     {@link JAXBElement }{@code <}{@link HebeanlageTyp }{@code >}
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public JAXBElement<HebeanlageTyp> getLastenaufzug() {
         return lastenaufzug;
     }
@@ -140,6 +157,7 @@ public class EinzelhandelTyp
      *     {@link JAXBElement }{@code <}{@link HebeanlageTyp }{@code >}
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setLastenaufzug(JAXBElement<HebeanlageTyp> value) {
         this.lastenaufzug = value;
     }
@@ -152,6 +170,7 @@ public class EinzelhandelTyp
      *     {@link EinzelhandelKategorienTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public EinzelhandelKategorienTyp getObjektkategorie2() {
         if (objektkategorie2 == null) {
             return EinzelhandelKategorienTyp.KEINE_ANGABE;
@@ -168,6 +187,7 @@ public class EinzelhandelTyp
      *     {@link EinzelhandelKategorienTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektkategorie2(EinzelhandelKategorienTyp value) {
         this.objektkategorie2 = value;
     }
@@ -180,6 +200,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getVerkaufsflaeche() {
         return verkaufsflaeche;
     }
@@ -192,6 +213,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setVerkaufsflaeche(BigDecimal value) {
         this.verkaufsflaeche = value;
     }
@@ -204,6 +226,7 @@ public class EinzelhandelTyp
      *     {@link BodenbelagTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BodenbelagTyp getBodenbelag() {
         return bodenbelag;
     }
@@ -216,6 +239,7 @@ public class EinzelhandelTyp
      *     {@link BodenbelagTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBodenbelag(BodenbelagTyp value) {
         this.bodenbelag = value;
     }
@@ -228,6 +252,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getSchaufensterfront() {
         return schaufensterfront;
     }
@@ -240,6 +265,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setSchaufensterfront(BigDecimal value) {
         this.schaufensterfront = value;
     }
@@ -252,6 +278,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getDeckenlast() {
         return deckenlast;
     }
@@ -264,6 +291,7 @@ public class EinzelhandelTyp
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setDeckenlast(BigDecimal value) {
         this.deckenlast = value;
     }
@@ -276,6 +304,7 @@ public class EinzelhandelTyp
      *     {@link LageartTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public LageartTyp getLageart() {
         return lageart;
     }
@@ -288,6 +317,7 @@ public class EinzelhandelTyp
      *     {@link LageartTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setLageart(LageartTyp value) {
         this.lageart = value;
     }
@@ -300,7 +330,8 @@ public class EinzelhandelTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isRampe() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getRampe() {
         return rampe;
     }
 
@@ -312,6 +343,7 @@ public class EinzelhandelTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setRampe(Boolean value) {
         this.rampe = value;
     }
@@ -324,6 +356,7 @@ public class EinzelhandelTyp
      *     {@link ZulieferungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ZulieferungTyp getZulieferung() {
         return zulieferung;
     }
@@ -336,6 +369,7 @@ public class EinzelhandelTyp
      *     {@link ZulieferungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setZulieferung(ZulieferungTyp value) {
         this.zulieferung = value;
     }
@@ -348,7 +382,8 @@ public class EinzelhandelTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isDenkmalschutzobjekt() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDenkmalschutzobjekt() {
         return denkmalschutzobjekt;
     }
 
@@ -360,6 +395,7 @@ public class EinzelhandelTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setDenkmalschutzobjekt(Boolean value) {
         this.denkmalschutzobjekt = value;
     }
@@ -372,7 +408,8 @@ public class EinzelhandelTyp
      *     {@link Boolean }
      *     
      */
-    public Boolean isKeller() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKeller() {
         return keller;
     }
 
@@ -384,10 +421,12 @@ public class EinzelhandelTyp
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKeller(Boolean value) {
         this.keller = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -395,6 +434,7 @@ public class EinzelhandelTyp
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -402,6 +442,7 @@ public class EinzelhandelTyp
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -446,7 +487,7 @@ public class EinzelhandelTyp
         }
         {
             Boolean theRampe;
-            theRampe = this.isRampe();
+            theRampe = this.getRampe();
             strategy.appendField(locator, this, "rampe", buffer, theRampe, (this.rampe!= null));
         }
         {
@@ -456,26 +497,29 @@ public class EinzelhandelTyp
         }
         {
             Boolean theDenkmalschutzobjekt;
-            theDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            theDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             strategy.appendField(locator, this, "denkmalschutzobjekt", buffer, theDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null));
         }
         {
             Boolean theKeller;
-            theKeller = this.isKeller();
+            theKeller = this.getKeller();
             strategy.appendField(locator, this, "keller", buffer, theKeller, (this.keller!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
@@ -590,7 +634,7 @@ public class EinzelhandelTyp
                 Boolean rampeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.rampe!= null));
                 if (rampeShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceRampe;
-                    sourceRampe = this.isRampe();
+                    sourceRampe = this.getRampe();
                     Boolean copyRampe = ((Boolean) strategy.copy(LocatorUtils.property(locator, "rampe", sourceRampe), sourceRampe, (this.rampe!= null)));
                     copy.setRampe(copyRampe);
                 } else {
@@ -616,7 +660,7 @@ public class EinzelhandelTyp
                 Boolean denkmalschutzobjektShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.denkmalschutzobjekt!= null));
                 if (denkmalschutzobjektShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDenkmalschutzobjekt;
-                    sourceDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+                    sourceDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
                     Boolean copyDenkmalschutzobjekt = ((Boolean) strategy.copy(LocatorUtils.property(locator, "denkmalschutzobjekt", sourceDenkmalschutzobjekt), sourceDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null)));
                     copy.setDenkmalschutzobjekt(copyDenkmalschutzobjekt);
                 } else {
@@ -629,7 +673,7 @@ public class EinzelhandelTyp
                 Boolean kellerShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.keller!= null));
                 if (kellerShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKeller;
-                    sourceKeller = this.isKeller();
+                    sourceKeller = this.getKeller();
                     Boolean copyKeller = ((Boolean) strategy.copy(LocatorUtils.property(locator, "keller", sourceKeller), sourceKeller, (this.keller!= null)));
                     copy.setKeller(copyKeller);
                 } else {
@@ -642,10 +686,12 @@ public class EinzelhandelTyp
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new EinzelhandelTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -731,9 +777,9 @@ public class EinzelhandelTyp
         }
         {
             Boolean lhsRampe;
-            lhsRampe = this.isRampe();
+            lhsRampe = this.getRampe();
             Boolean rhsRampe;
-            rhsRampe = that.isRampe();
+            rhsRampe = that.getRampe();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "rampe", lhsRampe), LocatorUtils.property(thatLocator, "rampe", rhsRampe), lhsRampe, rhsRampe, (this.rampe!= null), (that.rampe!= null))) {
                 return false;
             }
@@ -749,18 +795,18 @@ public class EinzelhandelTyp
         }
         {
             Boolean lhsDenkmalschutzobjekt;
-            lhsDenkmalschutzobjekt = this.isDenkmalschutzobjekt();
+            lhsDenkmalschutzobjekt = this.getDenkmalschutzobjekt();
             Boolean rhsDenkmalschutzobjekt;
-            rhsDenkmalschutzobjekt = that.isDenkmalschutzobjekt();
+            rhsDenkmalschutzobjekt = that.getDenkmalschutzobjekt();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "denkmalschutzobjekt", lhsDenkmalschutzobjekt), LocatorUtils.property(thatLocator, "denkmalschutzobjekt", rhsDenkmalschutzobjekt), lhsDenkmalschutzobjekt, rhsDenkmalschutzobjekt, (this.denkmalschutzobjekt!= null), (that.denkmalschutzobjekt!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKeller;
-            lhsKeller = this.isKeller();
+            lhsKeller = this.getKeller();
             Boolean rhsKeller;
-            rhsKeller = that.isKeller();
+            rhsKeller = that.getKeller();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "keller", lhsKeller), LocatorUtils.property(thatLocator, "keller", rhsKeller), lhsKeller, rhsKeller, (this.keller!= null), (that.keller!= null))) {
                 return false;
             }
@@ -768,6 +814,7 @@ public class EinzelhandelTyp
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

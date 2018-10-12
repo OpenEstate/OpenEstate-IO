@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -42,15 +43,19 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnergieausweisTyp")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "Energieausweistyp")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected EnergieausweistypTyp energieausweistyp;
     @XmlAttribute(name = "Energieverbrauchskennwert")
     @XmlJavaTypeAdapter(Adapter30 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal energieverbrauchskennwert;
     @XmlAttribute(name = "WarmwasserEnthalten")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean warmwasserEnthalten;
 
     /**
@@ -61,6 +66,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link EnergieausweistypTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public EnergieausweistypTyp getEnergieausweistyp() {
         return energieausweistyp;
     }
@@ -73,6 +79,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link EnergieausweistypTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEnergieausweistyp(EnergieausweistypTyp value) {
         this.energieausweistyp = value;
     }
@@ -85,6 +92,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getEnergieverbrauchskennwert() {
         return energieverbrauchskennwert;
     }
@@ -97,6 +105,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setEnergieverbrauchskennwert(BigDecimal value) {
         this.energieverbrauchskennwert = value;
     }
@@ -109,7 +118,8 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link Boolean }
      *     
      */
-    public Boolean isWarmwasserEnthalten() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWarmwasserEnthalten() {
         return warmwasserEnthalten;
     }
 
@@ -121,10 +131,12 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setWarmwasserEnthalten(Boolean value) {
         this.warmwasserEnthalten = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -132,6 +144,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -139,6 +152,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             EnergieausweistypTyp theEnergieausweistyp;
@@ -152,21 +166,24 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
         }
         {
             Boolean theWarmwasserEnthalten;
-            theWarmwasserEnthalten = this.isWarmwasserEnthalten();
+            theWarmwasserEnthalten = this.getWarmwasserEnthalten();
             strategy.appendField(locator, this, "warmwasserEnthalten", buffer, theWarmwasserEnthalten, (this.warmwasserEnthalten!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof EnergieausweisTyp) {
@@ -201,7 +218,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
                 Boolean warmwasserEnthaltenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.warmwasserEnthalten!= null));
                 if (warmwasserEnthaltenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWarmwasserEnthalten;
-                    sourceWarmwasserEnthalten = this.isWarmwasserEnthalten();
+                    sourceWarmwasserEnthalten = this.getWarmwasserEnthalten();
                     Boolean copyWarmwasserEnthalten = ((Boolean) strategy.copy(LocatorUtils.property(locator, "warmwasserEnthalten", sourceWarmwasserEnthalten), sourceWarmwasserEnthalten, (this.warmwasserEnthalten!= null)));
                     copy.setWarmwasserEnthalten(copyWarmwasserEnthalten);
                 } else {
@@ -214,10 +231,12 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new EnergieausweisTyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -246,9 +265,9 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
         }
         {
             Boolean lhsWarmwasserEnthalten;
-            lhsWarmwasserEnthalten = this.isWarmwasserEnthalten();
+            lhsWarmwasserEnthalten = this.getWarmwasserEnthalten();
             Boolean rhsWarmwasserEnthalten;
-            rhsWarmwasserEnthalten = that.isWarmwasserEnthalten();
+            rhsWarmwasserEnthalten = that.getWarmwasserEnthalten();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "warmwasserEnthalten", lhsWarmwasserEnthalten), LocatorUtils.property(thatLocator, "warmwasserEnthalten", rhsWarmwasserEnthalten), lhsWarmwasserEnthalten, rhsWarmwasserEnthalten, (this.warmwasserEnthalten!= null), (that.warmwasserEnthalten!= null))) {
                 return false;
             }
@@ -256,6 +275,7 @@ public class EnergieausweisTyp implements Serializable, Cloneable, CopyTo2, Equa
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

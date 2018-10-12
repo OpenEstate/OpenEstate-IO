@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,26 +30,36 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "energietyp")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "PASSIVHAUS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean passivhaus;
     @XmlAttribute(name = "NIEDRIGENERGIE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean niedrigenergie;
     @XmlAttribute(name = "NEUBAUSTANDARD")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean neubaustandard;
     @XmlAttribute(name = "KFW40")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kfw40;
     @XmlAttribute(name = "KFW60")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kfw60;
     @XmlAttribute(name = "KFW55")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kfw55;
     @XmlAttribute(name = "KFW70")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kfw70;
     @XmlAttribute(name = "MINERGIEBAUWEISE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean minergiebauweise;
     @XmlAttribute(name = "MINERGIE_ZERTIFIZIERT")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean minergiezertifiziert;
 
     /**
@@ -59,7 +70,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isPASSIVHAUS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPASSIVHAUS() {
         return passivhaus;
     }
 
@@ -71,6 +83,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPASSIVHAUS(Boolean value) {
         this.passivhaus = value;
     }
@@ -83,7 +96,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isNIEDRIGENERGIE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getNIEDRIGENERGIE() {
         return niedrigenergie;
     }
 
@@ -95,6 +109,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setNIEDRIGENERGIE(Boolean value) {
         this.niedrigenergie = value;
     }
@@ -107,7 +122,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isNEUBAUSTANDARD() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getNEUBAUSTANDARD() {
         return neubaustandard;
     }
 
@@ -119,6 +135,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setNEUBAUSTANDARD(Boolean value) {
         this.neubaustandard = value;
     }
@@ -131,7 +148,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isKFW40() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKFW40() {
         return kfw40;
     }
 
@@ -143,6 +161,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKFW40(Boolean value) {
         this.kfw40 = value;
     }
@@ -155,7 +174,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isKFW60() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKFW60() {
         return kfw60;
     }
 
@@ -167,6 +187,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKFW60(Boolean value) {
         this.kfw60 = value;
     }
@@ -179,7 +200,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isKFW55() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKFW55() {
         return kfw55;
     }
 
@@ -191,6 +213,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKFW55(Boolean value) {
         this.kfw55 = value;
     }
@@ -203,7 +226,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isKFW70() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKFW70() {
         return kfw70;
     }
 
@@ -215,6 +239,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKFW70(Boolean value) {
         this.kfw70 = value;
     }
@@ -227,7 +252,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isMINERGIEBAUWEISE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getMINERGIEBAUWEISE() {
         return minergiebauweise;
     }
 
@@ -239,6 +265,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMINERGIEBAUWEISE(Boolean value) {
         this.minergiebauweise = value;
     }
@@ -251,7 +278,8 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isMINERGIEZERTIFIZIERT() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getMINERGIEZERTIFIZIERT() {
         return minergiezertifiziert;
     }
 
@@ -263,10 +291,12 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMINERGIEZERTIFIZIERT(Boolean value) {
         this.minergiezertifiziert = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -274,6 +304,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -281,64 +312,68 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean thePASSIVHAUS;
-            thePASSIVHAUS = this.isPASSIVHAUS();
+            thePASSIVHAUS = this.getPASSIVHAUS();
             strategy.appendField(locator, this, "passivhaus", buffer, thePASSIVHAUS, (this.passivhaus!= null));
         }
         {
             Boolean theNIEDRIGENERGIE;
-            theNIEDRIGENERGIE = this.isNIEDRIGENERGIE();
+            theNIEDRIGENERGIE = this.getNIEDRIGENERGIE();
             strategy.appendField(locator, this, "niedrigenergie", buffer, theNIEDRIGENERGIE, (this.niedrigenergie!= null));
         }
         {
             Boolean theNEUBAUSTANDARD;
-            theNEUBAUSTANDARD = this.isNEUBAUSTANDARD();
+            theNEUBAUSTANDARD = this.getNEUBAUSTANDARD();
             strategy.appendField(locator, this, "neubaustandard", buffer, theNEUBAUSTANDARD, (this.neubaustandard!= null));
         }
         {
             Boolean theKFW40;
-            theKFW40 = this.isKFW40();
+            theKFW40 = this.getKFW40();
             strategy.appendField(locator, this, "kfw40", buffer, theKFW40, (this.kfw40 != null));
         }
         {
             Boolean theKFW60;
-            theKFW60 = this.isKFW60();
+            theKFW60 = this.getKFW60();
             strategy.appendField(locator, this, "kfw60", buffer, theKFW60, (this.kfw60 != null));
         }
         {
             Boolean theKFW55;
-            theKFW55 = this.isKFW55();
+            theKFW55 = this.getKFW55();
             strategy.appendField(locator, this, "kfw55", buffer, theKFW55, (this.kfw55 != null));
         }
         {
             Boolean theKFW70;
-            theKFW70 = this.isKFW70();
+            theKFW70 = this.getKFW70();
             strategy.appendField(locator, this, "kfw70", buffer, theKFW70, (this.kfw70 != null));
         }
         {
             Boolean theMINERGIEBAUWEISE;
-            theMINERGIEBAUWEISE = this.isMINERGIEBAUWEISE();
+            theMINERGIEBAUWEISE = this.getMINERGIEBAUWEISE();
             strategy.appendField(locator, this, "minergiebauweise", buffer, theMINERGIEBAUWEISE, (this.minergiebauweise!= null));
         }
         {
             Boolean theMINERGIEZERTIFIZIERT;
-            theMINERGIEZERTIFIZIERT = this.isMINERGIEZERTIFIZIERT();
+            theMINERGIEZERTIFIZIERT = this.getMINERGIEZERTIFIZIERT();
             strategy.appendField(locator, this, "minergiezertifiziert", buffer, theMINERGIEZERTIFIZIERT, (this.minergiezertifiziert!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Energietyp) {
@@ -347,7 +382,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean passivhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.passivhaus!= null));
                 if (passivhausShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePASSIVHAUS;
-                    sourcePASSIVHAUS = this.isPASSIVHAUS();
+                    sourcePASSIVHAUS = this.getPASSIVHAUS();
                     Boolean copyPASSIVHAUS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "passivhaus", sourcePASSIVHAUS), sourcePASSIVHAUS, (this.passivhaus!= null)));
                     copy.setPASSIVHAUS(copyPASSIVHAUS);
                 } else {
@@ -360,7 +395,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean niedrigenergieShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.niedrigenergie!= null));
                 if (niedrigenergieShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceNIEDRIGENERGIE;
-                    sourceNIEDRIGENERGIE = this.isNIEDRIGENERGIE();
+                    sourceNIEDRIGENERGIE = this.getNIEDRIGENERGIE();
                     Boolean copyNIEDRIGENERGIE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "niedrigenergie", sourceNIEDRIGENERGIE), sourceNIEDRIGENERGIE, (this.niedrigenergie!= null)));
                     copy.setNIEDRIGENERGIE(copyNIEDRIGENERGIE);
                 } else {
@@ -373,7 +408,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean neubaustandardShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.neubaustandard!= null));
                 if (neubaustandardShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceNEUBAUSTANDARD;
-                    sourceNEUBAUSTANDARD = this.isNEUBAUSTANDARD();
+                    sourceNEUBAUSTANDARD = this.getNEUBAUSTANDARD();
                     Boolean copyNEUBAUSTANDARD = ((Boolean) strategy.copy(LocatorUtils.property(locator, "neubaustandard", sourceNEUBAUSTANDARD), sourceNEUBAUSTANDARD, (this.neubaustandard!= null)));
                     copy.setNEUBAUSTANDARD(copyNEUBAUSTANDARD);
                 } else {
@@ -386,7 +421,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean kfw40ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kfw40 != null));
                 if (kfw40ShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKFW40;
-                    sourceKFW40 = this.isKFW40();
+                    sourceKFW40 = this.getKFW40();
                     Boolean copyKFW40 = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kfw40", sourceKFW40), sourceKFW40, (this.kfw40 != null)));
                     copy.setKFW40(copyKFW40);
                 } else {
@@ -399,7 +434,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean kfw60ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kfw60 != null));
                 if (kfw60ShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKFW60;
-                    sourceKFW60 = this.isKFW60();
+                    sourceKFW60 = this.getKFW60();
                     Boolean copyKFW60 = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kfw60", sourceKFW60), sourceKFW60, (this.kfw60 != null)));
                     copy.setKFW60(copyKFW60);
                 } else {
@@ -412,7 +447,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean kfw55ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kfw55 != null));
                 if (kfw55ShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKFW55;
-                    sourceKFW55 = this.isKFW55();
+                    sourceKFW55 = this.getKFW55();
                     Boolean copyKFW55 = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kfw55", sourceKFW55), sourceKFW55, (this.kfw55 != null)));
                     copy.setKFW55(copyKFW55);
                 } else {
@@ -425,7 +460,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean kfw70ShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kfw70 != null));
                 if (kfw70ShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKFW70;
-                    sourceKFW70 = this.isKFW70();
+                    sourceKFW70 = this.getKFW70();
                     Boolean copyKFW70 = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kfw70", sourceKFW70), sourceKFW70, (this.kfw70 != null)));
                     copy.setKFW70(copyKFW70);
                 } else {
@@ -438,7 +473,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean minergiebauweiseShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.minergiebauweise!= null));
                 if (minergiebauweiseShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceMINERGIEBAUWEISE;
-                    sourceMINERGIEBAUWEISE = this.isMINERGIEBAUWEISE();
+                    sourceMINERGIEBAUWEISE = this.getMINERGIEBAUWEISE();
                     Boolean copyMINERGIEBAUWEISE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "minergiebauweise", sourceMINERGIEBAUWEISE), sourceMINERGIEBAUWEISE, (this.minergiebauweise!= null)));
                     copy.setMINERGIEBAUWEISE(copyMINERGIEBAUWEISE);
                 } else {
@@ -451,7 +486,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean minergiezertifiziertShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.minergiezertifiziert!= null));
                 if (minergiezertifiziertShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceMINERGIEZERTIFIZIERT;
-                    sourceMINERGIEZERTIFIZIERT = this.isMINERGIEZERTIFIZIERT();
+                    sourceMINERGIEZERTIFIZIERT = this.getMINERGIEZERTIFIZIERT();
                     Boolean copyMINERGIEZERTIFIZIERT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "minergiezertifiziert", sourceMINERGIEZERTIFIZIERT), sourceMINERGIEZERTIFIZIERT, (this.minergiezertifiziert!= null)));
                     copy.setMINERGIEZERTIFIZIERT(copyMINERGIEZERTIFIZIERT);
                 } else {
@@ -464,10 +499,12 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Energietyp();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -478,81 +515,81 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
         final Energietyp that = ((Energietyp) object);
         {
             Boolean lhsPASSIVHAUS;
-            lhsPASSIVHAUS = this.isPASSIVHAUS();
+            lhsPASSIVHAUS = this.getPASSIVHAUS();
             Boolean rhsPASSIVHAUS;
-            rhsPASSIVHAUS = that.isPASSIVHAUS();
+            rhsPASSIVHAUS = that.getPASSIVHAUS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "passivhaus", lhsPASSIVHAUS), LocatorUtils.property(thatLocator, "passivhaus", rhsPASSIVHAUS), lhsPASSIVHAUS, rhsPASSIVHAUS, (this.passivhaus!= null), (that.passivhaus!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsNIEDRIGENERGIE;
-            lhsNIEDRIGENERGIE = this.isNIEDRIGENERGIE();
+            lhsNIEDRIGENERGIE = this.getNIEDRIGENERGIE();
             Boolean rhsNIEDRIGENERGIE;
-            rhsNIEDRIGENERGIE = that.isNIEDRIGENERGIE();
+            rhsNIEDRIGENERGIE = that.getNIEDRIGENERGIE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "niedrigenergie", lhsNIEDRIGENERGIE), LocatorUtils.property(thatLocator, "niedrigenergie", rhsNIEDRIGENERGIE), lhsNIEDRIGENERGIE, rhsNIEDRIGENERGIE, (this.niedrigenergie!= null), (that.niedrigenergie!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsNEUBAUSTANDARD;
-            lhsNEUBAUSTANDARD = this.isNEUBAUSTANDARD();
+            lhsNEUBAUSTANDARD = this.getNEUBAUSTANDARD();
             Boolean rhsNEUBAUSTANDARD;
-            rhsNEUBAUSTANDARD = that.isNEUBAUSTANDARD();
+            rhsNEUBAUSTANDARD = that.getNEUBAUSTANDARD();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "neubaustandard", lhsNEUBAUSTANDARD), LocatorUtils.property(thatLocator, "neubaustandard", rhsNEUBAUSTANDARD), lhsNEUBAUSTANDARD, rhsNEUBAUSTANDARD, (this.neubaustandard!= null), (that.neubaustandard!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKFW40;
-            lhsKFW40 = this.isKFW40();
+            lhsKFW40 = this.getKFW40();
             Boolean rhsKFW40;
-            rhsKFW40 = that.isKFW40();
+            rhsKFW40 = that.getKFW40();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kfw40", lhsKFW40), LocatorUtils.property(thatLocator, "kfw40", rhsKFW40), lhsKFW40, rhsKFW40, (this.kfw40 != null), (that.kfw40 != null))) {
                 return false;
             }
         }
         {
             Boolean lhsKFW60;
-            lhsKFW60 = this.isKFW60();
+            lhsKFW60 = this.getKFW60();
             Boolean rhsKFW60;
-            rhsKFW60 = that.isKFW60();
+            rhsKFW60 = that.getKFW60();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kfw60", lhsKFW60), LocatorUtils.property(thatLocator, "kfw60", rhsKFW60), lhsKFW60, rhsKFW60, (this.kfw60 != null), (that.kfw60 != null))) {
                 return false;
             }
         }
         {
             Boolean lhsKFW55;
-            lhsKFW55 = this.isKFW55();
+            lhsKFW55 = this.getKFW55();
             Boolean rhsKFW55;
-            rhsKFW55 = that.isKFW55();
+            rhsKFW55 = that.getKFW55();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kfw55", lhsKFW55), LocatorUtils.property(thatLocator, "kfw55", rhsKFW55), lhsKFW55, rhsKFW55, (this.kfw55 != null), (that.kfw55 != null))) {
                 return false;
             }
         }
         {
             Boolean lhsKFW70;
-            lhsKFW70 = this.isKFW70();
+            lhsKFW70 = this.getKFW70();
             Boolean rhsKFW70;
-            rhsKFW70 = that.isKFW70();
+            rhsKFW70 = that.getKFW70();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kfw70", lhsKFW70), LocatorUtils.property(thatLocator, "kfw70", rhsKFW70), lhsKFW70, rhsKFW70, (this.kfw70 != null), (that.kfw70 != null))) {
                 return false;
             }
         }
         {
             Boolean lhsMINERGIEBAUWEISE;
-            lhsMINERGIEBAUWEISE = this.isMINERGIEBAUWEISE();
+            lhsMINERGIEBAUWEISE = this.getMINERGIEBAUWEISE();
             Boolean rhsMINERGIEBAUWEISE;
-            rhsMINERGIEBAUWEISE = that.isMINERGIEBAUWEISE();
+            rhsMINERGIEBAUWEISE = that.getMINERGIEBAUWEISE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "minergiebauweise", lhsMINERGIEBAUWEISE), LocatorUtils.property(thatLocator, "minergiebauweise", rhsMINERGIEBAUWEISE), lhsMINERGIEBAUWEISE, rhsMINERGIEBAUWEISE, (this.minergiebauweise!= null), (that.minergiebauweise!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsMINERGIEZERTIFIZIERT;
-            lhsMINERGIEZERTIFIZIERT = this.isMINERGIEZERTIFIZIERT();
+            lhsMINERGIEZERTIFIZIERT = this.getMINERGIEZERTIFIZIERT();
             Boolean rhsMINERGIEZERTIFIZIERT;
-            rhsMINERGIEZERTIFIZIERT = that.isMINERGIEZERTIFIZIERT();
+            rhsMINERGIEZERTIFIZIERT = that.getMINERGIEZERTIFIZIERT();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "minergiezertifiziert", lhsMINERGIEZERTIFIZIERT), LocatorUtils.property(thatLocator, "minergiezertifiziert", rhsMINERGIEZERTIFIZIERT), lhsMINERGIEZERTIFIZIERT, rhsMINERGIEZERTIFIZIERT, (this.minergiezertifiziert!= null), (that.minergiezertifiziert!= null))) {
                 return false;
             }
@@ -560,6 +597,7 @@ public class Energietyp implements Serializable, Cloneable, CopyTo2, Equals2, To
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

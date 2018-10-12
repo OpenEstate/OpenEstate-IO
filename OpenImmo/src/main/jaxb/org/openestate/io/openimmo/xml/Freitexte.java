@@ -4,6 +4,7 @@ package org.openestate.io.openimmo.xml;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,24 +43,35 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "userDefinedExtend"
 })
 @XmlRootElement(name = "freitexte")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String objekttitel;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String dreizeiler;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String lage;
     @XmlElement(name = "ausstatt_beschr")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String ausstattBeschr;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String objektbeschreibung;
     @XmlElement(name = "sonstige_angaben")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String sonstigeAngaben;
     @XmlElement(name = "objekt_text")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected ObjektText objektText;
     @XmlElement(name = "user_defined_simplefield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedSimplefield> userDefinedSimplefield;
     @XmlElement(name = "user_defined_anyfield")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedAnyfield> userDefinedAnyfield;
     @XmlElement(name = "user_defined_extend")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected List<UserDefinedExtend> userDefinedExtend;
 
     /**
@@ -70,6 +82,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getObjekttitel() {
         return objekttitel;
     }
@@ -82,6 +95,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setObjekttitel(String value) {
         this.objekttitel = value;
     }
@@ -94,6 +108,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getDreizeiler() {
         return dreizeiler;
     }
@@ -106,6 +121,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDreizeiler(String value) {
         this.dreizeiler = value;
     }
@@ -118,6 +134,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getLage() {
         return lage;
     }
@@ -130,6 +147,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLage(String value) {
         this.lage = value;
     }
@@ -142,6 +160,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getAusstattBeschr() {
         return ausstattBeschr;
     }
@@ -154,6 +173,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAusstattBeschr(String value) {
         this.ausstattBeschr = value;
     }
@@ -166,6 +186,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getObjektbeschreibung() {
         return objektbeschreibung;
     }
@@ -178,6 +199,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektbeschreibung(String value) {
         this.objektbeschreibung = value;
     }
@@ -190,6 +212,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getSonstigeAngaben() {
         return sonstigeAngaben;
     }
@@ -202,6 +225,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSonstigeAngaben(String value) {
         this.sonstigeAngaben = value;
     }
@@ -214,6 +238,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link ObjektText }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public ObjektText getObjektText() {
         return objektText;
     }
@@ -226,6 +251,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link ObjektText }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektText(ObjektText value) {
         this.objektText = value;
     }
@@ -252,6 +278,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedSimplefield> getUserDefinedSimplefield() {
         if (userDefinedSimplefield == null) {
             userDefinedSimplefield = new ArrayList<UserDefinedSimplefield>();
@@ -281,6 +308,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedAnyfield> getUserDefinedAnyfield() {
         if (userDefinedAnyfield == null) {
             userDefinedAnyfield = new ArrayList<UserDefinedAnyfield>();
@@ -310,6 +338,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public List<UserDefinedExtend> getUserDefinedExtend() {
         if (userDefinedExtend == null) {
             userDefinedExtend = new ArrayList<UserDefinedExtend>();
@@ -317,6 +346,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return this.userDefinedExtend;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -324,6 +354,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -331,6 +362,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theObjekttitel;
@@ -385,15 +417,18 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Freitexte) {
@@ -547,10 +582,12 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Freitexte();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -652,6 +689,7 @@ public class Freitexte implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

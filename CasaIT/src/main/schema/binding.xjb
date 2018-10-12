@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               jaxb:version="2.1">
+
+    <jaxb:globalBindings>
+        <jaxb:serializable/>
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:double"
+                       parseMethod="org.openestate.io.casa_it.CasaItUtils.parseDouble"
+                       printMethod="org.openestate.io.casa_it.CasaItUtils.printDouble"/>
+    </jaxb:globalBindings>
+
+    <jaxb:bindings schemaLocation="schema.xsd" node="/xsd:schema">
+
+        <jaxb:schemaBindings>
+            <jaxb:package name="org.openestate.io.casa_it.xml">
+                <jaxb:javadoc><![CDATA[<body>
+<strong>EXPERIMENTAL:</strong> Generated JAXB classes to read and write XML files for <a href="http://casa.it/">casa.it</a>.
+<h3>Warning</h3>
+This implementation is experimental and not used in productive environments so far!
+</body>]]></jaxb:javadoc>
+            </jaxb:package>
+        </jaxb:schemaBindings>
+
+    </jaxb:bindings>
+
+</jaxb:bindings>

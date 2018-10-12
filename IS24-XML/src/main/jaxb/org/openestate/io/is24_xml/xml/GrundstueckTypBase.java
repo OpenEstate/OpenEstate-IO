@@ -3,6 +3,7 @@ package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -58,6 +59,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     org.openestate.io.is24_xml.xml.GrundstueckWohnenMiete.Type.class,
     org.openestate.io.is24_xml.xml.GrundstueckGewerbe.Type.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public abstract class GrundstueckTypBase
     extends ImmobilieBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
@@ -65,28 +67,38 @@ public abstract class GrundstueckTypBase
 
     @XmlAttribute(name = "GrundstuecksFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal grundstuecksFlaeche;
     @XmlAttribute(name = "TeilbarAb")
     @XmlJavaTypeAdapter(Adapter24 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long teilbarAb;
     @XmlAttribute(name = "BebaubarNach")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BebaubarNachTyp bebaubarNach;
     @XmlAttribute(name = "BaugenehmigungVorhanden")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean baugenehmigungVorhanden;
     @XmlAttribute(name = "AbrissErforderlich")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean abrissErforderlich;
     @XmlAttribute(name = "GRZ")
     @XmlJavaTypeAdapter(Adapter28 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal grz;
     @XmlAttribute(name = "GFZ")
     @XmlJavaTypeAdapter(Adapter28 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal gfz;
     @XmlAttribute(name = "Erschliessungszustand")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ErschliessungszustandTyp erschliessungszustand;
     @XmlAttribute(name = "KurzfristigBebaubar")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kurzfristigBebaubar;
     @XmlAttribute(name = "FreiAb")
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String freiAb;
 
     /**
@@ -97,6 +109,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getGrundstuecksFlaeche() {
         return grundstuecksFlaeche;
     }
@@ -109,6 +122,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGrundstuecksFlaeche(BigDecimal value) {
         this.grundstuecksFlaeche = value;
     }
@@ -121,6 +135,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getTeilbarAb() {
         return teilbarAb;
     }
@@ -133,6 +148,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setTeilbarAb(Long value) {
         this.teilbarAb = value;
     }
@@ -145,6 +161,7 @@ public abstract class GrundstueckTypBase
      *     {@link BebaubarNachTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BebaubarNachTyp getBebaubarNach() {
         return bebaubarNach;
     }
@@ -157,6 +174,7 @@ public abstract class GrundstueckTypBase
      *     {@link BebaubarNachTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBebaubarNach(BebaubarNachTyp value) {
         this.bebaubarNach = value;
     }
@@ -169,7 +187,8 @@ public abstract class GrundstueckTypBase
      *     {@link Boolean }
      *     
      */
-    public Boolean isBaugenehmigungVorhanden() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBaugenehmigungVorhanden() {
         return baugenehmigungVorhanden;
     }
 
@@ -181,6 +200,7 @@ public abstract class GrundstueckTypBase
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setBaugenehmigungVorhanden(Boolean value) {
         this.baugenehmigungVorhanden = value;
     }
@@ -193,7 +213,8 @@ public abstract class GrundstueckTypBase
      *     {@link Boolean }
      *     
      */
-    public Boolean isAbrissErforderlich() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAbrissErforderlich() {
         return abrissErforderlich;
     }
 
@@ -205,6 +226,7 @@ public abstract class GrundstueckTypBase
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAbrissErforderlich(Boolean value) {
         this.abrissErforderlich = value;
     }
@@ -217,6 +239,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getGRZ() {
         return grz;
     }
@@ -229,6 +252,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGRZ(BigDecimal value) {
         this.grz = value;
     }
@@ -241,6 +265,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getGFZ() {
         return gfz;
     }
@@ -253,6 +278,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGFZ(BigDecimal value) {
         this.gfz = value;
     }
@@ -265,6 +291,7 @@ public abstract class GrundstueckTypBase
      *     {@link ErschliessungszustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ErschliessungszustandTyp getErschliessungszustand() {
         return erschliessungszustand;
     }
@@ -277,6 +304,7 @@ public abstract class GrundstueckTypBase
      *     {@link ErschliessungszustandTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setErschliessungszustand(ErschliessungszustandTyp value) {
         this.erschliessungszustand = value;
     }
@@ -289,7 +317,8 @@ public abstract class GrundstueckTypBase
      *     {@link Boolean }
      *     
      */
-    public Boolean isKurzfristigBebaubar() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKurzfristigBebaubar() {
         return kurzfristigBebaubar;
     }
 
@@ -301,6 +330,7 @@ public abstract class GrundstueckTypBase
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKurzfristigBebaubar(Boolean value) {
         this.kurzfristigBebaubar = value;
     }
@@ -313,6 +343,7 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getFreiAb() {
         return freiAb;
     }
@@ -325,10 +356,12 @@ public abstract class GrundstueckTypBase
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setFreiAb(String value) {
         this.freiAb = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -336,6 +369,7 @@ public abstract class GrundstueckTypBase
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -343,6 +377,7 @@ public abstract class GrundstueckTypBase
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -362,12 +397,12 @@ public abstract class GrundstueckTypBase
         }
         {
             Boolean theBaugenehmigungVorhanden;
-            theBaugenehmigungVorhanden = this.isBaugenehmigungVorhanden();
+            theBaugenehmigungVorhanden = this.getBaugenehmigungVorhanden();
             strategy.appendField(locator, this, "baugenehmigungVorhanden", buffer, theBaugenehmigungVorhanden, (this.baugenehmigungVorhanden!= null));
         }
         {
             Boolean theAbrissErforderlich;
-            theAbrissErforderlich = this.isAbrissErforderlich();
+            theAbrissErforderlich = this.getAbrissErforderlich();
             strategy.appendField(locator, this, "abrissErforderlich", buffer, theAbrissErforderlich, (this.abrissErforderlich!= null));
         }
         {
@@ -387,7 +422,7 @@ public abstract class GrundstueckTypBase
         }
         {
             Boolean theKurzfristigBebaubar;
-            theKurzfristigBebaubar = this.isKurzfristigBebaubar();
+            theKurzfristigBebaubar = this.getKurzfristigBebaubar();
             strategy.appendField(locator, this, "kurzfristigBebaubar", buffer, theKurzfristigBebaubar, (this.kurzfristigBebaubar!= null));
         }
         {
@@ -398,15 +433,18 @@ public abstract class GrundstueckTypBase
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         if (null == target) {
             throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
@@ -457,7 +495,7 @@ public abstract class GrundstueckTypBase
                 Boolean baugenehmigungVorhandenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.baugenehmigungVorhanden!= null));
                 if (baugenehmigungVorhandenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBaugenehmigungVorhanden;
-                    sourceBaugenehmigungVorhanden = this.isBaugenehmigungVorhanden();
+                    sourceBaugenehmigungVorhanden = this.getBaugenehmigungVorhanden();
                     Boolean copyBaugenehmigungVorhanden = ((Boolean) strategy.copy(LocatorUtils.property(locator, "baugenehmigungVorhanden", sourceBaugenehmigungVorhanden), sourceBaugenehmigungVorhanden, (this.baugenehmigungVorhanden!= null)));
                     copy.setBaugenehmigungVorhanden(copyBaugenehmigungVorhanden);
                 } else {
@@ -470,7 +508,7 @@ public abstract class GrundstueckTypBase
                 Boolean abrissErforderlichShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.abrissErforderlich!= null));
                 if (abrissErforderlichShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceAbrissErforderlich;
-                    sourceAbrissErforderlich = this.isAbrissErforderlich();
+                    sourceAbrissErforderlich = this.getAbrissErforderlich();
                     Boolean copyAbrissErforderlich = ((Boolean) strategy.copy(LocatorUtils.property(locator, "abrissErforderlich", sourceAbrissErforderlich), sourceAbrissErforderlich, (this.abrissErforderlich!= null)));
                     copy.setAbrissErforderlich(copyAbrissErforderlich);
                 } else {
@@ -522,7 +560,7 @@ public abstract class GrundstueckTypBase
                 Boolean kurzfristigBebaubarShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kurzfristigBebaubar!= null));
                 if (kurzfristigBebaubarShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKurzfristigBebaubar;
-                    sourceKurzfristigBebaubar = this.isKurzfristigBebaubar();
+                    sourceKurzfristigBebaubar = this.getKurzfristigBebaubar();
                     Boolean copyKurzfristigBebaubar = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kurzfristigBebaubar", sourceKurzfristigBebaubar), sourceKurzfristigBebaubar, (this.kurzfristigBebaubar!= null)));
                     copy.setKurzfristigBebaubar(copyKurzfristigBebaubar);
                 } else {
@@ -548,6 +586,7 @@ public abstract class GrundstueckTypBase
         return target;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -588,18 +627,18 @@ public abstract class GrundstueckTypBase
         }
         {
             Boolean lhsBaugenehmigungVorhanden;
-            lhsBaugenehmigungVorhanden = this.isBaugenehmigungVorhanden();
+            lhsBaugenehmigungVorhanden = this.getBaugenehmigungVorhanden();
             Boolean rhsBaugenehmigungVorhanden;
-            rhsBaugenehmigungVorhanden = that.isBaugenehmigungVorhanden();
+            rhsBaugenehmigungVorhanden = that.getBaugenehmigungVorhanden();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "baugenehmigungVorhanden", lhsBaugenehmigungVorhanden), LocatorUtils.property(thatLocator, "baugenehmigungVorhanden", rhsBaugenehmigungVorhanden), lhsBaugenehmigungVorhanden, rhsBaugenehmigungVorhanden, (this.baugenehmigungVorhanden!= null), (that.baugenehmigungVorhanden!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsAbrissErforderlich;
-            lhsAbrissErforderlich = this.isAbrissErforderlich();
+            lhsAbrissErforderlich = this.getAbrissErforderlich();
             Boolean rhsAbrissErforderlich;
-            rhsAbrissErforderlich = that.isAbrissErforderlich();
+            rhsAbrissErforderlich = that.getAbrissErforderlich();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "abrissErforderlich", lhsAbrissErforderlich), LocatorUtils.property(thatLocator, "abrissErforderlich", rhsAbrissErforderlich), lhsAbrissErforderlich, rhsAbrissErforderlich, (this.abrissErforderlich!= null), (that.abrissErforderlich!= null))) {
                 return false;
             }
@@ -633,9 +672,9 @@ public abstract class GrundstueckTypBase
         }
         {
             Boolean lhsKurzfristigBebaubar;
-            lhsKurzfristigBebaubar = this.isKurzfristigBebaubar();
+            lhsKurzfristigBebaubar = this.getKurzfristigBebaubar();
             Boolean rhsKurzfristigBebaubar;
-            rhsKurzfristigBebaubar = that.isKurzfristigBebaubar();
+            rhsKurzfristigBebaubar = that.getKurzfristigBebaubar();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kurzfristigBebaubar", lhsKurzfristigBebaubar), LocatorUtils.property(thatLocator, "kurzfristigBebaubar", rhsKurzfristigBebaubar), lhsKurzfristigBebaubar, rhsKurzfristigBebaubar, (this.kurzfristigBebaubar!= null), (that.kurzfristigBebaubar!= null))) {
                 return false;
             }
@@ -652,6 +691,7 @@ public abstract class GrundstueckTypBase
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

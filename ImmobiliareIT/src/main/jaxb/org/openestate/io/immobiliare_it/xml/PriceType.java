@@ -4,6 +4,7 @@ package org.openestate.io.immobiliare_it.xml;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Currency;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -58,18 +59,22 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "priceType", propOrder = {
     "value"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
 public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "integer")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger value;
     @XmlAttribute(name = "currency")
     @XmlJavaTypeAdapter(Adapter15 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected Currency currency;
     @XmlAttribute(name = "reserved")
     @XmlJavaTypeAdapter(Adapter16 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean reserved;
 
     /**
@@ -80,6 +85,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getValue() {
         return value;
     }
@@ -92,6 +98,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setValue(BigInteger value) {
         this.value = value;
     }
@@ -104,6 +111,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Currency getCurrency() {
         return currency;
     }
@@ -116,6 +124,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setCurrency(Currency value) {
         this.currency = value;
     }
@@ -128,7 +137,8 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
-    public Boolean isReserved() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getReserved() {
         return reserved;
     }
 
@@ -140,10 +150,12 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setReserved(Boolean value) {
         this.reserved = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -151,6 +163,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -158,6 +171,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigInteger theValue;
@@ -171,21 +185,24 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         }
         {
             Boolean theReserved;
-            theReserved = this.isReserved();
+            theReserved = this.getReserved();
             strategy.appendField(locator, this, "reserved", buffer, theReserved, (this.reserved!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof PriceType) {
@@ -220,7 +237,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 Boolean reservedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.reserved!= null));
                 if (reservedShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceReserved;
-                    sourceReserved = this.isReserved();
+                    sourceReserved = this.getReserved();
                     Boolean copyReserved = ((Boolean) strategy.copy(LocatorUtils.property(locator, "reserved", sourceReserved), sourceReserved, (this.reserved!= null)));
                     copy.setReserved(copyReserved);
                 } else {
@@ -233,10 +250,12 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new PriceType();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -265,9 +284,9 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         }
         {
             Boolean lhsReserved;
-            lhsReserved = this.isReserved();
+            lhsReserved = this.getReserved();
             Boolean rhsReserved;
-            rhsReserved = that.isReserved();
+            rhsReserved = that.getReserved();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "reserved", lhsReserved), LocatorUtils.property(thatLocator, "reserved", rhsReserved), lhsReserved, rhsReserved, (this.reserved!= null), (that.reserved!= null))) {
                 return false;
             }
@@ -275,6 +294,7 @@ public class PriceType implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

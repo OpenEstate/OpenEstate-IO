@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,20 +30,27 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "stellplatzart")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "GARAGE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean garage;
     @XmlAttribute(name = "TIEFGARAGE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean tiefgarage;
     @XmlAttribute(name = "CARPORT")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean carport;
     @XmlAttribute(name = "FREIPLATZ")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean freiplatz;
     @XmlAttribute(name = "PARKHAUS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean parkhaus;
     @XmlAttribute(name = "DUPLEX")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean duplex;
 
     /**
@@ -53,7 +61,8 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isGARAGE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGARAGE() {
         return garage;
     }
 
@@ -65,6 +74,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGARAGE(Boolean value) {
         this.garage = value;
     }
@@ -77,7 +87,8 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isTIEFGARAGE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getTIEFGARAGE() {
         return tiefgarage;
     }
 
@@ -89,6 +100,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setTIEFGARAGE(Boolean value) {
         this.tiefgarage = value;
     }
@@ -101,7 +113,8 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isCARPORT() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getCARPORT() {
         return carport;
     }
 
@@ -113,6 +126,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setCARPORT(Boolean value) {
         this.carport = value;
     }
@@ -125,7 +139,8 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isFREIPLATZ() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFREIPLATZ() {
         return freiplatz;
     }
 
@@ -137,6 +152,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFREIPLATZ(Boolean value) {
         this.freiplatz = value;
     }
@@ -149,7 +165,8 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isPARKHAUS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPARKHAUS() {
         return parkhaus;
     }
 
@@ -161,6 +178,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPARKHAUS(Boolean value) {
         this.parkhaus = value;
     }
@@ -173,7 +191,8 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isDUPLEX() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getDUPLEX() {
         return duplex;
     }
 
@@ -185,10 +204,12 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setDUPLEX(Boolean value) {
         this.duplex = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -196,6 +217,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -203,49 +225,53 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theGARAGE;
-            theGARAGE = this.isGARAGE();
+            theGARAGE = this.getGARAGE();
             strategy.appendField(locator, this, "garage", buffer, theGARAGE, (this.garage!= null));
         }
         {
             Boolean theTIEFGARAGE;
-            theTIEFGARAGE = this.isTIEFGARAGE();
+            theTIEFGARAGE = this.getTIEFGARAGE();
             strategy.appendField(locator, this, "tiefgarage", buffer, theTIEFGARAGE, (this.tiefgarage!= null));
         }
         {
             Boolean theCARPORT;
-            theCARPORT = this.isCARPORT();
+            theCARPORT = this.getCARPORT();
             strategy.appendField(locator, this, "carport", buffer, theCARPORT, (this.carport!= null));
         }
         {
             Boolean theFREIPLATZ;
-            theFREIPLATZ = this.isFREIPLATZ();
+            theFREIPLATZ = this.getFREIPLATZ();
             strategy.appendField(locator, this, "freiplatz", buffer, theFREIPLATZ, (this.freiplatz!= null));
         }
         {
             Boolean thePARKHAUS;
-            thePARKHAUS = this.isPARKHAUS();
+            thePARKHAUS = this.getPARKHAUS();
             strategy.appendField(locator, this, "parkhaus", buffer, thePARKHAUS, (this.parkhaus!= null));
         }
         {
             Boolean theDUPLEX;
-            theDUPLEX = this.isDUPLEX();
+            theDUPLEX = this.getDUPLEX();
             strategy.appendField(locator, this, "duplex", buffer, theDUPLEX, (this.duplex!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Stellplatzart) {
@@ -254,7 +280,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean garageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.garage!= null));
                 if (garageShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGARAGE;
-                    sourceGARAGE = this.isGARAGE();
+                    sourceGARAGE = this.getGARAGE();
                     Boolean copyGARAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "garage", sourceGARAGE), sourceGARAGE, (this.garage!= null)));
                     copy.setGARAGE(copyGARAGE);
                 } else {
@@ -267,7 +293,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean tiefgarageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.tiefgarage!= null));
                 if (tiefgarageShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceTIEFGARAGE;
-                    sourceTIEFGARAGE = this.isTIEFGARAGE();
+                    sourceTIEFGARAGE = this.getTIEFGARAGE();
                     Boolean copyTIEFGARAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "tiefgarage", sourceTIEFGARAGE), sourceTIEFGARAGE, (this.tiefgarage!= null)));
                     copy.setTIEFGARAGE(copyTIEFGARAGE);
                 } else {
@@ -280,7 +306,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean carportShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.carport!= null));
                 if (carportShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceCARPORT;
-                    sourceCARPORT = this.isCARPORT();
+                    sourceCARPORT = this.getCARPORT();
                     Boolean copyCARPORT = ((Boolean) strategy.copy(LocatorUtils.property(locator, "carport", sourceCARPORT), sourceCARPORT, (this.carport!= null)));
                     copy.setCARPORT(copyCARPORT);
                 } else {
@@ -293,7 +319,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean freiplatzShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.freiplatz!= null));
                 if (freiplatzShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFREIPLATZ;
-                    sourceFREIPLATZ = this.isFREIPLATZ();
+                    sourceFREIPLATZ = this.getFREIPLATZ();
                     Boolean copyFREIPLATZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "freiplatz", sourceFREIPLATZ), sourceFREIPLATZ, (this.freiplatz!= null)));
                     copy.setFREIPLATZ(copyFREIPLATZ);
                 } else {
@@ -306,7 +332,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean parkhausShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.parkhaus!= null));
                 if (parkhausShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePARKHAUS;
-                    sourcePARKHAUS = this.isPARKHAUS();
+                    sourcePARKHAUS = this.getPARKHAUS();
                     Boolean copyPARKHAUS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "parkhaus", sourcePARKHAUS), sourcePARKHAUS, (this.parkhaus!= null)));
                     copy.setPARKHAUS(copyPARKHAUS);
                 } else {
@@ -319,7 +345,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean duplexShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.duplex!= null));
                 if (duplexShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceDUPLEX;
-                    sourceDUPLEX = this.isDUPLEX();
+                    sourceDUPLEX = this.getDUPLEX();
                     Boolean copyDUPLEX = ((Boolean) strategy.copy(LocatorUtils.property(locator, "duplex", sourceDUPLEX), sourceDUPLEX, (this.duplex!= null)));
                     copy.setDUPLEX(copyDUPLEX);
                 } else {
@@ -332,10 +358,12 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Stellplatzart();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -346,54 +374,54 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
         final Stellplatzart that = ((Stellplatzart) object);
         {
             Boolean lhsGARAGE;
-            lhsGARAGE = this.isGARAGE();
+            lhsGARAGE = this.getGARAGE();
             Boolean rhsGARAGE;
-            rhsGARAGE = that.isGARAGE();
+            rhsGARAGE = that.getGARAGE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "garage", lhsGARAGE), LocatorUtils.property(thatLocator, "garage", rhsGARAGE), lhsGARAGE, rhsGARAGE, (this.garage!= null), (that.garage!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsTIEFGARAGE;
-            lhsTIEFGARAGE = this.isTIEFGARAGE();
+            lhsTIEFGARAGE = this.getTIEFGARAGE();
             Boolean rhsTIEFGARAGE;
-            rhsTIEFGARAGE = that.isTIEFGARAGE();
+            rhsTIEFGARAGE = that.getTIEFGARAGE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "tiefgarage", lhsTIEFGARAGE), LocatorUtils.property(thatLocator, "tiefgarage", rhsTIEFGARAGE), lhsTIEFGARAGE, rhsTIEFGARAGE, (this.tiefgarage!= null), (that.tiefgarage!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsCARPORT;
-            lhsCARPORT = this.isCARPORT();
+            lhsCARPORT = this.getCARPORT();
             Boolean rhsCARPORT;
-            rhsCARPORT = that.isCARPORT();
+            rhsCARPORT = that.getCARPORT();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "carport", lhsCARPORT), LocatorUtils.property(thatLocator, "carport", rhsCARPORT), lhsCARPORT, rhsCARPORT, (this.carport!= null), (that.carport!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFREIPLATZ;
-            lhsFREIPLATZ = this.isFREIPLATZ();
+            lhsFREIPLATZ = this.getFREIPLATZ();
             Boolean rhsFREIPLATZ;
-            rhsFREIPLATZ = that.isFREIPLATZ();
+            rhsFREIPLATZ = that.getFREIPLATZ();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "freiplatz", lhsFREIPLATZ), LocatorUtils.property(thatLocator, "freiplatz", rhsFREIPLATZ), lhsFREIPLATZ, rhsFREIPLATZ, (this.freiplatz!= null), (that.freiplatz!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsPARKHAUS;
-            lhsPARKHAUS = this.isPARKHAUS();
+            lhsPARKHAUS = this.getPARKHAUS();
             Boolean rhsPARKHAUS;
-            rhsPARKHAUS = that.isPARKHAUS();
+            rhsPARKHAUS = that.getPARKHAUS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "parkhaus", lhsPARKHAUS), LocatorUtils.property(thatLocator, "parkhaus", rhsPARKHAUS), lhsPARKHAUS, rhsPARKHAUS, (this.parkhaus!= null), (that.parkhaus!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsDUPLEX;
-            lhsDUPLEX = this.isDUPLEX();
+            lhsDUPLEX = this.getDUPLEX();
             Boolean rhsDUPLEX;
-            rhsDUPLEX = that.isDUPLEX();
+            rhsDUPLEX = that.getDUPLEX();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "duplex", lhsDUPLEX), LocatorUtils.property(thatLocator, "duplex", rhsDUPLEX), lhsDUPLEX, rhsDUPLEX, (this.duplex!= null), (that.duplex!= null))) {
                 return false;
             }
@@ -401,6 +429,7 @@ public class Stellplatzart implements Serializable, Cloneable, CopyTo2, Equals2,
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

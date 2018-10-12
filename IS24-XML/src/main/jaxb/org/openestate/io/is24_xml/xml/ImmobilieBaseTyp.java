@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -77,64 +78,88 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     ZwangsversteigerungTyp.class,
     WGZimmerTyp.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Adresse", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ImmobilienAdresseTyp adresse;
     @XmlElement(name = "ManuelleGeoCodierung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ManuellGeoCodingTyp manuelleGeoCodierung;
     @XmlElement(name = "Kontaktperson")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected KontaktAdresseTyp kontaktperson;
     @XmlElementRef(name = "ApiSuchfelder", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected JAXBElement<ApiSuchfelderTyp> apiSuchfelder;
     @XmlElement(name = "Objektbeschreibung")
     @XmlJavaTypeAdapter(Adapter15 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String objektbeschreibung;
     @XmlElement(name = "Lage")
     @XmlJavaTypeAdapter(Adapter15 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String lage;
     @XmlElement(name = "Ausstattung")
     @XmlJavaTypeAdapter(Adapter15 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String ausstattung;
     @XmlElement(name = "SonstigeAngaben")
     @XmlJavaTypeAdapter(Adapter15 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String sonstigeAngaben;
     @XmlElement(name = "MultimediaAnhang")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected List<MultimediaAnhangTyp> multimediaAnhang;
     @XmlAttribute(name = "AnbieterObjektID", required = true)
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String anbieterObjektID;
     @XmlAttribute(name = "StatusVBM")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected StatusTyp statusVBM;
     @XmlAttribute(name = "StatusIS24")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected StatusTyp statusIS24;
     @XmlAttribute(name = "StatusHP")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected StatusTyp statusHP;
     @XmlAttribute(name = "AktiveGruppen")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String aktiveGruppen;
     @XmlAttribute(name = "Importmodus")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected AktionsTyp importmodus;
     @XmlAttribute(name = "ScoutObjektID")
     @XmlJavaTypeAdapter(Adapter26 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger scoutObjektID;
     @XmlAttribute(name = "GruppierungsID")
     @XmlJavaTypeAdapter(Adapter25 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Long gruppierungsID;
     @XmlAttribute(name = "Adressdruck")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean adressdruck;
     @XmlAttribute(name = "Ueberschrift", required = true)
     @XmlJavaTypeAdapter(Adapter9 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String ueberschrift;
     @XmlAttribute(name = "Provision")
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String provision;
     @XmlAttribute(name = "Provisionspflichtig")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean provisionspflichtig;
     @XmlAttribute(name = "Provisionshinweis")
     @XmlJavaTypeAdapter(Adapter14 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String provisionshinweis;
     @XmlAttribute(name = "Waehrung")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected WaehrungTyp waehrung;
 
     /**
@@ -145,6 +170,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link ImmobilienAdresseTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ImmobilienAdresseTyp getAdresse() {
         return adresse;
     }
@@ -157,6 +183,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link ImmobilienAdresseTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAdresse(ImmobilienAdresseTyp value) {
         this.adresse = value;
     }
@@ -169,6 +196,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link ManuellGeoCodingTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ManuellGeoCodingTyp getManuelleGeoCodierung() {
         return manuelleGeoCodierung;
     }
@@ -181,6 +209,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link ManuellGeoCodingTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setManuelleGeoCodierung(ManuellGeoCodingTyp value) {
         this.manuelleGeoCodierung = value;
     }
@@ -193,6 +222,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link KontaktAdresseTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public KontaktAdresseTyp getKontaktperson() {
         return kontaktperson;
     }
@@ -205,6 +235,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link KontaktAdresseTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setKontaktperson(KontaktAdresseTyp value) {
         this.kontaktperson = value;
     }
@@ -217,6 +248,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public JAXBElement<ApiSuchfelderTyp> getApiSuchfelder() {
         return apiSuchfelder;
     }
@@ -229,6 +261,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setApiSuchfelder(JAXBElement<ApiSuchfelderTyp> value) {
         this.apiSuchfelder = value;
     }
@@ -241,6 +274,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getObjektbeschreibung() {
         return objektbeschreibung;
     }
@@ -253,6 +287,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setObjektbeschreibung(String value) {
         this.objektbeschreibung = value;
     }
@@ -265,6 +300,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getLage() {
         return lage;
     }
@@ -277,6 +313,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setLage(String value) {
         this.lage = value;
     }
@@ -289,6 +326,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getAusstattung() {
         return ausstattung;
     }
@@ -301,6 +339,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAusstattung(String value) {
         this.ausstattung = value;
     }
@@ -313,6 +352,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getSonstigeAngaben() {
         return sonstigeAngaben;
     }
@@ -325,6 +365,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setSonstigeAngaben(String value) {
         this.sonstigeAngaben = value;
     }
@@ -351,6 +392,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      * 
      * 
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public List<MultimediaAnhangTyp> getMultimediaAnhang() {
         if (multimediaAnhang == null) {
             multimediaAnhang = new ArrayList<MultimediaAnhangTyp>();
@@ -366,6 +408,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getAnbieterObjektID() {
         return anbieterObjektID;
     }
@@ -378,6 +421,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAnbieterObjektID(String value) {
         this.anbieterObjektID = value;
     }
@@ -390,6 +434,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link StatusTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StatusTyp getStatusVBM() {
         if (statusVBM == null) {
             return StatusTyp.AKTIV;
@@ -406,6 +451,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link StatusTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setStatusVBM(StatusTyp value) {
         this.statusVBM = value;
     }
@@ -418,6 +464,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link StatusTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StatusTyp getStatusIS24() {
         if (statusIS24 == null) {
             return StatusTyp.AKTIV;
@@ -434,6 +481,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link StatusTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setStatusIS24(StatusTyp value) {
         this.statusIS24 = value;
     }
@@ -446,6 +494,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link StatusTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StatusTyp getStatusHP() {
         if (statusHP == null) {
             return StatusTyp.AKTIV;
@@ -462,6 +511,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link StatusTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setStatusHP(StatusTyp value) {
         this.statusHP = value;
     }
@@ -474,6 +524,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getAktiveGruppen() {
         return aktiveGruppen;
     }
@@ -486,6 +537,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAktiveGruppen(String value) {
         this.aktiveGruppen = value;
     }
@@ -498,6 +550,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link AktionsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public AktionsTyp getImportmodus() {
         if (importmodus == null) {
             return AktionsTyp.IMPORTIEREN;
@@ -514,6 +567,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link AktionsTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setImportmodus(AktionsTyp value) {
         this.importmodus = value;
     }
@@ -526,6 +580,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getScoutObjektID() {
         return scoutObjektID;
     }
@@ -538,6 +593,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setScoutObjektID(BigInteger value) {
         this.scoutObjektID = value;
     }
@@ -550,6 +606,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Long getGruppierungsID() {
         return gruppierungsID;
     }
@@ -562,6 +619,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setGruppierungsID(Long value) {
         this.gruppierungsID = value;
     }
@@ -574,7 +632,8 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link Boolean }
      *     
      */
-    public boolean isAdressdruck() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getAdressdruck() {
         if (adressdruck == null) {
             return false;
         } else {
@@ -590,6 +649,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setAdressdruck(Boolean value) {
         this.adressdruck = value;
     }
@@ -602,6 +662,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getUeberschrift() {
         return ueberschrift;
     }
@@ -614,6 +675,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setUeberschrift(String value) {
         this.ueberschrift = value;
     }
@@ -626,6 +688,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getProvision() {
         return provision;
     }
@@ -638,6 +701,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setProvision(String value) {
         this.provision = value;
     }
@@ -650,7 +714,8 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link Boolean }
      *     
      */
-    public Boolean isProvisionspflichtig() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getProvisionspflichtig() {
         return provisionspflichtig;
     }
 
@@ -662,6 +727,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setProvisionspflichtig(Boolean value) {
         this.provisionspflichtig = value;
     }
@@ -674,6 +740,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getProvisionshinweis() {
         return provisionshinweis;
     }
@@ -686,6 +753,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setProvisionshinweis(String value) {
         this.provisionshinweis = value;
     }
@@ -698,6 +766,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link WaehrungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public WaehrungTyp getWaehrung() {
         if (waehrung == null) {
             return WaehrungTyp.EUR;
@@ -714,10 +783,12 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
      *     {@link WaehrungTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setWaehrung(WaehrungTyp value) {
         this.waehrung = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -725,6 +796,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -732,6 +804,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             ImmobilienAdresseTyp theAdresse;
@@ -819,8 +892,8 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
             strategy.appendField(locator, this, "gruppierungsID", buffer, theGruppierungsID, (this.gruppierungsID!= null));
         }
         {
-            boolean theAdressdruck;
-            theAdressdruck = ((this.adressdruck!= null)?this.isAdressdruck():false);
+            Boolean theAdressdruck;
+            theAdressdruck = this.getAdressdruck();
             strategy.appendField(locator, this, "adressdruck", buffer, theAdressdruck, (this.adressdruck!= null));
         }
         {
@@ -835,7 +908,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
         }
         {
             Boolean theProvisionspflichtig;
-            theProvisionspflichtig = this.isProvisionspflichtig();
+            theProvisionspflichtig = this.getProvisionspflichtig();
             strategy.appendField(locator, this, "provisionspflichtig", buffer, theProvisionspflichtig, (this.provisionspflichtig!= null));
         }
         {
@@ -851,15 +924,18 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         if (null == target) {
             throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
@@ -1096,9 +1172,9 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
             {
                 Boolean adressdruckShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.adressdruck!= null));
                 if (adressdruckShouldBeCopiedAndSet == Boolean.TRUE) {
-                    boolean sourceAdressdruck;
-                    sourceAdressdruck = ((this.adressdruck!= null)?this.isAdressdruck():false);
-                    boolean copyAdressdruck = strategy.copy(LocatorUtils.property(locator, "adressdruck", sourceAdressdruck), sourceAdressdruck, (this.adressdruck!= null));
+                    Boolean sourceAdressdruck;
+                    sourceAdressdruck = this.getAdressdruck();
+                    Boolean copyAdressdruck = ((Boolean) strategy.copy(LocatorUtils.property(locator, "adressdruck", sourceAdressdruck), sourceAdressdruck, (this.adressdruck!= null)));
                     copy.setAdressdruck(copyAdressdruck);
                 } else {
                     if (adressdruckShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -1136,7 +1212,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
                 Boolean provisionspflichtigShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.provisionspflichtig!= null));
                 if (provisionspflichtigShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceProvisionspflichtig;
-                    sourceProvisionspflichtig = this.isProvisionspflichtig();
+                    sourceProvisionspflichtig = this.getProvisionspflichtig();
                     Boolean copyProvisionspflichtig = ((Boolean) strategy.copy(LocatorUtils.property(locator, "provisionspflichtig", sourceProvisionspflichtig), sourceProvisionspflichtig, (this.provisionspflichtig!= null)));
                     copy.setProvisionspflichtig(copyProvisionspflichtig);
                 } else {
@@ -1175,6 +1251,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
         return target;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -1337,10 +1414,10 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
             }
         }
         {
-            boolean lhsAdressdruck;
-            lhsAdressdruck = ((this.adressdruck!= null)?this.isAdressdruck():false);
-            boolean rhsAdressdruck;
-            rhsAdressdruck = ((that.adressdruck!= null)?that.isAdressdruck():false);
+            Boolean lhsAdressdruck;
+            lhsAdressdruck = this.getAdressdruck();
+            Boolean rhsAdressdruck;
+            rhsAdressdruck = that.getAdressdruck();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "adressdruck", lhsAdressdruck), LocatorUtils.property(thatLocator, "adressdruck", rhsAdressdruck), lhsAdressdruck, rhsAdressdruck, (this.adressdruck!= null), (that.adressdruck!= null))) {
                 return false;
             }
@@ -1365,9 +1442,9 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
         }
         {
             Boolean lhsProvisionspflichtig;
-            lhsProvisionspflichtig = this.isProvisionspflichtig();
+            lhsProvisionspflichtig = this.getProvisionspflichtig();
             Boolean rhsProvisionspflichtig;
-            rhsProvisionspflichtig = that.isProvisionspflichtig();
+            rhsProvisionspflichtig = that.getProvisionspflichtig();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "provisionspflichtig", lhsProvisionspflichtig), LocatorUtils.property(thatLocator, "provisionspflichtig", rhsProvisionspflichtig), lhsProvisionspflichtig, rhsProvisionspflichtig, (this.provisionspflichtig!= null), (that.provisionspflichtig!= null))) {
                 return false;
             }
@@ -1393,6 +1470,7 @@ public abstract class ImmobilieBaseTyp implements Serializable, Cloneable, CopyT
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

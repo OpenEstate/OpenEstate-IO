@@ -2,6 +2,7 @@
 package org.openestate.io.immoxml.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,12 +30,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "moebliert")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "VOLL")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean voll;
     @XmlAttribute(name = "TEIL")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean teil;
 
     /**
@@ -45,7 +49,8 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
-    public Boolean isVOLL() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getVOLL() {
         return voll;
     }
 
@@ -57,6 +62,7 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setVOLL(Boolean value) {
         this.voll = value;
     }
@@ -69,7 +75,8 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
-    public Boolean isTEIL() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getTEIL() {
         return teil;
     }
 
@@ -81,10 +88,12 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setTEIL(Boolean value) {
         this.teil = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -92,6 +101,7 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -99,29 +109,33 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theVOLL;
-            theVOLL = this.isVOLL();
+            theVOLL = this.getVOLL();
             strategy.appendField(locator, this, "voll", buffer, theVOLL, (this.voll!= null));
         }
         {
             Boolean theTEIL;
-            theTEIL = this.isTEIL();
+            theTEIL = this.getTEIL();
             strategy.appendField(locator, this, "teil", buffer, theTEIL, (this.teil!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Moebliert) {
@@ -130,7 +144,7 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 Boolean vollShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.voll!= null));
                 if (vollShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceVOLL;
-                    sourceVOLL = this.isVOLL();
+                    sourceVOLL = this.getVOLL();
                     Boolean copyVOLL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "voll", sourceVOLL), sourceVOLL, (this.voll!= null)));
                     copy.setVOLL(copyVOLL);
                 } else {
@@ -143,7 +157,7 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
                 Boolean teilShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.teil!= null));
                 if (teilShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceTEIL;
-                    sourceTEIL = this.isTEIL();
+                    sourceTEIL = this.getTEIL();
                     Boolean copyTEIL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "teil", sourceTEIL), sourceTEIL, (this.teil!= null)));
                     copy.setTEIL(copyTEIL);
                 } else {
@@ -156,10 +170,12 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Moebliert();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -170,18 +186,18 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         final Moebliert that = ((Moebliert) object);
         {
             Boolean lhsVOLL;
-            lhsVOLL = this.isVOLL();
+            lhsVOLL = this.getVOLL();
             Boolean rhsVOLL;
-            rhsVOLL = that.isVOLL();
+            rhsVOLL = that.getVOLL();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "voll", lhsVOLL), LocatorUtils.property(thatLocator, "voll", rhsVOLL), lhsVOLL, rhsVOLL, (this.voll!= null), (that.voll!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsTEIL;
-            lhsTEIL = this.isTEIL();
+            lhsTEIL = this.getTEIL();
             Boolean rhsTEIL;
-            rhsTEIL = that.isTEIL();
+            rhsTEIL = that.getTEIL();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "teil", lhsTEIL), LocatorUtils.property(thatLocator, "teil", rhsTEIL), lhsTEIL, rhsTEIL, (this.teil!= null), (that.teil!= null))) {
                 return false;
             }
@@ -189,6 +205,7 @@ public class Moebliert implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

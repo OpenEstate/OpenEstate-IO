@@ -2,6 +2,7 @@
 package org.openestate.io.immoxml.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,14 +30,18 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "sicherheitstechnik")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
 public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "ALARMANLAGE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean alarmanlage;
     @XmlAttribute(name = "KAMERA")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kamera;
     @XmlAttribute(name = "POLIZEIRUF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean polizeiruf;
 
     /**
@@ -47,7 +52,8 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
      *     {@link Boolean }
      *     
      */
-    public Boolean isALARMANLAGE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getALARMANLAGE() {
         return alarmanlage;
     }
 
@@ -59,6 +65,7 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setALARMANLAGE(Boolean value) {
         this.alarmanlage = value;
     }
@@ -71,7 +78,8 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
      *     {@link Boolean }
      *     
      */
-    public Boolean isKAMERA() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKAMERA() {
         return kamera;
     }
 
@@ -83,6 +91,7 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setKAMERA(Boolean value) {
         this.kamera = value;
     }
@@ -95,7 +104,8 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
      *     {@link Boolean }
      *     
      */
-    public Boolean isPOLIZEIRUF() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPOLIZEIRUF() {
         return polizeiruf;
     }
 
@@ -107,10 +117,12 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public void setPOLIZEIRUF(Boolean value) {
         this.polizeiruf = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -118,6 +130,7 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -125,34 +138,38 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theALARMANLAGE;
-            theALARMANLAGE = this.isALARMANLAGE();
+            theALARMANLAGE = this.getALARMANLAGE();
             strategy.appendField(locator, this, "alarmanlage", buffer, theALARMANLAGE, (this.alarmanlage!= null));
         }
         {
             Boolean theKAMERA;
-            theKAMERA = this.isKAMERA();
+            theKAMERA = this.getKAMERA();
             strategy.appendField(locator, this, "kamera", buffer, theKAMERA, (this.kamera!= null));
         }
         {
             Boolean thePOLIZEIRUF;
-            thePOLIZEIRUF = this.isPOLIZEIRUF();
+            thePOLIZEIRUF = this.getPOLIZEIRUF();
             strategy.appendField(locator, this, "polizeiruf", buffer, thePOLIZEIRUF, (this.polizeiruf!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Sicherheitstechnik) {
@@ -161,7 +178,7 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
                 Boolean alarmanlageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.alarmanlage!= null));
                 if (alarmanlageShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceALARMANLAGE;
-                    sourceALARMANLAGE = this.isALARMANLAGE();
+                    sourceALARMANLAGE = this.getALARMANLAGE();
                     Boolean copyALARMANLAGE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alarmanlage", sourceALARMANLAGE), sourceALARMANLAGE, (this.alarmanlage!= null)));
                     copy.setALARMANLAGE(copyALARMANLAGE);
                 } else {
@@ -174,7 +191,7 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
                 Boolean kameraShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kamera!= null));
                 if (kameraShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKAMERA;
-                    sourceKAMERA = this.isKAMERA();
+                    sourceKAMERA = this.getKAMERA();
                     Boolean copyKAMERA = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kamera", sourceKAMERA), sourceKAMERA, (this.kamera!= null)));
                     copy.setKAMERA(copyKAMERA);
                 } else {
@@ -187,7 +204,7 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
                 Boolean polizeirufShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.polizeiruf!= null));
                 if (polizeirufShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePOLIZEIRUF;
-                    sourcePOLIZEIRUF = this.isPOLIZEIRUF();
+                    sourcePOLIZEIRUF = this.getPOLIZEIRUF();
                     Boolean copyPOLIZEIRUF = ((Boolean) strategy.copy(LocatorUtils.property(locator, "polizeiruf", sourcePOLIZEIRUF), sourcePOLIZEIRUF, (this.polizeiruf!= null)));
                     copy.setPOLIZEIRUF(copyPOLIZEIRUF);
                 } else {
@@ -200,10 +217,12 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Sicherheitstechnik();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -214,27 +233,27 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
         final Sicherheitstechnik that = ((Sicherheitstechnik) object);
         {
             Boolean lhsALARMANLAGE;
-            lhsALARMANLAGE = this.isALARMANLAGE();
+            lhsALARMANLAGE = this.getALARMANLAGE();
             Boolean rhsALARMANLAGE;
-            rhsALARMANLAGE = that.isALARMANLAGE();
+            rhsALARMANLAGE = that.getALARMANLAGE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "alarmanlage", lhsALARMANLAGE), LocatorUtils.property(thatLocator, "alarmanlage", rhsALARMANLAGE), lhsALARMANLAGE, rhsALARMANLAGE, (this.alarmanlage!= null), (that.alarmanlage!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKAMERA;
-            lhsKAMERA = this.isKAMERA();
+            lhsKAMERA = this.getKAMERA();
             Boolean rhsKAMERA;
-            rhsKAMERA = that.isKAMERA();
+            rhsKAMERA = that.getKAMERA();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kamera", lhsKAMERA), LocatorUtils.property(thatLocator, "kamera", rhsKAMERA), lhsKAMERA, rhsKAMERA, (this.kamera!= null), (that.kamera!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsPOLIZEIRUF;
-            lhsPOLIZEIRUF = this.isPOLIZEIRUF();
+            lhsPOLIZEIRUF = this.getPOLIZEIRUF();
             Boolean rhsPOLIZEIRUF;
-            rhsPOLIZEIRUF = that.isPOLIZEIRUF();
+            rhsPOLIZEIRUF = that.getPOLIZEIRUF();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "polizeiruf", lhsPOLIZEIRUF), LocatorUtils.property(thatLocator, "polizeiruf", rhsPOLIZEIRUF), lhsPOLIZEIRUF, rhsPOLIZEIRUF, (this.polizeiruf!= null), (that.polizeiruf!= null))) {
                 return false;
             }
@@ -242,6 +261,7 @@ public class Sicherheitstechnik implements Serializable, Cloneable, CopyTo2, Equ
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

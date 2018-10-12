@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,22 +30,30 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "dachform")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "KRUEPPELWALMDACH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean krueppelwalmdach;
     @XmlAttribute(name = "MANSARDDACH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean mansarddach;
     @XmlAttribute(name = "PULTDACH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean pultdach;
     @XmlAttribute(name = "SATTELDACH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean satteldach;
     @XmlAttribute(name = "WALMDACH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean walmdach;
     @XmlAttribute(name = "FLACHDACH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean flachdach;
     @XmlAttribute(name = "PYRAMIDENDACH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean pyramidendach;
 
     /**
@@ -55,7 +64,8 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isKRUEPPELWALMDACH() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKRUEPPELWALMDACH() {
         return krueppelwalmdach;
     }
 
@@ -67,6 +77,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKRUEPPELWALMDACH(Boolean value) {
         this.krueppelwalmdach = value;
     }
@@ -79,7 +90,8 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isMANSARDDACH() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getMANSARDDACH() {
         return mansarddach;
     }
 
@@ -91,6 +103,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMANSARDDACH(Boolean value) {
         this.mansarddach = value;
     }
@@ -103,7 +116,8 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isPULTDACH() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPULTDACH() {
         return pultdach;
     }
 
@@ -115,6 +129,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPULTDACH(Boolean value) {
         this.pultdach = value;
     }
@@ -127,7 +142,8 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isSATTELDACH() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSATTELDACH() {
         return satteldach;
     }
 
@@ -139,6 +155,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSATTELDACH(Boolean value) {
         this.satteldach = value;
     }
@@ -151,7 +168,8 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isWALMDACH() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWALMDACH() {
         return walmdach;
     }
 
@@ -163,6 +181,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWALMDACH(Boolean value) {
         this.walmdach = value;
     }
@@ -175,7 +194,8 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isFLACHDACH() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFLACHDACH() {
         return flachdach;
     }
 
@@ -187,6 +207,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFLACHDACH(Boolean value) {
         this.flachdach = value;
     }
@@ -199,7 +220,8 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isPYRAMIDENDACH() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPYRAMIDENDACH() {
         return pyramidendach;
     }
 
@@ -211,10 +233,12 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPYRAMIDENDACH(Boolean value) {
         this.pyramidendach = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -222,6 +246,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -229,54 +254,58 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theKRUEPPELWALMDACH;
-            theKRUEPPELWALMDACH = this.isKRUEPPELWALMDACH();
+            theKRUEPPELWALMDACH = this.getKRUEPPELWALMDACH();
             strategy.appendField(locator, this, "krueppelwalmdach", buffer, theKRUEPPELWALMDACH, (this.krueppelwalmdach!= null));
         }
         {
             Boolean theMANSARDDACH;
-            theMANSARDDACH = this.isMANSARDDACH();
+            theMANSARDDACH = this.getMANSARDDACH();
             strategy.appendField(locator, this, "mansarddach", buffer, theMANSARDDACH, (this.mansarddach!= null));
         }
         {
             Boolean thePULTDACH;
-            thePULTDACH = this.isPULTDACH();
+            thePULTDACH = this.getPULTDACH();
             strategy.appendField(locator, this, "pultdach", buffer, thePULTDACH, (this.pultdach!= null));
         }
         {
             Boolean theSATTELDACH;
-            theSATTELDACH = this.isSATTELDACH();
+            theSATTELDACH = this.getSATTELDACH();
             strategy.appendField(locator, this, "satteldach", buffer, theSATTELDACH, (this.satteldach!= null));
         }
         {
             Boolean theWALMDACH;
-            theWALMDACH = this.isWALMDACH();
+            theWALMDACH = this.getWALMDACH();
             strategy.appendField(locator, this, "walmdach", buffer, theWALMDACH, (this.walmdach!= null));
         }
         {
             Boolean theFLACHDACH;
-            theFLACHDACH = this.isFLACHDACH();
+            theFLACHDACH = this.getFLACHDACH();
             strategy.appendField(locator, this, "flachdach", buffer, theFLACHDACH, (this.flachdach!= null));
         }
         {
             Boolean thePYRAMIDENDACH;
-            thePYRAMIDENDACH = this.isPYRAMIDENDACH();
+            thePYRAMIDENDACH = this.getPYRAMIDENDACH();
             strategy.appendField(locator, this, "pyramidendach", buffer, thePYRAMIDENDACH, (this.pyramidendach!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Dachform) {
@@ -285,7 +314,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean krueppelwalmdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.krueppelwalmdach!= null));
                 if (krueppelwalmdachShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKRUEPPELWALMDACH;
-                    sourceKRUEPPELWALMDACH = this.isKRUEPPELWALMDACH();
+                    sourceKRUEPPELWALMDACH = this.getKRUEPPELWALMDACH();
                     Boolean copyKRUEPPELWALMDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "krueppelwalmdach", sourceKRUEPPELWALMDACH), sourceKRUEPPELWALMDACH, (this.krueppelwalmdach!= null)));
                     copy.setKRUEPPELWALMDACH(copyKRUEPPELWALMDACH);
                 } else {
@@ -298,7 +327,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean mansarddachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.mansarddach!= null));
                 if (mansarddachShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceMANSARDDACH;
-                    sourceMANSARDDACH = this.isMANSARDDACH();
+                    sourceMANSARDDACH = this.getMANSARDDACH();
                     Boolean copyMANSARDDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "mansarddach", sourceMANSARDDACH), sourceMANSARDDACH, (this.mansarddach!= null)));
                     copy.setMANSARDDACH(copyMANSARDDACH);
                 } else {
@@ -311,7 +340,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean pultdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pultdach!= null));
                 if (pultdachShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePULTDACH;
-                    sourcePULTDACH = this.isPULTDACH();
+                    sourcePULTDACH = this.getPULTDACH();
                     Boolean copyPULTDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pultdach", sourcePULTDACH), sourcePULTDACH, (this.pultdach!= null)));
                     copy.setPULTDACH(copyPULTDACH);
                 } else {
@@ -324,7 +353,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean satteldachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.satteldach!= null));
                 if (satteldachShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSATTELDACH;
-                    sourceSATTELDACH = this.isSATTELDACH();
+                    sourceSATTELDACH = this.getSATTELDACH();
                     Boolean copySATTELDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "satteldach", sourceSATTELDACH), sourceSATTELDACH, (this.satteldach!= null)));
                     copy.setSATTELDACH(copySATTELDACH);
                 } else {
@@ -337,7 +366,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean walmdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.walmdach!= null));
                 if (walmdachShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWALMDACH;
-                    sourceWALMDACH = this.isWALMDACH();
+                    sourceWALMDACH = this.getWALMDACH();
                     Boolean copyWALMDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "walmdach", sourceWALMDACH), sourceWALMDACH, (this.walmdach!= null)));
                     copy.setWALMDACH(copyWALMDACH);
                 } else {
@@ -350,7 +379,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean flachdachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.flachdach!= null));
                 if (flachdachShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFLACHDACH;
-                    sourceFLACHDACH = this.isFLACHDACH();
+                    sourceFLACHDACH = this.getFLACHDACH();
                     Boolean copyFLACHDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "flachdach", sourceFLACHDACH), sourceFLACHDACH, (this.flachdach!= null)));
                     copy.setFLACHDACH(copyFLACHDACH);
                 } else {
@@ -363,7 +392,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean pyramidendachShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pyramidendach!= null));
                 if (pyramidendachShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePYRAMIDENDACH;
-                    sourcePYRAMIDENDACH = this.isPYRAMIDENDACH();
+                    sourcePYRAMIDENDACH = this.getPYRAMIDENDACH();
                     Boolean copyPYRAMIDENDACH = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pyramidendach", sourcePYRAMIDENDACH), sourcePYRAMIDENDACH, (this.pyramidendach!= null)));
                     copy.setPYRAMIDENDACH(copyPYRAMIDENDACH);
                 } else {
@@ -376,10 +405,12 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Dachform();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -390,63 +421,63 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         final Dachform that = ((Dachform) object);
         {
             Boolean lhsKRUEPPELWALMDACH;
-            lhsKRUEPPELWALMDACH = this.isKRUEPPELWALMDACH();
+            lhsKRUEPPELWALMDACH = this.getKRUEPPELWALMDACH();
             Boolean rhsKRUEPPELWALMDACH;
-            rhsKRUEPPELWALMDACH = that.isKRUEPPELWALMDACH();
+            rhsKRUEPPELWALMDACH = that.getKRUEPPELWALMDACH();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "krueppelwalmdach", lhsKRUEPPELWALMDACH), LocatorUtils.property(thatLocator, "krueppelwalmdach", rhsKRUEPPELWALMDACH), lhsKRUEPPELWALMDACH, rhsKRUEPPELWALMDACH, (this.krueppelwalmdach!= null), (that.krueppelwalmdach!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsMANSARDDACH;
-            lhsMANSARDDACH = this.isMANSARDDACH();
+            lhsMANSARDDACH = this.getMANSARDDACH();
             Boolean rhsMANSARDDACH;
-            rhsMANSARDDACH = that.isMANSARDDACH();
+            rhsMANSARDDACH = that.getMANSARDDACH();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "mansarddach", lhsMANSARDDACH), LocatorUtils.property(thatLocator, "mansarddach", rhsMANSARDDACH), lhsMANSARDDACH, rhsMANSARDDACH, (this.mansarddach!= null), (that.mansarddach!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsPULTDACH;
-            lhsPULTDACH = this.isPULTDACH();
+            lhsPULTDACH = this.getPULTDACH();
             Boolean rhsPULTDACH;
-            rhsPULTDACH = that.isPULTDACH();
+            rhsPULTDACH = that.getPULTDACH();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pultdach", lhsPULTDACH), LocatorUtils.property(thatLocator, "pultdach", rhsPULTDACH), lhsPULTDACH, rhsPULTDACH, (this.pultdach!= null), (that.pultdach!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSATTELDACH;
-            lhsSATTELDACH = this.isSATTELDACH();
+            lhsSATTELDACH = this.getSATTELDACH();
             Boolean rhsSATTELDACH;
-            rhsSATTELDACH = that.isSATTELDACH();
+            rhsSATTELDACH = that.getSATTELDACH();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "satteldach", lhsSATTELDACH), LocatorUtils.property(thatLocator, "satteldach", rhsSATTELDACH), lhsSATTELDACH, rhsSATTELDACH, (this.satteldach!= null), (that.satteldach!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWALMDACH;
-            lhsWALMDACH = this.isWALMDACH();
+            lhsWALMDACH = this.getWALMDACH();
             Boolean rhsWALMDACH;
-            rhsWALMDACH = that.isWALMDACH();
+            rhsWALMDACH = that.getWALMDACH();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "walmdach", lhsWALMDACH), LocatorUtils.property(thatLocator, "walmdach", rhsWALMDACH), lhsWALMDACH, rhsWALMDACH, (this.walmdach!= null), (that.walmdach!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFLACHDACH;
-            lhsFLACHDACH = this.isFLACHDACH();
+            lhsFLACHDACH = this.getFLACHDACH();
             Boolean rhsFLACHDACH;
-            rhsFLACHDACH = that.isFLACHDACH();
+            rhsFLACHDACH = that.getFLACHDACH();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "flachdach", lhsFLACHDACH), LocatorUtils.property(thatLocator, "flachdach", rhsFLACHDACH), lhsFLACHDACH, rhsFLACHDACH, (this.flachdach!= null), (that.flachdach!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsPYRAMIDENDACH;
-            lhsPYRAMIDENDACH = this.isPYRAMIDENDACH();
+            lhsPYRAMIDENDACH = this.getPYRAMIDENDACH();
             Boolean rhsPYRAMIDENDACH;
-            rhsPYRAMIDENDACH = that.isPYRAMIDENDACH();
+            rhsPYRAMIDENDACH = that.getPYRAMIDENDACH();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pyramidendach", lhsPYRAMIDENDACH), LocatorUtils.property(thatLocator, "pyramidendach", rhsPYRAMIDENDACH), lhsPYRAMIDENDACH, rhsPYRAMIDENDACH, (this.pyramidendach!= null), (that.pyramidendach!= null))) {
                 return false;
             }
@@ -454,6 +485,7 @@ public class Dachform implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

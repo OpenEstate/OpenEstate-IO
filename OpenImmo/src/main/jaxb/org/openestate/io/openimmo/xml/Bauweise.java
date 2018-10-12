@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,14 +30,18 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "bauweise")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "MASSIV")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean massiv;
     @XmlAttribute(name = "FERTIGTEILE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean fertigteile;
     @XmlAttribute(name = "HOLZ")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean holz;
 
     /**
@@ -47,7 +52,8 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isMASSIV() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getMASSIV() {
         return massiv;
     }
 
@@ -59,6 +65,7 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setMASSIV(Boolean value) {
         this.massiv = value;
     }
@@ -71,7 +78,8 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isFERTIGTEILE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFERTIGTEILE() {
         return fertigteile;
     }
 
@@ -83,6 +91,7 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFERTIGTEILE(Boolean value) {
         this.fertigteile = value;
     }
@@ -95,7 +104,8 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
-    public Boolean isHOLZ() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHOLZ() {
         return holz;
     }
 
@@ -107,10 +117,12 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHOLZ(Boolean value) {
         this.holz = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -118,6 +130,7 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -125,34 +138,38 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theMASSIV;
-            theMASSIV = this.isMASSIV();
+            theMASSIV = this.getMASSIV();
             strategy.appendField(locator, this, "massiv", buffer, theMASSIV, (this.massiv!= null));
         }
         {
             Boolean theFERTIGTEILE;
-            theFERTIGTEILE = this.isFERTIGTEILE();
+            theFERTIGTEILE = this.getFERTIGTEILE();
             strategy.appendField(locator, this, "fertigteile", buffer, theFERTIGTEILE, (this.fertigteile!= null));
         }
         {
             Boolean theHOLZ;
-            theHOLZ = this.isHOLZ();
+            theHOLZ = this.getHOLZ();
             strategy.appendField(locator, this, "holz", buffer, theHOLZ, (this.holz!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Bauweise) {
@@ -161,7 +178,7 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean massivShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.massiv!= null));
                 if (massivShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceMASSIV;
-                    sourceMASSIV = this.isMASSIV();
+                    sourceMASSIV = this.getMASSIV();
                     Boolean copyMASSIV = ((Boolean) strategy.copy(LocatorUtils.property(locator, "massiv", sourceMASSIV), sourceMASSIV, (this.massiv!= null)));
                     copy.setMASSIV(copyMASSIV);
                 } else {
@@ -174,7 +191,7 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean fertigteileShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fertigteile!= null));
                 if (fertigteileShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFERTIGTEILE;
-                    sourceFERTIGTEILE = this.isFERTIGTEILE();
+                    sourceFERTIGTEILE = this.getFERTIGTEILE();
                     Boolean copyFERTIGTEILE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fertigteile", sourceFERTIGTEILE), sourceFERTIGTEILE, (this.fertigteile!= null)));
                     copy.setFERTIGTEILE(copyFERTIGTEILE);
                 } else {
@@ -187,7 +204,7 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
                 Boolean holzShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.holz!= null));
                 if (holzShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHOLZ;
-                    sourceHOLZ = this.isHOLZ();
+                    sourceHOLZ = this.getHOLZ();
                     Boolean copyHOLZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "holz", sourceHOLZ), sourceHOLZ, (this.holz!= null)));
                     copy.setHOLZ(copyHOLZ);
                 } else {
@@ -200,10 +217,12 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Bauweise();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -214,27 +233,27 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         final Bauweise that = ((Bauweise) object);
         {
             Boolean lhsMASSIV;
-            lhsMASSIV = this.isMASSIV();
+            lhsMASSIV = this.getMASSIV();
             Boolean rhsMASSIV;
-            rhsMASSIV = that.isMASSIV();
+            rhsMASSIV = that.getMASSIV();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "massiv", lhsMASSIV), LocatorUtils.property(thatLocator, "massiv", rhsMASSIV), lhsMASSIV, rhsMASSIV, (this.massiv!= null), (that.massiv!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFERTIGTEILE;
-            lhsFERTIGTEILE = this.isFERTIGTEILE();
+            lhsFERTIGTEILE = this.getFERTIGTEILE();
             Boolean rhsFERTIGTEILE;
-            rhsFERTIGTEILE = that.isFERTIGTEILE();
+            rhsFERTIGTEILE = that.getFERTIGTEILE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fertigteile", lhsFERTIGTEILE), LocatorUtils.property(thatLocator, "fertigteile", rhsFERTIGTEILE), lhsFERTIGTEILE, rhsFERTIGTEILE, (this.fertigteile!= null), (that.fertigteile!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsHOLZ;
-            lhsHOLZ = this.isHOLZ();
+            lhsHOLZ = this.getHOLZ();
             Boolean rhsHOLZ;
-            rhsHOLZ = that.isHOLZ();
+            rhsHOLZ = that.getHOLZ();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "holz", lhsHOLZ), LocatorUtils.property(thatLocator, "holz", rhsHOLZ), lhsHOLZ, rhsHOLZ, (this.holz!= null), (that.holz!= null))) {
                 return false;
             }
@@ -242,6 +261,7 @@ public class Bauweise implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

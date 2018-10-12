@@ -2,6 +2,7 @@
 package org.openestate.io.immobiliare_it.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -56,16 +57,20 @@ import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
 @XmlType(name = "classEnergyPerformance", propOrder = {
     "value"
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
 public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected String value;
     @XmlAttribute(name = "certified")
     @XmlJavaTypeAdapter(Adapter12 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean certified;
     @XmlAttribute(name = "unit", required = true)
     @XmlJavaTypeAdapter(Adapter13 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     protected EnergyUnit unit;
 
     /**
@@ -76,6 +81,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public String getValue() {
         return value;
     }
@@ -88,6 +94,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setValue(String value) {
         this.value = value;
     }
@@ -100,7 +107,8 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
-    public Boolean isCertified() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getCertified() {
         return certified;
     }
 
@@ -112,6 +120,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setCertified(Boolean value) {
         this.certified = value;
     }
@@ -124,6 +133,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public EnergyUnit getUnit() {
         return unit;
     }
@@ -136,10 +146,12 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public void setUnit(EnergyUnit value) {
         this.unit = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -147,6 +159,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -154,6 +167,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theValue;
@@ -162,7 +176,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
         }
         {
             Boolean theCertified;
-            theCertified = this.isCertified();
+            theCertified = this.getCertified();
             strategy.appendField(locator, this, "certified", buffer, theCertified, (this.certified!= null));
         }
         {
@@ -173,15 +187,18 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ClassEnergyPerformance) {
@@ -203,7 +220,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
                 Boolean certifiedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.certified!= null));
                 if (certifiedShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceCertified;
-                    sourceCertified = this.isCertified();
+                    sourceCertified = this.getCertified();
                     Boolean copyCertified = ((Boolean) strategy.copy(LocatorUtils.property(locator, "certified", sourceCertified), sourceCertified, (this.certified!= null)));
                     copy.setCertified(copyCertified);
                 } else {
@@ -229,10 +246,12 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new ClassEnergyPerformance();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -252,9 +271,9 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
         }
         {
             Boolean lhsCertified;
-            lhsCertified = this.isCertified();
+            lhsCertified = this.getCertified();
             Boolean rhsCertified;
-            rhsCertified = that.isCertified();
+            rhsCertified = that.getCertified();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "certified", lhsCertified), LocatorUtils.property(thatLocator, "certified", rhsCertified), lhsCertified, rhsCertified, (this.certified!= null), (that.certified!= null))) {
                 return false;
             }
@@ -271,6 +290,7 @@ public class ClassEnergyPerformance implements Serializable, Cloneable, CopyTo2,
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

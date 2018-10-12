@@ -4,6 +4,7 @@ package org.openestate.io.openimmo.xml;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -35,20 +36,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     StpSonstige.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "stellplatzmiete")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal stellplatzmiete;
     @XmlAttribute(name = "stellplatzkaufpreis")
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal stellplatzkaufpreis;
     @XmlAttribute(name = "anzahl")
     @XmlJavaTypeAdapter(Adapter5 .class)
     @XmlSchemaType(name = "int")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger anzahl;
 
     /**
@@ -59,6 +64,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getStellplatzmiete() {
         return stellplatzmiete;
     }
@@ -71,6 +77,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setStellplatzmiete(BigDecimal value) {
         this.stellplatzmiete = value;
     }
@@ -83,6 +90,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getStellplatzkaufpreis() {
         return stellplatzkaufpreis;
     }
@@ -95,6 +103,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setStellplatzkaufpreis(BigDecimal value) {
         this.stellplatzkaufpreis = value;
     }
@@ -107,6 +116,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getAnzahl() {
         return anzahl;
     }
@@ -119,10 +129,12 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAnzahl(BigInteger value) {
         this.anzahl = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -130,6 +142,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -137,6 +150,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigDecimal theStellplatzmiete;
@@ -156,15 +170,18 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Stellplatz) {
@@ -212,10 +229,12 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Stellplatz();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -254,6 +273,7 @@ public class Stellplatz implements Serializable, Cloneable, CopyTo2, Equals2, To
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

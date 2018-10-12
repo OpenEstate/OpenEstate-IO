@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,14 +30,18 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "kueche")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "EBK")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean ebk;
     @XmlAttribute(name = "OFFEN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean offen;
     @XmlAttribute(name = "PANTRY")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean pantry;
 
     /**
@@ -47,7 +52,8 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
-    public Boolean isEBK() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getEBK() {
         return ebk;
     }
 
@@ -59,6 +65,7 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setEBK(Boolean value) {
         this.ebk = value;
     }
@@ -71,7 +78,8 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
-    public Boolean isOFFEN() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getOFFEN() {
         return offen;
     }
 
@@ -83,6 +91,7 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setOFFEN(Boolean value) {
         this.offen = value;
     }
@@ -95,7 +104,8 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
-    public Boolean isPANTRY() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPANTRY() {
         return pantry;
     }
 
@@ -107,10 +117,12 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPANTRY(Boolean value) {
         this.pantry = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -118,6 +130,7 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -125,34 +138,38 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theEBK;
-            theEBK = this.isEBK();
+            theEBK = this.getEBK();
             strategy.appendField(locator, this, "ebk", buffer, theEBK, (this.ebk!= null));
         }
         {
             Boolean theOFFEN;
-            theOFFEN = this.isOFFEN();
+            theOFFEN = this.getOFFEN();
             strategy.appendField(locator, this, "offen", buffer, theOFFEN, (this.offen!= null));
         }
         {
             Boolean thePANTRY;
-            thePANTRY = this.isPANTRY();
+            thePANTRY = this.getPANTRY();
             strategy.appendField(locator, this, "pantry", buffer, thePANTRY, (this.pantry!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Kueche) {
@@ -161,7 +178,7 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
                 Boolean ebkShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.ebk!= null));
                 if (ebkShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceEBK;
-                    sourceEBK = this.isEBK();
+                    sourceEBK = this.getEBK();
                     Boolean copyEBK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "ebk", sourceEBK), sourceEBK, (this.ebk!= null)));
                     copy.setEBK(copyEBK);
                 } else {
@@ -174,7 +191,7 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
                 Boolean offenShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.offen!= null));
                 if (offenShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceOFFEN;
-                    sourceOFFEN = this.isOFFEN();
+                    sourceOFFEN = this.getOFFEN();
                     Boolean copyOFFEN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "offen", sourceOFFEN), sourceOFFEN, (this.offen!= null)));
                     copy.setOFFEN(copyOFFEN);
                 } else {
@@ -187,7 +204,7 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
                 Boolean pantryShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pantry!= null));
                 if (pantryShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePANTRY;
-                    sourcePANTRY = this.isPANTRY();
+                    sourcePANTRY = this.getPANTRY();
                     Boolean copyPANTRY = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pantry", sourcePANTRY), sourcePANTRY, (this.pantry!= null)));
                     copy.setPANTRY(copyPANTRY);
                 } else {
@@ -200,10 +217,12 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Kueche();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -214,27 +233,27 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         final Kueche that = ((Kueche) object);
         {
             Boolean lhsEBK;
-            lhsEBK = this.isEBK();
+            lhsEBK = this.getEBK();
             Boolean rhsEBK;
-            rhsEBK = that.isEBK();
+            rhsEBK = that.getEBK();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "ebk", lhsEBK), LocatorUtils.property(thatLocator, "ebk", rhsEBK), lhsEBK, rhsEBK, (this.ebk!= null), (that.ebk!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsOFFEN;
-            lhsOFFEN = this.isOFFEN();
+            lhsOFFEN = this.getOFFEN();
             Boolean rhsOFFEN;
-            rhsOFFEN = that.isOFFEN();
+            rhsOFFEN = that.getOFFEN();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "offen", lhsOFFEN), LocatorUtils.property(thatLocator, "offen", rhsOFFEN), lhsOFFEN, rhsOFFEN, (this.offen!= null), (that.offen!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsPANTRY;
-            lhsPANTRY = this.isPANTRY();
+            lhsPANTRY = this.getPANTRY();
             Boolean rhsPANTRY;
-            rhsPANTRY = that.isPANTRY();
+            rhsPANTRY = that.getPANTRY();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pantry", lhsPANTRY), LocatorUtils.property(thatLocator, "pantry", rhsPANTRY), lhsPANTRY, rhsPANTRY, (this.pantry!= null), (that.pantry!= null))) {
                 return false;
             }
@@ -242,6 +261,7 @@ public class Kueche implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

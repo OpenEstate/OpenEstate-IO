@@ -2,6 +2,7 @@
 package org.openestate.io.openimmo.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,36 +30,51 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "befeuerung")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "OEL")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean oel;
     @XmlAttribute(name = "GAS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean gas;
     @XmlAttribute(name = "ELEKTRO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean elektro;
     @XmlAttribute(name = "ALTERNATIV")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean alternativ;
     @XmlAttribute(name = "SOLAR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean solar;
     @XmlAttribute(name = "ERDWAERME")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean erdwaerme;
     @XmlAttribute(name = "LUFTWP")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean luftwp;
     @XmlAttribute(name = "FERN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean fern;
     @XmlAttribute(name = "BLOCK")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean block;
     @XmlAttribute(name = "WASSER-ELEKTRO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean wasserelektro;
     @XmlAttribute(name = "PELLET")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean pellet;
     @XmlAttribute(name = "KOHLE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean kohle;
     @XmlAttribute(name = "HOLZ")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean holz;
     @XmlAttribute(name = "FLUESSIGGAS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean fluessiggas;
 
     /**
@@ -69,7 +85,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isOEL() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getOEL() {
         return oel;
     }
 
@@ -81,6 +98,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setOEL(Boolean value) {
         this.oel = value;
     }
@@ -93,7 +111,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isGAS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getGAS() {
         return gas;
     }
 
@@ -105,6 +124,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setGAS(Boolean value) {
         this.gas = value;
     }
@@ -117,7 +137,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isELEKTRO() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getELEKTRO() {
         return elektro;
     }
 
@@ -129,6 +150,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setELEKTRO(Boolean value) {
         this.elektro = value;
     }
@@ -141,7 +163,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isALTERNATIV() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getALTERNATIV() {
         return alternativ;
     }
 
@@ -153,6 +176,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setALTERNATIV(Boolean value) {
         this.alternativ = value;
     }
@@ -165,7 +189,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isSOLAR() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getSOLAR() {
         return solar;
     }
 
@@ -177,6 +202,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setSOLAR(Boolean value) {
         this.solar = value;
     }
@@ -189,7 +215,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isERDWAERME() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getERDWAERME() {
         return erdwaerme;
     }
 
@@ -201,6 +228,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setERDWAERME(Boolean value) {
         this.erdwaerme = value;
     }
@@ -213,7 +241,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isLUFTWP() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getLUFTWP() {
         return luftwp;
     }
 
@@ -225,6 +254,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setLUFTWP(Boolean value) {
         this.luftwp = value;
     }
@@ -237,7 +267,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isFERN() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFERN() {
         return fern;
     }
 
@@ -249,6 +280,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFERN(Boolean value) {
         this.fern = value;
     }
@@ -261,7 +293,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isBLOCK() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getBLOCK() {
         return block;
     }
 
@@ -273,6 +306,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBLOCK(Boolean value) {
         this.block = value;
     }
@@ -285,7 +319,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isWASSERELEKTRO() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getWASSERELEKTRO() {
         return wasserelektro;
     }
 
@@ -297,6 +332,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setWASSERELEKTRO(Boolean value) {
         this.wasserelektro = value;
     }
@@ -309,7 +345,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isPELLET() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getPELLET() {
         return pellet;
     }
 
@@ -321,6 +358,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setPELLET(Boolean value) {
         this.pellet = value;
     }
@@ -333,7 +371,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isKOHLE() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getKOHLE() {
         return kohle;
     }
 
@@ -345,6 +384,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setKOHLE(Boolean value) {
         this.kohle = value;
     }
@@ -357,7 +397,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isHOLZ() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getHOLZ() {
         return holz;
     }
 
@@ -369,6 +410,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setHOLZ(Boolean value) {
         this.holz = value;
     }
@@ -381,7 +423,8 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
-    public Boolean isFLUESSIGGAS() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getFLUESSIGGAS() {
         return fluessiggas;
     }
 
@@ -393,10 +436,12 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setFLUESSIGGAS(Boolean value) {
         this.fluessiggas = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -404,6 +449,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -411,89 +457,93 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theOEL;
-            theOEL = this.isOEL();
+            theOEL = this.getOEL();
             strategy.appendField(locator, this, "oel", buffer, theOEL, (this.oel!= null));
         }
         {
             Boolean theGAS;
-            theGAS = this.isGAS();
+            theGAS = this.getGAS();
             strategy.appendField(locator, this, "gas", buffer, theGAS, (this.gas!= null));
         }
         {
             Boolean theELEKTRO;
-            theELEKTRO = this.isELEKTRO();
+            theELEKTRO = this.getELEKTRO();
             strategy.appendField(locator, this, "elektro", buffer, theELEKTRO, (this.elektro!= null));
         }
         {
             Boolean theALTERNATIV;
-            theALTERNATIV = this.isALTERNATIV();
+            theALTERNATIV = this.getALTERNATIV();
             strategy.appendField(locator, this, "alternativ", buffer, theALTERNATIV, (this.alternativ!= null));
         }
         {
             Boolean theSOLAR;
-            theSOLAR = this.isSOLAR();
+            theSOLAR = this.getSOLAR();
             strategy.appendField(locator, this, "solar", buffer, theSOLAR, (this.solar!= null));
         }
         {
             Boolean theERDWAERME;
-            theERDWAERME = this.isERDWAERME();
+            theERDWAERME = this.getERDWAERME();
             strategy.appendField(locator, this, "erdwaerme", buffer, theERDWAERME, (this.erdwaerme!= null));
         }
         {
             Boolean theLUFTWP;
-            theLUFTWP = this.isLUFTWP();
+            theLUFTWP = this.getLUFTWP();
             strategy.appendField(locator, this, "luftwp", buffer, theLUFTWP, (this.luftwp!= null));
         }
         {
             Boolean theFERN;
-            theFERN = this.isFERN();
+            theFERN = this.getFERN();
             strategy.appendField(locator, this, "fern", buffer, theFERN, (this.fern!= null));
         }
         {
             Boolean theBLOCK;
-            theBLOCK = this.isBLOCK();
+            theBLOCK = this.getBLOCK();
             strategy.appendField(locator, this, "block", buffer, theBLOCK, (this.block!= null));
         }
         {
             Boolean theWASSERELEKTRO;
-            theWASSERELEKTRO = this.isWASSERELEKTRO();
+            theWASSERELEKTRO = this.getWASSERELEKTRO();
             strategy.appendField(locator, this, "wasserelektro", buffer, theWASSERELEKTRO, (this.wasserelektro!= null));
         }
         {
             Boolean thePELLET;
-            thePELLET = this.isPELLET();
+            thePELLET = this.getPELLET();
             strategy.appendField(locator, this, "pellet", buffer, thePELLET, (this.pellet!= null));
         }
         {
             Boolean theKOHLE;
-            theKOHLE = this.isKOHLE();
+            theKOHLE = this.getKOHLE();
             strategy.appendField(locator, this, "kohle", buffer, theKOHLE, (this.kohle!= null));
         }
         {
             Boolean theHOLZ;
-            theHOLZ = this.isHOLZ();
+            theHOLZ = this.getHOLZ();
             strategy.appendField(locator, this, "holz", buffer, theHOLZ, (this.holz!= null));
         }
         {
             Boolean theFLUESSIGGAS;
-            theFLUESSIGGAS = this.isFLUESSIGGAS();
+            theFLUESSIGGAS = this.getFLUESSIGGAS();
             strategy.appendField(locator, this, "fluessiggas", buffer, theFLUESSIGGAS, (this.fluessiggas!= null));
         }
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Befeuerung) {
@@ -502,7 +552,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean oelShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.oel!= null));
                 if (oelShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceOEL;
-                    sourceOEL = this.isOEL();
+                    sourceOEL = this.getOEL();
                     Boolean copyOEL = ((Boolean) strategy.copy(LocatorUtils.property(locator, "oel", sourceOEL), sourceOEL, (this.oel!= null)));
                     copy.setOEL(copyOEL);
                 } else {
@@ -515,7 +565,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean gasShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.gas!= null));
                 if (gasShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceGAS;
-                    sourceGAS = this.isGAS();
+                    sourceGAS = this.getGAS();
                     Boolean copyGAS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "gas", sourceGAS), sourceGAS, (this.gas!= null)));
                     copy.setGAS(copyGAS);
                 } else {
@@ -528,7 +578,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean elektroShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.elektro!= null));
                 if (elektroShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceELEKTRO;
-                    sourceELEKTRO = this.isELEKTRO();
+                    sourceELEKTRO = this.getELEKTRO();
                     Boolean copyELEKTRO = ((Boolean) strategy.copy(LocatorUtils.property(locator, "elektro", sourceELEKTRO), sourceELEKTRO, (this.elektro!= null)));
                     copy.setELEKTRO(copyELEKTRO);
                 } else {
@@ -541,7 +591,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean alternativShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.alternativ!= null));
                 if (alternativShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceALTERNATIV;
-                    sourceALTERNATIV = this.isALTERNATIV();
+                    sourceALTERNATIV = this.getALTERNATIV();
                     Boolean copyALTERNATIV = ((Boolean) strategy.copy(LocatorUtils.property(locator, "alternativ", sourceALTERNATIV), sourceALTERNATIV, (this.alternativ!= null)));
                     copy.setALTERNATIV(copyALTERNATIV);
                 } else {
@@ -554,7 +604,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean solarShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.solar!= null));
                 if (solarShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceSOLAR;
-                    sourceSOLAR = this.isSOLAR();
+                    sourceSOLAR = this.getSOLAR();
                     Boolean copySOLAR = ((Boolean) strategy.copy(LocatorUtils.property(locator, "solar", sourceSOLAR), sourceSOLAR, (this.solar!= null)));
                     copy.setSOLAR(copySOLAR);
                 } else {
@@ -567,7 +617,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean erdwaermeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.erdwaerme!= null));
                 if (erdwaermeShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceERDWAERME;
-                    sourceERDWAERME = this.isERDWAERME();
+                    sourceERDWAERME = this.getERDWAERME();
                     Boolean copyERDWAERME = ((Boolean) strategy.copy(LocatorUtils.property(locator, "erdwaerme", sourceERDWAERME), sourceERDWAERME, (this.erdwaerme!= null)));
                     copy.setERDWAERME(copyERDWAERME);
                 } else {
@@ -580,7 +630,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean luftwpShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.luftwp!= null));
                 if (luftwpShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceLUFTWP;
-                    sourceLUFTWP = this.isLUFTWP();
+                    sourceLUFTWP = this.getLUFTWP();
                     Boolean copyLUFTWP = ((Boolean) strategy.copy(LocatorUtils.property(locator, "luftwp", sourceLUFTWP), sourceLUFTWP, (this.luftwp!= null)));
                     copy.setLUFTWP(copyLUFTWP);
                 } else {
@@ -593,7 +643,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean fernShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fern!= null));
                 if (fernShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFERN;
-                    sourceFERN = this.isFERN();
+                    sourceFERN = this.getFERN();
                     Boolean copyFERN = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fern", sourceFERN), sourceFERN, (this.fern!= null)));
                     copy.setFERN(copyFERN);
                 } else {
@@ -606,7 +656,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean blockShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.block!= null));
                 if (blockShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceBLOCK;
-                    sourceBLOCK = this.isBLOCK();
+                    sourceBLOCK = this.getBLOCK();
                     Boolean copyBLOCK = ((Boolean) strategy.copy(LocatorUtils.property(locator, "block", sourceBLOCK), sourceBLOCK, (this.block!= null)));
                     copy.setBLOCK(copyBLOCK);
                 } else {
@@ -619,7 +669,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean wasserelektroShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.wasserelektro!= null));
                 if (wasserelektroShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceWASSERELEKTRO;
-                    sourceWASSERELEKTRO = this.isWASSERELEKTRO();
+                    sourceWASSERELEKTRO = this.getWASSERELEKTRO();
                     Boolean copyWASSERELEKTRO = ((Boolean) strategy.copy(LocatorUtils.property(locator, "wasserelektro", sourceWASSERELEKTRO), sourceWASSERELEKTRO, (this.wasserelektro!= null)));
                     copy.setWASSERELEKTRO(copyWASSERELEKTRO);
                 } else {
@@ -632,7 +682,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean pelletShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.pellet!= null));
                 if (pelletShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourcePELLET;
-                    sourcePELLET = this.isPELLET();
+                    sourcePELLET = this.getPELLET();
                     Boolean copyPELLET = ((Boolean) strategy.copy(LocatorUtils.property(locator, "pellet", sourcePELLET), sourcePELLET, (this.pellet!= null)));
                     copy.setPELLET(copyPELLET);
                 } else {
@@ -645,7 +695,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean kohleShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.kohle!= null));
                 if (kohleShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceKOHLE;
-                    sourceKOHLE = this.isKOHLE();
+                    sourceKOHLE = this.getKOHLE();
                     Boolean copyKOHLE = ((Boolean) strategy.copy(LocatorUtils.property(locator, "kohle", sourceKOHLE), sourceKOHLE, (this.kohle!= null)));
                     copy.setKOHLE(copyKOHLE);
                 } else {
@@ -658,7 +708,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean holzShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.holz!= null));
                 if (holzShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceHOLZ;
-                    sourceHOLZ = this.isHOLZ();
+                    sourceHOLZ = this.getHOLZ();
                     Boolean copyHOLZ = ((Boolean) strategy.copy(LocatorUtils.property(locator, "holz", sourceHOLZ), sourceHOLZ, (this.holz!= null)));
                     copy.setHOLZ(copyHOLZ);
                 } else {
@@ -671,7 +721,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
                 Boolean fluessiggasShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.fluessiggas!= null));
                 if (fluessiggasShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceFLUESSIGGAS;
-                    sourceFLUESSIGGAS = this.isFLUESSIGGAS();
+                    sourceFLUESSIGGAS = this.getFLUESSIGGAS();
                     Boolean copyFLUESSIGGAS = ((Boolean) strategy.copy(LocatorUtils.property(locator, "fluessiggas", sourceFLUESSIGGAS), sourceFLUESSIGGAS, (this.fluessiggas!= null)));
                     copy.setFLUESSIGGAS(copyFLUESSIGGAS);
                 } else {
@@ -684,10 +734,12 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Befeuerung();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -698,126 +750,126 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
         final Befeuerung that = ((Befeuerung) object);
         {
             Boolean lhsOEL;
-            lhsOEL = this.isOEL();
+            lhsOEL = this.getOEL();
             Boolean rhsOEL;
-            rhsOEL = that.isOEL();
+            rhsOEL = that.getOEL();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "oel", lhsOEL), LocatorUtils.property(thatLocator, "oel", rhsOEL), lhsOEL, rhsOEL, (this.oel!= null), (that.oel!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsGAS;
-            lhsGAS = this.isGAS();
+            lhsGAS = this.getGAS();
             Boolean rhsGAS;
-            rhsGAS = that.isGAS();
+            rhsGAS = that.getGAS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "gas", lhsGAS), LocatorUtils.property(thatLocator, "gas", rhsGAS), lhsGAS, rhsGAS, (this.gas!= null), (that.gas!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsELEKTRO;
-            lhsELEKTRO = this.isELEKTRO();
+            lhsELEKTRO = this.getELEKTRO();
             Boolean rhsELEKTRO;
-            rhsELEKTRO = that.isELEKTRO();
+            rhsELEKTRO = that.getELEKTRO();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "elektro", lhsELEKTRO), LocatorUtils.property(thatLocator, "elektro", rhsELEKTRO), lhsELEKTRO, rhsELEKTRO, (this.elektro!= null), (that.elektro!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsALTERNATIV;
-            lhsALTERNATIV = this.isALTERNATIV();
+            lhsALTERNATIV = this.getALTERNATIV();
             Boolean rhsALTERNATIV;
-            rhsALTERNATIV = that.isALTERNATIV();
+            rhsALTERNATIV = that.getALTERNATIV();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "alternativ", lhsALTERNATIV), LocatorUtils.property(thatLocator, "alternativ", rhsALTERNATIV), lhsALTERNATIV, rhsALTERNATIV, (this.alternativ!= null), (that.alternativ!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsSOLAR;
-            lhsSOLAR = this.isSOLAR();
+            lhsSOLAR = this.getSOLAR();
             Boolean rhsSOLAR;
-            rhsSOLAR = that.isSOLAR();
+            rhsSOLAR = that.getSOLAR();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "solar", lhsSOLAR), LocatorUtils.property(thatLocator, "solar", rhsSOLAR), lhsSOLAR, rhsSOLAR, (this.solar!= null), (that.solar!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsERDWAERME;
-            lhsERDWAERME = this.isERDWAERME();
+            lhsERDWAERME = this.getERDWAERME();
             Boolean rhsERDWAERME;
-            rhsERDWAERME = that.isERDWAERME();
+            rhsERDWAERME = that.getERDWAERME();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "erdwaerme", lhsERDWAERME), LocatorUtils.property(thatLocator, "erdwaerme", rhsERDWAERME), lhsERDWAERME, rhsERDWAERME, (this.erdwaerme!= null), (that.erdwaerme!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsLUFTWP;
-            lhsLUFTWP = this.isLUFTWP();
+            lhsLUFTWP = this.getLUFTWP();
             Boolean rhsLUFTWP;
-            rhsLUFTWP = that.isLUFTWP();
+            rhsLUFTWP = that.getLUFTWP();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "luftwp", lhsLUFTWP), LocatorUtils.property(thatLocator, "luftwp", rhsLUFTWP), lhsLUFTWP, rhsLUFTWP, (this.luftwp!= null), (that.luftwp!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFERN;
-            lhsFERN = this.isFERN();
+            lhsFERN = this.getFERN();
             Boolean rhsFERN;
-            rhsFERN = that.isFERN();
+            rhsFERN = that.getFERN();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fern", lhsFERN), LocatorUtils.property(thatLocator, "fern", rhsFERN), lhsFERN, rhsFERN, (this.fern!= null), (that.fern!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsBLOCK;
-            lhsBLOCK = this.isBLOCK();
+            lhsBLOCK = this.getBLOCK();
             Boolean rhsBLOCK;
-            rhsBLOCK = that.isBLOCK();
+            rhsBLOCK = that.getBLOCK();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "block", lhsBLOCK), LocatorUtils.property(thatLocator, "block", rhsBLOCK), lhsBLOCK, rhsBLOCK, (this.block!= null), (that.block!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsWASSERELEKTRO;
-            lhsWASSERELEKTRO = this.isWASSERELEKTRO();
+            lhsWASSERELEKTRO = this.getWASSERELEKTRO();
             Boolean rhsWASSERELEKTRO;
-            rhsWASSERELEKTRO = that.isWASSERELEKTRO();
+            rhsWASSERELEKTRO = that.getWASSERELEKTRO();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "wasserelektro", lhsWASSERELEKTRO), LocatorUtils.property(thatLocator, "wasserelektro", rhsWASSERELEKTRO), lhsWASSERELEKTRO, rhsWASSERELEKTRO, (this.wasserelektro!= null), (that.wasserelektro!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsPELLET;
-            lhsPELLET = this.isPELLET();
+            lhsPELLET = this.getPELLET();
             Boolean rhsPELLET;
-            rhsPELLET = that.isPELLET();
+            rhsPELLET = that.getPELLET();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "pellet", lhsPELLET), LocatorUtils.property(thatLocator, "pellet", rhsPELLET), lhsPELLET, rhsPELLET, (this.pellet!= null), (that.pellet!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsKOHLE;
-            lhsKOHLE = this.isKOHLE();
+            lhsKOHLE = this.getKOHLE();
             Boolean rhsKOHLE;
-            rhsKOHLE = that.isKOHLE();
+            rhsKOHLE = that.getKOHLE();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "kohle", lhsKOHLE), LocatorUtils.property(thatLocator, "kohle", rhsKOHLE), lhsKOHLE, rhsKOHLE, (this.kohle!= null), (that.kohle!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsHOLZ;
-            lhsHOLZ = this.isHOLZ();
+            lhsHOLZ = this.getHOLZ();
             Boolean rhsHOLZ;
-            rhsHOLZ = that.isHOLZ();
+            rhsHOLZ = that.getHOLZ();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "holz", lhsHOLZ), LocatorUtils.property(thatLocator, "holz", rhsHOLZ), lhsHOLZ, rhsHOLZ, (this.holz!= null), (that.holz!= null))) {
                 return false;
             }
         }
         {
             Boolean lhsFLUESSIGGAS;
-            lhsFLUESSIGGAS = this.isFLUESSIGGAS();
+            lhsFLUESSIGGAS = this.getFLUESSIGGAS();
             Boolean rhsFLUESSIGGAS;
-            rhsFLUESSIGGAS = that.isFLUESSIGGAS();
+            rhsFLUESSIGGAS = that.getFLUESSIGGAS();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "fluessiggas", lhsFLUESSIGGAS), LocatorUtils.property(thatLocator, "fluessiggas", rhsFLUESSIGGAS), lhsFLUESSIGGAS, rhsFLUESSIGGAS, (this.fluessiggas!= null), (that.fluessiggas!= null))) {
                 return false;
             }
@@ -825,6 +877,7 @@ public class Befeuerung implements Serializable, Cloneable, CopyTo2, Equals2, To
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

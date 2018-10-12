@@ -4,6 +4,7 @@ package org.openestate.io.openimmo.xml;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -40,23 +41,30 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "verkehrswert"
 })
 @XmlRootElement(name = "versteigerung")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
 public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Boolean zwangsversteigerung;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String aktenzeichen;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar zvtermin;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected Calendar zusatztermin;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected String amtsgericht;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "decimal")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     protected BigDecimal verkehrswert;
 
     /**
@@ -67,7 +75,8 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
-    public Boolean isZwangsversteigerung() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    public Boolean getZwangsversteigerung() {
         return zwangsversteigerung;
     }
 
@@ -79,6 +88,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link Boolean }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setZwangsversteigerung(Boolean value) {
         this.zwangsversteigerung = value;
     }
@@ -91,6 +101,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getAktenzeichen() {
         return aktenzeichen;
     }
@@ -103,6 +114,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAktenzeichen(String value) {
         this.aktenzeichen = value;
     }
@@ -115,6 +127,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getZvtermin() {
         return zvtermin;
     }
@@ -127,6 +140,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setZvtermin(Calendar value) {
         this.zvtermin = value;
     }
@@ -139,6 +153,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Calendar getZusatztermin() {
         return zusatztermin;
     }
@@ -151,6 +166,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setZusatztermin(Calendar value) {
         this.zusatztermin = value;
     }
@@ -163,6 +179,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String getAmtsgericht() {
         return amtsgericht;
     }
@@ -175,6 +192,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setAmtsgericht(String value) {
         this.amtsgericht = value;
     }
@@ -187,6 +205,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public BigDecimal getVerkehrswert() {
         return verkehrswert;
     }
@@ -199,10 +218,12 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public void setVerkehrswert(BigDecimal value) {
         this.verkehrswert = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -210,6 +231,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -217,10 +239,11 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theZwangsversteigerung;
-            theZwangsversteigerung = this.isZwangsversteigerung();
+            theZwangsversteigerung = this.getZwangsversteigerung();
             strategy.appendField(locator, this, "zwangsversteigerung", buffer, theZwangsversteigerung, (this.zwangsversteigerung!= null));
         }
         {
@@ -251,15 +274,18 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Versteigerung) {
@@ -268,7 +294,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
                 Boolean zwangsversteigerungShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.zwangsversteigerung!= null));
                 if (zwangsversteigerungShouldBeCopiedAndSet == Boolean.TRUE) {
                     Boolean sourceZwangsversteigerung;
-                    sourceZwangsversteigerung = this.isZwangsversteigerung();
+                    sourceZwangsversteigerung = this.getZwangsversteigerung();
                     Boolean copyZwangsversteigerung = ((Boolean) strategy.copy(LocatorUtils.property(locator, "zwangsversteigerung", sourceZwangsversteigerung), sourceZwangsversteigerung, (this.zwangsversteigerung!= null)));
                     copy.setZwangsversteigerung(copyZwangsversteigerung);
                 } else {
@@ -346,10 +372,12 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Versteigerung();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -360,9 +388,9 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
         final Versteigerung that = ((Versteigerung) object);
         {
             Boolean lhsZwangsversteigerung;
-            lhsZwangsversteigerung = this.isZwangsversteigerung();
+            lhsZwangsversteigerung = this.getZwangsversteigerung();
             Boolean rhsZwangsversteigerung;
-            rhsZwangsversteigerung = that.isZwangsversteigerung();
+            rhsZwangsversteigerung = that.getZwangsversteigerung();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "zwangsversteigerung", lhsZwangsversteigerung), LocatorUtils.property(thatLocator, "zwangsversteigerung", rhsZwangsversteigerung), lhsZwangsversteigerung, rhsZwangsversteigerung, (this.zwangsversteigerung!= null), (that.zwangsversteigerung!= null))) {
                 return false;
             }
@@ -415,6 +443,7 @@ public class Versteigerung implements Serializable, Cloneable, CopyTo2, Equals2,
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);

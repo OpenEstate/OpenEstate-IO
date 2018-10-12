@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,12 +73,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "objekte"
 })
 @XmlRootElement(name = "WIS")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
 public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "BENUTZER", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     protected WIS.BENUTZER benutzer;
     @XmlElement(name = "OBJEKTE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     protected WIS.OBJEKTE objekte;
 
     /**
@@ -88,6 +92,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link WIS.BENUTZER }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public WIS.BENUTZER getBENUTZER() {
         return benutzer;
     }
@@ -100,6 +105,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link WIS.BENUTZER }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public void setBENUTZER(WIS.BENUTZER value) {
         this.benutzer = value;
     }
@@ -112,6 +118,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link WIS.OBJEKTE }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public WIS.OBJEKTE getOBJEKTE() {
         return objekte;
     }
@@ -124,10 +131,12 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link WIS.OBJEKTE }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public void setOBJEKTE(WIS.OBJEKTE value) {
         this.objekte = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -135,6 +144,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -142,6 +152,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             WIS.BENUTZER theBENUTZER;
@@ -156,15 +167,18 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof WIS) {
@@ -199,10 +213,12 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return draftCopy;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new WIS();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -232,6 +248,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -261,10 +278,12 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     @XmlType(name = "", propOrder = {
         "kdnr"
     })
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public static class BENUTZER implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "KDNR", required = true)
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         protected String kdnr;
 
         /**
@@ -275,6 +294,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public String getKDNR() {
             return kdnr;
         }
@@ -287,10 +307,12 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public void setKDNR(String value) {
             this.kdnr = value;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
@@ -298,6 +320,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return buffer.toString();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -305,6 +328,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theKDNR;
@@ -314,15 +338,18 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof WIS.BENUTZER) {
@@ -344,10 +371,12 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return draftCopy;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object createNewInstance() {
             return new WIS.BENUTZER();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -368,6 +397,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return true;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);
@@ -401,14 +431,17 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         "anzahl",
         "objekt"
     })
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
     public static class OBJEKTE implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "ANZAHL", required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter2 .class)
         @XmlSchemaType(name = "positiveInteger")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         protected BigInteger anzahl;
         @XmlElement(name = "OBJEKT")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         protected List<ObjectType> objekt;
 
         /**
@@ -419,6 +452,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public BigInteger getANZAHL() {
             return anzahl;
         }
@@ -431,6 +465,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
          *     {@link String }
          *     
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public void setANZAHL(BigInteger value) {
             this.anzahl = value;
         }
@@ -457,6 +492,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
          * 
          * 
          */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public List<ObjectType> getOBJEKT() {
             if (objekt == null) {
                 objekt = new ArrayList<ObjectType>();
@@ -464,6 +500,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return this.objekt;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
             final StringBuilder buffer = new StringBuilder();
@@ -471,6 +508,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return buffer.toString();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -478,6 +516,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 BigInteger theANZAHL;
@@ -492,15 +531,18 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return buffer;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
             return copyTo(null, target, strategy);
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof WIS.OBJEKTE) {
@@ -540,10 +582,12 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return draftCopy;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public Object createNewInstance() {
             return new WIS.OBJEKTE();
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -573,6 +617,7 @@ public class WIS implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return true;
         }
 
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
             return equals(null, null, object, strategy);

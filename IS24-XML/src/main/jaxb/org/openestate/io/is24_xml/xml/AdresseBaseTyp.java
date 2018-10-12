@@ -2,6 +2,7 @@
 package org.openestate.io.is24_xml.xml;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -53,22 +54,28 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     KontaktAdresseTyp.class,
     ImmobilienAdresseBaseTyp.class
 })
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
 public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "Strasse")
     @XmlJavaTypeAdapter(Adapter9 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String strasse;
     @XmlAttribute(name = "Hausnummer")
     @XmlJavaTypeAdapter(Adapter5 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String hausnummer;
     @XmlAttribute(name = "Postleitzahl")
     @XmlJavaTypeAdapter(Adapter4 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String postleitzahl;
     @XmlAttribute(name = "Ort")
     @XmlJavaTypeAdapter(Adapter7 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected String ort;
     @XmlAttribute(name = "Laenderkennzeichen")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     protected ISOLaenderCodeTyp laenderkennzeichen;
 
     /**
@@ -79,6 +86,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getStrasse() {
         return strasse;
     }
@@ -91,6 +99,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setStrasse(String value) {
         this.strasse = value;
     }
@@ -103,6 +112,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getHausnummer() {
         return hausnummer;
     }
@@ -115,6 +125,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setHausnummer(String value) {
         this.hausnummer = value;
     }
@@ -127,6 +138,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getPostleitzahl() {
         return postleitzahl;
     }
@@ -139,6 +151,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setPostleitzahl(String value) {
         this.postleitzahl = value;
     }
@@ -151,6 +164,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String getOrt() {
         return ort;
     }
@@ -163,6 +177,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link String }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setOrt(String value) {
         this.ort = value;
     }
@@ -175,6 +190,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link ISOLaenderCodeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public ISOLaenderCodeTyp getLaenderkennzeichen() {
         return laenderkennzeichen;
     }
@@ -187,10 +203,12 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
      *     {@link ISOLaenderCodeTyp }
      *     
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public void setLaenderkennzeichen(ISOLaenderCodeTyp value) {
         this.laenderkennzeichen = value;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -198,6 +216,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
         return buffer.toString();
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -205,6 +224,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theStrasse;
@@ -234,15 +254,18 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
         return buffer;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         if (null == target) {
             throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
@@ -318,6 +341,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
         return target;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -374,6 +398,7 @@ public abstract class AdresseBaseTyp implements Serializable, Cloneable, CopyTo2
         return true;
     }
 
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
