@@ -26,18 +26,32 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public enum GrossPremium {
+    @SuppressWarnings("unused")
     FROM_2_UNTIL_3("2-3"),
+
+    @SuppressWarnings("unused")
     FROM_3_UNTIL_4("3-4"),
+
+    @SuppressWarnings("unused")
     FROM_4_UNTIL_5("4-5"),
+
+    @SuppressWarnings("unused")
     FROM_5_UNTIL_6("5-6"),
+
+    @SuppressWarnings("unused")
     FROM_6_UNTIL_7("6-7"),
+
+    @SuppressWarnings("unused")
     FROM_7_UNTIL_8("7-8"),
+
+    @SuppressWarnings("unused")
     FROM_8("8+");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(GrossPremium.class);
     private final String value;
 
-    private GrossPremium(String value) {
+    GrossPremium(String value) {
         this.value = value;
     }
 

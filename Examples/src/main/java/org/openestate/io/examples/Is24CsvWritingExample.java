@@ -52,12 +52,13 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing IS24-CSV files.
  * <p>
- * This example illustrates the programatic creation of an IS24-CSV document,
+ * This example illustrates the programmatic creation of an IS24-CSV document,
  * and how the document is written into CSV.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Is24CsvWritingExample {
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
@@ -67,6 +68,7 @@ public class Is24CsvWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(

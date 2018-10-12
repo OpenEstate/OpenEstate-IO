@@ -31,7 +31,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultDocument.class);
 
     /**
@@ -61,7 +63,7 @@ public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static FilemakerResultDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(FilemakerUtils.getFactoryForResult().createFMPXMLRESULT());
@@ -73,7 +75,7 @@ public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
      * @param xmlResult Java object, that represents the &lt;FMPXMLRESULT&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static FilemakerResultDocument newDocument(FMPXMLRESULT xmlResult) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
@@ -85,7 +87,7 @@ public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
      * Creates a {@link FilemakerResultMapping} object from the contained {@link Document}.
      *
      * @return created mapping, that contains the values from the {@link FMPXMLRESULT}
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public FilemakerResultMapping toMapping() throws JAXBException {
         return new FilemakerResultMapping(this.toObject());
@@ -95,7 +97,7 @@ public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
      * Creates a {@link FMPXMLRESULT} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;FMPXMLRESULT&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public FMPXMLRESULT toObject() throws JAXBException {

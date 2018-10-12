@@ -52,33 +52,40 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class ImmobiliareItUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItUtils.class);
     private static JAXBContext JAXB = null;
 
     /**
      * the latest implemented version of this format
      */
+    @SuppressWarnings("unused")
     public final static ImmobiliareItVersion VERSION = ImmobiliareItVersion.V2_5;
 
     /**
      * the XML target namespace of this format
      */
+    @SuppressWarnings("unused")
     public final static String NAMESPACE = "http://feed.immobiliare.it";
 
     /**
      * the default locale of this format
      */
+    @SuppressWarnings("unused")
     public final static Locale DEFAULT_LOCALE = Locale.ENGLISH;
 
     /**
      * the package, where generated JAXB classes are located
      */
+    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.immobiliare_it.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
+    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private ImmobiliareItUtils() {
@@ -142,6 +149,7 @@ public class ImmobiliareItUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occured
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
         return createMarshaller(Charset.defaultCharset().name(), true);
     }
@@ -356,6 +364,7 @@ public class ImmobiliareItUtils {
         return unit;
     }
 
+    @SuppressWarnings({"SameParameterValue", "unused"})
     private static String parseText(String value, int length) {
         return StringUtils.trimToNull(value);
     }
@@ -364,6 +373,7 @@ public class ImmobiliareItUtils {
         return parseText(value, 3000);
     }
 
+    @SuppressWarnings("unused")
     public static Transaction parseTransaction(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
@@ -434,7 +444,7 @@ public class ImmobiliareItUtils {
     }
 
     public static String printEmailType(String value) {
-        if (value == null || !isValidEmailType(value))
+        if (!isValidEmailType(value))
             throw new IllegalArgumentException("Can't print email value!");
         else
             return value;
@@ -476,7 +486,7 @@ public class ImmobiliareItUtils {
     }
 
     public static String printRooms(Integer value) {
-        if (value == null || !isValidRooms(value))
+        if (!isValidRooms(value))
             throw new IllegalArgumentException("Can't print rooms value!");
         else
             return DatatypeConverter.printInt(value);
@@ -489,6 +499,7 @@ public class ImmobiliareItUtils {
             return value.getXmlValue();
     }
 
+    @SuppressWarnings({"SameParameterValue", "Duplicates"})
     private static String printText(String value, int maxLength) {
         value = StringUtils.trimToEmpty(value);
         int length = value.length();
@@ -506,6 +517,7 @@ public class ImmobiliareItUtils {
         return printText(value, 3000);
     }
 
+    @SuppressWarnings("unused")
     public static String printTransaction(Transaction value) {
         if (value == null)
             throw new IllegalArgumentException("Can't print transaction value!");
@@ -514,7 +526,7 @@ public class ImmobiliareItUtils {
     }
 
     public static String printYear(Integer value) {
-        if (value == null || !isValidYear(value))
+        if (!isValidYear(value))
             throw new IllegalArgumentException("Can't print year value!");
         else
             return DatatypeConverter.printInt(value);

@@ -44,6 +44,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class OpenImmoReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -52,6 +53,7 @@ public class OpenImmoReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -101,6 +103,7 @@ public class OpenImmoReadingExample {
      * @throws ParserConfigurationException if the XML parser is improperly configured
      * @throws JAXBException                if XML conversion into Java objects failed
      */
+    @SuppressWarnings("Duplicates")
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("process file: " + xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
@@ -131,6 +134,7 @@ public class OpenImmoReadingExample {
      * @throws ParserConfigurationException if the XML parser is improperly configured
      * @throws JAXBException                if XML conversion into Java objects failed
      */
+    @SuppressWarnings("Duplicates")
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("process example file");
         OpenImmoDocument doc = OpenImmoUtils.createDocument(xmlInputStream);
@@ -177,6 +181,7 @@ public class OpenImmoReadingExample {
      * @param doc the document to process
      * @throws JAXBException if XML conversion into Java objects failed
      */
+    @SuppressWarnings("Duplicates")
     protected static void printToConsole(OpenImmoTransferDocument doc) throws JAXBException {
         LOGGER.info("> process transfer document in version "
                 + doc.getDocumentVersion());
@@ -197,7 +202,7 @@ public class OpenImmoReadingExample {
                 String objectTitle = (immobilie.getFreitexte() != null) ?
                         immobilie.getFreitexte().getObjekttitel() : "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info(">>> found object '" + objectNr + "' "
                         + "with title '" + objectTitle + "'");
             }

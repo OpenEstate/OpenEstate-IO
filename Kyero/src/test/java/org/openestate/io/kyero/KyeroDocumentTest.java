@@ -30,6 +30,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class KyeroDocumentTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroDocumentTest.class);
 
     private static Document buildExampleDocument(String version) throws Exception {
@@ -62,8 +63,7 @@ public class KyeroDocumentTest {
         KyeroDocument doc;
         try {
             doc = new KyeroDocument(buildExampleDocument(""));
-            Assert.assertEquals(
-                    "no version", null, doc.getDocumentVersion());
+            Assert.assertNull("no version", doc.getDocumentVersion());
 
             doc = new KyeroDocument(buildExampleDocument("3"));
             Assert.assertEquals(
@@ -84,8 +84,7 @@ public class KyeroDocumentTest {
         KyeroDocument doc;
         try {
             doc = new KyeroDocument(buildExampleDocument(""));
-            Assert.assertEquals(
-                    "no version", null, doc.getDocumentVersion());
+            Assert.assertNull("no version", doc.getDocumentVersion());
 
             doc.setDocumentVersion(KyeroVersion.V3);
             Assert.assertEquals(

@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public class DaftIe_2_7 extends XmlConverter<DaftIeDocument, DaftIeVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIe_2_7.class);
 
     @Override

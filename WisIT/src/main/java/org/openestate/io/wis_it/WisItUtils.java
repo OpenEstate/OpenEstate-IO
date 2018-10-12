@@ -49,11 +49,13 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class WisItUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(WisItUtils.class);
     private static JAXBContext JAXB = null;
 
-    /**
+    /*
      * the latest implemented version of this format
      *
      * public final static String VERSION = "1.0";
@@ -62,16 +64,19 @@ public class WisItUtils {
     /**
      * the XML target namespace of this format
      */
+    @SuppressWarnings("unused")
     public final static String NAMESPACE = StringUtils.EMPTY;
 
     /**
      * the package, where generated JAXB classes are located
      */
+    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.wis_it.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
+    @SuppressWarnings("unused")
     private final static ObjectFactory FACTORY = new ObjectFactory();
 
     private WisItUtils() {
@@ -133,8 +138,9 @@ public class WisItUtils {
      * Creates a {@link Marshaller} to write JAXB objects into XML.
      *
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
         return createMarshaller(Charset.defaultCharset().name(), true);
     }
@@ -145,8 +151,9 @@ public class WisItUtils {
      * @param encoding  encoding of written XML
      * @param formatted if written XML is pretty printed
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         Marshaller m = getContext().createMarshaller();
         m.setProperty(Marshaller.JAXB_ENCODING, encoding);
@@ -159,7 +166,7 @@ public class WisItUtils {
      * Creates a {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         Unmarshaller m = getContext().createUnmarshaller();
@@ -171,7 +178,7 @@ public class WisItUtils {
      * Returns the {@link JAXBContext} for this format.
      *
      * @return context
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
         if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
@@ -197,10 +204,10 @@ public class WisItUtils {
     }
 
     /**
-     * Intializes the {@link JAXBContext} for this format.
+     * Initializes the {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
         JAXB = JAXBContext.newInstance(PACKAGE, classloader);
@@ -210,8 +217,7 @@ public class WisItUtils {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
         try {
-            Date date = DateUtils.parseDateStrictly(value, new String[]{
-                    "yyyy-MM-dd mm:hh:ss", "yyyy-MM-dd mm:hh", "yyyy-MM-dd"});
+            Date date = DateUtils.parseDateStrictly(value, "yyyy-MM-dd mm:hh:ss", "yyyy-MM-dd mm:hh", "yyyy-MM-dd");
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             return cal;
@@ -255,7 +261,7 @@ public class WisItUtils {
         else if (value != null)
             return DatatypeConverter.parseBoolean(value);
         else
-            throw new IllegalArgumentException("Can't parse boolean value '" + value + "'!");
+            throw new IllegalArgumentException("Can't parse boolean value!");
     }
 
     public static String printDateTime(Calendar value) {

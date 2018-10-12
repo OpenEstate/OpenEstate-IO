@@ -30,6 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 @RunWith(JUnit4.class)
 public class ImmoXmlUtilsTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlUtilsTest.class);
 
     @Test
@@ -82,6 +83,7 @@ public class ImmoXmlUtilsTest {
     }
 
     @Test
+    @SuppressWarnings("CatchMayIgnoreException")
     public void testParseDecimal() {
         Assert.assertEquals(
                 new BigDecimal("2"), ImmoXmlUtils.parseDecimal("2"));
@@ -89,19 +91,16 @@ public class ImmoXmlUtilsTest {
                 new BigDecimal("2.5"), ImmoXmlUtils.parseDecimal("2.5"));
         Assert.assertEquals(
                 new BigDecimal("2.5"), ImmoXmlUtils.parseDecimal("2,5"));
-        Assert.assertEquals(
-                null, ImmoXmlUtils.parseDecimal(""));
+        Assert.assertNull(ImmoXmlUtils.parseDecimal(""));
 
         try {
-            Assert.assertEquals(
-                    null, ImmoXmlUtils.parseDecimal(","));
+            Assert.assertNull(ImmoXmlUtils.parseDecimal(","));
             Assert.fail("An exception should have been thrown.");
         } catch (IllegalArgumentException ex) {
         }
 
         try {
-            Assert.assertEquals(
-                    null, ImmoXmlUtils.parseDecimal("."));
+            Assert.assertNull(ImmoXmlUtils.parseDecimal("."));
             Assert.fail("An exception should have been thrown.");
         } catch (IllegalArgumentException ex) {
         }

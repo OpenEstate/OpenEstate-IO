@@ -44,13 +44,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing XML files for <a href="http://daft.ie">daft.ie</a>.
  * <p>
- * This example illustrates the programatic creation of documents for
+ * This example illustrates the programmatic creation of documents for
  * <a href="http://daft.ie">daft.ie</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class DaftIeWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = DaftIeUtils.getFactory();
@@ -61,6 +63,7 @@ public class DaftIeWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -70,12 +73,12 @@ public class DaftIeWritingExample {
         // this object corresponds to the <daft> root element in XML
         Daft daft = FACTORY.createDaft();
 
-        // append some example objectss for rent to the Daft object
+        // append some example objects for rent to the Daft object
         daft.setOverseasRental(FACTORY.createDaftOverseasRental());
         daft.getOverseasRental().getOverseasRentalAd().add(createAdForRent());
         daft.getOverseasRental().getOverseasRentalAd().add(createAdForRent());
 
-        // append some example objectss for sale to the Daft object
+        // append some example objects for sale to the Daft object
         daft.setOverseasSales(FACTORY.createDaftOverseasSales());
         daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
         daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
@@ -115,6 +118,7 @@ public class DaftIeWritingExample {
      *
      * @return created example object
      */
+    @SuppressWarnings("CatchMayIgnoreException")
     protected static OverseasRentalAdType createAdForRent() {
         // create an example real estate for rent
         OverseasRentalAdType ad = FACTORY.createOverseasRentalAdType();
@@ -173,6 +177,7 @@ public class DaftIeWritingExample {
      *
      * @return created example object
      */
+    @SuppressWarnings("CatchMayIgnoreException")
     protected static OverseasSaleAdType createAdForSale() {
         // create an example real estate for sale
         OverseasSaleAdType ad = FACTORY.createOverseasSaleAdType();
@@ -238,6 +243,7 @@ public class DaftIeWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(DaftIeDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -256,6 +262,7 @@ public class DaftIeWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(DaftIeDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -274,6 +281,7 @@ public class DaftIeWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(DaftIeDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -292,6 +300,7 @@ public class DaftIeWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(DaftIeDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

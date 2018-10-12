@@ -33,6 +33,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class GrundstueckWohnen extends Grundstueck {
     private final static Logger LOGGER = LoggerFactory.getLogger(GrundstueckWohnen.class);
 
@@ -127,6 +128,7 @@ public class GrundstueckWohnen extends Grundstueck {
                 this.get(FIELD_EMPFOHLENE_NUTZUNG));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getErbpachtdauer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -143,6 +145,7 @@ public class GrundstueckWohnen extends Grundstueck {
                 this.get(FIELD_ERSCHLIESSUNG));
     }
 
+    @SuppressWarnings("Duplicates")
     public Long getFlaecheTeilbarAb() {
         try {
             return Is24CsvFormat.parseLong(
@@ -154,6 +157,7 @@ public class GrundstueckWohnen extends Grundstueck {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGeschossflaechenzahl() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -165,6 +169,7 @@ public class GrundstueckWohnen extends Grundstueck {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGrundflaechenzahl() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -176,6 +181,7 @@ public class GrundstueckWohnen extends Grundstueck {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGrundstuecksflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -192,6 +198,7 @@ public class GrundstueckWohnen extends Grundstueck {
                 this.get(FIELD_KURZFRISTIG_BEBAUBAR));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getPreis() {
         try {
             return Is24CsvFormat.parseDecimal(

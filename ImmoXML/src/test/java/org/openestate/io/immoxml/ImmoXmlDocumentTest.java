@@ -30,8 +30,10 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class ImmoXmlDocumentTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlDocumentTest.class);
 
+    @SuppressWarnings("unused")
     private static Document buildExampleDocument(String version) throws Exception {
         return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<immoxml xmlns=\"" + ImmoXmlUtils.NAMESPACE + "\">\n"
@@ -45,6 +47,7 @@ public class ImmoXmlDocumentTest {
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void testDowngrade() {
         try {
             String version = ImmoXmlUtils.VERSION.toReadableVersion();
@@ -60,6 +63,7 @@ public class ImmoXmlDocumentTest {
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void testToObject() {
         try {
             String version = ImmoXmlUtils.VERSION.toReadableVersion();
@@ -80,6 +84,7 @@ public class ImmoXmlDocumentTest {
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void testUpgrade() {
         try {
             String version = ImmoXmlUtils.VERSION.toReadableVersion();

@@ -26,8 +26,12 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public enum OfferType {
-    RENT, SALE;
+    @SuppressWarnings("unused")
+    RENT,
+    @SuppressWarnings("unused")
+    SALE;
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OfferType.class);
 
     public static OfferType parse(String value) {

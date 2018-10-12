@@ -31,7 +31,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class FilemakerLayoutDocument extends FilemakerDocument<FMPXMLLAYOUT> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerLayoutDocument.class);
 
     /**
@@ -61,7 +63,7 @@ public class FilemakerLayoutDocument extends FilemakerDocument<FMPXMLLAYOUT> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static FilemakerLayoutDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(FilemakerUtils.getFactoryForLayout().createFMPXMLLAYOUT());
@@ -73,7 +75,7 @@ public class FilemakerLayoutDocument extends FilemakerDocument<FMPXMLLAYOUT> {
      * @param xmlLayout Java object, that represents the &lt;FMPXMLLAYOUT&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static FilemakerLayoutDocument newDocument(FMPXMLLAYOUT xmlLayout) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
@@ -85,7 +87,7 @@ public class FilemakerLayoutDocument extends FilemakerDocument<FMPXMLLAYOUT> {
      * Creates a {@link FMPXMLLAYOUT} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;FMPXMLLAYOUT&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public FMPXMLLAYOUT toObject() throws JAXBException {

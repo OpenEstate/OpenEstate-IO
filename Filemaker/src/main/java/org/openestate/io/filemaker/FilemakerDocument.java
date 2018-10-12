@@ -28,7 +28,9 @@ import org.w3c.dom.Document;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public abstract class FilemakerDocument<JavaType> extends XmlDocument<JavaType> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerDocument.class);
 
     /**

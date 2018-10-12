@@ -41,6 +41,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class Is24XmlReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -49,6 +50,7 @@ public class Is24XmlReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -146,7 +148,7 @@ public class Is24XmlReadingExample {
                 String objectTitle = (!StringUtils.isBlank(obj.getUeberschrift())) ?
                         obj.getUeberschrift().trim() : "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info("> found object '" + objectNr + "' "
                         + "with title '" + objectTitle + "'");
             }
@@ -163,7 +165,7 @@ public class Is24XmlReadingExample {
                 String objectTitle = (!StringUtils.isBlank(obj.getUeberschrift())) ?
                         obj.getUeberschrift().trim() : "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info("> found virtual object '" + objectNr + "' "
                         + "with title '" + objectTitle + "'");
             }

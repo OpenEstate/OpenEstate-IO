@@ -39,6 +39,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class ImmoXmlReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -47,6 +48,7 @@ public class ImmoXmlReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -127,6 +129,7 @@ public class ImmoXmlReadingExample {
      * @param doc the document to process
      * @throws JAXBException if XML conversion into Java objects failed
      */
+    @SuppressWarnings("Duplicates")
     protected static void printToConsole(ImmoXmlDocument doc) throws JAXBException {
         LOGGER.info("> process document in version "
                 + doc.getDocumentVersion());
@@ -147,7 +150,7 @@ public class ImmoXmlReadingExample {
                 String objectTitle = (immobilie.getFreitexte() != null) ?
                         immobilie.getFreitexte().getObjekttitel() : "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info(">>> found object '" + objectNr + "' "
                         + "with title '" + objectTitle + "'");
             }

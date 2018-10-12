@@ -41,6 +41,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class DaftIeReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -49,6 +50,7 @@ public class DaftIeReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -146,7 +148,7 @@ public class DaftIeReadingExample {
                 String objectInfo = StringUtils.trimToNull(ad.getDescription());
                 if (objectInfo == null) objectInfo = "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info("> found object "
                         + "'" + objectNr + "' for rent: " + objectInfo);
             }
@@ -163,7 +165,7 @@ public class DaftIeReadingExample {
                 String objectInfo = StringUtils.trimToNull(ad.getDescription());
                 if (objectInfo == null) objectInfo = "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info("> found object "
                         + "'" + objectNr + "' for sale: " + objectInfo);
             }

@@ -45,12 +45,13 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing IDX files.
  * <p>
- * This example illustrates the programatic creation of IDX records and how they
+ * This example illustrates the programmatic creation of IDX records and how they
  * are written into CSV.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class IdxWritingExample {
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
@@ -60,6 +61,7 @@ public class IdxWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(

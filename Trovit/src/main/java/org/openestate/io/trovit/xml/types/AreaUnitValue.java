@@ -31,10 +31,11 @@ public enum AreaUnitValue {
     METERS(new String[]{"meters"}),
     HECTARES(new String[]{"hectares"});
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(AreaUnitValue.class);
     private final String[] aliases;
 
-    private AreaUnitValue(String[] aliases) {
+    AreaUnitValue(String[] aliases) {
         this.aliases = aliases;
     }
 

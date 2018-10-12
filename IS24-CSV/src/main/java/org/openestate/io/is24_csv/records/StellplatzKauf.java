@@ -31,6 +31,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class StellplatzKauf extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(StellplatzKauf.class);
 
@@ -84,6 +85,7 @@ public class StellplatzKauf extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.STELLPLATZ_KAUF);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getBaujahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -95,6 +97,7 @@ public class StellplatzKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getBreite() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -106,6 +109,7 @@ public class StellplatzKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getFlaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -117,6 +121,7 @@ public class StellplatzKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getHoehe() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -128,6 +133,7 @@ public class StellplatzKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getKaufpreis() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -139,6 +145,7 @@ public class StellplatzKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getLaenge() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -160,6 +167,7 @@ public class StellplatzKauf extends Is24CsvRecord {
                 this.get(FIELD_OBJEKTZUSTAND));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getSanierungsjahr() {
         try {
             return Is24CsvFormat.parseInteger(

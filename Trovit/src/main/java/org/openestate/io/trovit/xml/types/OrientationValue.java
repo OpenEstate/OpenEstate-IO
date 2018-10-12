@@ -31,10 +31,11 @@ public enum OrientationValue {
     EAST(new String[]{"East", "Ost", "Osten"}),
     WEST(new String[]{"West", "Westen"});
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OrientationValue.class);
     private final String[] aliases;
 
-    private OrientationValue(String[] aliases) {
+    OrientationValue(String[] aliases) {
         this.aliases = aliases;
     }
 

@@ -34,7 +34,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class WisItDocument extends XmlDocument<WIS> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(WisItDocument.class);
 
     /**
@@ -65,7 +67,7 @@ public class WisItDocument extends XmlDocument<WIS> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static WisItDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(WisItUtils.getFactory().createWIS());
@@ -77,7 +79,7 @@ public class WisItDocument extends XmlDocument<WIS> {
      * @param wis Java object, that represents the &lt;WIS&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static WisItDocument newDocument(WIS wis) throws ParserConfigurationException, JAXBException {
         if (wis.getOBJEKTE() == null)
@@ -93,7 +95,7 @@ public class WisItDocument extends XmlDocument<WIS> {
      * Creates a {@link WIS} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;WIS&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public WIS toObject() throws JAXBException {

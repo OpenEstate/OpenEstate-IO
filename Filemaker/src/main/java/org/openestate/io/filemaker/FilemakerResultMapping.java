@@ -33,7 +33,9 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class FilemakerResultMapping {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultMapping.class);
     private final List<MetaDataType.FIELD> fields;
     private final List<Row> rows;
@@ -64,6 +66,7 @@ public class FilemakerResultMapping {
      * @param index position of the field within the {@link FMPXMLRESULT}, starting with 0
      * @return field definition at the provided index position, or null if not found
      */
+    @SuppressWarnings("unused")
     public MetaDataType.FIELD getField(int index) {
         return this.fields.get(index);
     }
@@ -87,7 +90,7 @@ public class FilemakerResultMapping {
         for (MetaDataType.FIELD field : this.fields) {
             names.add(field.getNAME());
         }
-        return names.toArray(new String[names.size()]);
+        return names.toArray(new String[0]);
     }
 
     /**
@@ -95,8 +98,9 @@ public class FilemakerResultMapping {
      *
      * @return fields
      */
+    @SuppressWarnings("unused")
     public MetaDataType.FIELD[] getFields() {
-        return this.fields.toArray(new MetaDataType.FIELD[this.fields.size()]);
+        return this.fields.toArray(new MetaDataType.FIELD[0]);
     }
 
     /**
@@ -123,8 +127,9 @@ public class FilemakerResultMapping {
      *
      * @return rows
      */
+    @SuppressWarnings("unused")
     public Row[] getRows() {
-        return this.rows.toArray(new Row[this.rows.size()]);
+        return this.rows.toArray(new Row[0]);
     }
 
     /**
@@ -163,7 +168,7 @@ public class FilemakerResultMapping {
          * @return all values
          */
         public String[] getValues() {
-            return this.data.toArray(new String[this.data.size()]);
+            return this.data.toArray(new String[0]);
         }
     }
 
@@ -198,6 +203,7 @@ public class FilemakerResultMapping {
          * @param name name of the field
          * @return column for the provided field, or null if not found
          */
+        @SuppressWarnings("unused")
         public Column getColumn(String name) {
             return this.columns.get(name);
         }
@@ -208,6 +214,7 @@ public class FilemakerResultMapping {
          * @param name name of the field
          * @return definition for the provided field, or null if not found
          */
+        @SuppressWarnings("unused")
         public MetaDataType.FIELD getField(String name) {
             Column col = this.columns.get(name);
             return (col != null) ? col.getField() : null;
@@ -219,7 +226,7 @@ public class FilemakerResultMapping {
          * @return field names
          */
         public String[] getFieldNames() {
-            return this.columns.keySet().toArray(new String[this.columns.size()]);
+            return this.columns.keySet().toArray(new String[0]);
         }
 
         /**

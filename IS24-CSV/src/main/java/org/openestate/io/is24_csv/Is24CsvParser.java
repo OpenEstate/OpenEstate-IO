@@ -49,7 +49,9 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Is24CsvParser extends CsvParser<Is24CsvRecord> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvParser.class);
 
     /**
@@ -155,7 +157,7 @@ public class Is24CsvParser extends CsvParser<Is24CsvRecord> {
         else if (Immobilienart.WOHNUNG_MIETE.equals(art))
             return WohnungMiete.newRecord(record);
 
-            // Immobilienart für Grundstücke wird abhängig zur Objektkategorie erzeugt
+        // Immobilienart für Grundstücke wird abhängig zur Objektkategorie erzeugt
         else if (Immobilienart.GRUNDSTUECKE.equals(art)) {
             ObjektkategorieGrundstueck cat = Grundstueck.getObjektkategorie(record);
             if (ObjektkategorieGrundstueck.WOHNEN.equals(cat))

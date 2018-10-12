@@ -39,6 +39,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class KyeroReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -47,6 +48,7 @@ public class KyeroReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -146,7 +148,7 @@ public class KyeroReadingExample {
                     objectInfo = StringUtils.trimToNull(obj.getDesc().getEs());
             }
 
-            // print object informations to console
+            // print object information to console
             LOGGER.info("> found object '" + objectNr + "' "
                     + "with title '" + objectInfo + "'");
         }

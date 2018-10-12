@@ -39,22 +39,27 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvFormat.class);
 
     /**
      * the implemented version of this format
      */
+    @SuppressWarnings("unused")
     public final static String VERSION = "1.4.0.4";
 
     /**
      * the encoding of this format
      */
+    @SuppressWarnings("unused")
     public final static String ENCODING = "CP1252";
 
     /**
      * the record separator of this format
      */
+    @SuppressWarnings("unused")
     public final static String RECORD_SEPARATOR = "\r\n";
 
     /**
@@ -118,6 +123,7 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
         return (value != null) ? getDateFormat().parse(value) : null;
     }
 
+    @SuppressWarnings("Duplicates")
     public static Calendar parseDateAsCalendar(String value) throws ParseException {
         Date date = parseDate(value);
         if (date == null) return null;
@@ -141,6 +147,7 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
         return (number != null) ? number.longValue() : null;
     }
 
+    @SuppressWarnings("unused")
     public static Number parseNumber(String value) throws NumberFormatException {
         return parseNumber(value, false);
     }
@@ -180,6 +187,7 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
 
     public static String printString(String value, int maxLength) {
         value = StringUtils.trimToNull(value);
+        //noinspection Duplicates
         if (maxLength < 1)
             return value;
         else if (maxLength < 4)

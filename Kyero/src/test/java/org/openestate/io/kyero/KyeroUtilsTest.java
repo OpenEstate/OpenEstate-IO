@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 @RunWith(JUnit4.class)
 public class KyeroUtilsTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroUtilsTest.class);
 
     @Test

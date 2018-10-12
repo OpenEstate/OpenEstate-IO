@@ -44,13 +44,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing OpenImmo files.
  * <p>
- * This example illustrates the programatic creation of OpenImmo documents, how
+ * This example illustrates the programmatic creation of OpenImmo documents, how
  * they are written into XML and how they are downgraded to earlier versions.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class OpenImmoWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = OpenImmoUtils.getFactory();
@@ -61,6 +63,7 @@ public class OpenImmoWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -139,7 +142,7 @@ public class OpenImmoWritingExample {
         // create an example real estate
         Immobilie immobilie = FACTORY.createImmobilie();
 
-        // add some administrative informations
+        // add some administrative information
         immobilie.setVerwaltungTechn(FACTORY.createVerwaltungTechn());
         immobilie.getVerwaltungTechn().setAktion(FACTORY.createAktion());
         immobilie.getVerwaltungTechn().getAktion().setAktionart(Aktion.AktionArt.CHANGE);
@@ -160,21 +163,21 @@ public class OpenImmoWritingExample {
         singleFamilyHouse.setHaustyp(Haus.Haustyp.EINFAMILIENHAUS);
         immobilie.getObjektkategorie().getObjektart().getHaus().add(singleFamilyHouse);
 
-        // add some informations about the location
+        // add some information about the location
         immobilie.setGeo(FACTORY.createGeo());
         immobilie.getGeo().setPlz(RandomStringUtils.randomNumeric(5));
         immobilie.getGeo().setOrt("Berlin");
         immobilie.getGeo().setLand(FACTORY.createLand());
         immobilie.getGeo().getLand().setIsoLand(Locale.GERMANY.getISO3Country());
 
-        // add some informations about prices
+        // add some information about prices
         immobilie.setPreise(FACTORY.createPreise());
         immobilie.getPreise().setHeizkosten(new BigDecimal("456.0"));
         immobilie.getPreise().setKaufpreis(FACTORY.createKaufpreis());
         immobilie.getPreise().getKaufpreis().setAufAnfrage(false);
         immobilie.getPreise().getKaufpreis().setValue(new BigDecimal("123456.79"));
 
-        // add some informations about features
+        // add some information about features
         immobilie.setAusstattung(FACTORY.createAusstattung());
         immobilie.getAusstattung().setGaestewc(true);
         immobilie.getAusstattung().setGartennutzung(true);
@@ -224,6 +227,7 @@ public class OpenImmoWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(OpenImmoTransferDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -242,6 +246,7 @@ public class OpenImmoWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(OpenImmoTransferDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -260,6 +265,7 @@ public class OpenImmoWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(OpenImmoTransferDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -278,6 +284,7 @@ public class OpenImmoWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(OpenImmoTransferDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

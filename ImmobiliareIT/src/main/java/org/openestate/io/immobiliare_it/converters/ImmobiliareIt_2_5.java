@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public class ImmobiliareIt_2_5 extends XmlConverter<ImmobiliareItDocument, ImmobiliareItVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareIt_2_5.class);
 
     @Override

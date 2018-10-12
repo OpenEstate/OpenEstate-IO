@@ -68,14 +68,16 @@ import org.slf4j.LoggerFactory;
  * Example for writing XML files for
  * <a href="http://immobiliare.it">immobiliare.it</a>.
  * <p>
- * This example illustrates the programatic creation of documents for
+ * This example illustrates the programmatic creation of documents for
  * <a href="http://immobiliare.it">immobiliare.it</a> and how they are written
  * into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class ImmobiliareItWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = ImmobiliareItUtils.getFactory();
@@ -86,6 +88,7 @@ public class ImmobiliareItWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -158,7 +161,7 @@ public class ImmobiliareItWritingExample {
         obj.getBuilding().setClazz(Clazz.SIGNORILE);
         obj.getBuilding().setDetail(PropertyTypeBusiness.ALBERGO);
         obj.getBuilding().setStatus(Status.DISCRETO);
-        obj.getBuilding().setType(PropertyType.BUNGALOW);
+        obj.getBuilding().setType(PropertyType.APPARTAMENTO);
 
         obj.setExtraFeatures(FACTORY.createFeedPropertiesPropertyExtraFeatures());
         obj.getExtraFeatures().setAirConditioning(RandomUtils.nextInt(0, 2) == 1);
@@ -317,6 +320,7 @@ public class ImmobiliareItWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(ImmobiliareItDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -335,6 +339,7 @@ public class ImmobiliareItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(ImmobiliareItDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -353,6 +358,7 @@ public class ImmobiliareItWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(ImmobiliareItDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -371,6 +377,7 @@ public class ImmobiliareItWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(ImmobiliareItDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

@@ -37,11 +37,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Record from the IS24-CSV format for short term accomodation.
+ * Record from the IS24-CSV format for short term accommodation.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class WohnenAufZeit extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(WohnenAufZeit.class);
 
@@ -225,6 +226,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.WOHNEN_AUF_ZEIT);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlGarageStellplatz() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -272,6 +274,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getEnergieausweisKennwert() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -288,6 +291,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getEtage() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -299,6 +303,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getEtagenzahl() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -310,6 +315,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Calendar getFreiAb() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -321,6 +327,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Calendar getFreiBis() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -357,6 +364,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getKaltmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -404,6 +412,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_MOBILIAR));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getNebenkosten() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -457,6 +466,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_STELLPLATZ));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getStellplatzmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -468,6 +478,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -479,6 +490,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getZimmer() {
         try {
             return Is24CsvFormat.parseDecimal(

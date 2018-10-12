@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 @RunWith(JUnit4.class)
 public class DaftIeUtilsTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeUtilsTest.class);
 
     @Test

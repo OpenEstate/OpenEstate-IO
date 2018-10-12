@@ -104,7 +104,12 @@ public abstract class CsvRecord {
      *
      * @return number of values
      */
-    protected abstract int getRecordLenth();
+    protected abstract int getRecordLength();
+
+    @Deprecated
+    protected int getRecordLenth() {
+        return this.getRecordLength();
+    }
 
     /**
      * Loads data from {@link CsvParser} into the record.

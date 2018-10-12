@@ -26,8 +26,28 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public enum PriceUnit {
-    SELL, SELLM2, YEARLY, M2YEARLY, MONTHLY, WEEKLY, DAILY;
+    @SuppressWarnings("unused")
+    SELL,
 
+    @SuppressWarnings("unused")
+    SELLM2,
+
+    @SuppressWarnings("unused")
+    YEARLY,
+
+    @SuppressWarnings("unused")
+    M2YEARLY,
+
+    @SuppressWarnings("unused")
+    MONTHLY,
+
+    @SuppressWarnings("unused")
+    WEEKLY,
+
+    @SuppressWarnings("unused")
+    DAILY;
+
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(PriceUnit.class);
 
     public static PriceUnit parse(String value) {

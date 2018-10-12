@@ -45,10 +45,11 @@ public enum TypeValue {
     SHORT_TERM_RENTALS(new String[]{"Short Term Rentals"}),
     UNLISTED_FORECLOSURE(new String[]{"Unlisted Foreclosure"});
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TypeValue.class);
     private final String[] aliases;
 
-    private TypeValue(String[] aliases) {
+    TypeValue(String[] aliases) {
         this.aliases = aliases;
     }
 

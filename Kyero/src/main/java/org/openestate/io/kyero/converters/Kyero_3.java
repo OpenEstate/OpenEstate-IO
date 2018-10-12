@@ -35,7 +35,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Kyero_3.class);
 
     @Override
@@ -154,11 +156,11 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * the value "new_build" is used in the &lt;price_freq&gt; element.
      * <p>
      * Any &lt;new_build&gt; elements are removed. If its value is set to "1",
-     * then &lt;price_freq&gt;sale&lt;/price_freq&gt; is convertet to
+     * then &lt;price_freq&gt;sale&lt;/price_freq&gt; is converted to
      * &lt;price_freq&gt;new_build&lt;/price_freq&gt;,
      *
      * @param doc Kyero document in version 3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeNewBuildElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -192,7 +194,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * An &lt;en&gt; child element is created for any &lt;type&gt; element.
      *
      * @param doc Kyero document in version 3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeTypeElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -219,8 +221,9 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * first found URL is copied as simple value into the &lt;url&gt; element.
      *
      * @param doc Kyero document in version 3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
+    @SuppressWarnings("Duplicates")
     protected void downgradeUrlElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
                 "/io:root/io:property/io:url",
@@ -251,10 +254,10 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Kyero 3 does not support &lt;custom&gt; elements in &lt;property&gt; and
      * &lt;agent&gt;.
      * <p>
-     * Any occurence of these elements is removed.
+     * Any occurrence of these elements is removed.
      *
      * @param doc OpenImmo document in version 2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeCustomElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -274,7 +277,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Kyero 2.1 does not support &lt;energy_rating&gt; elements.
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeEnergyRatingElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -293,7 +296,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Kyero 2.1 does not support &lt;location&gt; elements.
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeLocationElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -312,7 +315,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Kyero 2.1 does not support &lt;notes&gt; elements.
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeNotesElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -332,7 +335,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;desc&gt; (for properties) elements for "en", "es", "de", "nl", "fr".
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeUnsupportedLanguageElements(Document doc) throws JaxenException {
         String[] unsupportedLanguages = new String[]{
@@ -368,7 +371,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * document.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void upgradeCurrencyElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -395,12 +398,12 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * The &lt;new_build&gt; elements are not available in version 2.1. Instead
      * the value "new_build" is used in the &lt;price_freq&gt; element.
      * <p>
-     * Any occurences of &lt;price_freq&gt;new_build&lt;/price_freq&gt; is
+     * Any occurrences of &lt;price_freq&gt;new_build&lt;/price_freq&gt; is
      * replaced by &lt;price_freq&gt;sale&lt;/price_freq&gt; and
      * &lt;new_build&gt;1&lt;/new_build&gt; is added to the property.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void upgradeNewBuildElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -427,8 +430,9 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;en&gt; child element is copied into the &lt;type&gt; element.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
+    @SuppressWarnings("Duplicates")
     protected void upgradeTypeElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
                 "/io:root/io:property/io:type",
@@ -462,7 +466,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;en&gt; child element.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void upgradeUrlElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(

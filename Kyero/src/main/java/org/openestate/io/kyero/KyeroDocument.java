@@ -33,7 +33,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroDocument.class);
 
     /**
@@ -56,7 +58,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
                     .newXPath("/io:root/io:kyero/io:feed_version/text()", doc)
                     .stringValueOf(doc));
             if (version == null) {
-                LOGGER.warn("Can't find version informations in the XML document!");
+                LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
                 //try
                 //{
@@ -104,7 +106,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static KyeroDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(KyeroUtils.getFactory().createRoot());
@@ -116,7 +118,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
      * @param root Java object, that represents the &lt;root&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static KyeroDocument newDocument(Root root) throws ParserConfigurationException, JAXBException {
         if (root.getKyero() == null)
@@ -168,7 +170,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
      * Creates a {@link Root} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;root&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public Root toObject() throws JAXBException {

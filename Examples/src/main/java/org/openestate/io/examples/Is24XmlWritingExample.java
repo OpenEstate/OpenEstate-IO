@@ -54,13 +54,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing IS24-XML files.
  * <p>
- * This example illustrates the programatic creation of IS24-XML documents and
+ * This example illustrates the programmatic creation of IS24-XML documents and
  * how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Is24XmlWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = Is24XmlUtils.getFactory();
@@ -71,6 +73,7 @@ public class Is24XmlWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -241,6 +244,7 @@ public class Is24XmlWritingExample {
         return FACTORY.createHausMiete(obj);
     }
 
+    @SuppressWarnings("CatchMayIgnoreException")
     protected static void initImmobilie(ImmobilieBaseTyp immobilie) {
         immobilie.setAdressdruck(RandomUtils.nextInt(0, 2) == 1);
         immobilie.setAktiveGruppen("active groups");
@@ -304,6 +308,7 @@ public class Is24XmlWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(Is24XmlDocument doc, File file) {
         LOGGER.info("writing document");
         try {
@@ -322,6 +327,7 @@ public class Is24XmlWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(Is24XmlDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
@@ -340,6 +346,7 @@ public class Is24XmlWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(Is24XmlDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
@@ -358,6 +365,7 @@ public class Is24XmlWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(Is24XmlDocument doc) {
         LOGGER.info("writing document");
         try {

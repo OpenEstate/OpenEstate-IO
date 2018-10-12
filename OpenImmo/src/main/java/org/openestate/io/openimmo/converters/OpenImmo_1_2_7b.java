@@ -34,7 +34,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.3
  */
+@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
 public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_7b.class);
 
     @Override
@@ -81,7 +83,7 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
      * OpenImmo 1.2.7 does not support &lt;referenz_id&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.7b
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeReferenzIdElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -100,7 +102,7 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
      * OpenImmo 1.2.7 does not support &lt;geg2018&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.7b
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeGeg2018Elements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -121,7 +123,7 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
      * &lt;energiepass&gt; is not available in OpenImmo 1.2.7.
      *
      * @param doc OpenImmo document in version 1.2.7b
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeEnergiepassJahrgangElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(

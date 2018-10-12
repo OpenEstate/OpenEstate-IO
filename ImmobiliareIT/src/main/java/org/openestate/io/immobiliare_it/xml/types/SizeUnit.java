@@ -27,10 +27,11 @@ import org.slf4j.LoggerFactory;
 public enum SizeUnit {
     M2("m2"), SFT("sft");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(SizeUnit.class);
     private final String xmlValue;
 
-    private SizeUnit(String xmlValue) {
+    SizeUnit(String xmlValue) {
         this.xmlValue = xmlValue;
     }
 

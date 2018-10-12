@@ -32,7 +32,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlDocument.class);
 
     /**
@@ -62,7 +64,7 @@ public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static Is24XmlDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(Is24XmlUtils.getFactory().createImmobilienTransferTyp());
@@ -76,7 +78,7 @@ public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp> {
      *                 element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static Is24XmlDocument newDocument(ImmobilienTransferTyp transfer) throws ParserConfigurationException, JAXBException {
         return newDocument(Is24XmlUtils.getFactory().createIS24ImmobilienTransfer(transfer));
@@ -90,7 +92,7 @@ public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp> {
      *                 element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static Is24XmlDocument newDocument(IS24ImmobilienTransfer transfer) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
@@ -104,7 +106,7 @@ public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp> {
      *
      * @return created object, that represents the &lt;IS24ImmobilienTransfer&gt; root
      * element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public ImmobilienTransferTyp toObject() throws JAXBException {

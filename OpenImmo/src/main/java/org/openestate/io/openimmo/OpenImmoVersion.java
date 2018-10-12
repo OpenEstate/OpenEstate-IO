@@ -91,12 +91,13 @@ public enum OpenImmoVersion implements XmlVersion {
      */
     V1_2_7B(OpenImmo_1_2_7b.class, "1.2.7b", "1.2.7B");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoVersion.class);
     private final Class converterClass;
     private final String readableVersion;
     private final String[] alias;
 
-    private OpenImmoVersion(Class converterClass, String readableVersion, String... alias) {
+    OpenImmoVersion(Class converterClass, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.readableVersion = readableVersion;
         this.alias = alias;
@@ -118,6 +119,7 @@ public enum OpenImmoVersion implements XmlVersion {
     }
 
     @Override
+    @SuppressWarnings("Duplicates")
     public XmlConverter getConverter() {
         try {
             return (XmlConverter) this.converterClass.newInstance();

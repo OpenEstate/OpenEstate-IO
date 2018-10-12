@@ -26,12 +26,15 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
- * FilemakerResultMappingExample.
+ * Example for processing XML-mappings of Filemaker PRO.
+ * <p>
+ * This example illustrates how to process mappings from XML files of Filemaker PRO.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
 public class FilemakerResultMappingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultMappingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 

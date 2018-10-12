@@ -40,13 +40,14 @@ public enum KyeroVersion implements XmlVersion {
      */
     V3(Kyero_3.class, "3", "3", "3.0", "3.1", "3.2", "3.3", "3.4");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroVersion.class);
     private final Class converterClass;
     private final String xmlVersion;
     private final String readableVersion;
     private final String[] alias;
 
-    private KyeroVersion(Class converterClass, String xmlVersion, String readableVersion, String... alias) {
+    KyeroVersion(Class converterClass, String xmlVersion, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.xmlVersion = xmlVersion;
         this.readableVersion = readableVersion;
@@ -69,6 +70,7 @@ public enum KyeroVersion implements XmlVersion {
     }
 
     @Override
+    @SuppressWarnings("Duplicates")
     public XmlConverter getConverter() {
         try {
             return (XmlConverter) this.converterClass.newInstance();

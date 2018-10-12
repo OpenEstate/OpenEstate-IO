@@ -29,6 +29,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class FilemakerResultMappingTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultMappingTest.class);
 
     private static Document buildExampleDocument() throws Exception {
@@ -76,19 +77,19 @@ public class FilemakerResultMappingTest {
             Assert.fail("Test of FilemakerResultMapping failed!");
         }
 
-        Assert.assertTrue("test number of fields", mapping.getFieldCount() == 2);
-        Assert.assertTrue("test number of rows", mapping.getRowCount() == 2);
+        Assert.assertEquals("test number of fields", 2, mapping.getFieldCount());
+        Assert.assertEquals("test number of rows", 2, mapping.getRowCount());
 
         FilemakerResultMapping.Row row = mapping.getRow(0);
-        Assert.assertTrue("test modId of the first row", row.getModId() == 1);
-        Assert.assertTrue("test recoirdId of the first row", row.getRecordId() == 2);
-        Assert.assertTrue("test first value of the first row", "123".equals(row.getValue("aNumericField")));
-        Assert.assertTrue("test second value of the first row", "this is a text".equals(row.getValue("aTextField")));
+        Assert.assertEquals("test modId of the first row", 1, row.getModId());
+        Assert.assertEquals("test recordId of the first row", 2, row.getRecordId());
+        Assert.assertEquals("test first value of the first row", "123", row.getValue("aNumericField"));
+        Assert.assertEquals("test second value of the first row", "this is a text", row.getValue("aTextField"));
 
         row = mapping.getRow(1);
-        Assert.assertTrue("test modId of the second row", row.getModId() == 3);
-        Assert.assertTrue("test recoirdId of the second row", row.getRecordId() == 4);
-        Assert.assertTrue("test first value of the second row", "456".equals(row.getValue("aNumericField")));
-        Assert.assertTrue("test second value of the second row", "this is another text".equals(row.getValue("aTextField")));
+        Assert.assertEquals("test modId of the second row", 3, row.getModId());
+        Assert.assertEquals("test recordId of the second row", 4, row.getRecordId());
+        Assert.assertEquals("test first value of the second row", "456", row.getValue("aNumericField"));
+        Assert.assertEquals("test second value of the second row", "this is another text", row.getValue("aTextField"));
     }
 }

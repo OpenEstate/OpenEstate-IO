@@ -48,34 +48,41 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class OpenImmoUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoUtils.class);
     private static JAXBContext JAXB = null;
 
     /**
      * the latest implemented version of this format
      */
+    @SuppressWarnings("unused")
     public final static OpenImmoVersion VERSION = OpenImmoVersion.V1_2_7B;
 
     /**
      * the XML target namespace of this format
      */
+    @SuppressWarnings("unused")
     public final static String NAMESPACE = StringUtils.EMPTY;
 
     /**
      * the old XML target namespace of this format, that was used up to version
      * 1.2
      */
+    @SuppressWarnings("unused")
     public final static String OLD_NAMESPACE = "http://www.openimmo.de";
 
     /**
      * the package, where generated JAXB classes are located
      */
+    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.openimmo.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
+    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private OpenImmoUtils() {
@@ -139,8 +146,9 @@ public class OpenImmoUtils {
      * Creates a {@link Marshaller} to write JAXB objects into XML.
      *
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
         return createMarshaller(Charset.defaultCharset().name(), true);
     }
@@ -151,8 +159,9 @@ public class OpenImmoUtils {
      * @param encoding  encoding of written XML
      * @param formatted if written XML is pretty printed
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         Marshaller m = getContext().createMarshaller();
         m.setProperty(Marshaller.JAXB_ENCODING, encoding);
@@ -165,7 +174,7 @@ public class OpenImmoUtils {
      * Creates a {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         Unmarshaller m = getContext().createUnmarshaller();
@@ -182,6 +191,7 @@ public class OpenImmoUtils {
      * @param value text value of the created element
      * @return created element
      */
+    @SuppressWarnings("Duplicates")
     public static Element createUserDefinedSimplefield(Document doc, String name, String value) {
         Element root = XmlUtils.getRootElement(doc);
         Element node = doc.createElementNS(root.getNamespaceURI(), "user_defined_simplefield");
@@ -194,7 +204,7 @@ public class OpenImmoUtils {
      * Returns the {@link JAXBContext} for this format.
      *
      * @return context
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
         if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
@@ -220,10 +230,10 @@ public class OpenImmoUtils {
     }
 
     /**
-     * Intializes the {@link JAXBContext} for this format.
+     * Initializes the {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
         JAXB = JAXBContext.newInstance(PACKAGE, classloader);
@@ -237,6 +247,7 @@ public class OpenImmoUtils {
         return XmlUtils.parseDateTime(value);
     }
 
+    @SuppressWarnings("Duplicates")
     public static BigDecimal parseDecimal(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;

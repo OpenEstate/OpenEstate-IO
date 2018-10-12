@@ -34,7 +34,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeDocument.class);
 
     /**
@@ -57,7 +59,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
                     .newXPath("/io:daft/@version", doc)
                     .stringValueOf(doc));
             if (version == null) {
-                LOGGER.warn("Can't find version informations in the XML document!");
+                LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
                 //try
                 //{
@@ -105,7 +107,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static DaftIeDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(DaftIeUtils.getFactory().createDaft());
@@ -117,7 +119,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
      * @param daft Java object, that represents the &lt;daft&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static DaftIeDocument newDocument(Daft daft) throws ParserConfigurationException, JAXBException {
         if (StringUtils.isBlank(daft.getVersion()))
@@ -150,7 +152,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
      * Creates a {@link Daft} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;daft&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public Daft toObject() throws JAXBException {

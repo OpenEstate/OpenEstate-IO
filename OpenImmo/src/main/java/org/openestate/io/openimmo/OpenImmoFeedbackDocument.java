@@ -32,7 +32,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoFeedbackDocument.class);
 
     /**
@@ -69,7 +71,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
 
             version = StringUtils.trimToNull(node.getTextContent());
             if (version == null) {
-                LOGGER.warn("Can't find version informations in the XML document!");
+                LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
                 //try
                 //{
@@ -113,7 +115,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static OpenImmoFeedbackDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(OpenImmoUtils.getFactory().createOpenimmoFeedback());
@@ -126,7 +128,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
      * @param feedback Java object, that represents the &lt;openimmo_feedback&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static OpenImmoFeedbackDocument newDocument(OpenimmoFeedback feedback) throws ParserConfigurationException, JAXBException {
         if (StringUtils.isBlank(feedback.getVersion()))
@@ -186,7 +188,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
      * {@link Document}.
      *
      * @return created object, that represents the &lt;openimmo_feedback&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public OpenimmoFeedback toObject() throws JAXBException {

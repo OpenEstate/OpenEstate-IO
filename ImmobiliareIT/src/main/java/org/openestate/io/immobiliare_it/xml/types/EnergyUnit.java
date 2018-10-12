@@ -27,10 +27,11 @@ import org.slf4j.LoggerFactory;
 public enum EnergyUnit {
     KWH_M2ANNO("kWh/m2anno"), KWH_M3ANNO("kWh/m3anno");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(EnergyUnit.class);
     private final String xmlValue;
 
-    private EnergyUnit(String xmlValue) {
+    EnergyUnit(String xmlValue) {
         this.xmlValue = xmlValue;
     }
 

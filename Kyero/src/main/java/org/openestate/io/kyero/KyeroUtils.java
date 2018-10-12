@@ -48,28 +48,34 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class KyeroUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroUtils.class);
     private static JAXBContext JAXB = null;
 
     /**
      * the latest implemented version of this format
      */
+    @SuppressWarnings("unused")
     public final static KyeroVersion VERSION = KyeroVersion.V3;
 
     /**
      * the XML target namespace of this format
      */
+    @SuppressWarnings("unused")
     public final static String NAMESPACE = StringUtils.EMPTY;
 
     /**
      * the package, where generated JAXB classes are located
      */
+    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.kyero.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
+    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private KyeroUtils() {
@@ -133,6 +139,7 @@ public class KyeroUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occured
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
         return createMarshaller(Charset.defaultCharset().name(), true);
     }
@@ -145,6 +152,7 @@ public class KyeroUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occured
      */
+    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         Marshaller m = getContext().createMarshaller();
         m.setProperty(Marshaller.JAXB_ENCODING, encoding);
@@ -234,10 +242,7 @@ public class KyeroUtils {
             return false;
 
         String path = StringUtils.trimToEmpty(value.getPath()).toLowerCase();
-        if (!path.endsWith(".gif") && !path.endsWith(".jpg") && !path.endsWith(".jpeg") && !path.endsWith(".png"))
-            return false;
-
-        return true;
+        return path.endsWith(".gif") || path.endsWith(".jpg") || path.endsWith(".jpeg") || path.endsWith(".png");
     }
 
     public static boolean isValidRefType(String value) {
@@ -257,10 +262,7 @@ public class KyeroUtils {
             return false;
 
         String scheme = StringUtils.trimToEmpty(value.getScheme()).toLowerCase();
-        if (!"http".equals(scheme) && !"https".equals(scheme))
-            return false;
-
-        return true;
+        return "http".equals(scheme) || "https".equals(scheme);
     }
 
     public static Boolean parseBoolType(String value) {
@@ -411,7 +413,7 @@ public class KyeroUtils {
 
     public static String printFeedVersionType(String value) {
         value = StringUtils.trimToNull(value);
-        if (value == null || !isValidFeedVersionType(value))
+        if (!isValidFeedVersionType(value))
             throw new IllegalArgumentException("Can't print feed-version value!");
         else
             return value;
@@ -419,21 +421,21 @@ public class KyeroUtils {
 
     public static String printIdType(String value) {
         value = StringUtils.trimToNull(value);
-        if (value == null || !isValidIdType(value))
+        if (!isValidIdType(value))
             throw new IllegalArgumentException("Can't print id value!");
         else
             return StringUtils.abbreviate(value, 50);
     }
 
     public static String printImageAttributeType(Integer value) {
-        if (value == null || !isValidImageAttributeType(value))
+        if (!isValidImageAttributeType(value))
             throw new IllegalArgumentException("Can't print image-attribute value!");
         else
             return DatatypeConverter.printInt(value);
     }
 
     public static String printImageUrlType(URI value) {
-        if (value == null || !isValidImageUrlType(value))
+        if (!isValidImageUrlType(value))
             throw new IllegalArgumentException("Can't print image-url value!");
         else
             return value.toString();
@@ -451,7 +453,7 @@ public class KyeroUtils {
     }
 
     public static String printNonNegativeInteger(BigInteger value) {
-        if (value == null || value.compareTo(BigInteger.ZERO) == -1)
+        if (value == null || value.compareTo(BigInteger.ZERO) < 0)
             throw new IllegalArgumentException("Can't print integer value '" + value + "'!");
         else
             return DatatypeConverter.printInteger(value);
@@ -464,7 +466,7 @@ public class KyeroUtils {
 
     public static String printRefType(String value) {
         value = StringUtils.trimToNull(value);
-        if (value == null || !isValidRefType(value))
+        if (!isValidRefType(value))
             throw new IllegalArgumentException("Can't print ref value!");
         else
             return StringUtils.abbreviate(value, 255);
@@ -472,7 +474,7 @@ public class KyeroUtils {
 
     public static String printRequiredType(String value) {
         value = StringUtils.trimToNull(value);
-        if (value == null || !isValidRequiredType(value))
+        if (!isValidRequiredType(value))
             throw new IllegalArgumentException("Can't print required value!");
         else
             return value;
@@ -480,14 +482,14 @@ public class KyeroUtils {
 
     public static String printTypeDataType(String value) {
         value = StringUtils.trimToNull(value);
-        if (value == null || !isValidTypeDataType(value))
+        if (!isValidTypeDataType(value))
             throw new IllegalArgumentException("Can't print type-data value!");
         else
             return value;
     }
 
     public static String printUrlDataType(URI value) {
-        if (value == null || !isValidUrlDataType(value))
+        if (!isValidUrlDataType(value))
             throw new IllegalArgumentException("Can't print url-data value!");
         else
             return value.toString();

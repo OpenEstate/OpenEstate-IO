@@ -37,12 +37,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * FilemakerWritingExample.
+ * Example for writing XML files for Filemaker PRO.
+ * <p>
+ * This example illustrates the programmatic creation of documents for
+ * Filemaker PRO and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class FilemakerWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = FilemakerUtils.getFactoryForResult();
@@ -53,6 +58,7 @@ public class FilemakerWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -181,6 +187,7 @@ public class FilemakerWritingExample {
      * @param description   value for description
      * @return created example object
      */
+    @SuppressWarnings("ConstantConditions")
     protected static ResultSetType.ROW createResultSetRow(long id, Number numberOfRooms, Number price, String description) {
         ResultSetType.ROW.COL col;
 
@@ -215,6 +222,7 @@ public class FilemakerWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(FilemakerResultDocument doc, File file) {
         LOGGER.info("writing document");
         try {
@@ -233,6 +241,7 @@ public class FilemakerWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(FilemakerResultDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
@@ -251,6 +260,7 @@ public class FilemakerWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(FilemakerResultDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
@@ -269,6 +279,7 @@ public class FilemakerWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(FilemakerResultDocument doc) {
         LOGGER.info("writing document");
         try {

@@ -36,7 +36,9 @@ import org.w3c.dom.Node;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
 public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_4.class);
 
     @Override
@@ -183,7 +185,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * available in version 1.2.3.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeAnhangElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -222,7 +224,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurences of these values are removed.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeBebaubarNachElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -243,7 +245,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * available in OpenImmo 1.2.3.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeEnergietypElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -265,7 +267,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeGrundstueckElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -290,7 +292,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * "SONSTIGE_LANDWIRTSCHAFTSIMMOBILIEN" value.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeLandUndForstwirtschaftElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -314,7 +316,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is replaced by the "STELLPLATZ" value.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeParkenElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -343,7 +345,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is replaced by the "KEINE_ANGABE" value.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeWohnungElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -365,8 +367,9 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * &lt;wunsch&gt; elements in feedback XML.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
+    @SuppressWarnings("Duplicates")
     protected void removeFeedbackInteressentChildElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
                 "/io:openimmo_feedback/io:objekt/io:interessent",
@@ -400,7 +403,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.3 does not support &lt;version&gt; elements in feedback XML.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeFeedbackVersionElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -423,7 +426,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * These elements are removed by this function.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removePreiseChildElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -444,7 +447,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.3 does not support &lt;wintergarten&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.4
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeWintergartenElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -468,7 +471,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * of the "location" attribute is changed to "REMOTE".
      *
      * @param doc OpenImmo document in version 1.2.3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void upgradeAnhangElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -501,7 +504,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * copied into &lt;anzahl_balkone&gt;, if this element is not already present.
      *
      * @param doc OpenImmo document in version 1.2.3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void upgradeAnzahlBalkonTerrassenElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -536,7 +539,7 @@ public class OpenImmo_1_2_4 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * element is replaced with a &lt;parken&gt; element.
      *
      * @param doc OpenImmo document in version 1.2.3
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void upgradeSonstigeElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(

@@ -31,7 +31,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class TrovitDocument extends XmlDocument<Trovit> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TrovitDocument.class);
 
     /**
@@ -62,7 +64,7 @@ public class TrovitDocument extends XmlDocument<Trovit> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static TrovitDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(TrovitUtils.getFactory().createTrovit());
@@ -74,7 +76,7 @@ public class TrovitDocument extends XmlDocument<Trovit> {
      * @param trovit Java object, that represents the &lt;trovit&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static TrovitDocument newDocument(Trovit trovit) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
@@ -86,7 +88,7 @@ public class TrovitDocument extends XmlDocument<Trovit> {
      * Creates a {@link Trovit} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;trovit&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public Trovit toObject() throws JAXBException {

@@ -32,7 +32,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class CasaItDocument extends XmlDocument<Container> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CasaItDocument.class);
 
     /**
@@ -62,7 +64,7 @@ public class CasaItDocument extends XmlDocument<Container> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static CasaItDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(CasaItUtils.getFactory().createContainer());
@@ -74,7 +76,7 @@ public class CasaItDocument extends XmlDocument<Container> {
      * @param container Java object, that represents the &lt;container&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static CasaItDocument newDocument(Container container) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
@@ -86,7 +88,7 @@ public class CasaItDocument extends XmlDocument<Container> {
      * Creates a {@link Container} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;container&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public Container toObject() throws JAXBException {

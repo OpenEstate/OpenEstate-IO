@@ -31,6 +31,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class DaftIeDocumentTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeDocumentTest.class);
 
     private static Document buildExampleDocument(String version) throws Exception {
@@ -58,7 +59,7 @@ public class DaftIeDocumentTest {
     public void testSetDocumentVersion() {
         try {
             DaftIeDocument doc = new DaftIeDocument(buildExampleDocument(""));
-            Assert.assertEquals("no version", null, doc.getDocumentVersion());
+            Assert.assertNull("no version", doc.getDocumentVersion());
 
             doc.setDocumentVersion(DaftIeVersion.V2_7);
             Assert.assertEquals("2.7", DaftIeVersion.V2_7, doc.getDocumentVersion());

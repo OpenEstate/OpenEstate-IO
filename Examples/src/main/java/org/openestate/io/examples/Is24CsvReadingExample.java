@@ -27,13 +27,14 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for reading IS24-CSV files.
  * <p>
- * This example illustrates the programatic creation of IS24-CSV records and how
+ * This example illustrates the programmatic creation of IS24-CSV records and how
  * they are written into CSV.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
 public class Is24CsvReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -42,6 +43,7 @@ public class Is24CsvReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -128,7 +130,7 @@ public class Is24CsvReadingExample {
             String objectTitle = record.getUeberschrift();
             if (objectTitle == null) objectTitle = "???";
 
-            // print object informations to console
+            // print object information to console
             LOGGER.info("> found object '" + objectNr + "' "
                     + "with title '" + objectTitle + "'");
         }

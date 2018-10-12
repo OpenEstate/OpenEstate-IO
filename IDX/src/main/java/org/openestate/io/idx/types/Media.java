@@ -26,8 +26,10 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Media implements Serializable {
     private final static long serialVersionUID = 5668966682578880420L;
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Media.class);
 
     private String fileName;
@@ -50,10 +52,12 @@ public class Media implements Serializable {
     private final static String SUFFIX_RTF = ".rtf";
     private final static String SUFFIX_WMV = ".wmv";
 
+    @SuppressWarnings("unused")
     public Media() {
         this(null, null, null, null);
     }
 
+    @SuppressWarnings("unused")
     public Media(String fileName) {
         this(fileName, null, null, null);
     }
@@ -89,6 +93,7 @@ public class Media implements Serializable {
         return this.url;
     }
 
+    @SuppressWarnings("unused")
     public String guessMimeType() {
         String n = StringUtils.lowerCase(
                 (!StringUtils.isBlank(this.fileName)) ? this.fileName : this.url);
@@ -163,6 +168,7 @@ public class Media implements Serializable {
                 || n.endsWith(SUFFIX_GIF);
     }
 
+    @SuppressWarnings("unused")
     public boolean isMovie() {
         return isMovie(this.fileName);
     }
@@ -184,6 +190,7 @@ public class Media implements Serializable {
         this.description = StringUtils.trimToNull(value);
     }
 
+    @SuppressWarnings("unused")
     public void setFileName(String value) {
         this.fileName = StringUtils.trimToNull(value);
     }
@@ -192,6 +199,7 @@ public class Media implements Serializable {
         this.title = StringUtils.trimToNull(value);
     }
 
+    @SuppressWarnings("unused")
     public void setUrl(String value) {
         this.url = StringUtils.trimToNull(value);
     }

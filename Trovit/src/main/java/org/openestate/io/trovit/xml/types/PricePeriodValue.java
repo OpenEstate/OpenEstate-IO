@@ -30,10 +30,11 @@ public enum PricePeriodValue {
     WEEKLY(new String[]{"weekly"}),
     DAILY(new String[]{"daily"});
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(PricePeriodValue.class);
     private final String[] aliases;
 
-    private PricePeriodValue(String[] aliases) {
+    PricePeriodValue(String[] aliases) {
         this.aliases = aliases;
     }
 

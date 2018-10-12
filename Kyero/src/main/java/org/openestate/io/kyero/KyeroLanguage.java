@@ -25,7 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Supported langauges by Kyero-XML.
+ * Supported languages by Kyero-XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -96,6 +96,7 @@ public enum KyeroLanguage {
      */
     SV;
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroLanguage.class);
 
     /**
@@ -103,6 +104,7 @@ public enum KyeroLanguage {
      *
      * @param container container, where translations are removed from
      */
+    @SuppressWarnings("unused")
     public static void clear(LangType container) {
         for (KyeroLanguage language : KyeroLanguage.values()) {
             language.setText(container, null);
@@ -132,6 +134,7 @@ public enum KyeroLanguage {
      * @return language according to the provided locale or null, if the language is not
      * supported
      */
+    @SuppressWarnings("unused")
     public static KyeroLanguage fromLocale(Locale locale) {
         return (locale != null) ?
                 KyeroLanguage.fromLanguageCode(locale.getLanguage()) : null;
@@ -143,6 +146,7 @@ public enum KyeroLanguage {
      * @param container container to lookup
      * @return languages with translations in the container
      */
+    @SuppressWarnings("unused")
     public static KyeroLanguage[] getLanguages(LangType container) {
         List<KyeroLanguage> languages = new ArrayList<>();
 
@@ -185,7 +189,7 @@ public enum KyeroLanguage {
         if (StringUtils.isNotBlank(container.getSv()))
             languages.add(SV);
 
-        return languages.toArray(new KyeroLanguage[languages.size()]);
+        return languages.toArray(new KyeroLanguage[0]);
     }
 
     /**
@@ -250,6 +254,7 @@ public enum KyeroLanguage {
      * @param language  language to lookup
      * @return translation for this language
      */
+    @SuppressWarnings("unused")
     public static String getText(LangType container, KyeroLanguage language) {
         return (language != null) ? language.getText(container) : null;
     }
@@ -327,6 +332,7 @@ public enum KyeroLanguage {
      * @param txt       translation to set
      * @param language  language to set
      */
+    @SuppressWarnings("unused")
     public static void setText(LangType container, String txt, KyeroLanguage language) {
         if (language != null) language.setText(container, txt);
     }
@@ -345,6 +351,7 @@ public enum KyeroLanguage {
      *
      * @return locale
      */
+    @SuppressWarnings("unused")
     public Locale toLocale() {
         return LocaleUtils.toLocale(this.toLanguageCode());
     }

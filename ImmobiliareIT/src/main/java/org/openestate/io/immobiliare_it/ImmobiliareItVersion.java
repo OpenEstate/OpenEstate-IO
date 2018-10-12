@@ -35,12 +35,13 @@ public enum ImmobiliareItVersion implements XmlVersion {
      */
     V2_5(ImmobiliareIt_2_5.class, "2.5", "2.5.0");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItVersion.class);
     private final Class converterClass;
     private final String readableVersion;
     private final String[] alias;
 
-    private ImmobiliareItVersion(Class converterClass, String readableVersion, String... alias) {
+    ImmobiliareItVersion(Class converterClass, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.readableVersion = readableVersion;
         this.alias = alias;
@@ -61,6 +62,7 @@ public enum ImmobiliareItVersion implements XmlVersion {
     }
 
     @Override
+    @SuppressWarnings("Duplicates")
     public XmlConverter getConverter() {
         try {
             return (XmlConverter) this.converterClass.newInstance();

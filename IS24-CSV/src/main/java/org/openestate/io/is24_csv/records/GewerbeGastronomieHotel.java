@@ -36,6 +36,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class GewerbeGastronomieHotel extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(GewerbeGastronomieHotel.class);
 
@@ -221,6 +222,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlParkflaechen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -237,6 +239,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
                 this.get(FIELD_AUSSTATTUNG));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getBaujahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -263,6 +266,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getEnergieausweisKennwert() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -283,6 +287,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         return this.get(FIELD_ETAGEN);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFahrtwegAutobahn() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -294,6 +299,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFahrtwegFlughafen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -305,6 +311,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFahrtwegHauptbahnhof() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -316,6 +323,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFusswegNahverkehr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -332,6 +340,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
                 this.get(FIELD_GASTTERRASSE));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGesamtflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -343,6 +352,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGewerbeflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -368,6 +378,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
                 this.get(FIELD_KELLER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getNebenflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -379,6 +390,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getNebenkosten() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -405,6 +417,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
                 this.get(FIELD_PERSONENAUFZUG));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getPreis() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -416,6 +429,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getPreisProParkflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -427,6 +441,7 @@ public class GewerbeGastronomieHotel extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getSanierungsjahr() {
         try {
             return Is24CsvFormat.parseInteger(

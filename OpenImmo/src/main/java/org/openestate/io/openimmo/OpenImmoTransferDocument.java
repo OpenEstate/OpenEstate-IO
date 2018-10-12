@@ -32,7 +32,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoTransferDocument.class);
 
     /**
@@ -55,7 +57,7 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
                     .newXPath("/io:openimmo/io:uebertragung/@version", doc)
                     .stringValueOf(doc));
             if (version == null) {
-                LOGGER.warn("Can't find version informations in the XML document!");
+                LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
                 //try
                 //{
@@ -99,7 +101,7 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static OpenImmoTransferDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(OpenImmoUtils.getFactory().createOpenimmo());
@@ -111,7 +113,7 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
      * @param openimmo Java object, that represents the &lt;openimmo&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static OpenImmoTransferDocument newDocument(Openimmo openimmo) throws ParserConfigurationException, JAXBException {
         if (openimmo.getUebertragung() == null)
@@ -162,7 +164,7 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
      * Creates a {@link Openimmo} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;openimmo&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public Openimmo toObject() throws JAXBException {

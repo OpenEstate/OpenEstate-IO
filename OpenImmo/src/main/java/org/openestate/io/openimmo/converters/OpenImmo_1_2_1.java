@@ -36,7 +36,9 @@ import org.w3c.dom.Node;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
 public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_1.class);
 
     @Override
@@ -90,6 +92,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * @param doc OpenImmo document in version 1.2.0
      */
     @Override
+    @SuppressWarnings("Duplicates")
     public void upgradeFromPreviousVersion(OpenImmoDocument doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_1);
 
@@ -121,7 +124,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * &lt;energiebedarf&gt; and &lt;skala&gt; in version 1.2.0.
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeEnergiepassElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -185,7 +188,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void downgradeHausElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -205,9 +208,8 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.0 uses the namespace URI "http://www.openimmo.de".
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws org.jaxen.JaxenException
      */
-    protected void downgradeXmlNamespace(Document doc) throws JaxenException {
+    protected void downgradeXmlNamespace(Document doc) {
         //System.out.println( "----------------------------" );
         //System.out.println( "DOCUMENT BEFORE CONVERSION:" );
         //DocumentUtils.write( doc, System.out );
@@ -227,7 +229,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.0 does not support &lt;objektart_zusatz&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void removeObjektartZusatzElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(
@@ -252,7 +254,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * the provided &lt;art&gt;.
      *
      * @param doc OpenImmo document in version 1.2.0
-     * @throws JaxenException
+     * @throws JaxenException if xpath evaluation failed
      */
     protected void upgradeEnergiepassElements(Document doc) throws JaxenException {
         List nodes = XmlUtils.newXPath(

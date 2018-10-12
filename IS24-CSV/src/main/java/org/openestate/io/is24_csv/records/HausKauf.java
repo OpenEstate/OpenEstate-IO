@@ -37,6 +37,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class HausKauf extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(HausKauf.class);
 
@@ -205,6 +206,7 @@ public class HausKauf extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.HAUS_KAUF);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlBadezimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -216,6 +218,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlGarageStellplatz() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -227,6 +230,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlSchlafzimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -243,6 +247,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_AUSSTATTUNG));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getBaujahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -284,6 +289,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getEnergieausweisKennwert() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -300,6 +306,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getEtagenzahl() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -321,6 +328,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_GAESTE_WC));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGrundstuecksflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -337,6 +345,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getKaufpreis() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -353,6 +362,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_KELLER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getMieteinnahmenProMonat() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -364,6 +374,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getNutzflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -391,6 +402,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_ROLLSTUHLGERECHT));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getSanierungsjahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -407,6 +419,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_STELLPLATZ));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getStellplatzpreis() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -427,6 +440,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_VERMIETET));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -438,6 +452,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getZimmer() {
         try {
             return Is24CsvFormat.parseDecimal(

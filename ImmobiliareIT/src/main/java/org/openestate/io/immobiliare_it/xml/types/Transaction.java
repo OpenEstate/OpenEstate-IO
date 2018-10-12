@@ -27,10 +27,11 @@ import org.slf4j.LoggerFactory;
 public enum Transaction {
     SALE("S"), RENT("R");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Transaction.class);
     private final String xmlValue;
 
-    private Transaction(String xmlValue) {
+    Transaction(String xmlValue) {
         this.xmlValue = xmlValue;
     }
 

@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Kyero_2_1.class);
 
     @Override

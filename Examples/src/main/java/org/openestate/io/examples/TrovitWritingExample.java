@@ -48,13 +48,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing Trovit XML feeds.
  * <p>
- * This example illustrates the programatic creation of Trovit documents and how
+ * This example illustrates the programmatic creation of Trovit documents and how
  * they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class TrovitWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TrovitWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = TrovitUtils.getFactory();
@@ -65,6 +67,7 @@ public class TrovitWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -113,6 +116,7 @@ public class TrovitWritingExample {
      *
      * @return created example object
      */
+    @SuppressWarnings("CatchMayIgnoreException")
     protected static AdType createAd() {
         // create an example real estate
         AdType ad = FACTORY.createAdType();
@@ -203,6 +207,7 @@ public class TrovitWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(TrovitDocument doc, File file) {
         LOGGER.info("writing document");
         try {
@@ -221,6 +226,7 @@ public class TrovitWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(TrovitDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
@@ -239,6 +245,7 @@ public class TrovitWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(TrovitDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
@@ -257,6 +264,7 @@ public class TrovitWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(TrovitDocument doc) {
         LOGGER.info("writing document");
         try {

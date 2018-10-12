@@ -37,6 +37,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class WohnungMiete extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(WohnungMiete.class);
 
@@ -235,6 +236,7 @@ public class WohnungMiete extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.WOHNUNG_MIETE);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlBadezimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -246,6 +248,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlGarageStellplatz() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -257,6 +260,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlSchlafzimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -268,6 +272,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getAufzug() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_AUFZUG));
@@ -278,16 +283,19 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_AUSSTATTUNG));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getBalkonTerrasse() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_BALKON_TERRASSE));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getBarrierefrei() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_BARRIEREFREI));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getBaujahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -304,6 +312,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_BEFEUERUNG));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getEinbaukueche() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_EINBAUKUECHE));
@@ -314,6 +323,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getEnergieausweisKennwert() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -330,6 +340,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getEtage() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -341,6 +352,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getEtagenzahl() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -352,26 +364,31 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getFoerderung() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_FOERDERUNG));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getGaesteWc() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_GAESTE_WC));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getGartennutzung() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_GARTENNUTZUNG));
     }
 
+    @SuppressWarnings("unused")
     public Auswahl getHaustiere() {
         return Auswahl.parse(
                 this.get(FIELD_HAUSTIERE));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getHeizkosten() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -388,6 +405,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getKaltmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -408,6 +426,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_KELLER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getNebenkosten() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -419,11 +438,13 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getNebenkostenInklHeizkosten() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_NEBENKOSTEN_INKL_HEIZKOSTEN));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getNutzflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -451,6 +472,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_ROLLSTUHLGERECHT));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getSanierungsjahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -462,16 +484,19 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getSeniorengerecht() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_SENIORENGERECHT));
     }
 
+    @SuppressWarnings("unused")
     public Stellplatz getStellplatz() {
         return Stellplatz.parse(
                 this.get(FIELD_STELLPLATZ));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getStellplatzmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -487,6 +512,7 @@ public class WohnungMiete extends Is24CsvRecord {
         return this.get(FIELD_VERFUEGBAR_AB);
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getWarmmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -498,6 +524,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -509,6 +536,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getZimmer() {
         try {
             return Is24CsvFormat.parseDecimal(

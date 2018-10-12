@@ -39,11 +39,13 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class FilemakerUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerUtils.class);
     private static JAXBContext JAXB = null;
 
-    /**
+    /*
      * the latest implemented version of this format
      *
      * public final static String VERSION = "1.0";
@@ -52,22 +54,26 @@ public class FilemakerUtils {
     /**
      * the XML target namespace of this format
      */
+    @SuppressWarnings("unused")
     public final static String NAMESPACE = StringUtils.EMPTY;
 
     /**
      * the package, where generated JAXB classes are located
      */
+    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.filemaker.xml.result"
             + ":org.openestate.io.filemaker.xml.layout";
 
     /**
      * the factory for creation of JAXB objects in FMPXMLLAYOUT format
      */
+    @SuppressWarnings("unused")
     public final static org.openestate.io.filemaker.xml.layout.ObjectFactory FACTORY_LAYOUT = new org.openestate.io.filemaker.xml.layout.ObjectFactory();
 
     /**
      * the factory for creation of JAXB objects in FMPXMLRESULT format
      */
+    @SuppressWarnings("unused")
     public final static org.openestate.io.filemaker.xml.result.ObjectFactory FACTORY_RESULT = new org.openestate.io.filemaker.xml.result.ObjectFactory();
 
     private FilemakerUtils() {
@@ -131,8 +137,9 @@ public class FilemakerUtils {
      * Creates a {@link Marshaller} to write JAXB objects into XML.
      *
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
         return createMarshaller(Charset.defaultCharset().name(), true);
     }
@@ -143,8 +150,9 @@ public class FilemakerUtils {
      * @param encoding  encoding of written XML
      * @param formatted if written XML is pretty printed
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         Marshaller m = getContext().createMarshaller();
         m.setProperty(Marshaller.JAXB_ENCODING, encoding);
@@ -157,7 +165,7 @@ public class FilemakerUtils {
      * Creates a {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         Unmarshaller m = getContext().createUnmarshaller();
@@ -169,7 +177,7 @@ public class FilemakerUtils {
      * Returns the {@link JAXBContext} for this format.
      *
      * @return context
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
         if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
@@ -195,10 +203,10 @@ public class FilemakerUtils {
     }
 
     /**
-     * Intializes the {@link JAXBContext} for this format.
+     * Initializes the {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
         JAXB = JAXBContext.newInstance(PACKAGE, classloader);

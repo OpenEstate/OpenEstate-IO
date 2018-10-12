@@ -32,6 +32,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class OpenImmoFeedbackDocumentTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoFeedbackDocumentTest.class);
 
     private static Document buildExampleDocument(String version) throws Exception {

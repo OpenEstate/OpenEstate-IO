@@ -31,7 +31,9 @@ import org.w3c.dom.Document;
  * @since 1.0
  */
 @RunWith(JUnit4.class)
+@SuppressWarnings("SpellCheckingInspection")
 public class OpenImmo_1_2_7bTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_7bTest.class);
 
     private static Document buildTransferDocumentForDowngrade() throws Exception {

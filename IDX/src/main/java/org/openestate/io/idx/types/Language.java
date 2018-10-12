@@ -26,12 +26,23 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public enum Language {
-    GERMAN(1), FRENCH(2), ITALIAN(3), ENGLISH(4);
+    @SuppressWarnings("unused")
+    GERMAN(1),
 
+    @SuppressWarnings("unused")
+    FRENCH(2),
+
+    @SuppressWarnings("unused")
+    ITALIAN(3),
+
+    @SuppressWarnings("unused")
+    ENGLISH(4);
+
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Language.class);
     private final int value;
 
-    private Language(int value) {
+    Language(int value) {
         this.value = value;
     }
 

@@ -48,13 +48,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing Kyero XML feeds.
  * <p>
- * This example illustrates the programatic creation of Kyero documents, how
+ * This example illustrates the programmatic creation of Kyero documents, how
  * they are written into XML and how they are downgraded to earlier versions.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class KyeroWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = KyeroUtils.getFactory();
@@ -65,6 +67,7 @@ public class KyeroWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -152,6 +155,7 @@ public class KyeroWritingExample {
      *
      * @return created example object
      */
+    @SuppressWarnings("CatchMayIgnoreException")
     protected static PropertyType createProperty() {
         final String id = RandomStringUtils.random(5);
         int imageCount = 0;
@@ -241,6 +245,7 @@ public class KyeroWritingExample {
      * @param pos index position within the property images
      * @return created example object
      */
+    @SuppressWarnings("CatchMayIgnoreException")
     protected static Image createPropertyImage(String id, int pos) {
         // create an example image
         Image img = FACTORY.createImagesTypeImage();
@@ -259,6 +264,7 @@ public class KyeroWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(KyeroDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -277,6 +283,7 @@ public class KyeroWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(KyeroDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -295,6 +302,7 @@ public class KyeroWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(KyeroDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
@@ -313,6 +321,7 @@ public class KyeroWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(KyeroDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

@@ -35,12 +35,13 @@ public enum ImmoXmlVersion implements XmlVersion {
      */
     V3_0(ImmoXML_3_0.class, "3.0", "3");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlVersion.class);
     private final Class converterClass;
     private final String readableVersion;
     private final String[] alias;
 
-    private ImmoXmlVersion(Class converterClass, String readableVersion, String... alias) {
+    ImmoXmlVersion(Class converterClass, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.readableVersion = readableVersion;
         this.alias = alias;
@@ -62,6 +63,7 @@ public enum ImmoXmlVersion implements XmlVersion {
     }
 
     @Override
+    @SuppressWarnings("Duplicates")
     public XmlConverter getConverter() {
         try {
             return (XmlConverter) this.converterClass.newInstance();

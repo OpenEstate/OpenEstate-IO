@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public abstract class Grundstueck extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(Grundstueck.class);
 

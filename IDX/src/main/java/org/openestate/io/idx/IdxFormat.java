@@ -39,7 +39,9 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxFormat.class);
 
     /**
@@ -127,6 +129,7 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
         return (value != null) ? getDateFormat().parse(value) : null;
     }
 
+    @SuppressWarnings("Duplicates")
     public static Calendar parseDateAsCalendar(String value) throws ParseException {
         Date date = parseDate(value);
         if (date == null) return null;
@@ -163,6 +166,7 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
         return (number != null) ? number.longValue() : null;
     }
 
+    @SuppressWarnings("unused")
     public static Number parseNumber(String value) throws NumberFormatException {
         return parseNumber(value, false);
     }
@@ -171,6 +175,7 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
         return NumberUtils.parseNumber(value, integerOnly, Locale.ENGLISH, Locale.GERMANY);
     }
 
+    @SuppressWarnings("Duplicates")
     public static String printBoolean(Boolean value) {
         if (Boolean.TRUE.equals(value))
             return "1";
@@ -204,10 +209,12 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
         return NumberUtils.printNumber(value, integerDigits, fractionDigits, Locale.ENGLISH);
     }
 
+    @SuppressWarnings("unused")
     public static String printString(String value) {
         return printString(value, 0);
     }
 
+    @SuppressWarnings("Duplicates")
     public static String printString(String value, int maxLength) {
         value = StringUtils.trimToNull(value);
         if (maxLength < 1)

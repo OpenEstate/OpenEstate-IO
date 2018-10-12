@@ -29,48 +29,58 @@ public enum ObjectCategory {
     /**
      * Landwirtschaft / Agriculture
      */
+    @SuppressWarnings("unused")
     AGRI,
 
     /**
      * Wohnung / Apartment
      */
+    @SuppressWarnings("unused")
     APPT,
 
     /**
      * Gastronomie / Gastronomy
      */
+    @SuppressWarnings("unused")
     GASTRO,
 
     /**
      * Haus / House
      */
+    @SuppressWarnings("unused")
     HOUSE,
 
     /**
      * Gewerbe/Industrie / Industrial Objects
      */
+    @SuppressWarnings("unused")
     INDUS,
 
     /**
      * Parkplatz / Parking space
      */
+    @SuppressWarnings("unused")
     PARK,
 
     /**
      * Grundstück / Plot
      */
+    @SuppressWarnings("unused")
     PROP,
 
     /**
      * Wohnnebenräume / Secondary rooms
      */
+    @SuppressWarnings("unused")
     SECONDARY,
 
     /**
      * Garten / Garden
      */
+    @SuppressWarnings("unused")
     GARDEN;
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjectCategory.class);
 
     public static ObjectCategory parse(String value) {

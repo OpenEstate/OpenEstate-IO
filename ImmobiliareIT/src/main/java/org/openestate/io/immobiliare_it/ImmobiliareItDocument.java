@@ -35,7 +35,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, ImmobiliareItVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItDocument.class);
 
     /**
@@ -58,7 +60,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
                     .newXPath("/io:feed/io:version/text()", doc)
                     .stringValueOf(doc));
             if (version == null) {
-                LOGGER.warn("Can't find version informations in the XML document!");
+                LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
                 //try
                 //{
@@ -107,7 +109,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmobiliareItDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(ImmobiliareItUtils.getFactory().createFeed());
@@ -119,7 +121,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
      * @param feed Java object, that represents the &lt;feed&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmobiliareItDocument newDocument(Feed feed) throws ParserConfigurationException, JAXBException {
         if (feed.getVersion() == null)
@@ -161,7 +163,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
      * Creates a {@link Feed} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;feed&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public Feed toObject() throws JAXBException {

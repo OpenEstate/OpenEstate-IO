@@ -41,6 +41,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class WisItReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(WisItReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -49,6 +50,7 @@ public class WisItReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -144,7 +146,7 @@ public class WisItReadingExample {
                 if (objectInfo == null) objectInfo = obj.getINFOIT();
                 if (objectInfo == null) objectInfo = "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info("> found object '" + objectNr + "' "
                         + "with title '" + objectInfo + "'");
             }

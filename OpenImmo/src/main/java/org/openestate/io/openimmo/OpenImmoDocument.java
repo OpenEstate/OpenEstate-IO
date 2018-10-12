@@ -29,6 +29,7 @@ import org.w3c.dom.Document;
  * @since 1.0
  */
 public abstract class OpenImmoDocument<JavaType> extends XmlConvertableDocument<JavaType, OpenImmoVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoDocument.class);
 
     /**

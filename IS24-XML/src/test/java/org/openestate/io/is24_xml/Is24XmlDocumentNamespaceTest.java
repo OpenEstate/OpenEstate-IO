@@ -32,6 +32,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class Is24XmlDocumentNamespaceTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlDocumentNamespaceTest.class);
 
     private static Document buildExampleDocument() throws Exception {
@@ -39,6 +40,7 @@ public class Is24XmlDocumentNamespaceTest {
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void testToObject() {
         try {
             Is24XmlDocument doc = new Is24XmlDocument(buildExampleDocument());
@@ -55,11 +57,8 @@ public class Is24XmlDocumentNamespaceTest {
 
     @Test
     @Ignore
+    @SuppressWarnings("Duplicates")
     public void testToXml() {
-        //ObjectType obj = Is24XmlUtils.getFactory().createObjectType();
-        //obj.setINFODE( "an example property" );
-        //obj.setORT( "Berlin" );
-
         Anbieter agent = Is24XmlUtils.getFactory().createImmobilienTransferTypAnbieter();
         agent.setScoutKundenID("123456");
         //agent.getImmobilien().add( e );

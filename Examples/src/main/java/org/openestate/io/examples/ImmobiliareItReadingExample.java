@@ -41,6 +41,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class ImmobiliareItReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -49,6 +50,7 @@ public class ImmobiliareItReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -147,7 +149,7 @@ public class ImmobiliareItReadingExample {
                         StringUtils.trimToNull(object.getFeatures().getDescription().get(0).getValue()) : null;
                 if (objectInfo == null) objectInfo = "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info("> found object "
                         + "'" + objectNr + "': " + objectInfo);
             }

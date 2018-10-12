@@ -35,12 +35,13 @@ public enum DaftIeVersion implements XmlVersion {
      */
     V2_7(DaftIe_2_7.class, "2.7");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeVersion.class);
     private final Class converterClass;
     private final String readableVersion;
     private final String[] alias;
 
-    private DaftIeVersion(Class converterClass, String readableVersion, String... alias) {
+    DaftIeVersion(Class converterClass, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.readableVersion = readableVersion;
         this.alias = alias;
@@ -61,6 +62,7 @@ public enum DaftIeVersion implements XmlVersion {
     }
 
     @Override
+    @SuppressWarnings("Duplicates")
     public XmlConverter getConverter() {
         try {
             return (XmlConverter) this.converterClass.newInstance();

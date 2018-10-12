@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXML_3_0.class);
 
     @Override

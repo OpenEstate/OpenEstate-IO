@@ -31,6 +31,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class ImmobiliareItDocumentNamespaceTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItDocumentNamespaceTest.class);
 
     private static Document buildExampleDocument(String version) throws Exception {
@@ -41,6 +42,7 @@ public class ImmobiliareItDocumentNamespaceTest {
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void testGetDocumentVersion() {
         ImmobiliareItDocument doc;
         try {
@@ -54,6 +56,7 @@ public class ImmobiliareItDocumentNamespaceTest {
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void testSetDocumentVersion() {
         try {
             ImmobiliareItDocument doc = new ImmobiliareItDocument(buildExampleDocument(""));
@@ -68,6 +71,7 @@ public class ImmobiliareItDocumentNamespaceTest {
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void testToObject() {
         try {
             ImmobiliareItDocument doc = new ImmobiliareItDocument(buildExampleDocument(ImmobiliareItUtils.VERSION.toReadableVersion()));
@@ -83,6 +87,7 @@ public class ImmobiliareItDocumentNamespaceTest {
 
     @Test
     @Ignore
+    @SuppressWarnings("Duplicates")
     public void testToXml() {
         Feed feed = ImmobiliareItUtils.getFactory().createFeed();
         //feed.setVersion( DaftIEUtils.VERSION.getReadableVersion() );

@@ -39,13 +39,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing XML files for <a href="http://casa.it">casa.it</a>.
  * <p>
- * This example illustrates the programatic creation of documents for
+ * This example illustrates the programmatic creation of documents for
  * <a href="http://casa.it">casa.it</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class CasaItWritingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CasaItWritingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = CasaItUtils.getFactory();
@@ -56,6 +58,7 @@ public class CasaItWritingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -193,6 +196,7 @@ public class CasaItWritingExample {
      * @param doc  the document to write
      * @param file the file, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(CasaItDocument doc, File file) {
         LOGGER.info("writing document");
         try {
@@ -211,6 +215,7 @@ public class CasaItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(CasaItDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
@@ -229,6 +234,7 @@ public class CasaItWritingExample {
      * @param doc    the document to write
      * @param output the writer, where the document is written to
      */
+    @SuppressWarnings("Duplicates")
     protected static void write(CasaItDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
@@ -247,6 +253,7 @@ public class CasaItWritingExample {
      *
      * @param doc the document to write
      */
+    @SuppressWarnings("Duplicates")
     protected static void writeToConsole(CasaItDocument doc) {
         LOGGER.info("writing document");
         try {

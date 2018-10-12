@@ -25,6 +25,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -34,8 +35,8 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class ImmoXmlJavadocBindings {
     public static void main(String[] args) {
-        TreeSet<String> elementNames = new TreeSet<String>();
-        TreeMap<String, String> typeNames = new TreeMap<String, String>();
+        TreeSet<String> elementNames = new TreeSet<>();
+        TreeMap<String, String> typeNames = new TreeMap<>();
         for (Class clazz : ClassFinder.find(ImmoXmlUtils.PACKAGE)) {
             XmlRootElement element = (XmlRootElement) clazz.getAnnotation(XmlRootElement.class);
             if (element != null) {
@@ -46,7 +47,6 @@ public class ImmoXmlJavadocBindings {
             XmlType type = (XmlType) clazz.getAnnotation(XmlType.class);
             if (type != null) {
                 typeNames.put(type.name(), clazz.getSimpleName());
-                continue;
             }
         }
 
@@ -61,7 +61,7 @@ public class ImmoXmlJavadocBindings {
                     + "  </jaxb:class>\n"
                     + "</jaxb:bindings>");
         }
-        System.out.println("");
+        System.out.println();
 
         System.out.println(StringUtils.repeat("-", 50));
         System.out.println("XML types");
@@ -74,9 +74,10 @@ public class ImmoXmlJavadocBindings {
                     + "  </jaxb:class>\n"
                     + "</jaxb:bindings>");
         }
-        System.out.println("");
+        System.out.println();
     }
 
+    @SuppressWarnings("WeakerAccess")
     private final static class ClassFinder {
         private final static char DOT = '.';
         private final static char SLASH = '/';
@@ -84,11 +85,12 @@ public class ImmoXmlJavadocBindings {
         private final static String BAD_PACKAGE_ERROR
                 = "Unable to get resources from path '%s'. Are you sure the given '%s' package exists?";
 
-        public final static List<Class<?>> find(final String scannedPackage) {
+        public static List<Class<?>> find(final String scannedPackage) {
             return find(scannedPackage, Thread.currentThread().getContextClassLoader());
         }
 
-        public final static List<Class<?>> find(final String scannedPackage, final ClassLoader classLoader) {
+        @SuppressWarnings("Duplicates")
+        public static List<Class<?>> find(final String scannedPackage, final ClassLoader classLoader) {
             final String scannedPath = scannedPackage.replace(DOT, SLASH);
             final Enumeration<URL> resources;
             try {
@@ -96,7 +98,7 @@ public class ImmoXmlJavadocBindings {
             } catch (IOException e) {
                 throw new IllegalArgumentException(String.format(BAD_PACKAGE_ERROR, scannedPath, scannedPackage), e);
             }
-            final List<Class<?>> classes = new LinkedList<Class<?>>();
+            final List<Class<?>> classes = new LinkedList<>();
             while (resources.hasMoreElements()) {
                 final File file = new File(resources.nextElement().getFile());
                 classes.addAll(find(file, scannedPackage));
@@ -104,10 +106,11 @@ public class ImmoXmlJavadocBindings {
             return classes;
         }
 
-        private final static List<Class<?>> find(final File file, final String scannedPackage) {
-            final List<Class<?>> classes = new LinkedList<Class<?>>();
+        @SuppressWarnings("Duplicates")
+        private static List<Class<?>> find(final File file, final String scannedPackage) {
+            final List<Class<?>> classes = new LinkedList<>();
             if (file.isDirectory()) {
-                for (File nestedFile : file.listFiles()) {
+                for (File nestedFile : ObjectUtils.defaultIfNull(file.listFiles(), new File[]{})) {
                     classes.addAll(find(nestedFile, scannedPackage));
                 }
                 //File names with the $1, $2 holds the anonymous inner classes, we are not interested on them.

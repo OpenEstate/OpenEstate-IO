@@ -47,28 +47,34 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class Is24XmlUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlUtils.class);
     private static JAXBContext JAXB = null;
 
     /**
      * the latest implemented version of this format
      */
+    @SuppressWarnings("unused")
     public final static String VERSION = "rev189438";
 
     /**
      * the XML target namespace of this format
      */
+    @SuppressWarnings("unused")
     public final static String NAMESPACE = "http://www.immobilienscout24.de/immobilientransfer";
 
     /**
      * the package, where generated JAXB classes are located
      */
+    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.is24_xml.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
+    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
 
@@ -131,8 +137,9 @@ public class Is24XmlUtils {
      * Creates a {@link Marshaller} to write JAXB objects into XML.
      *
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
         return createMarshaller(Charset.defaultCharset().name(), true);
     }
@@ -143,8 +150,9 @@ public class Is24XmlUtils {
      * @param encoding  encoding of written XML
      * @param formatted if written XML is pretty printed
      * @return created marshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         Marshaller m = getContext().createMarshaller();
         m.setProperty(Marshaller.JAXB_ENCODING, encoding);
@@ -157,7 +165,7 @@ public class Is24XmlUtils {
      * Creates a {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         Unmarshaller m = getContext().createUnmarshaller();
@@ -169,7 +177,7 @@ public class Is24XmlUtils {
      * Returns the {@link JAXBContext} for this format.
      *
      * @return context
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
         if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
@@ -195,10 +203,10 @@ public class Is24XmlUtils {
     }
 
     /**
-     * Intializes the {@link JAXBContext} for this format.
+     * Initializes the {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
         JAXB = JAXBContext.newInstance(PACKAGE, classloader);
@@ -224,6 +232,7 @@ public class Is24XmlUtils {
         return StringUtils.trimToNull(value);
     }
 
+    @SuppressWarnings("unused")
     private static String parseText(String value, int length) {
         return StringUtils.trimToNull(value);
     }
@@ -284,6 +293,7 @@ public class Is24XmlUtils {
         return parseText(value, 2000);
     }
 
+    @SuppressWarnings("Duplicates")
     public static URI parseWebUrl(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
@@ -381,7 +391,7 @@ public class Is24XmlUtils {
 
     public static String printDate(Calendar value) {
         if (value == null)
-            throw new IllegalArgumentException("Can't print date value '" + value + "'!");
+            throw new IllegalArgumentException("Can't print date value!");
         else
             return getDateFormat().format(value.getTime());
     }
@@ -395,7 +405,7 @@ public class Is24XmlUtils {
     }
 
     public static String printPreisAufAnfrage(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) == -1 || value.compareTo(BigDecimal.TEN.pow(13)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 0 || value.compareTo(BigDecimal.TEN.pow(13)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else if (value.compareTo(BigDecimal.ZERO) == 0)
             return "0";
@@ -403,6 +413,7 @@ public class Is24XmlUtils {
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
     }
 
+    @SuppressWarnings("Duplicates")
     private static String printText(String value, int maxLength) {
         value = StringUtils.trimToEmpty(value);
         int length = value.length();
@@ -552,7 +563,7 @@ public class Is24XmlUtils {
     }
 
     public static String printZahl20(BigInteger value) {
-        if (value == null || value.compareTo(BigInteger.ZERO) != 1)
+        if (value == null || value.compareTo(BigInteger.ZERO) < 1)
             throw new IllegalArgumentException("Can't print integer value '" + value + "'!");
         String val = DatatypeConverter.printInteger(value);
         if (val.length() > 20)
@@ -561,56 +572,56 @@ public class Is24XmlUtils {
     }
 
     public static String printZahl31(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(2)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(2)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(1, BigDecimal.ROUND_HALF_UP));
     }
 
     public static String printZahl32(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(1)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(1)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
     }
 
     public static String printZahl42(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(2)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(2)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
     }
 
     public static String printZahl52(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(3)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(3)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
     }
 
     public static String printZahl62(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(4)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(4)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
     }
 
     public static String printZahl72(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(5)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(5)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
     }
 
     public static String printZahl102(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(8)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(8)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
     }
 
     public static String printZahl152(BigDecimal value) {
-        if (value == null || value.compareTo(BigDecimal.ZERO) != 1 || value.compareTo(BigDecimal.TEN.pow(13)) != -1)
+        if (value == null || value.compareTo(BigDecimal.ZERO) < 1 || value.compareTo(BigDecimal.TEN.pow(13)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return DatatypeConverter.printDecimal(value.setScale(2, BigDecimal.ROUND_HALF_UP));
@@ -619,7 +630,7 @@ public class Is24XmlUtils {
     public static String printZimmeranzahl(BigDecimal value) {
         BigDecimal min = new BigDecimal("0.5");
         BigDecimal max = new BigDecimal("9999");
-        if (value == null || value.compareTo(min) == -1 || value.compareTo(max) == 1)
+        if (value == null || value.compareTo(min) < 0 || value.compareTo(max) > 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
         else
             return printZahl62(value);

@@ -33,6 +33,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public class IdxReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -41,6 +42,7 @@ public class IdxReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -127,7 +129,7 @@ public class IdxReadingExample {
             String objectTitle = record.getObjectTitle();
             if (objectTitle == null) objectTitle = "???";
 
-            // print object informations to console
+            // print object information to console
             System.out.println("> found object '" + objectNr + "' "
                     + "with title '" + objectTitle + "'");
         }

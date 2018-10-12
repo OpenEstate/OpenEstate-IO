@@ -39,6 +39,7 @@ import org.xml.sax.SAXException;
  * @since 1.0
  */
 public class CasaItReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CasaItReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -47,6 +48,7 @@ public class CasaItReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -142,7 +144,7 @@ public class CasaItReadingExample {
                         StringUtils.trimToNull(obj.getDescription().getValue()) : null;
                 if (objectTitle == null) objectTitle = "???";
 
-                // print object informations to console
+                // print object information to console
                 LOGGER.info("> found object '" + objectNr + "' "
                         + "with title '" + objectTitle + "'");
             }

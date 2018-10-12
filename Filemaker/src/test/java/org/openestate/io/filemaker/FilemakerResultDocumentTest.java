@@ -32,6 +32,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class FilemakerResultDocumentTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultDocumentTest.class);
 
     private static Document buildExampleDocument() throws Exception {

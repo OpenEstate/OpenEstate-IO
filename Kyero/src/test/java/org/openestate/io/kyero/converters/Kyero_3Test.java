@@ -29,6 +29,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class Kyero_3Test {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Kyero_3Test.class);
 
     private static Document buildDocumentForDowngrade() throws Exception {
@@ -509,7 +510,7 @@ public class Kyero_3Test {
             count = XmlUtils.countNodes(
                     "/io:root/io:property/io:url/io:en", doc);
             Assert.assertEquals(
-                    "2 conveted <url> elements available after conversion.", 2, count);
+                    "2 converted <url> elements available after conversion.", 2, count);
         } catch (Exception ex) {
             LOGGER.error("Test of Kyero_3.upgradeUrlElements failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

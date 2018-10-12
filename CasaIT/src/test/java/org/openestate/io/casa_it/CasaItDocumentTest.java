@@ -31,6 +31,7 @@ import org.w3c.dom.Document;
  */
 @RunWith(JUnit4.class)
 public class CasaItDocumentTest {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CasaItDocumentTest.class);
 
     private static Document buildExampleDocument() throws Exception {
@@ -65,12 +66,12 @@ public class CasaItDocumentTest {
         obj.setDescription(CasaItUtils.getFactory().createContainerRealestateitemsRealestateDescription());
         obj.getDescription().setValue("an example property");
 
-        Container containier = CasaItUtils.getFactory().createContainer();
-        containier.setRealestateitems(CasaItUtils.getFactory().createContainerRealestateitems());
-        containier.getRealestateitems().getRealestate().add(obj);
+        Container container = CasaItUtils.getFactory().createContainer();
+        container.setRealestateitems(CasaItUtils.getFactory().createContainerRealestateitems());
+        container.getRealestateitems().getRealestate().add(obj);
 
         try {
-            CasaItDocument doc = CasaItDocument.newDocument(containier);
+            CasaItDocument doc = CasaItDocument.newDocument(container);
 
             String xml = doc.toXmlString(true);
             LOGGER.info("XML: " + xml);

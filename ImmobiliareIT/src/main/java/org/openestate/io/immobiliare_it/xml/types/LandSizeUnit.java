@@ -27,10 +27,11 @@ import org.slf4j.LoggerFactory;
 public enum LandSizeUnit {
     HA("ha"), M2("m2"), SFT("sft");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(LandSizeUnit.class);
     private final String xmlValue;
 
-    private LandSizeUnit(String xmlValue) {
+    LandSizeUnit(String xmlValue) {
         this.xmlValue = xmlValue;
     }
 

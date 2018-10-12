@@ -44,6 +44,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class IdxRecord extends CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxRecord.class);
     private final static Pattern LINEBREAK = Pattern.compile("<br\\s*/?>", Pattern.CASE_INSENSITIVE);
@@ -52,7 +53,7 @@ public class IdxRecord extends CsvRecord {
     public final static int PICTURE_LIMIT = 13;
 
 
-    /**
+    /*
      * general fields
      */
 
@@ -97,7 +98,7 @@ public class IdxRecord extends CsvRecord {
     protected final static int FIELD_SPAREFIELD_4 = 182;
 
 
-    /**
+    /*
      * fields for the property
      */
 
@@ -532,7 +533,7 @@ public class IdxRecord extends CsvRecord {
     protected final static int FIELD_MINENERGY_CERTIFIED = 176;
 
 
-    /**
+    /*
      * fields for the agency
      */
 
@@ -607,7 +608,7 @@ public class IdxRecord extends CsvRecord {
     protected final static int FIELD_AGENCY_LOGO2 = 161;
 
 
-    /**
+    /*
      * fields for the contact person
      */
 
@@ -632,7 +633,7 @@ public class IdxRecord extends CsvRecord {
     protected final static int FIELD_VISIT_REMARK = 84;
 
 
-    /**
+    /*
      * fields for attachments
      */
 
@@ -927,7 +928,7 @@ public class IdxRecord extends CsvRecord {
     protected final static int FIELD_DOCUMENT_TEXT = 66;
 
 
-    /**
+    /*
      * fields for billing
      */
 
@@ -995,7 +996,6 @@ public class IdxRecord extends CsvRecord {
      * Rechnungsadresse, Sprache, int(1)
      */
     protected final static int FIELD_BILLING_LANGUAGE = 139;
-
 
     public IdxRecord() {
         super();
@@ -1545,7 +1545,7 @@ public class IdxRecord extends CsvRecord {
             Media picture = this.getPicture(i);
             if (picture != null) pictures.add(picture);
         }
-        return pictures.toArray(new Media[pictures.size()]);
+        return pictures.toArray(new Media[0]);
     }
 
     public PriceUnit getPriceUnit() {
@@ -1577,7 +1577,7 @@ public class IdxRecord extends CsvRecord {
     }
 
     @Override
-    protected int getRecordLenth() {
+    protected int getRecordLength() {
         return LENGTH;
     }
 
@@ -2550,6 +2550,7 @@ public class IdxRecord extends CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture1(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_1_FILE, file);
@@ -2561,6 +2562,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture2(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_2_FILE, file);
@@ -2572,6 +2574,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture3(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_3_FILE, file);
@@ -2583,6 +2586,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture4(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_4_FILE, file);
@@ -2594,6 +2598,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture5(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_5_FILE, file);
@@ -2605,6 +2610,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture6(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_6_FILE, file);
@@ -2616,6 +2622,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture7(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_7_FILE, file);
@@ -2627,6 +2634,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture8(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_8_FILE, file);
@@ -2638,6 +2646,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture9(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_9_FILE, file);
@@ -2649,6 +2658,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture10(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_10_FILE, file);
@@ -2660,6 +2670,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture11(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_11_FILE, file);
@@ -2671,6 +2682,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture12(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_12_FILE, file);
@@ -2682,6 +2694,7 @@ public class IdxRecord extends CsvRecord {
                 value.getUrl() : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setPicture13(Media value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getFileName()) : null;
         this.set(FIELD_PICTURE_13_FILE, file);
@@ -2946,11 +2959,21 @@ public class IdxRecord extends CsvRecord {
                 IdxFormat.printBoolean((value != null) ? value : false));
     }
 
-    public void setWheelcharAccessible(boolean value) {
-        this.setWheelcharAccessible(Boolean.valueOf(value));
+    @Deprecated
+    public void setWheelcharAccessible(Boolean value) {
+        this.setWheelchairAccessible(value);
     }
 
-    public void setWheelcharAccessible(Boolean value) {
+    @Deprecated
+    public void setWheelcharAccessible(boolean value) {
+        this.setWheelchairAccessible(value);
+    }
+
+    public void setWheelchairAccessible(boolean value) {
+        this.setWheelchairAccessible(Boolean.valueOf(value));
+    }
+
+    public void setWheelchairAccessible(Boolean value) {
         this.set(FIELD_WHEELCHAIR_ACCESSIBLE,
                 IdxFormat.printBoolean((value != null) ? value : false));
     }

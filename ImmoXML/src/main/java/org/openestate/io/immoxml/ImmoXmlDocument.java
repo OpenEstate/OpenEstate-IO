@@ -33,7 +33,9 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVersion> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlDocument.class);
 
     /**
@@ -56,7 +58,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
                     .newXPath("/io:immoxml/io:uebertragung/@version", doc)
                     .stringValueOf(doc));
             if (version == null) {
-                LOGGER.warn("Can't find version informations in the XML document!");
+                LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
                 //try
                 //{
@@ -104,7 +106,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
      *
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmoXmlDocument newDocument() throws ParserConfigurationException, JAXBException {
         return newDocument(ImmoXmlUtils.getFactory().createImmoxml());
@@ -116,7 +118,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
      * @param immoxml Java object, that represents the &lt;immoxml&gt; root element
      * @return created document
      * @throws ParserConfigurationException if the parser is not properly configured
-     * @throws JAXBException                if a problem with JAXB occured
+     * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmoXmlDocument newDocument(Immoxml immoxml) throws ParserConfigurationException, JAXBException {
         if (immoxml.getUebertragung() == null)
@@ -167,7 +169,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
      * Creates a {@link Immoxml} object from the contained {@link Document}.
      *
      * @return created object, that represents the &lt;immoxml&gt; root element
-     * @throws JAXBException if a problem with JAXB occured
+     * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
     public Immoxml toObject() throws JAXBException {

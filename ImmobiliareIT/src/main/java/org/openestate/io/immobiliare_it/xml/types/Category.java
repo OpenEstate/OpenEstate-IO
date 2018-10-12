@@ -27,10 +27,11 @@ import org.slf4j.LoggerFactory;
 public enum Category {
     COMMERCIALE("C"), RESIDENZIALE("R"), VACANZE("V");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Category.class);
     private final String xmlValue;
 
-    private Category(String xmlValue) {
+    Category(String xmlValue) {
         this.xmlValue = xmlValue;
     }
 

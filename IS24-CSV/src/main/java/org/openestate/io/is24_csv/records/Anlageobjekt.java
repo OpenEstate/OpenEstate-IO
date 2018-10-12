@@ -35,6 +35,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class Anlageobjekt extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(Anlageobjekt.class);
 
@@ -204,6 +205,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.ANLAGE);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getAnzahlParkflaechen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -220,6 +222,7 @@ public class Anlageobjekt extends Is24CsvRecord {
                 this.get(FIELD_AUSSTATTUNG));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getBaujahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -257,6 +260,7 @@ public class Anlageobjekt extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getEnergieausweisKennwert() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -277,6 +281,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         return this.get(FIELD_ETAGEN);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFahrtwegAutobahn() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -288,6 +293,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFahrtwegFlughafen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -299,6 +305,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFahrtwegHauptbahnhof() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -310,6 +317,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getFusswegNahverkehr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -321,6 +329,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGesamtflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -332,6 +341,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGewerbeflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -343,6 +353,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getGrundstuecksflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -359,6 +370,7 @@ public class Anlageobjekt extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getKaufpreis() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -429,6 +441,7 @@ public class Anlageobjekt extends Is24CsvRecord {
                 this.get(FIELD_PERSONENAUFZUG));
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getPreisProParkflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -440,6 +453,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getSanierungsjahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -473,6 +487,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(

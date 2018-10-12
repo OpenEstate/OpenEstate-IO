@@ -34,6 +34,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public class StellplatzMiete extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(StellplatzMiete.class);
 
@@ -98,6 +99,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.STELLPLATZ_MIETE);
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getBaujahr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -109,6 +111,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getBreite() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -120,6 +123,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getFlaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -131,6 +135,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Calendar getFreiAb() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -142,6 +147,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public Calendar getFreiBis() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -153,6 +159,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getHoehe() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -164,6 +171,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public BigDecimal getLaenge() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -196,6 +204,7 @@ public class StellplatzMiete extends Is24CsvRecord {
                 this.get(FIELD_OBJEKTZUSTAND));
     }
 
+    @SuppressWarnings("Duplicates")
     public Integer getSanierungsjahr() {
         try {
             return Is24CsvFormat.parseInteger(

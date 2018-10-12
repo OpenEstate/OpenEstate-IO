@@ -30,10 +30,11 @@ public enum ForeclosureTypeValue {
     AUCTION(new String[]{"Auction"}),
     BANK_OWNED(new String[]{"Bank Owned"});
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ForeclosureTypeValue.class);
     private final String[] aliases;
 
-    private ForeclosureTypeValue(String[] aliases) {
+    ForeclosureTypeValue(String[] aliases) {
         this.aliases = aliases;
     }
 

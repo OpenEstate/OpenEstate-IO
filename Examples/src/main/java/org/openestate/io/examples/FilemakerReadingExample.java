@@ -36,12 +36,15 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * FilemakerReadingExample.
+ * Example for reading XML files for Filemaker PRO.
+ * <p>
+ * This example illustrates how to read XML files for Filemaker PRO.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
 public class FilemakerReadingExample {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerReadingExample.class);
     private final static String PACKAGE = "/org/openestate/io/examples";
 
@@ -50,6 +53,7 @@ public class FilemakerReadingExample {
      *
      * @param args command line arguments
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
@@ -99,6 +103,7 @@ public class FilemakerReadingExample {
      * @throws ParserConfigurationException if the XML parser is improperly configured
      * @throws JAXBException                if XML conversion into Java objects failed
      */
+    @SuppressWarnings("Duplicates")
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("process file: " + xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
@@ -129,6 +134,7 @@ public class FilemakerReadingExample {
      * @throws ParserConfigurationException if the XML parser is improperly configured
      * @throws JAXBException                if XML conversion into Java objects failed
      */
+    @SuppressWarnings("Duplicates")
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("process example file");
         FilemakerDocument doc = FilemakerUtils.createDocument(xmlInputStream);
@@ -168,9 +174,9 @@ public class FilemakerReadingExample {
             }
         }
         if (layout.getVALUELISTS() != null) {
-            for (ValueListsType.VALUELIST valuelist : layout.getVALUELISTS().getVALUELIST()) {
-                LOGGER.info("> database values : " + valuelist.getNAME());
-                for (String value : valuelist.getVALUE()) {
+            for (ValueListsType.VALUELIST valueList : layout.getVALUELISTS().getVALUELIST()) {
+                LOGGER.info("> database values : " + valueList.getNAME());
+                for (String value : valueList.getVALUE()) {
                     LOGGER.info(">> " + value);
                 }
             }
@@ -208,9 +214,9 @@ public class FilemakerReadingExample {
             }
         }
         if (result.getRESULTSET() != null) {
-            LOGGER.info("> resultset found  : " + result.getRESULTSET().getFOUND());
+            LOGGER.info("> result set found  : " + result.getRESULTSET().getFOUND());
             for (ResultSetType.ROW row : result.getRESULTSET().getROW()) {
-                LOGGER.info("> resultset row    : " + row.getRECORDID() + " / " + row.getMODID());
+                LOGGER.info("> result set row    : " + row.getRECORDID() + " / " + row.getMODID());
                 for (ResultSetType.ROW.COL col : row.getCOL()) {
                     for (String data : col.getDATA()) {
                         LOGGER.info(">> " + data);

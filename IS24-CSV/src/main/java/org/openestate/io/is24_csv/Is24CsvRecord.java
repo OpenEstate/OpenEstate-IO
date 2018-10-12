@@ -39,14 +39,14 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
 public abstract class Is24CsvRecord extends CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvRecord.class);
     private final static Pattern LINEBREAK = Pattern.compile("<br\\s*/?>", Pattern.CASE_INSENSITIVE);
     public final static int LENGTH = 182;
     public final static int FILE_LIMIT = 10;
 
-
-    /**
+    /*
      * general fields
      */
 
@@ -121,7 +121,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     protected final static int FIELD_API_SUCHFELD3 = 13;
 
 
-    /**
+    /*
      * fields for customer identification
      */
 
@@ -196,7 +196,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     protected final static int FIELD_KONTAKT_WEBSEITE = 28;
 
 
-    /**
+    /*
      * fields for publishing details
      */
 
@@ -231,7 +231,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     protected final static int FIELD_PROVISIONSHINWEIS = 40;
 
 
-    /**
+    /*
      * fields for object address
      */
 
@@ -266,7 +266,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     protected final static int FIELD_OBJEKT_INTERNATIONALE_REGION = 55;
 
 
-    /**
+    /*
      * fields for object description
      */
 
@@ -291,7 +291,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     protected final static int FIELD_BESCHREIBUNG_SONSTIGES = 102;
 
 
-    /**
+    /*
      * fields for attachments
      */
 
@@ -834,7 +834,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
             Datei datei = this.getDatei(i);
             if (datei != null) dateien.add(datei);
         }
-        return dateien.toArray(new Datei[dateien.size()]);
+        return dateien.toArray(new Datei[0]);
     }
 
     public Integer getGruppierungId() {
@@ -960,7 +960,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     }
 
     @Override
-    protected int getRecordLenth() {
+    protected int getRecordLength() {
         return LENGTH;
     }
 
@@ -1040,7 +1040,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
 
     public void setAktiv(Boolean value) {
         this.set(FIELD_STATUS,
-                (value || value == null) ? "1" : "0");
+                Boolean.TRUE.equals(value) ? "1" : "0");
     }
 
     public void setAnbieterObjektId(String value) {
@@ -1120,6 +1120,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei1(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI1_NAME, file);
@@ -1133,6 +1134,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei2(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI2_NAME, file);
@@ -1146,6 +1148,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei3(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI3_NAME, file);
@@ -1159,6 +1162,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei4(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI4_NAME, file);
@@ -1172,6 +1176,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei5(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI5_NAME, file);
@@ -1185,6 +1190,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei6(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI6_NAME, file);
@@ -1198,6 +1204,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei7(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI7_NAME, file);
@@ -1211,6 +1218,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei8(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI8_NAME, file);
@@ -1224,6 +1232,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei9(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI9_NAME, file);
@@ -1237,6 +1246,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("Duplicates")
     public void setDatei10(Datei value) {
         String file = (value != null) ? StringUtils.trimToNull(value.getName()) : null;
         this.set(FIELD_DATEI10_NAME, file);

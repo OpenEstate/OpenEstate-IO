@@ -28,10 +28,11 @@ import org.slf4j.LoggerFactory;
 public enum Salutation {
     FEMALE(1), MALE(2), COMPANY(3);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Salutation.class);
     private final int value;
 
-    private Salutation(int value) {
+    Salutation(int value) {
         this.value = value;
     }
 

@@ -58,12 +58,14 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("WeakerAccess")
 public class TrovitUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TrovitUtils.class);
     private final static Pattern ROOMS_INTERVAL = Pattern.compile("^(\\d+)\\-(\\d+)$");
     private static JAXBContext JAXB = null;
 
-    /**
+    /*
      * the latest implemented version of this format
      *
      * public final static String VERSION = "1.0";
@@ -72,16 +74,19 @@ public class TrovitUtils {
     /**
      * the XML target namespace of this format
      */
+    @SuppressWarnings("unused")
     public final static String NAMESPACE = StringUtils.EMPTY;
 
     /**
      * the package, where generated JAXB classes are located
      */
+    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.trovit.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
+    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private TrovitUtils() {
@@ -145,6 +150,7 @@ public class TrovitUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occured
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
         return createMarshaller(Charset.defaultCharset().name(), true);
     }
@@ -157,6 +163,7 @@ public class TrovitUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occured
      */
+    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         Marshaller m = getContext().createMarshaller();
         m.setProperty(Marshaller.JAXB_ENCODING, encoding);
