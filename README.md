@@ -1,5 +1,5 @@
-OpenEstate-IO 1.4
-=================
+OpenEstate-IO 1.5-SNAPSHOT
+==========================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate
 data in common formats. These libraries are used within
@@ -56,73 +56,73 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IDX</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Trovit</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-WisIT</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -164,7 +164,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
 for the license text.
 
 
@@ -179,6 +179,6 @@ Further information
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
 -   [Validator for common XML formats](https://validator.openestate.org/)

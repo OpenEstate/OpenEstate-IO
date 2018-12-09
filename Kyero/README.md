@@ -1,5 +1,5 @@
-OpenEstate-IO-Kyero 1.4
-=======================
+OpenEstate-IO-Kyero 1.5-SNAPSHOT
+================================
 
 *OpenEstate-IO-Kyero* is a Java library to read and write real estate data in
 the XML format of [*kyero.com*](https://www.kyero.com/) (version 3.4 and 2.1).
@@ -10,10 +10,10 @@ Features
 
 -   read XML data according to the specifications of
     [*kyero.com*](https://www.kyero.com/) in version 3.4 and 2.1
-    (see [`KyeroReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/Examples/src/main/java/org/openestate/io/examples/KyeroReadingExample.java))
+    (see [`KyeroReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/KyeroReadingExample.java))
 -   write XML data according to the specifications of
     [*kyero.com*](https://www.kyero.com/) in version 3.4 and 2.1
-    (see [`KyeroWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/Examples/src/main/java/org/openestate/io/examples/KyeroWritingExample.java))
+    (see [`KyeroWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/KyeroWritingExample.java))
 
 
 How to use
@@ -32,14 +32,14 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
 </dependency>
 ```
 
 You can find further information in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-Kyero).
 Some example classes for this format are available in the
-[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/v1.4/Examples)
+[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
 module.
 
 
@@ -77,7 +77,7 @@ Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 for the full changelog.
 
 
@@ -87,7 +87,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
 for the license text.
 
 
@@ -96,7 +96,7 @@ Further information
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
 -   [Validator for *kyero.com* XML](https://validator.openestate.org/)
 -   [XML import specifications](https://help.kyero.com/article/354-xml-import-specification)
