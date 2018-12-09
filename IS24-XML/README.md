@@ -3,14 +3,14 @@ OpenEstate-IO-IS24-XML 1.4-SNAPSHOT
 
 *OpenEstate-IO-IS24-XML* is a Java library to read and write real estate data in
 the *IS24-XML* format (revision 189438), that was used by
-[*immobilienscout24.de*](http://immobilienscout24.de) until 2014.
+[*immobilienscout24.de*](https://www.immobilienscout24.de/) until 2014.
 
 
 Warning
 -------
 
 *IS24-XML* is outdated and not used by
-[*immobilienscout24.de*](http://immobilienscout24.de) anymore. We're still
+[*immobilienscout24.de*](https://www.immobilienscout24.de/) anymore. We're still
 supporting this format for compatibility with older real estate software.
 
 *IS24-XML* was replaced by a REST webservice in 2014. You can access this
@@ -37,8 +37,8 @@ The provided archive contains all required files (compiled libraries,
 dependencies, source code and documentations).
 
 Alternatively you can integrate the library from
-[Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
-into your [Maven](http://maven.apache.org/) project. Just add the following
+[Maven Central Repository](https://search.maven.org/#search|ga|1|org.openestate.io)
+into your [Maven](https://maven.apache.org/) project. Just add the following
 dependency to your projects `pom.xml`:
 
 ```xml
@@ -49,7 +49,7 @@ dependency to your projects `pom.xml`:
 </dependency>
 ```
 
-You can find further informations in the
+You can find further information in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-IS24-XML).
 Some example classes for this format are available in the
 [`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
@@ -108,12 +108,12 @@ Dependencies
 ------------
 
 -   Java 7 or newer
--   [commons-codec 1.11](http://commons.apache.org/proper/commons-codec/)
--   [commons-io 2.6](http://commons.apache.org/proper/commons-io/)
--   [commons-lang 3.7](http://commons.apache.org/proper/commons-lang/)
+-   [commons-codec 1.11](https://commons.apache.org/proper/commons-codec/)
+-   [commons-io 2.6](https://commons.apache.org/proper/commons-io/)
+-   [commons-lang 3.8.1](https://commons.apache.org/proper/commons-lang/)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
--   [jaxen 1.1.6](http://jaxen.codehaus.org/)
--   [SLF4J 1.7.25](http://www.slf4j.org/)
+-   [jaxen 1.1.6](https://github.com/jaxen-xpath/jaxen)
+-   [SLF4J 1.7.25](https://www.slf4j.org/)
 
 
 Changelog
@@ -128,17 +128,17 @@ License
 -------
 
 This library is licensed under the terms of
-[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
 [`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
 for the license text.
 
 
-Further informations
---------------------
+Further information
+-------------------
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
 -   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [Javadocs of *OpenEstate-IO*](http://manual.openestate.org/OpenEstate-IO/)
--   [Validator for *IS24-XML*](http://validator.openestate.org/)
+-   [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
+-   [Validator for *IS24-XML*](https://validator.openestate.org/)
