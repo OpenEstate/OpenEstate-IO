@@ -79,7 +79,7 @@
       </excludes>
     </fileSet>
     <fileSet>
-      <directory>${project.parent.basedir}/apidocs</directory>
+      <directory>${project.javadocDir}</directory>
       <outputDirectory>docs/javadoc</outputDirectory>
     </fileSet>
     <fileSet>
@@ -135,7 +135,7 @@
       <outputDirectory>lib/3rdparty</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>${project.parent.basedir}/misc/licenses</directory>
+      <directory>${project.parent.basedir}/etc/licenses</directory>
       <outputDirectory>lib/3rdparty</outputDirectory>
     </fileSet>
   </fileSets>

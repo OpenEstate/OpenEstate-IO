@@ -64,8 +64,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.baseName>OpenEstate-IO</project.baseName>
-        <project.javadocDir>${project.basedir}/apidocs</project.javadocDir>
-        <project.packageDir>${project.basedir}/package</project.packageDir>
         <createChecksum>true</createChecksum>
 
         <!-- Set this value to true, in order to skip GPG signing during the release phase. -->
@@ -268,13 +266,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.10.4</version>
-                    <!-- version 3.0.0 leads to errors when packaging releases with assembly plugin. -->
+                    <version>3.0.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>3.0.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
                 </plugin>
 
                 <plugin>
@@ -307,23 +309,13 @@
         </pluginManagement>
         <plugins>
 
-            <!-- clean -->
+            <!-- findbugs -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <inherited>false</inherited>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
                 <configuration>
                     <failOnError>false</failOnError>
-                    <filesets>
-                        <fileset>
-                            <directory>${project.packageDir}</directory>
-                            <followSymlinks>false</followSymlinks>
-                        </fileset>
-                        <fileset>
-                            <directory>${project.javadocDir}</directory>
-                            <followSymlinks>false</followSymlinks>
-                        </fileset>
-                    </filesets>
+                    <excludeFilterFile>${project.basedir}/findbugs/exclude.xml</excludeFilterFile>
                 </configuration>
             </plugin>
 
@@ -393,7 +385,7 @@
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>attach-javadocs</id>
+                                <id>attach-javadoc</id>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
@@ -401,85 +393,6 @@
                                     <quiet>true</quiet>
                                     <encoding>${project.build.sourceEncoding}</encoding>
                                     <docencoding>${project.build.sourceEncoding}</docencoding>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>aggregate-javadocs</id>
-                                <inherited>false</inherited>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>aggregate</goal>
-                                </goals>
-                                <configuration>
-                                    <reportOutputDirectory>${project.basedir}</reportOutputDirectory>
-                                    <encoding>${project.build.sourceEncoding}</encoding>
-                                    <docencoding>${project.build.sourceEncoding}</docencoding>
-                                    <keywords>true</keywords>
-                                    <quiet>true</quiet>
-                                    <links>
-                                        <link>https://docs.oracle.com/javase/7/docs/api/</link>
-                                    </links>
-                                    <groups>
-                                        <group>
-                                            <title>core classes</title>
-                                            <packages>org.openestate.io.core</packages>
-                                        </group>
-                                        <group>
-                                            <title>casa.it</title>
-                                            <packages>org.openestate.io.casa_it:org.openestate.io.casa_it.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>daft.ie</title>
-                                            <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>Filemaker</title>
-                                            <packages>org.openestate.io.filemaker:org.openestate.io.filemaker.*
-                                            </packages>
-                                        </group>
-                                        <group>
-                                            <title>IDX</title>
-                                            <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>immobiliare.it</title>
-                                            <packages>
-                                                org.openestate.io.immobiliare_it:org.openestate.io.immobiliare_it.*
-                                            </packages>
-                                        </group>
-                                        <group>
-                                            <title>ImmoXML</title>
-                                            <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>IS24-CSV</title>
-                                            <packages>org.openestate.io.is24_csv:org.openestate.io.is24_csv.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>IS24-XML</title>
-                                            <packages>org.openestate.io.is24_xml:org.openestate.io.is24_xml.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>Kyero</title>
-                                            <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>OpenImmo</title>
-                                            <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>Trovit</title>
-                                            <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>wohnen-in-suedtirol.it</title>
-                                            <packages>org.openestate.io.wis_it:org.openestate.io.wis_it.*</packages>
-                                        </group>
-                                        <group>
-                                            <title>example classes</title>
-                                            <packages>org.openestate.io.examples:org.openestate.io.examples.*</packages>
-                                        </group>
-                                    </groups>
                                 </configuration>
                             </execution>
                         </executions>
