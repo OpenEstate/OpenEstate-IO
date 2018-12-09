@@ -1,5 +1,5 @@
-OpenEstate-IO-Filemaker 1.4-SNAPSHOT
-====================================
+OpenEstate-IO-Filemaker 1.4
+===========================
 
 *OpenEstate-IO-Filemaker* is a Java library to read and write XML formats of
 the real estate software [*FlatHunter Pro*](https://www.fmmedia.de/immobilien/flathunterpro),
@@ -11,12 +11,12 @@ Features
 
 -   read *FMPXMLLAYOUT* & *FMPXMLRESULT* data according to the specifications
     of *Filemaker*
-    (see [`FilemakerReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/FilemakerReadingExample.java))
+    (see [`FilemakerReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/Examples/src/main/java/org/openestate/io/examples/FilemakerReadingExample.java))
 -   write *FMPXMLLAYOUT* & *FMPXMLRESULT* data according to the specifications
     of *Filemaker*
-    (see [`FilemakerWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/FilemakerWritingExample.java))
+    (see [`FilemakerWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/Examples/src/main/java/org/openestate/io/examples/FilemakerWritingExample.java))
 -   read *FMPXMLRESULT* data more easily through a high level class
-    (see [`FilemakerResultMappingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/FilemakerResultMappingExample.java))
+    (see [`FilemakerResultMappingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/Examples/src/main/java/org/openestate/io/examples/FilemakerResultMappingExample.java))
 
 
 How to use
@@ -35,14 +35,14 @@ dependency to your projects `pom.xml`:
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.4</version>
 </dependency>
 ```
 
 You can find further information in the
 [project wiki](https://github.com/OpenEstate/OpenEstate-IO/wiki/Usage-Filemaker).
 Some example classes for this format are available in the
-[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/develop/Examples)
+[`Examples`](https://github.com/OpenEstate/OpenEstate-IO/tree/v1.4/Examples)
 module.
 
 
@@ -68,7 +68,7 @@ Changelog
 ---------
 
 Take a look at
-[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+[`CHANGELOG.md`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/CHANGELOG.md)
 for the full changelog.
 
 
@@ -78,7 +78,7 @@ License
 This library is licensed under the terms of
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 Take a look at
-[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/LICENSE.txt)
+[`LICENSE.txt`](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/LICENSE.txt)
 for the license text.
 
 
@@ -87,7 +87,7 @@ Further information
 
 -   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
 -   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
+-   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.4/CHANGELOG.md)
 -   [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
 -   [English documentation about *FMPXMLLAYOUT*](https://etutorials.org/XML/filemaker+pro+6+developers+guide+to+xml_xsl/Chapter+4+FileMaker+Pro+XML+Schema+or+Grammar+Formats+DTDs/4.1+FMPXMLLAYOUT+Schema+Grammar/)
 -   [English documentation about *FMPXMLRESULT*](https://etutorials.org/XML/filemaker+pro+6+developers+guide+to+xml_xsl/Chapter+4+FileMaker+Pro+XML+Schema+or+Grammar+Formats+DTDs/4.2+FMPXMLRESULT+Schema+Grammar/)

@@ -6,7 +6,7 @@
 
     <groupId>org.openestate.io</groupId>
     <artifactId>OpenEstate-IO</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.4</version>
     <packaging>pom</packaging>
 
     <name>OpenEstate-IO</name>
