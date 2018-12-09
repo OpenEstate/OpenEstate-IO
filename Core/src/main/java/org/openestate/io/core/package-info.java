@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
  *
  *
  * <h3>CSV processing</h3>
- *
+ * <p>
  * The classes
  * {@link org.openestate.io.core.CsvFormat},
  * {@link org.openestate.io.core.CsvParser},
@@ -31,7 +31,7 @@
  *
  *
  * <h3>XML processing</h3>
- *
+ * <p>
  * The classes
  * {@link org.openestate.io.core.XmlDocument},
  * {@link org.openestate.io.core.XmlUtils}
@@ -40,7 +40,7 @@
  *
  *
  * <h3>XML versioning</h3>
- *
+ * <p>
  * The classes
  * {@link org.openestate.io.core.XmlConvertableDocument},
  * {@link org.openestate.io.core.XmlConverter},
@@ -48,8 +48,7 @@
  * provide general functions for upgrading / downgrading XML documents through
  * manipulation of the DOM tree ({@link org.w3c.dom.Document}).
  *
- *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
 package org.openestate.io.core;

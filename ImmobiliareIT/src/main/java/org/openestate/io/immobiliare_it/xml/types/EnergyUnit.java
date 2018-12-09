@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,32 +21,28 @@ import org.slf4j.LoggerFactory;
 /**
  * EnergyUnit.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum EnergyUnit
-{
-  KWH_M2ANNO( "kWh/m2anno" ), KWH_M3ANNO( "kWh/m3anno" );
+public enum EnergyUnit {
+    KWH_M2ANNO("kWh/m2anno"), KWH_M3ANNO("kWh/m3anno");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( EnergyUnit.class );
-  private final String xmlValue;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(EnergyUnit.class);
+    private final String xmlValue;
 
-  private EnergyUnit( String xmlValue )
-  {
-    this.xmlValue = xmlValue;
-  }
-
-  public String getXmlValue()
-  {
-    return xmlValue;
-  }
-
-  public static EnergyUnit fromXmlValue( String xmlValue )
-  {
-    for (EnergyUnit val : EnergyUnit.values())
-    {
-      if (val.xmlValue.equalsIgnoreCase( xmlValue )) return val;
+    EnergyUnit(String xmlValue) {
+        this.xmlValue = xmlValue;
     }
-    return null;
-  }
+
+    public String getXmlValue() {
+        return xmlValue;
+    }
+
+    public static EnergyUnit fromXmlValue(String xmlValue) {
+        for (EnergyUnit val : EnergyUnit.values()) {
+            if (val.xmlValue.equalsIgnoreCase(xmlValue)) return val;
+        }
+        return null;
+    }
 }

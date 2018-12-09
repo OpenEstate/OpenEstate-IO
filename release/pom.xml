@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO</artifactId>
+        <version>1.4</version>
+    </parent>
+
+    <artifactId>release</artifactId>
+    <version>1.4</version>
+    <packaging>pom</packaging>
+
+    <name>release</name>
+    <description>
+        This module is used to assemble the release package for OpenEstate-IO. It does not
+        add any further code to the libraries.
+    </description>
+    <url>https://openestate.org</url>
+    <organization>
+        <name>OpenEstate</name>
+        <url>https://openestate.org/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <properties>
+        <project.javadocDir>${project.basedir}/apidocs</project.javadocDir>
+        <project.packageDir>${project.basedir}/package</project.packageDir>
+    </properties>
+
+    <!--
+    NOTE: These dependency declarations are only required to sort this project to
+    the end of the line in the multi module build.
+
+    see https://maven.apache.org/plugins/maven-assembly-plugin/examples/multimodule/module-binary-inclusion-simple.html
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-CasaIT</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-DaftIE</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Examples</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Filemaker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-IDX</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-IS24-XML</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Kyero</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-OpenImmo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Trovit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-WisIT</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- clean -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.packageDir}</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.javadocDir}</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            <!-- install -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <!-- deploy -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <profiles>
+
+        <!-- release profile for oss.sonatype.org -->
+        <profile>
+            <id>ossrh-release</id>
+
+            <build>
+                <plugins>
+
+                    <!-- javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>aggregate-javadoc</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>javadoc</goal>
+                                </goals>
+                                <configuration>
+                                    <reportOutputDirectory>${project.basedir}</reportOutputDirectory>
+                                    <destDir>apidocs</destDir>
+                                    <doctitle>${project.parent.artifactId} ${project.parent.version} API</doctitle>
+                                    <windowtitle>${project.parent.artifactId} ${project.parent.version} API</windowtitle>
+                                    <encoding>${project.build.sourceEncoding}</encoding>
+                                    <docencoding>${project.build.sourceEncoding}</docencoding>
+                                    <keywords>true</keywords>
+                                    <quiet>true</quiet>
+                                    <!--<doclint>none</doclint>-->
+                                    <links>
+                                        <link>https://docs.oracle.com/javase/7/docs/api/</link>
+                                    </links>
+                                    <groups>
+                                        <group>
+                                            <title>core classes</title>
+                                            <packages>org.openestate.io.core</packages>
+                                        </group>
+                                        <group>
+                                            <title>casa.it</title>
+                                            <packages>org.openestate.io.casa_it:org.openestate.io.casa_it.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>daft.ie</title>
+                                            <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>Filemaker</title>
+                                            <packages>org.openestate.io.filemaker:org.openestate.io.filemaker.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>IDX</title>
+                                            <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>immobiliare.it</title>
+                                            <packages>org.openestate.io.immobiliare_it:org.openestate.io.immobiliare_it.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>ImmoXML</title>
+                                            <packages>org.openestate.io.immoxml:org.openestate.io.immoxml.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>IS24-CSV</title>
+                                            <packages>org.openestate.io.is24_csv:org.openestate.io.is24_csv.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>IS24-XML</title>
+                                            <packages>org.openestate.io.is24_xml:org.openestate.io.is24_xml.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>Kyero</title>
+                                            <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>OpenImmo</title>
+                                            <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>Trovit</title>
+                                            <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>wohnen-in-suedtirol.it</title>
+                                            <packages>org.openestate.io.wis_it:org.openestate.io.wis_it.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>example classes</title>
+                                            <packages>org.openestate.io.examples:org.openestate.io.examples.*</packages>
+                                        </group>
+                                    </groups>
+                                    <sourcepath>
+                                        ${project.parent.basedir}/CasaIT/src/main/java;
+                                        ${project.parent.basedir}/CasaIT/src/main/jaxb;
+                                        ${project.parent.basedir}/Core/src/main/java;
+                                        ${project.parent.basedir}/DaftIE/src/main/java;
+                                        ${project.parent.basedir}/DaftIE/src/main/jaxb;
+                                        ${project.parent.basedir}/Examples/src/main/java;
+                                        ${project.parent.basedir}/Filemaker/src/main/java;
+                                        ${project.parent.basedir}/Filemaker/src/main/jaxb;
+                                        ${project.parent.basedir}/IDX/src/main/java;
+                                        ${project.parent.basedir}/ImmobiliareIT/src/main/java;
+                                        ${project.parent.basedir}/ImmobiliareIT/src/main/jaxb;
+                                        ${project.parent.basedir}/ImmoXML/src/main/java;
+                                        ${project.parent.basedir}/ImmoXML/src/main/jaxb;
+                                        ${project.parent.basedir}/IS24-CSV/src/main/java;
+                                        ${project.parent.basedir}/IS24-XML/src/main/java;
+                                        ${project.parent.basedir}/IS24-XML/src/main/jaxb;
+                                        ${project.parent.basedir}/Kyero/src/main/java;
+                                        ${project.parent.basedir}/Kyero/src/main/jaxb;
+                                        ${project.parent.basedir}/OpenImmo/src/main/java;
+                                        ${project.parent.basedir}/OpenImmo/src/main/jaxb;
+                                        ${project.parent.basedir}/Trovit/src/main/java;
+                                        ${project.parent.basedir}/Trovit/src/main/jaxb;
+                                        ${project.parent.basedir}/WisIT/src/main/java;
+                                        ${project.parent.basedir}/WisIT/src/main/jaxb
+                                    </sourcepath>
+                                    <additionalDependencies>
+                                        <dependency>
+                                            <groupId>com.google.code.findbugs</groupId>
+                                            <artifactId>annotations</artifactId>
+                                            <version>3.0.1u2</version>
+                                        </dependency>
+                                    </additionalDependencies>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- dependency -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-dependencies-jar</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
+                                    <silent>true</silent>
+                                    <overWriteReleases>false</overWriteReleases>
+                                    <overWriteSnapshots>false</overWriteSnapshots>
+                                    <overWriteIfNewer>true</overWriteIfNewer>
+                                    <includeScope>runtime</includeScope>
+                                    <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip,net.jcip</excludeGroupIds>
+                                </configuration>
+                            </execution>
+
+                            <execution>
+                                <id>copy-dependencies-sources</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
+                                    <silent>true</silent>
+                                    <overWriteReleases>false</overWriteReleases>
+                                    <overWriteSnapshots>false</overWriteSnapshots>
+                                    <overWriteIfNewer>true</overWriteIfNewer>
+                                    <includeScope>runtime</includeScope>
+                                    <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip,net.jcip</excludeGroupIds>
+                                    <classifier>sources</classifier>
+                                </configuration>
+                            </execution>
+
+                            <execution>
+                                <id>copy-dependencies-javadoc</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
+                                    <silent>true</silent>
+                                    <overWriteReleases>false</overWriteReleases>
+                                    <overWriteSnapshots>false</overWriteSnapshots>
+                                    <overWriteIfNewer>true</overWriteIfNewer>
+                                    <includeScope>runtime</includeScope>
+                                    <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip,net.jcip</excludeGroupIds>
+                                    <classifier>javadoc</classifier>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- assembly  -->
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>distro-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>${project.parent.artifactId}-${project.version}</finalName>
+                                    <outputDirectory>${project.packageDir}</outputDirectory>
+                                    <tarLongFileMode>posix</tarLongFileMode>
+                                    <attach>false</attach>
+                                    <descriptors>
+                                        <descriptor>${project.basedir}/src/assembly/release.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+
+        </profile>
+    </profiles>
+</project>

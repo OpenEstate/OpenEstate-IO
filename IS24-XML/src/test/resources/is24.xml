@@ -1,70 +1,118 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<IS24ImmobilienTransfer ErstellerSoftwareVersion="1.0-SNAPSHOT" ErstellerSoftware="OpenEstate-ImmoTool" EmailBeiFehler="test@test.de" xmlns="http://www.immobilienscout24.de/immobilientransfer">
+<IS24ImmobilienTransfer ErstellerSoftwareVersion="1.0-SNAPSHOT" ErstellerSoftware="OpenEstate-ImmoTool"
+                        EmailBeiFehler="test@test.de" xmlns="http://www.immobilienscout24.de/immobilientransfer">
     <Anbieter ScoutKundenID="123">
-        <WohnungKauf Ausstattungsqualitaet="Gehoben" Parkplatz="keineAngabe" AlsFerienwohnungGeeignet="true" Heizungsart="keineAngabe" Objektzustand="keineAngabe" JahrLetzteModernisierung="1985" Baujahr="1950" Zimmer="2" Wohnflaeche="123" WohnungKategorie="Sonstige" Waehrung="EUR" Provisionshinweis="provision-de" Provisionspflichtig="false" Ueberschrift="wohnung-kauf" Adressdruck="false" Importmodus="aktualisieren" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AnbieterObjektID="1">
-            <Adresse Laenderkennzeichen="DEU" Ort="Berlin" Postleitzahl="12345" Hausnummer="123" Strasse="Karl-Marx-Straße"/>
-            <Kontaktperson EMail="test@test.de" Telefon="030/123456" Nachname="Simpson" Vorname="Homer" Laenderkennzeichen="DEU"/>
+        <WohnungKauf Ausstattungsqualitaet="Gehoben" Parkplatz="keineAngabe" AlsFerienwohnungGeeignet="true"
+                     Heizungsart="keineAngabe" Objektzustand="keineAngabe" JahrLetzteModernisierung="1985"
+                     Baujahr="1950" Zimmer="2" Wohnflaeche="123" WohnungKategorie="Sonstige" Waehrung="EUR"
+                     Provisionshinweis="provision-de" Provisionspflichtig="false" Ueberschrift="wohnung-kauf"
+                     Adressdruck="false" Importmodus="aktualisieren" StatusHP="aktiv" StatusIS24="aktiv"
+                     StatusVBM="aktiv" AnbieterObjektID="1">
+            <Adresse Laenderkennzeichen="DEU" Ort="Berlin" Postleitzahl="12345" Hausnummer="123"
+                     Strasse="Karl-Marx-Straße"/>
+            <Kontaktperson EMail="test@test.de" Telefon="030/123456" Nachname="Simpson" Vorname="Homer"
+                           Laenderkennzeichen="DEU"/>
             <Objektbeschreibung>details-de</Objektbeschreibung>
             <Lage>lage-de</Lage>
             <Ausstattung>ausstattung-de</Ausstattung>
             <SonstigeAngaben>weiteres-de
 
-ENERGIEAUSWEIS
+                ENERGIEAUSWEIS
 
-- Energieeffizienzklasse: B
-- erstellt am: 02.05.2014
-- gültig bis: 31.03.2018
-- Art des Energieausweises: nach Bedarf
-- Endenergiebedarf insgesamt: ca. 123 kWh/(m²a)
-- Endenergiebedarf für Strom: ca. 234 kWh/(m²a)
-- Endenergiebedarf für Heizung: ca. 345 kWh/(m²a)
-- Baujahr: 1950</SonstigeAngaben>
-            <MultimediaAnhang Dateityp="PNG" Titel="agent" Dateiname="f4f5bc373b8c8e4aab3f459cf7324258d6d9dcfb.png" AnhangArt="grundrissBild"/>
-            <MultimediaAnhang Dateityp="PNG" Titel="3d" Dateiname="7f53789631c6e4b87ce65afd66ee7751e6ff9975.png" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="PNG" Titel="access" Dateiname="d99912f602973c320c291c2655e775f492bda10f.png" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="PNG" Titel="acroread" Dateiname="3df316f7de5038d89805c370be89c17208ffa3db.png" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="PNG" Titel="advancedsettings" Dateiname="1f8c6118d8ae9c90cb827326e63bb4715bd69844.png" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="PNG" Titel="agt aisles" Dateiname="a6b5186a5e4864891af87e77397f8614717cac34.png" AnhangArt="grundrissBild"/>
-            <MultimediaAnhang Dateityp="PNG" Titel="agt announcements" Dateiname="4248ad94c9c66c7b05ebfae325e6c1498d756b33.png" AnhangArt="grundrissBild"/>
-            <MultimediaAnhang Dateityp="PNG" Titel="asd" Dateiname="55193ffb5097ad2ce5c8cf543bc6be17bd690943.png" AnhangArt="bild"/>
+                - Energieeffizienzklasse: B
+                - erstellt am: 02.05.2014
+                - gültig bis: 31.03.2018
+                - Art des Energieausweises: nach Bedarf
+                - Endenergiebedarf insgesamt: ca. 123 kWh/(m²a)
+                - Endenergiebedarf für Strom: ca. 234 kWh/(m²a)
+                - Endenergiebedarf für Heizung: ca. 345 kWh/(m²a)
+                - Baujahr: 1950
+            </SonstigeAngaben>
+            <MultimediaAnhang Dateityp="PNG" Titel="agent" Dateiname="f4f5bc373b8c8e4aab3f459cf7324258d6d9dcfb.png"
+                              AnhangArt="grundrissBild"/>
+            <MultimediaAnhang Dateityp="PNG" Titel="3d" Dateiname="7f53789631c6e4b87ce65afd66ee7751e6ff9975.png"
+                              AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="PNG" Titel="access" Dateiname="d99912f602973c320c291c2655e775f492bda10f.png"
+                              AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="PNG" Titel="acroread" Dateiname="3df316f7de5038d89805c370be89c17208ffa3db.png"
+                              AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="PNG" Titel="advancedsettings"
+                              Dateiname="1f8c6118d8ae9c90cb827326e63bb4715bd69844.png" AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="PNG" Titel="agt aisles" Dateiname="a6b5186a5e4864891af87e77397f8614717cac34.png"
+                              AnhangArt="grundrissBild"/>
+            <MultimediaAnhang Dateityp="PNG" Titel="agt announcements"
+                              Dateiname="4248ad94c9c66c7b05ebfae325e6c1498d756b33.png" AnhangArt="grundrissBild"/>
+            <MultimediaAnhang Dateityp="PNG" Titel="asd" Dateiname="55193ffb5097ad2ce5c8cf543bc6be17bd690943.png"
+                              AnhangArt="bild"/>
             <Kaufpreise Kaufpreis="12345"/>
             <BefeuerungsArt>
                 <KeineAngabe xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </BefeuerungsArt>
             <Energieausweis Energieverbrauchskennwert="123" Energieausweistyp="Endenergiebedarf"/>
         </WohnungKauf>
-        <WohnungMiete FreiAb="17.06.2013" Parkplatz="keineAngabe" Haustiere="keineAngabe" Heizungsart="keineAngabe" Objektzustand="keineAngabe" Zimmer="3" Wohnflaeche="234" WohnungKategorie="Sonstige" Waehrung="EUR" Provisionspflichtig="true" Provision="keine Provision" Ueberschrift="wohnung-miete" Adressdruck="true" Importmodus="aktualisieren" StatusHP="aktiv" StatusIS24="aktiv" StatusVBM="aktiv" AnbieterObjektID="2">
-            <Adresse Laenderkennzeichen="DEU" Ort="Berlin" Postleitzahl="12345" Hausnummer="124" Strasse="Friedrichstraße"/>
-            <Kontaktperson EMail="hans@dampf.de" Telefon="030/123456" Nachname="Dampf" Vorname="Hans" Laenderkennzeichen="DEU"/>
-            <Objektbeschreibung>Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern?
+        <WohnungMiete FreiAb="17.06.2013" Parkplatz="keineAngabe" Haustiere="keineAngabe" Heizungsart="keineAngabe"
+                      Objektzustand="keineAngabe" Zimmer="3" Wohnflaeche="234" WohnungKategorie="Sonstige"
+                      Waehrung="EUR" Provisionspflichtig="true" Provision="keine Provision" Ueberschrift="wohnung-miete"
+                      Adressdruck="true" Importmodus="aktualisieren" StatusHP="aktiv" StatusIS24="aktiv"
+                      StatusVBM="aktiv" AnbieterObjektID="2">
+            <Adresse Laenderkennzeichen="DEU" Ort="Berlin" Postleitzahl="12345" Hausnummer="124"
+                     Strasse="Friedrichstraße"/>
+            <Kontaktperson EMail="hans@dampf.de" Telefon="030/123456" Nachname="Dampf" Vorname="Hans"
+                           Laenderkennzeichen="DEU"/>
+            <Objektbeschreibung>Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon
+                folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel?
+                Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte
+                einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die
+                Früchte seiner Arbeit zu erleichtern?
 
-Oder gehörten die Schritte hinter ihm zu einem der unzähligen Gesetzeshüter dieser Stadt, und die stählerne Acht um seine Handgelenke würde gleich zuschnappen? Er konnte die Aufforderung stehen zu bleiben schon hören. Gehetzt sah er sich um. Plötzlich erblickte er den schmalen Durchgang. Blitzartig drehte er sich nach rechts und verschwand zwischen den beiden Gebäuden. Beinahe wäre er dabei über den umgestürzten Mülleimer gefallen, der mitten im Weg lag. Er versuchte, sich in der Dunkelheit seinen Weg zu ertasten und erstarrte: Anscheinend gab es keinen anderen Ausweg aus diesem kleinen Hof als den Durchgang, durch den er gekommen war. Die Schritte wurden lauter und lauter, er sah eine dunkle Gestalt um die Ecke biegen. Fieberhaft irrten seine Augen durch die nächtliche Dunkelheit und suchten einen Ausweg.</Objektbeschreibung>
+                Oder gehörten die Schritte hinter ihm zu einem der unzähligen Gesetzeshüter dieser Stadt, und die
+                stählerne Acht um seine Handgelenke würde gleich zuschnappen? Er konnte die Aufforderung stehen zu
+                bleiben schon hören. Gehetzt sah er sich um. Plötzlich erblickte er den schmalen Durchgang. Blitzartig
+                drehte er sich nach rechts und verschwand zwischen den beiden Gebäuden. Beinahe wäre er dabei über den
+                umgestürzten Mülleimer gefallen, der mitten im Weg lag. Er versuchte, sich in der Dunkelheit seinen Weg
+                zu ertasten und erstarrte: Anscheinend gab es keinen anderen Ausweg aus diesem kleinen Hof als den
+                Durchgang, durch den er gekommen war. Die Schritte wurden lauter und lauter, er sah eine dunkle Gestalt
+                um die Ecke biegen. Fieberhaft irrten seine Augen durch die nächtliche Dunkelheit und suchten einen
+                Ausweg.
+            </Objektbeschreibung>
             <SonstigeAngaben>ENERGIEAUSWEIS
 
-- Energieeffizienzklasse: B
-- erstellt am: 05.05.2014
-- gültig bis: 20.05.2020
-- Art des Energieausweises: nach Bedarf
-- Endenergiebedarf insgesamt: ca. 123 kWh/(m²a)
-- Endenergiebedarf für Strom: ca. 234 kWh/(m²a)
-- Endenergiebedarf für Heizung: ca. 345 kWh/(m²a)</SonstigeAngaben>
-            <MultimediaAnhang Dateityp="JPG" Titel="titel 2" Dateiname="bc11b82fea15f8384a82e2556792be704ea2f206.jpg" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="JPG" Titel="foto3" Dateiname="30d9485c2539b32942a9bf4e0558222301867aaf.jpg" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="JPG" Titel="foto4" Dateiname="8298db6c57930c45f7c0558ede51daabf08d7d5a.jpg" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="JPG" Titel="lageplan 1" Dateiname="ca04b415c029b9d57b2426f7f03a7a62f2270c63.jpg" AnhangArt="bild"/>
-            <MultimediaAnhang Dateityp="JPG" Titel="lageplan 2" Dateiname="9897ddd6a2416bf4f9d7e5521f660b669e59ae68.jpg" AnhangArt="bild"/>
+                - Energieeffizienzklasse: B
+                - erstellt am: 05.05.2014
+                - gültig bis: 20.05.2020
+                - Art des Energieausweises: nach Bedarf
+                - Endenergiebedarf insgesamt: ca. 123 kWh/(m²a)
+                - Endenergiebedarf für Strom: ca. 234 kWh/(m²a)
+                - Endenergiebedarf für Heizung: ca. 345 kWh/(m²a)
+            </SonstigeAngaben>
+            <MultimediaAnhang Dateityp="JPG" Titel="titel 2" Dateiname="bc11b82fea15f8384a82e2556792be704ea2f206.jpg"
+                              AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="JPG" Titel="foto3" Dateiname="30d9485c2539b32942a9bf4e0558222301867aaf.jpg"
+                              AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="JPG" Titel="foto4" Dateiname="8298db6c57930c45f7c0558ede51daabf08d7d5a.jpg"
+                              AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="JPG" Titel="lageplan 1" Dateiname="ca04b415c029b9d57b2426f7f03a7a62f2270c63.jpg"
+                              AnhangArt="bild"/>
+            <MultimediaAnhang Dateityp="JPG" Titel="lageplan 2" Dateiname="9897ddd6a2416bf4f9d7e5521f660b669e59ae68.jpg"
+                              AnhangArt="bild"/>
             <Mietpreise Kaltmiete="123"/>
             <BefeuerungsArt>
                 <KeineAngabe xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </BefeuerungsArt>
             <Energieausweis Energieverbrauchskennwert="123" Energieausweistyp="Endenergiebedarf"/>
         </WohnungMiete>
-        <GarageKauf Objektzustand="keineAngabe" ObjektKategorie2="keineAngabe" Waehrung="EUR" Provisionspflichtig="false" Ueberschrift="Stellplatz / Kauf" Adressdruck="false" Importmodus="loeschen" StatusHP="inaktiv" StatusIS24="inaktiv" StatusVBM="inaktiv" AnbieterObjektID="3">
+        <GarageKauf Objektzustand="keineAngabe" ObjektKategorie2="keineAngabe" Waehrung="EUR"
+                    Provisionspflichtig="false" Ueberschrift="Stellplatz / Kauf" Adressdruck="false"
+                    Importmodus="loeschen" StatusHP="inaktiv" StatusIS24="inaktiv" StatusVBM="inaktiv"
+                    AnbieterObjektID="3">
             <Adresse Laenderkennzeichen="DEU" Ort="Berlin" Postleitzahl="13125"/>
             <Kontaktperson EMail="test@test.de" Telefon="030/123456"/>
             <Kaufpreise Kaufpreis="99999"/>
         </GarageKauf>
-        <GarageKauf Objektzustand="keineAngabe" ObjektKategorie2="keineAngabe" Waehrung="EUR" Provisionspflichtig="false" Ueberschrift="Stellplatz / Kauf" Adressdruck="false" Importmodus="loeschen" StatusHP="inaktiv" StatusIS24="inaktiv" StatusVBM="inaktiv" AnbieterObjektID="4">
+        <GarageKauf Objektzustand="keineAngabe" ObjektKategorie2="keineAngabe" Waehrung="EUR"
+                    Provisionspflichtig="false" Ueberschrift="Stellplatz / Kauf" Adressdruck="false"
+                    Importmodus="loeschen" StatusHP="inaktiv" StatusIS24="inaktiv" StatusVBM="inaktiv"
+                    AnbieterObjektID="4">
             <Adresse Laenderkennzeichen="DEU" Ort="Berlin" Postleitzahl="13125"/>
             <Kontaktperson EMail="test@test.de" Telefon="030/123456"/>
             <Kaufpreise Kaufpreis="99999"/>

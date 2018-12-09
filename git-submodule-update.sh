@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright 2015-2017 OpenEstate.org
+# Copyright 2015-2018 OpenEstate.org
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,9 +15,10 @@
 # limitations under the License.
 #
 
-GIT=git
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-set -e
+GIT="git"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cd $PROJECT_DIR
-$GIT submodule update --init
+set -e
+export LANG=en
+cd "$DIR"
+"$GIT" submodule update --init

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <FMPXMLLAYOUT xmlns="http://www.filemaker.com/fmpxmllayout">
-  <ERRORCODE>0</ERRORCODE>
-  <PRODUCT BUILD="08/12/2004" NAME="FileMaker Web Publishing Engine" VERSION="7.0v3"/>
-  <LAYOUT DATABASE="House" NAME="house_web">
-    <FIELD NAME="Address">
-      <STYLE TYPE="EDITTEXT" VALUELIST=""/>
-    </FIELD>
-    <FIELD NAME="City">
-      <STYLE TYPE="EDITTEXT" VALUELIST=""/>
-    </FIELD>
-    <FIELD NAME="State">
-      <STYLE TYPE="EDITTEXT" VALUELIST=""/>
-    </FIELD>
-    <FIELD NAME="PostalCode">
-      <STYLE TYPE="EDITTEXT" VALUELIST=""/>
-    </FIELD>
-    <FIELD NAME="LotSizeAcres">
-      <STYLE TYPE="EDITTEXT" VALUELIST=""/>
-    </FIELD>
-    <FIELD NAME="CountBedrooms">
-      <STYLE TYPE="EDITTEXT" VALUELIST=""/>
-    </FIELD>
-    <FIELD NAME="AskingPrice">
-      <STYLE TYPE="EDITTEXT" VALUELIST=""/>
-    </FIELD>
-  </LAYOUT>
-  <VALUELISTS/>
+    <ERRORCODE>0</ERRORCODE>
+    <PRODUCT BUILD="08/12/2004" NAME="FileMaker Web Publishing Engine" VERSION="7.0v3"/>
+    <LAYOUT DATABASE="House" NAME="house_web">
+        <FIELD NAME="Address">
+            <STYLE TYPE="EDITTEXT" VALUELIST=""/>
+        </FIELD>
+        <FIELD NAME="City">
+            <STYLE TYPE="EDITTEXT" VALUELIST=""/>
+        </FIELD>
+        <FIELD NAME="State">
+            <STYLE TYPE="EDITTEXT" VALUELIST=""/>
+        </FIELD>
+        <FIELD NAME="PostalCode">
+            <STYLE TYPE="EDITTEXT" VALUELIST=""/>
+        </FIELD>
+        <FIELD NAME="LotSizeAcres">
+            <STYLE TYPE="EDITTEXT" VALUELIST=""/>
+        </FIELD>
+        <FIELD NAME="CountBedrooms">
+            <STYLE TYPE="EDITTEXT" VALUELIST=""/>
+        </FIELD>
+        <FIELD NAME="AskingPrice">
+            <STYLE TYPE="EDITTEXT" VALUELIST=""/>
+        </FIELD>
+    </LAYOUT>
+    <VALUELISTS/>
 </FMPXMLLAYOUT>

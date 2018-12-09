@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openimmo>
-  <uebertragung version="1.2.2"/>
-  <anbieter>
-    <firma>first agency</firma>
-    <openimmo_anid/>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <haus haustyp="KRANKENHAUS" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <haus haustyp="PFLEGEHEIM" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <haus haustyp="SANATORIUM" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <haus haustyp="SENIORENHEIM" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-    <immobilie>
-      <objektkategorie>
-        <objektart>
-          <haus haustyp="BETREUTES-WOHNEN" />
-        </objektart>
-      </objektkategorie>
-    </immobilie>
-  </anbieter>
+    <uebertragung version="1.2.2"/>
+    <anbieter>
+        <firma>first agency</firma>
+        <openimmo_anid/>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <haus haustyp="KRANKENHAUS"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <haus haustyp="PFLEGEHEIM"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <haus haustyp="SANATORIUM"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <haus haustyp="SENIORENHEIM"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+        <immobilie>
+            <objektkategorie>
+                <objektart>
+                    <haus haustyp="BETREUTES-WOHNEN"/>
+                </objektart>
+            </objektkategorie>
+        </immobilie>
+    </anbieter>
 </openimmo>

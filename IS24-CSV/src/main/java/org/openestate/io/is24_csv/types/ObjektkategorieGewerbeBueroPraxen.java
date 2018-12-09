@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,47 +22,42 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjektkategorieGewerbeBueroPraxen.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjektkategorieGewerbeBueroPraxen
-{
-  KEINE_ANGABE( 0 ),
-  LOFT( 6 ),
-  ATELIER( 37 ),
-  BUERO( 60 ),
-  BUEROETAGE( 61 ),
-  BUEROHAUS( 62 ),
-  BUEROZENTRUM( 63 ),
-  BUERO_UND_LAGERGEBAEUDE( 64 ),
-  PRAXIS( 65 ),
-  PRAXISETAGE( 66 ),
-  PRAXISHAUS( 67 ),
-  GEWERBEZENTRUM( 68 ),
-  WOHN_GESCHAEFTSGEBAEUDE( 138 ),
-  BUERO_GESCHAEFTSGEBAEUDE( 139 );
+public enum ObjektkategorieGewerbeBueroPraxen {
+    KEINE_ANGABE(0),
+    LOFT(6),
+    ATELIER(37),
+    BUERO(60),
+    BUEROETAGE(61),
+    BUEROHAUS(62),
+    BUEROZENTRUM(63),
+    BUERO_UND_LAGERGEBAEUDE(64),
+    PRAXIS(65),
+    PRAXISETAGE(66),
+    PRAXISHAUS(67),
+    GEWERBEZENTRUM(68),
+    WOHN_GESCHAEFTSGEBAEUDE(138),
+    BUERO_GESCHAEFTSGEBAEUDE(139);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieGewerbeBueroPraxen.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieGewerbeBueroPraxen.class);
+    private final int value;
 
-  private ObjektkategorieGewerbeBueroPraxen( int value )
-  {
-    this.value = value;
-  }
-
-  public static ObjektkategorieGewerbeBueroPraxen parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (ObjektkategorieGewerbeBueroPraxen s : ObjektkategorieGewerbeBueroPraxen.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private ObjektkategorieGewerbeBueroPraxen(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static ObjektkategorieGewerbeBueroPraxen parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (ObjektkategorieGewerbeBueroPraxen s : ObjektkategorieGewerbeBueroPraxen.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

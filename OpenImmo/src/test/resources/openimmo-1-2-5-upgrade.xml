@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openimmo>
-  <uebertragung version="1.2.4"/>
-  <anbieter>
-    <firma>first agency</firma>
-    <openimmo_anid/>
-    <immobilie>
-      <zustand_angaben>
-        <energiepass>
-          <epart>BEDARF</epart>
-          <gueltig_bis>03-2018</gueltig_bis>
-          <endenergiebedarf>123</endenergiebedarf>
-        </energiepass>
-        <user_defined_simplefield feldname="epass_hwbwert">123</user_defined_simplefield>
-        <user_defined_simplefield feldname="epass_hwbklasse">B</user_defined_simplefield>
-        <user_defined_simplefield feldname="epass_fgeewert">234</user_defined_simplefield>
-        <user_defined_simplefield feldname="epass_fgeeklasse">C</user_defined_simplefield>
-      </zustand_angaben>
-    </immobilie>
-    <immobilie>
-      <zustand_angaben>
-        <user_defined_simplefield feldname="epass_hwbwert">345</user_defined_simplefield>
-        <user_defined_simplefield feldname="epass_hwbklasse">D</user_defined_simplefield>
-        <user_defined_simplefield feldname="epass_fgeewert">456</user_defined_simplefield>
-        <user_defined_simplefield feldname="epass_fgeeklasse">E</user_defined_simplefield>
-      </zustand_angaben>
-    </immobilie>
-  </anbieter>
+    <uebertragung version="1.2.4"/>
+    <anbieter>
+        <firma>first agency</firma>
+        <openimmo_anid/>
+        <immobilie>
+            <zustand_angaben>
+                <energiepass>
+                    <epart>BEDARF</epart>
+                    <gueltig_bis>03-2018</gueltig_bis>
+                    <endenergiebedarf>123</endenergiebedarf>
+                </energiepass>
+                <user_defined_simplefield feldname="epass_hwbwert">123</user_defined_simplefield>
+                <user_defined_simplefield feldname="epass_hwbklasse">B</user_defined_simplefield>
+                <user_defined_simplefield feldname="epass_fgeewert">234</user_defined_simplefield>
+                <user_defined_simplefield feldname="epass_fgeeklasse">C</user_defined_simplefield>
+            </zustand_angaben>
+        </immobilie>
+        <immobilie>
+            <zustand_angaben>
+                <user_defined_simplefield feldname="epass_hwbwert">345</user_defined_simplefield>
+                <user_defined_simplefield feldname="epass_hwbklasse">D</user_defined_simplefield>
+                <user_defined_simplefield feldname="epass_fgeewert">456</user_defined_simplefield>
+                <user_defined_simplefield feldname="epass_fgeeklasse">E</user_defined_simplefield>
+            </zustand_angaben>
+        </immobilie>
+    </anbieter>
 </openimmo>

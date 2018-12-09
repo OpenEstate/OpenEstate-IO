@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,77 +24,65 @@ import org.slf4j.LoggerFactory;
  * A {@link ValidationEventHandler} that handles validation events during XML
  * processing.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class XmlValidationHandler implements ValidationEventHandler
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( XmlValidationHandler.class );
+public class XmlValidationHandler implements ValidationEventHandler {
+    private final static Logger LOGGER = LoggerFactory.getLogger(XmlValidationHandler.class);
 
-  /**
-   * Receive notification of a validation warning or error.
-   *
-   * <p>
-   *
-   * The ValidationEvent will have a
-   * {@link javax.xml.bind.ValidationEventLocator} embedded in it that
-   * indicates where the error or warning occurred.
-   *
-   * <p>
-   *
-   * If an unchecked runtime exception is thrown from this method, the JAXB
-   * provider will treat it as if the method returned false and interrupt
-   * the current unmarshal, validate, or marshal operation.
-   *
-   * @param event
-   * the encapsulated validation event information. It is a provider error if
-   * this parameter is null.
-   *
-   * @return
-   * true if the JAXB Provider should attempt to continue the current unmarshal,
-   * validate, or marshal operation after handling this warning/error, false if
-   * the provider should terminate the current operation with the appropriate
-   * <tt>UnmarshalException</tt>, <tt>ValidationException</tt>, or
-   * <tt>MarshalException</tt>.
-   *
-   * @throws IllegalArgumentException
-   * if the event object is null.
-   */
-  @Override
-  public boolean handleEvent( ValidationEvent event )
-  {
-    if (event==null)
-      throw new IllegalArgumentException( "No validation event was provided!" );
+    /**
+     * Receive notification of a validation warning or error.
+     *
+     * <p>
+     * <p>
+     * The ValidationEvent will have a
+     * {@link javax.xml.bind.ValidationEventLocator} embedded in it that
+     * indicates where the error or warning occurred.
+     *
+     * <p>
+     * <p>
+     * If an unchecked runtime exception is thrown from this method, the JAXB
+     * provider will treat it as if the method returned false and interrupt
+     * the current unmarshal, validate, or marshal operation.
+     *
+     * @param event the encapsulated validation event information. It is a provider error if
+     *              this parameter is null.
+     * @return true if the JAXB Provider should attempt to continue the current unmarshal,
+     * validate, or marshal operation after handling this warning/error, false if
+     * the provider should terminate the current operation with the appropriate
+     * <tt>UnmarshalException</tt>, <tt>ValidationException</tt>, or
+     * <tt>MarshalException</tt>.
+     * @throws IllegalArgumentException if the event object is null.
+     */
+    @Override
+    public boolean handleEvent(ValidationEvent event) {
+        if (event == null)
+            throw new IllegalArgumentException("No validation event was provided!");
 
-    int line = -1;
-    int col = -1;
-    if (event.getLocator()!=null)
-    {
-      line = event.getLocator().getLineNumber();
-      col = event.getLocator().getColumnNumber();
+        int line = -1;
+        int col = -1;
+        if (event.getLocator() != null) {
+            line = event.getLocator().getLineNumber();
+            col = event.getLocator().getColumnNumber();
+        }
+
+        if (ValidationEvent.FATAL_ERROR == event.getSeverity()) {
+            LOGGER.warn("fatal validation error");
+            if (line > -1 && col > -1) LOGGER.warn("> at line " + line + " / column " + col);
+            LOGGER.warn("> " + event.getMessage());
+            return false;
+        }
+
+        if (ValidationEvent.WARNING == event.getSeverity()) {
+            LOGGER.warn("validation warning");
+            if (line > -1 && col > -1) LOGGER.warn("> at line " + line + " / column " + col);
+            LOGGER.warn("> " + event.getMessage());
+        } else {
+            LOGGER.warn("validation error");
+            if (line > -1 && col > -1) LOGGER.warn("> at line " + line + " / column " + col);
+            LOGGER.warn("> " + event.getMessage());
+        }
+
+        return true;
     }
-
-    if (ValidationEvent.FATAL_ERROR==event.getSeverity())
-    {
-      LOGGER.warn( "fatal validation error" );
-      if (line>-1 && col>-1) LOGGER.warn( "> at line " + line + " / column " + col );
-      LOGGER.warn( "> " + event.getMessage() );
-      return false;
-    }
-
-    if (ValidationEvent.WARNING==event.getSeverity())
-    {
-      LOGGER.warn( "validation warning" );
-      if (line>-1 && col>-1) LOGGER.warn( "> at line " + line + " / column " + col );
-      LOGGER.warn( "> " + event.getMessage() );
-    }
-    else
-    {
-      LOGGER.warn( "validation error" );
-      if (line>-1 && col>-1) LOGGER.warn( "> at line " + line + " / column " + col );
-      LOGGER.warn( "> " + event.getMessage() );
-    }
-
-    return true;
-  }
 }

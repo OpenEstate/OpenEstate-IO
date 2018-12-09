@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openimmo>
-  <uebertragung version="1.2.1"/>
-  <anbieter>
-    <firma>first agency</firma>
-    <openimmo_anid/>
-    <immobilie>
-      <zustand_angaben>
-        <energiepass>
-          <art>BEDARF</art>
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-    <immobilie>
-      <zustand_angaben>
-        <energiepass>
-          <art>VERBRAUCH</art>
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-    <immobilie>
-      <zustand_angaben>
-        <energiepass>
-          <art />
-        </energiepass>
-      </zustand_angaben>
-    </immobilie>
-  </anbieter>
+    <uebertragung version="1.2.1"/>
+    <anbieter>
+        <firma>first agency</firma>
+        <openimmo_anid/>
+        <immobilie>
+            <zustand_angaben>
+                <energiepass>
+                    <art>BEDARF</art>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+        <immobilie>
+            <zustand_angaben>
+                <energiepass>
+                    <art>VERBRAUCH</art>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+        <immobilie>
+            <zustand_angaben>
+                <energiepass>
+                    <art/>
+                </energiepass>
+            </zustand_angaben>
+        </immobilie>
+    </anbieter>
 </openimmo>

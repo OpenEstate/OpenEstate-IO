@@ -1,228 +1,228 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <daft version="2.7">
-  <overseas_sales>
-    <overseas_sale_ad>
-      <country>DE</country>
-      <region>Berlin</region>
-      <area>Berlin</area>
-      <address>Beispielstraße 123</address>
-      <property_type>house</property_type>
-      <house_type>detached</house_type>
-      <commercial_type>shop</commercial_type>
-      <description>A description about the property.</description>
-      <price>10166</price>
-      <price_type>region</price_type>
-      <bathroom_number>3</bathroom_number>
-      <bedroom_number>1</bedroom_number>
-      <is_new_development>1</is_new_development>
-      <units_available>1</units_available>
-      <new_development_availability>some notes about development</new_development_availability>
-      <square_metres>242.22038955880006</square_metres>
-      <acres>168.40822509581932</acres>
-      <directions>some notes about directions</directions>
-      <co2_rating>some notes about CO2 rating</co2_rating>
-      <energy_rating>some notes about energy rating</energy_rating>
-      <viewing_details>some notes about viewing details</viewing_details>
-      <phone1>030/123456</phone1>
-      <phone2>030/123457</phone2>
-      <contact_name>Max Mustermann</contact_name>
-      <phone_info>Some information about contacts via phone.</phone_info>
-      <main_email>test@openstate.org</main_email>
-      <cc_email>test@openestate.org</cc_email>
-      <external_id>527</external_id>
-      <agent_id>123</agent_id>
-      <property_status>for-sale</property_status>
-      <photos>
-        <photo>http://www.mywebsite.org/image1.jpg</photo>
-        <photo>http://www.mywebsite.org/image2.jpg</photo>
-        <photo>http://www.mywebsite.org/image3.jpg</photo>
-      </photos>
-      <features>
-        <feature>another feature</feature>
-        <feature>some more feature</feature>
-      </features>
-      <pdfs>
-        <pdf>http://www.mywebsite.org/document1.pdf</pdf>
-        <pdf>http://www.mywebsite.org/document2.pdf</pdf>
-      </pdfs>
-    </overseas_sale_ad>
-    <overseas_sale_ad>
-      <country>DE</country>
-      <region>Berlin</region>
-      <area>Berlin</area>
-      <address>Beispielstraße 123</address>
-      <property_type>house</property_type>
-      <house_type>detached</house_type>
-      <commercial_type>shop</commercial_type>
-      <description>A description about the property.</description>
-      <price>924856</price>
-      <price_type>region</price_type>
-      <bathroom_number>4</bathroom_number>
-      <bedroom_number>2</bedroom_number>
-      <is_new_development>1</is_new_development>
-      <units_available>5</units_available>
-      <new_development_availability>some notes about development</new_development_availability>
-      <square_metres>563.3985136392812</square_metres>
-      <acres>966.4511149400772</acres>
-      <directions>some notes about directions</directions>
-      <co2_rating>some notes about CO2 rating</co2_rating>
-      <energy_rating>some notes about energy rating</energy_rating>
-      <viewing_details>some notes about viewing details</viewing_details>
-      <phone1>030/123456</phone1>
-      <phone2>030/123457</phone2>
-      <contact_name>Max Mustermann</contact_name>
-      <phone_info>Some information about contacts via phone.</phone_info>
-      <main_email>test@openstate.org</main_email>
-      <cc_email>test@openestate.org</cc_email>
-      <external_id>651</external_id>
-      <agent_id>123</agent_id>
-      <property_status>for-sale</property_status>
-      <photos>
-        <photo>http://www.mywebsite.org/image1.jpg</photo>
-        <photo>http://www.mywebsite.org/image2.jpg</photo>
-        <photo>http://www.mywebsite.org/image3.jpg</photo>
-      </photos>
-      <features>
-        <feature>another feature</feature>
-        <feature>some more feature</feature>
-      </features>
-      <pdfs>
-        <pdf>http://www.mywebsite.org/document1.pdf</pdf>
-        <pdf>http://www.mywebsite.org/document2.pdf</pdf>
-      </pdfs>
-    </overseas_sale_ad>
-    <overseas_sale_ad>
-      <country>DE</country>
-      <region>Berlin</region>
-      <area>Berlin</area>
-      <address>Beispielstraße 123</address>
-      <property_type>house</property_type>
-      <house_type>detached</house_type>
-      <commercial_type>shop</commercial_type>
-      <description>A description about the property.</description>
-      <price>181631</price>
-      <price_type>region</price_type>
-      <bathroom_number>2</bathroom_number>
-      <bedroom_number>3</bedroom_number>
-      <is_new_development>0</is_new_development>
-      <units_available>34</units_available>
-      <new_development_availability>some notes about development</new_development_availability>
-      <square_metres>482.56882349544327</square_metres>
-      <acres>882.0965718205337</acres>
-      <directions>some notes about directions</directions>
-      <co2_rating>some notes about CO2 rating</co2_rating>
-      <energy_rating>some notes about energy rating</energy_rating>
-      <viewing_details>some notes about viewing details</viewing_details>
-      <phone1>030/123456</phone1>
-      <phone2>030/123457</phone2>
-      <contact_name>Max Mustermann</contact_name>
-      <phone_info>Some information about contacts via phone.</phone_info>
-      <main_email>test@openstate.org</main_email>
-      <cc_email>test@openestate.org</cc_email>
-      <external_id>779</external_id>
-      <agent_id>123</agent_id>
-      <property_status>for-sale</property_status>
-      <photos>
-        <photo>http://www.mywebsite.org/image1.jpg</photo>
-        <photo>http://www.mywebsite.org/image2.jpg</photo>
-        <photo>http://www.mywebsite.org/image3.jpg</photo>
-      </photos>
-      <features>
-        <feature>another feature</feature>
-        <feature>some more feature</feature>
-      </features>
-      <pdfs>
-        <pdf>http://www.mywebsite.org/document1.pdf</pdf>
-        <pdf>http://www.mywebsite.org/document2.pdf</pdf>
-      </pdfs>
-    </overseas_sale_ad>
-  </overseas_sales>
-  <overseas_rental>
-    <overseas_rental_ad>
-      <country>DE</country>
-      <region>Berlin</region>
-      <area>Berlin</area>
-      <address>Beispielstraße 123</address>
-      <property_type>house</property_type>
-      <house_type>townhouse</house_type>
-      <commercial_type>land</commercial_type>
-      <description>A description about the property.</description>
-      <rent>779</rent>
-      <rent_collection_period>monthly</rent_collection_period>
-      <bathroom_number>0</bathroom_number>
-      <bedroom_number>3</bedroom_number>
-      <furnished>furnished</furnished>
-      <cable_television>1</cable_television>
-      <washing_machine>0</washing_machine>
-      <dryer>1</dryer>
-      <dishwasher>1</dishwasher>
-      <microwave>1</microwave>
-      <single_beds>2</single_beds>
-      <double_beds>1</double_beds>
-      <twin_beds>2</twin_beds>
-      <number_people>3</number_people>
-      <available_from>2015-02-24+01:00</available_from>
-      <lease>946</lease>
-      <phone1>030/123456</phone1>
-      <phone2>030/123457</phone2>
-      <contact_name>Max Mustermann</contact_name>
-      <phone_info>Some information about contacts via phone.</phone_info>
-      <main_email>test@openstate.org</main_email>
-      <cc_email>test@openestate.org</cc_email>
-      <external_id>799</external_id>
-      <agent_id>123</agent_id>
-      <photos>
-        <photo>http://www.mywebsite.org/image1.jpg</photo>
-        <photo>http://www.mywebsite.org/image2.jpg</photo>
-        <photo>http://www.mywebsite.org/image3.jpg</photo>
-      </photos>
-      <features>
-        <feature>another feature</feature>
-        <feature>some more feature</feature>
-      </features>
-    </overseas_rental_ad>
-    <overseas_rental_ad>
-      <country>DE</country>
-      <region>Berlin</region>
-      <area>Berlin</area>
-      <address>Beispielstraße 123</address>
-      <property_type>house</property_type>
-      <house_type>townhouse</house_type>
-      <commercial_type>land</commercial_type>
-      <description>A description about the property.</description>
-      <rent>150</rent>
-      <rent_collection_period>monthly</rent_collection_period>
-      <bathroom_number>2</bathroom_number>
-      <bedroom_number>1</bedroom_number>
-      <furnished>furnished</furnished>
-      <cable_television>1</cable_television>
-      <washing_machine>0</washing_machine>
-      <dryer>0</dryer>
-      <dishwasher>1</dishwasher>
-      <microwave>1</microwave>
-      <single_beds>1</single_beds>
-      <double_beds>4</double_beds>
-      <twin_beds>4</twin_beds>
-      <number_people>0</number_people>
-      <available_from>2015-02-24+01:00</available_from>
-      <lease>190</lease>
-      <phone1>030/123456</phone1>
-      <phone2>030/123457</phone2>
-      <contact_name>Max Mustermann</contact_name>
-      <phone_info>Some information about contacts via phone.</phone_info>
-      <main_email>test@openstate.org</main_email>
-      <cc_email>test@openestate.org</cc_email>
-      <external_id>906</external_id>
-      <agent_id>123</agent_id>
-      <photos>
-        <photo>http://www.mywebsite.org/image1.jpg</photo>
-        <photo>http://www.mywebsite.org/image2.jpg</photo>
-        <photo>http://www.mywebsite.org/image3.jpg</photo>
-      </photos>
-      <features>
-        <feature>another feature</feature>
-        <feature>some more feature</feature>
-      </features>
-    </overseas_rental_ad>
-  </overseas_rental>
+    <overseas_sales>
+        <overseas_sale_ad>
+            <country>DE</country>
+            <region>Berlin</region>
+            <area>Berlin</area>
+            <address>Beispielstraße 123</address>
+            <property_type>house</property_type>
+            <house_type>detached</house_type>
+            <commercial_type>shop</commercial_type>
+            <description>A description about the property.</description>
+            <price>10166</price>
+            <price_type>region</price_type>
+            <bathroom_number>3</bathroom_number>
+            <bedroom_number>1</bedroom_number>
+            <is_new_development>1</is_new_development>
+            <units_available>1</units_available>
+            <new_development_availability>some notes about development</new_development_availability>
+            <square_metres>242.22038955880006</square_metres>
+            <acres>168.40822509581932</acres>
+            <directions>some notes about directions</directions>
+            <co2_rating>some notes about CO2 rating</co2_rating>
+            <energy_rating>some notes about energy rating</energy_rating>
+            <viewing_details>some notes about viewing details</viewing_details>
+            <phone1>030/123456</phone1>
+            <phone2>030/123457</phone2>
+            <contact_name>Max Mustermann</contact_name>
+            <phone_info>Some information about contacts via phone.</phone_info>
+            <main_email>test@openstate.org</main_email>
+            <cc_email>test@openestate.org</cc_email>
+            <external_id>527</external_id>
+            <agent_id>123</agent_id>
+            <property_status>for-sale</property_status>
+            <photos>
+                <photo>http://www.mywebsite.org/image1.jpg</photo>
+                <photo>http://www.mywebsite.org/image2.jpg</photo>
+                <photo>http://www.mywebsite.org/image3.jpg</photo>
+            </photos>
+            <features>
+                <feature>another feature</feature>
+                <feature>some more feature</feature>
+            </features>
+            <pdfs>
+                <pdf>http://www.mywebsite.org/document1.pdf</pdf>
+                <pdf>http://www.mywebsite.org/document2.pdf</pdf>
+            </pdfs>
+        </overseas_sale_ad>
+        <overseas_sale_ad>
+            <country>DE</country>
+            <region>Berlin</region>
+            <area>Berlin</area>
+            <address>Beispielstraße 123</address>
+            <property_type>house</property_type>
+            <house_type>detached</house_type>
+            <commercial_type>shop</commercial_type>
+            <description>A description about the property.</description>
+            <price>924856</price>
+            <price_type>region</price_type>
+            <bathroom_number>4</bathroom_number>
+            <bedroom_number>2</bedroom_number>
+            <is_new_development>1</is_new_development>
+            <units_available>5</units_available>
+            <new_development_availability>some notes about development</new_development_availability>
+            <square_metres>563.3985136392812</square_metres>
+            <acres>966.4511149400772</acres>
+            <directions>some notes about directions</directions>
+            <co2_rating>some notes about CO2 rating</co2_rating>
+            <energy_rating>some notes about energy rating</energy_rating>
+            <viewing_details>some notes about viewing details</viewing_details>
+            <phone1>030/123456</phone1>
+            <phone2>030/123457</phone2>
+            <contact_name>Max Mustermann</contact_name>
+            <phone_info>Some information about contacts via phone.</phone_info>
+            <main_email>test@openstate.org</main_email>
+            <cc_email>test@openestate.org</cc_email>
+            <external_id>651</external_id>
+            <agent_id>123</agent_id>
+            <property_status>for-sale</property_status>
+            <photos>
+                <photo>http://www.mywebsite.org/image1.jpg</photo>
+                <photo>http://www.mywebsite.org/image2.jpg</photo>
+                <photo>http://www.mywebsite.org/image3.jpg</photo>
+            </photos>
+            <features>
+                <feature>another feature</feature>
+                <feature>some more feature</feature>
+            </features>
+            <pdfs>
+                <pdf>http://www.mywebsite.org/document1.pdf</pdf>
+                <pdf>http://www.mywebsite.org/document2.pdf</pdf>
+            </pdfs>
+        </overseas_sale_ad>
+        <overseas_sale_ad>
+            <country>DE</country>
+            <region>Berlin</region>
+            <area>Berlin</area>
+            <address>Beispielstraße 123</address>
+            <property_type>house</property_type>
+            <house_type>detached</house_type>
+            <commercial_type>shop</commercial_type>
+            <description>A description about the property.</description>
+            <price>181631</price>
+            <price_type>region</price_type>
+            <bathroom_number>2</bathroom_number>
+            <bedroom_number>3</bedroom_number>
+            <is_new_development>0</is_new_development>
+            <units_available>34</units_available>
+            <new_development_availability>some notes about development</new_development_availability>
+            <square_metres>482.56882349544327</square_metres>
+            <acres>882.0965718205337</acres>
+            <directions>some notes about directions</directions>
+            <co2_rating>some notes about CO2 rating</co2_rating>
+            <energy_rating>some notes about energy rating</energy_rating>
+            <viewing_details>some notes about viewing details</viewing_details>
+            <phone1>030/123456</phone1>
+            <phone2>030/123457</phone2>
+            <contact_name>Max Mustermann</contact_name>
+            <phone_info>Some information about contacts via phone.</phone_info>
+            <main_email>test@openstate.org</main_email>
+            <cc_email>test@openestate.org</cc_email>
+            <external_id>779</external_id>
+            <agent_id>123</agent_id>
+            <property_status>for-sale</property_status>
+            <photos>
+                <photo>http://www.mywebsite.org/image1.jpg</photo>
+                <photo>http://www.mywebsite.org/image2.jpg</photo>
+                <photo>http://www.mywebsite.org/image3.jpg</photo>
+            </photos>
+            <features>
+                <feature>another feature</feature>
+                <feature>some more feature</feature>
+            </features>
+            <pdfs>
+                <pdf>http://www.mywebsite.org/document1.pdf</pdf>
+                <pdf>http://www.mywebsite.org/document2.pdf</pdf>
+            </pdfs>
+        </overseas_sale_ad>
+    </overseas_sales>
+    <overseas_rental>
+        <overseas_rental_ad>
+            <country>DE</country>
+            <region>Berlin</region>
+            <area>Berlin</area>
+            <address>Beispielstraße 123</address>
+            <property_type>house</property_type>
+            <house_type>townhouse</house_type>
+            <commercial_type>land</commercial_type>
+            <description>A description about the property.</description>
+            <rent>779</rent>
+            <rent_collection_period>monthly</rent_collection_period>
+            <bathroom_number>0</bathroom_number>
+            <bedroom_number>3</bedroom_number>
+            <furnished>furnished</furnished>
+            <cable_television>1</cable_television>
+            <washing_machine>0</washing_machine>
+            <dryer>1</dryer>
+            <dishwasher>1</dishwasher>
+            <microwave>1</microwave>
+            <single_beds>2</single_beds>
+            <double_beds>1</double_beds>
+            <twin_beds>2</twin_beds>
+            <number_people>3</number_people>
+            <available_from>2015-02-24+01:00</available_from>
+            <lease>946</lease>
+            <phone1>030/123456</phone1>
+            <phone2>030/123457</phone2>
+            <contact_name>Max Mustermann</contact_name>
+            <phone_info>Some information about contacts via phone.</phone_info>
+            <main_email>test@openstate.org</main_email>
+            <cc_email>test@openestate.org</cc_email>
+            <external_id>799</external_id>
+            <agent_id>123</agent_id>
+            <photos>
+                <photo>http://www.mywebsite.org/image1.jpg</photo>
+                <photo>http://www.mywebsite.org/image2.jpg</photo>
+                <photo>http://www.mywebsite.org/image3.jpg</photo>
+            </photos>
+            <features>
+                <feature>another feature</feature>
+                <feature>some more feature</feature>
+            </features>
+        </overseas_rental_ad>
+        <overseas_rental_ad>
+            <country>DE</country>
+            <region>Berlin</region>
+            <area>Berlin</area>
+            <address>Beispielstraße 123</address>
+            <property_type>house</property_type>
+            <house_type>townhouse</house_type>
+            <commercial_type>land</commercial_type>
+            <description>A description about the property.</description>
+            <rent>150</rent>
+            <rent_collection_period>monthly</rent_collection_period>
+            <bathroom_number>2</bathroom_number>
+            <bedroom_number>1</bedroom_number>
+            <furnished>furnished</furnished>
+            <cable_television>1</cable_television>
+            <washing_machine>0</washing_machine>
+            <dryer>0</dryer>
+            <dishwasher>1</dishwasher>
+            <microwave>1</microwave>
+            <single_beds>1</single_beds>
+            <double_beds>4</double_beds>
+            <twin_beds>4</twin_beds>
+            <number_people>0</number_people>
+            <available_from>2015-02-24+01:00</available_from>
+            <lease>190</lease>
+            <phone1>030/123456</phone1>
+            <phone2>030/123457</phone2>
+            <contact_name>Max Mustermann</contact_name>
+            <phone_info>Some information about contacts via phone.</phone_info>
+            <main_email>test@openstate.org</main_email>
+            <cc_email>test@openestate.org</cc_email>
+            <external_id>906</external_id>
+            <agent_id>123</agent_id>
+            <photos>
+                <photo>http://www.mywebsite.org/image1.jpg</photo>
+                <photo>http://www.mywebsite.org/image2.jpg</photo>
+                <photo>http://www.mywebsite.org/image3.jpg</photo>
+            </photos>
+            <features>
+                <feature>another feature</feature>
+                <feature>some more feature</feature>
+            </features>
+        </overseas_rental_ad>
+    </overseas_rental>
 </daft>

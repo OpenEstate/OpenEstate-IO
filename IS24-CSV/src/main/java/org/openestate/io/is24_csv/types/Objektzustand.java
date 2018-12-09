@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,46 +22,41 @@ import org.slf4j.LoggerFactory;
 /**
  * Objektzustand.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Objektzustand
-{
-  KEINE_ANGABE( 0 ),
-  ERSTBEZUG( 1 ),
-  NEUWERTIG( 2 ),
-  VOLLSTAENDIG_RENOVIERT( 3 ),
-  RENOVIERUNGSBEDARF( 4 ),
-  MODERNISIERT( 5 ),
-  NACH_VEREINBARUNG( 6 ),
-  GEPFLEGT( 7 ),
-  ERSTBEZUG_NACH_SANIERUNG( 8 ),
-  SANIERT( 9 ),
-  @Deprecated
-  UNRENOVIERT( 10 ),
-  ABBRUCHREIF( 11 );
+public enum Objektzustand {
+    KEINE_ANGABE(0),
+    ERSTBEZUG(1),
+    NEUWERTIG(2),
+    VOLLSTAENDIG_RENOVIERT(3),
+    RENOVIERUNGSBEDARF(4),
+    MODERNISIERT(5),
+    NACH_VEREINBARUNG(6),
+    GEPFLEGT(7),
+    ERSTBEZUG_NACH_SANIERUNG(8),
+    SANIERT(9),
+    @Deprecated
+    UNRENOVIERT(10),
+    ABBRUCHREIF(11);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Objektzustand.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Objektzustand.class);
+    private final int value;
 
-  private Objektzustand( int value )
-  {
-    this.value = value;
-  }
-
-  public static Objektzustand parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Objektzustand s : Objektzustand.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Objektzustand(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Objektzustand parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Objektzustand s : Objektzustand.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

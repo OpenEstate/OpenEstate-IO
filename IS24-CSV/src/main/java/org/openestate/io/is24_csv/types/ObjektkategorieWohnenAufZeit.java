@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,37 +22,32 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjektkategorieWohnenAufZeit.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjektkategorieWohnenAufZeit
-{
-  ZIMMER( 0 ),
-  APPARTMENT( 1 ),
-  WOHNUNG( 2 ),
-  HAUS( 3 );
+public enum ObjektkategorieWohnenAufZeit {
+    ZIMMER(0),
+    APPARTMENT(1),
+    WOHNUNG(2),
+    HAUS(3);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieWohnenAufZeit.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieWohnenAufZeit.class);
+    private final int value;
 
-  private ObjektkategorieWohnenAufZeit( int value )
-  {
-    this.value = value;
-  }
-
-  public static ObjektkategorieWohnenAufZeit parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (ObjektkategorieWohnenAufZeit s : ObjektkategorieWohnenAufZeit.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private ObjektkategorieWohnenAufZeit(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static ObjektkategorieWohnenAufZeit parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (ObjektkategorieWohnenAufZeit s : ObjektkategorieWohnenAufZeit.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

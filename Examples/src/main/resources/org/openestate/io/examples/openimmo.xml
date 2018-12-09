@@ -5,498 +5,505 @@
 	Beispiel Daten zur Version 1.2.7
 	-->
 <openimmo>
-  <uebertragung art="ONLINE" umfang="VOLL" modus="NEW" version="1.2.7" sendersoftware="OIGEN" senderversion="0.9" techn_email="" timestamp="2014-06-01T10:00:00" regi_id="ABCD143"/>
-  <anbieter>
-    <anbieternr/>
-    <firma>MusterMannFrau Immobilien</firma>
-    <openimmo_anid/>
-    <lizenzkennung>ABCD13</lizenzkennung>
-    <anhang location="EXTERN" gruppe="BILD">
-      <anhangtitel/>
-      <format/>
-      <daten>
-        <pfad/>
-      </daten>
-    </anhang>
-    <immobilie>
-      <objektkategorie>
-        <nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false"/>
-        <vermarktungsart KAUF="true" MIETE_PACHT="false" ERBPACHT="false" LEASING="false"/>
-        <objektart>
-          <zimmer zimmertyp="ZIMMER"/>
-          <objektart_zusatz>Moebeliert</objektart_zusatz>
-        </objektart>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-      </objektkategorie>
-      <geo>
-        <plz/>
-        <ort/>
-        <geokoordinaten breitengrad="22.22" laengengrad="22.22"/>
-        <strasse/>
-        <hausnummer/>
-        <bundesland/>
-        <land iso_land="DEU"/>
-        <gemeindecode/>
-        <flur/>
-        <flurstueck/>
-        <gemarkung/>
-        <etage>1</etage>
-        <anzahl_etagen>3</anzahl_etagen>
-        <lage_im_bau LINKS="false" RECHTS="true" VORNE="true" HINTEN="false"/>
-        <wohnungsnr/>
-        <lage_gebiet gebiete="NEBENZENTRUM"/>
-        <regionaler_zusatz>Blumenviertel</regionaler_zusatz>
-        <karten_makro>true</karten_makro>
-        <karten_mikro>false</karten_mikro>
-        <virtuelletour>false</virtuelletour>
-        <luftbildern>true</luftbildern>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend/>
-      </geo>
-      <kontaktperson>
-        <email_zentrale>foo@bar.de</email_zentrale>
-        <email_direkt>foo@bar.de</email_direkt>
-        <tel_zentrale>1</tel_zentrale>
-        <tel_durchw>2</tel_durchw>
-        <tel_fax>3</tel_fax>
-        <tel_handy>4</tel_handy>
-        <name/>
-        <vorname/>
-        <titel/>
-        <anrede/>
-        <anrede_brief/>
-        <firma/>
-        <zusatzfeld/>
-        <strasse/>
-        <hausnummer/>
-        <plz/>
-        <ort/>
-        <postfach/>
-        <postf_plz/>
-        <postf_ort/>
-        <land iso_land="DEU"/>
-        <email_privat>foo@bar.de</email_privat>
-        <email_sonstige emailart="EM_DIREKT" bemerkung="1">foo@bar.de</email_sonstige>
-        <email_feedback>yx@y.de</email_feedback>
-        <tel_privat>1</tel_privat>
-        <tel_sonstige telefonart="TEL_PRIVAT" bemerkung="">1</tel_sonstige>
-        <url/>
-        <adressfreigabe>false</adressfreigabe>
-        <personennummer/>
-        <immobilientreuhaenderid>In .AT</immobilientreuhaenderid>
-        <foto location="EXTERN">
-          <format>JPEG</format>
-          <daten>
-            <pfad>abc.jpg</pfad>
-          </daten>
-        </foto>
-        <freitextfeld/>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend/>
-      </kontaktperson>
-      <weitere_adresse adressart="">
-        <vorname/>
-        <name/>
-        <titel/>
-        <anrede/>
-        <anrede_brief/>
-        <firma/>
-        <zusatzfeld/>
-        <strasse/>
-        <hausnummer/>
-        <plz/>
-        <ort/>
-        <postfach/>
-        <postf_plz/>
-        <postf_ort/>
-        <land iso_land="DEU"/>
-        <email_zentrale>foo@bar.de</email_zentrale>
-        <email_direkt>foo@bar.de</email_direkt>
-        <email_privat>foo@bar.de</email_privat>
-        <email_sonstige emailart="EM_PRIVAT" bemerkung="">1</email_sonstige>
-        <tel_durchw>1</tel_durchw>
-        <tel_zentrale>1</tel_zentrale>
-        <tel_handy>1</tel_handy>
-        <tel_fax>1</tel_fax>
-        <tel_privat>1</tel_privat>
-        <tel_sonstige telefonart="TEL_DURCHW" bemerkung="">1</tel_sonstige>
-        <url/>
-        <adressfreigabe>false</adressfreigabe>
-        <personennummer/>
-        <freitextfeld/>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend/>
-      </weitere_adresse>
-      <preise>
-        <kaufpreis>1</kaufpreis>
-        <kaufpreisnetto>100000.00</kaufpreisnetto>
-        <kaufpreisbrutto>119000.00</kaufpreisbrutto>
-        <nettokaltmiete>1</nettokaltmiete>
-        <kaltmiete>1</kaltmiete>
-        <warmmiete>1</warmmiete>
-        <nebenkosten>1</nebenkosten>
-        <heizkosten_enthalten>false</heizkosten_enthalten>
-        <heizkosten>1</heizkosten>
-        <zzg_mehrwertsteuer>true</zzg_mehrwertsteuer>
-        <mietzuschlaege>1</mietzuschlaege>
-        <!-- $V126 -->
-        <hauptmietzinsnetto hauptmietzinsust="106.40">560.00</hauptmietzinsnetto>
-        <pauschalmiete>100 </pauschalmiete>
-        <betriebskostennetto betriebskostenust="106.40">560.00</betriebskostennetto>
-        <!-- erst nach Zertifizierung
-		<evbnetto />
-		<gesamtmietenetto />
-		<gesamtmietebrutto />
-		<gesamtbelastungnetto />
-		<gesamtbelastungbrutto />
-		<gesamtkostenprom2von />
-		<heizkostennetto />
-		<monatlichekostennetto />
-		<monatlichekostenbrutto />
-		<nebenkostenprom2von />
-		<ruecklagenetto />
-		<sonstigekostennetto />
-		<sonstigemietenetto />
-		<summemietenetto />
-		<nettomieteprom2von />		-->
-        <!-- /$V126 -->
-        <pacht>1</pacht>
-        <erbpacht>1</erbpacht>
-        <hausgeld>1</hausgeld>
-        <abstand>1</abstand>
-        <preis_zeitraum_von>2001-01-01</preis_zeitraum_von>
-        <preis_zeitraum_bis>2001-01-01</preis_zeitraum_bis>
-        <preis_zeiteinheit zeiteinheit="JAHR"/>
-        <mietpreis_pro_qm>1</mietpreis_pro_qm>
-        <kaufpreis_pro_qm>1</kaufpreis_pro_qm>
-        <provisionspflichtig>true</provisionspflichtig>
-        <provision_teilen>false</provision_teilen>
-        <innen_courtage mit_mwst="false"/>
-        <aussen_courtage mit_mwst="false"/>
-        <courtage_hinweis>String</courtage_hinweis>
-        <provisionnetto>100</provisionnetto>
-        <provisionbrutto>119</provisionbrutto>
-        <waehrung iso_waehrung="DEM"/>
-        <mwst_satz>19</mwst_satz>
-        <mwst_gesamt>500.00</mwst_gesamt>
-        <freitext_preis/>
-        <x_fache/>
-        <nettorendite>10</nettorendite>
-        <nettorendite_soll>10</nettorendite_soll>
-        <nettorendite_ist>10</nettorendite_ist>
-        <mieteinnahmen_ist periode="JAHR">1</mieteinnahmen_ist>
-        <mieteinnahmen_soll periode="JAHR">1</mieteinnahmen_soll>
-        <erschliessungskosten>1</erschliessungskosten>
-        <kaution>1</kaution>
-        <kaution_text>3 monate</kaution_text>
-        <geschaeftsguthaben>1</geschaeftsguthaben>
-        <stp_carport stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
-        <stp_duplex stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
-        <stp_freiplatz stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
-        <stp_garage stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
-        <stp_parkhaus stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
-        <stp_tiefgarage stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
-        <stp_sonstige stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1" platzart="CARPORT" bemerkung=""/>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend>
-          <feld>
-            <name/>
-            <wert/>
-            <typ/>
-            <modus/>
-          </feld>
-        </user_defined_extend>
-      </preise>
-      <bieterverfahren>
-        <beginn_angebotsphase>2001-01-01</beginn_angebotsphase>
-        <besichtigungstermin>2001-01-01</besichtigungstermin>
-        <hoechstgebot_zeigen>false</hoechstgebot_zeigen>
-        <mindestpreis>1</mindestpreis>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend>
-          <feld>
-            <name/>
-            <wert/>
-            <typ/>
-            <modus/>
-          </feld>
-        </user_defined_extend>
-      </bieterverfahren>
-      <versteigerung>
-        <zwangsversteigerung>true</zwangsversteigerung>
-        <aktenzeichen>abc123</aktenzeichen>
-        <zvtermin>2001-01-01T11:00:00</zvtermin>
-        <zusatztermin>2001-01-01T11:00:00</zusatztermin>
-        <amtsgericht>Stadt</amtsgericht>
-        <verkehrswert>150000</verkehrswert>
-      </versteigerung>
-      <flaechen>
-        <wohnflaeche>1</wohnflaeche>
-        <nutzflaeche>1</nutzflaeche>
-        <gesamtflaeche>1</gesamtflaeche>
-        <ladenflaeche>1</ladenflaeche>
-        <lagerflaeche>1</lagerflaeche>
-        <verkaufsflaeche>1</verkaufsflaeche>
-        <freiflaeche>1</freiflaeche>
-        <bueroflaeche>1</bueroflaeche>
-        <bueroteilflaeche>1</bueroteilflaeche>
-        <fensterfront>1</fensterfront>
-        <verwaltungsflaeche>1</verwaltungsflaeche>
-        <gastroflaeche>1</gastroflaeche>
-        <grz>1</grz>
-        <gfz>1</gfz>
-        <bmz>1</bmz>
-        <bgf>1</bgf>
-        <grundstuecksflaeche>1</grundstuecksflaeche>
-        <sonstflaeche>1</sonstflaeche>
-        <anzahl_zimmer>1</anzahl_zimmer>
-        <anzahl_schlafzimmer>1</anzahl_schlafzimmer>
-        <anzahl_badezimmer>1</anzahl_badezimmer>
-        <anzahl_sep_wc>1</anzahl_sep_wc>
-        <!-- ab 124 nicht mehr <anzahl_balkon_terrassen>2</anzahl_balkon_terrassen> -->
-        <anzahl_balkone>1</anzahl_balkone>
-        <anzahl_terrassen>1</anzahl_terrassen>
-        <anzahl_logia>1</anzahl_logia>
-        <balkon_terrasse_flaeche>30</balkon_terrasse_flaeche>
-        <anzahl_wohn_schlafzimmer>1</anzahl_wohn_schlafzimmer>
-        <gartenflaeche>1</gartenflaeche>
-        <kellerflaeche>1</kellerflaeche>
-        <fensterfront_qm>1</fensterfront_qm>
-        <grundstuecksfront>1</grundstuecksfront>
-        <dachbodenflaeche>1</dachbodenflaeche>
-        <teilbar_ab>1</teilbar_ab>
-        <beheizbare_flaeche>1</beheizbare_flaeche>
-        <anzahl_stellplaetze>1</anzahl_stellplaetze>
-        <plaetze_gastraum>1</plaetze_gastraum>
-        <anzahl_betten>1</anzahl_betten>
-        <anzahl_tagungsraeume>1</anzahl_tagungsraeume>
-        <vermietbare_flaeche>1</vermietbare_flaeche>
-        <anzahl_wohneinheiten>1</anzahl_wohneinheiten>
-        <anzahl_gewerbeeinheiten>1</anzahl_gewerbeeinheiten>
-        <einliegerwohnung>1</einliegerwohnung>
-        <kubatur>2</kubatur>
-        <ausnuetzungsziffer>1</ausnuetzungsziffer>
-        <flaechevon>100</flaechevon>
-        <flaechebis>200</flaechebis>
-        <user_defined_simplefield feldname="abc"/>
-        <user_defined_anyfield/>
-        <user_defined_extend>
-          <feld>
-            <name/>
-            <wert/>
-            <typ/>
-            <modus/>
-          </feld>
-        </user_defined_extend>
-      </flaechen>
-      <ausstattung>
-        <ausstatt_kategorie>STANDARD</ausstatt_kategorie>
-        <wg_geeignet>false</wg_geeignet>
-        <raeume_veraenderbar>false</raeume_veraenderbar>
-        <bad DUSCHE="1" WANNE="1" FENSTER="1" BIDET="1" PISSOIR="1"/>
-        <kueche EBK="1" OFFEN="1" PANTRY="1"/>
-        <boden FLIESEN="0" STEIN="0" TEPPICH="1" PARKETT="1" FERTIGPARKETT="0" LAMINAT="0" DIELEN="0" KUNSTSTOFF="1" ESTRICH="1" DOPPELBODEN="1" LINOLEUM="1" MARMOR="1" TERRAKOTTA="1" GRANIT="0"/>
-        <kamin>1</kamin>
-        <heizungsart OFEN="1" ETAGE="1" ZENTRAL="1" FERN="1" FUSSBODEN="1"/>
-        <befeuerung OEL="0" GAS="1" ELEKTRO="0" ALTERNATIV="0" SOLAR="1" ERDWAERME="0" LUFTWP="0" FERN="0" BLOCK="0" WASSER-ELEKTRO="0" PELLET="0"/>
-        <klimatisiert>1</klimatisiert>
-        <fahrstuhl PERSONEN="1" LASTEN="1"/>
-        <stellplatzart GARAGE="1" TIEFGARAGE="1" CARPORT="1" FREIPLATZ="1" PARKHAUS="1" DUPLEX="1"/>
-        <gartennutzung>1</gartennutzung>
-        <ausricht_balkon_terrasse NORD="1" OST="1" SUED="1" WEST="1" NORDOST="1" NORDWEST="1" SUEDOST="1" SUEDWEST="1"/>
-        <moebliert moeb="TEIL"/>
-        <rollstuhlgerecht>false</rollstuhlgerecht>
-        <kabel_sat_tv>false</kabel_sat_tv>
-        <barrierefrei>false</barrierefrei>
-        <sauna>false</sauna>
-        <swimmingpool>false</swimmingpool>
-        <wasch_trockenraum>false</wasch_trockenraum>
-        <wintergarten>false</wintergarten>
-        <dv_verkabelung>false</dv_verkabelung>
-        <rampe>false</rampe>
-        <hebebuehne>false</hebebuehne>
-        <kran>false</kran>
-        <gastterrasse>false</gastterrasse>
-        <stromanschlusswert/>
-        <kantine_cafeteria>false</kantine_cafeteria>
-        <teekueche>false</teekueche>
-        <hallenhoehe/>
-        <angeschl_gastronomie HOTELRESTAURANT="false" BAR="false"/>
-        <brauereibindung>false</brauereibindung>
-        <sporteinrichtungen>false</sporteinrichtungen>
-        <wellnessbereich>false</wellnessbereich>
-        <serviceleistungen BETREUTES_WOHNEN="false" CATERING="false" REINIGUNG="false" EINKAUF="false" WACHDIENST="false"/>
-        <telefon_ferienimmobilie>false</telefon_ferienimmobilie>
-        <sicherheitstechnik ALARMANLAGE="false" KAMERA="false" POLIZEIRUF="false"/>
-        <unterkellert keller="JA"/>
-        <abstellraum>false</abstellraum>
-        <fahrradraum>false</fahrradraum>
-        <rolladen>false</rolladen>
-        <dachform KRUEPPELWALMDACH="1" MANSARDDACH="1" PULTDACH="1" SATTELDACH="1" WALMDACH="1" FLACHDACH="1" PYRAMIDENDACH="1"/>
-        <bauweise MASSIV="1" FERTIGTEILE="1" HOLZ="1"/>
-        <ausbaustufe BAUSATZHAUS="1" AUSBAUHAUS="1" SCHLUESSELFERTIGMITKELLER="1" SCHLUESSELFERTIGOHNEBODENPLATTE="1" SCHLUESSELFERTIGMITBODENPLATTE="1"/>
-        <energietyp PASSIVHAUS="1" NIEDRIGENERGIE="1" NEUBAUSTANDARD="1" KFW40="1" KFW60="1"/>
-        <bibliothek>1</bibliothek>
-        <dachboden>1</dachboden>
-        <gaestewc>1</gaestewc>
-        <kabelkanaele>1</kabelkanaele>
-        <seniorengerecht>1</seniorengerecht>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend>
-          <feld>
-            <name/>
-            <wert/>
-            <typ/>
-            <modus/>
-          </feld>
-        </user_defined_extend>
-      </ausstattung>
-      <zustand_angaben>
-        <baujahr/>
-        <letztemodernisierung/>
-        <zustand zustand_art="ENTKERNT"/>
-        <alter alter_attr="ALTBAU"/>
-        <bebaubar_nach bebaubar_attr="34_NACHBARSCHAFT"/>
-        <erschliessung erschl_attr="TEILERSCHLOSSEN"/>
-        <erschliessung_umfang/>
-        <bauzone/>
-        <altlasten/>
-        <energiepass>
-          <epart>VERBRAUCH</epart>
-          <gueltig_bis>01-2024</gueltig_bis>
-          <energieverbrauchkennwert>80</energieverbrauchkennwert>
-          <mitwarmwasser>false</mitwarmwasser>
-          <endenergiebedarf/>
-          <!-- Werte  für Epass ab 2014 -->
-          <primaerenergietraeger>GAS</primaerenergietraeger>
-          <stromwert/>
-          <waermewert>80</waermewert>
-          <wertklasse>C</wertklasse>
-          <ausstelldatum>2014-06-01</ausstelldatum>
-          <jahrgang>2014</jahrgang>
-          <gebaeudeart>wohn</gebaeudeart>
-        </energiepass>
-        <verkaufstatus/>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend/>
-      </zustand_angaben>
-      <bewertung>
-        <feld>
-          <name>abc</name>
-          <wert>100</wert>
-          <typ>int</typ>
-          <modus>kauf</modus>
-        </feld>
-      </bewertung>
-      <infrastruktur>
-        <zulieferung>false</zulieferung>
-        <ausblick blick="BERGE"/>
-        <distanzen distanz_zu="HAUPTSCHULE">22.00</distanzen>
-        <distanzen_sport distanz_zu_sport="SEE">15</distanzen_sport>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend/>
-      </infrastruktur>
-      <freitexte>
-        <objekttitel>Schönes Appartment im Stadtzentrum</objekttitel>
-        <dreizeiler/>
-        <lage/>
-        <ausstatt_beschr/>
-        <objektbeschreibung/>
-        <sonstige_angaben>Hier können Hinweise auf die Regelung im Fernabsatzgesetz stehen.</sonstige_angaben>
-        <objekt_text lang="en">Nice appartment in the inner city</objekt_text>
-      </freitexte>
-      <anhaenge>
-        <anhang location="INTERN" gruppe="TITELBILD">
-          <anhangtitel>Frontansicht des Hauses</anhangtitel>
-          <format>JPEG</format>
-          <check ctype="DATETIME">2011-09-01T12:15:05</check>
-          <daten>
-            <pfad>abc.jpg</pfad>
-          </daten>
+    <uebertragung art="ONLINE" umfang="VOLL" modus="NEW" version="1.2.7" sendersoftware="OIGEN" senderversion="0.9"
+                  techn_email="" timestamp="2014-06-01T10:00:00" regi_id="ABCD143"/>
+    <anbieter>
+        <anbieternr/>
+        <firma>MusterMannFrau Immobilien</firma>
+        <openimmo_anid/>
+        <lizenzkennung>ABCD13</lizenzkennung>
+        <anhang location="EXTERN" gruppe="BILD">
+            <anhangtitel/>
+            <format/>
+            <daten>
+                <pfad/>
+            </daten>
         </anhang>
+        <immobilie>
+            <objektkategorie>
+                <nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false"/>
+                <vermarktungsart KAUF="true" MIETE_PACHT="false" ERBPACHT="false" LEASING="false"/>
+                <objektart>
+                    <zimmer zimmertyp="ZIMMER"/>
+                    <objektart_zusatz>Moebeliert</objektart_zusatz>
+                </objektart>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+            </objektkategorie>
+            <geo>
+                <plz/>
+                <ort/>
+                <geokoordinaten breitengrad="22.22" laengengrad="22.22"/>
+                <strasse/>
+                <hausnummer/>
+                <bundesland/>
+                <land iso_land="DEU"/>
+                <gemeindecode/>
+                <flur/>
+                <flurstueck/>
+                <gemarkung/>
+                <etage>1</etage>
+                <anzahl_etagen>3</anzahl_etagen>
+                <lage_im_bau LINKS="false" RECHTS="true" VORNE="true" HINTEN="false"/>
+                <wohnungsnr/>
+                <lage_gebiet gebiete="NEBENZENTRUM"/>
+                <regionaler_zusatz>Blumenviertel</regionaler_zusatz>
+                <karten_makro>true</karten_makro>
+                <karten_mikro>false</karten_mikro>
+                <virtuelletour>false</virtuelletour>
+                <luftbildern>true</luftbildern>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend/>
+            </geo>
+            <kontaktperson>
+                <email_zentrale>foo@bar.de</email_zentrale>
+                <email_direkt>foo@bar.de</email_direkt>
+                <tel_zentrale>1</tel_zentrale>
+                <tel_durchw>2</tel_durchw>
+                <tel_fax>3</tel_fax>
+                <tel_handy>4</tel_handy>
+                <name/>
+                <vorname/>
+                <titel/>
+                <anrede/>
+                <anrede_brief/>
+                <firma/>
+                <zusatzfeld/>
+                <strasse/>
+                <hausnummer/>
+                <plz/>
+                <ort/>
+                <postfach/>
+                <postf_plz/>
+                <postf_ort/>
+                <land iso_land="DEU"/>
+                <email_privat>foo@bar.de</email_privat>
+                <email_sonstige emailart="EM_DIREKT" bemerkung="1">foo@bar.de</email_sonstige>
+                <email_feedback>yx@y.de</email_feedback>
+                <tel_privat>1</tel_privat>
+                <tel_sonstige telefonart="TEL_PRIVAT" bemerkung="">1</tel_sonstige>
+                <url/>
+                <adressfreigabe>false</adressfreigabe>
+                <personennummer/>
+                <immobilientreuhaenderid>In .AT</immobilientreuhaenderid>
+                <foto location="EXTERN">
+                    <format>JPEG</format>
+                    <daten>
+                        <pfad>abc.jpg</pfad>
+                    </daten>
+                </foto>
+                <freitextfeld/>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend/>
+            </kontaktperson>
+            <weitere_adresse adressart="">
+                <vorname/>
+                <name/>
+                <titel/>
+                <anrede/>
+                <anrede_brief/>
+                <firma/>
+                <zusatzfeld/>
+                <strasse/>
+                <hausnummer/>
+                <plz/>
+                <ort/>
+                <postfach/>
+                <postf_plz/>
+                <postf_ort/>
+                <land iso_land="DEU"/>
+                <email_zentrale>foo@bar.de</email_zentrale>
+                <email_direkt>foo@bar.de</email_direkt>
+                <email_privat>foo@bar.de</email_privat>
+                <email_sonstige emailart="EM_PRIVAT" bemerkung="">1</email_sonstige>
+                <tel_durchw>1</tel_durchw>
+                <tel_zentrale>1</tel_zentrale>
+                <tel_handy>1</tel_handy>
+                <tel_fax>1</tel_fax>
+                <tel_privat>1</tel_privat>
+                <tel_sonstige telefonart="TEL_DURCHW" bemerkung="">1</tel_sonstige>
+                <url/>
+                <adressfreigabe>false</adressfreigabe>
+                <personennummer/>
+                <freitextfeld/>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend/>
+            </weitere_adresse>
+            <preise>
+                <kaufpreis>1</kaufpreis>
+                <kaufpreisnetto>100000.00</kaufpreisnetto>
+                <kaufpreisbrutto>119000.00</kaufpreisbrutto>
+                <nettokaltmiete>1</nettokaltmiete>
+                <kaltmiete>1</kaltmiete>
+                <warmmiete>1</warmmiete>
+                <nebenkosten>1</nebenkosten>
+                <heizkosten_enthalten>false</heizkosten_enthalten>
+                <heizkosten>1</heizkosten>
+                <zzg_mehrwertsteuer>true</zzg_mehrwertsteuer>
+                <mietzuschlaege>1</mietzuschlaege>
+                <!-- $V126 -->
+                <hauptmietzinsnetto hauptmietzinsust="106.40">560.00</hauptmietzinsnetto>
+                <pauschalmiete>100</pauschalmiete>
+                <betriebskostennetto betriebskostenust="106.40">560.00</betriebskostennetto>
+                <!-- erst nach Zertifizierung
+                <evbnetto />
+                <gesamtmietenetto />
+                <gesamtmietebrutto />
+                <gesamtbelastungnetto />
+                <gesamtbelastungbrutto />
+                <gesamtkostenprom2von />
+                <heizkostennetto />
+                <monatlichekostennetto />
+                <monatlichekostenbrutto />
+                <nebenkostenprom2von />
+                <ruecklagenetto />
+                <sonstigekostennetto />
+                <sonstigemietenetto />
+                <summemietenetto />
+                <nettomieteprom2von />		-->
+                <!-- /$V126 -->
+                <pacht>1</pacht>
+                <erbpacht>1</erbpacht>
+                <hausgeld>1</hausgeld>
+                <abstand>1</abstand>
+                <preis_zeitraum_von>2001-01-01</preis_zeitraum_von>
+                <preis_zeitraum_bis>2001-01-01</preis_zeitraum_bis>
+                <preis_zeiteinheit zeiteinheit="JAHR"/>
+                <mietpreis_pro_qm>1</mietpreis_pro_qm>
+                <kaufpreis_pro_qm>1</kaufpreis_pro_qm>
+                <provisionspflichtig>true</provisionspflichtig>
+                <provision_teilen>false</provision_teilen>
+                <innen_courtage mit_mwst="false"/>
+                <aussen_courtage mit_mwst="false"/>
+                <courtage_hinweis>String</courtage_hinweis>
+                <provisionnetto>100</provisionnetto>
+                <provisionbrutto>119</provisionbrutto>
+                <waehrung iso_waehrung="DEM"/>
+                <mwst_satz>19</mwst_satz>
+                <mwst_gesamt>500.00</mwst_gesamt>
+                <freitext_preis/>
+                <x_fache/>
+                <nettorendite>10</nettorendite>
+                <nettorendite_soll>10</nettorendite_soll>
+                <nettorendite_ist>10</nettorendite_ist>
+                <mieteinnahmen_ist periode="JAHR">1</mieteinnahmen_ist>
+                <mieteinnahmen_soll periode="JAHR">1</mieteinnahmen_soll>
+                <erschliessungskosten>1</erschliessungskosten>
+                <kaution>1</kaution>
+                <kaution_text>3 monate</kaution_text>
+                <geschaeftsguthaben>1</geschaeftsguthaben>
+                <stp_carport stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
+                <stp_duplex stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
+                <stp_freiplatz stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
+                <stp_garage stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
+                <stp_parkhaus stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
+                <stp_tiefgarage stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1"/>
+                <stp_sonstige stellplatzmiete="1" stellplatzkaufpreis="1" anzahl="1" platzart="CARPORT" bemerkung=""/>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend>
+                    <feld>
+                        <name/>
+                        <wert/>
+                        <typ/>
+                        <modus/>
+                    </feld>
+                </user_defined_extend>
+            </preise>
+            <bieterverfahren>
+                <beginn_angebotsphase>2001-01-01</beginn_angebotsphase>
+                <besichtigungstermin>2001-01-01</besichtigungstermin>
+                <hoechstgebot_zeigen>false</hoechstgebot_zeigen>
+                <mindestpreis>1</mindestpreis>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend>
+                    <feld>
+                        <name/>
+                        <wert/>
+                        <typ/>
+                        <modus/>
+                    </feld>
+                </user_defined_extend>
+            </bieterverfahren>
+            <versteigerung>
+                <zwangsversteigerung>true</zwangsversteigerung>
+                <aktenzeichen>abc123</aktenzeichen>
+                <zvtermin>2001-01-01T11:00:00</zvtermin>
+                <zusatztermin>2001-01-01T11:00:00</zusatztermin>
+                <amtsgericht>Stadt</amtsgericht>
+                <verkehrswert>150000</verkehrswert>
+            </versteigerung>
+            <flaechen>
+                <wohnflaeche>1</wohnflaeche>
+                <nutzflaeche>1</nutzflaeche>
+                <gesamtflaeche>1</gesamtflaeche>
+                <ladenflaeche>1</ladenflaeche>
+                <lagerflaeche>1</lagerflaeche>
+                <verkaufsflaeche>1</verkaufsflaeche>
+                <freiflaeche>1</freiflaeche>
+                <bueroflaeche>1</bueroflaeche>
+                <bueroteilflaeche>1</bueroteilflaeche>
+                <fensterfront>1</fensterfront>
+                <verwaltungsflaeche>1</verwaltungsflaeche>
+                <gastroflaeche>1</gastroflaeche>
+                <grz>1</grz>
+                <gfz>1</gfz>
+                <bmz>1</bmz>
+                <bgf>1</bgf>
+                <grundstuecksflaeche>1</grundstuecksflaeche>
+                <sonstflaeche>1</sonstflaeche>
+                <anzahl_zimmer>1</anzahl_zimmer>
+                <anzahl_schlafzimmer>1</anzahl_schlafzimmer>
+                <anzahl_badezimmer>1</anzahl_badezimmer>
+                <anzahl_sep_wc>1</anzahl_sep_wc>
+                <!-- ab 124 nicht mehr <anzahl_balkon_terrassen>2</anzahl_balkon_terrassen> -->
+                <anzahl_balkone>1</anzahl_balkone>
+                <anzahl_terrassen>1</anzahl_terrassen>
+                <anzahl_logia>1</anzahl_logia>
+                <balkon_terrasse_flaeche>30</balkon_terrasse_flaeche>
+                <anzahl_wohn_schlafzimmer>1</anzahl_wohn_schlafzimmer>
+                <gartenflaeche>1</gartenflaeche>
+                <kellerflaeche>1</kellerflaeche>
+                <fensterfront_qm>1</fensterfront_qm>
+                <grundstuecksfront>1</grundstuecksfront>
+                <dachbodenflaeche>1</dachbodenflaeche>
+                <teilbar_ab>1</teilbar_ab>
+                <beheizbare_flaeche>1</beheizbare_flaeche>
+                <anzahl_stellplaetze>1</anzahl_stellplaetze>
+                <plaetze_gastraum>1</plaetze_gastraum>
+                <anzahl_betten>1</anzahl_betten>
+                <anzahl_tagungsraeume>1</anzahl_tagungsraeume>
+                <vermietbare_flaeche>1</vermietbare_flaeche>
+                <anzahl_wohneinheiten>1</anzahl_wohneinheiten>
+                <anzahl_gewerbeeinheiten>1</anzahl_gewerbeeinheiten>
+                <einliegerwohnung>1</einliegerwohnung>
+                <kubatur>2</kubatur>
+                <ausnuetzungsziffer>1</ausnuetzungsziffer>
+                <flaechevon>100</flaechevon>
+                <flaechebis>200</flaechebis>
+                <user_defined_simplefield feldname="abc"/>
+                <user_defined_anyfield/>
+                <user_defined_extend>
+                    <feld>
+                        <name/>
+                        <wert/>
+                        <typ/>
+                        <modus/>
+                    </feld>
+                </user_defined_extend>
+            </flaechen>
+            <ausstattung>
+                <ausstatt_kategorie>STANDARD</ausstatt_kategorie>
+                <wg_geeignet>false</wg_geeignet>
+                <raeume_veraenderbar>false</raeume_veraenderbar>
+                <bad DUSCHE="1" WANNE="1" FENSTER="1" BIDET="1" PISSOIR="1"/>
+                <kueche EBK="1" OFFEN="1" PANTRY="1"/>
+                <boden FLIESEN="0" STEIN="0" TEPPICH="1" PARKETT="1" FERTIGPARKETT="0" LAMINAT="0" DIELEN="0"
+                       KUNSTSTOFF="1" ESTRICH="1" DOPPELBODEN="1" LINOLEUM="1" MARMOR="1" TERRAKOTTA="1" GRANIT="0"/>
+                <kamin>1</kamin>
+                <heizungsart OFEN="1" ETAGE="1" ZENTRAL="1" FERN="1" FUSSBODEN="1"/>
+                <befeuerung OEL="0" GAS="1" ELEKTRO="0" ALTERNATIV="0" SOLAR="1" ERDWAERME="0" LUFTWP="0" FERN="0"
+                            BLOCK="0" WASSER-ELEKTRO="0" PELLET="0"/>
+                <klimatisiert>1</klimatisiert>
+                <fahrstuhl PERSONEN="1" LASTEN="1"/>
+                <stellplatzart GARAGE="1" TIEFGARAGE="1" CARPORT="1" FREIPLATZ="1" PARKHAUS="1" DUPLEX="1"/>
+                <gartennutzung>1</gartennutzung>
+                <ausricht_balkon_terrasse NORD="1" OST="1" SUED="1" WEST="1" NORDOST="1" NORDWEST="1" SUEDOST="1"
+                                          SUEDWEST="1"/>
+                <moebliert moeb="TEIL"/>
+                <rollstuhlgerecht>false</rollstuhlgerecht>
+                <kabel_sat_tv>false</kabel_sat_tv>
+                <barrierefrei>false</barrierefrei>
+                <sauna>false</sauna>
+                <swimmingpool>false</swimmingpool>
+                <wasch_trockenraum>false</wasch_trockenraum>
+                <wintergarten>false</wintergarten>
+                <dv_verkabelung>false</dv_verkabelung>
+                <rampe>false</rampe>
+                <hebebuehne>false</hebebuehne>
+                <kran>false</kran>
+                <gastterrasse>false</gastterrasse>
+                <stromanschlusswert/>
+                <kantine_cafeteria>false</kantine_cafeteria>
+                <teekueche>false</teekueche>
+                <hallenhoehe/>
+                <angeschl_gastronomie HOTELRESTAURANT="false" BAR="false"/>
+                <brauereibindung>false</brauereibindung>
+                <sporteinrichtungen>false</sporteinrichtungen>
+                <wellnessbereich>false</wellnessbereich>
+                <serviceleistungen BETREUTES_WOHNEN="false" CATERING="false" REINIGUNG="false" EINKAUF="false"
+                                   WACHDIENST="false"/>
+                <telefon_ferienimmobilie>false</telefon_ferienimmobilie>
+                <sicherheitstechnik ALARMANLAGE="false" KAMERA="false" POLIZEIRUF="false"/>
+                <unterkellert keller="JA"/>
+                <abstellraum>false</abstellraum>
+                <fahrradraum>false</fahrradraum>
+                <rolladen>false</rolladen>
+                <dachform KRUEPPELWALMDACH="1" MANSARDDACH="1" PULTDACH="1" SATTELDACH="1" WALMDACH="1" FLACHDACH="1"
+                          PYRAMIDENDACH="1"/>
+                <bauweise MASSIV="1" FERTIGTEILE="1" HOLZ="1"/>
+                <ausbaustufe BAUSATZHAUS="1" AUSBAUHAUS="1" SCHLUESSELFERTIGMITKELLER="1"
+                             SCHLUESSELFERTIGOHNEBODENPLATTE="1" SCHLUESSELFERTIGMITBODENPLATTE="1"/>
+                <energietyp PASSIVHAUS="1" NIEDRIGENERGIE="1" NEUBAUSTANDARD="1" KFW40="1" KFW60="1"/>
+                <bibliothek>1</bibliothek>
+                <dachboden>1</dachboden>
+                <gaestewc>1</gaestewc>
+                <kabelkanaele>1</kabelkanaele>
+                <seniorengerecht>1</seniorengerecht>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend>
+                    <feld>
+                        <name/>
+                        <wert/>
+                        <typ/>
+                        <modus/>
+                    </feld>
+                </user_defined_extend>
+            </ausstattung>
+            <zustand_angaben>
+                <baujahr/>
+                <letztemodernisierung/>
+                <zustand zustand_art="ENTKERNT"/>
+                <alter alter_attr="ALTBAU"/>
+                <bebaubar_nach bebaubar_attr="34_NACHBARSCHAFT"/>
+                <erschliessung erschl_attr="TEILERSCHLOSSEN"/>
+                <erschliessung_umfang/>
+                <bauzone/>
+                <altlasten/>
+                <energiepass>
+                    <epart>VERBRAUCH</epart>
+                    <gueltig_bis>01-2024</gueltig_bis>
+                    <energieverbrauchkennwert>80</energieverbrauchkennwert>
+                    <mitwarmwasser>false</mitwarmwasser>
+                    <endenergiebedarf/>
+                    <!-- Werte  für Epass ab 2014 -->
+                    <primaerenergietraeger>GAS</primaerenergietraeger>
+                    <stromwert/>
+                    <waermewert>80</waermewert>
+                    <wertklasse>C</wertklasse>
+                    <ausstelldatum>2014-06-01</ausstelldatum>
+                    <jahrgang>2014</jahrgang>
+                    <gebaeudeart>wohn</gebaeudeart>
+                </energiepass>
+                <verkaufstatus/>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend/>
+            </zustand_angaben>
+            <bewertung>
+                <feld>
+                    <name>abc</name>
+                    <wert>100</wert>
+                    <typ>int</typ>
+                    <modus>kauf</modus>
+                </feld>
+            </bewertung>
+            <infrastruktur>
+                <zulieferung>false</zulieferung>
+                <ausblick blick="BERGE"/>
+                <distanzen distanz_zu="HAUPTSCHULE">22.00</distanzen>
+                <distanzen_sport distanz_zu_sport="SEE">15</distanzen_sport>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend/>
+            </infrastruktur>
+            <freitexte>
+                <objekttitel>Schönes Appartment im Stadtzentrum</objekttitel>
+                <dreizeiler/>
+                <lage/>
+                <ausstatt_beschr/>
+                <objektbeschreibung/>
+                <sonstige_angaben>Hier können Hinweise auf die Regelung im Fernabsatzgesetz stehen.</sonstige_angaben>
+                <objekt_text lang="en">Nice appartment in the inner city</objekt_text>
+            </freitexte>
+            <anhaenge>
+                <anhang location="INTERN" gruppe="TITELBILD">
+                    <anhangtitel>Frontansicht des Hauses</anhangtitel>
+                    <format>JPEG</format>
+                    <check ctype="DATETIME">2011-09-01T12:15:05</check>
+                    <daten>
+                        <pfad>abc.jpg</pfad>
+                    </daten>
+                </anhang>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+            </anhaenge>
+            <verwaltung_objekt>
+                <objektadresse_freigeben>false</objektadresse_freigeben>
+                <verfuegbar_ab/>
+                <abdatum>2001-01-01</abdatum>
+                <bisdatum>2001-01-01</bisdatum>
+                <min_mietdauer min_dauer="MONAT"/>
+                <max_mietdauer max_dauer="MONAT"/>
+                <versteigerungstermin>2001-01-01</versteigerungstermin>
+                <wbs_sozialwohnung>false</wbs_sozialwohnung>
+                <vermietet>false</vermietet>
+                <gruppennummer/>
+                <zugang/>
+                <laufzeit>10</laufzeit>
+                <max_personen>10</max_personen>
+                <nichtraucher>true</nichtraucher>
+                <haustiere>true</haustiere>
+                <geschlecht geschl_attr="EGAL"/>
+                <denkmalgeschuetzt>false</denkmalgeschuetzt>
+                <als_ferien>true</als_ferien>
+                <gewerbliche_nutzung>true</gewerbliche_nutzung>
+                <branchen/>
+                <hochhaus>false</hochhaus>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+            </verwaltung_objekt>
+            <verwaltung_techn>
+                <objektnr_intern/>
+                <objektnr_extern/>
+                <aktion aktionart="CHANGE"/>
+                <aktiv_von>2001-01-01</aktiv_von>
+                <aktiv_bis>2001-01-03</aktiv_bis>
+                <openimmo_obid>111</openimmo_obid>
+                <kennung_ursprung/>
+                <stand_vom>2001-02-03</stand_vom>
+                <weitergabe_generell>true</weitergabe_generell>
+                <weitergabe_positiv/>
+                <weitergabe_negativ/>
+                <gruppen_kennung>001</gruppen_kennung>
+                <master visible="false">001</master>
+                <sprache/>
+                <user_defined_simplefield feldname=""/>
+                <user_defined_anyfield/>
+                <user_defined_extend/>
+            </verwaltung_techn>
+            <user_defined_simplefield feldname=""/>
+            <user_defined_anyfield>
+                <!-- Beispiele -->
+                <plaintext fieldname="objektart" fieldvalue="Etagenwohnung"/>
+                <plaintext fieldname="auslandsregion" fieldvalue="Canillo"/>
+                <plaintext fieldname="headline2" fieldvalue=" Einfamilienhaus in Dortmund"/>
+                <flag fieldname="balkon" fieldvalue="true"/>
+                <flag fieldname="terrasse" fieldvalue="false"/>
+            </user_defined_anyfield>
+            <user_defined_extend/>
+        </immobilie>
+        <impressum/>
+        <impressum_strukt>
+            <firmenname/>
+            <firmenanschrift/>
+            <telefon/>
+            <vertretungsberechtigter/>
+            <berufsaufsichtsbehoerde/>
+            <handelsregister/>
+            <handelsregister_nr/>
+            <umsst-id/>
+            <steuernummer/>
+            <weiteres/>
+        </impressum_strukt>
         <user_defined_simplefield feldname=""/>
         <user_defined_anyfield/>
-      </anhaenge>
-      <verwaltung_objekt>
-        <objektadresse_freigeben>false</objektadresse_freigeben>
-        <verfuegbar_ab/>
-        <abdatum>2001-01-01</abdatum>
-        <bisdatum>2001-01-01</bisdatum>
-        <min_mietdauer min_dauer="MONAT"/>
-        <max_mietdauer max_dauer="MONAT"/>
-        <versteigerungstermin>2001-01-01</versteigerungstermin>
-        <wbs_sozialwohnung>false</wbs_sozialwohnung>
-        <vermietet>false</vermietet>
-        <gruppennummer/>
-        <zugang/>
-        <laufzeit>10</laufzeit>
-        <max_personen>10</max_personen>
-        <nichtraucher>true</nichtraucher>
-        <haustiere>true</haustiere>
-        <geschlecht geschl_attr="EGAL"/>
-        <denkmalgeschuetzt>false</denkmalgeschuetzt>
-        <als_ferien>true</als_ferien>
-        <gewerbliche_nutzung>true</gewerbliche_nutzung>
-        <branchen/>
-        <hochhaus>false</hochhaus>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-      </verwaltung_objekt>
-      <verwaltung_techn>
-        <objektnr_intern/>
-        <objektnr_extern/>
-        <aktion aktionart="CHANGE"/>
-        <aktiv_von>2001-01-01</aktiv_von>
-        <aktiv_bis>2001-01-03</aktiv_bis>
-        <openimmo_obid>111</openimmo_obid>
-        <kennung_ursprung/>
-        <stand_vom>2001-02-03</stand_vom>
-        <weitergabe_generell>true</weitergabe_generell>
-        <weitergabe_positiv/>
-        <weitergabe_negativ/>
-        <gruppen_kennung>001</gruppen_kennung>
-        <master visible="false">001</master>
-        <sprache/>
-        <user_defined_simplefield feldname=""/>
-        <user_defined_anyfield/>
-        <user_defined_extend/>
-      </verwaltung_techn>
-      <user_defined_simplefield feldname=""/>
-      <user_defined_anyfield>
-        <!-- Beispiele -->
-        <plaintext fieldname="objektart" fieldvalue="Etagenwohnung"/>
-        <plaintext fieldname="auslandsregion" fieldvalue="Canillo"/>
-        <plaintext fieldname="headline2" fieldvalue=" Einfamilienhaus in Dortmund"/>
-        <flag fieldname="balkon" fieldvalue="true"/>
-        <flag fieldname="terrasse" fieldvalue="false"/>
-      </user_defined_anyfield>
-      <user_defined_extend/>
-    </immobilie>
-    <impressum/>
-    <impressum_strukt>
-      <firmenname/>
-      <firmenanschrift/>
-      <telefon/>
-      <vertretungsberechtigter/>
-      <berufsaufsichtsbehoerde/>
-      <handelsregister/>
-      <handelsregister_nr/>
-      <umsst-id/>
-      <steuernummer/>
-      <weiteres/>
-    </impressum_strukt>
+    </anbieter>
     <user_defined_simplefield feldname=""/>
     <user_defined_anyfield/>
-  </anbieter>
-  <user_defined_simplefield feldname=""/>
-  <user_defined_anyfield/>
 </openimmo>

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright 2015-2017 OpenEstate.org
+# Copyright 2015-2018 OpenEstate.org
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,16 +15,13 @@
 # limitations under the License.
 #
 
-MVN=mvn
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+MVN="mvn"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # force an update of submodules
-$PROJECT_DIR/git-submodule-update.sh
+"$DIR"/git-submodule-update.sh
 
-# install library and build release package
-export LANG=en
 set -e
-
-cd $PROJECT_DIR
-$MVN -Prelease clean javadoc:aggregate deploy
-$MVN -Prelease --non-recursive assembly:single
+export LANG=en
+cd "$DIR"
+"$MVN" -Possrh-release clean deploy

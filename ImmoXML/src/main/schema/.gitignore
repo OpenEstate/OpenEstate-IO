@@ -1,0 +1,5 @@
+*
+!.gitignore
+!binding.xjb
+!xmlschema.xsd
+!README.txt

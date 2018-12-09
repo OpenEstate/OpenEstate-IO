@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,47 +23,40 @@ import org.w3c.dom.Document;
 /**
  * A general Filemaker-XML document.
  *
- * @param <JavaType>
- * the class of a (via JAXB generated) Java object, that the contained
- * {@link Document} is mapped to
- *
- * @since 1.0
+ * @param <JavaType> the class of a (via JAXB generated) Java object, that the contained
+ *                   {@link Document} is mapped to
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public abstract class FilemakerDocument<JavaType> extends XmlDocument<JavaType>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( FilemakerDocument.class );
+@SuppressWarnings("WeakerAccess")
+public abstract class FilemakerDocument<JavaType> extends XmlDocument<JavaType> {
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerDocument.class);
 
-  /**
-   * Create from a {@link Document}.
-   *
-   * @param document
-   * the document to create from
-   */
-  protected FilemakerDocument( Document document )
-  {
-    super( document );
-  }
+    /**
+     * Create from a {@link Document}.
+     *
+     * @param document the document to create from
+     */
+    protected FilemakerDocument(Document document) {
+        super(document);
+    }
 
-  /**
-   * Checks, if the current document is a {@link FilemakerLayoutDocument}.
-   *
-   * @return
-   * true, if the current document is a {@link FilemakerLayoutDocument}
-   */
-  public boolean isLayout()
-  {
-    return this instanceof FilemakerLayoutDocument;
-  }
+    /**
+     * Checks, if the current document is a {@link FilemakerLayoutDocument}.
+     *
+     * @return true, if the current document is a {@link FilemakerLayoutDocument}
+     */
+    public boolean isLayout() {
+        return this instanceof FilemakerLayoutDocument;
+    }
 
-  /**
-   * Checks, if the current document is a {@link FilemakerResultDocument}.
-   *
-   * @return
-   * true, if the current document is a {@link FilemakerResultDocument}
-   */
-  public boolean isResult()
-  {
-    return this instanceof FilemakerResultDocument;
-  }
+    /**
+     * Checks, if the current document is a {@link FilemakerResultDocument}.
+     *
+     * @return true, if the current document is a {@link FilemakerResultDocument}
+     */
+    public boolean isResult() {
+        return this instanceof FilemakerResultDocument;
+    }
 }

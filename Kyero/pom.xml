@@ -2,281 +2,181 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.openestate.io</groupId>
-    <artifactId>ALL</artifactId>
-    <version>1.3</version>
-  </parent>
+    <parent>
+        <groupId>org.openestate.io</groupId>
+        <artifactId>OpenEstate-IO</artifactId>
+        <version>1.4</version>
+    </parent>
 
-  <groupId>org.openestate.io</groupId>
-  <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.3</version>
-  <packaging>jar</packaging>
+    <artifactId>OpenEstate-IO-Kyero</artifactId>
+    <version>1.4</version>
+    <packaging>jar</packaging>
 
-  <name>OpenEstate-IO-Kyero</name>
-  <description>OpenEstate-IO-Kyero is a Java library to read and write real estate data in the XML format of kyero.com.</description>
-  <url>http://www.openestate.org</url>
-  <organization>
-    <name>OpenEstate</name>
-    <url>http://openestate.org/</url>
-  </organization>
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
+    <name>OpenEstate-IO-Kyero</name>
+    <description>
+        OpenEstate-IO-Kyero is a Java library to read and write real estate data in the XML format of kyero.com.
+    </description>
+    <url>https://openestate.org</url>
+    <organization>
+        <name>OpenEstate</name>
+        <url>https://openestate.org/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
 
-  <developers>
-    <developer>
-      <id>andy</id>
-      <name>Andreas Rudolph</name>
-      <email>andy@openindex.de</email>
-      <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
-    </developer>
-    <developer>
-      <id>walter</id>
-      <name>Walter Wagner</name>
-      <email>walter@openindex.de</email>
-      <organization>OpenIndex</organization>
-      <organizationUrl>http://www.openindex.de/</organizationUrl>
-    </developer>
-  </developers>
+    <developers>
+        <developer>
+            <id>andy</id>
+            <name>Andreas Rudolph</name>
+            <email>andy@openindex.de</email>
+            <organization>OpenIndex</organization>
+            <organizationUrl>https://openindex.de/</organizationUrl>
+        </developer>
+    </developers>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.releaseDir>${basedir}/release</project.releaseDir>
-  </properties>
+    <dependencies>
 
-  <dependencies>
+        <!-- compile -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-runtime</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Core</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
 
-    <!-- compile -->
-    <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>annotations</artifactId>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jvnet.jaxb2_commons</groupId>
-      <artifactId>jaxb2-basics-runtime</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>jaxen</groupId>
-      <artifactId>jaxen</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openestate.io</groupId>
-      <artifactId>OpenEstate-IO-Core</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <scope>compile</scope>
-    </dependency>
+        <!-- test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-    <!-- test -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <scope>test</scope>
-    </dependency>
+    </dependencies>
 
-  </dependencies>
+    <build>
+        <plugins>
 
-  <build>
-    <plugins>
+            <!-- add generated JAXB sources -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/main/jaxb</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
-      <!-- clean -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <configuration>
-          <failOnError>false</failOnError>
-          <filesets>
-            <fileset>
-              <directory>${project.releaseDir}</directory>
-              <followSymlinks>false</followSymlinks>
-            </fileset>
-          </filesets>
-        </configuration>
-      </plugin>
+            <!-- jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Automatic-Module-Name>org.openestate.io.kyero</Automatic-Module-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
 
-      <!-- dependency -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-dependency-sources</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
-              <overWriteReleases>false</overWriteReleases>
-              <overWriteSnapshots>false</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <includeScope>runtime</includeScope>
-              <excludeGroupIds>${project.groupId},com.google.code.findbugs</excludeGroupIds>
-              <classifier>sources</classifier>
-            </configuration>
-          </execution>
+            <!-- JAXB -->
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb22-plugin</artifactId>
+                <configuration>
+                    <generateDirectory>${project.basedir}/src/main/jaxb</generateDirectory>
+                    <schemaDirectory>${project.basedir}/src/main/schema</schemaDirectory>
+                    <scanDependenciesForBindings>false</scanDependenciesForBindings>
 
-          <execution>
-            <id>copy-dependency-javadocs</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.basedir}/target/3rdparty</outputDirectory>
-              <overWriteReleases>false</overWriteReleases>
-              <overWriteSnapshots>false</overWriteSnapshots>
-              <overWriteIfNewer>true</overWriteIfNewer>
-              <includeScope>runtime</includeScope>
-              <excludeGroupIds>${project.groupId},com.google.code.findbugs</excludeGroupIds>
-              <classifier>javadoc</classifier>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+                    <readOnly>false</readOnly>
+                    <noFileHeader>true</noFileHeader>
+                    <enableIntrospection>true</enableIntrospection>
+                    <markGenerated>true</markGenerated>
+                    <removeOldOutput>true</removeOldOutput>
+                    <cleanPackageDirectories>true</cleanPackageDirectories>
+                    <forceRegenerate>false</forceRegenerate>
 
-      <!-- compiler -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-          <showDeprecation>true</showDeprecation>
-          <debug>false</debug>
-        </configuration>
-      </plugin>
+                    <episode>true</episode>
+                    <episodeFile>${project.basedir}/src/main/jaxb/META-INF/sun-jaxb.episode</episodeFile>
 
-      <!-- source -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <locale>en</locale>
+                    <debug>false</debug>
+                    <verbose>false</verbose>
 
-      <!-- javadoc -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <quiet>true</quiet>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+                    <specVersion>2.2</specVersion>
+                    <extension>true</extension>
+                    <strict>true</strict>
+                    <args>
+                        <arg>-XtoString</arg>
+                        <arg>-Xcopyable</arg>
+                        <arg>-Xequals</arg>
+                    </args>
+                </configuration>
+            </plugin>
 
-      <!-- assembly -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>release</id>
-            <phase>install</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <finalName>release</finalName>
-              <outputDirectory>${basedir}</outputDirectory>
-              <appendAssemblyId>false</appendAssemblyId>
-              <attach>false</attach>
-              <descriptors>
-                <descriptor>assembly.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- JAXB -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jaxb2-maven-plugin</artifactId>
-        <configuration>
-          <sources>
-            <source>${project.basedir}/src/main/xsd/kyeroV3.0.xsd</source>
-            <source>${project.basedir}/src/main/xsd/xmlschema.xsd</source>
-          </sources>
-          <bindingFiles>binding.xjb</bindingFiles>
-          <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-          <clearOutputDir>false</clearOutputDir>
-          <target>2.1</target>
-          <extension>true</extension>
-          <generateEpisode>false</generateEpisode>
-          <noGeneratedHeaderComments>true</noGeneratedHeaderComments>
-          <arguments>
-            <argument>-XtoString</argument>
-            <argument>-Xcopyable</argument>
-            <argument>-Xequals</argument>
-          </arguments>
-        </configuration>
-      </plugin>
-
-      <!-- findbugs -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <configuration>
-          <failOnError>false</failOnError>
-          <excludeFilterFile>${basedir}/findbugs-exclude.xml</excludeFilterFile>
-        </configuration>
-      </plugin>
-
-    </plugins>
-  </build>
+        </plugins>
+    </build>
 </project>

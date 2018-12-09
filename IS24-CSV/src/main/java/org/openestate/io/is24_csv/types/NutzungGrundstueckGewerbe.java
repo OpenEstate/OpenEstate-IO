@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,80 +24,71 @@ import org.slf4j.LoggerFactory;
 /**
  * NutzungGrundstueckGewerbe.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum NutzungGrundstueckGewerbe
-{
-  ACKERLAND( 1 ),
-  BAUERWARTUNGSLAND( 2 ),
-  BOOTSSTAENDE( 3 ),
-  BUERO( 4 ),
-  CAMPING( 5 ),
-  EINZELHANDEL_GROSS( 8 ),
-  EINZELHANDEL_KLEIN( 9 ),
-  GARAGEN( 10 ),
-  GARTEN( 11 ),
-  GASTRONOMIE( 12 ),
-  GEWERBE( 13 ),
-  HOTEL( 14 ),
-  INDUSTRIE( 15 ),
-  KEINE_BEBAUUNG( 16 ),
-  KLEINGEWERBE( 17 ),
-  LAGER( 18 ),
-  OBSTPFLANZUNG( 20 ),
-  PARKHAUS( 21 ),
-  PRODUKTION( 22 ),
-  STELLPLAETZE( 24 ),
-  WALD( 26 );
+public enum NutzungGrundstueckGewerbe {
+    ACKERLAND(1),
+    BAUERWARTUNGSLAND(2),
+    BOOTSSTAENDE(3),
+    BUERO(4),
+    CAMPING(5),
+    EINZELHANDEL_GROSS(8),
+    EINZELHANDEL_KLEIN(9),
+    GARAGEN(10),
+    GARTEN(11),
+    GASTRONOMIE(12),
+    GEWERBE(13),
+    HOTEL(14),
+    INDUSTRIE(15),
+    KEINE_BEBAUUNG(16),
+    KLEINGEWERBE(17),
+    LAGER(18),
+    OBSTPFLANZUNG(20),
+    PARKHAUS(21),
+    PRODUKTION(22),
+    STELLPLAETZE(24),
+    WALD(26);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( NutzungGrundstueckGewerbe.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(NutzungGrundstueckGewerbe.class);
+    private final int value;
 
-  private NutzungGrundstueckGewerbe( int value )
-  {
-    this.value = value;
-  }
-
-  public static NutzungGrundstueckGewerbe parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (NutzungGrundstueckGewerbe s : NutzungGrundstueckGewerbe.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private NutzungGrundstueckGewerbe(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public static NutzungGrundstueckGewerbe[] parseMultiple( String valueList )
-  {
-    String[] values = StringUtils.split( valueList, ";" );
-    if (values==null) return new NutzungGrundstueckGewerbe[]{};
-    List<NutzungGrundstueckGewerbe> nutzungen = new ArrayList<>();
-    for (String value : values)
-    {
-      NutzungGrundstueckGewerbe nutzung = NutzungGrundstueckGewerbe.parse( value );
-      if (nutzung!=null && !nutzungen.contains( nutzung ))
-        nutzungen.add( nutzung );
+    public static NutzungGrundstueckGewerbe parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (NutzungGrundstueckGewerbe s : NutzungGrundstueckGewerbe.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
     }
-    return nutzungen.toArray( new NutzungGrundstueckGewerbe[nutzungen.size()] );
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
-
-  public static String printMultiple( Iterable<NutzungGrundstueckGewerbe> arten )
-  {
-    if (arten==null) return null;
-    List<String> values = new ArrayList<>();
-    for (NutzungGrundstueckGewerbe art : arten)
-    {
-      String value = art.print();
-      if (!values.contains( value )) values.add( value );
+    public static NutzungGrundstueckGewerbe[] parseMultiple(String valueList) {
+        String[] values = StringUtils.split(valueList, ";");
+        if (values == null) return new NutzungGrundstueckGewerbe[]{};
+        List<NutzungGrundstueckGewerbe> nutzungen = new ArrayList<>();
+        for (String value : values) {
+            NutzungGrundstueckGewerbe nutzung = NutzungGrundstueckGewerbe.parse(value);
+            if (nutzung != null && !nutzungen.contains(nutzung))
+                nutzungen.add(nutzung);
+        }
+        return nutzungen.toArray(new NutzungGrundstueckGewerbe[nutzungen.size()]);
     }
-    return StringUtils.trimToNull( StringUtils.join( values, ";" ) );
-  }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
+
+    public static String printMultiple(Iterable<NutzungGrundstueckGewerbe> arten) {
+        if (arten == null) return null;
+        List<String> values = new ArrayList<>();
+        for (NutzungGrundstueckGewerbe art : arten) {
+            String value = art.print();
+            if (!values.contains(value)) values.add(value);
+        }
+        return StringUtils.trimToNull(StringUtils.join(values, ";"));
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,35 +22,41 @@ import org.slf4j.LoggerFactory;
 /**
  * Language.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Language
-{
-  GERMAN( 1 ), FRENCH( 2 ), ITALIAN( 3 ), ENGLISH( 4 );
+public enum Language {
+    @SuppressWarnings("unused")
+    GERMAN(1),
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Language.class );
-  private final int value;
+    @SuppressWarnings("unused")
+    FRENCH(2),
 
-  private Language( int value )
-  {
-    this.value = value;
-  }
+    @SuppressWarnings("unused")
+    ITALIAN(3),
 
-  public static Language parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
+    @SuppressWarnings("unused")
+    ENGLISH(4);
 
-    for (Language l : Language.values())
-    {
-      if (String.valueOf( l.value ).equalsIgnoreCase( value )) return l;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(Language.class);
+    private final int value;
+
+    Language(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Language parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (Language l : Language.values()) {
+            if (String.valueOf(l.value).equalsIgnoreCase(value)) return l;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

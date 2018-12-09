@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,642 +33,604 @@ import org.slf4j.LoggerFactory;
 /**
  * Record from the IS24-CSV format for gastronomy objects.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class GewerbeGastronomieHotel extends Is24CsvRecord
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( GewerbeGastronomieHotel.class );
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+public class GewerbeGastronomieHotel extends Is24CsvRecord {
+    private final static Logger LOGGER = LoggerFactory.getLogger(GewerbeGastronomieHotel.class);
 
-  /** Vermarktungsart, Text 1 */
-  protected final static int FIELD_VERMARKTUNGSART = 60;
+    /**
+     * Vermarktungsart, Text 1
+     */
+    protected final static int FIELD_VERMARKTUNGSART = 60;
 
-  /** Objektkategorie 2, Zahl 3 */
-  protected final static int FIELD_OBJEKTKATEGORIE = 61;
+    /**
+     * Objektkategorie 2, Zahl 3
+     */
+    protected final static int FIELD_OBJEKTKATEGORIE = 61;
 
-  /** Gastraumfläche (gewerbliche Hauptnutzungsfläche), Zahl 10,2 */
-  protected final static int FIELD_GEWERBEFLAECHE = 62;
+    /**
+     * Gastraumfläche (gewerbliche Hauptnutzungsfläche), Zahl 10,2
+     */
+    protected final static int FIELD_GEWERBEFLAECHE = 62;
 
-  /** Nebenfläche, Zahl 10,2 */
-  protected final static int FIELD_NEBENFLAECHE = 63;
+    /**
+     * Nebenfläche, Zahl 10,2
+     */
+    protected final static int FIELD_NEBENFLAECHE = 63;
 
-  /** Gesamtfläche, Zahl 10,2 */
-  protected final static int FIELD_GESAMTFLAECHE = 64;
+    /**
+     * Gesamtfläche, Zahl 10,2
+     */
+    protected final static int FIELD_GESAMTFLAECHE = 64;
 
-  /** Anzahl Parkflächen, Zahl 5 */
-  protected final static int FIELD_ANZAHL_PARKFLAECHEN = 65;
+    /**
+     * Anzahl Parkflächen, Zahl 5
+     */
+    protected final static int FIELD_ANZAHL_PARKFLAECHEN = 65;
 
-  /** Etage(n), Text 50 */
-  protected final static int FIELD_ETAGEN = 66;
+    /**
+     * Etage(n), Text 50
+     */
+    protected final static int FIELD_ETAGEN = 66;
 
-  /** Baujahr, Zahl 4 */
-  protected final static int FIELD_BAUJAHR = 67;
+    /**
+     * Baujahr, Zahl 4
+     */
+    protected final static int FIELD_BAUJAHR = 67;
 
-  /** Objektzustand, Zahl 10 */
-  protected final static int FIELD_OBJEKTZUSTAND = 68;
+    /**
+     * Objektzustand, Zahl 10
+     */
+    protected final static int FIELD_OBJEKTZUSTAND = 68;
 
-  /** Personenaufzug, Text 1 */
-  protected final static int FIELD_PERSONENAUFZUG = 69;
+    /**
+     * Personenaufzug, Text 1
+     */
+    protected final static int FIELD_PERSONENAUFZUG = 69;
 
-  /** Anzahl Plätze Gastraum, Zahl 5 */
-  protected final static int FIELD_ANZAHL_GASTRAUMPLAETZE = 70;
+    /**
+     * Anzahl Plätze Gastraum, Zahl 5
+     */
+    protected final static int FIELD_ANZAHL_GASTRAUMPLAETZE = 70;
 
-  /** Anzahl Betten, Zahl 5 */
-  protected final static int FIELD_ANZAHL_BETTEN = 71;
+    /**
+     * Anzahl Betten, Zahl 5
+     */
+    protected final static int FIELD_ANZAHL_BETTEN = 71;
 
-  /** Gastterrasse, Text 1 */
-  protected final static int FIELD_GASTTERRASSE = 72;
+    /**
+     * Gastterrasse, Text 1
+     */
+    protected final static int FIELD_GASTTERRASSE = 72;
 
-  /** Fussweg zu öffentlichen Verkehrsmitteln (in Min.), Zahl 2 */
-  protected final static int FIELD_FUSSWEG_NAHVERKEHR = 73;
+    /**
+     * Fussweg zu öffentlichen Verkehrsmitteln (in Min.), Zahl 2
+     */
+    protected final static int FIELD_FUSSWEG_NAHVERKEHR = 73;
 
-  /** Fahrzeit zum nächsten Hauptbahnhof (in Min.), Zahl 2 */
-  protected final static int FIELD_FAHRTWEG_HAUPTBAHNHOF = 74;
+    /**
+     * Fahrzeit zum nächsten Hauptbahnhof (in Min.), Zahl 2
+     */
+    protected final static int FIELD_FAHRTWEG_HAUPTBAHNHOF = 74;
 
-  /** Fahrzeit zum nächsten BAB (in Min.), Zahl 3 */
-  protected final static int FIELD_FAHRTWEG_AUTOBAHN = 75;
+    /**
+     * Fahrzeit zum nächsten BAB (in Min.), Zahl 3
+     */
+    protected final static int FIELD_FAHRTWEG_AUTOBAHN = 75;
 
-  /** Fahrzeit zum nächsten Flughafen (in Min.), Zahl 3 */
-  protected final static int FIELD_FAHRTWEG_FLUGHAFEN = 76;
+    /**
+     * Fahrzeit zum nächsten Flughafen (in Min.), Zahl 3
+     */
+    protected final static int FIELD_FAHRTWEG_FLUGHAFEN = 76;
 
-  /** Frei ab/Verfügbar ab/Antrittstermin, Text 50 */
-  protected final static int FIELD_VERFUEGBAR_AB = 77;
+    /**
+     * Frei ab/Verfügbar ab/Antrittstermin, Text 50
+     */
+    protected final static int FIELD_VERFUEGBAR_AB = 77;
 
-  /** Jahr letzte Modernisierung/ Sanierung, Zahl 4 */
-  protected final static int FIELD_SANIERUNGSJAHR = 80;
+    /**
+     * Jahr letzte Modernisierung/ Sanierung, Zahl 4
+     */
+    protected final static int FIELD_SANIERUNGSJAHR = 80;
 
-  /** Qualität der Ausstattung, Zahl 1 */
-  protected final static int FIELD_AUSSTATTUNG = 81;
+    /**
+     * Qualität der Ausstattung, Zahl 1
+     */
+    protected final static int FIELD_AUSSTATTUNG = 81;
 
-  /** Befeuerungsart, Zahl 2 (Mehrfachauswahl möglich, wenn Eingaben durch Semikolon getrennt werden. Jeder mögliche Wert darf max. einmal erscheinen.) */
-  protected final static int FIELD_BEFEUERUNG = 83;
+    /**
+     * Befeuerungsart, Zahl 2 (Mehrfachauswahl möglich, wenn Eingaben durch Semikolon getrennt werden. Jeder mögliche Wert darf max. einmal erscheinen.)
+     */
+    protected final static int FIELD_BEFEUERUNG = 83;
 
-  /** Energieausweistyp, Zahl 1 */
-  protected final static int FIELD_ENERGIEAUSWEIS_TYP = 84;
+    /**
+     * Energieausweistyp, Zahl 1
+     */
+    protected final static int FIELD_ENERGIEAUSWEIS_TYP = 84;
 
-  /** Kennwert in kWh/(m²*a), Zahl 5,2 */
-  protected final static int FIELD_ENERGIEAUSWEIS_KENNWERT = 85;
+    /**
+     * Kennwert in kWh/(m²*a), Zahl 5,2
+     */
+    protected final static int FIELD_ENERGIEAUSWEIS_KENNWERT = 85;
 
-  /** Energieverbrauch für Warmwasser enthalten, Text 1 (Nur relevant falls Energieausweistyp=VERBRAUCH. In allen anderen Fällen darf das Feld nicht gesetzt sein.) */
-  protected final static int FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER = 86;
+    /**
+     * Energieverbrauch für Warmwasser enthalten, Text 1 (Nur relevant falls Energieausweistyp=VERBRAUCH. In allen anderen Fällen darf das Feld nicht gesetzt sein.)
+     */
+    protected final static int FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER = 86;
 
-  /** Heizungsart, Zahl 10 */
-  protected final static int FIELD_HEIZUNGSART = 87;
+    /**
+     * Heizungsart, Zahl 10
+     */
+    protected final static int FIELD_HEIZUNGSART = 87;
 
-  /** Denkmalschutzobjekt, Text 1 */
-  protected final static int FIELD_DENKMALSCHUTZ = 88;
+    /**
+     * Denkmalschutzobjekt, Text 1
+     */
+    protected final static int FIELD_DENKMALSCHUTZ = 88;
 
-  /** Keller, Text 1 */
-  protected final static int FIELD_KELLER = 89;
+    /**
+     * Keller, Text 1
+     */
+    protected final static int FIELD_KELLER = 89;
 
-  /** Preis (Monatsmiete oder Kaufpreis), Zahl 15,2 */
-  protected final static int FIELD_PREIS = 90;
+    /**
+     * Preis (Monatsmiete oder Kaufpreis), Zahl 15,2
+     */
+    protected final static int FIELD_PREIS = 90;
 
-  /** Nebenkosten, Zahl 15,2 */
-  protected final static int FIELD_NEBENKOSTEN = 91;
+    /**
+     * Nebenkosten, Zahl 15,2
+     */
+    protected final static int FIELD_NEBENKOSTEN = 91;
 
-  /** Preis pro Parkfläche, Zahl 15,2 */
-  protected final static int FIELD_PREIS_PRO_PARKFLAECHE = 92;
+    /**
+     * Preis pro Parkfläche, Zahl 15,2
+     */
+    protected final static int FIELD_PREIS_PRO_PARKFLAECHE = 92;
 
-  /** Kaution, Text 50 */
-  protected final static int FIELD_KAUTION = 93;
+    /**
+     * Kaution, Text 50
+     */
+    protected final static int FIELD_KAUTION = 93;
 
-  public GewerbeGastronomieHotel()
-  {
-    super();
-    this.setImmobilienart( Immobilienart.GEWERBE_GASTRONOMIE_HOTEL );
-  }
-
-  public Integer getAnzahlBetten()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_ANZAHL_BETTEN ) );
+    public GewerbeGastronomieHotel() {
+        super();
+        this.setImmobilienart(Immobilienart.GEWERBE_GASTRONOMIE_HOTEL);
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Anzahl Betten'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Integer getAnzahlBetten() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_ANZAHL_BETTEN));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Anzahl Betten'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Integer getAnzahlGastraumplaetze()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_ANZAHL_GASTRAUMPLAETZE ) );
+    public Integer getAnzahlGastraumplaetze() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_ANZAHL_GASTRAUMPLAETZE));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Anzahl Gastraumplaetze'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Anzahl Gastraumplaetze'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public Integer getAnzahlParkflaechen() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_ANZAHL_PARKFLAECHEN));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Anzahl Parkflaechen'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Integer getAnzahlParkflaechen()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_ANZAHL_PARKFLAECHEN ) );
+    public Ausstattung getAusstattung() {
+        return Ausstattung.parse(
+                this.get(FIELD_AUSSTATTUNG));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Anzahl Parkflaechen'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public Integer getBaujahr() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_BAUJAHR));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Baujahr'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Ausstattung getAusstattung()
-  {
-    return Ausstattung.parse(
-      this.get( FIELD_AUSSTATTUNG ) );
-  }
-
-  public Integer getBaujahr()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_BAUJAHR ) );
+    public Befeuerungsart[] getBefeuerungsart() {
+        return Befeuerungsart.parseMultiple(
+                this.get(FIELD_BEFEUERUNG));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Baujahr'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Boolean getDenkmalschutz() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_DENKMALSCHUTZ));
     }
-  }
 
-  public Befeuerungsart[] getBefeuerungsart()
-  {
-    return Befeuerungsart.parseMultiple(
-      this.get( FIELD_BEFEUERUNG ) );
-  }
-
-  public Boolean getDenkmalschutz()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_DENKMALSCHUTZ ) );
-  }
-
-  public Boolean getEnergieausweisInklWarmwasser()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER ) );
-  }
-
-  public BigDecimal getEnergieausweisKennwert()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_ENERGIEAUSWEIS_KENNWERT ) );
+    public Boolean getEnergieausweisInklWarmwasser() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Energieausweis-Kennwert'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public BigDecimal getEnergieausweisKennwert() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_ENERGIEAUSWEIS_KENNWERT));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Energieausweis-Kennwert'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public EnergieausweisTyp getEnergieausweisTyp()
-  {
-    return EnergieausweisTyp.parse(
-      this.get( FIELD_ENERGIEAUSWEIS_TYP ) );
-  }
-
-  public String getEtagen()
-  {
-    return this.get( FIELD_ETAGEN );
-  }
-
-  public Integer getFahrtwegAutobahn()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_FAHRTWEG_AUTOBAHN ) );
+    public EnergieausweisTyp getEnergieausweisTyp() {
+        return EnergieausweisTyp.parse(
+                this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Fahrtweg zur Autobahn'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public String getEtagen() {
+        return this.get(FIELD_ETAGEN);
     }
-  }
 
-  public Integer getFahrtwegFlughafen()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_FAHRTWEG_FLUGHAFEN ) );
+    @SuppressWarnings("Duplicates")
+    public Integer getFahrtwegAutobahn() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_FAHRTWEG_AUTOBAHN));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Fahrtweg zur Autobahn'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Fahrtweg zum Flughafen'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public Integer getFahrtwegFlughafen() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_FAHRTWEG_FLUGHAFEN));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Fahrtweg zum Flughafen'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Integer getFahrtwegHauptbahnhof()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_FAHRTWEG_HAUPTBAHNHOF ) );
+    @SuppressWarnings("Duplicates")
+    public Integer getFahrtwegHauptbahnhof() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_FAHRTWEG_HAUPTBAHNHOF));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Fahrtweg zum Hauptbahnhof'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Fahrtweg zum Hauptbahnhof'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public Integer getFusswegNahverkehr() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_FUSSWEG_NAHVERKEHR));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Fussweg zum Nahverkehr'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Integer getFusswegNahverkehr()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_FUSSWEG_NAHVERKEHR ) );
+    public Boolean getGastterrasse() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_GASTTERRASSE));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Fussweg zum Nahverkehr'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public BigDecimal getGesamtflaeche() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_GESAMTFLAECHE));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Gesamtflaeche'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Boolean getGastterrasse()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_GASTTERRASSE ) );
-  }
-
-  public BigDecimal getGesamtflaeche()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_GESAMTFLAECHE ) );
+    @SuppressWarnings("Duplicates")
+    public BigDecimal getGewerbeflaeche() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_GEWERBEFLAECHE));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Gewerbeflaeche'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Gesamtflaeche'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Heizungsart getHeizungsart() {
+        return Heizungsart.parse(
+                this.get(FIELD_HEIZUNGSART));
     }
-  }
 
-  public BigDecimal getGewerbeflaeche()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_GEWERBEFLAECHE ) );
+    public String getKaution() {
+        return this.get(FIELD_KAUTION);
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Gewerbeflaeche'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Boolean getKeller() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_KELLER));
     }
-  }
 
-  public Heizungsart getHeizungsart()
-  {
-    return Heizungsart.parse(
-      this.get( FIELD_HEIZUNGSART ) );
-  }
-
-  public String getKaution()
-  {
-    return this.get( FIELD_KAUTION );
-  }
-
-  public Boolean getKeller()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_KELLER ) );
-  }
-
-  public BigDecimal getNebenflaeche()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_NEBENFLAECHE ) );
+    @SuppressWarnings("Duplicates")
+    public BigDecimal getNebenflaeche() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_NEBENFLAECHE));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Nebenflaeche'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Nebenflaeche'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public BigDecimal getNebenkosten() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_NEBENKOSTEN));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Nebenkosten'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public BigDecimal getNebenkosten()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_NEBENKOSTEN ) );
+    public ObjektkategorieGewerbeGastronomieHotel getObjektkategorie() {
+        return ObjektkategorieGewerbeGastronomieHotel.parse(
+                this.get(FIELD_OBJEKTKATEGORIE));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Nebenkosten'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public Objektzustand getObjektzustand() {
+        return Objektzustand.parse(
+                this.get(FIELD_OBJEKTZUSTAND));
     }
-  }
 
-  public ObjektkategorieGewerbeGastronomieHotel getObjektkategorie()
-  {
-    return ObjektkategorieGewerbeGastronomieHotel.parse(
-      this.get( FIELD_OBJEKTKATEGORIE ) );
-  }
-
-  public Objektzustand getObjektzustand()
-  {
-    return Objektzustand.parse(
-      this.get( FIELD_OBJEKTZUSTAND ) );
-  }
-
-  public Boolean getPersonenaufzug()
-  {
-    return Is24CsvFormat.parseBoolean(
-      this.get( FIELD_PERSONENAUFZUG ) );
-  }
-
-  public BigDecimal getPreis()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_PREIS ) );
+    public Boolean getPersonenaufzug() {
+        return Is24CsvFormat.parseBoolean(
+                this.get(FIELD_PERSONENAUFZUG));
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Preis'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public BigDecimal getPreis() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_PREIS));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Preis'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public BigDecimal getPreisProParkflaeche()
-  {
-    try
-    {
-      return Is24CsvFormat.parseDecimal(
-        this.get( FIELD_PREIS_PRO_PARKFLAECHE ) );
+    @SuppressWarnings("Duplicates")
+    public BigDecimal getPreisProParkflaeche() {
+        try {
+            return Is24CsvFormat.parseDecimal(
+                    this.get(FIELD_PREIS_PRO_PARKFLAECHE));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Preis pro Parkflaeche'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Preis pro Parkflaeche'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @SuppressWarnings("Duplicates")
+    public Integer getSanierungsjahr() {
+        try {
+            return Is24CsvFormat.parseInteger(
+                    this.get(FIELD_SANIERUNGSJAHR));
+        } catch (NumberFormatException ex) {
+            LOGGER.warn("Can't read 'Sanierungsjahr'!");
+            LOGGER.warn("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-  }
 
-  public Integer getSanierungsjahr()
-  {
-    try
-    {
-      return Is24CsvFormat.parseInteger(
-        this.get( FIELD_SANIERUNGSJAHR ) );
+    public String getVerfuegbarAb() {
+        return this.get(FIELD_VERFUEGBAR_AB);
     }
-    catch (NumberFormatException ex)
-    {
-      LOGGER.warn( "Can't read 'Sanierungsjahr'!" );
-      LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    public VermarktungsartGewerbe getVermarktungsart() {
+        return VermarktungsartGewerbe.parse(
+                this.get(FIELD_VERMARKTUNGSART));
     }
-  }
 
-  public String getVerfuegbarAb()
-  {
-    return this.get( FIELD_VERFUEGBAR_AB );
-  }
+    public static GewerbeGastronomieHotel newRecord(CSVRecord record) {
+        GewerbeGastronomieHotel is24Record = new GewerbeGastronomieHotel();
+        is24Record.parse(record);
+        return is24Record;
+    }
 
-  public VermarktungsartGewerbe getVermarktungsart()
-  {
-    return VermarktungsartGewerbe.parse(
-      this.get( FIELD_VERMARKTUNGSART ) );
-  }
+    @Override
+    protected Iterable<String> print() {
+        this.setImmobilienart(Immobilienart.GEWERBE_GASTRONOMIE_HOTEL);
+        return super.print();
+    }
 
-  public static GewerbeGastronomieHotel newRecord( CSVRecord record )
-  {
-    GewerbeGastronomieHotel is24Record = new GewerbeGastronomieHotel();
-    is24Record.parse( record );
-    return is24Record;
-  }
+    public void setAnzahlBetten(Number value) {
+        this.set(FIELD_ANZAHL_BETTEN,
+                Is24CsvFormat.printNumber(value, 5));
+    }
 
-  @Override
-  protected Iterable<String> print()
-  {
-    this.setImmobilienart( Immobilienart.GEWERBE_GASTRONOMIE_HOTEL );
-    return super.print();
-  }
+    public void setAnzahlGastraumplaetze(Number value) {
+        this.set(FIELD_ANZAHL_GASTRAUMPLAETZE,
+                Is24CsvFormat.printNumber(value, 5));
+    }
 
-  public void setAnzahlBetten( Number value )
-  {
-    this.set( FIELD_ANZAHL_BETTEN,
-      Is24CsvFormat.printNumber( value, 5 ) );
-  }
+    public void setAnzahlParkflaechen(Number value) {
+        this.set(FIELD_ANZAHL_PARKFLAECHEN,
+                Is24CsvFormat.printNumber(value, 5));
+    }
 
-  public void setAnzahlGastraumplaetze( Number value )
-  {
-    this.set( FIELD_ANZAHL_GASTRAUMPLAETZE,
-      Is24CsvFormat.printNumber( value, 5 ) );
-  }
+    public void setAusstattung(Ausstattung value) {
+        this.set(FIELD_AUSSTATTUNG,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setAnzahlParkflaechen( Number value )
-  {
-    this.set( FIELD_ANZAHL_PARKFLAECHEN,
-      Is24CsvFormat.printNumber( value, 5 ) );
-  }
+    public void setBaujahr(Number value) {
+        this.set(FIELD_BAUJAHR,
+                Is24CsvFormat.printNumber(value, 4));
+    }
 
-  public void setAusstattung( Ausstattung value )
-  {
-    this.set( FIELD_AUSSTATTUNG,
-      (value!=null)? value.print(): null );
-  }
+    public void setBefeuerungsart(Befeuerungsart value) {
+        this.set(FIELD_BEFEUERUNG,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setBaujahr( Number value )
-  {
-    this.set( FIELD_BAUJAHR,
-      Is24CsvFormat.printNumber( value, 4 ) );
-  }
+    public void setBefeuerungsart(Iterable<Befeuerungsart> values) {
+        this.set(FIELD_BEFEUERUNG,
+                Befeuerungsart.printMultiple(values));
+    }
 
-  public void setBefeuerungsart( Befeuerungsart value )
-  {
-    this.set( FIELD_BEFEUERUNG,
-      (value!=null)? value.print(): null );
-  }
+    public void setDenkmalschutz(Boolean value) {
+        this.set(FIELD_DENKMALSCHUTZ,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-  public void setBefeuerungsart( Iterable<Befeuerungsart> values )
-  {
-    this.set( FIELD_BEFEUERUNG,
-      Befeuerungsart.printMultiple( values ) );
-  }
+    public void setEnergieausweisInklWarmwasser(Boolean value) {
+        this.set(FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-  public void setDenkmalschutz( Boolean value )
-  {
-    this.set( FIELD_DENKMALSCHUTZ,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+    public void setEnergieausweisKennwert(Number value) {
+        this.set(FIELD_ENERGIEAUSWEIS_KENNWERT,
+                Is24CsvFormat.printNumber(value, 5, 2));
+    }
 
-  public void setEnergieausweisInklWarmwasser( Boolean value )
-  {
-    this.set( FIELD_ENERGIEAUSWEIS_INKL_WARMWASSER,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+    public void setEnergieausweisTyp(EnergieausweisTyp value) {
+        this.set(FIELD_ENERGIEAUSWEIS_TYP,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setEnergieausweisKennwert( Number value )
-  {
-    this.set( FIELD_ENERGIEAUSWEIS_KENNWERT,
-      Is24CsvFormat.printNumber( value, 5, 2 ) );
-  }
+    public void setEtagen(String value) {
+        this.set(FIELD_ETAGEN,
+                Is24CsvFormat.printString(value, 50));
+    }
 
-  public void setEnergieausweisTyp( EnergieausweisTyp value )
-  {
-    this.set( FIELD_ENERGIEAUSWEIS_TYP,
-      (value!=null)? value.print(): null );
-  }
+    public void setFahrtwegAutobahn(Number value) {
+        this.set(FIELD_FAHRTWEG_AUTOBAHN,
+                Is24CsvFormat.printNumber(value, 3));
+    }
 
-  public void setEtagen( String value )
-  {
-    this.set( FIELD_ETAGEN,
-      Is24CsvFormat.printString( value, 50 ) );
-  }
+    public void setFahrtwegFlughafen(Number value) {
+        this.set(FIELD_FAHRTWEG_FLUGHAFEN,
+                Is24CsvFormat.printNumber(value, 3));
+    }
 
-  public void setFahrtwegAutobahn( Number value )
-  {
-    this.set( FIELD_FAHRTWEG_AUTOBAHN,
-      Is24CsvFormat.printNumber( value, 3 ) );
-  }
+    public void setFahrtwegHauptbahnhof(Number value) {
+        this.set(FIELD_FAHRTWEG_HAUPTBAHNHOF,
+                Is24CsvFormat.printNumber(value, 2));
+    }
 
-  public void setFahrtwegFlughafen( Number value )
-  {
-    this.set( FIELD_FAHRTWEG_FLUGHAFEN,
-      Is24CsvFormat.printNumber( value, 3 ) );
-  }
+    public void setFusswegNahverkehr(Number value) {
+        this.set(FIELD_FUSSWEG_NAHVERKEHR,
+                Is24CsvFormat.printNumber(value, 2));
+    }
 
-  public void setFahrtwegHauptbahnhof( Number value )
-  {
-    this.set( FIELD_FAHRTWEG_HAUPTBAHNHOF,
-      Is24CsvFormat.printNumber( value, 2 ) );
-  }
+    public void setGastterrasse(Boolean value) {
+        this.set(FIELD_GASTTERRASSE,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-  public void setFusswegNahverkehr( Number value )
-  {
-    this.set( FIELD_FUSSWEG_NAHVERKEHR,
-      Is24CsvFormat.printNumber( value, 2 ) );
-  }
+    public void setGesamtflaeche(Number value) {
+        this.set(FIELD_GESAMTFLAECHE,
+                Is24CsvFormat.printNumber(value, 10, 2));
+    }
 
-  public void setGastterrasse( Boolean value )
-  {
-    this.set( FIELD_GASTTERRASSE,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+    public void setGewerbeflaeche(Number value) {
+        this.set(FIELD_GEWERBEFLAECHE,
+                Is24CsvFormat.printNumber(value, 10, 2));
+    }
 
-  public void setGesamtflaeche( Number value )
-  {
-    this.set( FIELD_GESAMTFLAECHE,
-      Is24CsvFormat.printNumber( value, 10, 2 ) );
-  }
+    public void setHeizungsart(Heizungsart value) {
+        this.set(FIELD_HEIZUNGSART,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setGewerbeflaeche( Number value )
-  {
-    this.set( FIELD_GEWERBEFLAECHE,
-      Is24CsvFormat.printNumber( value, 10, 2 ) );
-  }
+    public void setKaution(String value) {
+        this.set(FIELD_KAUTION,
+                Is24CsvFormat.printString(value, 50));
+    }
 
-  public void setHeizungsart( Heizungsart value )
-  {
-    this.set( FIELD_HEIZUNGSART,
-      (value!=null)? value.print(): null );
-  }
+    public void setKeller(Boolean value) {
+        this.set(FIELD_KELLER,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-  public void setKaution( String value )
-  {
-    this.set( FIELD_KAUTION,
-      Is24CsvFormat.printString( value, 50 ) );
-  }
+    public void setNebenflaeche(Number value) {
+        this.set(FIELD_NEBENFLAECHE,
+                Is24CsvFormat.printNumber(value, 10, 2));
+    }
 
-  public void setKeller( Boolean value )
-  {
-    this.set( FIELD_KELLER,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+    public void setNebenkosten(Number value) {
+        this.set(FIELD_NEBENKOSTEN,
+                Is24CsvFormat.printNumber(value, 15, 2));
+    }
 
-  public void setNebenflaeche( Number value )
-  {
-    this.set( FIELD_NEBENFLAECHE,
-      Is24CsvFormat.printNumber( value, 10, 2 ) );
-  }
+    public void setObjektkategorie(ObjektkategorieGewerbeGastronomieHotel value) {
+        this.set(FIELD_OBJEKTKATEGORIE,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setNebenkosten( Number value )
-  {
-    this.set( FIELD_NEBENKOSTEN,
-      Is24CsvFormat.printNumber( value, 15, 2 ) );
-  }
+    public void setObjektzustand(Objektzustand value) {
+        this.set(FIELD_OBJEKTZUSTAND,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setObjektkategorie( ObjektkategorieGewerbeGastronomieHotel value )
-  {
-    this.set( FIELD_OBJEKTKATEGORIE,
-      (value!=null)? value.print(): null );
-  }
+    public void setPersonenaufzug(Boolean value) {
+        this.set(FIELD_PERSONENAUFZUG,
+                Is24CsvFormat.printBoolean(value));
+    }
 
-  public void setObjektzustand( Objektzustand value )
-  {
-    this.set( FIELD_OBJEKTZUSTAND,
-      (value!=null)? value.print(): null );
-  }
+    public void setPreis(Number value) {
+        this.set(FIELD_PREIS,
+                Is24CsvFormat.printNumber(value, 15, 2));
+    }
 
-  public void setPersonenaufzug( Boolean value )
-  {
-    this.set( FIELD_PERSONENAUFZUG,
-      Is24CsvFormat.printBoolean( value ) );
-  }
+    public void setPreisProParkflaeche(Number value) {
+        this.set(FIELD_PREIS_PRO_PARKFLAECHE,
+                Is24CsvFormat.printNumber(value, 15, 2));
+    }
 
-  public void setPreis( Number value )
-  {
-    this.set( FIELD_PREIS,
-      Is24CsvFormat.printNumber( value, 15, 2 ) );
-  }
+    public void setSanierungsjahr(Number value) {
+        this.set(FIELD_SANIERUNGSJAHR,
+                Is24CsvFormat.printNumber(value, 4));
+    }
 
-  public void setPreisProParkflaeche( Number value )
-  {
-    this.set( FIELD_PREIS_PRO_PARKFLAECHE,
-      Is24CsvFormat.printNumber( value, 15, 2 ) );
-  }
+    public void setVerfuegbarAb(String value) {
+        this.set(FIELD_VERFUEGBAR_AB,
+                Is24CsvFormat.printString(value, 50));
+    }
 
-  public void setSanierungsjahr( Number value )
-  {
-    this.set( FIELD_SANIERUNGSJAHR,
-      Is24CsvFormat.printNumber( value, 4 ) );
-  }
-
-  public void setVerfuegbarAb( String value )
-  {
-    this.set( FIELD_VERFUEGBAR_AB,
-      Is24CsvFormat.printString( value, 50 ) );
-  }
-
-  public void setVermarktungsart( VermarktungsartGewerbe value )
-  {
-    this.set( FIELD_VERMARKTUNGSART,
-      (value!=null)? value.print(): null );
-  }
+    public void setVermarktungsart(VermarktungsartGewerbe value) {
+        this.set(FIELD_VERMARKTUNGSART,
+                (value != null) ? value.print() : null);
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,162 +35,119 @@ import org.xml.sax.SAXException;
  * This example illustrates how to read XML files for
  * <a href="http://casa.it">casa.it</a>.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class CasaItReadingExample
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( CasaItReadingExample.class );
-  private final static String PACKAGE = "/org/openestate/io/examples";
+public class CasaItReadingExample {
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(CasaItReadingExample.class);
+    private final static String PACKAGE = "/org/openestate/io/examples";
 
-  /**
-   * Start the example application.
-   *
-   * @param args
-   * command line arguments
-   */
-  public static void main( String[] args )
-  {
-    // init logging
-    PropertyConfigurator.configure(
-      CasaItReadingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+    /**
+     * Start the example application.
+     *
+     * @param args command line arguments
+     */
+    @SuppressWarnings("Duplicates")
+    public static void main(String[] args) {
+        // init logging
+        PropertyConfigurator.configure(
+                CasaItReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
 
-    // read example file, if no files were specified as command line arguments
-    if (args.length<1)
-    {
-      try
-      {
-        read( CasaItReadingExample.class.getResourceAsStream( PACKAGE + "/casa_it.xml" ) );
-      }
-      catch (Exception ex)
-      {
-        LOGGER.error( "Can't read example file!" );
-        LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-        System.exit( 2 );
-      }
-    }
-
-    // read files, that were specified as command line arguments
-    else
-    {
-      for (String arg : args)
-      {
-        try
-        {
-          read( new File( arg ) );
+        // read example file, if no files were specified as command line arguments
+        if (args.length < 1) {
+            try {
+                read(CasaItReadingExample.class.getResourceAsStream(PACKAGE + "/casa_it.xml"));
+            } catch (Exception ex) {
+                LOGGER.error("Can't read example file!");
+                LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+                System.exit(2);
+            }
         }
-        catch (Exception ex)
-        {
-          LOGGER.error( "Can't read file '" + arg + "'!" );
-          LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-          System.exit( 2 );
+
+        // read files, that were specified as command line arguments
+        else {
+            for (String arg : args) {
+                try {
+                    read(new File(arg));
+                } catch (Exception ex) {
+                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+                    System.exit(2);
+                }
+            }
         }
-      }
     }
-  }
 
-  /**
-   * Read a {@link File} into a {@link CasaItDocument} and print some of its
-   * content to console.
-   *
-   * @param xmlFile
-   * the file to read
-   *
-   * @throws SAXException
-   * if the file is not readable by the XML parser
-   *
-   * @throws IOException
-   * if the file is not readable
-   *
-   * @throws ParserConfigurationException
-   * if the XML parser is improperly configured
-   *
-   * @throws JAXBException
-   * if XML conversion into Java objects failed
-   */
-  protected static void read( File xmlFile ) throws SAXException, IOException, ParserConfigurationException, JAXBException
-  {
-    LOGGER.info( "process file: " + xmlFile.getAbsolutePath() );
-    if (!xmlFile.isFile())
-    {
-      LOGGER.warn( "> provided file is invalid" );
-      return;
+    /**
+     * Read a {@link File} into a {@link CasaItDocument} and print some of its
+     * content to console.
+     *
+     * @param xmlFile the file to read
+     * @throws SAXException                 if the file is not readable by the XML parser
+     * @throws IOException                  if the file is not readable
+     * @throws ParserConfigurationException if the XML parser is improperly configured
+     * @throws JAXBException                if XML conversion into Java objects failed
+     */
+    protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
+        LOGGER.info("process file: " + xmlFile.getAbsolutePath());
+        if (!xmlFile.isFile()) {
+            LOGGER.warn("> provided file is invalid");
+            return;
+        }
+        CasaItDocument doc = CasaItUtils.createDocument(xmlFile);
+        if (doc == null) {
+            LOGGER.warn("> provided XML is not supported");
+        } else {
+            printToConsole(doc);
+        }
     }
-    CasaItDocument doc = CasaItUtils.createDocument( xmlFile );
-    if (doc==null)
-    {
-      LOGGER.warn( "> provided XML is not supported" );
-    }
-    else
-    {
-      printToConsole( doc );
-    }
-  }
 
-  /**
-   * Read an {@link InputStream} into a {@link CasaItDocument} and print some
-   * of its content to console.
-   *
-   * @param xmlInputStream
-   * the input stream to read
-   *
-   * @throws SAXException
-   * if the file is not readable by the XML parser
-   *
-   * @throws IOException
-   * if the file is not readable
-   *
-   * @throws ParserConfigurationException
-   * if the XML parser is improperly configured
-   *
-   * @throws JAXBException
-   * if XML conversion into Java objects failed
-   */
-  protected static void read( InputStream xmlInputStream ) throws SAXException, IOException, ParserConfigurationException, JAXBException
-  {
-    LOGGER.info( "process example file" );
-    CasaItDocument doc = CasaItUtils.createDocument( xmlInputStream );
-    if (doc==null)
-    {
-      LOGGER.warn( "> provided XML is not supported" );
+    /**
+     * Read an {@link InputStream} into a {@link CasaItDocument} and print some
+     * of its content to console.
+     *
+     * @param xmlInputStream the input stream to read
+     * @throws SAXException                 if the file is not readable by the XML parser
+     * @throws IOException                  if the file is not readable
+     * @throws ParserConfigurationException if the XML parser is improperly configured
+     * @throws JAXBException                if XML conversion into Java objects failed
+     */
+    protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
+        LOGGER.info("process example file");
+        CasaItDocument doc = CasaItUtils.createDocument(xmlInputStream);
+        if (doc == null) {
+            LOGGER.warn("> provided XML is not supported");
+        } else {
+            printToConsole(doc);
+        }
     }
-    else
-    {
-      printToConsole( doc );
+
+    /**
+     * Print some content of a {@link CasaItDocument} to console.
+     *
+     * @param doc the document to process
+     * @throws JAXBException if XML conversion into Java objects failed
+     */
+    protected static void printToConsole(CasaItDocument doc) throws JAXBException {
+        Container container = doc.toObject();
+
+        // process real estates
+        if (container.getRealestateitems() != null) {
+            for (Container.Realestateitems.Realestate obj : container.getRealestateitems().getRealestate()) {
+                // get object nr
+                String objectNr = StringUtils.trimToNull(obj.getReference());
+                if (objectNr == null) objectNr = "???";
+
+                // get object title
+                String objectTitle = (obj.getDescription() != null) ?
+                        StringUtils.trimToNull(obj.getDescription().getValue()) : null;
+                if (objectTitle == null) objectTitle = "???";
+
+                // print object information to console
+                LOGGER.info("> found object '" + objectNr + "' "
+                        + "with title '" + objectTitle + "'");
+            }
+        }
     }
-  }
-
-  /**
-   * Print some content of a {@link CasaItDocument} to console.
-   *
-   * @param doc
-   * the document to process
-   *
-   * @throws JAXBException
-   * if XML conversion into Java objects failed
-   */
-  protected static void printToConsole( CasaItDocument doc ) throws JAXBException
-  {
-    Container container = doc.toObject();
-
-    // process real estates
-    if (container.getRealestateitems()!=null)
-    {
-      for (Container.Realestateitems.Realestate obj : container.getRealestateitems().getRealestate())
-      {
-        // get object nr
-        String objectNr = StringUtils.trimToNull( obj.getReference() );
-        if (objectNr==null) objectNr = "???";
-
-        // get object title
-        String objectTitle = (obj.getDescription()!=null)?
-          StringUtils.trimToNull( obj.getDescription().getValue() ): null;
-        if (objectTitle==null) objectTitle = "???";
-
-        // print object informations to console
-        LOGGER.info( "> found object '" + objectNr + "' "
-          + "with title '" + objectTitle + "'" );
-      }
-    }
-  }
 }

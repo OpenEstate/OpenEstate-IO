@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,73 +28,63 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class WisItDocumentTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(WisItDocumentTest.class );
+@RunWith(JUnit4.class)
+public class WisItDocumentTest {
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(WisItDocumentTest.class);
 
-  private static Document buildExampleDocument() throws Exception
-  {
-    return XmlUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<WIS>\n"
-      + "  <OBJEKTE>\n"
-      + "    <ANZAHL>2</ANZAHL>\n"
-      + "    <OBJEKT>\n"
-      + "    </OBJEKT>\n"
-      + "    <OBJEKT>\n"
-      + "    </OBJEKT>\n"
-      + "  </OBJEKTE>\n"
-      + "</WIS>" );
-  }
-
-  @Test
-  public void testToObject()
-  {
-    try
-    {
-      WisItDocument doc = new WisItDocument( buildExampleDocument() );
-
-      WIS obj = doc.toObject();
-      Assert.assertNotNull(
-        "Created object for transfer document.", obj );
+    private static Document buildExampleDocument() throws Exception {
+        return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<WIS>\n"
+                + "  <OBJEKTE>\n"
+                + "    <ANZAHL>2</ANZAHL>\n"
+                + "    <OBJEKT>\n"
+                + "    </OBJEKT>\n"
+                + "    <OBJEKT>\n"
+                + "    </OBJEKT>\n"
+                + "  </OBJEKTE>\n"
+                + "</WIS>");
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of WisItDocument.toObject failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of WisItDocument.toObject failed!" );
+
+    @Test
+    public void testToObject() {
+        try {
+            WisItDocument doc = new WisItDocument(buildExampleDocument());
+
+            WIS obj = doc.toObject();
+            Assert.assertNotNull(
+                    "Created object for transfer document.", obj);
+        } catch (Exception ex) {
+            LOGGER.error("Test of WisItDocument.toObject failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of WisItDocument.toObject failed!");
+        }
     }
-  }
 
-  @Test
-  @Ignore
-  public void testToXml()
-  {
-    ObjectType obj = WisItUtils.getFactory().createObjectType();
-    obj.setINFODE( "an example property" );
-    obj.setORT( "Berlin" );
+    @Test
+    @Ignore
+    public void testToXml() {
+        ObjectType obj = WisItUtils.getFactory().createObjectType();
+        obj.setINFODE("an example property");
+        obj.setORT("Berlin");
 
-    WIS wis = WisItUtils.getFactory().createWIS();
-    wis.setBENUTZER( WisItUtils.getFactory().createWISBENUTZER() );
-    wis.getBENUTZER().setKDNR( "123" );
-    wis.setOBJEKTE(WisItUtils.getFactory().createWISOBJEKTE() );
-    wis.getOBJEKTE().getOBJEKT().add( obj );
+        WIS wis = WisItUtils.getFactory().createWIS();
+        wis.setBENUTZER(WisItUtils.getFactory().createWISBENUTZER());
+        wis.getBENUTZER().setKDNR("123");
+        wis.setOBJEKTE(WisItUtils.getFactory().createWISOBJEKTE());
+        wis.getOBJEKTE().getOBJEKT().add(obj);
 
-    try
-    {
-      WisItDocument doc = WisItDocument.newDocument( wis );
+        try {
+            WisItDocument doc = WisItDocument.newDocument(wis);
 
-      String xml = doc.toXmlString( true );
-      LOGGER.info( "XML: " + xml );
+            String xml = doc.toXmlString(true);
+            LOGGER.info("XML: " + xml);
+        } catch (Exception ex) {
+            LOGGER.error("Test of WisItDocument.toXml failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of WisItDocument.toXml failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of WisItDocument.toXml failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of WisItDocument.toXml failed!" );
-    }
-  }
 }
