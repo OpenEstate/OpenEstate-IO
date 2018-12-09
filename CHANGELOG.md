@@ -1,8 +1,15 @@
 Changelog for OpenEstate-IO
 ===========================
 
-1.4 (not released yet)
+
+1.5 (not released yet)
 ----------------------
+
+...
+
+
+1.4 (09 Dec 2018)
+-----------------
 
 -   Added [automatic module names](http://branchandbound.net/blog/java/2017/12/automatic-module-name/) 
     into JAR manifests.
