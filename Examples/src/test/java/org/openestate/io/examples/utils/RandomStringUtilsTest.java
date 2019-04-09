@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,95 +26,82 @@ import org.slf4j.LoggerFactory;
 /**
  * RandomStringUtilsTest.
  *
- * @since 1.3
  * @author Andreas Rudolph
+ * @since 1.3
  */
-@RunWith( JUnit4.class )
-public class RandomStringUtilsTest
-{
-  private static final Logger LOGGER = LoggerFactory.getLogger( RandomStringUtilsTest.class );
+@RunWith(JUnit4.class)
+public class RandomStringUtilsTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RandomStringUtilsTest.class);
 
-  private static boolean isAsciiAlpha( String value )
-  {
-    for (char c : value.toCharArray())
-    {
-      if (!CharUtils.isAsciiAlpha( c ))
-        return false;
+    private static boolean isAsciiAlpha(String value) {
+        for (char c : value.toCharArray()) {
+            if (!CharUtils.isAsciiAlpha(c))
+                return false;
+        }
+        return true;
     }
-    return true;
-  }
 
-  private static boolean isAsciiAlphanumeric( String value )
-  {
-    for (char c : value.toCharArray())
-    {
-      if (!CharUtils.isAsciiAlphanumeric( c ))
-        return false;
+    private static boolean isAsciiAlphanumeric(String value) {
+        for (char c : value.toCharArray()) {
+            if (!CharUtils.isAsciiAlphanumeric(c))
+                return false;
+        }
+        return true;
     }
-    return true;
-  }
 
-  private static boolean isAsciiNumeric( String value )
-  {
-    for (char c : value.toCharArray())
-    {
-      if (!CharUtils.isAsciiNumeric( c ))
-        return false;
+    private static boolean isAsciiNumeric(String value) {
+        for (char c : value.toCharArray()) {
+            if (!CharUtils.isAsciiNumeric(c))
+                return false;
+        }
+        return true;
     }
-    return true;
-  }
 
-  @Test
-  public void testRandom() throws Exception
-  {
-    for (int length=1; length<10; length++)
-    {
-      String value = RandomStringUtils.random( length );
-      //LOGGER.debug( "random alphanumeric string: " + value );
+    @Test
+    public void testRandom() throws Exception {
+        for (int length = 1; length < 10; length++) {
+            String value = RandomStringUtils.random(length);
+            //LOGGER.debug( "random alphanumeric string: " + value );
 
-      Assert.assertEquals(
-        "random string has a length of " + length,
-        length, value.length() );
+            Assert.assertEquals(
+                    "random string has a length of " + length,
+                    length, value.length());
 
-      Assert.assertEquals(
-        "random string is alphanumeric",
-        true, isAsciiAlphanumeric( value ) );
+            Assert.assertEquals(
+                    "random string is alphanumeric",
+                    true, isAsciiAlphanumeric(value));
+        }
     }
-  }
 
-  @Test
-  public void testRandomLetters() throws Exception
-  {
-    for (int length=1; length<10; length++)
-    {
-      String value = RandomStringUtils.randomLetters( length );
-      //LOGGER.debug( "random alpha string: " + value );
+    @Test
+    public void testRandomLetters() throws Exception {
+        for (int length = 1; length < 10; length++) {
+            String value = RandomStringUtils.randomLetters(length);
+            //LOGGER.debug( "random alpha string: " + value );
 
-      Assert.assertEquals(
-        "random string has a length of " + length,
-        length, value.length() );
+            Assert.assertEquals(
+                    "random string has a length of " + length,
+                    length, value.length());
 
-      Assert.assertEquals(
-        "random string is alpha",
-        true, isAsciiAlpha( value ) );
+            Assert.assertEquals(
+                    "random string is alpha",
+                    true, isAsciiAlpha(value));
+        }
     }
-  }
 
-  @Test
-  public void testRandomNumbers() throws Exception
-  {
-    for (int length=1; length<10; length++)
-    {
-      String value = RandomStringUtils.randomNumeric( length );
-      //LOGGER.debug( "random numeric string: " + value );
+    @Test
+    public void testRandomNumbers() throws Exception {
+        for (int length = 1; length < 10; length++) {
+            String value = RandomStringUtils.randomNumeric(length);
+            //LOGGER.debug( "random numeric string: " + value );
 
-      Assert.assertEquals(
-        "random string has a length of " + length,
-        length, value.length() );
+            Assert.assertEquals(
+                    "random string has a length of " + length,
+                    length, value.length());
 
-      Assert.assertEquals(
-        "random string is numeric",
-        true, isAsciiNumeric( value ) );
+            Assert.assertEquals(
+                    "random string is numeric",
+                    true, isAsciiNumeric(value));
+        }
     }
-  }
 }

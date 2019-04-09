@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+               jaxb:version="2.1">
+
+    <jaxb:globalBindings>
+        <jaxb:serializable/>
+
+        <jaxb:javaType name="java.math.BigInteger" xmlType="xsd:positiveInteger"
+                       parseMethod="org.openestate.io.wis_it.WisItUtils.parsePositiveInteger"
+                       printMethod="org.openestate.io.wis_it.WisItUtils.printPositiveInteger"/>
+
+        <jaxb:javaType name="java.math.BigDecimal" xmlType="xsd:double"
+                       parseMethod="org.openestate.io.wis_it.WisItUtils.parseDouble"
+                       printMethod="org.openestate.io.wis_it.WisItUtils.printDouble"/>
+
+    </jaxb:globalBindings>
+
+    <jaxb:bindings schemaLocation="wis.xsd" node="/xsd:schema">
+
+        <jaxb:schemaBindings>
+            <jaxb:package name="org.openestate.io.wis_it.xml">
+                <jaxb:javadoc>
+                    <![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.</body>]]></jaxb:javadoc>
+            </jaxb:package>
+        </jaxb:schemaBindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='dateTimeType']">
+            <jaxb:javaType name="java.util.Calendar"
+                           parseMethod="org.openestate.io.wis_it.WisItUtils.parseDateTime"
+                           printMethod="org.openestate.io.wis_it.WisItUtils.printDateTime"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='decimalType']">
+            <jaxb:javaType name="java.math.BigDecimal"
+                           parseMethod="org.openestate.io.wis_it.WisItUtils.parseDecimal"
+                           printMethod="org.openestate.io.wis_it.WisItUtils.printDecimal"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='yesNoType']">
+            <jaxb:javaType name="java.lang.Boolean"
+                           parseMethod="org.openestate.io.wis_it.WisItUtils.parseYesNo"
+                           printMethod="org.openestate.io.wis_it.WisItUtils.printYesNo"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='areaType']">
+            <jaxb:typesafeEnumClass name="AreaType">
+                <jaxb:javadoc><![CDATA[Java enum for &lt;FLAECHEART&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='conditionType']">
+            <jaxb:typesafeEnumClass name="ConditionType">
+                <jaxb:javadoc><![CDATA[Java enum for &lt;ZUSTAND&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='energyEfficencyClass']">
+            <jaxb:typesafeEnumClass name="EnergyEfficencyClass">
+                <jaxb:javadoc><![CDATA[Java enum for &lt;ENERGIEEFFIZIENZKLASSE&gt; elements.]]></jaxb:javadoc>
+                <jaxb:typesafeEnumMember value="A gold" name="A_GOLD"/>
+                <jaxb:typesafeEnumMember value="A Gold" name="A_GOLD2"/>
+                <jaxb:typesafeEnumMember value="A+++" name="A_PLUS_PLUS_PLUS"/>
+                <jaxb:typesafeEnumMember value="A++" name="A_PLUS_PLUS"/>
+                <jaxb:typesafeEnumMember value="A+" name="A_PLUS"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='energyStandard']">
+            <jaxb:typesafeEnumClass name="EnergyStandard">
+                <jaxb:javadoc><![CDATA[Java enum for &lt;KLIMAHAUS&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='heatingType']">
+            <jaxb:typesafeEnumClass name="HeatingType">
+                <jaxb:javadoc><![CDATA[Java enum for &lt;HEIZUNG&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='marketingType']">
+            <jaxb:typesafeEnumClass name="MarketingType">
+                <jaxb:javadoc><![CDATA[Java enum for &lt;MIETEKAUF&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='propertyType']">
+            <jaxb:typesafeEnumClass name="PropertyType">
+                <jaxb:javadoc><![CDATA[Java enum for &lt;IMMOBILIENART&gt; elements.]]></jaxb:javadoc>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+    </jaxb:bindings>
+
+</jaxb:bindings>

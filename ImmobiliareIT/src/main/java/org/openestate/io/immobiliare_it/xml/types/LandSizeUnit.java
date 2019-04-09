@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,32 +21,28 @@ import org.slf4j.LoggerFactory;
 /**
  * LandSizeUnit.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum LandSizeUnit
-{
-  HA( "ha" ), M2( "m2" ), SFT( "sft" );
+public enum LandSizeUnit {
+    HA("ha"), M2("m2"), SFT("sft");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( LandSizeUnit.class );
-  private final String xmlValue;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(LandSizeUnit.class);
+    private final String xmlValue;
 
-  private LandSizeUnit( String xmlValue )
-  {
-    this.xmlValue = xmlValue;
-  }
-
-  public String getXmlValue()
-  {
-    return xmlValue;
-  }
-
-  public static LandSizeUnit fromXmlValue( String xmlValue )
-  {
-    for (LandSizeUnit val : LandSizeUnit.values())
-    {
-      if (val.xmlValue.equalsIgnoreCase( xmlValue )) return val;
+    LandSizeUnit(String xmlValue) {
+        this.xmlValue = xmlValue;
     }
-    return null;
-  }
+
+    public String getXmlValue() {
+        return xmlValue;
+    }
+
+    public static LandSizeUnit fromXmlValue(String xmlValue) {
+        for (LandSizeUnit val : LandSizeUnit.values()) {
+            if (val.xmlValue.equalsIgnoreCase(xmlValue)) return val;
+        }
+        return null;
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,46 +25,45 @@ import org.slf4j.LoggerFactory;
 /**
  * General record from the IS24-CSV format for plots.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public abstract class Grundstueck extends Is24CsvRecord
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( Grundstueck.class );
+@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+public abstract class Grundstueck extends Is24CsvRecord {
+    private final static Logger LOGGER = LoggerFactory.getLogger(Grundstueck.class);
 
-  /** Vermarktungsart, Text 1 */
-  protected final static int FIELD_VERMARKTUNGSART = 60;
+    /**
+     * Vermarktungsart, Text 1
+     */
+    protected final static int FIELD_VERMARKTUNGSART = 60;
 
-  /** Objektkategorie 2, Zahl 3 */
-  protected final static int FIELD_OBJEKTKATEGORIE = 61;
+    /**
+     * Objektkategorie 2, Zahl 3
+     */
+    protected final static int FIELD_OBJEKTKATEGORIE = 61;
 
-  public ObjektkategorieGrundstueck getObjektkategorie()
-  {
-    return ObjektkategorieGrundstueck.parse(
-      this.get( FIELD_OBJEKTKATEGORIE ) );
-  }
+    public ObjektkategorieGrundstueck getObjektkategorie() {
+        return ObjektkategorieGrundstueck.parse(
+                this.get(FIELD_OBJEKTKATEGORIE));
+    }
 
-  public static ObjektkategorieGrundstueck getObjektkategorie( CSVRecord record )
-  {
-    return ObjektkategorieGrundstueck.parse(
-      record.get( FIELD_OBJEKTKATEGORIE ) );
-  }
+    public static ObjektkategorieGrundstueck getObjektkategorie(CSVRecord record) {
+        return ObjektkategorieGrundstueck.parse(
+                record.get(FIELD_OBJEKTKATEGORIE));
+    }
 
-  public Vermarktungsart getVermarktungsart()
-  {
-    return Vermarktungsart.parse(
-      this.get( FIELD_VERMARKTUNGSART ) );
-  }
+    public Vermarktungsart getVermarktungsart() {
+        return Vermarktungsart.parse(
+                this.get(FIELD_VERMARKTUNGSART));
+    }
 
-  public void setObjektkategorie( ObjektkategorieGrundstueck value )
-  {
-    this.set( FIELD_OBJEKTKATEGORIE,
-      (value!=null)? value.print(): null );
-  }
+    public void setObjektkategorie(ObjektkategorieGrundstueck value) {
+        this.set(FIELD_OBJEKTKATEGORIE,
+                (value != null) ? value.print() : null);
+    }
 
-  public void setVermarktungsart( Vermarktungsart value )
-  {
-    this.set( FIELD_VERMARKTUNGSART,
-      (value!=null)? value.print(): null );
-  }
+    public void setVermarktungsart(Vermarktungsart value) {
+        this.set(FIELD_VERMARKTUNGSART,
+                (value != null) ? value.print() : null);
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,38 +22,33 @@ import org.slf4j.LoggerFactory;
 /**
  * Ausstattung.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Ausstattung
-{
-  KEINE_ANGABE( 1 ),
-  LUXUS( 2 ),
-  GEHOBEN( 3 ),
-  NORMAL( 4 ),
-  EINFACH( 5 );
+public enum Ausstattung {
+    KEINE_ANGABE(1),
+    LUXUS(2),
+    GEHOBEN(3),
+    NORMAL(4),
+    EINFACH(5);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Ausstattung.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Ausstattung.class);
+    private final int value;
 
-  private Ausstattung( int value )
-  {
-    this.value = value;
-  }
-
-  public static Ausstattung parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Ausstattung s : Ausstattung.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Ausstattung(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Ausstattung parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Ausstattung s : Ausstattung.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

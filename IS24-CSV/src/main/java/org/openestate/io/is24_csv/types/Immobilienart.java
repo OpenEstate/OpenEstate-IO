@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,48 +22,43 @@ import org.slf4j.LoggerFactory;
 /**
  * Immobilienart.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Immobilienart
-{
-  WOHNUNG_MIETE( 0 ),
-  HAUS_MIETE( 1 ),
-  WOHNUNG_KAUF( 2 ),
-  HAUS_KAUF( 3 ),
-  WOHNEN_AUF_ZEIT( 4 ),
-  GRUNDSTUECKE( 5 ),
-  GEWERBE_BUERO_PRAXEN( 7 ),
-  GEWERBE_EINZELHANDEL( 8 ),
-  GEWERBE_GASTRONOMIE_HOTEL( 9 ),
-  GEWERBE_HALLE_PRODUKTION( 10 ),
-  GEWERBE_SONSTIGES( 11 ),
-  ANLAGE( 12 ),
-  STELLPLATZ_KAUF( 17 ),
-  STELLPLATZ_MIETE( 18 );
+public enum Immobilienart {
+    WOHNUNG_MIETE(0),
+    HAUS_MIETE(1),
+    WOHNUNG_KAUF(2),
+    HAUS_KAUF(3),
+    WOHNEN_AUF_ZEIT(4),
+    GRUNDSTUECKE(5),
+    GEWERBE_BUERO_PRAXEN(7),
+    GEWERBE_EINZELHANDEL(8),
+    GEWERBE_GASTRONOMIE_HOTEL(9),
+    GEWERBE_HALLE_PRODUKTION(10),
+    GEWERBE_SONSTIGES(11),
+    ANLAGE(12),
+    STELLPLATZ_KAUF(17),
+    STELLPLATZ_MIETE(18);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Immobilienart.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Immobilienart.class);
+    private final int value;
 
-  private Immobilienart( int value )
-  {
-    this.value = value;
-  }
-
-  public static Immobilienart parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (Immobilienart s : Immobilienart.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Immobilienart(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Immobilienart parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (Immobilienart s : Immobilienart.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

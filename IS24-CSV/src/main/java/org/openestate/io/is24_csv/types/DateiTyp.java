@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,40 +22,35 @@ import org.slf4j.LoggerFactory;
 /**
  * DateiTyp.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum DateiTyp
-{
-  BILD( "B" ),
-  VIDEO( "V" ),
-  SOUNDFILE( "S" ),
-  LINK( "L" ),
-  GRUNDRISS_BILD( "GB" ),
-  GRUNDRISS_PDF( "GP" );
+public enum DateiTyp {
+    BILD("B"),
+    VIDEO("V"),
+    SOUNDFILE("S"),
+    LINK("L"),
+    GRUNDRISS_BILD("GB"),
+    GRUNDRISS_PDF("GP");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( DateiTyp.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(DateiTyp.class);
+    private final String value;
 
-  private DateiTyp( String value )
-  {
-    this.value = value;
-  }
-
-  public static DateiTyp parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (DateiTyp t : DateiTyp.values())
-    {
-      if (t.value.equalsIgnoreCase( value )) return t;
+    private DateiTyp(String value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static DateiTyp parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (DateiTyp t : DateiTyp.values()) {
+            if (t.value.equalsIgnoreCase(value)) return t;
+        }
+        return null;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

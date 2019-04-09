@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,35 +22,31 @@ import org.slf4j.LoggerFactory;
 /**
  * Salutation.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Salutation
-{
-  FEMALE( 1 ), MALE( 2 ), COMPANY( 3 );
+public enum Salutation {
+    FEMALE(1), MALE(2), COMPANY(3);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Salutation.class );
-  private final int value;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(Salutation.class);
+    private final int value;
 
-  private Salutation( int value )
-  {
-    this.value = value;
-  }
-
-  public static Salutation parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-
-    for (Salutation s : Salutation.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    Salutation(int value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static Salutation parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        for (Salutation s : Salutation.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,68 +28,56 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
- *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class Is24XmlDocumentNamespaceTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( Is24XmlDocumentNamespaceTest.class );
+@RunWith(JUnit4.class)
+public class Is24XmlDocumentNamespaceTest {
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlDocumentNamespaceTest.class);
 
-  private static Document buildExampleDocument() throws Exception
-  {
-    return XmlUtils.newDocument(Is24XmlDocumentNamespaceTest.class.getResourceAsStream( "/is24-namespace.xml" ) );
-  }
-
-  @Test
-  public void testToObject()
-  {
-    try
-    {
-      Is24XmlDocument doc = new Is24XmlDocument( buildExampleDocument() );
-
-      ImmobilienTransferTyp obj = doc.toObject();
-      Assert.assertNotNull(
-        "Created object for transfer document.", obj );
+    private static Document buildExampleDocument() throws Exception {
+        return XmlUtils.newDocument(Is24XmlDocumentNamespaceTest.class.getResourceAsStream("/is24-namespace.xml"));
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of Is24XmlDocument.toObject failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of Is24XmlDocument.toObject failed!" );
+
+    @Test
+    @SuppressWarnings("Duplicates")
+    public void testToObject() {
+        try {
+            Is24XmlDocument doc = new Is24XmlDocument(buildExampleDocument());
+
+            ImmobilienTransferTyp obj = doc.toObject();
+            Assert.assertNotNull(
+                    "Created object for transfer document.", obj);
+        } catch (Exception ex) {
+            LOGGER.error("Test of Is24XmlDocument.toObject failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of Is24XmlDocument.toObject failed!");
+        }
     }
-  }
 
-  @Test
-  @Ignore
-  public void testToXml()
-  {
-    //ObjectType obj = Is24XmlUtils.getFactory().createObjectType();
-    //obj.setINFODE( "an example property" );
-    //obj.setORT( "Berlin" );
+    @Test
+    @Ignore
+    @SuppressWarnings("Duplicates")
+    public void testToXml() {
+        Anbieter agent = Is24XmlUtils.getFactory().createImmobilienTransferTypAnbieter();
+        agent.setScoutKundenID("123456");
+        //agent.getImmobilien().add( e );
 
-    Anbieter agent = Is24XmlUtils.getFactory().createImmobilienTransferTypAnbieter();
-    agent.setScoutKundenID( "123456" );
-    //agent.getImmobilien().add( e );
+        ImmobilienTransferTyp transfer = Is24XmlUtils.getFactory().createImmobilienTransferTyp();
+        transfer.setAnbieter(agent);
+        transfer.setEmailBeiFehler("test@test.org");
+        transfer.setErstellerSoftware("OpenEstate.org");
+        transfer.setErstellerSoftwareVersion("1.0");
 
-    ImmobilienTransferTyp transfer = Is24XmlUtils.getFactory().createImmobilienTransferTyp();
-    transfer.setAnbieter( agent );
-    transfer.setEmailBeiFehler( "test@test.org" );
-    transfer.setErstellerSoftware( "OpenEstate.org" );
-    transfer.setErstellerSoftwareVersion( "1.0" );
+        try {
+            Is24XmlDocument doc = Is24XmlDocument.newDocument(transfer);
 
-    try
-    {
-      Is24XmlDocument doc = Is24XmlDocument.newDocument( transfer );
-
-      String xml = doc.toXmlString( true );
-      LOGGER.info( "XML: " + xml );
+            String xml = doc.toXmlString(true);
+            LOGGER.info("XML: " + xml);
+        } catch (Exception ex) {
+            LOGGER.error("Test of Is24XmlDocument.toXml failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of Is24XmlDocument.toXml failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of Is24XmlDocument.toXml failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of Is24XmlDocument.toXml failed!" );
-    }
-  }
 }

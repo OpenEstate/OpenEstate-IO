@@ -1,16 +1,26 @@
 Changelog for OpenEstate-IO
 ===========================
 
-1.4 (not released yet)
+
+1.5 (not released yet)
 ----------------------
 
+...
+
+
+1.4 (09 Dec 2018)
+-----------------
+
+-   Added [automatic module names](http://branchandbound.net/blog/java/2017/12/automatic-module-name/) 
+    into JAR manifests.
 -   Updated `commons-codec` library to version 1.11.
--   Updated `commons-csv` library to version 1.5.
+-   Updated `commons-csv` library to version 1.6.
 -   Updated `commons-io` library to version 2.6.
--   Updated `commons-lang` library to version 3.7.
+-   Updated `commons-lang` library to version 3.8.1.
+-   Updated `commons-text` library to version 1.3.
 -   **API change:** The XML format of *trovit.com* was rewritten from scratch.
     Because *trovit.com* does not provide a XML schema anymore we've created
-    our own inofficial XML schema, that is used for generation of Java classes
+    our own unofficial XML schema, that is used for generation of Java classes
     via JAXB. The new implementation contains some additions (e.g. new XML
     elements, new property types). Due to the new schema some of the generated
     JAXB classes were renamed, improved and simplified.
@@ -23,6 +33,10 @@ Changelog for OpenEstate-IO
     in the XML formats of *daft.ie*, *kyero.com* and *IS24* whenever possible.
     See [Always read the documentation/code – a.k.a. java.net.URL is evil](https://sworddance.com/blog/2007/09/09/code-review-4-always-read-the-documentationcode-aka-javaneturl-is-evil/)
     for more information.
+-   **API change:** JAXB classes were regenerated with compatibility for Bean 
+    Introspection API's. Getter methods for `Boolean` values were renamed from 
+    `getValue()` to `isValue()`.
+-   Migrated project to IntelliJ IDEA.
 
 
 1.3 (29 Jul 2017)
@@ -79,7 +93,7 @@ Changelog for OpenEstate-IO
 
 -   The library is available through [Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
     from this release on. See [documentation page about Maven](https://github.com/OpenEstate/OpenEstate-IO/wiki/Integration-with-Maven)
-    for more informations.
+    for more information.
 -   implemented *FMPXMLLAYOUT* & *FMPXMLRESULT* format of *Filemaker* databases
 
 ### updates

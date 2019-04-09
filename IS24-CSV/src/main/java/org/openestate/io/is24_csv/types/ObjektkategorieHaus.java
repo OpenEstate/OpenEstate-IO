@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,51 +22,46 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjektkategorieHaus.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjektkategorieHaus
-{
-  KEINE_ANGABE( 0 ),
-  BAUERNHAUS( 14 ),
-  BUNGALOW( 15 ),
-  DOPPELHAUSHAELFTE( 17 ),
-  EINFAMILIENHAUS( 18 ),
-  MEHRFAMILIENHAUS( 21 ),
-  VILLA( 24 ),
-  @Deprecated
-  REIHENHAUS( 25 ),
-  @Deprecated
-  ZWEIFAMILIENHAUS( 43 ),
-  @Deprecated
-  SONSTIGES( 113 ),
-  BESONDERE_IMMOBILIE( 119 ),
-  REIHENMITTELHAUS( 123 ),
-  REIHENECKHAUS( 124 ),
-  BURG_SCHLOSS( 125 ),
-  SONSTIGE_WOHNIMMOBILIE( 126 );
+public enum ObjektkategorieHaus {
+    KEINE_ANGABE(0),
+    BAUERNHAUS(14),
+    BUNGALOW(15),
+    DOPPELHAUSHAELFTE(17),
+    EINFAMILIENHAUS(18),
+    MEHRFAMILIENHAUS(21),
+    VILLA(24),
+    @Deprecated
+    REIHENHAUS(25),
+    @Deprecated
+    ZWEIFAMILIENHAUS(43),
+    @Deprecated
+    SONSTIGES(113),
+    BESONDERE_IMMOBILIE(119),
+    REIHENMITTELHAUS(123),
+    REIHENECKHAUS(124),
+    BURG_SCHLOSS(125),
+    SONSTIGE_WOHNIMMOBILIE(126);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieHaus.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieHaus.class);
+    private final int value;
 
-  private ObjektkategorieHaus( int value )
-  {
-    this.value = value;
-  }
-
-  public static ObjektkategorieHaus parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (ObjektkategorieHaus s : ObjektkategorieHaus.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private ObjektkategorieHaus(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static ObjektkategorieHaus parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (ObjektkategorieHaus s : ObjektkategorieHaus.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,43 +22,38 @@ import org.slf4j.LoggerFactory;
 /**
  * ObjektkategorieGewerbeEinzelhandel.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ObjektkategorieGewerbeEinzelhandel
-{
-  KEINE_ANGABE( 0 ),
-  AUSSTELLUNGSFLAECHE( 69 ),
-  EINKAUFSZENTRUM( 70 ),
-  FACTORY_OUTLET( 71 ),
-  KAUFHAUS( 72 ),
-  KIOSK( 73 ),
-  LADEN( 74 ),
-  SB_MARKT( 75 ),
-  VERKAUFSFLAECHE( 76 ),
-  VERKAUFSHALLE( 77 );
+public enum ObjektkategorieGewerbeEinzelhandel {
+    KEINE_ANGABE(0),
+    AUSSTELLUNGSFLAECHE(69),
+    EINKAUFSZENTRUM(70),
+    FACTORY_OUTLET(71),
+    KAUFHAUS(72),
+    KIOSK(73),
+    LADEN(74),
+    SB_MARKT(75),
+    VERKAUFSFLAECHE(76),
+    VERKAUFSHALLE(77);
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ObjektkategorieGewerbeEinzelhandel.class );
-  private final int value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieGewerbeEinzelhandel.class);
+    private final int value;
 
-  private ObjektkategorieGewerbeEinzelhandel( int value )
-  {
-    this.value = value;
-  }
-
-  public static ObjektkategorieGewerbeEinzelhandel parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (ObjektkategorieGewerbeEinzelhandel s : ObjektkategorieGewerbeEinzelhandel.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private ObjektkategorieGewerbeEinzelhandel(int value) {
+        this.value = value;
     }
-    return KEINE_ANGABE;
-  }
 
-  public String print()
-  {
-    return String.valueOf( this.value );
-  }
+    public static ObjektkategorieGewerbeEinzelhandel parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (ObjektkategorieGewerbeEinzelhandel s : ObjektkategorieGewerbeEinzelhandel.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return KEINE_ANGABE;
+    }
+
+    public String print() {
+        return String.valueOf(this.value);
+    }
 }

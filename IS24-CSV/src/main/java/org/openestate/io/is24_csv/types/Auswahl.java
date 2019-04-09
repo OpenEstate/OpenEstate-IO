@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,36 +22,31 @@ import org.slf4j.LoggerFactory;
 /**
  * Auswahl.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum Auswahl
-{
-  JA( "J" ),
-  NEIN( "N" ),
-  NACH_VEREINBARUNG( "V" );
+public enum Auswahl {
+    JA("J"),
+    NEIN("N"),
+    NACH_VEREINBARUNG("V");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( Auswahl.class );
-  private final String value;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Auswahl.class);
+    private final String value;
 
-  private Auswahl( String value )
-  {
-    this.value = value;
-  }
-
-  public static Auswahl parse( String value )
-  {
-    value = StringUtils.trimToNull( value );
-    if (value==null) return null;
-    for (Auswahl s : Auswahl.values())
-    {
-      if (String.valueOf( s.value ).equalsIgnoreCase( value )) return s;
+    private Auswahl(String value) {
+        this.value = value;
     }
-    return null;
-  }
 
-  public String print()
-  {
-    return this.value;
-  }
+    public static Auswahl parse(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+        for (Auswahl s : Auswahl.values()) {
+            if (String.valueOf(s.value).equalsIgnoreCase(value)) return s;
+        }
+        return null;
+    }
+
+    public String print() {
+        return this.value;
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,108 +27,87 @@ import org.slf4j.LoggerFactory;
  * A general CSV parser, that is bound to a {@link CsvFormat} and reads CSV data
  * into {@link CsvRecord} objects.
  *
- * @param <Record>
- * the class used for a record, that is parsed from a CSV file
- *
- * @since 1.0
+ * @param <Record> the class used for a record, that is parsed from a CSV file
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public abstract class CsvParser<Record extends CsvRecord> implements Closeable
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( CsvParser.class );
-  private final CSVParser parser;
-  private Iterator<CSVRecord> iterator = null;
+public abstract class CsvParser<Record extends CsvRecord> implements Closeable {
+    private final static Logger LOGGER = LoggerFactory.getLogger(CsvParser.class);
+    private final CSVParser parser;
+    private Iterator<CSVRecord> iterator = null;
 
-  /**
-   * Create with specifications of a {@link CSVParser}.
-   *
-   * @param parser
-   * the CSV parser from
-   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
-   */
-  protected CsvParser( CSVParser parser )
-  {
-    this.parser = parser;
-  }
-
-  /**
-   * Closes the parser instance.
-   *
-   * @throws IOException
-   * if closing failed
-   */
-  @Override
-  public void close() throws IOException
-  {
-    this.parser.close();
-  }
-
-  /**
-   * Returns the line number, that is currently processed by the parser.
-   *
-   * @return
-   * line number
-   */
-  public final long getCurrentLineNumber()
-  {
-    return this.parser.getCurrentLineNumber();
-  }
-
-  /**
-   * Returns the total number of available records.
-   *
-   * @return
-   * number of records
-   */
-  public final long getRecordNumber()
-  {
-    return this.parser.getRecordNumber();
-  }
-
-  /**
-   * Checks, if another record is available for the parser.
-   *
-   * @return
-   * true, if another record is available, otherwise false
-   */
-  public final boolean hasNext()
-  {
-    if (this.iterator==null)
-    {
-      this.iterator = this.parser.iterator();
+    /**
+     * Create with specifications of a {@link CSVParser}.
+     *
+     * @param parser the CSV parser from
+     *               <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+     */
+    protected CsvParser(CSVParser parser) {
+        this.parser = parser;
     }
-    return this.iterator.hasNext();
-  }
 
-  /**
-   * Checks, if the parser instance was closed.
-   *
-   * @return
-   * true, if the parser was closed, otherwise false
-   */
-  public final boolean isClosed()
-  {
-    return this.parser.isClosed();
-  }
-
-  /**
-   * Creates a new {@link CsvRecord} with parsed CSV data.
-   *
-   * @param record
-   * parsed CSV data from
-   * <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
-   *
-   * @return
-   * created record
-   */
-  protected abstract Record newRecord( CSVRecord record );
-
-  public final Record next()
-  {
-    if (this.iterator==null)
-    {
-      this.iterator = this.parser.iterator();
+    /**
+     * Closes the parser instance.
+     *
+     * @throws IOException if closing failed
+     */
+    @Override
+    public void close() throws IOException {
+        this.parser.close();
     }
-    return this.newRecord( this.iterator.next() );
-  }
+
+    /**
+     * Returns the line number, that is currently processed by the parser.
+     *
+     * @return line number
+     */
+    public final long getCurrentLineNumber() {
+        return this.parser.getCurrentLineNumber();
+    }
+
+    /**
+     * Returns the total number of available records.
+     *
+     * @return number of records
+     */
+    public final long getRecordNumber() {
+        return this.parser.getRecordNumber();
+    }
+
+    /**
+     * Checks, if another record is available for the parser.
+     *
+     * @return true, if another record is available, otherwise false
+     */
+    public final boolean hasNext() {
+        if (this.iterator == null) {
+            this.iterator = this.parser.iterator();
+        }
+        return this.iterator.hasNext();
+    }
+
+    /**
+     * Checks, if the parser instance was closed.
+     *
+     * @return true, if the parser was closed, otherwise false
+     */
+    public final boolean isClosed() {
+        return this.parser.isClosed();
+    }
+
+    /**
+     * Creates a new {@link CsvRecord} with parsed CSV data.
+     *
+     * @param record parsed CSV data from
+     *               <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+     * @return created record
+     */
+    protected abstract Record newRecord(CSVRecord record);
+
+    public final Record next() {
+        if (this.iterator == null) {
+            this.iterator = this.parser.iterator();
+        }
+        return this.newRecord(this.iterator.next());
+    }
 }

@@ -1,137 +1,137 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-  <kyero>
-    <feed_version>3</feed_version>
-  </kyero>
-  <property>
-    <new_build>1</new_build>
-    <price_freq>sale</price_freq>
-    <type>house</type>
-    <location>
-      <longitude>45.0</longitude>
-      <latitude>23.23</latitude>
-    </location>
-    <energy_rating>
-      <consumption>B</consumption>
-      <emissions>D</emissions>
-    </energy_rating>
-    <url>
-      <en>http://english.website.com/property/123456.htm</en>
-      <de>http://german.website.com/property/123456.htm</de>
-    </url>
-    <notes>some notes about the property</notes>
-  </property>
-  <property>
-    <new_build>1</new_build>
-    <price_freq>month</price_freq>
-    <type>apartment</type>
-    <location>
-      <longitude>64.0</longitude>
-      <latitude>-48.57</latitude>
-    </location>
-    <energy_rating>
-      <consumption>C</consumption>
-      <emissions>E</emissions>
-    </energy_rating>
-    <url>
-      <de>http://german.website.com/property/123457.htm</de>
-      <en>http://english.website.com/property/123457.htm</en>
-    </url>
-    <notes>some notes about the property</notes>
-  </property>
-  <property>
-    <new_build>0</new_build>
-    <price_freq>sale</price_freq>
-    <type>garage</type>
-    <location />
-    <energy_rating />
-    <url>
-      <de>http://german.website.com/property/123458.htm</de>
-      <es>http://spanish.website.com/property/123458.htm</es>
-    </url>
-    <notes />
-  </property>
-  <property>
-    <desc>
-      <ar>Arabic property description</ar>
-      <bg>Bulgarian property description</bg>
-      <ca>Catalan property description</ca>
-      <cs>Czech property description</cs>
-      <da>Danish property description</da>
-      <de>German property description</de>
-      <el>Greek property description</el>
-      <en>English property description</en>
-      <es>Spanish property description</es>
-      <et>Estonian property description</et>
-      <fa>Farsi property description</fa>
-      <fi>Finnish property description</fi>
-      <fr>French property description</fr>
-      <he>Hebrew property description</he>
-      <hi>Hindi property description</hi>
-      <hu>Hungarian property description</hu>
-      <id>Indonesian property description</id>
-      <it>Italian property description</it>
-      <ja>Japanese property description</ja>
-      <ko>Korean property description</ko>
-      <lt>Lithuanian property description</lt>
-      <lv>Latvian property description</lv>
-      <nl>Dutch property description</nl>
-      <no>Norwegian property description</no>
-      <pl>Polish property description</pl>
-      <pt>Portuguese property description</pt>
-      <ro>Romainan property description</ro>
-      <ru>Russian property description</ru>
-      <sk>Slovak property description</sk>
-      <sl>Slovenian property description</sl>
-      <sv>Swedish property description</sv>
-      <th>Thai property description</th>
-      <tr>Turkish property description</tr>
-      <uk>Ukranian property description</uk>
-      <vi>Vietnamese property description</vi>
-      <zh>Simplified Chinese property description</zh>
-    </desc>
-    <images>
-      <image id="1">
-        <url>http://www.mywebsite.com/property123.jpg</url>
-        <title>
-          <ar>Arabic image title</ar>
-          <bg>Bulgarian image title</bg>
-          <ca>Catalan image title</ca>
-          <cs>Czech image title</cs>
-          <da>Danish image title</da>
-          <de>German image title</de>
-          <el>Greek image title</el>
-          <en>English image title</en>
-          <es>Spanish image title</es>
-          <et>Estonian image title</et>
-          <fa>Farsi image title</fa>
-          <fi>Finnish image title</fi>
-          <fr>French image title</fr>
-          <he>Hebrew image title</he>
-          <hi>Hindi image title</hi>
-          <hu>Hungarian image title</hu>
-          <id>Indonesian image title</id>
-          <it>Italian image title</it>
-          <ja>Japanese image title</ja>
-          <ko>Korean image title</ko>
-          <lt>Lithuanian image title</lt>
-          <lv>Latvian image title</lv>
-          <nl>Dutch image title</nl>
-          <no>Norwegian image title</no>
-          <pl>Polish image title</pl>
-          <pt>Portuguese image title</pt>
-          <ro>Romainan image title</ro>
-          <ru>Russian image title</ru>
-          <sk>Slovak image title</sk>
-          <sl>Slovenian image title</sl>
-          <sv>Swedish image title</sv>
-          <th>Thai image title</th>
-          <tr>Turkish image title</tr>
-          <uk>Ukranian image title</uk>
-          <vi>Vietnamese image title</vi>
-          <zh>Simplified Chinese image title</zh>
-        </title>
-      </image>
-    </images>
-  </property>
+    <kyero>
+        <feed_version>3</feed_version>
+    </kyero>
+    <property>
+        <new_build>1</new_build>
+        <price_freq>sale</price_freq>
+        <type>house</type>
+        <location>
+            <longitude>45.0</longitude>
+            <latitude>23.23</latitude>
+        </location>
+        <energy_rating>
+            <consumption>B</consumption>
+            <emissions>D</emissions>
+        </energy_rating>
+        <url>
+            <en>http://english.website.com/property/123456.htm</en>
+            <de>http://german.website.com/property/123456.htm</de>
+        </url>
+        <notes>some notes about the property</notes>
+    </property>
+    <property>
+        <new_build>1</new_build>
+        <price_freq>month</price_freq>
+        <type>apartment</type>
+        <location>
+            <longitude>64.0</longitude>
+            <latitude>-48.57</latitude>
+        </location>
+        <energy_rating>
+            <consumption>C</consumption>
+            <emissions>E</emissions>
+        </energy_rating>
+        <url>
+            <de>http://german.website.com/property/123457.htm</de>
+            <en>http://english.website.com/property/123457.htm</en>
+        </url>
+        <notes>some notes about the property</notes>
+    </property>
+    <property>
+        <new_build>0</new_build>
+        <price_freq>sale</price_freq>
+        <type>garage</type>
+        <location/>
+        <energy_rating/>
+        <url>
+            <de>http://german.website.com/property/123458.htm</de>
+            <es>http://spanish.website.com/property/123458.htm</es>
+        </url>
+        <notes/>
+    </property>
+    <property>
+        <desc>
+            <ar>Arabic property description</ar>
+            <bg>Bulgarian property description</bg>
+            <ca>Catalan property description</ca>
+            <cs>Czech property description</cs>
+            <da>Danish property description</da>
+            <de>German property description</de>
+            <el>Greek property description</el>
+            <en>English property description</en>
+            <es>Spanish property description</es>
+            <et>Estonian property description</et>
+            <fa>Farsi property description</fa>
+            <fi>Finnish property description</fi>
+            <fr>French property description</fr>
+            <he>Hebrew property description</he>
+            <hi>Hindi property description</hi>
+            <hu>Hungarian property description</hu>
+            <id>Indonesian property description</id>
+            <it>Italian property description</it>
+            <ja>Japanese property description</ja>
+            <ko>Korean property description</ko>
+            <lt>Lithuanian property description</lt>
+            <lv>Latvian property description</lv>
+            <nl>Dutch property description</nl>
+            <no>Norwegian property description</no>
+            <pl>Polish property description</pl>
+            <pt>Portuguese property description</pt>
+            <ro>Romainan property description</ro>
+            <ru>Russian property description</ru>
+            <sk>Slovak property description</sk>
+            <sl>Slovenian property description</sl>
+            <sv>Swedish property description</sv>
+            <th>Thai property description</th>
+            <tr>Turkish property description</tr>
+            <uk>Ukranian property description</uk>
+            <vi>Vietnamese property description</vi>
+            <zh>Simplified Chinese property description</zh>
+        </desc>
+        <images>
+            <image id="1">
+                <url>http://www.mywebsite.com/property123.jpg</url>
+                <title>
+                    <ar>Arabic image title</ar>
+                    <bg>Bulgarian image title</bg>
+                    <ca>Catalan image title</ca>
+                    <cs>Czech image title</cs>
+                    <da>Danish image title</da>
+                    <de>German image title</de>
+                    <el>Greek image title</el>
+                    <en>English image title</en>
+                    <es>Spanish image title</es>
+                    <et>Estonian image title</et>
+                    <fa>Farsi image title</fa>
+                    <fi>Finnish image title</fi>
+                    <fr>French image title</fr>
+                    <he>Hebrew image title</he>
+                    <hi>Hindi image title</hi>
+                    <hu>Hungarian image title</hu>
+                    <id>Indonesian image title</id>
+                    <it>Italian image title</it>
+                    <ja>Japanese image title</ja>
+                    <ko>Korean image title</ko>
+                    <lt>Lithuanian image title</lt>
+                    <lv>Latvian image title</lv>
+                    <nl>Dutch image title</nl>
+                    <no>Norwegian image title</no>
+                    <pl>Polish image title</pl>
+                    <pt>Portuguese image title</pt>
+                    <ro>Romainan image title</ro>
+                    <ru>Russian image title</ru>
+                    <sk>Slovak image title</sk>
+                    <sl>Slovenian image title</sl>
+                    <sv>Swedish image title</sv>
+                    <th>Thai image title</th>
+                    <tr>Turkish image title</tr>
+                    <uk>Ukranian image title</uk>
+                    <vi>Vietnamese image title</vi>
+                    <zh>Simplified Chinese image title</zh>
+                </title>
+            </image>
+        </images>
+    </property>
 </root>

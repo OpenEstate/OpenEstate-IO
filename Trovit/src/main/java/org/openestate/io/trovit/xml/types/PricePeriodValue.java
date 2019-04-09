@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,40 +22,35 @@ import org.slf4j.LoggerFactory;
 /**
  * PricePeriodValue.
  *
- * @since 1.4
  * @author Andreas Rudolph
+ * @since 1.4
  */
-public enum PricePeriodValue
-{
-  MONTHLY( new String[]{ "monthly" } ),
-  WEEKLY( new String[]{ "weekly" } ),
-  DAILY( new String[]{ "daily" } );
+public enum PricePeriodValue {
+    MONTHLY(new String[]{"monthly"}),
+    WEEKLY(new String[]{"weekly"}),
+    DAILY(new String[]{"daily"});
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( PricePeriodValue.class );
-  private final String[] aliases;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(PricePeriodValue.class);
+    private final String[] aliases;
 
-  private PricePeriodValue( String[] aliases )
-  {
-    this.aliases = aliases;
-  }
-
-  public static PricePeriodValue fromXmlValue( String name )
-  {
-    name = StringUtils.trimToNull( name );
-    if (name==null) return null;
-    for (PricePeriodValue value : PricePeriodValue.values())
-    {
-      if (value.name().equalsIgnoreCase( name )) return value;
-      for (String alias : value.aliases)
-      {
-        if (alias.equalsIgnoreCase( name )) return value;
-      }
+    PricePeriodValue(String[] aliases) {
+        this.aliases = aliases;
     }
-    return null;
-  }
 
-  public String write()
-  {
-    return this.aliases[0];
-  }
+    public static PricePeriodValue fromXmlValue(String name) {
+        name = StringUtils.trimToNull(name);
+        if (name == null) return null;
+        for (PricePeriodValue value : PricePeriodValue.values()) {
+            if (value.name().equalsIgnoreCase(name)) return value;
+            for (String alias : value.aliases) {
+                if (alias.equalsIgnoreCase(name)) return value;
+            }
+        }
+        return null;
+    }
+
+    public String write() {
+        return this.aliases[0];
+    }
 }

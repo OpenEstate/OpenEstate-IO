@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright 2015-2017 OpenEstate.org
+# Copyright 2015-2018 OpenEstate.org
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
 # limitations under the License.
 #
 
-MVN=mvn
-PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-export LANG=en
-set -e
+MVN="mvn"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cd $PROJECT_DIR
-$MVN -Pdevelopment clean install
+set -e
+export LANG=en
+cd "$DIR"
+"$MVN" clean install

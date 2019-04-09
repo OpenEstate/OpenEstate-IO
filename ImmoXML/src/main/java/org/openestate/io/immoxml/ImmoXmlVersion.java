@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2018 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,104 +26,89 @@ import org.slf4j.LoggerFactory;
 /**
  * Implemented versions of the ImmoXML format.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ImmoXmlVersion implements XmlVersion
-{
-  /**
-   * Version 3.0
-   */
-  V3_0( ImmoXML_3_0.class, "3.0", "3" );
+public enum ImmoXmlVersion implements XmlVersion {
+    /**
+     * Version 3.0
+     */
+    V3_0(ImmoXML_3_0.class, "3.0", "3");
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ImmoXmlVersion.class );
-  private final Class converterClass;
-  private final String readableVersion;
-  private final String[] alias;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlVersion.class);
+    private final Class converterClass;
+    private final String readableVersion;
+    private final String[] alias;
 
-  private ImmoXmlVersion( Class converterClass, String readableVersion, String...alias )
-  {
-    this.converterClass = converterClass;
-    this.readableVersion = readableVersion;
-    this.alias = alias;
-  }
+    ImmoXmlVersion(Class converterClass, String readableVersion, String... alias) {
+        this.converterClass = converterClass;
+        this.readableVersion = readableVersion;
+        this.alias = alias;
+    }
 
-  public static ImmoXmlVersion detectFromString( String version )
-  {
-    if (version!=null)
-    {
-      String[] values = StringUtils.split( version, "/" );
-      for (ImmoXmlVersion v : ImmoXmlVersion.values())
-      {
-        if (v.toReadableVersion().equalsIgnoreCase( values[0] )) return v;
-        if (v.alias!=null)
-        {
-          for (String a : v.alias)
-          {
-            if (a.equalsIgnoreCase( values[0] )) return v;
-          }
+    public static ImmoXmlVersion detectFromString(String version) {
+        if (version != null) {
+            String[] values = StringUtils.split(version, "/");
+            for (ImmoXmlVersion v : ImmoXmlVersion.values()) {
+                if (v.toReadableVersion().equalsIgnoreCase(values[0])) return v;
+                if (v.alias != null) {
+                    for (String a : v.alias) {
+                        if (a.equalsIgnoreCase(values[0])) return v;
+                    }
+                }
+            }
         }
-      }
+        return null;
     }
-    return null;
-  }
 
-  @Override
-  public XmlConverter getConverter()
-  {
-    try
-    {
-      return (XmlConverter) this.converterClass.newInstance();
+    @Override
+    @SuppressWarnings("Duplicates")
+    public XmlConverter getConverter() {
+        try {
+            return (XmlConverter) this.converterClass.newInstance();
+        } catch (Exception ex) {
+            LOGGER.error("Can't create converter!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            return null;
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Can't create converter!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      return null;
+
+    @Override
+    public ImmoXmlVersion getNextVersion() {
+        ImmoXmlVersion[] versions = ImmoXmlVersion.values();
+        int pos = ArrayUtils.indexOf(versions, this);
+        pos++;
+        return (versions.length > pos) ? versions[pos] : null;
     }
-  }
 
-  @Override
-  public ImmoXmlVersion getNextVersion()
-  {
-    ImmoXmlVersion[] versions = ImmoXmlVersion.values();
-    int pos = ArrayUtils.indexOf( versions, this );
-    pos++;
-    return (versions.length>pos)? versions[pos]: null;
-  }
+    @Override
+    public ImmoXmlVersion getPreviousVersion() {
+        ImmoXmlVersion[] versions = ImmoXmlVersion.values();
+        int pos = ArrayUtils.indexOf(versions, this);
+        pos--;
+        return (pos >= 0) ? versions[pos] : null;
+    }
 
-  @Override
-  public ImmoXmlVersion getPreviousVersion()
-  {
-    ImmoXmlVersion[] versions = ImmoXmlVersion.values();
-    int pos = ArrayUtils.indexOf( versions, this );
-    pos--;
-    return (pos>=0)? versions[pos]: null;
-  }
+    @Override
+    public boolean isLatestVersion() {
+        return ImmoXmlUtils.VERSION.equals(this);
+    }
 
-  @Override
-  public boolean isLatestVersion()
-  {
-    return ImmoXmlUtils.VERSION.equals( this );
-  }
+    @Override
+    public boolean isNewerThen(XmlVersion v) {
+        ImmoXmlVersion[] versions = ImmoXmlVersion.values();
+        return ArrayUtils.indexOf(versions, this) > ArrayUtils.indexOf(versions, v);
+    }
 
-  @Override
-  public boolean isNewerThen( XmlVersion v )
-  {
-    ImmoXmlVersion[] versions = ImmoXmlVersion.values();
-    return ArrayUtils.indexOf( versions, this ) > ArrayUtils.indexOf( versions, v );
-  }
+    @Override
+    public boolean isOlderThen(XmlVersion v) {
+        ImmoXmlVersion[] versions = ImmoXmlVersion.values();
+        return ArrayUtils.indexOf(versions, this) < ArrayUtils.indexOf(versions, v);
+    }
 
-  @Override
-  public boolean isOlderThen( XmlVersion v )
-  {
-    ImmoXmlVersion[] versions = ImmoXmlVersion.values();
-    return ArrayUtils.indexOf( versions, this ) < ArrayUtils.indexOf( versions, v );
-  }
-
-  @Override
-  public String toReadableVersion()
-  {
-    return this.readableVersion;
-  }
+    @Override
+    public String toReadableVersion() {
+        return this.readableVersion;
+    }
 }
