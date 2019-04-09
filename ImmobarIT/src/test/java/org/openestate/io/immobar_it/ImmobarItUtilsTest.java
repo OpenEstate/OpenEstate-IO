@@ -23,54 +23,48 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * ImmobarItUtilsTest.
  *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class ImmobarItUtilsTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItUtilsTest.class );
+@RunWith(JUnit4.class)
+public class ImmobarItUtilsTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItUtilsTest.class);
 
-  @Test
-  public void testCreateDocument()
-  {
-    String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<realestate>\n"
-      + "  <company_name_de>test</company_name_de>\n"
-      + "  <property>\n"
-      + "  </property>\n"
-      + "</realestate>";
+    @Test
+    public void testCreateDocument() {
+        //noinspection SpellCheckingInspection
+        String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<realestate>\n"
+                + "  <company_name_de>test</company_name_de>\n"
+                + "  <property>\n"
+                + "  </property>\n"
+                + "</realestate>";
 
-    ImmobarItDocument doc;
-    try
-    {
-      doc = ImmobarItUtils.createDocument( transferXml );
-      Assert.assertNotNull(
-        "Transfer was processed.", doc );
-      Assert.assertTrue(
-        "Transfer was processed as CasaITDocument.", doc instanceof ImmobarItDocument );
+        ImmobarItDocument doc;
+        try {
+            doc = ImmobarItUtils.createDocument(transferXml);
+            Assert.assertNotNull(
+                    "Transfer was processed.", doc);
+            //noinspection ConstantConditions
+            Assert.assertTrue(
+                    "Transfer was processed as ImmobarItDocument.", doc instanceof ImmobarItDocument);
+        } catch (Exception ex) {
+            LOGGER.error("Test of ImmobarItUtils.createDocument failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of ImmobarItUtils.createDocument failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of CasaITUtils.createDocument failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of CasaITUtils.createDocument failed!" );
-    }
-  }
 
-  @Test
-  public void testGetContext()
-  {
-    try
-    {
-      Assert.assertNotNull(
-        "JAXB context must be creatable.", ImmobarItUtils.getContext() );
+    @Test
+    public void testGetContext() {
+        try {
+            Assert.assertNotNull(
+                    "JAXB context must be creatable.", ImmobarItUtils.getContext());
+        } catch (Exception ex) {
+            LOGGER.error("Test of ImmobarItUtils.getContext failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of ImmobarItUtils.getContext failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of CasaITUtils.getContext failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of CasaITUtils.getContext failed!" );
-    }
-  }
 }

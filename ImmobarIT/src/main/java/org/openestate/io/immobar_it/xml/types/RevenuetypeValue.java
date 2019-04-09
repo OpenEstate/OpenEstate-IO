@@ -22,39 +22,35 @@ import org.slf4j.LoggerFactory;
 /**
  * RevenuetypeValue.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum RevenuetypeValue
-{
-  SALE( new String[]{ "1" } ),
-  RENT( new String[]{ "2" } );
+@SuppressWarnings("SpellCheckingInspection")
+public enum RevenuetypeValue {
+    SALE(new String[]{"1"}),
+    RENT(new String[]{"2"});
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( RevenuetypeValue.class );
-  private final String[] aliases;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(RevenuetypeValue.class);
+    private final String[] aliases;
 
-  private RevenuetypeValue( String[] aliases )
-  {
-    this.aliases = aliases;
-  }
-
-  public static RevenuetypeValue fromXmlValue( String name )
-  {
-    name = StringUtils.trimToNull( name );
-    if (name==null) return null;
-    for (RevenuetypeValue value : RevenuetypeValue.values())
-    {
-      if (value.name().equalsIgnoreCase( name )) return value;
-      for (String alias : value.aliases)
-      {
-        if (alias.equalsIgnoreCase( name )) return value;
-      }
+    RevenuetypeValue(String[] aliases) {
+        this.aliases = aliases;
     }
-    return null;
-  }
 
-  public String write()
-  {
-    return this.aliases[0];
-  }
+    public static RevenuetypeValue fromXmlValue(String name) {
+        name = StringUtils.trimToNull(name);
+        if (name == null) return null;
+        for (RevenuetypeValue value : RevenuetypeValue.values()) {
+            if (value.name().equalsIgnoreCase(name)) return value;
+            for (String alias : value.aliases) {
+                if (alias.equalsIgnoreCase(name)) return value;
+            }
+        }
+        return null;
+    }
+
+    public String write() {
+        return this.aliases[0];
+    }
 }

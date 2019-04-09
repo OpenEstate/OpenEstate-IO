@@ -16,7 +16,6 @@
 package org.openestate.io.immobar_it;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -29,68 +28,60 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 /**
+ * ImmobarItDocumentTest.
  *
  * @author Andreas Rudolph
  */
-@RunWith( JUnit4.class )
-public class ImmobarItDocumentTest
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItDocumentTest.class );
+@RunWith(JUnit4.class)
+public class ImmobarItDocumentTest {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItDocumentTest.class);
 
-  private static Document buildExampleDocument() throws Exception
-  {
-    return XmlUtils.newDocument( "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-      + "<realestate>\n"
-      + "  <company_name_de>test</company_name_de>\n"
-      + "  <property>\n"
-      + "  </property>\n"
-      + "</realestate>" );
-  }
-
-  @Test
-  public void testToObject()
-  {
-    try
-    {
-      ImmobarItDocument doc = new ImmobarItDocument( buildExampleDocument() );
-
-      Realestate obj = doc.toObject();
-      Assert.assertNotNull(
-        "Created object for transfer document.", obj );
+    private static Document buildExampleDocument() throws Exception {
+        //noinspection SpellCheckingInspection
+        return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+                + "<realestate>\n"
+                + "  <company_name_de>test</company_name_de>\n"
+                + "  <property>\n"
+                + "  </property>\n"
+                + "</realestate>");
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of CasaITDocument.toObject failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of CasaITDocument.toObject failed!" );
+
+    @Test
+    public void testToObject() {
+        try {
+            ImmobarItDocument doc = new ImmobarItDocument(buildExampleDocument());
+
+            Realestate obj = doc.toObject();
+            Assert.assertNotNull(
+                    "Created object for transfer document.", obj);
+        } catch (Exception ex) {
+            LOGGER.error("Test of CasaITDocument.toObject failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of CasaITDocument.toObject failed!");
+        }
     }
-  }
 
-  @Test
-  public void testToXml()
-  {
-    PropertyType obj = ImmobarItUtils.getFactory().createPropertyType();
-    obj.setDescriptionDe( "an example property" );
+    @Test
+    public void testToXml() {
+        PropertyType obj = ImmobarItUtils.getFactory().createPropertyType();
+        obj.setDescriptionDe("an example property");
 
-    CompanyType company = ImmobarItUtils.getFactory().createCompanyType();
-    company.setCompanyNameDe( "an example company" );
-    company.getProperty().add( obj );
+        CompanyType company = ImmobarItUtils.getFactory().createCompanyType();
+        company.setCompanyNameDe("an example company");
+        company.getProperty().add(obj);
 
-    Realestate realestate = ImmobarItUtils.getFactory().createRealestate();
-    realestate.getCompany().add( company );
+        Realestate realestate = ImmobarItUtils.getFactory().createRealestate();
+        realestate.getCompany().add(company);
 
-    try
-    {
-      ImmobarItDocument doc = ImmobarItDocument.newDocument( realestate );
+        try {
+            ImmobarItDocument doc = ImmobarItDocument.newDocument(realestate);
 
-      String xml = doc.toXmlString( true );
-      LOGGER.info( "XML: " + xml );
+            String xml = doc.toXmlString(true);
+            LOGGER.info("XML: " + xml);
+        } catch (Exception ex) {
+            LOGGER.error("Test of ImmobarITDocument.toXml failed!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            Assert.fail("Test of ImmobarITDocument.toXml failed!");
+        }
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Test of ImmobarITDocument.toXml failed!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      Assert.fail( "Test of ImmobarITDocument.toXml failed!" );
-    }
-  }
 }

@@ -22,52 +22,48 @@ import org.slf4j.LoggerFactory;
 /**
  * ImmotypeValue.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public enum ImmotypeValue
-{
-  APARTMENT( new String[]{ "1" } ),
-  DETACHED_HOUSE( new String[]{ "2" } ),
-  ROW_HOUSE( new String[]{ "3" } ),
-  PLOT_AREA( new String[]{ "4" } ),
-  AGRICULTURE_FORESTRY( new String[]{ "5" } ),
-  PLOT_AREA_COMMERCIAL( new String[]{ "6" } ),
-  GASTRONOMY( new String[]{ "7" } ),
-  STORE( new String[]{ "8" } ),
-  OFFICE_SURGERY( new String[]{ "9" } ),
-  INDUSTRIAL_PROPERTY( new String[]{ "10" } ),
-  PARKING_SPACE( new String[]{ "11" } ),
-  HOLIDAY_PROPERTY( new String[]{ "12" } ),
-  INVESTMENT_PROPERTY( new String[]{ "13" } ),
-  WAREHOUSE( new String[]{ "14" } ),
-  OTHER( new String[]{ "100" } );
+@SuppressWarnings("SpellCheckingInspection")
+public enum ImmotypeValue {
+    APARTMENT(new String[]{"1"}),
+    DETACHED_HOUSE(new String[]{"2"}),
+    ROW_HOUSE(new String[]{"3"}),
+    PLOT_AREA(new String[]{"4"}),
+    AGRICULTURE_FORESTRY(new String[]{"5"}),
+    PLOT_AREA_COMMERCIAL(new String[]{"6"}),
+    GASTRONOMY(new String[]{"7"}),
+    STORE(new String[]{"8"}),
+    OFFICE_SURGERY(new String[]{"9"}),
+    INDUSTRIAL_PROPERTY(new String[]{"10"}),
+    PARKING_SPACE(new String[]{"11"}),
+    HOLIDAY_PROPERTY(new String[]{"12"}),
+    INVESTMENT_PROPERTY(new String[]{"13"}),
+    WAREHOUSE(new String[]{"14"}),
+    OTHER(new String[]{"100"});
 
-  private final static Logger LOGGER = LoggerFactory.getLogger( ImmotypeValue.class );
-  private final String[] aliases;
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmotypeValue.class);
+    private final String[] aliases;
 
-  private ImmotypeValue( String[] aliases )
-  {
-    this.aliases = aliases;
-  }
-
-  public static ImmotypeValue fromXmlValue( String name )
-  {
-    name = StringUtils.trimToNull( name );
-    if (name==null) return null;
-    for (ImmotypeValue value : ImmotypeValue.values())
-    {
-      if (value.name().equalsIgnoreCase( name )) return value;
-      for (String alias : value.aliases)
-      {
-        if (alias.equalsIgnoreCase( name )) return value;
-      }
+    ImmotypeValue(String[] aliases) {
+        this.aliases = aliases;
     }
-    return null;
-  }
 
-  public String write()
-  {
-    return this.aliases[0];
-  }
+    public static ImmotypeValue fromXmlValue(String name) {
+        name = StringUtils.trimToNull(name);
+        if (name == null) return null;
+        for (ImmotypeValue value : ImmotypeValue.values()) {
+            if (value.name().equalsIgnoreCase(name)) return value;
+            for (String alias : value.aliases) {
+                if (alias.equalsIgnoreCase(name)) return value;
+            }
+        }
+        return null;
+    }
+
+    public String write() {
+        return this.aliases[0];
+    }
 }

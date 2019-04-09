@@ -29,92 +29,70 @@ import org.w3c.dom.Element;
  * XML document from <a href="https://www.immobar.it">immobar.it</a> with a
  * &lt;realestate&gt; root element.
  *
- * @since 1.0
  * @author Andreas Rudolph
+ * @since 1.0
  */
-public class ImmobarItDocument extends XmlDocument<Realestate>
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItDocument.class );
+@SuppressWarnings("WeakerAccess")
+public class ImmobarItDocument extends XmlDocument<Realestate> {
+    @SuppressWarnings("unused")
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItDocument.class);
 
-  /**
-   * Create from a {@link Document}.
-   *
-   * @param document
-   * the document to create from
-   */
-  public ImmobarItDocument( Document document )
-  {
-    super( document );
-    if (!isReadable( document ))
-      throw new IllegalArgumentException( "The provided document is invalid!" );
-  }
+    /**
+     * Create from a {@link Document}.
+     *
+     * @param document the document to create from
+     */
+    public ImmobarItDocument(Document document) {
+        super(document);
+        if (!isReadable(document))
+            throw new IllegalArgumentException("The provided document is invalid!");
+    }
 
-  /**
-   * Checks, if a {@link Document} is readable as a {@link ImmobarItDocument}.
-   *
-   * @param doc
-   * document to check
-   *
-   * @return
-   * true, if the document is usable, otherwise false
-   */
-  public static boolean isReadable( Document doc )
-  {
-    Element root = XmlUtils.getRootElement( doc );
-    return "realestate".equals( root.getLocalName() );
-  }
+    /**
+     * Checks, if a {@link Document} is readable as a {@link ImmobarItDocument}.
+     *
+     * @param doc document to check
+     * @return true, if the document is usable, otherwise false
+     */
+    public static boolean isReadable(Document doc) {
+        Element root = XmlUtils.getRootElement(doc);
+        //noinspection SpellCheckingInspection
+        return "realestate".equals(root.getLocalName());
+    }
 
-  /**
-   * Creates an empty {@link ImmobarItDocument}.
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static ImmobarItDocument newDocument() throws ParserConfigurationException, JAXBException
-  {
-    return newDocument( ImmobarItUtils.getFactory().createRealestate() );
-  }
+    /**
+     * Creates an empty {@link ImmobarItDocument}.
+     *
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static ImmobarItDocument newDocument() throws ParserConfigurationException, JAXBException {
+        return newDocument(ImmobarItUtils.getFactory().createRealestate());
+    }
 
-  /**
-   * Creates a {@link ImmobarItDocument} from a {@link Realestate} object.
-   *
-   * @param realestate
-   * Java object, that represents the &lt;realestate&gt; root element
-   *
-   * @return
-   * created document
-   *
-   * @throws ParserConfigurationException
-   * if the parser is not properly configured
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  public static ImmobarItDocument newDocument( Realestate realestate ) throws ParserConfigurationException, JAXBException
-  {
-    Document document = XmlUtils.newDocument();
-    ImmobarItUtils.createMarshaller( "UTF-8", true ).marshal( realestate, document );
-    return new ImmobarItDocument( document );
-  }
+    /**
+     * Creates a {@link ImmobarItDocument} from a {@link Realestate} object.
+     *
+     * @param realestate Java object, that represents the &lt;realestate&gt; root element
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static ImmobarItDocument newDocument(Realestate realestate) throws ParserConfigurationException, JAXBException {
+        Document document = XmlUtils.newDocument();
+        ImmobarItUtils.createMarshaller("UTF-8", true).marshal(realestate, document);
+        return new ImmobarItDocument(document);
+    }
 
-  /**
-   * Creates a {@link Realestate} object from the contained {@link Document}.
-   *
-   * @return
-   * created object, that represents the &lt;realestate&gt; root element
-   *
-   * @throws JAXBException
-   * if a problem with JAXB occured
-   */
-  @Override
-  public Realestate toObject() throws JAXBException
-  {
-    return (Realestate) ImmobarItUtils.createUnmarshaller().unmarshal( this.getDocument() );
-  }
+    /**
+     * Creates a {@link Realestate} object from the contained {@link Document}.
+     *
+     * @return created object, that represents the &lt;realestate&gt; root element
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @Override
+    public Realestate toObject() throws JAXBException {
+        return (Realestate) ImmobarItUtils.createUnmarshaller().unmarshal(this.getDocument());
+    }
 }
