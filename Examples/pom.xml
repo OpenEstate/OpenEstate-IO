@@ -89,6 +89,11 @@
         </dependency>
         <dependency>
             <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-ImmobarIT</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
             <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
             <scope>compile</scope>
         </dependency>

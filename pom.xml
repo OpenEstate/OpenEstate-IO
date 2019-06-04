@@ -44,6 +44,7 @@
         <module>Examples</module>
         <module>Filemaker</module>
         <module>IDX</module>
+        <module>ImmobarIT</module>
         <module>ImmobiliareIT</module>
         <module>ImmoXML</module>
         <module>IS24-CSV</module>
@@ -101,6 +102,11 @@
             <dependency>
                 <groupId>org.openestate.io</groupId>
                 <artifactId>OpenEstate-IO-IDX</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openestate.io</groupId>
+                <artifactId>OpenEstate-IO-ImmobarIT</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
