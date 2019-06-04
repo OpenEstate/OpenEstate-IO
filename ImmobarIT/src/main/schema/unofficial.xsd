@@ -57,7 +57,7 @@
             <xsd:documentation><![CDATA[A company to transfer.]]></xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="company_name_de" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_name_de" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         german company name
@@ -67,7 +67,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_address_de" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_address_de" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         german company address (street, street nr)
@@ -77,7 +77,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_location_de" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_location_de" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         german company location (city, region)
@@ -87,7 +87,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_name_it" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_name_it" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         italian company name
@@ -97,7 +97,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_address_it" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_address_it" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         italian company addresse (street, street nr)
@@ -107,7 +107,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_location_it" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_location_it" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         italian company location (city, region)
@@ -117,7 +117,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_postalcode" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_postalcode" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         company postcode
@@ -127,7 +127,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_province" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_province" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         company region (e.g. BZ, TN)
@@ -137,7 +137,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_country" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_country" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         company country (e.g. IT, AT, DE)
@@ -147,7 +147,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_phone" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_phone" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         company phone nr
@@ -177,7 +177,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_email" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_email" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         company email address
@@ -197,13 +197,13 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="company_ISTAT" type="xsd:string" minOccurs="1" maxOccurs="1">
+            <xsd:element name="company_ISTAT" type="xsd:string" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        company ISTAT code ???
+                        company ISTAT code (regional code)
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        ISTAT-Code der Firma ???
+                        ISTAT-Code der Firma (regionaler Code)
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -264,10 +264,10 @@
             <xsd:element name="ISTATcode" type="xsd:string" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        property ISTAT code ???
+                        property ISTAT code (regional code)
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        ISTAT-Code der Immobilie ???
+                        ISTAT-Code der Immobilie (regionaler Code)
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -464,30 +464,30 @@
             <xsd:element name="flooristop" type="xsd:boolean" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        floor is on top (attic) ???
+                        floor is on top (attic)
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        oberste Etage (Dachgeschoss) ???
+                        oberste Etage (Dachgeschoss)
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="floorisground" type="xsd:boolean" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        ground level ???
+                        ground level
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Erdgeschoss ???
+                        Erdgeschoss
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="duplex" type="xsd:boolean" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        duplex house ???
+                        multiple floors
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Doppelhaus ???
+                        mehrere Etagen
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -654,10 +654,10 @@
             <xsd:element name="used" type="xsd:boolean" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        used ???
+                        used
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        gebraucht ???
+                        gebraucht
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -684,10 +684,10 @@
             <xsd:element name="ipe" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        IPE ???
+                        Energy consumption level - Indice Prestazione Energetica (IPE) - e.g. 117.00 kwh/m2
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        IPE ???
+                        Energieeffizienzindex (IPE) - z.B. 117.00 kwh/m2
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -754,10 +754,10 @@
             <xsd:element name="utilities" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
-                        ???
+                        service charges / operational costs
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        ???
+                        Nebenkosten / Betriebskosten
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
