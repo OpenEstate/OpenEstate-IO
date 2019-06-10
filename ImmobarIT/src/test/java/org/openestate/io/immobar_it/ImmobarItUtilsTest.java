@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
  * ImmobarItUtilsTest.
  *
  * @author Andreas Rudolph
+ * @since 1.5
  */
 @RunWith(JUnit4.class)
 public class ImmobarItUtilsTest {

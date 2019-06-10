@@ -31,6 +31,7 @@ import org.w3c.dom.Document;
  * ImmobarItDocumentTest.
  *
  * @author Andreas Rudolph
+ * @since 1.5
  */
 @RunWith(JUnit4.class)
 public class ImmobarItDocumentTest {

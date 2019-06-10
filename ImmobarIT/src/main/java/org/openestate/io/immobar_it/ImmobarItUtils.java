@@ -47,7 +47,7 @@ import org.xml.sax.SAXException;
  * <a href="https://www.immobar.it">immobar.it</a>.
  *
  * @author Andreas Rudolph
- * @since 1.0
+ * @since 1.5
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class ImmobarItUtils {
@@ -59,8 +59,7 @@ public class ImmobarItUtils {
      * the latest implemented version of this format
      */
     @SuppressWarnings("unused")
-    private final static String VERSION = "1.0";
-
+    public final static String VERSION = "2015-04-21";
 
     /**
      * the XML target namespace of this format

@@ -30,7 +30,7 @@ import org.w3c.dom.Element;
  * &lt;realestate&gt; root element.
  *
  * @author Andreas Rudolph
- * @since 1.0
+ * @since 1.5
  */
 @SuppressWarnings("WeakerAccess")
 public class ImmobarItDocument extends XmlDocument<Realestate> {
