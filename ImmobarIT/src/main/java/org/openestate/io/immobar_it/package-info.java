@@ -18,6 +18,6 @@
  * Read and write XML data for <a href="https://www.immobar.it">immobar.it</a>.
  *
  * @author Andreas Rudolph
- * @since 1.0
+ * @since 1.5
  */
 package org.openestate.io.immobar_it;
