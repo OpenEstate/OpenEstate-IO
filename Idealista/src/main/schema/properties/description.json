@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/description.json",
+  "title": "Description Object",
+  "type": "object",
+  "required":["descriptionLanguage"],
+  "additionalProperties": false,
+  "dependencies": {
+    "descriptionText": ["descriptionLanguage"]
+  },
+  "properties": {
+    "descriptionLanguage": {
+      "enum": ["spanish","italian","portuguese","english","german","french","russian","chinese","catalan","finnish","dutch","polish","romanian","swedish","danish"]
+    },
+    "descriptionText": {
+      "title": "description text",
+      "$ref": "../rules.json#/stringTo4000"
+    }
+  }
+}

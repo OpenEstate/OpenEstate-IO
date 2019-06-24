@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/homes.json",
+  "title": "Homes Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed",
+    "featuresBathroomNumber"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "featuresRooms"
+      ]
+    },
+    {
+      "required": [
+        "featuresBedroomNumber"
+      ]
+    }
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "description": "Types availability varies between countries. Spain: rustic_rural, rustic_masia, rustic_cortijo, rustic_terrera, rustic_torre, rustic_caseron. Italy: house_villa, rustic_masseria, rustic_trullo, rustic_casalecascina, rustic_baita. Portugal: house_andar_moradia, rustic_quinta, rustic_moinho, rustic_montealentejano, rustic_solar. Spain and Portugal: rustic_palace.  The rest of the types is available in every country.",
+      "enum": [
+        "flat",
+        "house",
+        "house_andar_moradia",
+        "house_independent",
+        "house_semidetached",
+        "house_terraced",
+        "house_villa",
+        "rustic",
+        "rustic_house",
+        "rustic_village",
+        "rustic_castle",
+        "rustic_palace",
+        "rustic_baita",
+        "rustic_rural",
+        "rustic_casalecascina",
+        "rustic_caseron",
+        "rustic_cortijo",
+        "rustic_masia",
+        "rustic_masseria",
+        "rustic_moinho",
+        "rustic_montealentejano",
+        "rustic_quinta",
+        "rustic_solar",
+        "rustic_terrera",
+        "rustic_torre",
+        "rustic_trullo"
+      ]
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed"
+    },
+    "featuresAreaPlot": {
+      "$ref": "features.json#/featuresAreaPlot"
+    },
+    "featuresAreaUsable": {
+      "$ref": "features.json#/featuresAreaUsable"
+    },
+    "featuresBalcony": {
+      "$ref": "features.json#/featuresBalcony"
+    },
+    "featuresBathroomNumber": {
+      "$ref": "features.json#/featuresBathroomNumber"
+    },
+    "featuresBedroomNumber": {
+      "$ref": "features.json#/featuresBedroomNumber"
+    },
+    "featuresBuiltYear": {
+      "$ref": "features.json#/featuresBuiltYear"
+    },
+    "featuresConditionedAir": {
+      "$ref": "features.json#/featuresConditionedAir"
+    },
+    "featuresConservation": {
+      "$ref": "features.json#/featuresConservation"
+    },
+    "featuresChimney": {
+      "$ref": "features.json#/featuresChimney"
+    },
+    "featuresDoorman": {
+      "$ref": "features.json#/featuresDoorman"
+    },
+    "featuresDuplex": {
+      "$ref": "features.json#/featuresDuplex"
+    },
+    "featuresEquippedKitchen": {
+      "$ref": "features.json#/featuresEquippedKitchen"
+    },
+    "featuresEquippedWithFurniture": {
+      "$ref": "features.json#/featuresEquippedWithFurniture"
+    },
+    "featuresEnergyCertificatePerformance": {
+      "$ref": "features.json#/featuresEnergyCertificatePerformance"
+    },
+    "featuresEnergyCertificateLaw": {
+      "$ref": "features.json#/featuresEnergyCertificateLaw"
+    },
+    "featuresEnergyCertificateRating": {
+      "$ref": "features.json#/featuresEnergyCertificateRating"
+    },
+    "featuresEnergyCertificateType": {
+      "$ref": "features.json#/featuresEnergyCertificateType"
+    },
+    "featuresFloorsBuilding": {
+      "$ref": "features.json#/featuresFloorsBuilding"
+    },
+    "featuresFloorsInTop": {
+      "$ref": "features.json#/featuresFloorsInTop"
+    },
+    "featuresGarden": {
+      "$ref": "features.json#/featuresGarden"
+    },
+    "featuresHandicapAdaptedAccess": {
+      "$ref": "features.json#/featuresHandicapAdaptedAccess"
+    },
+    "featuresHandicapAdaptedUse": {
+      "$ref": "features.json#/featuresHandicapAdaptedUse"
+    },
+    "featuresLiftAvailable": {
+      "$ref": "features.json#featuresLiftAvailable",
+      "description": "only for flat type"
+    },
+    "featuresOrientationNorth": {
+      "$ref": "features.json#/featuresOrientationNorth"
+    },
+    "featuresOrientationSouth": {
+      "$ref": "features.json#/featuresOrientationSouth"
+    },
+    "featuresOrientationWest": {
+      "$ref": "features.json#/featuresOrientationWest"
+    },
+    "featuresOrientationEast": {
+      "$ref": "features.json#/featuresOrientationEast"
+    },
+    "featuresParkingAvailable": {
+      "$ref": "features.json#/featuresParkingAvailable"
+    },
+    "featuresPenthouse": {
+      "$ref": "features.json#/featuresPenthouse"
+    },
+    "featuresPetsAllowed": {
+      "$ref": "features.json#/featuresAllowPets"
+    },
+    "featuresPool": {
+      "$ref": "features.json#/featuresPool"
+    },
+    "featuresRooms": {
+      "$ref": "features.json#/featuresRooms"
+    },
+    "featuresStorage": {
+      "$ref": "features.json#/featuresStorage"
+    },
+    "featuresStudio": {
+      "$ref": "features.json#/featuresStudio"
+    },
+    "featuresTerrace": {
+      "$ref": "features.json#/featuresTerrace"
+    },
+    "featuresWardrobes": {
+      "$ref": "features.json#/featuresWardrobes"
+    },
+    "featuresWindowsLocation": {
+      "$ref": "features.json#/featuresWindowsLocation"
+    },
+    "featuresHeatingType": {
+      "$ref": "features.json#/featuresHeatingType"
+    }
+  }
+}

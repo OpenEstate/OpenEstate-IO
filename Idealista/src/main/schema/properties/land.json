@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/land.json",
+  "title": "Land Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "featuresType",
+    "featuresAreaPlot"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "land",
+        "land_urban",
+        "land_countrybuildable",
+        "land_countrynonbuildable"
+      ]
+    },
+    "featuresAreaPlot": {
+      "$ref": "features.json#/featuresAreaPlot"
+    },
+    "featuresAreaBuildable": {
+      "$ref": "features.json#/featuresAreaBuildable"
+    },
+    "featuresAreaTradableMinimum": {
+      "$ref": "features.json#/featuresAreaTradableMinimum"
+    },
+    "featuresClassificationBlocks": {
+      "$ref": "features.json#/featuresClassificationBlocks"
+    },
+    "featuresClassificationChalet": {
+      "$ref": "features.json#/featuresClassificationChalet"
+    },
+    "featuresClassificationCommercial": {
+      "$ref": "features.json#/featuresClassificationCommercial"
+    },
+    "featuresClassificationHotel": {
+      "$ref": "features.json#/featuresClassificationHotel"
+    },
+    "featuresClassificationIndustrial": {
+      "$ref": "features.json#/featuresClassificationIndustrial"
+    },
+    "featuresClassificationOffice": {
+      "$ref": "features.json#/featuresClassificationOffice"
+    },
+    "featuresClassificationOther": {
+      "$ref": "features.json#/featuresClassificationOther"
+    },
+    "featuresClassificationPublic": {
+      "$ref": "features.json#/featuresClassificationPublic"
+    },
+    "featuresFloorsBuildable": {
+      "$ref": "features.json#/featuresFloorsBuildable"
+    },
+    "featuresNearestLocationKm": {
+      "$ref": "features.json#/featuresNearestLocationKm"
+    },
+    "featuresUtilitiesElectricity": {
+      "$ref": "features.json#/featuresUtilitiesElectricity"
+    },
+    "featuresUtilitiesNaturalGas": {
+      "$ref": "features.json#/featuresUtilitiesNaturalGas"
+    },
+    "featuresUtilitiesRoadAccess": {
+      "$ref": "features.json#/featuresUtilitiesRoadAccess"
+    },
+    "featuresUtilitiesSewerage": {
+      "$ref": "features.json#/featuresUtilitiesSewerage"
+    },
+    "featuresUtilitiesSidewalk": {
+      "$ref": "features.json#/featuresUtilitiesSidewalk"
+    },
+    "featuresUtilitiesStreetLighting": {
+      "$ref": "features.json#/featuresUtilitiesStreetLighting"
+    },
+    "featuresUtilitiesWater": {
+      "$ref": "features.json#/featuresUtilitiesWater"
+    },
+    "featuresAccessType": {
+      "$ref": "features.json#/featuresAccessType"
+    }
+  }
+}

@@ -71,6 +71,10 @@
         </dependency>
         <dependency>
             <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Idealista</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
             <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
         </dependency>
         <dependency>

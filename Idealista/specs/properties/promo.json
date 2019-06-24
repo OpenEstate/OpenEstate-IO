@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/promo.json",
+  "title": "Promo Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "featuresNewDevelopmentType",
+    "featuresNewDevelopmentName"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "promo"
+      ]
+    },
+    "featuresEnergyCertificatePerformance": {
+      "$ref": "features.json#/featuresEnergyCertificatePerformance"
+    },
+    "featuresEnergyCertificateLaw": {
+      "$ref": "features.json#/featuresEnergyCertificateLaw"
+    },
+    "featuresEnergyCertificateRating": {
+      "$ref": "features.json#/featuresEnergyCertificateRating"
+    },
+    "featuresEnergyCertificateType": {
+      "$ref": "features.json#/featuresEnergyCertificateType"
+    },
+    "featuresLiftAvailable": {
+      "$ref": "features.json#featuresLiftAvailable",
+      "description": "only for flat type"
+    },
+    "featuresDoorman": {
+      "$ref": "features.json#/featuresDoorman"
+    },
+    "featuresConservation": {
+      "$ref": "features.json#/featuresConservation"
+    },
+    "featuresPool": {
+      "$ref": "features.json#/featuresPool"
+    },
+    "featuresGarden": {
+      "$ref": "features.json#/featuresGarden"
+    },
+    "featuresSecurityDoor": {
+      "$ref": "features.json#/featuresSecurityDoor"
+    },
+    "featuresSecurityAlarm": {
+      "$ref": "features.json#/featuresSecurityAlarm"
+    },
+    "featuresNewDevelopmentType": {
+      "title": "New Development type",
+      "$ref": "features.json#/enumNewDevelopmentType"
+    },
+    "featuresNewDevelopmentName": {
+      "$ref": "features.json#/featuresNewDevelopmentName"
+    },
+    "featuresFinished": {
+      "$ref": "features.json#/featuresFinished"
+    },
+    "featuresStartDate": {
+      "$ref": "features.json#/featuresStartDate"
+    },
+    "featuresKeyDeliveryYear": {
+      "$ref": "features.json#/featuresKeyDeliveryYear"
+    },
+    "featuresKeyDeliveryMonth": {
+      "$ref": "features.json#/featuresKeyDeliveryMonth"
+    },
+    "featuresBuiltPhase": {
+      "title": "New Development built phase",
+      "$ref": "features.json#/enumFeaturesBuiltPhase"
+    },
+    "featuresAvailabilityHour": {
+      "title": "New Development availability hour",
+      "$ref": "features.json#/enumFeaturesAvailabilityHour"
+    },
+    "featuresAccessComments": {
+      "title": "Access comments",
+      "type": "array",
+      "uniqueItems": true,
+      "items": [
+        {
+          "$ref": "description.json#"
+        }
+      ]
+    },
+    "featuresOnSite": {
+      "$ref": "features.json#/featuresOnSite"
+    },
+    "featuresMortgageStateSubsidized": {
+      "$ref": "features.json#/featuresMortgageStateSubsidized"
+    },
+    "featuresMortgageBankName": {
+      "$ref": "features.json#/featuresMortgageBankName"
+    },
+    "featuresMortgagePercentage": {
+      "$ref": "features.json#/featuresMortgagePercentage"
+    },
+    "featuresMortgageEntryPercentage": {
+      "$ref": "features.json#/featuresMortgageEntryPercentage"
+    },
+    "featuresMortgageLettersPercentage": {
+      "$ref": "features.json#/featuresMortgageLettersPercentage"
+    },
+    "featuresMortgageInterestRate": {
+      "$ref": "features.json#/featuresMortgageInterestRate"
+    },
+    "featuresMortgageYears": {
+      "$ref": "features.json#/featuresMortgageYears"
+    }
+  }
+}

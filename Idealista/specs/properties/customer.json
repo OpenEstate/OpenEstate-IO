@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/customer.json",
+  "title": "Customer Object",
+  "type": "object",
+  "anyOf": [
+    {
+      "required": [
+        "customerCountry",
+        "customerCode"
+      ]
+    },
+    {
+      "required": [
+        "customerCountry",
+        "customerReference"
+      ]
+    }
+  ],
+  "properties": {
+  	"customerSendDate": {
+      "title": "Customer file send date",
+      "description": "date when the file has been generated to be processed",
+      "$ref": "../rules.json#/dateFormat"
+    },
+    "customerCountry": {
+      "title": "Customer country",
+      "readOnly": true,
+      "enum": ["Spain","Italy","Portugal"]
+    },
+    "customerCode": {
+      "title": "Customer Identifier",
+      "$ref": "../rules.json#/feedkey",
+      "readOnly": true
+    },
+    "customerName": {
+      "title": "Customer Name",
+      "$ref": "../rules.json#/stringTo100",
+      "readOnly": true
+    },
+    "customerReference": {
+      "title": "Customer Reference",
+      "$ref": "../rules.json#/stringTo50"
+    },
+    "customerContact": {
+      "$ref": "contact.json#"
+    },
+    "customerProperties": {
+      "title": "Customer Secondhand Properties",
+      "type": "array",
+      "uniqueItems": true,
+      "items":
+        {
+          "$ref": "property.json#"
+        }
+    },
+    "customerNewDevelopments":{
+      "title":"Customer NewDevelopment Properties",
+      "type":"array",
+      "uniqueItems":true,
+      "items":{
+        "$ref":"newDevelopment.json#"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/operation.json",
+  "title": "Operation Object",
+  "type": "object",
+  "required": [
+    "operationType",
+    "operationPrice"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "operationDepositMonths": {
+      "title": "deposit months",
+      "$ref": "../rules.json#/number0to12"
+    },
+    "operationPrice": {
+      "title": "operation price",
+      "$ref": "../rules.json#/integer1to99999999"
+    },
+    "operationPriceCommunity": {
+      "title": "community fees",
+      "description": "for Spain and Portugal, this field only applies to sale properties",
+      "$ref": "../rules.json#/integer1to9999"
+    },
+    "operationPriceToOwn": {
+      "title": "operation price to own",
+      "description": "this operation only applies to new development properties. Not avaible for second hand properties",
+      "$ref": "../rules.json#/integer1to99999999"
+    },
+    "operationPriceTransfer": {
+      "title": "transfer price",
+      "description": "this operation is only for premises typologies with rent operation",
+      "$ref": "../rules.json#/integer1to99999999"
+    },
+    "operationPriceParking": {
+      "title": "parking price",
+      "$ref": "../rules.json#/integer1to99999999"
+    },
+    "operationType": {
+      "$ref": "../rules.json#/enumOperationType"
+    }
+  }
+}

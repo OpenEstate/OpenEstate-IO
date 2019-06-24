@@ -10,14 +10,13 @@
         <version>1.5-SNAPSHOT</version>
     </parent>
 
-    <artifactId>OpenEstate-IO-Core</artifactId>
+    <artifactId>OpenEstate-IO-Idealista</artifactId>
     <version>1.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>OpenEstate-IO-Core</name>
-    <description>
-        OpenEstate-IO-Core is a Java library, that provides some general classes used by the OpenEstate-IO format
-        implementations.
+    <name>OpenEstate-IO-Idealista</name>
+    <description>OpenEstate-IO-Idealista is a Java library to read and write real estate data in the JSON format of
+        idealista.com.
     </description>
     <url>https://openestate.org</url>
     <organization>
@@ -58,11 +57,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <scope>compile</scope>
@@ -76,18 +70,16 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <scope>compile</scope>
-            <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>jaxen</groupId>
-            <artifactId>jaxen</artifactId>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Core</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.bval</groupId>
             <artifactId>org.apache.bval.bundle</artifactId>
             <scope>runtime</scope>
-            <!--<type>bundle</type>-->
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -99,7 +91,6 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <scope>compile</scope>
-            <optional>true</optional>
         </dependency>
 
         <!-- test -->
@@ -124,6 +115,25 @@
     <build>
         <plugins>
 
+            <!-- add generated JAXB sources -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/main/json</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -131,9 +141,29 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Automatic-Module-Name>org.openestate.io.core</Automatic-Module-Name>
+                            <Automatic-Module-Name>org.openestate.io.idealista</Automatic-Module-Name>
                         </manifestEntries>
                     </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                <configuration>
+                    <sourceDirectory>${project.basedir}/src/main/schema/properties</sourceDirectory>
+                    <outputDirectory>${project.basedir}/src/main/json</outputDirectory>
+                    <targetPackage>org.openestate.io.idealista.json</targetPackage>
+                    <removeOldOutput>true</removeOldOutput>
+                    <serializable>true</serializable>
+                    <useBigDecimals>true</useBigDecimals>
+                    <useBigIntegers>true</useBigIntegers>
+                    <initializeCollections>false</initializeCollections>
+                    <includeHashcodeAndEquals>true</includeHashcodeAndEquals>
+                    <includeJsr303Annotations>true</includeJsr303Annotations>
+                    <includeJsr305Annotations>true</includeJsr305Annotations>
+                    <includeConstructors>true</includeConstructors>
+                    <constructorsRequiredPropertiesOnly>true</constructorsRequiredPropertiesOnly>
                 </configuration>
             </plugin>
 

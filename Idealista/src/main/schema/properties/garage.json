@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/garage.json",
+  "title": "Garaje Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "garage"
+      ]
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed"
+    },
+    "featuresLiftAvailable": {
+      "$ref": "features.json#/featuresLiftAvailable"
+    },
+    "featuresParkingAutomaticDoor": {
+      "$ref": "features.json#/featuresParkingAutomaticDoor"
+    },
+    "featuresParkingPlaceCovered": {
+      "$ref": "features.json#/featuresParkingPlaceCovered"
+    },
+    "featuresParkingType": {
+      "$ref": "features.json#/featuresParkingType"
+    },
+    "featuresSecurityAlarm": {
+      "$ref": "features.json#/featuresSecurityAlarm"
+    },
+    "featuresSecurityPersonnel": {
+      "$ref": "features.json#/featuresSecurityPersonnel"
+    },
+    "featuresSecuritySystem": {
+      "$ref": "features.json#/featuresSecuritySystem"
+    }
+  }
+}

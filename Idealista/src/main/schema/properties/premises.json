@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/premises.json",
+  "title": "Premises Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "premise types",
+      "enum": [
+        "premises",
+        "premises_commercial",
+        "premises_industrial"
+      ]
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed"
+    },
+    "featuresAreaPlot": {
+      "$ref": "features.json#/featuresAreaPlot"
+    },
+    "featuresAreaUsable": {
+      "$ref": "features.json#/featuresAreaUsable"
+    },
+    "featuresBathroomAdapted": {
+      "$ref": "features.json#/featuresBathroomAdapted"
+    },
+    "featuresBathroomNumber": {
+      "$ref": "features.json#/featuresBathroomNumber"
+    },
+    "featuresConditionedAir": {
+      "$ref": "features.json#/featuresConditionedAir"
+    },
+    "featuresConservation": {
+      "$ref": "features.json#/featuresConservation"
+    },
+    "featuresEnergyCertificateRating": {
+      "$ref": "features.json#/featuresEnergyCertificateRating"
+    },
+    "featuresEnergyCertificatePerformance": {
+      "$ref": "features.json#/featuresEnergyCertificatePerformance"
+    },
+    "featuresEnergyCertificateType": {
+      "$ref": "features.json#/featuresEnergyCertificateType"
+    },
+    "featuresEnergyCertificateLaw": {
+      "$ref": "features.json#/featuresEnergyCertificateLaw"
+    },
+    "featuresEquippedKitchen": {
+      "$ref": "features.json#/featuresEquippedKitchen"
+    },
+    "featuresFacadeArea": {
+      "$ref": "features.json#/featuresFacadeArea"
+    },
+    "featuresFloorsBuilding": {
+      "$ref": "features.json#/featuresFloorsBuilding"
+    },
+    "featuresHeating": {
+      "$ref": "features.json#/featuresHeating"
+    },
+    "featuresLastActivity": {
+      "$ref": "features.json#/featuresLastActivity"
+    },
+    "featuresLocatedAtCorner": {
+      "$ref": "features.json#/featuresLocatedAtCorner"
+    },
+    "featuresRooms": {
+      "$ref": "features.json#/featuresRooms"
+    },
+    "featuresSecurityAlarm": {
+      "$ref": "features.json#/featuresSecurityAlarm"
+    },
+    "featuresSecurityDoor": {
+      "$ref": "features.json#/featuresSecurityDoor"
+    },
+    "featuresSecuritySystem": {
+      "$ref": "features.json#/featuresSecuritySystem"
+    },
+    "featuresStorage": {
+      "$ref": "features.json#/featuresStorage"
+    },
+    "featuresSmokeExtraction": {
+      "$ref": "features.json#/featuresSmokeExtraction"
+    },
+    "featuresUbication": {
+      "$ref": "features.json#/featuresUbication"
+    },
+    "featuresWindowsNumber": {
+      "$ref": "features.json#/featuresWindowsNumber"
+    }    
+  }
+}

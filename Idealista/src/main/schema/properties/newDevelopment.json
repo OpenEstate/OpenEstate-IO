@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/newDevelopment.json",
+  "title": "New Development Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "propertyCode"
+  ],
+  "properties": {
+    "propertyCode": {
+      "title": "New Development identifier",
+      "description": "It must be unique for each property and unchanging over time",
+      "$ref": "../rules.json#/stringTo50"
+    },
+    "propertyReference": {
+      "title": "Property reference",
+      "$ref": "../rules.json#/stringTo50"
+    },
+    "propertyVisibility": {
+      "title": "Property visibility",
+      "$ref": "../rules.json#/enumPropertyVisibility"
+    },
+    "propertyAddress": {
+      "title": "New Development address",
+      "$ref": "address.json#"
+    },
+    "propertyFeatures": {
+      "title": "New Development promo features",
+      "$ref": "promo.json#"
+    },
+    "propertyContact": {
+      "title": "New Development contact",
+      "$ref": "contact.json#"
+    },
+    "propertyDescriptions": {
+      "title": "New Development descriptions",
+      "type": "array",
+      "uniqueItems": true,
+      "items": [
+        {
+          "$ref": "description.json#"
+        }
+      ]
+    },
+    "propertyImages": {
+      "title": "New Development images",
+      "type": "array",
+      "uniqueItems": true,
+      "items": [
+        {
+          "$ref": "images.json#"
+        }
+      ]
+    },
+    "newDevelopmentTypologies": {
+      "title": "New Development typologies",
+      "type": "array",
+      "uniqueItems": true,
+      "items": [
+        {
+          "$ref": "typology.json#"
+        }
+      ]
+    }
+  }
+}

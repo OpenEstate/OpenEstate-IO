@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/contact.json",
+  "title": "Contact Object",
+  "type": "object",  
+  "dependencies": {
+    "contactPrimaryPhonePrefix": [
+      "contactPrimaryPhoneNumber"
+    ],
+    "contactSecondaryPhonePrefix": [
+      "contactSecondaryPhoneNumber"
+    ]
+  },
+  "additionalProperties": false,
+  "properties": {    
+    "contactName": {
+      "title": "contact name",
+      "$ref": "../rules.json#/stringTo60"
+    },
+    "contactEmail": {
+      "title": "contact email",
+      "$ref": "../rules.json#/emailFormat"
+    },
+    "contactPrimaryPhonePrefix": {
+      "title": "contact primary phone prefix",
+      "$ref": "../rules.json#/phonePrefixFormat"
+    },
+    "contactPrimaryPhoneNumber": {
+      "title": "contact primary phone number",
+      "$ref": "../rules.json#/phoneFormat"
+    },
+    "contactSecondaryPhonePrefix": {
+      "title": "contact secondary phone prefix",
+      "$ref": "../rules.json#/phonePrefixFormat"
+    },
+    "contactSecondaryPhoneNumber": {
+      "title": "contact secondary phone number",
+      "$ref": "../rules.json#/phoneFormat"
+    }
+  }
+}

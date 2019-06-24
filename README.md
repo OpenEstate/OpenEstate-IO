@@ -16,6 +16,7 @@ Supported Formats
 | [`DaftIE`](DaftIE)               | [*Daft.ie*](http://daft.ie) Overseas Webfeed                     | XML  | 2.7        |
 | [`Filemaker`](Filemaker)         | [*Filemaker*](http://www.filemaker.com) FMPXMLLAYOUT             | XML  | ?          |
 |                                  | [*Filemaker*](http://www.filemaker.com) FMPXMLRESULT             | XML  | ?          |
+| [`Idealista`](Idealista)         | [*idealista.com*](https://www.idealista.com/) properties format  | JSON | 6.00       |
 | [`IDX`](IDX)                     | *IDX* format                                                     | CSV  | 3.01       |
 | [`ImmoXML`](ImmoXML)             | *ImmoXML* format                                                 | XML  | 3.0        |
 | [`ImmobarIT`](ImmobarIT)         | [*immobar.it*](https://www.immobar.it) format                    | XML  | 21/04/2015 |
@@ -69,6 +70,12 @@ requirements):
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
+  <version>1.5-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>org.openestate.io</groupId>
+  <artifactId>OpenEstate-IO-Idealista</artifactId>
   <version>1.5-SNAPSHOT</version>
 </dependency>
 
