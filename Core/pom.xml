@@ -61,6 +61,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
             <scope>compile</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -76,6 +77,7 @@
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
             <scope>compile</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

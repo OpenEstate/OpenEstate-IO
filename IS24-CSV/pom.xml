@@ -73,11 +73,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>jaxen</groupId>
-            <artifactId>jaxen</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.openestate.io</groupId>
             <artifactId>OpenEstate-IO-Core</artifactId>
             <scope>compile</scope>
