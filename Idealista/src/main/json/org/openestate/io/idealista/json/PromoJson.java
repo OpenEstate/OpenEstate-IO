@@ -4,6 +4,7 @@ package org.openestate.io.idealista.json;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -15,6 +16,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -225,9 +227,9 @@ public class PromoJson implements Serializable
      * 
      */
     @Nullable
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd", timezone = "UTC")
     @JsonProperty("featuresStartDate")
-    @Pattern(regexp = "^20[0-9][0-9]/(0[1-9]|1[0-2])/(([0-2][0-9])|(3[0-1]))$")
-    private String featuresStartDate;
+    private Date featuresStartDate;
     /**
      * 
      * (Can be null)
@@ -357,7 +359,7 @@ public class PromoJson implements Serializable
     @DecimalMin("1")
     @DecimalMax("9999")
     private BigDecimal featuresMortgageYears;
-    private final static long serialVersionUID = -5266480413643453424L;
+    private final static long serialVersionUID = 1539656525204470024L;
 
     /**
      * No args constructor for use in serialization
@@ -692,12 +694,12 @@ public class PromoJson implements Serializable
     }
 
     @JsonProperty("featuresStartDate")
-    public String getFeaturesStartDate() {
+    public Date getFeaturesStartDate() {
         return featuresStartDate;
     }
 
     @JsonProperty("featuresStartDate")
-    public void setFeaturesStartDate(String featuresStartDate) {
+    public void setFeaturesStartDate(Date featuresStartDate) {
         this.featuresStartDate = featuresStartDate;
     }
 

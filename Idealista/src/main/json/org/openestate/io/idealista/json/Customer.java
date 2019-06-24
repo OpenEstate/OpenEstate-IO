@@ -2,6 +2,7 @@
 package org.openestate.io.idealista.json;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -11,6 +12,7 @@ import javax.validation.constraints.Pattern;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -45,9 +47,9 @@ public class Customer implements Serializable
      * 
      */
     @Nullable
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd HH:mm:ss", timezone = "UTC")
     @JsonProperty("customerSendDate")
-    @Pattern(regexp = "^20[0-9][0-9]/[0-9][0-9]/(([0-2][0-9])|(3[0-1])) (([0-1][0-9])|(2[0-4])):([0-5][0-9]):([0-5][0-9])$")
-    private String customerSendDate;
+    private Date customerSendDate;
     /**
      * Customer country
      * <p>
@@ -123,15 +125,15 @@ public class Customer implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 2496503998602293962L;
+    private final static long serialVersionUID = 1415110503944403369L;
 
     @JsonProperty("customerSendDate")
-    public String getCustomerSendDate() {
+    public Date getCustomerSendDate() {
         return customerSendDate;
     }
 
     @JsonProperty("customerSendDate")
-    public void setCustomerSendDate(String customerSendDate) {
+    public void setCustomerSendDate(Date customerSendDate) {
         this.customerSendDate = customerSendDate;
     }
 
