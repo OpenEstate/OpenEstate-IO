@@ -2,6 +2,7 @@
 package org.openestate.io.idealista.json;
 
 import java.io.Serializable;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -137,8 +138,7 @@ public class PropertyJson implements Serializable
      */
     @Nullable
     @JsonProperty("propertyUrl")
-    @Pattern(regexp = "^(http)(s?)://.*$")
-    private String propertyUrl;
+    private URI propertyUrl;
     /**
      * If the visibility is 'idealista', you can find the property using the idealista's search engine; 'microsite', the property is only published on the real estate agency microsite; 'private', the property is not published and only the customer can see it.
      * (Can be null)
@@ -148,7 +148,7 @@ public class PropertyJson implements Serializable
     @JsonProperty("propertyVisibility")
     @JsonPropertyDescription("If the visibility is 'idealista', you can find the property using the idealista's search engine; 'microsite', the property is only published on the real estate agency microsite; 'private', the property is not published and only the customer can see it.")
     private PropertyJson.EnumPropertyVisibility propertyVisibility;
-    private final static long serialVersionUID = 3697051010846714735L;
+    private final static long serialVersionUID = -7842706478666239940L;
 
     /**
      * No args constructor for use in serialization
@@ -329,12 +329,12 @@ public class PropertyJson implements Serializable
     }
 
     @JsonProperty("propertyUrl")
-    public String getPropertyUrl() {
+    public URI getPropertyUrl() {
         return propertyUrl;
     }
 
     @JsonProperty("propertyUrl")
-    public void setPropertyUrl(String propertyUrl) {
+    public void setPropertyUrl(URI propertyUrl) {
         this.propertyUrl = propertyUrl;
     }
 

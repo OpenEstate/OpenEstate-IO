@@ -3,6 +3,7 @@ package org.openestate.io.idealista.json;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nonnull;
@@ -10,7 +11,6 @@ import javax.annotation.Nullable;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -61,11 +61,10 @@ public class Images implements Serializable
      * 
      */
     @JsonProperty("imageUrl")
-    @Pattern(regexp = "^(http)(s?)://.*$")
     @NotNull
     @Nonnull
-    private String imageUrl;
-    private final static long serialVersionUID = -648802483294099831L;
+    private URI imageUrl;
+    private final static long serialVersionUID = 2394371097367072608L;
 
     /**
      * No args constructor for use in serialization
@@ -78,7 +77,7 @@ public class Images implements Serializable
      * 
      * @param imageUrl
      */
-    public Images(String imageUrl) {
+    public Images(URI imageUrl) {
         super();
         this.imageUrl = imageUrl;
     }
@@ -133,7 +132,7 @@ public class Images implements Serializable
      * 
      */
     @JsonProperty("imageUrl")
-    public String getImageUrl() {
+    public URI getImageUrl() {
         return imageUrl;
     }
 
@@ -143,7 +142,7 @@ public class Images implements Serializable
      * 
      */
     @JsonProperty("imageUrl")
-    public void setImageUrl(String imageUrl) {
+    public void setImageUrl(URI imageUrl) {
         this.imageUrl = imageUrl;
     }
 
