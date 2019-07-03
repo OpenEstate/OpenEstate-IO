@@ -197,12 +197,16 @@
                                             <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
                                         </group>
                                         <group>
-                                            <title>Filemaker</title>
+                                            <title>Filemaker-XML</title>
                                             <packages>org.openestate.io.filemaker:org.openestate.io.filemaker.*</packages>
                                         </group>
                                         <group>
                                             <title>IDX</title>
                                             <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>Idealista-XML</title>
+                                            <packages>org.openestate.io.idealista:org.openestate.io.idealista.*</packages>
                                         </group>
                                         <group>
                                             <title>immobiliare.it</title>
@@ -221,15 +225,15 @@
                                             <packages>org.openestate.io.is24_xml:org.openestate.io.is24_xml.*</packages>
                                         </group>
                                         <group>
-                                            <title>Kyero</title>
+                                            <title>Kyero-XML</title>
                                             <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
                                         </group>
                                         <group>
-                                            <title>OpenImmo</title>
+                                            <title>OpenImmo-XML</title>
                                             <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
                                         </group>
                                         <group>
-                                            <title>Trovit</title>
+                                            <title>Trovit-XML</title>
                                             <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
                                         </group>
                                         <group>
@@ -251,6 +255,8 @@
                                         ${project.parent.basedir}/Filemaker/src/main/java;
                                         ${project.parent.basedir}/Filemaker/src/main/jaxb;
                                         ${project.parent.basedir}/IDX/src/main/java;
+                                        ${project.parent.basedir}/Idealista/src/main/java;
+                                        ${project.parent.basedir}/Idealista/src/main/json;
                                         ${project.parent.basedir}/ImmobiliareIT/src/main/java;
                                         ${project.parent.basedir}/ImmobiliareIT/src/main/jaxb;
                                         ${project.parent.basedir}/ImmoXML/src/main/java;
