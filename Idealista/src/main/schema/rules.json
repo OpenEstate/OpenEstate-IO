@@ -19,7 +19,7 @@
   },
   "enumOperationType": {
     "enum": ["rent","sale","rentToOwn"],
-    "javaType": "org.openestate.io.idealista.json.OperationType"
+    "javaName": "Type"
   },
   "enumPropertyStatus": {
     "enum": ["active","pending","quality","error"],

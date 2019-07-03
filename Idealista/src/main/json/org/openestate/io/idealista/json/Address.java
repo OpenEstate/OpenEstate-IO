@@ -196,7 +196,7 @@ public class Address implements Serializable
     @JsonPropertyDescription("to have a good accuracy, latitude need to have at least 4 decimals")
     @DecimalMin("-90")
     @DecimalMax("90")
-    private BigDecimal latitude;
+    private BigDecimal coordinatesLatitude;
     /**
      * address coordinates longitude
      * <p>
@@ -210,11 +210,11 @@ public class Address implements Serializable
     @JsonPropertyDescription("to have a good accuracy, longitude need to have at least 4 decimals")
     @DecimalMin("-180")
     @DecimalMax("180")
-    private BigDecimal longitude;
+    private BigDecimal coordinatesLongitude;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -9176022832099173579L;
+    private final static long serialVersionUID = 7896145906116550615L;
 
     /**
      * address visibility
@@ -503,8 +503,8 @@ public class Address implements Serializable
      * 
      */
     @JsonProperty("addressCoordinatesLatitude")
-    public BigDecimal getLatitude() {
-        return latitude;
+    public BigDecimal getCoordinatesLatitude() {
+        return coordinatesLatitude;
     }
 
     /**
@@ -515,12 +515,12 @@ public class Address implements Serializable
      * 
      */
     @JsonProperty("addressCoordinatesLatitude")
-    public void setLatitude(BigDecimal latitude) {
-        this.latitude = latitude;
+    public void setCoordinatesLatitude(BigDecimal coordinatesLatitude) {
+        this.coordinatesLatitude = coordinatesLatitude;
     }
 
-    public Address withLatitude(BigDecimal latitude) {
-        this.latitude = latitude;
+    public Address withCoordinatesLatitude(BigDecimal coordinatesLatitude) {
+        this.coordinatesLatitude = coordinatesLatitude;
         return this;
     }
 
@@ -532,8 +532,8 @@ public class Address implements Serializable
      * 
      */
     @JsonProperty("addressCoordinatesLongitude")
-    public BigDecimal getLongitude() {
-        return longitude;
+    public BigDecimal getCoordinatesLongitude() {
+        return coordinatesLongitude;
     }
 
     /**
@@ -544,12 +544,12 @@ public class Address implements Serializable
      * 
      */
     @JsonProperty("addressCoordinatesLongitude")
-    public void setLongitude(BigDecimal longitude) {
-        this.longitude = longitude;
+    public void setCoordinatesLongitude(BigDecimal coordinatesLongitude) {
+        this.coordinatesLongitude = coordinatesLongitude;
     }
 
-    public Address withLongitude(BigDecimal longitude) {
-        this.longitude = longitude;
+    public Address withCoordinatesLongitude(BigDecimal coordinatesLongitude) {
+        this.coordinatesLongitude = coordinatesLongitude;
         return this;
     }
 
@@ -624,13 +624,13 @@ public class Address implements Serializable
         sb.append('=');
         sb.append(((this.coordinatesPrecision == null)?"<null>":this.coordinatesPrecision));
         sb.append(',');
-        sb.append("latitude");
+        sb.append("coordinatesLatitude");
         sb.append('=');
-        sb.append(((this.latitude == null)?"<null>":this.latitude));
+        sb.append(((this.coordinatesLatitude == null)?"<null>":this.coordinatesLatitude));
         sb.append(',');
-        sb.append("longitude");
+        sb.append("coordinatesLongitude");
         sb.append('=');
-        sb.append(((this.longitude == null)?"<null>":this.longitude));
+        sb.append(((this.coordinatesLongitude == null)?"<null>":this.coordinatesLongitude));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
@@ -655,14 +655,14 @@ public class Address implements Serializable
         result = ((result* 31)+((this.town == null)? 0 :this.town.hashCode()));
         result = ((result* 31)+((this.streetNumber == null)? 0 :this.streetNumber.hashCode()));
         result = ((result* 31)+((this.postalCode == null)? 0 :this.postalCode.hashCode()));
-        result = ((result* 31)+((this.latitude == null)? 0 :this.latitude.hashCode()));
         result = ((result* 31)+((this.coordinatesPrecision == null)? 0 :this.coordinatesPrecision.hashCode()));
         result = ((result* 31)+((this.urbanization == null)? 0 :this.urbanization.hashCode()));
+        result = ((result* 31)+((this.coordinatesLatitude == null)? 0 :this.coordinatesLatitude.hashCode()));
         result = ((result* 31)+((this.streetName == null)? 0 :this.streetName.hashCode()));
+        result = ((result* 31)+((this.coordinatesLongitude == null)? 0 :this.coordinatesLongitude.hashCode()));
         result = ((result* 31)+((this.block == null)? 0 :this.block.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
         result = ((result* 31)+((this.floor == null)? 0 :this.floor.hashCode()));
-        result = ((result* 31)+((this.longitude == null)? 0 :this.longitude.hashCode()));
         return result;
     }
 
@@ -675,7 +675,7 @@ public class Address implements Serializable
             return false;
         }
         Address rhs = ((Address) other);
-        return (((((((((((((((((this.door == rhs.door)||((this.door!= null)&&this.door.equals(rhs.door)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.stair == rhs.stair)||((this.stair!= null)&&this.stair.equals(rhs.stair))))&&((this.nsiCode == rhs.nsiCode)||((this.nsiCode!= null)&&this.nsiCode.equals(rhs.nsiCode))))&&((this.visibility == rhs.visibility)||((this.visibility!= null)&&this.visibility.equals(rhs.visibility))))&&((this.town == rhs.town)||((this.town!= null)&&this.town.equals(rhs.town))))&&((this.streetNumber == rhs.streetNumber)||((this.streetNumber!= null)&&this.streetNumber.equals(rhs.streetNumber))))&&((this.postalCode == rhs.postalCode)||((this.postalCode!= null)&&this.postalCode.equals(rhs.postalCode))))&&((this.latitude == rhs.latitude)||((this.latitude!= null)&&this.latitude.equals(rhs.latitude))))&&((this.coordinatesPrecision == rhs.coordinatesPrecision)||((this.coordinatesPrecision!= null)&&this.coordinatesPrecision.equals(rhs.coordinatesPrecision))))&&((this.urbanization == rhs.urbanization)||((this.urbanization!= null)&&this.urbanization.equals(rhs.urbanization))))&&((this.streetName == rhs.streetName)||((this.streetName!= null)&&this.streetName.equals(rhs.streetName))))&&((this.block == rhs.block)||((this.block!= null)&&this.block.equals(rhs.block))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.floor == rhs.floor)||((this.floor!= null)&&this.floor.equals(rhs.floor))))&&((this.longitude == rhs.longitude)||((this.longitude!= null)&&this.longitude.equals(rhs.longitude))));
+        return (((((((((((((((((this.door == rhs.door)||((this.door!= null)&&this.door.equals(rhs.door)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.stair == rhs.stair)||((this.stair!= null)&&this.stair.equals(rhs.stair))))&&((this.nsiCode == rhs.nsiCode)||((this.nsiCode!= null)&&this.nsiCode.equals(rhs.nsiCode))))&&((this.visibility == rhs.visibility)||((this.visibility!= null)&&this.visibility.equals(rhs.visibility))))&&((this.town == rhs.town)||((this.town!= null)&&this.town.equals(rhs.town))))&&((this.streetNumber == rhs.streetNumber)||((this.streetNumber!= null)&&this.streetNumber.equals(rhs.streetNumber))))&&((this.postalCode == rhs.postalCode)||((this.postalCode!= null)&&this.postalCode.equals(rhs.postalCode))))&&((this.coordinatesPrecision == rhs.coordinatesPrecision)||((this.coordinatesPrecision!= null)&&this.coordinatesPrecision.equals(rhs.coordinatesPrecision))))&&((this.urbanization == rhs.urbanization)||((this.urbanization!= null)&&this.urbanization.equals(rhs.urbanization))))&&((this.coordinatesLatitude == rhs.coordinatesLatitude)||((this.coordinatesLatitude!= null)&&this.coordinatesLatitude.equals(rhs.coordinatesLatitude))))&&((this.streetName == rhs.streetName)||((this.streetName!= null)&&this.streetName.equals(rhs.streetName))))&&((this.coordinatesLongitude == rhs.coordinatesLongitude)||((this.coordinatesLongitude!= null)&&this.coordinatesLongitude.equals(rhs.coordinatesLongitude))))&&((this.block == rhs.block)||((this.block!= null)&&this.block.equals(rhs.block))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.floor == rhs.floor)||((this.floor!= null)&&this.floor.equals(rhs.floor))));
     }
 
     public enum CoordinatesPrecision {

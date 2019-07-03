@@ -145,7 +145,7 @@
       "type": "number",
       "minimum": -90,
       "maximum": 90,
-      "javaName": "latitude"
+      "javaName": "coordinatesLatitude"
     },
     "addressCoordinatesLongitude": {
       "title": "address coordinates longitude",
@@ -153,7 +153,7 @@
       "type": "number",
       "minimum": -180,
       "maximum": 180,
-      "javaName": "longitude"
+      "javaName": "coordinatesLongitude"
     }
   }
 }

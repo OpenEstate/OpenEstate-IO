@@ -14,10 +14,12 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 
 /**
@@ -102,17 +104,18 @@ public class Operation implements Serializable
     private BigInteger priceParking;
     /**
      * 
+     * Corresponds to the "operationType" property.
      * (Required)
      * 
      */
     @JsonProperty("operationType")
     @NotNull
     @Nonnull
-    private OperationType type;
+    private Operation.Type type;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -7305585631351005110L;
+    private final static long serialVersionUID = 8039840371972681481L;
 
     /**
      * No args constructor for use in serialization
@@ -126,7 +129,7 @@ public class Operation implements Serializable
      * @param price
      * @param type
      */
-    public Operation(BigInteger price, OperationType type) {
+    public Operation(BigInteger price, Operation.Type type) {
         super();
         this.price = price;
         this.type = type;
@@ -234,25 +237,27 @@ public class Operation implements Serializable
 
     /**
      * 
+     * Corresponds to the "operationType" property.
      * (Required)
      * 
      */
     @JsonProperty("operationType")
-    public OperationType getType() {
+    public Operation.Type getType() {
         return type;
     }
 
     /**
      * 
+     * Corresponds to the "operationType" property.
      * (Required)
      * 
      */
     @JsonProperty("operationType")
-    public void setType(OperationType type) {
+    public void setType(Operation.Type type) {
         this.type = type;
     }
 
-    public Operation withType(OperationType type) {
+    public Operation withType(Operation.Type type) {
         this.type = type;
         return this;
     }
@@ -340,6 +345,46 @@ public class Operation implements Serializable
         }
         Operation rhs = ((Operation) other);
         return (((((((((this.priceCommunity == rhs.priceCommunity)||((this.priceCommunity!= null)&&this.priceCommunity.equals(rhs.priceCommunity)))&&((this.priceTransfer == rhs.priceTransfer)||((this.priceTransfer!= null)&&this.priceTransfer.equals(rhs.priceTransfer))))&&((this.priceParking == rhs.priceParking)||((this.priceParking!= null)&&this.priceParking.equals(rhs.priceParking))))&&((this.price == rhs.price)||((this.price!= null)&&this.price.equals(rhs.price))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.depositMonths == rhs.depositMonths)||((this.depositMonths!= null)&&this.depositMonths.equals(rhs.depositMonths))))&&((this.priceToOwn == rhs.priceToOwn)||((this.priceToOwn!= null)&&this.priceToOwn.equals(rhs.priceToOwn))));
+    }
+
+    public enum Type {
+
+        RENT("rent"),
+        SALE("sale"),
+        RENT_TO_OWN("rentToOwn");
+        private final String value;
+        private final static Map<String, Operation.Type> CONSTANTS = new HashMap<String, Operation.Type>();
+
+        static {
+            for (Operation.Type c: values()) {
+                CONSTANTS.put(c.value, c);
+            }
+        }
+
+        private Type(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return this.value;
+        }
+
+        @JsonValue
+        public String value() {
+            return this.value;
+        }
+
+        @JsonCreator
+        public static Operation.Type fromValue(String value) {
+            Operation.Type constant = CONSTANTS.get(value);
+            if (constant == null) {
+                throw new IllegalArgumentException(value);
+            } else {
+                return constant;
+            }
+        }
+
     }
 
 }

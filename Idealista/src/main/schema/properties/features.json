@@ -541,7 +541,7 @@
       "house",
       "mixed_promos"
     ],
-    "javaType": "org.openestate.io.idealista.json.NewDevelopmentType"
+    "javaName": "NewDevelopmentType"
   },
   "enumFeaturesBuiltPhase": {
     "description": "Phase of built for new developments",
