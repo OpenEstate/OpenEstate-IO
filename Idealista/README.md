@@ -53,9 +53,13 @@ Dependencies
 ------------
 
 -   Java 7 or newer
+-   [Apache BVal 1.1.2](https://bval.apache.org/) 
+    (optional; for validation of JSON data; may be replaced with other implementations)
 -   [commons-codec 1.11](https://commons.apache.org/proper/commons-codec/)
 -   [commons-io 2.6](https://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.8.1](https://commons.apache.org/proper/commons-lang/)
+-   [jackson-databind 2.5.4](https://github.com/FasterXML/jackson-databind)
+-   [Java Validation API 1.1.0](https://beanvalidation.org/)
 -   [SLF4J 1.7.25](https://www.slf4j.org/)
 
 

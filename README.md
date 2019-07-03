@@ -149,6 +149,8 @@ Dependencies
 ------------
 
 -   Java 7 or newer
+-   [Apache BVal 1.1.2](https://bval.apache.org/)
+    (optional; for validation of JSON data; may be replaced with other implementations)
 -   [commons-codec 1.11](https://commons.apache.org/proper/commons-codec/)
 -   [commons-csv 1.6](https://commons.apache.org/proper/commons-csv/)
     (optional; for processing of CSV formats)
@@ -156,11 +158,15 @@ Dependencies
 -   [commons-lang 3.8.1](https://commons.apache.org/proper/commons-lang/)
 -   [commons-text 1.3](https://commons.apache.org/proper/commons-text/)
     (optional; for examples and some unit tests)
+-   [jackson-databind 2.5.4](https://github.com/FasterXML/jackson-databind)
+    (optional; for processing of JSON formats)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
 -   [jaxen 1.1.6](https://github.com/jaxen-xpath/jaxen)
     (optional; for processing of XML formats)
 -   [SLF4J 1.7.25](https://www.slf4j.org/)
+-   [Java Validation API 1.1.0](https://beanvalidation.org/)
+    (optional; for processing of JSON formats)
 -   [log4j 1.2.17](https://logging.apache.org/log4j/1.2/)
     (optional; may be replaced by another logging system
     [via SLF4J](https://www.slf4j.org/manual.html))
