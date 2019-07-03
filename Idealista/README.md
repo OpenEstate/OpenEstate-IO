@@ -9,10 +9,10 @@ Features
 --------
 
 -   read XML data according to the specifications of
-    [*immobar.it*](https://www.immobar.it)
+    [*idealista.com*](https://www.idealista.com/)
     (see [`IdealistaReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/IdealistaReadingExample.java))
 -   write XML data according to the specifications of
-    [*immobar.it*](https://www.immobar.it)
+    [*idealista.com*](https://www.idealista.com/)
     (see [`IdealistaWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/IdealistaWritingExample.java))
 
 
