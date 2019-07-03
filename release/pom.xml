@@ -71,10 +71,6 @@
         </dependency>
         <dependency>
             <groupId>org.openestate.io</groupId>
-            <artifactId>OpenEstate-IO-Idealista</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openestate.io</groupId>
             <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
         </dependency>
         <dependency>
@@ -83,7 +79,15 @@
         </dependency>
         <dependency>
             <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Idealista</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
             <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-ImmobarIT</artifactId>
         </dependency>
         <dependency>
             <groupId>org.openestate.io</groupId>
@@ -209,6 +213,10 @@
                                             <packages>org.openestate.io.idealista:org.openestate.io.idealista.*</packages>
                                         </group>
                                         <group>
+                                            <title>immobar.it</title>
+                                            <packages>org.openestate.io.immobar_it:org.openestate.io.immobar_it.*</packages>
+                                        </group>
+                                        <group>
                                             <title>immobiliare.it</title>
                                             <packages>org.openestate.io.immobiliare_it:org.openestate.io.immobiliare_it.*</packages>
                                         </group>
@@ -257,6 +265,8 @@
                                         ${project.parent.basedir}/IDX/src/main/java;
                                         ${project.parent.basedir}/Idealista/src/main/java;
                                         ${project.parent.basedir}/Idealista/src/main/json;
+                                        ${project.parent.basedir}/ImmobarIT/src/main/java;
+                                        ${project.parent.basedir}/ImmobarIT/src/main/jaxb;
                                         ${project.parent.basedir}/ImmobiliareIT/src/main/java;
                                         ${project.parent.basedir}/ImmobiliareIT/src/main/jaxb;
                                         ${project.parent.basedir}/ImmoXML/src/main/java;
