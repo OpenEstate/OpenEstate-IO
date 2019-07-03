@@ -292,7 +292,7 @@ public class LandFeatures
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 9144362546134144052L;
+    private final static long serialVersionUID = -4732398260832080151L;
 
     /**
      * No args constructor for use in serialization
@@ -343,47 +343,57 @@ public class LandFeatures
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaPlot")
-    public BigInteger getFeaturesAreaPlot() {
+    public BigInteger getAreaPlot() {
         return areaPlot;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaPlot")
-    public void setFeaturesAreaPlot(BigInteger areaPlot) {
+    public void setAreaPlot(BigInteger areaPlot) {
         this.areaPlot = areaPlot;
     }
 
-    public LandFeatures withFeaturesAreaPlot(BigInteger areaPlot) {
+    public LandFeatures withAreaPlot(BigInteger areaPlot) {
         this.areaPlot = areaPlot;
         return this;
     }
 
     @JsonProperty("featuresAreaBuildable")
-    public BigInteger getFeaturesAreaBuildable() {
+    public BigInteger getAreaBuildable() {
         return areaBuildable;
     }
 
     @JsonProperty("featuresAreaBuildable")
-    public void setFeaturesAreaBuildable(BigInteger areaBuildable) {
+    public void setAreaBuildable(BigInteger areaBuildable) {
         this.areaBuildable = areaBuildable;
     }
 
-    public LandFeatures withFeaturesAreaBuildable(BigInteger areaBuildable) {
+    public LandFeatures withAreaBuildable(BigInteger areaBuildable) {
         this.areaBuildable = areaBuildable;
         return this;
     }
 
     @JsonProperty("featuresAreaTradableMinimum")
-    public BigInteger getFeaturesAreaTradableMinimum() {
+    public BigInteger getAreaTradableMinimum() {
         return areaTradableMinimum;
     }
 
     @JsonProperty("featuresAreaTradableMinimum")
-    public void setFeaturesAreaTradableMinimum(BigInteger areaTradableMinimum) {
+    public void setAreaTradableMinimum(BigInteger areaTradableMinimum) {
         this.areaTradableMinimum = areaTradableMinimum;
     }
 
-    public LandFeatures withFeaturesAreaTradableMinimum(BigInteger areaTradableMinimum) {
+    public LandFeatures withAreaTradableMinimum(BigInteger areaTradableMinimum) {
         this.areaTradableMinimum = areaTradableMinimum;
         return this;
     }
@@ -395,7 +405,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationBlocks")
-    public Boolean getFeaturesClassificationBlocks() {
+    public Boolean getClassificationBlocks() {
         return classificationBlocks;
     }
 
@@ -406,11 +416,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationBlocks")
-    public void setFeaturesClassificationBlocks(Boolean classificationBlocks) {
+    public void setClassificationBlocks(Boolean classificationBlocks) {
         this.classificationBlocks = classificationBlocks;
     }
 
-    public LandFeatures withFeaturesClassificationBlocks(Boolean classificationBlocks) {
+    public LandFeatures withClassificationBlocks(Boolean classificationBlocks) {
         this.classificationBlocks = classificationBlocks;
         return this;
     }
@@ -422,7 +432,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationChalet")
-    public Boolean getFeaturesClassificationChalet() {
+    public Boolean getClassificationChalet() {
         return classificationChalet;
     }
 
@@ -433,11 +443,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationChalet")
-    public void setFeaturesClassificationChalet(Boolean classificationChalet) {
+    public void setClassificationChalet(Boolean classificationChalet) {
         this.classificationChalet = classificationChalet;
     }
 
-    public LandFeatures withFeaturesClassificationChalet(Boolean classificationChalet) {
+    public LandFeatures withClassificationChalet(Boolean classificationChalet) {
         this.classificationChalet = classificationChalet;
         return this;
     }
@@ -449,7 +459,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationCommercial")
-    public Boolean getFeaturesClassificationCommercial() {
+    public Boolean getClassificationCommercial() {
         return classificationCommercial;
     }
 
@@ -460,11 +470,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationCommercial")
-    public void setFeaturesClassificationCommercial(Boolean classificationCommercial) {
+    public void setClassificationCommercial(Boolean classificationCommercial) {
         this.classificationCommercial = classificationCommercial;
     }
 
-    public LandFeatures withFeaturesClassificationCommercial(Boolean classificationCommercial) {
+    public LandFeatures withClassificationCommercial(Boolean classificationCommercial) {
         this.classificationCommercial = classificationCommercial;
         return this;
     }
@@ -476,7 +486,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationHotel")
-    public Boolean getFeaturesClassificationHotel() {
+    public Boolean getClassificationHotel() {
         return classificationHotel;
     }
 
@@ -487,11 +497,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationHotel")
-    public void setFeaturesClassificationHotel(Boolean classificationHotel) {
+    public void setClassificationHotel(Boolean classificationHotel) {
         this.classificationHotel = classificationHotel;
     }
 
-    public LandFeatures withFeaturesClassificationHotel(Boolean classificationHotel) {
+    public LandFeatures withClassificationHotel(Boolean classificationHotel) {
         this.classificationHotel = classificationHotel;
         return this;
     }
@@ -503,7 +513,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationIndustrial")
-    public Boolean getFeaturesClassificationIndustrial() {
+    public Boolean getClassificationIndustrial() {
         return classificationIndustrial;
     }
 
@@ -514,11 +524,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationIndustrial")
-    public void setFeaturesClassificationIndustrial(Boolean classificationIndustrial) {
+    public void setClassificationIndustrial(Boolean classificationIndustrial) {
         this.classificationIndustrial = classificationIndustrial;
     }
 
-    public LandFeatures withFeaturesClassificationIndustrial(Boolean classificationIndustrial) {
+    public LandFeatures withClassificationIndustrial(Boolean classificationIndustrial) {
         this.classificationIndustrial = classificationIndustrial;
         return this;
     }
@@ -530,7 +540,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationOffice")
-    public Boolean getFeaturesClassificationOffice() {
+    public Boolean getClassificationOffice() {
         return classificationOffice;
     }
 
@@ -541,11 +551,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationOffice")
-    public void setFeaturesClassificationOffice(Boolean classificationOffice) {
+    public void setClassificationOffice(Boolean classificationOffice) {
         this.classificationOffice = classificationOffice;
     }
 
-    public LandFeatures withFeaturesClassificationOffice(Boolean classificationOffice) {
+    public LandFeatures withClassificationOffice(Boolean classificationOffice) {
         this.classificationOffice = classificationOffice;
         return this;
     }
@@ -557,7 +567,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationOther")
-    public Boolean getFeaturesClassificationOther() {
+    public Boolean getClassificationOther() {
         return classificationOther;
     }
 
@@ -568,11 +578,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationOther")
-    public void setFeaturesClassificationOther(Boolean classificationOther) {
+    public void setClassificationOther(Boolean classificationOther) {
         this.classificationOther = classificationOther;
     }
 
-    public LandFeatures withFeaturesClassificationOther(Boolean classificationOther) {
+    public LandFeatures withClassificationOther(Boolean classificationOther) {
         this.classificationOther = classificationOther;
         return this;
     }
@@ -584,7 +594,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationPublic")
-    public Boolean getFeaturesClassificationPublic() {
+    public Boolean getClassificationPublic() {
         return classificationPublic;
     }
 
@@ -595,41 +605,41 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresClassificationPublic")
-    public void setFeaturesClassificationPublic(Boolean classificationPublic) {
+    public void setClassificationPublic(Boolean classificationPublic) {
         this.classificationPublic = classificationPublic;
     }
 
-    public LandFeatures withFeaturesClassificationPublic(Boolean classificationPublic) {
+    public LandFeatures withClassificationPublic(Boolean classificationPublic) {
         this.classificationPublic = classificationPublic;
         return this;
     }
 
     @JsonProperty("featuresFloorsBuildable")
-    public BigInteger getFeaturesFloorsBuildable() {
+    public BigInteger getFloorsBuildable() {
         return floorsBuildable;
     }
 
     @JsonProperty("featuresFloorsBuildable")
-    public void setFeaturesFloorsBuildable(BigInteger floorsBuildable) {
+    public void setFloorsBuildable(BigInteger floorsBuildable) {
         this.floorsBuildable = floorsBuildable;
     }
 
-    public LandFeatures withFeaturesFloorsBuildable(BigInteger floorsBuildable) {
+    public LandFeatures withFloorsBuildable(BigInteger floorsBuildable) {
         this.floorsBuildable = floorsBuildable;
         return this;
     }
 
     @JsonProperty("featuresNearestLocationKm")
-    public BigDecimal getFeaturesNearestLocationKm() {
+    public BigDecimal getNearestLocationKm() {
         return nearestLocationKm;
     }
 
     @JsonProperty("featuresNearestLocationKm")
-    public void setFeaturesNearestLocationKm(BigDecimal nearestLocationKm) {
+    public void setNearestLocationKm(BigDecimal nearestLocationKm) {
         this.nearestLocationKm = nearestLocationKm;
     }
 
-    public LandFeatures withFeaturesNearestLocationKm(BigDecimal nearestLocationKm) {
+    public LandFeatures withNearestLocationKm(BigDecimal nearestLocationKm) {
         this.nearestLocationKm = nearestLocationKm;
         return this;
     }
@@ -641,7 +651,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesElectricity")
-    public Boolean getFeaturesUtilitiesElectricity() {
+    public Boolean getUtilitiesElectricity() {
         return utilitiesElectricity;
     }
 
@@ -652,11 +662,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesElectricity")
-    public void setFeaturesUtilitiesElectricity(Boolean utilitiesElectricity) {
+    public void setUtilitiesElectricity(Boolean utilitiesElectricity) {
         this.utilitiesElectricity = utilitiesElectricity;
     }
 
-    public LandFeatures withFeaturesUtilitiesElectricity(Boolean utilitiesElectricity) {
+    public LandFeatures withUtilitiesElectricity(Boolean utilitiesElectricity) {
         this.utilitiesElectricity = utilitiesElectricity;
         return this;
     }
@@ -668,7 +678,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesNaturalGas")
-    public Boolean getFeaturesUtilitiesNaturalGas() {
+    public Boolean getUtilitiesNaturalGas() {
         return utilitiesNaturalGas;
     }
 
@@ -679,11 +689,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesNaturalGas")
-    public void setFeaturesUtilitiesNaturalGas(Boolean utilitiesNaturalGas) {
+    public void setUtilitiesNaturalGas(Boolean utilitiesNaturalGas) {
         this.utilitiesNaturalGas = utilitiesNaturalGas;
     }
 
-    public LandFeatures withFeaturesUtilitiesNaturalGas(Boolean utilitiesNaturalGas) {
+    public LandFeatures withUtilitiesNaturalGas(Boolean utilitiesNaturalGas) {
         this.utilitiesNaturalGas = utilitiesNaturalGas;
         return this;
     }
@@ -695,7 +705,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesRoadAccess")
-    public Boolean getFeaturesUtilitiesRoadAccess() {
+    public Boolean getUtilitiesRoadAccess() {
         return utilitiesRoadAccess;
     }
 
@@ -706,11 +716,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesRoadAccess")
-    public void setFeaturesUtilitiesRoadAccess(Boolean utilitiesRoadAccess) {
+    public void setUtilitiesRoadAccess(Boolean utilitiesRoadAccess) {
         this.utilitiesRoadAccess = utilitiesRoadAccess;
     }
 
-    public LandFeatures withFeaturesUtilitiesRoadAccess(Boolean utilitiesRoadAccess) {
+    public LandFeatures withUtilitiesRoadAccess(Boolean utilitiesRoadAccess) {
         this.utilitiesRoadAccess = utilitiesRoadAccess;
         return this;
     }
@@ -722,7 +732,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesSewerage")
-    public Boolean getFeaturesUtilitiesSewerage() {
+    public Boolean getUtilitiesSewerage() {
         return utilitiesSewerage;
     }
 
@@ -733,11 +743,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesSewerage")
-    public void setFeaturesUtilitiesSewerage(Boolean utilitiesSewerage) {
+    public void setUtilitiesSewerage(Boolean utilitiesSewerage) {
         this.utilitiesSewerage = utilitiesSewerage;
     }
 
-    public LandFeatures withFeaturesUtilitiesSewerage(Boolean utilitiesSewerage) {
+    public LandFeatures withUtilitiesSewerage(Boolean utilitiesSewerage) {
         this.utilitiesSewerage = utilitiesSewerage;
         return this;
     }
@@ -749,7 +759,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesSidewalk")
-    public Boolean getFeaturesUtilitiesSidewalk() {
+    public Boolean getUtilitiesSidewalk() {
         return utilitiesSidewalk;
     }
 
@@ -760,11 +770,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesSidewalk")
-    public void setFeaturesUtilitiesSidewalk(Boolean utilitiesSidewalk) {
+    public void setUtilitiesSidewalk(Boolean utilitiesSidewalk) {
         this.utilitiesSidewalk = utilitiesSidewalk;
     }
 
-    public LandFeatures withFeaturesUtilitiesSidewalk(Boolean utilitiesSidewalk) {
+    public LandFeatures withUtilitiesSidewalk(Boolean utilitiesSidewalk) {
         this.utilitiesSidewalk = utilitiesSidewalk;
         return this;
     }
@@ -776,7 +786,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesStreetLighting")
-    public Boolean getFeaturesUtilitiesStreetLighting() {
+    public Boolean getUtilitiesStreetLighting() {
         return utilitiesStreetLighting;
     }
 
@@ -787,11 +797,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesStreetLighting")
-    public void setFeaturesUtilitiesStreetLighting(Boolean utilitiesStreetLighting) {
+    public void setUtilitiesStreetLighting(Boolean utilitiesStreetLighting) {
         this.utilitiesStreetLighting = utilitiesStreetLighting;
     }
 
-    public LandFeatures withFeaturesUtilitiesStreetLighting(Boolean utilitiesStreetLighting) {
+    public LandFeatures withUtilitiesStreetLighting(Boolean utilitiesStreetLighting) {
         this.utilitiesStreetLighting = utilitiesStreetLighting;
         return this;
     }
@@ -803,7 +813,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesWater")
-    public Boolean getFeaturesUtilitiesWater() {
+    public Boolean getUtilitiesWater() {
         return utilitiesWater;
     }
 
@@ -814,11 +824,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresUtilitiesWater")
-    public void setFeaturesUtilitiesWater(Boolean utilitiesWater) {
+    public void setUtilitiesWater(Boolean utilitiesWater) {
         this.utilitiesWater = utilitiesWater;
     }
 
-    public LandFeatures withFeaturesUtilitiesWater(Boolean utilitiesWater) {
+    public LandFeatures withUtilitiesWater(Boolean utilitiesWater) {
         this.utilitiesWater = utilitiesWater;
         return this;
     }
@@ -830,7 +840,7 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresAccessType")
-    public AccessType getFeaturesAccessType() {
+    public AccessType getAccessType() {
         return accessType;
     }
 
@@ -841,11 +851,11 @@ public class LandFeatures
      * 
      */
     @JsonProperty("featuresAccessType")
-    public void setFeaturesAccessType(AccessType accessType) {
+    public void setAccessType(AccessType accessType) {
         this.accessType = accessType;
     }
 
-    public LandFeatures withFeaturesAccessType(AccessType accessType) {
+    public LandFeatures withAccessType(AccessType accessType) {
         this.accessType = accessType;
         return this;
     }

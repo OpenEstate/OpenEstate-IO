@@ -142,7 +142,7 @@ public class GarageFeatures
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 1456105677995948710L;
+    private final static long serialVersionUID = 2456582616823518185L;
 
     /**
      * No args constructor for use in serialization
@@ -193,17 +193,27 @@ public class GarageFeatures
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public BigInteger getFeaturesAreaConstructed() {
+    public BigInteger getAreaConstructed() {
         return areaConstructed;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public void setFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public void setAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
     }
 
-    public GarageFeatures withFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public GarageFeatures withAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
         return this;
     }
@@ -215,7 +225,7 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresLiftAvailable")
-    public Boolean getFeaturesLiftAvailable() {
+    public Boolean getLiftAvailable() {
         return liftAvailable;
     }
 
@@ -226,11 +236,11 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresLiftAvailable")
-    public void setFeaturesLiftAvailable(Boolean liftAvailable) {
+    public void setLiftAvailable(Boolean liftAvailable) {
         this.liftAvailable = liftAvailable;
     }
 
-    public GarageFeatures withFeaturesLiftAvailable(Boolean liftAvailable) {
+    public GarageFeatures withLiftAvailable(Boolean liftAvailable) {
         this.liftAvailable = liftAvailable;
         return this;
     }
@@ -242,7 +252,7 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresParkingAutomaticDoor")
-    public Boolean getFeaturesParkingAutomaticDoor() {
+    public Boolean getParkingAutomaticDoor() {
         return parkingAutomaticDoor;
     }
 
@@ -253,11 +263,11 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresParkingAutomaticDoor")
-    public void setFeaturesParkingAutomaticDoor(Boolean parkingAutomaticDoor) {
+    public void setParkingAutomaticDoor(Boolean parkingAutomaticDoor) {
         this.parkingAutomaticDoor = parkingAutomaticDoor;
     }
 
-    public GarageFeatures withFeaturesParkingAutomaticDoor(Boolean parkingAutomaticDoor) {
+    public GarageFeatures withParkingAutomaticDoor(Boolean parkingAutomaticDoor) {
         this.parkingAutomaticDoor = parkingAutomaticDoor;
         return this;
     }
@@ -269,7 +279,7 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresParkingPlaceCovered")
-    public Boolean getFeaturesParkingPlaceCovered() {
+    public Boolean getParkingPlaceCovered() {
         return parkingPlaceCovered;
     }
 
@@ -280,11 +290,11 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresParkingPlaceCovered")
-    public void setFeaturesParkingPlaceCovered(Boolean parkingPlaceCovered) {
+    public void setParkingPlaceCovered(Boolean parkingPlaceCovered) {
         this.parkingPlaceCovered = parkingPlaceCovered;
     }
 
-    public GarageFeatures withFeaturesParkingPlaceCovered(Boolean parkingPlaceCovered) {
+    public GarageFeatures withParkingPlaceCovered(Boolean parkingPlaceCovered) {
         this.parkingPlaceCovered = parkingPlaceCovered;
         return this;
     }
@@ -296,7 +306,7 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresParkingType")
-    public ParkingType getFeaturesParkingType() {
+    public ParkingType getParkingType() {
         return parkingType;
     }
 
@@ -307,11 +317,11 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresParkingType")
-    public void setFeaturesParkingType(ParkingType parkingType) {
+    public void setParkingType(ParkingType parkingType) {
         this.parkingType = parkingType;
     }
 
-    public GarageFeatures withFeaturesParkingType(ParkingType parkingType) {
+    public GarageFeatures withParkingType(ParkingType parkingType) {
         this.parkingType = parkingType;
         return this;
     }
@@ -323,7 +333,7 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresSecurityAlarm")
-    public Boolean getFeaturesSecurityAlarm() {
+    public Boolean getSecurityAlarm() {
         return securityAlarm;
     }
 
@@ -334,11 +344,11 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresSecurityAlarm")
-    public void setFeaturesSecurityAlarm(Boolean securityAlarm) {
+    public void setSecurityAlarm(Boolean securityAlarm) {
         this.securityAlarm = securityAlarm;
     }
 
-    public GarageFeatures withFeaturesSecurityAlarm(Boolean securityAlarm) {
+    public GarageFeatures withSecurityAlarm(Boolean securityAlarm) {
         this.securityAlarm = securityAlarm;
         return this;
     }
@@ -350,7 +360,7 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresSecurityPersonnel")
-    public Boolean getFeaturesSecurityPersonnel() {
+    public Boolean getSecurityPersonnel() {
         return securityPersonnel;
     }
 
@@ -361,11 +371,11 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresSecurityPersonnel")
-    public void setFeaturesSecurityPersonnel(Boolean securityPersonnel) {
+    public void setSecurityPersonnel(Boolean securityPersonnel) {
         this.securityPersonnel = securityPersonnel;
     }
 
-    public GarageFeatures withFeaturesSecurityPersonnel(Boolean securityPersonnel) {
+    public GarageFeatures withSecurityPersonnel(Boolean securityPersonnel) {
         this.securityPersonnel = securityPersonnel;
         return this;
     }
@@ -377,7 +387,7 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresSecuritySystem")
-    public Boolean getFeaturesSecuritySystem() {
+    public Boolean getSecuritySystem() {
         return securitySystem;
     }
 
@@ -388,11 +398,11 @@ public class GarageFeatures
      * 
      */
     @JsonProperty("featuresSecuritySystem")
-    public void setFeaturesSecuritySystem(Boolean securitySystem) {
+    public void setSecuritySystem(Boolean securitySystem) {
         this.securitySystem = securitySystem;
     }
 
-    public GarageFeatures withFeaturesSecuritySystem(Boolean securitySystem) {
+    public GarageFeatures withSecuritySystem(Boolean securitySystem) {
         this.securitySystem = securitySystem;
         return this;
     }

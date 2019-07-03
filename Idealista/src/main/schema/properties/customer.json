@@ -22,7 +22,8 @@
     "customerSendDate": {
       "title": "Customer file send date",
       "description": "date when the file has been generated to be processed",
-      "$ref": "../rules.json#/dateFormat"
+      "$ref": "../rules.json#/dateFormat",
+      "javaName": "sendDate"
     },
     "customerCountry": {
       "title": "Customer country",

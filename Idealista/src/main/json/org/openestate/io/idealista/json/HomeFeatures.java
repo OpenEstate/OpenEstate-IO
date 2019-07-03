@@ -503,7 +503,7 @@ public class HomeFeatures
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -5834802741668230961L;
+    private final static long serialVersionUID = -7926020788829878587L;
 
     /**
      * No args constructor for use in serialization
@@ -556,47 +556,57 @@ public class HomeFeatures
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public BigInteger getFeaturesAreaConstructed() {
+    public BigInteger getAreaConstructed() {
         return areaConstructed;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public void setFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public void setAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
     }
 
-    public HomeFeatures withFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public HomeFeatures withAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
         return this;
     }
 
     @JsonProperty("featuresAreaPlot")
-    public BigInteger getFeaturesAreaPlot() {
+    public BigInteger getAreaPlot() {
         return areaPlot;
     }
 
     @JsonProperty("featuresAreaPlot")
-    public void setFeaturesAreaPlot(BigInteger areaPlot) {
+    public void setAreaPlot(BigInteger areaPlot) {
         this.areaPlot = areaPlot;
     }
 
-    public HomeFeatures withFeaturesAreaPlot(BigInteger areaPlot) {
+    public HomeFeatures withAreaPlot(BigInteger areaPlot) {
         this.areaPlot = areaPlot;
         return this;
     }
 
     @JsonProperty("featuresAreaUsable")
-    public BigInteger getFeaturesAreaUsable() {
+    public BigInteger getAreaUsable() {
         return areaUsable;
     }
 
     @JsonProperty("featuresAreaUsable")
-    public void setFeaturesAreaUsable(BigInteger areaUsable) {
+    public void setAreaUsable(BigInteger areaUsable) {
         this.areaUsable = areaUsable;
     }
 
-    public HomeFeatures withFeaturesAreaUsable(BigInteger areaUsable) {
+    public HomeFeatures withAreaUsable(BigInteger areaUsable) {
         this.areaUsable = areaUsable;
         return this;
     }
@@ -608,7 +618,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresBalcony")
-    public Boolean getFeaturesBalcony() {
+    public Boolean getBalcony() {
         return balcony;
     }
 
@@ -619,41 +629,51 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresBalcony")
-    public void setFeaturesBalcony(Boolean balcony) {
+    public void setBalcony(Boolean balcony) {
         this.balcony = balcony;
     }
 
-    public HomeFeatures withFeaturesBalcony(Boolean balcony) {
+    public HomeFeatures withBalcony(Boolean balcony) {
         this.balcony = balcony;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresBathroomNumber")
-    public BigInteger getFeaturesBathroomNumber() {
+    public BigInteger getBathroomNumber() {
         return bathroomNumber;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresBathroomNumber")
-    public void setFeaturesBathroomNumber(BigInteger bathroomNumber) {
+    public void setBathroomNumber(BigInteger bathroomNumber) {
         this.bathroomNumber = bathroomNumber;
     }
 
-    public HomeFeatures withFeaturesBathroomNumber(BigInteger bathroomNumber) {
+    public HomeFeatures withBathroomNumber(BigInteger bathroomNumber) {
         this.bathroomNumber = bathroomNumber;
         return this;
     }
 
     @JsonProperty("featuresBedroomNumber")
-    public BigInteger getFeaturesBedroomNumber() {
+    public BigInteger getBedroomNumber() {
         return bedroomNumber;
     }
 
     @JsonProperty("featuresBedroomNumber")
-    public void setFeaturesBedroomNumber(BigInteger bedroomNumber) {
+    public void setBedroomNumber(BigInteger bedroomNumber) {
         this.bedroomNumber = bedroomNumber;
     }
 
-    public HomeFeatures withFeaturesBedroomNumber(BigInteger bedroomNumber) {
+    public HomeFeatures withBedroomNumber(BigInteger bedroomNumber) {
         this.bedroomNumber = bedroomNumber;
         return this;
     }
@@ -665,7 +685,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresBuiltYear")
-    public BigInteger getFeaturesBuiltYear() {
+    public BigInteger getBuiltYear() {
         return builtYear;
     }
 
@@ -676,11 +696,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresBuiltYear")
-    public void setFeaturesBuiltYear(BigInteger builtYear) {
+    public void setBuiltYear(BigInteger builtYear) {
         this.builtYear = builtYear;
     }
 
-    public HomeFeatures withFeaturesBuiltYear(BigInteger builtYear) {
+    public HomeFeatures withBuiltYear(BigInteger builtYear) {
         this.builtYear = builtYear;
         return this;
     }
@@ -692,7 +712,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresConditionedAir")
-    public Boolean getFeaturesConditionedAir() {
+    public Boolean getConditionedAir() {
         return conditionedAir;
     }
 
@@ -703,11 +723,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresConditionedAir")
-    public void setFeaturesConditionedAir(Boolean conditionedAir) {
+    public void setConditionedAir(Boolean conditionedAir) {
         this.conditionedAir = conditionedAir;
     }
 
-    public HomeFeatures withFeaturesConditionedAir(Boolean conditionedAir) {
+    public HomeFeatures withConditionedAir(Boolean conditionedAir) {
         this.conditionedAir = conditionedAir;
         return this;
     }
@@ -719,7 +739,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresConservation")
-    public ConservationType getFeaturesConservation() {
+    public ConservationType getConservation() {
         return conservation;
     }
 
@@ -730,11 +750,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresConservation")
-    public void setFeaturesConservation(ConservationType conservation) {
+    public void setConservation(ConservationType conservation) {
         this.conservation = conservation;
     }
 
-    public HomeFeatures withFeaturesConservation(ConservationType conservation) {
+    public HomeFeatures withConservation(ConservationType conservation) {
         this.conservation = conservation;
         return this;
     }
@@ -746,7 +766,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresChimney")
-    public Boolean getFeaturesChimney() {
+    public Boolean getChimney() {
         return chimney;
     }
 
@@ -757,11 +777,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresChimney")
-    public void setFeaturesChimney(Boolean chimney) {
+    public void setChimney(Boolean chimney) {
         this.chimney = chimney;
     }
 
-    public HomeFeatures withFeaturesChimney(Boolean chimney) {
+    public HomeFeatures withChimney(Boolean chimney) {
         this.chimney = chimney;
         return this;
     }
@@ -773,7 +793,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresDoorman")
-    public Boolean getFeaturesDoorman() {
+    public Boolean getDoorman() {
         return doorman;
     }
 
@@ -784,11 +804,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresDoorman")
-    public void setFeaturesDoorman(Boolean doorman) {
+    public void setDoorman(Boolean doorman) {
         this.doorman = doorman;
     }
 
-    public HomeFeatures withFeaturesDoorman(Boolean doorman) {
+    public HomeFeatures withDoorman(Boolean doorman) {
         this.doorman = doorman;
         return this;
     }
@@ -800,7 +820,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresDuplex")
-    public Boolean getFeaturesDuplex() {
+    public Boolean getDuplex() {
         return duplex;
     }
 
@@ -811,11 +831,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresDuplex")
-    public void setFeaturesDuplex(Boolean duplex) {
+    public void setDuplex(Boolean duplex) {
         this.duplex = duplex;
     }
 
-    public HomeFeatures withFeaturesDuplex(Boolean duplex) {
+    public HomeFeatures withDuplex(Boolean duplex) {
         this.duplex = duplex;
         return this;
     }
@@ -827,7 +847,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEquippedKitchen")
-    public Boolean getFeaturesEquippedKitchen() {
+    public Boolean getEquippedKitchen() {
         return equippedKitchen;
     }
 
@@ -838,11 +858,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEquippedKitchen")
-    public void setFeaturesEquippedKitchen(Boolean equippedKitchen) {
+    public void setEquippedKitchen(Boolean equippedKitchen) {
         this.equippedKitchen = equippedKitchen;
     }
 
-    public HomeFeatures withFeaturesEquippedKitchen(Boolean equippedKitchen) {
+    public HomeFeatures withEquippedKitchen(Boolean equippedKitchen) {
         this.equippedKitchen = equippedKitchen;
         return this;
     }
@@ -854,7 +874,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEquippedWithFurniture")
-    public Boolean getFeaturesEquippedWithFurniture() {
+    public Boolean getEquippedWithFurniture() {
         return equippedWithFurniture;
     }
 
@@ -865,26 +885,26 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEquippedWithFurniture")
-    public void setFeaturesEquippedWithFurniture(Boolean equippedWithFurniture) {
+    public void setEquippedWithFurniture(Boolean equippedWithFurniture) {
         this.equippedWithFurniture = equippedWithFurniture;
     }
 
-    public HomeFeatures withFeaturesEquippedWithFurniture(Boolean equippedWithFurniture) {
+    public HomeFeatures withEquippedWithFurniture(Boolean equippedWithFurniture) {
         this.equippedWithFurniture = equippedWithFurniture;
         return this;
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public BigDecimal getFeaturesEnergyCertificatePerformance() {
+    public BigDecimal getEnergyCertificatePerformance() {
         return energyCertificatePerformance;
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public void setFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public void setEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
     }
 
-    public HomeFeatures withFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public HomeFeatures withEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
         return this;
     }
@@ -896,7 +916,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public EnergyCertificateLawType getFeaturesEnergyCertificateLaw() {
+    public EnergyCertificateLawType getEnergyCertificateLaw() {
         return energyCertificateLaw;
     }
 
@@ -907,11 +927,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public void setFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public void setEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
     }
 
-    public HomeFeatures withFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public HomeFeatures withEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
         return this;
     }
@@ -923,7 +943,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public EnergyCertificateRatingType getFeaturesEnergyCertificateRating() {
+    public EnergyCertificateRatingType getEnergyCertificateRating() {
         return energyCertificateRating;
     }
 
@@ -934,11 +954,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public void setFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public void setEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
     }
 
-    public HomeFeatures withFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public HomeFeatures withEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
         return this;
     }
@@ -950,7 +970,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public EnergyCertificateType getFeaturesEnergyCertificateType() {
+    public EnergyCertificateType getEnergyCertificateType() {
         return energyCertificateType;
     }
 
@@ -961,26 +981,26 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public void setFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public void setEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
     }
 
-    public HomeFeatures withFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public HomeFeatures withEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
         return this;
     }
 
     @JsonProperty("featuresFloorsBuilding")
-    public BigInteger getFeaturesFloorsBuilding() {
+    public BigInteger getFloorsBuilding() {
         return floorsBuilding;
     }
 
     @JsonProperty("featuresFloorsBuilding")
-    public void setFeaturesFloorsBuilding(BigInteger floorsBuilding) {
+    public void setFloorsBuilding(BigInteger floorsBuilding) {
         this.floorsBuilding = floorsBuilding;
     }
 
-    public HomeFeatures withFeaturesFloorsBuilding(BigInteger floorsBuilding) {
+    public HomeFeatures withFloorsBuilding(BigInteger floorsBuilding) {
         this.floorsBuilding = floorsBuilding;
         return this;
     }
@@ -992,7 +1012,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresFloorsInTop")
-    public Boolean getFeaturesFloorsInTop() {
+    public Boolean getFloorsInTop() {
         return floorsInTop;
     }
 
@@ -1003,11 +1023,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresFloorsInTop")
-    public void setFeaturesFloorsInTop(Boolean floorsInTop) {
+    public void setFloorsInTop(Boolean floorsInTop) {
         this.floorsInTop = floorsInTop;
     }
 
-    public HomeFeatures withFeaturesFloorsInTop(Boolean floorsInTop) {
+    public HomeFeatures withFloorsInTop(Boolean floorsInTop) {
         this.floorsInTop = floorsInTop;
         return this;
     }
@@ -1019,7 +1039,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresGarden")
-    public Boolean getFeaturesGarden() {
+    public Boolean getGarden() {
         return garden;
     }
 
@@ -1030,11 +1050,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresGarden")
-    public void setFeaturesGarden(Boolean garden) {
+    public void setGarden(Boolean garden) {
         this.garden = garden;
     }
 
-    public HomeFeatures withFeaturesGarden(Boolean garden) {
+    public HomeFeatures withGarden(Boolean garden) {
         this.garden = garden;
         return this;
     }
@@ -1046,7 +1066,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresHandicapAdaptedAccess")
-    public Boolean getFeaturesHandicapAdaptedAccess() {
+    public Boolean getHandicapAdaptedAccess() {
         return handicapAdaptedAccess;
     }
 
@@ -1057,11 +1077,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresHandicapAdaptedAccess")
-    public void setFeaturesHandicapAdaptedAccess(Boolean handicapAdaptedAccess) {
+    public void setHandicapAdaptedAccess(Boolean handicapAdaptedAccess) {
         this.handicapAdaptedAccess = handicapAdaptedAccess;
     }
 
-    public HomeFeatures withFeaturesHandicapAdaptedAccess(Boolean handicapAdaptedAccess) {
+    public HomeFeatures withHandicapAdaptedAccess(Boolean handicapAdaptedAccess) {
         this.handicapAdaptedAccess = handicapAdaptedAccess;
         return this;
     }
@@ -1073,7 +1093,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresHandicapAdaptedUse")
-    public Boolean getFeaturesHandicapAdaptedUse() {
+    public Boolean getHandicapAdaptedUse() {
         return handicapAdaptedUse;
     }
 
@@ -1084,11 +1104,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresHandicapAdaptedUse")
-    public void setFeaturesHandicapAdaptedUse(Boolean handicapAdaptedUse) {
+    public void setHandicapAdaptedUse(Boolean handicapAdaptedUse) {
         this.handicapAdaptedUse = handicapAdaptedUse;
     }
 
-    public HomeFeatures withFeaturesHandicapAdaptedUse(Boolean handicapAdaptedUse) {
+    public HomeFeatures withHandicapAdaptedUse(Boolean handicapAdaptedUse) {
         this.handicapAdaptedUse = handicapAdaptedUse;
         return this;
     }
@@ -1100,7 +1120,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresLiftAvailable")
-    public Boolean getFeaturesLiftAvailable() {
+    public Boolean getLiftAvailable() {
         return liftAvailable;
     }
 
@@ -1111,11 +1131,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresLiftAvailable")
-    public void setFeaturesLiftAvailable(Boolean liftAvailable) {
+    public void setLiftAvailable(Boolean liftAvailable) {
         this.liftAvailable = liftAvailable;
     }
 
-    public HomeFeatures withFeaturesLiftAvailable(Boolean liftAvailable) {
+    public HomeFeatures withLiftAvailable(Boolean liftAvailable) {
         this.liftAvailable = liftAvailable;
         return this;
     }
@@ -1127,7 +1147,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationNorth")
-    public Boolean getFeaturesOrientationNorth() {
+    public Boolean getOrientationNorth() {
         return orientationNorth;
     }
 
@@ -1138,11 +1158,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationNorth")
-    public void setFeaturesOrientationNorth(Boolean orientationNorth) {
+    public void setOrientationNorth(Boolean orientationNorth) {
         this.orientationNorth = orientationNorth;
     }
 
-    public HomeFeatures withFeaturesOrientationNorth(Boolean orientationNorth) {
+    public HomeFeatures withOrientationNorth(Boolean orientationNorth) {
         this.orientationNorth = orientationNorth;
         return this;
     }
@@ -1154,7 +1174,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationSouth")
-    public Boolean getFeaturesOrientationSouth() {
+    public Boolean getOrientationSouth() {
         return orientationSouth;
     }
 
@@ -1165,11 +1185,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationSouth")
-    public void setFeaturesOrientationSouth(Boolean orientationSouth) {
+    public void setOrientationSouth(Boolean orientationSouth) {
         this.orientationSouth = orientationSouth;
     }
 
-    public HomeFeatures withFeaturesOrientationSouth(Boolean orientationSouth) {
+    public HomeFeatures withOrientationSouth(Boolean orientationSouth) {
         this.orientationSouth = orientationSouth;
         return this;
     }
@@ -1181,7 +1201,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationWest")
-    public Boolean getFeaturesOrientationWest() {
+    public Boolean getOrientationWest() {
         return orientationWest;
     }
 
@@ -1192,11 +1212,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationWest")
-    public void setFeaturesOrientationWest(Boolean orientationWest) {
+    public void setOrientationWest(Boolean orientationWest) {
         this.orientationWest = orientationWest;
     }
 
-    public HomeFeatures withFeaturesOrientationWest(Boolean orientationWest) {
+    public HomeFeatures withOrientationWest(Boolean orientationWest) {
         this.orientationWest = orientationWest;
         return this;
     }
@@ -1208,7 +1228,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationEast")
-    public Boolean getFeaturesOrientationEast() {
+    public Boolean getOrientationEast() {
         return orientationEast;
     }
 
@@ -1219,11 +1239,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresOrientationEast")
-    public void setFeaturesOrientationEast(Boolean orientationEast) {
+    public void setOrientationEast(Boolean orientationEast) {
         this.orientationEast = orientationEast;
     }
 
-    public HomeFeatures withFeaturesOrientationEast(Boolean orientationEast) {
+    public HomeFeatures withOrientationEast(Boolean orientationEast) {
         this.orientationEast = orientationEast;
         return this;
     }
@@ -1235,7 +1255,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresParkingAvailable")
-    public Boolean getFeaturesParkingAvailable() {
+    public Boolean getParkingAvailable() {
         return parkingAvailable;
     }
 
@@ -1246,11 +1266,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresParkingAvailable")
-    public void setFeaturesParkingAvailable(Boolean parkingAvailable) {
+    public void setParkingAvailable(Boolean parkingAvailable) {
         this.parkingAvailable = parkingAvailable;
     }
 
-    public HomeFeatures withFeaturesParkingAvailable(Boolean parkingAvailable) {
+    public HomeFeatures withParkingAvailable(Boolean parkingAvailable) {
         this.parkingAvailable = parkingAvailable;
         return this;
     }
@@ -1262,7 +1282,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresPenthouse")
-    public Boolean getFeaturesPenthouse() {
+    public Boolean getPenthouse() {
         return penthouse;
     }
 
@@ -1273,11 +1293,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresPenthouse")
-    public void setFeaturesPenthouse(Boolean penthouse) {
+    public void setPenthouse(Boolean penthouse) {
         this.penthouse = penthouse;
     }
 
-    public HomeFeatures withFeaturesPenthouse(Boolean penthouse) {
+    public HomeFeatures withPenthouse(Boolean penthouse) {
         this.penthouse = penthouse;
         return this;
     }
@@ -1289,7 +1309,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresPetsAllowed")
-    public Boolean getFeaturesPetsAllowed() {
+    public Boolean getPetsAllowed() {
         return petsAllowed;
     }
 
@@ -1300,11 +1320,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresPetsAllowed")
-    public void setFeaturesPetsAllowed(Boolean petsAllowed) {
+    public void setPetsAllowed(Boolean petsAllowed) {
         this.petsAllowed = petsAllowed;
     }
 
-    public HomeFeatures withFeaturesPetsAllowed(Boolean petsAllowed) {
+    public HomeFeatures withPetsAllowed(Boolean petsAllowed) {
         this.petsAllowed = petsAllowed;
         return this;
     }
@@ -1316,7 +1336,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresPool")
-    public Boolean getFeaturesPool() {
+    public Boolean getPool() {
         return pool;
     }
 
@@ -1327,26 +1347,26 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresPool")
-    public void setFeaturesPool(Boolean pool) {
+    public void setPool(Boolean pool) {
         this.pool = pool;
     }
 
-    public HomeFeatures withFeaturesPool(Boolean pool) {
+    public HomeFeatures withPool(Boolean pool) {
         this.pool = pool;
         return this;
     }
 
     @JsonProperty("featuresRooms")
-    public BigInteger getFeaturesRooms() {
+    public BigInteger getRooms() {
         return rooms;
     }
 
     @JsonProperty("featuresRooms")
-    public void setFeaturesRooms(BigInteger rooms) {
+    public void setRooms(BigInteger rooms) {
         this.rooms = rooms;
     }
 
-    public HomeFeatures withFeaturesRooms(BigInteger rooms) {
+    public HomeFeatures withRooms(BigInteger rooms) {
         this.rooms = rooms;
         return this;
     }
@@ -1358,7 +1378,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresStorage")
-    public Boolean getFeaturesStorage() {
+    public Boolean getStorage() {
         return storage;
     }
 
@@ -1369,11 +1389,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresStorage")
-    public void setFeaturesStorage(Boolean storage) {
+    public void setStorage(Boolean storage) {
         this.storage = storage;
     }
 
-    public HomeFeatures withFeaturesStorage(Boolean storage) {
+    public HomeFeatures withStorage(Boolean storage) {
         this.storage = storage;
         return this;
     }
@@ -1385,7 +1405,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresStudio")
-    public Boolean getFeaturesStudio() {
+    public Boolean getStudio() {
         return studio;
     }
 
@@ -1396,11 +1416,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresStudio")
-    public void setFeaturesStudio(Boolean studio) {
+    public void setStudio(Boolean studio) {
         this.studio = studio;
     }
 
-    public HomeFeatures withFeaturesStudio(Boolean studio) {
+    public HomeFeatures withStudio(Boolean studio) {
         this.studio = studio;
         return this;
     }
@@ -1412,7 +1432,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresTerrace")
-    public Boolean getFeaturesTerrace() {
+    public Boolean getTerrace() {
         return terrace;
     }
 
@@ -1423,11 +1443,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresTerrace")
-    public void setFeaturesTerrace(Boolean terrace) {
+    public void setTerrace(Boolean terrace) {
         this.terrace = terrace;
     }
 
-    public HomeFeatures withFeaturesTerrace(Boolean terrace) {
+    public HomeFeatures withTerrace(Boolean terrace) {
         this.terrace = terrace;
         return this;
     }
@@ -1439,7 +1459,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresWardrobes")
-    public Boolean getFeaturesWardrobes() {
+    public Boolean getWardrobes() {
         return wardrobes;
     }
 
@@ -1450,11 +1470,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresWardrobes")
-    public void setFeaturesWardrobes(Boolean wardrobes) {
+    public void setWardrobes(Boolean wardrobes) {
         this.wardrobes = wardrobes;
     }
 
-    public HomeFeatures withFeaturesWardrobes(Boolean wardrobes) {
+    public HomeFeatures withWardrobes(Boolean wardrobes) {
         this.wardrobes = wardrobes;
         return this;
     }
@@ -1466,7 +1486,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresWindowsLocation")
-    public WindowsLocationType getFeaturesWindowsLocation() {
+    public WindowsLocationType getWindowsLocation() {
         return windowsLocation;
     }
 
@@ -1477,11 +1497,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresWindowsLocation")
-    public void setFeaturesWindowsLocation(WindowsLocationType windowsLocation) {
+    public void setWindowsLocation(WindowsLocationType windowsLocation) {
         this.windowsLocation = windowsLocation;
     }
 
-    public HomeFeatures withFeaturesWindowsLocation(WindowsLocationType windowsLocation) {
+    public HomeFeatures withWindowsLocation(WindowsLocationType windowsLocation) {
         this.windowsLocation = windowsLocation;
         return this;
     }
@@ -1493,7 +1513,7 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresHeatingType")
-    public HeatingType getFeaturesHeatingType() {
+    public HeatingType getHeatingType() {
         return heatingType;
     }
 
@@ -1504,11 +1524,11 @@ public class HomeFeatures
      * 
      */
     @JsonProperty("featuresHeatingType")
-    public void setFeaturesHeatingType(HeatingType heatingType) {
+    public void setHeatingType(HeatingType heatingType) {
         this.heatingType = heatingType;
     }
 
-    public HomeFeatures withFeaturesHeatingType(HeatingType heatingType) {
+    public HomeFeatures withHeatingType(HeatingType heatingType) {
         this.heatingType = heatingType;
         return this;
     }

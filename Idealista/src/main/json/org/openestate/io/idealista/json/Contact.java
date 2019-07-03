@@ -90,94 +90,94 @@ public class Contact implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 7398587465974377361L;
+    private final static long serialVersionUID = 3433591450038418896L;
 
     @JsonProperty("contactName")
-    public String getContactName() {
+    public String getName() {
         return name;
     }
 
     @JsonProperty("contactName")
-    public void setContactName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Contact withContactName(String name) {
+    public Contact withName(String name) {
         this.name = name;
         return this;
     }
 
     @JsonProperty("contactEmail")
-    public String getContactEmail() {
+    public String getEmail() {
         return email;
     }
 
     @JsonProperty("contactEmail")
-    public void setContactEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public Contact withContactEmail(String email) {
+    public Contact withEmail(String email) {
         this.email = email;
         return this;
     }
 
     @JsonProperty("contactPrimaryPhonePrefix")
-    public String getContactPrimaryPhonePrefix() {
+    public String getPrimaryPhonePrefix() {
         return primaryPhonePrefix;
     }
 
     @JsonProperty("contactPrimaryPhonePrefix")
-    public void setContactPrimaryPhonePrefix(String primaryPhonePrefix) {
+    public void setPrimaryPhonePrefix(String primaryPhonePrefix) {
         this.primaryPhonePrefix = primaryPhonePrefix;
     }
 
-    public Contact withContactPrimaryPhonePrefix(String primaryPhonePrefix) {
+    public Contact withPrimaryPhonePrefix(String primaryPhonePrefix) {
         this.primaryPhonePrefix = primaryPhonePrefix;
         return this;
     }
 
     @JsonProperty("contactPrimaryPhoneNumber")
-    public String getContactPrimaryPhoneNumber() {
+    public String getPrimaryPhoneNumber() {
         return primaryPhoneNumber;
     }
 
     @JsonProperty("contactPrimaryPhoneNumber")
-    public void setContactPrimaryPhoneNumber(String primaryPhoneNumber) {
+    public void setPrimaryPhoneNumber(String primaryPhoneNumber) {
         this.primaryPhoneNumber = primaryPhoneNumber;
     }
 
-    public Contact withContactPrimaryPhoneNumber(String primaryPhoneNumber) {
+    public Contact withPrimaryPhoneNumber(String primaryPhoneNumber) {
         this.primaryPhoneNumber = primaryPhoneNumber;
         return this;
     }
 
     @JsonProperty("contactSecondaryPhonePrefix")
-    public String getContactSecondaryPhonePrefix() {
+    public String getSecondaryPhonePrefix() {
         return secondaryPhonePrefix;
     }
 
     @JsonProperty("contactSecondaryPhonePrefix")
-    public void setContactSecondaryPhonePrefix(String secondaryPhonePrefix) {
+    public void setSecondaryPhonePrefix(String secondaryPhonePrefix) {
         this.secondaryPhonePrefix = secondaryPhonePrefix;
     }
 
-    public Contact withContactSecondaryPhonePrefix(String secondaryPhonePrefix) {
+    public Contact withSecondaryPhonePrefix(String secondaryPhonePrefix) {
         this.secondaryPhonePrefix = secondaryPhonePrefix;
         return this;
     }
 
     @JsonProperty("contactSecondaryPhoneNumber")
-    public String getContactSecondaryPhoneNumber() {
+    public String getSecondaryPhoneNumber() {
         return secondaryPhoneNumber;
     }
 
     @JsonProperty("contactSecondaryPhoneNumber")
-    public void setContactSecondaryPhoneNumber(String secondaryPhoneNumber) {
+    public void setSecondaryPhoneNumber(String secondaryPhoneNumber) {
         this.secondaryPhoneNumber = secondaryPhoneNumber;
     }
 
-    public Contact withContactSecondaryPhoneNumber(String secondaryPhoneNumber) {
+    public Contact withSecondaryPhoneNumber(String secondaryPhoneNumber) {
         this.secondaryPhoneNumber = secondaryPhoneNumber;
         return this;
     }

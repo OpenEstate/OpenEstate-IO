@@ -155,7 +155,7 @@ public class Property implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -2083330077945523846L;
+    private final static long serialVersionUID = -3965990345321591059L;
 
     /**
      * No args constructor for use in serialization
@@ -180,7 +180,7 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyAddress")
-    public Address getPropertyAddress() {
+    public Address getAddress() {
         return address;
     }
 
@@ -191,41 +191,51 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyAddress")
-    public void setPropertyAddress(Address address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
-    public Property withPropertyAddress(Address address) {
+    public Property withAddress(Address address) {
         this.address = address;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("propertyCode")
-    public String getPropertyCode() {
+    public String getCode() {
         return code;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("propertyCode")
-    public void setPropertyCode(String code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public Property withPropertyCode(String code) {
+    public Property withCode(String code) {
         this.code = code;
         return this;
     }
 
     @JsonProperty("propertyReference")
-    public String getPropertyReference() {
+    public String getReference() {
         return reference;
     }
 
     @JsonProperty("propertyReference")
-    public void setPropertyReference(String reference) {
+    public void setReference(String reference) {
         this.reference = reference;
     }
 
-    public Property withPropertyReference(String reference) {
+    public Property withReference(String reference) {
         this.reference = reference;
         return this;
     }
@@ -237,7 +247,7 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyContact")
-    public Contact getPropertyContact() {
+    public Contact getContact() {
         return contact;
     }
 
@@ -248,11 +258,11 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyContact")
-    public void setPropertyContact(Contact contact) {
+    public void setContact(Contact contact) {
         this.contact = contact;
     }
 
-    public Property withPropertyContact(Contact contact) {
+    public Property withContact(Contact contact) {
         this.contact = contact;
         return this;
     }
@@ -351,7 +361,7 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyOperation")
-    public Operation getPropertyOperation() {
+    public Operation getOperation() {
         return operation;
     }
 
@@ -362,26 +372,26 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyOperation")
-    public void setPropertyOperation(Operation operation) {
+    public void setOperation(Operation operation) {
         this.operation = operation;
     }
 
-    public Property withPropertyOperation(Operation operation) {
+    public Property withOperation(Operation operation) {
         this.operation = operation;
         return this;
     }
 
     @JsonProperty("propertyUrl")
-    public URI getPropertyUrl() {
+    public URI getUrl() {
         return url;
     }
 
     @JsonProperty("propertyUrl")
-    public void setPropertyUrl(URI url) {
+    public void setUrl(URI url) {
         this.url = url;
     }
 
-    public Property withPropertyUrl(URI url) {
+    public Property withUrl(URI url) {
         this.url = url;
         return this;
     }
@@ -391,7 +401,7 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyVisibility")
-    public PropertyVisibilityType getPropertyVisibility() {
+    public PropertyVisibilityType getVisibility() {
         return visibility;
     }
 
@@ -400,11 +410,11 @@ public class Property implements Serializable
      * 
      */
     @JsonProperty("propertyVisibility")
-    public void setPropertyVisibility(PropertyVisibilityType visibility) {
+    public void setVisibility(PropertyVisibilityType visibility) {
         this.visibility = visibility;
     }
 
-    public Property withPropertyVisibility(PropertyVisibilityType visibility) {
+    public Property withVisibility(PropertyVisibilityType visibility) {
         this.visibility = visibility;
         return this;
     }

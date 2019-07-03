@@ -214,7 +214,7 @@ public class Address implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 6421638253075204034L;
+    private final static long serialVersionUID = -9176022832099173579L;
 
     /**
      * address visibility
@@ -246,46 +246,46 @@ public class Address implements Serializable
     }
 
     @JsonProperty("addressStreetName")
-    public String getAddressStreetName() {
+    public String getStreetName() {
         return streetName;
     }
 
     @JsonProperty("addressStreetName")
-    public void setAddressStreetName(String streetName) {
+    public void setStreetName(String streetName) {
         this.streetName = streetName;
     }
 
-    public Address withAddressStreetName(String streetName) {
+    public Address withStreetName(String streetName) {
         this.streetName = streetName;
         return this;
     }
 
     @JsonProperty("addressStreetNumber")
-    public String getAddressStreetNumber() {
+    public String getStreetNumber() {
         return streetNumber;
     }
 
     @JsonProperty("addressStreetNumber")
-    public void setAddressStreetNumber(String streetNumber) {
+    public void setStreetNumber(String streetNumber) {
         this.streetNumber = streetNumber;
     }
 
-    public Address withAddressStreetNumber(String streetNumber) {
+    public Address withStreetNumber(String streetNumber) {
         this.streetNumber = streetNumber;
         return this;
     }
 
     @JsonProperty("addressBlock")
-    public String getAddressBlock() {
+    public String getBlock() {
         return block;
     }
 
     @JsonProperty("addressBlock")
-    public void setAddressBlock(String block) {
+    public void setBlock(String block) {
         this.block = block;
     }
 
-    public Address withAddressBlock(String block) {
+    public Address withBlock(String block) {
         this.block = block;
         return this;
     }
@@ -320,46 +320,46 @@ public class Address implements Serializable
     }
 
     @JsonProperty("addressStair")
-    public String getAddressStair() {
+    public String getStair() {
         return stair;
     }
 
     @JsonProperty("addressStair")
-    public void setAddressStair(String stair) {
+    public void setStair(String stair) {
         this.stair = stair;
     }
 
-    public Address withAddressStair(String stair) {
+    public Address withStair(String stair) {
         this.stair = stair;
         return this;
     }
 
     @JsonProperty("addressDoor")
-    public String getAddressDoor() {
+    public String getDoor() {
         return door;
     }
 
     @JsonProperty("addressDoor")
-    public void setAddressDoor(String door) {
+    public void setDoor(String door) {
         this.door = door;
     }
 
-    public Address withAddressDoor(String door) {
+    public Address withDoor(String door) {
         this.door = door;
         return this;
     }
 
     @JsonProperty("addressUrbanization")
-    public String getAddressUrbanization() {
+    public String getUrbanization() {
         return urbanization;
     }
 
     @JsonProperty("addressUrbanization")
-    public void setAddressUrbanization(String urbanization) {
+    public void setUrbanization(String urbanization) {
         this.urbanization = urbanization;
     }
 
-    public Address withAddressUrbanization(String urbanization) {
+    public Address withUrbanization(String urbanization) {
         this.urbanization = urbanization;
         return this;
     }
@@ -394,16 +394,16 @@ public class Address implements Serializable
     }
 
     @JsonProperty("addressTown")
-    public String getAddressTown() {
+    public String getTown() {
         return town;
     }
 
     @JsonProperty("addressTown")
-    public void setAddressTown(String town) {
+    public void setTown(String town) {
         this.town = town;
     }
 
-    public Address withAddressTown(String town) {
+    public Address withTown(String town) {
         this.town = town;
         return this;
     }

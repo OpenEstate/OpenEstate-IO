@@ -144,7 +144,7 @@ public class NewDevelopment implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 6957707079434433150L;
+    private final static long serialVersionUID = -4527364995153293283L;
 
     /**
      * No args constructor for use in serialization
@@ -162,32 +162,42 @@ public class NewDevelopment implements Serializable
         this.code = code;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("propertyCode")
-    public String getPropertyCode() {
+    public String getCode() {
         return code;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("propertyCode")
-    public void setPropertyCode(String code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public NewDevelopment withPropertyCode(String code) {
+    public NewDevelopment withCode(String code) {
         this.code = code;
         return this;
     }
 
     @JsonProperty("propertyReference")
-    public String getPropertyReference() {
+    public String getReference() {
         return reference;
     }
 
     @JsonProperty("propertyReference")
-    public void setPropertyReference(String reference) {
+    public void setReference(String reference) {
         this.reference = reference;
     }
 
-    public NewDevelopment withPropertyReference(String reference) {
+    public NewDevelopment withReference(String reference) {
         this.reference = reference;
         return this;
     }
@@ -197,7 +207,7 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyVisibility")
-    public PropertyVisibilityType getPropertyVisibility() {
+    public PropertyVisibilityType getVisibility() {
         return visibility;
     }
 
@@ -206,11 +216,11 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyVisibility")
-    public void setPropertyVisibility(PropertyVisibilityType visibility) {
+    public void setVisibility(PropertyVisibilityType visibility) {
         this.visibility = visibility;
     }
 
-    public NewDevelopment withPropertyVisibility(PropertyVisibilityType visibility) {
+    public NewDevelopment withVisibility(PropertyVisibilityType visibility) {
         this.visibility = visibility;
         return this;
     }
@@ -222,7 +232,7 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyAddress")
-    public Address getPropertyAddress() {
+    public Address getAddress() {
         return address;
     }
 
@@ -233,11 +243,11 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyAddress")
-    public void setPropertyAddress(Address address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
-    public NewDevelopment withPropertyAddress(Address address) {
+    public NewDevelopment withAddress(Address address) {
         this.address = address;
         return this;
     }
@@ -249,7 +259,7 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyFeatures")
-    public Promo getPropertyFeatures() {
+    public Promo getFeatures() {
         return features;
     }
 
@@ -260,11 +270,11 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyFeatures")
-    public void setPropertyFeatures(Promo features) {
+    public void setFeatures(Promo features) {
         this.features = features;
     }
 
-    public NewDevelopment withPropertyFeatures(Promo features) {
+    public NewDevelopment withFeatures(Promo features) {
         this.features = features;
         return this;
     }
@@ -276,7 +286,7 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyContact")
-    public Contact getPropertyContact() {
+    public Contact getContact() {
         return contact;
     }
 
@@ -287,11 +297,11 @@ public class NewDevelopment implements Serializable
      * 
      */
     @JsonProperty("propertyContact")
-    public void setPropertyContact(Contact contact) {
+    public void setContact(Contact contact) {
         this.contact = contact;
     }
 
-    public NewDevelopment withPropertyContact(Contact contact) {
+    public NewDevelopment withContact(Contact contact) {
         this.contact = contact;
         return this;
     }

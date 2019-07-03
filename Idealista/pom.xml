@@ -165,7 +165,17 @@
                     <includeConstructors>true</includeConstructors>
                     <generateBuilders>true</generateBuilders>
                     <constructorsRequiredPropertiesOnly>true</constructorsRequiredPropertiesOnly>
+
+                    <!-- Fix naming problems in generated setter, getter and with methods. -->
+                    <customRuleFactory>org.openestate.io.build.CustomJsonRules</customRuleFactory>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>${project.groupId}</groupId>
+                        <artifactId>OpenEstate-IO-Build</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
         </plugins>

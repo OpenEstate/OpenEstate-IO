@@ -152,7 +152,7 @@ public class Typology implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 3503911444601877564L;
+    private final static long serialVersionUID = 3103885890854787924L;
 
     /**
      * No args constructor for use in serialization
@@ -177,7 +177,7 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyAddress")
-    public Address getPropertyAddress() {
+    public Address getAddress() {
         return address;
     }
 
@@ -188,26 +188,36 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyAddress")
-    public void setPropertyAddress(Address address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
-    public Typology withPropertyAddress(Address address) {
+    public Typology withAddress(Address address) {
         this.address = address;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("propertyCode")
-    public String getPropertyCode() {
+    public String getCode() {
         return code;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("propertyCode")
-    public void setPropertyCode(String code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public Typology withPropertyCode(String code) {
+    public Typology withCode(String code) {
         this.code = code;
         return this;
     }
@@ -219,7 +229,7 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyContact")
-    public Contact getPropertyContact() {
+    public Contact getContact() {
         return contact;
     }
 
@@ -230,11 +240,11 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyContact")
-    public void setPropertyContact(Contact contact) {
+    public void setContact(Contact contact) {
         this.contact = contact;
     }
 
-    public Typology withPropertyContact(Contact contact) {
+    public Typology withContact(Contact contact) {
         this.contact = contact;
         return this;
     }
@@ -333,7 +343,7 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyOperation")
-    public Operation getPropertyOperation() {
+    public Operation getOperation() {
         return operation;
     }
 
@@ -344,41 +354,41 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyOperation")
-    public void setPropertyOperation(Operation operation) {
+    public void setOperation(Operation operation) {
         this.operation = operation;
     }
 
-    public Typology withPropertyOperation(Operation operation) {
+    public Typology withOperation(Operation operation) {
         this.operation = operation;
         return this;
     }
 
     @JsonProperty("propertyReference")
-    public String getPropertyReference() {
+    public String getReference() {
         return reference;
     }
 
     @JsonProperty("propertyReference")
-    public void setPropertyReference(String reference) {
+    public void setReference(String reference) {
         this.reference = reference;
     }
 
-    public Typology withPropertyReference(String reference) {
+    public Typology withReference(String reference) {
         this.reference = reference;
         return this;
     }
 
     @JsonProperty("propertyUrl")
-    public URI getPropertyUrl() {
+    public URI getUrl() {
         return url;
     }
 
     @JsonProperty("propertyUrl")
-    public void setPropertyUrl(URI url) {
+    public void setUrl(URI url) {
         this.url = url;
     }
 
-    public Typology withPropertyUrl(URI url) {
+    public Typology withUrl(URI url) {
         this.url = url;
         return this;
     }
@@ -388,7 +398,7 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyVisibility")
-    public PropertyVisibilityType getPropertyVisibility() {
+    public PropertyVisibilityType getVisibility() {
         return visibility;
     }
 
@@ -397,11 +407,11 @@ public class Typology implements Serializable
      * 
      */
     @JsonProperty("propertyVisibility")
-    public void setPropertyVisibility(PropertyVisibilityType visibility) {
+    public void setVisibility(PropertyVisibilityType visibility) {
         this.visibility = visibility;
     }
 
-    public Typology withPropertyVisibility(PropertyVisibilityType visibility) {
+    public Typology withVisibility(PropertyVisibilityType visibility) {
         this.visibility = visibility;
         return this;
     }

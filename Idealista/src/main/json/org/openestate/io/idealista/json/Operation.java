@@ -112,7 +112,7 @@ public class Operation implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -7973679652284714858L;
+    private final static long serialVersionUID = -7305585631351005110L;
 
     /**
      * No args constructor for use in serialization
@@ -133,106 +133,126 @@ public class Operation implements Serializable
     }
 
     @JsonProperty("operationDepositMonths")
-    public BigDecimal getOperationDepositMonths() {
+    public BigDecimal getDepositMonths() {
         return depositMonths;
     }
 
     @JsonProperty("operationDepositMonths")
-    public void setOperationDepositMonths(BigDecimal depositMonths) {
+    public void setDepositMonths(BigDecimal depositMonths) {
         this.depositMonths = depositMonths;
     }
 
-    public Operation withOperationDepositMonths(BigDecimal depositMonths) {
+    public Operation withDepositMonths(BigDecimal depositMonths) {
         this.depositMonths = depositMonths;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("operationPrice")
-    public BigInteger getOperationPrice() {
+    public BigInteger getPrice() {
         return price;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("operationPrice")
-    public void setOperationPrice(BigInteger price) {
+    public void setPrice(BigInteger price) {
         this.price = price;
     }
 
-    public Operation withOperationPrice(BigInteger price) {
+    public Operation withPrice(BigInteger price) {
         this.price = price;
         return this;
     }
 
     @JsonProperty("operationPriceCommunity")
-    public BigInteger getOperationPriceCommunity() {
+    public BigInteger getPriceCommunity() {
         return priceCommunity;
     }
 
     @JsonProperty("operationPriceCommunity")
-    public void setOperationPriceCommunity(BigInteger priceCommunity) {
+    public void setPriceCommunity(BigInteger priceCommunity) {
         this.priceCommunity = priceCommunity;
     }
 
-    public Operation withOperationPriceCommunity(BigInteger priceCommunity) {
+    public Operation withPriceCommunity(BigInteger priceCommunity) {
         this.priceCommunity = priceCommunity;
         return this;
     }
 
     @JsonProperty("operationPriceToOwn")
-    public BigInteger getOperationPriceToOwn() {
+    public BigInteger getPriceToOwn() {
         return priceToOwn;
     }
 
     @JsonProperty("operationPriceToOwn")
-    public void setOperationPriceToOwn(BigInteger priceToOwn) {
+    public void setPriceToOwn(BigInteger priceToOwn) {
         this.priceToOwn = priceToOwn;
     }
 
-    public Operation withOperationPriceToOwn(BigInteger priceToOwn) {
+    public Operation withPriceToOwn(BigInteger priceToOwn) {
         this.priceToOwn = priceToOwn;
         return this;
     }
 
     @JsonProperty("operationPriceTransfer")
-    public BigInteger getOperationPriceTransfer() {
+    public BigInteger getPriceTransfer() {
         return priceTransfer;
     }
 
     @JsonProperty("operationPriceTransfer")
-    public void setOperationPriceTransfer(BigInteger priceTransfer) {
+    public void setPriceTransfer(BigInteger priceTransfer) {
         this.priceTransfer = priceTransfer;
     }
 
-    public Operation withOperationPriceTransfer(BigInteger priceTransfer) {
+    public Operation withPriceTransfer(BigInteger priceTransfer) {
         this.priceTransfer = priceTransfer;
         return this;
     }
 
     @JsonProperty("operationPriceParking")
-    public BigInteger getOperationPriceParking() {
+    public BigInteger getPriceParking() {
         return priceParking;
     }
 
     @JsonProperty("operationPriceParking")
-    public void setOperationPriceParking(BigInteger priceParking) {
+    public void setPriceParking(BigInteger priceParking) {
         this.priceParking = priceParking;
     }
 
-    public Operation withOperationPriceParking(BigInteger priceParking) {
+    public Operation withPriceParking(BigInteger priceParking) {
         this.priceParking = priceParking;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("operationType")
-    public OperationType getOperationType() {
+    public OperationType getType() {
         return type;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("operationType")
-    public void setOperationType(OperationType type) {
+    public void setType(OperationType type) {
         this.type = type;
     }
 
-    public Operation withOperationType(OperationType type) {
+    public Operation withType(OperationType type) {
         this.type = type;
         return this;
     }

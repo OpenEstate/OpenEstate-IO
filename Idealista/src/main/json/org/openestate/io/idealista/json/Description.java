@@ -55,7 +55,7 @@ public class Description implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -3776003431808735225L;
+    private final static long serialVersionUID = -3363236258831603757L;
 
     /**
      * No args constructor for use in serialization
@@ -101,16 +101,16 @@ public class Description implements Serializable
     }
 
     @JsonProperty("descriptionText")
-    public String getDescriptionText() {
+    public String getText() {
         return text;
     }
 
     @JsonProperty("descriptionText")
-    public void setDescriptionText(String text) {
+    public void setText(String text) {
         this.text = text;
     }
 
-    public Description withDescriptionText(String text) {
+    public Description withText(String text) {
         this.text = text;
         return this;
     }

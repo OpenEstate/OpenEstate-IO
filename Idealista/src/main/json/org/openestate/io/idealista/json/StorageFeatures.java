@@ -111,7 +111,7 @@ public class StorageFeatures
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 8142964024066145366L;
+    private final static long serialVersionUID = -3860240796463692769L;
 
     /**
      * No args constructor for use in serialization
@@ -169,7 +169,7 @@ public class StorageFeatures
      * 
      */
     @JsonProperty("featuresAccess24h")
-    public Boolean getFeaturesAccess24h() {
+    public Boolean getAccess24h() {
         return access24h;
     }
 
@@ -180,41 +180,51 @@ public class StorageFeatures
      * 
      */
     @JsonProperty("featuresAccess24h")
-    public void setFeaturesAccess24h(Boolean access24h) {
+    public void setAccess24h(Boolean access24h) {
         this.access24h = access24h;
     }
 
-    public StorageFeatures withFeaturesAccess24h(Boolean access24h) {
+    public StorageFeatures withAccess24h(Boolean access24h) {
         this.access24h = access24h;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public BigInteger getFeaturesAreaConstructed() {
+    public BigInteger getAreaConstructed() {
         return areaConstructed;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public void setFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public void setAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
     }
 
-    public StorageFeatures withFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public StorageFeatures withAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
         return this;
     }
 
     @JsonProperty("featuresAreaHeight")
-    public BigDecimal getFeaturesAreaHeight() {
+    public BigDecimal getAreaHeight() {
         return areaHeight;
     }
 
     @JsonProperty("featuresAreaHeight")
-    public void setFeaturesAreaHeight(BigDecimal areaHeight) {
+    public void setAreaHeight(BigDecimal areaHeight) {
         this.areaHeight = areaHeight;
     }
 
-    public StorageFeatures withFeaturesAreaHeight(BigDecimal areaHeight) {
+    public StorageFeatures withAreaHeight(BigDecimal areaHeight) {
         this.areaHeight = areaHeight;
         return this;
     }
@@ -226,7 +236,7 @@ public class StorageFeatures
      * 
      */
     @JsonProperty("featuresLoadingDock")
-    public Boolean getFeaturesLoadingDock() {
+    public Boolean getLoadingDock() {
         return loadingDock;
     }
 
@@ -237,11 +247,11 @@ public class StorageFeatures
      * 
      */
     @JsonProperty("featuresLoadingDock")
-    public void setFeaturesLoadingDock(Boolean loadingDock) {
+    public void setLoadingDock(Boolean loadingDock) {
         this.loadingDock = loadingDock;
     }
 
-    public StorageFeatures withFeaturesLoadingDock(Boolean loadingDock) {
+    public StorageFeatures withLoadingDock(Boolean loadingDock) {
         this.loadingDock = loadingDock;
         return this;
     }
@@ -253,7 +263,7 @@ public class StorageFeatures
      * 
      */
     @JsonProperty("featuresSecurity24h")
-    public Boolean getFeaturesSecurity24h() {
+    public Boolean getSecurity24h() {
         return security24h;
     }
 
@@ -264,11 +274,11 @@ public class StorageFeatures
      * 
      */
     @JsonProperty("featuresSecurity24h")
-    public void setFeaturesSecurity24h(Boolean security24h) {
+    public void setSecurity24h(Boolean security24h) {
         this.security24h = security24h;
     }
 
-    public StorageFeatures withFeaturesSecurity24h(Boolean security24h) {
+    public StorageFeatures withSecurity24h(Boolean security24h) {
         this.security24h = security24h;
         return this;
     }

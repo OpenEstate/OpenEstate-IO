@@ -367,7 +367,7 @@ public class Promo implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 6230046902058755137L;
+    private final static long serialVersionUID = 6863419734352714667L;
 
     /**
      * No args constructor for use in serialization
@@ -417,16 +417,16 @@ public class Promo implements Serializable
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public BigDecimal getFeaturesEnergyCertificatePerformance() {
+    public BigDecimal getEnergyCertificatePerformance() {
         return energyCertificatePerformance;
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public void setFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public void setEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
     }
 
-    public Promo withFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public Promo withEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
         return this;
     }
@@ -438,7 +438,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public EnergyCertificateLawType getFeaturesEnergyCertificateLaw() {
+    public EnergyCertificateLawType getEnergyCertificateLaw() {
         return energyCertificateLaw;
     }
 
@@ -449,11 +449,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public void setFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public void setEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
     }
 
-    public Promo withFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public Promo withEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
         return this;
     }
@@ -465,7 +465,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public EnergyCertificateRatingType getFeaturesEnergyCertificateRating() {
+    public EnergyCertificateRatingType getEnergyCertificateRating() {
         return energyCertificateRating;
     }
 
@@ -476,11 +476,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public void setFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public void setEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
     }
 
-    public Promo withFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public Promo withEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
         return this;
     }
@@ -492,7 +492,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public EnergyCertificateType getFeaturesEnergyCertificateType() {
+    public EnergyCertificateType getEnergyCertificateType() {
         return energyCertificateType;
     }
 
@@ -503,11 +503,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public void setFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public void setEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
     }
 
-    public Promo withFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public Promo withEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
         return this;
     }
@@ -519,7 +519,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresLiftAvailable")
-    public Boolean getFeaturesLiftAvailable() {
+    public Boolean getLiftAvailable() {
         return liftAvailable;
     }
 
@@ -530,11 +530,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresLiftAvailable")
-    public void setFeaturesLiftAvailable(Boolean liftAvailable) {
+    public void setLiftAvailable(Boolean liftAvailable) {
         this.liftAvailable = liftAvailable;
     }
 
-    public Promo withFeaturesLiftAvailable(Boolean liftAvailable) {
+    public Promo withLiftAvailable(Boolean liftAvailable) {
         this.liftAvailable = liftAvailable;
         return this;
     }
@@ -546,7 +546,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresDoorman")
-    public Boolean getFeaturesDoorman() {
+    public Boolean getDoorman() {
         return doorman;
     }
 
@@ -557,11 +557,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresDoorman")
-    public void setFeaturesDoorman(Boolean doorman) {
+    public void setDoorman(Boolean doorman) {
         this.doorman = doorman;
     }
 
-    public Promo withFeaturesDoorman(Boolean doorman) {
+    public Promo withDoorman(Boolean doorman) {
         this.doorman = doorman;
         return this;
     }
@@ -573,7 +573,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresConservation")
-    public ConservationType getFeaturesConservation() {
+    public ConservationType getConservation() {
         return conservation;
     }
 
@@ -584,11 +584,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresConservation")
-    public void setFeaturesConservation(ConservationType conservation) {
+    public void setConservation(ConservationType conservation) {
         this.conservation = conservation;
     }
 
-    public Promo withFeaturesConservation(ConservationType conservation) {
+    public Promo withConservation(ConservationType conservation) {
         this.conservation = conservation;
         return this;
     }
@@ -600,7 +600,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresPool")
-    public Boolean getFeaturesPool() {
+    public Boolean getPool() {
         return pool;
     }
 
@@ -611,11 +611,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresPool")
-    public void setFeaturesPool(Boolean pool) {
+    public void setPool(Boolean pool) {
         this.pool = pool;
     }
 
-    public Promo withFeaturesPool(Boolean pool) {
+    public Promo withPool(Boolean pool) {
         this.pool = pool;
         return this;
     }
@@ -627,7 +627,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresGarden")
-    public Boolean getFeaturesGarden() {
+    public Boolean getGarden() {
         return garden;
     }
 
@@ -638,11 +638,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresGarden")
-    public void setFeaturesGarden(Boolean garden) {
+    public void setGarden(Boolean garden) {
         this.garden = garden;
     }
 
-    public Promo withFeaturesGarden(Boolean garden) {
+    public Promo withGarden(Boolean garden) {
         this.garden = garden;
         return this;
     }
@@ -654,7 +654,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresSecurityDoor")
-    public Boolean getFeaturesSecurityDoor() {
+    public Boolean getSecurityDoor() {
         return securityDoor;
     }
 
@@ -665,11 +665,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresSecurityDoor")
-    public void setFeaturesSecurityDoor(Boolean securityDoor) {
+    public void setSecurityDoor(Boolean securityDoor) {
         this.securityDoor = securityDoor;
     }
 
-    public Promo withFeaturesSecurityDoor(Boolean securityDoor) {
+    public Promo withSecurityDoor(Boolean securityDoor) {
         this.securityDoor = securityDoor;
         return this;
     }
@@ -681,7 +681,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresSecurityAlarm")
-    public Boolean getFeaturesSecurityAlarm() {
+    public Boolean getSecurityAlarm() {
         return securityAlarm;
     }
 
@@ -692,49 +692,61 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresSecurityAlarm")
-    public void setFeaturesSecurityAlarm(Boolean securityAlarm) {
+    public void setSecurityAlarm(Boolean securityAlarm) {
         this.securityAlarm = securityAlarm;
     }
 
-    public Promo withFeaturesSecurityAlarm(Boolean securityAlarm) {
+    public Promo withSecurityAlarm(Boolean securityAlarm) {
         this.securityAlarm = securityAlarm;
         return this;
     }
 
     /**
      * Typing for new developments
+     * (Required)
      * 
      */
     @JsonProperty("featuresNewDevelopmentType")
-    public NewDevelopmentType getFeaturesNewDevelopmentType() {
+    public NewDevelopmentType getNewDevelopmentType() {
         return newDevelopmentType;
     }
 
     /**
      * Typing for new developments
+     * (Required)
      * 
      */
     @JsonProperty("featuresNewDevelopmentType")
-    public void setFeaturesNewDevelopmentType(NewDevelopmentType newDevelopmentType) {
+    public void setNewDevelopmentType(NewDevelopmentType newDevelopmentType) {
         this.newDevelopmentType = newDevelopmentType;
     }
 
-    public Promo withFeaturesNewDevelopmentType(NewDevelopmentType newDevelopmentType) {
+    public Promo withNewDevelopmentType(NewDevelopmentType newDevelopmentType) {
         this.newDevelopmentType = newDevelopmentType;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresNewDevelopmentName")
-    public String getFeaturesNewDevelopmentName() {
+    public String getNewDevelopmentName() {
         return newDevelopmentName;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresNewDevelopmentName")
-    public void setFeaturesNewDevelopmentName(String newDevelopmentName) {
+    public void setNewDevelopmentName(String newDevelopmentName) {
         this.newDevelopmentName = newDevelopmentName;
     }
 
-    public Promo withFeaturesNewDevelopmentName(String newDevelopmentName) {
+    public Promo withNewDevelopmentName(String newDevelopmentName) {
         this.newDevelopmentName = newDevelopmentName;
         return this;
     }
@@ -746,7 +758,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresFinished")
-    public Boolean getFeaturesFinished() {
+    public Boolean getFinished() {
         return finished;
     }
 
@@ -757,56 +769,56 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresFinished")
-    public void setFeaturesFinished(Boolean finished) {
+    public void setFinished(Boolean finished) {
         this.finished = finished;
     }
 
-    public Promo withFeaturesFinished(Boolean finished) {
+    public Promo withFinished(Boolean finished) {
         this.finished = finished;
         return this;
     }
 
     @JsonProperty("featuresStartDate")
-    public Date getFeaturesStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
     @JsonProperty("featuresStartDate")
-    public void setFeaturesStartDate(Date startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public Promo withFeaturesStartDate(Date startDate) {
+    public Promo withStartDate(Date startDate) {
         this.startDate = startDate;
         return this;
     }
 
     @JsonProperty("featuresKeyDeliveryYear")
-    public BigInteger getFeaturesKeyDeliveryYear() {
+    public BigInteger getKeyDeliveryYear() {
         return keyDeliveryYear;
     }
 
     @JsonProperty("featuresKeyDeliveryYear")
-    public void setFeaturesKeyDeliveryYear(BigInteger keyDeliveryYear) {
+    public void setKeyDeliveryYear(BigInteger keyDeliveryYear) {
         this.keyDeliveryYear = keyDeliveryYear;
     }
 
-    public Promo withFeaturesKeyDeliveryYear(BigInteger keyDeliveryYear) {
+    public Promo withKeyDeliveryYear(BigInteger keyDeliveryYear) {
         this.keyDeliveryYear = keyDeliveryYear;
         return this;
     }
 
     @JsonProperty("featuresKeyDeliveryMonth")
-    public BigDecimal getFeaturesKeyDeliveryMonth() {
+    public BigDecimal getKeyDeliveryMonth() {
         return keyDeliveryMonth;
     }
 
     @JsonProperty("featuresKeyDeliveryMonth")
-    public void setFeaturesKeyDeliveryMonth(BigDecimal keyDeliveryMonth) {
+    public void setKeyDeliveryMonth(BigDecimal keyDeliveryMonth) {
         this.keyDeliveryMonth = keyDeliveryMonth;
     }
 
-    public Promo withFeaturesKeyDeliveryMonth(BigDecimal keyDeliveryMonth) {
+    public Promo withKeyDeliveryMonth(BigDecimal keyDeliveryMonth) {
         this.keyDeliveryMonth = keyDeliveryMonth;
         return this;
     }
@@ -816,7 +828,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresBuiltPhase")
-    public BuiltPhaseType getFeaturesBuiltPhase() {
+    public BuiltPhaseType getBuiltPhase() {
         return builtPhase;
     }
 
@@ -825,11 +837,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresBuiltPhase")
-    public void setFeaturesBuiltPhase(BuiltPhaseType builtPhase) {
+    public void setBuiltPhase(BuiltPhaseType builtPhase) {
         this.builtPhase = builtPhase;
     }
 
-    public Promo withFeaturesBuiltPhase(BuiltPhaseType builtPhase) {
+    public Promo withBuiltPhase(BuiltPhaseType builtPhase) {
         this.builtPhase = builtPhase;
         return this;
     }
@@ -839,7 +851,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresAvailabilityHour")
-    public AvailabilityHourType getFeaturesAvailabilityHour() {
+    public AvailabilityHourType getAvailabilityHour() {
         return availabilityHour;
     }
 
@@ -848,11 +860,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresAvailabilityHour")
-    public void setFeaturesAvailabilityHour(AvailabilityHourType availabilityHour) {
+    public void setAvailabilityHour(AvailabilityHourType availabilityHour) {
         this.availabilityHour = availabilityHour;
     }
 
-    public Promo withFeaturesAvailabilityHour(AvailabilityHourType availabilityHour) {
+    public Promo withAvailabilityHour(AvailabilityHourType availabilityHour) {
         this.availabilityHour = availabilityHour;
         return this;
     }
@@ -893,7 +905,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresOnSite")
-    public Boolean getFeaturesOnSite() {
+    public Boolean getOnSite() {
         return onSite;
     }
 
@@ -904,11 +916,11 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresOnSite")
-    public void setFeaturesOnSite(Boolean onSite) {
+    public void setOnSite(Boolean onSite) {
         this.onSite = onSite;
     }
 
-    public Promo withFeaturesOnSite(Boolean onSite) {
+    public Promo withOnSite(Boolean onSite) {
         this.onSite = onSite;
         return this;
     }
@@ -920,7 +932,7 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresMortgageStateSubsidized")
-    public Boolean getFeaturesMortgageStateSubsidized() {
+    public Boolean getMortgageStateSubsidized() {
         return mortgageStateSubsidized;
     }
 
@@ -931,101 +943,101 @@ public class Promo implements Serializable
      * 
      */
     @JsonProperty("featuresMortgageStateSubsidized")
-    public void setFeaturesMortgageStateSubsidized(Boolean mortgageStateSubsidized) {
+    public void setMortgageStateSubsidized(Boolean mortgageStateSubsidized) {
         this.mortgageStateSubsidized = mortgageStateSubsidized;
     }
 
-    public Promo withFeaturesMortgageStateSubsidized(Boolean mortgageStateSubsidized) {
+    public Promo withMortgageStateSubsidized(Boolean mortgageStateSubsidized) {
         this.mortgageStateSubsidized = mortgageStateSubsidized;
         return this;
     }
 
     @JsonProperty("featuresMortgageBankName")
-    public String getFeaturesMortgageBankName() {
+    public String getMortgageBankName() {
         return mortgageBankName;
     }
 
     @JsonProperty("featuresMortgageBankName")
-    public void setFeaturesMortgageBankName(String mortgageBankName) {
+    public void setMortgageBankName(String mortgageBankName) {
         this.mortgageBankName = mortgageBankName;
     }
 
-    public Promo withFeaturesMortgageBankName(String mortgageBankName) {
+    public Promo withMortgageBankName(String mortgageBankName) {
         this.mortgageBankName = mortgageBankName;
         return this;
     }
 
     @JsonProperty("featuresMortgagePercentage")
-    public BigDecimal getFeaturesMortgagePercentage() {
+    public BigDecimal getMortgagePercentage() {
         return mortgagePercentage;
     }
 
     @JsonProperty("featuresMortgagePercentage")
-    public void setFeaturesMortgagePercentage(BigDecimal mortgagePercentage) {
+    public void setMortgagePercentage(BigDecimal mortgagePercentage) {
         this.mortgagePercentage = mortgagePercentage;
     }
 
-    public Promo withFeaturesMortgagePercentage(BigDecimal mortgagePercentage) {
+    public Promo withMortgagePercentage(BigDecimal mortgagePercentage) {
         this.mortgagePercentage = mortgagePercentage;
         return this;
     }
 
     @JsonProperty("featuresMortgageEntryPercentage")
-    public BigDecimal getFeaturesMortgageEntryPercentage() {
+    public BigDecimal getMortgageEntryPercentage() {
         return mortgageEntryPercentage;
     }
 
     @JsonProperty("featuresMortgageEntryPercentage")
-    public void setFeaturesMortgageEntryPercentage(BigDecimal mortgageEntryPercentage) {
+    public void setMortgageEntryPercentage(BigDecimal mortgageEntryPercentage) {
         this.mortgageEntryPercentage = mortgageEntryPercentage;
     }
 
-    public Promo withFeaturesMortgageEntryPercentage(BigDecimal mortgageEntryPercentage) {
+    public Promo withMortgageEntryPercentage(BigDecimal mortgageEntryPercentage) {
         this.mortgageEntryPercentage = mortgageEntryPercentage;
         return this;
     }
 
     @JsonProperty("featuresMortgageLettersPercentage")
-    public BigDecimal getFeaturesMortgageLettersPercentage() {
+    public BigDecimal getMortgageLettersPercentage() {
         return mortgageLettersPercentage;
     }
 
     @JsonProperty("featuresMortgageLettersPercentage")
-    public void setFeaturesMortgageLettersPercentage(BigDecimal mortgageLettersPercentage) {
+    public void setMortgageLettersPercentage(BigDecimal mortgageLettersPercentage) {
         this.mortgageLettersPercentage = mortgageLettersPercentage;
     }
 
-    public Promo withFeaturesMortgageLettersPercentage(BigDecimal mortgageLettersPercentage) {
+    public Promo withMortgageLettersPercentage(BigDecimal mortgageLettersPercentage) {
         this.mortgageLettersPercentage = mortgageLettersPercentage;
         return this;
     }
 
     @JsonProperty("featuresMortgageInterestRate")
-    public BigDecimal getFeaturesMortgageInterestRate() {
+    public BigDecimal getMortgageInterestRate() {
         return mortgageInterestRate;
     }
 
     @JsonProperty("featuresMortgageInterestRate")
-    public void setFeaturesMortgageInterestRate(BigDecimal mortgageInterestRate) {
+    public void setMortgageInterestRate(BigDecimal mortgageInterestRate) {
         this.mortgageInterestRate = mortgageInterestRate;
     }
 
-    public Promo withFeaturesMortgageInterestRate(BigDecimal mortgageInterestRate) {
+    public Promo withMortgageInterestRate(BigDecimal mortgageInterestRate) {
         this.mortgageInterestRate = mortgageInterestRate;
         return this;
     }
 
     @JsonProperty("featuresMortgageYears")
-    public BigDecimal getFeaturesMortgageYears() {
+    public BigDecimal getMortgageYears() {
         return mortgageYears;
     }
 
     @JsonProperty("featuresMortgageYears")
-    public void setFeaturesMortgageYears(BigDecimal mortgageYears) {
+    public void setMortgageYears(BigDecimal mortgageYears) {
         this.mortgageYears = mortgageYears;
     }
 
-    public Promo withFeaturesMortgageYears(BigDecimal mortgageYears) {
+    public Promo withMortgageYears(BigDecimal mortgageYears) {
         this.mortgageYears = mortgageYears;
         return this;
     }

@@ -49,7 +49,7 @@ public class Customer implements Serializable
     @Nullable
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd HH:mm:ss", timezone = "UTC")
     @JsonProperty("customerSendDate")
-    private Date customerSendDate;
+    private Date sendDate;
     /**
      * Customer country
      * <p>
@@ -128,20 +128,20 @@ public class Customer implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -8019238347120858266L;
+    private final static long serialVersionUID = 2849975534184547957L;
 
     @JsonProperty("customerSendDate")
-    public Date getCustomerSendDate() {
-        return customerSendDate;
+    public Date getSendDate() {
+        return sendDate;
     }
 
     @JsonProperty("customerSendDate")
-    public void setCustomerSendDate(Date customerSendDate) {
-        this.customerSendDate = customerSendDate;
+    public void setSendDate(Date sendDate) {
+        this.sendDate = sendDate;
     }
 
-    public Customer withCustomerSendDate(Date customerSendDate) {
-        this.customerSendDate = customerSendDate;
+    public Customer withSendDate(Date sendDate) {
+        this.sendDate = sendDate;
         return this;
     }
 
@@ -175,46 +175,46 @@ public class Customer implements Serializable
     }
 
     @JsonProperty("customerCode")
-    public String getCustomerCode() {
+    public String getCode() {
         return code;
     }
 
     @JsonProperty("customerCode")
-    public void setCustomerCode(String code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public Customer withCustomerCode(String code) {
+    public Customer withCode(String code) {
         this.code = code;
         return this;
     }
 
     @JsonProperty("customerName")
-    public String getCustomerName() {
+    public String getName() {
         return name;
     }
 
     @JsonProperty("customerName")
-    public void setCustomerName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Customer withCustomerName(String name) {
+    public Customer withName(String name) {
         this.name = name;
         return this;
     }
 
     @JsonProperty("customerReference")
-    public String getCustomerReference() {
+    public String getReference() {
         return reference;
     }
 
     @JsonProperty("customerReference")
-    public void setCustomerReference(String reference) {
+    public void setReference(String reference) {
         this.reference = reference;
     }
 
-    public Customer withCustomerReference(String reference) {
+    public Customer withReference(String reference) {
         this.reference = reference;
         return this;
     }
@@ -226,7 +226,7 @@ public class Customer implements Serializable
      * 
      */
     @JsonProperty("customerContact")
-    public Contact getCustomerContact() {
+    public Contact getContact() {
         return contact;
     }
 
@@ -237,11 +237,11 @@ public class Customer implements Serializable
      * 
      */
     @JsonProperty("customerContact")
-    public void setCustomerContact(Contact contact) {
+    public void setContact(Contact contact) {
         this.contact = contact;
     }
 
-    public Customer withCustomerContact(Contact contact) {
+    public Customer withContact(Contact contact) {
         this.contact = contact;
         return this;
     }
@@ -323,9 +323,9 @@ public class Customer implements Serializable
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Customer.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("customerSendDate");
+        sb.append("sendDate");
         sb.append('=');
-        sb.append(((this.customerSendDate == null)?"<null>":this.customerSendDate));
+        sb.append(((this.sendDate == null)?"<null>":this.sendDate));
         sb.append(',');
         sb.append("country");
         sb.append('=');
@@ -373,10 +373,10 @@ public class Customer implements Serializable
         result = ((result* 31)+((this.reference == null)? 0 :this.reference.hashCode()));
         result = ((result* 31)+((this.country == null)? 0 :this.country.hashCode()));
         result = ((result* 31)+((this.code == null)? 0 :this.code.hashCode()));
+        result = ((result* 31)+((this.sendDate == null)? 0 :this.sendDate.hashCode()));
         result = ((result* 31)+((this.contact == null)? 0 :this.contact.hashCode()));
         result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.customerSendDate == null)? 0 :this.customerSendDate.hashCode()));
         result = ((result* 31)+((this.newDevelopments == null)? 0 :this.newDevelopments.hashCode()));
         result = ((result* 31)+((this.properties == null)? 0 :this.properties.hashCode()));
         return result;
@@ -391,7 +391,7 @@ public class Customer implements Serializable
             return false;
         }
         Customer rhs = ((Customer) other);
-        return ((((((((((this.reference == rhs.reference)||((this.reference!= null)&&this.reference.equals(rhs.reference)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.code == rhs.code)||((this.code!= null)&&this.code.equals(rhs.code))))&&((this.contact == rhs.contact)||((this.contact!= null)&&this.contact.equals(rhs.contact))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.customerSendDate == rhs.customerSendDate)||((this.customerSendDate!= null)&&this.customerSendDate.equals(rhs.customerSendDate))))&&((this.newDevelopments == rhs.newDevelopments)||((this.newDevelopments!= null)&&this.newDevelopments.equals(rhs.newDevelopments))))&&((this.properties == rhs.properties)||((this.properties!= null)&&this.properties.equals(rhs.properties))));
+        return ((((((((((this.reference == rhs.reference)||((this.reference!= null)&&this.reference.equals(rhs.reference)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.code == rhs.code)||((this.code!= null)&&this.code.equals(rhs.code))))&&((this.sendDate == rhs.sendDate)||((this.sendDate!= null)&&this.sendDate.equals(rhs.sendDate))))&&((this.contact == rhs.contact)||((this.contact!= null)&&this.contact.equals(rhs.contact))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.newDevelopments == rhs.newDevelopments)||((this.newDevelopments!= null)&&this.newDevelopments.equals(rhs.newDevelopments))))&&((this.properties == rhs.properties)||((this.properties!= null)&&this.properties.equals(rhs.properties))));
     }
 
     public enum Country {

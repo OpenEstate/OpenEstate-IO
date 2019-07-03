@@ -544,7 +544,7 @@ public class OfficeFeatures
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 894500716077540319L;
+    private final static long serialVersionUID = -5844771007082297453L;
 
     /**
      * No args constructor for use in serialization
@@ -602,7 +602,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresAccessControl")
-    public Boolean getFeaturesAccessControl() {
+    public Boolean getAccessControl() {
         return accessControl;
     }
 
@@ -613,41 +613,51 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresAccessControl")
-    public void setFeaturesAccessControl(Boolean accessControl) {
+    public void setAccessControl(Boolean accessControl) {
         this.accessControl = accessControl;
     }
 
-    public OfficeFeatures withFeaturesAccessControl(Boolean accessControl) {
+    public OfficeFeatures withAccessControl(Boolean accessControl) {
         this.accessControl = accessControl;
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public BigInteger getFeaturesAreaConstructed() {
+    public BigInteger getAreaConstructed() {
         return areaConstructed;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public void setFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public void setAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
     }
 
-    public OfficeFeatures withFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public OfficeFeatures withAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
         return this;
     }
 
     @JsonProperty("featuresAreaUsable")
-    public BigInteger getFeaturesAreaUsable() {
+    public BigInteger getAreaUsable() {
         return areaUsable;
     }
 
     @JsonProperty("featuresAreaUsable")
-    public void setFeaturesAreaUsable(BigInteger areaUsable) {
+    public void setAreaUsable(BigInteger areaUsable) {
         this.areaUsable = areaUsable;
     }
 
-    public OfficeFeatures withFeaturesAreaUsable(BigInteger areaUsable) {
+    public OfficeFeatures withAreaUsable(BigInteger areaUsable) {
         this.areaUsable = areaUsable;
         return this;
     }
@@ -659,7 +669,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBathroomInside")
-    public Boolean getFeaturesBathroomInside() {
+    public Boolean getBathroomInside() {
         return bathroomInside;
     }
 
@@ -670,26 +680,26 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBathroomInside")
-    public void setFeaturesBathroomInside(Boolean bathroomInside) {
+    public void setBathroomInside(Boolean bathroomInside) {
         this.bathroomInside = bathroomInside;
     }
 
-    public OfficeFeatures withFeaturesBathroomInside(Boolean bathroomInside) {
+    public OfficeFeatures withBathroomInside(Boolean bathroomInside) {
         this.bathroomInside = bathroomInside;
         return this;
     }
 
     @JsonProperty("featuresBathroomNumber")
-    public BigInteger getFeaturesBathroomNumber() {
+    public BigInteger getBathroomNumber() {
         return bathroomNumber;
     }
 
     @JsonProperty("featuresBathroomNumber")
-    public void setFeaturesBathroomNumber(BigInteger bathroomNumber) {
+    public void setBathroomNumber(BigInteger bathroomNumber) {
         this.bathroomNumber = bathroomNumber;
     }
 
-    public OfficeFeatures withFeaturesBathroomNumber(BigInteger bathroomNumber) {
+    public OfficeFeatures withBathroomNumber(BigInteger bathroomNumber) {
         this.bathroomNumber = bathroomNumber;
         return this;
     }
@@ -701,7 +711,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBathroomType")
-    public BathroomType getFeaturesBathroomType() {
+    public BathroomType getBathroomType() {
         return bathroomType;
     }
 
@@ -712,11 +722,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBathroomType")
-    public void setFeaturesBathroomType(BathroomType bathroomType) {
+    public void setBathroomType(BathroomType bathroomType) {
         this.bathroomType = bathroomType;
     }
 
-    public OfficeFeatures withFeaturesBathroomType(BathroomType bathroomType) {
+    public OfficeFeatures withBathroomType(BathroomType bathroomType) {
         this.bathroomType = bathroomType;
         return this;
     }
@@ -728,7 +738,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBuiltYear")
-    public BigInteger getFeaturesBuiltYear() {
+    public BigInteger getBuiltYear() {
         return builtYear;
     }
 
@@ -739,11 +749,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBuiltYear")
-    public void setFeaturesBuiltYear(BigInteger builtYear) {
+    public void setBuiltYear(BigInteger builtYear) {
         this.builtYear = builtYear;
     }
 
-    public OfficeFeatures withFeaturesBuiltYear(BigInteger builtYear) {
+    public OfficeFeatures withBuiltYear(BigInteger builtYear) {
         this.builtYear = builtYear;
         return this;
     }
@@ -755,7 +765,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBuildingAdapted")
-    public Boolean getFeaturesBuildingAdapted() {
+    public Boolean getBuildingAdapted() {
         return buildingAdapted;
     }
 
@@ -766,11 +776,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresBuildingAdapted")
-    public void setFeaturesBuildingAdapted(Boolean buildingAdapted) {
+    public void setBuildingAdapted(Boolean buildingAdapted) {
         this.buildingAdapted = buildingAdapted;
     }
 
-    public OfficeFeatures withFeaturesBuildingAdapted(Boolean buildingAdapted) {
+    public OfficeFeatures withBuildingAdapted(Boolean buildingAdapted) {
         this.buildingAdapted = buildingAdapted;
         return this;
     }
@@ -782,7 +792,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresConditionedAir")
-    public Boolean getFeaturesConditionedAir() {
+    public Boolean getConditionedAir() {
         return conditionedAir;
     }
 
@@ -793,11 +803,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresConditionedAir")
-    public void setFeaturesConditionedAir(Boolean conditionedAir) {
+    public void setConditionedAir(Boolean conditionedAir) {
         this.conditionedAir = conditionedAir;
     }
 
-    public OfficeFeatures withFeaturesConditionedAir(Boolean conditionedAir) {
+    public OfficeFeatures withConditionedAir(Boolean conditionedAir) {
         this.conditionedAir = conditionedAir;
         return this;
     }
@@ -809,7 +819,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresConditionedAirType")
-    public ConditionedAirType getFeaturesConditionedAirType() {
+    public ConditionedAirType getConditionedAirType() {
         return conditionedAirType;
     }
 
@@ -820,11 +830,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresConditionedAirType")
-    public void setFeaturesConditionedAirType(ConditionedAirType conditionedAirType) {
+    public void setConditionedAirType(ConditionedAirType conditionedAirType) {
         this.conditionedAirType = conditionedAirType;
     }
 
-    public OfficeFeatures withFeaturesConditionedAirType(ConditionedAirType conditionedAirType) {
+    public OfficeFeatures withConditionedAirType(ConditionedAirType conditionedAirType) {
         this.conditionedAirType = conditionedAirType;
         return this;
     }
@@ -836,7 +846,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresConservation")
-    public ConservationType getFeaturesConservation() {
+    public ConservationType getConservation() {
         return conservation;
     }
 
@@ -847,11 +857,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresConservation")
-    public void setFeaturesConservation(ConservationType conservation) {
+    public void setConservation(ConservationType conservation) {
         this.conservation = conservation;
     }
 
-    public OfficeFeatures withFeaturesConservation(ConservationType conservation) {
+    public OfficeFeatures withConservation(ConservationType conservation) {
         this.conservation = conservation;
         return this;
     }
@@ -863,7 +873,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresDoorman")
-    public Boolean getFeaturesDoorman() {
+    public Boolean getDoorman() {
         return doorman;
     }
 
@@ -874,11 +884,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresDoorman")
-    public void setFeaturesDoorman(Boolean doorman) {
+    public void setDoorman(Boolean doorman) {
         this.doorman = doorman;
     }
 
-    public OfficeFeatures withFeaturesDoorman(Boolean doorman) {
+    public OfficeFeatures withDoorman(Boolean doorman) {
         this.doorman = doorman;
         return this;
     }
@@ -890,7 +900,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEmergencyExit")
-    public Boolean getFeaturesEmergencyExit() {
+    public Boolean getEmergencyExit() {
         return emergencyExit;
     }
 
@@ -901,11 +911,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEmergencyExit")
-    public void setFeaturesEmergencyExit(Boolean emergencyExit) {
+    public void setEmergencyExit(Boolean emergencyExit) {
         this.emergencyExit = emergencyExit;
     }
 
-    public OfficeFeatures withFeaturesEmergencyExit(Boolean emergencyExit) {
+    public OfficeFeatures withEmergencyExit(Boolean emergencyExit) {
         this.emergencyExit = emergencyExit;
         return this;
     }
@@ -917,7 +927,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEmergencyLights")
-    public Boolean getFeaturesEmergencyLights() {
+    public Boolean getEmergencyLights() {
         return emergencyLights;
     }
 
@@ -928,11 +938,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEmergencyLights")
-    public void setFeaturesEmergencyLights(Boolean emergencyLights) {
+    public void setEmergencyLights(Boolean emergencyLights) {
         this.emergencyLights = emergencyLights;
     }
 
-    public OfficeFeatures withFeaturesEmergencyLights(Boolean emergencyLights) {
+    public OfficeFeatures withEmergencyLights(Boolean emergencyLights) {
         this.emergencyLights = emergencyLights;
         return this;
     }
@@ -944,7 +954,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public EnergyCertificateRatingType getFeaturesEnergyCertificateRating() {
+    public EnergyCertificateRatingType getEnergyCertificateRating() {
         return energyCertificateRating;
     }
 
@@ -955,26 +965,26 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public void setFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public void setEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
     }
 
-    public OfficeFeatures withFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public OfficeFeatures withEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
         return this;
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public BigDecimal getFeaturesEnergyCertificatePerformance() {
+    public BigDecimal getEnergyCertificatePerformance() {
         return energyCertificatePerformance;
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public void setFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public void setEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
     }
 
-    public OfficeFeatures withFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public OfficeFeatures withEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
         return this;
     }
@@ -986,7 +996,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public EnergyCertificateType getFeaturesEnergyCertificateType() {
+    public EnergyCertificateType getEnergyCertificateType() {
         return energyCertificateType;
     }
 
@@ -997,11 +1007,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public void setFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public void setEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
     }
 
-    public OfficeFeatures withFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public OfficeFeatures withEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
         return this;
     }
@@ -1013,7 +1023,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public EnergyCertificateLawType getFeaturesEnergyCertificateLaw() {
+    public EnergyCertificateLawType getEnergyCertificateLaw() {
         return energyCertificateLaw;
     }
 
@@ -1024,11 +1034,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public void setFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public void setEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
     }
 
-    public OfficeFeatures withFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public OfficeFeatures withEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
         return this;
     }
@@ -1040,7 +1050,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEquippedKitchen")
-    public Boolean getFeaturesEquippedKitchen() {
+    public Boolean getEquippedKitchen() {
         return equippedKitchen;
     }
 
@@ -1051,11 +1061,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresEquippedKitchen")
-    public void setFeaturesEquippedKitchen(Boolean equippedKitchen) {
+    public void setEquippedKitchen(Boolean equippedKitchen) {
         this.equippedKitchen = equippedKitchen;
     }
 
-    public OfficeFeatures withFeaturesEquippedKitchen(Boolean equippedKitchen) {
+    public OfficeFeatures withEquippedKitchen(Boolean equippedKitchen) {
         this.equippedKitchen = equippedKitchen;
         return this;
     }
@@ -1067,7 +1077,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresExtinguishers")
-    public Boolean getFeaturesExtinguishers() {
+    public Boolean getExtinguishers() {
         return extinguishers;
     }
 
@@ -1078,11 +1088,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresExtinguishers")
-    public void setFeaturesExtinguishers(Boolean extinguishers) {
+    public void setExtinguishers(Boolean extinguishers) {
         this.extinguishers = extinguishers;
     }
 
-    public OfficeFeatures withFeaturesExtinguishers(Boolean extinguishers) {
+    public OfficeFeatures withExtinguishers(Boolean extinguishers) {
         this.extinguishers = extinguishers;
         return this;
     }
@@ -1094,7 +1104,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresFireDetectors")
-    public Boolean getFeaturesFireDetectors() {
+    public Boolean getFireDetectors() {
         return fireDetectors;
     }
 
@@ -1105,11 +1115,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresFireDetectors")
-    public void setFeaturesFireDetectors(Boolean fireDetectors) {
+    public void setFireDetectors(Boolean fireDetectors) {
         this.fireDetectors = fireDetectors;
     }
 
-    public OfficeFeatures withFeaturesFireDetectors(Boolean fireDetectors) {
+    public OfficeFeatures withFireDetectors(Boolean fireDetectors) {
         this.fireDetectors = fireDetectors;
         return this;
     }
@@ -1121,7 +1131,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresFireDoors")
-    public Boolean getFeaturesFireDoors() {
+    public Boolean getFireDoors() {
         return fireDoors;
     }
 
@@ -1132,41 +1142,41 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresFireDoors")
-    public void setFeaturesFireDoors(Boolean fireDoors) {
+    public void setFireDoors(Boolean fireDoors) {
         this.fireDoors = fireDoors;
     }
 
-    public OfficeFeatures withFeaturesFireDoors(Boolean fireDoors) {
+    public OfficeFeatures withFireDoors(Boolean fireDoors) {
         this.fireDoors = fireDoors;
         return this;
     }
 
     @JsonProperty("featuresFloorsBuilding")
-    public BigInteger getFeaturesFloorsBuilding() {
+    public BigInteger getFloorsBuilding() {
         return floorsBuilding;
     }
 
     @JsonProperty("featuresFloorsBuilding")
-    public void setFeaturesFloorsBuilding(BigInteger floorsBuilding) {
+    public void setFloorsBuilding(BigInteger floorsBuilding) {
         this.floorsBuilding = floorsBuilding;
     }
 
-    public OfficeFeatures withFeaturesFloorsBuilding(BigInteger floorsBuilding) {
+    public OfficeFeatures withFloorsBuilding(BigInteger floorsBuilding) {
         this.floorsBuilding = floorsBuilding;
         return this;
     }
 
     @JsonProperty("featuresFloorsProperty")
-    public BigInteger getFeaturesFloorsProperty() {
+    public BigInteger getFloorsProperty() {
         return floorsProperty;
     }
 
     @JsonProperty("featuresFloorsProperty")
-    public void setFeaturesFloorsProperty(BigInteger floorsProperty) {
+    public void setFloorsProperty(BigInteger floorsProperty) {
         this.floorsProperty = floorsProperty;
     }
 
-    public OfficeFeatures withFeaturesFloorsProperty(BigInteger floorsProperty) {
+    public OfficeFeatures withFloorsProperty(BigInteger floorsProperty) {
         this.floorsProperty = floorsProperty;
         return this;
     }
@@ -1178,7 +1188,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresHeating")
-    public Boolean getFeaturesHeating() {
+    public Boolean getHeating() {
         return heating;
     }
 
@@ -1189,11 +1199,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresHeating")
-    public void setFeaturesHeating(Boolean heating) {
+    public void setHeating(Boolean heating) {
         this.heating = heating;
     }
 
-    public OfficeFeatures withFeaturesHeating(Boolean heating) {
+    public OfficeFeatures withHeating(Boolean heating) {
         this.heating = heating;
         return this;
     }
@@ -1205,7 +1215,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresHotWater")
-    public Boolean getFeaturesHotWater() {
+    public Boolean getHotWater() {
         return hotWater;
     }
 
@@ -1216,26 +1226,26 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresHotWater")
-    public void setFeaturesHotWater(Boolean hotWater) {
+    public void setHotWater(Boolean hotWater) {
         this.hotWater = hotWater;
     }
 
-    public OfficeFeatures withFeaturesHotWater(Boolean hotWater) {
+    public OfficeFeatures withHotWater(Boolean hotWater) {
         this.hotWater = hotWater;
         return this;
     }
 
     @JsonProperty("featuresLiftNumber")
-    public BigInteger getFeaturesLiftNumber() {
+    public BigInteger getLiftNumber() {
         return liftNumber;
     }
 
     @JsonProperty("featuresLiftNumber")
-    public void setFeaturesLiftNumber(BigInteger liftNumber) {
+    public void setLiftNumber(BigInteger liftNumber) {
         this.liftNumber = liftNumber;
     }
 
-    public OfficeFeatures withFeaturesLiftNumber(BigInteger liftNumber) {
+    public OfficeFeatures withLiftNumber(BigInteger liftNumber) {
         this.liftNumber = liftNumber;
         return this;
     }
@@ -1247,7 +1257,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOfficeBuilding")
-    public Boolean getFeaturesOfficeBuilding() {
+    public Boolean getOfficeBuilding() {
         return officeBuilding;
     }
 
@@ -1258,11 +1268,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOfficeBuilding")
-    public void setFeaturesOfficeBuilding(Boolean officeBuilding) {
+    public void setOfficeBuilding(Boolean officeBuilding) {
         this.officeBuilding = officeBuilding;
     }
 
-    public OfficeFeatures withFeaturesOfficeBuilding(Boolean officeBuilding) {
+    public OfficeFeatures withOfficeBuilding(Boolean officeBuilding) {
         this.officeBuilding = officeBuilding;
         return this;
     }
@@ -1274,7 +1284,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationEast")
-    public Boolean getFeaturesOrientationEast() {
+    public Boolean getOrientationEast() {
         return orientationEast;
     }
 
@@ -1285,11 +1295,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationEast")
-    public void setFeaturesOrientationEast(Boolean orientationEast) {
+    public void setOrientationEast(Boolean orientationEast) {
         this.orientationEast = orientationEast;
     }
 
-    public OfficeFeatures withFeaturesOrientationEast(Boolean orientationEast) {
+    public OfficeFeatures withOrientationEast(Boolean orientationEast) {
         this.orientationEast = orientationEast;
         return this;
     }
@@ -1301,7 +1311,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationNorth")
-    public Boolean getFeaturesOrientationNorth() {
+    public Boolean getOrientationNorth() {
         return orientationNorth;
     }
 
@@ -1312,11 +1322,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationNorth")
-    public void setFeaturesOrientationNorth(Boolean orientationNorth) {
+    public void setOrientationNorth(Boolean orientationNorth) {
         this.orientationNorth = orientationNorth;
     }
 
-    public OfficeFeatures withFeaturesOrientationNorth(Boolean orientationNorth) {
+    public OfficeFeatures withOrientationNorth(Boolean orientationNorth) {
         this.orientationNorth = orientationNorth;
         return this;
     }
@@ -1328,7 +1338,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationSouth")
-    public Boolean getFeaturesOrientationSouth() {
+    public Boolean getOrientationSouth() {
         return orientationSouth;
     }
 
@@ -1339,11 +1349,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationSouth")
-    public void setFeaturesOrientationSouth(Boolean orientationSouth) {
+    public void setOrientationSouth(Boolean orientationSouth) {
         this.orientationSouth = orientationSouth;
     }
 
-    public OfficeFeatures withFeaturesOrientationSouth(Boolean orientationSouth) {
+    public OfficeFeatures withOrientationSouth(Boolean orientationSouth) {
         this.orientationSouth = orientationSouth;
         return this;
     }
@@ -1355,7 +1365,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationWest")
-    public Boolean getFeaturesOrientationWest() {
+    public Boolean getOrientationWest() {
         return orientationWest;
     }
 
@@ -1366,26 +1376,26 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresOrientationWest")
-    public void setFeaturesOrientationWest(Boolean orientationWest) {
+    public void setOrientationWest(Boolean orientationWest) {
         this.orientationWest = orientationWest;
     }
 
-    public OfficeFeatures withFeaturesOrientationWest(Boolean orientationWest) {
+    public OfficeFeatures withOrientationWest(Boolean orientationWest) {
         this.orientationWest = orientationWest;
         return this;
     }
 
     @JsonProperty("featuresParkingSpacesNumber")
-    public BigInteger getFeaturesParkingSpacesNumber() {
+    public BigInteger getParkingSpacesNumber() {
         return parkingSpacesNumber;
     }
 
     @JsonProperty("featuresParkingSpacesNumber")
-    public void setFeaturesParkingSpacesNumber(BigInteger parkingSpacesNumber) {
+    public void setParkingSpacesNumber(BigInteger parkingSpacesNumber) {
         this.parkingSpacesNumber = parkingSpacesNumber;
     }
 
-    public OfficeFeatures withFeaturesParkingSpacesNumber(BigInteger parkingSpacesNumber) {
+    public OfficeFeatures withParkingSpacesNumber(BigInteger parkingSpacesNumber) {
         this.parkingSpacesNumber = parkingSpacesNumber;
         return this;
     }
@@ -1397,7 +1407,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresRoomsSplitted")
-    public RoomsSplittedType getFeaturesRoomsSplitted() {
+    public RoomsSplittedType getRoomsSplitted() {
         return roomsSplitted;
     }
 
@@ -1408,11 +1418,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresRoomsSplitted")
-    public void setFeaturesRoomsSplitted(RoomsSplittedType roomsSplitted) {
+    public void setRoomsSplitted(RoomsSplittedType roomsSplitted) {
         this.roomsSplitted = roomsSplitted;
     }
 
-    public OfficeFeatures withFeaturesRoomsSplitted(RoomsSplittedType roomsSplitted) {
+    public OfficeFeatures withRoomsSplitted(RoomsSplittedType roomsSplitted) {
         this.roomsSplitted = roomsSplitted;
         return this;
     }
@@ -1424,7 +1434,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSecurityAlarm")
-    public Boolean getFeaturesSecurityAlarm() {
+    public Boolean getSecurityAlarm() {
         return securityAlarm;
     }
 
@@ -1435,11 +1445,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSecurityAlarm")
-    public void setFeaturesSecurityAlarm(Boolean securityAlarm) {
+    public void setSecurityAlarm(Boolean securityAlarm) {
         this.securityAlarm = securityAlarm;
     }
 
-    public OfficeFeatures withFeaturesSecurityAlarm(Boolean securityAlarm) {
+    public OfficeFeatures withSecurityAlarm(Boolean securityAlarm) {
         this.securityAlarm = securityAlarm;
         return this;
     }
@@ -1451,7 +1461,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSecurityDoor")
-    public Boolean getFeaturesSecurityDoor() {
+    public Boolean getSecurityDoor() {
         return securityDoor;
     }
 
@@ -1462,11 +1472,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSecurityDoor")
-    public void setFeaturesSecurityDoor(Boolean securityDoor) {
+    public void setSecurityDoor(Boolean securityDoor) {
         this.securityDoor = securityDoor;
     }
 
-    public OfficeFeatures withFeaturesSecurityDoor(Boolean securityDoor) {
+    public OfficeFeatures withSecurityDoor(Boolean securityDoor) {
         this.securityDoor = securityDoor;
         return this;
     }
@@ -1478,7 +1488,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSecuritySystem")
-    public Boolean getFeaturesSecuritySystem() {
+    public Boolean getSecuritySystem() {
         return securitySystem;
     }
 
@@ -1489,11 +1499,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSecuritySystem")
-    public void setFeaturesSecuritySystem(Boolean securitySystem) {
+    public void setSecuritySystem(Boolean securitySystem) {
         this.securitySystem = securitySystem;
     }
 
-    public OfficeFeatures withFeaturesSecuritySystem(Boolean securitySystem) {
+    public OfficeFeatures withSecuritySystem(Boolean securitySystem) {
         this.securitySystem = securitySystem;
         return this;
     }
@@ -1505,7 +1515,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSprinklers")
-    public Boolean getFeaturesSprinklers() {
+    public Boolean getSprinklers() {
         return sprinklers;
     }
 
@@ -1516,11 +1526,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSprinklers")
-    public void setFeaturesSprinklers(Boolean sprinklers) {
+    public void setSprinklers(Boolean sprinklers) {
         this.sprinklers = sprinklers;
     }
 
-    public OfficeFeatures withFeaturesSprinklers(Boolean sprinklers) {
+    public OfficeFeatures withSprinklers(Boolean sprinklers) {
         this.sprinklers = sprinklers;
         return this;
     }
@@ -1532,7 +1542,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSuspendedCeiling")
-    public Boolean getFeaturesSuspendedCeiling() {
+    public Boolean getSuspendedCeiling() {
         return suspendedCeiling;
     }
 
@@ -1543,11 +1553,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSuspendedCeiling")
-    public void setFeaturesSuspendedCeiling(Boolean suspendedCeiling) {
+    public void setSuspendedCeiling(Boolean suspendedCeiling) {
         this.suspendedCeiling = suspendedCeiling;
     }
 
-    public OfficeFeatures withFeaturesSuspendedCeiling(Boolean suspendedCeiling) {
+    public OfficeFeatures withSuspendedCeiling(Boolean suspendedCeiling) {
         this.suspendedCeiling = suspendedCeiling;
         return this;
     }
@@ -1559,7 +1569,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSuspendedFloor")
-    public Boolean getFeaturesSuspendedFloor() {
+    public Boolean getSuspendedFloor() {
         return suspendedFloor;
     }
 
@@ -1570,11 +1580,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresSuspendedFloor")
-    public void setFeaturesSuspendedFloor(Boolean suspendedFloor) {
+    public void setSuspendedFloor(Boolean suspendedFloor) {
         this.suspendedFloor = suspendedFloor;
     }
 
-    public OfficeFeatures withFeaturesSuspendedFloor(Boolean suspendedFloor) {
+    public OfficeFeatures withSuspendedFloor(Boolean suspendedFloor) {
         this.suspendedFloor = suspendedFloor;
         return this;
     }
@@ -1586,7 +1596,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresStorage")
-    public Boolean getFeaturesStorage() {
+    public Boolean getStorage() {
         return storage;
     }
 
@@ -1597,11 +1607,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresStorage")
-    public void setFeaturesStorage(Boolean storage) {
+    public void setStorage(Boolean storage) {
         this.storage = storage;
     }
 
-    public OfficeFeatures withFeaturesStorage(Boolean storage) {
+    public OfficeFeatures withStorage(Boolean storage) {
         this.storage = storage;
         return this;
     }
@@ -1613,7 +1623,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresWindowsDouble")
-    public Boolean getFeaturesWindowsDouble() {
+    public Boolean getWindowsDouble() {
         return windowsDouble;
     }
 
@@ -1624,11 +1634,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresWindowsDouble")
-    public void setFeaturesWindowsDouble(Boolean windowsDouble) {
+    public void setWindowsDouble(Boolean windowsDouble) {
         this.windowsDouble = windowsDouble;
     }
 
-    public OfficeFeatures withFeaturesWindowsDouble(Boolean windowsDouble) {
+    public OfficeFeatures withWindowsDouble(Boolean windowsDouble) {
         this.windowsDouble = windowsDouble;
         return this;
     }
@@ -1640,7 +1650,7 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresWindowsLocation")
-    public WindowsLocationType getFeaturesWindowsLocation() {
+    public WindowsLocationType getWindowsLocation() {
         return windowsLocation;
     }
 
@@ -1651,11 +1661,11 @@ public class OfficeFeatures
      * 
      */
     @JsonProperty("featuresWindowsLocation")
-    public void setFeaturesWindowsLocation(WindowsLocationType windowsLocation) {
+    public void setWindowsLocation(WindowsLocationType windowsLocation) {
         this.windowsLocation = windowsLocation;
     }
 
-    public OfficeFeatures withFeaturesWindowsLocation(WindowsLocationType windowsLocation) {
+    public OfficeFeatures withWindowsLocation(WindowsLocationType windowsLocation) {
         this.windowsLocation = windowsLocation;
         return this;
     }

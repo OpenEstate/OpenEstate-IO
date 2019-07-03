@@ -284,7 +284,7 @@ public class BuildingFeatures
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -6585644712564163552L;
+    private final static long serialVersionUID = 362284814886687707L;
 
     /**
      * No args constructor for use in serialization
@@ -335,47 +335,57 @@ public class BuildingFeatures
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public BigInteger getFeaturesAreaConstructed() {
+    public BigInteger getAreaConstructed() {
         return areaConstructed;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("featuresAreaConstructed")
-    public void setFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public void setAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
     }
 
-    public BuildingFeatures withFeaturesAreaConstructed(BigInteger areaConstructed) {
+    public BuildingFeatures withAreaConstructed(BigInteger areaConstructed) {
         this.areaConstructed = areaConstructed;
         return this;
     }
 
     @JsonProperty("featuresAreaTradableMinimum")
-    public BigInteger getFeaturesAreaTradableMinimum() {
+    public BigInteger getAreaTradableMinimum() {
         return areaTradableMinimum;
     }
 
     @JsonProperty("featuresAreaTradableMinimum")
-    public void setFeaturesAreaTradableMinimum(BigInteger areaTradableMinimum) {
+    public void setAreaTradableMinimum(BigInteger areaTradableMinimum) {
         this.areaTradableMinimum = areaTradableMinimum;
     }
 
-    public BuildingFeatures withFeaturesAreaTradableMinimum(BigInteger areaTradableMinimum) {
+    public BuildingFeatures withAreaTradableMinimum(BigInteger areaTradableMinimum) {
         this.areaTradableMinimum = areaTradableMinimum;
         return this;
     }
 
     @JsonProperty("featuresBuiltProperties")
-    public BigInteger getFeaturesBuiltProperties() {
+    public BigInteger getBuiltProperties() {
         return builtProperties;
     }
 
     @JsonProperty("featuresBuiltProperties")
-    public void setFeaturesBuiltProperties(BigInteger builtProperties) {
+    public void setBuiltProperties(BigInteger builtProperties) {
         this.builtProperties = builtProperties;
     }
 
-    public BuildingFeatures withFeaturesBuiltProperties(BigInteger builtProperties) {
+    public BuildingFeatures withBuiltProperties(BigInteger builtProperties) {
         this.builtProperties = builtProperties;
         return this;
     }
@@ -387,7 +397,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresBuiltYear")
-    public BigInteger getFeaturesBuiltYear() {
+    public BigInteger getBuiltYear() {
         return builtYear;
     }
 
@@ -398,11 +408,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresBuiltYear")
-    public void setFeaturesBuiltYear(BigInteger builtYear) {
+    public void setBuiltYear(BigInteger builtYear) {
         this.builtYear = builtYear;
     }
 
-    public BuildingFeatures withFeaturesBuiltYear(BigInteger builtYear) {
+    public BuildingFeatures withBuiltYear(BigInteger builtYear) {
         this.builtYear = builtYear;
         return this;
     }
@@ -414,7 +424,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationChalet")
-    public Boolean getFeaturesClassificationChalet() {
+    public Boolean getClassificationChalet() {
         return classificationChalet;
     }
 
@@ -425,11 +435,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationChalet")
-    public void setFeaturesClassificationChalet(Boolean classificationChalet) {
+    public void setClassificationChalet(Boolean classificationChalet) {
         this.classificationChalet = classificationChalet;
     }
 
-    public BuildingFeatures withFeaturesClassificationChalet(Boolean classificationChalet) {
+    public BuildingFeatures withClassificationChalet(Boolean classificationChalet) {
         this.classificationChalet = classificationChalet;
         return this;
     }
@@ -441,7 +451,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationCommercial")
-    public Boolean getFeaturesClassificationCommercial() {
+    public Boolean getClassificationCommercial() {
         return classificationCommercial;
     }
 
@@ -452,11 +462,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationCommercial")
-    public void setFeaturesClassificationCommercial(Boolean classificationCommercial) {
+    public void setClassificationCommercial(Boolean classificationCommercial) {
         this.classificationCommercial = classificationCommercial;
     }
 
-    public BuildingFeatures withFeaturesClassificationCommercial(Boolean classificationCommercial) {
+    public BuildingFeatures withClassificationCommercial(Boolean classificationCommercial) {
         this.classificationCommercial = classificationCommercial;
         return this;
     }
@@ -468,7 +478,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationHotel")
-    public Boolean getFeaturesClassificationHotel() {
+    public Boolean getClassificationHotel() {
         return classificationHotel;
     }
 
@@ -479,11 +489,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationHotel")
-    public void setFeaturesClassificationHotel(Boolean classificationHotel) {
+    public void setClassificationHotel(Boolean classificationHotel) {
         this.classificationHotel = classificationHotel;
     }
 
-    public BuildingFeatures withFeaturesClassificationHotel(Boolean classificationHotel) {
+    public BuildingFeatures withClassificationHotel(Boolean classificationHotel) {
         this.classificationHotel = classificationHotel;
         return this;
     }
@@ -495,7 +505,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationIndustrial")
-    public Boolean getFeaturesClassificationIndustrial() {
+    public Boolean getClassificationIndustrial() {
         return classificationIndustrial;
     }
 
@@ -506,11 +516,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationIndustrial")
-    public void setFeaturesClassificationIndustrial(Boolean classificationIndustrial) {
+    public void setClassificationIndustrial(Boolean classificationIndustrial) {
         this.classificationIndustrial = classificationIndustrial;
     }
 
-    public BuildingFeatures withFeaturesClassificationIndustrial(Boolean classificationIndustrial) {
+    public BuildingFeatures withClassificationIndustrial(Boolean classificationIndustrial) {
         this.classificationIndustrial = classificationIndustrial;
         return this;
     }
@@ -522,7 +532,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationOffice")
-    public Boolean getFeaturesClassificationOffice() {
+    public Boolean getClassificationOffice() {
         return classificationOffice;
     }
 
@@ -533,11 +543,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationOffice")
-    public void setFeaturesClassificationOffice(Boolean classificationOffice) {
+    public void setClassificationOffice(Boolean classificationOffice) {
         this.classificationOffice = classificationOffice;
     }
 
-    public BuildingFeatures withFeaturesClassificationOffice(Boolean classificationOffice) {
+    public BuildingFeatures withClassificationOffice(Boolean classificationOffice) {
         this.classificationOffice = classificationOffice;
         return this;
     }
@@ -549,7 +559,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationOther")
-    public Boolean getFeaturesClassificationOther() {
+    public Boolean getClassificationOther() {
         return classificationOther;
     }
 
@@ -560,11 +570,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresClassificationOther")
-    public void setFeaturesClassificationOther(Boolean classificationOther) {
+    public void setClassificationOther(Boolean classificationOther) {
         this.classificationOther = classificationOther;
     }
 
-    public BuildingFeatures withFeaturesClassificationOther(Boolean classificationOther) {
+    public BuildingFeatures withClassificationOther(Boolean classificationOther) {
         this.classificationOther = classificationOther;
         return this;
     }
@@ -576,7 +586,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresConservation")
-    public ConservationType getFeaturesConservation() {
+    public ConservationType getConservation() {
         return conservation;
     }
 
@@ -587,11 +597,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresConservation")
-    public void setFeaturesConservation(ConservationType conservation) {
+    public void setConservation(ConservationType conservation) {
         this.conservation = conservation;
     }
 
-    public BuildingFeatures withFeaturesConservation(ConservationType conservation) {
+    public BuildingFeatures withConservation(ConservationType conservation) {
         this.conservation = conservation;
         return this;
     }
@@ -603,7 +613,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public EnergyCertificateRatingType getFeaturesEnergyCertificateRating() {
+    public EnergyCertificateRatingType getEnergyCertificateRating() {
         return energyCertificateRating;
     }
 
@@ -614,26 +624,26 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateRating")
-    public void setFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public void setEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
     }
 
-    public BuildingFeatures withFeaturesEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
+    public BuildingFeatures withEnergyCertificateRating(EnergyCertificateRatingType energyCertificateRating) {
         this.energyCertificateRating = energyCertificateRating;
         return this;
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public BigDecimal getFeaturesEnergyCertificatePerformance() {
+    public BigDecimal getEnergyCertificatePerformance() {
         return energyCertificatePerformance;
     }
 
     @JsonProperty("featuresEnergyCertificatePerformance")
-    public void setFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public void setEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
     }
 
-    public BuildingFeatures withFeaturesEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
+    public BuildingFeatures withEnergyCertificatePerformance(BigDecimal energyCertificatePerformance) {
         this.energyCertificatePerformance = energyCertificatePerformance;
         return this;
     }
@@ -645,7 +655,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public EnergyCertificateType getFeaturesEnergyCertificateType() {
+    public EnergyCertificateType getEnergyCertificateType() {
         return energyCertificateType;
     }
 
@@ -656,11 +666,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateType")
-    public void setFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public void setEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
     }
 
-    public BuildingFeatures withFeaturesEnergyCertificateType(EnergyCertificateType energyCertificateType) {
+    public BuildingFeatures withEnergyCertificateType(EnergyCertificateType energyCertificateType) {
         this.energyCertificateType = energyCertificateType;
         return this;
     }
@@ -672,7 +682,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public EnergyCertificateLawType getFeaturesEnergyCertificateLaw() {
+    public EnergyCertificateLawType getEnergyCertificateLaw() {
         return energyCertificateLaw;
     }
 
@@ -683,56 +693,56 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresEnergyCertificateLaw")
-    public void setFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public void setEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
     }
 
-    public BuildingFeatures withFeaturesEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
+    public BuildingFeatures withEnergyCertificateLaw(EnergyCertificateLawType energyCertificateLaw) {
         this.energyCertificateLaw = energyCertificateLaw;
         return this;
     }
 
     @JsonProperty("featuresFloorsBuilding")
-    public BigInteger getFeaturesFloorsBuilding() {
+    public BigInteger getFloorsBuilding() {
         return floorsBuilding;
     }
 
     @JsonProperty("featuresFloorsBuilding")
-    public void setFeaturesFloorsBuilding(BigInteger floorsBuilding) {
+    public void setFloorsBuilding(BigInteger floorsBuilding) {
         this.floorsBuilding = floorsBuilding;
     }
 
-    public BuildingFeatures withFeaturesFloorsBuilding(BigInteger floorsBuilding) {
+    public BuildingFeatures withFloorsBuilding(BigInteger floorsBuilding) {
         this.floorsBuilding = floorsBuilding;
         return this;
     }
 
     @JsonProperty("featuresLiftNumber")
-    public BigInteger getFeaturesLiftNumber() {
+    public BigInteger getLiftNumber() {
         return liftNumber;
     }
 
     @JsonProperty("featuresLiftNumber")
-    public void setFeaturesLiftNumber(BigInteger liftNumber) {
+    public void setLiftNumber(BigInteger liftNumber) {
         this.liftNumber = liftNumber;
     }
 
-    public BuildingFeatures withFeaturesLiftNumber(BigInteger liftNumber) {
+    public BuildingFeatures withLiftNumber(BigInteger liftNumber) {
         this.liftNumber = liftNumber;
         return this;
     }
 
     @JsonProperty("featuresParkingSpacesNumber")
-    public BigInteger getFeaturesParkingSpacesNumber() {
+    public BigInteger getParkingSpacesNumber() {
         return parkingSpacesNumber;
     }
 
     @JsonProperty("featuresParkingSpacesNumber")
-    public void setFeaturesParkingSpacesNumber(BigInteger parkingSpacesNumber) {
+    public void setParkingSpacesNumber(BigInteger parkingSpacesNumber) {
         this.parkingSpacesNumber = parkingSpacesNumber;
     }
 
-    public BuildingFeatures withFeaturesParkingSpacesNumber(BigInteger parkingSpacesNumber) {
+    public BuildingFeatures withParkingSpacesNumber(BigInteger parkingSpacesNumber) {
         this.parkingSpacesNumber = parkingSpacesNumber;
         return this;
     }
@@ -744,7 +754,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresPropertyTenants")
-    public Boolean getFeaturesPropertyTenants() {
+    public Boolean getPropertyTenants() {
         return propertyTenants;
     }
 
@@ -755,11 +765,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresPropertyTenants")
-    public void setFeaturesPropertyTenants(Boolean propertyTenants) {
+    public void setPropertyTenants(Boolean propertyTenants) {
         this.propertyTenants = propertyTenants;
     }
 
-    public BuildingFeatures withFeaturesPropertyTenants(Boolean propertyTenants) {
+    public BuildingFeatures withPropertyTenants(Boolean propertyTenants) {
         this.propertyTenants = propertyTenants;
         return this;
     }
@@ -771,7 +781,7 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresSecurityPersonnel")
-    public Boolean getFeaturesSecurityPersonnel() {
+    public Boolean getSecurityPersonnel() {
         return securityPersonnel;
     }
 
@@ -782,11 +792,11 @@ public class BuildingFeatures
      * 
      */
     @JsonProperty("featuresSecurityPersonnel")
-    public void setFeaturesSecurityPersonnel(Boolean securityPersonnel) {
+    public void setSecurityPersonnel(Boolean securityPersonnel) {
         this.securityPersonnel = securityPersonnel;
     }
 
-    public BuildingFeatures withFeaturesSecurityPersonnel(Boolean securityPersonnel) {
+    public BuildingFeatures withSecurityPersonnel(Boolean securityPersonnel) {
         this.securityPersonnel = securityPersonnel;
         return this;
     }

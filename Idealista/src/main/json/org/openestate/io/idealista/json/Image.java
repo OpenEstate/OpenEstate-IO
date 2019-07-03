@@ -73,7 +73,7 @@ public class Image implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 1604487471095603646L;
+    private final static long serialVersionUID = 3658192647081340712L;
 
     /**
      * No args constructor for use in serialization
@@ -149,17 +149,27 @@ public class Image implements Serializable
         return this;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("imageUrl")
-    public URI getImageUrl() {
+    public URI getUrl() {
         return url;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("imageUrl")
-    public void setImageUrl(URI url) {
+    public void setUrl(URI url) {
         this.url = url;
     }
 
-    public Image withImageUrl(URI url) {
+    public Image withUrl(URI url) {
         this.url = url;
         return this;
     }

@@ -38,6 +38,7 @@
     </developers>
 
     <modules>
+        <module>Build</module>
         <module>Core</module>
         <module>CasaIT</module>
         <module>DaftIE</module>
@@ -203,6 +204,11 @@
                 <groupId>jaxen</groupId>
                 <artifactId>jaxen</artifactId>
                 <version>1.1.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-core</artifactId>
+                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
