@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/typology.json",
+  "title": "Property Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "propertyCode"
+  ],
+  "properties": {
+    "propertyAddress": {
+      "title": "Property address",
+      "$ref": "address.json#"
+    },
+    "propertyCode": {
+      "title": "Property identifier",
+      "description": "It must be unique for each property and unchanging over time",
+      "$ref": "../rules.json#/stringTo50"
+    },
+    "propertyContact": {
+      "title": "Property contact",
+      "$ref": "contact.json#"
+    },
+    "propertyDescriptions": {
+      "title": "Property descriptions",
+      "type": "array",
+      "uniqueItems": true,
+      "items": [
+        {
+          "$ref": "description.json#"
+        }
+      ]
+    },
+    "propertyFeatures": {
+      "title": "Property type",
+      "oneOf": [
+        {
+          "$ref": "garage.json#"
+        },
+        {
+          "$ref": "premises.json#"
+        },
+        {
+          "$ref": "offices.json#"
+        },
+        {
+          "$ref": "homes.json#"
+        }
+      ]
+    },
+    "propertyImages": {
+      "title": "Property images",
+      "type": "array",
+      "uniqueItems": true,
+      "items": [
+        {
+          "$ref": "images.json#"
+        }
+      ]
+    },
+    "propertyOperation": {
+      "title": "Property operation",
+      "$ref": "operation.json#"
+    },
+    "propertyReference": {
+      "title": "Property reference",
+      "$ref": "../rules.json#/stringTo50"
+    },
+    "propertyUrl": {
+      "title": "Property URL",
+      "$ref": "../rules.json#/urlFormat"
+    },
+    "propertyVisibility": {
+      "title": "Property visibility",
+      "$ref": "../rules.json#/enumPropertyVisibility"
+    }
+  }
+}

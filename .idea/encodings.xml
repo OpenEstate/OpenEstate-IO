@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Build" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CasaIT" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DaftIE" charset="UTF-8" />
@@ -10,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/IDX" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IS24-CSV" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IS24-XML" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Idealista" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImmoXML" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImmobarIT" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImmobiliareIT" charset="UTF-8" />

@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/storage.json",
+  "title": "Storage Room Object",
+  "type": "object",
+  "extends": {
+    "$ref": "../custom/abstractFeatures.json"
+  },
+  "javaType": "org.openestate.io.idealista.json.StorageFeatures",
+  "additionalProperties": true,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "storage"
+      ],
+      "javaName": "type"
+    },
+    "featuresAccess24h": {
+      "$ref": "features.json#/featuresAccess24h",
+      "javaName": "access24h"
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed",
+      "javaName": "areaConstructed"
+    },
+    "featuresAreaHeight": {
+      "$ref": "features.json#/featuresAreaHeight",
+      "javaName": "areaHeight"
+    },
+    "featuresLoadingDock": {
+      "$ref": "features.json#/featuresLoadingDock",
+      "javaName": "loadingDock"
+    },
+    "featuresSecurity24h": {
+      "$ref": "features.json#/featuresSecurity24h",
+      "javaName": "security24h"
+    }
+  }
+}

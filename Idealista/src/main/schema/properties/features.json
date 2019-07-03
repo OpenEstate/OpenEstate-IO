@@ -1,0 +1,636 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/features.json",
+  "title": "Features fields",
+  "description": "fields in alphabetic order",
+  "featuresAccess24h": {
+    "title": "24 hr access",
+    "description": "availability of 24 hr access",
+    "type": "boolean"
+  },
+  "featuresAccessControl": {
+    "title": "access control",
+    "description": "availability of access control system",
+    "type": "boolean"
+  },
+  "featuresAllowPets": {
+    "title": "pets allowed",
+    "description": "pet friendly flat",
+    "type": "boolean"
+  },
+  "featuresAreaBuildable": {
+    "title": "buildable area",
+    "description": "land buildable area",
+    "$ref": "../rules.json#/integer1to99999"
+  },
+  "featuresAreaConstructed": {
+    "title": "constructed area",
+    "description": "built square meters",
+    "$ref": "../rules.json#/integer1to99999"
+  },
+  "featuresAreaHeight": {
+    "title": "height area",
+    "$ref": "../rules.json#/number0to9"
+  },
+  "featuresAreaPlot": {
+    "title": "plot area",
+    "description": "plot square meters",
+    "$ref": "../rules.json#/integer1to99999999"
+  },
+  "featuresAreaTradableMinimum": {
+    "title": "minimum tradable area",
+    "$ref": "../rules.json#/integer1to999999"
+  },
+  "featuresAreaUsable": {
+    "title": "functional area",
+    "$ref": "../rules.json#/integer1to99999"
+  },
+  "featuresBathroomAdapted": {
+    "title": "adapted bathroom",
+    "description": "availability of adapted bathroom for disabled people",
+    "type": "boolean"
+  },
+  "featuresBathroomInside": {
+    "title": "bathroom inside",
+    "description": "bathroom inside the property is available",
+    "type": "boolean"
+  },
+  "featuresBathroomNumber": {
+    "title": "bathrooms number",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresBathroomType": {
+    "title": "bathroom type",
+    "enum": [
+      "toilets",
+      "fullEquiped",
+      "both"
+    ],
+    "javaType": "org.openestate.io.idealista.json.BathroomType"
+  },
+  "featuresBedroomNumber": {
+    "title": "bedrooms number",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresBuildingAdapted": {
+    "title": "adapted building",
+    "type": "boolean"
+  },
+  "featuresBuiltYear": {
+    "title": "building year",
+    "type": "integer",
+    "minimum": 1700,
+    "maximum": 2100
+  },
+  "featuresChimney": {
+    "title": "chimney availability for rustic houses",
+    "type": "boolean"
+  },
+  "featuresClassificationBlocks": {
+    "title": "blocks classification",
+    "description": "certified for high-rise residential properties",
+    "type": "boolean"
+  },
+  "featuresClassificationChalet": {
+    "title": "chalet classification",
+    "description": "classified for residential house (detached)",
+    "type": "boolean"
+  },
+  "featuresClassificationCommercial": {
+    "title": "commercial classification",
+    "description": "classified for tertiary commercial properties",
+    "type": "boolean"
+  },
+  "featuresClassificationHotel": {
+    "title": "hotel classification",
+    "description": "classified for hotels properties",
+    "type": "boolean"
+  },
+  "featuresClassificationIndustrial": {
+    "title": "industrial classification",
+    "description": "classified for industrial properties",
+    "type": "boolean"
+  },
+  "featuresClassificationOffice": {
+    "title": "office classification",
+    "description": "classified for office properties",
+    "type": "boolean"
+  },
+  "featuresClassificationOther": {
+    "title": "other classification",
+    "type": "boolean"
+  },
+  "featuresClassificationPublic": {
+    "title": "public classification",
+    "description": "classified for amenities (hospitals, schools, museums)",
+    "type": "boolean"
+  },
+  "featuresConditionedAir": {
+    "title": "air conditioning",
+    "description": "has air conditioning",
+    "type": "boolean"
+  },
+  "featuresConditionedAirType": {
+    "title": "air conditioning type",
+    "enum": [
+      "notAvailable",
+      "cold",
+      "cold/heat",
+      "preInstallation"
+    ],
+    "javaType": "org.openestate.io.idealista.json.ConditionedAirType"
+  },
+  "featuresConservation": {
+    "title": "conservation status",
+    "description": "status new is only available for new development properties, not for secondhand properties",
+    "enum": [
+      "new",
+      "good",
+      "toRestore"
+    ],
+    "javaType": "org.openestate.io.idealista.json.ConservationType"
+  },
+  "featuresDoorman": {
+    "title": "doorman",
+    "description": "doorman availability",
+    "type": "boolean"
+  },
+  "featuresDuplex": {
+    "title": "duplex",
+    "description": "flat on two floors connected by an indoor staircase",
+    "type": "boolean"
+  },
+  "featuresEmergencyExit": {
+    "title": "emergency exit",
+    "type": "boolean"
+  },
+  "featuresEmergencyLights": {
+    "title": "emergency lights",
+    "type": "boolean"
+  },
+  "featuresEnergyCertificateLaw": {
+    "title": "energy certification law",
+    "description": "only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)",
+    "enum": [
+      "dl-192_2005",
+      "legge-90_2013"
+    ],
+    "javaType": "org.openestate.io.idealista.json.EnergyCertificateLawType"
+  },
+  "featuresEnergyCertificatePerformance": {
+    "title": "energy certification performance",
+    "$ref": "../rules.json#/number1to999"
+  },
+  "featuresEnergyCertificateRating": {
+    "title": "energy certification rating",
+    "enum": [
+      "A",
+      "A+",
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "B",
+      "B-",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "exempt",
+      "inProcess",
+      "unknown"
+    ],
+    "javaEnumNames": [
+      "A",
+      "A_PLUS",
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "B",
+      "B_MINUS",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "EXEMPT",
+      "IN_PROCESS",
+      "UNKNOWN"
+    ],
+    "javaType": "org.openestate.io.idealista.json.EnergyCertificateRatingType"
+  },
+  "featuresEnergyCertificateType": {
+    "title": "energy certification type",
+    "description": "only available for new development properties. project: certification in project phase; completed: certification if the property is finished",
+    "enum": [
+      "project",
+      "completed"
+    ],
+    "javaType": "org.openestate.io.idealista.json.EnergyCertificateType"
+  },
+  "featuresEquippedKitchen": {
+    "title": "equipped with kitchen",
+    "description": "equipped with kitchen only",
+    "type": "boolean"
+  },
+  "featuresEquippedWithFurniture": {
+    "title": "equipped with furniture",
+    "description": "fully furnished",
+    "type": "boolean"
+  },
+  "featuresExtinguishers": {
+    "title": "extinguishers",
+    "description": "extinguishers availability",
+    "type": "boolean"
+  },
+  "featuresFacadeArea": {
+    "title": "facade area",
+    "$ref": "../rules.json#/integer1to999"
+  },
+  "featuresFireDetectors": {
+    "title": "fire detectors",
+    "description": "availability of fire detectors",
+    "type": "boolean"
+  },
+  "featuresFireDoors": {
+    "title": "fire doors",
+    "description": "availability of fire doors",
+    "type": "boolean"
+  },
+  "featuresFloorsBuildable": {
+    "title": "buildable floors",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresFloorsBuilding": {
+    "title": "building floors",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresFloorsInTop": {
+    "title": "floor in top",
+    "description": "flats: indicates if the property is on the last floor / houses: specific field for 'andar de moradia' property type, indicates if the property is the one on the upper floor (true) or the one in the lower floor (false)",
+    "type": "boolean"
+  },
+  "featuresFloorsProperty": {
+    "title": "property floors number",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresGarden": {
+    "title": "garden",
+    "description": "garden availability",
+    "type": "boolean"
+  },
+  "featuresHandicapAdaptedAccess": {
+    "title": "handicap adapted access availability",
+    "description": "access adapted to people with reduced mobility",
+    "type": "boolean"
+  },
+  "featuresHandicapAdaptedUse": {
+    "title": "handicap adapted use availability",
+    "description": "property adapted to people with reduced mobility",
+    "type": "boolean"
+  },
+  "featuresHeating": {
+    "title": "heating",
+    "description": "heating availability",
+    "type": "boolean"
+  },
+  "featuresHeatingType": {
+    "title": "heatingType",
+    "enum": [
+      "centralGas",
+      "centralFuelOil",
+      "centralOther",
+      "individualGas",
+      "individualPropaneButane",
+      "individualElectric",
+      "individualAirConditioningHeatPump",
+      "individualOther",
+      "noHeating"
+    ],
+    "javaType": "org.openestate.io.idealista.json.HeatingType"
+  },
+  "featuresHotWater": {
+    "title": "hot water",
+    "description": "hot water availability",
+    "type": "boolean"
+  },
+  "featuresLastActivity": {
+    "title": "last activity",
+    "$ref": "../rules.json#/stringTo100"
+  },
+  "featuresLiftAvailable": {
+    "title": "lift",
+    "type": "boolean"
+  },
+  "featuresLiftNumber": {
+    "title": "lifts number",
+    "$ref": "../rules.json#/integer1to9"
+  },
+  "featuresLoadingDock": {
+    "title": "loading dock",
+    "description": "loading dock availability",
+    "type": "boolean"
+  },
+  "featuresLocatedAtCorner": {
+    "title": "located at corner",
+    "type": "boolean"
+  },
+  "featuresNearestLocationKm": {
+    "title": "nearest location in km",
+    "$ref": "../rules.json#/number0to99"
+  },
+  "featuresOfficeBuilding": {
+    "title": "office building",
+    "type": "boolean"
+  },
+  "featuresOrientationEast": {
+    "title": "east orientation",
+    "type": "boolean"
+  },
+  "featuresOrientationNorth": {
+    "title": "north orientation",
+    "type": "boolean"
+  },
+  "featuresOrientationSouth": {
+    "title": "south orientation",
+    "type": "boolean"
+  },
+  "featuresOrientationWest": {
+    "title": "west orientation",
+    "type": "boolean"
+  },
+  "featuresParkingAvailable": {
+    "title": "parking availability",
+    "type": "boolean"
+  },
+  "featuresParkingAutomaticDoor": {
+    "title": "automatic door",
+    "type": "boolean"
+  },
+  "featuresParkingPlaceCovered": {
+    "title": "parking covered",
+    "type": "boolean"
+  },
+  "featuresParkingType": {
+    "title": "parking types",
+    "description": "this feature only applies for Portugal and Italy garages. 'depot' if is a box garage. 'parking_space' if is a regular garage",
+    "enum": [
+      "unknown",
+      "depot",
+      "parking_space"
+    ],
+    "javaType": "org.openestate.io.idealista.json.ParkingType"
+  },
+  "featuresParkingSpacesNumber": {
+    "title": "parking spaces number",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresPenthouse": {
+    "title": "penthouse",
+    "description": "flat on the top floor",
+    "type": "boolean"
+  },
+  "featuresPool": {
+    "title": "pool availability",
+    "type": "boolean"
+  },
+  "featuresBuiltProperties": {
+    "title": "properties number",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresRooms": {
+    "title": "rooms number",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "featuresRoomsSplitted": {
+    "title": "rooms splitted",
+    "enum": [
+      "unknown",
+      "openPlan",
+      "withScreens",
+      "withWalls"
+    ],
+    "javaType": "org.openestate.io.idealista.json.RoomsSplittedType"
+  },
+  "featuresSecurity24h": {
+    "title": "24 hr security service",
+    "type": "boolean"
+  },
+  "featuresSecurityAlarm": {
+    "title": "security alarm system",
+    "type": "boolean"
+  },
+  "featuresSecurityDoor": {
+    "title": "security door",
+    "type": "boolean"
+  },
+  "featuresSecurityPersonnel": {
+    "title": "security personnel",
+    "type": "boolean"
+  },
+  "featuresSecuritySystem": {
+    "title": "security system",
+    "type": "boolean"
+  },
+  "featuresSmokeExtraction": {
+    "title": "smoke extraction",
+    "type": "boolean"
+  },
+  "featuresSprinklers": {
+    "title": "sprinklers",
+    "type": "boolean"
+  },
+  "featuresStorage": {
+    "title": "storage room",
+    "type": "boolean"
+  },
+  "featuresStudio": {
+    "title": "studio",
+    "description": "flat with a single room",
+    "type": "boolean"
+  },
+  "featuresSuspendedCeiling": {
+    "title": "suspending ceiling",
+    "type": "boolean"
+  },
+  "featuresSuspendedFloor": {
+    "title": "suspending floor",
+    "type": "boolean"
+  },
+  "featuresPropertyTenants": {
+    "title": "tenants",
+    "type": "boolean"
+  },
+  "featuresTerrace": {
+    "title": "terrace",
+    "type": "boolean"
+  },
+  "featuresUbication": {
+    "title": "ubication",
+    "enum": [
+      "shopping",
+      "street",
+      "mezzanine",
+      "belowGround",
+      "other",
+      "unknown"
+    ],
+    "javaType": "org.openestate.io.idealista.json.UbicationType"
+  },
+  "featuresUtilitiesElectricity": {
+    "title": "electricity availability",
+    "type": "boolean"
+  },
+  "featuresUtilitiesNaturalGas": {
+    "title": "natural gas availability",
+    "type": "boolean"
+  },
+  "featuresUtilitiesRoadAccess": {
+    "title": "road access availability",
+    "type": "boolean"
+  },
+  "featuresUtilitiesSewerage": {
+    "title": "sewerage availability",
+    "type": "boolean"
+  },
+  "featuresUtilitiesSidewalk": {
+    "title": "sidewalk availability",
+    "type": "boolean"
+  },
+  "featuresUtilitiesStreetLighting": {
+    "title": "street lighting availability",
+    "type": "boolean"
+  },
+  "featuresUtilitiesWater": {
+    "title": "water availability",
+    "type": "boolean"
+  },
+  "featuresWardrobes": {
+    "title": "wardrobes availability",
+    "type": "boolean"
+  },
+  "featuresBalcony": {
+    "title": "balcony availability",
+    "type": "boolean"
+  },
+  "featuresWindowsDouble": {
+    "title": "double windows",
+    "description": "double pane windows availability",
+    "type": "boolean"
+  },
+  "featuresWindowsLocation": {
+    "title": "windows location",
+    "description": "internal / external flat based on windows view. Only available for Spain.",
+    "enum": [
+      "interior",
+      "exterior"
+    ],
+    "javaType": "org.openestate.io.idealista.json.WindowsLocationType"
+  },
+  "featuresWindowsShop": {
+    "title": "shop windows number",
+    "$ref": "../rules.json#/integer1to99"
+  },
+  "enumNewDevelopmentType": {
+    "description": "Typing for new developments",
+    "enum": [
+      "restored_building",
+      "new_building",
+      "house",
+      "mixed_promos"
+    ],
+    "javaName": "NewDevelopmentType"
+  },
+  "enumFeaturesBuiltPhase": {
+    "description": "Phase of built for new developments",
+    "enum": [
+      "land_move",
+      "foundation",
+      "carpentry",
+      "pilot",
+      "paving",
+      "equipment",
+      "keydelivery"
+    ],
+    "javaType": "org.openestate.io.idealista.json.BuiltPhaseType"
+  },
+  "enumFeaturesAvailabilityHour": {
+    "description": "Booth sales availability hour for new developments",
+    "enum": [
+      "any_morning",
+      "mornings",
+      "at_noon",
+      "afternoons",
+      "nights",
+      "weekends",
+      "business_hour"
+    ],
+    "javaType": "org.openestate.io.idealista.json.AvailabilityHourType"
+  },
+  "featuresNewDevelopmentName": {
+    "title": "name",
+    "$ref": "../rules.json#/stringTo100"
+  },
+  "featuresFinished": {
+    "title": "is finished",
+    "type": "boolean"
+  },
+  "featuresStartDate": {
+    "$ref": "../rules.json#/dateFormatNoHours"
+  },
+  "featuresKeyDeliveryYear": {
+    "$ref": "../rules.json#/integer1to9999"
+  },
+  "featuresKeyDeliveryMonth": {
+    "$ref": "../rules.json#/number1to12"
+  },
+  "featuresOnSite": {
+    "title": "Booth sale on side",
+    "type": "boolean"
+  },
+  "featuresMortgageStateSubsidized": {
+    "title": "Mortgage state subsidized",
+    "type": "boolean"
+  },
+  "featuresMortgageBankName": {
+    "title": "Mortgage bank name",
+    "$ref": "../rules.json#/stringTo100"
+  },
+  "featuresMortgagePercentage": {
+    "title": "Mortgage percentage",
+    "$ref": "../rules.json#/number1to999"
+  },
+  "featuresMortgageEntryPercentage": {
+    "title": "Mortgage entry percentage",
+    "$ref": "../rules.json#/number1to999"
+  },
+  "featuresMortgageLettersPercentage": {
+    "title": "Mortgage letters percentage",
+    "$ref": "../rules.json#/number1to999"
+  },
+  "featuresMortgageInterestRate": {
+    "title": "Mortgage interest rate",
+    "$ref": "../rules.json#/number1to999"
+  },
+  "featuresMortgageYears": {
+    "title": "Mortgage years",
+    "$ref": "../rules.json#/number1to9999"
+  },
+  "featuresWindowsNumber": {
+    "title": "Premise windows numbers",
+    "$ref": "../rules.json#/number1to999"
+  },
+  "featuresAccessType": {
+    "title": "access type",
+    "enum": [
+      "urban",
+      "road",
+      "track",
+      "highway",
+      "unknown"
+    ],
+    "javaType": "org.openestate.io.idealista.json.AccessType"
+  }
+}

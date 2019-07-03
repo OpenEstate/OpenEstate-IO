@@ -38,12 +38,14 @@
     </developers>
 
     <modules>
+        <module>Build</module>
         <module>Core</module>
         <module>CasaIT</module>
         <module>DaftIE</module>
         <module>Examples</module>
         <module>Filemaker</module>
         <module>IDX</module>
+        <module>Idealista</module>
         <module>ImmobarIT</module>
         <module>ImmobiliareIT</module>
         <module>ImmoXML</module>
@@ -102,6 +104,11 @@
             <dependency>
                 <groupId>org.openestate.io</groupId>
                 <artifactId>OpenEstate-IO-IDX</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openestate.io</groupId>
+                <artifactId>OpenEstate-IO-Idealista</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -183,6 +190,11 @@
                 <!-- version 1.4+ requires Java 8 -->
             </dependency>
             <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.5.4</version>
+            </dependency>
+            <dependency>
                 <groupId>org.jvnet.jaxb2_commons</groupId>
                 <artifactId>jaxb2-basics-runtime</artifactId>
                 <version>0.11.1</version>
@@ -192,6 +204,11 @@
                 <groupId>jaxen</groupId>
                 <artifactId>jaxen</artifactId>
                 <version>1.1.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-core</artifactId>
+                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -204,6 +221,16 @@
                 <version>1.2.17</version>
             </dependency>
             <dependency>
+                <groupId>com.thedeanda</groupId>
+                <artifactId>lorem</artifactId>
+                <version>2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.bval</groupId>
+                <artifactId>org.apache.bval.bundle</artifactId>
+                <version>1.1.2</version>
+            </dependency>
+            <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>1.7.25</version>
@@ -212,6 +239,11 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>1.7.25</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>1.1.0.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -294,6 +326,12 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>3.0.5</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jsonschema2pojo</groupId>
+                    <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                    <version>1.0.1</version>
                 </plugin>
 
                 <plugin>

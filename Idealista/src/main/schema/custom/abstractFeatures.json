@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "abstractFeatures.json",
+  "title": "An abstract property type",
+  "type": "object",
+  "javaType": "org.openestate.io.idealista.json.AbstractFeatures",
+  "additionalProperties": false
+}
