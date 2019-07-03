@@ -3,7 +3,8 @@
   "id": "https://feeds.idealista.com/v6/schemas/properties/newDevelopment.json",
   "title": "New Development Object",
   "type": "object",
-  "additionalProperties": false,
+  "javaType": "org.openestate.io.idealista.json.NewDevelopment",
+  "additionalProperties": true,
   "required": [
     "propertyCode"
   ],
@@ -11,57 +12,60 @@
     "propertyCode": {
       "title": "New Development identifier",
       "description": "It must be unique for each property and unchanging over time",
-      "$ref": "../rules.json#/stringTo50"
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "code"
     },
     "propertyReference": {
       "title": "Property reference",
-      "$ref": "../rules.json#/stringTo50"
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "reference"
     },
     "propertyVisibility": {
       "title": "Property visibility",
-      "$ref": "../rules.json#/enumPropertyVisibility"
+      "$ref": "../rules.json#/enumPropertyVisibility",
+      "javaName": "visibility"
     },
     "propertyAddress": {
       "title": "New Development address",
-      "$ref": "address.json#"
+      "$ref": "address.json#",
+      "javaName": "address"
     },
     "propertyFeatures": {
       "title": "New Development promo features",
-      "$ref": "promo.json#"
+      "$ref": "promo.json#",
+      "javaName": "features"
     },
     "propertyContact": {
       "title": "New Development contact",
-      "$ref": "contact.json#"
+      "$ref": "contact.json#",
+      "javaName": "contact"
     },
     "propertyDescriptions": {
       "title": "New Development descriptions",
       "type": "array",
       "uniqueItems": true,
-      "items": [
-        {
-          "$ref": "description.json#"
-        }
-      ]
+      "items": {
+        "$ref": "description.json#"
+      },
+      "javaName": "descriptions"
     },
     "propertyImages": {
       "title": "New Development images",
       "type": "array",
       "uniqueItems": true,
-      "items": [
-        {
-          "$ref": "images.json#"
-        }
-      ]
+      "items": {
+        "$ref": "images.json#"
+      },
+      "javaName": "images"
     },
     "newDevelopmentTypologies": {
       "title": "New Development typologies",
       "type": "array",
       "uniqueItems": true,
-      "items": [
-        {
-          "$ref": "typology.json#"
-        }
-      ]
+      "items": {
+        "$ref": "typology.json#"
+      },
+      "javaName": "typologies"
     }
   }
 }

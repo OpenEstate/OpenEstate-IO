@@ -44,13 +44,14 @@ public final class JsonUtils {
      *
      * @param json      JSON string
      * @param javaClass class of the Java object to create
+     * @param mapper    object mapper
      * @param <T>       type of the Java object to create
      * @return created Java object
      * @throws IOException if the object is not readable
      */
-    public static <T> T read(String json, Class<? extends T> javaClass) throws IOException {
+    public static <T> T read(String json, Class<? extends T> javaClass, ObjectMapper mapper) throws IOException {
         try (Reader r = new StringReader(json)) {
-            return read(r, javaClass);
+            return read(r, javaClass, mapper);
         }
     }
 
@@ -59,12 +60,13 @@ public final class JsonUtils {
      *
      * @param json      JSON string
      * @param javaClass class of the Java object to create
+     * @param mapper    object mapper
      * @param <T>       type of the Java object to create
      * @return created Java object
      * @throws IOException if the object is not readable
      */
-    public static <T> T read(Reader json, Class<? extends T> javaClass) throws IOException {
-        return new ObjectMapper()
+    public static <T> T read(Reader json, Class<? extends T> javaClass, ObjectMapper mapper) throws IOException {
+        return mapper
                 .reader(javaClass)
                 .readValue(json);
     }
@@ -75,11 +77,12 @@ public final class JsonUtils {
      * @param output    output target
      * @param object    Java object to write
      * @param javaClass class of the Java object to write
+     * @param mapper    object mapper
      * @param <T>       type of the Java object to write
      * @throws IOException if the object is not writable
      */
-    public static <T> void write(Writer output, T object, Class<? extends T> javaClass) throws IOException {
-        write(output, object, javaClass, true);
+    public static <T> void write(Writer output, T object, Class<? extends T> javaClass, ObjectMapper mapper) throws IOException {
+        write(output, object, javaClass, mapper, true);
     }
 
     /**
@@ -88,12 +91,13 @@ public final class JsonUtils {
      * @param output      output target
      * @param object      Java object to write
      * @param javaClass   class of the Java object to write
+     * @param mapper      object mapper
      * @param prettyPrint indent generated JSON
      * @param <T>         type of the Java object to write
      * @throws IOException if the object is not writable
      */
-    public static <T> void write(Writer output, T object, Class<? extends T> javaClass, boolean prettyPrint) throws IOException {
-        new ObjectMapper()
+    public static <T> void write(Writer output, T object, Class<? extends T> javaClass, ObjectMapper mapper, boolean prettyPrint) throws IOException {
+        mapper
                 .configure(SerializationFeature.INDENT_OUTPUT, prettyPrint)
                 .writer()
                 .forType(javaClass)
@@ -105,12 +109,13 @@ public final class JsonUtils {
      *
      * @param object    Java object to write
      * @param javaClass class of the Java object to write
+     * @param mapper    object mapper
      * @param <T>       type of the Java object to write
      * @return generated JSON string
      * @throws IOException if the object is not writable
      */
-    public static <T> String writeToString(T object, Class<? extends T> javaClass) throws IOException {
-        return writeToString(object, javaClass, true);
+    public static <T> String writeToString(T object, Class<? extends T> javaClass, ObjectMapper mapper) throws IOException {
+        return writeToString(object, javaClass, mapper, true);
     }
 
     /**
@@ -118,14 +123,15 @@ public final class JsonUtils {
      *
      * @param object      Java object to write
      * @param javaClass   class of the Java object to write
+     * @param mapper      object mapper
      * @param prettyPrint indent generated JSON
      * @param <T>         type of the Java object to write
      * @return generated JSON string
      * @throws IOException if the object is not writable
      */
-    public static <T> String writeToString(T object, Class<? extends T> javaClass, boolean prettyPrint) throws IOException {
+    public static <T> String writeToString(T object, Class<? extends T> javaClass, ObjectMapper mapper, boolean prettyPrint) throws IOException {
         try (StringWriter writer = new StringWriter()) {
-            write(writer, object, javaClass, prettyPrint);
+            write(writer, object, javaClass, mapper, prettyPrint);
             return writer.toString();
         }
     }

@@ -15,6 +15,7 @@
  */
 package org.openestate.io.core;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
@@ -60,7 +61,7 @@ public abstract class JsonRootElement<JavaType> {
      */
     protected JsonRootElement(String json) throws IOException {
         super();
-        this.object = JsonUtils.read(json, getJavaClass());
+        this.object = JsonUtils.read(json, getJavaClass(), this.createObjectMapper());
     }
 
     /**
@@ -71,7 +72,7 @@ public abstract class JsonRootElement<JavaType> {
      */
     protected JsonRootElement(Reader json) throws IOException {
         super();
-        this.object = JsonUtils.read(json, getJavaClass());
+        this.object = JsonUtils.read(json, getJavaClass(), this.createObjectMapper());
     }
 
     /**
@@ -86,6 +87,13 @@ public abstract class JsonRootElement<JavaType> {
             throw new IllegalArgumentException("The JSON object should not be null!");
         this.object = object;
     }
+
+    /**
+     * Create an object mapper instance.
+     *
+     * @return object mapper
+     */
+    protected abstract ObjectMapper createObjectMapper();
 
     /**
      * Returns the class of the contained Java object.
@@ -132,7 +140,7 @@ public abstract class JsonRootElement<JavaType> {
      * @throws IOException if the object is not writable
      */
     public void write(Writer writer) throws IOException {
-        JsonUtils.write(writer, this.object, this.getJavaClass());
+        JsonUtils.write(writer, this.object, this.getJavaClass(), this.createObjectMapper());
     }
 
     /**
@@ -143,7 +151,7 @@ public abstract class JsonRootElement<JavaType> {
      * @throws IOException if the object is not writable
      */
     public void write(Writer writer, boolean prettyPrint) throws IOException {
-        JsonUtils.write(writer, this.object, this.getJavaClass(), prettyPrint);
+        JsonUtils.write(writer, this.object, this.getJavaClass(), this.createObjectMapper(), prettyPrint);
     }
 
     /**
@@ -152,7 +160,7 @@ public abstract class JsonRootElement<JavaType> {
      * @throws IOException if the object is not writable
      */
     public String writeToString() throws IOException {
-        return JsonUtils.writeToString(this.object, this.getJavaClass());
+        return JsonUtils.writeToString(this.object, this.getJavaClass(), this.createObjectMapper());
     }
 
     /**
@@ -162,6 +170,6 @@ public abstract class JsonRootElement<JavaType> {
      * @throws IOException if the object is not writable
      */
     public String writeToString(boolean prettyPrint) throws IOException {
-        return JsonUtils.writeToString(this.object, this.getJavaClass(), prettyPrint);
+        return JsonUtils.writeToString(this.object, this.getJavaClass(), this.createObjectMapper(), prettyPrint);
     }
 }

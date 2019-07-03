@@ -8,10 +8,14 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -30,23 +34,25 @@ import com.fasterxml.jackson.annotation.JsonValue;
     "imageOrder",
     "imageUrl"
 })
-public class Images implements Serializable
+public class Image implements Serializable
 {
 
     /**
      * image label
      * <p>
      * 
+     * Corresponds to the "imageLabel" property.
      * (Can be null)
      * 
      */
     @Nullable
     @JsonProperty("imageLabel")
-    private Images.ImageLabel imageLabel;
+    private Image.Label label;
     /**
      * image order
      * <p>
      * 
+     * Corresponds to the "imageOrder" property.
      * (Can be null)
      * 
      */
@@ -54,7 +60,7 @@ public class Images implements Serializable
     @JsonProperty("imageOrder")
     @DecimalMin("1")
     @DecimalMax("200")
-    private BigInteger imageOrder;
+    private BigInteger order;
     /**
      * 
      * (Required)
@@ -63,104 +69,135 @@ public class Images implements Serializable
     @JsonProperty("imageUrl")
     @NotNull
     @Nonnull
-    private URI imageUrl;
-    private final static long serialVersionUID = 2394371097367072608L;
+    private URI url;
+    @JsonIgnore
+    @Valid
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final static long serialVersionUID = 1604487471095603646L;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public Images() {
+    public Image() {
     }
 
     /**
      * 
-     * @param imageUrl
+     * @param url
      */
-    public Images(URI imageUrl) {
+    public Image(URI url) {
         super();
-        this.imageUrl = imageUrl;
+        this.url = url;
     }
 
     /**
      * image label
      * <p>
      * 
+     * Corresponds to the "imageLabel" property.
      * 
      */
     @JsonProperty("imageLabel")
-    public Images.ImageLabel getImageLabel() {
-        return imageLabel;
+    public Image.Label getLabel() {
+        return label;
     }
 
     /**
      * image label
      * <p>
      * 
+     * Corresponds to the "imageLabel" property.
      * 
      */
     @JsonProperty("imageLabel")
-    public void setImageLabel(Images.ImageLabel imageLabel) {
-        this.imageLabel = imageLabel;
+    public void setLabel(Image.Label label) {
+        this.label = label;
+    }
+
+    public Image withLabel(Image.Label label) {
+        this.label = label;
+        return this;
     }
 
     /**
      * image order
      * <p>
      * 
+     * Corresponds to the "imageOrder" property.
      * 
      */
     @JsonProperty("imageOrder")
-    public BigInteger getImageOrder() {
-        return imageOrder;
+    public BigInteger getOrder() {
+        return order;
     }
 
     /**
      * image order
      * <p>
      * 
+     * Corresponds to the "imageOrder" property.
      * 
      */
     @JsonProperty("imageOrder")
-    public void setImageOrder(BigInteger imageOrder) {
-        this.imageOrder = imageOrder;
+    public void setOrder(BigInteger order) {
+        this.order = order;
     }
 
-    /**
-     * 
-     * (Required)
-     * 
-     */
+    public Image withOrder(BigInteger order) {
+        this.order = order;
+        return this;
+    }
+
     @JsonProperty("imageUrl")
     public URI getImageUrl() {
-        return imageUrl;
+        return url;
     }
 
-    /**
-     * 
-     * (Required)
-     * 
-     */
     @JsonProperty("imageUrl")
-    public void setImageUrl(URI imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageUrl(URI url) {
+        this.url = url;
+    }
+
+    public Image withImageUrl(URI url) {
+        this.url = url;
+        return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+    public Image withAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Images.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("imageLabel");
+        sb.append(Image.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("label");
         sb.append('=');
-        sb.append(((this.imageLabel == null)?"<null>":this.imageLabel));
+        sb.append(((this.label == null)?"<null>":this.label));
         sb.append(',');
-        sb.append("imageOrder");
+        sb.append("order");
         sb.append('=');
-        sb.append(((this.imageOrder == null)?"<null>":this.imageOrder));
+        sb.append(((this.order == null)?"<null>":this.order));
         sb.append(',');
-        sb.append("imageUrl");
+        sb.append("url");
         sb.append('=');
-        sb.append(((this.imageUrl == null)?"<null>":this.imageUrl));
+        sb.append(((this.url == null)?"<null>":this.url));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
@@ -173,9 +210,10 @@ public class Images implements Serializable
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.imageLabel == null)? 0 :this.imageLabel.hashCode()));
-        result = ((result* 31)+((this.imageOrder == null)? 0 :this.imageOrder.hashCode()));
-        result = ((result* 31)+((this.imageUrl == null)? 0 :this.imageUrl.hashCode()));
+        result = ((result* 31)+((this.label == null)? 0 :this.label.hashCode()));
+        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        result = ((result* 31)+((this.url == null)? 0 :this.url.hashCode()));
+        result = ((result* 31)+((this.order == null)? 0 :this.order.hashCode()));
         return result;
     }
 
@@ -184,14 +222,14 @@ public class Images implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof Images) == false) {
+        if ((other instanceof Image) == false) {
             return false;
         }
-        Images rhs = ((Images) other);
-        return ((((this.imageLabel == rhs.imageLabel)||((this.imageLabel!= null)&&this.imageLabel.equals(rhs.imageLabel)))&&((this.imageOrder == rhs.imageOrder)||((this.imageOrder!= null)&&this.imageOrder.equals(rhs.imageOrder))))&&((this.imageUrl == rhs.imageUrl)||((this.imageUrl!= null)&&this.imageUrl.equals(rhs.imageUrl))));
+        Image rhs = ((Image) other);
+        return (((((this.label == rhs.label)||((this.label!= null)&&this.label.equals(rhs.label)))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.url == rhs.url)||((this.url!= null)&&this.url.equals(rhs.url))))&&((this.order == rhs.order)||((this.order!= null)&&this.order.equals(rhs.order))));
     }
 
-    public enum ImageLabel {
+    public enum Label {
 
         APPRAISALPLAN("appraisalplan"),
         ARCHIVE("archive"),
@@ -241,15 +279,15 @@ public class Images implements Serializable
         WAITINGROOM("waitingroom"),
         WALK_IN_WARDROBE("walk_in_wardrobe");
         private final String value;
-        private final static Map<String, Images.ImageLabel> CONSTANTS = new HashMap<String, Images.ImageLabel>();
+        private final static Map<String, Image.Label> CONSTANTS = new HashMap<String, Image.Label>();
 
         static {
-            for (Images.ImageLabel c: values()) {
+            for (Image.Label c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        private ImageLabel(String value) {
+        private Label(String value) {
             this.value = value;
         }
 
@@ -264,8 +302,8 @@ public class Images implements Serializable
         }
 
         @JsonCreator
-        public static Images.ImageLabel fromValue(String value) {
-            Images.ImageLabel constant = CONSTANTS.get(value);
+        public static Image.Label fromValue(String value) {
+            Image.Label constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

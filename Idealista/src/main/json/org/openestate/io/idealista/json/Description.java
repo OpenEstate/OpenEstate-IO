@@ -6,9 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -31,13 +35,14 @@ public class Description implements Serializable
 
     /**
      * 
+     * Corresponds to the "descriptionLanguage" property.
      * (Required)
      * 
      */
     @JsonProperty("descriptionLanguage")
     @NotNull
     @Nonnull
-    private Description.DescriptionLanguage descriptionLanguage;
+    private Description.Language language;
     /**
      * 
      * (Can be null)
@@ -46,8 +51,11 @@ public class Description implements Serializable
     @Nullable
     @JsonProperty("descriptionText")
     @Pattern(regexp = "^.{0,4000}$")
-    private String descriptionText;
-    private final static long serialVersionUID = 3419090462860047724L;
+    private String text;
+    @JsonIgnore
+    @Valid
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final static long serialVersionUID = -3776003431808735225L;
 
     /**
      * No args constructor for use in serialization
@@ -58,54 +66,85 @@ public class Description implements Serializable
 
     /**
      * 
-     * @param descriptionLanguage
+     * @param language
      */
-    public Description(Description.DescriptionLanguage descriptionLanguage) {
+    public Description(Description.Language language) {
         super();
-        this.descriptionLanguage = descriptionLanguage;
+        this.language = language;
     }
 
     /**
      * 
+     * Corresponds to the "descriptionLanguage" property.
      * (Required)
      * 
      */
     @JsonProperty("descriptionLanguage")
-    public Description.DescriptionLanguage getDescriptionLanguage() {
-        return descriptionLanguage;
+    public Description.Language getLanguage() {
+        return language;
     }
 
     /**
      * 
+     * Corresponds to the "descriptionLanguage" property.
      * (Required)
      * 
      */
     @JsonProperty("descriptionLanguage")
-    public void setDescriptionLanguage(Description.DescriptionLanguage descriptionLanguage) {
-        this.descriptionLanguage = descriptionLanguage;
+    public void setLanguage(Description.Language language) {
+        this.language = language;
+    }
+
+    public Description withLanguage(Description.Language language) {
+        this.language = language;
+        return this;
     }
 
     @JsonProperty("descriptionText")
     public String getDescriptionText() {
-        return descriptionText;
+        return text;
     }
 
     @JsonProperty("descriptionText")
-    public void setDescriptionText(String descriptionText) {
-        this.descriptionText = descriptionText;
+    public void setDescriptionText(String text) {
+        this.text = text;
+    }
+
+    public Description withDescriptionText(String text) {
+        this.text = text;
+        return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+    public Description withAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Description.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("descriptionLanguage");
+        sb.append("language");
         sb.append('=');
-        sb.append(((this.descriptionLanguage == null)?"<null>":this.descriptionLanguage));
+        sb.append(((this.language == null)?"<null>":this.language));
         sb.append(',');
-        sb.append("descriptionText");
+        sb.append("text");
         sb.append('=');
-        sb.append(((this.descriptionText == null)?"<null>":this.descriptionText));
+        sb.append(((this.text == null)?"<null>":this.text));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
@@ -118,8 +157,9 @@ public class Description implements Serializable
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.descriptionLanguage == null)? 0 :this.descriptionLanguage.hashCode()));
-        result = ((result* 31)+((this.descriptionText == null)? 0 :this.descriptionText.hashCode()));
+        result = ((result* 31)+((this.language == null)? 0 :this.language.hashCode()));
+        result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
+        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
         return result;
     }
 
@@ -132,10 +172,10 @@ public class Description implements Serializable
             return false;
         }
         Description rhs = ((Description) other);
-        return (((this.descriptionLanguage == rhs.descriptionLanguage)||((this.descriptionLanguage!= null)&&this.descriptionLanguage.equals(rhs.descriptionLanguage)))&&((this.descriptionText == rhs.descriptionText)||((this.descriptionText!= null)&&this.descriptionText.equals(rhs.descriptionText))));
+        return ((((this.language == rhs.language)||((this.language!= null)&&this.language.equals(rhs.language)))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))));
     }
 
-    public enum DescriptionLanguage {
+    public enum Language {
 
         SPANISH("spanish"),
         ITALIAN("italian"),
@@ -153,15 +193,15 @@ public class Description implements Serializable
         SWEDISH("swedish"),
         DANISH("danish");
         private final String value;
-        private final static Map<String, Description.DescriptionLanguage> CONSTANTS = new HashMap<String, Description.DescriptionLanguage>();
+        private final static Map<String, Description.Language> CONSTANTS = new HashMap<String, Description.Language>();
 
         static {
-            for (Description.DescriptionLanguage c: values()) {
+            for (Description.Language c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        private DescriptionLanguage(String value) {
+        private Language(String value) {
             this.value = value;
         }
 
@@ -176,8 +216,8 @@ public class Description implements Serializable
         }
 
         @JsonCreator
-        public static Description.DescriptionLanguage fromValue(String value) {
-            Description.DescriptionLanguage constant = CONSTANTS.get(value);
+        public static Description.Language fromValue(String value) {
+            Description.Language constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

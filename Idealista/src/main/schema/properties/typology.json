@@ -3,33 +3,36 @@
   "id": "https://feeds.idealista.com/v6/schemas/properties/typology.json",
   "title": "Property Object",
   "type": "object",
-  "additionalProperties": false,
+  "javaType": "org.openestate.io.idealista.json.Typology",
+  "additionalProperties": true,
   "required": [
     "propertyCode"
   ],
   "properties": {
     "propertyAddress": {
       "title": "Property address",
-      "$ref": "address.json#"
+      "$ref": "address.json#",
+      "javaName": "address"
     },
     "propertyCode": {
       "title": "Property identifier",
       "description": "It must be unique for each property and unchanging over time",
-      "$ref": "../rules.json#/stringTo50"
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "code"
     },
     "propertyContact": {
       "title": "Property contact",
-      "$ref": "contact.json#"
+      "$ref": "contact.json#",
+      "javaName": "contact"
     },
     "propertyDescriptions": {
       "title": "Property descriptions",
       "type": "array",
       "uniqueItems": true,
-      "items": [
-        {
-          "$ref": "description.json#"
-        }
-      ]
+      "items": {
+        "$ref": "description.json#"
+      },
+      "javaName": "descriptions"
     },
     "propertyFeatures": {
       "title": "Property type",
@@ -46,33 +49,38 @@
         {
           "$ref": "homes.json#"
         }
-      ]
+      ],
+      "javaName": "features",
+      "existingJavaType" : "org.openestate.io.idealista.json.AbstractFeatures"
     },
     "propertyImages": {
       "title": "Property images",
       "type": "array",
       "uniqueItems": true,
-      "items": [
-        {
-          "$ref": "images.json#"
-        }
-      ]
+      "items": {
+        "$ref": "images.json#"
+      },
+      "javaName": "images"
     },
     "propertyOperation": {
       "title": "Property operation",
-      "$ref": "operation.json#"
+      "$ref": "operation.json#",
+      "javaName": "operation"
     },
     "propertyReference": {
       "title": "Property reference",
-      "$ref": "../rules.json#/stringTo50"
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "reference"
     },
     "propertyUrl": {
       "title": "Property URL",
-      "$ref": "../rules.json#/urlFormat"
+      "$ref": "../rules.json#/urlFormat",
+      "javaName": "url"
     },
     "propertyVisibility": {
       "title": "Property visibility",
-      "$ref": "../rules.json#/enumPropertyVisibility"
+      "$ref": "../rules.json#/enumPropertyVisibility",
+      "javaName": "visibility"
     }
   }
 }

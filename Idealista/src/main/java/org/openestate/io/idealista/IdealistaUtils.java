@@ -15,12 +15,33 @@
  */
 package org.openestate.io.idealista;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig;
+import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
+import org.openestate.io.idealista.json.AbstractFeatures;
 import org.openestate.io.idealista.json.Address;
+import org.openestate.io.idealista.json.BuildingFeatures;
 import org.openestate.io.idealista.json.Description;
+import org.openestate.io.idealista.json.GarageFeatures;
+import org.openestate.io.idealista.json.HomeFeatures;
+import org.openestate.io.idealista.json.LandFeatures;
+import org.openestate.io.idealista.json.OfficeFeatures;
+import org.openestate.io.idealista.json.PremiseFeatures;
+import org.openestate.io.idealista.json.StorageFeatures;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,8 +69,42 @@ public class IdealistaUtils {
     @SuppressWarnings("unused")
     public final static Charset CHARSET = StandardCharsets.UTF_8;
 
+    /**
+     * map property feature classes to their types
+     */
+    private final static Map<Class<? extends AbstractFeatures>, Class<? extends Enum>> TYPES;
+
+    static {
+        TYPES = new HashMap<>();
+        TYPES.put(BuildingFeatures.class, BuildingFeatures.Type.class);
+        TYPES.put(GarageFeatures.class, GarageFeatures.Type.class);
+        TYPES.put(HomeFeatures.class, HomeFeatures.Type.class);
+        TYPES.put(LandFeatures.class, LandFeatures.Type.class);
+        TYPES.put(OfficeFeatures.class, OfficeFeatures.Type.class);
+        TYPES.put(PremiseFeatures.class, PremiseFeatures.Type.class);
+        TYPES.put(StorageFeatures.class, StorageFeatures.Type.class);
+    }
+
     private IdealistaUtils() {
         super();
+    }
+
+    /**
+     * Create an object mapper instance.
+     *
+     * @return object mapper
+     */
+    public static ObjectMapper createObjectMapper() {
+        final ObjectMapper mapper = new ObjectMapper();
+
+        final SimpleModule module = new SimpleModule();
+        module.addDeserializer(AbstractFeatures.class, new FeaturesDeserializer());
+        for (Class<? extends AbstractFeatures> t : TYPES.keySet()) {
+            module.addDeserializer(t, null);
+        }
+        mapper.registerModule(module);
+
+        return mapper;
     }
 
     /**
@@ -58,29 +113,29 @@ public class IdealistaUtils {
      * @param code ISO country code
      * @return address country or <code>null</code>, if not supported
      */
-    public static Address.AddressCountry getAddressCountry(String code) {
+    public static Address.Country getAddressCountry(String code) {
         code = StringUtils.trimToNull(code);
 
         if (StringUtils.equalsAnyIgnoreCase(code, "AD", "AND", "020"))
-            return Address.AddressCountry.ANDORRA;
+            return Address.Country.ANDORRA;
 
         if (StringUtils.equalsAnyIgnoreCase(code, "FR", "FRA", "250"))
-            return Address.AddressCountry.FRANCE;
+            return Address.Country.FRANCE;
 
         if (StringUtils.equalsAnyIgnoreCase(code, "IT", "ITA", "380"))
-            return Address.AddressCountry.ITALY;
+            return Address.Country.ITALY;
 
         if (StringUtils.equalsAnyIgnoreCase(code, "PT", "PRT", "620"))
-            return Address.AddressCountry.PORTUGAL;
+            return Address.Country.PORTUGAL;
 
         if (StringUtils.equalsAnyIgnoreCase(code, "SM", "SMR", "674"))
-            return Address.AddressCountry.SAN_MARINO;
+            return Address.Country.SAN_MARINO;
 
         if (StringUtils.equalsAnyIgnoreCase(code, "ES", "ESP", "724"))
-            return Address.AddressCountry.SPAIN;
+            return Address.Country.SPAIN;
 
         if (StringUtils.equalsAnyIgnoreCase(code, "CH", "CHE", "756"))
-            return Address.AddressCountry.SWITZERLAND;
+            return Address.Country.SWITZERLAND;
 
         return null;
     }
@@ -91,7 +146,7 @@ public class IdealistaUtils {
      * @param locale locale
      * @return description language or <code>null</code>, if not supported
      */
-    public static Description.DescriptionLanguage getDescriptionLanguage(Locale locale) {
+    public static Description.Language getDescriptionLanguage(Locale locale) {
         return (locale != null) ?
                 getDescriptionLanguage(locale.getLanguage()) :
                 null;
@@ -103,39 +158,39 @@ public class IdealistaUtils {
      * @param code ISO language code
      * @return description language or <code>null</code>, if not supported
      */
-    public static Description.DescriptionLanguage getDescriptionLanguage(String code) {
+    public static Description.Language getDescriptionLanguage(String code) {
         code = StringUtils.trimToNull(code);
 
         if (StringUtils.equalsAnyIgnoreCase(code, "ca", "cat"))
-            return Description.DescriptionLanguage.CATALAN;
+            return Description.Language.CATALAN;
         if (StringUtils.equalsAnyIgnoreCase(code, "zh", "zho", "chi"))
-            return Description.DescriptionLanguage.CHINESE;
+            return Description.Language.CHINESE;
         if (StringUtils.equalsAnyIgnoreCase(code, "da", "dan"))
-            return Description.DescriptionLanguage.DANISH;
+            return Description.Language.DANISH;
         if (StringUtils.equalsAnyIgnoreCase(code, "nl", "nld", "dut"))
-            return Description.DescriptionLanguage.DUTCH;
+            return Description.Language.DUTCH;
         if (StringUtils.equalsAnyIgnoreCase(code, "en", "eng"))
-            return Description.DescriptionLanguage.ENGLISH;
+            return Description.Language.ENGLISH;
         if (StringUtils.equalsAnyIgnoreCase(code, "fi", "fin"))
-            return Description.DescriptionLanguage.FINNISH;
+            return Description.Language.FINNISH;
         if (StringUtils.equalsAnyIgnoreCase(code, "fr", "fra", "fre"))
-            return Description.DescriptionLanguage.FRENCH;
+            return Description.Language.FRENCH;
         if (StringUtils.equalsAnyIgnoreCase(code, "de", "deu", "ger"))
-            return Description.DescriptionLanguage.GERMAN;
+            return Description.Language.GERMAN;
         if (StringUtils.equalsAnyIgnoreCase(code, "it", "ita"))
-            return Description.DescriptionLanguage.ITALIAN;
+            return Description.Language.ITALIAN;
         if (StringUtils.equalsAnyIgnoreCase(code, "pl", "pol"))
-            return Description.DescriptionLanguage.POLISH;
+            return Description.Language.POLISH;
         if (StringUtils.equalsAnyIgnoreCase(code, "pt", "por"))
-            return Description.DescriptionLanguage.PORTUGUESE;
+            return Description.Language.PORTUGUESE;
         if (StringUtils.equalsAnyIgnoreCase(code, "ro", "ron", "rum"))
-            return Description.DescriptionLanguage.ROMANIAN;
+            return Description.Language.ROMANIAN;
         if (StringUtils.equalsAnyIgnoreCase(code, "ru", "rus"))
-            return Description.DescriptionLanguage.RUSSIAN;
+            return Description.Language.RUSSIAN;
         if (StringUtils.equalsAnyIgnoreCase(code, "es", "spa"))
-            return Description.DescriptionLanguage.SPANISH;
+            return Description.Language.SPANISH;
         if (StringUtils.equalsAnyIgnoreCase(code, "sv", "swe"))
-            return Description.DescriptionLanguage.SWEDISH;
+            return Description.Language.SWEDISH;
 
         return null;
     }
@@ -163,5 +218,53 @@ public class IdealistaUtils {
                 new Locale("es"), // spanish
                 new Locale("sv"), // swedish
         };
+    }
+
+    public static class FeaturesDeserializer extends StdDeserializer<AbstractFeatures> {
+        private final BeanDeserializerFactory beanDeserializerFactory = new BeanDeserializerFactory(new DeserializerFactoryConfig());
+
+        public FeaturesDeserializer() {
+            this(null);
+        }
+
+        public FeaturesDeserializer(Class<?> vc) {
+            super(vc);
+        }
+
+        @Override
+        public AbstractFeatures deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+            final JsonNode node = jp.getCodec().readTree(jp);
+            final String featuresType = (node.has("featuresType")) ?
+                    node.get("featuresType").asText() :
+                    null;
+
+            if (featuresType == null) {
+                //LOGGER.debug("No featuresType attribute was specified!");
+                //return null;
+                throw new IOException("No featuresType attribute was specified!");
+            }
+
+            //LOGGER.debug("Deserializing {} features...", featuresType);
+            for (Map.Entry<Class<? extends AbstractFeatures>, Class<? extends Enum>> type : TYPES.entrySet()) {
+                try {
+                    final Enum typeEnum = (Enum) type.getValue()
+                            .getMethod("fromValue", String.class)
+                            .invoke(null, featuresType);
+
+                    if (typeEnum != null) {
+                        final JsonParser p = node.traverse(jp.getCodec());
+                        p.nextToken();
+                        return ctxt.readValue(p, type.getKey());
+                    }
+
+                } catch (InvocationTargetException ex) {
+                    //LOGGER.debug("{} is not land.", type);
+                } catch (NoSuchMethodException | IllegalAccessException ex) {
+                    throw new IOException("Can't fetch property type!", ex);
+                }
+            }
+
+            throw new IOException("Unsupported property type '" + featuresType + "'!");
+        }
     }
 }

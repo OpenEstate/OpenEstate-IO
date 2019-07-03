@@ -65,7 +65,8 @@
       "toilets",
       "fullEquiped",
       "both"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.BathroomType"
   },
   "featuresBedroomNumber": {
     "title": "bedrooms number",
@@ -136,7 +137,8 @@
       "cold",
       "cold/heat",
       "preInstallation"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.ConditionedAirType"
   },
   "featuresConservation": {
     "title": "conservation status",
@@ -145,7 +147,8 @@
       "new",
       "good",
       "toRestore"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.ConservationType"
   },
   "featuresDoorman": {
     "title": "doorman",
@@ -171,7 +174,8 @@
     "enum": [
       "dl-192_2005",
       "legge-90_2013"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.EnergyCertificateLawType"
   },
   "featuresEnergyCertificatePerformance": {
     "title": "energy certification performance",
@@ -196,7 +200,26 @@
       "exempt",
       "inProcess",
       "unknown"
-    ]
+    ],
+    "javaEnumNames": [
+      "A",
+      "A_PLUS",
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "B",
+      "B_MINUS",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "EXEMPT",
+      "IN_PROCESS",
+      "UNKNOWN"
+    ],
+    "javaType": "org.openestate.io.idealista.json.EnergyCertificateRatingType"
   },
   "featuresEnergyCertificateType": {
     "title": "energy certification type",
@@ -204,7 +227,8 @@
     "enum": [
       "project",
       "completed"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.EnergyCertificateType"
   },
   "featuresEquippedKitchen": {
     "title": "equipped with kitchen",
@@ -284,7 +308,8 @@
       "individualAirConditioningHeatPump",
       "individualOther",
       "noHeating"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.HeatingType"
   },
   "featuresHotWater": {
     "title": "hot water",
@@ -355,7 +380,8 @@
       "unknown",
       "depot",
       "parking_space"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.ParkingType"
   },
   "featuresParkingSpacesNumber": {
     "title": "parking spaces number",
@@ -385,7 +411,8 @@
       "openPlan",
       "withScreens",
       "withWalls"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.RoomsSplittedType"
   },
   "featuresSecurity24h": {
     "title": "24 hr security service",
@@ -449,7 +476,8 @@
       "belowGround",
       "other",
       "unknown"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.UbicationType"
   },
   "featuresUtilitiesElectricity": {
     "title": "electricity availability",
@@ -498,7 +526,8 @@
     "enum": [
       "interior",
       "exterior"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.WindowsLocationType"
   },
   "featuresWindowsShop": {
     "title": "shop windows number",
@@ -506,15 +535,39 @@
   },
   "enumNewDevelopmentType": {
     "description": "Typing for new developments",
-    "enum": ["restored_building","new_building","house","mixed_promos"]
+    "enum": [
+      "restored_building",
+      "new_building",
+      "house",
+      "mixed_promos"
+    ],
+    "javaType": "org.openestate.io.idealista.json.NewDevelopmentType"
   },
   "enumFeaturesBuiltPhase": {
     "description": "Phase of built for new developments",
-    "enum": ["land_move","foundation","carpentry","pilot", "paving", "equipment","keydelivery"]
+    "enum": [
+      "land_move",
+      "foundation",
+      "carpentry",
+      "pilot",
+      "paving",
+      "equipment",
+      "keydelivery"
+    ],
+    "javaType": "org.openestate.io.idealista.json.BuiltPhaseType"
   },
   "enumFeaturesAvailabilityHour": {
     "description": "Booth sales availability hour for new developments",
-    "enum": ["any_morning","mornings","at_noon","afternoons", "nights", "weekends","business_hour"]
+    "enum": [
+      "any_morning",
+      "mornings",
+      "at_noon",
+      "afternoons",
+      "nights",
+      "weekends",
+      "business_hour"
+    ],
+    "javaType": "org.openestate.io.idealista.json.AvailabilityHourType"
   },
   "featuresNewDevelopmentName": {
     "title": "name",
@@ -566,7 +619,7 @@
     "$ref": "../rules.json#/number1to9999"
   },
   "featuresWindowsNumber": {
-    "title": "Premise windows noumbers",
+    "title": "Premise windows numbers",
     "$ref": "../rules.json#/number1to999"
   },
   "featuresAccessType": {
@@ -577,6 +630,7 @@
       "track",
       "highway",
       "unknown"
-    ]
+    ],
+    "javaType": "org.openestate.io.idealista.json.AccessType"
   }
 }

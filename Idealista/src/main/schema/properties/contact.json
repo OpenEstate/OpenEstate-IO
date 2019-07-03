@@ -2,7 +2,8 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://feeds.idealista.com/v6/schemas/properties/contact.json",
   "title": "Contact Object",
-  "type": "object",  
+  "type": "object",
+  "javaType": "org.openestate.io.idealista.json.Contact",
   "dependencies": {
     "contactPrimaryPhonePrefix": [
       "contactPrimaryPhoneNumber"
@@ -11,31 +12,37 @@
       "contactSecondaryPhoneNumber"
     ]
   },
-  "additionalProperties": false,
-  "properties": {    
+  "additionalProperties": true,
+  "properties": {
     "contactName": {
       "title": "contact name",
-      "$ref": "../rules.json#/stringTo60"
+      "$ref": "../rules.json#/stringTo60",
+      "javaName": "name"
     },
     "contactEmail": {
       "title": "contact email",
-      "$ref": "../rules.json#/emailFormat"
+      "$ref": "../rules.json#/emailFormat",
+      "javaName": "email"
     },
     "contactPrimaryPhonePrefix": {
       "title": "contact primary phone prefix",
-      "$ref": "../rules.json#/phonePrefixFormat"
+      "$ref": "../rules.json#/phonePrefixFormat",
+      "javaName": "primaryPhonePrefix"
     },
     "contactPrimaryPhoneNumber": {
       "title": "contact primary phone number",
-      "$ref": "../rules.json#/phoneFormat"
+      "$ref": "../rules.json#/phoneFormat",
+      "javaName": "primaryPhoneNumber"
     },
     "contactSecondaryPhonePrefix": {
       "title": "contact secondary phone prefix",
-      "$ref": "../rules.json#/phonePrefixFormat"
+      "$ref": "../rules.json#/phonePrefixFormat",
+      "javaName": "secondaryPhonePrefix"
     },
     "contactSecondaryPhoneNumber": {
       "title": "contact secondary phone number",
-      "$ref": "../rules.json#/phoneFormat"
+      "$ref": "../rules.json#/phoneFormat",
+      "javaName": "secondaryPhoneNumber"
     }
   }
 }

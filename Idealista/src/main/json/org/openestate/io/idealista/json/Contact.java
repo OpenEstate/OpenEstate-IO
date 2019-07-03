@@ -2,8 +2,14 @@
 package org.openestate.io.idealista.json;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import javax.annotation.Nullable;
+import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -35,7 +41,7 @@ public class Contact implements Serializable
     @Nullable
     @JsonProperty("contactName")
     @Pattern(regexp = "^.{0,60}$")
-    private String contactName;
+    private String name;
     /**
      * 
      * (Can be null)
@@ -44,7 +50,7 @@ public class Contact implements Serializable
     @Nullable
     @JsonProperty("contactEmail")
     @Pattern(regexp = "^(([a-zA-Z0-9-_\\.])+)@((?:[a-zA-Z0-9-_]+\\.)+)([a-zA-Z]{2,5})$")
-    private String contactEmail;
+    private String email;
     /**
      * 
      * (Can be null)
@@ -53,7 +59,7 @@ public class Contact implements Serializable
     @Nullable
     @JsonProperty("contactPrimaryPhonePrefix")
     @Pattern(regexp = "^[1-9][0-9]{0,2}$")
-    private String contactPrimaryPhonePrefix;
+    private String primaryPhonePrefix;
     /**
      * 
      * (Can be null)
@@ -62,7 +68,7 @@ public class Contact implements Serializable
     @Nullable
     @JsonProperty("contactPrimaryPhoneNumber")
     @Pattern(regexp = "^[0-9]{5,12}$")
-    private String contactPrimaryPhoneNumber;
+    private String primaryPhoneNumber;
     /**
      * 
      * (Can be null)
@@ -71,7 +77,7 @@ public class Contact implements Serializable
     @Nullable
     @JsonProperty("contactSecondaryPhonePrefix")
     @Pattern(regexp = "^[1-9][0-9]{0,2}$")
-    private String contactSecondaryPhonePrefix;
+    private String secondaryPhonePrefix;
     /**
      * 
      * (Can be null)
@@ -80,96 +86,148 @@ public class Contact implements Serializable
     @Nullable
     @JsonProperty("contactSecondaryPhoneNumber")
     @Pattern(regexp = "^[0-9]{5,12}$")
-    private String contactSecondaryPhoneNumber;
-    private final static long serialVersionUID = 8089758367839855648L;
+    private String secondaryPhoneNumber;
+    @JsonIgnore
+    @Valid
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final static long serialVersionUID = 7398587465974377361L;
 
     @JsonProperty("contactName")
     public String getContactName() {
-        return contactName;
+        return name;
     }
 
     @JsonProperty("contactName")
-    public void setContactName(String contactName) {
-        this.contactName = contactName;
+    public void setContactName(String name) {
+        this.name = name;
+    }
+
+    public Contact withContactName(String name) {
+        this.name = name;
+        return this;
     }
 
     @JsonProperty("contactEmail")
     public String getContactEmail() {
-        return contactEmail;
+        return email;
     }
 
     @JsonProperty("contactEmail")
-    public void setContactEmail(String contactEmail) {
-        this.contactEmail = contactEmail;
+    public void setContactEmail(String email) {
+        this.email = email;
+    }
+
+    public Contact withContactEmail(String email) {
+        this.email = email;
+        return this;
     }
 
     @JsonProperty("contactPrimaryPhonePrefix")
     public String getContactPrimaryPhonePrefix() {
-        return contactPrimaryPhonePrefix;
+        return primaryPhonePrefix;
     }
 
     @JsonProperty("contactPrimaryPhonePrefix")
-    public void setContactPrimaryPhonePrefix(String contactPrimaryPhonePrefix) {
-        this.contactPrimaryPhonePrefix = contactPrimaryPhonePrefix;
+    public void setContactPrimaryPhonePrefix(String primaryPhonePrefix) {
+        this.primaryPhonePrefix = primaryPhonePrefix;
+    }
+
+    public Contact withContactPrimaryPhonePrefix(String primaryPhonePrefix) {
+        this.primaryPhonePrefix = primaryPhonePrefix;
+        return this;
     }
 
     @JsonProperty("contactPrimaryPhoneNumber")
     public String getContactPrimaryPhoneNumber() {
-        return contactPrimaryPhoneNumber;
+        return primaryPhoneNumber;
     }
 
     @JsonProperty("contactPrimaryPhoneNumber")
-    public void setContactPrimaryPhoneNumber(String contactPrimaryPhoneNumber) {
-        this.contactPrimaryPhoneNumber = contactPrimaryPhoneNumber;
+    public void setContactPrimaryPhoneNumber(String primaryPhoneNumber) {
+        this.primaryPhoneNumber = primaryPhoneNumber;
+    }
+
+    public Contact withContactPrimaryPhoneNumber(String primaryPhoneNumber) {
+        this.primaryPhoneNumber = primaryPhoneNumber;
+        return this;
     }
 
     @JsonProperty("contactSecondaryPhonePrefix")
     public String getContactSecondaryPhonePrefix() {
-        return contactSecondaryPhonePrefix;
+        return secondaryPhonePrefix;
     }
 
     @JsonProperty("contactSecondaryPhonePrefix")
-    public void setContactSecondaryPhonePrefix(String contactSecondaryPhonePrefix) {
-        this.contactSecondaryPhonePrefix = contactSecondaryPhonePrefix;
+    public void setContactSecondaryPhonePrefix(String secondaryPhonePrefix) {
+        this.secondaryPhonePrefix = secondaryPhonePrefix;
+    }
+
+    public Contact withContactSecondaryPhonePrefix(String secondaryPhonePrefix) {
+        this.secondaryPhonePrefix = secondaryPhonePrefix;
+        return this;
     }
 
     @JsonProperty("contactSecondaryPhoneNumber")
     public String getContactSecondaryPhoneNumber() {
-        return contactSecondaryPhoneNumber;
+        return secondaryPhoneNumber;
     }
 
     @JsonProperty("contactSecondaryPhoneNumber")
-    public void setContactSecondaryPhoneNumber(String contactSecondaryPhoneNumber) {
-        this.contactSecondaryPhoneNumber = contactSecondaryPhoneNumber;
+    public void setContactSecondaryPhoneNumber(String secondaryPhoneNumber) {
+        this.secondaryPhoneNumber = secondaryPhoneNumber;
+    }
+
+    public Contact withContactSecondaryPhoneNumber(String secondaryPhoneNumber) {
+        this.secondaryPhoneNumber = secondaryPhoneNumber;
+        return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+    public Contact withAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Contact.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("contactName");
+        sb.append("name");
         sb.append('=');
-        sb.append(((this.contactName == null)?"<null>":this.contactName));
+        sb.append(((this.name == null)?"<null>":this.name));
         sb.append(',');
-        sb.append("contactEmail");
+        sb.append("email");
         sb.append('=');
-        sb.append(((this.contactEmail == null)?"<null>":this.contactEmail));
+        sb.append(((this.email == null)?"<null>":this.email));
         sb.append(',');
-        sb.append("contactPrimaryPhonePrefix");
+        sb.append("primaryPhonePrefix");
         sb.append('=');
-        sb.append(((this.contactPrimaryPhonePrefix == null)?"<null>":this.contactPrimaryPhonePrefix));
+        sb.append(((this.primaryPhonePrefix == null)?"<null>":this.primaryPhonePrefix));
         sb.append(',');
-        sb.append("contactPrimaryPhoneNumber");
+        sb.append("primaryPhoneNumber");
         sb.append('=');
-        sb.append(((this.contactPrimaryPhoneNumber == null)?"<null>":this.contactPrimaryPhoneNumber));
+        sb.append(((this.primaryPhoneNumber == null)?"<null>":this.primaryPhoneNumber));
         sb.append(',');
-        sb.append("contactSecondaryPhonePrefix");
+        sb.append("secondaryPhonePrefix");
         sb.append('=');
-        sb.append(((this.contactSecondaryPhonePrefix == null)?"<null>":this.contactSecondaryPhonePrefix));
+        sb.append(((this.secondaryPhonePrefix == null)?"<null>":this.secondaryPhonePrefix));
         sb.append(',');
-        sb.append("contactSecondaryPhoneNumber");
+        sb.append("secondaryPhoneNumber");
         sb.append('=');
-        sb.append(((this.contactSecondaryPhoneNumber == null)?"<null>":this.contactSecondaryPhoneNumber));
+        sb.append(((this.secondaryPhoneNumber == null)?"<null>":this.secondaryPhoneNumber));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
@@ -182,12 +240,13 @@ public class Contact implements Serializable
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.contactPrimaryPhoneNumber == null)? 0 :this.contactPrimaryPhoneNumber.hashCode()));
-        result = ((result* 31)+((this.contactEmail == null)? 0 :this.contactEmail.hashCode()));
-        result = ((result* 31)+((this.contactName == null)? 0 :this.contactName.hashCode()));
-        result = ((result* 31)+((this.contactSecondaryPhonePrefix == null)? 0 :this.contactSecondaryPhonePrefix.hashCode()));
-        result = ((result* 31)+((this.contactSecondaryPhoneNumber == null)? 0 :this.contactSecondaryPhoneNumber.hashCode()));
-        result = ((result* 31)+((this.contactPrimaryPhonePrefix == null)? 0 :this.contactPrimaryPhonePrefix.hashCode()));
+        result = ((result* 31)+((this.primaryPhonePrefix == null)? 0 :this.primaryPhonePrefix.hashCode()));
+        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
+        result = ((result* 31)+((this.secondaryPhonePrefix == null)? 0 :this.secondaryPhonePrefix.hashCode()));
+        result = ((result* 31)+((this.primaryPhoneNumber == null)? 0 :this.primaryPhoneNumber.hashCode()));
+        result = ((result* 31)+((this.secondaryPhoneNumber == null)? 0 :this.secondaryPhoneNumber.hashCode()));
+        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        result = ((result* 31)+((this.email == null)? 0 :this.email.hashCode()));
         return result;
     }
 
@@ -200,7 +259,7 @@ public class Contact implements Serializable
             return false;
         }
         Contact rhs = ((Contact) other);
-        return (((((((this.contactPrimaryPhoneNumber == rhs.contactPrimaryPhoneNumber)||((this.contactPrimaryPhoneNumber!= null)&&this.contactPrimaryPhoneNumber.equals(rhs.contactPrimaryPhoneNumber)))&&((this.contactEmail == rhs.contactEmail)||((this.contactEmail!= null)&&this.contactEmail.equals(rhs.contactEmail))))&&((this.contactName == rhs.contactName)||((this.contactName!= null)&&this.contactName.equals(rhs.contactName))))&&((this.contactSecondaryPhonePrefix == rhs.contactSecondaryPhonePrefix)||((this.contactSecondaryPhonePrefix!= null)&&this.contactSecondaryPhonePrefix.equals(rhs.contactSecondaryPhonePrefix))))&&((this.contactSecondaryPhoneNumber == rhs.contactSecondaryPhoneNumber)||((this.contactSecondaryPhoneNumber!= null)&&this.contactSecondaryPhoneNumber.equals(rhs.contactSecondaryPhoneNumber))))&&((this.contactPrimaryPhonePrefix == rhs.contactPrimaryPhonePrefix)||((this.contactPrimaryPhonePrefix!= null)&&this.contactPrimaryPhonePrefix.equals(rhs.contactPrimaryPhonePrefix))));
+        return ((((((((this.primaryPhonePrefix == rhs.primaryPhonePrefix)||((this.primaryPhonePrefix!= null)&&this.primaryPhonePrefix.equals(rhs.primaryPhonePrefix)))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.secondaryPhonePrefix == rhs.secondaryPhonePrefix)||((this.secondaryPhonePrefix!= null)&&this.secondaryPhonePrefix.equals(rhs.secondaryPhonePrefix))))&&((this.primaryPhoneNumber == rhs.primaryPhoneNumber)||((this.primaryPhoneNumber!= null)&&this.primaryPhoneNumber.equals(rhs.primaryPhoneNumber))))&&((this.secondaryPhoneNumber == rhs.secondaryPhoneNumber)||((this.secondaryPhoneNumber!= null)&&this.secondaryPhoneNumber.equals(rhs.secondaryPhoneNumber))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))));
     }
 
 }

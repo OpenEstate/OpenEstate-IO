@@ -54,12 +54,13 @@ public class Customer implements Serializable
      * Customer country
      * <p>
      * 
+     * Corresponds to the "customerCountry" property.
      * (Can be null)
      * 
      */
     @Nullable
     @JsonProperty("customerCountry")
-    private Customer.CustomerCountry customerCountry;
+    private Customer.Country country;
     /**
      * 
      * (Can be null)
@@ -68,7 +69,7 @@ public class Customer implements Serializable
     @Nullable
     @JsonProperty("customerCode")
     @Pattern(regexp = "^ilc([a-z]|[0-9]){40}$")
-    private String customerCode;
+    private String code;
     /**
      * 
      * (Can be null)
@@ -77,7 +78,7 @@ public class Customer implements Serializable
     @Nullable
     @JsonProperty("customerName")
     @Pattern(regexp = "^.{0,100}$")
-    private String customerName;
+    private String name;
     /**
      * 
      * (Can be null)
@@ -86,7 +87,7 @@ public class Customer implements Serializable
     @Nullable
     @JsonProperty("customerReference")
     @Pattern(regexp = "^.{0,50}$")
-    private String customerReference;
+    private String reference;
     /**
      * Contact Object
      * <p>
@@ -97,11 +98,12 @@ public class Customer implements Serializable
     @Nullable
     @JsonProperty("customerContact")
     @Valid
-    private Contact customerContact;
+    private Contact contact;
     /**
      * Customer Secondhand Properties
      * <p>
      * 
+     * Corresponds to the "customerProperties" property.
      * (Can be null)
      * 
      */
@@ -109,11 +111,12 @@ public class Customer implements Serializable
     @JsonProperty("customerProperties")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @Valid
-    private Set<PropertyJson> customerProperties = null;
+    private Set<Property> properties = null;
     /**
      * Customer NewDevelopment Properties
      * <p>
      * 
+     * Corresponds to the "customerNewDevelopments" property.
      * (Can be null)
      * 
      */
@@ -121,11 +124,11 @@ public class Customer implements Serializable
     @JsonProperty("customerNewDevelopments")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @Valid
-    private Set<NewDevelopmentJson> customerNewDevelopments = null;
+    private Set<NewDevelopment> newDevelopments = null;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 1415110503944403369L;
+    private final static long serialVersionUID = -8019238347120858266L;
 
     @JsonProperty("customerSendDate")
     public Date getCustomerSendDate() {
@@ -137,56 +140,83 @@ public class Customer implements Serializable
         this.customerSendDate = customerSendDate;
     }
 
-    /**
-     * Customer country
-     * <p>
-     * 
-     * 
-     */
-    @JsonProperty("customerCountry")
-    public Customer.CustomerCountry getCustomerCountry() {
-        return customerCountry;
+    public Customer withCustomerSendDate(Date customerSendDate) {
+        this.customerSendDate = customerSendDate;
+        return this;
     }
 
     /**
      * Customer country
      * <p>
      * 
+     * Corresponds to the "customerCountry" property.
      * 
      */
     @JsonProperty("customerCountry")
-    public void setCustomerCountry(Customer.CustomerCountry customerCountry) {
-        this.customerCountry = customerCountry;
+    public Customer.Country getCountry() {
+        return country;
+    }
+
+    /**
+     * Customer country
+     * <p>
+     * 
+     * Corresponds to the "customerCountry" property.
+     * 
+     */
+    @JsonProperty("customerCountry")
+    public void setCountry(Customer.Country country) {
+        this.country = country;
+    }
+
+    public Customer withCountry(Customer.Country country) {
+        this.country = country;
+        return this;
     }
 
     @JsonProperty("customerCode")
     public String getCustomerCode() {
-        return customerCode;
+        return code;
     }
 
     @JsonProperty("customerCode")
-    public void setCustomerCode(String customerCode) {
-        this.customerCode = customerCode;
+    public void setCustomerCode(String code) {
+        this.code = code;
+    }
+
+    public Customer withCustomerCode(String code) {
+        this.code = code;
+        return this;
     }
 
     @JsonProperty("customerName")
     public String getCustomerName() {
-        return customerName;
+        return name;
     }
 
     @JsonProperty("customerName")
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setCustomerName(String name) {
+        this.name = name;
+    }
+
+    public Customer withCustomerName(String name) {
+        this.name = name;
+        return this;
     }
 
     @JsonProperty("customerReference")
     public String getCustomerReference() {
-        return customerReference;
+        return reference;
     }
 
     @JsonProperty("customerReference")
-    public void setCustomerReference(String customerReference) {
-        this.customerReference = customerReference;
+    public void setCustomerReference(String reference) {
+        this.reference = reference;
+    }
+
+    public Customer withCustomerReference(String reference) {
+        this.reference = reference;
+        return this;
     }
 
     /**
@@ -197,7 +227,7 @@ public class Customer implements Serializable
      */
     @JsonProperty("customerContact")
     public Contact getCustomerContact() {
-        return customerContact;
+        return contact;
     }
 
     /**
@@ -207,52 +237,71 @@ public class Customer implements Serializable
      * 
      */
     @JsonProperty("customerContact")
-    public void setCustomerContact(Contact customerContact) {
-        this.customerContact = customerContact;
+    public void setCustomerContact(Contact contact) {
+        this.contact = contact;
+    }
+
+    public Customer withCustomerContact(Contact contact) {
+        this.contact = contact;
+        return this;
     }
 
     /**
      * Customer Secondhand Properties
      * <p>
      * 
+     * Corresponds to the "customerProperties" property.
      * 
      */
     @JsonProperty("customerProperties")
-    public Set<PropertyJson> getCustomerProperties() {
-        return customerProperties;
+    public Set<Property> getProperties() {
+        return properties;
     }
 
     /**
      * Customer Secondhand Properties
      * <p>
      * 
+     * Corresponds to the "customerProperties" property.
      * 
      */
     @JsonProperty("customerProperties")
-    public void setCustomerProperties(Set<PropertyJson> customerProperties) {
-        this.customerProperties = customerProperties;
+    public void setProperties(Set<Property> properties) {
+        this.properties = properties;
+    }
+
+    public Customer withProperties(Set<Property> properties) {
+        this.properties = properties;
+        return this;
     }
 
     /**
      * Customer NewDevelopment Properties
      * <p>
      * 
+     * Corresponds to the "customerNewDevelopments" property.
      * 
      */
     @JsonProperty("customerNewDevelopments")
-    public Set<NewDevelopmentJson> getCustomerNewDevelopments() {
-        return customerNewDevelopments;
+    public Set<NewDevelopment> getNewDevelopments() {
+        return newDevelopments;
     }
 
     /**
      * Customer NewDevelopment Properties
      * <p>
      * 
+     * Corresponds to the "customerNewDevelopments" property.
      * 
      */
     @JsonProperty("customerNewDevelopments")
-    public void setCustomerNewDevelopments(Set<NewDevelopmentJson> customerNewDevelopments) {
-        this.customerNewDevelopments = customerNewDevelopments;
+    public void setNewDevelopments(Set<NewDevelopment> newDevelopments) {
+        this.newDevelopments = newDevelopments;
+    }
+
+    public Customer withNewDevelopments(Set<NewDevelopment> newDevelopments) {
+        this.newDevelopments = newDevelopments;
+        return this;
     }
 
     @JsonAnyGetter
@@ -265,6 +314,11 @@ public class Customer implements Serializable
         this.additionalProperties.put(name, value);
     }
 
+    public Customer withAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -273,33 +327,33 @@ public class Customer implements Serializable
         sb.append('=');
         sb.append(((this.customerSendDate == null)?"<null>":this.customerSendDate));
         sb.append(',');
-        sb.append("customerCountry");
+        sb.append("country");
         sb.append('=');
-        sb.append(((this.customerCountry == null)?"<null>":this.customerCountry));
+        sb.append(((this.country == null)?"<null>":this.country));
         sb.append(',');
-        sb.append("customerCode");
+        sb.append("code");
         sb.append('=');
-        sb.append(((this.customerCode == null)?"<null>":this.customerCode));
+        sb.append(((this.code == null)?"<null>":this.code));
         sb.append(',');
-        sb.append("customerName");
+        sb.append("name");
         sb.append('=');
-        sb.append(((this.customerName == null)?"<null>":this.customerName));
+        sb.append(((this.name == null)?"<null>":this.name));
         sb.append(',');
-        sb.append("customerReference");
+        sb.append("reference");
         sb.append('=');
-        sb.append(((this.customerReference == null)?"<null>":this.customerReference));
+        sb.append(((this.reference == null)?"<null>":this.reference));
         sb.append(',');
-        sb.append("customerContact");
+        sb.append("contact");
         sb.append('=');
-        sb.append(((this.customerContact == null)?"<null>":this.customerContact));
+        sb.append(((this.contact == null)?"<null>":this.contact));
         sb.append(',');
-        sb.append("customerProperties");
+        sb.append("properties");
         sb.append('=');
-        sb.append(((this.customerProperties == null)?"<null>":this.customerProperties));
+        sb.append(((this.properties == null)?"<null>":this.properties));
         sb.append(',');
-        sb.append("customerNewDevelopments");
+        sb.append("newDevelopments");
         sb.append('=');
-        sb.append(((this.customerNewDevelopments == null)?"<null>":this.customerNewDevelopments));
+        sb.append(((this.newDevelopments == null)?"<null>":this.newDevelopments));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
@@ -316,15 +370,15 @@ public class Customer implements Serializable
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.customerProperties == null)? 0 :this.customerProperties.hashCode()));
-        result = ((result* 31)+((this.customerContact == null)? 0 :this.customerContact.hashCode()));
-        result = ((result* 31)+((this.customerReference == null)? 0 :this.customerReference.hashCode()));
-        result = ((result* 31)+((this.customerCode == null)? 0 :this.customerCode.hashCode()));
+        result = ((result* 31)+((this.reference == null)? 0 :this.reference.hashCode()));
+        result = ((result* 31)+((this.country == null)? 0 :this.country.hashCode()));
+        result = ((result* 31)+((this.code == null)? 0 :this.code.hashCode()));
+        result = ((result* 31)+((this.contact == null)? 0 :this.contact.hashCode()));
+        result = ((result* 31)+((this.name == null)? 0 :this.name.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
         result = ((result* 31)+((this.customerSendDate == null)? 0 :this.customerSendDate.hashCode()));
-        result = ((result* 31)+((this.customerNewDevelopments == null)? 0 :this.customerNewDevelopments.hashCode()));
-        result = ((result* 31)+((this.customerCountry == null)? 0 :this.customerCountry.hashCode()));
-        result = ((result* 31)+((this.customerName == null)? 0 :this.customerName.hashCode()));
+        result = ((result* 31)+((this.newDevelopments == null)? 0 :this.newDevelopments.hashCode()));
+        result = ((result* 31)+((this.properties == null)? 0 :this.properties.hashCode()));
         return result;
     }
 
@@ -337,24 +391,24 @@ public class Customer implements Serializable
             return false;
         }
         Customer rhs = ((Customer) other);
-        return ((((((((((this.customerProperties == rhs.customerProperties)||((this.customerProperties!= null)&&this.customerProperties.equals(rhs.customerProperties)))&&((this.customerContact == rhs.customerContact)||((this.customerContact!= null)&&this.customerContact.equals(rhs.customerContact))))&&((this.customerReference == rhs.customerReference)||((this.customerReference!= null)&&this.customerReference.equals(rhs.customerReference))))&&((this.customerCode == rhs.customerCode)||((this.customerCode!= null)&&this.customerCode.equals(rhs.customerCode))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.customerSendDate == rhs.customerSendDate)||((this.customerSendDate!= null)&&this.customerSendDate.equals(rhs.customerSendDate))))&&((this.customerNewDevelopments == rhs.customerNewDevelopments)||((this.customerNewDevelopments!= null)&&this.customerNewDevelopments.equals(rhs.customerNewDevelopments))))&&((this.customerCountry == rhs.customerCountry)||((this.customerCountry!= null)&&this.customerCountry.equals(rhs.customerCountry))))&&((this.customerName == rhs.customerName)||((this.customerName!= null)&&this.customerName.equals(rhs.customerName))));
+        return ((((((((((this.reference == rhs.reference)||((this.reference!= null)&&this.reference.equals(rhs.reference)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.code == rhs.code)||((this.code!= null)&&this.code.equals(rhs.code))))&&((this.contact == rhs.contact)||((this.contact!= null)&&this.contact.equals(rhs.contact))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.customerSendDate == rhs.customerSendDate)||((this.customerSendDate!= null)&&this.customerSendDate.equals(rhs.customerSendDate))))&&((this.newDevelopments == rhs.newDevelopments)||((this.newDevelopments!= null)&&this.newDevelopments.equals(rhs.newDevelopments))))&&((this.properties == rhs.properties)||((this.properties!= null)&&this.properties.equals(rhs.properties))));
     }
 
-    public enum CustomerCountry {
+    public enum Country {
 
         SPAIN("Spain"),
         ITALY("Italy"),
         PORTUGAL("Portugal");
         private final String value;
-        private final static Map<String, Customer.CustomerCountry> CONSTANTS = new HashMap<String, Customer.CustomerCountry>();
+        private final static Map<String, Customer.Country> CONSTANTS = new HashMap<String, Customer.Country>();
 
         static {
-            for (Customer.CustomerCountry c: values()) {
+            for (Customer.Country c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        private CustomerCountry(String value) {
+        private Country(String value) {
             this.value = value;
         }
 
@@ -369,8 +423,8 @@ public class Customer implements Serializable
         }
 
         @JsonCreator
-        public static Customer.CustomerCountry fromValue(String value) {
-            Customer.CustomerCountry constant = CONSTANTS.get(value);
+        public static Customer.Country fromValue(String value) {
+            Customer.Country constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

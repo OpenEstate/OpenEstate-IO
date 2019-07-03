@@ -3,7 +3,8 @@
   "id": "https://feeds.idealista.com/v6/schemas/properties/promo.json",
   "title": "Promo Object",
   "type": "object",
-  "additionalProperties": false,
+  "javaType": "org.openestate.io.idealista.json.Promo",
+  "additionalProperties": true,
   "required": [
     "featuresNewDevelopmentType",
     "featuresNewDevelopmentName"
@@ -13,102 +14,129 @@
       "title": "property types",
       "enum": [
         "promo"
-      ]
+      ],
+      "javaName": "type"
     },
     "featuresEnergyCertificatePerformance": {
-      "$ref": "features.json#/featuresEnergyCertificatePerformance"
+      "$ref": "features.json#/featuresEnergyCertificatePerformance",
+      "javaName": "energyCertificatePerformance"
     },
     "featuresEnergyCertificateLaw": {
-      "$ref": "features.json#/featuresEnergyCertificateLaw"
+      "$ref": "features.json#/featuresEnergyCertificateLaw",
+      "javaName": "energyCertificateLaw"
     },
     "featuresEnergyCertificateRating": {
-      "$ref": "features.json#/featuresEnergyCertificateRating"
+      "$ref": "features.json#/featuresEnergyCertificateRating",
+      "javaName": "energyCertificateRating"
     },
     "featuresEnergyCertificateType": {
-      "$ref": "features.json#/featuresEnergyCertificateType"
+      "$ref": "features.json#/featuresEnergyCertificateType",
+      "javaName": "energyCertificateType"
     },
     "featuresLiftAvailable": {
       "$ref": "features.json#featuresLiftAvailable",
-      "description": "only for flat type"
+      "description": "only for flat type",
+      "javaName": "liftAvailable"
     },
     "featuresDoorman": {
-      "$ref": "features.json#/featuresDoorman"
+      "$ref": "features.json#/featuresDoorman",
+      "javaName": "doorman"
     },
     "featuresConservation": {
-      "$ref": "features.json#/featuresConservation"
+      "$ref": "features.json#/featuresConservation",
+      "javaName": "conservation"
     },
     "featuresPool": {
-      "$ref": "features.json#/featuresPool"
+      "$ref": "features.json#/featuresPool",
+      "javaName": "pool"
     },
     "featuresGarden": {
-      "$ref": "features.json#/featuresGarden"
+      "$ref": "features.json#/featuresGarden",
+      "javaName": "garden"
     },
     "featuresSecurityDoor": {
-      "$ref": "features.json#/featuresSecurityDoor"
+      "$ref": "features.json#/featuresSecurityDoor",
+      "javaName": "securityDoor"
     },
     "featuresSecurityAlarm": {
-      "$ref": "features.json#/featuresSecurityAlarm"
+      "$ref": "features.json#/featuresSecurityAlarm",
+      "javaName": "securityAlarm"
     },
     "featuresNewDevelopmentType": {
       "title": "New Development type",
-      "$ref": "features.json#/enumNewDevelopmentType"
+      "$ref": "features.json#/enumNewDevelopmentType",
+      "javaName": "newDevelopmentType"
     },
     "featuresNewDevelopmentName": {
-      "$ref": "features.json#/featuresNewDevelopmentName"
+      "$ref": "features.json#/featuresNewDevelopmentName",
+      "javaName": "newDevelopmentName"
     },
     "featuresFinished": {
-      "$ref": "features.json#/featuresFinished"
+      "$ref": "features.json#/featuresFinished",
+      "javaName": "finished"
     },
     "featuresStartDate": {
-      "$ref": "features.json#/featuresStartDate"
+      "$ref": "features.json#/featuresStartDate",
+      "javaName": "startDate"
     },
     "featuresKeyDeliveryYear": {
-      "$ref": "features.json#/featuresKeyDeliveryYear"
+      "$ref": "features.json#/featuresKeyDeliveryYear",
+      "javaName": "keyDeliveryYear"
     },
     "featuresKeyDeliveryMonth": {
-      "$ref": "features.json#/featuresKeyDeliveryMonth"
+      "$ref": "features.json#/featuresKeyDeliveryMonth",
+      "javaName": "keyDeliveryMonth"
     },
     "featuresBuiltPhase": {
       "title": "New Development built phase",
-      "$ref": "features.json#/enumFeaturesBuiltPhase"
+      "$ref": "features.json#/enumFeaturesBuiltPhase",
+      "javaName": "builtPhase"
     },
     "featuresAvailabilityHour": {
       "title": "New Development availability hour",
-      "$ref": "features.json#/enumFeaturesAvailabilityHour"
+      "$ref": "features.json#/enumFeaturesAvailabilityHour",
+      "javaName": "availabilityHour"
     },
     "featuresAccessComments": {
       "title": "Access comments",
       "type": "array",
       "uniqueItems": true,
-      "items": [
-        {
-          "$ref": "description.json#"
-        }
-      ]
+      "items": {
+        "$ref": "description.json#"
+      },
+      "javaName": "accessComments"
     },
     "featuresOnSite": {
-      "$ref": "features.json#/featuresOnSite"
+      "$ref": "features.json#/featuresOnSite",
+      "javaName": "onSite"
     },
     "featuresMortgageStateSubsidized": {
-      "$ref": "features.json#/featuresMortgageStateSubsidized"
+      "$ref": "features.json#/featuresMortgageStateSubsidized",
+      "javaName": "mortgageStateSubsidized"
     },
     "featuresMortgageBankName": {
-      "$ref": "features.json#/featuresMortgageBankName"
+      "$ref": "features.json#/featuresMortgageBankName",
+      "javaName": "mortgageBankName"
     },
     "featuresMortgagePercentage": {
-      "$ref": "features.json#/featuresMortgagePercentage"
+      "$ref": "features.json#/featuresMortgagePercentage",
+      "javaName": "mortgagePercentage"
     },
     "featuresMortgageEntryPercentage": {
-      "$ref": "features.json#/featuresMortgageEntryPercentage"
+      "$ref": "features.json#/featuresMortgageEntryPercentage",
+      "javaName": "mortgageEntryPercentage"
     },
     "featuresMortgageLettersPercentage": {
-      "$ref": "features.json#/featuresMortgageLettersPercentage"
+      "$ref": "features.json#/featuresMortgageLettersPercentage",
+      "javaName": "mortgageLettersPercentage"
     },
     "featuresMortgageInterestRate": {
-      "$ref": "features.json#/featuresMortgageInterestRate"
+      "$ref": "features.json#/featuresMortgageInterestRate",
+      "javaName": "mortgageInterestRate"
     },
     "featuresMortgageYears": {
-      "$ref": "features.json#/featuresMortgageYears"
+      "$ref": "features.json#/featuresMortgageYears",
+      "javaName": "mortgageYears"
     }
   }
 }

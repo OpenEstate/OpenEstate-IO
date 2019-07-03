@@ -15,6 +15,7 @@
  */
 package org.openestate.io.idealista;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.Reader;
 import org.openestate.io.core.JsonRootElement;
@@ -28,6 +29,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.5
  */
+@SuppressWarnings("WeakerAccess")
 public class IdealistaCustomer extends JsonRootElement<Customer> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaCustomer.class);
@@ -59,6 +61,11 @@ public class IdealistaCustomer extends JsonRootElement<Customer> {
      */
     public IdealistaCustomer(Reader json) throws IOException {
         super(json);
+    }
+
+    @Override
+    protected ObjectMapper createObjectMapper() {
+        return IdealistaUtils.createObjectMapper();
     }
 
     /**

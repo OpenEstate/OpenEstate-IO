@@ -6,10 +6,14 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nullable;
+import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Pattern;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -47,14 +51,15 @@ public class Address implements Serializable
     /**
      * address visibility
      * <p>
-     * full address, street name or zone will be shown publicly
+     * 
+     * Corresponds to the "addressVisibility" property.full address, street name or zone will be shown publicly
      * (Can be null)
      * 
      */
     @Nullable
     @JsonProperty("addressVisibility")
     @JsonPropertyDescription("full address, street name or zone will be shown publicly")
-    private Address.AddressVisibility addressVisibility;
+    private Address.Visibility visibility;
     /**
      * 
      * (Can be null)
@@ -63,7 +68,7 @@ public class Address implements Serializable
     @Nullable
     @JsonProperty("addressStreetName")
     @Pattern(regexp = "^.{0,200}$")
-    private String addressStreetName;
+    private String streetName;
     /**
      * 
      * (Can be null)
@@ -72,7 +77,7 @@ public class Address implements Serializable
     @Nullable
     @JsonProperty("addressStreetNumber")
     @Pattern(regexp = "^.{0,10}$")
-    private String addressStreetNumber;
+    private String streetNumber;
     /**
      * 
      * (Can be null)
@@ -81,18 +86,19 @@ public class Address implements Serializable
     @Nullable
     @JsonProperty("addressBlock")
     @Pattern(regexp = "^.{0,20}$")
-    private String addressBlock;
+    private String block;
     /**
      * address floor
      * <p>
      * 
+     * Corresponds to the "addressFloor" property.
      * (Can be null)
      * 
      */
     @Nullable
     @JsonProperty("addressFloor")
     @Pattern(regexp = "^(-[1-2]|[1-9]|[1-5][0-9]|60|bj|en|ss|st)$")
-    private String addressFloor;
+    private String floor;
     /**
      * 
      * (Can be null)
@@ -101,7 +107,7 @@ public class Address implements Serializable
     @Nullable
     @JsonProperty("addressStair")
     @Pattern(regexp = "^.{0,10}$")
-    private String addressStair;
+    private String stair;
     /**
      * 
      * (Can be null)
@@ -110,7 +116,7 @@ public class Address implements Serializable
     @Nullable
     @JsonProperty("addressDoor")
     @Pattern(regexp = "^.{0,4}$")
-    private String addressDoor;
+    private String door;
     /**
      * 
      * (Can be null)
@@ -119,18 +125,19 @@ public class Address implements Serializable
     @Nullable
     @JsonProperty("addressUrbanization")
     @Pattern(regexp = "^.{0,50}$")
-    private String addressUrbanization;
+    private String urbanization;
     /**
      * address postal code
      * <p>
      * 
+     * Corresponds to the "addressPostalCode" property.
      * (Can be null)
      * 
      */
     @Nullable
     @JsonProperty("addressPostalCode")
     @Pattern(regexp = "^[0-9]{5}$|^AD[0-9]{3}$|^[0-9]{4}(-[0-9]{3})?$")
-    private String addressPostalCode;
+    private String postalCode;
     /**
      * 
      * (Can be null)
@@ -139,11 +146,12 @@ public class Address implements Serializable
     @Nullable
     @JsonProperty("addressTown")
     @Pattern(regexp = "^.{0,50}$")
-    private String addressTown;
+    private String town;
     /**
      * address nsi code
      * <p>
-     * national institute of statistics town code
+     * 
+     * Corresponds to the "addressNsiCode" property.national institute of statistics town code
      * (Can be null)
      * 
      */
@@ -151,32 +159,35 @@ public class Address implements Serializable
     @JsonProperty("addressNsiCode")
     @JsonPropertyDescription("national institute of statistics town code")
     @Pattern(regexp = "^[0-9]{6}$")
-    private String addressNsiCode;
+    private String nsiCode;
     /**
      * address country
      * <p>
      * 
+     * Corresponds to the "addressCountry" property.
      * (Can be null)
      * 
      */
     @Nullable
     @JsonProperty("addressCountry")
-    private Address.AddressCountry addressCountry;
+    private Address.Country country;
     /**
      * address coordinates precision
      * <p>
-     * if moved, just the property zone will be shown publicly, but not its address
+     * 
+     * Corresponds to the "addressCoordinatesPrecision" property.if moved, just the property zone will be shown publicly, but not its address
      * (Can be null)
      * 
      */
     @Nullable
     @JsonProperty("addressCoordinatesPrecision")
     @JsonPropertyDescription("if moved, just the property zone will be shown publicly, but not its address")
-    private Address.AddressCoordinatesPrecision addressCoordinatesPrecision;
+    private Address.CoordinatesPrecision coordinatesPrecision;
     /**
      * address coordinates latitude
      * <p>
-     * to have a good accuracy, latitude need to have at least 4 decimals
+     * 
+     * Corresponds to the "addressCoordinatesLatitude" property.to have a good accuracy, latitude need to have at least 4 decimals
      * (Can be null)
      * 
      */
@@ -185,11 +196,12 @@ public class Address implements Serializable
     @JsonPropertyDescription("to have a good accuracy, latitude need to have at least 4 decimals")
     @DecimalMin("-90")
     @DecimalMax("90")
-    private BigDecimal addressCoordinatesLatitude;
+    private BigDecimal latitude;
     /**
      * address coordinates longitude
      * <p>
-     * to have a good accuracy, longitude need to have at least 4 decimals
+     * 
+     * Corresponds to the "addressCoordinatesLongitude" property.to have a good accuracy, longitude need to have at least 4 decimals
      * (Can be null)
      * 
      */
@@ -198,318 +210,431 @@ public class Address implements Serializable
     @JsonPropertyDescription("to have a good accuracy, longitude need to have at least 4 decimals")
     @DecimalMin("-180")
     @DecimalMax("180")
-    private BigDecimal addressCoordinatesLongitude;
-    private final static long serialVersionUID = 3320795154613000755L;
+    private BigDecimal longitude;
+    @JsonIgnore
+    @Valid
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final static long serialVersionUID = 6421638253075204034L;
 
     /**
      * address visibility
      * <p>
-     * full address, street name or zone will be shown publicly
+     * 
+     * Corresponds to the "addressVisibility" property.full address, street name or zone will be shown publicly
      * 
      */
     @JsonProperty("addressVisibility")
-    public Address.AddressVisibility getAddressVisibility() {
-        return addressVisibility;
+    public Address.Visibility getVisibility() {
+        return visibility;
     }
 
     /**
      * address visibility
      * <p>
-     * full address, street name or zone will be shown publicly
+     * 
+     * Corresponds to the "addressVisibility" property.full address, street name or zone will be shown publicly
      * 
      */
     @JsonProperty("addressVisibility")
-    public void setAddressVisibility(Address.AddressVisibility addressVisibility) {
-        this.addressVisibility = addressVisibility;
+    public void setVisibility(Address.Visibility visibility) {
+        this.visibility = visibility;
+    }
+
+    public Address withVisibility(Address.Visibility visibility) {
+        this.visibility = visibility;
+        return this;
     }
 
     @JsonProperty("addressStreetName")
     public String getAddressStreetName() {
-        return addressStreetName;
+        return streetName;
     }
 
     @JsonProperty("addressStreetName")
-    public void setAddressStreetName(String addressStreetName) {
-        this.addressStreetName = addressStreetName;
+    public void setAddressStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public Address withAddressStreetName(String streetName) {
+        this.streetName = streetName;
+        return this;
     }
 
     @JsonProperty("addressStreetNumber")
     public String getAddressStreetNumber() {
-        return addressStreetNumber;
+        return streetNumber;
     }
 
     @JsonProperty("addressStreetNumber")
-    public void setAddressStreetNumber(String addressStreetNumber) {
-        this.addressStreetNumber = addressStreetNumber;
+    public void setAddressStreetNumber(String streetNumber) {
+        this.streetNumber = streetNumber;
+    }
+
+    public Address withAddressStreetNumber(String streetNumber) {
+        this.streetNumber = streetNumber;
+        return this;
     }
 
     @JsonProperty("addressBlock")
     public String getAddressBlock() {
-        return addressBlock;
+        return block;
     }
 
     @JsonProperty("addressBlock")
-    public void setAddressBlock(String addressBlock) {
-        this.addressBlock = addressBlock;
+    public void setAddressBlock(String block) {
+        this.block = block;
+    }
+
+    public Address withAddressBlock(String block) {
+        this.block = block;
+        return this;
     }
 
     /**
      * address floor
      * <p>
      * 
+     * Corresponds to the "addressFloor" property.
      * 
      */
     @JsonProperty("addressFloor")
-    public String getAddressFloor() {
-        return addressFloor;
+    public String getFloor() {
+        return floor;
     }
 
     /**
      * address floor
      * <p>
      * 
+     * Corresponds to the "addressFloor" property.
      * 
      */
     @JsonProperty("addressFloor")
-    public void setAddressFloor(String addressFloor) {
-        this.addressFloor = addressFloor;
+    public void setFloor(String floor) {
+        this.floor = floor;
+    }
+
+    public Address withFloor(String floor) {
+        this.floor = floor;
+        return this;
     }
 
     @JsonProperty("addressStair")
     public String getAddressStair() {
-        return addressStair;
+        return stair;
     }
 
     @JsonProperty("addressStair")
-    public void setAddressStair(String addressStair) {
-        this.addressStair = addressStair;
+    public void setAddressStair(String stair) {
+        this.stair = stair;
+    }
+
+    public Address withAddressStair(String stair) {
+        this.stair = stair;
+        return this;
     }
 
     @JsonProperty("addressDoor")
     public String getAddressDoor() {
-        return addressDoor;
+        return door;
     }
 
     @JsonProperty("addressDoor")
-    public void setAddressDoor(String addressDoor) {
-        this.addressDoor = addressDoor;
+    public void setAddressDoor(String door) {
+        this.door = door;
+    }
+
+    public Address withAddressDoor(String door) {
+        this.door = door;
+        return this;
     }
 
     @JsonProperty("addressUrbanization")
     public String getAddressUrbanization() {
-        return addressUrbanization;
+        return urbanization;
     }
 
     @JsonProperty("addressUrbanization")
-    public void setAddressUrbanization(String addressUrbanization) {
-        this.addressUrbanization = addressUrbanization;
+    public void setAddressUrbanization(String urbanization) {
+        this.urbanization = urbanization;
+    }
+
+    public Address withAddressUrbanization(String urbanization) {
+        this.urbanization = urbanization;
+        return this;
     }
 
     /**
      * address postal code
      * <p>
      * 
+     * Corresponds to the "addressPostalCode" property.
      * 
      */
     @JsonProperty("addressPostalCode")
-    public String getAddressPostalCode() {
-        return addressPostalCode;
+    public String getPostalCode() {
+        return postalCode;
     }
 
     /**
      * address postal code
      * <p>
      * 
+     * Corresponds to the "addressPostalCode" property.
      * 
      */
     @JsonProperty("addressPostalCode")
-    public void setAddressPostalCode(String addressPostalCode) {
-        this.addressPostalCode = addressPostalCode;
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public Address withPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+        return this;
     }
 
     @JsonProperty("addressTown")
     public String getAddressTown() {
-        return addressTown;
+        return town;
     }
 
     @JsonProperty("addressTown")
-    public void setAddressTown(String addressTown) {
-        this.addressTown = addressTown;
+    public void setAddressTown(String town) {
+        this.town = town;
+    }
+
+    public Address withAddressTown(String town) {
+        this.town = town;
+        return this;
     }
 
     /**
      * address nsi code
      * <p>
-     * national institute of statistics town code
+     * 
+     * Corresponds to the "addressNsiCode" property.national institute of statistics town code
      * 
      */
     @JsonProperty("addressNsiCode")
-    public String getAddressNsiCode() {
-        return addressNsiCode;
+    public String getNsiCode() {
+        return nsiCode;
     }
 
     /**
      * address nsi code
      * <p>
-     * national institute of statistics town code
+     * 
+     * Corresponds to the "addressNsiCode" property.national institute of statistics town code
      * 
      */
     @JsonProperty("addressNsiCode")
-    public void setAddressNsiCode(String addressNsiCode) {
-        this.addressNsiCode = addressNsiCode;
+    public void setNsiCode(String nsiCode) {
+        this.nsiCode = nsiCode;
+    }
+
+    public Address withNsiCode(String nsiCode) {
+        this.nsiCode = nsiCode;
+        return this;
     }
 
     /**
      * address country
      * <p>
      * 
+     * Corresponds to the "addressCountry" property.
      * 
      */
     @JsonProperty("addressCountry")
-    public Address.AddressCountry getAddressCountry() {
-        return addressCountry;
+    public Address.Country getCountry() {
+        return country;
     }
 
     /**
      * address country
      * <p>
      * 
+     * Corresponds to the "addressCountry" property.
      * 
      */
     @JsonProperty("addressCountry")
-    public void setAddressCountry(Address.AddressCountry addressCountry) {
-        this.addressCountry = addressCountry;
+    public void setCountry(Address.Country country) {
+        this.country = country;
+    }
+
+    public Address withCountry(Address.Country country) {
+        this.country = country;
+        return this;
     }
 
     /**
      * address coordinates precision
      * <p>
-     * if moved, just the property zone will be shown publicly, but not its address
+     * 
+     * Corresponds to the "addressCoordinatesPrecision" property.if moved, just the property zone will be shown publicly, but not its address
      * 
      */
     @JsonProperty("addressCoordinatesPrecision")
-    public Address.AddressCoordinatesPrecision getAddressCoordinatesPrecision() {
-        return addressCoordinatesPrecision;
+    public Address.CoordinatesPrecision getCoordinatesPrecision() {
+        return coordinatesPrecision;
     }
 
     /**
      * address coordinates precision
      * <p>
-     * if moved, just the property zone will be shown publicly, but not its address
+     * 
+     * Corresponds to the "addressCoordinatesPrecision" property.if moved, just the property zone will be shown publicly, but not its address
      * 
      */
     @JsonProperty("addressCoordinatesPrecision")
-    public void setAddressCoordinatesPrecision(Address.AddressCoordinatesPrecision addressCoordinatesPrecision) {
-        this.addressCoordinatesPrecision = addressCoordinatesPrecision;
+    public void setCoordinatesPrecision(Address.CoordinatesPrecision coordinatesPrecision) {
+        this.coordinatesPrecision = coordinatesPrecision;
+    }
+
+    public Address withCoordinatesPrecision(Address.CoordinatesPrecision coordinatesPrecision) {
+        this.coordinatesPrecision = coordinatesPrecision;
+        return this;
     }
 
     /**
      * address coordinates latitude
      * <p>
-     * to have a good accuracy, latitude need to have at least 4 decimals
+     * 
+     * Corresponds to the "addressCoordinatesLatitude" property.to have a good accuracy, latitude need to have at least 4 decimals
      * 
      */
     @JsonProperty("addressCoordinatesLatitude")
-    public BigDecimal getAddressCoordinatesLatitude() {
-        return addressCoordinatesLatitude;
+    public BigDecimal getLatitude() {
+        return latitude;
     }
 
     /**
      * address coordinates latitude
      * <p>
-     * to have a good accuracy, latitude need to have at least 4 decimals
+     * 
+     * Corresponds to the "addressCoordinatesLatitude" property.to have a good accuracy, latitude need to have at least 4 decimals
      * 
      */
     @JsonProperty("addressCoordinatesLatitude")
-    public void setAddressCoordinatesLatitude(BigDecimal addressCoordinatesLatitude) {
-        this.addressCoordinatesLatitude = addressCoordinatesLatitude;
+    public void setLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
+    }
+
+    public Address withLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
+        return this;
     }
 
     /**
      * address coordinates longitude
      * <p>
-     * to have a good accuracy, longitude need to have at least 4 decimals
+     * 
+     * Corresponds to the "addressCoordinatesLongitude" property.to have a good accuracy, longitude need to have at least 4 decimals
      * 
      */
     @JsonProperty("addressCoordinatesLongitude")
-    public BigDecimal getAddressCoordinatesLongitude() {
-        return addressCoordinatesLongitude;
+    public BigDecimal getLongitude() {
+        return longitude;
     }
 
     /**
      * address coordinates longitude
      * <p>
-     * to have a good accuracy, longitude need to have at least 4 decimals
+     * 
+     * Corresponds to the "addressCoordinatesLongitude" property.to have a good accuracy, longitude need to have at least 4 decimals
      * 
      */
     @JsonProperty("addressCoordinatesLongitude")
-    public void setAddressCoordinatesLongitude(BigDecimal addressCoordinatesLongitude) {
-        this.addressCoordinatesLongitude = addressCoordinatesLongitude;
+    public void setLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+    }
+
+    public Address withLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+        return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+    public Address withAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Address.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        sb.append("addressVisibility");
+        sb.append("visibility");
         sb.append('=');
-        sb.append(((this.addressVisibility == null)?"<null>":this.addressVisibility));
+        sb.append(((this.visibility == null)?"<null>":this.visibility));
         sb.append(',');
-        sb.append("addressStreetName");
+        sb.append("streetName");
         sb.append('=');
-        sb.append(((this.addressStreetName == null)?"<null>":this.addressStreetName));
+        sb.append(((this.streetName == null)?"<null>":this.streetName));
         sb.append(',');
-        sb.append("addressStreetNumber");
+        sb.append("streetNumber");
         sb.append('=');
-        sb.append(((this.addressStreetNumber == null)?"<null>":this.addressStreetNumber));
+        sb.append(((this.streetNumber == null)?"<null>":this.streetNumber));
         sb.append(',');
-        sb.append("addressBlock");
+        sb.append("block");
         sb.append('=');
-        sb.append(((this.addressBlock == null)?"<null>":this.addressBlock));
+        sb.append(((this.block == null)?"<null>":this.block));
         sb.append(',');
-        sb.append("addressFloor");
+        sb.append("floor");
         sb.append('=');
-        sb.append(((this.addressFloor == null)?"<null>":this.addressFloor));
+        sb.append(((this.floor == null)?"<null>":this.floor));
         sb.append(',');
-        sb.append("addressStair");
+        sb.append("stair");
         sb.append('=');
-        sb.append(((this.addressStair == null)?"<null>":this.addressStair));
+        sb.append(((this.stair == null)?"<null>":this.stair));
         sb.append(',');
-        sb.append("addressDoor");
+        sb.append("door");
         sb.append('=');
-        sb.append(((this.addressDoor == null)?"<null>":this.addressDoor));
+        sb.append(((this.door == null)?"<null>":this.door));
         sb.append(',');
-        sb.append("addressUrbanization");
+        sb.append("urbanization");
         sb.append('=');
-        sb.append(((this.addressUrbanization == null)?"<null>":this.addressUrbanization));
+        sb.append(((this.urbanization == null)?"<null>":this.urbanization));
         sb.append(',');
-        sb.append("addressPostalCode");
+        sb.append("postalCode");
         sb.append('=');
-        sb.append(((this.addressPostalCode == null)?"<null>":this.addressPostalCode));
+        sb.append(((this.postalCode == null)?"<null>":this.postalCode));
         sb.append(',');
-        sb.append("addressTown");
+        sb.append("town");
         sb.append('=');
-        sb.append(((this.addressTown == null)?"<null>":this.addressTown));
+        sb.append(((this.town == null)?"<null>":this.town));
         sb.append(',');
-        sb.append("addressNsiCode");
+        sb.append("nsiCode");
         sb.append('=');
-        sb.append(((this.addressNsiCode == null)?"<null>":this.addressNsiCode));
+        sb.append(((this.nsiCode == null)?"<null>":this.nsiCode));
         sb.append(',');
-        sb.append("addressCountry");
+        sb.append("country");
         sb.append('=');
-        sb.append(((this.addressCountry == null)?"<null>":this.addressCountry));
+        sb.append(((this.country == null)?"<null>":this.country));
         sb.append(',');
-        sb.append("addressCoordinatesPrecision");
+        sb.append("coordinatesPrecision");
         sb.append('=');
-        sb.append(((this.addressCoordinatesPrecision == null)?"<null>":this.addressCoordinatesPrecision));
+        sb.append(((this.coordinatesPrecision == null)?"<null>":this.coordinatesPrecision));
         sb.append(',');
-        sb.append("addressCoordinatesLatitude");
+        sb.append("latitude");
         sb.append('=');
-        sb.append(((this.addressCoordinatesLatitude == null)?"<null>":this.addressCoordinatesLatitude));
+        sb.append(((this.latitude == null)?"<null>":this.latitude));
         sb.append(',');
-        sb.append("addressCoordinatesLongitude");
+        sb.append("longitude");
         sb.append('=');
-        sb.append(((this.addressCoordinatesLongitude == null)?"<null>":this.addressCoordinatesLongitude));
+        sb.append(((this.longitude == null)?"<null>":this.longitude));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
@@ -522,21 +647,22 @@ public class Address implements Serializable
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.addressNsiCode == null)? 0 :this.addressNsiCode.hashCode()));
-        result = ((result* 31)+((this.addressCountry == null)? 0 :this.addressCountry.hashCode()));
-        result = ((result* 31)+((this.addressStair == null)? 0 :this.addressStair.hashCode()));
-        result = ((result* 31)+((this.addressCoordinatesPrecision == null)? 0 :this.addressCoordinatesPrecision.hashCode()));
-        result = ((result* 31)+((this.addressCoordinatesLatitude == null)? 0 :this.addressCoordinatesLatitude.hashCode()));
-        result = ((result* 31)+((this.addressDoor == null)? 0 :this.addressDoor.hashCode()));
-        result = ((result* 31)+((this.addressFloor == null)? 0 :this.addressFloor.hashCode()));
-        result = ((result* 31)+((this.addressCoordinatesLongitude == null)? 0 :this.addressCoordinatesLongitude.hashCode()));
-        result = ((result* 31)+((this.addressTown == null)? 0 :this.addressTown.hashCode()));
-        result = ((result* 31)+((this.addressPostalCode == null)? 0 :this.addressPostalCode.hashCode()));
-        result = ((result* 31)+((this.addressVisibility == null)? 0 :this.addressVisibility.hashCode()));
-        result = ((result* 31)+((this.addressUrbanization == null)? 0 :this.addressUrbanization.hashCode()));
-        result = ((result* 31)+((this.addressStreetName == null)? 0 :this.addressStreetName.hashCode()));
-        result = ((result* 31)+((this.addressBlock == null)? 0 :this.addressBlock.hashCode()));
-        result = ((result* 31)+((this.addressStreetNumber == null)? 0 :this.addressStreetNumber.hashCode()));
+        result = ((result* 31)+((this.door == null)? 0 :this.door.hashCode()));
+        result = ((result* 31)+((this.country == null)? 0 :this.country.hashCode()));
+        result = ((result* 31)+((this.stair == null)? 0 :this.stair.hashCode()));
+        result = ((result* 31)+((this.nsiCode == null)? 0 :this.nsiCode.hashCode()));
+        result = ((result* 31)+((this.visibility == null)? 0 :this.visibility.hashCode()));
+        result = ((result* 31)+((this.town == null)? 0 :this.town.hashCode()));
+        result = ((result* 31)+((this.streetNumber == null)? 0 :this.streetNumber.hashCode()));
+        result = ((result* 31)+((this.postalCode == null)? 0 :this.postalCode.hashCode()));
+        result = ((result* 31)+((this.latitude == null)? 0 :this.latitude.hashCode()));
+        result = ((result* 31)+((this.coordinatesPrecision == null)? 0 :this.coordinatesPrecision.hashCode()));
+        result = ((result* 31)+((this.urbanization == null)? 0 :this.urbanization.hashCode()));
+        result = ((result* 31)+((this.streetName == null)? 0 :this.streetName.hashCode()));
+        result = ((result* 31)+((this.block == null)? 0 :this.block.hashCode()));
+        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        result = ((result* 31)+((this.floor == null)? 0 :this.floor.hashCode()));
+        result = ((result* 31)+((this.longitude == null)? 0 :this.longitude.hashCode()));
         return result;
     }
 
@@ -549,23 +675,23 @@ public class Address implements Serializable
             return false;
         }
         Address rhs = ((Address) other);
-        return ((((((((((((((((this.addressNsiCode == rhs.addressNsiCode)||((this.addressNsiCode!= null)&&this.addressNsiCode.equals(rhs.addressNsiCode)))&&((this.addressCountry == rhs.addressCountry)||((this.addressCountry!= null)&&this.addressCountry.equals(rhs.addressCountry))))&&((this.addressStair == rhs.addressStair)||((this.addressStair!= null)&&this.addressStair.equals(rhs.addressStair))))&&((this.addressCoordinatesPrecision == rhs.addressCoordinatesPrecision)||((this.addressCoordinatesPrecision!= null)&&this.addressCoordinatesPrecision.equals(rhs.addressCoordinatesPrecision))))&&((this.addressCoordinatesLatitude == rhs.addressCoordinatesLatitude)||((this.addressCoordinatesLatitude!= null)&&this.addressCoordinatesLatitude.equals(rhs.addressCoordinatesLatitude))))&&((this.addressDoor == rhs.addressDoor)||((this.addressDoor!= null)&&this.addressDoor.equals(rhs.addressDoor))))&&((this.addressFloor == rhs.addressFloor)||((this.addressFloor!= null)&&this.addressFloor.equals(rhs.addressFloor))))&&((this.addressCoordinatesLongitude == rhs.addressCoordinatesLongitude)||((this.addressCoordinatesLongitude!= null)&&this.addressCoordinatesLongitude.equals(rhs.addressCoordinatesLongitude))))&&((this.addressTown == rhs.addressTown)||((this.addressTown!= null)&&this.addressTown.equals(rhs.addressTown))))&&((this.addressPostalCode == rhs.addressPostalCode)||((this.addressPostalCode!= null)&&this.addressPostalCode.equals(rhs.addressPostalCode))))&&((this.addressVisibility == rhs.addressVisibility)||((this.addressVisibility!= null)&&this.addressVisibility.equals(rhs.addressVisibility))))&&((this.addressUrbanization == rhs.addressUrbanization)||((this.addressUrbanization!= null)&&this.addressUrbanization.equals(rhs.addressUrbanization))))&&((this.addressStreetName == rhs.addressStreetName)||((this.addressStreetName!= null)&&this.addressStreetName.equals(rhs.addressStreetName))))&&((this.addressBlock == rhs.addressBlock)||((this.addressBlock!= null)&&this.addressBlock.equals(rhs.addressBlock))))&&((this.addressStreetNumber == rhs.addressStreetNumber)||((this.addressStreetNumber!= null)&&this.addressStreetNumber.equals(rhs.addressStreetNumber))));
+        return (((((((((((((((((this.door == rhs.door)||((this.door!= null)&&this.door.equals(rhs.door)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.stair == rhs.stair)||((this.stair!= null)&&this.stair.equals(rhs.stair))))&&((this.nsiCode == rhs.nsiCode)||((this.nsiCode!= null)&&this.nsiCode.equals(rhs.nsiCode))))&&((this.visibility == rhs.visibility)||((this.visibility!= null)&&this.visibility.equals(rhs.visibility))))&&((this.town == rhs.town)||((this.town!= null)&&this.town.equals(rhs.town))))&&((this.streetNumber == rhs.streetNumber)||((this.streetNumber!= null)&&this.streetNumber.equals(rhs.streetNumber))))&&((this.postalCode == rhs.postalCode)||((this.postalCode!= null)&&this.postalCode.equals(rhs.postalCode))))&&((this.latitude == rhs.latitude)||((this.latitude!= null)&&this.latitude.equals(rhs.latitude))))&&((this.coordinatesPrecision == rhs.coordinatesPrecision)||((this.coordinatesPrecision!= null)&&this.coordinatesPrecision.equals(rhs.coordinatesPrecision))))&&((this.urbanization == rhs.urbanization)||((this.urbanization!= null)&&this.urbanization.equals(rhs.urbanization))))&&((this.streetName == rhs.streetName)||((this.streetName!= null)&&this.streetName.equals(rhs.streetName))))&&((this.block == rhs.block)||((this.block!= null)&&this.block.equals(rhs.block))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.floor == rhs.floor)||((this.floor!= null)&&this.floor.equals(rhs.floor))))&&((this.longitude == rhs.longitude)||((this.longitude!= null)&&this.longitude.equals(rhs.longitude))));
     }
 
-    public enum AddressCoordinatesPrecision {
+    public enum CoordinatesPrecision {
 
         EXACT("exact"),
         MOVED("moved");
         private final String value;
-        private final static Map<String, Address.AddressCoordinatesPrecision> CONSTANTS = new HashMap<String, Address.AddressCoordinatesPrecision>();
+        private final static Map<String, Address.CoordinatesPrecision> CONSTANTS = new HashMap<String, Address.CoordinatesPrecision>();
 
         static {
-            for (Address.AddressCoordinatesPrecision c: values()) {
+            for (Address.CoordinatesPrecision c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        private AddressCoordinatesPrecision(String value) {
+        private CoordinatesPrecision(String value) {
             this.value = value;
         }
 
@@ -580,8 +706,8 @@ public class Address implements Serializable
         }
 
         @JsonCreator
-        public static Address.AddressCoordinatesPrecision fromValue(String value) {
-            Address.AddressCoordinatesPrecision constant = CONSTANTS.get(value);
+        public static Address.CoordinatesPrecision fromValue(String value) {
+            Address.CoordinatesPrecision constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {
@@ -591,7 +717,7 @@ public class Address implements Serializable
 
     }
 
-    public enum AddressCountry {
+    public enum Country {
 
         SPAIN("Spain"),
         ITALY("Italy"),
@@ -601,15 +727,15 @@ public class Address implements Serializable
         SWITZERLAND("Switzerland"),
         SAN_MARINO("San Marino");
         private final String value;
-        private final static Map<String, Address.AddressCountry> CONSTANTS = new HashMap<String, Address.AddressCountry>();
+        private final static Map<String, Address.Country> CONSTANTS = new HashMap<String, Address.Country>();
 
         static {
-            for (Address.AddressCountry c: values()) {
+            for (Address.Country c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        private AddressCountry(String value) {
+        private Country(String value) {
             this.value = value;
         }
 
@@ -624,8 +750,8 @@ public class Address implements Serializable
         }
 
         @JsonCreator
-        public static Address.AddressCountry fromValue(String value) {
-            Address.AddressCountry constant = CONSTANTS.get(value);
+        public static Address.Country fromValue(String value) {
+            Address.Country constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {
@@ -635,21 +761,21 @@ public class Address implements Serializable
 
     }
 
-    public enum AddressVisibility {
+    public enum Visibility {
 
         FULL("full"),
         STREET("street"),
         HIDDEN("hidden");
         private final String value;
-        private final static Map<String, Address.AddressVisibility> CONSTANTS = new HashMap<String, Address.AddressVisibility>();
+        private final static Map<String, Address.Visibility> CONSTANTS = new HashMap<String, Address.Visibility>();
 
         static {
-            for (Address.AddressVisibility c: values()) {
+            for (Address.Visibility c: values()) {
                 CONSTANTS.put(c.value, c);
             }
         }
 
-        private AddressVisibility(String value) {
+        private Visibility(String value) {
             this.value = value;
         }
 
@@ -664,8 +790,8 @@ public class Address implements Serializable
         }
 
         @JsonCreator
-        public static Address.AddressVisibility fromValue(String value) {
-            Address.AddressVisibility constant = CONSTANTS.get(value);
+        public static Address.Visibility fromValue(String value) {
+            Address.Visibility constant = CONSTANTS.get(value);
             if (constant == null) {
                 throw new IllegalArgumentException(value);
             } else {

@@ -3,7 +3,11 @@
   "id": "https://feeds.idealista.com/v6/schemas/properties/homes.json",
   "title": "Homes Object",
   "type": "object",
-  "additionalProperties": false,
+  "extends": {
+    "$ref": "../custom/abstractFeatures.json"
+  },
+  "javaType": "org.openestate.io.idealista.json.HomeFeatures",
+  "additionalProperties": true,
   "required": [
     "featuresType",
     "featuresAreaConstructed",
@@ -52,125 +56,165 @@
         "rustic_terrera",
         "rustic_torre",
         "rustic_trullo"
-      ]
+      ],
+      "javaName": "type"
     },
     "featuresAreaConstructed": {
-      "$ref": "features.json#/featuresAreaConstructed"
+      "$ref": "features.json#/featuresAreaConstructed",
+      "javaName": "areaConstructed"
     },
     "featuresAreaPlot": {
-      "$ref": "features.json#/featuresAreaPlot"
+      "$ref": "features.json#/featuresAreaPlot",
+      "javaName": "areaPlot"
     },
     "featuresAreaUsable": {
-      "$ref": "features.json#/featuresAreaUsable"
+      "$ref": "features.json#/featuresAreaUsable",
+      "javaName": "areaUsable"
     },
     "featuresBalcony": {
-      "$ref": "features.json#/featuresBalcony"
+      "$ref": "features.json#/featuresBalcony",
+      "javaName": "balcony"
     },
     "featuresBathroomNumber": {
-      "$ref": "features.json#/featuresBathroomNumber"
+      "$ref": "features.json#/featuresBathroomNumber",
+      "javaName": "bathroomNumber"
     },
     "featuresBedroomNumber": {
-      "$ref": "features.json#/featuresBedroomNumber"
+      "$ref": "features.json#/featuresBedroomNumber",
+      "javaName": "bedroomNumber"
     },
     "featuresBuiltYear": {
-      "$ref": "features.json#/featuresBuiltYear"
+      "$ref": "features.json#/featuresBuiltYear",
+      "javaName": "builtYear"
     },
     "featuresConditionedAir": {
-      "$ref": "features.json#/featuresConditionedAir"
+      "$ref": "features.json#/featuresConditionedAir",
+      "javaName": "conditionedAir"
     },
     "featuresConservation": {
-      "$ref": "features.json#/featuresConservation"
+      "$ref": "features.json#/featuresConservation",
+      "javaName": "conservation"
     },
     "featuresChimney": {
-      "$ref": "features.json#/featuresChimney"
+      "$ref": "features.json#/featuresChimney",
+      "javaName": "chimney"
     },
     "featuresDoorman": {
-      "$ref": "features.json#/featuresDoorman"
+      "$ref": "features.json#/featuresDoorman",
+      "javaName": "doorman"
     },
     "featuresDuplex": {
-      "$ref": "features.json#/featuresDuplex"
+      "$ref": "features.json#/featuresDuplex",
+      "javaName": "duplex"
     },
     "featuresEquippedKitchen": {
-      "$ref": "features.json#/featuresEquippedKitchen"
+      "$ref": "features.json#/featuresEquippedKitchen",
+      "javaName": "equippedKitchen"
     },
     "featuresEquippedWithFurniture": {
-      "$ref": "features.json#/featuresEquippedWithFurniture"
+      "$ref": "features.json#/featuresEquippedWithFurniture",
+      "javaName": "equippedWithFurniture"
     },
     "featuresEnergyCertificatePerformance": {
-      "$ref": "features.json#/featuresEnergyCertificatePerformance"
+      "$ref": "features.json#/featuresEnergyCertificatePerformance",
+      "javaName": "energyCertificatePerformance"
     },
     "featuresEnergyCertificateLaw": {
-      "$ref": "features.json#/featuresEnergyCertificateLaw"
+      "$ref": "features.json#/featuresEnergyCertificateLaw",
+      "javaName": "energyCertificateLaw"
     },
     "featuresEnergyCertificateRating": {
-      "$ref": "features.json#/featuresEnergyCertificateRating"
+      "$ref": "features.json#/featuresEnergyCertificateRating",
+      "javaName": "energyCertificateRating"
     },
     "featuresEnergyCertificateType": {
-      "$ref": "features.json#/featuresEnergyCertificateType"
+      "$ref": "features.json#/featuresEnergyCertificateType",
+      "javaName": "energyCertificateType"
     },
     "featuresFloorsBuilding": {
-      "$ref": "features.json#/featuresFloorsBuilding"
+      "$ref": "features.json#/featuresFloorsBuilding",
+      "javaName": "floorsBuilding"
     },
     "featuresFloorsInTop": {
-      "$ref": "features.json#/featuresFloorsInTop"
+      "$ref": "features.json#/featuresFloorsInTop",
+      "javaName": "floorsInTop"
     },
     "featuresGarden": {
-      "$ref": "features.json#/featuresGarden"
+      "$ref": "features.json#/featuresGarden",
+      "javaName": "garden"
     },
     "featuresHandicapAdaptedAccess": {
-      "$ref": "features.json#/featuresHandicapAdaptedAccess"
+      "$ref": "features.json#/featuresHandicapAdaptedAccess",
+      "javaName": "handicapAdaptedAccess"
     },
     "featuresHandicapAdaptedUse": {
-      "$ref": "features.json#/featuresHandicapAdaptedUse"
+      "$ref": "features.json#/featuresHandicapAdaptedUse",
+      "javaName": "handicapAdaptedUse"
     },
     "featuresLiftAvailable": {
       "$ref": "features.json#featuresLiftAvailable",
-      "description": "only for flat type"
+      "description": "only for flat type",
+      "javaName": "liftAvailable"
     },
     "featuresOrientationNorth": {
-      "$ref": "features.json#/featuresOrientationNorth"
+      "$ref": "features.json#/featuresOrientationNorth",
+      "javaName": "orientationNorth"
     },
     "featuresOrientationSouth": {
-      "$ref": "features.json#/featuresOrientationSouth"
+      "$ref": "features.json#/featuresOrientationSouth",
+      "javaName": "orientationSouth"
     },
     "featuresOrientationWest": {
-      "$ref": "features.json#/featuresOrientationWest"
+      "$ref": "features.json#/featuresOrientationWest",
+      "javaName": "orientationWest"
     },
     "featuresOrientationEast": {
-      "$ref": "features.json#/featuresOrientationEast"
+      "$ref": "features.json#/featuresOrientationEast",
+      "javaName": "orientationEast"
     },
     "featuresParkingAvailable": {
-      "$ref": "features.json#/featuresParkingAvailable"
+      "$ref": "features.json#/featuresParkingAvailable",
+      "javaName": "parkingAvailable"
     },
     "featuresPenthouse": {
-      "$ref": "features.json#/featuresPenthouse"
+      "$ref": "features.json#/featuresPenthouse",
+      "javaName": "penthouse"
     },
     "featuresPetsAllowed": {
-      "$ref": "features.json#/featuresAllowPets"
+      "$ref": "features.json#/featuresAllowPets",
+      "javaName": "petsAllowed"
     },
     "featuresPool": {
-      "$ref": "features.json#/featuresPool"
+      "$ref": "features.json#/featuresPool",
+      "javaName": "pool"
     },
     "featuresRooms": {
-      "$ref": "features.json#/featuresRooms"
+      "$ref": "features.json#/featuresRooms",
+      "javaName": "rooms"
     },
     "featuresStorage": {
-      "$ref": "features.json#/featuresStorage"
+      "$ref": "features.json#/featuresStorage",
+      "javaName": "storage"
     },
     "featuresStudio": {
-      "$ref": "features.json#/featuresStudio"
+      "$ref": "features.json#/featuresStudio",
+      "javaName": "studio"
     },
     "featuresTerrace": {
-      "$ref": "features.json#/featuresTerrace"
+      "$ref": "features.json#/featuresTerrace",
+      "javaName": "terrace"
     },
     "featuresWardrobes": {
-      "$ref": "features.json#/featuresWardrobes"
+      "$ref": "features.json#/featuresWardrobes",
+      "javaName": "wardrobes"
     },
     "featuresWindowsLocation": {
-      "$ref": "features.json#/featuresWindowsLocation"
+      "$ref": "features.json#/featuresWindowsLocation",
+      "javaName": "windowsLocation"
     },
     "featuresHeatingType": {
-      "$ref": "features.json#/featuresHeatingType"
+      "$ref": "features.json#/featuresHeatingType",
+      "javaName": "heatingType"
     }
   }
 }

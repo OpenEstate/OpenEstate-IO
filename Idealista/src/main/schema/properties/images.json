@@ -3,10 +3,11 @@
   "id": "https://feeds.idealista.com/v6/schemas/properties/images.json",
   "title": "Images Object",
   "type": "object",
+  "javaType": "org.openestate.io.idealista.json.Image",
   "required": [
     "imageUrl"
   ],
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "imageLabel": {
       "title": "image label",
@@ -58,17 +59,20 @@
         "views",
         "waitingroom",
         "walk_in_wardrobe"
-      ]
+      ],
+      "javaName": "label"
     },
     "imageOrder": {
       "title": "image order",
       "type": "integer",
       "minimum": 1,
-      "maximum": 200
+      "maximum": 200,
+      "javaName": "order"
     },
     "imageUrl": {
       "title": "image url",
-      "$ref": "../rules.json#/urlFormat"
+      "$ref": "../rules.json#/urlFormat",
+      "javaName": "url"
     }
   }
 }

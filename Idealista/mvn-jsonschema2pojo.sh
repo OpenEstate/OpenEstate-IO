@@ -21,4 +21,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 set -e
 export LANG=en
 cd "$DIR"
-"$MVN" org.jsonschema2pojo:jsonschema2pojo-maven-plugin:generate
+"$MVN" \
+    clean \
+    org.jsonschema2pojo:jsonschema2pojo-maven-plugin:generate
+
+sed -i 's/public class AbstractFeatures/public abstract class AbstractFeatures/g' \
+    src/main/json/org/openestate/io/idealista/json/AbstractFeatures.java

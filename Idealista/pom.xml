@@ -163,6 +163,7 @@
                     <includeJsr303Annotations>true</includeJsr303Annotations>
                     <includeJsr305Annotations>true</includeJsr305Annotations>
                     <includeConstructors>true</includeConstructors>
+                    <generateBuilders>true</generateBuilders>
                     <constructorsRequiredPropertiesOnly>true</constructorsRequiredPropertiesOnly>
                 </configuration>
             </plugin>

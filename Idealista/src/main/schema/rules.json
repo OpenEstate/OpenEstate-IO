@@ -18,14 +18,17 @@
     "pattern": "^(([a-zA-Z0-9-_\\.])+)@((?:[a-zA-Z0-9-_]+\\.)+)([a-zA-Z]{2,5})$"
   },
   "enumOperationType": {
-    "enum": ["rent","sale","rentToOwn"]
+    "enum": ["rent","sale","rentToOwn"],
+    "javaType": "org.openestate.io.idealista.json.OperationType"
   },
   "enumPropertyStatus": {
-    "enum": ["active","pending","quality","error"]
+    "enum": ["active","pending","quality","error"],
+    "javaType": "org.openestate.io.idealista.json.PropertyStatusType"
   },
   "enumPropertyVisibility": {
     "enum": ["idealista","microsite","private"],
-    "description": "If the visibility is 'idealista', you can find the property using the idealista's search engine; 'microsite', the property is only published on the real estate agency microsite; 'private', the property is not published and only the customer can see it."
+    "description": "If the visibility is 'idealista', you can find the property using the idealista's search engine; 'microsite', the property is only published on the real estate agency microsite; 'private', the property is not published and only the customer can see it.",
+    "javaType": "org.openestate.io.idealista.json.PropertyVisibilityType"
   },
   "feedkey": {
     "type": "string",

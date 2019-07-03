@@ -4,7 +4,8 @@
   "title": "Address Object",
   "description": "the option of (addressPostalCode, addressCountry) is only available for Portugal. If you send only coordinates we will not publish with exact visibility, maximum with street only visibility",
   "type": "object",
-  "additionalProperties": false,
+  "javaType": "org.openestate.io.idealista.json.Address",
+  "additionalProperties": true,
   "anyOf": [
     {
       "required": [
@@ -54,75 +55,105 @@
     "addressVisibility": {
       "title": "address visibility",
       "description": "full address, street name or zone will be shown publicly",
-      "enum": ["full","street","hidden"]
+      "enum": [
+        "full",
+        "street",
+        "hidden"
+      ],
+      "javaName": "visibility"
     },
     "addressStreetName": {
       "title": "address street name",
-      "$ref": "../rules.json#/stringTo200"
+      "$ref": "../rules.json#/stringTo200",
+      "javaName": "streetName"
     },
     "addressStreetNumber": {
       "title": "address street number",
-      "$ref": "../rules.json#/stringTo10"
+      "$ref": "../rules.json#/stringTo10",
+      "javaName": "streetNumber"
     },
     "addressBlock": {
       "title": "address block",
-      "$ref": "../rules.json#/stringTo20"
+      "$ref": "../rules.json#/stringTo20",
+      "javaName": "block"
     },
     "addressFloor": {
       "title": "address floor",
       "type": "string",
-      "pattern": "^(-[1-2]|[1-9]|[1-5][0-9]|60|bj|en|ss|st)$"
+      "pattern": "^(-[1-2]|[1-9]|[1-5][0-9]|60|bj|en|ss|st)$",
+      "javaName": "floor"
     },
     "addressStair": {
       "title": "address stair",
-      "$ref": "../rules.json#/stringTo10"
+      "$ref": "../rules.json#/stringTo10",
+      "javaName": "stair"
     },
     "addressDoor": {
       "title": "address door",
-      "$ref": "../rules.json#/stringTo4"
+      "$ref": "../rules.json#/stringTo4",
+      "javaName": "door"
     },
     "addressUrbanization": {
       "title": "address urbanization",
       "description": "note: this field will be shown even if the visibility is set to 'hidden'",
-      "$ref": "../rules.json#/stringTo50"
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "urbanization"
     },
     "addressPostalCode": {
       "title": "address postal code",
       "type": "string",
-      "pattern": "^[0-9]{5}$|^AD[0-9]{3}$|^[0-9]{4}(-[0-9]{3})?$"
+      "pattern": "^[0-9]{5}$|^AD[0-9]{3}$|^[0-9]{4}(-[0-9]{3})?$",
+      "javaName": "postalCode"
     },
     "addressTown": {
       "title": "address town",
-      "$ref": "../rules.json#/stringTo50"
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "town"
     },
     "addressNsiCode": {
       "title": "address nsi code",
       "description": "national institute of statistics town code",
       "type": "string",
-      "pattern": "^[0-9]{6}$"
+      "pattern": "^[0-9]{6}$",
+      "javaName": "nsiCode"
     },
     "addressCountry": {
       "title": "address country",
-      "enum": ["Spain","Italy","Portugal","Andorra","France","Switzerland", "San Marino"]
+      "enum": [
+        "Spain",
+        "Italy",
+        "Portugal",
+        "Andorra",
+        "France",
+        "Switzerland",
+        "San Marino"
+      ],
+      "javaName": "country"
     },
     "addressCoordinatesPrecision": {
       "title": "address coordinates precision",
       "description": "if moved, just the property zone will be shown publicly, but not its address",
-      "enum": ["exact","moved"]
+      "enum": [
+        "exact",
+        "moved"
+      ],
+      "javaName": "coordinatesPrecision"
     },
     "addressCoordinatesLatitude": {
       "title": "address coordinates latitude",
       "description": "to have a good accuracy, latitude need to have at least 4 decimals",
       "type": "number",
       "minimum": -90,
-      "maximum": 90
+      "maximum": 90,
+      "javaName": "latitude"
     },
     "addressCoordinatesLongitude": {
       "title": "address coordinates longitude",
       "description": "to have a good accuracy, longitude need to have at least 4 decimals",
       "type": "number",
       "minimum": -180,
-      "maximum": 180
+      "maximum": 180,
+      "javaName": "longitude"
     }
   }
 }

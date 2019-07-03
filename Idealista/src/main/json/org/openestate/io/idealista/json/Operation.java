@@ -1,0 +1,325 @@
+
+package org.openestate.io.idealista.json;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.validation.Valid;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+
+/**
+ * Operation Object
+ * <p>
+ * 
+ * 
+ */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "operationDepositMonths",
+    "operationPrice",
+    "operationPriceCommunity",
+    "operationPriceToOwn",
+    "operationPriceTransfer",
+    "operationPriceParking",
+    "operationType"
+})
+public class Operation implements Serializable
+{
+
+    /**
+     * 
+     * (Can be null)
+     * 
+     */
+    @Nullable
+    @JsonProperty("operationDepositMonths")
+    @DecimalMin("0")
+    @DecimalMax("12")
+    private BigDecimal depositMonths;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("operationPrice")
+    @DecimalMin("1")
+    @DecimalMax("99999999")
+    @NotNull
+    @Nonnull
+    private BigInteger price;
+    /**
+     * 
+     * (Can be null)
+     * 
+     */
+    @Nullable
+    @JsonProperty("operationPriceCommunity")
+    @DecimalMin("1")
+    @DecimalMax("9999")
+    private BigInteger priceCommunity;
+    /**
+     * 
+     * (Can be null)
+     * 
+     */
+    @Nullable
+    @JsonProperty("operationPriceToOwn")
+    @DecimalMin("1")
+    @DecimalMax("99999999")
+    private BigInteger priceToOwn;
+    /**
+     * 
+     * (Can be null)
+     * 
+     */
+    @Nullable
+    @JsonProperty("operationPriceTransfer")
+    @DecimalMin("1")
+    @DecimalMax("99999999")
+    private BigInteger priceTransfer;
+    /**
+     * 
+     * (Can be null)
+     * 
+     */
+    @Nullable
+    @JsonProperty("operationPriceParking")
+    @DecimalMin("1")
+    @DecimalMax("99999999")
+    private BigInteger priceParking;
+    /**
+     * 
+     * (Required)
+     * 
+     */
+    @JsonProperty("operationType")
+    @NotNull
+    @Nonnull
+    private OperationType type;
+    @JsonIgnore
+    @Valid
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final static long serialVersionUID = -7973679652284714858L;
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Operation() {
+    }
+
+    /**
+     * 
+     * @param price
+     * @param type
+     */
+    public Operation(BigInteger price, OperationType type) {
+        super();
+        this.price = price;
+        this.type = type;
+    }
+
+    @JsonProperty("operationDepositMonths")
+    public BigDecimal getOperationDepositMonths() {
+        return depositMonths;
+    }
+
+    @JsonProperty("operationDepositMonths")
+    public void setOperationDepositMonths(BigDecimal depositMonths) {
+        this.depositMonths = depositMonths;
+    }
+
+    public Operation withOperationDepositMonths(BigDecimal depositMonths) {
+        this.depositMonths = depositMonths;
+        return this;
+    }
+
+    @JsonProperty("operationPrice")
+    public BigInteger getOperationPrice() {
+        return price;
+    }
+
+    @JsonProperty("operationPrice")
+    public void setOperationPrice(BigInteger price) {
+        this.price = price;
+    }
+
+    public Operation withOperationPrice(BigInteger price) {
+        this.price = price;
+        return this;
+    }
+
+    @JsonProperty("operationPriceCommunity")
+    public BigInteger getOperationPriceCommunity() {
+        return priceCommunity;
+    }
+
+    @JsonProperty("operationPriceCommunity")
+    public void setOperationPriceCommunity(BigInteger priceCommunity) {
+        this.priceCommunity = priceCommunity;
+    }
+
+    public Operation withOperationPriceCommunity(BigInteger priceCommunity) {
+        this.priceCommunity = priceCommunity;
+        return this;
+    }
+
+    @JsonProperty("operationPriceToOwn")
+    public BigInteger getOperationPriceToOwn() {
+        return priceToOwn;
+    }
+
+    @JsonProperty("operationPriceToOwn")
+    public void setOperationPriceToOwn(BigInteger priceToOwn) {
+        this.priceToOwn = priceToOwn;
+    }
+
+    public Operation withOperationPriceToOwn(BigInteger priceToOwn) {
+        this.priceToOwn = priceToOwn;
+        return this;
+    }
+
+    @JsonProperty("operationPriceTransfer")
+    public BigInteger getOperationPriceTransfer() {
+        return priceTransfer;
+    }
+
+    @JsonProperty("operationPriceTransfer")
+    public void setOperationPriceTransfer(BigInteger priceTransfer) {
+        this.priceTransfer = priceTransfer;
+    }
+
+    public Operation withOperationPriceTransfer(BigInteger priceTransfer) {
+        this.priceTransfer = priceTransfer;
+        return this;
+    }
+
+    @JsonProperty("operationPriceParking")
+    public BigInteger getOperationPriceParking() {
+        return priceParking;
+    }
+
+    @JsonProperty("operationPriceParking")
+    public void setOperationPriceParking(BigInteger priceParking) {
+        this.priceParking = priceParking;
+    }
+
+    public Operation withOperationPriceParking(BigInteger priceParking) {
+        this.priceParking = priceParking;
+        return this;
+    }
+
+    @JsonProperty("operationType")
+    public OperationType getOperationType() {
+        return type;
+    }
+
+    @JsonProperty("operationType")
+    public void setOperationType(OperationType type) {
+        this.type = type;
+    }
+
+    public Operation withOperationType(OperationType type) {
+        this.type = type;
+        return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+    public Operation withAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Operation.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("depositMonths");
+        sb.append('=');
+        sb.append(((this.depositMonths == null)?"<null>":this.depositMonths));
+        sb.append(',');
+        sb.append("price");
+        sb.append('=');
+        sb.append(((this.price == null)?"<null>":this.price));
+        sb.append(',');
+        sb.append("priceCommunity");
+        sb.append('=');
+        sb.append(((this.priceCommunity == null)?"<null>":this.priceCommunity));
+        sb.append(',');
+        sb.append("priceToOwn");
+        sb.append('=');
+        sb.append(((this.priceToOwn == null)?"<null>":this.priceToOwn));
+        sb.append(',');
+        sb.append("priceTransfer");
+        sb.append('=');
+        sb.append(((this.priceTransfer == null)?"<null>":this.priceTransfer));
+        sb.append(',');
+        sb.append("priceParking");
+        sb.append('=');
+        sb.append(((this.priceParking == null)?"<null>":this.priceParking));
+        sb.append(',');
+        sb.append("type");
+        sb.append('=');
+        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        result = ((result* 31)+((this.priceCommunity == null)? 0 :this.priceCommunity.hashCode()));
+        result = ((result* 31)+((this.priceTransfer == null)? 0 :this.priceTransfer.hashCode()));
+        result = ((result* 31)+((this.priceParking == null)? 0 :this.priceParking.hashCode()));
+        result = ((result* 31)+((this.price == null)? 0 :this.price.hashCode()));
+        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
+        result = ((result* 31)+((this.depositMonths == null)? 0 :this.depositMonths.hashCode()));
+        result = ((result* 31)+((this.priceToOwn == null)? 0 :this.priceToOwn.hashCode()));
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if ((other instanceof Operation) == false) {
+            return false;
+        }
+        Operation rhs = ((Operation) other);
+        return (((((((((this.priceCommunity == rhs.priceCommunity)||((this.priceCommunity!= null)&&this.priceCommunity.equals(rhs.priceCommunity)))&&((this.priceTransfer == rhs.priceTransfer)||((this.priceTransfer!= null)&&this.priceTransfer.equals(rhs.priceTransfer))))&&((this.priceParking == rhs.priceParking)||((this.priceParking!= null)&&this.priceParking.equals(rhs.priceParking))))&&((this.price == rhs.price)||((this.price!= null)&&this.price.equals(rhs.price))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.depositMonths == rhs.depositMonths)||((this.depositMonths!= null)&&this.depositMonths.equals(rhs.depositMonths))))&&((this.priceToOwn == rhs.priceToOwn)||((this.priceToOwn!= null)&&this.priceToOwn.equals(rhs.priceToOwn))));
+    }
+
+}

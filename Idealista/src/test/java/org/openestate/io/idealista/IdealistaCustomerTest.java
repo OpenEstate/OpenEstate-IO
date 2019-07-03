@@ -26,6 +26,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openestate.io.idealista.json.Customer;
+import org.openestate.io.idealista.json.Property;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,6 +48,10 @@ public class IdealistaCustomerTest {
         try (Reader json = createReader("properties.json")) {
             IdealistaCustomer customer = new IdealistaCustomer(json);
             LOGGER.debug(customer.writeToString());
+
+            //for (Property p : customer.getObject().getProperties()) {
+            //    LOGGER.debug("found property type {}", p.getFeatures().getClass().getName());
+            //}
         } catch (IOException ex) {
             LOGGER.warn("Can't read example properties.json!", ex);
             Assert.fail();
