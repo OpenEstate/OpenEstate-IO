@@ -15,6 +15,8 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -24,10 +26,10 @@ import java.math.BigInteger;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.wis_it.WisItDocument;
 import org.openestate.io.wis_it.WisItUtils;
 import org.openestate.io.wis_it.xml.AreaType;
@@ -43,22 +45,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML files for
- * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
+ * Example for writing XML files for <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
  * <p>
  * This example illustrates the programmatic creation of documents for
- * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a> and how
- * they are written into XML.
+ * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class WisItWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(WisItWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = WisItUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
     private final static boolean PRETTY_PRINT = true;
 
     /**
@@ -70,7 +69,7 @@ public class WisItWritingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                WisItWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                WisItWritingExample.class.getResource("log4j.properties"));
 
         // create a WIS object with some example data
         // this object corresponds to the <WIS> element in XML
@@ -79,10 +78,11 @@ public class WisItWritingExample {
         wis.setOBJEKTE(FACTORY.createWISOBJEKTE());
 
         // append some example ads to the transfer
-        wis.getOBJEKTE().getOBJEKT().add(createOBJEKT());
-        wis.getOBJEKTE().getOBJEKT().add(createOBJEKT());
-        wis.getOBJEKTE().getOBJEKT().add(createOBJEKT());
-        wis.getOBJEKTE().setANZAHL(BigInteger.valueOf(wis.getOBJEKTE().getOBJEKT().size()));
+        int objectCount = RandomUtils.nextInt(3, 10);
+        for (int i = 0; i < objectCount; i++) {
+            wis.getOBJEKTE().getOBJEKT().add(createOBJEKT());
+        }
+        wis.getOBJEKTE().setANZAHL(BigInteger.valueOf(objectCount));
 
         // convert the WIS object into a XML document
         WisItDocument doc = null;
@@ -118,59 +118,72 @@ public class WisItWritingExample {
      *
      * @return created example object
      */
-    protected static ObjectType createOBJEKT() {
+    private static ObjectType createOBJEKT() {
         // create an example real estate
         ObjectType obj = FACTORY.createObjectType();
-        obj.setABSTELLPLATZ(RandomUtils.nextInt(0, 2) == 1);
-        obj.setAUFANFRAGE(RandomUtils.nextInt(0, 2) == 1);
-        obj.setAUFZUG(RandomUtils.nextInt(0, 2) == 1);
-        obj.setBALKON(RandomUtils.nextInt(0, 2) == 1);
+        obj.setABSTELLPLATZ(RandomUtils.nextBoolean());
+        obj.setAUFANFRAGE(RandomUtils.nextBoolean());
+        obj.setAUFZUG(RandomUtils.nextBoolean());
+        obj.setBALKON(RandomUtils.nextBoolean());
         obj.setBAUJAHR(String.valueOf(RandomUtils.nextInt(1900, 2015)));
-        obj.setDACHBODEN(RandomUtils.nextInt(0, 2) == 1);
-        obj.setFLAECHEART(AreaType.NETTO);
-        obj.setFOERDERBAR(RandomUtils.nextInt(0, 2) == 1);
-        obj.setFRAKTION("some notes about the fraction");
-        obj.setGARAGE(RandomUtils.nextInt(0, 2) == 1);
-        obj.setGRUENFLAECHE(RandomUtils.nextInt(0, 2) == 1);
+        obj.setDACHBODEN(RandomUtils.nextBoolean());
+        obj.setFLAECHEART(randomValue(AreaType.values()));
+        obj.setFOERDERBAR(RandomUtils.nextBoolean());
+        obj.setFRAKTION(RANDOMIZER.getWords(1, 5));
+        obj.setGARAGE(RandomUtils.nextBoolean());
+        obj.setGRUENFLAECHE(RandomUtils.nextBoolean());
         obj.setGUELTIGBIS(Calendar.getInstance());
-        obj.setHEIZUNG(HeatingType.ZENTRAL);
-        obj.setID(RandomStringUtils.random(5));
-        obj.setIMMOBILIENART(PropertyType.EINFAMILIENHAUS);
-        obj.setINFODE("some description in german language");
-        obj.setINFOIT("some description in italian language");
-        obj.setKELLER(RandomUtils.nextInt(0, 2) == 1);
-        obj.setKLIMAHAUS(EnergyStandard.A);
-        obj.setKONVENTIONIERT(RandomUtils.nextInt(0, 2) == 1);
+        obj.setHEIZUNG(randomValue(HeatingType.values()));
+        obj.setID(RandomStringUtils.randomAlphanumeric(5));
+        obj.setIMMOBILIENART(randomValue(PropertyType.values()));
+        obj.setINFODE(RANDOMIZER.getWords(10, 50));
+        obj.setINFOIT(RANDOMIZER.getWords(10, 50));
+        obj.setKELLER(RandomUtils.nextBoolean());
+        obj.setKLIMAHAUS(randomValue(EnergyStandard.values()));
+        obj.setKONVENTIONIERT(RandomUtils.nextBoolean());
         obj.setKUBATUR(BigDecimal.valueOf(RandomUtils.nextDouble(100, 1000)));
-        obj.setLOESCHEN(RandomUtils.nextInt(0, 2) == 1);
-        obj.setLOGGIA(RandomUtils.nextInt(0, 2) == 1);
-        obj.setMIETEKAUF(MarketingType.MIETE);
+        obj.setLOESCHEN(RandomUtils.nextBoolean());
+        obj.setLOGGIA(RandomUtils.nextBoolean());
+        obj.setMIETEKAUF(randomValue(MarketingType.values()));
         obj.setNUTZFLAECHE(BigDecimal.valueOf(RandomUtils.nextDouble(100, 1000)));
-        obj.setORT("Bozen");
+        obj.setORT(RANDOMIZER.getCity());
         obj.setPREIS(BigDecimal.valueOf(RandomUtils.nextDouble(300, 3000)));
-        obj.setSTOCKWERK(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        obj.setSTOCKWERKE(BigInteger.valueOf(RandomUtils.nextInt(0, 10)));
-        obj.setTERRASSE(RandomUtils.nextInt(0, 2) == 1);
-        obj.setUEBERGABEZEITPUNKT("some notes about the time of handover");
+        obj.setSTOCKWERK(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        obj.setSTOCKWERKE(BigInteger.valueOf(RandomUtils.nextInt(1, 10)));
+        obj.setTERRASSE(RandomUtils.nextBoolean());
+        obj.setUEBERGABEZEITPUNKT(RANDOMIZER.getWords(1, 10));
         obj.setZIMMER(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
-        obj.setZUSTAND(ConditionType.GEBRAUCHT);
+        obj.setZUSTAND(randomValue(ConditionType.values()));
 
-        obj.setBILD1(obj.getID() + "_1.jpg");
-        obj.setBILD2(obj.getID() + "_2.jpg");
-        obj.setBILD3(obj.getID() + "_3.jpg");
-        obj.setBILD4(obj.getID() + "_4.jpg");
-        obj.setBILD5(obj.getID() + "_5.jpg");
-        obj.setBILD6(obj.getID() + "_6.jpg");
-        obj.setBILD7(obj.getID() + "_7.jpg");
-        obj.setBILD8(obj.getID() + "_8.jpg");
-        obj.setBILD9(obj.getID() + "_9.jpg");
-        obj.setBILD10(obj.getID() + "_10.jpg");
+        obj.setBILD1(obj.getID() + "-01.jpg");
+        obj.setBILD2(obj.getID() + "-02.jpg");
+        obj.setBILD3(obj.getID() + "-03.jpg");
+        obj.setBILD4(obj.getID() + "-04.jpg");
+        obj.setBILD5(obj.getID() + "-05.jpg");
+        obj.setBILD6(obj.getID() + "-06.jpg");
+        obj.setBILD7(obj.getID() + "-07.jpg");
+        obj.setBILD8(obj.getID() + "-08.jpg");
+        obj.setBILD9(obj.getID() + "-09.jpg");
+        obj.setBILD10(obj.getID() + "-10.jpg");
 
-        obj.setDOWNLOAD1(obj.getID() + "_1.pdf");
-        obj.setDOWNLOAD2(obj.getID() + "_2.pdf");
-        obj.setDOWNLOAD3(obj.getID() + "_3.pdf");
+        obj.setDOWNLOAD1(obj.getID() + "-01.pdf");
+        obj.setDOWNLOAD2(obj.getID() + "-02.pdf");
+        obj.setDOWNLOAD3(obj.getID() + "-03.pdf");
 
         return obj;
+    }
+
+    /**
+     * Get a random value from an array.
+     *
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
+     */
+    private static <T> T randomValue(T[] values) {
+        return (values != null && values.length > 0) ?
+                values[RandomUtils.nextInt(0, values.length)] :
+                null;
     }
 
     /**
@@ -180,7 +193,7 @@ public class WisItWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(WisItDocument doc, File file) {
+    private static void write(WisItDocument doc, File file) {
         LOGGER.info("writing document");
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -199,7 +212,7 @@ public class WisItWritingExample {
      * @param output the stream, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(WisItDocument doc, OutputStream output) {
+    private static void write(WisItDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -218,7 +231,7 @@ public class WisItWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(WisItDocument doc, Writer output) {
+    private static void write(WisItDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -237,7 +250,7 @@ public class WisItWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(WisItDocument doc) {
+    private static void writeToConsole(WisItDocument doc) {
         LOGGER.info("writing document");
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

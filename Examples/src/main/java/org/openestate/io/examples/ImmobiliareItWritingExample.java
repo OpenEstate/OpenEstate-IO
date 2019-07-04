@@ -15,6 +15,8 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -25,10 +27,10 @@ import java.util.Calendar;
 import java.util.Currency;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
 import org.openestate.io.immobiliare_it.xml.Box;
@@ -65,22 +67,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML files for
- * <a href="http://immobiliare.it">immobiliare.it</a>.
+ * Example for writing XML files for <a href="https://www.immobiliare.it/">immobiliare.it</a>.
  * <p>
  * This example illustrates the programmatic creation of documents for
- * <a href="http://immobiliare.it">immobiliare.it</a> and how they are written
- * into XML.
+ * <a href="https://www.immobiliare.it/">immobiliare.it</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class ImmobiliareItWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = ImmobiliareItUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
     private final static boolean PRETTY_PRINT = true;
 
     /**
@@ -92,7 +91,7 @@ public class ImmobiliareItWritingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                ImmobiliareItWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                ImmobiliareItWritingExample.class.getResource("log4j.properties"));
 
         // create a Feed object with some example data
         // this object corresponds to the <feed> root element in XML
@@ -100,8 +99,10 @@ public class ImmobiliareItWritingExample {
 
         // append some example objects to the Feed object
         feed.setProperties(FACTORY.createFeedProperties());
-        feed.getProperties().getProperty().add(createProperty());
-        feed.getProperties().getProperty().add(createProperty());
+        int propertyCount = RandomUtils.nextInt(3, 5);
+        for (int i = 0; i < propertyCount; i++) {
+            feed.getProperties().getProperty().add(createProperty());
+        }
 
         // convert the Feed object into a XML document
         ImmobiliareItDocument doc = null;
@@ -137,142 +138,146 @@ public class ImmobiliareItWritingExample {
      *
      * @return created example object
      */
-    protected static Property createProperty() {
+    private static Property createProperty() {
         // create an example real estate for rent
         Property obj = FACTORY.createFeedPropertiesProperty();
-        obj.setBuildingStatus(Status.ABITABILE);
-        obj.setCategory(Category.COMMERCIALE);
+        obj.setBuildingStatus(randomValue(Status.values()));
+        obj.setCategory(randomValue(Category.values()));
         obj.setDateExpiration(Calendar.getInstance());
         obj.setDateUpdated(Calendar.getInstance());
-        obj.setOperation(Operation.WRITE);
-        obj.setUniqueId(RandomStringUtils.random(5));
+        obj.setOperation(randomValue(Operation.values()));
+        obj.setUniqueId(RandomStringUtils.randomAlphanumeric(5));
 
         obj.setAgent(FACTORY.createFeedPropertiesPropertyAgent());
-        obj.getAgent().setEmail("agency@test.org");
-        obj.getAgent().setOfficeName("agency name");
+        obj.getAgent().setEmail(RANDOMIZER.getEmail());
+        obj.getAgent().setOfficeName(RANDOMIZER.getName());
 
         obj.setBlueprints(FACTORY.createFeedPropertiesPropertyBlueprints());
-        obj.getBlueprints().getBlueprint().add(createPictureExtended());
-        obj.getBlueprints().getBlueprint().add(createPictureExtended());
-        obj.getBlueprints().getBlueprint().add(createPictureExtended());
+        int blueprintCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < blueprintCount; i++) {
+            obj.getBlueprints().getBlueprint().add(createPictureExtended(i));
+        }
 
         obj.setBuilding(FACTORY.createBuilding());
-        obj.getBuilding().setCategory(Category.COMMERCIALE);
-        obj.getBuilding().setClazz(Clazz.SIGNORILE);
-        obj.getBuilding().setDetail(PropertyTypeBusiness.ALBERGO);
-        obj.getBuilding().setStatus(Status.DISCRETO);
-        obj.getBuilding().setType(PropertyType.APPARTAMENTO);
+        obj.getBuilding().setCategory(randomValue(Category.values()));
+        obj.getBuilding().setClazz(randomValue(Clazz.values()));
+        obj.getBuilding().setDetail(randomValue(PropertyTypeBusiness.values()));
+        obj.getBuilding().setStatus(randomValue(Status.values()));
+        obj.getBuilding().setType(randomValue(PropertyType.values()));
 
         obj.setExtraFeatures(FACTORY.createFeedPropertiesPropertyExtraFeatures());
-        obj.getExtraFeatures().setAirConditioning(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setBalcony(RandomUtils.nextInt(0, 2) == 1);
+        obj.getExtraFeatures().setAirConditioning(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setBalcony(RandomUtils.nextBoolean());
         obj.getExtraFeatures().setBathrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
         obj.getExtraFeatures().setBeamHeight(BigInteger.valueOf(RandomUtils.nextLong(1, 10)));
         obj.getExtraFeatures().setBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
         obj.getExtraFeatures().setBuildYear(RandomUtils.nextInt(1900, 2000));
-        obj.getExtraFeatures().setDocDescription("some descriptions");
-        obj.getExtraFeatures().setDocSpecification("some specifications");
-        obj.getExtraFeatures().setElevator(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setFloorplannerUrl("http://floorplanner-url.it/");
-        obj.getExtraFeatures().setFreeConditions("free conditions");
-        obj.getExtraFeatures().setFurniture(Furniture.PARZIALMENTE_ARREDATO);
-        obj.getExtraFeatures().setGarden(Garden.NESSUNO);
-        obj.getExtraFeatures().setHeating(Heat.AUTONOMO);
-        obj.getExtraFeatures().setKitchen(Kitchen.SEMI_ABITABILE);
-        obj.getExtraFeatures().setNet(RandomUtils.nextInt(0, 2) == 1);
+        obj.getExtraFeatures().setDocDescription(RANDOMIZER.getWords(5, 10));
+        obj.getExtraFeatures().setDocSpecification(RANDOMIZER.getWords(5, 10));
+        obj.getExtraFeatures().setElevator(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setFloorplannerUrl("http://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
+        obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
+        obj.getExtraFeatures().setFurniture(randomValue(Furniture.values()));
+        obj.getExtraFeatures().setGarden(randomValue(Garden.values()));
+        obj.getExtraFeatures().setHeating(randomValue(Heat.values()));
+        obj.getExtraFeatures().setKitchen(randomValue(Kitchen.values()));
+        obj.getExtraFeatures().setNet(RandomUtils.nextBoolean());
         obj.getExtraFeatures().setNumFloors(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.getExtraFeatures().setOverheadCrane(YesNoReady.READY);
-        obj.getExtraFeatures().setReception(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setRentContract(Rental.LIBERO);
-        obj.getExtraFeatures().setSecurityAlarm(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setTerrace(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setVirtualTour("virtual tour");
+        obj.getExtraFeatures().setOverheadCrane(randomValue(YesNoReady.values()));
+        obj.getExtraFeatures().setReception(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setRentContract(randomValue(Rental.values()));
+        obj.getExtraFeatures().setSecurityAlarm(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setTerrace(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setVirtualTour(RANDOMIZER.getWords(5, 10));
 
         obj.getExtraFeatures().setAdditionalCosts(FACTORY.createAdditionalCostsType());
         obj.getExtraFeatures().getAdditionalCosts().setCurrency(Currency.getInstance("EUR"));
         obj.getExtraFeatures().getAdditionalCosts().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 5000)));
 
         obj.getExtraFeatures().setExternalArea(FACTORY.createLandSizeType());
-        obj.getExtraFeatures().getExternalArea().setUnit(LandSizeUnit.M2);
+        obj.getExtraFeatures().getExternalArea().setUnit(randomValue(LandSizeUnit.values()));
         obj.getExtraFeatures().getExternalArea().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
 
         obj.getExtraFeatures().setFloor(FACTORY.createFloor());
-        obj.getExtraFeatures().getFloor().setType(Floor.FloorType.INTERMEDIO);
+        obj.getExtraFeatures().getFloor().setType(randomValue(Floor.FloorType.values()));
         obj.getExtraFeatures().getFloor().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
 
         obj.getExtraFeatures().setGarage(FACTORY.createBox());
-        obj.getExtraFeatures().getGarage().setType(Box.BoxType.POSTO_AUTO);
+        obj.getExtraFeatures().getGarage().setType(randomValue(Box.BoxType.values()));
         obj.getExtraFeatures().getGarage().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
 
         obj.getExtraFeatures().setOfficeSize(FACTORY.createSizeType());
-        obj.getExtraFeatures().getOfficeSize().setUnit(SizeUnit.M2);
+        obj.getExtraFeatures().getOfficeSize().setUnit(randomValue(SizeUnit.values()));
         obj.getExtraFeatures().getOfficeSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(5, 50)));
 
         obj.setFeatures(FACTORY.createFeedPropertiesPropertyFeatures());
-        obj.getFeatures().setEnergyClass(ClassEnergy.D);
+        obj.getFeatures().setEnergyClass(randomValue(ClassEnergy.values()));
         obj.getFeatures().setRooms(RandomUtils.nextInt(1, 5));
 
         obj.getFeatures().setEnergyPerformance(FACTORY.createClassEnergyPerformance());
-        obj.getFeatures().getEnergyPerformance().setCertified(RandomUtils.nextInt(0, 2) == 1);
-        obj.getFeatures().getEnergyPerformance().setUnit(EnergyUnit.KWH_M2ANNO);
-        obj.getFeatures().getEnergyPerformance().setValue("energy performance");
+        obj.getFeatures().getEnergyPerformance().setCertified(RandomUtils.nextBoolean());
+        obj.getFeatures().getEnergyPerformance().setUnit(randomValue(EnergyUnit.values()));
+        obj.getFeatures().getEnergyPerformance().setValue(RANDOMIZER.getWords(3, 10));
 
         obj.getFeatures().setPrice(FACTORY.createPriceType());
         obj.getFeatures().getPrice().setCurrency(Currency.getInstance("EUR"));
-        obj.getFeatures().getPrice().setReserved(RandomUtils.nextInt(0, 2) == 1);
+        obj.getFeatures().getPrice().setReserved(RandomUtils.nextBoolean());
         obj.getFeatures().getPrice().setValue(BigInteger.valueOf(RandomUtils.nextLong(500, 5000000)));
 
         obj.getFeatures().setSize(FACTORY.createSizeType());
-        obj.getFeatures().getSize().setUnit(SizeUnit.M2);
+        obj.getFeatures().getSize().setUnit(randomValue(SizeUnit.values()));
         obj.getFeatures().getSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
 
         obj.setLocation(FACTORY.createLocationStructure());
-        obj.getLocation().setAdministrativeArea("administrative area");
-        obj.getLocation().setCountryCode("DE");
+        obj.getLocation().setAdministrativeArea(RANDOMIZER.getWords(3, 5));
+        obj.getLocation().setCountryCode(randomValue(new String[]{"DE", "IT", "AT", "CH"}));
 
         obj.getLocation().setCity(FACTORY.createLocationStructureCity());
-        obj.getLocation().getCity().setCode(BigInteger.ZERO);
-        obj.getLocation().getCity().setValue("Berlin");
+        obj.getLocation().getCity().setCode(BigInteger.valueOf(RandomUtils.nextLong(1, 1000)));
+        obj.getLocation().getCity().setValue(RANDOMIZER.getCity());
 
         obj.getLocation().setLocality(FACTORY.createLocationStructureLocality());
         obj.getLocation().getLocality().setLatitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 90)));
         obj.getLocation().getLocality().setLongitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 90)));
-        obj.getLocation().getLocality().setPostalCode("13125");
+        obj.getLocation().getLocality().setPostalCode(RANDOMIZER.getZipCode());
 
         obj.getLocation().getLocality().setNeighbourhood(FACTORY.createLocationStructureLocalityNeighbourhood());
-        obj.getLocation().getLocality().getNeighbourhood().setId(BigInteger.ZERO);
-        obj.getLocation().getLocality().getNeighbourhood().setType(LocationNeighbourhoodType.DISTRICT);
-        obj.getLocation().getLocality().getNeighbourhood().setValue("about the neighbourhood");
+        obj.getLocation().getLocality().getNeighbourhood().setId(BigInteger.valueOf(RandomUtils.nextInt(0, 10)));
+        obj.getLocation().getLocality().getNeighbourhood().setType(randomValue(LocationNeighbourhoodType.values()));
+        obj.getLocation().getLocality().getNeighbourhood().setValue(RANDOMIZER.getWords(3, 10));
 
         obj.getLocation().getLocality().setThoroughfare(FACTORY.createLocationStructureLocalityThoroughfare());
-        obj.getLocation().getLocality().getThoroughfare().setDisplay(RandomUtils.nextInt(0, 2) == 1);
-        obj.getLocation().getLocality().getThoroughfare().setValue("about thoroughfare");
+        obj.getLocation().getLocality().getThoroughfare().setDisplay(RandomUtils.nextBoolean());
+        obj.getLocation().getLocality().getThoroughfare().setValue(RANDOMIZER.getWords(3, 10));
 
         obj.getLocation().setSubAdministrativeArea(FACTORY.createLocationStructureSubAdministrativeArea());
-        obj.getLocation().getSubAdministrativeArea().setCode(RandomStringUtils.random(5));
-        obj.getLocation().getSubAdministrativeArea().setValue("Berlin");
+        obj.getLocation().getSubAdministrativeArea().setCode(RandomStringUtils.randomAlphanumeric(5));
+        obj.getLocation().getSubAdministrativeArea().setValue(RANDOMIZER.getCity());
 
         obj.setPictures(FACTORY.createFeedPropertiesPropertyPictures());
-        obj.getPictures().getPictureUrlAndPicture().add(createPicture());
-        obj.getPictures().getPictureUrlAndPicture().add(createPicture());
-        obj.getPictures().getPictureUrlAndPicture().add(createPicture());
+        int pictureCount = RandomUtils.nextInt(2, 10);
+        for (int i = 0; i < pictureCount; i++) {
+            obj.getPictures().getPictureUrlAndPicture().add(createPicture(i));
+        }
 
         obj.setPropertyType(FACTORY.createProptype());
         obj.getPropertyType().setBusinessType(FACTORY.createBusinessElement());
-        obj.getPropertyType().getBusinessType().setCategory(BusinessElement.BusinessElementCategory.IMMOBILE);
-        obj.getPropertyType().getBusinessType().setValue(PropertyTypeBusiness.ALTRO);
+        obj.getPropertyType().getBusinessType().setCategory(randomValue(BusinessElement.BusinessElementCategory.values()));
+        obj.getPropertyType().getBusinessType().setValue(randomValue(PropertyTypeBusiness.values()));
         obj.getPropertyType().setTerrains(FACTORY.createTerrains());
-        obj.getPropertyType().getTerrains().getTerrain().add(TerrainType.SEMINATIVO);
-        obj.getPropertyType().setType(PropertyTypeSimple.CASA_INDIPENDENTE);
+        obj.getPropertyType().getTerrains().getTerrain().add(randomValue(TerrainType.values()));
+        obj.getPropertyType().setType(randomValue(PropertyTypeSimple.values()));
 
         obj.setTransactionType(FACTORY.createTransactionType());
-        obj.getTransactionType().setAuction(RandomUtils.nextInt(0, 2) == 1);
-        obj.getTransactionType().setOwnership(OwnershipType.PARZIALE);
-        obj.getTransactionType().setValue("notes about transaction");
+        obj.getTransactionType().setAuction(RandomUtils.nextBoolean());
+        obj.getTransactionType().setOwnership(randomValue(OwnershipType.values()));
+        obj.getTransactionType().setValue(RANDOMIZER.getWords(3, 10));
 
         obj.setVideos(FACTORY.createFeedPropertiesPropertyVideos());
-        obj.getVideos().getVideo().add(createVideo());
-        obj.getVideos().getVideo().add(createVideo());
+        int videoCount = RandomUtils.nextInt(1, 3);
+        for (int i = 0; i < videoCount; i++) {
+            obj.getVideos().getVideo().add(createVideo());
+        }
 
         return obj;
     }
@@ -282,23 +287,24 @@ public class ImmobiliareItWritingExample {
      *
      * @return created example object
      */
-    protected static PictureProject createPicture() {
+    private static PictureProject createPicture(int position) {
         PictureProject pic = FACTORY.createPictureProject();
-        pic.setPosition(BigInteger.valueOf(RandomUtils.nextLong(0, 100)));
-        pic.setValue("image-" + RandomUtils.nextInt(0, 999) + ".jpg");
+        pic.setPosition(BigInteger.valueOf(position));
+        pic.setValue("https://www.example.com/image-" + position + ".jpg");
         return pic;
     }
 
     /**
      * Create a {@link PictureExtended} with some example data.
      *
+     * @param position image position
      * @return created example object
      */
-    protected static PictureExtended createPictureExtended() {
+    private static PictureExtended createPictureExtended(int position) {
         PictureExtended pic = FACTORY.createPictureExtended();
-        pic.setPosition(BigInteger.valueOf(RandomUtils.nextLong(0, 100)));
-        pic.setValue("image-" + RandomUtils.nextInt(0, 999) + ".jpg");
-        pic.setUrl("http://mywebsite.org/" + pic.getValue());
+        pic.setPosition(BigInteger.valueOf(position));
+        pic.setValue("image-" + position + ".jpg");
+        pic.setUrl("https://www.example.com/" + pic.getValue());
         return pic;
     }
 
@@ -307,11 +313,24 @@ public class ImmobiliareItWritingExample {
      *
      * @return created example object
      */
-    protected static VideoProject createVideo() {
+    private static VideoProject createVideo() {
         VideoProject video = FACTORY.createVideoProject();
-        video.setType(VideoType.LOCAL);
-        video.setValue("video-" + RandomUtils.nextInt(0, 999) + ".mp4");
+        video.setType(VideoType.REMOTE);
+        video.setValue("https://www.example.com/video-" + RandomUtils.nextInt(0, 999) + ".mp4");
         return video;
+    }
+
+    /**
+     * Get a random value from an array.
+     *
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
+     */
+    private static <T> T randomValue(T[] values) {
+        return (values != null && values.length > 0) ?
+                values[RandomUtils.nextInt(0, values.length)] :
+                null;
     }
 
     /**
@@ -321,7 +340,7 @@ public class ImmobiliareItWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(ImmobiliareItDocument doc, File file) {
+    private static void write(ImmobiliareItDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -340,7 +359,7 @@ public class ImmobiliareItWritingExample {
      * @param output the stream, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(ImmobiliareItDocument doc, OutputStream output) {
+    private static void write(ImmobiliareItDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -359,7 +378,7 @@ public class ImmobiliareItWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(ImmobiliareItDocument doc, Writer output) {
+    private static void write(ImmobiliareItDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -378,7 +397,7 @@ public class ImmobiliareItWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(ImmobiliareItDocument doc) {
+    private static void writeToConsole(ImmobiliareItDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

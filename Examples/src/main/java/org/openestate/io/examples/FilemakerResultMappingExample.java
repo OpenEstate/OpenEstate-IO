@@ -36,7 +36,6 @@ import org.w3c.dom.Document;
 public class FilemakerResultMappingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultMappingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -46,7 +45,7 @@ public class FilemakerResultMappingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                FilemakerWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                FilemakerWritingExample.class.getResource("log4j.properties"));
 
         // create a mapping from the example document, if no files were specified as command line arguments
         FilemakerResultMapping mapping = null;
@@ -65,7 +64,7 @@ public class FilemakerResultMappingExample {
             try {
                 mapping = new FilemakerResultDocument(XmlUtils.newDocument(new File(args[0]))).toMapping();
             } catch (Exception ex) {
-                LOGGER.error("Can't create mapping from file '" + args[0] + "'!");
+                LOGGER.error("Can't create mapping from file '{}'!", args[0]);
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                 System.exit(1);
             }
@@ -80,13 +79,13 @@ public class FilemakerResultMappingExample {
         for (int i = 0; i < mapping.getRowCount(); i++) {
             FilemakerResultMapping.Row row = mapping.getRow(i);
             LOGGER.info(StringUtils.repeat("-", 50));
-            LOGGER.info("record at row " + i);
-            LOGGER.info("> recordId = " + row.getRecordId());
-            LOGGER.info("> modId = " + row.getModId());
+            LOGGER.info("record at row {}", i);
+            LOGGER.info("> recordId = {}", row.getRecordId());
+            LOGGER.info("> modId = {}", row.getModId());
 
             // access record values through their field name
             for (String field : row.getFieldNames()) {
-                LOGGER.info("> " + field + " = " + row.getValue(field));
+                LOGGER.info("> {} = {}", field, row.getValue(field));
             }
         }
     }

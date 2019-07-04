@@ -44,11 +44,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for reading JSON files for
- * <a href="https://www.idealista.com/">idealista.com</a>.
+ * Example for reading JSON files for <a href="https://www.idealista.com/">idealista.com</a>.
  * <p>
- * This example illustrates how to read JSON files for
- * <a href="https://www.idealista.com/">idealista.com</a>.
+ * This example illustrates how to read JSON files for <a href="https://www.idealista.com/">idealista.com</a>.
  *
  * @author Andreas Rudolph
  * @since 1.5
@@ -102,7 +100,7 @@ public class IdealistaReadingExample {
      * @throws IOException if the file is not readable
      */
     private static void read(File jsonFile) throws IOException {
-        LOGGER.info("process file: " + jsonFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", jsonFile.getAbsolutePath());
         if (!jsonFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
             return;
@@ -121,7 +119,7 @@ public class IdealistaReadingExample {
      * @throws IOException if the file is not readable
      */
     private static void read(InputStream jsonInputStream) throws IOException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         try (Reader reader = new InputStreamReader(jsonInputStream, IdealistaUtils.CHARSET)) {
             IdealistaCustomer doc = new IdealistaCustomer(reader);
             printToConsole(doc);
@@ -135,16 +133,16 @@ public class IdealistaReadingExample {
      */
     private static void printToConsole(IdealistaCustomer root) {
         Customer customer = root.getObject();
-        LOGGER.info("> processing customer '{}'",
-                StringUtils.defaultIfBlank(customer.getName(), "???"));
+        LOGGER.info("> processing customer '{}' ({})",
+                customer.getReference(), customer.getName());
 
         // process properties
         if (customer.getProperties() != null) {
             for (Property property : customer.getProperties()) {
                 // get property nr
-                String objectNr = StringUtils.trimToNull(StringUtils.defaultIfBlank(
-                        property.getReference(), property.getCode()));
-                if (objectNr == null) objectNr = "???";
+                String objectNr = StringUtils.defaultIfBlank(
+                        property.getReference(),
+                        property.getCode());
 
                 // get operation type
                 Operation.Type operationType = (property.getOperation() != null) ?
@@ -194,9 +192,9 @@ public class IdealistaReadingExample {
         if (customer.getNewDevelopments() != null) {
             for (NewDevelopment newDevelopment : customer.getNewDevelopments()) {
                 // get development nr
-                String objectNr = StringUtils.trimToNull(StringUtils.defaultIfBlank(
-                        newDevelopment.getReference(), newDevelopment.getCode()));
-                if (objectNr == null) objectNr = "???";
+                String objectNr = StringUtils.defaultIfBlank(
+                        newDevelopment.getReference(),
+                        newDevelopment.getCode());
 
                 // get typology types
                 List<Enum> objectTypes = new ArrayList<>();

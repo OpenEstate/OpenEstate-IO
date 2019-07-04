@@ -46,7 +46,6 @@ import org.xml.sax.SAXException;
 public class FilemakerReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -57,12 +56,12 @@ public class FilemakerReadingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                FilemakerReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                FilemakerReadingExample.class.getResource("log4j.properties"));
 
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(FilemakerReadingExample.class.getResourceAsStream(PACKAGE + "/filemaker-result.xml"));
+                read(FilemakerReadingExample.class.getResourceAsStream("filemaker-result.xml"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example result file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -70,7 +69,7 @@ public class FilemakerReadingExample {
             }
 
             try {
-                read(FilemakerReadingExample.class.getResourceAsStream(PACKAGE + "/filemaker-layout.xml"));
+                read(FilemakerReadingExample.class.getResourceAsStream("filemaker-layout.xml"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example layout file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -84,7 +83,7 @@ public class FilemakerReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -105,7 +104,7 @@ public class FilemakerReadingExample {
      */
     @SuppressWarnings("Duplicates")
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process file: " + xmlFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
             return;
@@ -136,7 +135,7 @@ public class FilemakerReadingExample {
      */
     @SuppressWarnings("Duplicates")
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         FilemakerDocument doc = FilemakerUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
@@ -145,8 +144,8 @@ public class FilemakerReadingExample {
         } else if (doc.isLayout()) {
             printToConsole((FilemakerLayoutDocument) doc);
         } else {
-            LOGGER.warn("> unsupported type of document: "
-                    + doc.getClass().getName());
+            LOGGER.warn("> unsupported type of document: {}",
+                    doc.getClass().getName());
         }
     }
 
@@ -157,27 +156,30 @@ public class FilemakerReadingExample {
      * @throws JAXBException if XML conversion into Java objects failed
      */
     protected static void printToConsole(FilemakerLayoutDocument doc) throws JAXBException {
-        LOGGER.info("> process layout document");
+        LOGGER.info("> processing layout document");
         FMPXMLLAYOUT layout = doc.toObject();
 
-        LOGGER.info("> error code      : " + layout.getERRORCODE());
+        LOGGER.info("> error code      : {}", layout.getERRORCODE());
         if (layout.getPRODUCT() != null) {
-            LOGGER.info("> product name    : " + layout.getPRODUCT().getNAME());
-            LOGGER.info("> product version : " + layout.getPRODUCT().getVERSION());
-            LOGGER.info("> product build   : " + layout.getPRODUCT().getBUILD());
+            LOGGER.info("> product name    : {}", layout.getPRODUCT().getNAME());
+            LOGGER.info("> product version : {}", layout.getPRODUCT().getVERSION());
+            LOGGER.info("> product build   : {}", layout.getPRODUCT().getBUILD());
         }
         if (layout.getLAYOUT() != null) {
-            LOGGER.info("> database name   : " + layout.getLAYOUT().getDATABASE());
-            LOGGER.info("> database layout : " + layout.getLAYOUT().getNAME());
+            LOGGER.info("> database name   : {}", layout.getLAYOUT().getDATABASE());
+            LOGGER.info("> database layout : {}", layout.getLAYOUT().getNAME());
             for (LayoutType.FIELD field : layout.getLAYOUT().getFIELD()) {
-                LOGGER.info("> database field  : " + field.getNAME() + " / " + field.getSTYLE().getTYPE() + " / " + field.getSTYLE().getVALUELIST());
+                LOGGER.info("> database field  : {} / {} / {}",
+                        field.getNAME(),
+                        field.getSTYLE().getTYPE(),
+                        field.getSTYLE().getVALUELIST());
             }
         }
         if (layout.getVALUELISTS() != null) {
             for (ValueListsType.VALUELIST valueList : layout.getVALUELISTS().getVALUELIST()) {
-                LOGGER.info("> database values : " + valueList.getNAME());
+                LOGGER.info("> database values : {}", valueList.getNAME());
                 for (String value : valueList.getVALUE()) {
-                    LOGGER.info(">> " + value);
+                    LOGGER.info(">> {}", value);
                 }
             }
         }
@@ -190,36 +192,37 @@ public class FilemakerReadingExample {
      * @throws JAXBException if XML conversion into Java objects failed
      */
     protected static void printToConsole(FilemakerResultDocument doc) throws JAXBException {
-        LOGGER.info("> process result document");
+        LOGGER.info("> processing result document");
         FMPXMLRESULT result = doc.toObject();
 
-        LOGGER.info("> error code       : " + result.getERRORCODE());
+        LOGGER.info("> error code       : {}", result.getERRORCODE());
         if (result.getPRODUCT() != null) {
-            LOGGER.info("> product name     : " + result.getPRODUCT().getNAME());
-            LOGGER.info("> product version  : " + result.getPRODUCT().getVERSION());
-            LOGGER.info("> product build    : " + result.getPRODUCT().getBUILD());
+            LOGGER.info("> product name     : {}", result.getPRODUCT().getNAME());
+            LOGGER.info("> product version  : {}", result.getPRODUCT().getVERSION());
+            LOGGER.info("> product build    : {}", result.getPRODUCT().getBUILD());
         }
         if (result.getDATABASE() != null) {
-            LOGGER.info("> database name    : " + result.getDATABASE().getNAME());
-            LOGGER.info("> database layout  : " + result.getDATABASE().getLAYOUT());
-            LOGGER.info("> database date    : " + result.getDATABASE().getDATEFORMAT());
-            LOGGER.info("> database time    : " + result.getDATABASE().getTIMEFORMAT());
-            LOGGER.info("> database records : " + result.getDATABASE().getRECORDS());
+            LOGGER.info("> database name    : {}", result.getDATABASE().getNAME());
+            LOGGER.info("> database layout  : {}", result.getDATABASE().getLAYOUT());
+            LOGGER.info("> database date    : {}", result.getDATABASE().getDATEFORMAT());
+            LOGGER.info("> database time    : {}", result.getDATABASE().getTIMEFORMAT());
+            LOGGER.info("> database records : {}", result.getDATABASE().getRECORDS());
         }
         if (result.getMETADATA() != null) {
             for (MetaDataType.FIELD field : result.getMETADATA().getFIELD()) {
-                LOGGER.info("> database field   : " + field.getNAME());
-                LOGGER.info(">> type : " + field.getTYPE());
-                LOGGER.info(">> max repeat : " + field.getMAXREPEAT());
+                LOGGER.info("> database field   : {}", field.getNAME());
+                LOGGER.info(">> type            : {}", field.getTYPE());
+                LOGGER.info(">> max repeat      : {}", field.getMAXREPEAT());
             }
         }
         if (result.getRESULTSET() != null) {
-            LOGGER.info("> result set found  : " + result.getRESULTSET().getFOUND());
+            LOGGER.info("> result set found : {}", result.getRESULTSET().getFOUND());
             for (ResultSetType.ROW row : result.getRESULTSET().getROW()) {
-                LOGGER.info("> result set row    : " + row.getRECORDID() + " / " + row.getMODID());
+                LOGGER.info("> result set row   : {} / {}",
+                        row.getRECORDID(), row.getMODID());
                 for (ResultSetType.ROW.COL col : row.getCOL()) {
                     for (String data : col.getDATA()) {
-                        LOGGER.info(">> " + data);
+                        LOGGER.info(">> {}", data);
                     }
                 }
             }

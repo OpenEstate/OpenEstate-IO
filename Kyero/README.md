@@ -99,4 +99,4 @@ Further information
 -   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
 -   [Validator for *kyero.com* XML](https://validator.openestate.org/)
--   [XML import specifications](https://help.kyero.com/article/354-xml-import-specification)
+-   [XML import specifications](https://help.kyero.com/estate-agents/xml-import-specification)

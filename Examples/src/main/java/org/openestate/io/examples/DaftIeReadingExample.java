@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.daft_ie.DaftIeDocument;
 import org.openestate.io.daft_ie.DaftIeUtils;
@@ -32,10 +31,9 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * Example for reading XML files for <a href="http://daft.ie">daft.ie</a>.
+ * Example for reading XML files for <a href="https://www.daft.ie/">daft.ie</a>.
  * <p>
- * This example illustrates how to read XML files for
- * <a href="http://daft.ie">daft.ie</a>.
+ * This example illustrates how to read XML files for <a href="https://www.daft.ie/">daft.ie</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -43,7 +41,6 @@ import org.xml.sax.SAXException;
 public class DaftIeReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -54,12 +51,12 @@ public class DaftIeReadingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                DaftIeReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                DaftIeReadingExample.class.getResource("log4j.properties"));
 
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(DaftIeReadingExample.class.getResourceAsStream(PACKAGE + "/daft_ie.xml"));
+                read(DaftIeReadingExample.class.getResourceAsStream("daft_ie.xml"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -73,7 +70,7 @@ public class DaftIeReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -92,7 +89,7 @@ public class DaftIeReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process file: " + xmlFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
             return;
@@ -116,7 +113,7 @@ public class DaftIeReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         DaftIeDocument doc = DaftIeUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
@@ -132,8 +129,8 @@ public class DaftIeReadingExample {
      * @throws JAXBException if XML conversion into Java objects failed
      */
     protected static void printToConsole(DaftIeDocument doc) throws JAXBException {
-        LOGGER.info("> process document in version "
-                + doc.getDocumentVersion());
+        LOGGER.info("> processing document in version {}",
+                doc.getDocumentVersion());
 
         Daft daft = doc.toObject();
 
@@ -141,16 +138,14 @@ public class DaftIeReadingExample {
         if (daft.getOverseasRental() != null) {
             for (OverseasRentalAdType ad : daft.getOverseasRental().getOverseasRentalAd()) {
                 // get object nr
-                String objectNr = StringUtils.trimToNull(ad.getExternalId());
-                if (objectNr == null) objectNr = "???";
+                String objectNr = ad.getExternalId();
 
                 // get object description
-                String objectInfo = StringUtils.trimToNull(ad.getDescription());
-                if (objectInfo == null) objectInfo = "???";
+                String objectInfo = ad.getDescription();
 
                 // print object information to console
-                LOGGER.info("> found object "
-                        + "'" + objectNr + "' for rent: " + objectInfo);
+                LOGGER.info("> found object '{}' for rent: {}",
+                        objectNr, objectInfo);
             }
         }
 
@@ -158,16 +153,14 @@ public class DaftIeReadingExample {
         if (daft.getOverseasSales() != null) {
             for (OverseasSaleAdType ad : daft.getOverseasSales().getOverseasSaleAd()) {
                 // get object nr
-                String objectNr = StringUtils.trimToNull(ad.getExternalId());
-                if (objectNr == null) objectNr = "???";
+                String objectNr = ad.getExternalId();
 
                 // get object description
-                String objectInfo = StringUtils.trimToNull(ad.getDescription());
-                if (objectInfo == null) objectInfo = "???";
+                String objectInfo = ad.getDescription();
 
                 // print object information to console
-                LOGGER.info("> found object "
-                        + "'" + objectNr + "' for sale: " + objectInfo);
+                LOGGER.info("> found object '{}' for sale: {}",
+                        objectNr, objectInfo);
             }
         }
     }

@@ -36,7 +36,6 @@ import org.slf4j.LoggerFactory;
 public class Is24CsvReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -47,12 +46,12 @@ public class Is24CsvReadingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                Is24CsvReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                Is24CsvReadingExample.class.getResource("log4j.properties"));
 
         // read example file, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(Is24CsvReadingExample.class.getResourceAsStream(PACKAGE + "/is24.csv"));
+                read(Is24CsvReadingExample.class.getResourceAsStream("is24.csv"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -66,7 +65,7 @@ public class Is24CsvReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -82,7 +81,7 @@ public class Is24CsvReadingExample {
      * @throws IOException if the file is not readable
      */
     protected static void read(File csvFile) throws IOException {
-        LOGGER.info("process file: " + csvFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", csvFile.getAbsolutePath());
         if (!csvFile.isFile()) {
             LOGGER.warn("> The provided file is invalid!");
             return;
@@ -103,7 +102,7 @@ public class Is24CsvReadingExample {
      * @throws IOException if the file is not readable
      */
     protected static void read(InputStream csvInputStream) throws IOException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         try (Is24CsvParser parser = Is24CsvParser.create(csvInputStream)) {
             if (parser == null)
                 LOGGER.warn("> Can't create parser!");
@@ -124,15 +123,13 @@ public class Is24CsvReadingExample {
 
             // get object nr
             String objectNr = record.getAnbieterObjektId();
-            if (objectNr == null) objectNr = "???";
 
             // get object title
             String objectTitle = record.getUeberschrift();
-            if (objectTitle == null) objectTitle = "???";
 
             // print object information to console
-            LOGGER.info("> found object '" + objectNr + "' "
-                    + "with title '" + objectTitle + "'");
+            LOGGER.info("> found object '{}': {}",
+                    objectNr, objectTitle);
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 OpenEstate.org.
+ * Copyright 2015-2019 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,23 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.immobar_it.ImmobarItDocument;
 import org.openestate.io.immobar_it.ImmobarItUtils;
 import org.openestate.io.immobar_it.xml.CompanyType;
@@ -43,311 +44,295 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML feeds of immobar.it.
+ * Example for writing XML feeds of <a href="https://www.immobar.it/">immobar.it</a>.
  * <p>
- * This example illustrates the programatic creation of immobar.it documents and
+ * This example illustrates the programmatic creation of <a href="https://www.immobar.it/">immobar.it</a> documents and
  * how they are written into XML.
  *
- * @since 1.4
  * @author Andreas Rudolph
+ * @since 1.5
  */
-public class ImmobarItWritingExample
-{
-  private final static Logger LOGGER = LoggerFactory.getLogger( ImmobarItWritingExample.class );
-  private final static String PACKAGE = "/org/openestate/io/examples";
-  private final static ObjectFactory FACTORY = ImmobarItUtils.getFactory();
-  private final static boolean PRETTY_PRINT = true;
+public class ImmobarItWritingExample {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItWritingExample.class);
+    private final static ObjectFactory FACTORY = ImmobarItUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
+    private final static boolean PRETTY_PRINT = true;
 
-  /**
-   * Start the example application.
-   *
-   * @param args
-   * command line arguments
-   */
-  public static void main( String[] args )
-  {
-    // init logging
-    PropertyConfigurator.configure( ImmobarItWritingExample.class.getResource( PACKAGE + "/log4j.properties" ) );
+    /**
+     * Start the example application.
+     *
+     * @param args command line arguments
+     */
+    @SuppressWarnings("Duplicates")
+    public static void main(String[] args) {
+        // init logging
+        PropertyConfigurator.configure(ImmobarItWritingExample.class.getResource("log4j.properties"));
 
-    // create a Realestate object with some example data
-    // this object corresponds to the <realestate> element in XML
-    Realestate realestate = FACTORY.createRealestate();
+        // create a Realestate object with some example data
+        // this object corresponds to the <realestate> element in XML
+        Realestate realestate = FACTORY.createRealestate();
 
-    // append some example companies to the transfer
-    realestate.getCompany().add( createCompany() );
-    realestate.getCompany().add( createCompany() );
+        // append some example companies to the transfer
+        int companyCount = RandomUtils.nextInt(1, 3);
+        for (int i = 0; i < companyCount; i++) {
+            realestate.getCompany().add(createCompany());
+        }
 
-    // convert the Realestate object into a XML document
-    ImmobarItDocument doc = null;
-    try
-    {
-      doc = ImmobarItDocument.newDocument( realestate );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Can't create XML document!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      System.exit( 1 );
-    }
+        // convert the Realestate object into a XML document
+        ImmobarItDocument doc = null;
+        try {
+            doc = ImmobarItDocument.newDocument(realestate);
+        } catch (Exception ex) {
+            LOGGER.error("Can't create XML document!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            System.exit(1);
+        }
 
-    // write XML document into a java.io.File
-    try
-    {
-      write( doc, File.createTempFile( "output-", ".xml" ) );
-    }
-    catch (IOException ex)
-    {
-      LOGGER.error( "Can't create temporary file!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      System.exit( 1 );
-    }
+        // write XML document into a java.io.File
+        try {
+            write(doc, File.createTempFile("output-", ".xml"));
+        } catch (IOException ex) {
+            LOGGER.error("Can't create temporary file!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            System.exit(1);
+        }
 
-    // write XML document into a java.io.OutputStream
-    write( doc, new NullOutputStream() );
+        // write XML document into a java.io.OutputStream
+        write(doc, new NullOutputStream());
 
-    // write XML document into a java.io.Writer
-    write( doc, new NullWriter() );
+        // write XML document into a java.io.Writer
+        write(doc, new NullWriter());
 
-    // write XML document into a string and send it to the console
-    writeToConsole( doc );
-  }
-
-  /**
-   * Create a {@link CompanyType} with some example data.
-   *
-   * @return
-   * created example object
-   */
-  protected static CompanyType createCompany()
-  {
-    // create an example company
-    CompanyType company = FACTORY.createCompanyType();
-
-    company.setCompanyNameDe( "Name Agentur/Firma deutsch" );
-    company.setCompanyAddressDe( "Adresse deutsch" );
-    company.setCompanyLocationDe( "Ort und Fraktion deutsch" );
-
-    company.setCompanyNameIt( "Nome agenzia/ditta italiano" );
-    company.setCompanyAddressIt( "Indirizzo italiano" );
-    company.setCompanyLocationIt( "Localita e frazione italiano" );
-
-    company.setCompanyPostalcode( "39100" );
-    company.setCompanyProvince( "BZ" );
-    company.setCompanyCountry( "IT" );
-
-    company.setCompanyEmail( "office@domain.com" );
-    company.setCompanyPhone( "+39 123 1234567" );
-    company.setCompanyMobile( "+39 123 1234567" );
-    company.setCompanyFax( "+39 123 1234567" );
-
-    company.setCompanyISTAT( "037011" );
-
-    try
-    {
-      company.setCompanyWebsite( new URI( "http://www.domain.com" ) );
-    }
-    catch (URISyntaxException ex)
-    {
+        // write XML document into a string and send it to the console
+        writeToConsole(doc);
     }
 
-    // append some example properties to the company
-    company.getProperty().add( createProperty() );
-    company.getProperty().add( createProperty() );
-    company.getProperty().add( createProperty() );
+    /**
+     * Create a {@link CompanyType} with some example data.
+     *
+     * @return created example object
+     */
+    private static CompanyType createCompany() {
+        // create an example company
+        CompanyType company = FACTORY.createCompanyType();
 
-    return company;
-  }
+        company.setCompanyNameDe(RANDOMIZER.getName());
+        company.setCompanyAddressDe(RANDOMIZER.getWords(1, 3));
+        company.setCompanyLocationDe(RANDOMIZER.getCity());
 
-  /**
-   * Create an {@link PropertyType} with some example data.
-   *
-   * @return
-   * created example object
-   */
-  protected static PropertyType createProperty()
-  {
-    // create an example real estate
-    PropertyType property = FACTORY.createPropertyType();
+        company.setCompanyNameIt(RANDOMIZER.getName());
+        company.setCompanyAddressIt(RANDOMIZER.getWords(1, 3));
+        company.setCompanyLocationIt(RANDOMIZER.getCity());
 
-    property.setId( RandomStringUtils.random( 5 ) );
-    property.setReferencenumber( RandomStringUtils.random( 5 ) );
-    property.setISTATcode( RandomStringUtils.randomNumeric( 5 ) );
+        company.setCompanyPostalcode(RANDOMIZER.getZipCode());
+        company.setCompanyProvince(RANDOMIZER.getStateAbbr());
+        company.setCompanyCountry("IT");
 
-    property.setAddressDe( "Hauptstr. 5" );
-    property.setLocationDe( "Bruneck" );
-    property.setDistrictDe( "Dietenheim" );
+        company.setCompanyEmail(RANDOMIZER.getEmail());
+        company.setCompanyPhone(RANDOMIZER.getPhone());
+        company.setCompanyMobile(RANDOMIZER.getPhone());
+        company.setCompanyFax(RANDOMIZER.getPhone());
 
-    property.setAddressIt( "via Centale 5" );
-    property.setLocationIt( "Brunico" );
-    property.setDistrictIt( "Teodone" );
+        company.setCompanyISTAT(RandomStringUtils.randomNumeric(5));
 
-    property.setPostalcode( RandomStringUtils.randomNumeric( 5 ) );
-    property.setProvince( "BZ" );
-    property.setCountry( "IT" );
+        //noinspection CatchMayIgnoreException
+        try {
+            company.setCompanyWebsite(new URI("https://www.example.com"));
+        } catch (URISyntaxException ex) {
+        }
 
-    property.setLatitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 180 ) - 90 ) );
-    property.setLongitude( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 360 ) - 180 ) );
+        // append some example properties to the company
+        int propertyCount = RandomUtils.nextInt(3, 5);
+        for (int i = 0; i < propertyCount; i++) {
+            company.getProperty().add(createProperty());
+        }
 
-    property.setTitleDe( "Titel deutsch" );
-    property.setDescriptionDe( "Beschreibung..." );
-    property.setHeatingDe( "Fernwärme..." );
-    property.setKitchentypeDe( "Wohnküche, Kochnische..." );
-    property.setParkinglottypeDe( "Parkplatz/Stellplatz überdacht, nicht überdacht, im Freien..." );
-
-    property.setTitleIt( "Titolo italiano" );
-    property.setDescriptionIt( "Descrizione..." );
-    property.setHeatingIt( "Teleriscaldamento..." );
-    property.setKitchentypeIt( "Cucina abitabile, angolo cottura..." );
-    property.setParkinglottypeIt( "Parcheggio al coperto, in casa, fuori..." );
-
-    property.setCellar( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setCommission( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setContactpersonname( "Franz Mair" );
-    property.setConvention( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setCountbathrooms( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
-    property.setCountgarage( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
-    property.setCountparkinglot( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
-    property.setCountrooms( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
-    property.setCountterrace( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
-    property.setCreationdate( Calendar.getInstance() );
-    property.setDuplex( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setElevator( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setEnergyclass( "A" );
-    property.setFloor( BigInteger.valueOf( RandomUtils.nextLong( 0, 10 ) ) );
-    property.setFloorisground( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setFlooristop( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setFurnished( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setGarden( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setImmotype( ImmotypeValue.values()[RandomUtils.nextInt( 0, ImmotypeValue.values().length )] );
-    property.setIpe( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 1000 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-    property.setLastmoddate( Calendar.getInstance() );
-    property.setPriceNet( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 10000 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-    property.setPriceOnRequest( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setRevenuetype( RevenuetypeValue.values()[RandomUtils.nextInt( 0, RevenuetypeValue.values().length )] );
-    property.setSqmCellar( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 100 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-    property.setSqmGarden( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 100 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-    property.setSqmGross( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 100 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-    property.setSqmNet( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 100 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-    property.setSqmSale( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 100 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-    property.setUsed( RandomUtils.nextInt( 0, 2 )==1 );
-    property.setUtilities( BigDecimal.valueOf( RandomUtils.nextDouble( 0, 100 ) ).setScale( 2, RoundingMode.HALF_EVEN ) );
-
-    try
-    {
-      for (int i=0; i<8; i++)
-      {
-        property.getImage().add(
-          new URI( "http://www.domain.com/" + property.getId() + "/image" + (i+1) + ".jpg" ) );
-      }
-      for (int i=0; i<2; i++)
-      {
-        property.getPlanimetry().add(
-          new URI( "http://www.domain.com/" + property.getId() + "/plan" + (i+1) + ".jpg" ));
-      }
-    }
-    catch (URISyntaxException ex)
-    {
+        return company;
     }
 
-    return property;
-  }
+    /**
+     * Create an {@link PropertyType} with some example data.
+     *
+     * @return created example object
+     */
+    private static PropertyType createProperty() {
+        // create an example real estate
+        PropertyType property = FACTORY.createPropertyType();
 
-  /**
-   * Write a {@link ImmobarItDocument} into a {@link File}.
-   *
-   * @param doc
-   * the document to write
-   *
-   * @param file
-   * the file, where the document is written to
-   */
-  protected static void write( ImmobarItDocument doc, File file )
-  {
-    LOGGER.info( "writing document" );
-    try
-    {
-      doc.toXml( file, PRETTY_PRINT );
-      LOGGER.info( "> written to: " + file.getAbsolutePath() );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Can't write document into a file!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      System.exit( 1 );
-    }
-  }
+        property.setId(RandomStringUtils.randomAlphanumeric(5));
+        property.setReferencenumber(RandomStringUtils.randomAlphanumeric(5));
+        property.setISTATcode(RandomStringUtils.randomNumeric(5));
 
-  /**
-   * Write a {@link ImmobarItDocument} into an {@link OutputStream}.
-   *
-   * @param doc
-   * the document to write
-   *
-   * @param output
-   * the stream, where the document is written to
-   */
-  protected static void write( ImmobarItDocument doc, OutputStream output )
-  {
-    LOGGER.info( "writing document" );
-    try
-    {
-      doc.toXml( output, PRETTY_PRINT );
-      LOGGER.info( "> written to a java.io.OutputStream" );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Can't write document into an OutputStream!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      System.exit( 1 );
-    }
-  }
+        property.setAddressDe(RANDOMIZER.getWords(1, 3));
+        property.setLocationDe(RANDOMIZER.getCity());
+        property.setDistrictDe(RANDOMIZER.getCity());
 
-  /**
-   * Write a {@link ImmobarItDocument} into a {@link Writer}.
-   *
-   * @param doc
-   * the document to write
-   *
-   * @param output
-   * the writer, where the document is written to
-   */
-  protected static void write( ImmobarItDocument doc, Writer output )
-  {
-    LOGGER.info( "writing document" );
-    try
-    {
-      doc.toXml( output, PRETTY_PRINT );
-      LOGGER.info( "> written to a java.io.Writer" );
-    }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Can't write document into an OutputStream!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      System.exit( 1 );
-    }
-  }
+        property.setAddressIt(RANDOMIZER.getWords(1, 3));
+        property.setLocationIt(RANDOMIZER.getCity());
+        property.setDistrictIt(RANDOMIZER.getCity());
 
-  /**
-   * Write a {@link ImmobarItDocument} into a {@link String} and print the
-   * results to the console.
-   *
-   * @param doc
-   * the document to write
-   */
-  protected static void writeToConsole( ImmobarItDocument doc )
-  {
-    LOGGER.info( "writing document" );
-    try
-    {
-      String xml = doc.toXmlString( PRETTY_PRINT );
-      LOGGER.info( StringUtils.repeat( "-", 50 )
-        + System.lineSeparator() + xml );
+        property.setPostalcode(RandomStringUtils.randomNumeric(5));
+        property.setProvince(RANDOMIZER.getStateAbbr());
+        property.setCountry("IT");
+
+        property.setLatitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 180) - 90));
+        property.setLongitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 360) - 180));
+
+        property.setTitleDe(RANDOMIZER.getWords(1, 3));
+        property.setDescriptionDe(RANDOMIZER.getWords(10, 50));
+        property.setHeatingDe(RANDOMIZER.getWords(1, 3));
+        property.setKitchentypeDe(RANDOMIZER.getWords(1, 10));
+        property.setParkinglottypeDe(RANDOMIZER.getWords(1, 10));
+
+        property.setTitleIt(RANDOMIZER.getWords(1, 3));
+        property.setDescriptionIt(RANDOMIZER.getWords(10, 50));
+        property.setHeatingIt(RANDOMIZER.getWords(1, 3));
+        property.setKitchentypeIt(RANDOMIZER.getWords(1, 10));
+        property.setParkinglottypeIt(RANDOMIZER.getWords(1, 10));
+
+        property.setCellar(RandomUtils.nextBoolean());
+        property.setCommission(RandomUtils.nextBoolean());
+        property.setContactpersonname(RANDOMIZER.getName());
+        property.setConvention(RandomUtils.nextBoolean());
+        property.setCountbathrooms(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        property.setCountgarage(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        property.setCountparkinglot(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        property.setCountrooms(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        property.setCountterrace(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        property.setCreationdate(Calendar.getInstance());
+        property.setDuplex(RandomUtils.nextBoolean());
+        property.setElevator(RandomUtils.nextBoolean());
+        property.setEnergyclass(randomValue(new String[]{"A", "B", "C", "D"}));
+        property.setFloor(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        property.setFloorisground(RandomUtils.nextBoolean());
+        property.setFlooristop(RandomUtils.nextBoolean());
+        property.setFurnished(RandomUtils.nextBoolean());
+        property.setGarden(RandomUtils.nextBoolean());
+        property.setImmotype(randomValue(ImmotypeValue.values()));
+        property.setIpe(BigDecimal.valueOf(RandomUtils.nextDouble(0, 1000)));
+        property.setLastmoddate(Calendar.getInstance());
+        property.setPriceNet(BigDecimal.valueOf(RandomUtils.nextDouble(0, 10000)));
+        property.setPriceOnRequest(RandomUtils.nextBoolean());
+        property.setRevenuetype(randomValue(RevenuetypeValue.values()));
+        property.setSqmCellar(BigDecimal.valueOf(RandomUtils.nextDouble(0, 100)));
+        property.setSqmGarden(BigDecimal.valueOf(RandomUtils.nextDouble(0, 100)));
+        property.setSqmGross(BigDecimal.valueOf(RandomUtils.nextDouble(0, 100)));
+        property.setSqmNet(BigDecimal.valueOf(RandomUtils.nextDouble(0, 100)));
+        property.setSqmSale(BigDecimal.valueOf(RandomUtils.nextDouble(0, 100)));
+        property.setUsed(RandomUtils.nextBoolean());
+        property.setUtilities(BigDecimal.valueOf(RandomUtils.nextDouble(0, 100)));
+
+        int imageCount = RandomUtils.nextInt(1, 9);
+        for (int i = 0; i < imageCount; i++) {
+            //noinspection CatchMayIgnoreException
+            try {
+                property.getImage().add(
+                        new URI("https://www.example.com/image-" + i + ".jpg"));
+            } catch (URISyntaxException ex) {
+            }
+        }
+
+        int planimetryCount = RandomUtils.nextInt(1, 3);
+        for (int i = 0; i < planimetryCount; i++) {
+            //noinspection CatchMayIgnoreException
+            try {
+                property.getPlanimetry().add(
+                        new URI("https://www.example.com/plan-" + i + ".jpg"));
+            } catch (URISyntaxException ex) {
+            }
+        }
+
+
+        return property;
     }
-    catch (Exception ex)
-    {
-      LOGGER.error( "Can't write document into a string!" );
-      LOGGER.error( "> " + ex.getLocalizedMessage(), ex );
-      System.exit( 1 );
+
+    /**
+     * Get a random value from an array.
+     *
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
+     */
+    private static <T> T randomValue(T[] values) {
+        return (values != null && values.length > 0) ?
+                values[RandomUtils.nextInt(0, values.length)] :
+                null;
     }
-  }
+
+    /**
+     * Write a {@link ImmobarItDocument} into a {@link File}.
+     *
+     * @param doc  the document to write
+     * @param file the file, where the document is written to
+     */
+    @SuppressWarnings("Duplicates")
+    private static void write(ImmobarItDocument doc, File file) {
+        LOGGER.info("writing document");
+        try {
+            doc.toXml(file, PRETTY_PRINT);
+            LOGGER.info("> written to: " + file.getAbsolutePath());
+        } catch (Exception ex) {
+            LOGGER.error("Can't write document into a file!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            System.exit(1);
+        }
+    }
+
+    /**
+     * Write a {@link ImmobarItDocument} into an {@link OutputStream}.
+     *
+     * @param doc    the document to write
+     * @param output the stream, where the document is written to
+     */
+    @SuppressWarnings("Duplicates")
+    private static void write(ImmobarItDocument doc, OutputStream output) {
+        LOGGER.info("writing document");
+        try {
+            doc.toXml(output, PRETTY_PRINT);
+            LOGGER.info("> written to a java.io.OutputStream");
+        } catch (Exception ex) {
+            LOGGER.error("Can't write document into an OutputStream!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            System.exit(1);
+        }
+    }
+
+    /**
+     * Write a {@link ImmobarItDocument} into a {@link Writer}.
+     *
+     * @param doc    the document to write
+     * @param output the writer, where the document is written to
+     */
+    @SuppressWarnings("Duplicates")
+    private static void write(ImmobarItDocument doc, Writer output) {
+        LOGGER.info("writing document");
+        try {
+            doc.toXml(output, PRETTY_PRINT);
+            LOGGER.info("> written to a java.io.Writer");
+        } catch (Exception ex) {
+            LOGGER.error("Can't write document into an OutputStream!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            System.exit(1);
+        }
+    }
+
+    /**
+     * Write a {@link ImmobarItDocument} into a {@link String} and print the
+     * results to the console.
+     *
+     * @param doc the document to write
+     */
+    @SuppressWarnings("Duplicates")
+    private static void writeToConsole(ImmobarItDocument doc) {
+        LOGGER.info("writing document");
+        try {
+            String xml = doc.toXmlString(PRETTY_PRINT);
+            LOGGER.info(StringUtils.repeat("-", 50)
+                    + System.lineSeparator() + xml);
+        } catch (Exception ex) {
+            LOGGER.error("Can't write document into a string!");
+            LOGGER.error("> " + ex.getLocalizedMessage(), ex);
+            System.exit(1);
+        }
+    }
 }

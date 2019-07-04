@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
@@ -41,7 +40,6 @@ import org.xml.sax.SAXException;
 public class KyeroReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -52,12 +50,12 @@ public class KyeroReadingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                KyeroReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                KyeroReadingExample.class.getResource("log4j.properties"));
 
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(KyeroReadingExample.class.getResourceAsStream(PACKAGE + "/kyero.xml"));
+                read(KyeroReadingExample.class.getResourceAsStream("kyero.xml"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -71,7 +69,7 @@ public class KyeroReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -90,7 +88,7 @@ public class KyeroReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process file: " + xmlFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
             return;
@@ -114,7 +112,7 @@ public class KyeroReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         KyeroDocument doc = KyeroUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
@@ -135,22 +133,21 @@ public class KyeroReadingExample {
         // process properties in the document
         for (PropertyType obj : root.getProperty()) {
             // get object nr
-            String objectNr = (obj.getId() != null) ?
-                    obj.getId() : "???";
+            String objectNr = obj.getId();
 
-            // get object description
-            String objectInfo = null;
-            if (obj.getDesc() != null) {
-                objectInfo = StringUtils.trimToNull(obj.getDesc().getEn());
-                if (objectInfo == null)
-                    objectInfo = StringUtils.trimToNull(obj.getDesc().getDe());
-                if (objectInfo == null)
-                    objectInfo = StringUtils.trimToNull(obj.getDesc().getEs());
-            }
+            // get english object description
+            String objectInfoEn = (obj.getDesc() != null) ?
+                    obj.getDesc().getEn() :
+                    null;
+
+            // get german object description
+            String objectInfoDe = (obj.getDesc() != null) ?
+                    obj.getDesc().getDe() :
+                    null;
 
             // print object information to console
-            LOGGER.info("> found object '" + objectNr + "' "
-                    + "with title '" + objectInfo + "'");
+            LOGGER.info("> found object '{}': {} / {}",
+                    objectNr, objectInfoEn, objectInfoDe);
         }
     }
 }
