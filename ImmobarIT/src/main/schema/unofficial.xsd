@@ -421,7 +421,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="sqm_sale" type="xsd:decimal" minOccurs="0" maxOccurs="1">
+            <xsd:element name="sqm_sale" type="DecimalValue" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         sales area in square meters
@@ -431,7 +431,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="sqm_net" type="xsd:decimal" minOccurs="0" maxOccurs="1">
+            <xsd:element name="sqm_net" type="DecimalValue" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         net area in square meters
@@ -441,7 +441,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="sqm_gross" type="xsd:decimal" minOccurs="0" maxOccurs="1">
+            <xsd:element name="sqm_gross" type="DecimalValue" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         gross area in square meters
@@ -551,7 +551,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="sqm_cellar" type="xsd:decimal" minOccurs="0" maxOccurs="1">
+            <xsd:element name="sqm_cellar" type="DecimalValue" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         cellar area in square meters
@@ -571,7 +571,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="sqm_garden" type="xsd:decimal" minOccurs="0" maxOccurs="1">
+            <xsd:element name="sqm_garden" type="DecimalValue" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         garden area in square meters
@@ -681,7 +681,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="ipe" type="xsd:decimal" minOccurs="0" maxOccurs="1">
+            <xsd:element name="ipe" type="DecimalValue" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         Energy consumption level - Indice Prestazione Energetica (IPE) - e.g. 117.00 kwh/m2
@@ -731,7 +731,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="price_net" type="xsd:decimal" minOccurs="1" maxOccurs="1">
+            <xsd:element name="price_net" type="DecimalValue" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         net price
@@ -751,7 +751,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="utilities" type="xsd:decimal" minOccurs="0" maxOccurs="1">
+            <xsd:element name="utilities" type="DecimalValue" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         service charges / operational costs
@@ -803,6 +803,20 @@
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+
+    <xsd:simpleType name="DecimalValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                decimal value with maximal two fraction digits
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Zahlenwert mit maximal zwei Stellen hinter dem Komma
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
     <xsd:simpleType name="LatitudeValue">
         <xsd:annotation>
