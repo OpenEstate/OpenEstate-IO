@@ -23,38 +23,38 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Converter for version 2.5.
+ * Converter for version 2.8.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-public class ImmobiliareIt_2_5 extends XmlConverter<ImmobiliareItDocument, ImmobiliareItVersion> {
+public class ImmobiliareIt_2_8 extends XmlConverter<ImmobiliareItDocument, ImmobiliareItVersion> {
     @SuppressWarnings("unused")
-    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareIt_2_5.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareIt_2_8.class);
 
     @Override
     public ImmobiliareItVersion getVersion() {
-        return ImmobiliareItVersion.V2_5;
+        return ImmobiliareItVersion.V2_8;
     }
 
     /**
-     * Downgrade an OpenImmo document from version 1.1.
+     * Downgrade an Immobiliare document from version 2.8.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
+     * Versions before 2.8 are not supported. Therefore this method always throws
      * a {@link NotImplementedException}.
      *
-     * @param doc OpenImmo document in version 1.1
+     * @param doc Immobiliare document in version 2.8
      */
     @Override
     public void downgradeToPreviousVersion(ImmobiliareItDocument doc) {
         throw new NotImplementedException(
-                "Immobiliare-XML versions before 2.5 are not supported!");
+                "Immobiliare-XML versions before 2.8 are not supported!");
     }
 
     /**
-     * Downgrade an OpenImmo document to version 1.1.
+     * Downgrade an Immobiliare document to version 2.8.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
+     * Versions before 2.8 are not supported. Therefore this method always throws
      * a {@link NotImplementedException}.
      *
      * @param doc OpenImmo document
@@ -62,6 +62,6 @@ public class ImmobiliareIt_2_5 extends XmlConverter<ImmobiliareItDocument, Immob
     @Override
     public void upgradeFromPreviousVersion(ImmobiliareItDocument doc) {
         throw new NotImplementedException(
-                "Immobiliare-XML versions before 2.5 are not supported!");
+                "Immobiliare-XML versions before 2.8 are not supported!");
     }
 }

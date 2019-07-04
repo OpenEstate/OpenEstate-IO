@@ -47,7 +47,7 @@ public class ImmobiliareItDocumentNamespaceTest {
         ImmobiliareItDocument doc;
         try {
             doc = new ImmobiliareItDocument(buildExampleDocument("2.5"));
-            Assert.assertEquals("2.5", ImmobiliareItVersion.V2_5, doc.getDocumentVersion());
+            Assert.assertEquals("2.5", ImmobiliareItVersion.V2_8, doc.getDocumentVersion());
         } catch (Exception ex) {
             LOGGER.error("Test of ImmobiliareItDocument.getDocumentVersion failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -61,8 +61,8 @@ public class ImmobiliareItDocumentNamespaceTest {
         try {
             ImmobiliareItDocument doc = new ImmobiliareItDocument(buildExampleDocument(""));
 
-            doc.setDocumentVersion(ImmobiliareItVersion.V2_5);
-            Assert.assertEquals("2.5", ImmobiliareItVersion.V2_5, doc.getDocumentVersion());
+            doc.setDocumentVersion(ImmobiliareItVersion.V2_8);
+            Assert.assertEquals("2.5", ImmobiliareItVersion.V2_8, doc.getDocumentVersion());
         } catch (Exception ex) {
             LOGGER.error("Test of ImmobiliareItDocument.setDocumentVersion failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

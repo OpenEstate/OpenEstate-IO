@@ -90,6 +90,6 @@ Further information
 -   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
 -   [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
 -   [Validator for *immobiliare.it* XML](https://validator.openestate.org/)
--   [Documentations in Italian language](http://feed.immobiliare.it/import/docs/xml-specification.beta.html)
+-   [Documentations in Italian language](http://feed.immobiliare.it/import/docs/xml-specification.html)
 -   [Alternative validator by *Immobiliare.it*](http://feed.immobiliare.it/import/docs/validator.php)
--   [Current schema in version 2.5](http://feed.immobiliare.it/import/docs/xsd/v2.5.xsd)
+-   [Current schema in version 2.8](http://feed.immobiliare.it/import/docs/xsd/v2.8.xsd)

@@ -62,7 +62,7 @@ public class ImmobiliareItUtils {
      * the latest implemented version of this format
      */
     @SuppressWarnings("unused")
-    public final static ImmobiliareItVersion VERSION = ImmobiliareItVersion.V2_5;
+    public final static ImmobiliareItVersion VERSION = ImmobiliareItVersion.V2_8;
 
     /**
      * the XML target namespace of this format

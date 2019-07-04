@@ -20,7 +20,7 @@ Supported Formats
 | [`IDX`](IDX)                     | *IDX* format                                                     | CSV  | 3.01       |
 | [`ImmoXML`](ImmoXML)             | *ImmoXML* format                                                 | XML  | 3.0        |
 | [`ImmobarIT`](ImmobarIT)         | [*immobar.it*](https://www.immobar.it) format                    | XML  | 21/04/2015 |
-| [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](http://immobiliare.it) format                 | XML  | 2.5        |
+| [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](http://immobiliare.it) format                 | XML  | 2.8        |
 | [`IS24-CSV`](IS24-CSV)           | *IS24-CSV* format (*legacy*)                                     | CSV  | 1.4.0.4    |
 | [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                     | XML  | rev189438  |
 | [`Kyero`](Kyero)                 | [*Kyero.com*](https://www.kyero.com) XML feed                    | XML  | 3.4        |
