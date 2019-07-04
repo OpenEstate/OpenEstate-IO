@@ -47,7 +47,7 @@
 
     </jaxb:globalBindings>
 
-    <jaxb:bindings schemaLocation="v2.5.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="schema.xsd" node="/xsd:schema">
 
         <jaxb:schemaBindings>
             <jaxb:package name="org.openestate.io.immobiliare_it.xml">
