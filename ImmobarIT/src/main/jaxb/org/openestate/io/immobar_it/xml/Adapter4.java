@@ -10,11 +10,11 @@ public class Adapter4
 
 
     public BigDecimal unmarshal(String value) {
-        return (org.openestate.io.immobar_it.ImmobarItUtils.parseLongitudeValue(value));
+        return (org.openestate.io.immobar_it.ImmobarItUtils.parseDecimalValue(value));
     }
 
     public String marshal(BigDecimal value) {
-        return (org.openestate.io.immobar_it.ImmobarItUtils.printLongitudeValue(value));
+        return (org.openestate.io.immobar_it.ImmobarItUtils.printLatitudeValue(value));
     }
 
 }

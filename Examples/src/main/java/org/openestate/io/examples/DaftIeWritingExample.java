@@ -15,6 +15,8 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -26,6 +28,7 @@ import java.net.URISyntaxException;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
@@ -42,20 +45,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML files for <a href="http://daft.ie">daft.ie</a>.
+ * Example for writing XML files for <a href="https://www.daft.ie/">daft.ie</a>.
  * <p>
- * This example illustrates the programmatic creation of documents for
- * <a href="http://daft.ie">daft.ie</a> and how they are written into XML.
+ * This example illustrates the programmatic creation of documents for <a href="https://www.daft.ie/">daft.ie</a> and
+ * how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class DaftIeWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = DaftIeUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
     private final static boolean PRETTY_PRINT = true;
 
     /**
@@ -67,7 +69,7 @@ public class DaftIeWritingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                DaftIeWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                DaftIeWritingExample.class.getResource("log4j.properties"));
 
         // create a Daft object with some example data
         // this object corresponds to the <daft> root element in XML
@@ -75,14 +77,17 @@ public class DaftIeWritingExample {
 
         // append some example objects for rent to the Daft object
         daft.setOverseasRental(FACTORY.createDaftOverseasRental());
-        daft.getOverseasRental().getOverseasRentalAd().add(createAdForRent());
-        daft.getOverseasRental().getOverseasRentalAd().add(createAdForRent());
+        int rentalCount = RandomUtils.nextInt(5, 10);
+        for (int i = 0; i < rentalCount; i++) {
+            daft.getOverseasRental().getOverseasRentalAd().add(createAdForRent());
+        }
 
         // append some example objects for sale to the Daft object
         daft.setOverseasSales(FACTORY.createDaftOverseasSales());
-        daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
-        daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
-        daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
+        int saleCount = RandomUtils.nextInt(5, 10);
+        for (int i = 0; i < saleCount; i++) {
+            daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
+        }
 
         // convert the Daft object into a XML document
         DaftIeDocument doc = null;
@@ -118,55 +123,59 @@ public class DaftIeWritingExample {
      *
      * @return created example object
      */
-    @SuppressWarnings("CatchMayIgnoreException")
-    protected static OverseasRentalAdType createAdForRent() {
+    @SuppressWarnings("Duplicates")
+    private static OverseasRentalAdType createAdForRent() {
         // create an example real estate for rent
         OverseasRentalAdType ad = FACTORY.createOverseasRentalAdType();
-        ad.setAddress("Beispielstraße 123");
-        ad.setAgentId("123");
-        ad.setArea("Berlin");
+        ad.setAddress(RANDOMIZER.getWords(1, 3));
+        ad.setAgentId(RandomStringUtils.randomAlphanumeric(1, 5));
+        ad.setArea(RANDOMIZER.getCity());
         ad.setAvailableFrom(Calendar.getInstance());
-        ad.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setBedroomNumber(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setCableTelevision(RandomUtils.nextInt(0, 2) == 1);
-        ad.setCcEmail("test@openestate.org");
-        ad.setCommercialType(CommercialType.LAND);
-        ad.setContactName("Max Mustermann");
-        ad.setCountry("DE");
-        ad.setDescription("A description about the property.");
-        ad.setDishwasher(RandomUtils.nextInt(0, 2) == 1);
-        ad.setDoubleBeds(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setDryer(RandomUtils.nextInt(0, 2) == 1);
-        ad.setExternalId(String.valueOf(RandomUtils.nextInt(1, 1000)));
-        ad.setFurnished(OverseasRentalAdType.Furnished.FURNISHED);
-        ad.setHouseType(HouseType.TOWNHOUSE);
+        ad.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setBedroomNumber(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setCableTelevision(RandomUtils.nextBoolean());
+        ad.setCcEmail(RANDOMIZER.getEmail());
+        ad.setCommercialType(randomValue(CommercialType.values()));
+        ad.setContactName(RANDOMIZER.getName());
+        ad.setCountry(randomValue(new String[]{"DE", "UK", "ES"}));
+        ad.setDescription(RANDOMIZER.getWords(10, 50));
+        ad.setDishwasher(RandomUtils.nextBoolean());
+        ad.setDoubleBeds(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setDryer(RandomUtils.nextBoolean());
+        ad.setExternalId(RandomStringUtils.randomAlphanumeric(1, 4));
+        ad.setFurnished(randomValue(OverseasRentalAdType.Furnished.values()));
+        ad.setHouseType(randomValue(HouseType.values()));
         ad.setLease(BigInteger.valueOf(RandomUtils.nextInt(100, 1000)));
-        ad.setMainEmail("test@openstate.org");
-        ad.setMicrowave(RandomUtils.nextInt(0, 2) == 1);
-        ad.setNumberPeople(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setPhone1("030/123456");
-        ad.setPhone2("030/123457");
-        ad.setPhoneInfo("Some information about contacts via phone.");
-        ad.setPropertyType(PropertyType.HOUSE);
-        ad.setRegion("Berlin");
+        ad.setMainEmail(RANDOMIZER.getEmail());
+        ad.setMicrowave(RandomUtils.nextBoolean());
+        ad.setNumberPeople(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setPhone1(RANDOMIZER.getPhone());
+        ad.setPhone2(RANDOMIZER.getPhone());
+        ad.setPhoneInfo(RANDOMIZER.getWords(2, 10));
+        ad.setPropertyType(randomValue(PropertyType.values()));
+        ad.setRegion(RANDOMIZER.getCity());
         ad.setRent(BigInteger.valueOf(RandomUtils.nextInt(100, 1000)));
         ad.setRentCollectionPeriod(OverseasRentalAdType.RentPeriod.MONTHLY);
-        ad.setSingleBeds(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setTwinBeds(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setWashingMachine(RandomUtils.nextInt(0, 2) == 1);
+        ad.setSingleBeds(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setTwinBeds(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setWashingMachine(RandomUtils.nextBoolean());
 
         // add some features
         ad.setFeatures(FACTORY.createFeaturesType());
-        ad.getFeatures().getFeature().add("another feature");
-        ad.getFeatures().getFeature().add("some more feature");
+        int featureCount = RandomUtils.nextInt(3, 10);
+        for (int i = 0; i < featureCount; i++) {
+            ad.getFeatures().getFeature().add(RANDOMIZER.getWords(1, 4));
+        }
 
         // add some photos
         ad.setPhotos(FACTORY.createPhotosType());
-        try {
-            ad.getPhotos().getPhoto().add(new URI("http://www.mywebsite.org/image1.jpg"));
-            ad.getPhotos().getPhoto().add(new URI("http://www.mywebsite.org/image2.jpg"));
-            ad.getPhotos().getPhoto().add(new URI("http://www.mywebsite.org/image3.jpg"));
-        } catch (URISyntaxException ex) {
+        int photoCount = RandomUtils.nextInt(5, 10);
+        for (int i = 0; i < photoCount; i++) {
+            //noinspection CatchMayIgnoreException
+            try {
+                ad.getPhotos().getPhoto().add(new URI("https://www.example.com/image-" + i + ".jpg"));
+            } catch (URISyntaxException ex) {
+            }
         }
 
         return ad;
@@ -177,64 +186,84 @@ public class DaftIeWritingExample {
      *
      * @return created example object
      */
-    @SuppressWarnings("CatchMayIgnoreException")
-    protected static OverseasSaleAdType createAdForSale() {
+    @SuppressWarnings("Duplicates")
+    private static OverseasSaleAdType createAdForSale() {
         // create an example real estate for sale
         OverseasSaleAdType ad = FACTORY.createOverseasSaleAdType();
         ad.setAcres(BigDecimal.valueOf(RandomUtils.nextDouble(10, 1000)));
-        ad.setAddress("Beispielstraße 123");
-        ad.setAgentId("123");
-        ad.setArea("Berlin");
-        ad.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setBedroomNumber(BigInteger.valueOf(RandomUtils.nextInt(0, 5)));
-        ad.setCcEmail("test@openestate.org");
-        ad.setCo2Rating("some notes about CO2 rating");
+        ad.setAddress(RANDOMIZER.getWords(1, 3));
+        ad.setAgentId(RandomStringUtils.randomAlphanumeric(1, 5));
+        ad.setArea(RANDOMIZER.getCity());
+        ad.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setBedroomNumber(BigInteger.valueOf(RandomUtils.nextInt(1, 5)));
+        ad.setCcEmail(RANDOMIZER.getEmail());
+        ad.setCo2Rating(RANDOMIZER.getWords(1, 3));
         ad.setCommercialType(CommercialType.SHOP);
-        ad.setContactName("Max Mustermann");
-        ad.setCountry("DE");
-        ad.setDescription("A description about the property.");
-        ad.setDirections("some notes about directions");
-        ad.setEnergyRating("some notes about energy rating");
-        ad.setExternalId(String.valueOf(RandomUtils.nextInt(1, 1000)));
-        ad.setHouseType(HouseType.DETACHED);
-        ad.setIsNewDevelopment(RandomUtils.nextInt(0, 2) == 1);
-        ad.setMainEmail("test@openstate.org");
-        ad.setNewDevelopmentAvailability("some notes about development");
-        ad.setPhone1("030/123456");
-        ad.setPhone2("030/123457");
-        ad.setPhoneInfo("Some information about contacts via phone.");
+        ad.setContactName(RANDOMIZER.getName());
+        ad.setCountry(randomValue(new String[]{"DE", "UK", "ES"}));
+        ad.setDescription(RANDOMIZER.getWords(10, 50));
+        ad.setDirections(RANDOMIZER.getWords(3, 10));
+        ad.setEnergyRating(RANDOMIZER.getWords(3, 10));
+        ad.setExternalId(RandomStringUtils.randomAlphanumeric(1, 4));
+        ad.setHouseType(randomValue(HouseType.values()));
+        ad.setIsNewDevelopment(RandomUtils.nextBoolean());
+        ad.setMainEmail(RANDOMIZER.getEmail());
+        ad.setNewDevelopmentAvailability(RANDOMIZER.getWords(3, 10));
+        ad.setPhone1(RANDOMIZER.getPhone());
+        ad.setPhone2(RANDOMIZER.getPhone());
+        ad.setPhoneInfo(RANDOMIZER.getWords(2, 10));
         ad.setPrice(BigInteger.valueOf(RandomUtils.nextInt(100, 1000000)));
-        ad.setPriceType(OverseasSaleAdType.PriceType.REGION);
-        ad.setPropertyStatus(OverseasSaleAdType.PropertyStatus.FOR_SALE);
-        ad.setPropertyType(PropertyType.HOUSE);
-        ad.setRegion("Berlin");
+        ad.setPriceType(randomValue(OverseasSaleAdType.PriceType.values()));
+        ad.setPropertyStatus(randomValue(OverseasSaleAdType.PropertyStatus.values()));
+        ad.setPropertyType(randomValue(PropertyType.values()));
+        ad.setRegion(RANDOMIZER.getCity());
         ad.setSquareMetres(BigDecimal.valueOf(RandomUtils.nextDouble(10, 1000)));
         ad.setUnitsAvailable(BigInteger.valueOf(RandomUtils.nextInt(1, 50)));
-        ad.setViewingDetails("some notes about viewing details");
+        ad.setViewingDetails(RANDOMIZER.getWords(3, 10));
 
         // add some features
         ad.setFeatures(FACTORY.createFeaturesType());
-        ad.getFeatures().getFeature().add("another feature");
-        ad.getFeatures().getFeature().add("some more feature");
+        int featureCount = RandomUtils.nextInt(3, 10);
+        for (int i = 0; i < featureCount; i++) {
+            ad.getFeatures().getFeature().add(RANDOMIZER.getWords(1, 4));
+        }
 
         // add some pdf documents
         ad.setPdfs(FACTORY.createPdfsType());
-        try {
-            ad.getPdfs().getPdf().add(new URI("http://www.mywebsite.org/document1.pdf"));
-            ad.getPdfs().getPdf().add(new URI("http://www.mywebsite.org/document2.pdf"));
-        } catch (URISyntaxException ex) {
+        int pdfCount = RandomUtils.nextInt(1, 3);
+        for (int i = 0; i < pdfCount; i++) {
+            //noinspection CatchMayIgnoreException
+            try {
+                ad.getPdfs().getPdf().add(new URI("https://www.example.com/document-" + i + ".pdf"));
+            } catch (URISyntaxException ex) {
+            }
         }
 
         // add some photos
         ad.setPhotos(FACTORY.createPhotosType());
-        try {
-            ad.getPhotos().getPhoto().add(new URI("http://www.mywebsite.org/image1.jpg"));
-            ad.getPhotos().getPhoto().add(new URI("http://www.mywebsite.org/image2.jpg"));
-            ad.getPhotos().getPhoto().add(new URI("http://www.mywebsite.org/image3.jpg"));
-        } catch (URISyntaxException ex) {
+        int photoCount = RandomUtils.nextInt(5, 10);
+        for (int i = 0; i < photoCount; i++) {
+            //noinspection CatchMayIgnoreException
+            try {
+                ad.getPhotos().getPhoto().add(new URI("https://www.example.com/image-" + i + ".jpg"));
+            } catch (URISyntaxException ex) {
+            }
         }
 
         return ad;
+    }
+
+    /**
+     * Get a random value from an array.
+     *
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
+     */
+    private static <T> T randomValue(T[] values) {
+        return (values != null && values.length > 0) ?
+                values[RandomUtils.nextInt(0, values.length)] :
+                null;
     }
 
     /**
@@ -244,7 +273,7 @@ public class DaftIeWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(DaftIeDocument doc, File file) {
+    private static void write(DaftIeDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -263,7 +292,7 @@ public class DaftIeWritingExample {
      * @param output the stream, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(DaftIeDocument doc, OutputStream output) {
+    private static void write(DaftIeDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -282,7 +311,7 @@ public class DaftIeWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(DaftIeDocument doc, Writer output) {
+    private static void write(DaftIeDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -301,7 +330,7 @@ public class DaftIeWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(DaftIeDocument doc) {
+    private static void writeToConsole(DaftIeDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

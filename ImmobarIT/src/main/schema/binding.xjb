@@ -26,15 +26,21 @@
             </jaxb:package>
         </jaxb:schemaBindings>
 
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='DecimalValue']">
+            <jaxb:javaType name="java.math.BigDecimal"
+                           parseMethod="org.openestate.io.immobar_it.ImmobarItUtils.parseDecimalValue"
+                           printMethod="org.openestate.io.immobar_it.ImmobarItUtils.printDecimalValue"/>
+        </jaxb:bindings>
+
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='LatitudeValue']">
             <jaxb:javaType name="java.math.BigDecimal"
-                           parseMethod="org.openestate.io.immobar_it.ImmobarItUtils.parseLatitudeValue"
+                           parseMethod="org.openestate.io.immobar_it.ImmobarItUtils.parseDecimalValue"
                            printMethod="org.openestate.io.immobar_it.ImmobarItUtils.printLatitudeValue"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='LongitudeValue']">
             <jaxb:javaType name="java.math.BigDecimal"
-                           parseMethod="org.openestate.io.immobar_it.ImmobarItUtils.parseLongitudeValue"
+                           parseMethod="org.openestate.io.immobar_it.ImmobarItUtils.parseDecimalValue"
                            printMethod="org.openestate.io.immobar_it.ImmobarItUtils.printLongitudeValue"/>
         </jaxb:bindings>
 

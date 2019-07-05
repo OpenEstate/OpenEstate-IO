@@ -2,19 +2,19 @@
 package org.openestate.io.immobar_it.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.immobar_it.xml.types.RevenuetypeValue;
+import org.openestate.io.immobar_it.xml.types.ImmotypeValue;
 
 public class Adapter6
-    extends XmlAdapter<String, RevenuetypeValue>
+    extends XmlAdapter<String, ImmotypeValue>
 {
 
 
-    public RevenuetypeValue unmarshal(String value) {
-        return (org.openestate.io.immobar_it.ImmobarItUtils.parseRevenuetypeValue(value));
+    public ImmotypeValue unmarshal(String value) {
+        return (org.openestate.io.immobar_it.ImmobarItUtils.parseImmotypeValue(value));
     }
 
-    public String marshal(RevenuetypeValue value) {
-        return (org.openestate.io.immobar_it.ImmobarItUtils.printRevenuetypeValue(value));
+    public String marshal(ImmotypeValue value) {
+        return (org.openestate.io.immobar_it.ImmobarItUtils.printImmotypeValue(value));
     }
 
 }

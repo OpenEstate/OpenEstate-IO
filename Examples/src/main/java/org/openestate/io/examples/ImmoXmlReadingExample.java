@@ -41,7 +41,6 @@ import org.xml.sax.SAXException;
 public class ImmoXmlReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -52,12 +51,12 @@ public class ImmoXmlReadingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                ImmoXmlReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                ImmoXmlReadingExample.class.getResource("log4j.properties"));
 
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(ImmoXmlReadingExample.class.getResourceAsStream(PACKAGE + "/immoxml.xml"));
+                read(ImmoXmlReadingExample.class.getResourceAsStream("immoxml.xml"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -71,7 +70,7 @@ public class ImmoXmlReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -90,7 +89,7 @@ public class ImmoXmlReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process file: " + xmlFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
             return;
@@ -114,7 +113,7 @@ public class ImmoXmlReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         ImmoXmlDocument doc = ImmoXmlUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
@@ -131,28 +130,31 @@ public class ImmoXmlReadingExample {
      */
     @SuppressWarnings("Duplicates")
     protected static void printToConsole(ImmoXmlDocument doc) throws JAXBException {
-        LOGGER.info("> process document in version "
-                + doc.getDocumentVersion());
+        LOGGER.info("> processing document in version {}",
+                doc.getDocumentVersion());
 
         Immoxml immoxml = doc.toObject();
 
         // process agencies in the document
         for (Anbieter anbieter : immoxml.getAnbieter()) {
-            LOGGER.info(">> found agency '" + anbieter.getAnbieternr() + "'");
+            LOGGER.info(">> found agency '{}'",
+                    anbieter.getAnbieternr());
 
             // process real estates of the agency
             for (Immobilie immobilie : anbieter.getImmobilie()) {
                 // get object nr
                 String objectNr = (immobilie.getVerwaltungTechn() != null) ?
-                        immobilie.getVerwaltungTechn().getObjektnrIntern() : "???";
+                        immobilie.getVerwaltungTechn().getObjektnrExtern() :
+                        null;
 
                 // get object title
                 String objectTitle = (immobilie.getFreitexte() != null) ?
-                        immobilie.getFreitexte().getObjekttitel() : "???";
+                        immobilie.getFreitexte().getObjekttitel() :
+                        null;
 
                 // print object information to console
-                LOGGER.info(">>> found object '" + objectNr + "' "
-                        + "with title '" + objectTitle + "'");
+                LOGGER.info(">>> found object '{}': {}",
+                        objectNr, objectTitle);
             }
         }
     }

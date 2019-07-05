@@ -57,10 +57,10 @@ import org.openestate.io.immobiliare_it.xml.TerrainType;
 import org.openestate.io.immobiliare_it.xml.VideoProject;
 import org.openestate.io.immobiliare_it.xml.VideoType;
 import org.openestate.io.immobiliare_it.xml.YesNoReady;
-import org.openestate.io.immobiliare_it.xml.types.Category;
+import org.openestate.io.immobiliare_it.xml.types.CategoryType;
 import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
-import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
-import org.openestate.io.immobiliare_it.xml.types.SizeUnit;
+import org.openestate.io.immobiliare_it.xml.types.LandSizeUnitType;
+import org.openestate.io.immobiliare_it.xml.types.SizeUnitType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -141,7 +141,7 @@ public class ImmobiliareItWritingExample {
         // create an example real estate for rent
         Property obj = FACTORY.createFeedPropertiesProperty();
         obj.setBuildingStatus(Status.ABITABILE);
-        obj.setCategory(Category.COMMERCIALE);
+        obj.setCategory(CategoryType.COMMERCIALE);
         obj.setDateExpiration(Calendar.getInstance());
         obj.setDateUpdated(Calendar.getInstance());
         obj.setOperation(Operation.WRITE);
@@ -157,7 +157,7 @@ public class ImmobiliareItWritingExample {
         obj.getBlueprints().getBlueprint().add(createPictureExtended());
 
         obj.setBuilding(FACTORY.createBuilding());
-        obj.getBuilding().setCategory(Category.COMMERCIALE);
+        obj.getBuilding().setCategory(CategoryType.COMMERCIALE);
         obj.getBuilding().setClazz(Clazz.SIGNORILE);
         obj.getBuilding().setDetail(PropertyTypeBusiness.ALBERGO);
         obj.getBuilding().setStatus(Status.DISCRETO);
@@ -193,7 +193,7 @@ public class ImmobiliareItWritingExample {
         obj.getExtraFeatures().getAdditionalCosts().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 5000)));
 
         obj.getExtraFeatures().setExternalArea(FACTORY.createLandSizeType());
-        obj.getExtraFeatures().getExternalArea().setUnit(LandSizeUnit.M2);
+        obj.getExtraFeatures().getExternalArea().setUnit(LandSizeUnitType.M2);
         obj.getExtraFeatures().getExternalArea().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
 
         obj.getExtraFeatures().setFloor(FACTORY.createFloor());
@@ -205,7 +205,7 @@ public class ImmobiliareItWritingExample {
         obj.getExtraFeatures().getGarage().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
 
         obj.getExtraFeatures().setOfficeSize(FACTORY.createSizeType());
-        obj.getExtraFeatures().getOfficeSize().setUnit(SizeUnit.M2);
+        obj.getExtraFeatures().getOfficeSize().setUnit(SizeUnitType.M2);
         obj.getExtraFeatures().getOfficeSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(5, 50)));
 
         obj.setFeatures(FACTORY.createFeedPropertiesPropertyFeatures());
@@ -223,7 +223,7 @@ public class ImmobiliareItWritingExample {
         obj.getFeatures().getPrice().setValue(BigInteger.valueOf(RandomUtils.nextLong(500, 5000000)));
 
         obj.getFeatures().setSize(FACTORY.createSizeType());
-        obj.getFeatures().getSize().setUnit(SizeUnit.M2);
+        obj.getFeatures().getSize().setUnit(SizeUnitType.M2);
         obj.getFeatures().getSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
 
         obj.setLocation(FACTORY.createLocationStructure());

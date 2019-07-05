@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
@@ -41,7 +40,6 @@ import org.xml.sax.SAXException;
 public class TrovitReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TrovitReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -52,12 +50,12 @@ public class TrovitReadingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                TrovitReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                TrovitReadingExample.class.getResource("log4j.properties"));
 
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(TrovitReadingExample.class.getResourceAsStream(PACKAGE + "/trovit.xml"));
+                read(TrovitReadingExample.class.getResourceAsStream("trovit.xml"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -71,7 +69,7 @@ public class TrovitReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -90,7 +88,7 @@ public class TrovitReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process file: " + xmlFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
             return;
@@ -114,7 +112,7 @@ public class TrovitReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         TrovitDocument doc = TrovitUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
@@ -135,16 +133,14 @@ public class TrovitReadingExample {
         // process ads
         for (AdType ad : trovit.getAd()) {
             // get object nr
-            String objectNr = StringUtils.trimToNull(ad.getId());
-            if (objectNr == null) objectNr = "???";
+            String objectNr = ad.getId();
 
             // get object title
-            String objectTitle = StringUtils.trimToNull(ad.getTitle());
-            if (objectTitle == null) objectTitle = "???";
+            String objectTitle = ad.getTitle();
 
             // print object information to console
-            LOGGER.info("> found object '" + objectNr + "' "
-                    + "with title '" + objectTitle + "'");
+            LOGGER.info("> found object '{}': {}",
+                    objectNr, objectTitle);
         }
     }
 }

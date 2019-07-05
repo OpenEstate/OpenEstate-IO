@@ -168,8 +168,10 @@ Dependencies
 -   [Java Validation API 1.1.0](https://beanvalidation.org/)
     (optional; for processing of JSON formats)
 -   [log4j 1.2.17](https://logging.apache.org/log4j/1.2/)
-    (optional; may be replaced by another logging system
+    (optional; may be replaced by another logging system)
     [via SLF4J](https://www.slf4j.org/manual.html))
+-   [lorem 2.1](https://github.com/mdeanda/lorem)
+    (optional; for generating random data in example classes)
 
 
 Changelog

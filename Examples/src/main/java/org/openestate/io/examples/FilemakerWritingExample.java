@@ -39,17 +39,14 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing XML files for Filemaker PRO.
  * <p>
- * This example illustrates the programmatic creation of documents for
- * Filemaker PRO and how they are written into XML.
+ * This example illustrates the programmatic creation of documents for Filemaker PRO and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class FilemakerWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = FilemakerUtils.getFactoryForResult();
     private final static boolean PRETTY_PRINT = true;
 
@@ -62,7 +59,7 @@ public class FilemakerWritingExample {
     public static void main(String[] args) {
         // init logging
         PropertyConfigurator.configure(
-                FilemakerWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
+                FilemakerWritingExample.class.getResource("log4j.properties"));
 
         // create a FMPXMLRESULT object with some example data
         // this object corresponds to the <FMPXMLRESULT> root element in XML
@@ -107,7 +104,7 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static DatabaseType createDatabase() {
+    private static DatabaseType createDatabase() {
         DatabaseType database = FACTORY.createDatabaseType();
         database.setNAME("example database");
         database.setLAYOUT("fmmedia2universal");
@@ -122,7 +119,7 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static MetaDataType createMetaData() {
+    private static MetaDataType createMetaData() {
         MetaDataType metadata = FACTORY.createMetaDataType();
         MetaDataType.FIELD field;
 
@@ -155,7 +152,7 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static ProductType createProduct() {
+    private static ProductType createProduct() {
         ProductType product = FACTORY.createProductType();
         product.setNAME("OpenEstate-IO");
         product.setVERSION("1.5-SNAPSHOT");
@@ -168,7 +165,7 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static ResultSetType createResultSet() {
+    private static ResultSetType createResultSet() {
         ResultSetType result = FACTORY.createResultSetType();
         result.getROW().add(createResultSetRow(1, 3, 100, "a first example"));
         result.getROW().add(createResultSetRow(2, null, 200, "a second example"));
@@ -188,7 +185,7 @@ public class FilemakerWritingExample {
      * @return created example object
      */
     @SuppressWarnings("ConstantConditions")
-    protected static ResultSetType.ROW createResultSetRow(long id, Number numberOfRooms, Number price, String description) {
+    private static ResultSetType.ROW createResultSetRow(long id, Number numberOfRooms, Number price, String description) {
         ResultSetType.ROW.COL col;
 
         ResultSetType.ROW row = FACTORY.createResultSetTypeROW();
@@ -223,7 +220,7 @@ public class FilemakerWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(FilemakerResultDocument doc, File file) {
+    private static void write(FilemakerResultDocument doc, File file) {
         LOGGER.info("writing document");
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -242,7 +239,7 @@ public class FilemakerWritingExample {
      * @param output the stream, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(FilemakerResultDocument doc, OutputStream output) {
+    private static void write(FilemakerResultDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -261,7 +258,7 @@ public class FilemakerWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(FilemakerResultDocument doc, Writer output) {
+    private static void write(FilemakerResultDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -280,7 +277,7 @@ public class FilemakerWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(FilemakerResultDocument doc) {
+    private static void writeToConsole(FilemakerResultDocument doc) {
         LOGGER.info("writing document");
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

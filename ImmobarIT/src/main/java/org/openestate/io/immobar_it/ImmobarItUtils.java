@@ -214,6 +214,22 @@ public class ImmobarItUtils {
     }
 
     /**
+     * Read a {@link BigDecimal} value from XML
+     * with a valid latitude range.
+     *
+     * @param value XML string
+     * @return parsed value or null, if the value is invalid
+     */
+    public static BigDecimal parseDecimalValue(String value) {
+        try {
+            value = StringUtils.trimToNull(value);
+            return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
+        } catch (NumberFormatException ex) {
+            throw new IllegalArgumentException("Can't parse decimal value '" + value + "'!", ex);
+        }
+    }
+
+    /**
      * Read a {@link ImmotypeValue} value from XML.
      *
      * @param value XML string
@@ -227,38 +243,6 @@ public class ImmobarItUtils {
         if (type != null) return type;
 
         throw new IllegalArgumentException("Can't parse immotype value '" + value + "'!");
-    }
-
-    /**
-     * Read a {@link BigDecimal} value from XML
-     * with a valid latitude range.
-     *
-     * @param value XML string
-     * @return parsed value or null, if the value is invalid
-     */
-    public static BigDecimal parseLatitudeValue(String value) {
-        try {
-            value = StringUtils.trimToNull(value);
-            return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
-        } catch (NumberFormatException ex) {
-            throw new IllegalArgumentException("Can't parse latitude value '" + value + "'!", ex);
-        }
-    }
-
-    /**
-     * Read a {@link BigDecimal} value from XML
-     * with a valid longitude range.
-     *
-     * @param value XML string
-     * @return parsed value or null, if the value is invalid
-     */
-    public static BigDecimal parseLongitudeValue(String value) {
-        try {
-            value = StringUtils.trimToNull(value);
-            return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
-        } catch (NumberFormatException ex) {
-            throw new IllegalArgumentException("Can't parse longitude value '" + value + "'!", ex);
-        }
     }
 
     /**
@@ -309,6 +293,22 @@ public class ImmobarItUtils {
 
         return new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
                 .format(value.getTime());
+    }
+
+    /**
+     * Write a {@link BigDecimal} value into XML output
+     * with maximal two decimal digits.
+     *
+     * @param value value to write
+     * @return XML string
+     * @throws IllegalArgumentException if a validation error occurred
+     */
+    public static String printDecimalValue(BigDecimal value) {
+        if (value == null)
+            throw new IllegalArgumentException("Can't print empty decimal value!");
+
+        value = value.setScale(2, BigDecimal.ROUND_HALF_UP);
+        return DatatypeConverter.printDecimal(value);
     }
 
     /**

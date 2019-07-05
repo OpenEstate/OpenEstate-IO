@@ -54,11 +54,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing JSON files for
- * <a href="https://www.idealista.com/">idealista.com</a>.
+ * Example for writing JSON files for <a href="https://www.idealista.com/">idealista.com</a>.
  * <p>
- * This example illustrates how to write JSON files for
- * <a href="https://www.idealista.com/">idealista.com</a>.
+ * This example illustrates how to write JSON files for <a href="https://www.idealista.com/">idealista.com</a>.
  *
  * @author Andreas Rudolph
  * @since 1.5
@@ -66,8 +64,8 @@ import org.slf4j.LoggerFactory;
 public class IdealistaWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaWritingExample.class);
-    private final static boolean PRETTY_PRINT = true;
     private final static Lorem RANDOMIZER = new LoremIpsum();
+    private final static boolean PRETTY_PRINT = true;
 
     /**
      * Start the example application.
@@ -84,7 +82,7 @@ public class IdealistaWritingExample {
         Customer customer = new Customer();
         customer.setReference(RandomStringUtils.randomAlphanumeric(5));
         customer.setSendDate(new Date());
-        customer.setCountry(randomObject(Customer.Country.values()));
+        customer.setCountry(randomValue(Customer.Country.values()));
 
         // add global customer contact
         customer.setContact(createContact());
@@ -145,20 +143,20 @@ public class IdealistaWritingExample {
 
         obj.setCode(RandomStringUtils.randomAlphanumeric(5));
         obj.setReference(RandomStringUtils.randomAlphanumeric(5));
-        obj.setVisibility(randomObject(PropertyVisibilityType.values()));
+        obj.setVisibility(randomValue(PropertyVisibilityType.values()));
 
         // add address
         obj.setAddress(new Address());
         obj.getAddress().setPostalCode(RandomStringUtils.randomNumeric(5));
         obj.getAddress().setTown(RANDOMIZER.getCity());
-        obj.getAddress().setCountry(randomObject(Address.Country.values()));
+        obj.getAddress().setCountry(randomValue(Address.Country.values()));
 
         // add contact
         obj.setContact(createContact());
 
         // add operation (sale / rent)
         obj.setOperation(new Operation());
-        obj.getOperation().setType(randomObject(Operation.Type.values()));
+        obj.getOperation().setType(randomValue(Operation.Type.values()));
         obj.getOperation().setPrice(BigInteger.valueOf(RandomUtils.nextLong(1000, 99999)));
 
         //noinspection CatchMayIgnoreException
@@ -210,7 +208,7 @@ public class IdealistaWritingExample {
     private static BuildingFeatures createPropertyBuilding() {
         // This is just a selection of attributes, supported for buildings.
         BuildingFeatures building = new BuildingFeatures();
-        building.setType(randomObject(BuildingFeatures.Type.values()));
+        building.setType(randomValue(BuildingFeatures.Type.values()));
         building.setAreaConstructed(BigInteger.valueOf(RandomUtils.nextLong(50, 1000)));
         building.setAreaTradableMinimum(BigInteger.valueOf(RandomUtils.nextLong(50, 1000)));
         building.setBuiltYear(BigInteger.valueOf(RandomUtils.nextLong(1990, 2020)));
@@ -220,9 +218,9 @@ public class IdealistaWritingExample {
         building.setClassificationIndustrial(RandomUtils.nextBoolean());
         building.setClassificationOffice(RandomUtils.nextBoolean());
         building.setClassificationOther(RandomUtils.nextBoolean());
-        building.setFloorsBuilding(BigInteger.valueOf(RandomUtils.nextLong(1,10)));
-        building.setLiftNumber(BigInteger.valueOf(RandomUtils.nextLong(1,5)));
-        building.setParkingSpacesNumber(BigInteger.valueOf(RandomUtils.nextLong(1,10)));
+        building.setFloorsBuilding(BigInteger.valueOf(RandomUtils.nextLong(1, 10)));
+        building.setLiftNumber(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        building.setParkingSpacesNumber(BigInteger.valueOf(RandomUtils.nextLong(1, 10)));
         building.setPropertyTenants(RandomUtils.nextBoolean());
         building.setSecurityPersonnel(RandomUtils.nextBoolean());
         return building;
@@ -236,19 +234,19 @@ public class IdealistaWritingExample {
     private static HomeFeatures createPropertyHome() {
         // This is just a selection of attributes, supported for homes.
         HomeFeatures home = new HomeFeatures();
-        home.setType(randomObject(HomeFeatures.Type.values()));
+        home.setType(randomValue(HomeFeatures.Type.values()));
         home.setAreaConstructed(BigInteger.valueOf(RandomUtils.nextLong(50, 1000)));
         home.setAreaPlot(BigInteger.valueOf(RandomUtils.nextLong(200, 2000)));
         home.setAreaUsable(BigInteger.valueOf(RandomUtils.nextLong(200, 2000)));
         home.setBuiltYear(BigInteger.valueOf(RandomUtils.nextLong(1990, 2020)));
-        home.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextLong(1,5)));
-        home.setBedroomNumber(BigInteger.valueOf(RandomUtils.nextLong(1,5)));
+        home.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        home.setBedroomNumber(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
         home.setBalcony(RandomUtils.nextBoolean());
         home.setChimney(RandomUtils.nextBoolean());
         home.setConditionedAir(RandomUtils.nextBoolean());
         home.setDoorman(RandomUtils.nextBoolean());
         home.setDuplex(RandomUtils.nextBoolean());
-        home.setHeatingType(randomObject(HeatingType.values()));
+        home.setHeatingType(randomValue(HeatingType.values()));
         home.setLiftAvailable(RandomUtils.nextBoolean());
         home.setEquippedKitchen(RandomUtils.nextBoolean());
         home.setEquippedWithFurniture(RandomUtils.nextBoolean());
@@ -268,23 +266,23 @@ public class IdealistaWritingExample {
     private static OfficeFeatures createPropertyOffice() {
         // This is just a selection of attributes, supported for offices.
         OfficeFeatures office = new OfficeFeatures();
-        office.setType(randomObject(OfficeFeatures.Type.values()));
+        office.setType(randomValue(OfficeFeatures.Type.values()));
         office.setAreaConstructed(BigInteger.valueOf(RandomUtils.nextLong(50, 1000)));
         office.setAreaUsable(BigInteger.valueOf(RandomUtils.nextLong(50, 1000)));
         office.setBuiltYear(BigInteger.valueOf(RandomUtils.nextLong(1990, 2020)));
         office.setAccessControl(RandomUtils.nextBoolean());
         office.setBathroomInside(RandomUtils.nextBoolean());
-        office.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextLong(0,5)));
-        office.setBathroomType(randomObject(BathroomType.values()));
+        office.setBathroomNumber(BigInteger.valueOf(RandomUtils.nextLong(0, 5)));
+        office.setBathroomType(randomValue(BathroomType.values()));
         office.setConditionedAir(RandomUtils.nextBoolean());
-        office.setConditionedAirType(randomObject(ConditionedAirType.values()));
+        office.setConditionedAirType(randomValue(ConditionedAirType.values()));
         office.setEmergencyExit(RandomUtils.nextBoolean());
         office.setEmergencyLights(RandomUtils.nextBoolean());
         office.setEquippedKitchen(RandomUtils.nextBoolean());
         office.setExtinguishers(RandomUtils.nextBoolean());
         office.setFireDetectors(RandomUtils.nextBoolean());
         office.setFireDoors(RandomUtils.nextBoolean());
-        office.setFloorsBuilding(BigInteger.valueOf(RandomUtils.nextLong(1,10)));
+        office.setFloorsBuilding(BigInteger.valueOf(RandomUtils.nextLong(1, 10)));
         office.setSuspendedFloor(RandomUtils.nextBoolean());
         office.setOrientationEast(RandomUtils.nextBoolean());
         office.setOrientationNorth(RandomUtils.nextBoolean());
@@ -302,7 +300,7 @@ public class IdealistaWritingExample {
     private static Image createImage(int order) {
         Image image = new Image();
         image.setOrder(BigInteger.valueOf(order));
-        image.setLabel(randomObject(Image.Label.values()));
+        image.setLabel(randomValue(Image.Label.values()));
 
         //noinspection CatchMayIgnoreException
         try {
@@ -315,13 +313,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Get a random object from an array.
+     * Get a random value from an array.
      *
-     * @param values array containing objects to select from
-     * @param <T>    type of object
-     * @return randomly selected object
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
      */
-    private static <T> T randomObject(T[] values) {
+    private static <T> T randomValue(T[] values) {
         return (values != null && values.length > 0) ?
                 values[RandomUtils.nextInt(0, values.length)] :
                 null;
