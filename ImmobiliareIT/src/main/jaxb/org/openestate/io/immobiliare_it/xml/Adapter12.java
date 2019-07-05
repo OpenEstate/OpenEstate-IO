@@ -4,16 +4,16 @@ package org.openestate.io.immobiliare_it.xml;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter12
-    extends XmlAdapter<String, Boolean>
+    extends XmlAdapter<String, Integer>
 {
 
 
-    public Boolean unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo(value));
+    public Integer unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYear(value));
     }
 
-    public String marshal(Boolean value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo(value));
+    public String marshal(Integer value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYear(value));
     }
 
 }

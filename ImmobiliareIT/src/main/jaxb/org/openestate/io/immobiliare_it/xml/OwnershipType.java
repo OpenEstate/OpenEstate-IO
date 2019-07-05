@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "ownershipType")
 @XmlEnum
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
 public enum OwnershipType {
 
     @XmlEnumValue("intera propriet\u00e0")
@@ -36,7 +36,7 @@ public enum OwnershipType {
     @XmlEnumValue("nuda propriet\u00e0")
     NUDA_PROPRIETA("nuda propriet\u00e0"),
     @XmlEnumValue("parziale propriet\u00e0")
-    PARZIALE("parziale propriet\u00e0"),
+    PARZIALE_PROPRIETA("parziale propriet\u00e0"),
     @XmlEnumValue("usufrutto")
     USUFRUTTO("usufrutto"),
     @XmlEnumValue("multipropriet\u00e0")

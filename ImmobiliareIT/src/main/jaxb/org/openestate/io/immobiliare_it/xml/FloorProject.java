@@ -9,7 +9,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -34,7 +33,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <pre>
  * &lt;complexType name="floorProject"&gt;
  *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;integer"&gt;
+ *     &lt;extension base="&lt;http://feed.immobiliare.it&gt;nullInteger"&gt;
  *       &lt;attribute name="type"&gt;
  *         &lt;simpleType&gt;
  *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
@@ -44,7 +43,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *             &lt;enumeration value="PianoTerra"/&gt;
  *             &lt;enumeration value="Rialzato"/&gt;
  *             &lt;enumeration value="PianoNobile"/&gt;
- *             &lt;enumeration value="Multipiano su pi\u00f9 livelli"/&gt;
+ *             &lt;enumeration value="Multipiano"/&gt;
  *             &lt;enumeration value="Ultimo"/&gt;
  *             &lt;enumeration value="Attico"/&gt;
  *           &lt;/restriction&gt;
@@ -61,18 +60,17 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "floorProject", propOrder = {
     "value"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
 public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "integer")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @XmlJavaTypeAdapter(Adapter9 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger value;
     @XmlAttribute(name = "type")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    protected FloorProject.FloorProjectType type;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    protected FloorProject.Type type;
 
     /**
      * Gets the value of the value property.
@@ -82,7 +80,7 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getValue() {
         return value;
     }
@@ -95,7 +93,7 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public void setValue(BigInteger value) {
         this.value = value;
     }
@@ -105,11 +103,11 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
      * 
      * @return
      *     possible object is
-     *     {@link FloorProject.FloorProjectType }
+     *     {@link FloorProject.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public FloorProject.FloorProjectType getType() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    public FloorProject.Type getType() {
         return type;
     }
 
@@ -118,15 +116,15 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
      * 
      * @param value
      *     allowed object is
-     *     {@link FloorProject.FloorProjectType }
+     *     {@link FloorProject.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public void setType(FloorProject.FloorProjectType value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    public void setType(FloorProject.Type value) {
         this.type = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -134,7 +132,7 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -142,7 +140,7 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigInteger theValue;
@@ -150,25 +148,25 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            FloorProject.FloorProjectType theType;
+            FloorProject.Type theType;
             theType = this.getType();
             strategy.appendField(locator, this, "type", buffer, theType, (this.type!= null));
         }
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof FloorProject) {
@@ -189,9 +187,9 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
             {
                 Boolean typeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.type!= null));
                 if (typeShouldBeCopiedAndSet == Boolean.TRUE) {
-                    FloorProject.FloorProjectType sourceType;
+                    FloorProject.Type sourceType;
                     sourceType = this.getType();
-                    FloorProject.FloorProjectType copyType = ((FloorProject.FloorProjectType) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
+                    FloorProject.Type copyType = ((FloorProject.Type) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
                     copy.setType(copyType);
                 } else {
                     if (typeShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -203,12 +201,12 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new FloorProject();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -227,9 +225,9 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
             }
         }
         {
-            FloorProject.FloorProjectType lhsType;
+            FloorProject.Type lhsType;
             lhsType = this.getType();
-            FloorProject.FloorProjectType rhsType;
+            FloorProject.Type rhsType;
             rhsType = that.getType();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsType), LocatorUtils.property(thatLocator, "type", rhsType), lhsType, rhsType, (this.type!= null), (that.type!= null))) {
                 return false;
@@ -238,7 +236,7 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -259,7 +257,7 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     &lt;enumeration value="PianoTerra"/&gt;
      *     &lt;enumeration value="Rialzato"/&gt;
      *     &lt;enumeration value="PianoNobile"/&gt;
-     *     &lt;enumeration value="Multipiano su pi\u00f9 livelli"/&gt;
+     *     &lt;enumeration value="Multipiano"/&gt;
      *     &lt;enumeration value="Ultimo"/&gt;
      *     &lt;enumeration value="Attico"/&gt;
      *   &lt;/restriction&gt;
@@ -269,8 +267,8 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
      */
     @XmlType(name = "")
     @XmlEnum
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public enum FloorProjectType {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    public enum Type {
 
         @XmlEnumValue("Intermedio")
         INTERMEDIO("Intermedio"),
@@ -284,15 +282,15 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
         RIALZATO("Rialzato"),
         @XmlEnumValue("PianoNobile")
         PIANO_NOBILE("PianoNobile"),
-        @XmlEnumValue("Multipiano su pi\u00f9 livelli")
-        MULTIPIANO_SU_PI\u00d9_LIVELLI("Multipiano su pi\u00f9 livelli"),
+        @XmlEnumValue("Multipiano")
+        MULTIPIANO("Multipiano"),
         @XmlEnumValue("Ultimo")
         ULTIMO("Ultimo"),
         @XmlEnumValue("Attico")
         ATTICO("Attico");
         private final String value;
 
-        FloorProjectType(String v) {
+        Type(String v) {
             value = v;
         }
 
@@ -300,8 +298,8 @@ public class FloorProject implements Serializable, Cloneable, CopyTo2, Equals2, 
             return value;
         }
 
-        public static FloorProject.FloorProjectType fromValue(String v) {
-            for (FloorProject.FloorProjectType c: FloorProject.FloorProjectType.values()) {
+        public static FloorProject.Type fromValue(String v) {
+            for (FloorProject.Type c: FloorProject.Type.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

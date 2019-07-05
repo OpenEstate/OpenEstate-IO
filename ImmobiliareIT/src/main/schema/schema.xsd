@@ -7,7 +7,6 @@
            jxb:version="2.0"
            elementFormDefault="qualified">
 
-
     <xs:simpleType name="nullString">
         <xs:restriction base="xs:string">
             <xs:maxLength value="0"/>
@@ -55,7 +54,6 @@
             <xs:pattern value="S|R"/>
         </xs:restriction>
     </xs:simpleType>
-
 
     <xs:complexType name="transactions">
         <xs:sequence>
@@ -598,8 +596,7 @@
     <xs:complexType name="floor">
         <xs:simpleContent>
             <xs:extension base="nullInteger">
-                <xs:attribute
-                        name="type">
+                <xs:attribute name="type">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="Intermedio"/>
@@ -837,7 +834,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-
     <!-- additional-costs -->
     <xs:complexType name="additionalCostsType">
         <xs:simpleContent>
@@ -905,7 +901,6 @@
         </xs:all>
     </xs:complexType>
 
-
     <xs:complexType name="descriptions">
         <xs:sequence>
             <xs:element name="description" type="descriptionType" minOccurs="0" maxOccurs="25"/>
@@ -969,7 +964,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-
     <xs:complexType name="sizes">
         <xs:sequence>
             <xs:element name="size" minOccurs="1" maxOccurs="unbounded">
@@ -996,20 +990,17 @@
         <xs:attribute name="unit" type="sizeTypeUnit" use="required"/>
     </xs:complexType>
 
-
     <xs:complexType name="projects">
         <xs:sequence>
             <xs:element ref="project" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
-
     <xs:complexType name="properties">
         <xs:sequence>
             <xs:element ref="property" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-
 
     <xs:complexType name="contact">
         <xs:all>
@@ -1037,7 +1028,6 @@
         </xs:all>
         <xs:attribute name="id" type="xs:long"/>
     </xs:complexType>
-
 
     <xs:complexType name="sales-office">
         <xs:all>
@@ -1070,7 +1060,6 @@
             <xs:element name="mobile" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
-
 
     <xs:complexType name="lots">
         <xs:sequence>
@@ -1105,7 +1094,6 @@
         </xs:sequence>
     </xs:complexType>
 
-
     <xs:complexType name="processable" abstract="true">
         <xs:sequence>
             <xs:element name="unique-id" type="xs:string" minOccurs="1" maxOccurs="1"/>
@@ -1119,7 +1107,6 @@
         <xs:attribute name="operation" type="operation"/>
         <xs:attribute name="ID" type="xs:long"/>
     </xs:complexType>
-
 
     <xs:element name="project">
         <xs:complexType>
@@ -1159,7 +1146,6 @@
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
-
 
     <xs:complexType name="blueprints">
         <xs:sequence>
@@ -1387,7 +1373,6 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-
 
     <xs:complexType name="auction-features">
         <xs:sequence>

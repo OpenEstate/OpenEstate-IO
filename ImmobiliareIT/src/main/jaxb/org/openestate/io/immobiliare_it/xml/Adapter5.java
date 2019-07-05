@@ -1,20 +1,23 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.immobiliare_it.xml.types.Category;
 
 public class Adapter5
-    extends XmlAdapter<String, Category>
+    extends XmlAdapter<String, BigInteger>
 {
 
 
-    public Category unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCategory(value));
+    public BigInteger unmarshal(String value) {
+        return (javax.xml.bind.DatatypeConverter.parseInteger(value));
     }
 
-    public String marshal(Category value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCategory(value));
+    public String marshal(BigInteger value) {
+        if (value == null) {
+            return null;
+        }
+        return (javax.xml.bind.DatatypeConverter.printInteger(value));
     }
 
 }

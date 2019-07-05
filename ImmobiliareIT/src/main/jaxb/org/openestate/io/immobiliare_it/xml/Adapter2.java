@@ -1,20 +1,23 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
-import java.math.BigInteger;
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter2
-    extends XmlAdapter<String, BigInteger>
+    extends XmlAdapter<String, BigDecimal>
 {
 
 
-    public BigInteger unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseInteger(value));
+    public BigDecimal unmarshal(String value) {
+        return (javax.xml.bind.DatatypeConverter.parseDecimal(value));
     }
 
-    public String marshal(BigInteger value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printInteger(value));
+    public String marshal(BigDecimal value) {
+        if (value == null) {
+            return null;
+        }
+        return (javax.xml.bind.DatatypeConverter.printDecimal(value));
     }
 
 }

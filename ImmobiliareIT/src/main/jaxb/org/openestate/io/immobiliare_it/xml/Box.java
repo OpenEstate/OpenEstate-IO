@@ -34,7 +34,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  * <pre>
  * &lt;complexType name="box"&gt;
  *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;integer"&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;int"&gt;
  *       &lt;attribute name="type"&gt;
  *         &lt;simpleType&gt;
  *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
@@ -56,18 +56,18 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "box", propOrder = {
     "value"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
 public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "integer")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @XmlJavaTypeAdapter(Adapter5 .class)
+    @XmlSchemaType(name = "int")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     protected BigInteger value;
     @XmlAttribute(name = "type")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    protected Box.BoxType type;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    protected Box.Type type;
 
     /**
      * Gets the value of the value property.
@@ -77,7 +77,7 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public BigInteger getValue() {
         return value;
     }
@@ -90,7 +90,7 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public void setValue(BigInteger value) {
         this.value = value;
     }
@@ -100,11 +100,11 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      * 
      * @return
      *     possible object is
-     *     {@link Box.BoxType }
+     *     {@link Box.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public Box.BoxType getType() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    public Box.Type getType() {
         return type;
     }
 
@@ -113,15 +113,15 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      * 
      * @param value
      *     allowed object is
-     *     {@link Box.BoxType }
+     *     {@link Box.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public void setType(Box.BoxType value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    public void setType(Box.Type value) {
         this.type = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
         final StringBuilder buffer = new StringBuilder();
@@ -129,7 +129,7 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -137,7 +137,7 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigInteger theValue;
@@ -145,25 +145,25 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            Box.BoxType theType;
+            Box.Type theType;
             theType = this.getType();
             strategy.appendField(locator, this, "type", buffer, theType, (this.type!= null));
         }
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Box) {
@@ -184,9 +184,9 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             {
                 Boolean typeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.type!= null));
                 if (typeShouldBeCopiedAndSet == Boolean.TRUE) {
-                    Box.BoxType sourceType;
+                    Box.Type sourceType;
                     sourceType = this.getType();
-                    Box.BoxType copyType = ((Box.BoxType) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
+                    Box.Type copyType = ((Box.Type) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
                     copy.setType(copyType);
                 } else {
                     if (typeShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -198,12 +198,12 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public Object createNewInstance() {
         return new Box();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -222,9 +222,9 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             }
         }
         {
-            Box.BoxType lhsType;
+            Box.Type lhsType;
             lhsType = this.getType();
-            Box.BoxType rhsType;
+            Box.Type rhsType;
             rhsType = that.getType();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsType), LocatorUtils.property(thatLocator, "type", rhsType), lhsType, rhsType, (this.type!= null), (that.type!= null))) {
                 return false;
@@ -233,7 +233,7 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
         return equals(null, null, object, strategy);
@@ -259,8 +259,8 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
      */
     @XmlType(name = "")
     @XmlEnum
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public enum BoxType {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    public enum Type {
 
         @XmlEnumValue("No")
         NO("No"),
@@ -272,7 +272,7 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         POSTO_AUTO("PostoAuto");
         private final String value;
 
-        BoxType(String v) {
+        Type(String v) {
             value = v;
         }
 
@@ -280,8 +280,8 @@ public class Box implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
             return value;
         }
 
-        public static Box.BoxType fromValue(String v) {
-            for (Box.BoxType c: Box.BoxType.values()) {
+        public static Box.Type fromValue(String v) {
+            for (Box.Type c: Box.Type.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

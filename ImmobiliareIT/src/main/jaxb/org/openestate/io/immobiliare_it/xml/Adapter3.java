@@ -10,11 +10,14 @@ public class Adapter3
 
 
     public Calendar unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseDateUpdatedType(value));
+        return (javax.xml.bind.DatatypeConverter.parseDateTime(value));
     }
 
     public String marshal(Calendar value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printDateUpdatedType(value));
+        if (value == null) {
+            return null;
+        }
+        return (javax.xml.bind.DatatypeConverter.printDateTime(value));
     }
 
 }

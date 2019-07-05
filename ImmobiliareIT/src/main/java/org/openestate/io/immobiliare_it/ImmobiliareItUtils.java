@@ -35,11 +35,12 @@ import org.openestate.io.core.LocaleUtils;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.immobiliare_it.xml.ObjectFactory;
-import org.openestate.io.immobiliare_it.xml.types.Category;
-import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
-import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
-import org.openestate.io.immobiliare_it.xml.types.SizeUnit;
-import org.openestate.io.immobiliare_it.xml.types.Transaction;
+import org.openestate.io.immobiliare_it.xml.types.Breadcrumb;
+import org.openestate.io.immobiliare_it.xml.types.EnergyScaleType;
+import org.openestate.io.immobiliare_it.xml.types.GenderType;
+import org.openestate.io.immobiliare_it.xml.types.LandSizeUnitType;
+import org.openestate.io.immobiliare_it.xml.types.MapType;
+import org.openestate.io.immobiliare_it.xml.types.SizeUnitType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -238,33 +239,27 @@ public class ImmobiliareItUtils {
         return value != null && value.compareTo(min) >= 0 && value.compareTo(max) <= 0;
     }
 
-    @Deprecated
-    public static boolean isValidLatitude(Double value) {
-        //return value!=null && value>=27.2 && value<=71.1;
-        return isValidLatitude(BigDecimal.valueOf(value));
-    }
-
     public static boolean isValidLongitude(BigDecimal value) {
-        BigDecimal min = new BigDecimal("31.2");
+        BigDecimal min = new BigDecimal("-31.2");
         BigDecimal max = new BigDecimal("38.9");
         return value != null && value.compareTo(min) >= 0 && value.compareTo(max) <= 0;
     }
 
-    @Deprecated
-    public static boolean isValidLongitude(Double value) {
-        //return value!=null && value>=-31.2 && value<=38.9;
-        return isValidLongitude(BigDecimal.valueOf(value));
-    }
-
-    public static boolean isValidRooms(Integer value) {
-        return value != null && value >= 1 && value <= 100;
+    public static boolean isValidRatio(BigDecimal value) {
+        BigDecimal min = BigDecimal.ZERO;
+        BigDecimal max = new BigDecimal("100");
+        return value != null && value.compareTo(min) >= 0 && value.compareTo(max) <= 0;
     }
 
     public static boolean isValidYear(Integer value) {
-        return value != null && value >= 1000 && value <= 2020;
+        return value != null && value >= 1000 && value <= 2050;
     }
 
-    public static Category parseCategory(String value) {
+    public static Breadcrumb parseBreadcrumb(String value) {
+        return Breadcrumb.read(value);
+    }
+
+    /*public static Category parseCategory(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
@@ -273,7 +268,7 @@ public class ImmobiliareItUtils {
             throw new IllegalArgumentException("Can't parse category value '" + value + "'!");
 
         return cat;
-    }
+    }*/
 
     public static String parseCountry(String value) {
         return StringUtils.trimToNull(value);
@@ -311,27 +306,33 @@ public class ImmobiliareItUtils {
         return StringUtils.trimToNull(value);
     }
 
-    public static EnergyUnit parseEnergyUnit(String value) {
+    public static EnergyScaleType parseEnergyScale(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
-        EnergyUnit unit = EnergyUnit.fromXmlValue(value);
-        if (unit == null)
-            throw new IllegalArgumentException("Can't parse energy-unit value '" + value + "'!");
+        EnergyScaleType scale = EnergyScaleType.fromXmlValue(value);
+        if (scale == null)
+            throw new IllegalArgumentException("Can't parse energy scale value '" + value + "'!");
 
-        return unit;
+        return scale;
     }
 
-    public static BigInteger parseInteger(String value) {
-        value = StringUtils.trimToNull(value);
-        return (value != null) ? DatatypeConverter.parseInteger(value) : null;
-    }
-
-    public static LandSizeUnit parseLandSizeUnit(String value) {
+    public static GenderType parseGender(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
-        LandSizeUnit unit = LandSizeUnit.fromXmlValue(value);
+        GenderType gender = GenderType.fromXmlValue(value);
+        if (gender == null)
+            throw new IllegalArgumentException("Can't parse gender value '" + value + "'!");
+
+        return gender;
+    }
+
+    public static LandSizeUnitType parseLandSizeUnit(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        LandSizeUnitType unit = LandSizeUnitType.fromXmlValue(value);
         if (unit == null)
             throw new IllegalArgumentException("Can't parse land-size-unit value '" + value + "'!");
 
@@ -348,42 +349,58 @@ public class ImmobiliareItUtils {
         return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
     }
 
-    public static Integer parseRooms(String value) {
-        value = StringUtils.trimToNull(value);
-        return (value != null) ? DatatypeConverter.parseInt(value) : null;
-    }
-
-    public static SizeUnit parseSizeUnit(String value) {
+    public static MapType parseMap(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
-        SizeUnit unit = SizeUnit.fromXmlValue(value);
+        MapType map = MapType.fromXmlValue(value);
+        if (map == null)
+            throw new IllegalArgumentException("Can't parse map type value '" + value + "'!");
+
+        return map;
+    }
+
+    public static Calendar parseNullDateTime(String value) {
+        value = StringUtils.trimToNull(value);
+        return (value != null) ? DatatypeConverter.parseDateTime(value) : null;
+    }
+
+    public static BigInteger parseNullInteger(String value) {
+        value = StringUtils.trimToNull(value);
+        return (value != null) ? DatatypeConverter.parseInteger(value) : null;
+    }
+
+    public static BigInteger parsePositiveInteger(String value) {
+        value = StringUtils.trimToNull(value);
+        return (value != null) ? DatatypeConverter.parseInteger(value) : null;
+    }
+
+    public static BigDecimal parseRatio(String value) {
+        value = StringUtils.trimToNull(value);
+        return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
+    }
+
+    public static SizeUnitType parseSizeUnit(String value) {
+        value = StringUtils.trimToNull(value);
+        if (value == null) return null;
+
+        SizeUnitType unit = SizeUnitType.fromXmlValue(value);
         if (unit == null)
             throw new IllegalArgumentException("Can't parse size-unit value '" + value + "'!");
 
         return unit;
     }
 
-    @SuppressWarnings({"SameParameterValue", "unused"})
-    private static String parseText(String value, int length) {
-        return StringUtils.trimToNull(value);
-    }
-
-    public static String parseText3000(String value) {
-        return parseText(value, 3000);
-    }
-
-    @SuppressWarnings("unused")
-    public static Transaction parseTransaction(String value) {
+    /*public static Transaction parseTransaction(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
-        Transaction unit = Transaction.fromXmlValue(value);
-        if (unit == null)
+        Transaction trans = Transaction.fromXmlValue(value);
+        if (trans == null)
             throw new IllegalArgumentException("Can't parse transaction value '" + value + "'!");
 
-        return unit;
-    }
+        return trans;
+    }*/
 
     public static Integer parseYear(String value) {
         value = StringUtils.trimToNull(value);
@@ -400,22 +417,24 @@ public class ImmobiliareItUtils {
             throw new IllegalArgumentException("Can't parse yes-no value '" + value + "'!");
     }
 
-    public static Boolean parseYN(String value) {
+    public static Boolean parseYesOnly(String value) {
         value = StringUtils.trimToEmpty(value);
-        if ("y".equalsIgnoreCase(value))
+        if ("yes".equalsIgnoreCase(value))
             return Boolean.TRUE;
-        else if ("n".equalsIgnoreCase(value))
-            return Boolean.FALSE;
         else
-            throw new IllegalArgumentException("Can't parse y-n value '" + value + "'!");
+            return null;
     }
 
-    public static String printCategory(Category value) {
+    public static String printBreadcrumb(Breadcrumb value) {
+        return (value != null) ? value.write() : null;
+    }
+
+    /*public static String printCategory(Category value) {
         if (value == null)
             throw new IllegalArgumentException("Can't print category value!");
         else
             return value.getXmlValue();
-    }
+    }*/
 
     public static String printCountry(String value) {
         value = StringUtils.trimToNull(value);
@@ -450,21 +469,21 @@ public class ImmobiliareItUtils {
             return value;
     }
 
-    public static String printEnergyUnit(EnergyUnit value) {
+    public static String printEnergyScale(EnergyScaleType value) {
         if (value == null)
-            throw new IllegalArgumentException("Can't print energy-unit value!");
+            throw new IllegalArgumentException("Can't print energy scale value!");
         else
             return value.getXmlValue();
     }
 
-    public static String printInteger(BigInteger value) {
+    public static String printGender(GenderType value) {
         if (value == null)
-            throw new IllegalArgumentException("Can't print integer value!");
+            throw new IllegalArgumentException("Can't print gender value!");
         else
-            return DatatypeConverter.printInteger(value);
+            return value.getXmlValue();
     }
 
-    public static String printLandSizeUnit(LandSizeUnit value) {
+    public static String printLandSizeUnit(LandSizeUnitType value) {
         if (value == null)
             throw new IllegalArgumentException("Can't print land-size-unit value!");
         else
@@ -485,45 +504,52 @@ public class ImmobiliareItUtils {
             return DatatypeConverter.printDecimal(value);
     }
 
-    public static String printRooms(Integer value) {
-        if (!isValidRooms(value))
-            throw new IllegalArgumentException("Can't print rooms value!");
+    public static String printMap(MapType value) {
+        if (value == null)
+            throw new IllegalArgumentException("Can't print map type value!");
         else
-            return DatatypeConverter.printInt(value);
+            return value.getXmlValue();
     }
 
-    public static String printSizeUnit(SizeUnit value) {
+    public static String printNullDateTime(Calendar value) {
+        return (value != null) ?
+                DatatypeConverter.printDateTime(value) :
+                StringUtils.EMPTY;
+    }
+
+    public static String printNullInteger(BigInteger value) {
+        return (value != null) ?
+                DatatypeConverter.printInteger(value) :
+                StringUtils.EMPTY;
+    }
+
+    public static String printPositiveInteger(BigInteger value) {
+        if (value == null || BigInteger.ZERO.compareTo(value) < 0)
+            throw new IllegalArgumentException("Can't print positive integer value!");
+
+        return DatatypeConverter.printInteger(value);
+    }
+
+    public static String printRatio(BigDecimal value) {
+        if (value == null || !isValidRatio(value))
+            throw new IllegalArgumentException("Can't print ratio value!");
+        else
+            return DatatypeConverter.printDecimal(value);
+    }
+
+    public static String printSizeUnit(SizeUnitType value) {
         if (value == null)
             throw new IllegalArgumentException("Can't print size-unit value!");
         else
             return value.getXmlValue();
     }
 
-    @SuppressWarnings({"SameParameterValue", "Duplicates"})
-    private static String printText(String value, int maxLength) {
-        value = StringUtils.trimToEmpty(value);
-        int length = value.length();
-        if (length <= 0)
-            return StringUtils.EMPTY;
-        else if (length <= maxLength)
-            return value;
-        else if (maxLength > 3)
-            return StringUtils.abbreviate(value, maxLength);
-        else
-            return value.substring(0, maxLength);
-    }
-
-    public static String printText3000(String value) {
-        return printText(value, 3000);
-    }
-
-    @SuppressWarnings("unused")
-    public static String printTransaction(Transaction value) {
+    /*public static String printTransaction(Category value) {
         if (value == null)
             throw new IllegalArgumentException("Can't print transaction value!");
         else
             return value.getXmlValue();
-    }
+    }*/
 
     public static String printYear(Integer value) {
         if (!isValidYear(value))
@@ -541,12 +567,10 @@ public class ImmobiliareItUtils {
             throw new IllegalArgumentException("Can't print yes-no value!");
     }
 
-    public static String printYN(Boolean value) {
+    public static String printYesOnly(Boolean value) {
         if (Boolean.TRUE.equals(value))
-            return "Y";
-        else if (Boolean.FALSE.equals(value))
-            return "N";
+            return "yes";
         else
-            throw new IllegalArgumentException("Can't print y-n value!");
+            return null;
     }
 }

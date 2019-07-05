@@ -22,7 +22,7 @@ import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConvertableDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.immobiliare_it.xml.Feed;
-import org.openestate.io.immobiliare_it.xml.Version;
+import org.openestate.io.immobiliare_it.xml.VersionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -125,7 +125,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
      */
     public static ImmobiliareItDocument newDocument(Feed feed) throws ParserConfigurationException, JAXBException {
         if (feed.getVersion() == null)
-            feed.setVersion(Version.V2_5);
+            feed.setVersion(VersionType.V2_8);
 
         Document document = XmlUtils.newDocument();
         ImmobiliareItUtils.createMarshaller("UTF-8", true).marshal(feed, document);

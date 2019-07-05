@@ -1,23 +1,20 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
-import java.util.Calendar;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import org.openestate.io.immobiliare_it.xml.types.EnergyScaleType;
 
 public class Adapter22
-    extends XmlAdapter<String, Calendar>
+    extends XmlAdapter<String, EnergyScaleType>
 {
 
 
-    public Calendar unmarshal(String value) {
-        return (javax.xml.bind.DatatypeConverter.parseDateTime(value));
+    public EnergyScaleType unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseEnergyScale(value));
     }
 
-    public String marshal(Calendar value) {
-        if (value == null) {
-            return null;
-        }
-        return (javax.xml.bind.DatatypeConverter.printDateTime(value));
+    public String marshal(EnergyScaleType value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printEnergyScale(value));
     }
 
 }
