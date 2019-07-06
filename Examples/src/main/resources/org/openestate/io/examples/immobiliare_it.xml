@@ -1,851 +1,851 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <feed xmlns="http://feed.immobiliare.it"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://feed.immobiliare.it/import/docs/xsd/v2.8.xsd">
-	<version>2.8</version>
-	<metadata>
-		<publisher>
-			<name>John Doe</name>
-			<site>http://www.nowhere.net/</site>
-			<email>info@nowhere.net</email>
-			<phone>+39065551234</phone>
-		</publisher>
-		<build-date>2013-05-26T11:20:30+01:00</build-date>
-		<multipage>
-			<current>1</current>
-			<last>1</last>
-		</multipage>
-	</metadata>
-	<properties>
-	  <property operation="write">
-	    <unique-id>51064668</unique-id>
-	    <date-updated>2013-04-13T13:31:00+01:00</date-updated>
-	    <date-expiration></date-expiration>
-	    <transaction-type auction="yes" ownership="intera proprietà">R</transaction-type>
-	    <building map="Residenziale/Appartamento/Appartamento">
-	    	<maps>
-	    		<additional map="Commerciale/Ufficio/Ufficio" />
-	    	</maps>
-	      	<status>ottimo</status>
-          	<class>signorile</class>
-	    </building>
-	    <agent>
-	      <office-name>My Agency S.A.</office-name>
-	      <email>contact@agency.com</email>
-	    </agent>
-        <location>
-          <country-code>IT</country-code>
-          <administrative-area>Lazio</administrative-area>
-          <sub-administrative-area>Roma</sub-administrative-area>
-          <city code="58091">Roma</city>
-          <locality>
-            <neighbourhood type="area" id="845"/>
-            <thoroughfare display="yes">Via Ottaviano, 6</thoroughfare>
-            <postal-code>00141</postal-code>
-            <latitude>43.07958</latitude>
-            <longitude>11.67340</longitude>
-          </locality>
-        </location>
-        <features>
-          <rooms>6</rooms>
-          <size unit="m2">280</size>
-          <price currency="EUR" reserved="no">700000</price>
-          <descriptions>
-            <description language="it"><![CDATA[Delizioso appartamento in contesto signorile]]></description>
-          </descriptions>
-          <energy-class value="A2">
-	       <energy-performance unit="kWh/m2anno" type="nren">3.88</energy-performance>
-	       <energy-performance unit="kWh/m2anno" type="ren">1.22</energy-performance>
-	       <energy-season season="winter" level="high"/>
-	       <energy-season season="summer" level="normal"/>
-	       <zero>Yes</zero>
-	      </energy-class>
-        </features>
-        <extra-features>
-          <bedrooms>2</bedrooms>
-          <bathrooms>1</bathrooms>
-          <kitchen>Cucinotto</kitchen>
-          <garage type="PostoAuto">1</garage>
-          <heating>Autonomo</heating>
-          <garden>Privato</garden>
-          <terrace>Y</terrace>
-          <balcony>Y</balcony>
-          <elevator>Y</elevator>
-          <air-conditioning>Y</air-conditioning>
-          <furniture>Non Arredato</furniture>
-          <rent-contract>Concordato</rent-contract>
-          <additional-costs currency="EUR">100</additional-costs>
-          <floor>3</floor>
-          <num-floors>3</num-floors>
-		  <for-revenue>Y</for-revenue>
-		  <available-now>Y</available-now>
-	  <virtual-tour>http://www.example.com/video?dreamhouse.mpg</virtual-tour>
-          <doc-specification>http://www.example.com/capitolato.pdf</doc-specification>
-          <doc-description>http://www.example.com/descrizione_progetto.pdf</doc-description>
-	    </extra-features>
-	    <auction-features>
-            <auctions>
-                <auction type="con incanto">2015-10-30T17:00:00</auction>
-                <auction type="senza incanto">2015-11-02T18:00:00</auction>
-            </auctions>
-            <starting-price currency="EUR">1000</starting-price>
-            <minimum-bid currency="EUR">100</minimum-bid>
-            <success-price currency="EUR">1500</success-price>
-            <court>Tribunale di Parma</court>
-            <reference year="2015" number="5">F0005</reference>
-            <nr>5</nr>
-            <actors>
-                <actor type="giudice">
-                    <name>Dott. Luigi Bianchi</name>
-                    <email>luigi.bianchi@nowhere.org</email>
-                    <phone>+3906654321</phone>
-                    <fax>+3906656565</fax>
-                </actor>
-	            <actor type="custode">
-                    <name>Mario Verdi</name>
-                </actor>
-                <actor type="delegato">
-                    <name>Dott. Carlo Rossi</name>
-                </actor>
-            </actors>
-            <notes>Vendita fallimentare</notes>
-        </auction-features>
-
-        <documents>
-            <document type="ordinanza di vendita" url="http://pdf.nowhere.com/docs/12/ordinanza.pdf" />
-            <document type="avviso di vendita" url="http://pdf.nowhere.com/docs/12/ordinanza.pdf" />
-            <document type="altro" url="http://pdf.nowhere.com/docs/12/ordinanza.pdf" />
-        </documents>
-	    <pictures>
-	      <picture-url position="1">http://www.example.com/case/images/Z9A8B43/image1.jpg</picture-url>
-	      <picture-url position="2">http://www.example.com/case/images/Z9A8B43/image2.jpg</picture-url>
-	    </pictures>
-	    <blueprints>
-	      <blueprint url="http://www.example.com/case/blueprints/8A6D92/bp1.jpg" position="1" />
-	      <blueprint url="http://www.example.com/case/blueprints/8A6D92/bp2.jpg" position="2" />
-	    </blueprints>
-	    <videos>
-            <video type="local">http://www.example.com/case/Z9A8B43/video.mpg</video>
-        </videos>
-	  </property>
-	  <property operation="write">
-        <unique-id>31064668</unique-id>
-        <date-updated>2013-04-13T13:32:00+01:00</date-updated>
-        <date-expiration></date-expiration>
-        <transaction-type>S</transaction-type>
-	<building map="Terreno/Terreno agricolo/Terreno agricolo">
-	    <terrains>
-	        <terrain>seminativo irriguo</terrain>
-			<terrain>risaia stabile</terrain>
-	    </terrains>
-	    <status>nd</status>
-	</building>
-        <agent>
-          <office-name>My Agency S.A.</office-name>
-          <email>contact@agency.com</email>
-        </agent>
-        <location>
-          <country-code>IT</country-code>
-          <administrative-area>Piemonte</administrative-area>
-          <sub-administrative-area>Vercelli</sub-administrative-area>
-          <city code="2049">Crescentino</city>
-          <locality>
-            <thoroughfare display="yes">Strada provinciale 31bis, 160</thoroughfare>
-            <postal-code>13044</postal-code>
-            <latitude>45.1899</latitude>
-            <longitude>8.138</longitude>
-          </locality>
-        </location>
-        <features>
-          <rooms>6</rooms>
-          <size unit="m2">2200</size>
-          <price currency="EUR" reserved="no">110000</price>
-          <descriptions>
-            <description language="it"><![CDATA[Terreno agricolo con risaia. Sistema di irrigazione automatico, canale demaniale. Casale da ristrutturare completamente]]></description>
-          </descriptions>
-	  <energy-class>D</energy-class>
-	  <energy-performance certified="yes" unit="kWh/m3anno">84.56</energy-performance>
-        </features>
-        <extra-features>
-          <bedrooms>2</bedrooms>
-          <bathrooms>3</bathrooms>
-          <kitchen>Cucinotto</kitchen>
-          <garage type="PostoAuto">3</garage>
-          <heating>Autonomo</heating>
-          <garden>Privato</garden>
-          <terrace>N</terrace>
-          <balcony>Y</balcony>
-          <elevator>N</elevator>
-          <air-conditioning>N</air-conditioning>
-          <floor type="Multipiano">2</floor>
-          <num-floors>2</num-floors>
-          <additional-costs currency="EUR">50</additional-costs>
-          <external-area unit="ha">15</external-area>
-          <virtual-tour>http://www.example.com/video?risaia.mpg</virtual-tour>
-        </extra-features>
-        <pictures>
-          <picture-url position="1">http://www.example.com/case/images/A9A8B43/image1.jpg</picture-url>
-          <picture-url position="2">http://www.example.com/case/images/A9A8B43/image2.jpg</picture-url>
-        </pictures>
-        <videos>
-            <video type="local">http://www.example.com/case/A9A8B43/video.mpg</video>
-        </videos>
-      </property>
-      <property operation="write">
-        <unique-id>61064668</unique-id>
-        <date-updated>2010-10-13T13:32:00+01:00</date-updated>
-        <date-expiration></date-expiration>
-        <transaction-type>S</transaction-type>
-	<building map="Commerciale/Ufficio/Ufficio">
-	    <status>ottimo</status>
-            <class>signorile</class>
-	</building>
-        <agent>
-          <office-name>My Agency S.A.</office-name>
-          <email>contact@agency.com</email>
-        </agent>
-        <location>
-          <country-code>IT</country-code>
-          <administrative-area>Lazio</administrative-area>
-          <sub-administrative-area>Roma</sub-administrative-area>
-          <city code="58091">Roma</city>
-          <locality>
-            <thoroughfare display="yes">Piazza Sempione, 13</thoroughfare>
-            <postal-code>00131</postal-code>
-            <latitude>41.9355</latitude>
-            <longitude>12.5354</longitude>
-          </locality>
-        </location>
-        <features>
-          <rooms>6</rooms>
-          <size unit="m2">
-            <details>
-                <detail main="Y">
-                    <type>Ufficio</type>
-                    <floor type="ultimo">5</floor>
-                    <size>300</size>
-                </detail>
-                <detail main="N">
-                    <type>Garage</type>
-                    <floor type="interrato">0</floor>
-                    <size>30</size>
-                    <weight>40</weight>
-                </detail>
-            </details>
-          </size>
-          <price currency="EUR" reserved="no">250000</price>
-          <descriptions>
-            <description language="it"><![CDATA[Ufficio moderno, ben illuminato ad un passo dal centro. Predisosizione per servizi di rete.]]></description>
-          </descriptions>
-	  <energy-class>E</energy-class>
-	  <energy-performance certified="no" unit="kWh/m3anno">110</energy-performance>
-        </features>
-        <extra-features>
-          <bathrooms>2</bathrooms>
-          <garage type="PostoAuto">1</garage>
-          <heating>Autonomo</heating>
-          <terrace>N</terrace>
-          <balcony>Y</balcony>
-          <elevator>Y</elevator>
-          <air-conditioning>Y</air-conditioning>
-          <floor type="Intermedio">3</floor>
-          <num-floors>5</num-floors>
-          <security-alarm>Y</security-alarm>
-          <reception>N</reception>
-          <net>Y</net>
-          <build-year>2002</build-year>
-          <free-conditions>subito</free-conditions>
-          <office-size>200</office-size>
-          <virtual-tour>http://www.example.com/video?dreamoffice.mpg</virtual-tour>
-        </extra-features>
-        <pictures>
-          <picture-url position="1">http://www.example.com/case/images/M9A8B43/image1.jpg</picture-url>
-          <picture-url position="2">http://www.example.com/case/images/M9A8B43/image2.jpg</picture-url>
-        </pictures>
-        <videos>
-            <video type="local">http://www.example.com/case/M9A8B43/video.mpg</video>
-        </videos>
-      </property>
-
-      <property operation="write">
-        <unique-id>51065668</unique-id>
-        <date-updated>2013-04-13T13:31:00+01:00</date-updated>
-        <date-expiration></date-expiration>
-        <transaction-type>R</transaction-type>
-	<building map="Residenziale/Appartamento/Appartamento">
-	  <status>ristrutturato</status>
-          <class>medio</class>
-	</building>
-        <agent>
-          <office-name>My Agency S.A.</office-name>
-          <email>contact@agency.com</email>
-        </agent>
-        <location>
-          <country-code>IT</country-code>
-          <administrative-area>Lazio</administrative-area>
-          <sub-administrative-area>Roma</sub-administrative-area>
-          <city code="58091">Roma</city>
-          <locality>
-            <neighbourhood type="area" id="845"/>
-            <thoroughfare display="yes">Via Ottaviano, 6</thoroughfare>
-            <postal-code>00141</postal-code>
-            <latitude>43.07958</latitude>
-            <longitude>11.67340</longitude>
-          </locality>
-        </location>
-        <features>
-          <rooms>6</rooms>
-          <size unit="m2">180</size>
-          <price currency="EUR" reserved="no">450000</price>
-          <descriptions>
-            <description language="it"><![CDATA[Delizioso appartamento in contesto signorile]]></description>
-          </descriptions>
-          <energy-class>A</energy-class>
-	  <energy-performance certified="no" unit="kWh/m2anno">29.4</energy-performance>
-        </features>
-        <extra-features>
-          <bedrooms>2</bedrooms>
-          <bathrooms>1</bathrooms>
-          <kitchen>Cucinotto</kitchen>
-          <garage type="PostoAuto">1</garage>
-          <heating>Autonomo</heating>
-          <garden>Privato</garden>
-          <terrace>Y</terrace>
-          <balcony>Y</balcony>
-          <elevator>Y</elevator>
-          <air-conditioning>Y</air-conditioning>
-          <furniture>Non Arredato</furniture>
-          <rent-contract>Concordato</rent-contract>
-          <floor>3</floor>
-          <num-floors>3</num-floors>
-          <virtual-tour>http://www.example.com/video?dreamhouse.mpg</virtual-tour>
-          <floorplanner-url>http://getrix.floorplanner.com/h34v3n/embed</floorplanner-url>
-        </extra-features>
-        <pictures>
-          <picture-url position="1">http://www.example.com/case/images/Z9A8B43/image1.jpg</picture-url>
-          <picture-url position="2">http://www.example.com/case/images/Z9A8B43/image2.jpg</picture-url>
-        </pictures>
-        <videos>
-            <video type="local">http://www.example.com/case/Z9A8B43/video.mpg</video>
-        </videos>
-      </property>
-      <property operation="write">
-        <unique-id>31065668</unique-id>
-        <date-updated>2013-04-13T13:32:00+01:00</date-updated>
-        <date-expiration></date-expiration>
-        <transaction-type>R</transaction-type>
-        <property-type>
-            <business-type category="Immobile">Stabile</business-type>
-        </property-type>
-	<building map="Commerciale/Stabile o Palazzo/Stabile o Palazzo">
-	  <status>nuovo</status>
-	</building>
-        <agent>
-          <office-name>My Agency S.A.</office-name>
-          <email>contact@agency.com</email>
-        </agent>
-        <location>
-          <country-code>IT</country-code>
-          <administrative-area>Piemonte</administrative-area>
-          <sub-administrative-area>Vercelli</sub-administrative-area>
-          <city code="2049">Crescentino</city>
-          <locality>
-            <thoroughfare display="yes">Strada provinciale 31bis, 260</thoroughfare>
-            <postal-code>13044</postal-code>
-            <latitude>45.1998</latitude>
-            <longitude>8.183</longitude>
-          </locality>
-        </location>
-        <features>
-          <rooms>18</rooms>
-          <size unit="m2">200</size>
-          <price currency="EUR" reserved="no">800000</price>
-          <descriptions>
-            <description language="it"><![CDATA[Ufficio in centro servizi con parcheggio, garage privato. Il centro servizi mette a disposizione ufficio di sicurezza/portineria, giardino di rappresentanza, infermeria, bar/mensa, connessione internet. In capannone attiguo è anche possibile acquistare spazio di magazzino. Questo annuncio contiene tutti i possibili tag opzionali (a parte 'terrains').]]></description>
-          </descriptions>
-          <energy-class>C</energy-class>
-	  	  <energy-performance unit="kWh/m2anno" certified="no">50</energy-performance>
-        </features>
-        <extra-features>
-          <bedrooms>1</bedrooms>
-          <bathrooms>2</bathrooms>
-          <kitchen>Angolo cottura</kitchen>
-          <garage type="Box">5</garage>
-          <heating>Centralizzato</heating>
-          <garden>Comune</garden>
-          <terrace>N</terrace>
-          <balcony>N</balcony>
-          <elevator>Y</elevator>
-          <air-conditioning>Y</air-conditioning>
-          <floor type="Intermedio">2</floor>
-          <num-floors>3</num-floors>
-          <external-area unit="m2">1500</external-area>
-          <virtual-tour>http://www.example.com/video?office.mpg</virtual-tour>
-          <furniture>Non Arredato</furniture>
-          <rent-contract>6+6</rent-contract>
-          <security-alarm>Y</security-alarm>
-          <reception>Y</reception>
-          <net>Y</net>
-          <build-year>2012</build-year>
-          <free-conditions>Subito libero</free-conditions>
-          <overhead-crane>Ready</overhead-crane>
-          <beam-height>8</beam-height>
-          <office-size unit="m2">250</office-size>
-        </extra-features>
-        <pictures>
-          <picture-url position="1">http://www.example.com/case/images/A9A8B43/image1.jpg</picture-url>
-          <picture-url position="2">http://www.example.com/case/images/A9A8B43/image2.jpg</picture-url>
-          <picture-url position="3">http://www.example.com/case/images/A9A8B43/image3.jpg</picture-url>
-          <picture-url position="4">http://www.example.com/case/images/A9A8B43/image4.jpg</picture-url>
-          <picture-url position="5">http://www.example.com/case/images/A9A8B43/image5.jpg</picture-url>
-          <picture-url position="6">http://www.example.com/case/images/A9A8B43/image6.jpg</picture-url>
-          <picture-url position="7">http://www.example.com/case/images/A9A8B43/image7.jpg</picture-url>
-          <picture-url position="8">http://www.example.com/case/images/A9A8B43/image8.jpg</picture-url>
-          <picture-url position="9">http://www.example.com/case/images/A9A8B43/image9.jpg</picture-url>
-          <picture-url position="10">http://www.example.com/case/images/A9A8B43/image10.jpg</picture-url>
-        </pictures>
-        <videos>
-            <video type="local">http://www.example.com/case/A9A8B43/video.mpg</video>
-        </videos>
-      </property>
-
-      <property operation="write">
-  <agent>
-    <office-name>My Agency S.A.</office-name>
-          <email>contact@agency.com</email>
-  </agent>
-  <unique-id><![CDATA[ROOM-987654321]]></unique-id>
-  <building map="Stanza-Camera/In casa/In appartamento">
-	      <status>ottimo</status>
-          <class>signorile</class>
-  </building>
-  <transaction-type>R</transaction-type>
-  <date-updated>2013-03-05T00:00:00+01:00</date-updated>
-  <location>
-  <country-code>IT</country-code>
-          <administrative-area>Piemonte</administrative-area>
-          <sub-administrative-area>Vercelli</sub-administrative-area>
-          <city code="2049">Crescentino</city>
-          <locality>
-            <thoroughfare display="yes">Strada provinciale 31bis, 260</thoroughfare>
-            <postal-code>13044</postal-code>
-            <latitude>45.1998</latitude>
-            <longitude>8.183</longitude>
-          </locality>
-        </location>
-  
-  <features>
-  	<rooms>1</rooms>
-  	<size unit="m2">20</size>
-  	<price currency="EUR">150</price>
-  	<descriptions>
-        <description language="it"><![CDATA[Camera luminosa con vista sulle risaie. Finestra con persiane e zanzariera, possibilità di riscattare parte dei mobili.]]></description>
-    </descriptions>
-    <energy-class>esente</energy-class>
-  </features>
-
-  <extra-features>
-    <bathrooms>1</bathrooms>
-    <available-date>2013-03-06T00:00:00+01:00</available-date>
-    <minimum-stay>9</minimum-stay>
-    <bills-included>
-    	<powerline>Y</powerline>
-    	<gas>Y</gas>
-    	<phone>N</phone>
-    	<internet>N</internet>
-    </bills-included>
-    <costs>
-    	<services currency="EUR">50</services>
-    	<other currency="EUR">0</other>
-    	<deposit currency="EUR">250</deposit>
-    </costs>
-    <flatmate>
-      <gender>DoesntMatter</gender>
-      <couples>N</couples>
-      <age from="18"/>
-      <smoker>N</smoker>
-      <pets>Y</pets>
-    </flatmate>
-    <links>
-      <link href="http://www.easystanza.it/default.aspx?ac=eurekamail&amp;at=L&amp;lc=6&amp;mc=OTH&amp;lid=H130305143814784&amp;extlink=1">Per contattare l'inserzionista</link>
-    </links>
-  </extra-features>
-  <pictures>
-    <picture-url>http://www.easystanza.it/Photos.idx/IT.idx/nopic.jpg</picture-url>
-  </pictures>
-</property>
-
-  <property operation="write">
-    <unique-id><![CDATA[H/12345]]></unique-id>
-    <date-updated>2016-03-07T11:59:53</date-updated>
-    <transaction-type >R</transaction-type>
-    <building IDType="206">
-        <status>nuovo</status>
-    </building>
-    <agent>
-        <office-name><![CDATA[Case e cose]]></office-name>
-        <email>case@cose.it</email>
-    </agent>
-    <location>
-        <country-code>IT</country-code>
-        <administrative-area>Sicilia</administrative-area>
-        <sub-administrative-area>Trapani</sub-administrative-area>
-        <city code="081014">Pantelleria</city>
-        <locality>
-            <thoroughfare display="yes"><![CDATA[Via Vai, 1]]></thoroughfare>
-            <postal-code>91017</postal-code>
-            <latitude>36.8231</latitude>
-            <longitude>11.9406</longitude>
-        </locality>
-    </location>
-    <features>
-        <rooms>2</rooms>
-        <size unit="m2">55</size>
-        <price currency="EUR" reserved="no" >1300</price>
-        <descriptions>
-            <description language="it"><![CDATA["Vieni qui, dai]]></description>
-        </descriptions>
-        <energy-class value="C">
-           <energy-performance unit="kWh/m2anno" type="nren">13.88</energy-performance>
-           <energy-performance unit="kWh/m2anno" type="ren">1.22</energy-performance>
-           <energy-season season="winter" level="normal"/>
-           <energy-season season="summer" level="high"/>
-        </energy-class>
-    </features>
-    <extra-features>
-        <bedrooms>1</bedrooms>
-        <bathrooms>1</bathrooms>
-        <kitchen>Angolo cottura</kitchen>
-        <heating>Autonomo</heating>
-        <garden>Nessuno</garden>
-        <balcony>Y</balcony>
-        <elevator>Y</elevator>
-        <air-conditioning>Y</air-conditioning>
-        <floor>2</floor>
-        <num-floors>3</num-floors>
-        <security-alarm>N</security-alarm>
-        <reception>N</reception>
-        <build-year>2009</build-year>
-    </extra-features>
-    <extended>
-    </extended>
-    <pictures>
-        <picture position="1" url="http://www.postoacaso.com/a498e4cd7a7882dbe260e221af7fd036.jpg" />
-        <picture position="2" url="http://www.postoacaso.com/84a2c85e0fa3effef967a3def4b57c72.jpg" />
-        <picture position="3" url="http://www.postoacaso.com/086560a267151aca4d17cba8445052f1.jpg" />
-    </pictures>
-    <rates>
-        <rate>
-            <season>A</season>
-            <begin>2016-01-01T00:00:00</begin>
-            <end>2016-12-31T00:00:00</end>
-            <prices>
-                <week currency="EUR">550.0000</week>
-                <weekend currency="EUR">180.0000</weekend>
-                <night currency="EUR">100.0000</night>
-            </prices>
-            <note>Prenotazioni a meno di 72h di anticipo, ove possibili, comportano maggiorazione del 50%</note>
-        </rate>
-    </rates>
-    <costs>
-        <deposit currency="EUR">500</deposit>
-        <services currency="EUR">20</services>
-        <cleaning currency="EUR">50</cleaning>
-    </costs>
-</property>
-
-	</properties>
-	<projects>
-		<project operation="write">
-			<unique-id>123455-JD</unique-id>
-			<date-updated>2015-11-25T09:20:30+01:00</date-updated>
-			<agent>
-			 <name>John Doe Building inc.</name>
-			 <email>doe@nowhere.net</email>
-			 <sales-office>
-			     <country-code>IT</country-code>
-			     <administrative-area>Lazio</administrative-area>
-			     <sub-administrative-area>Roma</sub-administrative-area>
-			     <city>Tivoli</city>
-			     <locality>
-			         <thoroughfare>Via Tiburtina, 123/c</thoroughfare>
-			     </locality>
-			     <phone>+3907745551234</phone>
-			     <mobile>+393935551234</mobile>
-			 </sales-office>
-			</agent>
-			<features>
-			     <building-status>Fondamenta</building-status>
-			     <start-date>2015-11-05T08:00:00+01:00</start-date>
-			     <end-date>2016-06-30T18:00:00+01:00</end-date>
-			     <name>Residenza delle Terme</name>
-			     <specification><![CDATA[http://docs.nowhere.net/projects/ResidenzaTerme-capitolato.pdf]]></specification>
-			     <floorplanner-url>http://floorplanner.com/johndoe/ResidenzaTerme/</floorplanner-url>
-			     <virtual-tour>http://panora.eu/johndoe/ResidenzaTerme/virtualtour/</virtual-tour>
-			     <descriptions>
-			         <description language="it"><![CDATA[Sulla via Tiburtina, a 10 minuti da Roma ed a pochi passi dalle Terme sulfuree di Tivoli stiamo costruendo uno stupendo residence immerso nel verde formato da 30 unità abitative. Al piano terra, riparato da archi di vetro insonorizzati, un centro commerciale composto da 10 negozi di diversa metratura.]]></description>
-			     </descriptions>
-			     <energy-class value="A2">
-		           <energy-performance unit="kWh/m2anno" type="nren">3.88</energy-performance>
-		           <energy-performance unit="kWh/m2anno" type="ren">1.22</energy-performance>
-		           <energy-season season="winter" level="low"/>
-		           <energy-season season="summer" level="low"/>
-		           <zero>Yes</zero>
-		         </energy-class>
-			</features>
-			<location>
-			 <country-code>IT</country-code>
-			 <administrative-area>Lazio</administrative-area>
-             <sub-administrative-area>Roma</sub-administrative-area>
-             <city code="58104">Tivoli</city>
-             <locality>
-                <neighbourhood type="locality">Bagni Di Tivoli</neighbourhood>
-                <thoroughfare display="yes">Via Tiburtina 123</thoroughfare>
-                <postal-code>00019</postal-code>
-                <latitude>41.95222</latitude>
-                <longitude>12.72426</longitude>
-             </locality>
-			</location>
-			<pictures>
-			 <picture-url position="1"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-1.jpg]]></picture-url>
-			 <picture-url position="2"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-2.jpg]]></picture-url>
-			 <picture-url position="3"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-3.jpg]]></picture-url>
-			</pictures>
-			<videos>
-                <video type="local">http://docs.nowhere.net/projects/ResidenzaTerme.mpg</video>
-            </videos>
-			<lots>
-			 <residential>30</residential>
-			 <commercial>10</commercial>
-			 <lot total="5" forsale="5">
-			     <unique-id>123456-a02</unique-id>
-			     <property-type>Appartamento</property-type>
-			     <price currency="EUR">90000</price>
-			     <size unit="m2">55</size>
-			     <rooms>3</rooms>
-			     <bathrooms>1</bathrooms>
-			     <floor type="Intermedio">2</floor>
-			     <garage type="Box">1</garage>
-			     <description><![CDATA[Appartamenti al secondo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
-			     <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-002.pdf</specification>
-			     <pictures>
-		             <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-1.jpg</picture-url>
-		             <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-2.jpg</picture-url>
-		             <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-3.jpg</picture-url>
-		         </pictures>
-			 </lot>
-			 <lot total="10" forsale="8">
-                 <unique-id>123456-a03</unique-id>
-                 <property-type>Appartamento</property-type>
-                 <price currency="EUR">110000</price>
-                 <size unit="m2">55</size>
-                 <rooms>3</rooms>
-                 <bathrooms>1</bathrooms>
-                 <floor type="Intermedio">3</floor>
-                 <garage type="Box">1</garage>
-                 <description><![CDATA[Appartamenti al terzo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-003.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-             <lot total="10" forsale="7">
-                 <unique-id>123456-a04</unique-id>
-                 <property-type>Appartamento</property-type>
-                 <price currency="EUR">120000</price>
-                 <size unit="m2">55</size>
-                 <rooms>3</rooms>
-                 <bathrooms>1</bathrooms>
-                 <floor type="Intermedio">4</floor>
-                 <garage type="Box">1</garage>
-                 <description><![CDATA[Appartamenti al quarto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-004.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-             <lot total="5" forsale="3">
-                 <unique-id>123456-a05</unique-id>
-                 <property-type>Appartamento</property-type>
-                 <price currency="EUR">190000</price>
-                 <size unit="m2">120</size>
-                 <rooms>5</rooms>
-                 <bathrooms>2</bathrooms>
-                 <floor type="Attico">5</floor>
-                 <garage type="Box">2</garage>
-                 <description><![CDATA[Attici al quinto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, doppio box auto.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-005.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-             <lot total="5" forsale="3">
-                 <unique-id>123456-c01</unique-id>
-                 <property-type>Negozio</property-type>
-                 <price currency="EUR">115000</price>
-                 <size unit="m2">80</size>
-                 <rooms>5</rooms>
-                 <bathrooms>2</bathrooms>
-                 <floor type="PianoTerra">0</floor>
-                 <garage type="No" />
-                 <description><![CDATA[Negozio di 80mq su due livelli, ingresso di servizio, accesso alla strada. Lotti componibili per spazi di vendita allargati.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-commerciale-001.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-			</lots>
-		</project>
-		<project operation="write">
-            <unique-id>123456-JD</unique-id>
-            <date-updated>2010-11-25T09:20:30+01:00</date-updated>
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://feed.immobiliare.it/import/docs/xsd/v2.7.xsd">
+    <version>2.7</version>
+    <metadata>
+        <publisher>
+            <name>John Doe</name>
+            <site>http://www.nowhere.net/</site>
+            <email>info@nowhere.net</email>
+            <phone>+39065551234</phone>
+        </publisher>
+        <build-date>2013-05-26T11:20:30+01:00</build-date>
+        <multipage>
+            <current>1</current>
+            <last>1</last>
+        </multipage>
+    </metadata>
+    <properties>
+        <property operation="write">
+            <unique-id>51064668</unique-id>
+            <date-updated>2013-04-13T13:31:00+01:00</date-updated>
+            <date-expiration></date-expiration>
+            <transaction-type auction="yes" ownership="intera proprietà">R</transaction-type>
+            <building map="Residenziale/Appartamento/Appartamento">
+                <maps>
+                    <additional map="Commerciale/Ufficio/Ufficio" />
+                </maps>
+                <status>ottimo</status>
+                <class>signorile</class>
+            </building>
             <agent>
-             <name>John Doe Building inc.</name>
-             <email>doe@nowhere.net</email>
-             <sales-office>
-                 <country-code>IT</country-code>
-                 <administrative-area>Lazio</administrative-area>
-                 <sub-administrative-area>Roma</sub-administrative-area>
-                 <city>Tivoli</city>
-                 <locality>
-                     <thoroughfare>Via Tiburtina, 123/c</thoroughfare>
-                 </locality>
-                 <phone>+3907745551234</phone>
-                 <mobile>+393935551234</mobile>
-             </sales-office>
+                <office-name>My Agency S.A.</office-name>
+                <email>contact@agency.com</email>
+            </agent>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Lazio</administrative-area>
+                <sub-administrative-area>Roma</sub-administrative-area>
+                <city code="58091">Roma</city>
+                <locality>
+                    <neighbourhood type="area" id="845"/>
+                    <thoroughfare display="yes">Via Ottaviano, 6</thoroughfare>
+                    <postal-code>00141</postal-code>
+                    <latitude>43.07958</latitude>
+                    <longitude>11.67340</longitude>
+                </locality>
+            </location>
+            <features>
+                <rooms>6</rooms>
+                <size unit="m2">280</size>
+                <price currency="EUR" reserved="no">700000</price>
+                <descriptions>
+                    <description language="it"><![CDATA[Delizioso appartamento in contesto signorile]]></description>
+                </descriptions>
+                <energy-class value="A2">
+                    <energy-performance unit="kWh/m2anno" type="nren">3.88</energy-performance>
+                    <energy-performance unit="kWh/m2anno" type="ren">1.22</energy-performance>
+                    <energy-season season="winter" level="high"/>
+                    <energy-season season="summer" level="normal"/>
+                    <zero>Yes</zero>
+                </energy-class>
+            </features>
+            <extra-features>
+                <bedrooms>2</bedrooms>
+                <bathrooms>1</bathrooms>
+                <kitchen>Cucinotto</kitchen>
+                <garage type="PostoAuto">1</garage>
+                <heating>Autonomo</heating>
+                <garden>Privato</garden>
+                <terrace>Y</terrace>
+                <balcony>Y</balcony>
+                <elevator>Y</elevator>
+                <air-conditioning>Y</air-conditioning>
+                <furniture>Non Arredato</furniture>
+                <rent-contract>Concordato</rent-contract>
+                <additional-costs currency="EUR">100</additional-costs>
+                <floor>3</floor>
+                <num-floors>3</num-floors>
+                <for-revenue>Y</for-revenue>
+                <available-now>Y</available-now>
+                <virtual-tour>http://www.example.com/video?dreamhouse.mpg</virtual-tour>
+                <doc-specification>http://www.example.com/capitolato.pdf</doc-specification>
+                <doc-description>http://www.example.com/descrizione_progetto.pdf</doc-description>
+            </extra-features>
+            <auction-features>
+                <auctions>
+                    <auction type="con incanto">2015-10-30T17:00:00</auction>
+                    <auction type="senza incanto">2015-11-02T18:00:00</auction>
+                </auctions>
+                <starting-price currency="EUR">1000</starting-price>
+                <minimum-bid currency="EUR">100</minimum-bid>
+                <success-price currency="EUR">1500</success-price>
+                <court>Tribunale di Parma</court>
+                <reference year="2015" number="5">F0005</reference>
+                <nr>5</nr>
+                <actors>
+                    <actor type="giudice">
+                        <name>Dott. Luigi Bianchi</name>
+                        <email>luigi.bianchi@nowhere.org</email>
+                        <phone>+3906654321</phone>
+                        <fax>+3906656565</fax>
+                    </actor>
+                    <actor type="custode">
+                        <name>Mario Verdi</name>
+                    </actor>
+                    <actor type="delegato">
+                        <name>Dott. Carlo Rossi</name>
+                    </actor>
+                </actors>
+                <notes>Vendita fallimentare</notes>
+            </auction-features>
+
+            <documents>
+                <document type="ordinanza di vendita" url="http://pdf.nowhere.com/docs/12/ordinanza.pdf" />
+                <document type="avviso di vendita" url="http://pdf.nowhere.com/docs/12/ordinanza.pdf" />
+                <document type="altro" url="http://pdf.nowhere.com/docs/12/ordinanza.pdf" />
+            </documents>
+            <pictures>
+                <picture-url position="1">http://www.example.com/case/images/Z9A8B43/image1.jpg</picture-url>
+                <picture-url position="2">http://www.example.com/case/images/Z9A8B43/image2.jpg</picture-url>
+            </pictures>
+            <blueprints>
+                <blueprint url="http://www.example.com/case/blueprints/8A6D92/bp1.jpg" position="1" />
+                <blueprint url="http://www.example.com/case/blueprints/8A6D92/bp2.jpg" position="2" />
+            </blueprints>
+            <videos>
+                <video type="local">http://www.example.com/case/Z9A8B43/video.mpg</video>
+            </videos>
+        </property>
+        <property operation="write">
+            <unique-id>31064668</unique-id>
+            <date-updated>2013-04-13T13:32:00+01:00</date-updated>
+            <date-expiration></date-expiration>
+            <transaction-type>S</transaction-type>
+            <building map="Terreno/Terreno agricolo/Terreno agricolo">
+                <terrains>
+                    <terrain>seminativo irriguo</terrain>
+                    <terrain>risaia stabile</terrain>
+                </terrains>
+                <status>nd</status>
+            </building>
+            <agent>
+                <office-name>My Agency S.A.</office-name>
+                <email>contact@agency.com</email>
+            </agent>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Piemonte</administrative-area>
+                <sub-administrative-area>Vercelli</sub-administrative-area>
+                <city code="2049">Crescentino</city>
+                <locality>
+                    <thoroughfare display="yes">Strada provinciale 31bis, 160</thoroughfare>
+                    <postal-code>13044</postal-code>
+                    <latitude>45.1899</latitude>
+                    <longitude>8.138</longitude>
+                </locality>
+            </location>
+            <features>
+                <rooms>6</rooms>
+                <size unit="m2">2200</size>
+                <price currency="EUR" reserved="no">110000</price>
+                <descriptions>
+                    <description language="it"><![CDATA[Terreno agricolo con risaia. Sistema di irrigazione automatico, canale demaniale. Casale da ristrutturare completamente]]></description>
+                </descriptions>
+                <energy-class>D</energy-class>
+                <energy-performance certified="yes" unit="kWh/m3anno">84.56</energy-performance>
+            </features>
+            <extra-features>
+                <bedrooms>2</bedrooms>
+                <bathrooms>3</bathrooms>
+                <kitchen>Cucinotto</kitchen>
+                <garage type="PostoAuto">3</garage>
+                <heating>Autonomo</heating>
+                <garden>Privato</garden>
+                <terrace>N</terrace>
+                <balcony>Y</balcony>
+                <elevator>N</elevator>
+                <air-conditioning>N</air-conditioning>
+                <floor type="Multipiano">2</floor>
+                <num-floors>2</num-floors>
+                <additional-costs currency="EUR">50</additional-costs>
+                <external-area unit="ha">15</external-area>
+                <virtual-tour>http://www.example.com/video?risaia.mpg</virtual-tour>
+            </extra-features>
+            <pictures>
+                <picture-url position="1">http://www.example.com/case/images/A9A8B43/image1.jpg</picture-url>
+                <picture-url position="2">http://www.example.com/case/images/A9A8B43/image2.jpg</picture-url>
+            </pictures>
+            <videos>
+                <video type="local">http://www.example.com/case/A9A8B43/video.mpg</video>
+            </videos>
+        </property>
+        <property operation="write">
+            <unique-id>61064668</unique-id>
+            <date-updated>2010-10-13T13:32:00+01:00</date-updated>
+            <date-expiration></date-expiration>
+            <transaction-type>S</transaction-type>
+            <building map="Commerciale/Ufficio/Ufficio">
+                <status>ottimo</status>
+                <class>signorile</class>
+            </building>
+            <agent>
+                <office-name>My Agency S.A.</office-name>
+                <email>contact@agency.com</email>
+            </agent>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Lazio</administrative-area>
+                <sub-administrative-area>Roma</sub-administrative-area>
+                <city code="58091">Roma</city>
+                <locality>
+                    <thoroughfare display="yes">Piazza Sempione, 13</thoroughfare>
+                    <postal-code>00131</postal-code>
+                    <latitude>41.9355</latitude>
+                    <longitude>12.5354</longitude>
+                </locality>
+            </location>
+            <features>
+                <rooms>6</rooms>
+                <size unit="m2">
+                    <details>
+                        <detail main="Y">
+                            <type>Ufficio</type>
+                            <floor type="ultimo">5</floor>
+                            <size>300</size>
+                        </detail>
+                        <detail main="N">
+                            <type>Garage</type>
+                            <floor type="interrato">0</floor>
+                            <size>30</size>
+                            <weight>40</weight>
+                        </detail>
+                    </details>
+                </size>
+                <price currency="EUR" reserved="no">250000</price>
+                <descriptions>
+                    <description language="it"><![CDATA[Ufficio moderno, ben illuminato ad un passo dal centro. Predisosizione per servizi di rete.]]></description>
+                </descriptions>
+                <energy-class>E</energy-class>
+                <energy-performance certified="no" unit="kWh/m3anno">110</energy-performance>
+            </features>
+            <extra-features>
+                <bathrooms>2</bathrooms>
+                <garage type="PostoAuto">1</garage>
+                <heating>Autonomo</heating>
+                <terrace>N</terrace>
+                <balcony>Y</balcony>
+                <elevator>Y</elevator>
+                <air-conditioning>Y</air-conditioning>
+                <floor type="Intermedio">3</floor>
+                <num-floors>5</num-floors>
+                <security-alarm>Y</security-alarm>
+                <reception>N</reception>
+                <net>Y</net>
+                <build-year>2002</build-year>
+                <free-conditions>subito</free-conditions>
+                <office-size>200</office-size>
+                <virtual-tour>http://www.example.com/video?dreamoffice.mpg</virtual-tour>
+            </extra-features>
+            <pictures>
+                <picture-url position="1">http://www.example.com/case/images/M9A8B43/image1.jpg</picture-url>
+                <picture-url position="2">http://www.example.com/case/images/M9A8B43/image2.jpg</picture-url>
+            </pictures>
+            <videos>
+                <video type="local">http://www.example.com/case/M9A8B43/video.mpg</video>
+            </videos>
+        </property>
+
+        <property operation="write">
+            <unique-id>51065668</unique-id>
+            <date-updated>2013-04-13T13:31:00+01:00</date-updated>
+            <date-expiration></date-expiration>
+            <transaction-type>R</transaction-type>
+            <building map="Residenziale/Appartamento/Appartamento">
+                <status>ristrutturato</status>
+                <class>medio</class>
+            </building>
+            <agent>
+                <office-name>My Agency S.A.</office-name>
+                <email>contact@agency.com</email>
+            </agent>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Lazio</administrative-area>
+                <sub-administrative-area>Roma</sub-administrative-area>
+                <city code="58091">Roma</city>
+                <locality>
+                    <neighbourhood type="area" id="845"/>
+                    <thoroughfare display="yes">Via Ottaviano, 6</thoroughfare>
+                    <postal-code>00141</postal-code>
+                    <latitude>43.07958</latitude>
+                    <longitude>11.67340</longitude>
+                </locality>
+            </location>
+            <features>
+                <rooms>6</rooms>
+                <size unit="m2">180</size>
+                <price currency="EUR" reserved="no">450000</price>
+                <descriptions>
+                    <description language="it"><![CDATA[Delizioso appartamento in contesto signorile]]></description>
+                </descriptions>
+                <energy-class>A</energy-class>
+                <energy-performance certified="no" unit="kWh/m2anno">29.4</energy-performance>
+            </features>
+            <extra-features>
+                <bedrooms>2</bedrooms>
+                <bathrooms>1</bathrooms>
+                <kitchen>Cucinotto</kitchen>
+                <garage type="PostoAuto">1</garage>
+                <heating>Autonomo</heating>
+                <garden>Privato</garden>
+                <terrace>Y</terrace>
+                <balcony>Y</balcony>
+                <elevator>Y</elevator>
+                <air-conditioning>Y</air-conditioning>
+                <furniture>Non Arredato</furniture>
+                <rent-contract>Concordato</rent-contract>
+                <floor>3</floor>
+                <num-floors>3</num-floors>
+                <virtual-tour>http://www.example.com/video?dreamhouse.mpg</virtual-tour>
+                <floorplanner-url>http://getrix.floorplanner.com/h34v3n/embed</floorplanner-url>
+            </extra-features>
+            <pictures>
+                <picture-url position="1">http://www.example.com/case/images/Z9A8B43/image1.jpg</picture-url>
+                <picture-url position="2">http://www.example.com/case/images/Z9A8B43/image2.jpg</picture-url>
+            </pictures>
+            <videos>
+                <video type="local">http://www.example.com/case/Z9A8B43/video.mpg</video>
+            </videos>
+        </property>
+        <property operation="write">
+            <unique-id>31065668</unique-id>
+            <date-updated>2013-04-13T13:32:00+01:00</date-updated>
+            <date-expiration></date-expiration>
+            <transaction-type>R</transaction-type>
+            <property-type>
+                <business-type category="Immobile">Stabile</business-type>
+            </property-type>
+            <building map="Commerciale/Stabile o Palazzo/Stabile o Palazzo">
+                <status>nuovo</status>
+            </building>
+            <agent>
+                <office-name>My Agency S.A.</office-name>
+                <email>contact@agency.com</email>
+            </agent>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Piemonte</administrative-area>
+                <sub-administrative-area>Vercelli</sub-administrative-area>
+                <city code="2049">Crescentino</city>
+                <locality>
+                    <thoroughfare display="yes">Strada provinciale 31bis, 260</thoroughfare>
+                    <postal-code>13044</postal-code>
+                    <latitude>45.1998</latitude>
+                    <longitude>8.183</longitude>
+                </locality>
+            </location>
+            <features>
+                <rooms>18</rooms>
+                <size unit="m2">200</size>
+                <price currency="EUR" reserved="no">800000</price>
+                <descriptions>
+                    <description language="it"><![CDATA[Ufficio in centro servizi con parcheggio, garage privato. Il centro servizi mette a disposizione ufficio di sicurezza/portineria, giardino di rappresentanza, infermeria, bar/mensa, connessione internet. In capannone attiguo è anche possibile acquistare spazio di magazzino. Questo annuncio contiene tutti i possibili tag opzionali (a parte 'terrains').]]></description>
+                </descriptions>
+                <energy-class>C</energy-class>
+                <energy-performance unit="kWh/m2anno" certified="no">50</energy-performance>
+            </features>
+            <extra-features>
+                <bedrooms>1</bedrooms>
+                <bathrooms>2</bathrooms>
+                <kitchen>Angolo cottura</kitchen>
+                <garage type="Box">5</garage>
+                <heating>Centralizzato</heating>
+                <garden>Comune</garden>
+                <terrace>N</terrace>
+                <balcony>N</balcony>
+                <elevator>Y</elevator>
+                <air-conditioning>Y</air-conditioning>
+                <floor type="Intermedio">2</floor>
+                <num-floors>3</num-floors>
+                <external-area unit="m2">1500</external-area>
+                <virtual-tour>http://www.example.com/video?office.mpg</virtual-tour>
+                <furniture>Non Arredato</furniture>
+                <rent-contract>6+6</rent-contract>
+                <security-alarm>Y</security-alarm>
+                <reception>Y</reception>
+                <net>Y</net>
+                <build-year>2012</build-year>
+                <free-conditions>Subito libero</free-conditions>
+                <overhead-crane>Ready</overhead-crane>
+                <beam-height>8</beam-height>
+                <office-size unit="m2">250</office-size>
+            </extra-features>
+            <pictures>
+                <picture-url position="1">http://www.example.com/case/images/A9A8B43/image1.jpg</picture-url>
+                <picture-url position="2">http://www.example.com/case/images/A9A8B43/image2.jpg</picture-url>
+                <picture-url position="3">http://www.example.com/case/images/A9A8B43/image3.jpg</picture-url>
+                <picture-url position="4">http://www.example.com/case/images/A9A8B43/image4.jpg</picture-url>
+                <picture-url position="5">http://www.example.com/case/images/A9A8B43/image5.jpg</picture-url>
+                <picture-url position="6">http://www.example.com/case/images/A9A8B43/image6.jpg</picture-url>
+                <picture-url position="7">http://www.example.com/case/images/A9A8B43/image7.jpg</picture-url>
+                <picture-url position="8">http://www.example.com/case/images/A9A8B43/image8.jpg</picture-url>
+                <picture-url position="9">http://www.example.com/case/images/A9A8B43/image9.jpg</picture-url>
+                <picture-url position="10">http://www.example.com/case/images/A9A8B43/image10.jpg</picture-url>
+            </pictures>
+            <videos>
+                <video type="local">http://www.example.com/case/A9A8B43/video.mpg</video>
+            </videos>
+        </property>
+
+        <property operation="write">
+            <agent>
+                <office-name>My Agency S.A.</office-name>
+                <email>contact@agency.com</email>
+            </agent>
+            <unique-id><![CDATA[ROOM-987654321]]></unique-id>
+            <building map="Stanza-Camera/In casa/In appartamento">
+                <status>ottimo</status>
+                <class>signorile</class>
+            </building>
+            <transaction-type>R</transaction-type>
+            <date-updated>2013-03-05T00:00:00+01:00</date-updated>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Piemonte</administrative-area>
+                <sub-administrative-area>Vercelli</sub-administrative-area>
+                <city code="2049">Crescentino</city>
+                <locality>
+                    <thoroughfare display="yes">Strada provinciale 31bis, 260</thoroughfare>
+                    <postal-code>13044</postal-code>
+                    <latitude>45.1998</latitude>
+                    <longitude>8.183</longitude>
+                </locality>
+            </location>
+
+            <features>
+                <rooms>1</rooms>
+                <size unit="m2">20</size>
+                <price currency="EUR">150</price>
+                <descriptions>
+                    <description language="it"><![CDATA[Camera luminosa con vista sulle risaie. Finestra con persiane e zanzariera, possibilità di riscattare parte dei mobili.]]></description>
+                </descriptions>
+                <energy-class>esente</energy-class>
+            </features>
+
+            <extra-features>
+                <bathrooms>1</bathrooms>
+                <available-date>2013-03-06T00:00:00+01:00</available-date>
+                <minimum-stay>9</minimum-stay>
+                <bills-included>
+                    <powerline>Y</powerline>
+                    <gas>Y</gas>
+                    <phone>N</phone>
+                    <internet>N</internet>
+                </bills-included>
+                <costs>
+                    <services currency="EUR">50</services>
+                    <other currency="EUR">0</other>
+                    <deposit currency="EUR">250</deposit>
+                </costs>
+                <flatmate>
+                    <gender>DoesntMatter</gender>
+                    <couples>N</couples>
+                    <age from="18"/>
+                    <smoker>N</smoker>
+                    <pets>Y</pets>
+                </flatmate>
+                <links>
+                    <link href="http://www.easystanza.it/default.aspx?ac=eurekamail&amp;at=L&amp;lc=6&amp;mc=OTH&amp;lid=H130305143814784&amp;extlink=1">Per contattare l'inserzionista</link>
+                </links>
+            </extra-features>
+            <pictures>
+                <picture-url>http://www.easystanza.it/Photos.idx/IT.idx/nopic.jpg</picture-url>
+            </pictures>
+        </property>
+
+        <property operation="write">
+            <unique-id><![CDATA[H/12345]]></unique-id>
+            <date-updated>2016-03-07T11:59:53</date-updated>
+            <transaction-type >R</transaction-type>
+            <building IDType="206">
+                <status>nuovo</status>
+            </building>
+            <agent>
+                <office-name><![CDATA[Case e cose]]></office-name>
+                <email>case@cose.it</email>
+            </agent>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Sicilia</administrative-area>
+                <sub-administrative-area>Trapani</sub-administrative-area>
+                <city code="081014">Pantelleria</city>
+                <locality>
+                    <thoroughfare display="yes"><![CDATA[Via Vai, 1]]></thoroughfare>
+                    <postal-code>91017</postal-code>
+                    <latitude>36.8231</latitude>
+                    <longitude>11.9406</longitude>
+                </locality>
+            </location>
+            <features>
+                <rooms>2</rooms>
+                <size unit="m2">55</size>
+                <price currency="EUR" reserved="no" >1300</price>
+                <descriptions>
+                    <description language="it"><![CDATA["Vieni qui, dai]]></description>
+                </descriptions>
+                <energy-class value="C">
+                    <energy-performance unit="kWh/m2anno" type="nren">13.88</energy-performance>
+                    <energy-performance unit="kWh/m2anno" type="ren">1.22</energy-performance>
+                    <energy-season season="winter" level="normal"/>
+                    <energy-season season="summer" level="high"/>
+                </energy-class>
+            </features>
+            <extra-features>
+                <bedrooms>1</bedrooms>
+                <bathrooms>1</bathrooms>
+                <kitchen>Angolo cottura</kitchen>
+                <heating>Autonomo</heating>
+                <garden>Nessuno</garden>
+                <balcony>Y</balcony>
+                <elevator>Y</elevator>
+                <air-conditioning>Y</air-conditioning>
+                <floor>2</floor>
+                <num-floors>3</num-floors>
+                <security-alarm>N</security-alarm>
+                <reception>N</reception>
+                <build-year>2009</build-year>
+            </extra-features>
+            <extended>
+            </extended>
+            <pictures>
+                <picture position="1" url="http://www.postoacaso.com/a498e4cd7a7882dbe260e221af7fd036.jpg" />
+                <picture position="2" url="http://www.postoacaso.com/84a2c85e0fa3effef967a3def4b57c72.jpg" />
+                <picture position="3" url="http://www.postoacaso.com/086560a267151aca4d17cba8445052f1.jpg" />
+            </pictures>
+            <rates>
+                <rate>
+                    <season>A</season>
+                    <begin>2016-01-01T00:00:00</begin>
+                    <end>2016-12-31T00:00:00</end>
+                    <prices>
+                        <week currency="EUR">550.0000</week>
+                        <weekend currency="EUR">180.0000</weekend>
+                        <night currency="EUR">100.0000</night>
+                    </prices>
+                    <note>Prenotazioni a meno di 72h di anticipo, ove possibili, comportano maggiorazione del 50%</note>
+                </rate>
+            </rates>
+            <costs>
+                <deposit currency="EUR">500</deposit>
+                <services currency="EUR">20</services>
+                <cleaning currency="EUR">50</cleaning>
+            </costs>
+        </property>
+
+    </properties>
+    <projects>
+        <project operation="write">
+            <unique-id>123455-JD</unique-id>
+            <date-updated>2015-11-25T09:20:30+01:00</date-updated>
+            <agent>
+                <name>John Doe Building inc.</name>
+                <email>doe@nowhere.net</email>
+                <sales-office>
+                    <country-code>IT</country-code>
+                    <administrative-area>Lazio</administrative-area>
+                    <sub-administrative-area>Roma</sub-administrative-area>
+                    <city>Tivoli</city>
+                    <locality>
+                        <thoroughfare>Via Tiburtina, 123/c</thoroughfare>
+                    </locality>
+                    <phone>+3907745551234</phone>
+                    <mobile>+393935551234</mobile>
+                </sales-office>
             </agent>
             <features>
-                 <building-status>Fondamenta</building-status>
-                 <start-date>2010-11-05T08:00:00+01:00</start-date>
-                 <end-date>2011-06-30T18:00:00+01:00</end-date>
-                 <name>Residenza delle Terme</name>
-                 <specification><![CDATA[http://docs.nowhere.net/projects/ResidenzaTerme-capitolato.pdf]]></specification>
-                 <floorplanner-url>http://floorplanner.com/johndoe/ResidenzaTerme/</floorplanner-url>
-                 <virtual-tour>http://panora.eu/johndoe/ResidenzaTerme/virtualtour/</virtual-tour>
-                 <descriptions>
-                     <description language="it"><![CDATA[Sulla via Tiburtina, a 10 minuti da Roma ed a pochi passi dalle Terme sulfuree di Tivoli stiamo costruendo uno stupendo residence immerso nel verde formato da 30 unità abitative. Al piano terra, riparato da archi di vetro insonorizzati, un centro commerciale composto da 10 negozi di diversa metratura.]]></description>
-                 </descriptions>
-                 <energy-class>!</energy-class>
-                 <energy-performance unit="kWh/m2anno">133.88</energy-performance>
+                <building-status>Fondamenta</building-status>
+                <start-date>2015-11-05T08:00:00+01:00</start-date>
+                <end-date>2016-06-30T18:00:00+01:00</end-date>
+                <name>Residenza delle Terme</name>
+                <specification><![CDATA[http://docs.nowhere.net/projects/ResidenzaTerme-capitolato.pdf]]></specification>
+                <floorplanner-url>http://floorplanner.com/johndoe/ResidenzaTerme/</floorplanner-url>
+                <virtual-tour>http://panora.eu/johndoe/ResidenzaTerme/virtualtour/</virtual-tour>
+                <descriptions>
+                    <description language="it"><![CDATA[Sulla via Tiburtina, a 10 minuti da Roma ed a pochi passi dalle Terme sulfuree di Tivoli stiamo costruendo uno stupendo residence immerso nel verde formato da 30 unità abitative. Al piano terra, riparato da archi di vetro insonorizzati, un centro commerciale composto da 10 negozi di diversa metratura.]]></description>
+                </descriptions>
+                <energy-class value="A2">
+                    <energy-performance unit="kWh/m2anno" type="nren">3.88</energy-performance>
+                    <energy-performance unit="kWh/m2anno" type="ren">1.22</energy-performance>
+                    <energy-season season="winter" level="low"/>
+                    <energy-season season="summer" level="low"/>
+                    <zero>Yes</zero>
+                </energy-class>
             </features>
             <location>
-             <country-code>IT</country-code>
-             <administrative-area>Lazio</administrative-area>
-             <sub-administrative-area>Roma</sub-administrative-area>
-             <city code="58104">Tivoli</city>
-             <locality>
-                <neighbourhood type="locality">Bagni Di Tivoli</neighbourhood>
-                <thoroughfare display="yes">Via Tiburtina 123</thoroughfare>
-                <postal-code>00019</postal-code>
-                <latitude>41.95222</latitude>
-                <longitude>12.72426</longitude>
-             </locality>
+                <country-code>IT</country-code>
+                <administrative-area>Lazio</administrative-area>
+                <sub-administrative-area>Roma</sub-administrative-area>
+                <city code="58104">Tivoli</city>
+                <locality>
+                    <neighbourhood type="locality">Bagni Di Tivoli</neighbourhood>
+                    <thoroughfare display="yes">Via Tiburtina 123</thoroughfare>
+                    <postal-code>00019</postal-code>
+                    <latitude>41.95222</latitude>
+                    <longitude>12.72426</longitude>
+                </locality>
             </location>
             <pictures>
-             <picture-url position="1"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-1.jpg]]></picture-url>
-             <picture-url position="2"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-2.jpg]]></picture-url>
-             <picture-url position="3"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-3.jpg]]></picture-url>
+                <picture-url position="1"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-1.jpg]]></picture-url>
+                <picture-url position="2"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-2.jpg]]></picture-url>
+                <picture-url position="3"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-3.jpg]]></picture-url>
             </pictures>
             <videos>
                 <video type="local">http://docs.nowhere.net/projects/ResidenzaTerme.mpg</video>
             </videos>
             <lots>
-             <residential>30</residential>
-             <commercial>10</commercial>
-             <lot total="5" forsale="5">
-                 <unique-id>123456-a02</unique-id>
-                 <property-type>Appartamento</property-type>
-                 <price currency="EUR">90000</price>
-                 <size unit="m2">55</size>
-                 <rooms>3</rooms>
-                 <bathrooms>1</bathrooms>
-                 <floor type="Intermedio">2</floor>
-                 <garage type="Box">1</garage>
-                 <description><![CDATA[Appartamenti al secondo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-002.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-             <lot total="10" forsale="8">
-                 <unique-id>123456-a03</unique-id>
-                 <property-type>Appartamento</property-type>
-                 <price currency="EUR">110000</price>
-                 <size unit="m2">55</size>
-                 <rooms>3</rooms>
-                 <bathrooms>1</bathrooms>
-                 <floor type="Intermedio">3</floor>
-                 <garage type="Box">1</garage>
-                 <description><![CDATA[Appartamenti al terzo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-003.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-             <lot total="10" forsale="7">
-                 <unique-id>123456-a04</unique-id>
-                 <property-type>Appartamento</property-type>
-                 <price currency="EUR">120000</price>
-                 <size unit="m2">55</size>
-                 <rooms>3</rooms>
-                 <bathrooms>1</bathrooms>
-                 <floor type="Intermedio">4</floor>
-                 <garage type="Box">1</garage>
-                 <description><![CDATA[Appartamenti al quarto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-004.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-             <lot total="5" forsale="3">
-                 <unique-id>123456-a05</unique-id>
-                 <property-type>Appartamento</property-type>
-                 <price currency="EUR">190000</price>
-                 <size unit="m2">120</size>
-                 <rooms>5</rooms>
-                 <bathrooms>2</bathrooms>
-                 <floor type="Attico">5</floor>
-                 <garage type="Box">2</garage>
-                 <description><![CDATA[Attici al quinto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, doppio box auto.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-005.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
-             <lot total="5" forsale="3">
-                 <unique-id>123456-c01</unique-id>
-                 <property-type>Negozio</property-type>
-                 <price currency="EUR">115000</price>
-                 <size unit="m2">80</size>
-                 <rooms>5</rooms>
-                 <bathrooms>2</bathrooms>
-                 <floor type="PianoTerra">0</floor>
-                 <garage type="No" />
-                 <description><![CDATA[Negozio di 80mq su due livelli, ingresso di servizio, accesso alla strada. Lotti componibili per spazi di vendita allargati.]]></description>
-                 <specification>http://docs.nowhere.net/projects/ResidenzaTerme-commerciale-001.pdf</specification>
-                 <pictures>
-                     <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-1.jpg</picture-url>
-                     <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-2.jpg</picture-url>
-                     <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-3.jpg</picture-url>
-                 </pictures>
-             </lot>
+                <residential>30</residential>
+                <commercial>10</commercial>
+                <lot total="5" forsale="5">
+                    <unique-id>123456-a02</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">90000</price>
+                    <size unit="m2">55</size>
+                    <rooms>3</rooms>
+                    <bathrooms>1</bathrooms>
+                    <floor type="Intermedio">2</floor>
+                    <garage type="Box">1</garage>
+                    <description><![CDATA[Appartamenti al secondo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-002.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="10" forsale="8">
+                    <unique-id>123456-a03</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">110000</price>
+                    <size unit="m2">55</size>
+                    <rooms>3</rooms>
+                    <bathrooms>1</bathrooms>
+                    <floor type="Intermedio">3</floor>
+                    <garage type="Box">1</garage>
+                    <description><![CDATA[Appartamenti al terzo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-003.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="10" forsale="7">
+                    <unique-id>123456-a04</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">120000</price>
+                    <size unit="m2">55</size>
+                    <rooms>3</rooms>
+                    <bathrooms>1</bathrooms>
+                    <floor type="Intermedio">4</floor>
+                    <garage type="Box">1</garage>
+                    <description><![CDATA[Appartamenti al quarto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-004.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="5" forsale="3">
+                    <unique-id>123456-a05</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">190000</price>
+                    <size unit="m2">120</size>
+                    <rooms>5</rooms>
+                    <bathrooms>2</bathrooms>
+                    <floor type="Attico">5</floor>
+                    <garage type="Box">2</garage>
+                    <description><![CDATA[Attici al quinto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, doppio box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-005.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="5" forsale="3">
+                    <unique-id>123456-c01</unique-id>
+                    <property-type>Negozio</property-type>
+                    <price currency="EUR">115000</price>
+                    <size unit="m2">80</size>
+                    <rooms>5</rooms>
+                    <bathrooms>2</bathrooms>
+                    <floor type="PianoTerra">0</floor>
+                    <garage type="No" />
+                    <description><![CDATA[Negozio di 80mq su due livelli, ingresso di servizio, accesso alla strada. Lotti componibili per spazi di vendita allargati.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-commerciale-001.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
             </lots>
         </project>
-	</projects>
+        <project operation="write">
+            <unique-id>123456-JD</unique-id>
+            <date-updated>2010-11-25T09:20:30+01:00</date-updated>
+            <agent>
+                <name>John Doe Building inc.</name>
+                <email>doe@nowhere.net</email>
+                <sales-office>
+                    <country-code>IT</country-code>
+                    <administrative-area>Lazio</administrative-area>
+                    <sub-administrative-area>Roma</sub-administrative-area>
+                    <city>Tivoli</city>
+                    <locality>
+                        <thoroughfare>Via Tiburtina, 123/c</thoroughfare>
+                    </locality>
+                    <phone>+3907745551234</phone>
+                    <mobile>+393935551234</mobile>
+                </sales-office>
+            </agent>
+            <features>
+                <building-status>Fondamenta</building-status>
+                <start-date>2010-11-05T08:00:00+01:00</start-date>
+                <end-date>2011-06-30T18:00:00+01:00</end-date>
+                <name>Residenza delle Terme</name>
+                <specification><![CDATA[http://docs.nowhere.net/projects/ResidenzaTerme-capitolato.pdf]]></specification>
+                <floorplanner-url>http://floorplanner.com/johndoe/ResidenzaTerme/</floorplanner-url>
+                <virtual-tour>http://panora.eu/johndoe/ResidenzaTerme/virtualtour/</virtual-tour>
+                <descriptions>
+                    <description language="it"><![CDATA[Sulla via Tiburtina, a 10 minuti da Roma ed a pochi passi dalle Terme sulfuree di Tivoli stiamo costruendo uno stupendo residence immerso nel verde formato da 30 unità abitative. Al piano terra, riparato da archi di vetro insonorizzati, un centro commerciale composto da 10 negozi di diversa metratura.]]></description>
+                </descriptions>
+                <energy-class>!</energy-class>
+                <energy-performance unit="kWh/m2anno">133.88</energy-performance>
+            </features>
+            <location>
+                <country-code>IT</country-code>
+                <administrative-area>Lazio</administrative-area>
+                <sub-administrative-area>Roma</sub-administrative-area>
+                <city code="58104">Tivoli</city>
+                <locality>
+                    <neighbourhood type="locality">Bagni Di Tivoli</neighbourhood>
+                    <thoroughfare display="yes">Via Tiburtina 123</thoroughfare>
+                    <postal-code>00019</postal-code>
+                    <latitude>41.95222</latitude>
+                    <longitude>12.72426</longitude>
+                </locality>
+            </location>
+            <pictures>
+                <picture-url position="1"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-1.jpg]]></picture-url>
+                <picture-url position="2"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-2.jpg]]></picture-url>
+                <picture-url position="3"><![CDATA[http://img.nowhere.net/projects/ResidenzaTerme/cg-3.jpg]]></picture-url>
+            </pictures>
+            <videos>
+                <video type="local">http://docs.nowhere.net/projects/ResidenzaTerme.mpg</video>
+            </videos>
+            <lots>
+                <residential>30</residential>
+                <commercial>10</commercial>
+                <lot total="5" forsale="5">
+                    <unique-id>123456-a02</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">90000</price>
+                    <size unit="m2">55</size>
+                    <rooms>3</rooms>
+                    <bathrooms>1</bathrooms>
+                    <floor type="Intermedio">2</floor>
+                    <garage type="Box">1</garage>
+                    <description><![CDATA[Appartamenti al secondo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-002.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/002-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="10" forsale="8">
+                    <unique-id>123456-a03</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">110000</price>
+                    <size unit="m2">55</size>
+                    <rooms>3</rooms>
+                    <bathrooms>1</bathrooms>
+                    <floor type="Intermedio">3</floor>
+                    <garage type="Box">1</garage>
+                    <description><![CDATA[Appartamenti al terzo piano, ottima vista. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-003.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/003-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="10" forsale="7">
+                    <unique-id>123456-a04</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">120000</price>
+                    <size unit="m2">55</size>
+                    <rooms>3</rooms>
+                    <bathrooms>1</bathrooms>
+                    <floor type="Intermedio">4</floor>
+                    <garage type="Box">1</garage>
+                    <description><![CDATA[Appartamenti al quarto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-004.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/004-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="5" forsale="3">
+                    <unique-id>123456-a05</unique-id>
+                    <property-type>Appartamento</property-type>
+                    <price currency="EUR">190000</price>
+                    <size unit="m2">120</size>
+                    <rooms>5</rooms>
+                    <bathrooms>2</bathrooms>
+                    <floor type="Attico">5</floor>
+                    <garage type="Box">2</garage>
+                    <description><![CDATA[Attici al quinto piano, ottima vista sulle terme. Finiture di pregio, vetri doppi, riscaldamento autonomo, doppio box auto.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-residenziale-005.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/005-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+                <lot total="5" forsale="3">
+                    <unique-id>123456-c01</unique-id>
+                    <property-type>Negozio</property-type>
+                    <price currency="EUR">115000</price>
+                    <size unit="m2">80</size>
+                    <rooms>5</rooms>
+                    <bathrooms>2</bathrooms>
+                    <floor type="PianoTerra">0</floor>
+                    <garage type="No" />
+                    <description><![CDATA[Negozio di 80mq su due livelli, ingresso di servizio, accesso alla strada. Lotti componibili per spazi di vendita allargati.]]></description>
+                    <specification>http://docs.nowhere.net/projects/ResidenzaTerme-commerciale-001.pdf</specification>
+                    <pictures>
+                        <picture-url position="1">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-1.jpg</picture-url>
+                        <picture-url position="2">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-2.jpg</picture-url>
+                        <picture-url position="3">http://img.nowhere.net/projects/ResidenzaTerme/001-cg-3.jpg</picture-url>
+                    </pictures>
+                </lot>
+            </lots>
+        </project>
+    </projects>
 </feed>
