@@ -3,17 +3,17 @@ OpenEstate-IO-ImmobiliareIT 1.5-SNAPSHOT
 
 *OpenEstate-IO-ImmobiliareIT* is a Java library to read and write real estate
 data in the XML format of [*immobiliare.it*](https://www.immobiliare.it/)
-(version 2.5).
+(version 2.8).
 
 
 Features
 --------
 
 -   read XML data according to the specifications of
-    [*immobiliare.it*](https://www.immobiliare.it/) in version 2.5
+    [*immobiliare.it*](https://www.immobiliare.it/) in version 2.8
     (see [`ImmobiliareItReadingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/ImmobiliareItReadingExample.java))
 -   write XML data according to the specifications of
-    [*immobiliare.it*](https://www.immobiliare.it/) in version 2.5
+    [*immobiliare.it*](https://www.immobiliare.it/) in version 2.8
     (see [`ImmobiliareItWritingExample.java`](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/Examples/src/main/java/org/openestate/io/examples/ImmobiliareItWritingExample.java))
 
 
