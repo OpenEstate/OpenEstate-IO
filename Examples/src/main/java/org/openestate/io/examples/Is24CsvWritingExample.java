@@ -288,8 +288,7 @@ public class Is24CsvWritingExample {
      */
     private static void write(List<Is24CsvRecord> records, OutputStream output) {
         LOGGER.info("writing document");
-        try {
-            Is24CsvPrinter printer = Is24CsvPrinter.create(output);
+        try (Is24CsvPrinter printer = Is24CsvPrinter.create(output)) {
             printer.printRecords(records);
             LOGGER.info("> written to a java.io.OutputStream");
         } catch (Exception ex) {
@@ -307,8 +306,7 @@ public class Is24CsvWritingExample {
      */
     private static void write(List<Is24CsvRecord> records, Writer output) {
         LOGGER.info("writing document");
-        try {
-            Is24CsvPrinter printer = Is24CsvPrinter.create(output);
+        try (Is24CsvPrinter printer = Is24CsvPrinter.create(output)) {
             printer.printRecords(records);
             LOGGER.info("> written to a java.io.Writer");
         } catch (Exception ex) {

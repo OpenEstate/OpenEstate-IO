@@ -22,6 +22,7 @@ import java.io.Writer;
 import java.math.BigInteger;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.filemaker.FilemakerResultDocument;
@@ -154,8 +155,8 @@ public class FilemakerWritingExample {
      */
     private static ProductType createProduct() {
         ProductType product = FACTORY.createProductType();
-        product.setNAME("OpenEstate-IO");
-        product.setVERSION("1.5-SNAPSHOT");
+        product.setNAME("My application");
+        product.setVERSION(RandomStringUtils.randomNumeric(2));
         product.setBUILD("123");
         return product;
     }

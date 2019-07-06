@@ -35,6 +35,7 @@ import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
 import org.openestate.io.openimmo.xml.Aktion;
 import org.openestate.io.openimmo.xml.Anbieter;
+import org.openestate.io.openimmo.xml.Anhang;
 import org.openestate.io.openimmo.xml.Haus;
 import org.openestate.io.openimmo.xml.Immobilie;
 import org.openestate.io.openimmo.xml.ObjectFactory;
@@ -211,7 +212,30 @@ public class OpenImmoWritingExample {
         immobilie.getKontaktperson().setLand(FACTORY.createLand());
         immobilie.getKontaktperson().getLand().setIsoLand(Locale.GERMANY.getISO3Country());
 
+        // add some attachments
+        immobilie.setAnhaenge(FACTORY.createAnhaenge());
+        int attachmentCount = RandomUtils.nextInt(3, 10);
+        for (int i = 0; i < attachmentCount; i++) {
+            immobilie.getAnhaenge().getAnhang().add(createAnhang());
+        }
+
         return immobilie;
+    }
+
+    /**
+     * Create an {@link Anhang} with some example data.
+     *
+     * @return created example object
+     */
+    private static Anhang createAnhang() {
+        // create an example transfer
+        Anhang anhang = FACTORY.createAnhang();
+        anhang.setAnhangtitel(RANDOMIZER.getWords(2, 5));
+        anhang.setLocation(Anhang.Location.EXTERN);
+        anhang.setFormat("image/jpeg");
+        anhang.setDaten(FACTORY.createDaten());
+        anhang.getDaten().setPfad("image" + RandomStringUtils.randomAlphabetic(3) + ".jpg");
+        return anhang;
     }
 
     /**

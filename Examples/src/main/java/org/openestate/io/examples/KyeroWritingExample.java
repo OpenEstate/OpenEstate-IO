@@ -159,8 +159,6 @@ public class KyeroWritingExample {
      * @return created example object
      */
     private static PropertyType createProperty() {
-        final String id = RandomStringUtils.randomAlphanumeric(5);
-
         // create an example real estate
         PropertyType obj = FACTORY.createPropertyType();
         obj.setBaths(BigInteger.valueOf(RandomUtils.nextLong(0, 5)));
@@ -168,7 +166,7 @@ public class KyeroWritingExample {
         obj.setCountry(RANDOMIZER.getCountry());
         obj.setCurrency(randomValue(CurrencyType.values()));
         obj.setDate(Calendar.getInstance());
-        obj.setId(id);
+        obj.setId(RandomStringUtils.randomAlphanumeric(5));
         obj.setLeasehold(RandomUtils.nextBoolean());
         obj.setLocationDetail(RANDOMIZER.getWords(2, 10));
         obj.setNewBuild(RandomUtils.nextBoolean());
@@ -210,7 +208,7 @@ public class KyeroWritingExample {
         obj.setImages(FACTORY.createImagesType());
         int imageCount = RandomUtils.nextInt(1, 10);
         for (int i = 0; i < imageCount; i++) {
-            obj.getImages().getImage().add(createPropertyImage(id, i));
+            obj.getImages().getImage().add(createPropertyImage(i));
         }
 
         obj.setLocation(FACTORY.createGpsLocationType());
@@ -224,19 +222,19 @@ public class KyeroWritingExample {
         obj.setUrl(FACTORY.createUrlType());
         //noinspection CatchMayIgnoreException
         try {
-            obj.getUrl().setCa(new URI("https://www.example.com/catalan/" + id + ".html"));
-            obj.getUrl().setDa(new URI("https://www.example.com/danish/" + id + ".html"));
-            obj.getUrl().setDe(new URI("https://www.example.com/german/" + id + ".html"));
-            obj.getUrl().setEn(new URI("https://www.example.com/english/" + id + ".html"));
-            obj.getUrl().setEs(new URI("https://www.example.com/spanish/" + id + ".html"));
-            obj.getUrl().setFi(new URI("https://www.example.com/finnish/" + id + ".html"));
-            obj.getUrl().setFr(new URI("https://www.example.com/french/" + id + ".html"));
-            obj.getUrl().setIt(new URI("https://www.example.com/italian/" + id + ".html"));
-            obj.getUrl().setNl(new URI("https://www.example.com/dutch/" + id + ".html"));
-            obj.getUrl().setNo(new URI("https://www.example.com/norwegian/" + id + ".html"));
-            obj.getUrl().setPt(new URI("https://www.example.com/portuguese/" + id + ".html"));
-            obj.getUrl().setRu(new URI("https://www.example.com/russian/" + id + ".html"));
-            obj.getUrl().setSv(new URI("https://www.example.com/swedish/" + id + ".html"));
+            obj.getUrl().setCa(new URI("https://www.example.com/catalan/" + obj.getId() + ".html"));
+            obj.getUrl().setDa(new URI("https://www.example.com/danish/" + obj.getId() + ".html"));
+            obj.getUrl().setDe(new URI("https://www.example.com/german/" + obj.getId() + ".html"));
+            obj.getUrl().setEn(new URI("https://www.example.com/english/" + obj.getId() + ".html"));
+            obj.getUrl().setEs(new URI("https://www.example.com/spanish/" + obj.getId() + ".html"));
+            obj.getUrl().setFi(new URI("https://www.example.com/finnish/" + obj.getId() + ".html"));
+            obj.getUrl().setFr(new URI("https://www.example.com/french/" + obj.getId() + ".html"));
+            obj.getUrl().setIt(new URI("https://www.example.com/italian/" + obj.getId() + ".html"));
+            obj.getUrl().setNl(new URI("https://www.example.com/dutch/" + obj.getId() + ".html"));
+            obj.getUrl().setNo(new URI("https://www.example.com/norwegian/" + obj.getId() + ".html"));
+            obj.getUrl().setPt(new URI("https://www.example.com/portuguese/" + obj.getId() + ".html"));
+            obj.getUrl().setRu(new URI("https://www.example.com/russian/" + obj.getId() + ".html"));
+            obj.getUrl().setSv(new URI("https://www.example.com/swedish/" + obj.getId() + ".html"));
         } catch (URISyntaxException ex) {
         }
 
@@ -246,11 +244,10 @@ public class KyeroWritingExample {
     /**
      * Create an {@link Image} object with some example data.
      *
-     * @param id  property id
      * @param pos index position within the property images
      * @return created example object
      */
-    private static Image createPropertyImage(String id, int pos) {
+    private static Image createPropertyImage(int pos) {
         // create an example image
         Image img = FACTORY.createImagesTypeImage();
         img.setId(pos);
