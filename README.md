@@ -190,10 +190,10 @@ Take a look at
 for the license text.
 
 
-Todo
-----
+Support
+-------
 
--   improve javadoc comments
+We are providing [professional support](https://github.com/OpenEstate/OpenEstate-IO/wiki/Service) for *OpenEstate-IO* in case you need a specialized solution for your use case. 
 
 
 Further information
