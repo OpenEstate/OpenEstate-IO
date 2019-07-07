@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
 
     <xsd:annotation>
@@ -15,7 +15,7 @@
             (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
         </xsd:documentation>
         <xsd:documentation xml:lang="de">
-            XML-Schema des XML-Feeds von https://www.trovit.com/ gemäß den
+            XML-Schema des XML-Feeds von https://www.trovit.com/ gemÃ¤ÃŸ den
             Spezifikationen unter:
 
             https://corporate.trovit.com/feed-us-homes/
@@ -23,7 +23,7 @@
             https://corporate.trovit.com/specs-us-homes/
 
             Dieses inoffizielle XML-Schema wurde von Andreas Rudolph erstellt und
-            unter den Bedingungen der Apache License 2.0 veröffentlicht
+            unter den Bedingungen der Apache License 2.0 verÃ¶ffentlicht
             (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
         </xsd:documentation>
     </xsd:annotation>
@@ -34,7 +34,7 @@
                 Sorrunding tags.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Umschließende Tags.
+                UmschlieÃŸende Tags.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:complexType>
@@ -45,7 +45,7 @@
                             List of objects to insert or update.
                         </xsd:documentation>
                         <xsd:documentation xml:lang="de">
-                            Liste von einzufügenden oder zu aktualisierenden Objekten.
+                            Liste von einzufÃ¼genden oder zu aktualisierenden Objekten.
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:element>
@@ -59,7 +59,7 @@
                 An object to insert or update.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Ein einzufügendes oder zu aktualisierendes Objekt.
+                Ein einzufÃ¼gendes oder zu aktualisierendes Objekt.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:all>
@@ -91,7 +91,7 @@
                         device. Useful when your website has a mobile version.
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        URL Ihrer Website für Handys (mobile version)
+                        URL Ihrer Website fÃ¼r Handys (mobile version)
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -102,7 +102,7 @@
                         contain your websites name or URL)
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Anzeigentitel (muss mit Anzeigeninhalt übereinstimmen; Name der
+                        Anzeigentitel (muss mit Anzeigeninhalt Ã¼bereinstimmen; Name der
                         Website oder URL darf nicht genannt werden)
                     </xsd:documentation>
                 </xsd:annotation>
@@ -228,7 +228,7 @@
                         Only applicable with "Overseas" type.
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Land, in der sich Auslandsimmoblie befindet (nur für "Overseas"
+                        Land, in der sich Auslandsimmoblie befindet (nur fÃ¼r "Overseas"
                         anwendbar; bitte ISO-Code angeben)
                     </xsd:documentation>
                 </xsd:annotation>
@@ -259,7 +259,7 @@
                         longitude of the property
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Längengrad
+                        LÃ¤ngengrad
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -299,7 +299,7 @@
                         area of the property
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Wohnfläche
+                        WohnflÃ¤che
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -309,7 +309,7 @@
                         plot area / area of the land on which the property is located
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Grundstücksfläche
+                        GrundstÃ¼cksflÃ¤che
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -466,7 +466,7 @@
                         whether or not the property is furnished
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Möblierung
+                        MÃ¶blierung
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
@@ -520,7 +520,7 @@
                 A picture to insert or update.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Ein einzufügendes oder zu aktualisierendes Bild.
+                Ein einzufÃ¼gendes oder zu aktualisierendes Bild.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:all>
@@ -634,7 +634,7 @@
                         office for rent
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Büro/Praxen zur Miete
+                        BÃ¼ro/Praxen zur Miete
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
@@ -644,7 +644,7 @@
                         office for sale
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Büro/Praxen zum Kauf
+                        BÃ¼ro/Praxen zum Kauf
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
@@ -654,7 +654,7 @@
                         land for sale
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Grundstück
+                        GrundstÃ¼ck
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
@@ -797,7 +797,7 @@
                         </xsd:documentation>
                         <xsd:documentation xml:lang="de">
                             Ist der Preis der Immobilie nicht in EUR ausgegeben, verwenden Sie
-                            bitte den Zusatz "currency". Die Währungsabkürzungen finden Sie
+                            bitte den Zusatz "currency". Die WÃ¤hrungsabkÃ¼rzungen finden Sie
                             unter ISO-4217.
                         </xsd:documentation>
                     </xsd:annotation>
@@ -813,7 +813,7 @@
                 see https://corporate.trovit.com/specs-us-homes/
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Der Preis eines Objekts hängt von der gewählten Art ab.
+                Der Preis eines Objekts hÃ¤ngt von der gewÃ¤hlten Art ab.
                 siehe https://corporate.trovit.com/specs-us-homes/
             </xsd:documentation>
         </xsd:annotation>
@@ -850,7 +850,7 @@
                         weekly
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        wöchentlich
+                        wÃ¶chentlich
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
@@ -860,7 +860,7 @@
                         daily
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        täglich
+                        tÃ¤glich
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
@@ -873,7 +873,7 @@
                 The currency of a price according ISO-4217.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Die Währung eines Preises gemäß ISO-4217.
+                Die WÃ¤hrung eines Preises gemÃ¤ÃŸ ISO-4217.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string">
@@ -945,7 +945,7 @@
                 longitude value (from -180.0 to 180.0)
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Wert des Längengrads (von -180.0 bis 180.0)
+                Wert des LÃ¤ngengrads (von -180.0 bis 180.0)
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:decimal">
@@ -960,7 +960,7 @@
                 The floor area of an object.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Der Fläche eines Objekts.
+                Der FlÃ¤che eines Objekts.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
@@ -971,7 +971,7 @@
                             The unit of the area.
                         </xsd:documentation>
                         <xsd:documentation xml:lang="de">
-                            Weist die Anzeige eine andere Maßeinheit als Quadratmeter auf,
+                            Weist die Anzeige eine andere MaÃŸeinheit als Quadratmeter auf,
                             kann Trovit diese mit folgendem Zusatz konvertieren.
                         </xsd:documentation>
                     </xsd:annotation>
@@ -986,7 +986,7 @@
                 floor area value (from 20 to 50000)
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Wert der Fläche (von 20 bis 50000)
+                Wert der FlÃ¤che (von 20 bis 50000)
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:integer">
@@ -1001,7 +1001,7 @@
                 The plot area of an object.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Der Grundstücksfläche eines Objekts.
+                Der GrundstÃ¼cksflÃ¤che eines Objekts.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:simpleContent>
@@ -1012,7 +1012,7 @@
                             The unit of the area.
                         </xsd:documentation>
                         <xsd:documentation xml:lang="en">
-                            Die Einheit der Fläche.
+                            Die Einheit der FlÃ¤che.
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
@@ -1026,7 +1026,7 @@
                 plot area value (from 1 to 1000000000
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Wert der Grundstücksfläche (von 1 bis 1000000000
+                Wert der GrundstÃ¼cksflÃ¤che (von 1 bis 1000000000
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:integer">
@@ -1041,7 +1041,7 @@
                 The unit of an area.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Die Einheit einer Fläche.
+                Die Einheit einer FlÃ¤che.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string">
@@ -1051,7 +1051,7 @@
                         square feet
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Quadratfuß
+                        QuadratfuÃŸ
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
@@ -1123,19 +1123,16 @@
         <xsd:annotation>
             <xsd:documentation xml:lang="en">
                 date value
-                Formats accepted:
-                DD/MM/YYYY or DD/MM/YYYY HH:MM:SS
-                DD-MM-YYYY or DD-MM-YYYY HH:MM:SS
+                Valid formats:
+                DD/MM/YYYY or DD/MM/YYYY HH:MM:SS and
                 YYYY/MM/DD or YYYY/MM/DD HH:MM:SS
-                YYYY-MM-DD or YYYY-MM-DD HH:MM:SS
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
                 Wert des Datums
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string">
-            <xsd:pattern
-                    value="(\d{2}/\d{2}/\d{4}(\s\d{2}:\d{2}:\d{2})?|\d{2}\-\d{2}\-\d{4}(\s\d{2}:\d{2}:\d{2})?|\d{4}/\d{2}/\d{2}(\s\d{2}:\d{2}:\d{2})?|\d{4}\-\d{2}\-\d{2}(\s\d{2}:\d{2}:\d{2})?)"/>
+            <xsd:pattern value="(\d{1,2}/\d{1,2}/\d{4}(\s\d{1,2}:\d{1,2}(:\d{1,2})?)?)|(\d{4}/\d{1,2}/\d{1,2}(\s\d{1,2}:\d{1,2}(:\d{1,2})?)?)"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -1145,7 +1142,7 @@
                 Valid boolean values.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Gültige Boolean-Werte.
+                GÃ¼ltige Boolean-Werte.
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string">
@@ -1242,7 +1239,7 @@
                 orientation value
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-                Werte für Ausrichtungen
+                Werte fÃ¼r Ausrichtungen
             </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string">
@@ -1272,17 +1269,17 @@
                         South
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Süden
+                        SÃ¼den
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
-            <xsd:enumeration value="Süd">
+            <xsd:enumeration value="SÃ¼d">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         South
                     </xsd:documentation>
                     <xsd:documentation xml:lang="de">
-                        Süden
+                        SÃ¼den
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>

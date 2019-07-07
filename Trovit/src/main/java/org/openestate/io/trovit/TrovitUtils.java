@@ -285,19 +285,20 @@ public class TrovitUtils {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
-        final String[] patterns = new String[]{
-                "dd/MM/yyyy",
-                "dd/MM/yyyy hh:mm:ss",
-                "dd-MM-yyyy",
-                "dd-MM-yyyy hh:mm:ss",
-                "yyyy/MM/dd",
-                "yyyy/MM/dd hh:mm:ss",
-                "yyyy-MM-dd",
-                "yyyy-MM-dd hh:mm:ss"
-        };
-
         try {
-            Date date = DateUtils.parseDateStrictly(value, Locale.ENGLISH, patterns);
+            Date date = DateUtils.parseDateStrictly(value,
+                    "d/M/yyyy",
+                    "d/M/yyyy HH:mm",
+                    "d/M/yyyy HH:mm:ss",
+                    "dd/MM/yyyy",
+                    "dd/MM/yyyy HH:mm",
+                    "dd/MM/yyyy HH:mm:ss",
+                    "yyyy/M/d",
+                    "yyyy/M/d HH:mm",
+                    "yyyy/MM/dd HH:mm:ss",
+                    "yyyy/MM/dd",
+                    "yyyy/MM/dd HH:mm",
+                    "yyyy/MM/dd HH:mm:ss");
             Calendar cal = Calendar.getInstance(Locale.getDefault());
             cal.setTime(date);
             return cal;
@@ -604,7 +605,7 @@ public class TrovitUtils {
         if (value == null)
             throw new IllegalArgumentException("Can't print empty date value!");
 
-        return new SimpleDateFormat("dd-MM-yyyy hh:mm:ss", Locale.ENGLISH)
+        return new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.ENGLISH)
                 .format(value.getTime());
     }
 

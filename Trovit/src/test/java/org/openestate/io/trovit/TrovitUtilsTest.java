@@ -15,6 +15,7 @@
  */
 package org.openestate.io.trovit;
 
+import java.text.SimpleDateFormat;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -101,6 +102,23 @@ public class TrovitUtilsTest {
             LOGGER.error("Test of TrovitUtils.getContext failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             Assert.fail("Test of TrovitUtils.getContext failed!");
+        }
+    }
+
+    @Test
+    public void testParseDate() {
+        try {
+            Assert.assertNotNull(TrovitUtils.parseDateValue("30/06/2011 09:30"));
+        } catch (Exception ex) {
+            LOGGER.error(ex.getLocalizedMessage(), ex);
+            Assert.fail(ex.getLocalizedMessage());
+        }
+
+        try {
+            Assert.assertNotNull(TrovitUtils.parseDateValue("28/2/2011 17:30"));
+        } catch (Exception ex) {
+            LOGGER.error(ex.getLocalizedMessage(), ex);
+            Assert.fail(ex.getLocalizedMessage());
         }
     }
 }
