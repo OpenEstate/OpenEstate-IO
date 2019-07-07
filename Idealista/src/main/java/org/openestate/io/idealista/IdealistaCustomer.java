@@ -16,8 +16,13 @@
 package org.openestate.io.idealista;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.Reader;
+import java.io.Writer;
 import org.openestate.io.core.JsonRootElement;
 import org.openestate.io.idealista.json.Customer;
 import org.slf4j.Logger;
@@ -81,5 +86,51 @@ public class IdealistaCustomer extends JsonRootElement<Customer> {
     @Override
     public Class<Customer> getJavaClass() {
         return Customer.class;
+    }
+
+    /**
+     * Write the contained Java object into JSON.
+     *
+     * @param output output target
+     * @throws IOException if the object is not writable
+     */
+    public void write(OutputStream output) throws IOException {
+        this.write(output, true);
+    }
+
+    /**
+     * Write the contained Java object into JSON.
+     *
+     * @param output      output target
+     * @param prettyPrint indent generated JSON
+     * @throws IOException if the object is not writable
+     */
+    public void write(OutputStream output, boolean prettyPrint) throws IOException {
+        try (Writer w = new OutputStreamWriter(output, IdealistaUtils.CHARSET)) {
+            this.write(w, prettyPrint);
+        }
+    }
+
+    /**
+     * Write the contained Java object into JSON.
+     *
+     * @param output output target
+     * @throws IOException if the object is not writable
+     */
+    public void write(File output) throws IOException {
+        this.write(output, true);
+    }
+
+    /**
+     * Write the contained Java object into JSON.
+     *
+     * @param output      output target
+     * @param prettyPrint indent generated JSON
+     * @throws IOException if the object is not writable
+     */
+    public void write(File output, boolean prettyPrint) throws IOException {
+        try (Writer w = new OutputStreamWriter(new FileOutputStream(output), IdealistaUtils.CHARSET)) {
+            this.write(w, prettyPrint);
+        }
     }
 }

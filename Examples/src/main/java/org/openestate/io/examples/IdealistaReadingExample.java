@@ -16,11 +16,8 @@
 package org.openestate.io.examples;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
@@ -105,10 +102,8 @@ public class IdealistaReadingExample {
             LOGGER.warn("> provided file is invalid");
             return;
         }
-        try (Reader reader = new InputStreamReader(new FileInputStream(jsonFile), IdealistaUtils.CHARSET)) {
-            IdealistaCustomer doc = new IdealistaCustomer(reader);
-            printToConsole(doc);
-        }
+        IdealistaCustomer doc = IdealistaUtils.read(jsonFile);
+        printToConsole(doc);
     }
 
     /**
@@ -120,10 +115,8 @@ public class IdealistaReadingExample {
      */
     private static void read(InputStream jsonInputStream) throws IOException {
         LOGGER.info("processing example file");
-        try (Reader reader = new InputStreamReader(jsonInputStream, IdealistaUtils.CHARSET)) {
-            IdealistaCustomer doc = new IdealistaCustomer(reader);
-            printToConsole(doc);
-        }
+        IdealistaCustomer doc = IdealistaUtils.read(jsonInputStream);
+        printToConsole(doc);
     }
 
     /**

@@ -304,8 +304,7 @@ public class IdealistaWritingExample {
 
         //noinspection CatchMayIgnoreException
         try {
-            image.setUrl(new URI("https://example.com/image-"
-                    + RandomUtils.nextInt(0, 999) + ".jpg"));
+            image.setUrl(new URI("https://example.com/image-" + order + ".jpg"));
         } catch (URISyntaxException ex) {
         }
 

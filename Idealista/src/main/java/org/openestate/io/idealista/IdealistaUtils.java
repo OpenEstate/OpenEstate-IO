@@ -24,7 +24,12 @@ import com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -218,6 +223,54 @@ public class IdealistaUtils {
                 new Locale("es"), // spanish
                 new Locale("sv"), // swedish
         };
+    }
+
+    /**
+     * Parse Idealista JSON from a {@link String}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaCustomer read(String json) throws IOException {
+        return new IdealistaCustomer(json);
+    }
+
+    /**
+     * Parse Idealista JSON from a {@link Reader}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaCustomer read(Reader json) throws IOException {
+        return new IdealistaCustomer(json);
+    }
+
+    /**
+     * Parse Idealista JSON from an {@link InputStream}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaCustomer read(InputStream json) throws IOException {
+        try (Reader r = new InputStreamReader(json, CHARSET)) {
+            return new IdealistaCustomer(r);
+        }
+    }
+
+    /**
+     * Parse Idealista JSON from a {@link File}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaCustomer read(File json) throws IOException {
+        try (Reader r = new InputStreamReader(new FileInputStream(json), CHARSET)) {
+            return new IdealistaCustomer(r);
+        }
     }
 
     public static class FeaturesDeserializer extends StdDeserializer<AbstractFeatures> {
