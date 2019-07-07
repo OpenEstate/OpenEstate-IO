@@ -55,8 +55,8 @@
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
 
-        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='energyEfficencyClass']">
-            <jaxb:typesafeEnumClass name="EnergyEfficencyClass">
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='energyEfficiencyClass']">
+            <jaxb:typesafeEnumClass name="EnergyEfficiencyClass">
                 <jaxb:javadoc><![CDATA[Java enum for &lt;ENERGIEEFFIZIENZKLASSE&gt; elements.]]></jaxb:javadoc>
                 <jaxb:typesafeEnumMember value="A gold" name="A_GOLD"/>
                 <jaxb:typesafeEnumMember value="A Gold" name="A_GOLD2"/>

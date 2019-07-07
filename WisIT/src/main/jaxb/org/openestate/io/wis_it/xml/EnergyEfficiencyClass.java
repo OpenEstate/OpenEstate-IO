@@ -10,12 +10,12 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * Java enum for &lt;ENERGIEEFFIZIENZKLASSE&gt; elements.
  * 
- * <p>Java class for energyEfficencyClass.
+ * <p>Java class for energyEfficiencyClass.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="energyEfficencyClass"&gt;
+ * &lt;simpleType name="energyEfficiencyClass"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="A gold"/&gt;
  *     &lt;enumeration value="A Gold"/&gt;
@@ -34,10 +34,10 @@ import javax.xml.bind.annotation.XmlType;
  * </pre>
  * 
  */
-@XmlType(name = "energyEfficencyClass")
+@XmlType(name = "energyEfficiencyClass")
 @XmlEnum
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:55:50+02:00", comments = "JAXB RI v2.2.11")
-public enum EnergyEfficencyClass {
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:14:25+02:00", comments = "JAXB RI v2.2.11")
+public enum EnergyEfficiencyClass {
 
     @XmlEnumValue("A gold")
     A_GOLD("A gold"),
@@ -58,7 +58,7 @@ public enum EnergyEfficencyClass {
     G("G");
     private final String value;
 
-    EnergyEfficencyClass(String v) {
+    EnergyEfficiencyClass(String v) {
         value = v;
     }
 
@@ -66,8 +66,8 @@ public enum EnergyEfficencyClass {
         return value;
     }
 
-    public static EnergyEfficencyClass fromValue(String v) {
-        for (EnergyEfficencyClass c: EnergyEfficencyClass.values()) {
+    public static EnergyEfficiencyClass fromValue(String v) {
+        for (EnergyEfficiencyClass c: EnergyEfficiencyClass.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
