@@ -35,36 +35,36 @@ import org.slf4j.LoggerFactory;
  * @since 1.5
  */
 @SuppressWarnings("WeakerAccess")
-public class IdealistaDocument extends JsonRootElement<Customer> {
+public class IdealistaRootElement extends JsonRootElement<Customer> {
     @SuppressWarnings("unused")
-    private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaDocument.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaRootElement.class);
 
     /**
-     * Create an {@link IdealistaDocument} with a new / empty Java object.
+     * Create an {@link IdealistaRootElement} with a new / empty Java object.
      *
      * @throws IllegalStateException if the empty instance of the Java object can not be created
      */
-    public IdealistaDocument() {
+    public IdealistaRootElement() {
         super();
     }
 
     /**
-     * Create an {@link IdealistaDocument} from a JSON {@link String}.
+     * Create an {@link IdealistaRootElement} from a JSON {@link String}.
      *
      * @param json JSON string to create the object from
      * @throws IOException if the object is not readable
      */
-    public IdealistaDocument(String json) throws IOException {
+    public IdealistaRootElement(String json) throws IOException {
         super(json);
     }
 
     /**
-     * Create an {@link IdealistaDocument} from a JSON {@link Reader}.
+     * Create an {@link IdealistaRootElement} from a JSON {@link Reader}.
      *
      * @param json JSON reader to create the object from
      * @throws IOException if the object is not readable
      */
-    public IdealistaDocument(Reader json) throws IOException {
+    public IdealistaRootElement(Reader json) throws IOException {
         super(json);
     }
 
@@ -74,12 +74,12 @@ public class IdealistaDocument extends JsonRootElement<Customer> {
     }
 
     /**
-     * Create an {@link IdealistaDocument} with the corresponding Java object.
+     * Create an {@link IdealistaRootElement} with the corresponding Java object.
      *
      * @param object Java object to contain
      * @throws IllegalArgumentException if the object parameter is null
      */
-    public IdealistaDocument(Customer object) {
+    public IdealistaRootElement(Customer object) {
         super(object);
     }
 

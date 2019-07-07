@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.idealista.IdealistaDocument;
+import org.openestate.io.idealista.IdealistaRootElement;
 import org.openestate.io.idealista.IdealistaUtils;
 import org.openestate.io.idealista.json.AbstractFeatures;
 import org.openestate.io.idealista.json.BuildingFeatures;
@@ -90,7 +90,7 @@ public class IdealistaReadingExample {
     }
 
     /**
-     * Read a {@link File} into an {@link IdealistaDocument} and print some
+     * Read a {@link File} into an {@link IdealistaRootElement} and print some
      * of its content to console.
      *
      * @param jsonFile the file to read
@@ -102,12 +102,11 @@ public class IdealistaReadingExample {
             LOGGER.warn("> provided file is invalid");
             return;
         }
-        IdealistaDocument doc = IdealistaUtils.read(jsonFile);
-        printToConsole(doc);
+        printToConsole(IdealistaUtils.read(jsonFile));
     }
 
     /**
-     * Read a {@link InputStream} into an {@link IdealistaDocument} and print
+     * Read a {@link InputStream} into an {@link IdealistaRootElement} and print
      * some of its content to console.
      *
      * @param jsonInputStream the input stream to read
@@ -115,16 +114,15 @@ public class IdealistaReadingExample {
      */
     private static void read(InputStream jsonInputStream) throws IOException {
         LOGGER.info("processing example file");
-        IdealistaDocument doc = IdealistaUtils.read(jsonInputStream);
-        printToConsole(doc);
+        printToConsole(IdealistaUtils.read(jsonInputStream));
     }
 
     /**
-     * Print some content of an {@link IdealistaDocument} to console.
+     * Print some content of an {@link IdealistaRootElement} to console.
      *
      * @param root JSON root element
      */
-    private static void printToConsole(IdealistaDocument root) {
+    private static void printToConsole(IdealistaRootElement root) {
         Customer customer = root.getObject();
         LOGGER.info("> processing customer '{}' ({})",
                 customer.getReference(), customer.getName());

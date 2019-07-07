@@ -33,19 +33,19 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  */
 @RunWith(JUnit4.class)
-public class IdealistaDocumentTest {
+public class IdealistaRootElementTest {
     @SuppressWarnings("unused")
-    private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaDocumentTest.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaRootElementTest.class);
 
     private static Reader createReader(String jsonFile) {
-        return new InputStreamReader(IdealistaDocumentTest.class.getResourceAsStream(jsonFile), StandardCharsets.UTF_8);
+        return new InputStreamReader(IdealistaRootElementTest.class.getResourceAsStream(jsonFile), StandardCharsets.UTF_8);
     }
 
     @Test
     public void testParser() {
 
         try (Reader json = createReader("properties.json")) {
-            IdealistaDocument customer = new IdealistaDocument(json);
+            IdealistaRootElement customer = new IdealistaRootElement(json);
             LOGGER.debug(customer.writeToString());
 
             //for (Property p : customer.getObject().getProperties()) {
@@ -57,7 +57,7 @@ public class IdealistaDocumentTest {
         }
 
         try (Reader json = createReader("customerNewDevelopments.json")) {
-            IdealistaDocument customer = new IdealistaDocument(json);
+            IdealistaRootElement customer = new IdealistaRootElement(json);
             LOGGER.debug(customer.writeToString());
         } catch (IOException ex) {
             LOGGER.warn("Can't read example customerNewDevelopments.json!", ex);
@@ -68,7 +68,7 @@ public class IdealistaDocumentTest {
     @Test
     public void testValidator() {
         try (Reader json = createReader("properties.json")) {
-            IdealistaDocument properties = new IdealistaDocument(json);
+            IdealistaRootElement properties = new IdealistaRootElement(json);
 
             Set<ConstraintViolation<Customer>> violations = properties.getViolations();
             if (violations.isEmpty()) {

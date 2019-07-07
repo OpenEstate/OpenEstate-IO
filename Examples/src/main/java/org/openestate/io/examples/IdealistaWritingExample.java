@@ -34,7 +34,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.idealista.IdealistaDocument;
+import org.openestate.io.idealista.IdealistaRootElement;
 import org.openestate.io.idealista.IdealistaUtils;
 import org.openestate.io.idealista.json.Address;
 import org.openestate.io.idealista.json.BathroomType;
@@ -95,7 +95,7 @@ public class IdealistaWritingExample {
         }
 
         // wrap customer object into a JSON root element
-        IdealistaDocument root = new IdealistaDocument(customer);
+        IdealistaRootElement root = new IdealistaRootElement(customer);
 
         // write JSON root element into a java.io.File
         try {
@@ -325,13 +325,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaDocument} into a {@link File}.
+     * Write an {@link IdealistaRootElement} into a {@link File}.
      *
      * @param root the root element to write
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    private static void write(IdealistaDocument root, File file) {
+    private static void write(IdealistaRootElement root, File file) {
         LOGGER.info("writing document");
         try (Writer w = new OutputStreamWriter(new FileOutputStream(file), IdealistaUtils.CHARSET)) {
             root.write(w, PRETTY_PRINT);
@@ -344,13 +344,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaDocument} into an {@link OutputStream}.
+     * Write an {@link IdealistaRootElement} into an {@link OutputStream}.
      *
      * @param root   the root element to write
      * @param output the stream, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    private static void write(IdealistaDocument root, OutputStream output) {
+    private static void write(IdealistaRootElement root, OutputStream output) {
         LOGGER.info("writing document");
         try (Writer w = new OutputStreamWriter(output, IdealistaUtils.CHARSET)) {
             root.write(w, PRETTY_PRINT);
@@ -363,13 +363,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaDocument} into a {@link Writer}.
+     * Write an {@link IdealistaRootElement} into a {@link Writer}.
      *
      * @param root   the root element to write
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    private static void write(IdealistaDocument root, Writer output) {
+    private static void write(IdealistaRootElement root, Writer output) {
         LOGGER.info("writing document");
         try {
             root.write(output, PRETTY_PRINT);
@@ -382,13 +382,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaDocument} into a {@link String} and print the
+     * Write an {@link IdealistaRootElement} into a {@link String} and print the
      * results to the console.
      *
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    private static void writeToConsole(IdealistaDocument doc) {
+    private static void writeToConsole(IdealistaRootElement doc) {
         LOGGER.info("writing document");
         try {
             String xml = doc.writeToString(PRETTY_PRINT);
