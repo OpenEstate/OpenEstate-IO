@@ -232,8 +232,8 @@ public class IdealistaUtils {
      * @return Java object containing the JSON data
      * @throws IOException if the object is not readable
      */
-    public static IdealistaCustomer read(String json) throws IOException {
-        return new IdealistaCustomer(json);
+    public static IdealistaDocument read(String json) throws IOException {
+        return new IdealistaDocument(json);
     }
 
     /**
@@ -243,8 +243,8 @@ public class IdealistaUtils {
      * @return Java object containing the JSON data
      * @throws IOException if the object is not readable
      */
-    public static IdealistaCustomer read(Reader json) throws IOException {
-        return new IdealistaCustomer(json);
+    public static IdealistaDocument read(Reader json) throws IOException {
+        return new IdealistaDocument(json);
     }
 
     /**
@@ -254,9 +254,9 @@ public class IdealistaUtils {
      * @return Java object containing the JSON data
      * @throws IOException if the object is not readable
      */
-    public static IdealistaCustomer read(InputStream json) throws IOException {
+    public static IdealistaDocument read(InputStream json) throws IOException {
         try (Reader r = new InputStreamReader(json, CHARSET)) {
-            return new IdealistaCustomer(r);
+            return new IdealistaDocument(r);
         }
     }
 
@@ -267,9 +267,9 @@ public class IdealistaUtils {
      * @return Java object containing the JSON data
      * @throws IOException if the object is not readable
      */
-    public static IdealistaCustomer read(File json) throws IOException {
+    public static IdealistaDocument read(File json) throws IOException {
         try (Reader r = new InputStreamReader(new FileInputStream(json), CHARSET)) {
-            return new IdealistaCustomer(r);
+            return new IdealistaDocument(r);
         }
     }
 

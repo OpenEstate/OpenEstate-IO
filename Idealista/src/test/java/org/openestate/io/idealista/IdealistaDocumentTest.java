@@ -26,7 +26,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openestate.io.idealista.json.Customer;
-import org.openestate.io.idealista.json.Property;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,19 +33,19 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  */
 @RunWith(JUnit4.class)
-public class IdealistaCustomerTest {
+public class IdealistaDocumentTest {
     @SuppressWarnings("unused")
-    private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaCustomerTest.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaDocumentTest.class);
 
     private static Reader createReader(String jsonFile) {
-        return new InputStreamReader(IdealistaCustomerTest.class.getResourceAsStream(jsonFile), StandardCharsets.UTF_8);
+        return new InputStreamReader(IdealistaDocumentTest.class.getResourceAsStream(jsonFile), StandardCharsets.UTF_8);
     }
 
     @Test
     public void testParser() {
 
         try (Reader json = createReader("properties.json")) {
-            IdealistaCustomer customer = new IdealistaCustomer(json);
+            IdealistaDocument customer = new IdealistaDocument(json);
             LOGGER.debug(customer.writeToString());
 
             //for (Property p : customer.getObject().getProperties()) {
@@ -58,7 +57,7 @@ public class IdealistaCustomerTest {
         }
 
         try (Reader json = createReader("customerNewDevelopments.json")) {
-            IdealistaCustomer customer = new IdealistaCustomer(json);
+            IdealistaDocument customer = new IdealistaDocument(json);
             LOGGER.debug(customer.writeToString());
         } catch (IOException ex) {
             LOGGER.warn("Can't read example customerNewDevelopments.json!", ex);
@@ -69,7 +68,7 @@ public class IdealistaCustomerTest {
     @Test
     public void testValidator() {
         try (Reader json = createReader("properties.json")) {
-            IdealistaCustomer properties = new IdealistaCustomer(json);
+            IdealistaDocument properties = new IdealistaDocument(json);
 
             Set<ConstraintViolation<Customer>> violations = properties.getViolations();
             if (violations.isEmpty()) {
