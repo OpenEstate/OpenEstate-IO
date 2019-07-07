@@ -1,5 +1,5 @@
 OpenEstate-IO-ImmobarIT 1.5-SNAPSHOT
-=================================
+====================================
 
 *OpenEstate-IO-ImmobarIT* is a Java library to read and write real estate data in
 the XML format of [*immobar.it*](https://www.immobar.it).
