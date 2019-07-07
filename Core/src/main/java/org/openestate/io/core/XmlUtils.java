@@ -343,10 +343,10 @@ public final class XmlUtils {
             //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
         }
         try {
-            Date date = DateUtils.parseDateStrictly(value, new String[]{
+            Date date = DateUtils.parseDateStrictly(value,
                     "dd.MM.yyyy", "dd.MM.yy", "dd/MM/yyyy", "dd/MM/yy", "dd-MM-yyyy",
                     "dd-MMM-yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "yyyy-D", "MM/yyyy",
-                    "MMM yyyy", "MMMMM yyyy", "yyyy"});
+                    "MMM yyyy", "MMMMM yyyy", "yyyy");
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             return cal;
@@ -395,8 +395,11 @@ public final class XmlUtils {
             //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
         }
         try {
-            Date date = DateUtils.parseDateStrictly(value, new String[]{
-                    "yyyy-MM-dd'T'HH:mm:ss", "yyyy-MM-dd'T'HH:mm", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm"});
+            Date date = DateUtils.parseDateStrictly(value,
+                    "yyyy-MM-dd'T'HH:mm:ss",
+                    "yyyy-MM-dd'T'HH:mm",
+                    "yyyy-MM-dd HH:mm:ss",
+                    "yyyy-MM-dd HH:mm");
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             return cal;
