@@ -5,7 +5,7 @@
         <xsd:documentation xml:lang="en">
             XML specifications of Import Interface V2
             for https://wohnen-in-suedtirol.it/
-            based on Document version 2.2, Christoph Dolar, Oktober 2015
+            based on Document version 2.2, Christoph Dolar, October 2015
 
             This unofficial XML schema was created by Andreas Rudolph and is licensed
             under the terms of Apache License 2.0
@@ -409,7 +409,7 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="ENERGIEEFFIZIENZKLASSE" type="energyEfficencyClass" minOccurs="0" maxOccurs="1">
+            <xsd:element name="ENERGIEEFFIZIENZKLASSE" type="energyEfficiencyClass" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation xml:lang="en">
                         Energy efficiency class
@@ -936,7 +936,7 @@
 
     <xsd:simpleType name="dateTimeType">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[0-9]{4}\-[0-9]{2}\-[0-9]{2} [0-9]{2}\-[0-9]{2}\-[0-9]{2}"/>
+            <xsd:pattern value="[0-9]{4}\-[0-9]{2}\-[0-9]{2} [0-9]{2}:[0-9]{2}(:[0-9]{2})?"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -948,7 +948,7 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:simpleType name="energyEfficencyClass">
+    <xsd:simpleType name="energyEfficiencyClass">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="A gold"/>
             <xsd:enumeration value="A Gold"/>

@@ -217,7 +217,10 @@ public class WisItUtils {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
         try {
-            Date date = DateUtils.parseDateStrictly(value, "yyyy-MM-dd mm:hh:ss", "yyyy-MM-dd mm:hh", "yyyy-MM-dd");
+            Date date = DateUtils.parseDateStrictly(value,
+                    "yyyy-MM-dd HH:mm:ss",
+                    "yyyy-MM-dd HH:mm",
+                    "yyyy-MM-dd");
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             return cal;
