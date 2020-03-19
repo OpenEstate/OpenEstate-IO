@@ -7,6 +7,7 @@ Changelog for OpenEstate-IO
 
 -   Updated `commons-codec` library to version 1.14.
 -   Updated `jaxen` library to version 1.2.0.
+-   Updated `slf4j` libraries to version 1.7.30.
 
 
 1.4 (09 Dec 2018)

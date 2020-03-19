@@ -164,7 +164,7 @@ Dependencies
     (optional; for processing of XML formats)
 -   [jaxen 1.2.0](https://github.com/jaxen-xpath/jaxen)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.25](https://www.slf4j.org/)
+-   [SLF4J 1.7.30](https://www.slf4j.org/)
 -   [Java Validation API 1.1.0](https://beanvalidation.org/)
     (optional; for processing of JSON formats)
 -   [log4j 1.2.17](https://logging.apache.org/log4j/1.2/)

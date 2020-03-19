@@ -45,7 +45,7 @@ Dependencies
     (optional; for processing of XML formats)
 -   [jaxen 1.2.0](https://github.com/jaxen-xpath/jaxen)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.25](https://www.slf4j.org/)
+-   [SLF4J 1.7.30](https://www.slf4j.org/)
 -   [log4j 1.2.17](https://logging.apache.org/log4j/1.2/)
 -   [lorem 2.1](https://github.com/mdeanda/lorem)
 
