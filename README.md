@@ -162,7 +162,7 @@ Dependencies
     (optional; for processing of JSON formats)
 -   [jaxb2-basics-runtime 0.11.1](https://github.com/highsource/jaxb2-basics)
     (optional; for processing of XML formats)
--   [jaxen 1.1.6](https://github.com/jaxen-xpath/jaxen)
+-   [jaxen 1.2.0](https://github.com/jaxen-xpath/jaxen)
     (optional; for processing of XML formats)
 -   [SLF4J 1.7.25](https://www.slf4j.org/)
 -   [Java Validation API 1.1.0](https://beanvalidation.org/)
