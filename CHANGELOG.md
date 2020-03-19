@@ -5,7 +5,7 @@ Changelog for OpenEstate-IO
 1.5 (not released yet)
 ----------------------
 
-...
+-   Updated `commons-codec` library to version 1.14.
 
 
 1.4 (09 Dec 2018)
