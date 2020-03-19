@@ -146,6 +146,36 @@ public class IdealistaUtils {
     }
 
     /**
+     * Get two digit ISO country code from an address country.
+     *
+     * @param country address country
+     * @return ISO country code or <code>null</code>, if not supported
+     */
+    public static String getAddressCountryCode(Address.Country country) {
+        if (country == null) return null;
+
+        switch (country) {
+            case ANDORRA:
+                return "AD";
+            case FRANCE:
+                return "FR";
+            case ITALY:
+                return "IT";
+            case PORTUGAL:
+                return "PT";
+            case SAN_MARINO:
+                return "SM";
+            case SPAIN:
+                return "ES";
+            case SWITZERLAND:
+                return "CH";
+            default:
+                LOGGER.warn("Unsupported country code '{}'!", country);
+                return null;
+        }
+    }
+
+    /**
      * Get description language for a supported locale.
      *
      * @param locale locale
