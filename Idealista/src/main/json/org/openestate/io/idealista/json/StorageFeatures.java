@@ -378,6 +378,13 @@ public class StorageFeatures
         return (((((((super.equals(rhs)&&((this.security24h == rhs.security24h)||((this.security24h!= null)&&this.security24h.equals(rhs.security24h))))&&((this.areaHeight == rhs.areaHeight)||((this.areaHeight!= null)&&this.areaHeight.equals(rhs.areaHeight))))&&((this.loadingDock == rhs.loadingDock)||((this.loadingDock!= null)&&this.loadingDock.equals(rhs.loadingDock))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.access24h == rhs.access24h)||((this.access24h!= null)&&this.access24h.equals(rhs.access24h))))&&((this.areaConstructed == rhs.areaConstructed)||((this.areaConstructed!= null)&&this.areaConstructed.equals(rhs.areaConstructed))));
     }
 
+
+    /**
+     * property types
+     * <p>
+     * 
+     * 
+     */
     public enum Type {
 
         STORAGE("storage");

@@ -678,6 +678,13 @@ public class Address implements Serializable
         return (((((((((((((((((this.door == rhs.door)||((this.door!= null)&&this.door.equals(rhs.door)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.stair == rhs.stair)||((this.stair!= null)&&this.stair.equals(rhs.stair))))&&((this.nsiCode == rhs.nsiCode)||((this.nsiCode!= null)&&this.nsiCode.equals(rhs.nsiCode))))&&((this.visibility == rhs.visibility)||((this.visibility!= null)&&this.visibility.equals(rhs.visibility))))&&((this.town == rhs.town)||((this.town!= null)&&this.town.equals(rhs.town))))&&((this.streetNumber == rhs.streetNumber)||((this.streetNumber!= null)&&this.streetNumber.equals(rhs.streetNumber))))&&((this.postalCode == rhs.postalCode)||((this.postalCode!= null)&&this.postalCode.equals(rhs.postalCode))))&&((this.coordinatesPrecision == rhs.coordinatesPrecision)||((this.coordinatesPrecision!= null)&&this.coordinatesPrecision.equals(rhs.coordinatesPrecision))))&&((this.urbanization == rhs.urbanization)||((this.urbanization!= null)&&this.urbanization.equals(rhs.urbanization))))&&((this.coordinatesLatitude == rhs.coordinatesLatitude)||((this.coordinatesLatitude!= null)&&this.coordinatesLatitude.equals(rhs.coordinatesLatitude))))&&((this.streetName == rhs.streetName)||((this.streetName!= null)&&this.streetName.equals(rhs.streetName))))&&((this.coordinatesLongitude == rhs.coordinatesLongitude)||((this.coordinatesLongitude!= null)&&this.coordinatesLongitude.equals(rhs.coordinatesLongitude))))&&((this.block == rhs.block)||((this.block!= null)&&this.block.equals(rhs.block))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.floor == rhs.floor)||((this.floor!= null)&&this.floor.equals(rhs.floor))));
     }
 
+
+    /**
+     * address coordinates precision
+     * <p>
+     * if moved, just the property zone will be shown publicly, but not its address
+     * 
+     */
     public enum CoordinatesPrecision {
 
         EXACT("exact"),
@@ -717,6 +724,13 @@ public class Address implements Serializable
 
     }
 
+
+    /**
+     * address country
+     * <p>
+     * 
+     * 
+     */
     public enum Country {
 
         SPAIN("Spain"),
@@ -761,6 +775,13 @@ public class Address implements Serializable
 
     }
 
+
+    /**
+     * address visibility
+     * <p>
+     * full address, street name or zone will be shown publicly
+     * 
+     */
     public enum Visibility {
 
         FULL("full"),

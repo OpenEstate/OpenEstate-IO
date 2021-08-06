@@ -18,10 +18,12 @@ package org.openestate.io.idealista;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
+import com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.io.File;
@@ -104,9 +106,10 @@ public class IdealistaUtils {
 
         final SimpleModule module = new SimpleModule();
         module.addDeserializer(AbstractFeatures.class, new FeaturesDeserializer());
-        for (Class<? extends AbstractFeatures> t : TYPES.keySet()) {
-            module.addDeserializer(t, null);
-        }
+
+        //for (Class<? extends AbstractFeatures> t : TYPES.keySet()) {
+        //    module.addDeserializer(t, null);
+        //}
         mapper.registerModule(module);
 
         return mapper;

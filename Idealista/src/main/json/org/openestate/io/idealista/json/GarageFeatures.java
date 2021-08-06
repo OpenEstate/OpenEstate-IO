@@ -517,6 +517,13 @@ public class GarageFeatures
         return ((((((((((super.equals(rhs)&&((this.parkingType == rhs.parkingType)||((this.parkingType!= null)&&this.parkingType.equals(rhs.parkingType))))&&((this.securitySystem == rhs.securitySystem)||((this.securitySystem!= null)&&this.securitySystem.equals(rhs.securitySystem))))&&((this.liftAvailable == rhs.liftAvailable)||((this.liftAvailable!= null)&&this.liftAvailable.equals(rhs.liftAvailable))))&&((this.parkingAutomaticDoor == rhs.parkingAutomaticDoor)||((this.parkingAutomaticDoor!= null)&&this.parkingAutomaticDoor.equals(rhs.parkingAutomaticDoor))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.parkingPlaceCovered == rhs.parkingPlaceCovered)||((this.parkingPlaceCovered!= null)&&this.parkingPlaceCovered.equals(rhs.parkingPlaceCovered))))&&((this.securityPersonnel == rhs.securityPersonnel)||((this.securityPersonnel!= null)&&this.securityPersonnel.equals(rhs.securityPersonnel))))&&((this.areaConstructed == rhs.areaConstructed)||((this.areaConstructed!= null)&&this.areaConstructed.equals(rhs.areaConstructed))))&&((this.securityAlarm == rhs.securityAlarm)||((this.securityAlarm!= null)&&this.securityAlarm.equals(rhs.securityAlarm))));
     }
 
+
+    /**
+     * property types
+     * <p>
+     * 
+     * 
+     */
     public enum Type {
 
         GARAGE("garage");

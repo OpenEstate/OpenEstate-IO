@@ -239,6 +239,13 @@ public class Image implements Serializable
         return (((((this.label == rhs.label)||((this.label!= null)&&this.label.equals(rhs.label)))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.url == rhs.url)||((this.url!= null)&&this.url.equals(rhs.url))))&&((this.order == rhs.order)||((this.order!= null)&&this.order.equals(rhs.order))));
     }
 
+
+    /**
+     * image label
+     * <p>
+     * 
+     * 
+     */
     public enum Label {
 
         APPRAISALPLAN("appraisalplan"),

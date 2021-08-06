@@ -1240,6 +1240,11 @@ public class Promo implements Serializable
         return (((((((((((((((((((((((((((((((this.mortgageYears == rhs.mortgageYears)||((this.mortgageYears!= null)&&this.mortgageYears.equals(rhs.mortgageYears)))&&((this.liftAvailable == rhs.liftAvailable)||((this.liftAvailable!= null)&&this.liftAvailable.equals(rhs.liftAvailable))))&&((this.energyCertificateRating == rhs.energyCertificateRating)||((this.energyCertificateRating!= null)&&this.energyCertificateRating.equals(rhs.energyCertificateRating))))&&((this.doorman == rhs.doorman)||((this.doorman!= null)&&this.doorman.equals(rhs.doorman))))&&((this.keyDeliveryYear == rhs.keyDeliveryYear)||((this.keyDeliveryYear!= null)&&this.keyDeliveryYear.equals(rhs.keyDeliveryYear))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.mortgagePercentage == rhs.mortgagePercentage)||((this.mortgagePercentage!= null)&&this.mortgagePercentage.equals(rhs.mortgagePercentage))))&&((this.mortgageStateSubsidized == rhs.mortgageStateSubsidized)||((this.mortgageStateSubsidized!= null)&&this.mortgageStateSubsidized.equals(rhs.mortgageStateSubsidized))))&&((this.mortgageEntryPercentage == rhs.mortgageEntryPercentage)||((this.mortgageEntryPercentage!= null)&&this.mortgageEntryPercentage.equals(rhs.mortgageEntryPercentage))))&&((this.onSite == rhs.onSite)||((this.onSite!= null)&&this.onSite.equals(rhs.onSite))))&&((this.energyCertificatePerformance == rhs.energyCertificatePerformance)||((this.energyCertificatePerformance!= null)&&this.energyCertificatePerformance.equals(rhs.energyCertificatePerformance))))&&((this.newDevelopmentName == rhs.newDevelopmentName)||((this.newDevelopmentName!= null)&&this.newDevelopmentName.equals(rhs.newDevelopmentName))))&&((this.keyDeliveryMonth == rhs.keyDeliveryMonth)||((this.keyDeliveryMonth!= null)&&this.keyDeliveryMonth.equals(rhs.keyDeliveryMonth))))&&((this.pool == rhs.pool)||((this.pool!= null)&&this.pool.equals(rhs.pool))))&&((this.accessComments == rhs.accessComments)||((this.accessComments!= null)&&this.accessComments.equals(rhs.accessComments))))&&((this.mortgageInterestRate == rhs.mortgageInterestRate)||((this.mortgageInterestRate!= null)&&this.mortgageInterestRate.equals(rhs.mortgageInterestRate))))&&((this.newDevelopmentType == rhs.newDevelopmentType)||((this.newDevelopmentType!= null)&&this.newDevelopmentType.equals(rhs.newDevelopmentType))))&&((this.finished == rhs.finished)||((this.finished!= null)&&this.finished.equals(rhs.finished))))&&((this.securityDoor == rhs.securityDoor)||((this.securityDoor!= null)&&this.securityDoor.equals(rhs.securityDoor))))&&((this.securityAlarm == rhs.securityAlarm)||((this.securityAlarm!= null)&&this.securityAlarm.equals(rhs.securityAlarm))))&&((this.energyCertificateLaw == rhs.energyCertificateLaw)||((this.energyCertificateLaw!= null)&&this.energyCertificateLaw.equals(rhs.energyCertificateLaw))))&&((this.conservation == rhs.conservation)||((this.conservation!= null)&&this.conservation.equals(rhs.conservation))))&&((this.energyCertificateType == rhs.energyCertificateType)||((this.energyCertificateType!= null)&&this.energyCertificateType.equals(rhs.energyCertificateType))))&&((this.mortgageBankName == rhs.mortgageBankName)||((this.mortgageBankName!= null)&&this.mortgageBankName.equals(rhs.mortgageBankName))))&&((this.builtPhase == rhs.builtPhase)||((this.builtPhase!= null)&&this.builtPhase.equals(rhs.builtPhase))))&&((this.garden == rhs.garden)||((this.garden!= null)&&this.garden.equals(rhs.garden))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.availabilityHour == rhs.availabilityHour)||((this.availabilityHour!= null)&&this.availabilityHour.equals(rhs.availabilityHour))))&&((this.startDate == rhs.startDate)||((this.startDate!= null)&&this.startDate.equals(rhs.startDate))))&&((this.mortgageLettersPercentage == rhs.mortgageLettersPercentage)||((this.mortgageLettersPercentage!= null)&&this.mortgageLettersPercentage.equals(rhs.mortgageLettersPercentage))));
     }
 
+
+    /**
+     * Typing for new developments
+     * 
+     */
     public enum NewDevelopmentType {
 
         RESTORED_BUILDING("restored_building"),
@@ -1281,6 +1286,13 @@ public class Promo implements Serializable
 
     }
 
+
+    /**
+     * property types
+     * <p>
+     * 
+     * 
+     */
     public enum Type {
 
         PROMO("promo");

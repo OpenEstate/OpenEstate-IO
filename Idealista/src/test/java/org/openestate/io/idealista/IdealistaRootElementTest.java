@@ -15,7 +15,6 @@
  */
 package org.openestate.io.idealista;
 
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
@@ -26,6 +25,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openestate.io.idealista.json.Customer;
+import org.openestate.io.idealista.json.Property;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,12 +46,15 @@ public class IdealistaRootElementTest {
 
         try (Reader json = createReader("properties.json")) {
             IdealistaRootElement customer = new IdealistaRootElement(json);
-            LOGGER.debug(customer.writeToString());
 
-            //for (Property p : customer.getObject().getProperties()) {
-            //    LOGGER.debug("found property type {}", p.getFeatures().getClass().getName());
-            //}
-        } catch (IOException ex) {
+            //noinspection ConstantConditions
+            for (Property p : customer.getObject().getProperties()) {
+                //noinspection ConstantConditions
+                LOGGER.debug("found property type {}", p.getFeatures().getClass().getName());
+            }
+
+            LOGGER.debug(customer.writeToString());
+        } catch (Exception ex) {
             LOGGER.warn("Can't read example properties.json!", ex);
             Assert.fail();
         }
@@ -59,7 +62,7 @@ public class IdealistaRootElementTest {
         try (Reader json = createReader("customerNewDevelopments.json")) {
             IdealistaRootElement customer = new IdealistaRootElement(json);
             LOGGER.debug(customer.writeToString());
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             LOGGER.warn("Can't read example customerNewDevelopments.json!", ex);
             Assert.fail();
         }
@@ -79,7 +82,7 @@ public class IdealistaRootElementTest {
                     LOGGER.debug("> {}", violation.getMessage());
                 }
             }
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             LOGGER.warn("Can't read example properties.json!", ex);
             Assert.fail();
         }

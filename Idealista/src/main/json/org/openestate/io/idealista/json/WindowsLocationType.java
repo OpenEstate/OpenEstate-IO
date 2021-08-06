@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * windows location
+ * <p>
+ * internal / external flat based on windows view. Only available for Spain.
+ * 
+ */
 public enum WindowsLocationType {
 
     INTERIOR("interior"),
