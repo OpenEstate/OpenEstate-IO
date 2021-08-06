@@ -201,23 +201,55 @@
       "inProcess",
       "unknown"
     ],
-    "javaEnumNames": [
-      "A",
-      "A_PLUS",
-      "A1",
-      "A2",
-      "A3",
-      "A4",
-      "B",
-      "B_MINUS",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G",
-      "EXEMPT",
-      "IN_PROCESS",
-      "UNKNOWN"
+    "javaEnums": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "A_PLUS"
+      },
+      {
+        "name": "A1"
+      },
+      {
+        "name": "A2"
+      },
+      {
+        "name": "A3"
+      },
+      {
+        "name": "A4"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "B_MINUS"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "EXEMPT"
+      },
+      {
+        "name": "IN_PROCESS"
+      },
+      {
+        "name": "UNKNOWN"
+      }
     ],
     "javaType": "org.openestate.io.idealista.json.EnergyCertificateRatingType"
   },

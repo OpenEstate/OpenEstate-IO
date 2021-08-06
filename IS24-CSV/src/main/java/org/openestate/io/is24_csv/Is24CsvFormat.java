@@ -15,7 +15,6 @@
  */
 package org.openestate.io.is24_csv;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -105,9 +104,6 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
         return new Is24CsvPrinter(printer);
     }
 
-    @SuppressFBWarnings(
-            value = "NP_BOOLEAN_RETURN_NULL",
-            justification = "This behaviour is intended.")
     public static Boolean parseBoolean(String value) {
         value = StringUtils.trimToNull(value);
         if ("J".equalsIgnoreCase(value))

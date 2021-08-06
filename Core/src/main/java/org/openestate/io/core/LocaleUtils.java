@@ -15,7 +15,6 @@
  */
 package org.openestate.io.core;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -27,9 +26,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressFBWarnings(
-        value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS",
-        justification = "This behaviour is intended.")
 public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
     private final static Logger LOGGER = LoggerFactory.getLogger(LocaleUtils.class);
 

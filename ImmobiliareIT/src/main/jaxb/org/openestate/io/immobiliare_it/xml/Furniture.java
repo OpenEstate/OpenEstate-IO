@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "furniture")
 @XmlEnum
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
 public enum Furniture {
 
     @XmlEnumValue("Arredato")

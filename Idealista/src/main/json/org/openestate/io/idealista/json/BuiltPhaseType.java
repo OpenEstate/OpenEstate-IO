@@ -29,7 +29,7 @@ public enum BuiltPhaseType {
         }
     }
 
-    private BuiltPhaseType(String value) {
+    BuiltPhaseType(String value) {
         this.value = value;
     }
 

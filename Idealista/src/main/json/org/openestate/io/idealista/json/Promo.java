@@ -8,8 +8,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -74,18 +72,10 @@ public class Promo implements Serializable
      * <p>
      * 
      * Corresponds to the "featuresType" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresType")
     private Promo.Type type;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresEnergyCertificatePerformance")
     @DecimalMin("1")
     @DecimalMax("999")
@@ -94,10 +84,8 @@ public class Promo implements Serializable
      * energy certification law
      * <p>
      * only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateLaw")
     @JsonPropertyDescription("only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)")
     private EnergyCertificateLawType energyCertificateLaw;
@@ -105,20 +93,16 @@ public class Promo implements Serializable
      * energy certification rating
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateRating")
     private EnergyCertificateRatingType energyCertificateRating;
     /**
      * energy certification type
      * <p>
      * only available for new development properties. project: certification in project phase; completed: certification if the property is finished
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateType")
     @JsonPropertyDescription("only available for new development properties. project: certification in project phase; completed: certification if the property is finished")
     private EnergyCertificateType energyCertificateType;
@@ -126,20 +110,16 @@ public class Promo implements Serializable
      * lift
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresLiftAvailable")
     private Boolean liftAvailable;
     /**
      * doorman
      * <p>
      * doorman availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresDoorman")
     @JsonPropertyDescription("doorman availability")
     private Boolean doorman;
@@ -147,10 +127,8 @@ public class Promo implements Serializable
      * conservation status
      * <p>
      * status new is only available for new development properties, not for secondhand properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresConservation")
     @JsonPropertyDescription("status new is only available for new development properties, not for secondhand properties")
     private ConservationType conservation;
@@ -158,20 +136,16 @@ public class Promo implements Serializable
      * pool availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresPool")
     private Boolean pool;
     /**
      * garden
      * <p>
      * garden availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresGarden")
     @JsonPropertyDescription("garden availability")
     private Boolean garden;
@@ -179,20 +153,16 @@ public class Promo implements Serializable
      * security door
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityDoor")
     private Boolean securityDoor;
     /**
      * security alarm system
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityAlarm")
     private Boolean securityAlarm;
     /**
@@ -204,7 +174,6 @@ public class Promo implements Serializable
     @JsonProperty("featuresNewDevelopmentType")
     @JsonPropertyDescription("Typing for new developments")
     @NotNull
-    @Nonnull
     private Promo.NewDevelopmentType newDevelopmentType;
     /**
      * 
@@ -214,62 +183,37 @@ public class Promo implements Serializable
     @JsonProperty("featuresNewDevelopmentName")
     @Pattern(regexp = "^.{0,100}$")
     @NotNull
-    @Nonnull
     private String newDevelopmentName;
     /**
      * is finished
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresFinished")
     private Boolean finished;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd", timezone = "UTC")
     @JsonProperty("featuresStartDate")
     private Date startDate;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresKeyDeliveryYear")
     @DecimalMin("1")
     @DecimalMax("9999")
     private BigInteger keyDeliveryYear;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresKeyDeliveryMonth")
     @DecimalMin("1")
     @DecimalMax("12")
     private BigDecimal keyDeliveryMonth;
     /**
      * Phase of built for new developments
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresBuiltPhase")
     @JsonPropertyDescription("Phase of built for new developments")
     private BuiltPhaseType builtPhase;
     /**
      * Booth sales availability hour for new developments
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresAvailabilityHour")
     @JsonPropertyDescription("Booth sales availability hour for new developments")
     private AvailabilityHourType availabilityHour;
@@ -278,10 +222,8 @@ public class Promo implements Serializable
      * <p>
      * 
      * Corresponds to the "featuresAccessComments" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresAccessComments")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @Valid
@@ -290,77 +232,37 @@ public class Promo implements Serializable
      * Booth sale on side
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresOnSite")
     private Boolean onSite;
     /**
      * Mortgage state subsidized
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresMortgageStateSubsidized")
     private Boolean mortgageStateSubsidized;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresMortgageBankName")
     @Pattern(regexp = "^.{0,100}$")
     private String mortgageBankName;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresMortgagePercentage")
     @DecimalMin("1")
     @DecimalMax("999")
     private BigDecimal mortgagePercentage;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresMortgageEntryPercentage")
     @DecimalMin("1")
     @DecimalMax("999")
     private BigDecimal mortgageEntryPercentage;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresMortgageLettersPercentage")
     @DecimalMin("1")
     @DecimalMax("999")
     private BigDecimal mortgageLettersPercentage;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresMortgageInterestRate")
     @DecimalMin("1")
     @DecimalMax("999")
     private BigDecimal mortgageInterestRate;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresMortgageYears")
     @DecimalMin("1")
     @DecimalMax("9999")
@@ -368,7 +270,7 @@ public class Promo implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 6438234894930888049L;
+    private final static long serialVersionUID = -4975280699303245838L;
 
     /**
      * No args constructor for use in serialization
@@ -1260,7 +1162,7 @@ public class Promo implements Serializable
             }
         }
 
-        private NewDevelopmentType(String value) {
+        NewDevelopmentType(String value) {
             this.value = value;
         }
 
@@ -1305,7 +1207,7 @@ public class Promo implements Serializable
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

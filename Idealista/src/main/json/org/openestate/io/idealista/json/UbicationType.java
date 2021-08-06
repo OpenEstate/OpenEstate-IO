@@ -30,7 +30,7 @@ public enum UbicationType {
         }
     }
 
-    private UbicationType(String value) {
+    UbicationType(String value) {
         this.value = value;
     }
 

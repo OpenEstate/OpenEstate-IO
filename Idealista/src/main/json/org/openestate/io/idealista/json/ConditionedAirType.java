@@ -28,7 +28,7 @@ public enum ConditionedAirType {
         }
     }
 
-    private ConditionedAirType(String value) {
+    ConditionedAirType(String value) {
         this.value = value;
     }
 

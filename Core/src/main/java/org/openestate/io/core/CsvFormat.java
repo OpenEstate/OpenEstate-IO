@@ -15,7 +15,6 @@
  */
 package org.openestate.io.core;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -108,9 +107,6 @@ public abstract class CsvFormat<Parser extends CsvParser, Printer extends CsvPri
      * @return created parser
      * @throws IOException if CSV is not readable
      */
-    @SuppressFBWarnings(
-            value = "OBL_UNSATISFIED_OBLIGATION",
-            justification = "The stream is closed later together with the parser.")
     public final Parser parse(File csvFile) throws IOException {
         return this.parse(new FileInputStream(csvFile));
     }
@@ -168,9 +164,6 @@ public abstract class CsvFormat<Parser extends CsvParser, Printer extends CsvPri
      * @return created printer
      * @throws IOException if CSV is not writable
      */
-    @SuppressFBWarnings(
-            value = "OBL_UNSATISFIED_OBLIGATION",
-            justification = "The stream is closed later together with the printer.")
     public final Printer print(File csvFile) throws IOException {
         return print(new FileOutputStream(csvFile));
     }

@@ -109,152 +109,152 @@ import org.openestate.io.trovit.xml.types.TypeValue;
 @XmlType(name = "AdType", propOrder = {
 
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
 public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String id;
     @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "anyURI")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected URI url;
     @XmlElement(name = "mobile_url", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "anyURI")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected URI mobileUrl;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String title;
     @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected TypeValue type;
     @XmlElement(required = true)
     @XmlJavaTypeAdapter(Adapter3 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String content;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected PriceType price;
     @XmlElement(name = "property_type")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String propertyType;
     @XmlElement(name = "foreclosure_type", type = String.class)
     @XmlJavaTypeAdapter(Adapter7 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected ForeclosureTypeValue foreclosureType;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String address;
     @XmlElement(name = "floor_number")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String floorNumber;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String neighborhood;
     @XmlElement(name = "city_area")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String cityArea;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String city;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String region;
     @XmlJavaTypeAdapter(Adapter17 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String country;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String postcode;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter8 .class)
     @XmlSchemaType(name = "decimal")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected BigDecimal latitude;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter9 .class)
     @XmlSchemaType(name = "decimal")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected BigDecimal longitude;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter18 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected OrientationValue orientation;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String agency;
     @XmlElement(name = "mls_database")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String mlsDatabase;
     @XmlElement(name = "floor_area")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected FloorAreaType floorArea;
     @XmlElement(name = "plot_area")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected PlotAreaType plotArea;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected BigDecimal rooms;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter13 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected BigDecimal bathrooms;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String condition;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter14 .class)
     @XmlSchemaType(name = "integer")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected BigInteger year;
     @XmlElement(name = "virtual_tour", type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "anyURI")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected URI virtualTour;
     @XmlElement(name = "eco_score")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String ecoScore;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected AdType.Pictures pictures;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter15 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Calendar date;
     @XmlElement(name = "expiration_date", type = String.class)
     @XmlJavaTypeAdapter(Adapter15 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Calendar expirationDate;
     @XmlElement(name = "by_owner", type = String.class)
     @XmlJavaTypeAdapter(Adapter16 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean byOwner;
     @XmlElement(name = "is_rent_to_own", type = String.class)
     @XmlJavaTypeAdapter(Adapter16 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean isRentToOwn;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter16 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean parking;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter16 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean foreclosure;
     @XmlElement(name = "is_furnished", type = String.class)
     @XmlJavaTypeAdapter(Adapter16 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean isFurnished;
     @XmlElement(name = "is_new", type = String.class)
     @XmlJavaTypeAdapter(Adapter16 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean isNew;
     @XmlElement(name = "contact_name")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String contactName;
     @XmlElement(name = "contact_email")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String contactEmail;
     @XmlElement(name = "contact_telephone")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     protected String contactTelephone;
 
     /**
@@ -265,7 +265,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getId() {
         return id;
     }
@@ -278,7 +278,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setId(String value) {
         this.id = value;
     }
@@ -291,7 +291,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public URI getUrl() {
         return url;
     }
@@ -304,7 +304,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setUrl(URI value) {
         this.url = value;
     }
@@ -317,7 +317,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public URI getMobileUrl() {
         return mobileUrl;
     }
@@ -330,7 +330,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setMobileUrl(URI value) {
         this.mobileUrl = value;
     }
@@ -343,7 +343,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getTitle() {
         return title;
     }
@@ -356,7 +356,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setTitle(String value) {
         this.title = value;
     }
@@ -369,7 +369,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public TypeValue getType() {
         return type;
     }
@@ -382,7 +382,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setType(TypeValue value) {
         this.type = value;
     }
@@ -395,7 +395,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getContent() {
         return content;
     }
@@ -408,7 +408,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setContent(String value) {
         this.content = value;
     }
@@ -421,7 +421,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link PriceType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public PriceType getPrice() {
         return price;
     }
@@ -434,7 +434,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link PriceType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setPrice(PriceType value) {
         this.price = value;
     }
@@ -447,7 +447,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getPropertyType() {
         return propertyType;
     }
@@ -460,7 +460,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setPropertyType(String value) {
         this.propertyType = value;
     }
@@ -473,7 +473,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public ForeclosureTypeValue getForeclosureType() {
         return foreclosureType;
     }
@@ -486,7 +486,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setForeclosureType(ForeclosureTypeValue value) {
         this.foreclosureType = value;
     }
@@ -499,7 +499,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getAddress() {
         return address;
     }
@@ -512,7 +512,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setAddress(String value) {
         this.address = value;
     }
@@ -525,7 +525,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getFloorNumber() {
         return floorNumber;
     }
@@ -538,7 +538,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setFloorNumber(String value) {
         this.floorNumber = value;
     }
@@ -551,7 +551,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getNeighborhood() {
         return neighborhood;
     }
@@ -564,7 +564,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setNeighborhood(String value) {
         this.neighborhood = value;
     }
@@ -577,7 +577,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getCityArea() {
         return cityArea;
     }
@@ -590,7 +590,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setCityArea(String value) {
         this.cityArea = value;
     }
@@ -603,7 +603,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getCity() {
         return city;
     }
@@ -616,7 +616,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setCity(String value) {
         this.city = value;
     }
@@ -629,7 +629,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getRegion() {
         return region;
     }
@@ -642,7 +642,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setRegion(String value) {
         this.region = value;
     }
@@ -655,7 +655,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getCountry() {
         return country;
     }
@@ -668,7 +668,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setCountry(String value) {
         this.country = value;
     }
@@ -681,7 +681,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getPostcode() {
         return postcode;
     }
@@ -694,7 +694,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setPostcode(String value) {
         this.postcode = value;
     }
@@ -707,7 +707,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public BigDecimal getLatitude() {
         return latitude;
     }
@@ -720,7 +720,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setLatitude(BigDecimal value) {
         this.latitude = value;
     }
@@ -733,7 +733,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public BigDecimal getLongitude() {
         return longitude;
     }
@@ -746,7 +746,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setLongitude(BigDecimal value) {
         this.longitude = value;
     }
@@ -759,7 +759,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public OrientationValue getOrientation() {
         return orientation;
     }
@@ -772,7 +772,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setOrientation(OrientationValue value) {
         this.orientation = value;
     }
@@ -785,7 +785,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getAgency() {
         return agency;
     }
@@ -798,7 +798,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setAgency(String value) {
         this.agency = value;
     }
@@ -811,7 +811,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getMlsDatabase() {
         return mlsDatabase;
     }
@@ -824,7 +824,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setMlsDatabase(String value) {
         this.mlsDatabase = value;
     }
@@ -837,7 +837,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link FloorAreaType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public FloorAreaType getFloorArea() {
         return floorArea;
     }
@@ -850,7 +850,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link FloorAreaType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setFloorArea(FloorAreaType value) {
         this.floorArea = value;
     }
@@ -863,7 +863,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link PlotAreaType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public PlotAreaType getPlotArea() {
         return plotArea;
     }
@@ -876,7 +876,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link PlotAreaType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setPlotArea(PlotAreaType value) {
         this.plotArea = value;
     }
@@ -889,7 +889,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public BigDecimal getRooms() {
         return rooms;
     }
@@ -902,7 +902,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setRooms(BigDecimal value) {
         this.rooms = value;
     }
@@ -915,7 +915,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public BigDecimal getBathrooms() {
         return bathrooms;
     }
@@ -928,7 +928,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setBathrooms(BigDecimal value) {
         this.bathrooms = value;
     }
@@ -941,7 +941,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getCondition() {
         return condition;
     }
@@ -954,7 +954,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setCondition(String value) {
         this.condition = value;
     }
@@ -967,7 +967,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public BigInteger getYear() {
         return year;
     }
@@ -980,7 +980,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setYear(BigInteger value) {
         this.year = value;
     }
@@ -993,7 +993,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public URI getVirtualTour() {
         return virtualTour;
     }
@@ -1006,7 +1006,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setVirtualTour(URI value) {
         this.virtualTour = value;
     }
@@ -1019,7 +1019,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getEcoScore() {
         return ecoScore;
     }
@@ -1032,7 +1032,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setEcoScore(String value) {
         this.ecoScore = value;
     }
@@ -1045,7 +1045,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link AdType.Pictures }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public AdType.Pictures getPictures() {
         return pictures;
     }
@@ -1058,7 +1058,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link AdType.Pictures }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setPictures(AdType.Pictures value) {
         this.pictures = value;
     }
@@ -1071,7 +1071,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Calendar getDate() {
         return date;
     }
@@ -1084,7 +1084,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setDate(Calendar value) {
         this.date = value;
     }
@@ -1097,7 +1097,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Calendar getExpirationDate() {
         return expirationDate;
     }
@@ -1110,7 +1110,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setExpirationDate(Calendar value) {
         this.expirationDate = value;
     }
@@ -1123,7 +1123,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getByOwner() {
         return byOwner;
     }
@@ -1136,7 +1136,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setByOwner(Boolean value) {
         this.byOwner = value;
     }
@@ -1149,7 +1149,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getIsRentToOwn() {
         return isRentToOwn;
     }
@@ -1162,7 +1162,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setIsRentToOwn(Boolean value) {
         this.isRentToOwn = value;
     }
@@ -1175,7 +1175,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getParking() {
         return parking;
     }
@@ -1188,7 +1188,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setParking(Boolean value) {
         this.parking = value;
     }
@@ -1201,7 +1201,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getForeclosure() {
         return foreclosure;
     }
@@ -1214,7 +1214,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setForeclosure(Boolean value) {
         this.foreclosure = value;
     }
@@ -1227,7 +1227,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getIsFurnished() {
         return isFurnished;
     }
@@ -1240,7 +1240,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setIsFurnished(Boolean value) {
         this.isFurnished = value;
     }
@@ -1253,7 +1253,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getIsNew() {
         return isNew;
     }
@@ -1266,7 +1266,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setIsNew(Boolean value) {
         this.isNew = value;
     }
@@ -1279,7 +1279,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getContactName() {
         return contactName;
     }
@@ -1292,7 +1292,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setContactName(String value) {
         this.contactName = value;
     }
@@ -1305,7 +1305,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getContactEmail() {
         return contactEmail;
     }
@@ -1318,7 +1318,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setContactEmail(String value) {
         this.contactEmail = value;
     }
@@ -1331,7 +1331,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String getContactTelephone() {
         return contactTelephone;
     }
@@ -1344,20 +1344,20 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public void setContactTelephone(String value) {
         this.contactTelephone = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -1365,7 +1365,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theId;
@@ -1580,18 +1580,18 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof AdType) {
@@ -2146,12 +2146,12 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new AdType();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -2541,9 +2541,9 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 
@@ -2571,11 +2571,11 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
     @XmlType(name = "", propOrder = {
         "picture"
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
     public static class Pictures implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         protected List<PictureType> picture;
 
         /**
@@ -2600,7 +2600,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
          * 
          * 
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public List<PictureType> getPicture() {
             if (picture == null) {
                 picture = new ArrayList<PictureType>();
@@ -2608,15 +2608,15 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
             return this.picture;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
-            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -2624,7 +2624,7 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 List<PictureType> thePicture;
@@ -2634,18 +2634,18 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
-            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof AdType.Pictures) {
@@ -2672,12 +2672,12 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new AdType.Pictures();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -2698,9 +2698,9 @@ public class AdType implements Serializable, Cloneable, CopyTo2, Equals2, ToStri
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:09:46+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
-            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
         }
 

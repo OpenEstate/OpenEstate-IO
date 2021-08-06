@@ -40,7 +40,7 @@ public enum EnergyCertificateRatingType {
         }
     }
 
-    private EnergyCertificateRatingType(String value) {
+    EnergyCertificateRatingType(String value) {
         this.value = value;
     }
 

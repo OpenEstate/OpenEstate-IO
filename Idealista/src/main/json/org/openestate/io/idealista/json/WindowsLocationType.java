@@ -26,7 +26,7 @@ public enum WindowsLocationType {
         }
     }
 
-    private WindowsLocationType(String value) {
+    WindowsLocationType(String value) {
         this.value = value;
     }
 

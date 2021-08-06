@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -53,37 +52,17 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressVisibility" property.full address, street name or zone will be shown publicly
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressVisibility")
     @JsonPropertyDescription("full address, street name or zone will be shown publicly")
     private Address.Visibility visibility;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("addressStreetName")
     @Pattern(regexp = "^.{0,200}$")
     private String streetName;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("addressStreetNumber")
     @Pattern(regexp = "^.{0,10}$")
     private String streetNumber;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("addressBlock")
     @Pattern(regexp = "^.{0,20}$")
     private String block;
@@ -92,37 +71,17 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressFloor" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressFloor")
     @Pattern(regexp = "^(-[1-2]|[1-9]|[1-5][0-9]|60|bj|en|ss|st)$")
     private String floor;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("addressStair")
     @Pattern(regexp = "^.{0,10}$")
     private String stair;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("addressDoor")
     @Pattern(regexp = "^.{0,4}$")
     private String door;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("addressUrbanization")
     @Pattern(regexp = "^.{0,50}$")
     private String urbanization;
@@ -131,19 +90,11 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressPostalCode" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressPostalCode")
     @Pattern(regexp = "^[0-9]{5}$|^AD[0-9]{3}$|^[0-9]{4}(-[0-9]{3})?$")
     private String postalCode;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("addressTown")
     @Pattern(regexp = "^.{0,50}$")
     private String town;
@@ -152,10 +103,8 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressNsiCode" property.national institute of statistics town code
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressNsiCode")
     @JsonPropertyDescription("national institute of statistics town code")
     @Pattern(regexp = "^[0-9]{6}$")
@@ -165,10 +114,8 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressCountry" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressCountry")
     private Address.Country country;
     /**
@@ -176,10 +123,8 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressCoordinatesPrecision" property.if moved, just the property zone will be shown publicly, but not its address
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressCoordinatesPrecision")
     @JsonPropertyDescription("if moved, just the property zone will be shown publicly, but not its address")
     private Address.CoordinatesPrecision coordinatesPrecision;
@@ -188,10 +133,8 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressCoordinatesLatitude" property.to have a good accuracy, latitude need to have at least 4 decimals
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressCoordinatesLatitude")
     @JsonPropertyDescription("to have a good accuracy, latitude need to have at least 4 decimals")
     @DecimalMin("-90")
@@ -202,10 +145,8 @@ public class Address implements Serializable
      * <p>
      * 
      * Corresponds to the "addressCoordinatesLongitude" property.to have a good accuracy, longitude need to have at least 4 decimals
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("addressCoordinatesLongitude")
     @JsonPropertyDescription("to have a good accuracy, longitude need to have at least 4 decimals")
     @DecimalMin("-180")
@@ -214,7 +155,7 @@ public class Address implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 7896145906116550615L;
+    private final static long serialVersionUID = 9024735423331326534L;
 
     /**
      * address visibility
@@ -698,7 +639,7 @@ public class Address implements Serializable
             }
         }
 
-        private CoordinatesPrecision(String value) {
+        CoordinatesPrecision(String value) {
             this.value = value;
         }
 
@@ -749,7 +690,7 @@ public class Address implements Serializable
             }
         }
 
-        private Country(String value) {
+        Country(String value) {
             this.value = value;
         }
 
@@ -796,7 +737,7 @@ public class Address implements Serializable
             }
         }
 
-        private Visibility(String value) {
+        Visibility(String value) {
             this.value = value;
         }
 

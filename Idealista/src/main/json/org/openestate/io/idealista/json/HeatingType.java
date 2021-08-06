@@ -33,7 +33,7 @@ public enum HeatingType {
         }
     }
 
-    private HeatingType(String value) {
+    HeatingType(String value) {
         this.value = value;
     }
 

@@ -5,8 +5,6 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -55,7 +53,6 @@ public class GarageFeatures
      */
     @JsonProperty("featuresType")
     @NotNull
-    @Nonnull
     private GarageFeatures.Type type;
     /**
      * 
@@ -66,46 +63,37 @@ public class GarageFeatures
     @DecimalMin("1")
     @DecimalMax("99999")
     @NotNull
-    @Nonnull
     private BigInteger areaConstructed;
     /**
      * lift
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresLiftAvailable")
     private Boolean liftAvailable;
     /**
      * automatic door
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresParkingAutomaticDoor")
     private Boolean parkingAutomaticDoor;
     /**
      * parking covered
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresParkingPlaceCovered")
     private Boolean parkingPlaceCovered;
     /**
      * parking types
      * <p>
      * this feature only applies for Portugal and Italy garages. 'depot' if is a box garage. 'parking_space' if is a regular garage
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresParkingType")
     @JsonPropertyDescription("this feature only applies for Portugal and Italy garages. 'depot' if is a box garage. 'parking_space' if is a regular garage")
     private ParkingType parkingType;
@@ -113,36 +101,30 @@ public class GarageFeatures
      * security alarm system
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityAlarm")
     private Boolean securityAlarm;
     /**
      * security personnel
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityPersonnel")
     private Boolean securityPersonnel;
     /**
      * security system
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecuritySystem")
     private Boolean securitySystem;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 2456582616823518185L;
+    private final static long serialVersionUID = 6666937898394718052L;
 
     /**
      * No args constructor for use in serialization
@@ -536,7 +518,7 @@ public class GarageFeatures
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

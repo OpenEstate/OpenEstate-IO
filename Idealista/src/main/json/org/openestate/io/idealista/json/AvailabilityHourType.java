@@ -29,7 +29,7 @@ public enum AvailabilityHourType {
         }
     }
 
-    private AvailabilityHourType(String value) {
+    AvailabilityHourType(String value) {
         this.value = value;
     }
 
