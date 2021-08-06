@@ -197,6 +197,21 @@
                 <version>2.9.10</version>
             </dependency>
             <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>2.3.5</version>
+            </dependency>
+            <dependency>
                 <groupId>org.jvnet.jaxb2_commons</groupId>
                 <artifactId>jaxb2-basics-runtime</artifactId>
                 <version>0.11.1</version>
@@ -269,8 +284,7 @@
                     <version>3.8.1</version>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <source>1.7</source>
-                        <target>1.7</target>
+                        <release>11</release>
                         <showDeprecation>true</showDeprecation>
                         <debug>false</debug>
                         <compilerArgs>
