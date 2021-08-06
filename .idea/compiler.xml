@@ -6,23 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="OpenEstate-IO-Build" />
-        <module name="OpenEstate-IO-OpenImmo" />
-        <module name="OpenEstate-IO-ImmoXML" />
-        <module name="OpenEstate-IO-Examples" />
-        <module name="OpenEstate-IO-ImmobarIT" />
-        <module name="OpenEstate-IO-WisIT" />
-        <module name="OpenEstate-IO-IS24-XML" />
-        <module name="OpenEstate-IO-Trovit" />
         <module name="OpenEstate-IO-Filemaker" />
+        <module name="OpenEstate-IO-IS24-XML" />
+        <module name="OpenEstate-IO-WisIT" />
         <module name="OpenEstate-IO-Idealista" />
-        <module name="OpenEstate-IO-Kyero" />
-        <module name="OpenEstate-IO-DaftIE" />
-        <module name="OpenEstate-IO-CasaIT" />
-        <module name="OpenEstate-IO-IDX" />
         <module name="OpenEstate-IO-ImmobiliareIT" />
-        <module name="OpenEstate-IO-IS24-CSV" />
+        <module name="OpenEstate-IO-Build" />
+        <module name="OpenEstate-IO-CasaIT" />
+        <module name="OpenEstate-IO-ImmobarIT" />
+        <module name="OpenEstate-IO-DaftIE" />
+        <module name="OpenEstate-IO-OpenImmo" />
+        <module name="OpenEstate-IO-Kyero" />
         <module name="OpenEstate-IO-Core" />
+        <module name="OpenEstate-IO-IDX" />
+        <module name="OpenEstate-IO-ImmoXML" />
+        <module name="OpenEstate-IO-Trovit" />
+        <module name="OpenEstate-IO-IS24-CSV" />
+        <module name="OpenEstate-IO-Examples" />
       </profile>
     </annotationProcessing>
   </component>
@@ -30,21 +30,6 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="-Xlint:unchecked" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="OpenEstate-IO" options="" />
-      <module name="OpenEstate-IO-CasaIT" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-Core" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-DaftIE" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-Examples" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-Filemaker" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-IDX" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-IS24-CSV" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-IS24-XML" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-ImmoXML" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-ImmobiliareIT" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-Kyero" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-OpenImmo" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-Trovit" options="-Xlint:unchecked" />
-      <module name="OpenEstate-IO-WisIT" options="-Xlint:unchecked" />
-      <module name="release" options="" />
     </option>
   </component>
 </project>
