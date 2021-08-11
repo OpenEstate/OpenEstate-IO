@@ -15,10 +15,10 @@
  */
 
 /**
- * <strong>EXPERIMENTAL:</strong> Read and write JSON data for
+ * <strong>EXPERIMENTAL:</strong> Generated Jackson classes for
  * <a href="https://www.idealista.com">idealista.com</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-package org.openestate.io.idealista;
+package org.openestate.io.idealista.json;
