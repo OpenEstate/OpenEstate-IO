@@ -118,6 +118,8 @@
 
     <build>
         <plugins>
+
+            <!-- compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -145,6 +147,7 @@
                 </executions>
             </plugin>
 
+            <!-- JSON -->
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>

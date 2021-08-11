@@ -148,6 +148,8 @@
 
     <build>
         <plugins>
+
+            <!-- compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -155,6 +157,7 @@
                     <release>8</release>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
