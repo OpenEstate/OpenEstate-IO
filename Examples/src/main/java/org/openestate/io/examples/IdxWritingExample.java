@@ -30,7 +30,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxPrinter;
 import org.openestate.io.idx.IdxRecord;
 import org.openestate.io.idx.types.GrossPremium;
@@ -62,10 +61,6 @@ public class IdxWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                IdxWritingExample.class.getResource("log4j.properties"));
-
         // create some CSV records
         List<IdxRecord> records = new ArrayList<>();
         int recordCount = RandomUtils.nextInt(5, 10);

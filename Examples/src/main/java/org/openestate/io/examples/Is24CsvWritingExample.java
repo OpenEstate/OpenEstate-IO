@@ -29,7 +29,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_csv.Is24CsvPrinter;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.records.HausKauf;
@@ -70,10 +69,6 @@ public class Is24CsvWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24CsvWritingExample.class.getResource("log4j.properties"));
-
         // create some CSV records
         List<Is24CsvRecord> records = new ArrayList<>();
         int hausKaufCount = RandomUtils.nextInt(1, 5);

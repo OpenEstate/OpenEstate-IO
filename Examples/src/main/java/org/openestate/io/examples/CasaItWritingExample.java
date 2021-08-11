@@ -28,7 +28,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.casa_it.CasaItDocument;
 import org.openestate.io.casa_it.CasaItUtils;
 import org.openestate.io.casa_it.xml.Container;
@@ -61,10 +60,6 @@ public class CasaItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                CasaItWritingExample.class.getResource("log4j.properties"));
-
         // create a Container object with some example data
         // this object corresponds to the <container> root element in XML
         Container container = FACTORY.createContainer();

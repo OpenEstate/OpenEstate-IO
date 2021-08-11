@@ -33,7 +33,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idealista.IdealistaRootElement;
 import org.openestate.io.idealista.IdealistaUtils;
 import org.openestate.io.idealista.json.Address;
@@ -74,10 +73,6 @@ public class IdealistaWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmobiliareItWritingExample.class.getResource("log4j.properties"));
-
         // create a customer root object with some example data
         Customer customer = new Customer();
         customer.setReference(RandomStringUtils.randomAlphanumeric(5));

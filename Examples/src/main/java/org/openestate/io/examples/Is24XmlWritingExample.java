@@ -30,7 +30,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_xml.Is24XmlDocument;
 import org.openestate.io.is24_xml.Is24XmlUtils;
 import org.openestate.io.is24_xml.xml.AktionsTyp;
@@ -78,10 +77,6 @@ public class Is24XmlWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24XmlWritingExample.class.getResource("log4j.properties"));
-
         // create a ImmobilienTransferTyp object with some example data
         // this object corresponds to the <IS24ImmobilienTransfer> root element in XML
         ImmobilienTransferTyp transfer = FACTORY.createImmobilienTransferTyp();

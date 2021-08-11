@@ -29,7 +29,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
@@ -67,10 +66,6 @@ public class OpenImmoWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                OpenImmoWritingExample.class.getResource("log4j.properties"));
-
         // create an Openimmo object with some example data
         // this object corresponds to the <openimmo> root element in XML
         Openimmo openimmo = FACTORY.createOpenimmo();

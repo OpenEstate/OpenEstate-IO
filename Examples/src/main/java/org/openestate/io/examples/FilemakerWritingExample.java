@@ -24,7 +24,6 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.filemaker.FilemakerResultDocument;
 import org.openestate.io.filemaker.FilemakerUtils;
 import org.openestate.io.filemaker.xml.result.DatabaseType;
@@ -58,10 +57,6 @@ public class FilemakerWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                FilemakerWritingExample.class.getResource("log4j.properties"));
-
         // create a FMPXMLRESULT object with some example data
         // this object corresponds to the <FMPXMLRESULT> root element in XML
         FMPXMLRESULT result = FACTORY.createFMPXMLRESULT();

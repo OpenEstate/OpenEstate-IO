@@ -31,7 +31,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
 import org.openestate.io.trovit.xml.AdType;
@@ -68,10 +67,6 @@ public class TrovitWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                TrovitWritingExample.class.getResource("log4j.properties"));
-
         // create a Trovit object with some example data
         // this object corresponds to the <trovit> element in XML
         Trovit trovit = FACTORY.createTrovit();

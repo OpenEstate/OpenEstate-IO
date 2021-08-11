@@ -18,7 +18,6 @@ package org.openestate.io.examples;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxParser;
 import org.openestate.io.idx.IdxRecord;
 import org.slf4j.Logger;
@@ -43,10 +42,6 @@ public class IdxReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                IdxReadingExample.class.getResource("log4j.properties"));
-
         // read example file, if no files were specified as command line arguments
         if (args.length < 1) {
             try {

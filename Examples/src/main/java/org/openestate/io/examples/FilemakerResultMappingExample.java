@@ -17,7 +17,6 @@ package org.openestate.io.examples;
 
 import java.io.File;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.filemaker.FilemakerResultDocument;
 import org.openestate.io.filemaker.FilemakerResultMapping;
@@ -43,10 +42,6 @@ public class FilemakerResultMappingExample {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                FilemakerWritingExample.class.getResource("log4j.properties"));
-
         // create a mapping from the example document, if no files were specified as command line arguments
         FilemakerResultMapping mapping = null;
         if (args.length < 1) {

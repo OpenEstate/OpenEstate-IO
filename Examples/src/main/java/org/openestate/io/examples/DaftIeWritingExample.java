@@ -31,7 +31,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.daft_ie.DaftIeDocument;
 import org.openestate.io.daft_ie.DaftIeUtils;
 import org.openestate.io.daft_ie.xml.CommercialType;
@@ -67,10 +66,6 @@ public class DaftIeWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                DaftIeWritingExample.class.getResource("log4j.properties"));
-
         // create a Daft object with some example data
         // this object corresponds to the <daft> root element in XML
         Daft daft = FACTORY.createDaft();
