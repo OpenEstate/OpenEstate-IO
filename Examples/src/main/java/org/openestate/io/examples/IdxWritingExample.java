@@ -78,7 +78,7 @@ public class IdxWritingExample {
         }
 
         // write CSV records into a java.io.OutputStream
-        write(records, new NullOutputStream());
+        write(records, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write CSV records into a java.io.Writer
         write(records, new NullWriter());
@@ -92,6 +92,7 @@ public class IdxWritingExample {
      *
      * @return created example object
      */
+    @SuppressWarnings("deprecation")
     private static IdxRecord createRecord() {
         // create an example real estate
         IdxRecord obj = new IdxRecord();
@@ -304,6 +305,7 @@ public class IdxWritingExample {
      * @param records the CSV records to write
      * @param output  the stream, where the document is written to
      */
+    @SuppressWarnings("SameParameterValue")
     private static void write(List<IdxRecord> records, OutputStream output) {
         LOGGER.info("writing document");
         try {
@@ -348,7 +350,7 @@ public class IdxWritingExample {
         try (IdxPrinter printer = IdxPrinter.create(csv)) {
             printer.printRecords(records);
             LOGGER.info(StringUtils.repeat("-", 50)
-                    + System.lineSeparator() + csv.toString());
+                    + System.lineSeparator() + csv);
         } catch (Exception ex) {
             LOGGER.error("Can't write document into a string!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

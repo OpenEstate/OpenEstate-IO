@@ -103,7 +103,7 @@ public class OpenImmoReadingExample {
             LOGGER.warn("> provided file is invalid");
             return;
         }
-        OpenImmoDocument doc = OpenImmoUtils.createDocument(xmlFile);
+        OpenImmoDocument<?> doc = OpenImmoUtils.createDocument(xmlFile);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
         } else if (doc.isFeedback()) {
@@ -129,7 +129,7 @@ public class OpenImmoReadingExample {
     @SuppressWarnings("Duplicates")
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("process example file");
-        OpenImmoDocument doc = OpenImmoUtils.createDocument(xmlInputStream);
+        OpenImmoDocument<?> doc = OpenImmoUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
         } else if (doc.isFeedback()) {

@@ -104,7 +104,7 @@ public class FilemakerReadingExample {
             LOGGER.warn("> provided file is invalid");
             return;
         }
-        FilemakerDocument doc = FilemakerUtils.createDocument(xmlFile);
+        FilemakerDocument<?> doc = FilemakerUtils.createDocument(xmlFile);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
         } else if (doc.isResult()) {
@@ -131,7 +131,7 @@ public class FilemakerReadingExample {
     @SuppressWarnings("Duplicates")
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("processing example file");
-        FilemakerDocument doc = FilemakerUtils.createDocument(xmlInputStream);
+        FilemakerDocument<?> doc = FilemakerUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
         } else if (doc.isResult()) {

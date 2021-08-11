@@ -135,7 +135,7 @@ public class IdealistaReadingExample {
                         property.getOperation().getType() : null;
 
                 // get property type
-                Enum objectType;
+                Enum<?> objectType;
                 AbstractFeatures features = property.getFeatures();
                 if (features instanceof BuildingFeatures) {
                     BuildingFeatures building = (BuildingFeatures) features;
@@ -183,7 +183,7 @@ public class IdealistaReadingExample {
                         newDevelopment.getCode());
 
                 // get typology types
-                List<Enum> objectTypes = new ArrayList<>();
+                List<Enum<?>> objectTypes = new ArrayList<>();
                 if (newDevelopment.getTypologies() != null) {
                     for (Typology typology : newDevelopment.getTypologies()) {
                         AbstractFeatures features = typology.getFeatures();

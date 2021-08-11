@@ -90,7 +90,7 @@ public class Is24CsvWritingExample {
         }
 
         // write CSV records into a java.io.OutputStream
-        write(records, new NullOutputStream());
+        write(records, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write CSV records into a java.io.Writer
         write(records, new NullWriter());
@@ -281,6 +281,7 @@ public class Is24CsvWritingExample {
      * @param records the CSV records to write
      * @param output  the stream, where the document is written to
      */
+    @SuppressWarnings("SameParameterValue")
     private static void write(List<Is24CsvRecord> records, OutputStream output) {
         LOGGER.info("writing document");
         try (Is24CsvPrinter printer = Is24CsvPrinter.create(output)) {
@@ -323,7 +324,7 @@ public class Is24CsvWritingExample {
         try (Is24CsvPrinter printer = Is24CsvPrinter.create(csv)) {
             printer.printRecords(records);
             LOGGER.info(StringUtils.repeat("-", 50)
-                    + System.lineSeparator() + csv.toString());
+                    + System.lineSeparator() + csv);
         } catch (Exception ex) {
             LOGGER.error("Can't write document into a string!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

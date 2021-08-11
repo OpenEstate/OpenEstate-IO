@@ -119,7 +119,7 @@ public class ImmobiliareItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -170,7 +170,7 @@ public class ImmobiliareItWritingExample {
         obj.getExtraFeatures().setDocDescription(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setDocSpecification(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setElevator(RandomUtils.nextBoolean());
-        obj.getExtraFeatures().setFloorplannerUrl("http://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
+        obj.getExtraFeatures().setFloorplannerUrl("https://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
         obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setFurniture(randomValue(Furniture.values()));
         obj.getExtraFeatures().setGarden(randomValue(Garden.values()));
@@ -353,7 +353,7 @@ public class ImmobiliareItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(ImmobiliareItDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
