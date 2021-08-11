@@ -289,7 +289,7 @@
                     <version>3.8.1</version>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <release>11</release>
+                        <release>8</release>
                         <showDeprecation>true</showDeprecation>
                         <debug>false</debug>
                         <compilerArgs>
