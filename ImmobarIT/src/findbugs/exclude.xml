@@ -1,5 +1,0 @@
-<FindBugsFilter>
-  <Match>
-    <Package name="~org.openestate.io.immobar_it.xml.*" />
-  </Match>
-</FindBugsFilter>
