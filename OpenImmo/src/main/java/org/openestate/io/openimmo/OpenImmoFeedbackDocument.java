@@ -15,6 +15,7 @@
  */
 package org.openestate.io.openimmo;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
@@ -122,8 +123,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
     }
 
     /**
-     * Creates a {@link OpenImmoFeedbackDocument} from a
-     * {@link OpenimmoFeedback} object.
+     * Creates a {@link OpenImmoFeedbackDocument} from a {@link OpenimmoFeedback} object.
      *
      * @param feedback Java object, that represents the &lt;openimmo_feedback&gt; root element
      * @return created document
@@ -131,11 +131,24 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static OpenImmoFeedbackDocument newDocument(OpenimmoFeedback feedback) throws ParserConfigurationException, JAXBException {
+        return newDocument(feedback, null);
+    }
+
+    /**
+     * Creates a {@link OpenImmoFeedbackDocument} from a {@link OpenimmoFeedback} object.
+     *
+     * @param feedback Java object, that represents the &lt;openimmo_feedback&gt; root element
+     * @param context  JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static OpenImmoFeedbackDocument newDocument(OpenimmoFeedback feedback, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (StringUtils.isBlank(feedback.getVersion()))
             feedback.setVersion(OpenImmoUtils.VERSION.toReadableVersion());
 
         Document document = XmlUtils.newDocument();
-        OpenImmoUtils.createMarshaller("UTF-8", true).marshal(feedback, document);
+        OpenImmoUtils.createMarshaller("UTF-8", true, context).marshal(feedback, document);
         return new OpenImmoFeedbackDocument(document);
     }
 
@@ -184,15 +197,15 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
     }
 
     /**
-     * Creates a {@link OpenimmoFeedback} object from the contained
-     * {@link Document}.
+     * Creates a {@link OpenimmoFeedback} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;openimmo_feedback&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public OpenimmoFeedback toObject() throws JAXBException {
+    public OpenimmoFeedback toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (OpenimmoFeedback) OpenImmoUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (OpenimmoFeedback) OpenImmoUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

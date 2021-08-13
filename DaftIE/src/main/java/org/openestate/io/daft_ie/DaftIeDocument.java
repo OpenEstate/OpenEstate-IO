@@ -15,6 +15,7 @@
  */
 package org.openestate.io.daft_ie;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
@@ -122,11 +123,24 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static DaftIeDocument newDocument(Daft daft) throws ParserConfigurationException, JAXBException {
+        return newDocument(daft, null);
+    }
+
+    /**
+     * Creates a {@link DaftIeDocument} from a {@link Daft} object.
+     *
+     * @param daft    Java object, that represents the &lt;daft&gt; root element
+     * @param context JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static DaftIeDocument newDocument(Daft daft, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (StringUtils.isBlank(daft.getVersion()))
             daft.setVersion(DaftIeUtils.VERSION.toReadableVersion());
 
         Document document = XmlUtils.newDocument();
-        DaftIeUtils.createMarshaller("UTF-8", true).marshal(daft, document);
+        DaftIeUtils.createMarshaller("UTF-8", true, context).marshal(daft, document);
         return new DaftIeDocument(document);
     }
 
@@ -151,12 +165,13 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
     /**
      * Creates a {@link Daft} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;daft&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Daft toObject() throws JAXBException {
+    public Daft toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (Daft) DaftIeUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (Daft) DaftIeUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

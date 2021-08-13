@@ -15,6 +15,7 @@
  */
 package org.openestate.io.immobiliare_it;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
@@ -124,11 +125,24 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmobiliareItDocument newDocument(Feed feed) throws ParserConfigurationException, JAXBException {
+        return newDocument(feed, null);
+    }
+
+    /**
+     * Creates a {@link ImmobiliareItDocument} from a {@link Feed} object.
+     *
+     * @param feed    Java object, that represents the &lt;feed&gt; root element
+     * @param context JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static ImmobiliareItDocument newDocument(Feed feed, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (feed.getVersion() == null)
             feed.setVersion(Version.V2_5);
 
         Document document = XmlUtils.newDocument();
-        ImmobiliareItUtils.createMarshaller("UTF-8", true).marshal(feed, document);
+        ImmobiliareItUtils.createMarshaller("UTF-8", true, context).marshal(feed, document);
         return new ImmobiliareItDocument(document);
     }
 
@@ -162,12 +176,13 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
     /**
      * Creates a {@link Feed} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;feed&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Feed toObject() throws JAXBException {
+    public Feed toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (Feed) ImmobiliareItUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (Feed) ImmobiliareItUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

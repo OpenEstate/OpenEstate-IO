@@ -15,6 +15,7 @@
  */
 package org.openestate.io.immoxml;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
@@ -121,13 +122,26 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmoXmlDocument newDocument(Immoxml immoxml) throws ParserConfigurationException, JAXBException {
+        return newDocument(immoxml, null);
+    }
+
+    /**
+     * Creates a {@link ImmoXmlDocument} from a {@link Immoxml} object.
+     *
+     * @param immoxml Java object, that represents the &lt;immoxml&gt; root element
+     * @param context JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static ImmoXmlDocument newDocument(Immoxml immoxml, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (immoxml.getUebertragung() == null)
             immoxml.setUebertragung(ImmoXmlUtils.getFactory().createUebertragung());
         if (StringUtils.isBlank(immoxml.getUebertragung().getVersion()))
             immoxml.getUebertragung().setVersion(ImmoXmlUtils.VERSION.toReadableVersion());
 
         Document document = XmlUtils.newDocument();
-        ImmoXmlUtils.createMarshaller("UTF-8", true).marshal(immoxml, document);
+        ImmoXmlUtils.createMarshaller("UTF-8", true, context).marshal(immoxml, document);
         return new ImmoXmlDocument(document);
     }
 
@@ -168,12 +182,13 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
     /**
      * Creates a {@link Immoxml} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;immoxml&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Immoxml toObject() throws JAXBException {
+    public Immoxml toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (Immoxml) ImmoXmlUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (Immoxml) ImmoXmlUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

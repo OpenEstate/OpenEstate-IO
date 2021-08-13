@@ -15,6 +15,7 @@
  */
 package org.openestate.io.openimmo;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
@@ -116,13 +117,26 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static OpenImmoTransferDocument newDocument(Openimmo openimmo) throws ParserConfigurationException, JAXBException {
+        return newDocument(openimmo, null);
+    }
+
+    /**
+     * Creates a {@link OpenImmoTransferDocument} from a {@link Openimmo} object.
+     *
+     * @param openimmo Java object, that represents the &lt;openimmo&gt; root element
+     * @param context  JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static OpenImmoTransferDocument newDocument(Openimmo openimmo, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (openimmo.getUebertragung() == null)
             openimmo.setUebertragung(OpenImmoUtils.getFactory().createUebertragung());
         if (StringUtils.isBlank(openimmo.getUebertragung().getVersion()))
             openimmo.getUebertragung().setVersion(OpenImmoUtils.VERSION.toReadableVersion());
 
         Document document = XmlUtils.newDocument();
-        OpenImmoUtils.createMarshaller("UTF-8", true).marshal(openimmo, document);
+        OpenImmoUtils.createMarshaller("UTF-8", true, context).marshal(openimmo, document);
         return new OpenImmoTransferDocument(document);
     }
 
@@ -163,12 +177,13 @@ public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
     /**
      * Creates a {@link Openimmo} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;openimmo&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Openimmo toObject() throws JAXBException {
+    public Openimmo toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (Openimmo) OpenImmoUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (Openimmo) OpenImmoUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

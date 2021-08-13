@@ -15,6 +15,7 @@
  */
 package org.openestate.io.kyero;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang3.StringUtils;
@@ -121,13 +122,26 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static KyeroDocument newDocument(Root root) throws ParserConfigurationException, JAXBException {
+        return newDocument(root, null);
+    }
+
+    /**
+     * Creates a {@link KyeroDocument} from a {@link Root} object.
+     *
+     * @param root    Java object, that represents the &lt;root&gt; root element
+     * @param context JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static KyeroDocument newDocument(Root root, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (root.getKyero() == null)
             root.setKyero(KyeroUtils.getFactory().createKyeroType());
         if (StringUtils.isBlank(root.getKyero().getFeedVersion()))
             root.getKyero().setFeedVersion(KyeroUtils.VERSION.toXmlVersion());
 
         Document document = XmlUtils.newDocument();
-        KyeroUtils.createMarshaller("UTF-8", true).marshal(root, document);
+        KyeroUtils.createMarshaller("UTF-8", true, context).marshal(root, document);
         return new KyeroDocument(document);
     }
 
@@ -169,12 +183,13 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
     /**
      * Creates a {@link Root} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;root&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Root toObject() throws JAXBException {
+    public Root toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (Root) KyeroUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (Root) KyeroUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

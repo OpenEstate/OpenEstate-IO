@@ -15,6 +15,7 @@
  */
 package org.openestate.io.casa_it;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.casa_it.xml.Container;
@@ -79,19 +80,33 @@ public class CasaItDocument extends XmlDocument<Container> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static CasaItDocument newDocument(Container container) throws ParserConfigurationException, JAXBException {
+        return newDocument(container, null);
+    }
+
+    /**
+     * Creates a {@link CasaItDocument} from a {@link Container} object.
+     *
+     * @param container Java object, that represents the &lt;container&gt; root element
+     * @param context   JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static CasaItDocument newDocument(Container container, JAXBContext context) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
-        CasaItUtils.createMarshaller("UTF-8", true).marshal(container, document);
+        CasaItUtils.createMarshaller("UTF-8", true, context).marshal(container, document);
         return new CasaItDocument(document);
     }
 
     /**
      * Creates a {@link Container} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;container&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Container toObject() throws JAXBException {
-        return (Container) CasaItUtils.createUnmarshaller().unmarshal(this.getDocument());
+    public Container toObject(JAXBContext context) throws JAXBException {
+        return (Container) CasaItUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

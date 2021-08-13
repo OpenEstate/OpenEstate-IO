@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -39,11 +41,10 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class FilemakerUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerUtils.class);
-    private static JAXBContext JAXB = null;
+    private static JAXBContext DEFAULT_CONTEXT = null;
 
     /*
      * the latest implemented version of this format
@@ -60,23 +61,76 @@ public class FilemakerUtils {
     /**
      * the package, where generated JAXB classes are located
      */
-    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.filemaker.xml.result"
             + ":org.openestate.io.filemaker.xml.layout";
 
     /**
      * the factory for creation of JAXB objects in FMPXMLLAYOUT format
      */
-    @SuppressWarnings("unused")
-    public final static org.openestate.io.filemaker.xml.layout.ObjectFactory FACTORY_LAYOUT = new org.openestate.io.filemaker.xml.layout.ObjectFactory();
+    public final static org.openestate.io.filemaker.xml.layout.ObjectFactory FACTORY_LAYOUT =
+            new org.openestate.io.filemaker.xml.layout.ObjectFactory();
 
     /**
      * the factory for creation of JAXB objects in FMPXMLRESULT format
      */
-    @SuppressWarnings("unused")
-    public final static org.openestate.io.filemaker.xml.result.ObjectFactory FACTORY_RESULT = new org.openestate.io.filemaker.xml.result.ObjectFactory();
+    public final static org.openestate.io.filemaker.xml.result.ObjectFactory FACTORY_RESULT =
+            new org.openestate.io.filemaker.xml.result.ObjectFactory();
 
     private FilemakerUtils() {
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext() throws JAXBException {
+        return createContext(null, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext(List<String> additionalJaxbPackages) throws JAXBException {
+        return createContext(additionalJaxbPackages, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param classloader the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(ClassLoader classloader) throws JAXBException {
+        return createContext(null, classloader);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @param classloader            the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(List<String> additionalJaxbPackages, ClassLoader classloader) throws JAXBException {
+        final List<String> packages = new ArrayList<>();
+        packages.add(PACKAGE);
+        if (additionalJaxbPackages != null && !additionalJaxbPackages.isEmpty())
+            packages.addAll(additionalJaxbPackages);
+
+        return JAXBContext.newInstance(
+                StringUtils.join(packages, ":"),
+                (classloader != null) ? classloader : Thread.currentThread().getContextClassLoader()
+        );
     }
 
     /**
@@ -88,7 +142,7 @@ public class FilemakerUtils {
      * @throws IOException                  if reading failed
      * @throws ParserConfigurationException if the parser is not properly configured
      */
-    public static FilemakerDocument createDocument(InputStream input) throws SAXException, IOException, ParserConfigurationException {
+    public static FilemakerDocument<?> createDocument(InputStream input) throws SAXException, IOException, ParserConfigurationException {
         return createDocument(XmlUtils.newDocument(input, true));
     }
 
@@ -101,7 +155,7 @@ public class FilemakerUtils {
      * @throws IOException                  if reading failed
      * @throws ParserConfigurationException if the parser is not properly configured
      */
-    public static FilemakerDocument createDocument(File xmlFile) throws SAXException, IOException, ParserConfigurationException {
+    public static FilemakerDocument<?> createDocument(File xmlFile) throws SAXException, IOException, ParserConfigurationException {
         return createDocument(XmlUtils.newDocument(xmlFile, true));
     }
 
@@ -114,7 +168,7 @@ public class FilemakerUtils {
      * @throws IOException                  if reading failed
      * @throws ParserConfigurationException if the parser is not properly configured
      */
-    public static FilemakerDocument createDocument(String xmlString) throws SAXException, IOException, ParserConfigurationException {
+    public static FilemakerDocument<?> createDocument(String xmlString) throws SAXException, IOException, ParserConfigurationException {
         return createDocument(XmlUtils.newDocument(xmlString, true));
     }
 
@@ -124,7 +178,7 @@ public class FilemakerUtils {
      * @param doc XML document
      * @return created document or null, of the document is not supported by this format
      */
-    public static FilemakerDocument createDocument(Document doc) {
+    public static FilemakerDocument<?> createDocument(Document doc) {
         if (FilemakerResultDocument.isReadable(doc))
             return new FilemakerResultDocument(doc);
         else if (FilemakerLayoutDocument.isReadable(doc))
@@ -141,7 +195,19 @@ public class FilemakerUtils {
      */
     @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
-        return createMarshaller(Charset.defaultCharset().name(), true);
+        return createMarshaller(null, true, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param context context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static Marshaller createMarshaller(JAXBContext context) throws JAXBException {
+        return createMarshaller(null, true, context);
     }
 
     /**
@@ -152,36 +218,65 @@ public class FilemakerUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
-    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
-        Marshaller m = getContext().createMarshaller();
-        m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+        return createMarshaller(encoding, formatted, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param encoding  encoding of written XML
+     * @param formatted if written XML is pretty printed
+     * @param context   context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Marshaller createMarshaller(String encoding, boolean formatted, JAXBContext context) throws JAXBException {
+        final Marshaller m = (context != null) ?
+                context.createMarshaller() :
+                getContext().createMarshaller();
+
+        m.setProperty(Marshaller.JAXB_ENCODING, StringUtils.defaultIfBlank(encoding, Charset.defaultCharset().name()));
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, formatted);
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Creates a {@link Unmarshaller} to read JAXB objects from XML.
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
-        Unmarshaller m = getContext().createUnmarshaller();
+        return createUnmarshaller(null);
+    }
+
+    /**
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
+     *
+     * @param context context to create the unmarshaller on
+     * @return created unmarshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Unmarshaller createUnmarshaller(JAXBContext context) throws JAXBException {
+        final Unmarshaller m = (context != null) ?
+                context.createUnmarshaller() :
+                getContext().createUnmarshaller();
+
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Returns the {@link JAXBContext} for this format.
+     * Returns the default {@link JAXBContext} for this format.
      *
      * @return context
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
-        if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
-        return JAXB;
+        if (DEFAULT_CONTEXT == null) initContext(null);
+        return DEFAULT_CONTEXT;
     }
 
     /**
@@ -203,13 +298,13 @@ public class FilemakerUtils {
     }
 
     /**
-     * Initializes the {@link JAXBContext} for this format.
+     * Initializes the default {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
-        JAXB = JAXBContext.newInstance(PACKAGE, classloader);
+        DEFAULT_CONTEXT = createContext(classloader);
     }
 
     public static Boolean parseBoolean(String value) {
