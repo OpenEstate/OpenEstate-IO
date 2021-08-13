@@ -31,6 +31,12 @@
       <w>wohnen</w>
       <w>wohnung</w>
       <w>zahl</w>
+      <w>immobar</w>
+      <w>immotype</w>
+      <w>planimetry</w>
+      <w>realestate</w>
+      <w>revenuetype</w>
+      <w>simplefield</w>
     </words>
   </dictionary>
 </component>
