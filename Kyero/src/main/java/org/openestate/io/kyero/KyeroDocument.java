@@ -18,8 +18,8 @@ package org.openestate.io.kyero;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConvertableDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.kyero.xml.Root;
@@ -55,9 +55,8 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
         String version;
         try {
             Document doc = this.getDocument();
-            version = StringUtils.trimToNull(XmlUtils
-                    .newXPath("/io:root/io:kyero/io:feed_version/text()", doc)
-                    .stringValueOf(doc));
+            version = StringUtils.trimToNull(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:root/io:kyero/io:feed_version/text()", doc, "io"), doc));
             if (version == null) {
                 LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
@@ -73,7 +72,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
                 //System.out.println( "----------------------------" );
                 return null;
             }
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             return null;
@@ -150,17 +149,11 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
         try {
             Document doc = this.getDocument();
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:root/io:kyero/io:feed_version", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(XmlUtils.xPath("/io:root/io:kyero/io:feed_version", doc, "io"), doc);
             if (node == null) {
-                Element parentNode = (Element) XmlUtils
-                        .newXPath("/io:root/io:kyero", doc)
-                        .selectSingleNode(doc);
+                Element parentNode = XmlUtils.xPathElement(XmlUtils.xPath("/io:root/io:kyero", doc, "io"), doc);
                 if (parentNode == null) {
-                    Element grandParentNode = (Element) XmlUtils
-                            .newXPath("/io:root", doc)
-                            .selectSingleNode(doc);
+                    Element grandParentNode = XmlUtils.xPathElement(XmlUtils.xPath("/io:root", doc, "io"), doc);
                     if (grandParentNode == null) {
                         LOGGER.warn("Can't find a <root> element in the document!");
                         return;
@@ -174,7 +167,7 @@ public class KyeroDocument extends XmlConvertableDocument<Root, KyeroVersion> {
 
             String newVersion = version.toXmlVersion();
             node.setTextContent(newVersion);
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
         }

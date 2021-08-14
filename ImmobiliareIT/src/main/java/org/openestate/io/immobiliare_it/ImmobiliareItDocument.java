@@ -18,8 +18,8 @@ package org.openestate.io.immobiliare_it;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConvertableDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.immobiliare_it.xml.Feed;
@@ -57,9 +57,8 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
         String version;
         try {
             Document doc = this.getDocument();
-            version = StringUtils.trimToNull(XmlUtils
-                    .newXPath("/io:feed/io:version/text()", doc)
-                    .stringValueOf(doc));
+            version = StringUtils.trimToNull(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:feed/io:version/text()", doc, "io"), doc));
             if (version == null) {
                 LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
@@ -75,7 +74,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
                 //System.out.println( "----------------------------" );
                 return null;
             }
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             return null;
@@ -151,13 +150,9 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
         try {
             Document doc = this.getDocument();
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:feed/io:version", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(XmlUtils.xPath("/io:feed/io:version", doc, "io"), doc);
             if (node == null) {
-                Element parentNode = (Element) XmlUtils
-                        .newXPath("/io:feed", doc)
-                        .selectSingleNode(doc);
+                Element parentNode = XmlUtils.xPathElement(XmlUtils.xPath("/io:feed", doc, "io"), doc);
                 if (parentNode == null) {
                     LOGGER.warn("Can't find a <feed> element in the document!");
                     return;
@@ -167,7 +162,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
             }
 
             node.setTextContent(version.toReadableVersion());
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
         }

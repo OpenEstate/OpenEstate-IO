@@ -18,8 +18,8 @@ package org.openestate.io.immoxml;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConvertableDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.immoxml.xml.Immoxml;
@@ -55,9 +55,8 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
         String version;
         try {
             Document doc = this.getDocument();
-            version = StringUtils.trimToNull(XmlUtils
-                    .newXPath("/io:immoxml/io:uebertragung/@version", doc)
-                    .stringValueOf(doc));
+            version = StringUtils.trimToNull(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:immoxml/io:uebertragung/@version", doc, "io"), doc));
             if (version == null) {
                 LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
@@ -73,7 +72,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
                 //System.out.println( "----------------------------" );
                 return null;
             }
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             return null;
@@ -150,18 +149,13 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
         try {
             Document doc = this.getDocument();
 
-            String currentVersion = StringUtils.trimToEmpty(XmlUtils
-                    .newXPath("/io:immoxml/io:uebertragung/@version", doc)
-                    .stringValueOf(doc));
+            String currentVersion = StringUtils.trimToEmpty(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:immoxml/io:uebertragung/@version", doc), doc));
             String[] ver = StringUtils.split(currentVersion, "/", 2);
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:immoxml/io:uebertragung", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(XmlUtils.xPath("/io:immoxml/io:uebertragung", doc), doc);
             if (node == null) {
-                Element parentNode = (Element) XmlUtils
-                        .newXPath("/io:immoxml", doc)
-                        .selectSingleNode(doc);
+                Element parentNode = XmlUtils.xPathElement(XmlUtils.xPath("/io:immoxml", doc), doc);
                 if (parentNode == null) {
                     LOGGER.warn("Can't find an <immoxml> element in the document!");
                     return;
@@ -173,7 +167,7 @@ public class ImmoXmlDocument extends XmlConvertableDocument<Immoxml, ImmoXmlVers
             String newVersion = version.toReadableVersion();
             if (ver.length > 1) newVersion += "/" + ver[1];
             node.setAttribute("version", newVersion);
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
         }

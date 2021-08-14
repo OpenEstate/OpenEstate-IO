@@ -18,8 +18,8 @@ package org.openestate.io.daft_ie;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConvertableDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.daft_ie.xml.Daft;
@@ -56,9 +56,8 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
         String version;
         try {
             Document doc = this.getDocument();
-            version = StringUtils.trimToNull(XmlUtils
-                    .newXPath("/io:daft/@version", doc)
-                    .stringValueOf(doc));
+            version = StringUtils.trimToNull(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:daft/@version", doc, "io"), doc));
             if (version == null) {
                 LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
@@ -74,7 +73,7 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
                 //System.out.println( "----------------------------" );
                 return null;
             }
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             return null;
@@ -148,15 +147,13 @@ public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> 
     public void setDocumentVersion(DaftIeVersion version) {
         try {
             Document doc = this.getDocument();
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:daft", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(XmlUtils.xPath("/io:daft", doc, "io"), doc);
             if (node == null) {
                 LOGGER.warn("Can't find an <daft> element in the document!");
                 return;
             }
             node.setAttribute("version", version.toReadableVersion());
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
         }

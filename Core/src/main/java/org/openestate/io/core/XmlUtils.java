@@ -25,7 +25,9 @@ import java.io.Writer;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import javax.xml.bind.DatatypeConverter;
+import javax.xml.namespace.NamespaceContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -35,11 +37,13 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.jaxen.JaxenException;
-import org.jaxen.XPath;
-import org.jaxen.dom.DOMXPath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Attr;
@@ -91,31 +95,6 @@ public final class XmlUtils {
     }
 
     /**
-     * Count the number of nodes, that are matching against an XPath expression.
-     *
-     * @param xpathExpression the XPath expression to match
-     * @param doc             the document, on which the XPath expression is evaluated
-     * @return number of matching nodes
-     * @throws JaxenException if the XPath evaluation failed
-     */
-    public static int countNodes(String xpathExpression, Document doc) throws JaxenException {
-        return XmlUtils.countNodes(xpathExpression, doc, doc);
-    }
-
-    /**
-     * Count the number of nodes, that are matching against an XPath expression.
-     *
-     * @param xpathExpression the XPath expression to match
-     * @param doc             the document, on which the XPath expression is evaluated
-     * @param context         the node, on which the XPath expression is evaluated
-     * @return number of matching nodes
-     * @throws JaxenException if the XPath evaluation failed
-     */
-    public static int countNodes(String xpathExpression, Document doc, Object context) throws JaxenException {
-        return XmlUtils.newXPath(xpathExpression, doc).selectNodes(context).size();
-    }
-
-    /**
      * Return the root {@link Element} of a {@link Document}.
      *
      * @param doc the document, where the root element is looked up
@@ -156,7 +135,7 @@ public final class XmlUtils {
     }
 
     /**
-     * Create a {@link Document} from a XML string.
+     * Create a {@link Document} from XML string.
      *
      * @param xmlString the XML string, the document is created from
      * @return created document
@@ -169,7 +148,7 @@ public final class XmlUtils {
     }
 
     /**
-     * Create a {@link Document} from a XML string.
+     * Create a {@link Document} from XML string.
      *
      * @param xmlString      the XML string, the document is created from
      * @param namespaceAware if namespaces are used in the created document
@@ -274,50 +253,22 @@ public final class XmlUtils {
     }
 
     /**
-     * Create a {@link XPath} expression.
-     *
-     * @param expression string with the XPath expression to create
-     * @return the created XPath expression
-     * @throws JaxenException if the XPath is not creatable
-     */
-    public static XPath newXPath(String expression) throws JaxenException {
-        return XmlUtils.newXPath(expression, null, null);
-    }
-
-    /**
-     * Create a {@link XPath} expression.
-     *
-     * @param expression string with the XPath expression to create
-     * @param doc        the document, whose namespace is bound to the XPath expression
-     * @return the created XPath expression
-     * @throws JaxenException if the XPath is not creatable
-     */
-    public static XPath newXPath(String expression, Document doc) throws JaxenException {
-        return XmlUtils.newXPath(expression, doc, "io");
-    }
-
-    /**
-     * Create a {@link XPath} expression.
+     * Create a {@link XPathExpression}.
      *
      * @param expression      string with the XPath expression to create
      * @param doc             the document, whose namespace is bound to the XPath expression
      * @param namespacePrefix prefix of the document namespace, that is bound to the XPath expression
      * @return the created XPath expression
-     * @throws JaxenException if the XPath is not creatable
+     * @throws XPathExpressionException if the XPath is not creatable
+     * @deprecated use {@link #xPath(String, Document, String)} instead
      */
-    public static XPath newXPath(String expression, Document doc, String namespacePrefix) throws JaxenException {
-        DOMXPath xpath = new DOMXPath(expression);
-        //LOGGER.debug( "new xpath: " + xpath.debug() );
-        if (doc != null && namespacePrefix != null) {
-            Element root = XmlUtils.getRootElement(doc);
-            String uri = StringUtils.trimToEmpty(root.getNamespaceURI());
-            xpath.addNamespace(namespacePrefix, uri);
-        }
-        return xpath;
+    @Deprecated
+    public static XPathExpression newXPath(String expression, Document doc, String namespacePrefix) throws XPathExpressionException {
+        return xPath(expression, doc, namespacePrefix);
     }
 
     /**
-     * Reads an xsd:date value.
+     * Reads a xsd:date value.
      * <p>
      * If the value is not a valid xsd:date, we're trying to parse the value
      * against other common formats. If this also fails, we're trying to parse the
@@ -343,6 +294,7 @@ public final class XmlUtils {
             //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
         }
         try {
+            //noinspection SpellCheckingInspection
             Date date = DateUtils.parseDateStrictly(value,
                     "dd.MM.yyyy", "dd.MM.yy", "dd/MM/yyyy", "dd/MM/yy", "dd-MM-yyyy",
                     "dd-MMM-yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "yyyy-D", "MM/yyyy",
@@ -369,7 +321,7 @@ public final class XmlUtils {
     }
 
     /**
-     * Reads an xsd:dateTime value.
+     * Reads a xsd:dateTime value.
      * <p>
      * If the value is not a valid xsd:dateTime, we're trying to parse the value
      * against other common formats. If this also fails, we're trying to parse the
@@ -395,6 +347,7 @@ public final class XmlUtils {
             //LOGGER.warn( "> " + ex.getLocalizedMessage(), ex );
         }
         try {
+            //noinspection SpellCheckingInspection
             Date date = DateUtils.parseDateStrictly(value,
                     "yyyy-MM-dd'T'HH:mm:ss",
                     "yyyy-MM-dd'T'HH:mm",
@@ -426,6 +379,7 @@ public final class XmlUtils {
      *
      * @param doc the document to print
      */
+    @SuppressWarnings("unused")
     public static void printNodes(Document doc) {
         NodeList children = doc.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
@@ -574,6 +528,7 @@ public final class XmlUtils {
      * @param prettyPrint if pretty printing is enabled for the generated XML code
      * @throws TransformerException if XML transformation failed
      */
+    @SuppressWarnings("DuplicatedCode")
     public static void write(Document doc, OutputStream output, boolean prettyPrint) throws TransformerException {
         XmlUtils.clean(doc);
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -583,6 +538,7 @@ public final class XmlUtils {
         transformer.setOutputProperty(OutputKeys.STANDALONE, "yes");
         transformer.setOutputProperty(OutputKeys.INDENT, (prettyPrint) ? "yes" : "no");
         if (prettyPrint) {
+            //noinspection HttpUrlsUsage
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         }
         transformer.transform(new DOMSource(doc), new StreamResult(output));
@@ -607,6 +563,7 @@ public final class XmlUtils {
      * @param prettyPrint if pretty printing is enabled for the generated XML code
      * @throws TransformerException if XML transformation failed
      */
+    @SuppressWarnings("DuplicatedCode")
     public static void write(Document doc, Writer output, boolean prettyPrint) throws TransformerException {
         XmlUtils.clean(doc);
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -616,8 +573,224 @@ public final class XmlUtils {
         transformer.setOutputProperty(OutputKeys.STANDALONE, "yes");
         transformer.setOutputProperty(OutputKeys.INDENT, (prettyPrint) ? "yes" : "no");
         if (prettyPrint) {
+            //noinspection HttpUrlsUsage
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         }
         transformer.transform(new DOMSource(doc), new StreamResult(output));
+    }
+
+    /**
+     * Create a {@link XPathExpression}.
+     *
+     * @param expression string with the XPath expression to create
+     * @return the created XPath expression
+     * @throws XPathExpressionException if the XPath is not creatable
+     */
+    public static XPathExpression xPath(String expression) throws XPathExpressionException {
+        return xPath(expression, null, null);
+    }
+
+    /**
+     * Create a {@link XPathExpression}.
+     *
+     * @param expression string with the XPath expression to create
+     * @param doc        the document, whose namespace is bound to the XPath expression
+     * @return the created XPath expression
+     * @throws XPathExpressionException if the XPath is not creatable
+     */
+    public static XPathExpression xPath(String expression, Document doc) throws XPathExpressionException {
+        return xPath(expression, doc, null);
+    }
+
+    /**
+     * Create a {@link XPathExpression}.
+     *
+     * @param expression      string with the XPath expression to create
+     * @param doc             the document, whose namespace is bound to the XPath expression
+     * @param namespacePrefix prefix of the document namespace, that is bound to the XPath expression
+     * @return the created XPath expression
+     * @throws XPathExpressionException if the XPath is not creatable
+     */
+    public static XPathExpression xPath(String expression, Document doc, String namespacePrefix) throws XPathExpressionException {
+        XPath xPath = XPathFactory.newInstance().newXPath();
+
+        //LOGGER.debug( "new xpath: " + xpath.debug() );
+        if (doc != null && StringUtils.isNotBlank(namespacePrefix)) {
+            final Element root = XmlUtils.getRootElement(doc);
+            final String uri = StringUtils.trimToEmpty(root.getNamespaceURI());
+
+            if (StringUtils.isBlank(uri)) {
+                // Remove namespace from xPath expression, if the document does not use namespaces at all.
+                // Otherwise, error are thrown during evaluation.
+                expression = expression.replace(namespacePrefix + ":", StringUtils.EMPTY);
+            } else {
+                //xpath.addNamespace(namespacePrefix, uri);
+
+                //NamespaceContextImpl context = new NamespaceContextImpl();
+                //context.startPrefixMapping(namespacePrefix, uri);
+                //xPath.setNamespaceContext(new NamespaceContextImpl());
+                //xPath.setNamespaceContext(new SimpleNamespaceResolver(namespacePrefix, uri));
+                xPath.setNamespaceContext(new NamespaceContext() {
+                    @Override
+                    public String getNamespaceURI(String prefix) {
+                        //LOGGER.debug("getNamespaceURI({}) => {} ({})", prefix, uri, uri.length());
+                        //LOGGER.debug("test", new Exception());
+                        return uri;
+                    }
+
+                    @Override
+                    public String getPrefix(String namespaceURI) {
+                        //LOGGER.debug("getPrefix({}) => {}", namespaceURI, namespacePrefix);
+                        return namespacePrefix;
+                    }
+
+                    @Override
+                    public Iterator<String> getPrefixes(String namespaceURI) {
+                        //LOGGER.debug("getPrefixes({})", namespaceURI);
+                        return null;
+                    }
+                });
+            }
+        }
+
+        return xPath.compile(expression);
+    }
+
+    /**
+     * Get a node, that matches against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @return matching boolean value
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static Boolean xPathBoolean(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
+        return (Boolean) xpathExpression.evaluate(item, XPathConstants.BOOLEAN);
+    }
+
+    /**
+     * Get an element, that matches against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @return matching element
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static Element xPathElement(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
+        return (Element) xpathExpression.evaluate(item, XPathConstants.NODE);
+    }
+
+    /**
+     * Process an element, that matches against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static void xPathElementProcess(XPathExpression xpathExpression, Object item, XPathProcessor<Element> processor) throws XPathExpressionException {
+        processor.process(xPathElement(xpathExpression, item));
+    }
+
+    /**
+     * Process a list of elements, that are matching against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static void xPathElementsProcess(XPathExpression xpathExpression, Object item, XPathProcessor<Element> processor) throws XPathExpressionException {
+        final NodeList nodes = xPathNodes(xpathExpression, item);
+        for (int i=0; i<nodes.getLength(); i++) {
+            processor.process((Element) nodes.item(i));
+        }
+    }
+
+    /**
+     * Get a node, that matches against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @return matching node
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static Node xPathNode(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
+        return (Node) xpathExpression.evaluate(item, XPathConstants.NODE);
+    }
+
+    /**
+     * Process a node, that matches against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static void xPathNodeProcess(XPathExpression xpathExpression, Object item, XPathProcessor<Node> processor) throws XPathExpressionException {
+        processor.process(xPathNode(xpathExpression, item));
+    }
+
+    /**
+     * Get a list of nodes, that are matching against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @return list of matching nodes
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static NodeList xPathNodes(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
+        return (NodeList) xpathExpression.evaluate(item, XPathConstants.NODESET);
+    }
+
+    /**
+     * Process a list of nodes, that are matching against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static void xPathNodesProcess(XPathExpression xpathExpression, Object item, XPathProcessor<Node> processor) throws XPathExpressionException {
+        final NodeList nodes = xPathNodes(xpathExpression, item);
+        for (int i=0; i<nodes.getLength(); i++) {
+            processor.process(nodes.item(i));
+        }
+    }
+
+    /**
+     * Count the number of nodes, that are matching against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @return number of matching nodes
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static int xPathNodesCount(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
+        return xPathNodes(xpathExpression, item).getLength();
+    }
+
+    /**
+     * Get a number, that matches against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @return matching number value
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static Number xPathNumber(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
+        return (Number) xpathExpression.evaluate(item, XPathConstants.NUMBER);
+    }
+
+    /**
+     * Get a string, that matches against an XPath expression.
+     *
+     * @param xpathExpression the XPath expression to match
+     * @param item            the node, on which the XPath expression is evaluated
+     * @return matching string value
+     * @throws XPathExpressionException if the XPath evaluation failed
+     */
+    public static String xPathString(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
+        return (String) xpathExpression.evaluate(item, XPathConstants.STRING);
+    }
+
+    public interface XPathProcessor<T extends Node> {
+        void process(T node) throws XPathExpressionException;
     }
 }

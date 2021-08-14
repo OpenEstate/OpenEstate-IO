@@ -18,8 +18,8 @@ package org.openestate.io.openimmo;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.xml.OpenimmoFeedback;
 import org.slf4j.Logger;
@@ -55,11 +55,10 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
         try {
             Document doc = this.getDocument();
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:openimmo_feedback/io:version", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(
+                    XmlUtils.xPath("/io:openimmo_feedback/io:version", doc, "io"), doc);
 
-            // versions older then 1.2.4 do not support the <version> element
+            // versions older than 1.2.4 do not support the <version> element
             // - version 1.2.3 is assumed, when no <version> element is present and
             //   an empty namespace is used
             // - version 1.2.0 is assumed, when no <version> element is present and
@@ -86,7 +85,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
                 //System.out.println( "----------------------------" );
                 return null;
             }
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             return null;
@@ -157,16 +156,14 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
         try {
             Document doc = this.getDocument();
 
-            String currentVersion = StringUtils.trimToEmpty(XmlUtils
-                    .newXPath("/io:openimmo/io:uebertragung/@version", doc)
-                    .stringValueOf(doc));
+            String currentVersion = StringUtils.trimToEmpty(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:openimmo/io:uebertragung/@version", doc, "io"), doc));
             String[] ver = StringUtils.split(currentVersion, "/", 2);
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:openimmo_feedback/io:version", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(
+                    XmlUtils.xPath("/io:openimmo_feedback/io:version", doc, "io"), doc);
 
-            // versions older then 1.2.4 do not support the <version> element
+            // versions older than 1.2.4 do not support the <version> element
             if (OpenImmoVersion.V1_2_4.isNewerThen(version)) {
                 if (node != null) {
                     Element root = XmlUtils.getRootElement(doc);
@@ -176,9 +173,8 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
             }
 
             if (node == null) {
-                Element parentNode = (Element) XmlUtils
-                        .newXPath("/io:openimmo_feedback", doc)
-                        .selectSingleNode(doc);
+                Element parentNode = XmlUtils.xPathElement(
+                        XmlUtils.xPath("/io:openimmo_feedback", doc, "io"), doc);
                 if (parentNode == null) {
                     LOGGER.warn("Can't find an <openimmo_feedback> element in the document!");
                     return;
@@ -190,7 +186,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
             String newVersion = version.toReadableVersion();
             if (ver.length > 1) newVersion += "/" + ver[1];
             node.setTextContent(newVersion);
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
         }

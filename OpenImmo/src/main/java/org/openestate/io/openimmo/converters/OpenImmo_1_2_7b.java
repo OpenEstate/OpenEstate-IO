@@ -15,9 +15,8 @@
  */
 package org.openestate.io.openimmo.converters;
 
-import java.util.List;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoDocument;
@@ -35,7 +34,7 @@ import org.w3c.dom.Element;
  * @since 1.3
  */
 @SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
-public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument<?>, OpenImmoVersion> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_7b.class);
 
@@ -45,7 +44,7 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
     }
 
     @Override
-    public void downgradeToPreviousVersion(OpenImmoDocument doc) {
+    public void downgradeToPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_7);
 
         if (doc instanceof OpenImmoTransferDocument) {
@@ -73,7 +72,7 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
     }
 
     @Override
-    public void upgradeFromPreviousVersion(OpenImmoDocument doc) {
+    public void upgradeFromPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_7B);
     }
 
@@ -83,17 +82,13 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
      * OpenImmo 1.2.7 does not support &lt;referenz_id&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.7b
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeReferenzIdElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:kontaktperson/io:referenz_id",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeReferenzIdElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:kontaktperson/io:referenz_id";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -102,17 +97,13 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
      * OpenImmo 1.2.7 does not support &lt;geg2018&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.7b
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeGeg2018Elements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:geg2018",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeGeg2018Elements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:geg2018";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -123,19 +114,18 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument, OpenImmoVers
      * &lt;energiepass&gt; is not available in OpenImmo 1.2.7.
      *
      * @param doc OpenImmo document in version 1.2.7b
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeEnergiepassJahrgangElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:jahrgang",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getTextContent());
+    protected void downgradeEnergiepassJahrgangElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:jahrgang";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getTextContent());
+
             if (value == null || value.equalsIgnoreCase("bei_besichtigung")) {
-                Element parentNode = (Element) node.getParentNode();
-                parentNode.removeChild(node);
+                Element parentNode = (Element) element.getParentNode();
+                parentNode.removeChild(element);
             }
-        }
+        });
     }
 }

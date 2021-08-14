@@ -28,8 +28,8 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
-public class OpenImmo_1_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+@SuppressWarnings({"WeakerAccess"})
+public class OpenImmo_1_1 extends XmlConverter<OpenImmoDocument<?>, OpenImmoVersion> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_1.class);
 
@@ -41,13 +41,13 @@ public class OpenImmo_1_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion
     /**
      * Downgrade an OpenImmo document from version 1.1.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
+     * Versions before 1.1 are not supported. Therefore, this method always throws
      * a {@link NotImplementedException}.
      *
      * @param doc OpenImmo document in version 1.1
      */
     @Override
-    public void downgradeToPreviousVersion(OpenImmoDocument doc) {
+    public void downgradeToPreviousVersion(OpenImmoDocument<?> doc) {
         throw new NotImplementedException(
                 "OpenImmo versions before 1.1 are not supported!");
     }
@@ -55,13 +55,13 @@ public class OpenImmo_1_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion
     /**
      * Downgrade an OpenImmo document to version 1.1.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
+     * Versions before 1.1 are not supported. Therefore, this method always throws
      * a {@link NotImplementedException}.
      *
      * @param doc OpenImmo document
      */
     @Override
-    public void upgradeFromPreviousVersion(OpenImmoDocument doc) {
+    public void upgradeFromPreviousVersion(OpenImmoDocument<?> doc) {
         throw new NotImplementedException(
                 "OpenImmo versions before 1.1 are not supported!");
     }

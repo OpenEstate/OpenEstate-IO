@@ -15,9 +15,12 @@
  */
 package org.openestate.io.openimmo.converters;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoDocument;
@@ -28,7 +31,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 
 /**
  * Converter for version 1.2.1.
@@ -37,7 +39,7 @@ import org.w3c.dom.Node;
  * @since 1.0
  */
 @SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
-public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument<?>, OpenImmoVersion> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_1.class);
 
@@ -52,7 +54,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * @param doc OpenImmo document in version 1.2.1
      */
     @Override
-    public void downgradeToPreviousVersion(OpenImmoDocument doc) {
+    public void downgradeToPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_0);
 
         if (doc instanceof OpenImmoTransferDocument) {
@@ -93,7 +95,7 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      */
     @Override
     @SuppressWarnings("Duplicates")
-    public void upgradeFromPreviousVersion(OpenImmoDocument doc) {
+    public void upgradeFromPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_1);
 
         if (doc instanceof OpenImmoTransferDocument) {
@@ -124,59 +126,60 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * &lt;energiebedarf&gt; and &lt;skala&gt; in version 1.2.0.
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeEnergiepassElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element parentNode = (Element) item;
-            boolean skalaProcessed = false;
-            String artValue = XmlUtils.newXPath("io:art/text()", doc)
-                    .stringValueOf(parentNode);
+    protected void downgradeEnergiepassElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass";
 
-            List childNodes = XmlUtils.newXPath("io:mitwarmwasser", doc)
-                    .selectNodes(parentNode);
-            for (Object child : childNodes) {
-                Node childNode = (Node) child;
-                childNode.getParentNode().removeChild(childNode);
-            }
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (parentNode) -> {
+            final List<String> options = new ArrayList<>();
+            final String artValue = XmlUtils.xPathString(
+                    XmlUtils.xPath("io:art/text()", doc, "io"), parentNode);
 
-            childNodes = XmlUtils.newXPath("io:energieverbrauchkennwert", doc)
-                    .selectNodes(parentNode);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                String childValue = StringUtils.trimToNull(childNode.getTextContent());
-                if (!skalaProcessed && "VERBRAUCH".equalsIgnoreCase(artValue) && childValue != null) {
-                    skalaProcessed = true;
-                    Element skalaNode = doc.createElementNS(OpenImmoUtils.OLD_NAMESPACE, "skala");
-                    skalaNode.setAttribute("type", "ZAHL");
-                    skalaNode.setTextContent(childValue);
-                    parentNode.appendChild(skalaNode);
-                }
-                childNode.getParentNode().removeChild(childNode);
-            }
+            XmlUtils.xPathElementsProcess(
+                    XmlUtils.xPath("io:mitwarmwasser", doc, "io"), parentNode,
+                    (element) -> element.getParentNode().removeChild(element)
+            );
 
-            childNodes = XmlUtils.newXPath("io:endenergiebedarf", doc)
-                    .selectNodes(parentNode);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                String childValue = StringUtils.trimToNull(childNode.getTextContent());
-                if (!skalaProcessed && "BEDARF".equalsIgnoreCase(artValue) && childValue != null) {
-                    skalaProcessed = true;
-                    Element skalaNode = doc.createElementNS(OpenImmoUtils.OLD_NAMESPACE, "skala");
-                    skalaNode.setAttribute("type", "ZAHL");
-                    skalaNode.setTextContent(childValue);
-                    parentNode.appendChild(skalaNode);
+            XmlUtils.xPathElementsProcess(
+                    XmlUtils.xPath("io:energieverbrauchkennwert", doc, "io"), parentNode,
+                    (childNode) -> {
+                        final String childValue = StringUtils.trimToNull(childNode.getTextContent());
 
-                    Element newNode = doc.createElementNS(OpenImmoUtils.OLD_NAMESPACE, "energiebedarf");
-                    newNode.setTextContent(childValue);
-                    parentNode.appendChild(newNode);
-                }
-                childNode.getParentNode().removeChild(childNode);
-            }
-        }
+                        if (!options.contains("skalaProcessed") && "VERBRAUCH".equalsIgnoreCase(artValue) && childValue != null) {
+                            options.add("skalaProcessed");
+
+                            final Element skalaNode = doc.createElementNS(OpenImmoUtils.OLD_NAMESPACE, "skala");
+                            skalaNode.setAttribute("type", "ZAHL");
+                            skalaNode.setTextContent(childValue);
+                            parentNode.appendChild(skalaNode);
+                        }
+                        childNode.getParentNode().removeChild(childNode);
+                    }
+            );
+
+            XmlUtils.xPathElementsProcess(
+                    XmlUtils.xPath("io:endenergiebedarf", doc, "io"), parentNode,
+                    (childNode) -> {
+                        final String childValue = StringUtils.trimToNull(childNode.getTextContent());
+
+                        if (!options.contains("skalaProcessed") && "BEDARF".equalsIgnoreCase(artValue) && childValue != null) {
+                            options.add("skalaProcessed");
+
+                            final Element skalaElement = doc.createElementNS(OpenImmoUtils.OLD_NAMESPACE, "skala");
+                            skalaElement.setAttribute("type", "ZAHL");
+                            skalaElement.setTextContent(childValue);
+                            parentNode.appendChild(skalaElement);
+
+                            final Element newElement = doc.createElementNS(OpenImmoUtils.OLD_NAMESPACE, "energiebedarf");
+                            newElement.setTextContent(childValue);
+                            parentNode.appendChild(newElement);
+                        }
+
+                        childNode.getParentNode().removeChild(childNode);
+                    }
+            );
+        });
     }
 
     /**
@@ -188,18 +191,17 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeHausElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("haustyp"));
+    protected void downgradeHausElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("haustyp"));
+
             if ("BUNGALOW".equalsIgnoreCase(value))
-                node.removeAttribute("haustyp");
-        }
+                element.removeAttribute("haustyp");
+        });
     }
 
     /**
@@ -229,17 +231,13 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.0 does not support &lt;objektart_zusatz&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeObjektartZusatzElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:objektart_zusatz",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeObjektartZusatzElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:objektart_zusatz";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -254,65 +252,64 @@ public class OpenImmo_1_2_1 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * the provided &lt;art&gt;.
      *
      * @param doc OpenImmo document in version 1.2.0
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void upgradeEnergiepassElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element parentNode = (Element) item;
-            String energiebedarfValue = null;
-            String skalaValue = null;
+    protected void upgradeEnergiepassElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass";
 
-            Element artNode = (Element) XmlUtils.newXPath("io:art", doc)
-                    .selectSingleNode(parentNode);
-            String artValue = (artNode != null) ?
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (parentNode) -> {
+            final Map<String,String> values = new HashMap<>();
+            values.put("energiebedarf", null);
+            values.put("skala", null);
+
+            final Element artNode = XmlUtils.xPathElement(
+                    XmlUtils.xPath("io:art", doc, "io"), parentNode);
+            final String artValue = (artNode != null) ?
                     StringUtils.trimToNull(artNode.getTextContent()) : null;
 
-            List childNodes = XmlUtils.newXPath("io:heizwert", doc)
-                    .selectNodes(parentNode);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                childNode.getParentNode().removeChild(childNode);
-            }
+            XmlUtils.xPathElementsProcess(
+                    XmlUtils.xPath("io:heizwert", doc, "io"), parentNode,
+                    (childNode) -> childNode.getParentNode().removeChild(childNode)
+            );
 
-            childNodes = XmlUtils.newXPath("io:energiebedarf", doc)
-                    .selectNodes(parentNode);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (energiebedarfValue == null)
-                    energiebedarfValue = StringUtils.trimToNull(childNode.getTextContent());
-                childNode.getParentNode().removeChild(childNode);
-            }
+            XmlUtils.xPathElementsProcess(
+                    XmlUtils.xPath("io:energiebedarf", doc, "io"), parentNode,
+                    (childNode) -> {
+                        if (values.get("energiebedarf") == null)
+                            values.put("energiebedarf", StringUtils.trimToNull(childNode.getTextContent()));
+                        childNode.getParentNode().removeChild(childNode);
+                    }
+            );
 
-            childNodes = XmlUtils.newXPath("io:skala", doc)
-                    .selectNodes(parentNode);
-            for (Object childItem : childNodes) {
-                Element childNode = (Element) childItem;
-                if (skalaValue == null && "ZAHL".equalsIgnoreCase(childNode.getAttribute("type")))
-                    skalaValue = StringUtils.trimToNull(childNode.getTextContent());
-                childNode.getParentNode().removeChild(childNode);
-            }
+            XmlUtils.xPathElementsProcess(
+                    XmlUtils.xPath("io:skala", doc, "io"), parentNode,
+                    (childNode) -> {
+                        if (values.get("skala") == null && "ZAHL".equalsIgnoreCase(childNode.getAttribute("type")))
+                            values.put("skala", StringUtils.trimToNull(childNode.getTextContent()));
+                        childNode.getParentNode().removeChild(childNode);
+                    }
+            );
+
+            final String skalaValue = values.get("skala");
+            final String energiebedarfValue = values.get("energiebedarf");
 
             if (artNode != null && "VERBRAUCH".equalsIgnoreCase(artValue)) {
                 artNode.setTextContent("VERBRAUCH");
-                String value = skalaValue;
-                if (value != null) {
-                    Element newNode = doc.createElementNS(StringUtils.EMPTY, "energieverbrauchkennwert");
-                    newNode.setTextContent(value);
-                    parentNode.appendChild(newNode);
+                if (skalaValue != null) {
+                    final Element newElement = doc.createElementNS(StringUtils.EMPTY, "energieverbrauchkennwert");
+                    newElement.setTextContent(skalaValue);
+                    parentNode.appendChild(newElement);
                 }
             } else if (artNode != null && "BEDARF".equalsIgnoreCase(artValue)) {
                 artNode.setTextContent("BEDARF");
-                String value = (energiebedarfValue != null) ? energiebedarfValue : skalaValue;
+                final String value = (energiebedarfValue != null) ? energiebedarfValue : skalaValue;
                 if (value != null) {
-                    Element newNode = doc.createElementNS(StringUtils.EMPTY, "endenergiebedarf");
-                    newNode.setTextContent(value);
-                    parentNode.appendChild(newNode);
+                    final Element newElement = doc.createElementNS(StringUtils.EMPTY, "endenergiebedarf");
+                    newElement.setTextContent(value);
+                    parentNode.appendChild(newElement);
                 }
             }
-        }
+        });
     }
 
     /**

@@ -15,6 +15,7 @@
  */
 package org.openestate.io.openimmo.converters;
 
+import javax.xml.xpath.XPathExpressionException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,7 +53,7 @@ public class OpenImmo_1_2_7bTest {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:jahrgang", doc);
             Assert.assertEquals(
                     "4 <jahrgang> element available before conversion.", 4, count);
@@ -64,7 +65,7 @@ public class OpenImmo_1_2_7bTest {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:jahrgang", doc);
             Assert.assertEquals(
                     "1 <jahrgang> elements available after conversion.", 1, count);
@@ -86,7 +87,7 @@ public class OpenImmo_1_2_7bTest {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:geg2018", doc);
             Assert.assertEquals(
                     "3 <geg2018> element available before conversion.", 3, count);
@@ -98,7 +99,7 @@ public class OpenImmo_1_2_7bTest {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:geg2018", doc);
             Assert.assertEquals(
                     "0 <geg2018> elements available after conversion.", 0, count);
@@ -120,7 +121,7 @@ public class OpenImmo_1_2_7bTest {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:kontaktperson/io:referenz_id", doc);
             Assert.assertEquals(
                     "3 <referenz_id> element available before conversion.", 3, count);
@@ -132,7 +133,7 @@ public class OpenImmo_1_2_7bTest {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:kontaktperson/io:referenz_id", doc);
             Assert.assertEquals(
                     "0 <referenz_id> elements available after conversion.", 0, count);
@@ -141,5 +142,14 @@ public class OpenImmo_1_2_7bTest {
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             Assert.fail("Test of OpenImmo_1_2_7b.removeReferenzIdElements failed!");
         }
+    }
+
+    private static int xpathCount(String xpath, Document doc) throws XPathExpressionException {
+        return xpathCount(xpath, doc, doc);
+    }
+
+    private static int xpathCount(String xpath, Document doc, Object element) throws XPathExpressionException {
+        return XmlUtils.xPathNumber(XmlUtils.xPath(
+                "count(" + xpath + ")", doc, "io"), element).intValue();
     }
 }
