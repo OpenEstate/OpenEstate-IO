@@ -16,7 +16,6 @@
 package org.openestate.io.daft_ie.converters;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.daft_ie.DaftIeDocument;
 import org.openestate.io.daft_ie.DaftIeVersion;
 import org.slf4j.Logger;
@@ -28,7 +27,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-public class DaftIe_2_7 extends XmlConverter<DaftIeDocument, DaftIeVersion> {
+public class DaftIe_2_7 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIe_2_7.class);
 
@@ -38,12 +37,11 @@ public class DaftIe_2_7 extends XmlConverter<DaftIeDocument, DaftIeVersion> {
     }
 
     /**
-     * Downgrade an OpenImmo document from version 1.1.
+     * Downgrade a {@link DaftIeDocument} from version 2.7.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.7 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc OpenImmo document in version 1.1
+     * @param doc document in version 2.7
      */
     @Override
     public void downgradeToPreviousVersion(DaftIeDocument doc) {
@@ -52,12 +50,11 @@ public class DaftIe_2_7 extends XmlConverter<DaftIeDocument, DaftIeVersion> {
     }
 
     /**
-     * Downgrade an OpenImmo document to version 1.1.
+     * Upgrade a {@link DaftIeDocument} to version 2.7.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.7 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc OpenImmo document
+     * @param doc document
      */
     @Override
     public void upgradeFromPreviousVersion(DaftIeDocument doc) {

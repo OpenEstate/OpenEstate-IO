@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringWriter;
 import java.io.Writer;
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
 import org.slf4j.Logger;
@@ -36,6 +37,7 @@ import org.w3c.dom.Document;
  * @since 1.0
  */
 public abstract class XmlDocument<JavaType> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(XmlDocument.class);
     private final Document document;
     private boolean textWrittenAsCDATA = false;
@@ -73,7 +75,7 @@ public abstract class XmlDocument<JavaType> {
      * @param doc the document, that will be written to XML
      * @throws IOException if an error occurred and XML generation should be stopped
      */
-    protected void prepareDocumentBeforeWritingToXml(Document doc) throws IOException {
+    protected void prepareDocumentBeforeWritingToXml(@SuppressWarnings("unused") Document doc) throws IOException {
     }
 
     /**
@@ -91,7 +93,18 @@ public abstract class XmlDocument<JavaType> {
      * @return created object, that represents the contained {@link Document}
      * @throws JAXBException if the Java object is not creatable
      */
-    public abstract JavaType toObject() throws JAXBException;
+    public JavaType toObject() throws JAXBException {
+        return this.toObject(null);
+    }
+
+    /**
+     * Creates an object from the contained {@link Document}.
+     *
+     * @param context JAXB context for unmarshalling
+     * @return created object, that represents the contained {@link Document}
+     * @throws JAXBException if the Java object is not creatable
+     */
+    public abstract JavaType toObject(JAXBContext context) throws JAXBException;
 
     /**
      * Generate XML for the contained {@link Document}.

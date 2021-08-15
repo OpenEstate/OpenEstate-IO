@@ -27,7 +27,7 @@ public enum BathroomType {
         }
     }
 
-    private BathroomType(String value) {
+    BathroomType(String value) {
         this.value = value;
     }
 

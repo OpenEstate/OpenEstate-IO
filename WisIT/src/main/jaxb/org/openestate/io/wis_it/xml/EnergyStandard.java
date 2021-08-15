@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "energyStandard")
 @XmlEnum
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-07T07:14:25+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:32:15+02:00", comments = "JAXB RI v2.3.0")
 public enum EnergyStandard {
 
     A,

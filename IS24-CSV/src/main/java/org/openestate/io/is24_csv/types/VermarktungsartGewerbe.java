@@ -25,14 +25,16 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum VermarktungsartGewerbe {
     KAUF("K"),
     MIETE("M");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(VermarktungsartGewerbe.class);
     private final String value;
 
-    private VermarktungsartGewerbe(String value) {
+    VermarktungsartGewerbe(String value) {
         this.value = value;
     }
 

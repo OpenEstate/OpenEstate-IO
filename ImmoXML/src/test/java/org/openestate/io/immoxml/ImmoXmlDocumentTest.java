@@ -35,6 +35,7 @@ public class ImmoXmlDocumentTest {
 
     @SuppressWarnings("unused")
     private static Document buildExampleDocument(String version) throws Exception {
+        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<immoxml xmlns=\"" + ImmoXmlUtils.NAMESPACE + "\">\n"
                 + "  <uebertragung version=\"" + ImmoXmlUtils.VERSION.toReadableVersion() + "\" "

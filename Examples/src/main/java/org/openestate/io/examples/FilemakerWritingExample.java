@@ -24,7 +24,6 @@ import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.filemaker.FilemakerResultDocument;
 import org.openestate.io.filemaker.FilemakerUtils;
 import org.openestate.io.filemaker.xml.result.DatabaseType;
@@ -58,10 +57,6 @@ public class FilemakerWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                FilemakerWritingExample.class.getResource("log4j.properties"));
-
         // create a FMPXMLRESULT object with some example data
         // this object corresponds to the <FMPXMLRESULT> root element in XML
         FMPXMLRESULT result = FACTORY.createFMPXMLRESULT();
@@ -71,7 +66,7 @@ public class FilemakerWritingExample {
         result.setMETADATA(createMetaData());
         result.setRESULTSET(createResultSet());
 
-        // convert the Openimmo object into a XML document
+        // convert the Openimmo object into an XML document
         FilemakerResultDocument doc = null;
         try {
             doc = FilemakerResultDocument.newDocument(result);
@@ -91,7 +86,7 @@ public class FilemakerWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -239,7 +234,7 @@ public class FilemakerWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(FilemakerResultDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {

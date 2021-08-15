@@ -26,7 +26,7 @@ public enum EnergyCertificateLawType {
         }
     }
 
-    private EnergyCertificateLawType(String value) {
+    EnergyCertificateLawType(String value) {
         this.value = value;
     }
 

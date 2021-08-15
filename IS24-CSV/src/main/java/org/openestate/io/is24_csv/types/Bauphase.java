@@ -25,16 +25,18 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Bauphase {
     KEINE_ANGABE(1),
     IN_PLANUNG(2),
     IM_BAU(3),
     FERTIG_GESTELLT(4);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Bauphase.class);
     private final int value;
 
-    private Bauphase(int value) {
+    Bauphase(int value) {
         this.value = value;
     }
 

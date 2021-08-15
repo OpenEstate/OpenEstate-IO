@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.4
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum TypeValue {
     FOR_RENT(new String[]{"For Rent", "Alquiler"}),
     FOR_SALE(new String[]{"For Sale", "Venta"}),

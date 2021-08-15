@@ -15,7 +15,6 @@
  */
 package org.openestate.io.trovit;
 
-import java.text.SimpleDateFormat;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -85,7 +84,8 @@ public class TrovitUtilsTest {
             doc = TrovitUtils.createDocument(transferXml);
             Assert.assertNotNull(
                     "Transfer was processed.", doc);
-            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof TrovitDocument);
+            //Assert.assertTrue("Transfer was processed as TransferDocument.",
+            //        doc instanceof TrovitDocument);
         } catch (Exception ex) {
             LOGGER.error("Test of TrovitUtils.createDocument failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

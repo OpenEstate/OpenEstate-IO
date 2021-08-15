@@ -77,87 +77,87 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     GrundstueckWohnenEmpfohleneNutzung.class,
     GrundstueckGewerbeEmpfohleneNutzung.class
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
 public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElementRef(name = "Ackerland", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> ackerland;
     @XmlElementRef(name = "Bauerwartungsland", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> bauerwartungsland;
     @XmlElementRef(name = "Bootsstaende", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> bootsstaende;
     @XmlElementRef(name = "Buero", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> buero;
     @XmlElementRef(name = "Camping", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> camping;
     @XmlElementRef(name = "Doppelhaus", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> doppelhaus;
     @XmlElementRef(name = "Einfamilienhaus", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> einfamilienhaus;
     @XmlElementRef(name = "Einzelhandel-gross", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> einzelhandelGross;
     @XmlElementRef(name = "Einzelhandel-klein", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> einzelhandelKlein;
     @XmlElementRef(name = "Garagen", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> garagen;
     @XmlElementRef(name = "Garten", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> garten;
     @XmlElementRef(name = "Gastronomie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> gastronomie;
     @XmlElementRef(name = "Gewerbe", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> gewerbe;
     @XmlElementRef(name = "Hotel", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> hotel;
     @XmlElementRef(name = "Industrie", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> industrie;
     @XmlElementRef(name = "keineBebauung", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> keineBebauung;
     @XmlElementRef(name = "Kleingewerbe", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> kleingewerbe;
     @XmlElementRef(name = "Lager", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> lager;
     @XmlElementRef(name = "Mehrfamilienhaus", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> mehrfamilienhaus;
     @XmlElementRef(name = "Obstpflanzung", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> obstpflanzung;
     @XmlElementRef(name = "Parkhaus", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> parkhaus;
     @XmlElementRef(name = "Produktion", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> produktion;
     @XmlElementRef(name = "Reihenhaus", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> reihenhaus;
     @XmlElementRef(name = "Stellplaetze", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> stellplaetze;
     @XmlElementRef(name = "Villa", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> villa;
     @XmlElementRef(name = "Wald", namespace = "http://www.immobilienscout24.de/immobilientransfer", type = JAXBElement.class, required = false)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected JAXBElement<Object> wald;
 
     /**
@@ -168,7 +168,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getAckerland() {
         return ackerland;
     }
@@ -181,7 +181,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setAckerland(JAXBElement<Object> value) {
         this.ackerland = value;
     }
@@ -194,7 +194,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getBauerwartungsland() {
         return bauerwartungsland;
     }
@@ -207,7 +207,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setBauerwartungsland(JAXBElement<Object> value) {
         this.bauerwartungsland = value;
     }
@@ -220,7 +220,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getBootsstaende() {
         return bootsstaende;
     }
@@ -233,7 +233,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setBootsstaende(JAXBElement<Object> value) {
         this.bootsstaende = value;
     }
@@ -246,7 +246,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getBuero() {
         return buero;
     }
@@ -259,7 +259,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setBuero(JAXBElement<Object> value) {
         this.buero = value;
     }
@@ -272,7 +272,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getCamping() {
         return camping;
     }
@@ -285,7 +285,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setCamping(JAXBElement<Object> value) {
         this.camping = value;
     }
@@ -298,7 +298,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getDoppelhaus() {
         return doppelhaus;
     }
@@ -311,7 +311,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setDoppelhaus(JAXBElement<Object> value) {
         this.doppelhaus = value;
     }
@@ -324,7 +324,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getEinfamilienhaus() {
         return einfamilienhaus;
     }
@@ -337,7 +337,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setEinfamilienhaus(JAXBElement<Object> value) {
         this.einfamilienhaus = value;
     }
@@ -350,7 +350,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getEinzelhandelGross() {
         return einzelhandelGross;
     }
@@ -363,7 +363,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setEinzelhandelGross(JAXBElement<Object> value) {
         this.einzelhandelGross = value;
     }
@@ -376,7 +376,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getEinzelhandelKlein() {
         return einzelhandelKlein;
     }
@@ -389,7 +389,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setEinzelhandelKlein(JAXBElement<Object> value) {
         this.einzelhandelKlein = value;
     }
@@ -402,7 +402,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getGaragen() {
         return garagen;
     }
@@ -415,7 +415,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setGaragen(JAXBElement<Object> value) {
         this.garagen = value;
     }
@@ -428,7 +428,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getGarten() {
         return garten;
     }
@@ -441,7 +441,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setGarten(JAXBElement<Object> value) {
         this.garten = value;
     }
@@ -454,7 +454,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getGastronomie() {
         return gastronomie;
     }
@@ -467,7 +467,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setGastronomie(JAXBElement<Object> value) {
         this.gastronomie = value;
     }
@@ -480,7 +480,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getGewerbe() {
         return gewerbe;
     }
@@ -493,7 +493,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setGewerbe(JAXBElement<Object> value) {
         this.gewerbe = value;
     }
@@ -506,7 +506,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getHotel() {
         return hotel;
     }
@@ -519,7 +519,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setHotel(JAXBElement<Object> value) {
         this.hotel = value;
     }
@@ -532,7 +532,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getIndustrie() {
         return industrie;
     }
@@ -545,7 +545,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setIndustrie(JAXBElement<Object> value) {
         this.industrie = value;
     }
@@ -558,7 +558,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getKeineBebauung() {
         return keineBebauung;
     }
@@ -571,7 +571,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setKeineBebauung(JAXBElement<Object> value) {
         this.keineBebauung = value;
     }
@@ -584,7 +584,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getKleingewerbe() {
         return kleingewerbe;
     }
@@ -597,7 +597,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setKleingewerbe(JAXBElement<Object> value) {
         this.kleingewerbe = value;
     }
@@ -610,7 +610,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getLager() {
         return lager;
     }
@@ -623,7 +623,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setLager(JAXBElement<Object> value) {
         this.lager = value;
     }
@@ -636,7 +636,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getMehrfamilienhaus() {
         return mehrfamilienhaus;
     }
@@ -649,7 +649,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setMehrfamilienhaus(JAXBElement<Object> value) {
         this.mehrfamilienhaus = value;
     }
@@ -662,7 +662,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getObstpflanzung() {
         return obstpflanzung;
     }
@@ -675,7 +675,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setObstpflanzung(JAXBElement<Object> value) {
         this.obstpflanzung = value;
     }
@@ -688,7 +688,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getParkhaus() {
         return parkhaus;
     }
@@ -701,7 +701,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setParkhaus(JAXBElement<Object> value) {
         this.parkhaus = value;
     }
@@ -714,7 +714,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getProduktion() {
         return produktion;
     }
@@ -727,7 +727,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setProduktion(JAXBElement<Object> value) {
         this.produktion = value;
     }
@@ -740,7 +740,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getReihenhaus() {
         return reihenhaus;
     }
@@ -753,7 +753,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setReihenhaus(JAXBElement<Object> value) {
         this.reihenhaus = value;
     }
@@ -766,7 +766,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getStellplaetze() {
         return stellplaetze;
     }
@@ -779,7 +779,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setStellplaetze(JAXBElement<Object> value) {
         this.stellplaetze = value;
     }
@@ -792,7 +792,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getVilla() {
         return villa;
     }
@@ -805,7 +805,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setVilla(JAXBElement<Object> value) {
         this.villa = value;
     }
@@ -818,7 +818,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public JAXBElement<Object> getWald() {
         return wald;
     }
@@ -831,20 +831,20 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
      *     {@link JAXBElement }{@code <}{@link Object }{@code >}
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setWald(JAXBElement<Object> value) {
         this.wald = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -852,7 +852,7 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             JAXBElement<Object> theAckerland;
@@ -987,18 +987,18 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof GrundstueckEmpfohleneNutzung) {
@@ -1371,12 +1371,12 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new GrundstueckEmpfohleneNutzung();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -1622,9 +1622,9 @@ public class GrundstueckEmpfohleneNutzung implements Serializable, Cloneable, Co
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 

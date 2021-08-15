@@ -30,6 +30,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("unused")
 public enum KyeroLanguage {
     /**
      * Catalan

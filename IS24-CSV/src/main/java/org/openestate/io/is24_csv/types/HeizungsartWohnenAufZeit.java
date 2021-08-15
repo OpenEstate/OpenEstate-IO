@@ -25,15 +25,17 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum HeizungsartWohnenAufZeit {
     ETAGENHEIZUNG(0),
     OFENHEIZUNG(1),
     ZENTRALHEIZUNG(2);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(HeizungsartWohnenAufZeit.class);
     private final int value;
 
-    private HeizungsartWohnenAufZeit(int value) {
+    HeizungsartWohnenAufZeit(int value) {
         this.value = value;
     }
 

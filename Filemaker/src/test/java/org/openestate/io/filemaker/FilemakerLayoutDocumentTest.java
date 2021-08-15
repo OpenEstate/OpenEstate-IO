@@ -35,6 +35,7 @@ public class FilemakerLayoutDocumentTest {
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerLayoutDocumentTest.class);
 
     private static Document buildExampleDocument() throws Exception {
+        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                 + "<FMPXMLLAYOUT xmlns=\"http://www.filemaker.com/fmpxmllayout\">\n"
                 + "  <ERRORCODE>0</ERRORCODE>\n"

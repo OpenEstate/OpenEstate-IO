@@ -26,7 +26,7 @@ public enum EnergyCertificateType {
         }
     }
 
-    private EnergyCertificateType(String value) {
+    EnergyCertificateType(String value) {
         this.value = value;
     }
 

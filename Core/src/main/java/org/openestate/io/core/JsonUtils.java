@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings("WeakerAccess")
 public final class JsonUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(JsonUtils.class);
@@ -67,7 +66,7 @@ public final class JsonUtils {
      */
     public static <T> T read(Reader json, Class<? extends T> javaClass, ObjectMapper mapper) throws IOException {
         return mapper
-                .reader(javaClass)
+                .readerFor(javaClass)
                 .readValue(json);
     }
 

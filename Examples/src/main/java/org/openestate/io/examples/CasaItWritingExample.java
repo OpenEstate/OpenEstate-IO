@@ -28,7 +28,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.casa_it.CasaItDocument;
 import org.openestate.io.casa_it.CasaItUtils;
 import org.openestate.io.casa_it.xml.Container;
@@ -61,10 +60,6 @@ public class CasaItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                CasaItWritingExample.class.getResource("log4j.properties"));
-
         // create a Container object with some example data
         // this object corresponds to the <container> root element in XML
         Container container = FACTORY.createContainer();
@@ -73,10 +68,10 @@ public class CasaItWritingExample {
         // append some example objects to the Container object
         int propertyCount = RandomUtils.nextInt(5, 10);
         for (int i = 0; i < propertyCount; i++) {
-            container.getRealestateitems().getRealestate().add(createRealestate());
+            container.getRealestateitems().getRealestate().add(createRealEstate());
         }
 
-        // convert the Container object into a XML document
+        // convert the Container object into an XML document
         CasaItDocument doc = null;
         try {
             doc = CasaItDocument.newDocument(container);
@@ -96,7 +91,7 @@ public class CasaItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -110,7 +105,7 @@ public class CasaItWritingExample {
      *
      * @return created example object
      */
-    private static Realestate createRealestate() {
+    private static Realestate createRealEstate() {
         // create an example real estate
         Realestate obj = FACTORY.createContainerRealestateitemsRealestate();
         obj.setAction(BigInteger.ONE);
@@ -170,7 +165,7 @@ public class CasaItWritingExample {
         obj.setImages(FACTORY.createContainerRealestateitemsRealestateImages());
         int imageCount = RandomUtils.nextInt(1, 10);
         for (int i = 0; i < imageCount; i++) {
-            obj.getImages().getAdvertismentimage().add(createAdvertismentimage());
+            obj.getImages().getAdvertismentimage().add(createAdvertisementImage());
         }
 
         obj.setPrice(FACTORY.createContainerRealestateitemsRealestatePrice());
@@ -186,7 +181,7 @@ public class CasaItWritingExample {
      *
      * @return created example object
      */
-    private static Advertismentimage createAdvertismentimage() {
+    private static Advertismentimage createAdvertisementImage() {
         Advertismentimage img = FACTORY.createContainerRealestateitemsRealestateImagesAdvertismentimage();
         img.setImagetype("image/jpeg");
         img.setPath("image-" + RandomStringUtils.randomNumeric(3) + ".jpg");
@@ -218,7 +213,7 @@ public class CasaItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(CasaItDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {

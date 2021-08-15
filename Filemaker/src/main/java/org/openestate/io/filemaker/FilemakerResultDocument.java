@@ -15,6 +15,7 @@
  */
 package org.openestate.io.filemaker;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlUtils;
@@ -25,13 +26,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="http://www.filemaker.com/">Filemaker</a> with a
- * &lt;FMPXMLRESULT&gt; root element.
+ * XML document from <a href="http://www.filemaker.com/">Filemaker</a> with a &lt;FMPXMLRESULT&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultDocument.class);
@@ -78,8 +77,21 @@ public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static FilemakerResultDocument newDocument(FMPXMLRESULT xmlResult) throws ParserConfigurationException, JAXBException {
+        return newDocument(xmlResult, null);
+    }
+
+    /**
+     * Creates a {@link FilemakerResultDocument} from a {@link FMPXMLRESULT} object.
+     *
+     * @param xmlResult Java object, that represents the &lt;FMPXMLRESULT&gt; root element
+     * @param context   JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static FilemakerResultDocument newDocument(FMPXMLRESULT xmlResult, JAXBContext context) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
-        FilemakerUtils.createMarshaller("UTF-8", true).marshal(xmlResult, document);
+        FilemakerUtils.createMarshaller("UTF-8", true, context).marshal(xmlResult, document);
         return new FilemakerResultDocument(document);
     }
 
@@ -96,11 +108,12 @@ public class FilemakerResultDocument extends FilemakerDocument<FMPXMLRESULT> {
     /**
      * Creates a {@link FMPXMLRESULT} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;FMPXMLRESULT&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public FMPXMLRESULT toObject() throws JAXBException {
-        return (FMPXMLRESULT) FilemakerUtils.createUnmarshaller().unmarshal(this.getDocument());
+    public FMPXMLRESULT toObject(JAXBContext context) throws JAXBException {
+        return (FMPXMLRESULT) FilemakerUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

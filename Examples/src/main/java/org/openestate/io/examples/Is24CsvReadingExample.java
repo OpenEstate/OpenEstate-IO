@@ -18,7 +18,6 @@ package org.openestate.io.examples;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_csv.Is24CsvParser;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.slf4j.Logger;
@@ -27,8 +26,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for reading IS24-CSV files.
  * <p>
- * This example illustrates the programmatic creation of IS24-CSV records and how
- * they are written into CSV.
+ * This example illustrates the programmatic creation of IS24-CSV records and how they are written into CSV.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -44,10 +42,6 @@ public class Is24CsvReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24CsvReadingExample.class.getResource("log4j.properties"));
-
         // read example file, if no files were specified as command line arguments
         if (args.length < 1) {
             try {

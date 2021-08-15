@@ -20,14 +20,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -58,12 +61,12 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class TrovitUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TrovitUtils.class);
+    @SuppressWarnings("RegExpRedundantEscape")
     private final static Pattern ROOMS_INTERVAL = Pattern.compile("^(\\d+)\\-(\\d+)$");
-    private static JAXBContext JAXB = null;
+    private static JAXBContext DEFAULT_CONTEXT = null;
 
     /*
      * the latest implemented version of this format
@@ -80,16 +83,68 @@ public class TrovitUtils {
     /**
      * the package, where generated JAXB classes are located
      */
-    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.trovit.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
-    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private TrovitUtils() {
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext() throws JAXBException {
+        return createContext(null, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext(List<String> additionalJaxbPackages) throws JAXBException {
+        return createContext(additionalJaxbPackages, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param classloader the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(ClassLoader classloader) throws JAXBException {
+        return createContext(null, classloader);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @param classloader            the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(List<String> additionalJaxbPackages, ClassLoader classloader) throws JAXBException {
+        final List<String> packages = new ArrayList<>();
+        packages.add(PACKAGE);
+        if (additionalJaxbPackages != null && !additionalJaxbPackages.isEmpty())
+            packages.addAll(additionalJaxbPackages);
+
+        return JAXBContext.newInstance(
+                StringUtils.join(packages, ":"),
+                (classloader != null) ? classloader : Thread.currentThread().getContextClassLoader()
+        );
     }
 
     /**
@@ -152,7 +207,19 @@ public class TrovitUtils {
      */
     @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
-        return createMarshaller(Charset.defaultCharset().name(), true);
+        return createMarshaller(null, true, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param context context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static Marshaller createMarshaller(JAXBContext context) throws JAXBException {
+        return createMarshaller(null, true, context);
     }
 
     /**
@@ -163,36 +230,67 @@ public class TrovitUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
-        Marshaller m = getContext().createMarshaller();
-        m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+        return createMarshaller(encoding, formatted, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param encoding  encoding of written XML
+     * @param formatted if written XML is pretty printed
+     * @param context   context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Marshaller createMarshaller(String encoding, boolean formatted, JAXBContext context) throws JAXBException {
+        final Marshaller m = (context != null) ?
+                context.createMarshaller() :
+                getContext().createMarshaller();
+
+        m.setProperty(Marshaller.JAXB_ENCODING, StringUtils.defaultIfBlank(encoding, Charset.defaultCharset().name()));
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, formatted);
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Creates a {@link Unmarshaller} to read JAXB objects from XML.
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
-        Unmarshaller m = getContext().createUnmarshaller();
+        return createUnmarshaller(null);
+    }
+
+    /**
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
+     *
+     * @param context context to create the unmarshaller on
+     * @return created unmarshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Unmarshaller createUnmarshaller(JAXBContext context) throws JAXBException {
+        final Unmarshaller m = (context != null) ?
+                context.createUnmarshaller() :
+                getContext().createUnmarshaller();
+
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Returns the {@link JAXBContext} for this format.
+     * Returns the default {@link JAXBContext} for this format.
      *
      * @return context
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
-        if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
-        return JAXB;
+        if (DEFAULT_CONTEXT == null) initContext(null);
+        return DEFAULT_CONTEXT;
     }
 
     /**
@@ -205,13 +303,13 @@ public class TrovitUtils {
     }
 
     /**
-     * Initializes the {@link JAXBContext} for this format.
+     * Initializes the default {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
-        JAXB = JAXBContext.newInstance(PACKAGE, classloader);
+        DEFAULT_CONTEXT = createContext(classloader);
     }
 
     /**
@@ -486,7 +584,9 @@ public class TrovitUtils {
     public static URI parseUriValue(String value) {
         value = StringUtils.trimToNull(value);
 
+        //noinspection HttpUrlsUsage
         if (value != null && !StringUtils.startsWithIgnoreCase(value, "http://") && !StringUtils.startsWithIgnoreCase(value, "https://"))
+            //noinspection HttpUrlsUsage
             value = "http://" + value;
 
         try {
@@ -577,8 +677,7 @@ public class TrovitUtils {
     /**
      * Write a {@link String} value for a country code into XML output.
      * <p>
-     * The country has to be represendet by a ISO-Code wirh two or three
-     * characters.
+     * The country has to be represented by an ISO-Code with two or three characters.
      *
      * @param value value to write
      * @return XML string
@@ -657,7 +756,7 @@ public class TrovitUtils {
         if (value.compareTo(new BigDecimal("90")) > 0)
             throw new IllegalArgumentException("Can't print latitude value '" + value + "' because it is above 90!");
 
-        value = value.setScale(10, BigDecimal.ROUND_HALF_UP);
+        value = value.setScale(10, RoundingMode.HALF_UP);
         return DatatypeConverter.printDecimal(value);
     }
 
@@ -677,7 +776,7 @@ public class TrovitUtils {
         if (value.compareTo(new BigDecimal("180")) > 0)
             throw new IllegalArgumentException("Can't print longitude value '" + value + "' because it is above 180!");
 
-        value = value.setScale(10, BigDecimal.ROUND_HALF_UP);
+        value = value.setScale(10, RoundingMode.HALF_UP);
         return DatatypeConverter.printDecimal(value);
     }
 
@@ -756,7 +855,7 @@ public class TrovitUtils {
         if (value.compareTo(new BigDecimal("1000000000")) > 0)
             throw new IllegalArgumentException("Can't print price value '" + value + "' because it is above 1000000000!");
 
-        value = value.setScale(2, BigDecimal.ROUND_HALF_UP);
+        value = value.setScale(2, RoundingMode.HALF_UP);
         return DatatypeConverter.printDecimal(value);
     }
 
@@ -775,13 +874,13 @@ public class TrovitUtils {
         if (value.compareTo(new BigDecimal("20")) > 0)
             throw new IllegalArgumentException("Can't print rooms value '" + value + "' because it is above 20!");
 
-        value = value.setScale(1, BigDecimal.ROUND_HALF_UP);
+        value = value.setScale(1, RoundingMode.HALF_UP);
         //return DatatypeConverter.printDecimal( value );
 
         final BigInteger integerPart = value.toBigInteger();
         final BigInteger decimalPart = value.subtract(new BigDecimal(integerPart, 1)).multiply(BigDecimal.TEN).toBigInteger();
         if (decimalPart.compareTo(BigInteger.ZERO) != 0)
-            return integerPart.toString() + ".5";
+            return integerPart + ".5";
 
         return DatatypeConverter.printInteger(integerPart);
     }

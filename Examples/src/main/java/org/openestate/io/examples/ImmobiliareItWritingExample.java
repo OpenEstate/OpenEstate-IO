@@ -30,7 +30,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
 import org.openestate.io.immobiliare_it.xml.Box;
@@ -89,10 +88,6 @@ public class ImmobiliareItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmobiliareItWritingExample.class.getResource("log4j.properties"));
-
         // create a Feed object with some example data
         // this object corresponds to the <feed> root element in XML
         Feed feed = FACTORY.createFeed();
@@ -104,7 +99,7 @@ public class ImmobiliareItWritingExample {
             feed.getProperties().getProperty().add(createProperty());
         }
 
-        // convert the Feed object into a XML document
+        // convert the Feed object into an XML document
         ImmobiliareItDocument doc = null;
         try {
             doc = ImmobiliareItDocument.newDocument(feed);
@@ -124,7 +119,7 @@ public class ImmobiliareItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -175,7 +170,7 @@ public class ImmobiliareItWritingExample {
         obj.getExtraFeatures().setDocDescription(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setDocSpecification(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setElevator(RandomUtils.nextBoolean());
-        obj.getExtraFeatures().setFloorplannerUrl("http://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
+        obj.getExtraFeatures().setFloorplannerUrl("https://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
         obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setFurniture(randomValue(Furniture.values()));
         obj.getExtraFeatures().setGarden(randomValue(Garden.values()));
@@ -358,7 +353,7 @@ public class ImmobiliareItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(ImmobiliareItDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

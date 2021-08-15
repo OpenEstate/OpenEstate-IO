@@ -24,7 +24,9 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class Datei {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Datei.class);
     private String name;
     private String text;
@@ -32,6 +34,7 @@ public class Datei {
     private DateiTyp typ;
     private int abspieldauer;
 
+    @SuppressWarnings("unused")
     public Datei(String name, DateiTyp art, DateiSuffix typ) {
         this(name, art, typ, null, 0);
     }
@@ -68,6 +71,7 @@ public class Datei {
         return this.typ;
     }
 
+    @SuppressWarnings("unused")
     public String guessMimeType() {
         DateiSuffix suffixToLookup = this.suffix;
         if (suffixToLookup == null)
@@ -76,6 +80,7 @@ public class Datei {
                 suffixToLookup.getMimeType() : "application/octet-stream";
     }
 
+    @SuppressWarnings("unused")
     public void setAbspieldauer(int value) {
         this.abspieldauer = value;
     }
@@ -84,6 +89,7 @@ public class Datei {
         this.name = value;
     }
 
+    @SuppressWarnings("unused")
     public void setSuffix(DateiSuffix value) {
         this.suffix = value;
     }
@@ -92,6 +98,7 @@ public class Datei {
         this.text = value;
     }
 
+    @SuppressWarnings("unused")
     public void setTyp(DateiTyp value) {
         this.typ = value;
     }

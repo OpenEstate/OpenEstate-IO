@@ -17,8 +17,8 @@ package org.openestate.io.immoxml;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlVersion;
+import org.openestate.io.immoxml.converters.AbstractConverter;
 import org.openestate.io.immoxml.converters.ImmoXML_3_0;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-public enum ImmoXmlVersion implements XmlVersion {
+public enum ImmoXmlVersion implements XmlVersion<ImmoXmlDocument, ImmoXmlVersion> {
     /**
      * Version 3.0
      */
@@ -37,11 +37,11 @@ public enum ImmoXmlVersion implements XmlVersion {
 
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlVersion.class);
-    private final Class converterClass;
+    private final Class<? extends AbstractConverter> converterClass;
     private final String readableVersion;
     private final String[] alias;
 
-    ImmoXmlVersion(Class converterClass, String readableVersion, String... alias) {
+    ImmoXmlVersion(Class<? extends AbstractConverter> converterClass, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.readableVersion = readableVersion;
         this.alias = alias;
@@ -64,9 +64,9 @@ public enum ImmoXmlVersion implements XmlVersion {
 
     @Override
     @SuppressWarnings("Duplicates")
-    public XmlConverter getConverter() {
+    public AbstractConverter getConverter() {
         try {
-            return (XmlConverter) this.converterClass.newInstance();
+            return this.converterClass.getConstructor().newInstance();
         } catch (Exception ex) {
             LOGGER.error("Can't create converter!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -96,13 +96,13 @@ public enum ImmoXmlVersion implements XmlVersion {
     }
 
     @Override
-    public boolean isNewerThen(XmlVersion v) {
+    public boolean isNewerThen(ImmoXmlVersion v) {
         ImmoXmlVersion[] versions = ImmoXmlVersion.values();
         return ArrayUtils.indexOf(versions, this) > ArrayUtils.indexOf(versions, v);
     }
 
     @Override
-    public boolean isOlderThen(XmlVersion v) {
+    public boolean isOlderThen(ImmoXmlVersion v) {
         ImmoXmlVersion[] versions = ImmoXmlVersion.values();
         return ArrayUtils.indexOf(versions, this) < ArrayUtils.indexOf(versions, v);
     }

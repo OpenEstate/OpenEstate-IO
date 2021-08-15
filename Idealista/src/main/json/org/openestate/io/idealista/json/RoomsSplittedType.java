@@ -28,7 +28,7 @@ public enum RoomsSplittedType {
         }
     }
 
-    private RoomsSplittedType(String value) {
+    RoomsSplittedType(String value) {
         this.value = value;
     }
 

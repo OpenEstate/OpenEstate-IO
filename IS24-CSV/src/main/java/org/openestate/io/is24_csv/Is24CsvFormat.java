@@ -15,7 +15,6 @@
  */
 package org.openestate.io.is24_csv;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -39,8 +38,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
-public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
+public class Is24CsvFormat extends CsvFormat<Is24CsvRecord, Is24CsvParser, Is24CsvPrinter> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvFormat.class);
 
@@ -66,9 +64,11 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
      * Create IS24-CSV format.
      */
     public Is24CsvFormat() {
-        super(CSVFormat.newFormat('|')
-                .withRecordSeparator(RECORD_SEPARATOR)
-                .withNullString(StringUtils.EMPTY));
+        super(CSVFormat.Builder
+                .create(CSVFormat.newFormat('|'))
+                .setRecordSeparator(RECORD_SEPARATOR)
+                .setNullString(StringUtils.EMPTY)
+                .build());
     }
 
     /**
@@ -105,9 +105,6 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
         return new Is24CsvPrinter(printer);
     }
 
-    @SuppressFBWarnings(
-            value = "NP_BOOLEAN_RETURN_NULL",
-            justification = "This behaviour is intended.")
     public static Boolean parseBoolean(String value) {
         value = StringUtils.trimToNull(value);
         if ("J".equalsIgnoreCase(value))

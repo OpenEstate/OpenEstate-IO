@@ -41,6 +41,7 @@ public class OpenImmoJavadocBindings {
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoJavadocBindings.class);
 
     public static void main(String[] args) {
+        @SuppressWarnings("SpellCheckingInspection")
         String[] feedbackNames = new String[]{
                 "fehlerliste",
                 "interessent",
@@ -52,14 +53,14 @@ public class OpenImmoJavadocBindings {
 
         TreeSet<String> elementNames = new TreeSet<>();
         TreeMap<String, String> typeNames = new TreeMap<>();
-        for (Class clazz : ClassFinder.find(OpenImmoUtils.PACKAGE)) {
-            XmlRootElement element = (XmlRootElement) clazz.getAnnotation(XmlRootElement.class);
+        for (Class<?> clazz : ClassFinder.find(OpenImmoUtils.PACKAGE)) {
+            XmlRootElement element = clazz.getAnnotation(XmlRootElement.class);
             if (element != null) {
                 elementNames.add(element.name());
                 continue;
             }
 
-            XmlType type = (XmlType) clazz.getAnnotation(XmlType.class);
+            XmlType type = clazz.getAnnotation(XmlType.class);
             if (type != null) {
                 typeNames.put(type.name(), clazz.getSimpleName());
             }
@@ -107,7 +108,6 @@ public class OpenImmoJavadocBindings {
         System.out.println();
     }
 
-    @SuppressWarnings("WeakerAccess")
     private final static class ClassFinder {
         private final static char DOT = '.';
         private final static char SLASH = '/';

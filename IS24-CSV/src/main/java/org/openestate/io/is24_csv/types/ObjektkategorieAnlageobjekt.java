@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum ObjektkategorieAnlageobjekt {
     EINFAMILIENHAUS(18),
     MEHRFAMILIENHAUS(21),
@@ -46,10 +47,11 @@ public enum ObjektkategorieAnlageobjekt {
     WOHN_GESCHAEFTSHAUS(115),
     WOHNANLAGE(116);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieAnlageobjekt.class);
     private final int value;
 
-    private ObjektkategorieAnlageobjekt(int value) {
+    ObjektkategorieAnlageobjekt(int value) {
         this.value = value;
     }
 

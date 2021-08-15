@@ -27,7 +27,7 @@ public enum ParkingType {
         }
     }
 
-    private ParkingType(String value) {
+    ParkingType(String value) {
         this.value = value;
     }
 

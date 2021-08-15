@@ -29,7 +29,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
@@ -67,10 +66,6 @@ public class OpenImmoWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                OpenImmoWritingExample.class.getResource("log4j.properties"));
-
         // create an Openimmo object with some example data
         // this object corresponds to the <openimmo> root element in XML
         Openimmo openimmo = FACTORY.createOpenimmo();
@@ -81,7 +76,7 @@ public class OpenImmoWritingExample {
             openimmo.getAnbieter().add(createAnbieter());
         }
 
-        // convert the Openimmo object into a XML document
+        // convert the Openimmo object into an XML document
         OpenImmoTransferDocument doc = null;
         try {
             doc = OpenImmoTransferDocument.newDocument(openimmo);
@@ -101,7 +96,7 @@ public class OpenImmoWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -294,7 +289,7 @@ public class OpenImmoWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(OpenImmoTransferDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

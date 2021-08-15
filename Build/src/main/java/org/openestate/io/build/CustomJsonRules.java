@@ -44,7 +44,7 @@ public class CustomJsonRules extends RuleFactory {
     }
 
     private static class CustomNameHelper extends NameHelper {
-        private Map<String, String> names = new HashMap<>();
+        private final Map<String, String> names = new HashMap<>();
 
         private CustomNameHelper(GenerationConfig generationConfig) {
             super(generationConfig);

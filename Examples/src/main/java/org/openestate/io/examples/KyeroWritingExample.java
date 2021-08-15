@@ -31,7 +31,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
 import org.openestate.io.kyero.KyeroVersion;
@@ -70,10 +69,6 @@ public class KyeroWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                KyeroWritingExample.class.getResource("log4j.properties"));
-
         // create a Root object with some example data
         // this object corresponds to the <root> element in XML
         Root root = FACTORY.createRoot();
@@ -85,7 +80,7 @@ public class KyeroWritingExample {
             root.getProperty().add(createProperty());
         }
 
-        // convert the Root object into a XML document
+        // convert the Root object into an XML document
         KyeroDocument doc = null;
         try {
             doc = KyeroDocument.newDocument(root);
@@ -105,7 +100,7 @@ public class KyeroWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -297,7 +292,7 @@ public class KyeroWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(KyeroDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

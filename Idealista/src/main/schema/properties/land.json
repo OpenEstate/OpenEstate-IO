@@ -22,11 +22,19 @@
         "land_countrynonbuildable"
       ],
       "javaName": "type",
-      "javaEnumNames": [
-        "LAND",
-        "LAND_URBAN",
-        "LAND_COUNTRY_BUILDABLE",
-        "LAND_COUNTRY_NON_BUILDABLE"
+      "javaEnums": [
+        {
+          "name": "LAND"
+        },
+        {
+          "name": "LAND_URBAN"
+        },
+        {
+          "name": "LAND_COUNTRY_BUILDABLE"
+        },
+        {
+          "name": "LAND_COUNTRY_NON_BUILDABLE"
+        }
       ]
     },
     "featuresAreaPlot": {

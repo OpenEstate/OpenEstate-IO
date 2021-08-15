@@ -20,8 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
 import org.openestate.io.immobiliare_it.xml.Feed;
@@ -49,10 +47,6 @@ public class ImmobiliareItReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmobiliareItReadingExample.class.getResource("log4j.properties"));
-
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {

@@ -67,11 +67,11 @@ public class KyeroDocumentTest {
 
             doc = new KyeroDocument(buildExampleDocument("3"));
             Assert.assertEquals(
-                    "3", KyeroVersion.V3, doc.getDocumentVersion());
+                    "version 3", KyeroVersion.V3, doc.getDocumentVersion());
 
             doc = new KyeroDocument(buildExampleDocument("3.1"));
             Assert.assertEquals(
-                    "3", KyeroVersion.V3, doc.getDocumentVersion());
+                    "version 3.1", KyeroVersion.V3, doc.getDocumentVersion());
         } catch (Exception ex) {
             LOGGER.error("Test of KyeroDocument.getDocumentVersion failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

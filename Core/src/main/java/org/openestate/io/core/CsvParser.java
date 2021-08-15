@@ -32,6 +32,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public abstract class CsvParser<Record extends CsvRecord> implements Closeable {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CsvParser.class);
     private final CSVParser parser;
     private Iterator<CSVRecord> iterator = null;

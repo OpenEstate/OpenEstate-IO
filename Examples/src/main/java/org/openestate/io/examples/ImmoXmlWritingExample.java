@@ -28,7 +28,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlUtils;
 import org.openestate.io.immoxml.xml.Aktion;
@@ -63,10 +62,6 @@ public class ImmoXmlWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmoXmlWritingExample.class.getResource("log4j.properties"));
-
         // create an Immoxml object with some example data
         // this object corresponds to the <immoxml> root element in XML
         Immoxml immoxml = FACTORY.createImmoxml();
@@ -77,7 +72,7 @@ public class ImmoXmlWritingExample {
             immoxml.getAnbieter().add(createAnbieter());
         }
 
-        // convert the Immoxml object into a XML document
+        // convert the Immoxml object into an XML document
         ImmoXmlDocument doc = null;
         try {
             doc = ImmoXmlDocument.newDocument(immoxml);
@@ -97,7 +92,7 @@ public class ImmoXmlWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -273,7 +268,7 @@ public class ImmoXmlWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(ImmoXmlDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

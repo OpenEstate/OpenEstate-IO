@@ -15,7 +15,6 @@
  */
 package org.openestate.io.idx;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -39,8 +38,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
-public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
+public class IdxFormat extends CsvFormat<IdxRecord, IdxParser, IdxPrinter> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxFormat.class);
 
@@ -63,9 +61,11 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
      * Create IDX format.
      */
     public IdxFormat() {
-        super(CSVFormat.newFormat('#')
-                .withRecordSeparator(RECORD_SEPARATOR)
-                .withNullString(StringUtils.EMPTY));
+        super(CSVFormat.Builder
+                .create(CSVFormat.newFormat('#'))
+                .setRecordSeparator(RECORD_SEPARATOR)
+                .setNullString(StringUtils.EMPTY)
+                .build());
     }
 
     /**
@@ -111,9 +111,6 @@ public class IdxFormat extends CsvFormat<IdxParser, IdxPrinter> {
         return new IdxPrinter(printer);
     }
 
-    @SuppressFBWarnings(
-            value = "NP_BOOLEAN_RETURN_NULL",
-            justification = "This behaviour is intended.")
     public static Boolean parseBoolean(String value) {
         value = StringUtils.trimToNull(value);
         if ("1".equalsIgnoreCase(value) || "Y".equalsIgnoreCase(value))

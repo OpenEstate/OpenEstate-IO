@@ -29,7 +29,7 @@ public enum AccessType {
         }
     }
 
-    private AccessType(String value) {
+    AccessType(String value) {
         this.value = value;
     }
 

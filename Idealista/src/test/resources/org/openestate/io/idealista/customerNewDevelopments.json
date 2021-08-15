@@ -99,12 +99,12 @@
         {
           "imageOrder": 1,
           "imageLabel": "bathroom",
-          "imageUrl": "http://www.idealista.com/photo1.jpg"
+          "imageUrl": "https://www.idealista.com/photo1.jpg"
         },
         {
           "imageOrder": 2,
           "imageLabel": "bedroom",
-          "imageUrl": "http://www.idealista.com/photo2.jpg"
+          "imageUrl": "https://www.idealista.com/photo2.jpg"
         }
       ],
       "newDevelopmentTypologies": [
@@ -201,27 +201,27 @@
             {
               "imageOrder": 1,
               "imageLabel": "bathroom",
-              "imageUrl": "http://www.idealista.com/photo1.jpg"
+              "imageUrl": "https://www.idealista.com/photo1.jpg"
             },
             {
               "imageOrder": 2,
               "imageLabel": "bedroom",
-              "imageUrl": "http://www.idealista.com/photo2.jpg"
+              "imageUrl": "https://www.idealista.com/photo2.jpg"
             },
             {
               "imageOrder": 3,
               "imageLabel": "communalareas",
-              "imageUrl": "http://www.idealista.com/photo3.jpg"
+              "imageUrl": "https://www.idealista.com/photo3.jpg"
             },
             {
               "imageOrder": 4,
               "imageLabel": "corridor",
-              "imageUrl": "http://www.idealista.com/photo4.jpg"
+              "imageUrl": "https://www.idealista.com/photo4.jpg"
             },
             {
               "imageOrder": 5,
               "imageLabel": "details",
-              "imageUrl": "http://www.idealista.com/photo5.jpg"
+              "imageUrl": "https://www.idealista.com/photo5.jpg"
             }
           ]
         },
@@ -320,122 +320,122 @@
             {
               "imageOrder": 1,
               "imageLabel": "bathroom",
-              "imageUrl": "http://www.idealista.com/photo1.jpg"
+              "imageUrl": "https://www.idealista.com/photo1.jpg"
             },
             {
               "imageOrder": 2,
               "imageLabel": "bedroom",
-              "imageUrl": "http://www.idealista.com/photo2.jpg"
+              "imageUrl": "https://www.idealista.com/photo2.jpg"
             },
             {
               "imageOrder": 3,
               "imageLabel": "communalareas",
-              "imageUrl": "http://www.idealista.com/photo3.jpg"
+              "imageUrl": "https://www.idealista.com/photo3.jpg"
             },
             {
               "imageOrder": 4,
               "imageLabel": "corridor",
-              "imageUrl": "http://www.idealista.com/photo4.jpg"
+              "imageUrl": "https://www.idealista.com/photo4.jpg"
             },
             {
               "imageOrder": 5,
               "imageLabel": "details",
-              "imageUrl": "http://www.idealista.com/photo5.jpg"
+              "imageUrl": "https://www.idealista.com/photo5.jpg"
             },
             {
               "imageOrder": 6,
               "imageLabel": "energycertificate",
-              "imageUrl": "http://www.idealista.com/photo6.jpg"
+              "imageUrl": "https://www.idealista.com/photo6.jpg"
             },
             {
               "imageOrder": 7,
               "imageLabel": "facade",
-              "imageUrl": "http://www.idealista.com/photo7.jpg"
+              "imageUrl": "https://www.idealista.com/photo7.jpg"
             },
             {
               "imageOrder": 8,
               "imageLabel": "garage",
-              "imageUrl": "http://www.idealista.com/photo8.jpg"
+              "imageUrl": "https://www.idealista.com/photo8.jpg"
             },
             {
               "imageOrder": 9,
               "imageLabel": "garden",
-              "imageUrl": "http://www.idealista.com/photo9.jpg"
+              "imageUrl": "https://www.idealista.com/photo9.jpg"
             },
             {
               "imageOrder": 10,
               "imageLabel": "gateway",
-              "imageUrl": "http://www.idealista.com/photo10.jpg"
+              "imageUrl": "https://www.idealista.com/photo10.jpg"
             },
             {
               "imageOrder": 11,
               "imageLabel": "hall",
-              "imageUrl": "http://www.idealista.com/photo11.jpg"
+              "imageUrl": "https://www.idealista.com/photo11.jpg"
             },
             {
               "imageOrder": 12,
               "imageLabel": "kitchen",
-              "imageUrl": "http://www.idealista.com/photo12.jpg"
+              "imageUrl": "https://www.idealista.com/photo12.jpg"
             },
             {
               "imageOrder": 13,
               "imageLabel": "land",
-              "imageUrl": "http://www.idealista.com/photo13.jpg"
+              "imageUrl": "https://www.idealista.com/photo13.jpg"
             },
             {
               "imageOrder": 14,
               "imageLabel": "living",
-              "imageUrl": "http://www.idealista.com/photo14.jpg"
+              "imageUrl": "https://www.idealista.com/photo14.jpg"
             },
             {
               "imageOrder": 15,
               "imageLabel": "mates",
-              "imageUrl": "http://www.idealista.com/photo15.jpg"
+              "imageUrl": "https://www.idealista.com/photo15.jpg"
             },
             {
               "imageOrder": 16,
               "imageLabel": "plan",
-              "imageUrl": "http://www.idealista.com/photo16.jpg"
+              "imageUrl": "https://www.idealista.com/photo16.jpg"
             },
             {
               "imageOrder": 17,
               "imageLabel": "pool",
-              "imageUrl": "http://www.idealista.com/photo17.jpg"
+              "imageUrl": "https://www.idealista.com/photo17.jpg"
             },
             {
               "imageOrder": 18,
               "imageLabel": "reception",
-              "imageUrl": "http://www.idealista.com/photo18.jpg"
+              "imageUrl": "https://www.idealista.com/photo18.jpg"
             },
             {
               "imageOrder": 19,
               "imageLabel": "room",
-              "imageUrl": "http://www.idealista.com/photo19.jpg"
+              "imageUrl": "https://www.idealista.com/photo19.jpg"
             },
             {
               "imageOrder": 20,
               "imageLabel": "storage",
-              "imageUrl": "http://www.idealista.com/photo20.jpg"
+              "imageUrl": "https://www.idealista.com/photo20.jpg"
             },
             {
               "imageOrder": 21,
               "imageLabel": "terrace",
-              "imageUrl": "http://www.idealista.com/photo21.jpg"
+              "imageUrl": "https://www.idealista.com/photo21.jpg"
             },
             {
               "imageOrder": 22,
               "imageLabel": "unknown",
-              "imageUrl": "http://www.idealista.com/photo22.jpg"
+              "imageUrl": "https://www.idealista.com/photo22.jpg"
             },
             {
               "imageOrder": 23,
               "imageLabel": "views",
-              "imageUrl": "http://www.idealista.com/photo23.jpg"
+              "imageUrl": "https://www.idealista.com/photo23.jpg"
             },
             {
               "imageOrder": 24,
               "imageLabel": "waitingroom",
-              "imageUrl": "http://www.idealista.com/photo24.jpg"
+              "imageUrl": "https://www.idealista.com/photo24.jpg"
             }
           ]
         }

@@ -204,7 +204,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "WaehrungTyp")
 @XmlEnum
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
 public enum WaehrungTyp {
 
     AED,

@@ -34,7 +34,6 @@ public class ImmobarItUtilsTest {
 
     @Test
     public void testCreateDocument() {
-        //noinspection SpellCheckingInspection
         String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<realestate>\n"
                 + "  <company_name_de>test</company_name_de>\n"

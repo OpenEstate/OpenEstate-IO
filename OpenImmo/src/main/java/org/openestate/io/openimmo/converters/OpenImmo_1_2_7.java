@@ -15,12 +15,13 @@
  */
 package org.openestate.io.openimmo.converters;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.xpath.XPathExpressionException;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoDocument;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
@@ -30,7 +31,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 
 /**
  * Converter for version 1.2.7.
@@ -38,8 +38,8 @@ import org.w3c.dom.Node;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
-public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+@SuppressWarnings("SpellCheckingInspection")
+public class OpenImmo_1_2_7 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_7.class);
 
@@ -49,12 +49,12 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
     }
 
     /**
-     * Downgrade an OpenImmo document from version 1.2.7 to 1.2.6.
+     * Downgrade an {@link OpenImmoDocument} from version 1.2.7 to 1.2.6.
      *
-     * @param doc OpenImmo document in version 1.2.7
+     * @param doc document in version 1.2.7
      */
     @Override
-    public void downgradeToPreviousVersion(OpenImmoDocument doc) {
+    public void downgradeToPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_6);
 
         if (doc instanceof OpenImmoTransferDocument) {
@@ -110,12 +110,12 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
     }
 
     /**
-     * Upgrade an OpenImmo document from version 1.2.6 to 1.2.7.
+     * Upgrade an {@link OpenImmoDocument} from version 1.2.6 to 1.2.7.
      *
-     * @param doc OpenImmo document in version 1.2.6
+     * @param doc document in version 1.2.6
      */
     @Override
-    public void upgradeFromPreviousVersion(OpenImmoDocument doc) {
+    public void upgradeFromPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_7);
 
         if (doc instanceof OpenImmoTransferDocument) {
@@ -144,18 +144,17 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of the "REFERENZ" value is replaced by the "CHANGE" value.
      *
      * @param doc OpenImmo document in version 1.2.7
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeAktionElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:verwaltung_techn/io:aktion[@aktionart]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("aktionart"));
+    protected void downgradeAktionElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:verwaltung_techn/io:aktion[@aktionart]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("aktionart"));
+
             if ("REFERENZ".equalsIgnoreCase(value))
-                node.setAttribute("aktionart", "CHANGE");
-        }
+                element.setAttribute("aktionart", "CHANGE");
+        });
     }
 
     /**
@@ -165,21 +164,20 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * &lt;anhang&gt; elements are not available in version 1.2.6
      *
      * @param doc OpenImmo document in version 1.2.7
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeAnhangElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:anhang[@gruppe] | " +
-                        "/io:openimmo/io:anbieter/io:immobilie/io:anhaenge/io:anhang[@gruppe]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("gruppe"));
+    protected void downgradeAnhangElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:anhang[@gruppe] | " +
+                "/io:openimmo/io:anbieter/io:immobilie/io:anhaenge/io:anhang[@gruppe]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("gruppe"));
+
             if ("EPASS-SKALA".equalsIgnoreCase(value))
-                node.removeAttribute("gruppe");
+                element.removeAttribute("gruppe");
             else if ("ANBOBJURL".equalsIgnoreCase(value))
-                node.removeAttribute("gruppe");
-        }
+                element.removeAttribute("gruppe");
+        });
     }
 
     /**
@@ -189,18 +187,16 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * elements are not available in OpenImmo 1.2.6.
      *
      * @param doc OpenImmo document in version 1.2.7
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeBefeuerungElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@KOHLE or @HOLZ or @FLUESSIGGAS]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            node.removeAttribute("KOHLE");
-            node.removeAttribute("HOLZ");
-            node.removeAttribute("FLUESSIGGAS");
-        }
+    protected void downgradeBefeuerungElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@KOHLE or @HOLZ or @FLUESSIGGAS]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            element.removeAttribute("KOHLE");
+            element.removeAttribute("HOLZ");
+            element.removeAttribute("FLUESSIGGAS");
+        });
     }
 
     /**
@@ -216,145 +212,107 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * are not available in OpenImmo 1.2.6.
      *
      * @param doc OpenImmo document in version 1.2.7
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeEnergiepassElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            boolean stromwertPassed = false;
-            boolean waermewertPassed = false;
-            boolean wertklassePassed = false;
-            boolean baujahrPassed = false;
-            boolean ausstelldatumPassed = false;
-            boolean jahrgangPassed = false;
-            boolean gebaeudeartPassed = false;
-            List childNodes;
+    protected void downgradeEnergiepassElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Element parent = (Element) element.getParentNode();
+            final List<String> options = new ArrayList<>();
 
             // <primaerenergietraeger> elements are not supported in version 1.2.6
-            childNodes = XmlUtils.newXPath("io:primaerenergietraeger", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                node.removeChild(childNode);
-            }
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:primaerenergietraeger", doc, "io"), element,
+                    element::removeChild);
 
             // <epasstext> elements are not supported in version 1.2.6
-            childNodes = XmlUtils.newXPath("io:epasstext", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                node.removeChild(childNode);
-            }
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:epasstext", doc, "io"), element,
+                    element::removeChild);
 
             // create a <user_defined_simplefield> for <stromwert> elements
-            childNodes = XmlUtils.newXPath("io:stromwert", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (!stromwertPassed) {
-                    String value = StringUtils.trimToNull(childNode.getTextContent());
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:stromwert", doc, "io"), element, (childElement) -> {
+                if (!options.contains("stromwertPassed")) {
+                    String value = StringUtils.trimToNull(childElement.getTextContent());
                     if (value != null) {
-                        parentNode.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_stromwert", value));
-                        stromwertPassed = true;
+                        parent.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_stromwert", value));
+                        options.add("stromwertPassed");
                     }
                 }
-                node.removeChild(childNode);
-            }
+                element.removeChild(childElement);
+            });
 
             // create a <user_defined_simplefield> for <waermewert> elements
-            childNodes = XmlUtils.newXPath("io:waermewert", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (!waermewertPassed) {
-                    String value = StringUtils.trimToNull(childNode.getTextContent());
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:waermewert", doc, "io"), element, (childElement) -> {
+                if (!options.contains("waermewertPassed")) {
+                    String value = StringUtils.trimToNull(childElement.getTextContent());
                     if (value != null) {
-                        parentNode.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_waermewert", value));
-                        waermewertPassed = true;
+                        parent.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_waermewert", value));
+                        options.add("waermewertPassed");
                     }
                 }
-                node.removeChild(childNode);
-            }
+                element.removeChild(childElement);
+            });
 
             // create a <user_defined_simplefield> for <wertklasse> elements
-            childNodes = XmlUtils.newXPath("io:wertklasse", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (!wertklassePassed) {
-                    String value = StringUtils.trimToNull(childNode.getTextContent());
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:wertklasse", doc, "io"), element, (childElement) -> {
+                if (!options.contains("wertklassePassed")) {
+                    String value = StringUtils.trimToNull(childElement.getTextContent());
                     if (value != null) {
-                        parentNode.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_wertklasse", value));
-                        wertklassePassed = true;
+                        parent.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_wertklasse", value));
+                        options.add("wertklassePassed");
                     }
                 }
-                node.removeChild(childNode);
-            }
+                element.removeChild(childElement);
+            });
 
             // create a <user_defined_simplefield> for <baujahr> elements
-            childNodes = XmlUtils.newXPath("io:baujahr", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (!baujahrPassed) {
-                    String value = StringUtils.trimToNull(childNode.getTextContent());
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:baujahr", doc, "io"), element, (childElement) -> {
+                if (!options.contains("baujahrPassed")) {
+                    String value = StringUtils.trimToNull(childElement.getTextContent());
                     if (value != null) {
-                        parentNode.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_baujahr", value));
-                        baujahrPassed = true;
+                        parent.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_baujahr", value));
+                        options.add("baujahrPassed");
                     }
                 }
-                node.removeChild(childNode);
-            }
+                element.removeChild(childElement);
+            });
 
             // create a <user_defined_simplefield> for <ausstelldatum> elements
-            childNodes = XmlUtils.newXPath("io:ausstelldatum", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (!ausstelldatumPassed) {
-                    String value = StringUtils.trimToNull(childNode.getTextContent());
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:ausstelldatum", doc, "io"), element, (childElement) -> {
+                if (!options.contains("ausstelldatumPassed")) {
+                    String value = StringUtils.trimToNull(childElement.getTextContent());
                     if (value != null) {
-                        parentNode.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_ausstelldatum", value));
-                        ausstelldatumPassed = true;
+                        parent.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_ausstelldatum", value));
+                        options.add("ausstelldatumPassed");
                     }
                 }
-                node.removeChild(childNode);
-            }
+                element.removeChild(childElement);
+            });
 
             // create a <user_defined_simplefield> for <jahrgang> elements
-            childNodes = XmlUtils.newXPath("io:jahrgang", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (!jahrgangPassed) {
-                    String value = StringUtils.trimToNull(childNode.getTextContent());
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:jahrgang", doc, "io"), element, (childElement) -> {
+                if (!options.contains("jahrgangPassed")) {
+                    String value = StringUtils.trimToNull(childElement.getTextContent());
                     if ("2008".equalsIgnoreCase(value) || "2014".equalsIgnoreCase(value) || "ohne".equalsIgnoreCase(value)) {
-                        parentNode.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_jahrgang", value));
-                        jahrgangPassed = true;
+                        parent.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_jahrgang", value));
+                        options.add("jahrgangPassed");
                     }
                 }
-                node.removeChild(childNode);
-            }
+                element.removeChild(childElement);
+            });
 
             // create a <user_defined_simplefield> for <gebaeudeart> elements
-            childNodes = XmlUtils.newXPath("io:gebaeudeart", doc)
-                    .selectNodes(node);
-            for (Object childItem : childNodes) {
-                Node childNode = (Node) childItem;
-                if (!gebaeudeartPassed) {
-                    String value = StringUtils.trimToNull(childNode.getTextContent());
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:gebaeudeart", doc, "io"), element, (childElement) -> {
+                if (!options.contains("gebaeudeartPassed")) {
+                    String value = StringUtils.trimToNull(childElement.getTextContent());
                     if ("wohn".equalsIgnoreCase(value) || "nichtwohn".equalsIgnoreCase(value) || "ohne".equalsIgnoreCase(value)) {
-                        parentNode.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_gebaeudeart", value));
-                        gebaeudeartPassed = true;
+                        parent.appendChild(OpenImmoUtils.createUserDefinedSimplefield(doc, "epass_gebaeudeart", value));
+                        options.add("gebaeudeartPassed");
                     }
                 }
-                node.removeChild(childNode);
-            }
-        }
+                element.removeChild(childElement);
+            });
+        });
     }
 
     /**
@@ -364,43 +322,44 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * renamed to "sonstigemieteust" in OpenImmo 1.2.6.
      *
      * @param doc OpenImmo document in version 1.2.7
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeSummemietenettoElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:summemietenetto[@summemieteust]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("summemieteust"));
-            if (value != null) node.setAttribute("sonstigemieteust", value);
-            node.removeAttribute("summemieteust");
-        }
+    protected void downgradeSummemietenettoElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:summemietenetto[@summemieteust]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("summemieteust"));
+
+            if (value != null)
+                element.setAttribute("sonstigemieteust", value);
+            element.removeAttribute("summemieteust");
+        });
     }
 
     /**
      * Only use one &lt;energiepass&gt; element for each &lt;immobilie&gt;.
      * <p>
-     * OpenImmo 1.2.6 does not allow more then one &lt;energiepass&gt; element
-     * for each &lt;immobilie&gt; (maxOccurs=1). Odd &lt;energiepass&gt; elements
+     * OpenImmo 1.2.6 does not allow more than one &lt;energiepass&gt; element
+     * for each &lt;immobilie&gt; (maxOccurs=1). Other &lt;energiepass&gt; elements
      * are removed by this function.
      *
      * @param doc OpenImmo document in version 1.2.7
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeMultipleEnergiepassElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element parentNode = (Element) item;
-            List childNodes = XmlUtils.newXPath("io:energiepass", doc)
-                    .selectNodes(parentNode);
-            if (childNodes.size() < 2) continue;
-            for (int j = 1; j < childNodes.size(); j++) {
-                parentNode.removeChild((Node) childNodes.get(j));
-            }
-        }
+    protected void removeMultipleEnergiepassElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (parentElement) -> {
+            final List<String> options = new ArrayList<>();
+
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("io:energiepass", doc, "io"), parentElement, (element) -> {
+                if (!options.contains("passedFirst")) {
+                    options.add("passedFirst");
+                    return;
+                }
+                parentElement.removeChild(element);
+            });
+        });
     }
 
     /**
@@ -409,17 +368,13 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.6 does not support &lt;objekt_text&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.7
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeObjektTextElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:freitexte/io:objekt_text",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeObjektTextElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:freitexte/io:objekt_text";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -432,11 +387,11 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * are moved into the &lt;energiepass&gt; element.
      *
      * @param doc OpenImmo document in version 1.2.6
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
     @SuppressWarnings("Duplicates")
-    protected void upgradeEnergiepassElements(Document doc) throws JaxenException {
-        Map<String, String> fields = new HashMap<>();
+    protected void upgradeEnergiepassElements(Document doc) throws XPathExpressionException {
+        final Map<String, String> fields = new HashMap<>();
         fields.put("stromwert", "user_defined_simplefield[@feldname='epass_stromwert']");
         fields.put("waermewert", "user_defined_simplefield[@feldname='epass_waermewert']");
         fields.put("wertklasse", "user_defined_simplefield[@feldname='epass_wertklasse']");
@@ -445,39 +400,36 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
         fields.put("jahrgang", "user_defined_simplefield[@feldname='epass_jahrgang']");
         fields.put("gebaeudeart", "user_defined_simplefield[@feldname='epass_gebaeudeart']");
 
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben";
 
-            Element energiepassNode = (Element) XmlUtils.newXPath(
-                    "io:energiepass", doc).selectSingleNode(node);
-            if (energiepassNode == null) {
-                energiepassNode = doc.createElementNS(StringUtils.EMPTY, "energiepass");
-            }
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final List<String> options = new ArrayList<>();
+            final Element energiepassNode = ObjectUtils.defaultIfNull(
+                    XmlUtils.xPathElement(XmlUtils.xPath("io:energiepass", doc, "io"), element),
+                    doc.createElementNS(StringUtils.EMPTY, "energiepass")
+            );
+
             for (Map.Entry<String, String> entry : fields.entrySet()) {
-                boolean fieldProcessed = false;
-                List childNodes = XmlUtils.newXPath(entry.getValue(), doc)
-                        .selectNodes(node);
-                for (Object childItem : childNodes) {
-                    Node childNode = (Node) childItem;
-                    if (!fieldProcessed) {
-                        String value = StringUtils.trimToNull(childNode.getTextContent());
+                final String fieldName = entry.getKey();
+                final String fieldPath = entry.getValue();
+
+                XmlUtils.xPathElementsProcess(XmlUtils.xPath(fieldPath, doc, "io"), element, (childElement) -> {
+                    if (!options.contains(fieldName)) {
+                        final String value = StringUtils.trimToNull(childElement.getTextContent());
                         if (value != null) {
-                            Element newElement = doc.createElementNS(StringUtils.EMPTY, entry.getKey());
+                            final Element newElement = doc.createElementNS(StringUtils.EMPTY, entry.getKey());
                             newElement.setTextContent(value);
                             energiepassNode.appendChild(newElement);
-                            fieldProcessed = true;
+                            options.add(fieldName);
                         }
                     }
-                    node.removeChild(childNode);
-                }
+                    element.removeChild(childElement);
+                });
             }
             if (energiepassNode.getParentNode() == null && energiepassNode.hasChildNodes()) {
-                node.appendChild(energiepassNode);
+                element.appendChild(energiepassNode);
             }
-        }
+        });
     }
 
     /**
@@ -487,17 +439,18 @@ public class OpenImmo_1_2_7 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * renamed to "summemieteust" in OpenImmo 1.2.7.
      *
      * @param doc OpenImmo document in version 1.2.6
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void upgradeSummemietenettoElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:summemietenetto[@sonstigemieteust]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("sonstigemieteust"));
-            if (value != null) node.setAttribute("summemieteust", value);
-            node.removeAttribute("sonstigemieteust");
-        }
+    protected void upgradeSummemietenettoElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:summemietenetto[@sonstigemieteust]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("sonstigemieteust"));
+
+            if (value != null)
+                element.setAttribute("summemieteust", value);
+
+            element.removeAttribute("sonstigemieteust");
+        });
     }
 }

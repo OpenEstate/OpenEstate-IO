@@ -25,7 +25,7 @@ public enum PropertyVisibilityType {
         }
     }
 
-    private PropertyVisibilityType(String value) {
+    PropertyVisibilityType(String value) {
         this.value = value;
     }
 

@@ -15,6 +15,7 @@
  */
 package org.openestate.io.trovit;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlDocument;
@@ -31,7 +32,6 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class TrovitDocument extends XmlDocument<Trovit> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TrovitDocument.class);
@@ -79,19 +79,33 @@ public class TrovitDocument extends XmlDocument<Trovit> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static TrovitDocument newDocument(Trovit trovit) throws ParserConfigurationException, JAXBException {
+        return newDocument(trovit, null);
+    }
+
+    /**
+     * Creates a {@link TrovitDocument} from a {@link Trovit} object.
+     *
+     * @param trovit  Java object, that represents the &lt;trovit&gt; root element
+     * @param context JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static TrovitDocument newDocument(Trovit trovit, JAXBContext context) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
-        TrovitUtils.createMarshaller("UTF-8", true).marshal(trovit, document);
+        TrovitUtils.createMarshaller("UTF-8", true, context).marshal(trovit, document);
         return new TrovitDocument(document);
     }
 
     /**
      * Creates a {@link Trovit} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;trovit&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Trovit toObject() throws JAXBException {
-        return (Trovit) TrovitUtils.createUnmarshaller().unmarshal(this.getDocument());
+    public Trovit toObject(JAXBContext context) throws JAXBException {
+        return (Trovit) TrovitUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

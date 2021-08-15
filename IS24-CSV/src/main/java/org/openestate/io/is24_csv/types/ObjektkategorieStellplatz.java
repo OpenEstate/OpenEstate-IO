@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum ObjektkategorieStellplatz {
     KEINE_ANGABE(0),
     GARAGE(129),
@@ -34,10 +35,11 @@ public enum ObjektkategorieStellplatz {
     AUSSENSTELLPLATZ(133),
     DUPLEX(134);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieStellplatz.class);
     private final int value;
 
-    private ObjektkategorieStellplatz(int value) {
+    ObjektkategorieStellplatz(int value) {
         this.value = value;
     }
 

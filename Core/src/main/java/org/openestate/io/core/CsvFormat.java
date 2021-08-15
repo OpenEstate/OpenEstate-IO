@@ -15,7 +15,6 @@
  */
 package org.openestate.io.core;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -37,12 +36,14 @@ import org.slf4j.LoggerFactory;
  * A general CSV format specification, that supports reading through
  * {@link CsvParser} and writing through {@link CsvPrinter}.
  *
- * @param <Parser>  the class used for CSV parsing
- * @param <Printer> the class used for CSV printing
+ * @param <Record>  the class used for CSV records
+ * @param <Parser>  the class used for parsing of CSV records
+ * @param <Printer> the class used for printing of CSV records
  * @author Andreas Rudolph
  * @since 1.0
  */
-public abstract class CsvFormat<Parser extends CsvParser, Printer extends CsvPrinter> {
+public abstract class CsvFormat<Record extends CsvRecord, Parser extends CsvParser<Record>, Printer extends CsvPrinter<Record>> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CsvFormat.class);
     private final CSVFormat format;
 
@@ -108,9 +109,6 @@ public abstract class CsvFormat<Parser extends CsvParser, Printer extends CsvPri
      * @return created parser
      * @throws IOException if CSV is not readable
      */
-    @SuppressFBWarnings(
-            value = "OBL_UNSATISFIED_OBLIGATION",
-            justification = "The stream is closed later together with the parser.")
     public final Parser parse(File csvFile) throws IOException {
         return this.parse(new FileInputStream(csvFile));
     }
@@ -168,9 +166,6 @@ public abstract class CsvFormat<Parser extends CsvParser, Printer extends CsvPri
      * @return created printer
      * @throws IOException if CSV is not writable
      */
-    @SuppressFBWarnings(
-            value = "OBL_UNSATISFIED_OBLIGATION",
-            justification = "The stream is closed later together with the printer.")
     public final Printer print(File csvFile) throws IOException {
         return print(new FileOutputStream(csvFile));
     }

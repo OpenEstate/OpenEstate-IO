@@ -31,7 +31,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.daft_ie.DaftIeDocument;
 import org.openestate.io.daft_ie.DaftIeUtils;
 import org.openestate.io.daft_ie.xml.CommercialType;
@@ -67,10 +66,6 @@ public class DaftIeWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                DaftIeWritingExample.class.getResource("log4j.properties"));
-
         // create a Daft object with some example data
         // this object corresponds to the <daft> root element in XML
         Daft daft = FACTORY.createDaft();
@@ -89,7 +84,7 @@ public class DaftIeWritingExample {
             daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
         }
 
-        // convert the Daft object into a XML document
+        // convert the Daft object into an XML document
         DaftIeDocument doc = null;
         try {
             doc = DaftIeDocument.newDocument(daft);
@@ -109,7 +104,7 @@ public class DaftIeWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -291,7 +286,7 @@ public class DaftIeWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(DaftIeDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

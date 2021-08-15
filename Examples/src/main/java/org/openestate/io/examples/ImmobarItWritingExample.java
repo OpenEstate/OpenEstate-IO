@@ -31,7 +31,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.immobar_it.ImmobarItDocument;
 import org.openestate.io.immobar_it.ImmobarItUtils;
 import org.openestate.io.immobar_it.xml.CompanyType;
@@ -65,9 +64,6 @@ public class ImmobarItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(ImmobarItWritingExample.class.getResource("log4j.properties"));
-
         // create a Realestate object with some example data
         // this object corresponds to the <realestate> element in XML
         Realestate realestate = FACTORY.createRealestate();
@@ -78,7 +74,7 @@ public class ImmobarItWritingExample {
             realestate.getCompany().add(createCompany());
         }
 
-        // convert the Realestate object into a XML document
+        // convert the Realestate object into an XML document
         ImmobarItDocument doc = null;
         try {
             doc = ImmobarItDocument.newDocument(realestate);
@@ -98,7 +94,7 @@ public class ImmobarItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -284,7 +280,7 @@ public class ImmobarItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(ImmobarItDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {

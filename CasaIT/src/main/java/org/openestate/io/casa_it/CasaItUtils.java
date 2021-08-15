@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -36,17 +38,15 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 /**
- * Some helper functions for the XML format of
- * <a href="http://casa.it/">casa.it</a>.
+ * Some helper functions for the XML format of <a href="https://www.casa.it/">casa.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class CasaItUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CasaItUtils.class);
-    private static JAXBContext JAXB = null;
+    private static JAXBContext DEFAULT_CONTEXT = null;
 
     /*
      * the latest implemented version of this format
@@ -63,16 +63,68 @@ public class CasaItUtils {
     /**
      * the package, where generated JAXB classes are located
      */
-    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.casa_it.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
-    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private CasaItUtils() {
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext() throws JAXBException {
+        return createContext(null, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext(List<String> additionalJaxbPackages) throws JAXBException {
+        return createContext(additionalJaxbPackages, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param classloader the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(ClassLoader classloader) throws JAXBException {
+        return createContext(null, classloader);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @param classloader            the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(List<String> additionalJaxbPackages, ClassLoader classloader) throws JAXBException {
+        final List<String> packages = new ArrayList<>();
+        packages.add(PACKAGE);
+        if (additionalJaxbPackages != null && !additionalJaxbPackages.isEmpty())
+            packages.addAll(additionalJaxbPackages);
+
+        return JAXBContext.newInstance(
+                StringUtils.join(packages, ":"),
+                (classloader != null) ? classloader : Thread.currentThread().getContextClassLoader()
+        );
     }
 
     /**
@@ -135,7 +187,19 @@ public class CasaItUtils {
      */
     @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
-        return createMarshaller(Charset.defaultCharset().name(), true);
+        return createMarshaller(null, true, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param context context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static Marshaller createMarshaller(JAXBContext context) throws JAXBException {
+        return createMarshaller(null, true, context);
     }
 
     /**
@@ -146,36 +210,65 @@ public class CasaItUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
-    @SuppressWarnings("Duplicates")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
-        Marshaller m = getContext().createMarshaller();
-        m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+        return createMarshaller(encoding, formatted, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param encoding  encoding of written XML
+     * @param formatted if written XML is pretty printed
+     * @param context   context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Marshaller createMarshaller(String encoding, boolean formatted, JAXBContext context) throws JAXBException {
+        final Marshaller m = (context != null) ?
+                context.createMarshaller() :
+                getContext().createMarshaller();
+
+        m.setProperty(Marshaller.JAXB_ENCODING, StringUtils.defaultIfBlank(encoding, Charset.defaultCharset().name()));
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, formatted);
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Creates a {@link Unmarshaller} to read JAXB objects from XML.
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
     public static Unmarshaller createUnmarshaller() throws JAXBException {
-        Unmarshaller m = getContext().createUnmarshaller();
+        return createUnmarshaller(null);
+    }
+
+    /**
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
+     *
+     * @param context context to create the unmarshaller on
+     * @return created unmarshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Unmarshaller createUnmarshaller(JAXBContext context) throws JAXBException {
+        final Unmarshaller m = (context != null) ?
+                context.createUnmarshaller() :
+                getContext().createUnmarshaller();
+
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Returns the {@link JAXBContext} for this format.
+     * Returns the default {@link JAXBContext} for this format.
      *
      * @return context
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
-        if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
-        return JAXB;
+        if (DEFAULT_CONTEXT == null) initContext(null);
+        return DEFAULT_CONTEXT;
     }
 
     /**
@@ -188,13 +281,13 @@ public class CasaItUtils {
     }
 
     /**
-     * Initializes the {@link JAXBContext} for this format.
+     * Initializes the default {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
-        JAXB = JAXBContext.newInstance(PACKAGE, classloader);
+        DEFAULT_CONTEXT = createContext(classloader);
     }
 
     public static BigDecimal parseDouble(String value) {

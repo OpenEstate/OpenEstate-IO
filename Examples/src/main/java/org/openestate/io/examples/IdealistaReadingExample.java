@@ -21,7 +21,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idealista.IdealistaRootElement;
 import org.openestate.io.idealista.IdealistaUtils;
 import org.openestate.io.idealista.json.AbstractFeatures;
@@ -59,10 +58,6 @@ public class IdealistaReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                IdealistaReadingExample.class.getResource("log4j.properties"));
-
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
@@ -140,7 +135,7 @@ public class IdealistaReadingExample {
                         property.getOperation().getType() : null;
 
                 // get property type
-                Enum objectType;
+                Enum<?> objectType;
                 AbstractFeatures features = property.getFeatures();
                 if (features instanceof BuildingFeatures) {
                     BuildingFeatures building = (BuildingFeatures) features;
@@ -188,7 +183,7 @@ public class IdealistaReadingExample {
                         newDevelopment.getCode());
 
                 // get typology types
-                List<Enum> objectTypes = new ArrayList<>();
+                List<Enum<?>> objectTypes = new ArrayList<>();
                 if (newDevelopment.getTypologies() != null) {
                     for (Typology typology : newDevelopment.getTypologies()) {
                         AbstractFeatures features = typology.getFeatures();

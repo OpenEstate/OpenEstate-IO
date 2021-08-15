@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum ObjektkategorieGewerbeHalleProduktion {
     KEINE_ANGABE(0),
     AUSSTELLUNGSFLAECHE(69),
@@ -41,10 +42,11 @@ public enum ObjektkategorieGewerbeHalleProduktion {
     SPEDITIONSLAGER(98),
     WERKSTATT(99);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieGewerbeHalleProduktion.class);
     private final int value;
 
-    private ObjektkategorieGewerbeHalleProduktion(int value) {
+    ObjektkategorieGewerbeHalleProduktion(int value) {
         this.value = value;
     }
 

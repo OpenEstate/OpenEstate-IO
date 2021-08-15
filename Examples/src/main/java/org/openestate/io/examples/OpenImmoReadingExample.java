@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.openimmo.OpenImmoDocument;
 import org.openestate.io.openimmo.OpenImmoFeedbackDocument;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
@@ -53,10 +52,6 @@ public class OpenImmoReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                OpenImmoReadingExample.class.getResource("log4j.properties"));
-
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
@@ -108,7 +103,7 @@ public class OpenImmoReadingExample {
             LOGGER.warn("> provided file is invalid");
             return;
         }
-        OpenImmoDocument doc = OpenImmoUtils.createDocument(xmlFile);
+        OpenImmoDocument<?> doc = OpenImmoUtils.createDocument(xmlFile);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
         } else if (doc.isFeedback()) {
@@ -134,7 +129,7 @@ public class OpenImmoReadingExample {
     @SuppressWarnings("Duplicates")
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("process example file");
-        OpenImmoDocument doc = OpenImmoUtils.createDocument(xmlInputStream);
+        OpenImmoDocument<?> doc = OpenImmoUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
         } else if (doc.isFeedback()) {

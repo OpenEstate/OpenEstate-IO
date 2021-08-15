@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.wis_it.WisItDocument;
 import org.openestate.io.wis_it.WisItUtils;
 import org.openestate.io.wis_it.xml.ObjectType;
@@ -30,11 +29,9 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * Example for reading XML files for
- * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
+ * Example for reading XML files for <a href="https://www.wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
  * <p>
- * This example illustrates how to read XML files for
- * <a href="wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
+ * This example illustrates how to read XML files for <a href="wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -50,10 +47,6 @@ public class WisItReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                WisItReadingExample.class.getResource("log4j.properties"));
-
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {

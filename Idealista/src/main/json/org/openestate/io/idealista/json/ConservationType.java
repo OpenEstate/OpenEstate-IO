@@ -27,7 +27,7 @@ public enum ConservationType {
         }
     }
 
-    private ConservationType(String value) {
+    ConservationType(String value) {
         this.value = value;
     }
 

@@ -29,7 +29,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_csv.Is24CsvPrinter;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.openestate.io.is24_csv.records.HausKauf;
@@ -70,10 +69,6 @@ public class Is24CsvWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24CsvWritingExample.class.getResource("log4j.properties"));
-
         // create some CSV records
         List<Is24CsvRecord> records = new ArrayList<>();
         int hausKaufCount = RandomUtils.nextInt(1, 5);
@@ -95,7 +90,7 @@ public class Is24CsvWritingExample {
         }
 
         // write CSV records into a java.io.OutputStream
-        write(records, new NullOutputStream());
+        write(records, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write CSV records into a java.io.Writer
         write(records, new NullWriter());
@@ -286,6 +281,7 @@ public class Is24CsvWritingExample {
      * @param records the CSV records to write
      * @param output  the stream, where the document is written to
      */
+    @SuppressWarnings("SameParameterValue")
     private static void write(List<Is24CsvRecord> records, OutputStream output) {
         LOGGER.info("writing document");
         try (Is24CsvPrinter printer = Is24CsvPrinter.create(output)) {
@@ -328,7 +324,7 @@ public class Is24CsvWritingExample {
         try (Is24CsvPrinter printer = Is24CsvPrinter.create(csv)) {
             printer.printRecords(records);
             LOGGER.info(StringUtils.repeat("-", 50)
-                    + System.lineSeparator() + csv.toString());
+                    + System.lineSeparator() + csv);
         } catch (Exception ex) {
             LOGGER.error("Can't write document into a string!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

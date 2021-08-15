@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Zulieferung {
     KEINE_ANGABE(0),
     DIREKT(1),
@@ -35,10 +36,11 @@ public enum Zulieferung {
     GANZTAEGIG(6),
     VORMITTAGS(7);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Zulieferung.class);
     private final int value;
 
-    private Zulieferung(int value) {
+    Zulieferung(int value) {
         this.value = value;
     }
 

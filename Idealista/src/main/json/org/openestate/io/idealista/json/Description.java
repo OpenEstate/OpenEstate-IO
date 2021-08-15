@@ -4,8 +4,6 @@ package org.openestate.io.idealista.json;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -41,21 +39,14 @@ public class Description implements Serializable
      */
     @JsonProperty("descriptionLanguage")
     @NotNull
-    @Nonnull
     private Description.Language language;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("descriptionText")
     @Pattern(regexp = "^.{0,4000}$")
     private String text;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -3363236258831603757L;
+    private final static long serialVersionUID = -7737248333909340855L;
 
     /**
      * No args constructor for use in serialization
@@ -201,7 +192,7 @@ public class Description implements Serializable
             }
         }
 
-        private Language(String value) {
+        Language(String value) {
             this.value = value;
         }
 

@@ -37,6 +37,7 @@ public class OpenImmoUtilsTest {
 
     @Test
     public void testCreateDocument() {
+        @SuppressWarnings("SpellCheckingInspection")
         String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<openimmo>\n"
                 + "  <uebertragung version=\"" + OpenImmoUtils.VERSION.toReadableVersion() + "\" "
@@ -53,7 +54,7 @@ public class OpenImmoUtilsTest {
                 + "  <version>" + OpenImmoUtils.VERSION.toReadableVersion() + "</version>\n"
                 + "</openimmo_feedback>";
 
-        OpenImmoDocument doc;
+        OpenImmoDocument<?> doc;
         try {
             doc = OpenImmoUtils.createDocument(transferXml);
             Assert.assertNotNull(

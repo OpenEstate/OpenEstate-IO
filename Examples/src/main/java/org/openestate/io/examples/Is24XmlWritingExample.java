@@ -30,7 +30,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_xml.Is24XmlDocument;
 import org.openestate.io.is24_xml.Is24XmlUtils;
 import org.openestate.io.is24_xml.xml.AktionsTyp;
@@ -78,10 +77,6 @@ public class Is24XmlWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24XmlWritingExample.class.getResource("log4j.properties"));
-
         // create a ImmobilienTransferTyp object with some example data
         // this object corresponds to the <IS24ImmobilienTransfer> root element in XML
         ImmobilienTransferTyp transfer = FACTORY.createImmobilienTransferTyp();
@@ -90,7 +85,7 @@ public class Is24XmlWritingExample {
         transfer.setErstellerSoftwareVersion(RandomStringUtils.randomNumeric(2));
         transfer.setAnbieter(createAnbieter());
 
-        // convert the ImmobilienTransferTyp object into a XML document
+        // convert the ImmobilienTransferTyp object into an XML document
         Is24XmlDocument doc = null;
         try {
             doc = Is24XmlDocument.newDocument(transfer);
@@ -110,7 +105,7 @@ public class Is24XmlWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -370,7 +365,7 @@ public class Is24XmlWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(Is24XmlDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {

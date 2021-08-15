@@ -25,15 +25,17 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum EnergieausweisTyp {
     KEINE_ANGABE(1),
     ENDENERGIEBEDARF(2),
     ENERGIEVERBRAUCHSKENNWERT(3);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(EnergieausweisTyp.class);
     private final int value;
 
-    private EnergieausweisTyp(int value) {
+    EnergieausweisTyp(int value) {
         this.value = value;
     }
 

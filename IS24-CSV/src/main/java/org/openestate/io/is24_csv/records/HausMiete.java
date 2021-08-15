@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class HausMiete extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(HausMiete.class);
 
@@ -117,7 +117,7 @@ public class HausMiete extends Is24CsvRecord {
     protected final static int FIELD_STELLPLATZ = 74;
 
     /**
-     * Frei ab/Verfügbar ab/Antrittstermin, Text 50
+     * frei ab / verfügbar ab / Antrittstermin, Text 50
      */
     protected final static int FIELD_VERFUEGBAR_AB = 75;
 
@@ -216,7 +216,7 @@ public class HausMiete extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.HAUS_MIETE);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlBadezimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -228,7 +228,7 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlGarageStellplatz() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -240,7 +240,7 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlSchlafzimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -257,6 +257,7 @@ public class HausMiete extends Is24CsvRecord {
                 this.get(FIELD_AUSSTATTUNG));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getBarrierefrei() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_BARRIEREFREI));
@@ -279,6 +280,7 @@ public class HausMiete extends Is24CsvRecord {
                 this.get(FIELD_BEFEUERUNG));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getEinbaukueche() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_EINBAUKUECHE));
@@ -306,7 +308,7 @@ public class HausMiete extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getEtagenzahl() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -318,6 +320,7 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getGaesteWc() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_GAESTE_WC));
@@ -335,12 +338,13 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Auswahl getHaustiere() {
         return Auswahl.parse(
                 this.get(FIELD_HAUSTIERE));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getHeizkosten() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -357,7 +361,7 @@ public class HausMiete extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getKaltmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -390,12 +394,13 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getNebenkostenInklHeizkosten() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_NEBENKOSTEN_INKL_HEIZKOSTEN));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getNutzflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -435,17 +440,19 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getSeniorengerecht() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_SENIORENGERECHT));
     }
 
+    @SuppressWarnings("unused")
     public Stellplatz getStellplatz() {
         return Stellplatz.parse(
                 this.get(FIELD_STELLPLATZ));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getStellplatzmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -461,7 +468,7 @@ public class HausMiete extends Is24CsvRecord {
         return this.get(FIELD_VERFUEGBAR_AB);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getWarmmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -473,7 +480,7 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -485,7 +492,7 @@ public class HausMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getZimmer() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -509,16 +516,19 @@ public class HausMiete extends Is24CsvRecord {
         return super.print();
     }
 
+    @SuppressWarnings("unused")
     public void setAnzahlBadezimmer(Number value) {
         this.set(FIELD_ANZAHL_BADEZIMMER,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setAnzahlGarageStellplatz(Number value) {
         this.set(FIELD_ANZAHL_GARAGE_STELLPLATZ,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setAnzahlSchlafzimmer(Number value) {
         this.set(FIELD_ANZAHL_SCHLAFZIMMER,
                 Is24CsvFormat.printNumber(value, 2));
@@ -529,6 +539,7 @@ public class HausMiete extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setBarrierefrei(Boolean value) {
         this.set(FIELD_BARRIEREFREI,
                 Is24CsvFormat.printBoolean(value));
@@ -549,6 +560,7 @@ public class HausMiete extends Is24CsvRecord {
                 Befeuerungsart.printMultiple(values));
     }
 
+    @SuppressWarnings("unused")
     public void setEinbaukueche(Boolean value) {
         this.set(FIELD_EINBAUKUECHE,
                 Is24CsvFormat.printBoolean(value));
@@ -569,11 +581,13 @@ public class HausMiete extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setEtagenzahl(Number value) {
         this.set(FIELD_ETAGENZAHL,
                 Is24CsvFormat.printNumber(value, 3));
     }
 
+    @SuppressWarnings("unused")
     public void setGaesteWc(Boolean value) {
         this.set(FIELD_GAESTE_WC,
                 Is24CsvFormat.printBoolean(value));
@@ -584,11 +598,13 @@ public class HausMiete extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setHaustiere(Auswahl value) {
         this.set(FIELD_HAUSTIERE,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setHeizkosten(Number value) {
         this.set(FIELD_HEIZKOSTEN,
                 Is24CsvFormat.printNumber(value, 15, 2));
@@ -604,6 +620,7 @@ public class HausMiete extends Is24CsvRecord {
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setKaltmiete(Number value) {
         this.set(FIELD_KALTMIETE,
                 Is24CsvFormat.printNumber(value, 15, 2));
@@ -619,11 +636,13 @@ public class HausMiete extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setNebenkostenInklHeizkosten(Boolean value) {
         this.set(FIELD_NEBENKOSTEN_INKL_HEIZKOSTEN,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setNutzflaeche(Number value) {
         this.set(FIELD_NUTZFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
@@ -650,16 +669,19 @@ public class HausMiete extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 4));
     }
 
+    @SuppressWarnings("unused")
     public void setSeniorengerecht(Boolean value) {
         this.set(FIELD_SENIORENGERECHT,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setStellplatz(Stellplatz value) {
         this.set(FIELD_STELLPLATZ,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setStellplatzmiete(Number value) {
         this.set(FIELD_STELLPLATZMIETE,
                 Is24CsvFormat.printNumber(value, 15, 2));
@@ -670,16 +692,19 @@ public class HausMiete extends Is24CsvRecord {
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setWarmmiete(Number value) {
         this.set(FIELD_WARMMIETE,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setWohnflaeche(Number value) {
         this.set(FIELD_WOHNFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setZimmer(Number value) {
         this.set(FIELD_ZIMMER,
                 Is24CsvFormat.printNumber(value, 6, 2));

@@ -16,7 +16,6 @@
 package org.openestate.io.immobiliare_it.converters;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItVersion;
 import org.slf4j.Logger;
@@ -28,7 +27,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-public class ImmobiliareIt_2_5 extends XmlConverter<ImmobiliareItDocument, ImmobiliareItVersion> {
+public class ImmobiliareIt_2_5 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareIt_2_5.class);
 
@@ -38,12 +37,11 @@ public class ImmobiliareIt_2_5 extends XmlConverter<ImmobiliareItDocument, Immob
     }
 
     /**
-     * Downgrade an OpenImmo document from version 1.1.
+     * Downgrade a {@link ImmobiliareItDocument} from version 2.5.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.5 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc OpenImmo document in version 1.1
+     * @param doc document in version 2.5
      */
     @Override
     public void downgradeToPreviousVersion(ImmobiliareItDocument doc) {
@@ -52,12 +50,11 @@ public class ImmobiliareIt_2_5 extends XmlConverter<ImmobiliareItDocument, Immob
     }
 
     /**
-     * Downgrade an OpenImmo document to version 1.1.
+     * Upgrade a {@link ImmobiliareItDocument} to version 2.5.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.5 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc OpenImmo document
+     * @param doc document
      */
     @Override
     public void upgradeFromPreviousVersion(ImmobiliareItDocument doc) {

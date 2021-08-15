@@ -6,8 +6,6 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -47,10 +45,8 @@ public class Typology implements Serializable
      * Address Object
      * <p>
      * the option of (addressPostalCode, addressCountry) is only available for Portugal. If you send only coordinates we will not publish with exact visibility, maximum with street only visibility
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("propertyAddress")
     @JsonPropertyDescription("the option of (addressPostalCode, addressCountry) is only available for Portugal. If you send only coordinates we will not publish with exact visibility, maximum with street only visibility")
     @Valid
@@ -63,16 +59,13 @@ public class Typology implements Serializable
     @JsonProperty("propertyCode")
     @Pattern(regexp = "^.{0,50}$")
     @NotNull
-    @Nonnull
     private String code;
     /**
      * Contact Object
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("propertyContact")
     @Valid
     private Contact contact;
@@ -81,10 +74,8 @@ public class Typology implements Serializable
      * <p>
      * 
      * Corresponds to the "propertyDescriptions" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("propertyDescriptions")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @Valid
@@ -94,10 +85,8 @@ public class Typology implements Serializable
      * <p>
      * 
      * Corresponds to the "propertyFeatures" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("propertyFeatures")
     private AbstractFeatures features;
     /**
@@ -105,10 +94,8 @@ public class Typology implements Serializable
      * <p>
      * 
      * Corresponds to the "propertyImages" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("propertyImages")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @Valid
@@ -119,33 +106,18 @@ public class Typology implements Serializable
      * 
      * 
      */
-    @Nullable
     @JsonProperty("propertyOperation")
     @Valid
     private Operation operation;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("propertyReference")
     @Pattern(regexp = "^.{0,50}$")
     private String reference;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("propertyUrl")
     private URI url;
     /**
      * If the visibility is 'idealista', you can find the property using the idealista's search engine; 'microsite', the property is only published on the real estate agency microsite; 'private', the property is not published and only the customer can see it.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("propertyVisibility")
     @JsonPropertyDescription("If the visibility is 'idealista', you can find the property using the idealista's search engine; 'microsite', the property is only published on the real estate agency microsite; 'private', the property is not published and only the customer can see it.")
     private PropertyVisibilityType visibility;

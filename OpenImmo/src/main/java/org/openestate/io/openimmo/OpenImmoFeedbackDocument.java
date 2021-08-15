@@ -15,10 +15,11 @@
  */
 package org.openestate.io.openimmo;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.xml.OpenimmoFeedback;
 import org.slf4j.Logger;
@@ -32,7 +33,6 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoFeedbackDocument.class);
@@ -54,11 +54,10 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
         try {
             Document doc = this.getDocument();
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:openimmo_feedback/io:version", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(
+                    XmlUtils.xPath("/io:openimmo_feedback/io:version", doc, "io"), doc);
 
-            // versions older then 1.2.4 do not support the <version> element
+            // versions older than 1.2.4 do not support the <version> element
             // - version 1.2.3 is assumed, when no <version> element is present and
             //   an empty namespace is used
             // - version 1.2.0 is assumed, when no <version> element is present and
@@ -85,7 +84,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
                 //System.out.println( "----------------------------" );
                 return null;
             }
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             return null;
@@ -122,8 +121,7 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
     }
 
     /**
-     * Creates a {@link OpenImmoFeedbackDocument} from a
-     * {@link OpenimmoFeedback} object.
+     * Creates a {@link OpenImmoFeedbackDocument} from a {@link OpenimmoFeedback} object.
      *
      * @param feedback Java object, that represents the &lt;openimmo_feedback&gt; root element
      * @return created document
@@ -131,11 +129,24 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static OpenImmoFeedbackDocument newDocument(OpenimmoFeedback feedback) throws ParserConfigurationException, JAXBException {
+        return newDocument(feedback, null);
+    }
+
+    /**
+     * Creates a {@link OpenImmoFeedbackDocument} from a {@link OpenimmoFeedback} object.
+     *
+     * @param feedback Java object, that represents the &lt;openimmo_feedback&gt; root element
+     * @param context  JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static OpenImmoFeedbackDocument newDocument(OpenimmoFeedback feedback, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (StringUtils.isBlank(feedback.getVersion()))
             feedback.setVersion(OpenImmoUtils.VERSION.toReadableVersion());
 
         Document document = XmlUtils.newDocument();
-        OpenImmoUtils.createMarshaller("UTF-8", true).marshal(feedback, document);
+        OpenImmoUtils.createMarshaller("UTF-8", true, context).marshal(feedback, document);
         return new OpenImmoFeedbackDocument(document);
     }
 
@@ -144,16 +155,14 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
         try {
             Document doc = this.getDocument();
 
-            String currentVersion = StringUtils.trimToEmpty(XmlUtils
-                    .newXPath("/io:openimmo/io:uebertragung/@version", doc)
-                    .stringValueOf(doc));
+            String currentVersion = StringUtils.trimToEmpty(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:openimmo/io:uebertragung/@version", doc, "io"), doc));
             String[] ver = StringUtils.split(currentVersion, "/", 2);
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:openimmo_feedback/io:version", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(
+                    XmlUtils.xPath("/io:openimmo_feedback/io:version", doc, "io"), doc);
 
-            // versions older then 1.2.4 do not support the <version> element
+            // versions older than 1.2.4 do not support the <version> element
             if (OpenImmoVersion.V1_2_4.isNewerThen(version)) {
                 if (node != null) {
                     Element root = XmlUtils.getRootElement(doc);
@@ -163,9 +172,8 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
             }
 
             if (node == null) {
-                Element parentNode = (Element) XmlUtils
-                        .newXPath("/io:openimmo_feedback", doc)
-                        .selectSingleNode(doc);
+                Element parentNode = XmlUtils.xPathElement(
+                        XmlUtils.xPath("/io:openimmo_feedback", doc, "io"), doc);
                 if (parentNode == null) {
                     LOGGER.warn("Can't find an <openimmo_feedback> element in the document!");
                     return;
@@ -177,22 +185,22 @@ public class OpenImmoFeedbackDocument extends OpenImmoDocument<OpenimmoFeedback>
             String newVersion = version.toReadableVersion();
             if (ver.length > 1) newVersion += "/" + ver[1];
             node.setTextContent(newVersion);
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
         }
     }
 
     /**
-     * Creates a {@link OpenimmoFeedback} object from the contained
-     * {@link Document}.
+     * Creates a {@link OpenimmoFeedback} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;openimmo_feedback&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public OpenimmoFeedback toObject() throws JAXBException {
+    public OpenimmoFeedback toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (OpenimmoFeedback) OpenImmoUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (OpenimmoFeedback) OpenImmoUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

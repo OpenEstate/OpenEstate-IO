@@ -15,7 +15,7 @@
  */
 
 /**
- * Convert XML data for <a href="http://daft.ie/">daft.ie</a> between different
+ * Convert XML data for <a href="https://www.daft.ie/">daft.ie</a> between different
  * versions.
  *
  * @author Andreas Rudolph

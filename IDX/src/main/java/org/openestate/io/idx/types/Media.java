@@ -26,7 +26,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class Media implements Serializable {
     private final static long serialVersionUID = 5668966682578880420L;
     @SuppressWarnings("unused")

@@ -25,14 +25,16 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum KaltmietePro {
     MONAT("M"),
     QUADRATMETER("Q");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KaltmietePro.class);
     private final String value;
 
-    private KaltmietePro(String value) {
+    KaltmietePro(String value) {
         this.value = value;
     }
 

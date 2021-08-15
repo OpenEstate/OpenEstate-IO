@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -91,16 +89,13 @@ public class OfficeFeatures
      */
     @JsonProperty("featuresType")
     @NotNull
-    @Nonnull
     private OfficeFeatures.Type type;
     /**
      * access control
      * <p>
      * availability of access control system
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresAccessControl")
     @JsonPropertyDescription("availability of access control system")
     private Boolean accessControl;
@@ -113,14 +108,7 @@ public class OfficeFeatures
     @DecimalMin("1")
     @DecimalMax("99999")
     @NotNull
-    @Nonnull
     private BigInteger areaConstructed;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresAreaUsable")
     @DecimalMin("1")
     @DecimalMax("99999")
@@ -129,19 +117,11 @@ public class OfficeFeatures
      * bathroom inside
      * <p>
      * bathroom inside the property is available
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresBathroomInside")
     @JsonPropertyDescription("bathroom inside the property is available")
     private Boolean bathroomInside;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresBathroomNumber")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -150,20 +130,16 @@ public class OfficeFeatures
      * bathroom type
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresBathroomType")
     private BathroomType bathroomType;
     /**
      * building year
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresBuiltYear")
     @DecimalMin("1700")
     @DecimalMax("2100")
@@ -172,20 +148,16 @@ public class OfficeFeatures
      * adapted building
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresBuildingAdapted")
     private Boolean buildingAdapted;
     /**
      * air conditioning
      * <p>
      * has air conditioning
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresConditionedAir")
     @JsonPropertyDescription("has air conditioning")
     private Boolean conditionedAir;
@@ -193,20 +165,16 @@ public class OfficeFeatures
      * air conditioning type
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresConditionedAirType")
     private ConditionedAirType conditionedAirType;
     /**
      * conservation status
      * <p>
      * status new is only available for new development properties, not for secondhand properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresConservation")
     @JsonPropertyDescription("status new is only available for new development properties, not for secondhand properties")
     private ConservationType conservation;
@@ -214,10 +182,8 @@ public class OfficeFeatures
      * doorman
      * <p>
      * doorman availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresDoorman")
     @JsonPropertyDescription("doorman availability")
     private Boolean doorman;
@@ -225,38 +191,26 @@ public class OfficeFeatures
      * emergency exit
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEmergencyExit")
     private Boolean emergencyExit;
     /**
      * emergency lights
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEmergencyLights")
     private Boolean emergencyLights;
     /**
      * energy certification rating
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateRating")
     private EnergyCertificateRatingType energyCertificateRating;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresEnergyCertificatePerformance")
     @DecimalMin("1")
     @DecimalMax("999")
@@ -265,10 +219,8 @@ public class OfficeFeatures
      * energy certification type
      * <p>
      * only available for new development properties. project: certification in project phase; completed: certification if the property is finished
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateType")
     @JsonPropertyDescription("only available for new development properties. project: certification in project phase; completed: certification if the property is finished")
     private EnergyCertificateType energyCertificateType;
@@ -276,10 +228,8 @@ public class OfficeFeatures
      * energy certification law
      * <p>
      * only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateLaw")
     @JsonPropertyDescription("only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)")
     private EnergyCertificateLawType energyCertificateLaw;
@@ -287,10 +237,8 @@ public class OfficeFeatures
      * equipped with kitchen
      * <p>
      * equipped with kitchen only
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEquippedKitchen")
     @JsonPropertyDescription("equipped with kitchen only")
     private Boolean equippedKitchen;
@@ -298,10 +246,8 @@ public class OfficeFeatures
      * extinguishers
      * <p>
      * extinguishers availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresExtinguishers")
     @JsonPropertyDescription("extinguishers availability")
     private Boolean extinguishers;
@@ -309,10 +255,8 @@ public class OfficeFeatures
      * fire detectors
      * <p>
      * availability of fire detectors
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresFireDetectors")
     @JsonPropertyDescription("availability of fire detectors")
     private Boolean fireDetectors;
@@ -320,29 +264,15 @@ public class OfficeFeatures
      * fire doors
      * <p>
      * availability of fire doors
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresFireDoors")
     @JsonPropertyDescription("availability of fire doors")
     private Boolean fireDoors;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresFloorsBuilding")
     @DecimalMin("1")
     @DecimalMax("99")
     private BigInteger floorsBuilding;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresFloorsProperty")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -351,10 +281,8 @@ public class OfficeFeatures
      * heating
      * <p>
      * heating availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresHeating")
     @JsonPropertyDescription("heating availability")
     private Boolean heating;
@@ -362,19 +290,11 @@ public class OfficeFeatures
      * hot water
      * <p>
      * hot water availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresHotWater")
     @JsonPropertyDescription("hot water availability")
     private Boolean hotWater;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresLiftNumber")
     @DecimalMin("1")
     @DecimalMax("9")
@@ -383,58 +303,42 @@ public class OfficeFeatures
      * office building
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresOfficeBuilding")
     private Boolean officeBuilding;
     /**
      * east orientation
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresOrientationEast")
     private Boolean orientationEast;
     /**
      * north orientation
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresOrientationNorth")
     private Boolean orientationNorth;
     /**
      * south orientation
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresOrientationSouth")
     private Boolean orientationSouth;
     /**
      * west orientation
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresOrientationWest")
     private Boolean orientationWest;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresParkingSpacesNumber")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -443,90 +347,72 @@ public class OfficeFeatures
      * rooms splitted
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresRoomsSplitted")
     private RoomsSplittedType roomsSplitted;
     /**
      * security alarm system
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityAlarm")
     private Boolean securityAlarm;
     /**
      * security door
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityDoor")
     private Boolean securityDoor;
     /**
      * security system
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecuritySystem")
     private Boolean securitySystem;
     /**
      * sprinklers
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSprinklers")
     private Boolean sprinklers;
     /**
      * suspending ceiling
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSuspendedCeiling")
     private Boolean suspendedCeiling;
     /**
      * suspending floor
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSuspendedFloor")
     private Boolean suspendedFloor;
     /**
      * storage room
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresStorage")
     private Boolean storage;
     /**
      * double windows
      * <p>
      * double pane windows availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresWindowsDouble")
     @JsonPropertyDescription("double pane windows availability")
     private Boolean windowsDouble;
@@ -534,17 +420,15 @@ public class OfficeFeatures
      * windows location
      * <p>
      * internal / external flat based on windows view. Only available for Spain.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresWindowsLocation")
     @JsonPropertyDescription("internal / external flat based on windows view. Only available for Spain.")
     private WindowsLocationType windowsLocation;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -5844771007082297453L;
+    private final static long serialVersionUID = 7360516029818834574L;
 
     /**
      * No args constructor for use in serialization
@@ -1974,7 +1858,7 @@ public class OfficeFeatures
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

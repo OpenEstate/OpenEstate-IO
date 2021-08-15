@@ -15,11 +15,11 @@
  */
 package org.openestate.io.kyero.converters;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
@@ -35,8 +35,7 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
-public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
+public class Kyero_3 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Kyero_3.class);
 
@@ -46,9 +45,9 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
     }
 
     /**
-     * Downgrade a Kyero document from version 3.
+     * Downgrade a {@link KyeroDocument} from version 3.
      *
-     * @param doc Kyero document in version 3
+     * @param doc document in version 3
      */
     @Override
     public void downgradeToPreviousVersion(KyeroDocument doc) {
@@ -105,9 +104,9 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
     }
 
     /**
-     * Upgrade a Kyero document to version 3.
+     * Upgrade a {@link KyeroDocument} to version 3.
      *
-     * @param doc Kyero document in version 2.1
+     * @param doc document in version 2.1
      */
     @Override
     public void upgradeFromPreviousVersion(KyeroDocument doc) {
@@ -152,7 +151,7 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
     /**
      * Downgrade &lt;new_build&gt; elements to Kyero 2.1.
      * <p>
-     * The &lt;new_build&gt; elements are not available in version 2.1. Instead
+     * The &lt;new_build&gt; elements are not available in version 2.1. Instead,
      * the value "new_build" is used in the &lt;price_freq&gt; element.
      * <p>
      * Any &lt;new_build&gt; elements are removed. If its value is set to "1",
@@ -160,29 +159,28 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;price_freq&gt;new_build&lt;/price_freq&gt;,
      *
      * @param doc Kyero document in version 3
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeNewBuildElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:new_build",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            String value = StringUtils.trimToNull(node.getTextContent());
+    protected void downgradeNewBuildElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:new_build";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Element parent = (Element) element.getParentNode();
+            final String value = StringUtils.trimToNull(element.getTextContent());
+
             if ("1".equals(value)) {
-                Element priceFreqNode = (Element) XmlUtils.newXPath("io:price_freq", doc)
-                        .selectSingleNode(parentNode);
+                Element priceFreqNode = XmlUtils.xPathElement(XmlUtils.xPath("io:price_freq", doc, "io"), parent);
                 if (priceFreqNode == null) {
                     priceFreqNode = doc.createElementNS(KyeroUtils.NAMESPACE, "price_freq");
                     priceFreqNode.setTextContent("new_build");
-                    parentNode.appendChild(priceFreqNode);
+                    parent.appendChild(priceFreqNode);
                 } else if ("sale".equalsIgnoreCase(priceFreqNode.getTextContent())) {
                     priceFreqNode.setTextContent("new_build");
                 }
             }
-            parentNode.removeChild(node);
-        }
+
+            parent.removeChild(element);
+        });
     }
 
     /**
@@ -194,21 +192,19 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * An &lt;en&gt; child element is created for any &lt;type&gt; element.
      *
      * @param doc Kyero document in version 3
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeTypeElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:type",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getTextContent());
-            node.setTextContent(null);
+    protected void downgradeTypeElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:type";
 
-            Element childNode = doc.createElementNS(KyeroUtils.NAMESPACE, "en");
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getTextContent());
+            final Element childNode = doc.createElementNS(KyeroUtils.NAMESPACE, "en");
+
             childNode.setTextContent(value);
-            node.appendChild(childNode);
-        }
+            element.setTextContent(null);
+            element.appendChild(childNode);
+        });
     }
 
     /**
@@ -221,31 +217,30 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * first found URL is copied as simple value into the &lt;url&gt; element.
      *
      * @param doc Kyero document in version 3
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
     @SuppressWarnings("Duplicates")
-    protected void downgradeUrlElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:url",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
+    protected void downgradeUrlElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:url";
 
-            String enUrlValue = null;
-            String fallbackUrlValue = null;
-            List childNodes = XmlUtils.newXPath(
-                    "*", doc).selectNodes(node);
-            for (Object childItem : childNodes) {
-                Element langNode = (Element) childItem;
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Map<String, String> values = new HashMap<>();
+            values.put("enUrlValue", null);
+            values.put("fallbackUrlValue", null);
+
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("*", doc, "io"), element, (langNode) -> {
                 if ("en".equalsIgnoreCase(langNode.getLocalName()))
-                    enUrlValue = StringUtils.trimToNull(langNode.getTextContent());
-                else if (fallbackUrlValue == null)
-                    fallbackUrlValue = StringUtils.trimToNull(langNode.getTextContent());
-                node.removeChild(langNode);
-            }
+                    values.put("enUrlValue", StringUtils.trimToNull(langNode.getTextContent()));
+                else if (values.get("fallbackUrlValue") == null)
+                    values.put("fallbackUrlValue", StringUtils.trimToNull(langNode.getTextContent()));
+                element.removeChild(langNode);
+            });
 
-            node.setTextContent((enUrlValue != null) ? enUrlValue : fallbackUrlValue);
-        }
+            element.setTextContent(StringUtils.defaultIfBlank(
+                    values.get("enUrlValue"),
+                    values.get("fallbackUrlValue")
+            ));
+        });
     }
 
     /**
@@ -257,18 +252,14 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Any occurrence of these elements is removed.
      *
      * @param doc OpenImmo document in version 2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeCustomElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:custom  | " +
-                        "/io:root/io:agent/io:custom",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeCustomElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:custom | " +
+                "/io:root/io:agent/io:custom";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -277,17 +268,13 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Kyero 2.1 does not support &lt;energy_rating&gt; elements.
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeEnergyRatingElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:energy_rating",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeEnergyRatingElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:energy_rating";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -296,17 +283,13 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Kyero 2.1 does not support &lt;location&gt; elements.
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeLocationElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:location",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeLocationElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:location";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -315,17 +298,13 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * Kyero 2.1 does not support &lt;notes&gt; elements.
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeNotesElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:notes",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeNotesElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:notes";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -335,30 +314,27 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;desc&gt; (for properties) elements for "en", "es", "de", "nl", "fr".
      *
      * @param doc OpenImmo document in version 3
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeUnsupportedLanguageElements(Document doc) throws JaxenException {
-        String[] unsupportedLanguages = new String[]{
+    protected void removeUnsupportedLanguageElements(Document doc) throws XPathExpressionException {
+        final String[] unsupportedLanguages = new String[]{
                 "ar", "bg", "ca", "cs", "da", "el", "et", "fa", "fi", "he", "hi", "hu",
                 "id", "it", "ja", "ko", "lt", "lv", "no", "pl", "pt", "ro", "ru", "sk",
                 "sl", "sv", "th", "tr", "uk", "vi", "zh",
         };
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:desc | " +
-                        "/io:root/io:property/io:images/io:image/io:title",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            List childNodes = XmlUtils.newXPath(
-                    "*", doc).selectNodes(node);
-            for (Object childItem : childNodes) {
-                Element langNode = (Element) childItem;
-                String lang = langNode.getLocalName().toLowerCase();
-                if (ArrayUtils.contains(unsupportedLanguages, lang)) {
-                    node.removeChild(langNode);
-                }
-            }
-        }
+
+        final String xpath = "/io:root/io:property/io:desc | " +
+                "/io:root/io:property/io:images/io:image/io:title";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> XmlUtils.xPathElementsProcess(XmlUtils.xPath("*", doc), element, (child) -> {
+                    final String lang = child.getLocalName().toLowerCase();
+
+                    if (ArrayUtils.contains(unsupportedLanguages, lang)) {
+                        element.removeChild(child);
+                    }
+                })
+        );
     }
 
     /**
@@ -371,31 +347,30 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * document.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void upgradeCurrencyElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:currency",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            String value = StringUtils.trimToNull(node.getTextContent());
+    protected void upgradeCurrencyElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:currency";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Element parent = (Element) element.getParentNode();
+            final String value = StringUtils.trimToNull(element.getTextContent());
+
             if ("EUR".equalsIgnoreCase(value))
-                node.setTextContent("EUR");
+                element.setTextContent("EUR");
             else if ("GBP".equalsIgnoreCase(value))
-                node.setTextContent("GBP");
+                element.setTextContent("GBP");
             else if ("USD".equalsIgnoreCase(value))
-                node.setTextContent("USD");
+                element.setTextContent("USD");
             else
-                parentNode.removeChild(node);
-        }
+                parent.removeChild(element);
+        });
     }
 
     /**
      * Upgrade &lt;new_build&gt; elements for Kyero 3.
      * <p>
-     * The &lt;new_build&gt; elements are not available in version 2.1. Instead
+     * The &lt;new_build&gt; elements are not available in version 2.1. Instead,
      * the value "new_build" is used in the &lt;price_freq&gt; element.
      * <p>
      * Any occurrences of &lt;price_freq&gt;new_build&lt;/price_freq&gt; is
@@ -403,22 +378,23 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;new_build&gt;1&lt;/new_build&gt; is added to the property.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void upgradeNewBuildElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:price_freq",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            if (!"new_build".equalsIgnoreCase(node.getTextContent())) continue;
-            node.setTextContent("sale");
+    protected void upgradeNewBuildElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:price_freq";
 
-            Element newBuildNode = doc.createElementNS(KyeroUtils.NAMESPACE, "new_build");
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Element parent = (Element) element.getParentNode();
+
+            if (!"new_build".equalsIgnoreCase(element.getTextContent()))
+                return;
+
+            element.setTextContent("sale");
+
+            final Element newBuildNode = doc.createElementNS(KyeroUtils.NAMESPACE, "new_build");
             newBuildNode.setTextContent("1");
-            parentNode.appendChild(newBuildNode);
-        }
+            parent.appendChild(newBuildNode);
+        });
     }
 
     /**
@@ -430,30 +406,30 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;en&gt; child element is copied into the &lt;type&gt; element.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
     @SuppressWarnings("Duplicates")
-    protected void upgradeTypeElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:type",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
+    protected void upgradeTypeElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:type";
 
-            String enTypeValue = null;
-            String fallbackTypeValue = null;
-            List childNodes = XmlUtils.newXPath(
-                    "*", doc).selectNodes(node);
-            for (Object childItem : childNodes) {
-                Element langNode = (Element) childItem;
-                if ("en".equalsIgnoreCase(langNode.getLocalName()))
-                    enTypeValue = StringUtils.trimToNull(langNode.getTextContent());
-                else if (fallbackTypeValue == null)
-                    fallbackTypeValue = StringUtils.trimToNull(langNode.getTextContent());
-                node.removeChild(langNode);
-            }
-            node.setTextContent((enTypeValue != null) ? enTypeValue : fallbackTypeValue);
-        }
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Map<String, String> values = new HashMap<>();
+            values.put("enTypeValue", null);
+            values.put("fallbackTypeValue", null);
+
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("*", doc), element, (child) -> {
+                if ("en".equalsIgnoreCase(child.getLocalName()))
+                    values.put("enTypeValue", StringUtils.trimToNull(child.getTextContent()));
+                else if (values.get("fallbackTypeValue") == null)
+                    values.put("fallbackTypeValue", StringUtils.trimToNull(child.getTextContent()));
+                element.removeChild(child);
+            });
+
+            element.setTextContent(StringUtils.defaultIfBlank(
+                    values.get("enTypeValue"),
+                    values.get("fallbackTypeValue")
+            ));
+        });
     }
 
     /**
@@ -466,24 +442,23 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
      * &lt;en&gt; child element.
      *
      * @param doc Kyero document in version 2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void upgradeUrlElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:root/io:property/io:url",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getTextContent());
-            node.setTextContent(null);
+    protected void upgradeUrlElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:root/io:property/io:url";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getTextContent());
+
+            element.setTextContent(null);
             if (value == null) {
-                Element parentNode = (Element) node.getParentNode();
-                parentNode.removeChild(node);
+                Element parentNode = (Element) element.getParentNode();
+                parentNode.removeChild(element);
             } else {
                 Element childNode = doc.createElementNS(KyeroUtils.NAMESPACE, "en");
                 childNode.setTextContent(value);
-                node.appendChild(childNode);
+                element.appendChild(childNode);
             }
-        }
+        });
     }
 }
