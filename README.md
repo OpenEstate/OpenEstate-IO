@@ -1,5 +1,5 @@
-OpenEstate-IO 1.5-SNAPSHOT
-==========================
+OpenEstate-IO 1.5
+=================
 
 *OpenEstate-IO* provides a set of Java libraries to read and write real estate data in common formats. These libraries are used within [*OpenEstate-ImmoTool*](https://openestate.org/) and in some of our clients projects in order to process real estate data.
 
@@ -7,33 +7,33 @@ OpenEstate-IO 1.5-SNAPSHOT
 Supported Formats
 -----------------
 
-| Module                           | Format                                                                | Type | Version    |
-| -------------------------------- | --------------------------------------------------------------------- | ---- | ---------- |
-| [`CasaIT`](CasaIT)               | [*Casa.it*](https://www.casa.it/) format (*experimental*)             | XML  | ?          |
-| [`DaftIE`](DaftIE)               | [*Daft.ie*](https://www.daft.ie) Overseas Webfeed                     | XML  | 2.7        |
-| [`Filemaker`](Filemaker)         | [*Filemaker*](http://www.filemaker.com) FMPXMLLAYOUT                  | XML  | ?          |
-|                                  | [*Filemaker*](http://www.filemaker.com) FMPXMLRESULT                  | XML  | ?          |
-| [`Idealista`](Idealista)         | [*idealista.com*](https://www.idealista.com/) properties format       | JSON | 6.00       |
-| [`IDX`](IDX)                     | *IDX* format                                                          | CSV  | 3.01       |
-| [`ImmoXML`](ImmoXML)             | *ImmoXML* format                                                      | XML  | 3.0        |
-| [`ImmobarIT`](ImmobarIT)         | [*immobar.it*](https://www.immobar.it) format                         | XML  | 21/04/2015 |
-| [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](https://www.immobiliare.it) format                 | XML  | 2.8        |
-| [`IS24-CSV`](IS24-CSV)           | *IS24-CSV* format (*legacy*)                                          | CSV  | 1.4.0.4    |
-| [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                          | XML  | rev189438  |
-| [`Kyero`](Kyero)                 | [*Kyero.com*](https://www.kyero.com) XML feed                         | XML  | 3.4        |
-|                                  |                                                                       |      | 2.1        |
-| [`OpenImmo`](OpenImmo)           | [*OpenImmo*](http://www.openimmo.de) format                           | XML  | 1.2.7b     |
-|                                  |                                                                       |      | 1.2.7      |
-|                                  |                                                                       |      | 1.2.6      |
-|                                  |                                                                       |      | 1.2.5      |
-|                                  |                                                                       |      | 1.2.4      |
-|                                  |                                                                       |      | 1.2.3      |
-|                                  |                                                                       |      | 1.2.2      |
-|                                  |                                                                       |      | 1.2.1      |
-|                                  |                                                                       |      | 1.2        |
-|                                  |                                                                       |      | 1.1        |
-| [`Trovit`](Trovit)               | [*Trovit.com*](https://www.trovit.com) Homes Feed                     | XML  | ?          |
-| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](https://www.wohnen-in-suedtirol.it) format | XML  | 2.2        |
+| Module                           | Format                                                                  | Type | Version    |
+| -------------------------------- | ------------------------------------------------------------------------|:----:|:----------:|
+| [`CasaIT`](CasaIT)               | [*Casa.it*](https://www.casa.it/) format **(experimental)**             | XML  | ?          |
+| [`DaftIE`](DaftIE)               | [*Daft.ie*](https://www.daft.ie) Overseas Webfeed                       | XML  | 2.7        |
+| [`Filemaker`](Filemaker)         | [*Filemaker*](http://www.filemaker.com) FMPXMLLAYOUT                    | XML  | ?          |
+|                                  | [*Filemaker*](http://www.filemaker.com) FMPXMLRESULT                    | XML  | ?          |
+| [`Idealista`](Idealista)         | [*idealista.com*](https://www.idealista.com/) format **(experimental)** | JSON | 6.00       |
+| [`IDX`](IDX)                     | *IDX* format                                                            | CSV  | 3.01       |
+| [`ImmoXML`](ImmoXML)             | *ImmoXML* format                                                        | XML  | 3.0        |
+| [`ImmobarIT`](ImmobarIT)         | [*immobar.it*](https://www.immobar.it) format **(experimental)**        | XML  | 21/04/2015 |
+| [`ImmobiliareIT`](ImmobiliareIT) | [*Immobiliare.it*](https://www.immobiliare.it) format                   | XML  | 2.8        |
+| [`IS24-CSV`](IS24-CSV)           | *IS24-CSV* format (*legacy*)                                            | CSV  | 1.4.0.4    |
+| [`IS24-XML`](IS24-XML)           | *IS24-XML* format (*legacy*)                                            | XML  | rev189438  |
+| [`Kyero`](Kyero)                 | [*Kyero.com*](https://www.kyero.com) XML feed                           | XML  | 3.4        |
+|                                  |                                                                         |      | 2.1        |
+| [`OpenImmo`](OpenImmo)           | [*OpenImmo*](http://www.openimmo.de) format                             | XML  | 1.2.7b     |
+|                                  |                                                                         |      | 1.2.7      |
+|                                  |                                                                         |      | 1.2.6      |
+|                                  |                                                                         |      | 1.2.5      |
+|                                  |                                                                         |      | 1.2.4      |
+|                                  |                                                                         |      | 1.2.3      |
+|                                  |                                                                         |      | 1.2.2      |
+|                                  |                                                                         |      | 1.2.1      |
+|                                  |                                                                         |      | 1.2        |
+|                                  |                                                                         |      | 1.1        |
+| [`Trovit`](Trovit)               | [*Trovit.com*](https://www.trovit.com) Homes Feed                       | XML  | ?          |
+| [`WisIT`](WisIT)                 | [*Wohnen-in-Suedtirol.it*](https://www.wohnen-in-suedtirol.it) format   | XML  | 2.2        |
 
 Open a module subfolder to get more information about the specific format.
 
@@ -49,85 +49,85 @@ Alternatively you can integrate the library from [Maven Central Repository](http
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-CasaIT</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-DaftIE</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Filemaker</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Idealista</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IDX</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmobarIT</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmobiliareIT</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-ImmoXML</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-CSV</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Kyero</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-OpenImmo</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-Trovit</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 
 <dependency>
   <groupId>org.openestate.io</groupId>
   <artifactId>OpenEstate-IO-WisIT</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5</version>
 </dependency>
 ```
 
@@ -146,12 +146,11 @@ Dependencies
 - [commons-text 1.9](https://commons.apache.org/proper/commons-text/) (optional; for examples and some unit tests)
 - [Eclipse Implementation of JAXB 2.3.5](https://projects.eclipse.org/projects/ee4j.jaxb-impl) (optional; for processing of XML formats)
 - [jackson-databind 2.12.4](https://github.com/FasterXML/jackson-databind) (optional; for processing of JSON formats)
-- [Jakarta Activation 1.2.2](https://projects.eclipse.org/projects/ee4j.jaf)
-- [Jakarta Annotations 1.3.5](https://projects.eclipse.org/projects/ee4j.ca)
+- [Jakarta Activation 1.2.2](https://projects.eclipse.org/projects/ee4j.jaf) (optional; for processing of XML formats)
+- [Jakarta Annotations 1.3.5](https://projects.eclipse.org/projects/ee4j.ca) (optional; for processing of JSON / XML formats)
 - [Jakarta Bean Validation 2.0.2](https://projects.eclipse.org/projects/ee4j.bean-validation) (optional; for processing of JSON formats)
 - [Jakarta XML Binding 2.3.3](https://projects.eclipse.org/projects/ee4j.jaxb) (optional; for processing of XML formats)
 - [jaxb2-basics-runtime 0.12.0](https://github.com/highsource/jaxb2-basics) (optional; for processing of XML formats)
-- [jaxen 1.2.0](https://github.com/jaxen-xpath/jaxen) (optional; for processing of XML formats)
 - [SLF4J 1.7.30](https://www.slf4j.org/)
 - [Logback 1.2.5](http://logback.qos.ch/) (optional; for logging in example classes)
 - [lorem 2.1](https://github.com/mdeanda/lorem) (optional; for generating random data in example classes)
@@ -196,8 +195,8 @@ We are providing [professional support](https://github.com/OpenEstate/OpenEstate
 Further information
 -------------------
 
--   [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
--   [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
--   [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/develop/CHANGELOG.md)
--   [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
--   [Validator for common XML formats](https://validator.openestate.org/)
+- [*OpenEstate-IO* at GitHub](https://github.com/OpenEstate/OpenEstate-IO)
+- [Releases of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/releases)
+- [Changelog of *OpenEstate-IO*](https://github.com/OpenEstate/OpenEstate-IO/blob/v1.5/CHANGELOG.md)
+- [API documentation of *OpenEstate-IO*](https://media.openestate.org/apidocs/OpenEstate-IO/)
+- [Validator for common XML formats](https://validator.openestate.org/)

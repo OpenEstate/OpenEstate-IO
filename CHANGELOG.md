@@ -2,8 +2,8 @@ Changelog for OpenEstate-IO
 ===========================
 
 
-1.5 (not released yet)
-----------------------
+1.5 (16 Aug 2021)
+-----------------
 
 -   Compile for Java 8.
 -   Provide JAXB as dependency for easier use in Java 9 and beyond.
