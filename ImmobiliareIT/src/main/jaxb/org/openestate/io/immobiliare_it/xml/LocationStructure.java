@@ -26,6 +26,7 @@ import org.jvnet.jaxb2_commons.lang.ToString2;
 import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
+import org.openestate.io.immobiliare_it.xml.types.MapType;
 
 
 /**
@@ -38,15 +39,15 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="country-code"&gt;
+ *         &lt;element name="country-code" minOccurs="0"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *               &lt;pattern value="[a-zA-Z]{2}"/&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
- *         &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="sub-administrative-area"&gt;
+ *         &lt;element name="administrative-area" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sub-administrative-area" minOccurs="0"&gt;
  *           &lt;complexType&gt;
  *             &lt;simpleContent&gt;
  *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
@@ -59,7 +60,8 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *           &lt;complexType&gt;
  *             &lt;simpleContent&gt;
  *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
- *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *                 &lt;attribute name="geo" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+ *                 &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *               &lt;/extension&gt;
  *             &lt;/simpleContent&gt;
  *           &lt;/complexType&gt;
@@ -83,6 +85,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *                             &lt;/simpleType&gt;
  *                           &lt;/attribute&gt;
  *                           &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+ *                           &lt;attribute name="geolocalized" type="{http://feed.immobiliare.it}yesonly" /&gt;
  *                         &lt;/extension&gt;
  *                       &lt;/simpleContent&gt;
  *                     &lt;/complexType&gt;
@@ -103,9 +106,16 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *                     &lt;/complexType&gt;
  *                   &lt;/element&gt;
  *                   &lt;element name="postal-code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *                   &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType"/&gt;
- *                   &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType"/&gt;
+ *                   &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType" minOccurs="0"/&gt;
+ *                   &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType" minOccurs="0"/&gt;
  *                 &lt;/all&gt;
+ *                 &lt;attribute name="map"&gt;
+ *                   &lt;simpleType&gt;
+ *                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                       &lt;pattern value="exact|near|no"/&gt;
+ *                     &lt;/restriction&gt;
+ *                   &lt;/simpleType&gt;
+ *                 &lt;/attribute&gt;
  *               &lt;/restriction&gt;
  *             &lt;/complexContent&gt;
  *           &lt;/complexType&gt;
@@ -122,24 +132,24 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "locationStructure", propOrder = {
 
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @XmlElement(name = "country-code", required = true)
-    @XmlJavaTypeAdapter(Adapter19 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @XmlElement(name = "country-code")
+    @XmlJavaTypeAdapter(Adapter24 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected String countryCode;
-    @XmlElement(name = "administrative-area", required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @XmlElement(name = "administrative-area")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected String administrativeArea;
-    @XmlElement(name = "sub-administrative-area", required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @XmlElement(name = "sub-administrative-area")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected LocationStructure.SubAdministrativeArea subAdministrativeArea;
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected LocationStructure.City city;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected LocationStructure.Locality locality;
 
     /**
@@ -150,7 +160,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String getCountryCode() {
         return countryCode;
     }
@@ -163,7 +173,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setCountryCode(String value) {
         this.countryCode = value;
     }
@@ -176,7 +186,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String getAdministrativeArea() {
         return administrativeArea;
     }
@@ -189,7 +199,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setAdministrativeArea(String value) {
         this.administrativeArea = value;
     }
@@ -202,7 +212,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link LocationStructure.SubAdministrativeArea }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public LocationStructure.SubAdministrativeArea getSubAdministrativeArea() {
         return subAdministrativeArea;
     }
@@ -215,7 +225,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link LocationStructure.SubAdministrativeArea }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setSubAdministrativeArea(LocationStructure.SubAdministrativeArea value) {
         this.subAdministrativeArea = value;
     }
@@ -228,7 +238,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link LocationStructure.City }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public LocationStructure.City getCity() {
         return city;
     }
@@ -241,7 +251,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link LocationStructure.City }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setCity(LocationStructure.City value) {
         this.city = value;
     }
@@ -254,7 +264,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link LocationStructure.Locality }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public LocationStructure.Locality getLocality() {
         return locality;
     }
@@ -267,12 +277,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *     {@link LocationStructure.Locality }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setLocality(LocationStructure.Locality value) {
         this.locality = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
@@ -280,7 +290,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -288,7 +298,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theCountryCode;
@@ -318,18 +328,18 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof LocationStructure) {
@@ -403,12 +413,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new LocationStructure();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -465,7 +475,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
@@ -481,7 +491,8 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      * &lt;complexType&gt;
      *   &lt;simpleContent&gt;
      *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
-     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+     *       &lt;attribute name="geo" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+     *       &lt;attribute name="code" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
      *     &lt;/extension&gt;
      *   &lt;/simpleContent&gt;
      * &lt;/complexType&gt;
@@ -493,18 +504,21 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
     @XmlType(name = "", propOrder = {
         "value"
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public static class City implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlValue
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected String value;
+        @XmlAttribute(name = "geo")
+        @XmlJavaTypeAdapter(Adapter6 .class)
+        @XmlSchemaType(name = "positiveInteger")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        protected BigInteger geo;
         @XmlAttribute(name = "code")
-        @XmlJavaTypeAdapter(Adapter2 .class)
-        @XmlSchemaType(name = "integer")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-        protected BigInteger code;
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        protected String code;
 
         /**
          * Gets the value of the value property.
@@ -514,7 +528,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String getValue() {
             return value;
         }
@@ -527,9 +541,35 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setValue(String value) {
             this.value = value;
+        }
+
+        /**
+         * Gets the value of the geo property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        public BigInteger getGeo() {
+            return geo;
+        }
+
+        /**
+         * Sets the value of the geo property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        public void setGeo(BigInteger value) {
+            this.geo = value;
         }
 
         /**
@@ -540,8 +580,8 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-        public BigInteger getCode() {
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        public String getCode() {
             return code;
         }
 
@@ -553,12 +593,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-        public void setCode(BigInteger value) {
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        public void setCode(String value) {
             this.code = value;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
@@ -566,7 +606,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -574,7 +614,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theValue;
@@ -582,25 +622,30 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
             }
             {
-                BigInteger theCode;
+                BigInteger theGeo;
+                theGeo = this.getGeo();
+                strategy.appendField(locator, this, "geo", buffer, theGeo, (this.geo!= null));
+            }
+            {
+                String theCode;
                 theCode = this.getCode();
                 strategy.appendField(locator, this, "code", buffer, theCode, (this.code!= null));
             }
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof LocationStructure.City) {
@@ -619,11 +664,24 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                     }
                 }
                 {
+                    Boolean geoShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.geo!= null));
+                    if (geoShouldBeCopiedAndSet == Boolean.TRUE) {
+                        BigInteger sourceGeo;
+                        sourceGeo = this.getGeo();
+                        BigInteger copyGeo = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "geo", sourceGeo), sourceGeo, (this.geo!= null)));
+                        copy.setGeo(copyGeo);
+                    } else {
+                        if (geoShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.geo = null;
+                        }
+                    }
+                }
+                {
                     Boolean codeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.code!= null));
                     if (codeShouldBeCopiedAndSet == Boolean.TRUE) {
-                        BigInteger sourceCode;
+                        String sourceCode;
                         sourceCode = this.getCode();
-                        BigInteger copyCode = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode, (this.code!= null)));
+                        String copyCode = ((String) strategy.copy(LocatorUtils.property(locator, "code", sourceCode), sourceCode, (this.code!= null)));
                         copy.setCode(copyCode);
                     } else {
                         if (codeShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -635,12 +693,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new LocationStructure.City();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -659,9 +717,18 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 }
             }
             {
-                BigInteger lhsCode;
+                BigInteger lhsGeo;
+                lhsGeo = this.getGeo();
+                BigInteger rhsGeo;
+                rhsGeo = that.getGeo();
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "geo", lhsGeo), LocatorUtils.property(thatLocator, "geo", rhsGeo), lhsGeo, rhsGeo, (this.geo!= null), (that.geo!= null))) {
+                    return false;
+                }
+            }
+            {
+                String lhsCode;
                 lhsCode = this.getCode();
-                BigInteger rhsCode;
+                String rhsCode;
                 rhsCode = that.getCode();
                 if (!strategy.equals(LocatorUtils.property(thisLocator, "code", lhsCode), LocatorUtils.property(thatLocator, "code", rhsCode), lhsCode, rhsCode, (this.code!= null), (that.code!= null))) {
                     return false;
@@ -670,7 +737,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
@@ -703,6 +770,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *                   &lt;/simpleType&gt;
      *                 &lt;/attribute&gt;
      *                 &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+     *                 &lt;attribute name="geolocalized" type="{http://feed.immobiliare.it}yesonly" /&gt;
      *               &lt;/extension&gt;
      *             &lt;/simpleContent&gt;
      *           &lt;/complexType&gt;
@@ -723,9 +791,16 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
      *           &lt;/complexType&gt;
      *         &lt;/element&gt;
      *         &lt;element name="postal-code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
-     *         &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType"/&gt;
-     *         &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType"/&gt;
+     *         &lt;element name="longitude" type="{http://feed.immobiliare.it}longitudeType" minOccurs="0"/&gt;
+     *         &lt;element name="latitude" type="{http://feed.immobiliare.it}latitudeType" minOccurs="0"/&gt;
      *       &lt;/all&gt;
+     *       &lt;attribute name="map"&gt;
+     *         &lt;simpleType&gt;
+     *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *             &lt;pattern value="exact|near|no"/&gt;
+     *           &lt;/restriction&gt;
+     *         &lt;/simpleType&gt;
+     *       &lt;/attribute&gt;
      *     &lt;/restriction&gt;
      *   &lt;/complexContent&gt;
      * &lt;/complexType&gt;
@@ -737,27 +812,31 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
     @XmlType(name = "", propOrder = {
 
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public static class Locality implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected LocationStructure.Locality.Neighbourhood neighbourhood;
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected LocationStructure.Locality.Thoroughfare thoroughfare;
         @XmlElement(name = "postal-code")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected String postalCode;
-        @XmlElement(required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter9 .class)
-        @XmlSchemaType(name = "decimal")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @XmlElement(type = String.class)
+        @XmlJavaTypeAdapter(Adapter17 .class)
+        @XmlSchemaType(name = "double")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected BigDecimal longitude;
-        @XmlElement(required = true, type = String.class)
-        @XmlJavaTypeAdapter(Adapter8 .class)
-        @XmlSchemaType(name = "decimal")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @XmlElement(type = String.class)
+        @XmlJavaTypeAdapter(Adapter16 .class)
+        @XmlSchemaType(name = "double")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected BigDecimal latitude;
+        @XmlAttribute(name = "map")
+        @XmlJavaTypeAdapter(Adapter25 .class)
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        protected MapType map;
 
         /**
          * Gets the value of the neighbourhood property.
@@ -767,7 +846,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link LocationStructure.Locality.Neighbourhood }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public LocationStructure.Locality.Neighbourhood getNeighbourhood() {
             return neighbourhood;
         }
@@ -780,7 +859,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link LocationStructure.Locality.Neighbourhood }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setNeighbourhood(LocationStructure.Locality.Neighbourhood value) {
             this.neighbourhood = value;
         }
@@ -793,7 +872,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link LocationStructure.Locality.Thoroughfare }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public LocationStructure.Locality.Thoroughfare getThoroughfare() {
             return thoroughfare;
         }
@@ -806,7 +885,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link LocationStructure.Locality.Thoroughfare }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setThoroughfare(LocationStructure.Locality.Thoroughfare value) {
             this.thoroughfare = value;
         }
@@ -819,7 +898,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String getPostalCode() {
             return postalCode;
         }
@@ -832,7 +911,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setPostalCode(String value) {
             this.postalCode = value;
         }
@@ -845,7 +924,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public BigDecimal getLongitude() {
             return longitude;
         }
@@ -858,7 +937,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setLongitude(BigDecimal value) {
             this.longitude = value;
         }
@@ -871,7 +950,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public BigDecimal getLatitude() {
             return latitude;
         }
@@ -884,12 +963,38 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setLatitude(BigDecimal value) {
             this.latitude = value;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        /**
+         * Gets the value of the map property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        public MapType getMap() {
+            return map;
+        }
+
+        /**
+         * Sets the value of the map property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+        public void setMap(MapType value) {
+            this.map = value;
+        }
+
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
@@ -897,7 +1002,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -905,7 +1010,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 LocationStructure.Locality.Neighbourhood theNeighbourhood;
@@ -932,21 +1037,26 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 theLatitude = this.getLatitude();
                 strategy.appendField(locator, this, "latitude", buffer, theLatitude, (this.latitude!= null));
             }
+            {
+                MapType theMap;
+                theMap = this.getMap();
+                strategy.appendField(locator, this, "map", buffer, theMap, (this.map!= null));
+            }
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof LocationStructure.Locality) {
@@ -1016,16 +1126,29 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                         }
                     }
                 }
+                {
+                    Boolean mapShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.map!= null));
+                    if (mapShouldBeCopiedAndSet == Boolean.TRUE) {
+                        MapType sourceMap;
+                        sourceMap = this.getMap();
+                        MapType copyMap = ((MapType) strategy.copy(LocatorUtils.property(locator, "map", sourceMap), sourceMap, (this.map!= null)));
+                        copy.setMap(copyMap);
+                    } else {
+                        if (mapShouldBeCopiedAndSet == Boolean.FALSE) {
+                            copy.map = null;
+                        }
+                    }
+                }
             }
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new LocationStructure.Locality();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -1079,10 +1202,19 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                     return false;
                 }
             }
+            {
+                MapType lhsMap;
+                lhsMap = this.getMap();
+                MapType rhsMap;
+                rhsMap = that.getMap();
+                if (!strategy.equals(LocatorUtils.property(thisLocator, "map", lhsMap), LocatorUtils.property(thatLocator, "map", rhsMap), lhsMap, rhsMap, (this.map!= null), (that.map!= null))) {
+                    return false;
+                }
+            }
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
@@ -1108,6 +1240,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *         &lt;/simpleType&gt;
          *       &lt;/attribute&gt;
          *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
+         *       &lt;attribute name="geolocalized" type="{http://feed.immobiliare.it}yesonly" /&gt;
          *     &lt;/extension&gt;
          *   &lt;/simpleContent&gt;
          * &lt;/complexType&gt;
@@ -1119,21 +1252,25 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
         @XmlType(name = "", propOrder = {
             "value"
         })
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public static class Neighbourhood implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlValue
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             protected String value;
             @XmlAttribute(name = "type")
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-            protected LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType type;
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+            protected LocationStructure.Locality.Neighbourhood.Type type;
             @XmlAttribute(name = "id")
-            @XmlJavaTypeAdapter(Adapter2 .class)
+            @XmlJavaTypeAdapter(Adapter6 .class)
             @XmlSchemaType(name = "positiveInteger")
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             protected BigInteger id;
+            @XmlAttribute(name = "geolocalized")
+            @XmlJavaTypeAdapter(Adapter15 .class)
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+            protected Boolean geolocalized;
 
             /**
              * Gets the value of the value property.
@@ -1143,7 +1280,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public String getValue() {
                 return value;
             }
@@ -1156,7 +1293,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public void setValue(String value) {
                 this.value = value;
             }
@@ -1166,11 +1303,11 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              * 
              * @return
              *     possible object is
-             *     {@link LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType }
+             *     {@link LocationStructure.Locality.Neighbourhood.Type }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-            public LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType getType() {
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+            public LocationStructure.Locality.Neighbourhood.Type getType() {
                 return type;
             }
 
@@ -1179,11 +1316,11 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              * 
              * @param value
              *     allowed object is
-             *     {@link LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType }
+             *     {@link LocationStructure.Locality.Neighbourhood.Type }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-            public void setType(LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType value) {
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+            public void setType(LocationStructure.Locality.Neighbourhood.Type value) {
                 this.type = value;
             }
 
@@ -1195,7 +1332,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public BigInteger getId() {
                 return id;
             }
@@ -1208,12 +1345,38 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public void setId(BigInteger value) {
                 this.id = value;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            /**
+             * Gets the value of the geolocalized property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+            public Boolean getGeolocalized() {
+                return geolocalized;
+            }
+
+            /**
+             * Sets the value of the geolocalized property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+            public void setGeolocalized(Boolean value) {
+                this.geolocalized = value;
+            }
+
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public String toString() {
                 final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
                 final StringBuilder buffer = new StringBuilder();
@@ -1221,7 +1384,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 return buffer.toString();
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 strategy.appendStart(locator, this, buffer);
                 appendFields(locator, buffer, strategy);
@@ -1229,7 +1392,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 return buffer;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 {
                     String theValue;
@@ -1237,7 +1400,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                     strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
                 }
                 {
-                    LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType theType;
+                    LocationStructure.Locality.Neighbourhood.Type theType;
                     theType = this.getType();
                     strategy.appendField(locator, this, "type", buffer, theType, (this.type!= null));
                 }
@@ -1246,21 +1409,26 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                     theId = this.getId();
                     strategy.appendField(locator, this, "id", buffer, theId, (this.id!= null));
                 }
+                {
+                    Boolean theGeolocalized;
+                    theGeolocalized = this.getGeolocalized();
+                    strategy.appendField(locator, this, "geolocalized", buffer, theGeolocalized, (this.geolocalized!= null));
+                }
                 return buffer;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object clone() {
                 return copyTo(createNewInstance());
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object copyTo(Object target) {
                 final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
                 return copyTo(null, target, strategy);
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                 final Object draftCopy = ((target == null)?createNewInstance():target);
                 if (draftCopy instanceof LocationStructure.Locality.Neighbourhood) {
@@ -1281,9 +1449,9 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                     {
                         Boolean typeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.type!= null));
                         if (typeShouldBeCopiedAndSet == Boolean.TRUE) {
-                            LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType sourceType;
+                            LocationStructure.Locality.Neighbourhood.Type sourceType;
                             sourceType = this.getType();
-                            LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType copyType = ((LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
+                            LocationStructure.Locality.Neighbourhood.Type copyType = ((LocationStructure.Locality.Neighbourhood.Type) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
                             copy.setType(copyType);
                         } else {
                             if (typeShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -1304,16 +1472,29 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                             }
                         }
                     }
+                    {
+                        Boolean geolocalizedShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.geolocalized!= null));
+                        if (geolocalizedShouldBeCopiedAndSet == Boolean.TRUE) {
+                            Boolean sourceGeolocalized;
+                            sourceGeolocalized = this.getGeolocalized();
+                            Boolean copyGeolocalized = ((Boolean) strategy.copy(LocatorUtils.property(locator, "geolocalized", sourceGeolocalized), sourceGeolocalized, (this.geolocalized!= null)));
+                            copy.setGeolocalized(copyGeolocalized);
+                        } else {
+                            if (geolocalizedShouldBeCopiedAndSet == Boolean.FALSE) {
+                                copy.geolocalized = null;
+                            }
+                        }
+                    }
                 }
                 return draftCopy;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object createNewInstance() {
                 return new LocationStructure.Locality.Neighbourhood();
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                 if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
@@ -1332,9 +1513,9 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                     }
                 }
                 {
-                    LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType lhsType;
+                    LocationStructure.Locality.Neighbourhood.Type lhsType;
                     lhsType = this.getType();
-                    LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType rhsType;
+                    LocationStructure.Locality.Neighbourhood.Type rhsType;
                     rhsType = that.getType();
                     if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsType), LocatorUtils.property(thatLocator, "type", rhsType), lhsType, rhsType, (this.type!= null), (that.type!= null))) {
                         return false;
@@ -1349,10 +1530,19 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                         return false;
                     }
                 }
+                {
+                    Boolean lhsGeolocalized;
+                    lhsGeolocalized = this.getGeolocalized();
+                    Boolean rhsGeolocalized;
+                    rhsGeolocalized = that.getGeolocalized();
+                    if (!strategy.equals(LocatorUtils.property(thisLocator, "geolocalized", lhsGeolocalized), LocatorUtils.property(thatLocator, "geolocalized", rhsGeolocalized), lhsGeolocalized, rhsGeolocalized, (this.geolocalized!= null), (that.geolocalized!= null))) {
+                        return false;
+                    }
+                }
                 return true;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public boolean equals(Object object) {
                 final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
                 return equals(null, null, object, strategy);
@@ -1377,8 +1567,8 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              */
             @XmlType(name = "")
             @XmlEnum
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-            public enum LocationNeighbourhoodType {
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+            public enum Type {
 
                 @XmlEnumValue("district")
                 DISTRICT("district"),
@@ -1388,7 +1578,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 AREA("area");
                 private final String value;
 
-                LocationNeighbourhoodType(String v) {
+                Type(String v) {
                     value = v;
                 }
 
@@ -1396,8 +1586,8 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                     return value;
                 }
 
-                public static LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType fromValue(String v) {
-                    for (LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType c: LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType.values()) {
+                public static LocationStructure.Locality.Neighbourhood.Type fromValue(String v) {
+                    for (LocationStructure.Locality.Neighbourhood.Type c: LocationStructure.Locality.Neighbourhood.Type.values()) {
                         if (c.value.equals(v)) {
                             return c;
                         }
@@ -1437,16 +1627,16 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
         @XmlType(name = "", propOrder = {
             "value"
         })
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public static class Thoroughfare implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
         {
 
             @XmlValue
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             protected String value;
             @XmlAttribute(name = "display")
-            @XmlJavaTypeAdapter(Adapter20 .class)
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @XmlJavaTypeAdapter(Adapter26 .class)
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             protected Boolean display;
 
             /**
@@ -1457,7 +1647,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public String getValue() {
                 return value;
             }
@@ -1470,7 +1660,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public void setValue(String value) {
                 this.value = value;
             }
@@ -1483,7 +1673,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Boolean getDisplay() {
                 return display;
             }
@@ -1496,12 +1686,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
              *     {@link String }
              *     
              */
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public void setDisplay(Boolean value) {
                 this.display = value;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public String toString() {
                 final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
                 final StringBuilder buffer = new StringBuilder();
@@ -1509,7 +1699,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 return buffer.toString();
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 strategy.appendStart(locator, this, buffer);
                 appendFields(locator, buffer, strategy);
@@ -1517,7 +1707,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 return buffer;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
                 {
                     String theValue;
@@ -1532,18 +1722,18 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 return buffer;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object clone() {
                 return copyTo(createNewInstance());
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object copyTo(Object target) {
                 final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
                 return copyTo(null, target, strategy);
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
                 final Object draftCopy = ((target == null)?createNewInstance():target);
                 if (draftCopy instanceof LocationStructure.Locality.Thoroughfare) {
@@ -1578,12 +1768,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 return draftCopy;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public Object createNewInstance() {
                 return new LocationStructure.Locality.Thoroughfare();
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
                 if ((object == null)||(this.getClass()!= object.getClass())) {
                     return false;
@@ -1613,7 +1803,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
                 return true;
             }
 
-            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
             public boolean equals(Object object) {
                 final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
                 return equals(null, null, object, strategy);
@@ -1645,15 +1835,15 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
     @XmlType(name = "", propOrder = {
         "value"
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public static class SubAdministrativeArea implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlValue
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected String value;
         @XmlAttribute(name = "code")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected String code;
 
         /**
@@ -1664,7 +1854,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String getValue() {
             return value;
         }
@@ -1677,7 +1867,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setValue(String value) {
             this.value = value;
         }
@@ -1690,7 +1880,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String getCode() {
             return code;
         }
@@ -1703,12 +1893,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setCode(String value) {
             this.code = value;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
             final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
@@ -1716,7 +1906,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -1724,7 +1914,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theValue;
@@ -1739,18 +1929,18 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
             final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof LocationStructure.SubAdministrativeArea) {
@@ -1785,12 +1975,12 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new LocationStructure.SubAdministrativeArea();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -1820,7 +2010,7 @@ public class LocationStructure implements Serializable, Cloneable, CopyTo2, Equa
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
             final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);

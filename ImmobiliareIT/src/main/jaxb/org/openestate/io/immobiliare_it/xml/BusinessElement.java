@@ -52,27 +52,27 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "businessElement", propOrder = {
     "value"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-    protected PropertyTypeBusiness value;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    protected BusinessPropertyType value;
     @XmlAttribute(name = "category")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-    protected BusinessElement.BusinessElementCategory category;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    protected BusinessElement.Category category;
 
     /**
      * Gets the value of the value property.
      * 
      * @return
      *     possible object is
-     *     {@link PropertyTypeBusiness }
+     *     {@link BusinessPropertyType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-    public PropertyTypeBusiness getValue() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public BusinessPropertyType getValue() {
         return value;
     }
 
@@ -81,11 +81,11 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * @param value
      *     allowed object is
-     *     {@link PropertyTypeBusiness }
+     *     {@link BusinessPropertyType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-    public void setValue(PropertyTypeBusiness value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public void setValue(BusinessPropertyType value) {
         this.value = value;
     }
 
@@ -94,11 +94,11 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * @return
      *     possible object is
-     *     {@link BusinessElement.BusinessElementCategory }
+     *     {@link BusinessElement.Category }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-    public BusinessElement.BusinessElementCategory getCategory() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public BusinessElement.Category getCategory() {
         return category;
     }
 
@@ -107,15 +107,15 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
      * 
      * @param value
      *     allowed object is
-     *     {@link BusinessElement.BusinessElementCategory }
+     *     {@link BusinessElement.Category }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-    public void setCategory(BusinessElement.BusinessElementCategory value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public void setCategory(BusinessElement.Category value) {
         this.category = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
         final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
@@ -123,7 +123,7 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -131,33 +131,33 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            PropertyTypeBusiness theValue;
+            BusinessPropertyType theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            BusinessElement.BusinessElementCategory theCategory;
+            BusinessElement.Category theCategory;
             theCategory = this.getCategory();
             strategy.appendField(locator, this, "category", buffer, theCategory, (this.category!= null));
         }
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
         final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof BusinessElement) {
@@ -165,9 +165,9 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
             {
                 Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
                 if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
-                    PropertyTypeBusiness sourceValue;
+                    BusinessPropertyType sourceValue;
                     sourceValue = this.getValue();
-                    PropertyTypeBusiness copyValue = ((PropertyTypeBusiness) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    BusinessPropertyType copyValue = ((BusinessPropertyType) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
                     copy.setValue(copyValue);
                 } else {
                     if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -178,9 +178,9 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
             {
                 Boolean categoryShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.category!= null));
                 if (categoryShouldBeCopiedAndSet == Boolean.TRUE) {
-                    BusinessElement.BusinessElementCategory sourceCategory;
+                    BusinessElement.Category sourceCategory;
                     sourceCategory = this.getCategory();
-                    BusinessElement.BusinessElementCategory copyCategory = ((BusinessElement.BusinessElementCategory) strategy.copy(LocatorUtils.property(locator, "category", sourceCategory), sourceCategory, (this.category!= null)));
+                    BusinessElement.Category copyCategory = ((BusinessElement.Category) strategy.copy(LocatorUtils.property(locator, "category", sourceCategory), sourceCategory, (this.category!= null)));
                     copy.setCategory(copyCategory);
                 } else {
                     if (categoryShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -192,12 +192,12 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new BusinessElement();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -207,18 +207,18 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
         }
         final BusinessElement that = ((BusinessElement) object);
         {
-            PropertyTypeBusiness lhsValue;
+            BusinessPropertyType lhsValue;
             lhsValue = this.getValue();
-            PropertyTypeBusiness rhsValue;
+            BusinessPropertyType rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
         {
-            BusinessElement.BusinessElementCategory lhsCategory;
+            BusinessElement.Category lhsCategory;
             lhsCategory = this.getCategory();
-            BusinessElement.BusinessElementCategory rhsCategory;
+            BusinessElement.Category rhsCategory;
             rhsCategory = that.getCategory();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "category", lhsCategory), LocatorUtils.property(thatLocator, "category", rhsCategory), lhsCategory, rhsCategory, (this.category!= null), (that.category!= null))) {
                 return false;
@@ -227,7 +227,7 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
         final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
@@ -252,8 +252,8 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
      */
     @XmlType(name = "")
     @XmlEnum
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:59+02:00", comments = "JAXB RI v2.3.0")
-    public enum BusinessElementCategory {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public enum Category {
 
         @XmlEnumValue("Attivit\u00e0")
         ATTIVITA("Attivit\u00e0"),
@@ -263,7 +263,7 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
         TERRENO("Terreno");
         private final String value;
 
-        BusinessElementCategory(String v) {
+        Category(String v) {
             value = v;
         }
 
@@ -271,8 +271,8 @@ public class BusinessElement implements Serializable, Cloneable, CopyTo2, Equals
             return value;
         }
 
-        public static BusinessElement.BusinessElementCategory fromValue(String v) {
-            for (BusinessElement.BusinessElementCategory c: BusinessElement.BusinessElementCategory.values()) {
+        public static BusinessElement.Category fromValue(String v) {
+            for (BusinessElement.Category c: BusinessElement.Category.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

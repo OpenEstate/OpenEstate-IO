@@ -2,19 +2,19 @@
 package org.openestate.io.immobiliare_it.xml;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
+import org.openestate.io.immobiliare_it.xml.types.SizeUnitType;
 
 public class Adapter13
-    extends XmlAdapter<String, EnergyUnit>
+    extends XmlAdapter<String, SizeUnitType>
 {
 
 
-    public EnergyUnit unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseEnergyUnit(value));
+    public SizeUnitType unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseSizeUnit(value));
     }
 
-    public String marshal(EnergyUnit value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printEnergyUnit(value));
+    public String marshal(SizeUnitType value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printSizeUnit(value));
     }
 
 }

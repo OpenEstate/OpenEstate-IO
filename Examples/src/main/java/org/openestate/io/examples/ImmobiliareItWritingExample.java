@@ -32,36 +32,25 @@ import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
-import org.openestate.io.immobiliare_it.xml.Box;
-import org.openestate.io.immobiliare_it.xml.BusinessElement;
-import org.openestate.io.immobiliare_it.xml.ClassEnergy;
-import org.openestate.io.immobiliare_it.xml.Clazz;
+import org.openestate.io.immobiliare_it.xml.ClassType;
+import org.openestate.io.immobiliare_it.xml.DescriptionType;
+import org.openestate.io.immobiliare_it.xml.Document;
+import org.openestate.io.immobiliare_it.xml.Extended;
 import org.openestate.io.immobiliare_it.xml.Feed;
-import org.openestate.io.immobiliare_it.xml.Feed.Properties.Property;
-import org.openestate.io.immobiliare_it.xml.Floor;
-import org.openestate.io.immobiliare_it.xml.Furniture;
-import org.openestate.io.immobiliare_it.xml.Garden;
-import org.openestate.io.immobiliare_it.xml.Heat;
-import org.openestate.io.immobiliare_it.xml.Kitchen;
-import org.openestate.io.immobiliare_it.xml.LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType;
+import org.openestate.io.immobiliare_it.xml.FurnitureType;
+import org.openestate.io.immobiliare_it.xml.GardenType;
+import org.openestate.io.immobiliare_it.xml.KitchenType;
+import org.openestate.io.immobiliare_it.xml.NationCodeType;
 import org.openestate.io.immobiliare_it.xml.ObjectFactory;
-import org.openestate.io.immobiliare_it.xml.Operation;
+import org.openestate.io.immobiliare_it.xml.OperationType;
 import org.openestate.io.immobiliare_it.xml.OwnershipType;
-import org.openestate.io.immobiliare_it.xml.PictureExtended;
-import org.openestate.io.immobiliare_it.xml.PictureProject;
-import org.openestate.io.immobiliare_it.xml.PropertyType;
-import org.openestate.io.immobiliare_it.xml.PropertyTypeBusiness;
-import org.openestate.io.immobiliare_it.xml.PropertyTypeSimple;
-import org.openestate.io.immobiliare_it.xml.Rental;
-import org.openestate.io.immobiliare_it.xml.Status;
+import org.openestate.io.immobiliare_it.xml.Picture;
+import org.openestate.io.immobiliare_it.xml.Property;
+import org.openestate.io.immobiliare_it.xml.StatusType;
 import org.openestate.io.immobiliare_it.xml.TerrainType;
-import org.openestate.io.immobiliare_it.xml.VideoProject;
-import org.openestate.io.immobiliare_it.xml.VideoType;
-import org.openestate.io.immobiliare_it.xml.YesNoReady;
-import org.openestate.io.immobiliare_it.xml.types.Category;
-import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
-import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
-import org.openestate.io.immobiliare_it.xml.types.SizeUnit;
+import org.openestate.io.immobiliare_it.xml.Transaction;
+import org.openestate.io.immobiliare_it.xml.Video;
+import org.openestate.io.immobiliare_it.xml.types.SizeUnitType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -93,7 +82,7 @@ public class ImmobiliareItWritingExample {
         Feed feed = FACTORY.createFeed();
 
         // append some example objects to the Feed object
-        feed.setProperties(FACTORY.createFeedProperties());
+        feed.setProperties(FACTORY.createProperties());
         int propertyCount = RandomUtils.nextInt(3, 5);
         for (int i = 0; i < propertyCount; i++) {
             feed.getProperties().getProperty().add(createProperty());
@@ -135,41 +124,67 @@ public class ImmobiliareItWritingExample {
      */
     private static Property createProperty() {
         // create an example real estate for rent
-        Property obj = FACTORY.createFeedPropertiesProperty();
-        obj.setBuildingStatus(randomValue(Status.values()));
-        obj.setCategory(randomValue(Category.values()));
-        obj.setDateExpiration(Calendar.getInstance());
-        obj.setDateUpdated(Calendar.getInstance());
-        obj.setOperation(randomValue(Operation.values()));
+        Property obj = FACTORY.createProperty();
         obj.setUniqueId(RandomStringUtils.randomAlphanumeric(5));
+        obj.setDateUpdated(Calendar.getInstance());
+        obj.setDateExpiration(Calendar.getInstance());
+        obj.setOperation(randomValue(OperationType.values()));
 
-        obj.setAgent(FACTORY.createFeedPropertiesPropertyAgent());
+        // add agent
+        obj.setAgent(FACTORY.createAgent());
         obj.getAgent().setEmail(RANDOMIZER.getEmail());
         obj.getAgent().setOfficeName(RANDOMIZER.getName());
 
-        obj.setBlueprints(FACTORY.createFeedPropertiesPropertyBlueprints());
-        int blueprintCount = RandomUtils.nextInt(2, 5);
-        for (int i = 0; i < blueprintCount; i++) {
-            obj.getBlueprints().getBlueprint().add(createPictureExtended(i));
+        // add a transaction
+        obj.setTransactions(FACTORY.createTransactions());
+        Transaction transaction = FACTORY.createTransaction();
+        transaction.setAuction(RandomUtils.nextBoolean());
+        transaction.setForRevenue(RandomUtils.nextBoolean());
+        transaction.setOwnership(randomValue(OwnershipType.values()));
+        transaction.setPrice(FACTORY.createPriceType());
+        transaction.getPrice().setCurrency(Currency.getInstance("EUR"));
+        transaction.getPrice().setReserved(RandomUtils.nextBoolean());
+        transaction.getPrice().setValue(BigInteger.valueOf(RandomUtils.nextLong(100, 10000)));
+        transaction.setType(RANDOMIZER.getWords(1, 3));
+        obj.getTransactions().getTransaction().add(transaction);
+
+        // add information about the building
+        obj.setBuilding(FACTORY.createBuilding());
+        obj.getBuilding().setClazz(randomValue(ClassType.values()));
+        obj.getBuilding().setStatus(randomValue(StatusType.values()));
+
+        // add some terrains to the building
+        obj.getBuilding().setTerrains(FACTORY.createTerrains());
+        int terrainCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < terrainCount; i++) {
+            obj.getBuilding().getTerrains().getTerrain().add(randomValue(TerrainType.values()));
         }
 
-        obj.setBuilding(FACTORY.createBuilding());
-        obj.getBuilding().setCategory(randomValue(Category.values()));
-        obj.getBuilding().setClazz(randomValue(Clazz.values()));
-        obj.getBuilding().setDetail(randomValue(PropertyTypeBusiness.values()));
-        obj.getBuilding().setStatus(randomValue(Status.values()));
-        obj.getBuilding().setType(randomValue(PropertyType.values()));
+        // add some features
+        obj.setFeatures(FACTORY.createFeaturesProperty());
+        obj.getFeatures().setDescriptions(FACTORY.createDescriptions());
+        for (NationCodeType lang : NationCodeType.values()) {
+            obj.getFeatures().getDescriptions().getDescription().add(createDescription(lang));
+        }
+        obj.getFeatures().setSize(FACTORY.createSizeType());
+        obj.getFeatures().getSize().setUnit(randomValue(SizeUnitType.values()));
+        obj.getFeatures().getSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(100, 1000)));
 
-        obj.setExtraFeatures(FACTORY.createFeedPropertiesPropertyExtraFeatures());
-        obj.getExtraFeatures().setAirConditioning(RandomUtils.nextBoolean());
+        // add some extra features
+        obj.setExtraFeatures(FACTORY.createExtraFeatures());
+        obj.getExtraFeatures().setAdditionalCosts(FACTORY.createAdditionalCostsType());
+        obj.getExtraFeatures().getAdditionalCosts().setCurrency(Currency.getInstance("EUR"));
+        obj.getExtraFeatures().getAdditionalCosts().setValue(BigDecimal.valueOf(RandomUtils.nextDouble(50, 1000)));
         obj.getExtraFeatures().setBalcony(RandomUtils.nextBoolean());
-        obj.getExtraFeatures().setBathrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.getExtraFeatures().setBeamHeight(BigInteger.valueOf(RandomUtils.nextLong(1, 10)));
         obj.getExtraFeatures().setBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.getExtraFeatures().setBuildYear(RandomUtils.nextInt(1900, 2000));
-        obj.getExtraFeatures().setDocDescription(RANDOMIZER.getWords(5, 10));
-        obj.getExtraFeatures().setDocSpecification(RANDOMIZER.getWords(5, 10));
+        obj.getExtraFeatures().setBuildYear(RandomUtils.nextInt(1990, 2020));
         obj.getExtraFeatures().setElevator(RandomUtils.nextBoolean());
+<<<<<<< HEAD
+        obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(1, 5));
+        obj.getExtraFeatures().setFurniture(randomValue(FurnitureType.values()));
+        obj.getExtraFeatures().setGarden(randomValue(GardenType.values()));
+        obj.getExtraFeatures().setKitchen(randomValue(KitchenType.values()));
+=======
         obj.getExtraFeatures().setFloorplannerUrl("https://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
         obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setFurniture(randomValue(Furniture.values()));
@@ -181,137 +196,103 @@ public class ImmobiliareItWritingExample {
         obj.getExtraFeatures().setOverheadCrane(randomValue(YesNoReady.values()));
         obj.getExtraFeatures().setReception(RandomUtils.nextBoolean());
         obj.getExtraFeatures().setRentContract(randomValue(Rental.values()));
+>>>>>>> develop
         obj.getExtraFeatures().setSecurityAlarm(RandomUtils.nextBoolean());
         obj.getExtraFeatures().setTerrace(RandomUtils.nextBoolean());
-        obj.getExtraFeatures().setVirtualTour(RANDOMIZER.getWords(5, 10));
 
-        obj.getExtraFeatures().setAdditionalCosts(FACTORY.createAdditionalCostsType());
-        obj.getExtraFeatures().getAdditionalCosts().setCurrency(Currency.getInstance("EUR"));
-        obj.getExtraFeatures().getAdditionalCosts().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 5000)));
+        // add some extended attributes
+        obj.setExtended(FACTORY.createExtended());
+        obj.getExtended().setAmountBalcony(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountOtherRooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountParking(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountTerrace(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setBasement(RandomUtils.nextBoolean());
+        obj.getExtended().setCloset(RandomUtils.nextBoolean());
+        obj.getExtended().setExternalFrames(randomValue(Extended.ExternalFrames.values()));
+        obj.getExtended().setFireplace(RandomUtils.nextBoolean());
+        obj.getExtended().setSwimmingPool(RandomUtils.nextBoolean());
+        obj.getExtended().setTv(randomValue(Extended.Tv.values()));
 
-        obj.getExtraFeatures().setExternalArea(FACTORY.createLandSizeType());
-        obj.getExtraFeatures().getExternalArea().setUnit(randomValue(LandSizeUnit.values()));
-        obj.getExtraFeatures().getExternalArea().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
-
-        obj.getExtraFeatures().setFloor(FACTORY.createFloor());
-        obj.getExtraFeatures().getFloor().setType(randomValue(Floor.FloorType.values()));
-        obj.getExtraFeatures().getFloor().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
-
-        obj.getExtraFeatures().setGarage(FACTORY.createBox());
-        obj.getExtraFeatures().getGarage().setType(randomValue(Box.BoxType.values()));
-        obj.getExtraFeatures().getGarage().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
-
-        obj.getExtraFeatures().setOfficeSize(FACTORY.createSizeType());
-        obj.getExtraFeatures().getOfficeSize().setUnit(randomValue(SizeUnit.values()));
-        obj.getExtraFeatures().getOfficeSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(5, 50)));
-
-        obj.setFeatures(FACTORY.createFeedPropertiesPropertyFeatures());
-        obj.getFeatures().setEnergyClass(randomValue(ClassEnergy.values()));
-        obj.getFeatures().setRooms(RandomUtils.nextInt(1, 5));
-
-        obj.getFeatures().setEnergyPerformance(FACTORY.createClassEnergyPerformance());
-        obj.getFeatures().getEnergyPerformance().setCertified(RandomUtils.nextBoolean());
-        obj.getFeatures().getEnergyPerformance().setUnit(randomValue(EnergyUnit.values()));
-        obj.getFeatures().getEnergyPerformance().setValue(RANDOMIZER.getWords(3, 10));
-
-        obj.getFeatures().setPrice(FACTORY.createPriceType());
-        obj.getFeatures().getPrice().setCurrency(Currency.getInstance("EUR"));
-        obj.getFeatures().getPrice().setReserved(RandomUtils.nextBoolean());
-        obj.getFeatures().getPrice().setValue(BigInteger.valueOf(RandomUtils.nextLong(500, 5000000)));
-
-        obj.getFeatures().setSize(FACTORY.createSizeType());
-        obj.getFeatures().getSize().setUnit(randomValue(SizeUnit.values()));
-        obj.getFeatures().getSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
-
-        obj.setLocation(FACTORY.createLocationStructure());
-        obj.getLocation().setAdministrativeArea(RANDOMIZER.getWords(3, 5));
-        obj.getLocation().setCountryCode(randomValue(new String[]{"DE", "IT", "AT", "CH"}));
-
-        obj.getLocation().setCity(FACTORY.createLocationStructureCity());
-        obj.getLocation().getCity().setCode(BigInteger.valueOf(RandomUtils.nextLong(1, 1000)));
-        obj.getLocation().getCity().setValue(RANDOMIZER.getCity());
-
-        obj.getLocation().setLocality(FACTORY.createLocationStructureLocality());
-        obj.getLocation().getLocality().setLatitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 90)));
-        obj.getLocation().getLocality().setLongitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 90)));
-        obj.getLocation().getLocality().setPostalCode(RANDOMIZER.getZipCode());
-
-        obj.getLocation().getLocality().setNeighbourhood(FACTORY.createLocationStructureLocalityNeighbourhood());
-        obj.getLocation().getLocality().getNeighbourhood().setId(BigInteger.valueOf(RandomUtils.nextInt(0, 10)));
-        obj.getLocation().getLocality().getNeighbourhood().setType(randomValue(LocationNeighbourhoodType.values()));
-        obj.getLocation().getLocality().getNeighbourhood().setValue(RANDOMIZER.getWords(3, 10));
-
-        obj.getLocation().getLocality().setThoroughfare(FACTORY.createLocationStructureLocalityThoroughfare());
-        obj.getLocation().getLocality().getThoroughfare().setDisplay(RandomUtils.nextBoolean());
-        obj.getLocation().getLocality().getThoroughfare().setValue(RANDOMIZER.getWords(3, 10));
-
-        obj.getLocation().setSubAdministrativeArea(FACTORY.createLocationStructureSubAdministrativeArea());
-        obj.getLocation().getSubAdministrativeArea().setCode(RandomStringUtils.randomAlphanumeric(5));
-        obj.getLocation().getSubAdministrativeArea().setValue(RANDOMIZER.getCity());
-
-        obj.setPictures(FACTORY.createFeedPropertiesPropertyPictures());
-        int pictureCount = RandomUtils.nextInt(2, 10);
+        // add some pictures
+        obj.setPictures(FACTORY.createPictures());
+        int pictureCount = RandomUtils.nextInt(2, 5);
         for (int i = 0; i < pictureCount; i++) {
-            obj.getPictures().getPictureUrlAndPicture().add(createPicture(i));
+            obj.getPictures().getPicture().add(createPicture(i));
         }
 
-        obj.setPropertyType(FACTORY.createProptype());
-        obj.getPropertyType().setBusinessType(FACTORY.createBusinessElement());
-        obj.getPropertyType().getBusinessType().setCategory(randomValue(BusinessElement.BusinessElementCategory.values()));
-        obj.getPropertyType().getBusinessType().setValue(randomValue(PropertyTypeBusiness.values()));
-        obj.getPropertyType().setTerrains(FACTORY.createTerrains());
-        obj.getPropertyType().getTerrains().getTerrain().add(randomValue(TerrainType.values()));
-        obj.getPropertyType().setType(randomValue(PropertyTypeSimple.values()));
+        // add some blueprints
+        obj.setBlueprints(FACTORY.createBlueprints());
+        int blueprintCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < blueprintCount; i++) {
+            obj.getBlueprints().getBlueprint().add(createPicture(i));
+        }
 
-        obj.setTransactionType(FACTORY.createTransactionType());
-        obj.getTransactionType().setAuction(RandomUtils.nextBoolean());
-        obj.getTransactionType().setOwnership(randomValue(OwnershipType.values()));
-        obj.getTransactionType().setValue(RANDOMIZER.getWords(3, 10));
-
-        obj.setVideos(FACTORY.createFeedPropertiesPropertyVideos());
-        int videoCount = RandomUtils.nextInt(1, 3);
+        // add some videos
+        obj.setVideos(FACTORY.createVideos());
+        int videoCount = RandomUtils.nextInt(2, 5);
         for (int i = 0; i < videoCount; i++) {
-            obj.getVideos().getVideo().add(createVideo());
+            obj.getVideos().getVideo().add(createVideo(i));
+        }
+
+        // add some documents
+        obj.setDocuments(FACTORY.createDocuments());
+        int documentCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < documentCount; i++) {
+            obj.getDocuments().getDocument().add(createDocument(i));
         }
 
         return obj;
     }
 
     /**
-     * Create a {@link PictureProject} with some example data.
+     * Create a {@link DescriptionType} with some example data.
      *
      * @return created example object
      */
-    private static PictureProject createPicture(int position) {
-        PictureProject pic = FACTORY.createPictureProject();
+    private static DescriptionType createDescription(NationCodeType lang) {
+        DescriptionType description = FACTORY.createDescriptionType();
+        description.setNative(RandomUtils.nextBoolean());
+        description.setLanguage(lang);
+        description.setContent(RANDOMIZER.getWords(10, 100));
+        description.setTitle(RANDOMIZER.getWords(2, 10));
+        return description;
+    }
+
+    /**
+     * Create a {@link Document} with some example data.
+     *
+     * @return created example object
+     */
+    private static Document createDocument(int position) {
+        Document doc = FACTORY.createDocument();
+        doc.setPosition(BigInteger.valueOf(position));
+        doc.setUrl("https://www.example.com/document-" + position + ".pdf");
+        doc.setMimetype("application/pdf");
+        return doc;
+    }
+
+    /**
+     * Create a {@link Picture} with some example data.
+     *
+     * @return created example object
+     */
+    private static Picture createPicture(int position) {
+        Picture pic = FACTORY.createPicture();
         pic.setPosition(BigInteger.valueOf(position));
-        pic.setValue("https://www.example.com/image-" + position + ".jpg");
+        pic.setUrl("https://www.example.com/image-" + position + ".jpg");
         return pic;
     }
 
     /**
-     * Create a {@link PictureExtended} with some example data.
-     *
-     * @param position image position
-     * @return created example object
-     */
-    private static PictureExtended createPictureExtended(int position) {
-        PictureExtended pic = FACTORY.createPictureExtended();
-        pic.setPosition(BigInteger.valueOf(position));
-        pic.setValue("image-" + position + ".jpg");
-        pic.setUrl("https://www.example.com/" + pic.getValue());
-        return pic;
-    }
-
-    /**
-     * Create a {@link VideoProject} with some example data.
+     * Create a {@link Video} with some example data.
      *
      * @return created example object
      */
-    private static VideoProject createVideo() {
-        VideoProject video = FACTORY.createVideoProject();
-        video.setType(VideoType.REMOTE);
-        video.setValue("https://www.example.com/video-" + RandomUtils.nextInt(0, 999) + ".mp4");
+    private static Video createVideo(int position) {
+        Video video = FACTORY.createVideo();
+        video.setType(Video.Type.REMOTE);
+        video.setValue("https://www.example.com/video-" + position + ".mp4");
         return video;
     }
 

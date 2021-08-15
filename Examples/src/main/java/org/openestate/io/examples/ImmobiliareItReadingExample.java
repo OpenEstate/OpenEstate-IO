@@ -20,10 +20,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+<<<<<<< HEAD
+import org.apache.log4j.PropertyConfigurator;
+=======
+>>>>>>> develop
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
+import org.openestate.io.immobiliare_it.xml.Descriptions;
 import org.openestate.io.immobiliare_it.xml.Feed;
-import org.openestate.io.immobiliare_it.xml.Feed.Properties.Property;
+import org.openestate.io.immobiliare_it.xml.Property;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
@@ -82,7 +87,7 @@ public class ImmobiliareItReadingExample {
      * @throws ParserConfigurationException if the XML parser is improperly configured
      * @throws JAXBException                if XML conversion into Java objects failed
      */
-    protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
+    private static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("processing file '{}'", xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
@@ -106,7 +111,7 @@ public class ImmobiliareItReadingExample {
      * @throws ParserConfigurationException if the XML parser is improperly configured
      * @throws JAXBException                if XML conversion into Java objects failed
      */
-    protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
+    private static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
         LOGGER.info("processing example file");
         ImmobiliareItDocument doc = ImmobiliareItUtils.createDocument(xmlInputStream);
         if (doc == null) {
@@ -122,7 +127,7 @@ public class ImmobiliareItReadingExample {
      * @param doc the document to process
      * @throws JAXBException if XML conversion into Java objects failed
      */
-    protected static void printToConsole(ImmobiliareItDocument doc) throws JAXBException {
+    private static void printToConsole(ImmobiliareItDocument doc) throws JAXBException {
         LOGGER.info("> processing document in version {}", doc.getDocumentVersion());
 
         Feed feed = doc.toObject();
@@ -134,8 +139,11 @@ public class ImmobiliareItReadingExample {
                 String objectNr = object.getUniqueId();
 
                 // get object description
-                String objectInfo = (object.getFeatures() != null && !object.getFeatures().getDescription().isEmpty()) ?
-                        object.getFeatures().getDescription().get(0).getValue() : null;
+                Descriptions descriptions = (object.getFeatures() != null) ?
+                        object.getFeatures().getDescriptions() :
+                        null;
+                String objectInfo = (descriptions != null && !descriptions.getDescription().isEmpty()) ?
+                        descriptions.getDescription().get(0).getContent() : null;
 
                 // print object information to console
                 LOGGER.info("> found object '{}': {}",

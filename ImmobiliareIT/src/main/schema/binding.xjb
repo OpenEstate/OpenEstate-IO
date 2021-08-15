@@ -7,47 +7,81 @@
     <jaxb:globalBindings>
         <jaxb:serializable/>
 
-        <!-- parsers & writers for global simpletypes -->
+        <!-- parsers & writers for global simple types -->
 
+        <jaxb:javaType xmlType="xsd:int" name="java.math.BigInteger"
+                       parseMethod="javax.xml.bind.DatatypeConverter.parseInteger"
+                       printMethod="javax.xml.bind.DatatypeConverter.printInteger"/>
+        <jaxb:javaType xmlType="xsd:positiveInteger" name="java.math.BigInteger"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parsePositiveInteger"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printPositiveInteger"/>
+        <jaxb:javaType xmlType="xsd:long" name="java.math.BigInteger"
+                       parseMethod="javax.xml.bind.DatatypeConverter.parseInteger"
+                       printMethod="javax.xml.bind.DatatypeConverter.printInteger"/>
+        <jaxb:javaType xmlType="xsd:float" name="java.math.BigDecimal"
+                       parseMethod="javax.xml.bind.DatatypeConverter.parseDecimal"
+                       printMethod="javax.xml.bind.DatatypeConverter.printDecimal"/>
+        <jaxb:javaType xmlType="xsd:double" name="java.math.BigDecimal"
+                       parseMethod="javax.xml.bind.DatatypeConverter.parseDecimal"
+                       printMethod="javax.xml.bind.DatatypeConverter.printDecimal"/>
         <jaxb:javaType xmlType="xsd:dateTime" name="java.util.Calendar"
                        parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
                        printMethod="javax.xml.bind.DatatypeConverter.printDateTime"/>
-        <jaxb:javaType xmlType="xsd:integer" name="java.math.BigInteger"
-                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseInteger"
-                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printInteger"/>
+
+        <jaxb:javaType xmlType="immobiliare:nullInteger" name="java.math.BigInteger"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseNullInteger"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printNullInteger"/>
         <jaxb:javaType xmlType="immobiliare:dateUpdatedType" name="java.util.Calendar"
                        parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseDateUpdatedType"
                        printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printDateUpdatedType"/>
         <jaxb:javaType xmlType="immobiliare:emailType" name="java.lang.String"
                        parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseEmailType"
                        printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printEmailType"/>
-        <!--
-        <javaType xmlType="immobiliare:sellOrRent" name="org.openestate.io.immobiliare_it.xml.types.Transaction"
-                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseTransaction"
-                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printTransaction" />
-        -->
-        <jaxb:javaType xmlType="immobiliare:cat" name="org.openestate.io.immobiliare_it.xml.types.Category"
-                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCategory"
-                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCategory"/>
         <jaxb:javaType xmlType="immobiliare:year" name="java.lang.Integer"
                        parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYear"
                        printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYear"/>
-        <jaxb:javaType xmlType="immobiliare:yesno" name="java.lang.Boolean"
-                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYN"
-                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYN"/>
+        <jaxb:javaType xmlType="immobiliare:breadcrumb3" name="org.openestate.io.immobiliare_it.xml.types.Breadcrumb"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseBreadcrumb"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printBreadcrumb"/>
+        <jaxb:javaType xmlType="immobiliare:sizeTypeUnit" name="org.openestate.io.immobiliare_it.xml.types.SizeUnitType"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseSizeUnit"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printSizeUnit"/>
+        <jaxb:javaType xmlType="immobiliare:currency" name="java.util.Currency"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCurrency"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCurrency"/>
+        <jaxb:javaType xmlType="immobiliare:yesonly" name="java.lang.Boolean"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesOnly"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesOnly"/>
         <jaxb:javaType xmlType="immobiliare:latitudeType" name="java.math.BigDecimal"
                        parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLatitude"
                        printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLatitude"/>
         <jaxb:javaType xmlType="immobiliare:longitudeType" name="java.math.BigDecimal"
                        parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLongitude"
                        printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLongitude"/>
-        <jaxb:javaType xmlType="immobiliare:roomsType" name="java.lang.Integer"
-                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseRooms"
-                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printRooms"/>
+        <jaxb:javaType xmlType="immobiliare:ratioType" name="java.math.BigDecimal"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseRatio"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printRatio"/>
+        <jaxb:javaType xmlType="immobiliare:genderType" name="org.openestate.io.immobiliare_it.xml.types.GenderType"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseGender"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printGender"/>
+
+        <!-- Defined in schema but actually not used. -->
+        <!--
+        <javaType xmlType="immobiliare:sellOrRent" name="org.openestate.io.immobiliare_it.xml.types.TransactionType"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseTransaction"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printTransaction" />
+        -->
+
+        <!-- Defined in schema but actually not used. -->
+        <!--
+        <jaxb:javaType xmlType="immobiliare:cat" name="org.openestate.io.immobiliare_it.xml.types.CategoryType"
+                       parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCategory"
+                       printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCategory"/>
+        -->
 
     </jaxb:globalBindings>
 
-    <jaxb:bindings schemaLocation="v2.5.xsd" node="/xsd:schema">
+    <jaxb:bindings schemaLocation="schema.xsd" node="/xsd:schema">
 
         <jaxb:schemaBindings>
             <jaxb:package name="org.openestate.io.immobiliare_it.xml">
@@ -56,114 +90,18 @@
             </jaxb:package>
         </jaxb:schemaBindings>
 
-        <!-- parsers & writers for anonymous simpletypes -->
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='country-code']/xsd:simpleType">
-            <jaxb:javaType name="java.lang.String"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCountry"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCountry"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='locality']//xsd:element[@name='thoroughfare']//xsd:attribute[@name='display']/xsd:simpleType">
-            <jaxb:javaType name="java.lang.Boolean"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='sizeType']//xsd:attribute[@name='unit']/xsd:simpleType">
-            <jaxb:javaType name="org.openestate.io.immobiliare_it.xml.types.SizeUnit"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseSizeUnit"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printSizeUnit"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='landSizeType']//xsd:attribute[@name='unit']/xsd:simpleType">
-            <jaxb:javaType name="org.openestate.io.immobiliare_it.xml.types.LandSizeUnit"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLandSizeUnit"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLandSizeUnit"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='priceType']//xsd:attribute[@name='currency']/xsd:simpleType">
-            <jaxb:javaType name="java.util.Currency"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCurrency"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCurrency"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='additionalCostsType']//xsd:attribute[@name='currency']/xsd:simpleType">
-            <jaxb:javaType name="java.util.Currency"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCurrency"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCurrency"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='priceType']//xsd:attribute[@name='reserved']/xsd:simpleType">
-            <jaxb:javaType name="java.lang.Boolean"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='descriptionType']//xsd:element[@name='description']/xsd:simpleType">
-            <jaxb:javaType name="java.lang.String"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseText3000"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printText3000"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:element[@name='feed']//xsd:element[@name='projects']//xsd:element[@name='project']//xsd:element[@name='country-code']/xsd:simpleType">
-            <jaxb:javaType name="java.lang.String"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCountry"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCountry"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:element[@name='feed']//xsd:element[@name='properties']//xsd:element[@name='property']//xsd:element[@name='date-expiration']/xsd:simpleType">
-            <jaxb:javaType name="java.util.Calendar"
-                           parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
-                           printMethod="javax.xml.bind.DatatypeConverter.printDateTime"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='classEnergyPerformance']//xsd:attribute[@name='certified']/xsd:simpleType">
-            <jaxb:javaType name="java.lang.Boolean"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='classEnergyPerformance']//xsd:attribute[@name='unit']/xsd:simpleType">
-            <jaxb:javaType name="org.openestate.io.immobiliare_it.xml.types.EnergyUnit"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseEnergyUnit"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printEnergyUnit"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='transactionType']//xsd:attribute[@name='auction']/xsd:simpleType">
-            <jaxb:javaType name="java.lang.Boolean"
-                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo"
-                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo"/>
-        </jaxb:bindings>
-
-        <!-- enumeration types -->
+        <!-- global enumeration types -->
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='operation']">
-            <jaxb:typesafeEnumClass name="Operation"/>
+            <jaxb:typesafeEnumClass name="OperationType"/>
         </jaxb:bindings>
 
-        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='allPropertyTypeSimple']">
-            <jaxb:typesafeEnumClass name="PropertyType"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='businessElement']//xsd:attribute[@name='category']/xsd:simpleType">
-            <jaxb:typesafeEnumClass name="BusinessElementCategory">
-                <jaxb:typesafeEnumMember value="Attività" name="ATTIVITA"/>
-                <jaxb:typesafeEnumMember value="Immobile" name="IMMOBILE"/>
-                <jaxb:typesafeEnumMember value="Terreno" name="TERRENO"/>
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='ownershipType']">
+            <jaxb:typesafeEnumClass name="OwnershipType">
+                <jaxb:typesafeEnumMember value="intera proprietà" name="INTERA_PROPRIETA"/>
+                <jaxb:typesafeEnumMember value="nuda proprietà" name="NUDA_PROPRIETA"/>
+                <jaxb:typesafeEnumMember value="parziale proprietà" name="PARZIALE_PROPRIETA"/>
+                <jaxb:typesafeEnumMember value="multiproprietà" name="MULTIPROPRIETA"/>
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
 
@@ -172,125 +110,243 @@
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='propertyTypeSimple']">
-            <jaxb:typesafeEnumClass name="PropertyTypeSimple"/>
+            <jaxb:typesafeEnumClass name="SimplePropertyType">
+                <jaxb:typesafeEnumMember value="Multiproprietà" name="MULTIPROPRIETA"/>
+                <jaxb:typesafeEnumMember value="Casa per ferie (gruppi)" name="CASA_PER_FERIE"/>
+            </jaxb:typesafeEnumClass>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='PropertyTypeBusiness']">
-            <jaxb:typesafeEnumClass name="PropertyTypeBusiness"/>
+            <jaxb:typesafeEnumClass name="BusinessPropertyType">
+                <jaxb:typesafeEnumMember value="Azienda agricola" name="AZIENDA_AGRICOLA"/>
+                <jaxb:typesafeEnumMember value="Azienda Agricola" name="AZIENDA_AGRICOLA2"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='allPropertyTypeSimple']">
+            <jaxb:typesafeEnumClass name="AllSimplePropertyType">
+                <jaxb:typesafeEnumMember value="Multiproprietà" name="MULTIPROPRIETA"/>
+                <jaxb:typesafeEnumMember value="Casa per ferie (gruppi)" name="CASA_PER_FERIE"/>
+                <jaxb:typesafeEnumMember value="Attività" name="ATTIVITA"/>
+            </jaxb:typesafeEnumClass>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='status']">
-            <jaxb:typesafeEnumClass name="Status"/>
+            <jaxb:typesafeEnumClass name="StatusType"/>
         </jaxb:bindings>
 
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='neighbourhood']//xsd:attribute[@name='type']/xsd:simpleType">
-            <jaxb:typesafeEnumClass name="LocationNeighbourhoodType"/>
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='class']">
+            <jaxb:typesafeEnumClass name="ClassType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='nationcode']">
-            <jaxb:typesafeEnumClass name="NationCode"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='box']//xsd:attribute[@name='type']/xsd:simpleType">
-            <jaxb:typesafeEnumClass name="BoxType"/>
+            <jaxb:typesafeEnumClass name="NationCodeType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='kitchen']">
-            <jaxb:typesafeEnumClass name="Kitchen"/>
+            <jaxb:typesafeEnumClass name="KitchenType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='heat']">
-            <jaxb:typesafeEnumClass name="Heat"/>
+            <jaxb:typesafeEnumClass name="HeatType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='garden']">
-            <jaxb:typesafeEnumClass name="Garden"/>
+            <jaxb:typesafeEnumClass name="GardenType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='yesnoready']">
-            <jaxb:typesafeEnumClass name="YesNoReady"/>
-        </jaxb:bindings>
-
-        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='floor']//xsd:attribute[@name='type']/xsd:simpleType">
-            <jaxb:typesafeEnumClass name="FloorType"/>
+            <jaxb:typesafeEnumClass name="YesNoReadyType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='rental']">
-            <jaxb:typesafeEnumClass name="Rental">
+            <jaxb:typesafeEnumClass name="RentalType">
                 <jaxb:typesafeEnumMember value="3+2" name="RENT_3_PLUS_2"/>
                 <jaxb:typesafeEnumMember value="4+4" name="RENT_4_PLUS_4"/>
                 <jaxb:typesafeEnumMember value="6+6" name="RENT_6_PLUS_6"/>
                 <jaxb:typesafeEnumMember value="9+9" name="RENT_9_PLUS_9"/>
-                <jaxb:typesafeEnumMember value="Transitorio" name="TRANSITORIO"/>
-                <jaxb:typesafeEnumMember value="Concordato" name="CONCORDATO"/>
-                <jaxb:typesafeEnumMember value="Libero" name="LIBERO"/>
-                <jaxb:typesafeEnumMember value="Studenti" name="STUDENTI"/>
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='furniture']">
-            <jaxb:typesafeEnumClass name="Furniture"/>
+            <jaxb:typesafeEnumClass name="FurnitureType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='version']">
-            <jaxb:typesafeEnumClass name="Version">
-                <jaxb:typesafeEnumMember value="1.5" name="V1_5"/>
-                <jaxb:typesafeEnumMember value="1.6" name="V1_6"/>
-                <jaxb:typesafeEnumMember value="2.0" name="V2_0"/>
-                <jaxb:typesafeEnumMember value="2.1" name="V2_1"/>
-                <jaxb:typesafeEnumMember value="2.2" name="V2_2"/>
-                <jaxb:typesafeEnumMember value="2.2.1" name="V2_2_1"/>
-                <jaxb:typesafeEnumMember value="2.4" name="V2_4"/>
-                <jaxb:typesafeEnumMember value="2.5" name="V2_5"/>
+            <jaxb:typesafeEnumClass name="VersionType">
+                <jaxb:typesafeEnumMember value="2.8" name="V2_8"/>
             </jaxb:typesafeEnumClass>
-        </jaxb:bindings>
-
-        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='videoType']">
-            <jaxb:typesafeEnumClass name="VideoType"/>
         </jaxb:bindings>
 
         <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='propertyTypeProject']">
-            <jaxb:typesafeEnumClass name="PropertyTypeProject"/>
+            <jaxb:typesafeEnumClass name="ProjectPropertyType"/>
         </jaxb:bindings>
 
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='floorProject']//xsd:attribute[@name='type']/xsd:simpleType">
-            <jaxb:typesafeEnumClass name="FloorProjectType"/>
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='visibility']">
+            <jaxb:typesafeEnumClass name="VisibilityType"/>
         </jaxb:bindings>
 
-        <jaxb:bindings
-                node="/xsd:schema/xsd:complexType[@name='boxProject']//xsd:attribute[@name='type']/xsd:simpleType">
-            <jaxb:typesafeEnumClass name="BoxProjectType"/>
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='detailedSizeType']">
+            <jaxb:typesafeEnumClass name="DetailedSizeType"/>
         </jaxb:bindings>
 
-        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='classEnergy']">
-            <jaxb:typesafeEnumClass name="ClassEnergy">
+        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='detailedSizeFloorType']">
+            <jaxb:typesafeEnumClass name="DetailedFloorSizeType"/>
+        </jaxb:bindings>
+
+        <!-- anonymous enumeration types -->
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='businessElement']//xsd:attribute[@name='category']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Category">
+                <jaxb:typesafeEnumMember value="Attività" name="ATTIVITA"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='neighbourhood']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='box']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='floor']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='floorProject']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='boxProject']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='classEnergy']//xsd:element[@name='energy-performance']//xsd:attribute[@name='unit']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Unit">
+                <jaxb:typesafeEnumMember value="kWh/m2anno" name="KWH_PER_SQM_ANNO"/>
+                <jaxb:typesafeEnumMember value="kWh/m3anno" name="KWH_PER_CUM_ANNO"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='classEnergy']//xsd:element[@name='energy-performance']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='classEnergy']//xsd:element[@name='energy-season']//xsd:attribute[@name='season']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='classEnergy']//xsd:element[@name='energy-season']//xsd:attribute[@name='level']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Level"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='classEnergy']//xsd:attribute[@name='value']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type">
                 <jaxb:typesafeEnumMember value="A+" name="A_PLUS"/>
-                <jaxb:typesafeEnumMember value="A" name="A"/>
-                <jaxb:typesafeEnumMember value="B" name="B"/>
-                <jaxb:typesafeEnumMember value="C" name="C"/>
-                <jaxb:typesafeEnumMember value="D" name="D"/>
-                <jaxb:typesafeEnumMember value="E" name="E"/>
-                <jaxb:typesafeEnumMember value="F" name="F"/>
-                <jaxb:typesafeEnumMember value="G" name="G"/>
-                <jaxb:typesafeEnumMember value="esente" name="ESENTE"/>
             </jaxb:typesafeEnumClass>
         </jaxb:bindings>
 
-        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='ownershipType']">
-            <jaxb:typesafeEnumClass name="OwnershipType">
-                <jaxb:typesafeEnumMember value="intera proprietà" name="INTERA_PROPRIETA"/>
-                <jaxb:typesafeEnumMember value="nuda proprietà" name="NUDA_PROPRIETA"/>
-                <jaxb:typesafeEnumMember value="parziale proprietà" name="PARZIALE"/>
-                <jaxb:typesafeEnumMember value="usufrutto" name="USUFRUTTO"/>
-                <jaxb:typesafeEnumMember value="multiproprietà" name="MULTIPROPRIETA"/>
-                <jaxb:typesafeEnumMember value="diritto di superficie" name="DIRITTO_DI_SUPERFICIE"/>
-            </jaxb:typesafeEnumClass>
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='registry']//xsd:attribute[@name='class']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
         </jaxb:bindings>
 
-        <jaxb:bindings node="/xsd:schema/xsd:simpleType[@name='class']">
-            <jaxb:typesafeEnumClass name="Clazz"/>
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='heating']//xsd:element[@name='system']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="System"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='heating']//xsd:element[@name='source']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Source"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='air-conditioning']//xsd:element[@name='effect']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Effect"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='air-conditioning']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='video']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='auction-features']//xsd:element[@name='court']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='auction-features']/xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='auction']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='auctionActorType']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='document']//xsd:attribute[@name='type']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Type"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='extended']//xsd:element[@name='external-frames']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="ExternalFrames"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='extended']//xsd:element[@name='tv']/xsd:simpleType">
+            <jaxb:typesafeEnumClass name="Tv"/>
+        </jaxb:bindings>
+
+        <!-- parsers & writers for anonymous simpletypes -->
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='country-code']/xsd:simpleType">
+            <jaxb:javaType name="java.lang.String"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCountry"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCountry"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='locality']//xsd:element[@name='thoroughfare']//xsd:attribute[@name='display']/xsd:simpleType">
+            <jaxb:javaType name="java.lang.Boolean"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='locationStructure']//xsd:element[@name='locality']//xsd:attribute[@name='map']/xsd:simpleType">
+            <jaxb:javaType name="org.openestate.io.immobiliare_it.xml.types.MapType"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseMap"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printMap"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='landSizeType']//xsd:attribute[@name='unit']/xsd:simpleType">
+            <jaxb:javaType name="org.openestate.io.immobiliare_it.xml.types.LandSizeUnitType"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLandSizeUnit"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLandSizeUnit"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='classEnergy']//xsd:attribute[@name='scale']/xsd:simpleType">
+            <jaxb:javaType name="org.openestate.io.immobiliare_it.xml.types.EnergyScaleType"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseEnergyScale"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printEnergyScale"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='additionalCostsType']//xsd:attribute[@name='currency']/xsd:simpleType">
+            <jaxb:javaType name="java.util.Currency"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCurrency"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCurrency"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:complexType[@name='sales-office']//xsd:element[@name='country-code']/xsd:simpleType">
+            <jaxb:javaType name="java.lang.String"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCountry"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCountry"/>
+        </jaxb:bindings>
+
+        <jaxb:bindings node="/xsd:schema/xsd:element[@name='property']//xsd:element[@name='date-expiration']/xsd:simpleType">
+            <jaxb:javaType name="java.util.Calendar"
+                           parseMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseNullDateTime"
+                           printMethod="org.openestate.io.immobiliare_it.ImmobiliareItUtils.printNullDateTime"/>
         </jaxb:bindings>
 
     </jaxb:bindings>

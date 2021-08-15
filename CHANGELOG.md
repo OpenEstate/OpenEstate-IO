@@ -10,6 +10,7 @@ Changelog for OpenEstate-IO
 -   Regenerated JAXB classes against with JAXB 2.3.
 -   Add support for the XML format of immobar.it.
 -   Add support for the JSON format of idealista.com.
+-   Updated the XML format of immobiliare.it to version 2.8.
 -   Replaced `jaxen` dependency with JDK's internal XPath engine.
 -   Updated `commons-codec` library to version 1.15.
 -   Updated `commons-csv` library to version 1.9.0.

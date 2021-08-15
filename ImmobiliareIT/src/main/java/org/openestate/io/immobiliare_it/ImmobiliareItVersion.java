@@ -18,7 +18,7 @@ package org.openestate.io.immobiliare_it;
 import org.apache.commons.lang3.ArrayUtils;
 import org.openestate.io.core.XmlVersion;
 import org.openestate.io.immobiliare_it.converters.AbstractConverter;
-import org.openestate.io.immobiliare_it.converters.ImmobiliareIt_2_5;
+import org.openestate.io.immobiliare_it.converters.ImmobiliareIt_2_8;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,9 +30,9 @@ import org.slf4j.LoggerFactory;
  */
 public enum ImmobiliareItVersion implements XmlVersion<ImmobiliareItDocument, ImmobiliareItVersion> {
     /**
-     * Version 2.5
+     * Version 2.8.
      */
-    V2_5(ImmobiliareIt_2_5.class, "2.5", "2.5.0");
+    V2_8(ImmobiliareIt_2_8.class, "2.8", "2.8.0");
 
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItVersion.class);
