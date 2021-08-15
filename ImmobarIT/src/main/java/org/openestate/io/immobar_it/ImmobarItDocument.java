@@ -27,13 +27,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="https://www.immobar.it">immobar.it</a> with a
- * &lt;realestate&gt; root element.
+ * XML document from <a href="https://www.immobar.it">immobar.it</a> with a &lt;realestate&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings("WeakerAccess")
 public class ImmobarItDocument extends XmlDocument<Realestate> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItDocument.class);

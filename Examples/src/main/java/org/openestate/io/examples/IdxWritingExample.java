@@ -92,7 +92,6 @@ public class IdxWritingExample {
      *
      * @return created example object
      */
-    @SuppressWarnings("deprecation")
     private static IdxRecord createRecord() {
         // create an example real estate
         IdxRecord obj = new IdxRecord();
@@ -202,7 +201,7 @@ public class IdxWritingExample {
         obj.setVisitRemark(RANDOMIZER.getWords(1, 5));
         obj.setVolume(RandomUtils.nextLong(50, 500));
         obj.setWaterSupply(RandomUtils.nextBoolean());
-        obj.setWheelcharAccessible(RandomUtils.nextBoolean());
+        obj.setWheelchairAccessible(RandomUtils.nextBoolean());
         obj.setYearBuilt(RandomUtils.nextInt(1900, 1995));
         obj.setYearRenovated(RandomUtils.nextInt(1995, 2010));
 

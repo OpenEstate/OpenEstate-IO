@@ -25,16 +25,18 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum ObjektkategorieWohnenAufZeit {
     ZIMMER(0),
     APPARTMENT(1),
     WOHNUNG(2),
     HAUS(3);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieWohnenAufZeit.class);
     private final int value;
 
-    private ObjektkategorieWohnenAufZeit(int value) {
+    ObjektkategorieWohnenAufZeit(int value) {
         this.value = value;
     }
 

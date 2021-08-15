@@ -35,6 +35,7 @@ public class ImmoXmlUtilsTest {
 
     @Test
     public void testCreateDocument() {
+        //noinspection SpellCheckingInspection
         String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<immoxml xmlns=\"" + ImmoXmlUtils.NAMESPACE + "\">\n"
                 + "  <uebertragung version=\"" + ImmoXmlUtils.VERSION.toReadableVersion() + "\" "
@@ -50,7 +51,8 @@ public class ImmoXmlUtilsTest {
             doc = ImmoXmlUtils.createDocument(transferXml);
             Assert.assertNotNull(
                     "Transfer was processed.", doc);
-            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof ImmoXmlDocument);
+            //Assert.assertTrue("Transfer was processed as TransferDocument.",
+            //        doc instanceof ImmoXmlDocument);
         } catch (Exception ex) {
             LOGGER.error("Test of ImmoXMLUtils.createDocument failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

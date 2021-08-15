@@ -29,11 +29,9 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 /**
- * Example for reading XML files for
- * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
+ * Example for reading XML files for <a href="https://www.wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
  * <p>
- * This example illustrates how to read XML files for
- * <a href="wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
+ * This example illustrates how to read XML files for <a href="wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

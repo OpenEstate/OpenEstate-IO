@@ -33,7 +33,6 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class OpenImmoTransferDocument extends OpenImmoDocument<Openimmo> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoTransferDocument.class);

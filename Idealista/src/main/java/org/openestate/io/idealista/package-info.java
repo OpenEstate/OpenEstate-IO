@@ -15,8 +15,7 @@
  */
 
 /**
- * <strong>EXPERIMENTAL:</strong> Read and write JSON data for
- * <a href="https://www.idealista.com">idealista.com</a>.
+ * <strong>EXPERIMENTAL:</strong> Read and write JSON data for <a href="https://www.idealista.com">idealista.com</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

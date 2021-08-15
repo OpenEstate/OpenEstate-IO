@@ -36,6 +36,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public abstract class CsvRecord {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CsvRecord.class);
     private final Map<Integer, String> values;
 
@@ -47,7 +48,7 @@ public abstract class CsvRecord {
     }
 
     /**
-     * Write content of the record in a human readable form.
+     * Write content of the record in a human-readable form.
      *
      * @param writer where the data is written to
      * @throws IOException if the record can't be written
@@ -57,14 +58,14 @@ public abstract class CsvRecord {
     }
 
     /**
-     * Write content of the record in a human readable form.
+     * Write content of the record in a human-readable form.
      *
      * @param writer        where the data is written to
      * @param lineSeparator line separator for multi line values
      * @throws IOException if the record can't be written
      */
     public void dump(Writer writer, String lineSeparator) throws IOException {
-        for (int i = 0; i < this.getRecordLenth(); i++) {
+        for (int i = 0; i < this.getRecordLength(); i++) {
             StringBuilder txt = new StringBuilder();
             try (StringReader reader = new StringReader(StringUtils.trimToEmpty(this.get(i)))) {
                 for (String line : IOUtils.readLines(reader)) {
@@ -72,7 +73,7 @@ public abstract class CsvRecord {
                     txt.append(line);
                 }
             }
-            writer.write(i + ":" + txt.toString());
+            writer.write(i + ":" + txt);
             writer.write(System.lineSeparator());
         }
     }
@@ -106,11 +107,6 @@ public abstract class CsvRecord {
      */
     protected abstract int getRecordLength();
 
-    @Deprecated
-    protected int getRecordLenth() {
-        return this.getRecordLength();
-    }
-
     /**
      * Loads data from {@link CsvParser} into the record.
      *
@@ -140,7 +136,7 @@ public abstract class CsvRecord {
      * @return CSV values to write
      */
     protected Iterable<String> print() {
-        final int length = this.getRecordLenth();
+        final int length = this.getRecordLength();
         List<String> row = new ArrayList<>();
         for (int i = 0; i < length; i++) {
             row.add(this.get(i));
@@ -158,7 +154,7 @@ public abstract class CsvRecord {
         value = StringUtils.trimToNull(value);
         if (value != null)
             this.values.put(pos, value);
-        else if (this.values.containsKey(pos))
+        else
             this.values.remove(pos);
     }
 }

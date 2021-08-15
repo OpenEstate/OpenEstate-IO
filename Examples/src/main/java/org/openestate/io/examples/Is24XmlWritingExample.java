@@ -85,7 +85,7 @@ public class Is24XmlWritingExample {
         transfer.setErstellerSoftwareVersion(RandomStringUtils.randomNumeric(2));
         transfer.setAnbieter(createAnbieter());
 
-        // convert the ImmobilienTransferTyp object into a XML document
+        // convert the ImmobilienTransferTyp object into an XML document
         Is24XmlDocument doc = null;
         try {
             doc = Is24XmlDocument.newDocument(transfer);

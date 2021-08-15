@@ -48,8 +48,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 /**
- * Some helper functions for the XML format of
- * <a href="http://immobiliare.it/">immobiliare.it</a>.
+ * Some helper functions for the XML format of <a href="https://www.immobiliare.it/">immobiliare.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -226,6 +225,7 @@ public class ImmobiliareItUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         return createMarshaller(encoding, formatted, null);
     }
@@ -256,6 +256,7 @@ public class ImmobiliareItUtils {
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         return createUnmarshaller(null);
     }

@@ -38,7 +38,6 @@ public class ImmobarItDocumentTest {
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItDocumentTest.class);
 
     private static Document buildExampleDocument() throws Exception {
-        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<realestate>\n"
                 + "  <company_name_de>test</company_name_de>\n"

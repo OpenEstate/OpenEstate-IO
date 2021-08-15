@@ -218,6 +218,7 @@ public class Is24XmlUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         return createMarshaller(encoding, formatted, null);
     }
@@ -248,6 +249,7 @@ public class Is24XmlUtils {
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         return createUnmarshaller(null);
     }
@@ -311,6 +313,7 @@ public class Is24XmlUtils {
         return XmlUtils.parseDate(value);
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     public static BigDecimal parsePreisAufAnfrage(String value) {
         value = StringUtils.trimToNull(value);
         return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
@@ -481,6 +484,7 @@ public class Is24XmlUtils {
         return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     public static BigDecimal parseZimmeranzahl(String value) {
         value = StringUtils.trimToNull(value);
         return (value != null) ? DatatypeConverter.parseDecimal(value) : null;
@@ -501,6 +505,7 @@ public class Is24XmlUtils {
             return value;
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     public static String printPreisAufAnfrage(BigDecimal value) {
         if (value == null || value.compareTo(BigDecimal.ZERO) < 0 || value.compareTo(BigDecimal.TEN.pow(13)) >= 0)
             throw new IllegalArgumentException("Can't print decimal value '" + value + "'!");
@@ -724,6 +729,7 @@ public class Is24XmlUtils {
             return DatatypeConverter.printDecimal(value.setScale(2, RoundingMode.HALF_UP));
     }
 
+    @SuppressWarnings("SpellCheckingInspection")
     public static String printZimmeranzahl(BigDecimal value) {
         BigDecimal min = new BigDecimal("0.5");
         BigDecimal max = new BigDecimal("9999");

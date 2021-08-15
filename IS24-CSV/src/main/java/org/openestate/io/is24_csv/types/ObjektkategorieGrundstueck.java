@@ -25,16 +25,18 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum ObjektkategorieGrundstueck {
     WOHNEN(56),
     GEWERBE(57),
     GEWERBE_LAND_FORSTWIRTSCHAFT(58),
     GEWERBE_FREIZEIT(59);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieGrundstueck.class);
     private final int value;
 
-    private ObjektkategorieGrundstueck(int value) {
+    ObjektkategorieGrundstueck(int value) {
         this.value = value;
     }
 

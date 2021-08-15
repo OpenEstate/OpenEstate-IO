@@ -16,14 +16,9 @@
 package org.openestate.io.idealista;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig;
-import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
-import com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import java.io.File;
@@ -53,13 +48,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Some helper functions for the JSON format of
- * <a href="https://www.idealista.com/">idealista.com</a>.
+ * Some helper functions for the JSON format of <a href="https://www.idealista.com/">idealista.com</a>.
  *
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings({"WeakerAccess", "unused"})
 public class IdealistaUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaUtils.class);
@@ -79,7 +72,7 @@ public class IdealistaUtils {
     /**
      * map property feature classes to their types
      */
-    private final static Map<Class<? extends AbstractFeatures>, Class<? extends Enum>> TYPES;
+    private final static Map<Class<? extends AbstractFeatures>, Class<? extends Enum<?>>> TYPES;
 
     static {
         TYPES = new HashMap<>();
@@ -121,6 +114,7 @@ public class IdealistaUtils {
      * @param code ISO country code
      * @return address country or <code>null</code>, if not supported
      */
+    @SuppressWarnings("unused")
     public static Address.Country getAddressCountry(String code) {
         code = StringUtils.trimToNull(code);
 
@@ -149,11 +143,12 @@ public class IdealistaUtils {
     }
 
     /**
-     * Get two digit ISO country code from an address country.
+     * Get two-digit ISO country code from an address country.
      *
      * @param country address country
      * @return ISO country code or <code>null</code>, if not supported
      */
+    @SuppressWarnings("unused")
     public static String getAddressCountryCode(Address.Country country) {
         if (country == null) return null;
 
@@ -184,6 +179,7 @@ public class IdealistaUtils {
      * @param locale locale
      * @return description language or <code>null</code>, if not supported
      */
+    @SuppressWarnings("unused")
     public static Description.Language getDescriptionLanguage(Locale locale) {
         return (locale != null) ?
                 getDescriptionLanguage(locale.getLanguage()) :
@@ -238,6 +234,7 @@ public class IdealistaUtils {
      *
      * @return supported locales
      */
+    @SuppressWarnings("unused")
     public static Locale[] getLocales() {
         return new Locale[]{
                 new Locale("ca"), // catalan
@@ -307,7 +304,7 @@ public class IdealistaUtils {
     }
 
     public static class FeaturesDeserializer extends StdDeserializer<AbstractFeatures> {
-        private final BeanDeserializerFactory beanDeserializerFactory = new BeanDeserializerFactory(new DeserializerFactoryConfig());
+        //private final BeanDeserializerFactory beanDeserializerFactory = new BeanDeserializerFactory(new DeserializerFactoryConfig());
 
         public FeaturesDeserializer() {
             this(null);
@@ -318,7 +315,7 @@ public class IdealistaUtils {
         }
 
         @Override
-        public AbstractFeatures deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        public AbstractFeatures deserialize(JsonParser jp, DeserializationContext context) throws IOException {
             final JsonNode node = jp.getCodec().readTree(jp);
             final String featuresType = (node.has("featuresType")) ?
                     node.get("featuresType").asText() :
@@ -331,16 +328,16 @@ public class IdealistaUtils {
             }
 
             //LOGGER.debug("Deserializing {} features...", featuresType);
-            for (Map.Entry<Class<? extends AbstractFeatures>, Class<? extends Enum>> type : TYPES.entrySet()) {
+            for (Map.Entry<Class<? extends AbstractFeatures>, Class<? extends Enum<?>>> type : TYPES.entrySet()) {
                 try {
-                    final Enum typeEnum = (Enum) type.getValue()
+                    final Enum<?> typeEnum = (Enum<?>) type.getValue()
                             .getMethod("fromValue", String.class)
                             .invoke(null, featuresType);
 
                     if (typeEnum != null) {
                         final JsonParser p = node.traverse(jp.getCodec());
                         p.nextToken();
-                        return ctxt.readValue(p, type.getKey());
+                        return context.readValue(p, type.getKey());
                     }
 
                 } catch (InvocationTargetException ex) {

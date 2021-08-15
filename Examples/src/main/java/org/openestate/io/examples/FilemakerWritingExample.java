@@ -66,7 +66,7 @@ public class FilemakerWritingExample {
         result.setMETADATA(createMetaData());
         result.setRESULTSET(createResultSet());
 
-        // convert the Openimmo object into a XML document
+        // convert the Openimmo object into an XML document
         FilemakerResultDocument doc = null;
         try {
             doc = FilemakerResultDocument.newDocument(result);

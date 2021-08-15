@@ -26,13 +26,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="http://www.filemaker.com/">Filemaker</a> with a
- * &lt;FMPXMLLAYOUT&gt; root element.
+ * XML document from <a href="http://www.filemaker.com/">Filemaker</a> with a &lt;FMPXMLLAYOUT&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class FilemakerLayoutDocument extends FilemakerDocument<FMPXMLLAYOUT> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerLayoutDocument.class);

@@ -44,10 +44,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML files for <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
+ * Example for writing XML files for <a href="https://www.wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
  * <p>
  * This example illustrates the programmatic creation of documents for
- * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a> and how they are written into XML.
+ * <a href="https://www.wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -79,7 +79,7 @@ public class WisItWritingExample {
         }
         wis.getOBJEKTE().setANZAHL(BigInteger.valueOf(objectCount));
 
-        // convert the WIS object into a XML document
+        // convert the WIS object into an XML document
         WisItDocument doc = null;
         try {
             doc = WisItDocument.newDocument(wis);

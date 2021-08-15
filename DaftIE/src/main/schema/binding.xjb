@@ -29,7 +29,7 @@
         <jaxb:schemaBindings>
             <jaxb:package name="org.openestate.io.daft_ie.xml">
                 <jaxb:javadoc>
-                    <![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="http://daft.ie/">daft.ie</a>.</body>]]></jaxb:javadoc>
+                    <![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="https://www.daft.ie/">daft.ie</a>.</body>]]></jaxb:javadoc>
             </jaxb:package>
         </jaxb:schemaBindings>
 

@@ -32,7 +32,6 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class TrovitDocument extends XmlDocument<Trovit> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(TrovitDocument.class);

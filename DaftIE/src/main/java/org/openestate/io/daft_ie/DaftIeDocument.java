@@ -29,13 +29,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="http://daft.ie/">daft.ie</a> with a &lt;daft&gt;
- * root element.
+ * XML document from <a href="https://www.daft.ie/">daft.ie</a> with a &lt;daft&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class DaftIeDocument extends XmlConvertableDocument<Daft, DaftIeVersion> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DaftIeDocument.class);

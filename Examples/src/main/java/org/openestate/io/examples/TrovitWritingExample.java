@@ -77,7 +77,7 @@ public class TrovitWritingExample {
             trovit.getAd().add(createAd());
         }
 
-        // convert the Trovit object into a XML document
+        // convert the Trovit object into an XML document
         TrovitDocument doc = null;
         try {
             doc = TrovitDocument.newDocument(trovit);

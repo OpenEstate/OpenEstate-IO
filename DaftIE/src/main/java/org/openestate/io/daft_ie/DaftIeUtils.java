@@ -46,8 +46,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 /**
- * Some helper functions for the XML format of
- * <a href="http://daft.ie/">daft.ie</a>.
+ * Some helper functions for the XML format of <a href="https://www.daft.ie/">daft.ie</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -224,6 +223,7 @@ public class DaftIeUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         return createMarshaller(encoding, formatted, null);
     }
@@ -254,6 +254,7 @@ public class DaftIeUtils {
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         return createUnmarshaller(null);
     }

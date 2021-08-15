@@ -28,13 +28,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>
- * with a &lt;WIS&gt; root element.
+ * XML document from <a href="https://www.wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a> with a &lt;WIS&gt;
+ * root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class WisItDocument extends XmlDocument<WIS> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(WisItDocument.class);

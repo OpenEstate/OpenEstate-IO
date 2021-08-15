@@ -16,7 +16,7 @@
 
 /**
  * <strong>EXPERIMENTAL:</strong> Read and write XML data for
- * <a href="http://casa.it/">casa.it</a>.
+ * <a href="https://www.casa.it/">casa.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

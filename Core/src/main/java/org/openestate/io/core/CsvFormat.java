@@ -36,12 +36,14 @@ import org.slf4j.LoggerFactory;
  * A general CSV format specification, that supports reading through
  * {@link CsvParser} and writing through {@link CsvPrinter}.
  *
- * @param <Parser>  the class used for CSV parsing
- * @param <Printer> the class used for CSV printing
+ * @param <Record>  the class used for CSV records
+ * @param <Parser>  the class used for parsing of CSV records
+ * @param <Printer> the class used for printing of CSV records
  * @author Andreas Rudolph
  * @since 1.0
  */
-public abstract class CsvFormat<Parser extends CsvParser, Printer extends CsvPrinter> {
+public abstract class CsvFormat<Record extends CsvRecord, Parser extends CsvParser<Record>, Printer extends CsvPrinter<Record>> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CsvFormat.class);
     private final CSVFormat format;
 

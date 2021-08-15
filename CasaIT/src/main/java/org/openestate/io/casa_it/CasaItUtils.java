@@ -38,8 +38,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 /**
- * Some helper functions for the XML format of
- * <a href="http://casa.it/">casa.it</a>.
+ * Some helper functions for the XML format of <a href="https://www.casa.it/">casa.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

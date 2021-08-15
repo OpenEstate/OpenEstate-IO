@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Objektzustand {
     KEINE_ANGABE(0),
     ERSTBEZUG(1),
@@ -40,10 +41,11 @@ public enum Objektzustand {
     UNRENOVIERT(10),
     ABBRUCHREIF(11);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Objektzustand.class);
     private final int value;
 
-    private Objektzustand(int value) {
+    Objektzustand(int value) {
         this.value = value;
     }
 

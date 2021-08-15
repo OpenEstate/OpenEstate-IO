@@ -16,7 +16,7 @@
 
 /**
  * Read and write XML data for
- * <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.
+ * <a href="https://www.wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

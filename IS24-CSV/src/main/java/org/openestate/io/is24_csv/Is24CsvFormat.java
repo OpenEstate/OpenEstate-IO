@@ -38,8 +38,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
-public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
+public class Is24CsvFormat extends CsvFormat<Is24CsvRecord, Is24CsvParser, Is24CsvPrinter> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvFormat.class);
 
@@ -65,9 +64,11 @@ public class Is24CsvFormat extends CsvFormat<Is24CsvParser, Is24CsvPrinter> {
      * Create IS24-CSV format.
      */
     public Is24CsvFormat() {
-        super(CSVFormat.newFormat('|')
-                .withRecordSeparator(RECORD_SEPARATOR)
-                .withNullString(StringUtils.EMPTY));
+        super(CSVFormat.Builder
+                .create(CSVFormat.newFormat('|'))
+                .setRecordSeparator(RECORD_SEPARATOR)
+                .setNullString(StringUtils.EMPTY)
+                .build());
     }
 
     /**

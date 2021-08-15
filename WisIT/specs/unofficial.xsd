@@ -4,7 +4,7 @@
     <xsd:annotation>
         <xsd:documentation xml:lang="en">
             XML specifications of Import Interface V2
-            for https://wohnen-in-suedtirol.it/
+            for https://www.wohnen-in-suedtirol.it/
             based on Document version 2.2, Christoph Dolar, October 2015
 
             This unofficial XML schema was created by Andreas Rudolph and is licensed
@@ -13,7 +13,7 @@
         </xsd:documentation>
         <xsd:documentation xml:lang="de">
             XML-Spezifikationen der Import-Schnittstelle V2
-            von https://wohnen-in-suedtirol.it/
+            von https://www.wohnen-in-suedtirol.it/
             basierend auf Dokument-Version 2.2, Christoph Dolar, Oktober 2015
 
             Dieses inoffizielle XML-Schema wurde von Andreas Rudolph erstellt und

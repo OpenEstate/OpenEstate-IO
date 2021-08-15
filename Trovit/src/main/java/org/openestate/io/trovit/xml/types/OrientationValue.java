@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.4
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum OrientationValue {
     NORTH(new String[]{"North", "Nord", "Norden"}),
     SOUTH(new String[]{"South", "Süd", "Süden"}),

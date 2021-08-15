@@ -15,7 +15,7 @@
  */
 
 /**
- * Read and write XML data for <a href="http://daft.ie/">daft.ie</a>.
+ * Read and write XML data for <a href="https://www.daft.ie/">daft.ie</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

@@ -74,7 +74,7 @@ public class ImmobarItWritingExample {
             realestate.getCompany().add(createCompany());
         }
 
-        // convert the Realestate object into a XML document
+        // convert the Realestate object into an XML document
         ImmobarItDocument doc = null;
         try {
             doc = ImmobarItDocument.newDocument(realestate);

@@ -84,7 +84,7 @@ public class DaftIeWritingExample {
             daft.getOverseasSales().getOverseasSaleAd().add(createAdForSale());
         }
 
-        // convert the Daft object into a XML document
+        // convert the Daft object into an XML document
         DaftIeDocument doc = null;
         try {
             doc = DaftIeDocument.newDocument(daft);

@@ -38,6 +38,7 @@ public class OpenImmoTransferDocumentNamespaceTest {
     private static Document buildExampleDocument(String version) throws Exception {
         String xmlns = ("1.2".equals(version) || "1.2.0".equals(version) || "1.1".equals(version)) ?
                 " xmlns:imo=\"" + OpenImmoUtils.OLD_NAMESPACE + "\"" : StringUtils.EMPTY;
+        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument(
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                         + "<imo:openimmo" + xmlns + " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openimmo.de openimmo.xsd\">\n"

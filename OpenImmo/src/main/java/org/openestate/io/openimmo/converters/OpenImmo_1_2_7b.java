@@ -17,7 +17,6 @@ package org.openestate.io.openimmo.converters;
 
 import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoDocument;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
@@ -33,8 +32,8 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.3
  */
-@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
-public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument<?>, OpenImmoVersion> {
+@SuppressWarnings("SpellCheckingInspection")
+public class OpenImmo_1_2_7b extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_7b.class);
 
@@ -43,6 +42,11 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument<?>, OpenImmoV
         return OpenImmoVersion.V1_2_7B;
     }
 
+    /**
+     * Downgrade an {@link OpenImmoDocument} from version 1.2.7b to 1.2.7.
+     *
+     * @param doc document in version 1.2.7b
+     */
     @Override
     public void downgradeToPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_7);
@@ -71,6 +75,11 @@ public class OpenImmo_1_2_7b extends XmlConverter<OpenImmoDocument<?>, OpenImmoV
         }
     }
 
+    /**
+     * Upgrade an {@link OpenImmoDocument} from version 1.2.7 to 1.2.7b.
+     *
+     * @param doc document in version 1.2.7
+     */
     @Override
     public void upgradeFromPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_7B);

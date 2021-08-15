@@ -99,7 +99,7 @@ public class ImmobiliareItWritingExample {
             feed.getProperties().getProperty().add(createProperty());
         }
 
-        // convert the Feed object into a XML document
+        // convert the Feed object into an XML document
         ImmobiliareItDocument doc = null;
         try {
             doc = ImmobiliareItDocument.newDocument(feed);

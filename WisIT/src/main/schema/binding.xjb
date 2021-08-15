@@ -21,7 +21,7 @@
         <jaxb:schemaBindings>
             <jaxb:package name="org.openestate.io.wis_it.xml">
                 <jaxb:javadoc>
-                    <![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.</body>]]></jaxb:javadoc>
+                    <![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="https://www.wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a>.</body>]]></jaxb:javadoc>
             </jaxb:package>
         </jaxb:schemaBindings>
 

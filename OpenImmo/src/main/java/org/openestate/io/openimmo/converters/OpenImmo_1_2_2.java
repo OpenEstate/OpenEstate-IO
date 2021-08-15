@@ -19,7 +19,6 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoDocument;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
@@ -35,8 +34,8 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
-public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument<?>, OpenImmoVersion> {
+@SuppressWarnings("SpellCheckingInspection")
+public class OpenImmo_1_2_2 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_2.class);
 
@@ -46,9 +45,9 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument<?>, OpenImmoVe
     }
 
     /**
-     * Downgrade an OpenImmo document from version 1.2.2 to 1.2.1.
+     * Downgrade an {@link OpenImmoDocument} from version 1.2.2 to 1.2.1.
      *
-     * @param doc OpenImmo document in version 1.2.2
+     * @param doc document in version 1.2.2
      */
     @Override
     public void downgradeToPreviousVersion(OpenImmoDocument<?> doc) {
@@ -179,9 +178,9 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument<?>, OpenImmoVe
     }
 
     /**
-     * Upgrade an OpenImmo document from version 1.2.1 to 1.2.2.
+     * Upgrade an {@link OpenImmoDocument} from version 1.2.1 to 1.2.2.
      *
-     * @param doc OpenImmo document in version 1.2.1
+     * @param doc document in version 1.2.1
      */
     @Override
     @SuppressWarnings("Duplicates")

@@ -37,7 +37,8 @@ public class KyeroUtilsTest {
             doc = KyeroUtils.createDocument(KyeroUtilsTest.class.getResourceAsStream("/kyero.xml"));
             Assert.assertNotNull(
                     "Transfer was processed.", doc);
-            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof KyeroDocument);
+            //Assert.assertTrue("Transfer was processed as TransferDocument.",
+            //        doc instanceof KyeroDocument);
         } catch (Exception ex) {
             LOGGER.error("Test of KyeroUtils.createDocument failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

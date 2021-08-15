@@ -25,14 +25,16 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Geschlecht {
     NUR_MAENNER(0),
     NUR_FRAUEN(1);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Geschlecht.class);
     private final int value;
 
-    private Geschlecht(int value) {
+    Geschlecht(int value) {
         this.value = value;
     }
 

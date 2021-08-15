@@ -27,13 +27,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="http://casa.it/">casa.it</a> with a
- * &lt;container&gt; root element.
+ * XML document from <a href="https://www.casa.it/">casa.it</a> with a &lt;container&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class CasaItDocument extends XmlDocument<Container> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CasaItDocument.class);

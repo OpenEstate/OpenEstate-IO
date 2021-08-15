@@ -23,12 +23,10 @@ import org.w3c.dom.Document;
 /**
  * A general Filemaker-XML document.
  *
- * @param <JavaType> the class of a (via JAXB generated) Java object, that the contained
- *                   {@link Document} is mapped to
+ * @param <JavaType> the class of a Java object (generated via JAXB), that the contained {@link Document} is mapped to
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public abstract class FilemakerDocument<JavaType> extends XmlDocument<JavaType> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerDocument.class);

@@ -49,7 +49,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class Is24CsvParser extends CsvParser<Is24CsvRecord> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvParser.class);
@@ -115,6 +114,7 @@ public class Is24CsvParser extends CsvParser<Is24CsvRecord> {
      * @param record the record to process
      * @return created record or null, if no matching record was found
      */
+    @SuppressWarnings("SpellCheckingInspection")
     public static Is24CsvRecord createRecord(CSVRecord record) {
         Immobilienart art = Is24CsvRecord.getImmobilienart(record);
 

@@ -76,7 +76,7 @@ public class OpenImmoWritingExample {
             openimmo.getAnbieter().add(createAnbieter());
         }
 
-        // convert the Openimmo object into a XML document
+        // convert the Openimmo object into an XML document
         OpenImmoTransferDocument doc = null;
         try {
             doc = OpenImmoTransferDocument.newDocument(openimmo);

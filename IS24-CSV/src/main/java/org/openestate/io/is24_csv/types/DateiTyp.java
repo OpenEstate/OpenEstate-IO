@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum DateiTyp {
     BILD("B"),
     VIDEO("V"),
@@ -33,10 +34,11 @@ public enum DateiTyp {
     GRUNDRISS_BILD("GB"),
     GRUNDRISS_PDF("GP");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DateiTyp.class);
     private final String value;
 
-    private DateiTyp(String value) {
+    DateiTyp(String value) {
         this.value = value;
     }
 

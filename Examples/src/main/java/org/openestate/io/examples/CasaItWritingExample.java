@@ -68,10 +68,10 @@ public class CasaItWritingExample {
         // append some example objects to the Container object
         int propertyCount = RandomUtils.nextInt(5, 10);
         for (int i = 0; i < propertyCount; i++) {
-            container.getRealestateitems().getRealestate().add(createRealestate());
+            container.getRealestateitems().getRealestate().add(createRealEstate());
         }
 
-        // convert the Container object into a XML document
+        // convert the Container object into an XML document
         CasaItDocument doc = null;
         try {
             doc = CasaItDocument.newDocument(container);
@@ -105,7 +105,7 @@ public class CasaItWritingExample {
      *
      * @return created example object
      */
-    private static Realestate createRealestate() {
+    private static Realestate createRealEstate() {
         // create an example real estate
         Realestate obj = FACTORY.createContainerRealestateitemsRealestate();
         obj.setAction(BigInteger.ONE);
@@ -165,7 +165,7 @@ public class CasaItWritingExample {
         obj.setImages(FACTORY.createContainerRealestateitemsRealestateImages());
         int imageCount = RandomUtils.nextInt(1, 10);
         for (int i = 0; i < imageCount; i++) {
-            obj.getImages().getAdvertismentimage().add(createAdvertismentimage());
+            obj.getImages().getAdvertismentimage().add(createAdvertisementImage());
         }
 
         obj.setPrice(FACTORY.createContainerRealestateitemsRealestatePrice());
@@ -181,7 +181,7 @@ public class CasaItWritingExample {
      *
      * @return created example object
      */
-    private static Advertismentimage createAdvertismentimage() {
+    private static Advertismentimage createAdvertisementImage() {
         Advertismentimage img = FACTORY.createContainerRealestateitemsRealestateImagesAdvertismentimage();
         img.setImagetype("image/jpeg");
         img.setPath("image-" + RandomStringUtils.randomNumeric(3) + ".jpg");

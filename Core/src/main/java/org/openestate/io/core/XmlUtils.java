@@ -664,6 +664,7 @@ public final class XmlUtils {
      * @return matching boolean value
      * @throws XPathExpressionException if the XPath evaluation failed
      */
+    @SuppressWarnings("unused")
     public static Boolean xPathBoolean(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
         return (Boolean) xpathExpression.evaluate(item, XPathConstants.BOOLEAN);
     }
@@ -687,6 +688,7 @@ public final class XmlUtils {
      * @param item            the node, on which the XPath expression is evaluated
      * @throws XPathExpressionException if the XPath evaluation failed
      */
+    @SuppressWarnings("unused")
     public static void xPathElementProcess(XPathExpression xpathExpression, Object item, XPathProcessor<Element> processor) throws XPathExpressionException {
         processor.process(xPathElement(xpathExpression, item));
     }
@@ -724,6 +726,7 @@ public final class XmlUtils {
      * @param item            the node, on which the XPath expression is evaluated
      * @throws XPathExpressionException if the XPath evaluation failed
      */
+    @SuppressWarnings("unused")
     public static void xPathNodeProcess(XPathExpression xpathExpression, Object item, XPathProcessor<Node> processor) throws XPathExpressionException {
         processor.process(xPathNode(xpathExpression, item));
     }
@@ -747,6 +750,7 @@ public final class XmlUtils {
      * @param item            the node, on which the XPath expression is evaluated
      * @throws XPathExpressionException if the XPath evaluation failed
      */
+    @SuppressWarnings("unused")
     public static void xPathNodesProcess(XPathExpression xpathExpression, Object item, XPathProcessor<Node> processor) throws XPathExpressionException {
         final NodeList nodes = xPathNodes(xpathExpression, item);
         for (int i=0; i<nodes.getLength(); i++) {
@@ -762,6 +766,7 @@ public final class XmlUtils {
      * @return number of matching nodes
      * @throws XPathExpressionException if the XPath evaluation failed
      */
+    @SuppressWarnings("unused")
     public static int xPathNodesCount(XPathExpression xpathExpression, Object item) throws XPathExpressionException {
         return xPathNodes(xpathExpression, item).getLength();
     }

@@ -80,7 +80,7 @@ public class KyeroWritingExample {
             root.getProperty().add(createProperty());
         }
 
-        // convert the Root object into a XML document
+        // convert the Root object into an XML document
         KyeroDocument doc = null;
         try {
             doc = KyeroDocument.newDocument(root);

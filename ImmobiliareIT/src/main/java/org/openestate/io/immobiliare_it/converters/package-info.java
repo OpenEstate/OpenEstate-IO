@@ -15,7 +15,7 @@
  */
 
 /**
- * Convert XML data for <a href="http://immobiliare.it/">immobiliare.it</a>
+ * Convert XML data for <a href="https://www.immobiliare.it/">immobiliare.it</a>
  * between different versions.
  *
  * @author Andreas Rudolph

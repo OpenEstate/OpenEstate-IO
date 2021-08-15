@@ -75,7 +75,7 @@ public abstract class XmlDocument<JavaType> {
      * @param doc the document, that will be written to XML
      * @throws IOException if an error occurred and XML generation should be stopped
      */
-    protected void prepareDocumentBeforeWritingToXml(Document doc) throws IOException {
+    protected void prepareDocumentBeforeWritingToXml(@SuppressWarnings("unused") Document doc) throws IOException {
     }
 
     /**

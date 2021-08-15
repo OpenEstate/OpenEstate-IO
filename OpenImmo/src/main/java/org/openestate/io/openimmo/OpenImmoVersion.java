@@ -17,8 +17,8 @@ package org.openestate.io.openimmo;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlVersion;
+import org.openestate.io.openimmo.converters.AbstractConverter;
 import org.openestate.io.openimmo.converters.OpenImmo_1_1;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_0;
 import org.openestate.io.openimmo.converters.OpenImmo_1_2_1;
@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-public enum OpenImmoVersion implements XmlVersion {
+public enum OpenImmoVersion implements XmlVersion<OpenImmoDocument<?>, OpenImmoVersion> {
     /**
      * Version 1.1
      */
@@ -93,11 +93,11 @@ public enum OpenImmoVersion implements XmlVersion {
 
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmoVersion.class);
-    private final Class converterClass;
+    private final Class<? extends AbstractConverter> converterClass;
     private final String readableVersion;
     private final String[] alias;
 
-    OpenImmoVersion(Class converterClass, String readableVersion, String... alias) {
+    OpenImmoVersion(Class<? extends AbstractConverter> converterClass, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.readableVersion = readableVersion;
         this.alias = alias;
@@ -120,9 +120,9 @@ public enum OpenImmoVersion implements XmlVersion {
 
     @Override
     @SuppressWarnings("Duplicates")
-    public XmlConverter getConverter() {
+    public AbstractConverter getConverter() {
         try {
-            return (XmlConverter) this.converterClass.newInstance();
+            return this.converterClass.getConstructor().newInstance();
         } catch (Exception ex) {
             LOGGER.error("Can't create converter!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -152,13 +152,13 @@ public enum OpenImmoVersion implements XmlVersion {
     }
 
     @Override
-    public boolean isNewerThen(XmlVersion v) {
+    public boolean isNewerThen(OpenImmoVersion v) {
         OpenImmoVersion[] versions = OpenImmoVersion.values();
         return ArrayUtils.indexOf(versions, this) > ArrayUtils.indexOf(versions, v);
     }
 
     @Override
-    public boolean isOlderThen(XmlVersion v) {
+    public boolean isOlderThen(OpenImmoVersion v) {
         OpenImmoVersion[] versions = OpenImmoVersion.values();
         return ArrayUtils.indexOf(versions, this) < ArrayUtils.indexOf(versions, v);
     }

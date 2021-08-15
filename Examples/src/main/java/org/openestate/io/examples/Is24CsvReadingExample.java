@@ -26,8 +26,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for reading IS24-CSV files.
  * <p>
- * This example illustrates the programmatic creation of IS24-CSV records and how
- * they are written into CSV.
+ * This example illustrates the programmatic creation of IS24-CSV records and how they are written into CSV.
  *
  * @author Andreas Rudolph
  * @since 1.0

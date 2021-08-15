@@ -86,6 +86,7 @@ public class FilemakerResultMappingExample {
     }
 
     private static Document buildExampleDocument() throws Exception {
+        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                 + "<FMPXMLRESULT xmlns=\"http://www.filemaker.com/fmpxmlresult\">\n"
                 + "  <ERRORCODE>0</ERRORCODE>\n"

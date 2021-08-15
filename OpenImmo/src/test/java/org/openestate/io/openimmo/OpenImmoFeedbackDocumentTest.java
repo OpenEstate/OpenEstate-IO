@@ -62,7 +62,7 @@ public class OpenImmoFeedbackDocumentTest {
 
             doc.downgrade(OpenImmoVersion.V1_1);
 
-            // versions older then 1.2.4 do not support the <version> element
+            // versions older than 1.2.4 do not support the <version> element
             // - version 1.2.3 is assumed, when no <version> element is present and
             //   an empty namespace is used
             // - version 1.2.0 is assumed, when no <version> element is present and
@@ -89,7 +89,7 @@ public class OpenImmoFeedbackDocumentTest {
             Assert.assertEquals(
                     "1.2.6/AT1.0", OpenImmoVersion.V1_2_6, doc.getDocumentVersion());
 
-            // versions older then 1.2.4 do not support the <version> element
+            // versions older than 1.2.4 do not support the <version> element
             // - version 1.2.3 is assumed, when no <version> element is present and
             //   an empty namespace is used
             // - version 1.2.0 is assumed, when no <version> element is present and

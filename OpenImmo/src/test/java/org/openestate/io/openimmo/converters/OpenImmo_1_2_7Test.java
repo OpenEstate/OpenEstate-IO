@@ -361,7 +361,6 @@ public class OpenImmo_1_2_7Test {
     public void testRemoveMultipleEnergiepassElements() {
         try {
             Document doc = buildTransferDocumentForDowngrade();
-            int count;
 
             //System.out.println( "----------------------------" );
             //System.out.println( "DOCUMENT BEFORE CONVERSION:" );

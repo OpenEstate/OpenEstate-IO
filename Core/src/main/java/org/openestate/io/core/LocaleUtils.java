@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(LocaleUtils.class);
 
     private LocaleUtils() {
@@ -124,8 +125,7 @@ public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
         if (iso2Code == null) return null;
         if (iso2Code.length() == 2) {
             Locale countryLocale = new Locale(iso2Code, iso2Code);
-            String iso3Code = StringUtils.trimToNull(countryLocale.getISO3Country());
-            if (iso3Code != null) return iso3Code;
+            return StringUtils.trimToNull(countryLocale.getISO3Country());
         }
         return null;
     }
@@ -143,9 +143,8 @@ public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
 
         String iso2Code = LocaleUtils.getCountryISO2(country);
         if (iso2Code != null) {
-            String name = StringUtils.trimToNull(
+            return StringUtils.trimToNull(
                     new Locale(iso2Code, iso2Code).getDisplayCountry(language));
-            if (name != null) return name;
         }
         return null;
     }
@@ -157,6 +156,7 @@ public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
      * @param language language to translate
      * @return translated country name or null, if no translation was found
      */
+    @SuppressWarnings("unused")
     public static String translateCountryName(String country, Locale language) {
         country = StringUtils.trimToNull(country);
         if (country == null) return null;

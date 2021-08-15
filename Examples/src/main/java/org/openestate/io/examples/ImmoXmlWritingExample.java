@@ -72,7 +72,7 @@ public class ImmoXmlWritingExample {
             immoxml.getAnbieter().add(createAnbieter());
         }
 
-        // convert the Immoxml object into a XML document
+        // convert the Immoxml object into an XML document
         ImmoXmlDocument doc = null;
         try {
             doc = ImmoXmlDocument.newDocument(immoxml);

@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Ausstattung {
     KEINE_ANGABE(1),
     LUXUS(2),
@@ -32,10 +33,11 @@ public enum Ausstattung {
     NORMAL(4),
     EINFACH(5);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Ausstattung.class);
     private final int value;
 
-    private Ausstattung(int value) {
+    Ausstattung(int value) {
         this.value = value;
     }
 

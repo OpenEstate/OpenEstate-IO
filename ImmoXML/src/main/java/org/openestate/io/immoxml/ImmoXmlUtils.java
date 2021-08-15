@@ -217,6 +217,7 @@ public class ImmoXmlUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         return createMarshaller(encoding, formatted, null);
     }
@@ -247,6 +248,7 @@ public class ImmoXmlUtils {
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         return createUnmarshaller(null);
     }
@@ -276,7 +278,7 @@ public class ImmoXmlUtils {
      * @param value text value of the created element
      * @return created element
      */
-    @SuppressWarnings({"unused", "Duplicates"})
+    @SuppressWarnings({"unused", "Duplicates", "SpellCheckingInspection"})
     public static Element createUserDefinedSimplefield(Document doc, String name, String value) {
         Element root = XmlUtils.getRootElement(doc);
         Element node = doc.createElementNS(root.getNamespaceURI(), "user_defined_simplefield");

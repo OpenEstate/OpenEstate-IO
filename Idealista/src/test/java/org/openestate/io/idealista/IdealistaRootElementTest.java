@@ -38,6 +38,7 @@ public class IdealistaRootElementTest {
     private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaRootElementTest.class);
 
     private static Reader createReader(String jsonFile) {
+        //noinspection ConstantConditions
         return new InputStreamReader(IdealistaRootElementTest.class.getResourceAsStream(jsonFile), StandardCharsets.UTF_8);
     }
 
@@ -47,9 +48,7 @@ public class IdealistaRootElementTest {
         try (Reader json = createReader("properties.json")) {
             IdealistaRootElement customer = new IdealistaRootElement(json);
 
-            //noinspection ConstantConditions
             for (Property p : customer.getObject().getProperties()) {
-                //noinspection ConstantConditions
                 LOGGER.debug("found property type {}", p.getFeatures().getClass().getName());
             }
 

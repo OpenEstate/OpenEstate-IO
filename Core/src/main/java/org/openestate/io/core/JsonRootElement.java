@@ -117,7 +117,7 @@ public abstract class JsonRootElement<JavaType> {
      * @return constraint violations or an empty set if none
      * @throws IllegalArgumentException if object is {@code null}
      *                                  or if {@code null} is passed to the varargs groups
-     * @throws ValidationException      if a non recoverable error happens
+     * @throws ValidationException      if a non-recoverable error happens
      *                                  during the validation process
      */
     public Set<ConstraintViolation<JavaType>> getViolations() {

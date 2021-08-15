@@ -20,7 +20,6 @@ import java.util.Map;
 import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
@@ -36,8 +35,7 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
-public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
+public class Kyero_3 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Kyero_3.class);
 
@@ -47,9 +45,9 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
     }
 
     /**
-     * Downgrade a Kyero document from version 3.
+     * Downgrade a {@link KyeroDocument} from version 3.
      *
-     * @param doc Kyero document in version 3
+     * @param doc document in version 3
      */
     @Override
     public void downgradeToPreviousVersion(KyeroDocument doc) {
@@ -106,9 +104,9 @@ public class Kyero_3 extends XmlConverter<KyeroDocument, KyeroVersion> {
     }
 
     /**
-     * Upgrade a Kyero document to version 3.
+     * Upgrade a {@link KyeroDocument} to version 3.
      *
-     * @param doc Kyero document in version 2.1
+     * @param doc document in version 2.1
      */
     @Override
     public void upgradeFromPreviousVersion(KyeroDocument doc) {

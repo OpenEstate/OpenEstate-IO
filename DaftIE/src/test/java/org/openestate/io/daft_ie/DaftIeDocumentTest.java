@@ -15,7 +15,6 @@
  */
 package org.openestate.io.daft_ie;
 
-import java.util.Locale;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

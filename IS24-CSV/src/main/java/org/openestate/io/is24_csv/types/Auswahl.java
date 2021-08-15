@@ -25,15 +25,17 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Auswahl {
     JA("J"),
     NEIN("N"),
     NACH_VEREINBARUNG("V");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Auswahl.class);
     private final String value;
 
-    private Auswahl(String value) {
+    Auswahl(String value) {
         this.value = value;
     }
 

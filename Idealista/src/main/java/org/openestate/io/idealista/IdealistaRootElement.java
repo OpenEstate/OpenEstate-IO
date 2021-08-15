@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings("WeakerAccess")
 public class IdealistaRootElement extends JsonRootElement<Customer> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaRootElement.class);
@@ -44,6 +43,7 @@ public class IdealistaRootElement extends JsonRootElement<Customer> {
      *
      * @throws IllegalStateException if the empty instance of the Java object can not be created
      */
+    @SuppressWarnings("unused")
     public IdealistaRootElement() {
         super();
     }

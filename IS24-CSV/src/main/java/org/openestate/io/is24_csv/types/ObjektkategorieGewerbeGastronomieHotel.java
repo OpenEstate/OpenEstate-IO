@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum ObjektkategorieGewerbeGastronomieHotel {
     BAR_LOUNGE(78),
     CAFE(79),
@@ -38,10 +39,11 @@ public enum ObjektkategorieGewerbeGastronomieHotel {
     RESTAURANT(87),
     FERIENBUNGALOW(104);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieGewerbeGastronomieHotel.class);
     private final int value;
 
-    private ObjektkategorieGewerbeGastronomieHotel(int value) {
+    ObjektkategorieGewerbeGastronomieHotel(int value) {
         this.value = value;
     }
 

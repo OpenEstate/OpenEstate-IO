@@ -219,6 +219,7 @@ public class ImmobarItUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
         return createMarshaller(encoding, formatted, null);
     }
@@ -249,6 +250,7 @@ public class ImmobarItUtils {
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
         return createUnmarshaller(null);
     }

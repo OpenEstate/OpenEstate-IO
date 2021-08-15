@@ -30,7 +30,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings("WeakerAccess")
 public class ValidationUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ValidationUtils.class);
@@ -48,7 +47,7 @@ public class ValidationUtils {
      * @return constraint violations or an empty set if none
      * @throws IllegalArgumentException if object is {@code null}
      *                                  or if {@code null} is passed to the varargs groups
-     * @throws ValidationException      if a non recoverable error happens
+     * @throws ValidationException      if a non-recoverable error happens
      *                                  during the validation process
      */
     public static <T> Set<ConstraintViolation<T>> getViolations(T object, Class<?>... groups) {

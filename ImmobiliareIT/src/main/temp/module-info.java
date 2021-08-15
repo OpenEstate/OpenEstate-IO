@@ -16,7 +16,7 @@
 
 /**
  * Read and write XML data for
- * <a href="http://immobiliare.it/">immobiliare.it</a>.
+ * <a href="https://www.immobiliare.it/">immobiliare.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

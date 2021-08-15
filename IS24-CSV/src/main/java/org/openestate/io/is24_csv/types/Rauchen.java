@@ -25,14 +25,16 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Rauchen {
     NUR_NICHTRAUCHER(0),
     KEINE_EINSCHRAENKUNG(1);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Rauchen.class);
     private final int value;
 
-    private Rauchen(int value) {
+    Rauchen(int value) {
         this.value = value;
     }
 
