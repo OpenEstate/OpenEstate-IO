@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * parking types
+ * <p>
+ * this feature only applies for Portugal and Italy garages. 'depot' if is a box garage. 'parking_space' if is a regular garage
+ * 
+ */
 public enum ParkingType {
 
     UNKNOWN("unknown"),
@@ -20,7 +27,7 @@ public enum ParkingType {
         }
     }
 
-    private ParkingType(String value) {
+    ParkingType(String value) {
         this.value = value;
     }
 

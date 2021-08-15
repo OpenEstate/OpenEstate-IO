@@ -45,38 +45,38 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "zinshausRenditeobjekt"
 })
 @XmlRootElement(name = "objektart")
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
 public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<Zimmer> zimmer;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<Wohnung> wohnung;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<Haus> haus;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<Grundstueck> grundstueck;
     @XmlElement(name = "buero_praxen")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<BueroPraxen> bueroPraxen;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<Einzelhandel> einzelhandel;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<Gastgewerbe> gastgewerbe;
     @XmlElement(name = "hallen_lager_prod")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<HallenLagerProd> hallenLagerProd;
     @XmlElement(name = "land_und_forstwirtschaft")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<LandUndForstwirtschaft> landUndForstwirtschaft;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<Sonstige> sonstige;
     @XmlElement(name = "freizeitimmobilie_gewerblich")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<FreizeitimmobilieGewerblich> freizeitimmobilieGewerblich;
     @XmlElement(name = "zinshaus_renditeobjekt")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     protected List<ZinshausRenditeobjekt> zinshausRenditeobjekt;
 
     /**
@@ -101,7 +101,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<Zimmer> getZimmer() {
         if (zimmer == null) {
             zimmer = new ArrayList<Zimmer>();
@@ -131,7 +131,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<Wohnung> getWohnung() {
         if (wohnung == null) {
             wohnung = new ArrayList<Wohnung>();
@@ -161,7 +161,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<Haus> getHaus() {
         if (haus == null) {
             haus = new ArrayList<Haus>();
@@ -191,7 +191,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<Grundstueck> getGrundstueck() {
         if (grundstueck == null) {
             grundstueck = new ArrayList<Grundstueck>();
@@ -221,7 +221,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<BueroPraxen> getBueroPraxen() {
         if (bueroPraxen == null) {
             bueroPraxen = new ArrayList<BueroPraxen>();
@@ -251,7 +251,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<Einzelhandel> getEinzelhandel() {
         if (einzelhandel == null) {
             einzelhandel = new ArrayList<Einzelhandel>();
@@ -281,7 +281,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<Gastgewerbe> getGastgewerbe() {
         if (gastgewerbe == null) {
             gastgewerbe = new ArrayList<Gastgewerbe>();
@@ -311,7 +311,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<HallenLagerProd> getHallenLagerProd() {
         if (hallenLagerProd == null) {
             hallenLagerProd = new ArrayList<HallenLagerProd>();
@@ -341,7 +341,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<LandUndForstwirtschaft> getLandUndForstwirtschaft() {
         if (landUndForstwirtschaft == null) {
             landUndForstwirtschaft = new ArrayList<LandUndForstwirtschaft>();
@@ -371,7 +371,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<Sonstige> getSonstige() {
         if (sonstige == null) {
             sonstige = new ArrayList<Sonstige>();
@@ -401,7 +401,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<FreizeitimmobilieGewerblich> getFreizeitimmobilieGewerblich() {
         if (freizeitimmobilieGewerblich == null) {
             freizeitimmobilieGewerblich = new ArrayList<FreizeitimmobilieGewerblich>();
@@ -431,7 +431,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public List<ZinshausRenditeobjekt> getZinshausRenditeobjekt() {
         if (zinshausRenditeobjekt == null) {
             zinshausRenditeobjekt = new ArrayList<ZinshausRenditeobjekt>();
@@ -439,15 +439,15 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return this.zinshausRenditeobjekt;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -455,7 +455,7 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Zimmer> theZimmer;
@@ -520,18 +520,18 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Objektart) {
@@ -756,12 +756,12 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new Objektart();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -881,9 +881,9 @@ public class Objektart implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:50:55+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:44+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 

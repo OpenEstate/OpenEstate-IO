@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ public class WisItDocumentTest {
     private final static Logger LOGGER = LoggerFactory.getLogger(WisItDocumentTest.class);
 
     private static Document buildExampleDocument() throws Exception {
+        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<WIS>\n"
                 + "  <OBJEKTE>\n"

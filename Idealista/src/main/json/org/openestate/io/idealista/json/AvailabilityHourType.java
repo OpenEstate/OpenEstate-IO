@@ -6,6 +6,11 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * Booth sales availability hour for new developments
+ * 
+ */
 public enum AvailabilityHourType {
 
     ANY_MORNING("any_morning"),
@@ -24,7 +29,7 @@ public enum AvailabilityHourType {
         }
     }
 
-    private AvailabilityHourType(String value) {
+    AvailabilityHourType(String value) {
         this.value = value;
     }
 

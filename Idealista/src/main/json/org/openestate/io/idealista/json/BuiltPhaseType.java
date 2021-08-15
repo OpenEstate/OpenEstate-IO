@@ -6,6 +6,11 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * Phase of built for new developments
+ * 
+ */
 public enum BuiltPhaseType {
 
     LAND_MOVE("land_move"),
@@ -24,7 +29,7 @@ public enum BuiltPhaseType {
         }
     }
 
-    private BuiltPhaseType(String value) {
+    BuiltPhaseType(String value) {
         this.value = value;
     }
 

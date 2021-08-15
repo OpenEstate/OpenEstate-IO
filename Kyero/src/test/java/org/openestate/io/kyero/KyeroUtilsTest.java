@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,8 @@ public class KyeroUtilsTest {
             doc = KyeroUtils.createDocument(KyeroUtilsTest.class.getResourceAsStream("/kyero.xml"));
             Assert.assertNotNull(
                     "Transfer was processed.", doc);
-            Assert.assertTrue("Transfer was processed as TransferDocument.", doc instanceof KyeroDocument);
+            //Assert.assertTrue("Transfer was processed as TransferDocument.",
+            //        doc instanceof KyeroDocument);
         } catch (Exception ex) {
             LOGGER.error("Test of KyeroUtils.createDocument failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

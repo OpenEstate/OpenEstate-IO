@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +22,13 @@ import org.slf4j.LoggerFactory;
  * A general class, that converts a {@link XmlConvertableDocument} into another
  * {@link XmlVersion}.
  *
- * @param <DocumentType> the class of {@link XmlConvertableDocument}
- * @param <VersionType>  the class to determine different versions of the document
+ * @param <DocumentType> the {@link XmlConvertableDocument} class, this converter applies to
+ * @param <VersionType>  the {@link XmlVersion} class to determine different versions of the document
  * @author Andreas Rudolph
  * @since 1.0
  */
-public abstract class XmlConverter<DocumentType extends XmlConvertableDocument, VersionType extends XmlVersion> {
+public abstract class XmlConverter<DocumentType extends XmlConvertableDocument<?, VersionType>, VersionType extends XmlVersion<DocumentType, VersionType>> {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(XmlConverter.class);
 
     /**
@@ -36,13 +37,12 @@ public abstract class XmlConverter<DocumentType extends XmlConvertableDocument, 
      *
      * @param doc the document to downgrade
      */
-    public abstract void downgradeToPreviousVersion(DocumentType doc);
+    public abstract void downgradeToPreviousVersion(XmlConvertableDocument<?, VersionType> doc);
 
     /**
      * Returns the version, that this converter is implemented for.
      *
-     * @return version
-     * version of the converter
+     * @return version of the converter
      */
     public abstract VersionType getVersion();
 
@@ -52,5 +52,5 @@ public abstract class XmlConverter<DocumentType extends XmlConvertableDocument, 
      *
      * @param doc the document to upgrade
      */
-    public abstract void upgradeFromPreviousVersion(DocumentType doc);
+    public abstract void upgradeFromPreviousVersion(XmlConvertableDocument<?, VersionType> doc);
 }

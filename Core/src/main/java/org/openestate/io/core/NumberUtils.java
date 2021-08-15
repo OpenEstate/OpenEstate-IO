@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.1
  */
 public final class NumberUtils {
+    @SuppressWarnings("unused")
     private static final Logger LOGGER = LoggerFactory.getLogger(NumberUtils.class);
 
     /**
@@ -94,7 +95,7 @@ public final class NumberUtils {
      * Convert a string value into a number.
      *
      * @param value       the string value to convert
-     * @param integerOnly wether only the integer part of the value is parsed
+     * @param integerOnly whether only the integer part of the value is parsed
      * @param locales     locales, against which the value is parsed
      * @return numeric value for the string
      * @throws NumberFormatException if the string is not a valid number
@@ -122,7 +123,7 @@ public final class NumberUtils {
                 format.setParseIntegerOnly(integerOnly);
                 format.setGroupingUsed(value.indexOf(DecimalFormatSymbols.getInstance(locale).getGroupingSeparator()) > -1);
                 return format.parse(value);
-            } catch (ParseException ex) {
+            } catch (ParseException ignored) {
             }
         }
         throw new NumberFormatException("The provided value '" + value + "' is not numeric!");

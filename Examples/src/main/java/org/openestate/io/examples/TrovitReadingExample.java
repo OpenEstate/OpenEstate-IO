@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
 import org.openestate.io.trovit.xml.AdType;
@@ -48,10 +47,6 @@ public class TrovitReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                TrovitReadingExample.class.getResource("log4j.properties"));
-
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {

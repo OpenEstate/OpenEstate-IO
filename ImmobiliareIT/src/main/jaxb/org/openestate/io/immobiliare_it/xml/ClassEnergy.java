@@ -131,28 +131,28 @@ import org.openestate.io.immobiliare_it.xml.types.EnergyScaleType;
     "energyPerformance",
     "energySeason"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "energy-performance")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected List<ClassEnergy.EnergyPerformance> energyPerformance;
     @XmlElement(name = "energy-season")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected List<ClassEnergy.EnergySeason> energySeason;
     @XmlAttribute(name = "zero")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean zero;
     @XmlAttribute(name = "scale")
     @XmlJavaTypeAdapter(Adapter22 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected EnergyScaleType scale;
     @XmlAttribute(name = "value")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected ClassEnergy.Type value;
     @XmlAttribute(name = "certified")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean certified;
 
     /**
@@ -177,7 +177,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public List<ClassEnergy.EnergyPerformance> getEnergyPerformance() {
         if (energyPerformance == null) {
             energyPerformance = new ArrayList<ClassEnergy.EnergyPerformance>();
@@ -207,7 +207,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public List<ClassEnergy.EnergySeason> getEnergySeason() {
         if (energySeason == null) {
             energySeason = new ArrayList<ClassEnergy.EnergySeason>();
@@ -223,7 +223,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getZero() {
         if (zero == null) {
             return false;
@@ -240,7 +240,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setZero(Boolean value) {
         this.zero = value;
     }
@@ -253,7 +253,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public EnergyScaleType getScale() {
         return scale;
     }
@@ -266,7 +266,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setScale(EnergyScaleType value) {
         this.scale = value;
     }
@@ -279,7 +279,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link ClassEnergy.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public ClassEnergy.Type getValue() {
         return value;
     }
@@ -292,7 +292,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link ClassEnergy.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setValue(ClassEnergy.Type value) {
         this.value = value;
     }
@@ -305,7 +305,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getCertified() {
         if (certified == null) {
             return true;
@@ -322,20 +322,20 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setCertified(Boolean value) {
         this.certified = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -343,7 +343,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<ClassEnergy.EnergyPerformance> theEnergyPerformance;
@@ -378,18 +378,18 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof ClassEnergy) {
@@ -486,12 +486,12 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new ClassEnergy();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -557,9 +557,9 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 
@@ -600,20 +600,20 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
     @XmlType(name = "", propOrder = {
         "value"
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public static class EnergyPerformance implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlValue
         @XmlJavaTypeAdapter(Adapter2 .class)
         @XmlSchemaType(name = "double")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected BigDecimal value;
         @XmlAttribute(name = "unit", required = true)
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected ClassEnergy.EnergyPerformance.Unit unit;
         @XmlAttribute(name = "type", required = true)
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected ClassEnergy.EnergyPerformance.Type type;
 
         /**
@@ -624,7 +624,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public BigDecimal getValue() {
             return value;
         }
@@ -637,7 +637,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setValue(BigDecimal value) {
             this.value = value;
         }
@@ -650,7 +650,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergyPerformance.Unit }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public ClassEnergy.EnergyPerformance.Unit getUnit() {
             return unit;
         }
@@ -663,7 +663,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergyPerformance.Unit }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setUnit(ClassEnergy.EnergyPerformance.Unit value) {
             this.unit = value;
         }
@@ -676,7 +676,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergyPerformance.Type }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public ClassEnergy.EnergyPerformance.Type getType() {
             return type;
         }
@@ -689,20 +689,20 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergyPerformance.Type }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setType(ClassEnergy.EnergyPerformance.Type value) {
             this.type = value;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
-            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -710,7 +710,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 BigDecimal theValue;
@@ -730,18 +730,18 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
-            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof ClassEnergy.EnergyPerformance) {
@@ -789,12 +789,12 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new ClassEnergy.EnergyPerformance();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -833,9 +833,9 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
-            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
         }
 
@@ -857,7 +857,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          */
         @XmlType(name = "")
         @XmlEnum
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public enum Type {
 
             @XmlEnumValue("nren")
@@ -903,7 +903,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          */
         @XmlType(name = "")
         @XmlEnum
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public enum Unit {
 
             @XmlEnumValue("kWh/m2anno")
@@ -969,15 +969,15 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public static class EnergySeason implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlAttribute(name = "season")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected ClassEnergy.EnergySeason.Type season;
         @XmlAttribute(name = "level")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected ClassEnergy.EnergySeason.Level level;
 
         /**
@@ -988,7 +988,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergySeason.Type }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public ClassEnergy.EnergySeason.Type getSeason() {
             return season;
         }
@@ -1001,7 +1001,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergySeason.Type }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setSeason(ClassEnergy.EnergySeason.Type value) {
             this.season = value;
         }
@@ -1014,7 +1014,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergySeason.Level }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public ClassEnergy.EnergySeason.Level getLevel() {
             return level;
         }
@@ -1027,20 +1027,20 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          *     {@link ClassEnergy.EnergySeason.Level }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setLevel(ClassEnergy.EnergySeason.Level value) {
             this.level = value;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
-            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -1048,7 +1048,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 ClassEnergy.EnergySeason.Type theSeason;
@@ -1063,18 +1063,18 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
-            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof ClassEnergy.EnergySeason) {
@@ -1109,12 +1109,12 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new ClassEnergy.EnergySeason();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -1144,9 +1144,9 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
-            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
         }
 
@@ -1169,7 +1169,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          */
         @XmlType(name = "")
         @XmlEnum
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public enum Level {
 
             @XmlEnumValue("low")
@@ -1217,7 +1217,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
          */
         @XmlType(name = "")
         @XmlEnum
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public enum Type {
 
             @XmlEnumValue("summer")
@@ -1277,7 +1277,7 @@ public class ClassEnergy implements Serializable, Cloneable, CopyTo2, Equals2, T
      */
     @XmlType(name = "")
     @XmlEnum
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public enum Type {
 
         @XmlEnumValue("A4")

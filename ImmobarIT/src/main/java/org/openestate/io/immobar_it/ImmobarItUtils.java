@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,14 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
@@ -49,11 +52,10 @@ import org.xml.sax.SAXException;
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings({"WeakerAccess", "unused"})
 public class ImmobarItUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItUtils.class);
-    private static JAXBContext JAXB = null;
+    private static JAXBContext DEFAULT_CONTEXT = null;
 
     /**
      * the latest implemented version of this format
@@ -78,6 +80,60 @@ public class ImmobarItUtils {
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private ImmobarItUtils() {
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext() throws JAXBException {
+        return createContext(null, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext(List<String> additionalJaxbPackages) throws JAXBException {
+        return createContext(additionalJaxbPackages, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param classloader the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(ClassLoader classloader) throws JAXBException {
+        return createContext(null, classloader);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @param classloader            the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(List<String> additionalJaxbPackages, ClassLoader classloader) throws JAXBException {
+        final List<String> packages = new ArrayList<>();
+        packages.add(PACKAGE);
+        if (additionalJaxbPackages != null && !additionalJaxbPackages.isEmpty())
+            packages.addAll(additionalJaxbPackages);
+
+        return JAXBContext.newInstance(
+                StringUtils.join(packages, ":"),
+                (classloader != null) ? classloader : Thread.currentThread().getContextClassLoader()
+        );
     }
 
     /**
@@ -138,8 +194,21 @@ public class ImmobarItUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
-        return createMarshaller(Charset.defaultCharset().name(), true);
+        return createMarshaller(null, true, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param context context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static Marshaller createMarshaller(JAXBContext context) throws JAXBException {
+        return createMarshaller(null, true, context);
     }
 
     /**
@@ -150,35 +219,67 @@ public class ImmobarItUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
-        Marshaller m = getContext().createMarshaller();
-        m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+        return createMarshaller(encoding, formatted, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param encoding  encoding of written XML
+     * @param formatted if written XML is pretty printed
+     * @param context   context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Marshaller createMarshaller(String encoding, boolean formatted, JAXBContext context) throws JAXBException {
+        final Marshaller m = (context != null) ?
+                context.createMarshaller() :
+                getContext().createMarshaller();
+
+        m.setProperty(Marshaller.JAXB_ENCODING, StringUtils.defaultIfBlank(encoding, Charset.defaultCharset().name()));
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, formatted);
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Creates a {@link Unmarshaller} to read JAXB objects from XML.
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
-        Unmarshaller m = getContext().createUnmarshaller();
+        return createUnmarshaller(null);
+    }
+
+    /**
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
+     *
+     * @param context context to create the unmarshaller on
+     * @return created unmarshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Unmarshaller createUnmarshaller(JAXBContext context) throws JAXBException {
+        final Unmarshaller m = (context != null) ?
+                context.createUnmarshaller() :
+                getContext().createUnmarshaller();
+
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Returns the {@link JAXBContext} for this format.
+     * Returns the default {@link JAXBContext} for this format.
      *
      * @return context
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
-        if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
-        return JAXB;
+        if (DEFAULT_CONTEXT == null) initContext(null);
+        return DEFAULT_CONTEXT;
     }
 
     /**
@@ -191,13 +292,13 @@ public class ImmobarItUtils {
     }
 
     /**
-     * Intializes the {@link JAXBContext} for this format.
+     * Initializes the default {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
-        JAXB = JAXBContext.newInstance(PACKAGE, classloader);
+        DEFAULT_CONTEXT = createContext(classloader);
     }
 
     /**
@@ -270,7 +371,9 @@ public class ImmobarItUtils {
     public static URI parseUriValue(String value) {
         value = StringUtils.trimToNull(value);
 
+        //noinspection HttpUrlsUsage
         if (value != null && !StringUtils.startsWithIgnoreCase(value, "http://") && !StringUtils.startsWithIgnoreCase(value, "https://"))
+            //noinspection HttpUrlsUsage
             value = "http://" + value;
 
         try {
@@ -307,7 +410,7 @@ public class ImmobarItUtils {
         if (value == null)
             throw new IllegalArgumentException("Can't print empty decimal value!");
 
-        value = value.setScale(2, BigDecimal.ROUND_HALF_UP);
+        value = value.setScale(2, RoundingMode.HALF_UP);
         return DatatypeConverter.printDecimal(value);
     }
 
@@ -341,7 +444,7 @@ public class ImmobarItUtils {
         if (value.compareTo(new BigDecimal("90")) > 0)
             throw new IllegalArgumentException("Can't print latitude value '" + value + "' because it is above 90!");
 
-        value = value.setScale(10, BigDecimal.ROUND_HALF_UP);
+        value = value.setScale(10, RoundingMode.HALF_UP);
         return DatatypeConverter.printDecimal(value);
     }
 
@@ -361,7 +464,7 @@ public class ImmobarItUtils {
         if (value.compareTo(new BigDecimal("180")) > 0)
             throw new IllegalArgumentException("Can't print longitude value '" + value + "' because it is above 180!");
 
-        value = value.setScale(10, BigDecimal.ROUND_HALF_UP);
+        value = value.setScale(10, RoundingMode.HALF_UP);
         return DatatypeConverter.printDecimal(value);
     }
 

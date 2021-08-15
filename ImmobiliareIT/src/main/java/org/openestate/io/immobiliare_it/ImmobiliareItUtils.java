@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,10 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
+import java.util.List;
 import java.util.Locale;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
@@ -36,39 +38,38 @@ import org.openestate.io.core.XmlUtils;
 import org.openestate.io.core.XmlValidationHandler;
 import org.openestate.io.immobiliare_it.xml.ObjectFactory;
 import org.openestate.io.immobiliare_it.xml.types.Breadcrumb;
+import org.openestate.io.immobiliare_it.xml.types.CategoryType;
 import org.openestate.io.immobiliare_it.xml.types.EnergyScaleType;
 import org.openestate.io.immobiliare_it.xml.types.GenderType;
 import org.openestate.io.immobiliare_it.xml.types.LandSizeUnitType;
 import org.openestate.io.immobiliare_it.xml.types.MapType;
 import org.openestate.io.immobiliare_it.xml.types.SizeUnitType;
+import org.openestate.io.immobiliare_it.xml.types.TransactionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 /**
- * Some helper functions for the XML format of
- * <a href="http://immobiliare.it/">immobiliare.it</a>.
+ * Some helper functions for the XML format of <a href="https://www.immobiliare.it/">immobiliare.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class ImmobiliareItUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItUtils.class);
-    private static JAXBContext JAXB = null;
+    private static JAXBContext DEFAULT_CONTEXT = null;
 
     /**
      * the latest implemented version of this format
      */
-    @SuppressWarnings("unused")
     public final static ImmobiliareItVersion VERSION = ImmobiliareItVersion.V2_8;
 
     /**
      * the XML target namespace of this format
      */
-    @SuppressWarnings("unused")
+    @SuppressWarnings("HttpUrlsUsage")
     public final static String NAMESPACE = "http://feed.immobiliare.it";
 
     /**
@@ -80,16 +81,68 @@ public class ImmobiliareItUtils {
     /**
      * the package, where generated JAXB classes are located
      */
-    @SuppressWarnings("unused")
     public final static String PACKAGE = "org.openestate.io.immobiliare_it.xml";
 
     /**
      * the factory for creation of JAXB objects
      */
-    @SuppressWarnings("unused")
     public final static ObjectFactory FACTORY = new ObjectFactory();
 
     private ImmobiliareItUtils() {
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext() throws JAXBException {
+        return createContext(null, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static JAXBContext createContext(List<String> additionalJaxbPackages) throws JAXBException {
+        return createContext(additionalJaxbPackages, null);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param classloader the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(ClassLoader classloader) throws JAXBException {
+        return createContext(null, classloader);
+    }
+
+    /**
+     * Creates a {@link JAXBContext} for this format.
+     *
+     * @param additionalJaxbPackages additional package with custom JAXB classes
+     * @param classloader            the classloader to load the generated JAXB classes with
+     * @return created JAXB context
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static JAXBContext createContext(List<String> additionalJaxbPackages, ClassLoader classloader) throws JAXBException {
+        final List<String> packages = new ArrayList<>();
+        packages.add(PACKAGE);
+        if (additionalJaxbPackages != null && !additionalJaxbPackages.isEmpty())
+            packages.addAll(additionalJaxbPackages);
+
+        return JAXBContext.newInstance(
+                StringUtils.join(packages, ":"),
+                (classloader != null) ? classloader : Thread.currentThread().getContextClassLoader()
+        );
     }
 
     /**
@@ -152,7 +205,19 @@ public class ImmobiliareItUtils {
      */
     @SuppressWarnings("unused")
     public static Marshaller createMarshaller() throws JAXBException {
-        return createMarshaller(Charset.defaultCharset().name(), true);
+        return createMarshaller(null, true, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param context context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    @SuppressWarnings("unused")
+    public static Marshaller createMarshaller(JAXBContext context) throws JAXBException {
+        return createMarshaller(null, true, context);
     }
 
     /**
@@ -163,35 +228,67 @@ public class ImmobiliareItUtils {
      * @return created marshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Marshaller createMarshaller(String encoding, boolean formatted) throws JAXBException {
-        Marshaller m = getContext().createMarshaller();
-        m.setProperty(Marshaller.JAXB_ENCODING, encoding);
+        return createMarshaller(encoding, formatted, null);
+    }
+
+    /**
+     * Creates a {@link Marshaller} to write JAXB objects into XML.
+     *
+     * @param encoding  encoding of written XML
+     * @param formatted if written XML is pretty printed
+     * @param context   context to create the marshaller on
+     * @return created marshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Marshaller createMarshaller(String encoding, boolean formatted, JAXBContext context) throws JAXBException {
+        final Marshaller m = (context != null) ?
+                context.createMarshaller() :
+                getContext().createMarshaller();
+
+        m.setProperty(Marshaller.JAXB_ENCODING, StringUtils.defaultIfBlank(encoding, Charset.defaultCharset().name()));
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, formatted);
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Creates a {@link Unmarshaller} to read JAXB objects from XML.
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
      *
      * @return created unmarshaller
      * @throws JAXBException if a problem with JAXB occurred
      */
+    @SuppressWarnings("unused")
     public static Unmarshaller createUnmarshaller() throws JAXBException {
-        Unmarshaller m = getContext().createUnmarshaller();
+        return createUnmarshaller(null);
+    }
+
+    /**
+     * Creates an {@link Unmarshaller} to read JAXB objects from XML.
+     *
+     * @param context context to create the unmarshaller on
+     * @return created unmarshaller
+     * @throws JAXBException if a problem with JAXB occurred
+     */
+    public static Unmarshaller createUnmarshaller(JAXBContext context) throws JAXBException {
+        final Unmarshaller m = (context != null) ?
+                context.createUnmarshaller() :
+                getContext().createUnmarshaller();
+
         m.setEventHandler(new XmlValidationHandler());
         return m;
     }
 
     /**
-     * Returns the {@link JAXBContext} for this format.
+     * Returns the default {@link JAXBContext} for this format.
      *
      * @return context
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static JAXBContext getContext() throws JAXBException {
-        if (JAXB == null) initContext(Thread.currentThread().getContextClassLoader());
-        return JAXB;
+        if (DEFAULT_CONTEXT == null) initContext(null);
+        return DEFAULT_CONTEXT;
     }
 
     /**
@@ -214,13 +311,13 @@ public class ImmobiliareItUtils {
     }
 
     /**
-     * Initializes the {@link JAXBContext} for this format.
+     * Initializes the default {@link JAXBContext} for this format.
      *
      * @param classloader the classloader to load the generated JAXB classes with
      * @throws JAXBException if a problem with JAXB occurred
      */
     public synchronized static void initContext(ClassLoader classloader) throws JAXBException {
-        JAXB = JAXBContext.newInstance(PACKAGE, classloader);
+        DEFAULT_CONTEXT = createContext(classloader);
     }
 
     public static boolean isValidDateUpdatedType(Calendar value) {
@@ -229,6 +326,7 @@ public class ImmobiliareItUtils {
     }
 
     public static boolean isValidEmailType(String value) {
+        //noinspection RegExpRedundantEscape
         return value != null && value.matches("[^@]+@[^\\.]+\\..+");
     }
 
@@ -259,16 +357,20 @@ public class ImmobiliareItUtils {
         return Breadcrumb.read(value);
     }
 
-    /*public static Category parseCategory(String value) {
+    /**
+     * @deprecated defined in schema but currently not used
+     */
+    @Deprecated
+    public static CategoryType parseCategory(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
-        Category cat = Category.fromXmlValue(value);
+        CategoryType cat = CategoryType.fromXmlValue(value);
         if (cat == null)
             throw new IllegalArgumentException("Can't parse category value '" + value + "'!");
 
         return cat;
-    }*/
+    }
 
     public static String parseCountry(String value) {
         return StringUtils.trimToNull(value);
@@ -391,16 +493,20 @@ public class ImmobiliareItUtils {
         return unit;
     }
 
-    /*public static Transaction parseTransaction(String value) {
+    /**
+     * @deprecated defined in schema but currently not used
+     */
+    @Deprecated
+    public static TransactionType parseTransaction(String value) {
         value = StringUtils.trimToNull(value);
         if (value == null) return null;
 
-        Transaction trans = Transaction.fromXmlValue(value);
+        TransactionType trans = TransactionType.fromXmlValue(value);
         if (trans == null)
             throw new IllegalArgumentException("Can't parse transaction value '" + value + "'!");
 
         return trans;
-    }*/
+    }
 
     public static Integer parseYear(String value) {
         value = StringUtils.trimToNull(value);
@@ -429,12 +535,16 @@ public class ImmobiliareItUtils {
         return (value != null) ? value.write() : null;
     }
 
-    /*public static String printCategory(Category value) {
+    /**
+     * @deprecated defined in schema but currently not used
+     */
+    @Deprecated
+    public static String printCategory(CategoryType value) {
         if (value == null)
             throw new IllegalArgumentException("Can't print category value!");
         else
             return value.getXmlValue();
-    }*/
+    }
 
     public static String printCountry(String value) {
         value = StringUtils.trimToNull(value);
@@ -544,12 +654,16 @@ public class ImmobiliareItUtils {
             return value.getXmlValue();
     }
 
-    /*public static String printTransaction(Category value) {
+    /**
+     * @deprecated defined in schema but currently not used
+     */
+    @Deprecated
+    public static String printTransaction(TransactionType value) {
         if (value == null)
             throw new IllegalArgumentException("Can't print transaction value!");
         else
             return value.getXmlValue();
-    }*/
+    }
 
     public static String printYear(Integer value) {
         if (!isValidYear(value))

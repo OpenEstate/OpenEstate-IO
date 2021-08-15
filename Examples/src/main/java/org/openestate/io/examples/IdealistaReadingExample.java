@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,12 @@
 package org.openestate.io.examples;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.idealista.IdealistaCustomer;
+import org.openestate.io.idealista.IdealistaRootElement;
 import org.openestate.io.idealista.IdealistaUtils;
 import org.openestate.io.idealista.json.AbstractFeatures;
 import org.openestate.io.idealista.json.BuildingFeatures;
@@ -62,10 +58,6 @@ public class IdealistaReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                IdealistaReadingExample.class.getResource("log4j.properties"));
-
         // read example files, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
@@ -93,7 +85,7 @@ public class IdealistaReadingExample {
     }
 
     /**
-     * Read a {@link File} into an {@link IdealistaCustomer} and print some
+     * Read a {@link File} into an {@link IdealistaRootElement} and print some
      * of its content to console.
      *
      * @param jsonFile the file to read
@@ -105,14 +97,11 @@ public class IdealistaReadingExample {
             LOGGER.warn("> provided file is invalid");
             return;
         }
-        try (Reader reader = new InputStreamReader(new FileInputStream(jsonFile), IdealistaUtils.CHARSET)) {
-            IdealistaCustomer doc = new IdealistaCustomer(reader);
-            printToConsole(doc);
-        }
+        printToConsole(IdealistaUtils.read(jsonFile));
     }
 
     /**
-     * Read a {@link InputStream} into an {@link IdealistaCustomer} and print
+     * Read a {@link InputStream} into an {@link IdealistaRootElement} and print
      * some of its content to console.
      *
      * @param jsonInputStream the input stream to read
@@ -120,18 +109,15 @@ public class IdealistaReadingExample {
      */
     private static void read(InputStream jsonInputStream) throws IOException {
         LOGGER.info("processing example file");
-        try (Reader reader = new InputStreamReader(jsonInputStream, IdealistaUtils.CHARSET)) {
-            IdealistaCustomer doc = new IdealistaCustomer(reader);
-            printToConsole(doc);
-        }
+        printToConsole(IdealistaUtils.read(jsonInputStream));
     }
 
     /**
-     * Print some content of an {@link IdealistaCustomer} to console.
+     * Print some content of an {@link IdealistaRootElement} to console.
      *
      * @param root JSON root element
      */
-    private static void printToConsole(IdealistaCustomer root) {
+    private static void printToConsole(IdealistaRootElement root) {
         Customer customer = root.getObject();
         LOGGER.info("> processing customer '{}' ({})",
                 customer.getReference(), customer.getName());
@@ -149,7 +135,7 @@ public class IdealistaReadingExample {
                         property.getOperation().getType() : null;
 
                 // get property type
-                Enum objectType;
+                Enum<?> objectType;
                 AbstractFeatures features = property.getFeatures();
                 if (features instanceof BuildingFeatures) {
                     BuildingFeatures building = (BuildingFeatures) features;
@@ -197,7 +183,7 @@ public class IdealistaReadingExample {
                         newDevelopment.getCode());
 
                 // get typology types
-                List<Enum> objectTypes = new ArrayList<>();
+                List<Enum<?>> objectTypes = new ArrayList<>();
                 if (newDevelopment.getTypologies() != null) {
                     for (Typology typology : newDevelopment.getTypologies()) {
                         AbstractFeatures features = typology.getFeatures();

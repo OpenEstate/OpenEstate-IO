@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -68,7 +66,6 @@ public class BuildingFeatures
      */
     @JsonProperty("featuresType")
     @NotNull
-    @Nonnull
     private BuildingFeatures.Type type;
     /**
      * 
@@ -79,24 +76,11 @@ public class BuildingFeatures
     @DecimalMin("1")
     @DecimalMax("99999")
     @NotNull
-    @Nonnull
     private BigInteger areaConstructed;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresAreaTradableMinimum")
     @DecimalMin("1")
     @DecimalMax("999999")
     private BigInteger areaTradableMinimum;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresBuiltProperties")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -105,10 +89,8 @@ public class BuildingFeatures
      * building year
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresBuiltYear")
     @DecimalMin("1700")
     @DecimalMax("2100")
@@ -117,10 +99,8 @@ public class BuildingFeatures
      * chalet classification
      * <p>
      * classified for residential house (detached)
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationChalet")
     @JsonPropertyDescription("classified for residential house (detached)")
     private Boolean classificationChalet;
@@ -128,10 +108,8 @@ public class BuildingFeatures
      * commercial classification
      * <p>
      * classified for tertiary commercial properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationCommercial")
     @JsonPropertyDescription("classified for tertiary commercial properties")
     private Boolean classificationCommercial;
@@ -139,10 +117,8 @@ public class BuildingFeatures
      * hotel classification
      * <p>
      * classified for hotels properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationHotel")
     @JsonPropertyDescription("classified for hotels properties")
     private Boolean classificationHotel;
@@ -150,10 +126,8 @@ public class BuildingFeatures
      * industrial classification
      * <p>
      * classified for industrial properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationIndustrial")
     @JsonPropertyDescription("classified for industrial properties")
     private Boolean classificationIndustrial;
@@ -161,10 +135,8 @@ public class BuildingFeatures
      * office classification
      * <p>
      * classified for office properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationOffice")
     @JsonPropertyDescription("classified for office properties")
     private Boolean classificationOffice;
@@ -172,20 +144,16 @@ public class BuildingFeatures
      * other classification
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationOther")
     private Boolean classificationOther;
     /**
      * conservation status
      * <p>
      * status new is only available for new development properties, not for secondhand properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresConservation")
     @JsonPropertyDescription("status new is only available for new development properties, not for secondhand properties")
     private ConservationType conservation;
@@ -193,18 +161,10 @@ public class BuildingFeatures
      * energy certification rating
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateRating")
     private EnergyCertificateRatingType energyCertificateRating;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresEnergyCertificatePerformance")
     @DecimalMin("1")
     @DecimalMax("999")
@@ -213,10 +173,8 @@ public class BuildingFeatures
      * energy certification type
      * <p>
      * only available for new development properties. project: certification in project phase; completed: certification if the property is finished
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateType")
     @JsonPropertyDescription("only available for new development properties. project: certification in project phase; completed: certification if the property is finished")
     private EnergyCertificateType energyCertificateType;
@@ -224,39 +182,19 @@ public class BuildingFeatures
      * energy certification law
      * <p>
      * only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateLaw")
     @JsonPropertyDescription("only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)")
     private EnergyCertificateLawType energyCertificateLaw;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresFloorsBuilding")
     @DecimalMin("1")
     @DecimalMax("99")
     private BigInteger floorsBuilding;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresLiftNumber")
     @DecimalMin("1")
     @DecimalMax("9")
     private BigInteger liftNumber;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresParkingSpacesNumber")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -265,26 +203,22 @@ public class BuildingFeatures
      * tenants
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresPropertyTenants")
     private Boolean propertyTenants;
     /**
      * security personnel
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityPersonnel")
     private Boolean securityPersonnel;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 362284814886687707L;
+    private final static long serialVersionUID = -3126243642766133439L;
 
     /**
      * No args constructor for use in serialization
@@ -971,6 +905,13 @@ public class BuildingFeatures
         return ((((((((((((((((((((((super.equals(rhs)&&((this.floorsBuilding == rhs.floorsBuilding)||((this.floorsBuilding!= null)&&this.floorsBuilding.equals(rhs.floorsBuilding))))&&((this.liftNumber == rhs.liftNumber)||((this.liftNumber!= null)&&this.liftNumber.equals(rhs.liftNumber))))&&((this.areaTradableMinimum == rhs.areaTradableMinimum)||((this.areaTradableMinimum!= null)&&this.areaTradableMinimum.equals(rhs.areaTradableMinimum))))&&((this.classificationIndustrial == rhs.classificationIndustrial)||((this.classificationIndustrial!= null)&&this.classificationIndustrial.equals(rhs.classificationIndustrial))))&&((this.energyCertificateRating == rhs.energyCertificateRating)||((this.energyCertificateRating!= null)&&this.energyCertificateRating.equals(rhs.energyCertificateRating))))&&((this.classificationChalet == rhs.classificationChalet)||((this.classificationChalet!= null)&&this.classificationChalet.equals(rhs.classificationChalet))))&&((this.classificationCommercial == rhs.classificationCommercial)||((this.classificationCommercial!= null)&&this.classificationCommercial.equals(rhs.classificationCommercial))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.securityPersonnel == rhs.securityPersonnel)||((this.securityPersonnel!= null)&&this.securityPersonnel.equals(rhs.securityPersonnel))))&&((this.areaConstructed == rhs.areaConstructed)||((this.areaConstructed!= null)&&this.areaConstructed.equals(rhs.areaConstructed))))&&((this.classificationHotel == rhs.classificationHotel)||((this.classificationHotel!= null)&&this.classificationHotel.equals(rhs.classificationHotel))))&&((this.classificationOther == rhs.classificationOther)||((this.classificationOther!= null)&&this.classificationOther.equals(rhs.classificationOther))))&&((this.parkingSpacesNumber == rhs.parkingSpacesNumber)||((this.parkingSpacesNumber!= null)&&this.parkingSpacesNumber.equals(rhs.parkingSpacesNumber))))&&((this.classificationOffice == rhs.classificationOffice)||((this.classificationOffice!= null)&&this.classificationOffice.equals(rhs.classificationOffice))))&&((this.conservation == rhs.conservation)||((this.conservation!= null)&&this.conservation.equals(rhs.conservation))))&&((this.energyCertificateLaw == rhs.energyCertificateLaw)||((this.energyCertificateLaw!= null)&&this.energyCertificateLaw.equals(rhs.energyCertificateLaw))))&&((this.energyCertificateType == rhs.energyCertificateType)||((this.energyCertificateType!= null)&&this.energyCertificateType.equals(rhs.energyCertificateType))))&&((this.builtYear == rhs.builtYear)||((this.builtYear!= null)&&this.builtYear.equals(rhs.builtYear))))&&((this.builtProperties == rhs.builtProperties)||((this.builtProperties!= null)&&this.builtProperties.equals(rhs.builtProperties))))&&((this.energyCertificatePerformance == rhs.energyCertificatePerformance)||((this.energyCertificatePerformance!= null)&&this.energyCertificatePerformance.equals(rhs.energyCertificatePerformance))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.propertyTenants == rhs.propertyTenants)||((this.propertyTenants!= null)&&this.propertyTenants.equals(rhs.propertyTenants))));
     }
 
+
+    /**
+     * property types
+     * <p>
+     * 
+     * 
+     */
     public enum Type {
 
         BUILDING("building");
@@ -983,7 +924,7 @@ public class BuildingFeatures
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

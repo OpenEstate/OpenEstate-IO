@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * ubication
+ * <p>
+ * 
+ * 
+ */
 public enum UbicationType {
 
     SHOPPING("shopping"),
@@ -23,7 +30,7 @@ public enum UbicationType {
         }
     }
 
-    private UbicationType(String value) {
+    UbicationType(String value) {
         this.value = value;
     }
 

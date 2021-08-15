@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.openestate.io.immobar_it;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlDocument;
@@ -26,13 +27,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="https://www.immobar.it">immobar.it</a> with a
- * &lt;realestate&gt; root element.
+ * XML document from <a href="https://www.immobar.it">immobar.it</a> with a &lt;realestate&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings("WeakerAccess")
 public class ImmobarItDocument extends XmlDocument<Realestate> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobarItDocument.class);
@@ -56,7 +55,6 @@ public class ImmobarItDocument extends XmlDocument<Realestate> {
      */
     public static boolean isReadable(Document doc) {
         Element root = XmlUtils.getRootElement(doc);
-        //noinspection SpellCheckingInspection
         return "realestate".equals(root.getLocalName());
     }
 
@@ -80,19 +78,33 @@ public class ImmobarItDocument extends XmlDocument<Realestate> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmobarItDocument newDocument(Realestate realestate) throws ParserConfigurationException, JAXBException {
+        return newDocument(realestate, null);
+    }
+
+    /**
+     * Creates a {@link ImmobarItDocument} from a {@link Realestate} object.
+     *
+     * @param realestate Java object, that represents the &lt;realestate&gt; root element
+     * @param context    JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static ImmobarItDocument newDocument(Realestate realestate, JAXBContext context) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
-        ImmobarItUtils.createMarshaller("UTF-8", true).marshal(realestate, document);
+        ImmobarItUtils.createMarshaller("UTF-8", true, context).marshal(realestate, document);
         return new ImmobarItDocument(document);
     }
 
     /**
      * Creates a {@link Realestate} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;realestate&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Realestate toObject() throws JAXBException {
-        return (Realestate) ImmobarItUtils.createUnmarshaller().unmarshal(this.getDocument());
+    public Realestate toObject(JAXBContext context) throws JAXBException {
+        return (Realestate) ImmobarItUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

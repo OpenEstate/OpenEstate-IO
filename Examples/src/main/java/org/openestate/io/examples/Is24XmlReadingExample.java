@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import java.io.InputStream;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_xml.Is24XmlDocument;
 import org.openestate.io.is24_xml.Is24XmlUtils;
 import org.openestate.io.is24_xml.xml.ImmobilieBaseTyp;
@@ -50,10 +49,6 @@ public class Is24XmlReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24XmlReadingExample.class.getResource("log4j.properties"));
-
         // read example file, if no files were specified as command line arguments
         if (args.length < 1) {
             try {

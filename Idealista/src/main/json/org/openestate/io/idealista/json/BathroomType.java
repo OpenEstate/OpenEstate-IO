@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * bathroom type
+ * <p>
+ * 
+ * 
+ */
 public enum BathroomType {
 
     TOILETS("toilets"),
@@ -20,7 +27,7 @@ public enum BathroomType {
         }
     }
 
-    private BathroomType(String value) {
+    BathroomType(String value) {
         this.value = value;
     }
 

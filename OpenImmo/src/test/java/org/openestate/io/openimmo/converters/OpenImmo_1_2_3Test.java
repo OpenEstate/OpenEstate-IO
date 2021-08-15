@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.openestate.io.openimmo.converters;
 
+import javax.xml.xpath.XPathExpressionException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,7 +57,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausricht_balkon_terrasse[@NORDOST or @NORDWEST or @SUEDOST or @SUEDWEST]", doc);
             Assert.assertEquals(
                     "3 convertable <ausricht_balkon_terrasse> elements available before conversion.", 3, count);
@@ -68,22 +69,22 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausricht_balkon_terrasse[@NORDOST or @NORDWEST or @SUEDOST or @SUEDWEST]", doc);
             Assert.assertEquals(
                     "0 convertable <ausricht_balkon_terrasse> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausricht_balkon_terrasse[@NORD='true' and @OST='true']", doc);
             Assert.assertEquals(
                     "1 converted <ausricht_balkon_terrasse> element available after conversion.", 1, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausricht_balkon_terrasse[@SUED='true' and @WEST='true']", doc);
             Assert.assertEquals(
                     "1 converted <ausricht_balkon_terrasse> element available after conversion.", 1, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausricht_balkon_terrasse[@NORD or @OST or @SUED or @WEST]", doc);
             Assert.assertEquals(
                     "2 converted <ausricht_balkon_terrasse> element available after conversion.", 2, count);
@@ -105,7 +106,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:bad[@BIDET or @PISSOIR]", doc);
             Assert.assertEquals(
                     "3 convertable <bad> elements available before conversion.", 3, count);
@@ -117,7 +118,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:bad[@BIDET or @PISSOIR]", doc);
             Assert.assertEquals(
                     "0 convertable <bad> elements available after conversion.", 0, count);
@@ -139,7 +140,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@PELLET]", doc);
             Assert.assertEquals(
                     "3 convertable <befeuerung> elements available before conversion.", 3, count);
@@ -151,7 +152,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@PELLET]", doc);
             Assert.assertEquals(
                     "0 convertable <befeuerung> elements available after conversion.", 0, count);
@@ -173,7 +174,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:boden[@MARMOR or @TERRAKOTTA]", doc);
             Assert.assertEquals(
                     "3 convertable <boden> elements available before conversion.", 3, count);
@@ -185,7 +186,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:boden[@MARMOR or @TERRAKOTTA]", doc);
             Assert.assertEquals(
                     "0 convertable <boden> elements available after conversion.", 0, count);
@@ -207,7 +208,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:dachform[@FLACHDACH or @PYRAMIDENDACH]", doc);
             Assert.assertEquals(
                     "3 convertable <dachform> elements available before conversion.", 3, count);
@@ -219,7 +220,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:dachform[@FLACHDACH or @PYRAMIDENDACH]", doc);
             Assert.assertEquals(
                     "0 convertable <dachform> elements available after conversion.", 0, count);
@@ -241,7 +242,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:anzahl_balkone | " +
                             "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:anzahl_terrassen", doc);
             Assert.assertEquals(
@@ -254,7 +255,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:anzahl_balkone | " +
                             "/io:openimmo/io:anbieter/io:immobilie/io:flaechen/io:anzahl_terrassen", doc);
             Assert.assertEquals(
@@ -277,7 +278,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='APARTMENTHAUS' or @haustyp='BURG' or @haustyp='HERRENHAUS' or @haustyp='FINCA' or @haustyp='RUSTICO']", doc);
             Assert.assertEquals(
                     "5 convertable <haus> elements available before conversion.", 5, count);
@@ -289,12 +290,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='APARTMENTHAUS' or @haustyp='BURG' or @haustyp='HERRENHAUS' or @haustyp='FINCA' or @haustyp='RUSTICO']", doc);
             Assert.assertEquals(
                     "0 convertable <haus> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='KEINE_ANGABE']", doc);
             Assert.assertEquals(
                     "5 converted <haus> elements available after conversion.", 5, count);
@@ -316,7 +317,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:kueche[@PANTRY]", doc);
             Assert.assertEquals(
                     "3 convertable <kueche> elements available before conversion.", 3, count);
@@ -328,7 +329,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:kueche[@PANTRY]", doc);
             Assert.assertEquals(
                     "0 convertable <kueche> elements available after conversion.", 0, count);
@@ -350,7 +351,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:parken", doc);
             Assert.assertEquals(
                     "2 convertable <parken> elements available before conversion.", 2, count);
@@ -362,12 +363,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:parken", doc);
             Assert.assertEquals(
                     "0 convertable <parken> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:sonstige[@sonstige_typ='PARKFLACHE']", doc);
             Assert.assertEquals(
                     "2 converted <sonstige> elements available after conversion.", 2, count);
@@ -389,7 +390,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:sonstige[@sonstige_typ='KRANKENHAUS']", doc);
             Assert.assertEquals(
                     "1 convertable <sonstige> element available before conversion.", 1, count);
@@ -401,12 +402,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:sonstige[@sonstige_typ='KRANKENHAUS']", doc);
             Assert.assertEquals(
                     "0 convertable <sonstige> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='KRANKENHAUS']", doc);
             Assert.assertEquals(
                     "1 converted <haus> elements available after conversion.", 1, count);
@@ -428,7 +429,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:wohnung[@wohnungtyp='APARTMENT' or @wohnungtyp='FERIENWOHNUNG' or @wohnungtyp='GALERIE']", doc);
             Assert.assertEquals(
                     "3 convertable <wohnung> elements available before conversion.", 3, count);
@@ -440,12 +441,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:wohnung[@wohnungtyp='APARTMENT' or @wohnungtyp='FERIENWOHNUNG' or @wohnungtyp='GALERIE']", doc);
             Assert.assertEquals(
                     "0 convertable <wohnung> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:wohnung[@wohnungtyp='KEINE_ANGABE']", doc);
             Assert.assertEquals(
                     "3 converted <wohnung> elements available after conversion.", 3, count);
@@ -467,7 +468,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:zinshaus_renditeobjekt[@zins_typ='PFLEGEHEIM' or @zins_typ='SANATORIUM' or @zins_typ='SENIORENHEIM' or @zins_typ='BETREUTES-WOHNEN']", doc);
             Assert.assertEquals(
                     "4 convertable <zinshaus_renditeobjekt> elements available before conversion.", 4, count);
@@ -479,12 +480,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:zinshaus_renditeobjekt[@zins_typ='PFLEGEHEIM' or @zins_typ='SANATORIUM' or @zins_typ='SENIORENHEIM' or @zins_typ='BETREUTES-WOHNEN']", doc);
             Assert.assertEquals(
                     "0 convertable <zinshaus_renditeobjekt> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='PFLEGEHEIM' or @haustyp='SANATORIUM' or @haustyp='SENIORENHEIM' or @haustyp='BETREUTES-WOHNEN']", doc);
             Assert.assertEquals(
                     "4 converted <haus> elements available after conversion.", 4, count);
@@ -511,7 +512,7 @@ public class OpenImmo_1_2_3Test {
             //System.out.println( "----------------------------" );
 
             for (String element : elements) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:" + element, doc);
                 Assert.assertEquals(
                         "1 convertable <" + element + "> element available before conversion.", 1, count);
@@ -525,7 +526,7 @@ public class OpenImmo_1_2_3Test {
             //System.out.println( "----------------------------" );
 
             for (String element : elements) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:" + element, doc);
                 Assert.assertEquals(
                         "0 convertable <" + element + "> elements available after conversion.", 0, count);
@@ -548,7 +549,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:kontaktperson/io:email_feedback", doc);
             Assert.assertEquals(
                     "2 convertable <email_feedback> elements available before conversion.", 2, count);
@@ -560,7 +561,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:kontaktperson/io:email_feedback", doc);
             Assert.assertEquals(
                     "0 convertable <email_feedback> elements available after conversion.", 0, count);
@@ -586,7 +587,7 @@ public class OpenImmo_1_2_3Test {
             //System.out.println( "----------------------------" );
 
             for (String element : elements) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:" + element, doc);
                 Assert.assertEquals(
                         "1 convertable <" + element + "> element available before conversion.", 1, count);
@@ -600,7 +601,7 @@ public class OpenImmo_1_2_3Test {
             //System.out.println( "----------------------------" );
 
             for (String element : elements) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:" + element, doc);
                 Assert.assertEquals(
                         "0 convertable <" + element + "> elements available after conversion.", 0, count);
@@ -623,12 +624,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "//io:user_defined_extend", doc);
             Assert.assertEquals(
                     "4 total <user_defined_extend> elements available before conversion.", 4, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:freitexte/io:user_defined_extend | " +
                             "/io:openimmo/io:anbieter/io:immobilie/io:anhaenge/io:user_defined_extend", doc);
             Assert.assertEquals(
@@ -641,13 +642,13 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:freitexte/io:user_defined_extend | " +
                             "/io:openimmo/io:anbieter/io:immobilie/io:anhaenge/io:user_defined_extend", doc);
             Assert.assertEquals(
                     "0 convertable <user_defined_extend> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "//io:user_defined_extend", doc);
             Assert.assertEquals(
                     "2 total <user_defined_extend> elements available before conversion.", 2, count);
@@ -673,7 +674,7 @@ public class OpenImmo_1_2_3Test {
             //System.out.println( "----------------------------" );
 
             for (String element : elements) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:" + element, doc);
                 Assert.assertEquals(
                         "1 convertable <" + element + "> element available before conversion.", 1, count);
@@ -687,7 +688,7 @@ public class OpenImmo_1_2_3Test {
             //System.out.println( "----------------------------" );
 
             for (String element : elements) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:" + element, doc);
                 Assert.assertEquals(
                         "0 convertable <" + element + "> elements available after conversion.", 0, count);
@@ -710,7 +711,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='KRANKENHAUS']", doc);
             Assert.assertEquals(
                     "1 convertable <haus> element available before conversion.", 1, count);
@@ -722,12 +723,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='KRANKENHAUS']", doc);
             Assert.assertEquals(
                     "0 convertable <haus> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:sonstige[@sonstige_typ='KRANKENHAUS']", doc);
             Assert.assertEquals(
                     "1 converted <sonstige> element available after conversion.", 1, count);
@@ -749,7 +750,7 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='PFLEGEHEIM' or @haustyp='SANATORIUM' or @haustyp='SENIORENHEIM' or @haustyp='BETREUTES-WOHNEN']", doc);
             Assert.assertEquals(
                     "4 convertable <haus> elements available before conversion.", 4, count);
@@ -761,12 +762,12 @@ public class OpenImmo_1_2_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp='PFLEGEHEIM' or @haustyp='SANATORIUM' or @haustyp='SENIORENHEIM' or @haustyp='BETREUTES-WOHNEN']", doc);
             Assert.assertEquals(
                     "0 convertable <wintergarten> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:zinshaus_renditeobjekt[@zins_typ='PFLEGEHEIM' or @zins_typ='SANATORIUM' or @zins_typ='SENIORENHEIM' or @zins_typ='BETREUTES-WOHNEN']", doc);
             Assert.assertEquals(
                     "4 converted <zinshaus_renditeobjekt> elements available after conversion.", 4, count);
@@ -775,5 +776,14 @@ public class OpenImmo_1_2_3Test {
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             Assert.fail("Test of OpenImmo_1_2_3.upgradeZinshausRenditeobjektElements failed!");
         }
+    }
+
+    private static int xpathCount(String xpath, Document doc) throws XPathExpressionException {
+        return xpathCount(xpath, doc, doc);
+    }
+
+    private static int xpathCount(String xpath, Document doc, Object element) throws XPathExpressionException {
+        return XmlUtils.xPathNumber(XmlUtils.xPath(
+                "count(" + xpath + ")", doc, "io"), element).intValue();
     }
 }

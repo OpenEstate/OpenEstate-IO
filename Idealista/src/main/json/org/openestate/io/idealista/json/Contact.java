@@ -4,7 +4,6 @@ package org.openestate.io.idealista.json;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -33,57 +32,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Contact implements Serializable
 {
 
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("contactName")
     @Pattern(regexp = "^.{0,60}$")
     private String name;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("contactEmail")
     @Pattern(regexp = "^(([a-zA-Z0-9-_\\.])+)@((?:[a-zA-Z0-9-_]+\\.)+)([a-zA-Z]{2,5})$")
     private String email;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("contactPrimaryPhonePrefix")
     @Pattern(regexp = "^[1-9][0-9]{0,2}$")
     private String primaryPhonePrefix;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("contactPrimaryPhoneNumber")
     @Pattern(regexp = "^[0-9]{5,12}$")
     private String primaryPhoneNumber;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("contactSecondaryPhonePrefix")
     @Pattern(regexp = "^[1-9][0-9]{0,2}$")
     private String secondaryPhonePrefix;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("contactSecondaryPhoneNumber")
     @Pattern(regexp = "^[0-9]{5,12}$")
     private String secondaryPhoneNumber;

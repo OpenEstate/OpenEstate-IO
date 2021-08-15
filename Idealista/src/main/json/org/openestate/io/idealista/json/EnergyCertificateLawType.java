@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * energy certification law
+ * <p>
+ * only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)
+ * 
+ */
 public enum EnergyCertificateLawType {
 
     DL_192_2005("dl-192_2005"),
@@ -19,7 +26,7 @@ public enum EnergyCertificateLawType {
         }
     }
 
-    private EnergyCertificateLawType(String value) {
+    EnergyCertificateLawType(String value) {
         this.value = value;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package org.openestate.io.immoxml.converters;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlVersion;
 import org.slf4j.Logger;
@@ -28,7 +27,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion> {
+public class ImmoXML_3_0 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXML_3_0.class);
 
@@ -38,12 +37,11 @@ public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion> {
     }
 
     /**
-     * Downgrade an ImmoXML document from version 3.0.
+     * Downgrade a {@link ImmoXmlDocument} from version 3.0.
      * <p>
-     * Versions before 3.0 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 3.0 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc ImmoXML document in version 3.0
+     * @param doc document in version 3.0
      */
     @Override
     public void downgradeToPreviousVersion(ImmoXmlDocument doc) {
@@ -52,12 +50,11 @@ public class ImmoXML_3_0 extends XmlConverter<ImmoXmlDocument, ImmoXmlVersion> {
     }
 
     /**
-     * Downgrade an ImmoXML document to version 3.0.
+     * Upgrade a {@link ImmoXmlDocument} to version 3.0.
      * <p>
-     * Versions before 3.0 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 3.0 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc ImmoXML document
+     * @param doc document
      */
     @Override
     public void upgradeFromPreviousVersion(ImmoXmlDocument doc) {

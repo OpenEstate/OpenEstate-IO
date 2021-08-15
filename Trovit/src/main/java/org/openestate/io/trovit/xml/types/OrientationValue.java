@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.4
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum OrientationValue {
     NORTH(new String[]{"North", "Nord", "Norden"}),
     SOUTH(new String[]{"South", "Süd", "Süden"}),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable, Flushable {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CsvPrinter.class);
     private final static Pattern LINES = Pattern.compile("^(.*)$", Pattern.MULTILINE);
     private final CSVPrinter printer;
@@ -133,6 +134,7 @@ public abstract class CsvPrinter<Record extends CsvRecord> implements Closeable,
      * @param value value to replace
      * @return value with replaced line breaks
      */
+    @SuppressWarnings("unused")
     protected static String replaceLineBreaks(String value) {
         return replaceLineBreaks(value, null);
     }

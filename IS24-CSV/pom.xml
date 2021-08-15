@@ -27,7 +27,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
@@ -46,12 +46,6 @@
     <dependencies>
 
         <!-- compile -->
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>annotations</artifactId>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -77,11 +71,6 @@
             <artifactId>OpenEstate-IO-Core</artifactId>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>compile</scope>
-        </dependency>
 
         <!-- test -->
         <dependency>
@@ -90,13 +79,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
             <scope>test</scope>
         </dependency>
 
@@ -105,16 +89,12 @@
     <build>
         <plugins>
 
-            <!-- jar -->
+            <!-- compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Automatic-Module-Name>org.openestate.io.is24_csv</Automatic-Module-Name>
-                        </manifestEntries>
-                    </archive>
+                    <release>8</release>
                 </configuration>
             </plugin>
 

@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -53,16 +51,13 @@ public class StorageFeatures
      */
     @JsonProperty("featuresType")
     @NotNull
-    @Nonnull
     private StorageFeatures.Type type;
     /**
      *  24 hr access
      * <p>
      * availability of 24 hr access
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresAccess24h")
     @JsonPropertyDescription("availability of 24 hr access")
     private Boolean access24h;
@@ -75,14 +70,7 @@ public class StorageFeatures
     @DecimalMin("1")
     @DecimalMax("99999")
     @NotNull
-    @Nonnull
     private BigInteger areaConstructed;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresAreaHeight")
     @DecimalMin("0")
     @DecimalMax("9")
@@ -91,10 +79,8 @@ public class StorageFeatures
      * loading dock
      * <p>
      * loading dock availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresLoadingDock")
     @JsonPropertyDescription("loading dock availability")
     private Boolean loadingDock;
@@ -102,16 +88,14 @@ public class StorageFeatures
      *  24 hr security service
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurity24h")
     private Boolean security24h;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -3860240796463692769L;
+    private final static long serialVersionUID = -5940399373315056850L;
 
     /**
      * No args constructor for use in serialization
@@ -378,6 +362,13 @@ public class StorageFeatures
         return (((((((super.equals(rhs)&&((this.security24h == rhs.security24h)||((this.security24h!= null)&&this.security24h.equals(rhs.security24h))))&&((this.areaHeight == rhs.areaHeight)||((this.areaHeight!= null)&&this.areaHeight.equals(rhs.areaHeight))))&&((this.loadingDock == rhs.loadingDock)||((this.loadingDock!= null)&&this.loadingDock.equals(rhs.loadingDock))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.access24h == rhs.access24h)||((this.access24h!= null)&&this.access24h.equals(rhs.access24h))))&&((this.areaConstructed == rhs.areaConstructed)||((this.areaConstructed!= null)&&this.areaConstructed.equals(rhs.areaConstructed))));
     }
 
+
+    /**
+     * property types
+     * <p>
+     * 
+     * 
+     */
     public enum Type {
 
         STORAGE("storage");
@@ -390,7 +381,7 @@ public class StorageFeatures
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

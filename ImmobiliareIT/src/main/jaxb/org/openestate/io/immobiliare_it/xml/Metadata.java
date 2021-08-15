@@ -60,19 +60,19 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "metadata", propOrder = {
 
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected Publisher publisher;
     @XmlElement(name = "build-date", required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     @XmlSchemaType(name = "dateTime")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected Calendar buildDate;
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected Metadata.Multipage multipage;
 
     /**
@@ -83,7 +83,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Publisher }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Publisher getPublisher() {
         return publisher;
     }
@@ -96,7 +96,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Publisher }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setPublisher(Publisher value) {
         this.publisher = value;
     }
@@ -109,7 +109,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Calendar getBuildDate() {
         return buildDate;
     }
@@ -122,7 +122,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setBuildDate(Calendar value) {
         this.buildDate = value;
     }
@@ -135,7 +135,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Metadata.Multipage }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Metadata.Multipage getMultipage() {
         return multipage;
     }
@@ -148,20 +148,20 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
      *     {@link Metadata.Multipage }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setMultipage(Metadata.Multipage value) {
         this.multipage = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -169,7 +169,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Publisher thePublisher;
@@ -189,18 +189,18 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Metadata) {
@@ -248,12 +248,12 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new Metadata();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -292,9 +292,9 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 
@@ -323,19 +323,19 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
     @XmlType(name = "", propOrder = {
 
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public static class Multipage implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter5 .class)
         @XmlSchemaType(name = "int")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected BigInteger current;
         @XmlElement(required = true, type = String.class)
         @XmlJavaTypeAdapter(Adapter5 .class)
         @XmlSchemaType(name = "int")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         protected BigInteger last;
 
         /**
@@ -346,7 +346,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public BigInteger getCurrent() {
             return current;
         }
@@ -359,7 +359,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setCurrent(BigInteger value) {
             this.current = value;
         }
@@ -372,7 +372,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public BigInteger getLast() {
             return last;
         }
@@ -385,20 +385,20 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public void setLast(BigInteger value) {
             this.last = value;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
-            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -406,7 +406,7 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 BigInteger theCurrent;
@@ -421,18 +421,18 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
-            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Metadata.Multipage) {
@@ -467,12 +467,12 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new Metadata.Multipage();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -502,9 +502,9 @@ public class Metadata implements Serializable, Cloneable, CopyTo2, Equals2, ToSt
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
-            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
         }
 

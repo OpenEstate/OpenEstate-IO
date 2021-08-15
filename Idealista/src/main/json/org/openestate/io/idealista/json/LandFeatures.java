@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -69,7 +67,6 @@ public class LandFeatures
      */
     @JsonProperty("featuresType")
     @NotNull
-    @Nonnull
     private LandFeatures.Type type;
     /**
      * 
@@ -80,24 +77,11 @@ public class LandFeatures
     @DecimalMin("1")
     @DecimalMax("99999999")
     @NotNull
-    @Nonnull
     private BigInteger areaPlot;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresAreaBuildable")
     @DecimalMin("1")
     @DecimalMax("99999")
     private BigInteger areaBuildable;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresAreaTradableMinimum")
     @DecimalMin("1")
     @DecimalMax("999999")
@@ -106,10 +90,8 @@ public class LandFeatures
      * blocks classification
      * <p>
      * certified for high-rise residential properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationBlocks")
     @JsonPropertyDescription("certified for high-rise residential properties")
     private Boolean classificationBlocks;
@@ -117,10 +99,8 @@ public class LandFeatures
      * chalet classification
      * <p>
      * classified for residential house (detached)
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationChalet")
     @JsonPropertyDescription("classified for residential house (detached)")
     private Boolean classificationChalet;
@@ -128,10 +108,8 @@ public class LandFeatures
      * commercial classification
      * <p>
      * classified for tertiary commercial properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationCommercial")
     @JsonPropertyDescription("classified for tertiary commercial properties")
     private Boolean classificationCommercial;
@@ -139,10 +117,8 @@ public class LandFeatures
      * hotel classification
      * <p>
      * classified for hotels properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationHotel")
     @JsonPropertyDescription("classified for hotels properties")
     private Boolean classificationHotel;
@@ -150,10 +126,8 @@ public class LandFeatures
      * industrial classification
      * <p>
      * classified for industrial properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationIndustrial")
     @JsonPropertyDescription("classified for industrial properties")
     private Boolean classificationIndustrial;
@@ -161,10 +135,8 @@ public class LandFeatures
      * office classification
      * <p>
      * classified for office properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationOffice")
     @JsonPropertyDescription("classified for office properties")
     private Boolean classificationOffice;
@@ -172,39 +144,23 @@ public class LandFeatures
      * other classification
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationOther")
     private Boolean classificationOther;
     /**
      * public classification
      * <p>
      * classified for amenities (hospitals, schools, museums)
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresClassificationPublic")
     @JsonPropertyDescription("classified for amenities (hospitals, schools, museums)")
     private Boolean classificationPublic;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresFloorsBuildable")
     @DecimalMin("1")
     @DecimalMax("99")
     private BigInteger floorsBuildable;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresNearestLocationKm")
     @DecimalMin("0")
     @DecimalMax("99")
@@ -213,86 +169,70 @@ public class LandFeatures
      * electricity availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUtilitiesElectricity")
     private Boolean utilitiesElectricity;
     /**
      * natural gas availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUtilitiesNaturalGas")
     private Boolean utilitiesNaturalGas;
     /**
      * road access availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUtilitiesRoadAccess")
     private Boolean utilitiesRoadAccess;
     /**
      * sewerage availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUtilitiesSewerage")
     private Boolean utilitiesSewerage;
     /**
      * sidewalk availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUtilitiesSidewalk")
     private Boolean utilitiesSidewalk;
     /**
      * street lighting availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUtilitiesStreetLighting")
     private Boolean utilitiesStreetLighting;
     /**
      * water availability
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUtilitiesWater")
     private Boolean utilitiesWater;
     /**
      * access type
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresAccessType")
     private AccessType accessType;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -4732398260832080151L;
+    private final static long serialVersionUID = 2214429406720917033L;
 
     /**
      * No args constructor for use in serialization
@@ -1035,6 +975,13 @@ public class LandFeatures
         return (((((((((((((((((((((((super.equals(rhs)&&((this.areaPlot == rhs.areaPlot)||((this.areaPlot!= null)&&this.areaPlot.equals(rhs.areaPlot))))&&((this.utilitiesElectricity == rhs.utilitiesElectricity)||((this.utilitiesElectricity!= null)&&this.utilitiesElectricity.equals(rhs.utilitiesElectricity))))&&((this.areaTradableMinimum == rhs.areaTradableMinimum)||((this.areaTradableMinimum!= null)&&this.areaTradableMinimum.equals(rhs.areaTradableMinimum))))&&((this.classificationIndustrial == rhs.classificationIndustrial)||((this.classificationIndustrial!= null)&&this.classificationIndustrial.equals(rhs.classificationIndustrial))))&&((this.utilitiesNaturalGas == rhs.utilitiesNaturalGas)||((this.utilitiesNaturalGas!= null)&&this.utilitiesNaturalGas.equals(rhs.utilitiesNaturalGas))))&&((this.classificationChalet == rhs.classificationChalet)||((this.classificationChalet!= null)&&this.classificationChalet.equals(rhs.classificationChalet))))&&((this.classificationCommercial == rhs.classificationCommercial)||((this.classificationCommercial!= null)&&this.classificationCommercial.equals(rhs.classificationCommercial))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.classificationHotel == rhs.classificationHotel)||((this.classificationHotel!= null)&&this.classificationHotel.equals(rhs.classificationHotel))))&&((this.classificationOther == rhs.classificationOther)||((this.classificationOther!= null)&&this.classificationOther.equals(rhs.classificationOther))))&&((this.utilitiesSidewalk == rhs.utilitiesSidewalk)||((this.utilitiesSidewalk!= null)&&this.utilitiesSidewalk.equals(rhs.utilitiesSidewalk))))&&((this.classificationOffice == rhs.classificationOffice)||((this.classificationOffice!= null)&&this.classificationOffice.equals(rhs.classificationOffice))))&&((this.utilitiesSewerage == rhs.utilitiesSewerage)||((this.utilitiesSewerage!= null)&&this.utilitiesSewerage.equals(rhs.utilitiesSewerage))))&&((this.accessType == rhs.accessType)||((this.accessType!= null)&&this.accessType.equals(rhs.accessType))))&&((this.utilitiesRoadAccess == rhs.utilitiesRoadAccess)||((this.utilitiesRoadAccess!= null)&&this.utilitiesRoadAccess.equals(rhs.utilitiesRoadAccess))))&&((this.utilitiesWater == rhs.utilitiesWater)||((this.utilitiesWater!= null)&&this.utilitiesWater.equals(rhs.utilitiesWater))))&&((this.utilitiesStreetLighting == rhs.utilitiesStreetLighting)||((this.utilitiesStreetLighting!= null)&&this.utilitiesStreetLighting.equals(rhs.utilitiesStreetLighting))))&&((this.classificationBlocks == rhs.classificationBlocks)||((this.classificationBlocks!= null)&&this.classificationBlocks.equals(rhs.classificationBlocks))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.classificationPublic == rhs.classificationPublic)||((this.classificationPublic!= null)&&this.classificationPublic.equals(rhs.classificationPublic))))&&((this.nearestLocationKm == rhs.nearestLocationKm)||((this.nearestLocationKm!= null)&&this.nearestLocationKm.equals(rhs.nearestLocationKm))))&&((this.areaBuildable == rhs.areaBuildable)||((this.areaBuildable!= null)&&this.areaBuildable.equals(rhs.areaBuildable))))&&((this.floorsBuildable == rhs.floorsBuildable)||((this.floorsBuildable!= null)&&this.floorsBuildable.equals(rhs.floorsBuildable))));
     }
 
+
+    /**
+     * property types
+     * <p>
+     * 
+     * 
+     */
     public enum Type {
 
         LAND("land"),
@@ -1050,7 +997,7 @@ public class LandFeatures
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

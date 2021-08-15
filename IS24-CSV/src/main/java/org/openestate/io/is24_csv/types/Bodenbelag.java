@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Bodenbelag {
     KEINE_ANGABE(0),
     BETON(1),
@@ -40,10 +41,11 @@ public enum Bodenbelag {
     NACH_MIETERWUNSCH(11),
     OHNE_BELAG(12);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Bodenbelag.class);
     private final int value;
 
-    private Bodenbelag(int value) {
+    Bodenbelag(int value) {
         this.value = value;
     }
 

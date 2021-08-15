@@ -6,8 +6,6 @@ import java.math.BigInteger;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -42,10 +40,8 @@ public class Image implements Serializable
      * <p>
      * 
      * Corresponds to the "imageLabel" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("imageLabel")
     private Image.Label label;
     /**
@@ -53,10 +49,8 @@ public class Image implements Serializable
      * <p>
      * 
      * Corresponds to the "imageOrder" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("imageOrder")
     @DecimalMin("1")
     @DecimalMax("200")
@@ -68,12 +62,11 @@ public class Image implements Serializable
      */
     @JsonProperty("imageUrl")
     @NotNull
-    @Nonnull
     private URI url;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 3658192647081340712L;
+    private final static long serialVersionUID = 7266463362292978492L;
 
     /**
      * No args constructor for use in serialization
@@ -239,6 +232,13 @@ public class Image implements Serializable
         return (((((this.label == rhs.label)||((this.label!= null)&&this.label.equals(rhs.label)))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.url == rhs.url)||((this.url!= null)&&this.url.equals(rhs.url))))&&((this.order == rhs.order)||((this.order!= null)&&this.order.equals(rhs.order))));
     }
 
+
+    /**
+     * image label
+     * <p>
+     * 
+     * 
+     */
     public enum Label {
 
         APPRAISALPLAN("appraisalplan"),
@@ -297,7 +297,7 @@ public class Image implements Serializable
             }
         }
 
-        private Label(String value) {
+        Label(String value) {
             this.value = value;
         }
 

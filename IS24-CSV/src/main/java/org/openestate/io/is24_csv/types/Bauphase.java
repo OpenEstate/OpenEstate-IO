@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,16 +25,18 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Bauphase {
     KEINE_ANGABE(1),
     IN_PLANUNG(2),
     IM_BAU(3),
     FERTIG_GESTELLT(4);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Bauphase.class);
     private final int value;
 
-    private Bauphase(int value) {
+    Bauphase(int value) {
         this.value = value;
     }
 

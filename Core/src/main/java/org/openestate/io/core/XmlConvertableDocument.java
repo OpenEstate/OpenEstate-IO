@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,13 +22,12 @@ import org.w3c.dom.Document;
 /**
  * An extended {@link XmlDocument} with versioning functionality.
  *
- * @param <JavaType>    the class of a (via JAXB generated) Java object, that the contained
- *                      {@link Document} is mapped to
+ * @param <JavaType>    the class of a Java object (generated via JAXB), that the contained {@link Document} is mapped to
  * @param <VersionType> the class to determine different versions of the document
  * @author Andreas Rudolph
  * @since 1.0
  */
-public abstract class XmlConvertableDocument<JavaType, VersionType extends XmlVersion> extends XmlDocument<JavaType> {
+public abstract class XmlConvertableDocument<JavaType, VersionType extends XmlVersion<? extends XmlConvertableDocument<?, VersionType>, VersionType>> extends XmlDocument<JavaType> {
     private final static Logger LOGGER = LoggerFactory.getLogger(XmlConvertableDocument.class);
 
     public XmlConvertableDocument(Document document) {
@@ -41,10 +40,11 @@ public abstract class XmlConvertableDocument<JavaType, VersionType extends XmlVe
      * @param targetVersion the version, that the {@link Document} is downgraded to
      */
     public void downgrade(VersionType targetVersion) {
+        //noinspection DuplicatedCode
         if (targetVersion == null)
             throw new NullPointerException("No target version was provided!");
 
-        XmlVersion currentVersion = this.getDocumentVersion();
+        VersionType currentVersion = this.getDocumentVersion();
         if (currentVersion == null) {
             currentVersion = this.getLatestVersion();
             LOGGER.warn("Can't determine document version! Assuming latest version "
@@ -58,12 +58,11 @@ public abstract class XmlConvertableDocument<JavaType, VersionType extends XmlVe
             return;
         }
 
-        XmlVersion v = currentVersion;
-        while (true) {
+        VersionType v = currentVersion;
+        do {
             v.getConverter().downgradeToPreviousVersion(this);
             v = v.getPreviousVersion();
-            if (v == targetVersion) break;
-        }
+        } while (v != targetVersion);
     }
 
     /**
@@ -101,11 +100,12 @@ public abstract class XmlConvertableDocument<JavaType, VersionType extends XmlVe
      *
      * @param targetVersion the version, that the {@link Document} is upgraded to
      */
-    public void upgrade(XmlVersion targetVersion) {
+    public void upgrade(VersionType targetVersion) {
+        //noinspection DuplicatedCode
         if (targetVersion == null)
             throw new NullPointerException("No target version was provided!");
 
-        XmlVersion currentVersion = this.getDocumentVersion();
+        VersionType currentVersion = this.getDocumentVersion();
         if (currentVersion == null) {
             currentVersion = this.getLatestVersion();
             LOGGER.warn("Can't determine document version! Assuming latest version "
@@ -119,12 +119,11 @@ public abstract class XmlConvertableDocument<JavaType, VersionType extends XmlVe
             return;
         }
 
-        XmlVersion v = currentVersion;
-        while (true) {
+        VersionType v = currentVersion;
+        do {
             v = v.getNextVersion();
             v.getConverter().upgradeFromPreviousVersion(this);
-            if (v == targetVersion) break;
-        }
+        } while (v != targetVersion);
     }
 
     /**

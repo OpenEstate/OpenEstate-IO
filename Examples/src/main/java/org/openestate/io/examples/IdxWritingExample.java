@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxPrinter;
 import org.openestate.io.idx.IdxRecord;
 import org.openestate.io.idx.types.GrossPremium;
@@ -62,10 +61,6 @@ public class IdxWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                IdxWritingExample.class.getResource("log4j.properties"));
-
         // create some CSV records
         List<IdxRecord> records = new ArrayList<>();
         int recordCount = RandomUtils.nextInt(5, 10);
@@ -83,7 +78,7 @@ public class IdxWritingExample {
         }
 
         // write CSV records into a java.io.OutputStream
-        write(records, new NullOutputStream());
+        write(records, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write CSV records into a java.io.Writer
         write(records, new NullWriter());
@@ -206,7 +201,7 @@ public class IdxWritingExample {
         obj.setVisitRemark(RANDOMIZER.getWords(1, 5));
         obj.setVolume(RandomUtils.nextLong(50, 500));
         obj.setWaterSupply(RandomUtils.nextBoolean());
-        obj.setWheelcharAccessible(RandomUtils.nextBoolean());
+        obj.setWheelchairAccessible(RandomUtils.nextBoolean());
         obj.setYearBuilt(RandomUtils.nextInt(1900, 1995));
         obj.setYearRenovated(RandomUtils.nextInt(1995, 2010));
 
@@ -309,6 +304,7 @@ public class IdxWritingExample {
      * @param records the CSV records to write
      * @param output  the stream, where the document is written to
      */
+    @SuppressWarnings("SameParameterValue")
     private static void write(List<IdxRecord> records, OutputStream output) {
         LOGGER.info("writing document");
         try {
@@ -353,7 +349,7 @@ public class IdxWritingExample {
         try (IdxPrinter printer = IdxPrinter.create(csv)) {
             printer.printRecords(records);
             LOGGER.info(StringUtils.repeat("-", 50)
-                    + System.lineSeparator() + csv.toString());
+                    + System.lineSeparator() + csv);
         } catch (Exception ex) {
             LOGGER.error("Can't write document into a string!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

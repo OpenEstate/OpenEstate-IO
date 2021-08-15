@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -41,12 +40,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public class Customer implements Serializable
 {
 
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd HH:mm:ss", timezone = "UTC")
     @JsonProperty("customerSendDate")
     private Date sendDate;
@@ -55,36 +48,16 @@ public class Customer implements Serializable
      * <p>
      * 
      * Corresponds to the "customerCountry" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("customerCountry")
     private Customer.Country country;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("customerCode")
     @Pattern(regexp = "^ilc([a-z]|[0-9]){40}$")
     private String code;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("customerName")
     @Pattern(regexp = "^.{0,100}$")
     private String name;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("customerReference")
     @Pattern(regexp = "^.{0,50}$")
     private String reference;
@@ -92,10 +65,8 @@ public class Customer implements Serializable
      * Contact Object
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("customerContact")
     @Valid
     private Contact contact;
@@ -104,10 +75,8 @@ public class Customer implements Serializable
      * <p>
      * 
      * Corresponds to the "customerProperties" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("customerProperties")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @Valid
@@ -117,10 +86,8 @@ public class Customer implements Serializable
      * <p>
      * 
      * Corresponds to the "customerNewDevelopments" property.
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("customerNewDevelopments")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @Valid
@@ -128,7 +95,7 @@ public class Customer implements Serializable
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 2849975534184547957L;
+    private final static long serialVersionUID = 8316910889507090679L;
 
     @JsonProperty("customerSendDate")
     public Date getSendDate() {
@@ -394,6 +361,13 @@ public class Customer implements Serializable
         return ((((((((((this.reference == rhs.reference)||((this.reference!= null)&&this.reference.equals(rhs.reference)))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.code == rhs.code)||((this.code!= null)&&this.code.equals(rhs.code))))&&((this.sendDate == rhs.sendDate)||((this.sendDate!= null)&&this.sendDate.equals(rhs.sendDate))))&&((this.contact == rhs.contact)||((this.contact!= null)&&this.contact.equals(rhs.contact))))&&((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.newDevelopments == rhs.newDevelopments)||((this.newDevelopments!= null)&&this.newDevelopments.equals(rhs.newDevelopments))))&&((this.properties == rhs.properties)||((this.properties!= null)&&this.properties.equals(rhs.properties))));
     }
 
+
+    /**
+     * Customer country
+     * <p>
+     * 
+     * 
+     */
     public enum Country {
 
         SPAIN("Spain"),
@@ -408,7 +382,7 @@ public class Customer implements Serializable
             }
         }
 
-        private Country(String value) {
+        Country(String value) {
             this.value = value;
         }
 

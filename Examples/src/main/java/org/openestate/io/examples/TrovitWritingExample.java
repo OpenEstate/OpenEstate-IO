@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.trovit.TrovitDocument;
 import org.openestate.io.trovit.TrovitUtils;
 import org.openestate.io.trovit.xml.AdType;
@@ -68,10 +67,6 @@ public class TrovitWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                TrovitWritingExample.class.getResource("log4j.properties"));
-
         // create a Trovit object with some example data
         // this object corresponds to the <trovit> element in XML
         Trovit trovit = FACTORY.createTrovit();
@@ -82,7 +77,7 @@ public class TrovitWritingExample {
             trovit.getAd().add(createAd());
         }
 
-        // convert the Trovit object into a XML document
+        // convert the Trovit object into an XML document
         TrovitDocument doc = null;
         try {
             doc = TrovitDocument.newDocument(trovit);
@@ -102,7 +97,7 @@ public class TrovitWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -240,7 +235,7 @@ public class TrovitWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(TrovitDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {

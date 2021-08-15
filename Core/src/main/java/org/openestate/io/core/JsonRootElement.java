@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,7 +117,7 @@ public abstract class JsonRootElement<JavaType> {
      * @return constraint violations or an empty set if none
      * @throws IllegalArgumentException if object is {@code null}
      *                                  or if {@code null} is passed to the varargs groups
-     * @throws ValidationException      if a non recoverable error happens
+     * @throws ValidationException      if a non-recoverable error happens
      *                                  during the validation process
      */
     public Set<ConstraintViolation<JavaType>> getViolations() {

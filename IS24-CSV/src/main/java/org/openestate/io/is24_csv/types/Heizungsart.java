@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,16 +25,18 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Heizungsart {
     KEINE_ANGABE(0),
     ETAGENHEIZUNG(1),
     OFENHEIZUNG(4),
     ZENTRALHEIZUNG(5);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Heizungsart.class);
     private final int value;
 
-    private Heizungsart(int value) {
+    Heizungsart(int value) {
         this.value = value;
     }
 

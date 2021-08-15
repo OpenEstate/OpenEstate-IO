@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Objektdarstellung {
     IS24_HOMEPAGE_ALLEGRUPPEN(0),
     VBM_ALLEGRUPPEN(1),
@@ -38,10 +39,11 @@ public enum Objektdarstellung {
     IS24_HOMEPAGE_WAHLGRUPPEN(9),
     WAHLGRUPPEN(10);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Objektdarstellung.class);
     private final int value;
 
-    private Objektdarstellung(int value) {
+    Objektdarstellung(int value) {
         this.value = value;
     }
 

@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * rooms splitted
+ * <p>
+ * 
+ * 
+ */
 public enum RoomsSplittedType {
 
     UNKNOWN("unknown"),
@@ -21,7 +28,7 @@ public enum RoomsSplittedType {
         }
     }
 
-    private RoomsSplittedType(String value) {
+    RoomsSplittedType(String value) {
         this.value = value;
     }
 

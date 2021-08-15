@@ -11,7 +11,7 @@
       <configuration isaddressvisibleonsite="false" ismapvisible="false" isrealestatevisibleonmap="false" />
       <googlemapcoordinate latitude="0" longitude="0" mapzoom="0" latitudemapcenter="0" longitudemapcenter="0" />
       <images>
-        <advertismentimage path="http://www.casa.it/im/logos/casa_207x56.png" imagetype="Image" />
+        <advertismentimage path="https://www.casa.it/im/logos/casa_207x56.png" imagetype="Image" />
       </images>
     </realestate>
   </realestateitems>

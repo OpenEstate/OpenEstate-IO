@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "detailedSizeFloorType")
 @XmlEnum
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-07-05T06:51:24+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public enum DetailedFloorSizeType {
 
     @XmlEnumValue("Intermedio")

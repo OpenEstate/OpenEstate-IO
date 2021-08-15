@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -74,7 +72,6 @@ public class PremiseFeatures
      */
     @JsonProperty("featuresType")
     @NotNull
-    @Nonnull
     private PremiseFeatures.Type type;
     /**
      * 
@@ -85,24 +82,11 @@ public class PremiseFeatures
     @DecimalMin("1")
     @DecimalMax("99999")
     @NotNull
-    @Nonnull
     private BigInteger areaConstructed;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresAreaPlot")
     @DecimalMin("1")
     @DecimalMax("99999999")
     private BigInteger areaPlot;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresAreaUsable")
     @DecimalMin("1")
     @DecimalMax("99999")
@@ -111,19 +95,11 @@ public class PremiseFeatures
      * adapted bathroom
      * <p>
      * availability of adapted bathroom for disabled people
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresBathroomAdapted")
     @JsonPropertyDescription("availability of adapted bathroom for disabled people")
     private Boolean bathroomAdapted;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresBathroomNumber")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -132,10 +108,8 @@ public class PremiseFeatures
      * air conditioning
      * <p>
      * has air conditioning
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresConditionedAir")
     @JsonPropertyDescription("has air conditioning")
     private Boolean conditionedAir;
@@ -143,10 +117,8 @@ public class PremiseFeatures
      * conservation status
      * <p>
      * status new is only available for new development properties, not for secondhand properties
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresConservation")
     @JsonPropertyDescription("status new is only available for new development properties, not for secondhand properties")
     private ConservationType conservation;
@@ -154,18 +126,10 @@ public class PremiseFeatures
      * energy certification rating
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateRating")
     private EnergyCertificateRatingType energyCertificateRating;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresEnergyCertificatePerformance")
     @DecimalMin("1")
     @DecimalMax("999")
@@ -174,10 +138,8 @@ public class PremiseFeatures
      * energy certification type
      * <p>
      * only available for new development properties. project: certification in project phase; completed: certification if the property is finished
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateType")
     @JsonPropertyDescription("only available for new development properties. project: certification in project phase; completed: certification if the property is finished")
     private EnergyCertificateType energyCertificateType;
@@ -185,10 +147,8 @@ public class PremiseFeatures
      * energy certification law
      * <p>
      * only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEnergyCertificateLaw")
     @JsonPropertyDescription("only for Italy, indicates the legislation that applies to the energy rating, DL-192(2005) or LEGGE-90(2013)")
     private EnergyCertificateLawType energyCertificateLaw;
@@ -196,29 +156,15 @@ public class PremiseFeatures
      * equipped with kitchen
      * <p>
      * equipped with kitchen only
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresEquippedKitchen")
     @JsonPropertyDescription("equipped with kitchen only")
     private Boolean equippedKitchen;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresFacadeArea")
     @DecimalMin("1")
     @DecimalMax("999")
     private BigInteger facadeArea;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresFloorsBuilding")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -227,19 +173,11 @@ public class PremiseFeatures
      * heating
      * <p>
      * heating availability
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresHeating")
     @JsonPropertyDescription("heating availability")
     private Boolean heating;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresLastActivity")
     @Pattern(regexp = "^.{0,100}$")
     private String lastActivity;
@@ -247,18 +185,10 @@ public class PremiseFeatures
      * located at corner
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresLocatedAtCorner")
     private Boolean locatedAtCorner;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresRooms")
     @DecimalMin("1")
     @DecimalMax("99")
@@ -267,68 +197,50 @@ public class PremiseFeatures
      * security alarm system
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityAlarm")
     private Boolean securityAlarm;
     /**
      * security door
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecurityDoor")
     private Boolean securityDoor;
     /**
      * security system
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSecuritySystem")
     private Boolean securitySystem;
     /**
      * storage room
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresStorage")
     private Boolean storage;
     /**
      * smoke extraction
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresSmokeExtraction")
     private Boolean smokeExtraction;
     /**
      * ubication
      * <p>
      * 
-     * (Can be null)
      * 
      */
-    @Nullable
     @JsonProperty("featuresUbication")
     private UbicationType ubication;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("featuresWindowsNumber")
     @DecimalMin("1")
     @DecimalMax("999")
@@ -336,7 +248,7 @@ public class PremiseFeatures
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -4696725558880422646L;
+    private final static long serialVersionUID = -3043204210164394468L;
 
     /**
      * No args constructor for use in serialization
@@ -1147,6 +1059,13 @@ public class PremiseFeatures
         return (((((((((((((((((((((((((((super.equals(rhs)&&((this.rooms == rhs.rooms)||((this.rooms!= null)&&this.rooms.equals(rhs.rooms))))&&((this.energyCertificateRating == rhs.energyCertificateRating)||((this.energyCertificateRating!= null)&&this.energyCertificateRating.equals(rhs.energyCertificateRating))))&&((this.equippedKitchen == rhs.equippedKitchen)||((this.equippedKitchen!= null)&&this.equippedKitchen.equals(rhs.equippedKitchen))))&&((this.areaUsable == rhs.areaUsable)||((this.areaUsable!= null)&&this.areaUsable.equals(rhs.areaUsable))))&&((this.bathroomNumber == rhs.bathroomNumber)||((this.bathroomNumber!= null)&&this.bathroomNumber.equals(rhs.bathroomNumber))))&&((this.storage == rhs.storage)||((this.storage!= null)&&this.storage.equals(rhs.storage))))&&((this.ubication == rhs.ubication)||((this.ubication!= null)&&this.ubication.equals(rhs.ubication))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.areaConstructed == rhs.areaConstructed)||((this.areaConstructed!= null)&&this.areaConstructed.equals(rhs.areaConstructed))))&&((this.windowsNumber == rhs.windowsNumber)||((this.windowsNumber!= null)&&this.windowsNumber.equals(rhs.windowsNumber))))&&((this.smokeExtraction == rhs.smokeExtraction)||((this.smokeExtraction!= null)&&this.smokeExtraction.equals(rhs.smokeExtraction))))&&((this.facadeArea == rhs.facadeArea)||((this.facadeArea!= null)&&this.facadeArea.equals(rhs.facadeArea))))&&((this.energyCertificatePerformance == rhs.energyCertificatePerformance)||((this.energyCertificatePerformance!= null)&&this.energyCertificatePerformance.equals(rhs.energyCertificatePerformance))))&&((this.heating == rhs.heating)||((this.heating!= null)&&this.heating.equals(rhs.heating))))&&((this.areaPlot == rhs.areaPlot)||((this.areaPlot!= null)&&this.areaPlot.equals(rhs.areaPlot))))&&((this.bathroomAdapted == rhs.bathroomAdapted)||((this.bathroomAdapted!= null)&&this.bathroomAdapted.equals(rhs.bathroomAdapted))))&&((this.floorsBuilding == rhs.floorsBuilding)||((this.floorsBuilding!= null)&&this.floorsBuilding.equals(rhs.floorsBuilding))))&&((this.securitySystem == rhs.securitySystem)||((this.securitySystem!= null)&&this.securitySystem.equals(rhs.securitySystem))))&&((this.locatedAtCorner == rhs.locatedAtCorner)||((this.locatedAtCorner!= null)&&this.locatedAtCorner.equals(rhs.locatedAtCorner))))&&((this.securityDoor == rhs.securityDoor)||((this.securityDoor!= null)&&this.securityDoor.equals(rhs.securityDoor))))&&((this.securityAlarm == rhs.securityAlarm)||((this.securityAlarm!= null)&&this.securityAlarm.equals(rhs.securityAlarm))))&&((this.conservation == rhs.conservation)||((this.conservation!= null)&&this.conservation.equals(rhs.conservation))))&&((this.energyCertificateLaw == rhs.energyCertificateLaw)||((this.energyCertificateLaw!= null)&&this.energyCertificateLaw.equals(rhs.energyCertificateLaw))))&&((this.conditionedAir == rhs.conditionedAir)||((this.conditionedAir!= null)&&this.conditionedAir.equals(rhs.conditionedAir))))&&((this.energyCertificateType == rhs.energyCertificateType)||((this.energyCertificateType!= null)&&this.energyCertificateType.equals(rhs.energyCertificateType))))&&((this.lastActivity == rhs.lastActivity)||((this.lastActivity!= null)&&this.lastActivity.equals(rhs.lastActivity))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))));
     }
 
+
+    /**
+     * premise types
+     * <p>
+     * 
+     * 
+     */
     public enum Type {
 
         PREMISES("premises"),
@@ -1161,7 +1080,7 @@ public class PremiseFeatures
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

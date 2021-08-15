@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum DateiSuffix {
     BMP(".BMP"),
     GIF(".GIF"),
@@ -45,10 +46,11 @@ public enum DateiSuffix {
     AVI(".AVI"),
     PDF(".PDF");
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(DateiSuffix.class);
     private final String value;
 
-    private DateiSuffix(String value) {
+    DateiSuffix(String value) {
         this.value = value;
     }
 
@@ -64,6 +66,7 @@ public enum DateiSuffix {
         return null;
     }
 
+    @SuppressWarnings("unused")
     public static DateiSuffix fromMimeType(String mimeType) {
         mimeType = StringUtils.lowerCase(StringUtils.trimToNull(mimeType));
 
@@ -134,17 +137,15 @@ public enum DateiSuffix {
                 return "image/jpeg";
 
             case MOV:
+            case QT:
+            case QTL:
                 return "video/quicktime";
 
             case MP4:
                 return "video/mp4";
 
             case MPE:
-                return "video/mpeg";
-
             case MPEG:
-                return "video/mpeg";
-
             case MPG:
                 return "video/mpeg";
 
@@ -153,12 +154,6 @@ public enum DateiSuffix {
 
             case PNG:
                 return "image/png";
-
-            case QT:
-                return "video/quicktime";
-
-            case QTL:
-                return "video/quicktime";
 
             case RM:
                 return "application/vnd.rn-realmedia";

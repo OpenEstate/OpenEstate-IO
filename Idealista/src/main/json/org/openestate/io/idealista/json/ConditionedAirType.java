@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * air conditioning type
+ * <p>
+ * 
+ * 
+ */
 public enum ConditionedAirType {
 
     NOT_AVAILABLE("notAvailable"),
@@ -21,7 +28,7 @@ public enum ConditionedAirType {
         }
     }
 
-    private ConditionedAirType(String value) {
+    ConditionedAirType(String value) {
         this.value = value;
     }
 

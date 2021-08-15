@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,12 +29,12 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
 import org.openestate.io.openimmo.OpenImmoUtils;
 import org.openestate.io.openimmo.OpenImmoVersion;
 import org.openestate.io.openimmo.xml.Aktion;
 import org.openestate.io.openimmo.xml.Anbieter;
+import org.openestate.io.openimmo.xml.Anhang;
 import org.openestate.io.openimmo.xml.Haus;
 import org.openestate.io.openimmo.xml.Immobilie;
 import org.openestate.io.openimmo.xml.ObjectFactory;
@@ -66,10 +66,6 @@ public class OpenImmoWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                OpenImmoWritingExample.class.getResource("log4j.properties"));
-
         // create an Openimmo object with some example data
         // this object corresponds to the <openimmo> root element in XML
         Openimmo openimmo = FACTORY.createOpenimmo();
@@ -80,7 +76,7 @@ public class OpenImmoWritingExample {
             openimmo.getAnbieter().add(createAnbieter());
         }
 
-        // convert the Openimmo object into a XML document
+        // convert the Openimmo object into an XML document
         OpenImmoTransferDocument doc = null;
         try {
             doc = OpenImmoTransferDocument.newDocument(openimmo);
@@ -100,7 +96,7 @@ public class OpenImmoWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -211,7 +207,30 @@ public class OpenImmoWritingExample {
         immobilie.getKontaktperson().setLand(FACTORY.createLand());
         immobilie.getKontaktperson().getLand().setIsoLand(Locale.GERMANY.getISO3Country());
 
+        // add some attachments
+        immobilie.setAnhaenge(FACTORY.createAnhaenge());
+        int attachmentCount = RandomUtils.nextInt(3, 10);
+        for (int i = 0; i < attachmentCount; i++) {
+            immobilie.getAnhaenge().getAnhang().add(createAnhang());
+        }
+
         return immobilie;
+    }
+
+    /**
+     * Create an {@link Anhang} with some example data.
+     *
+     * @return created example object
+     */
+    private static Anhang createAnhang() {
+        // create an example transfer
+        Anhang anhang = FACTORY.createAnhang();
+        anhang.setAnhangtitel(RANDOMIZER.getWords(2, 5));
+        anhang.setLocation(Anhang.Location.EXTERN);
+        anhang.setFormat("image/jpeg");
+        anhang.setDaten(FACTORY.createDaten());
+        anhang.getDaten().setPfad("image" + RandomStringUtils.randomAlphabetic(3) + ".jpg");
+        return anhang;
     }
 
     /**
@@ -270,7 +289,7 @@ public class OpenImmoWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(OpenImmoTransferDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

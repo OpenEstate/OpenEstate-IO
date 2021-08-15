@@ -26,7 +26,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
@@ -46,12 +46,6 @@
 
         <!-- compile -->
         <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>annotations</artifactId>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <scope>compile</scope>
@@ -67,6 +61,16 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <scope>compile</scope>
@@ -77,20 +81,14 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.bval</groupId>
-            <artifactId>org.apache.bval.bundle</artifactId>
+            <artifactId>bval-jsr</artifactId>
             <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <scope>compile</scope>
         </dependency>
 
         <!-- test -->
@@ -100,13 +98,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
             <scope>test</scope>
         </dependency>
 
@@ -115,7 +108,16 @@
     <build>
         <plugins>
 
-            <!-- add generated JAXB sources -->
+            <!-- compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>8</release>
+                </configuration>
+            </plugin>
+
+            <!-- add generated JSON sources -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -134,19 +136,7 @@
                 </executions>
             </plugin>
 
-            <!-- jar -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Automatic-Module-Name>org.openestate.io.idealista</Automatic-Module-Name>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-
+            <!-- JSON -->
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
@@ -158,10 +148,12 @@
                     <serializable>true</serializable>
                     <useBigDecimals>true</useBigDecimals>
                     <useBigIntegers>true</useBigIntegers>
+                    <useCommonsLang3>true</useCommonsLang3>
                     <initializeCollections>false</initializeCollections>
                     <includeHashcodeAndEquals>true</includeHashcodeAndEquals>
                     <includeJsr303Annotations>true</includeJsr303Annotations>
-                    <includeJsr305Annotations>true</includeJsr305Annotations>
+                    <includeJsr305Annotations>false</includeJsr305Annotations>
+                    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
                     <includeConstructors>true</includeConstructors>
                     <generateBuilders>true</generateBuilders>
                     <constructorsRequiredPropertiesOnly>true</constructorsRequiredPropertiesOnly>

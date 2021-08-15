@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * energy certification type
+ * <p>
+ * only available for new development properties. project: certification in project phase; completed: certification if the property is finished
+ * 
+ */
 public enum EnergyCertificateType {
 
     PROJECT("project"),
@@ -19,7 +26,7 @@ public enum EnergyCertificateType {
         }
     }
 
-    private EnergyCertificateType(String value) {
+    EnergyCertificateType(String value) {
         this.value = value;
     }
 

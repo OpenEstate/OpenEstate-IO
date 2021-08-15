@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 package org.openestate.io.kyero;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlVersion;
+import org.openestate.io.kyero.converters.AbstractConverter;
 import org.openestate.io.kyero.converters.Kyero_2_1;
 import org.openestate.io.kyero.converters.Kyero_3;
 import org.slf4j.Logger;
@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-public enum KyeroVersion implements XmlVersion {
+public enum KyeroVersion implements XmlVersion<KyeroDocument, KyeroVersion> {
     /**
      * Version v2.1
      */
@@ -42,12 +42,12 @@ public enum KyeroVersion implements XmlVersion {
 
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroVersion.class);
-    private final Class converterClass;
+    private final Class<? extends AbstractConverter> converterClass;
     private final String xmlVersion;
     private final String readableVersion;
     private final String[] alias;
 
-    KyeroVersion(Class converterClass, String xmlVersion, String readableVersion, String... alias) {
+    KyeroVersion(Class<? extends AbstractConverter> converterClass, String xmlVersion, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.xmlVersion = xmlVersion;
         this.readableVersion = readableVersion;
@@ -71,9 +71,9 @@ public enum KyeroVersion implements XmlVersion {
 
     @Override
     @SuppressWarnings("Duplicates")
-    public XmlConverter getConverter() {
+    public AbstractConverter getConverter() {
         try {
-            return (XmlConverter) this.converterClass.newInstance();
+            return this.converterClass.getConstructor().newInstance();
         } catch (Exception ex) {
             LOGGER.error("Can't create converter!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -103,13 +103,13 @@ public enum KyeroVersion implements XmlVersion {
     }
 
     @Override
-    public boolean isNewerThen(XmlVersion v) {
+    public boolean isNewerThen(KyeroVersion v) {
         KyeroVersion[] versions = KyeroVersion.values();
         return ArrayUtils.indexOf(versions, this) > ArrayUtils.indexOf(versions, v);
     }
 
     @Override
-    public boolean isOlderThen(XmlVersion v) {
+    public boolean isOlderThen(KyeroVersion v) {
         KyeroVersion[] versions = KyeroVersion.values();
         return ArrayUtils.indexOf(versions, this) < ArrayUtils.indexOf(versions, v);
     }

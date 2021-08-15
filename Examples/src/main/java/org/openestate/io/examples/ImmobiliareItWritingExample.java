@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
 import org.openestate.io.immobiliare_it.xml.ClassType;
@@ -78,10 +77,6 @@ public class ImmobiliareItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmobiliareItWritingExample.class.getResource("log4j.properties"));
-
         // create a Feed object with some example data
         // this object corresponds to the <feed> root element in XML
         Feed feed = FACTORY.createFeed();
@@ -93,7 +88,7 @@ public class ImmobiliareItWritingExample {
             feed.getProperties().getProperty().add(createProperty());
         }
 
-        // convert the Feed object into a XML document
+        // convert the Feed object into an XML document
         ImmobiliareItDocument doc = null;
         try {
             doc = ImmobiliareItDocument.newDocument(feed);
@@ -113,7 +108,7 @@ public class ImmobiliareItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -184,10 +179,24 @@ public class ImmobiliareItWritingExample {
         obj.getExtraFeatures().setBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
         obj.getExtraFeatures().setBuildYear(RandomUtils.nextInt(1990, 2020));
         obj.getExtraFeatures().setElevator(RandomUtils.nextBoolean());
+<<<<<<< HEAD
         obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(1, 5));
         obj.getExtraFeatures().setFurniture(randomValue(FurnitureType.values()));
         obj.getExtraFeatures().setGarden(randomValue(GardenType.values()));
         obj.getExtraFeatures().setKitchen(randomValue(KitchenType.values()));
+=======
+        obj.getExtraFeatures().setFloorplannerUrl("https://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
+        obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
+        obj.getExtraFeatures().setFurniture(randomValue(Furniture.values()));
+        obj.getExtraFeatures().setGarden(randomValue(Garden.values()));
+        obj.getExtraFeatures().setHeating(randomValue(Heat.values()));
+        obj.getExtraFeatures().setKitchen(randomValue(Kitchen.values()));
+        obj.getExtraFeatures().setNet(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setNumFloors(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtraFeatures().setOverheadCrane(randomValue(YesNoReady.values()));
+        obj.getExtraFeatures().setReception(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setRentContract(randomValue(Rental.values()));
+>>>>>>> develop
         obj.getExtraFeatures().setSecurityAlarm(RandomUtils.nextBoolean());
         obj.getExtraFeatures().setTerrace(RandomUtils.nextBoolean());
 
@@ -325,7 +334,7 @@ public class ImmobiliareItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(ImmobiliareItDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {

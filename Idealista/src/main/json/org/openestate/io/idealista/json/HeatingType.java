@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * heatingType
+ * <p>
+ * 
+ * 
+ */
 public enum HeatingType {
 
     CENTRAL_GAS("centralGas"),
@@ -26,7 +33,7 @@ public enum HeatingType {
         }
     }
 
-    private HeatingType(String value) {
+    HeatingType(String value) {
         this.value = value;
     }
 

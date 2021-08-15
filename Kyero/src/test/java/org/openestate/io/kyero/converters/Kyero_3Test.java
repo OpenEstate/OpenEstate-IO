@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.openestate.io.kyero.converters;
 
+import javax.xml.xpath.XPathExpressionException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -53,17 +54,17 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:new_build", doc);
             Assert.assertEquals(
                     "3 <new_build> elements available before conversion.", 3, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:price_freq[text()='sale']", doc);
             Assert.assertEquals(
                     "2 <price_freq>sale</price_freq> elements available before conversion.", 2, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:price_freq[text()='new_build']", doc);
             Assert.assertEquals(
                     "0 <price_freq>new_build</price_freq> elements available before conversion.", 0, count);
@@ -75,17 +76,17 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:new_build", doc);
             Assert.assertEquals(
                     "0 <new_build> elements available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:price_freq[text()='sale']", doc);
             Assert.assertEquals(
                     "1 <price_freq>sale</price_freq> element available after conversion.", 1, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:price_freq[text()='new_build']", doc);
             Assert.assertEquals(
                     "1 <price_freq>new_build</price_freq> element available after conversion.", 1, count);
@@ -107,12 +108,12 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:type", doc);
             Assert.assertEquals(
                     "3 <type> elements available before conversion.", 3, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:type[not(*)]", doc);
             Assert.assertEquals(
                     "3 <type> elements without children available before conversion.", 3, count);
@@ -124,12 +125,12 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:type[not(*)]", doc);
             Assert.assertEquals(
                     "0 <type> elements without children available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:type/io:en", doc);
             Assert.assertEquals(
                     "3 converted <type> elements available after conversion.", 3, count);
@@ -151,12 +152,12 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:url[not(*)]", doc);
             Assert.assertEquals(
                     "0 <url> elements without children available before conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:url/*", doc);
             Assert.assertEquals(
                     "6 children of <url> elements available before conversion.", 6, count);
@@ -168,12 +169,12 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:url[not(*)]", doc);
             Assert.assertEquals(
                     "3 <url> elements without children available after conversion.", 3, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:url/*", doc);
             Assert.assertEquals(
                     "0 children of <url> elements available after conversion.", 0, count);
@@ -195,9 +196,9 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
-                    "/io:root/io:property/io:custom  | " +
-                            "/io:root/io:agent/io:custom", doc);
+            count = xpathCount(
+                    "/io:root/io:property/io:custom | " +
+                    "/io:root/io:agent/io:custom", doc);
             Assert.assertEquals(
                     "6 <custom> elements available before conversion.", 6, count);
 
@@ -208,9 +209,9 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
-                    "/io:root/io:property/io:custom  | " +
-                            "/io:root/io:agent/io:custom", doc);
+            count = xpathCount(
+                    "/io:root/io:property/io:custom | " +
+                    "/io:root/io:agent/io:custom", doc);
             Assert.assertEquals(
                     "0 <custom> elements available after conversion.", 0, count);
         } catch (Exception ex) {
@@ -231,7 +232,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:energy_rating", doc);
             Assert.assertEquals(
                     "3 <energy_rating> elements available before conversion.", 3, count);
@@ -243,7 +244,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:energy_rating", doc);
             Assert.assertEquals(
                     "0 <energy_rating> elements available after conversion.", 0, count);
@@ -265,7 +266,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:location", doc);
             Assert.assertEquals(
                     "3 <location> elements available before conversion.", 3, count);
@@ -277,7 +278,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:location", doc);
             Assert.assertEquals(
                     "0 <location> elements available after conversion.", 0, count);
@@ -299,7 +300,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:notes", doc);
             Assert.assertEquals(
                     "3 <notes> elements available before conversion.", 3, count);
@@ -311,7 +312,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:notes", doc);
             Assert.assertEquals(
                     "0 <notes> elements available after conversion.", 0, count);
@@ -339,9 +340,9 @@ public class Kyero_3Test {
             //System.out.println( "----------------------------" );
 
             for (String lang : unsupportedLanguages) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:root/io:property/io:desc/io:" + lang + " | " +
-                                "/io:root/io:property/io:images/io:image/io:title/io:" + lang, doc);
+                        "/io:root/io:property/io:images/io:image/io:title/io:" + lang + "", doc);
                 Assert.assertEquals(
                         "2 translations in \"" + lang + "\" available before conversion.", 2, count);
             }
@@ -354,9 +355,9 @@ public class Kyero_3Test {
             //System.out.println( "----------------------------" );
 
             for (String lang : unsupportedLanguages) {
-                count = XmlUtils.countNodes(
+                count = xpathCount(
                         "/io:root/io:property/io:desc/io:" + lang + " | " +
-                                "/io:root/io:property/io:images/io:image/io:title/io:" + lang, doc);
+                        "/io:root/io:property/io:images/io:image/io:title/io:" + lang + "", doc);
                 Assert.assertEquals(
                         "0 translations in \"" + lang + "\" available after conversion.", 0, count);
             }
@@ -378,7 +379,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:currency", doc);
             Assert.assertEquals(
                     "3 <currency> elements available before conversion.", 3, count);
@@ -390,7 +391,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:currency", doc);
             Assert.assertEquals(
                     "1 <currency> element available after conversion.", 1, count);
@@ -412,12 +413,12 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:new_build", doc);
             Assert.assertEquals(
                     "0 <new_build> elements available before conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:price_freq[text()='sale']", doc);
             Assert.assertEquals(
                     "1 <price_freq>sale</price_freq> elements available before conversion.", 1, count);
@@ -429,12 +430,12 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:new_build", doc);
             Assert.assertEquals(
                     "1 <new_build> elements available after conversion.", 1, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:price_freq[text()='sale']", doc);
             Assert.assertEquals(
                     "2 <price_freq>sale</price_freq> elements available before conversion.", 2, count);
@@ -456,7 +457,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:type[not(*)]", doc);
             Assert.assertEquals(
                     "0 <type> elements without children available before conversion.", 0, count);
@@ -468,7 +469,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:type[not(*)]", doc);
             Assert.assertEquals(
                     "3 <type> elements without children available after conversion.", 3, count);
@@ -490,7 +491,7 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:url[not(*)]", doc);
             Assert.assertEquals(
                     "3 <url> elements without children available before conversion.", 3, count);
@@ -502,12 +503,12 @@ public class Kyero_3Test {
             //DocumentUtils.write( doc, System.out );
             //System.out.println( "----------------------------" );
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:url[not(*)]", doc);
             Assert.assertEquals(
                     "0 <url> elements without children available after conversion.", 0, count);
 
-            count = XmlUtils.countNodes(
+            count = xpathCount(
                     "/io:root/io:property/io:url/io:en", doc);
             Assert.assertEquals(
                     "2 converted <url> elements available after conversion.", 2, count);
@@ -516,5 +517,14 @@ public class Kyero_3Test {
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             Assert.fail("Test of Kyero_3.upgradeUrlElements failed!");
         }
+    }
+
+    private static int xpathCount(String xpath, Document doc) throws XPathExpressionException {
+        return xpathCount(xpath, doc, doc);
+    }
+
+    private static int xpathCount(String xpath, Document doc, Object element) throws XPathExpressionException {
+        return XmlUtils.xPathNumber(XmlUtils.xPath(
+                "count(" + xpath + ")", doc, "io"), element).intValue();
     }
 }

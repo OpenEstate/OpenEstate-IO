@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package org.openestate.io.immobiliare_it.converters;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItVersion;
 import org.slf4j.Logger;
@@ -26,9 +25,9 @@ import org.slf4j.LoggerFactory;
  * Converter for version 2.8.
  *
  * @author Andreas Rudolph
- * @since 1.0
+ * @since 1.5
  */
-public class ImmobiliareIt_2_8 extends XmlConverter<ImmobiliareItDocument, ImmobiliareItVersion> {
+public class ImmobiliareIt_2_8 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareIt_2_8.class);
 
@@ -38,12 +37,11 @@ public class ImmobiliareIt_2_8 extends XmlConverter<ImmobiliareItDocument, Immob
     }
 
     /**
-     * Downgrade an Immobiliare document from version 2.8.
+     * Downgrade a {@link ImmobiliareItDocument} from version 2.8.
      * <p>
-     * Versions before 2.8 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.8 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc Immobiliare document in version 2.8
+     * @param doc document in version 2.8
      */
     @Override
     public void downgradeToPreviousVersion(ImmobiliareItDocument doc) {
@@ -52,12 +50,11 @@ public class ImmobiliareIt_2_8 extends XmlConverter<ImmobiliareItDocument, Immob
     }
 
     /**
-     * Downgrade an Immobiliare document to version 2.8.
+     * Upgrade a {@link ImmobiliareItDocument} to version 2.8.
      * <p>
-     * Versions before 2.8 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.8 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc OpenImmo document
+     * @param doc document
      */
     @Override
     public void upgradeFromPreviousVersion(ImmobiliareItDocument doc) {

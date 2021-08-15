@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ public class ImmobarItUtilsTest {
 
     @Test
     public void testCreateDocument() {
-        //noinspection SpellCheckingInspection
         String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<realestate>\n"
                 + "  <company_name_de>test</company_name_de>\n"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package org.openestate.io.wis_it;
 
 import java.math.BigInteger;
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlDocument;
@@ -27,14 +28,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from
- * <a href="http://wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a> with a
- * &lt;WIS&gt; root element.
+ * XML document from <a href="https://www.wohnen-in-suedtirol.it/">wohnen-in-suedtirol.it</a> with a &lt;WIS&gt;
+ * root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class WisItDocument extends XmlDocument<WIS> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(WisItDocument.class);
@@ -82,23 +81,37 @@ public class WisItDocument extends XmlDocument<WIS> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static WisItDocument newDocument(WIS wis) throws ParserConfigurationException, JAXBException {
+        return newDocument(wis, null);
+    }
+
+    /**
+     * Creates a {@link WisItDocument} from a {@link WIS} object.
+     *
+     * @param wis     Java object, that represents the &lt;WIS&gt; root element
+     * @param context JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static WisItDocument newDocument(WIS wis, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (wis.getOBJEKTE() == null)
             wis.setOBJEKTE(WisItUtils.getFactory().createWISOBJEKTE());
         wis.getOBJEKTE().setANZAHL(BigInteger.valueOf(wis.getOBJEKTE().getOBJEKT().size()));
 
         Document document = XmlUtils.newDocument();
-        WisItUtils.createMarshaller("UTF-8", true).marshal(wis, document);
+        WisItUtils.createMarshaller("UTF-8", true, context).marshal(wis, document);
         return new WisItDocument(document);
     }
 
     /**
      * Creates a {@link WIS} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;WIS&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public WIS toObject() throws JAXBException {
-        return (WIS) WisItUtils.createUnmarshaller().unmarshal(this.getDocument());
+    public WIS toObject(JAXBContext context) throws JAXBException {
+        return (WIS) WisItUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

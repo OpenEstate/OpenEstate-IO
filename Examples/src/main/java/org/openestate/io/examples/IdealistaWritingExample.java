@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,7 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.idealista.IdealistaCustomer;
+import org.openestate.io.idealista.IdealistaRootElement;
 import org.openestate.io.idealista.IdealistaUtils;
 import org.openestate.io.idealista.json.Address;
 import org.openestate.io.idealista.json.BathroomType;
@@ -74,10 +73,6 @@ public class IdealistaWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmobiliareItWritingExample.class.getResource("log4j.properties"));
-
         // create a customer root object with some example data
         Customer customer = new Customer();
         customer.setReference(RandomStringUtils.randomAlphanumeric(5));
@@ -88,14 +83,14 @@ public class IdealistaWritingExample {
         customer.setContact(createContact());
 
         // append some example properties to the customer object
-        customer.setProperties(new LinkedHashSet<Property>());
+        customer.setProperties(new LinkedHashSet<>());
         int propertyCount = RandomUtils.nextInt(5, 10);
         for (int i = 0; i < propertyCount; i++) {
             customer.getProperties().add(createProperty());
         }
 
         // wrap customer object into a JSON root element
-        IdealistaCustomer root = new IdealistaCustomer(customer);
+        IdealistaRootElement root = new IdealistaRootElement(customer);
 
         // write JSON root element into a java.io.File
         try {
@@ -107,7 +102,7 @@ public class IdealistaWritingExample {
         }
 
         // write JSON root element into a java.io.OutputStream
-        write(root, new NullOutputStream());
+        write(root, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write JSON root element into a java.io.Writer
         write(root, new NullWriter());
@@ -167,14 +162,14 @@ public class IdealistaWritingExample {
         }
 
         // add random number of images
-        obj.setImages(new LinkedHashSet<Image>());
+        obj.setImages(new LinkedHashSet<>());
         int imageCount = RandomUtils.nextInt(5, 10);
         for (int i = 0; i < imageCount; i++) {
             obj.getImages().add(createImage(i));
         }
 
         // add random descriptions
-        obj.setDescriptions(new LinkedHashSet<Description>());
+        obj.setDescriptions(new LinkedHashSet<>());
         for (Description.Language lang : Description.Language.values()) {
             Description d = new Description();
             d.setLanguage(lang);
@@ -304,8 +299,7 @@ public class IdealistaWritingExample {
 
         //noinspection CatchMayIgnoreException
         try {
-            image.setUrl(new URI("https://example.com/image-"
-                    + RandomUtils.nextInt(0, 999) + ".jpg"));
+            image.setUrl(new URI("https://example.com/image-" + order + ".jpg"));
         } catch (URISyntaxException ex) {
         }
 
@@ -326,13 +320,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaCustomer} into a {@link File}.
+     * Write an {@link IdealistaRootElement} into a {@link File}.
      *
      * @param root the root element to write
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    private static void write(IdealistaCustomer root, File file) {
+    private static void write(IdealistaRootElement root, File file) {
         LOGGER.info("writing document");
         try (Writer w = new OutputStreamWriter(new FileOutputStream(file), IdealistaUtils.CHARSET)) {
             root.write(w, PRETTY_PRINT);
@@ -345,13 +339,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaCustomer} into an {@link OutputStream}.
+     * Write an {@link IdealistaRootElement} into an {@link OutputStream}.
      *
      * @param root   the root element to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
-    private static void write(IdealistaCustomer root, OutputStream output) {
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
+    private static void write(IdealistaRootElement root, OutputStream output) {
         LOGGER.info("writing document");
         try (Writer w = new OutputStreamWriter(output, IdealistaUtils.CHARSET)) {
             root.write(w, PRETTY_PRINT);
@@ -364,13 +358,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaCustomer} into a {@link Writer}.
+     * Write an {@link IdealistaRootElement} into a {@link Writer}.
      *
      * @param root   the root element to write
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    private static void write(IdealistaCustomer root, Writer output) {
+    private static void write(IdealistaRootElement root, Writer output) {
         LOGGER.info("writing document");
         try {
             root.write(output, PRETTY_PRINT);
@@ -383,13 +377,13 @@ public class IdealistaWritingExample {
     }
 
     /**
-     * Write an {@link IdealistaCustomer} into a {@link String} and print the
+     * Write an {@link IdealistaRootElement} into a {@link String} and print the
      * results to the console.
      *
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    private static void writeToConsole(IdealistaCustomer doc) {
+    private static void writeToConsole(IdealistaRootElement doc) {
         LOGGER.info("writing document");
         try {
             String xml = doc.writeToString(PRETTY_PRINT);

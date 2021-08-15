@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * OpenImmoJavadocBinding.
+ * ImmoXmlJavadocBindings.
  *
  * @author Andreas Rudolph
  */
@@ -37,14 +37,14 @@ public class ImmoXmlJavadocBindings {
     public static void main(String[] args) {
         TreeSet<String> elementNames = new TreeSet<>();
         TreeMap<String, String> typeNames = new TreeMap<>();
-        for (Class clazz : ClassFinder.find(ImmoXmlUtils.PACKAGE)) {
-            XmlRootElement element = (XmlRootElement) clazz.getAnnotation(XmlRootElement.class);
+        for (Class<?> clazz : ClassFinder.find(ImmoXmlUtils.PACKAGE)) {
+            XmlRootElement element = clazz.getAnnotation(XmlRootElement.class);
             if (element != null) {
                 elementNames.add(element.name());
                 continue;
             }
 
-            XmlType type = (XmlType) clazz.getAnnotation(XmlType.class);
+            XmlType type = clazz.getAnnotation(XmlType.class);
             if (type != null) {
                 typeNames.put(type.name(), clazz.getSimpleName());
             }
@@ -77,7 +77,6 @@ public class ImmoXmlJavadocBindings {
         System.out.println();
     }
 
-    @SuppressWarnings("WeakerAccess")
     private final static class ClassFinder {
         private final static char DOT = '.';
         private final static char SLASH = '/';

@@ -36,14 +36,14 @@ Dependencies
 ------------
 
 -   Java 7 or newer
--   [commons-codec 1.11](https://commons.apache.org/proper/commons-codec/)
+-   [commons-codec 1.14](https://commons.apache.org/proper/commons-codec/)
 -   [commons-csv 1.6](https://commons.apache.org/proper/commons-csv/)
     (optional; for processing of CSV formats)
 -   [commons-io 2.6](https://commons.apache.org/proper/commons-io/)
 -   [commons-lang 3.8.1](https://commons.apache.org/proper/commons-lang/)
--   [jaxen 1.1.6](https://github.com/jaxen-xpath/jaxen)
+-   [jaxen 1.2.0](https://github.com/jaxen-xpath/jaxen)
     (optional; for processing of XML formats)
--   [SLF4J 1.7.25](https://www.slf4j.org/)
+-   [SLF4J 1.7.30](https://www.slf4j.org/)
 
 
 Changelog

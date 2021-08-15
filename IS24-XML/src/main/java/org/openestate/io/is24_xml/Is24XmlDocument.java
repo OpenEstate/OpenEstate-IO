@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.openestate.io.is24_xml;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlDocument;
@@ -32,7 +33,6 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlDocument.class);
@@ -95,21 +95,33 @@ public class Is24XmlDocument extends XmlDocument<ImmobilienTransferTyp> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static Is24XmlDocument newDocument(IS24ImmobilienTransfer transfer) throws ParserConfigurationException, JAXBException {
+        return newDocument(transfer, null);
+    }
+
+    /**
+     * Creates a {@link Is24XmlDocument} from a {@link ImmobilienTransferTyp} object.
+     *
+     * @param transfer Java object, that represents the &lt;IS24ImmobilienTransfer&gt; root element
+     * @param context  JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static Is24XmlDocument newDocument(IS24ImmobilienTransfer transfer, JAXBContext context) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
-        Is24XmlUtils.createMarshaller("UTF-8", true).marshal(transfer, document);
+        Is24XmlUtils.createMarshaller("UTF-8", true, context).marshal(transfer, document);
         return new Is24XmlDocument(document);
     }
 
     /**
-     * Creates a {@link ImmobilienTransferTyp} object from the contained
-     * {@link Document}.
+     * Creates a {@link ImmobilienTransferTyp} object from the contained {@link Document}.
      *
-     * @return created object, that represents the &lt;IS24ImmobilienTransfer&gt; root
-     * element
+     * @param context JAXB context for unmarshalling
+     * @return created object, that represents the &lt;IS24ImmobilienTransfer&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public ImmobilienTransferTyp toObject() throws JAXBException {
-        return ((IS24ImmobilienTransfer) Is24XmlUtils.createUnmarshaller().unmarshal(this.getDocument())).getValue();
+    public ImmobilienTransferTyp toObject(JAXBContext context) throws JAXBException {
+        return ((IS24ImmobilienTransfer) Is24XmlUtils.createUnmarshaller(context).unmarshal(this.getDocument())).getValue();
     }
 }

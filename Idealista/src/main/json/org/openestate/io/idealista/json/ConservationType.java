@@ -6,6 +6,13 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
+/**
+ * conservation status
+ * <p>
+ * status new is only available for new development properties, not for secondhand properties
+ * 
+ */
 public enum ConservationType {
 
     NEW("new"),
@@ -20,7 +27,7 @@ public enum ConservationType {
         }
     }
 
-    private ConservationType(String value) {
+    ConservationType(String value) {
         this.value = value;
     }
 

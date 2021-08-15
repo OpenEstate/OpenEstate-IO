@@ -86,7 +86,7 @@
         <jaxb:schemaBindings>
             <jaxb:package name="org.openestate.io.immobiliare_it.xml">
                 <jaxb:javadoc>
-                    <![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="http://immobiliare.it/">immobiliare.it</a>.</body>]]></jaxb:javadoc>
+                    <![CDATA[<body>Generated JAXB classes to read and write XML files for <a href="https://www.immobiliare.it/">immobiliare.it</a>.</body>]]></jaxb:javadoc>
             </jaxb:package>
         </jaxb:schemaBindings>
 

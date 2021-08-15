@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ import org.slf4j.LoggerFactory;
  *
  * @author Andreas Rudolph
  * @since 1.0
+ * @deprecated defined in schema but currently not used
  */
+@Deprecated
 public enum CategoryType {
     COMMERCIALE("C"),
     RESIDENZIALE("R"),

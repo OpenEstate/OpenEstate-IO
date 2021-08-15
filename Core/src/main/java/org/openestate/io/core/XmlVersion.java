@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,37 +18,39 @@ package org.openestate.io.core;
 /**
  * A general interface for versions of XML documents.
  *
+ * @param <DocumentType> the {@link XmlConvertableDocument} class, this version applies to
+ * @param <VersionType>  this version class
  * @author Andreas Rudolph
  * @since 1.0
  */
-public interface XmlVersion {
+public interface XmlVersion<DocumentType extends XmlConvertableDocument<?, VersionType>, VersionType extends XmlVersion<DocumentType, VersionType>> {
     /**
      * Returns the converter for this version.
      *
      * @return the converter for this version
      */
-    public XmlConverter getConverter();
+    XmlConverter<DocumentType, VersionType> getConverter();
 
     /**
      * Returns the next version relative to this version.
      *
      * @return the next version or null, if no next version is present
      */
-    public XmlVersion getNextVersion();
+    VersionType getNextVersion();
 
     /**
      * Returns the previous version relative to this version.
      *
      * @return the previous version or null, if no previous version is present
      */
-    public XmlVersion getPreviousVersion();
+    VersionType getPreviousVersion();
 
     /**
      * Returns the newest / latest version, that is currently supported.
      *
      * @return the latest version
      */
-    public boolean isLatestVersion();
+    boolean isLatestVersion();
 
     /**
      * Check, if this version is newer then another version.
@@ -56,20 +58,20 @@ public interface XmlVersion {
      * @param v the other version to compare
      * @return true, if this version is newer then the other version, otherwise false
      */
-    public boolean isNewerThen(XmlVersion v);
+    boolean isNewerThen(VersionType v);
 
     /**
-     * Check, if this version is older then another version.
+     * Check, if this version is older than another version.
      *
      * @param v the other version to compare
-     * @return true, if this version is older then the other version, otherwise false
+     * @return true, if this version is older than the other version, otherwise false
      */
-    public boolean isOlderThen(XmlVersion v);
+    boolean isOlderThen(VersionType v);
 
     /**
      * Convert this version to a readable string.
      *
      * @return the readable string for this version
      */
-    public String toReadableVersion();
+    String toReadableVersion();
 }

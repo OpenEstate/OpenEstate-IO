@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ public class OpenImmoUtilsTest {
 
     @Test
     public void testCreateDocument() {
+        @SuppressWarnings("SpellCheckingInspection")
         String transferXml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<openimmo>\n"
                 + "  <uebertragung version=\"" + OpenImmoUtils.VERSION.toReadableVersion() + "\" "
@@ -53,7 +54,7 @@ public class OpenImmoUtilsTest {
                 + "  <version>" + OpenImmoUtils.VERSION.toReadableVersion() + "</version>\n"
                 + "</openimmo_feedback>";
 
-        OpenImmoDocument doc;
+        OpenImmoDocument<?> doc;
         try {
             doc = OpenImmoUtils.createDocument(transferXml);
             Assert.assertNotNull(

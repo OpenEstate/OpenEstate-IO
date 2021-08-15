@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.wis_it.WisItDocument;
 import org.openestate.io.wis_it.WisItUtils;
 import org.openestate.io.wis_it.xml.AreaType;
@@ -45,10 +44,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML files for <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
+ * Example for writing XML files for <a href="https://www.wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a>.
  * <p>
  * This example illustrates the programmatic creation of documents for
- * <a href="http://wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a> and how they are written into XML.
+ * <a href="https://www.wohnen-in-suedtirol.it">wohnen-in-suedtirol.it</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -67,10 +66,6 @@ public class WisItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                WisItWritingExample.class.getResource("log4j.properties"));
-
         // create a WIS object with some example data
         // this object corresponds to the <WIS> element in XML
         WIS wis = FACTORY.createWIS();
@@ -84,7 +79,7 @@ public class WisItWritingExample {
         }
         wis.getOBJEKTE().setANZAHL(BigInteger.valueOf(objectCount));
 
-        // convert the WIS object into a XML document
+        // convert the WIS object into an XML document
         WisItDocument doc = null;
         try {
             doc = WisItDocument.newDocument(wis);
@@ -104,7 +99,7 @@ public class WisItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -211,7 +206,7 @@ public class WisItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(WisItDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {

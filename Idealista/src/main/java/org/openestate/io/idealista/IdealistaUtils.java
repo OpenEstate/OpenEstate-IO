@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,17 @@
 package org.openestate.io.idealista;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.cfg.DeserializerFactoryConfig;
-import com.fasterxml.jackson.databind.deser.BeanDeserializerFactory;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -46,13 +48,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Some helper functions for the JSON format of
- * <a href="https://www.idealista.com/">idealista.com</a>.
+ * Some helper functions for the JSON format of <a href="https://www.idealista.com/">idealista.com</a>.
  *
  * @author Andreas Rudolph
  * @since 1.5
  */
-@SuppressWarnings({"WeakerAccess", "unused"})
 public class IdealistaUtils {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdealistaUtils.class);
@@ -72,7 +72,7 @@ public class IdealistaUtils {
     /**
      * map property feature classes to their types
      */
-    private final static Map<Class<? extends AbstractFeatures>, Class<? extends Enum>> TYPES;
+    private final static Map<Class<? extends AbstractFeatures>, Class<? extends Enum<?>>> TYPES;
 
     static {
         TYPES = new HashMap<>();
@@ -99,9 +99,10 @@ public class IdealistaUtils {
 
         final SimpleModule module = new SimpleModule();
         module.addDeserializer(AbstractFeatures.class, new FeaturesDeserializer());
-        for (Class<? extends AbstractFeatures> t : TYPES.keySet()) {
-            module.addDeserializer(t, null);
-        }
+
+        //for (Class<? extends AbstractFeatures> t : TYPES.keySet()) {
+        //    module.addDeserializer(t, null);
+        //}
         mapper.registerModule(module);
 
         return mapper;
@@ -113,6 +114,7 @@ public class IdealistaUtils {
      * @param code ISO country code
      * @return address country or <code>null</code>, if not supported
      */
+    @SuppressWarnings("unused")
     public static Address.Country getAddressCountry(String code) {
         code = StringUtils.trimToNull(code);
 
@@ -141,11 +143,43 @@ public class IdealistaUtils {
     }
 
     /**
+     * Get two-digit ISO country code from an address country.
+     *
+     * @param country address country
+     * @return ISO country code or <code>null</code>, if not supported
+     */
+    @SuppressWarnings("unused")
+    public static String getAddressCountryCode(Address.Country country) {
+        if (country == null) return null;
+
+        switch (country) {
+            case ANDORRA:
+                return "AD";
+            case FRANCE:
+                return "FR";
+            case ITALY:
+                return "IT";
+            case PORTUGAL:
+                return "PT";
+            case SAN_MARINO:
+                return "SM";
+            case SPAIN:
+                return "ES";
+            case SWITZERLAND:
+                return "CH";
+            default:
+                LOGGER.warn("Unsupported country code '{}'!", country);
+                return null;
+        }
+    }
+
+    /**
      * Get description language for a supported locale.
      *
      * @param locale locale
      * @return description language or <code>null</code>, if not supported
      */
+    @SuppressWarnings("unused")
     public static Description.Language getDescriptionLanguage(Locale locale) {
         return (locale != null) ?
                 getDescriptionLanguage(locale.getLanguage()) :
@@ -200,6 +234,7 @@ public class IdealistaUtils {
      *
      * @return supported locales
      */
+    @SuppressWarnings("unused")
     public static Locale[] getLocales() {
         return new Locale[]{
                 new Locale("ca"), // catalan
@@ -220,8 +255,56 @@ public class IdealistaUtils {
         };
     }
 
+    /**
+     * Parse Idealista JSON from a {@link String}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaRootElement read(String json) throws IOException {
+        return new IdealistaRootElement(json);
+    }
+
+    /**
+     * Parse Idealista JSON from a {@link Reader}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaRootElement read(Reader json) throws IOException {
+        return new IdealistaRootElement(json);
+    }
+
+    /**
+     * Parse Idealista JSON from an {@link InputStream}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaRootElement read(InputStream json) throws IOException {
+        try (Reader r = new InputStreamReader(json, CHARSET)) {
+            return new IdealistaRootElement(r);
+        }
+    }
+
+    /**
+     * Parse Idealista JSON from a {@link File}.
+     *
+     * @param json JSON code to read
+     * @return Java object containing the JSON data
+     * @throws IOException if the object is not readable
+     */
+    public static IdealistaRootElement read(File json) throws IOException {
+        try (Reader r = new InputStreamReader(new FileInputStream(json), CHARSET)) {
+            return new IdealistaRootElement(r);
+        }
+    }
+
     public static class FeaturesDeserializer extends StdDeserializer<AbstractFeatures> {
-        private final BeanDeserializerFactory beanDeserializerFactory = new BeanDeserializerFactory(new DeserializerFactoryConfig());
+        //private final BeanDeserializerFactory beanDeserializerFactory = new BeanDeserializerFactory(new DeserializerFactoryConfig());
 
         public FeaturesDeserializer() {
             this(null);
@@ -232,7 +315,7 @@ public class IdealistaUtils {
         }
 
         @Override
-        public AbstractFeatures deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        public AbstractFeatures deserialize(JsonParser jp, DeserializationContext context) throws IOException {
             final JsonNode node = jp.getCodec().readTree(jp);
             final String featuresType = (node.has("featuresType")) ?
                     node.get("featuresType").asText() :
@@ -245,16 +328,16 @@ public class IdealistaUtils {
             }
 
             //LOGGER.debug("Deserializing {} features...", featuresType);
-            for (Map.Entry<Class<? extends AbstractFeatures>, Class<? extends Enum>> type : TYPES.entrySet()) {
+            for (Map.Entry<Class<? extends AbstractFeatures>, Class<? extends Enum<?>>> type : TYPES.entrySet()) {
                 try {
-                    final Enum typeEnum = (Enum) type.getValue()
+                    final Enum<?> typeEnum = (Enum<?>) type.getValue()
                             .getMethod("fromValue", String.class)
                             .invoke(null, featuresType);
 
                     if (typeEnum != null) {
                         final JsonParser p = node.traverse(jp.getCodec());
                         p.nextToken();
-                        return ctxt.readValue(p, type.getKey());
+                        return context.readValue(p, type.getKey());
                     }
 
                 } catch (InvocationTargetException ex) {

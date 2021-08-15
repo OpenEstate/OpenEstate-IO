@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class IdxParser extends CsvParser<IdxRecord> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxParser.class);
@@ -39,8 +38,7 @@ public class IdxParser extends CsvParser<IdxRecord> {
     /**
      * Create with specifications of a {@link CSVParser}.
      *
-     * @param parser the CSV parser from
-     *               <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+     * @param parser the CSV parser from <a href="https://commons.apache.org/proper/commons-csv/">commons-csv</a>
      */
     protected IdxParser(CSVParser parser) {
         super(parser);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import org.slf4j.LoggerFactory;
  * @since 1.0
  */
 public abstract class CsvParser<Record extends CsvRecord> implements Closeable {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CsvParser.class);
     private final CSVParser parser;
     private Iterator<CSVRecord> iterator = null;

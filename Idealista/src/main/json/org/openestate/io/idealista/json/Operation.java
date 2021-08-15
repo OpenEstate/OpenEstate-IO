@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -41,12 +39,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public class Operation implements Serializable
 {
 
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("operationDepositMonths")
     @DecimalMin("0")
     @DecimalMax("12")
@@ -60,44 +52,19 @@ public class Operation implements Serializable
     @DecimalMin("1")
     @DecimalMax("99999999")
     @NotNull
-    @Nonnull
     private BigInteger price;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("operationPriceCommunity")
     @DecimalMin("1")
     @DecimalMax("9999")
     private BigInteger priceCommunity;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("operationPriceToOwn")
     @DecimalMin("1")
     @DecimalMax("99999999")
     private BigInteger priceToOwn;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("operationPriceTransfer")
     @DecimalMin("1")
     @DecimalMax("99999999")
     private BigInteger priceTransfer;
-    /**
-     * 
-     * (Can be null)
-     * 
-     */
-    @Nullable
     @JsonProperty("operationPriceParking")
     @DecimalMin("1")
     @DecimalMax("99999999")
@@ -110,12 +77,11 @@ public class Operation implements Serializable
      */
     @JsonProperty("operationType")
     @NotNull
-    @Nonnull
     private Operation.Type type;
     @JsonIgnore
     @Valid
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 8039840371972681481L;
+    private final static long serialVersionUID = -3776812814874962848L;
 
     /**
      * No args constructor for use in serialization
@@ -361,7 +327,7 @@ public class Operation implements Serializable
             }
         }
 
-        private Type(String value) {
+        Type(String value) {
             this.value = value;
         }
 

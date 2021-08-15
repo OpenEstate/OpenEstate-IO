@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2019 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
 import org.openestate.io.kyero.KyeroVersion;
@@ -70,10 +69,6 @@ public class KyeroWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                KyeroWritingExample.class.getResource("log4j.properties"));
-
         // create a Root object with some example data
         // this object corresponds to the <root> element in XML
         Root root = FACTORY.createRoot();
@@ -85,7 +80,7 @@ public class KyeroWritingExample {
             root.getProperty().add(createProperty());
         }
 
-        // convert the Root object into a XML document
+        // convert the Root object into an XML document
         KyeroDocument doc = null;
         try {
             doc = KyeroDocument.newDocument(root);
@@ -105,7 +100,7 @@ public class KyeroWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -159,8 +154,6 @@ public class KyeroWritingExample {
      * @return created example object
      */
     private static PropertyType createProperty() {
-        final String id = RandomStringUtils.randomAlphanumeric(5);
-
         // create an example real estate
         PropertyType obj = FACTORY.createPropertyType();
         obj.setBaths(BigInteger.valueOf(RandomUtils.nextLong(0, 5)));
@@ -168,7 +161,7 @@ public class KyeroWritingExample {
         obj.setCountry(RANDOMIZER.getCountry());
         obj.setCurrency(randomValue(CurrencyType.values()));
         obj.setDate(Calendar.getInstance());
-        obj.setId(id);
+        obj.setId(RandomStringUtils.randomAlphanumeric(5));
         obj.setLeasehold(RandomUtils.nextBoolean());
         obj.setLocationDetail(RANDOMIZER.getWords(2, 10));
         obj.setNewBuild(RandomUtils.nextBoolean());
@@ -210,7 +203,7 @@ public class KyeroWritingExample {
         obj.setImages(FACTORY.createImagesType());
         int imageCount = RandomUtils.nextInt(1, 10);
         for (int i = 0; i < imageCount; i++) {
-            obj.getImages().getImage().add(createPropertyImage(id, i));
+            obj.getImages().getImage().add(createPropertyImage(i));
         }
 
         obj.setLocation(FACTORY.createGpsLocationType());
@@ -224,19 +217,19 @@ public class KyeroWritingExample {
         obj.setUrl(FACTORY.createUrlType());
         //noinspection CatchMayIgnoreException
         try {
-            obj.getUrl().setCa(new URI("https://www.example.com/catalan/" + id + ".html"));
-            obj.getUrl().setDa(new URI("https://www.example.com/danish/" + id + ".html"));
-            obj.getUrl().setDe(new URI("https://www.example.com/german/" + id + ".html"));
-            obj.getUrl().setEn(new URI("https://www.example.com/english/" + id + ".html"));
-            obj.getUrl().setEs(new URI("https://www.example.com/spanish/" + id + ".html"));
-            obj.getUrl().setFi(new URI("https://www.example.com/finnish/" + id + ".html"));
-            obj.getUrl().setFr(new URI("https://www.example.com/french/" + id + ".html"));
-            obj.getUrl().setIt(new URI("https://www.example.com/italian/" + id + ".html"));
-            obj.getUrl().setNl(new URI("https://www.example.com/dutch/" + id + ".html"));
-            obj.getUrl().setNo(new URI("https://www.example.com/norwegian/" + id + ".html"));
-            obj.getUrl().setPt(new URI("https://www.example.com/portuguese/" + id + ".html"));
-            obj.getUrl().setRu(new URI("https://www.example.com/russian/" + id + ".html"));
-            obj.getUrl().setSv(new URI("https://www.example.com/swedish/" + id + ".html"));
+            obj.getUrl().setCa(new URI("https://www.example.com/catalan/" + obj.getId() + ".html"));
+            obj.getUrl().setDa(new URI("https://www.example.com/danish/" + obj.getId() + ".html"));
+            obj.getUrl().setDe(new URI("https://www.example.com/german/" + obj.getId() + ".html"));
+            obj.getUrl().setEn(new URI("https://www.example.com/english/" + obj.getId() + ".html"));
+            obj.getUrl().setEs(new URI("https://www.example.com/spanish/" + obj.getId() + ".html"));
+            obj.getUrl().setFi(new URI("https://www.example.com/finnish/" + obj.getId() + ".html"));
+            obj.getUrl().setFr(new URI("https://www.example.com/french/" + obj.getId() + ".html"));
+            obj.getUrl().setIt(new URI("https://www.example.com/italian/" + obj.getId() + ".html"));
+            obj.getUrl().setNl(new URI("https://www.example.com/dutch/" + obj.getId() + ".html"));
+            obj.getUrl().setNo(new URI("https://www.example.com/norwegian/" + obj.getId() + ".html"));
+            obj.getUrl().setPt(new URI("https://www.example.com/portuguese/" + obj.getId() + ".html"));
+            obj.getUrl().setRu(new URI("https://www.example.com/russian/" + obj.getId() + ".html"));
+            obj.getUrl().setSv(new URI("https://www.example.com/swedish/" + obj.getId() + ".html"));
         } catch (URISyntaxException ex) {
         }
 
@@ -246,11 +239,10 @@ public class KyeroWritingExample {
     /**
      * Create an {@link Image} object with some example data.
      *
-     * @param id  property id
      * @param pos index position within the property images
      * @return created example object
      */
-    private static Image createPropertyImage(String id, int pos) {
+    private static Image createPropertyImage(int pos) {
         // create an example image
         Image img = FACTORY.createImagesTypeImage();
         img.setId(pos);
@@ -300,7 +292,7 @@ public class KyeroWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
     private static void write(KyeroDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
