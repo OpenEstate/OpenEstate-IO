@@ -20,10 +20,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-<<<<<<< HEAD
-import org.apache.log4j.PropertyConfigurator;
-=======
->>>>>>> develop
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
 import org.openestate.io.immobiliare_it.xml.Descriptions;

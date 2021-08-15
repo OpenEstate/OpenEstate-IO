@@ -46,10 +46,12 @@ import org.openestate.io.immobiliare_it.xml.OperationType;
 import org.openestate.io.immobiliare_it.xml.OwnershipType;
 import org.openestate.io.immobiliare_it.xml.Picture;
 import org.openestate.io.immobiliare_it.xml.Property;
+import org.openestate.io.immobiliare_it.xml.RentalType;
 import org.openestate.io.immobiliare_it.xml.StatusType;
 import org.openestate.io.immobiliare_it.xml.TerrainType;
 import org.openestate.io.immobiliare_it.xml.Transaction;
 import org.openestate.io.immobiliare_it.xml.Video;
+import org.openestate.io.immobiliare_it.xml.YesNoReadyType;
 import org.openestate.io.immobiliare_it.xml.types.SizeUnitType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -179,24 +181,16 @@ public class ImmobiliareItWritingExample {
         obj.getExtraFeatures().setBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
         obj.getExtraFeatures().setBuildYear(RandomUtils.nextInt(1990, 2020));
         obj.getExtraFeatures().setElevator(RandomUtils.nextBoolean());
-<<<<<<< HEAD
-        obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(1, 5));
+        obj.getExtraFeatures().setFloorplannerUrl("https://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
+        obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
         obj.getExtraFeatures().setFurniture(randomValue(FurnitureType.values()));
         obj.getExtraFeatures().setGarden(randomValue(GardenType.values()));
         obj.getExtraFeatures().setKitchen(randomValue(KitchenType.values()));
-=======
-        obj.getExtraFeatures().setFloorplannerUrl("https://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
-        obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
-        obj.getExtraFeatures().setFurniture(randomValue(Furniture.values()));
-        obj.getExtraFeatures().setGarden(randomValue(Garden.values()));
-        obj.getExtraFeatures().setHeating(randomValue(Heat.values()));
-        obj.getExtraFeatures().setKitchen(randomValue(Kitchen.values()));
         obj.getExtraFeatures().setNet(RandomUtils.nextBoolean());
         obj.getExtraFeatures().setNumFloors(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.getExtraFeatures().setOverheadCrane(randomValue(YesNoReady.values()));
+        obj.getExtraFeatures().setOverheadCrane(randomValue(YesNoReadyType.values()));
         obj.getExtraFeatures().setReception(RandomUtils.nextBoolean());
-        obj.getExtraFeatures().setRentContract(randomValue(Rental.values()));
->>>>>>> develop
+        obj.getExtraFeatures().setRentContract(randomValue(RentalType.values()));
         obj.getExtraFeatures().setSecurityAlarm(RandomUtils.nextBoolean());
         obj.getExtraFeatures().setTerrace(RandomUtils.nextBoolean());
 
