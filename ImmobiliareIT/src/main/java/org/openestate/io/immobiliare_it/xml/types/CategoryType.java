@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
  * @deprecated defined in schema but currently not used
  */
 @Deprecated
+@SuppressWarnings("SpellCheckingInspection")
 public enum CategoryType {
     COMMERCIALE("C"),
     RESIDENZIALE("R"),

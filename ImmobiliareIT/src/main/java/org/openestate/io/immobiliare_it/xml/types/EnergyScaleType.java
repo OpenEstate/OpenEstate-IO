@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.5
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum EnergyScaleType {
     /**
      * Certificazione IPE antecedente al 1 Ottobre 2015.

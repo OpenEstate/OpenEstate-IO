@@ -29,6 +29,7 @@ public class Breadcrumb {
     private String level2;
     private String level3;
 
+    @SuppressWarnings("unused")
     public Breadcrumb() {
         this(null, null, null);
     }
@@ -39,14 +40,17 @@ public class Breadcrumb {
         this.level3 = StringUtils.trimToEmpty(level3);
     }
 
+    @SuppressWarnings("unused")
     public String getLevel1() {
         return this.level1;
     }
 
+    @SuppressWarnings("unused")
     public String getLevel2() {
         return this.level2;
     }
 
+    @SuppressWarnings("unused")
     public String getLevel3() {
         return this.level3;
     }
@@ -58,14 +62,17 @@ public class Breadcrumb {
                 null;
     }
 
+    @SuppressWarnings("unused")
     public void setLevel1(String level1) {
         this.level1 = StringUtils.trimToEmpty(level1);
     }
 
+    @SuppressWarnings("unused")
     public void setLevel2(String level2) {
         this.level2 = StringUtils.trimToEmpty(level2);
     }
 
+    @SuppressWarnings("unused")
     public void setLevel3(String level3) {
         this.level3 = StringUtils.trimToEmpty(level3);
     }
