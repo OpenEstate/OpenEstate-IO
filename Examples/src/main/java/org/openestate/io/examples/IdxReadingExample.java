@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package org.openestate.io.examples;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.idx.IdxParser;
 import org.openestate.io.idx.IdxRecord;
 import org.slf4j.Logger;
@@ -35,7 +34,6 @@ import org.slf4j.LoggerFactory;
 public class IdxReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -44,14 +42,10 @@ public class IdxReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                IdxReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // read example file, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(IdxReadingExample.class.getResourceAsStream(PACKAGE + "/idx.csv"));
+                read(IdxReadingExample.class.getResourceAsStream("idx.csv"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -65,7 +59,7 @@ public class IdxReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -81,7 +75,7 @@ public class IdxReadingExample {
      * @throws IOException if the file is not readable
      */
     protected static void read(File csvFile) throws IOException {
-        LOGGER.info("process file: " + csvFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", csvFile.getAbsolutePath());
         if (!csvFile.isFile()) {
             LOGGER.warn("> The provided file is invalid!");
             return;
@@ -102,7 +96,7 @@ public class IdxReadingExample {
      * @throws IOException if the file is not readable
      */
     protected static void read(InputStream csvInputStream) throws IOException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         try (IdxParser parser = IdxParser.create(csvInputStream)) {
             if (parser == null)
                 LOGGER.warn("> Can't create parser!");
@@ -123,15 +117,13 @@ public class IdxReadingExample {
 
             // get object nr
             String objectNr = record.getRefObject();
-            if (objectNr == null) objectNr = "???";
 
             // get object title
             String objectTitle = record.getObjectTitle();
-            if (objectTitle == null) objectTitle = "???";
 
             // print object information to console
-            System.out.println("> found object '" + objectNr + "' "
-                    + "with title '" + objectTitle + "'");
+            LOGGER.info("> found object '{}': {}",
+                    objectNr, objectTitle);
         }
     }
 }

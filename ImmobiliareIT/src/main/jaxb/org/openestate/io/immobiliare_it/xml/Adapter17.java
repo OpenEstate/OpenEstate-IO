@@ -1,20 +1,20 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
 
 public class Adapter17
-    extends XmlAdapter<String, LandSizeUnit>
+    extends XmlAdapter<String, BigDecimal>
 {
 
 
-    public LandSizeUnit unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLandSizeUnit(value));
+    public BigDecimal unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLongitude(value));
     }
 
-    public String marshal(LandSizeUnit value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLandSizeUnit(value));
+    public String marshal(BigDecimal value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLongitude(value));
     }
 
 }

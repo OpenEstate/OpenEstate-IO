@@ -30,6 +30,86 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Document }
+     * 
+     */
+    public Document createDocument() {
+        return new Document();
+    }
+
+    /**
+     * Create an instance of {@link AuctionActorType }
+     * 
+     */
+    public AuctionActorType createAuctionActorType() {
+        return new AuctionActorType();
+    }
+
+    /**
+     * Create an instance of {@link Auction }
+     * 
+     */
+    public Auction createAuction() {
+        return new Auction();
+    }
+
+    /**
+     * Create an instance of {@link Video }
+     * 
+     */
+    public Video createVideo() {
+        return new Video();
+    }
+
+    /**
+     * Create an instance of {@link AirConditioning }
+     * 
+     */
+    public AirConditioning createAirConditioning() {
+        return new AirConditioning();
+    }
+
+    /**
+     * Create an instance of {@link Heating }
+     * 
+     */
+    public Heating createHeating() {
+        return new Heating();
+    }
+
+    /**
+     * Create an instance of {@link Registry }
+     * 
+     */
+    public Registry createRegistry() {
+        return new Registry();
+    }
+
+    /**
+     * Create an instance of {@link ClassEnergy }
+     * 
+     */
+    public ClassEnergy createClassEnergy() {
+        return new ClassEnergy();
+    }
+
+    /**
+     * Create an instance of {@link ClassEnergy.EnergySeason }
+     * 
+     */
+    public ClassEnergy.EnergySeason createClassEnergyEnergySeason() {
+        return new ClassEnergy.EnergySeason();
+    }
+
+    /**
+     * Create an instance of {@link ClassEnergy.EnergyPerformance }
+     * 
+     */
+    public ClassEnergy.EnergyPerformance createClassEnergyEnergyPerformance() {
+        return new ClassEnergy.EnergyPerformance();
+    }
+
+    /**
      * Create an instance of {@link BoxProject }
      * 
      */
@@ -46,11 +126,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Floor }
+     * Create an instance of {@link org.openestate.io.immobiliare_it.xml.Floor }
      * 
      */
-    public Floor createFloor() {
-        return new Floor();
+    public org.openestate.io.immobiliare_it.xml.Floor createFloor() {
+        return new org.openestate.io.immobiliare_it.xml.Floor();
     }
 
     /**
@@ -59,6 +139,38 @@ public class ObjectFactory {
      */
     public Box createBox() {
         return new Box();
+    }
+
+    /**
+     * Create an instance of {@link BusinessElement }
+     * 
+     */
+    public BusinessElement createBusinessElement() {
+        return new BusinessElement();
+    }
+
+    /**
+     * Create an instance of {@link AuctionFeatures }
+     * 
+     */
+    public AuctionFeatures createAuctionFeatures() {
+        return new AuctionFeatures();
+    }
+
+    /**
+     * Create an instance of {@link AuctionFeatures.Court }
+     * 
+     */
+    public AuctionFeatures.Court createAuctionFeaturesCourt() {
+        return new AuctionFeatures.Court();
+    }
+
+    /**
+     * Create an instance of {@link Extended }
+     * 
+     */
+    public Extended createExtended() {
+        return new Extended();
     }
 
     /**
@@ -86,11 +198,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BusinessElement }
+     * Create an instance of {@link SalesOffice }
      * 
      */
-    public BusinessElement createBusinessElement() {
-        return new BusinessElement();
+    public SalesOffice createSalesOffice() {
+        return new SalesOffice();
+    }
+
+    /**
+     * Create an instance of {@link Sizes }
+     * 
+     */
+    public Sizes createSizes() {
+        return new Sizes();
+    }
+
+    /**
+     * Create an instance of {@link Sizes.Size }
+     * 
+     */
+    public Sizes.Size createSizesSize() {
+        return new Sizes.Size();
+    }
+
+    /**
+     * Create an instance of {@link ExtraFeatures }
+     * 
+     */
+    public ExtraFeatures createExtraFeatures() {
+        return new ExtraFeatures();
+    }
+
+    /**
+     * Create an instance of {@link ExtraFeatures.Flatmate }
+     * 
+     */
+    public ExtraFeatures.Flatmate createExtraFeaturesFlatmate() {
+        return new ExtraFeatures.Flatmate();
+    }
+
+    /**
+     * Create an instance of {@link Lots }
+     * 
+     */
+    public Lots createLots() {
+        return new Lots();
+    }
+
+    /**
+     * Create an instance of {@link Metadata }
+     * 
+     */
+    public Metadata createMetadata() {
+        return new Metadata();
     }
 
     /**
@@ -102,75 +262,107 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Feed.Properties }
+     * Create an instance of {@link Projects }
      * 
      */
-    public Feed.Properties createFeedProperties() {
-        return new Feed.Properties();
+    public Projects createProjects() {
+        return new Projects();
     }
 
     /**
-     * Create an instance of {@link Feed.Properties.Property }
+     * Create an instance of {@link Properties }
      * 
      */
-    public Feed.Properties.Property createFeedPropertiesProperty() {
-        return new Feed.Properties.Property();
+    public Properties createProperties() {
+        return new Properties();
     }
 
     /**
-     * Create an instance of {@link Feed.Projects }
+     * Create an instance of {@link Project }
      * 
      */
-    public Feed.Projects createFeedProjects() {
-        return new Feed.Projects();
+    public Project createProject() {
+        return new Project();
     }
 
     /**
-     * Create an instance of {@link Feed.Projects.Project }
+     * Create an instance of {@link Agent }
      * 
      */
-    public Feed.Projects.Project createFeedProjectsProject() {
-        return new Feed.Projects.Project();
+    public Agent createAgent() {
+        return new Agent();
     }
 
     /**
-     * Create an instance of {@link Feed.Projects.Project.Lots }
+     * Create an instance of {@link Pictures }
      * 
      */
-    public Feed.Projects.Project.Lots createFeedProjectsProjectLots() {
-        return new Feed.Projects.Project.Lots();
+    public Pictures createPictures() {
+        return new Pictures();
     }
 
     /**
-     * Create an instance of {@link Feed.Projects.Project.Lots.Lot }
+     * Create an instance of {@link Videos }
      * 
      */
-    public Feed.Projects.Project.Lots.Lot createFeedProjectsProjectLotsLot() {
-        return new Feed.Projects.Project.Lots.Lot();
+    public Videos createVideos() {
+        return new Videos();
     }
 
     /**
-     * Create an instance of {@link Feed.Projects.Project.Agent }
+     * Create an instance of {@link FeaturesProject }
      * 
      */
-    public Feed.Projects.Project.Agent createFeedProjectsProjectAgent() {
-        return new Feed.Projects.Project.Agent();
+    public FeaturesProject createFeaturesProject() {
+        return new FeaturesProject();
     }
 
     /**
-     * Create an instance of {@link Feed.Projects.Project.Agent.SalesOffice }
+     * Create an instance of {@link Property }
      * 
      */
-    public Feed.Projects.Project.Agent.SalesOffice createFeedProjectsProjectAgentSalesOffice() {
-        return new Feed.Projects.Project.Agent.SalesOffice();
+    public Property createProperty() {
+        return new Property();
     }
 
     /**
-     * Create an instance of {@link Feed.Metadata }
+     * Create an instance of {@link Transactions }
      * 
      */
-    public Feed.Metadata createFeedMetadata() {
-        return new Feed.Metadata();
+    public Transactions createTransactions() {
+        return new Transactions();
+    }
+
+    /**
+     * Create an instance of {@link Building }
+     * 
+     */
+    public Building createBuilding() {
+        return new Building();
+    }
+
+    /**
+     * Create an instance of {@link FeaturesProperty }
+     * 
+     */
+    public FeaturesProperty createFeaturesProperty() {
+        return new FeaturesProperty();
+    }
+
+    /**
+     * Create an instance of {@link Documents }
+     * 
+     */
+    public Documents createDocuments() {
+        return new Documents();
+    }
+
+    /**
+     * Create an instance of {@link Blueprints }
+     * 
+     */
+    public Blueprints createBlueprints() {
+        return new Blueprints();
     }
 
     /**
@@ -182,11 +374,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TransactionType }
+     * Create an instance of {@link Transaction }
      * 
      */
-    public TransactionType createTransactionType() {
-        return new TransactionType();
+    public Transaction createTransaction() {
+        return new Transaction();
     }
 
     /**
@@ -198,11 +390,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Building }
+     * Create an instance of {@link BuildingMap }
      * 
      */
-    public Building createBuilding() {
-        return new Building();
+    public BuildingMap createBuildingMap() {
+        return new BuildingMap();
+    }
+
+    /**
+     * Create an instance of {@link BuildingMaps }
+     * 
+     */
+    public BuildingMaps createBuildingMaps() {
+        return new BuildingMaps();
     }
 
     /**
@@ -262,35 +462,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PictureProject }
+     * Create an instance of {@link RoomsType }
      * 
      */
-    public PictureProject createPictureProject() {
-        return new PictureProject();
-    }
-
-    /**
-     * Create an instance of {@link PictureExtended }
-     * 
-     */
-    public PictureExtended createPictureExtended() {
-        return new PictureExtended();
-    }
-
-    /**
-     * Create an instance of {@link VideoProject }
-     * 
-     */
-    public VideoProject createVideoProject() {
-        return new VideoProject();
-    }
-
-    /**
-     * Create an instance of {@link ClassEnergyPerformance }
-     * 
-     */
-    public ClassEnergyPerformance createClassEnergyPerformance() {
-        return new ClassEnergyPerformance();
+    public RoomsType createRoomsType() {
+        return new RoomsType();
     }
 
     /**
@@ -299,6 +475,150 @@ public class ObjectFactory {
      */
     public AdditionalCostsType createAdditionalCostsType() {
         return new AdditionalCostsType();
+    }
+
+    /**
+     * Create an instance of {@link Descriptions }
+     * 
+     */
+    public Descriptions createDescriptions() {
+        return new Descriptions();
+    }
+
+    /**
+     * Create an instance of {@link Contact }
+     * 
+     */
+    public Contact createContact() {
+        return new Contact();
+    }
+
+    /**
+     * Create an instance of {@link Ambience }
+     * 
+     */
+    public Ambience createAmbience() {
+        return new Ambience();
+    }
+
+    /**
+     * Create an instance of {@link Actors }
+     * 
+     */
+    public Actors createActors() {
+        return new Actors();
+    }
+
+    /**
+     * Create an instance of {@link Picture }
+     * 
+     */
+    public Picture createPicture() {
+        return new Picture();
+    }
+
+    /**
+     * Create an instance of {@link Registry.Income }
+     * 
+     */
+    public Registry.Income createRegistryIncome() {
+        return new Registry.Income();
+    }
+
+    /**
+     * Create an instance of {@link SalesOffice.City }
+     * 
+     */
+    public SalesOffice.City createSalesOfficeCity() {
+        return new SalesOffice.City();
+    }
+
+    /**
+     * Create an instance of {@link SalesOffice.Locality }
+     * 
+     */
+    public SalesOffice.Locality createSalesOfficeLocality() {
+        return new SalesOffice.Locality();
+    }
+
+    /**
+     * Create an instance of {@link Sizes.Size.Floor }
+     * 
+     */
+    public Sizes.Size.Floor createSizesSizeFloor() {
+        return new Sizes.Size.Floor();
+    }
+
+    /**
+     * Create an instance of {@link AuctionFeatures.Auctions }
+     * 
+     */
+    public AuctionFeatures.Auctions createAuctionFeaturesAuctions() {
+        return new AuctionFeatures.Auctions();
+    }
+
+    /**
+     * Create an instance of {@link AuctionFeatures.StartingPrice }
+     * 
+     */
+    public AuctionFeatures.StartingPrice createAuctionFeaturesStartingPrice() {
+        return new AuctionFeatures.StartingPrice();
+    }
+
+    /**
+     * Create an instance of {@link AuctionFeatures.MinimumBid }
+     * 
+     */
+    public AuctionFeatures.MinimumBid createAuctionFeaturesMinimumBid() {
+        return new AuctionFeatures.MinimumBid();
+    }
+
+    /**
+     * Create an instance of {@link AuctionFeatures.SuccessPrice }
+     * 
+     */
+    public AuctionFeatures.SuccessPrice createAuctionFeaturesSuccessPrice() {
+        return new AuctionFeatures.SuccessPrice();
+    }
+
+    /**
+     * Create an instance of {@link AuctionFeatures.Reference }
+     * 
+     */
+    public AuctionFeatures.Reference createAuctionFeaturesReference() {
+        return new AuctionFeatures.Reference();
+    }
+
+    /**
+     * Create an instance of {@link ExtraFeatures.BillsIncluded }
+     * 
+     */
+    public ExtraFeatures.BillsIncluded createExtraFeaturesBillsIncluded() {
+        return new ExtraFeatures.BillsIncluded();
+    }
+
+    /**
+     * Create an instance of {@link ExtraFeatures.Costs }
+     * 
+     */
+    public ExtraFeatures.Costs createExtraFeaturesCosts() {
+        return new ExtraFeatures.Costs();
+    }
+
+    /**
+     * Create an instance of {@link ExtraFeatures.Flatmate.Age }
+     * 
+     */
+    public ExtraFeatures.Flatmate.Age createExtraFeaturesFlatmateAge() {
+        return new ExtraFeatures.Flatmate.Age();
+    }
+
+    /**
+     * Create an instance of {@link Lots.Lot }
+     * 
+     */
+    public Lots.Lot createLotsLot() {
+        return new Lots.Lot();
     }
 
     /**
@@ -326,107 +646,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Feed.Properties.Property.Agent }
+     * Create an instance of {@link Metadata.Multipage }
      * 
      */
-    public Feed.Properties.Property.Agent createFeedPropertiesPropertyAgent() {
-        return new Feed.Properties.Property.Agent();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Properties.Property.Features }
-     * 
-     */
-    public Feed.Properties.Property.Features createFeedPropertiesPropertyFeatures() {
-        return new Feed.Properties.Property.Features();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Properties.Property.ExtraFeatures }
-     * 
-     */
-    public Feed.Properties.Property.ExtraFeatures createFeedPropertiesPropertyExtraFeatures() {
-        return new Feed.Properties.Property.ExtraFeatures();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Properties.Property.Pictures }
-     * 
-     */
-    public Feed.Properties.Property.Pictures createFeedPropertiesPropertyPictures() {
-        return new Feed.Properties.Property.Pictures();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Properties.Property.Blueprints }
-     * 
-     */
-    public Feed.Properties.Property.Blueprints createFeedPropertiesPropertyBlueprints() {
-        return new Feed.Properties.Property.Blueprints();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Properties.Property.Videos }
-     * 
-     */
-    public Feed.Properties.Property.Videos createFeedPropertiesPropertyVideos() {
-        return new Feed.Properties.Property.Videos();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Projects.Project.Features }
-     * 
-     */
-    public Feed.Projects.Project.Features createFeedProjectsProjectFeatures() {
-        return new Feed.Projects.Project.Features();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Projects.Project.Pictures }
-     * 
-     */
-    public Feed.Projects.Project.Pictures createFeedProjectsProjectPictures() {
-        return new Feed.Projects.Project.Pictures();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Projects.Project.Videos }
-     * 
-     */
-    public Feed.Projects.Project.Videos createFeedProjectsProjectVideos() {
-        return new Feed.Projects.Project.Videos();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Projects.Project.Lots.Lot.Pictures }
-     * 
-     */
-    public Feed.Projects.Project.Lots.Lot.Pictures createFeedProjectsProjectLotsLotPictures() {
-        return new Feed.Projects.Project.Lots.Lot.Pictures();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Projects.Project.Agent.SalesOffice.City }
-     * 
-     */
-    public Feed.Projects.Project.Agent.SalesOffice.City createFeedProjectsProjectAgentSalesOfficeCity() {
-        return new Feed.Projects.Project.Agent.SalesOffice.City();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Projects.Project.Agent.SalesOffice.Locality }
-     * 
-     */
-    public Feed.Projects.Project.Agent.SalesOffice.Locality createFeedProjectsProjectAgentSalesOfficeLocality() {
-        return new Feed.Projects.Project.Agent.SalesOffice.Locality();
-    }
-
-    /**
-     * Create an instance of {@link Feed.Metadata.Multipage }
-     * 
-     */
-    public Feed.Metadata.Multipage createFeedMetadataMultipage() {
-        return new Feed.Metadata.Multipage();
+    public Metadata.Multipage createMetadataMultipage() {
+        return new Metadata.Multipage();
     }
 
 }

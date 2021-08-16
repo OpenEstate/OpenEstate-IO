@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "")
 @XmlEnum
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
 public enum AusstattKategorie {
 
     STANDARD,

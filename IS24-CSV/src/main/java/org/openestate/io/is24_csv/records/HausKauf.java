@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class HausKauf extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(HausKauf.class);
 
@@ -107,7 +107,7 @@ public class HausKauf extends Is24CsvRecord {
     protected final static int FIELD_STELLPLATZ = 73;
 
     /**
-     * Frei ab/Verfügbar ab/Antrittstermin, Text 50
+     * frei ab / verfügbar ab / Antrittstermin, Text 50
      */
     protected final static int FIELD_VERFUEGBAR_AB = 74;
 
@@ -206,7 +206,7 @@ public class HausKauf extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.HAUS_KAUF);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlBadezimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -218,7 +218,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlGarageStellplatz() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -230,7 +230,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlSchlafzimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -259,11 +259,13 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Bauphase getBauphase() {
         return Bauphase.parse(
                 this.get(FIELD_BAUPHASE));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getBarrierefrei() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_BARRIEREFREI));
@@ -274,11 +276,13 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_BEFEUERUNG));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getDenkmalschutz() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_DENKMALSCHUTZ));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getEinliegerwohnung() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_EINLIEGERWOHNUNG));
@@ -306,7 +310,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getEtagenzahl() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -318,11 +322,13 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getFerienhaus() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_FERIENHAUS));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getGaesteWc() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_GAESTE_WC));
@@ -362,7 +368,7 @@ public class HausKauf extends Is24CsvRecord {
                 this.get(FIELD_KELLER));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getMieteinnahmenProMonat() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -374,7 +380,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getNutzflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -414,12 +420,13 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Stellplatz getStellplatz() {
         return Stellplatz.parse(
                 this.get(FIELD_STELLPLATZ));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getStellplatzpreis() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -435,12 +442,13 @@ public class HausKauf extends Is24CsvRecord {
         return this.get(FIELD_VERFUEGBAR_AB);
     }
 
+    @SuppressWarnings("unused")
     public Boolean getVermietet() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_VERMIETET));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -452,7 +460,7 @@ public class HausKauf extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getZimmer() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -546,6 +554,7 @@ public class HausKauf extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setEtagenzahl(Number value) {
         this.set(FIELD_ETAGENZAHL,
                 Is24CsvFormat.printNumber(value, 3));

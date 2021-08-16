@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/building.json",
+  "title": "Building Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "building"
+      ]
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed"
+    },
+    "featuresAreaTradableMinimum": {
+      "$ref": "features.json#/featuresAreaTradableMinimum"
+    },
+    "featuresBuiltProperties": {
+      "$ref": "features.json#/featuresBuiltProperties"
+    },
+    "featuresBuiltYear": {
+      "$ref": "features.json#/featuresBuiltYear"
+    },
+    "featuresClassificationChalet": {
+      "$ref": "features.json#/featuresClassificationChalet"
+    },
+    "featuresClassificationCommercial": {
+      "$ref": "features.json#/featuresClassificationCommercial"
+    },
+    "featuresClassificationHotel": {
+      "$ref": "features.json#/featuresClassificationHotel"
+    },
+    "featuresClassificationIndustrial": {
+      "$ref": "features.json#/featuresClassificationIndustrial"
+    },
+    "featuresClassificationOffice": {
+      "$ref": "features.json#/featuresClassificationOffice"
+    },
+    "featuresClassificationOther": {
+      "$ref": "features.json#/featuresClassificationOther"
+    },
+    "featuresConservation": {
+      "$ref": "features.json#/featuresConservation"
+    },
+    "featuresEnergyCertificateRating": {
+      "$ref": "features.json#/featuresEnergyCertificateRating"
+    },
+    "featuresEnergyCertificatePerformance": {
+      "$ref": "features.json#/featuresEnergyCertificatePerformance"
+    },
+    "featuresEnergyCertificateType": {
+      "$ref": "features.json#/featuresEnergyCertificateType"
+    },
+    "featuresEnergyCertificateLaw": {
+      "$ref": "features.json#/featuresEnergyCertificateLaw"
+    },
+    "featuresFloorsBuilding": {
+      "$ref": "features.json#/featuresFloorsBuilding"
+    },
+    "featuresLiftNumber": {
+      "$ref": "features.json#/featuresLiftNumber"
+    },
+    "featuresParkingSpacesNumber": {
+      "$ref": "features.json#/featuresParkingSpacesNumber"
+    },
+    "featuresPropertyTenants": {
+      "$ref": "features.json#/featuresPropertyTenants"
+    },
+    "featuresSecurityPersonnel": {
+      "$ref": "features.json#/featuresSecurityPersonnel"
+    }
+  }
+}

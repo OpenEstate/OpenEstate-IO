@@ -2,77 +2,85 @@
 <trovit>
     <ad>
         <id><![CDATA[7004578]]></id>
-        <url><![CDATA[http://www.yourdomain.co.uk/ad/7004578]]></url>
-        <title><![CDATA[London- Notting Hill]]></title>
+        <url><![CDATA[http://www.yourdomain.com/ad/7004578]]></url>
+        <title><![CDATA[4 br, 2 bath House - 816 Brookwood]]></title>
         <type><![CDATA[For rent]]></type>
-        <agency><![CDATA[Lettings Agency]]></agency>
-        <content><![CDATA[Flat, 3 bedrooms, 2 bathrooms, open-plan living room and kitchen.
-Spacious, perfect for a small family or for students. Utilities are not included in the
-rental price.]]></content>
-        <price><![CDATA[800]]></price>
-        <property_type><![CDATA[Flat]]></property_type>
-        <floor_area unit="feet"><![CDATA[300]]></floor_area>
-        <rooms><![CDATA[3]]></rooms>
+        <content><![CDATA[Large 2 bedroom with large eat-in kitchen area, and 2nd entrance with deck.]]></content>
+        <price><![CDATA[1195]]></price>
+        <property_type><![CDATA[House]]></property_type>
+        <foreclosure><![CDATA[0]]></foreclosure>
+        <foreclosure_type><![CDATA[]]></foreclosure_type>
+        <address><![CDATA[332 E. Jefferson]]]></address>
+        <floor_number><![CDATA[2]]></floor_number>
+        <city_area><![CDATA[Valley Park]]></city_area>
+        <city><![CDATA[Ann Arbor]]></city>
+        <postcode><![CDATA[48104]]></postcode>
+        <region><![CDATA[MI]]></region>
+        <latitude><![CDATA[42.276230]]></latitude>
+        <longitude><![CDATA[-83.7455700]]></longitude>
+        <orientation><![CDATA[]]></orientation>
+        <agency><![CDATA[Stanward Properties]]></agency>
+        <mls_database><![CDATA[S86229U33B]]></mls_database>
+        <floor_area><![CDATA[2000]]></floor_area>
+        <plot_area unit="acres"><![CDATA[1]]></plot_area>
+        <rooms><![CDATA[4]]></rooms>
         <bathrooms><![CDATA[2]]></bathrooms>
-        <parking><![CDATA[0]]></parking>
-        <address><![CDATA[34 Portobello Road]]></address>
-        <city><![CDATA[London]]></city>
-        <city_area><![CDATA[Notting Hill]]></city_area>
-        <postcode><![CDATA[W11]]></postcode>
-        <region><![CDATA[Greater London]]></region>
-        <latitude><![CDATA[(51.51310938435912]]></latitude>
-        <longitude><![CDATA[ -0.20099401473999023]]></longitude>
+        <condition><![CDATA[]]></condition>
+        <year><![CDATA[2006]]></year>
+        <virtual_tour><![CDATA[]]></virtual_tour>
         <pictures>
             <picture>
-                <picture_url><![CDATA[http://www.yourdomain.co.uk/image.jpg]]></picture_url>
+                <picture_url><![CDATA[http://www.yourdomain.com/image.jpg]]></picture_url>
                 <picture_title><![CDATA[living room]]></picture_title>
             </picture>
         </pictures>
-        <virtual_tour><![CDATA[]]></virtual_tour>
-        <date><![CDATA[01/01/2011 13:40]]></date>
-        <expiration_date><![CDATA[31/12/2009]]></expiration_date>
-        <plot_area><![CDATA[]]></plot_area>
-        <floor_number><![CDATA[3]]></floor_number>
-        <orientation><![CDATA[south]]></orientation>
-        <foreclosure><![CDATA[]]></foreclosure>
+        <date><![CDATA[28/2/2011 17:30]]></date>
+        <expiration_date><![CDATA[1/6/2012]]></expiration_date>
+        <by_owner><![CDATA[1]]></by_owner>
+        <parking><![CDATA[1]]></parking>
         <is_furnished><![CDATA[0]]></is_furnished>
         <is_new><![CDATA[0]]></is_new>
-        <condition><![CDATA[recently renovated]]></condition>
-        <year><![CDATA[1956]]></year>
     </ad>
     <ad>
         <id><![CDATA[332A53BC2]]></id>
-        <url><![CDATA[http://www.yourdomain.co.uk/ad/332A53BC2]]></url>
-        <title><![CDATA[Semi-detached in Edinburgh]]></title>
+        <url><![CDATA[http://www.yourdomain.com/ad/332A53BC2]]></url>
+        <title><![CDATA[ 1 br, 1 bath Apartment - 711 E. Kingsley]]></title>
         <type><![CDATA[For sale]]></type>
-        <content><![CDATA[Semi-Detached on a quiet residential street, ten minutes from
-        Manchester centre and the airport.
-        4 bedrooms, 4 bathrooms, small garden with a shed]]></content>
+        <content>
+            <![CDATA[Garden level 1 bdrm. Cozy living room with plenty of sunlight. Newly remodeled master bath.]]></content>
         <price><![CDATA[209950]]></price>
-        <property_type><![CDATA[Flat]]></property_type>
-        <floor_area unit="feet"><![CDATA[300]]></floor_area>
-        <rooms><![CDATA[4]]></rooms>
-        <bathrooms><![CDATA[4]]></bathrooms>
-        <parking><![CDATA[1]]></parking>
-        <address><![CDATA[]]></address>
-        <city><![CDATA[Manchester]]></city>
-        <postcode><![CDATA[]]></postcode>
-        <region><![CDATA[Greater Manchester]]></region>
+        <property_type><![CDATA[Apartment]]></property_type>
+        <foreclosure><![CDATA[1]]></foreclosure>
+        <foreclosure_type><![CDATA[]]></foreclosure_type>
+        <address><![CDATA[711 E. Kinsley Unit 1]]></address>
+        <floor_number><![CDATA[]]></floor_number>
+        <city_area><![CDATA[Lincoln Park]]></city_area>
+        <city><![CDATA[Chicago]]></city>
+        <postcode><![CDATA[60614]]></postcode>
+        <region><![CDATA[IL]]></region>
+        <latitude><![CDATA[42.276230]]></latitude>
+        <longitude><![CDATA[-83.7455700]]></longitude>
+        <orientation><![CDATA[west]]></orientation>
+        <agency><![CDATA[]]></agency>
+        <mls_database><![CDATA[]]></mls_database>
+        <floor_area><![CDATA[1100]]></floor_area>
+        <plot_area unit="feet"><![CDATA[]]></plot_area>
+        <rooms><![CDATA[1]]></rooms>
+        <bathrooms><![CDATA[1]]></bathrooms>
+        <condition><![CDATA[]]></condition>
+        <year><![CDATA[1998]]></year>
+        <virtual_tour><![CDATA[]]></virtual_tour>
         <pictures>
             <picture>
-                <picture_url><![CDATA[http://www.yourdomain.co.uk/image.jpg]]></picture_url>
+                <picture_url><![CDATA[http://www.yourdomain.com/image.jpg]]></picture_url>
                 <picture_title><![CDATA[living room]]></picture_title>
             </picture>
         </pictures>
-        <date><![CDATA[20/03/2011 18:30]]></date>
-        <expiration_date><![CDATA[]]></expiration_date>
-        <plot_area><![CDATA[400]]></plot_area>
-        <floor_number><![CDATA[]]></floor_number>
-        <orientation><![CDATA[]]></orientation>
-        <foreclosure><![CDATA[]]></foreclosure>
-        <is_furnished><![CDATA[]]></is_furnished>
-        <is_new><![CDATA[]]></is_new>
-        <condition><![CDATA[]]></condition>
-        <year><![CDATA[]]></year>
+        <date><![CDATA[30/06/2011 09:30]]></date>
+        <expiration_date><![CDATA[31/12/2012]]></expiration_date>
+        <by_owner><![CDATA[1]]></by_owner>
+        <parking><![CDATA[0]]></parking>
+        <is_furnished><![CDATA[1]]></is_furnished>
+        <is_new><![CDATA[1]]></is_new>
     </ad>
 </trovit>

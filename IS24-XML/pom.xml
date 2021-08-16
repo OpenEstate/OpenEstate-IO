@@ -7,11 +7,11 @@
     <parent>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO</artifactId>
-        <version>1.4</version>
+        <version>1.5</version>
     </parent>
 
     <artifactId>OpenEstate-IO-IS24-XML</artifactId>
-    <version>1.4</version>
+    <version>1.5</version>
     <packaging>jar</packaging>
 
     <name>OpenEstate-IO-IS24-XML</name>
@@ -27,7 +27,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
@@ -47,12 +47,6 @@
 
         <!-- compile -->
         <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>annotations</artifactId>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <scope>compile</scope>
@@ -68,23 +62,28 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics-runtime</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>jaxen</groupId>
-            <artifactId>jaxen</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.openestate.io</groupId>
             <artifactId>OpenEstate-IO-Core</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
             <scope>compile</scope>
         </dependency>
 
@@ -95,13 +94,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
             <scope>test</scope>
         </dependency>
 
@@ -109,6 +103,15 @@
 
     <build>
         <plugins>
+
+            <!-- compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>8</release>
+                </configuration>
+            </plugin>
 
             <!-- add generated JAXB sources -->
             <plugin>
@@ -129,23 +132,10 @@
                 </executions>
             </plugin>
 
-            <!-- jar -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Automatic-Module-Name>org.openestate.io.is24_xml</Automatic-Module-Name>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-
             <!-- JAXB -->
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb22-plugin</artifactId>
+                <artifactId>maven-jaxb23-plugin</artifactId>
                 <configuration>
                     <generateDirectory>${project.basedir}/src/main/jaxb</generateDirectory>
                     <schemaDirectory>${project.basedir}/src/main/schema</schemaDirectory>
@@ -167,7 +157,7 @@
                     <debug>false</debug>
                     <verbose>false</verbose>
 
-                    <specVersion>2.2</specVersion>
+                    <specVersion>2.3</specVersion>
                     <extension>true</extension>
                     <strict>true</strict>
                     <args>

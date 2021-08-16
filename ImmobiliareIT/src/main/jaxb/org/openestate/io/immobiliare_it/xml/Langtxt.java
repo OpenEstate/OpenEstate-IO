@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
 import org.jvnet.jaxb2_commons.lang.CopyTo2;
 import org.jvnet.jaxb2_commons.lang.Equals2;
@@ -31,6 +32,7 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
  *   &lt;simpleContent&gt;
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
  *       &lt;attribute name="language" type="{http://feed.immobiliare.it}nationcode" /&gt;
+ *       &lt;attribute name="native" type="{http://feed.immobiliare.it}yesonly" /&gt;
  *     &lt;/extension&gt;
  *   &lt;/simpleContent&gt;
  * &lt;/complexType&gt;
@@ -42,16 +44,20 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "langtxt", propOrder = {
     "value"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected String value;
     @XmlAttribute(name = "language")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    protected NationCode language;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    protected NationCodeType language;
+    @XmlAttribute(name = "native")
+    @XmlJavaTypeAdapter(Adapter15 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    protected Boolean _native;
 
     /**
      * Gets the value of the value property.
@@ -61,7 +67,7 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String getValue() {
         return value;
     }
@@ -74,7 +80,7 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setValue(String value) {
         this.value = value;
     }
@@ -84,11 +90,11 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      * 
      * @return
      *     possible object is
-     *     {@link NationCode }
+     *     {@link NationCodeType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public NationCode getLanguage() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public NationCodeType getLanguage() {
         return language;
     }
 
@@ -97,23 +103,49 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
      * 
      * @param value
      *     allowed object is
-     *     {@link NationCode }
+     *     {@link NationCodeType }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public void setLanguage(NationCode value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public void setLanguage(NationCodeType value) {
         this.language = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    /**
+     * Gets the value of the native property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public Boolean getNative() {
+        return _native;
+    }
+
+    /**
+     * Sets the value of the native property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public void setNative(Boolean value) {
+        this._native = value;
+    }
+
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -121,7 +153,7 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             String theValue;
@@ -129,25 +161,30 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            NationCode theLanguage;
+            NationCodeType theLanguage;
             theLanguage = this.getLanguage();
             strategy.appendField(locator, this, "language", buffer, theLanguage, (this.language!= null));
+        }
+        {
+            Boolean theNative;
+            theNative = this.getNative();
+            strategy.appendField(locator, this, "_native", buffer, theNative, (this._native!= null));
         }
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Langtxt) {
@@ -168,9 +205,9 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             {
                 Boolean languageShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.language!= null));
                 if (languageShouldBeCopiedAndSet == Boolean.TRUE) {
-                    NationCode sourceLanguage;
+                    NationCodeType sourceLanguage;
                     sourceLanguage = this.getLanguage();
-                    NationCode copyLanguage = ((NationCode) strategy.copy(LocatorUtils.property(locator, "language", sourceLanguage), sourceLanguage, (this.language!= null)));
+                    NationCodeType copyLanguage = ((NationCodeType) strategy.copy(LocatorUtils.property(locator, "language", sourceLanguage), sourceLanguage, (this.language!= null)));
                     copy.setLanguage(copyLanguage);
                 } else {
                     if (languageShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -178,16 +215,29 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
                     }
                 }
             }
+            {
+                Boolean _nativeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this._native!= null));
+                if (_nativeShouldBeCopiedAndSet == Boolean.TRUE) {
+                    Boolean sourceNative;
+                    sourceNative = this.getNative();
+                    Boolean copyNative = ((Boolean) strategy.copy(LocatorUtils.property(locator, "_native", sourceNative), sourceNative, (this._native!= null)));
+                    copy.setNative(copyNative);
+                } else {
+                    if (_nativeShouldBeCopiedAndSet == Boolean.FALSE) {
+                        copy._native = null;
+                    }
+                }
+            }
         }
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new Langtxt();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -206,20 +256,29 @@ public class Langtxt implements Serializable, Cloneable, CopyTo2, Equals2, ToStr
             }
         }
         {
-            NationCode lhsLanguage;
+            NationCodeType lhsLanguage;
             lhsLanguage = this.getLanguage();
-            NationCode rhsLanguage;
+            NationCodeType rhsLanguage;
             rhsLanguage = that.getLanguage();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "language", lhsLanguage), LocatorUtils.property(thatLocator, "language", rhsLanguage), lhsLanguage, rhsLanguage, (this.language!= null), (that.language!= null))) {
+                return false;
+            }
+        }
+        {
+            Boolean lhsNative;
+            lhsNative = this.getNative();
+            Boolean rhsNative;
+            rhsNative = that.getNative();
+            if (!strategy.equals(LocatorUtils.property(thisLocator, "_native", lhsNative), LocatorUtils.property(thatLocator, "_native", rhsNative), lhsNative, rhsNative, (this._native!= null), (that._native!= null))) {
                 return false;
             }
         }
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 

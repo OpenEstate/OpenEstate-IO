@@ -57,38 +57,38 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlSeeAlso({
     org.openestate.io.is24_xml.xml.Gastronomie.Type.class
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
 public class GastronomieTyp
     extends GewerbeImmoBaseTyp
     implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "Vermarktung", required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected VermarktungGewerbeTyp2 vermarktung;
     @XmlAttribute(name = "GastraumFlaeche", required = true)
     @XmlJavaTypeAdapter(Adapter34 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected BigDecimal gastraumFlaeche;
     @XmlAttribute(name = "GastraumPlaetze")
     @XmlJavaTypeAdapter(Adapter23 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected Long gastraumPlaetze;
     @XmlAttribute(name = "AnzahlBetten")
     @XmlJavaTypeAdapter(Adapter23 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected Long anzahlBetten;
     @XmlAttribute(name = "Gastterrasse")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean gastterrasse;
     @XmlAttribute(name = "Denkmalschutzobjekt")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean denkmalschutzobjekt;
     @XmlAttribute(name = "Keller")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean keller;
     @XmlAttribute(name = "Objektkategorie2", required = true)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     protected GastroKategorieTyp objektkategorie2;
 
     /**
@@ -99,7 +99,7 @@ public class GastronomieTyp
      *     {@link VermarktungGewerbeTyp2 }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public VermarktungGewerbeTyp2 getVermarktung() {
         return vermarktung;
     }
@@ -112,7 +112,7 @@ public class GastronomieTyp
      *     {@link VermarktungGewerbeTyp2 }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setVermarktung(VermarktungGewerbeTyp2 value) {
         this.vermarktung = value;
     }
@@ -125,7 +125,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public BigDecimal getGastraumFlaeche() {
         return gastraumFlaeche;
     }
@@ -138,7 +138,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setGastraumFlaeche(BigDecimal value) {
         this.gastraumFlaeche = value;
     }
@@ -151,7 +151,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Long getGastraumPlaetze() {
         return gastraumPlaetze;
     }
@@ -164,7 +164,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setGastraumPlaetze(Long value) {
         this.gastraumPlaetze = value;
     }
@@ -177,7 +177,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Long getAnzahlBetten() {
         return anzahlBetten;
     }
@@ -190,7 +190,7 @@ public class GastronomieTyp
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setAnzahlBetten(Long value) {
         this.anzahlBetten = value;
     }
@@ -203,7 +203,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getGastterrasse() {
         return gastterrasse;
     }
@@ -216,7 +216,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setGastterrasse(Boolean value) {
         this.gastterrasse = value;
     }
@@ -229,7 +229,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getDenkmalschutzobjekt() {
         return denkmalschutzobjekt;
     }
@@ -242,7 +242,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setDenkmalschutzobjekt(Boolean value) {
         this.denkmalschutzobjekt = value;
     }
@@ -255,7 +255,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getKeller() {
         return keller;
     }
@@ -268,7 +268,7 @@ public class GastronomieTyp
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setKeller(Boolean value) {
         this.keller = value;
     }
@@ -281,7 +281,7 @@ public class GastronomieTyp
      *     {@link GastroKategorieTyp }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public GastroKategorieTyp getObjektkategorie2() {
         return objektkategorie2;
     }
@@ -294,20 +294,20 @@ public class GastronomieTyp
      *     {@link GastroKategorieTyp }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public void setObjektkategorie2(GastroKategorieTyp value) {
         this.objektkategorie2 = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -315,7 +315,7 @@ public class GastronomieTyp
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         super.appendFields(locator, buffer, strategy);
         {
@@ -361,18 +361,18 @@ public class GastronomieTyp
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         super.copyTo(locator, draftCopy, strategy);
@@ -486,12 +486,12 @@ public class GastronomieTyp
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new GastronomieTyp();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -578,9 +578,9 @@ public class GastronomieTyp
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:52:47+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:30:26+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 

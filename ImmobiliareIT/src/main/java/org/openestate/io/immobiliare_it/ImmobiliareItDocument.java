@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,26 @@
  */
 package org.openestate.io.immobiliare_it;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
 import org.openestate.io.core.XmlConvertableDocument;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.immobiliare_it.xml.Feed;
-import org.openestate.io.immobiliare_it.xml.Version;
+import org.openestate.io.immobiliare_it.xml.VersionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="http://immobiliare.it/">immobiliare.it</a> with a
- * &lt;feed&gt; root element.
+ * XML document from <a href="https://www.immobiliare.it/">immobiliare.it</a> with a &lt;feed&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, ImmobiliareItVersion> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItDocument.class);
@@ -56,9 +55,8 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
         String version;
         try {
             Document doc = this.getDocument();
-            version = StringUtils.trimToNull(XmlUtils
-                    .newXPath("/io:feed/io:version/text()", doc)
-                    .stringValueOf(doc));
+            version = StringUtils.trimToNull(XmlUtils.xPathString(
+                    XmlUtils.xPath("/io:feed/io:version/text()", doc, "io"), doc));
             if (version == null) {
                 LOGGER.warn("Can't find version information in the XML document!");
                 //System.out.println( "----------------------------" );
@@ -74,7 +72,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
                 //System.out.println( "----------------------------" );
                 return null;
             }
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             return null;
@@ -124,11 +122,24 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static ImmobiliareItDocument newDocument(Feed feed) throws ParserConfigurationException, JAXBException {
+        return newDocument(feed, null);
+    }
+
+    /**
+     * Creates a {@link ImmobiliareItDocument} from a {@link Feed} object.
+     *
+     * @param feed    Java object, that represents the &lt;feed&gt; root element
+     * @param context JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static ImmobiliareItDocument newDocument(Feed feed, JAXBContext context) throws ParserConfigurationException, JAXBException {
         if (feed.getVersion() == null)
-            feed.setVersion(Version.V2_5);
+            feed.setVersion(VersionType.V2_8);
 
         Document document = XmlUtils.newDocument();
-        ImmobiliareItUtils.createMarshaller("UTF-8", true).marshal(feed, document);
+        ImmobiliareItUtils.createMarshaller("UTF-8", true, context).marshal(feed, document);
         return new ImmobiliareItDocument(document);
     }
 
@@ -137,13 +148,9 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
         try {
             Document doc = this.getDocument();
 
-            Element node = (Element) XmlUtils
-                    .newXPath("/io:feed/io:version", doc)
-                    .selectSingleNode(doc);
+            Element node = XmlUtils.xPathElement(XmlUtils.xPath("/io:feed/io:version", doc, "io"), doc);
             if (node == null) {
-                Element parentNode = (Element) XmlUtils
-                        .newXPath("/io:feed", doc)
-                        .selectSingleNode(doc);
+                Element parentNode = XmlUtils.xPathElement(XmlUtils.xPath("/io:feed", doc, "io"), doc);
                 if (parentNode == null) {
                     LOGGER.warn("Can't find a <feed> element in the document!");
                     return;
@@ -153,7 +160,7 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
             }
 
             node.setTextContent(version.toReadableVersion());
-        } catch (JaxenException ex) {
+        } catch (XPathExpressionException ex) {
             LOGGER.error("Can't evaluate XPath expression!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
         }
@@ -162,12 +169,13 @@ public class ImmobiliareItDocument extends XmlConvertableDocument<Feed, Immobili
     /**
      * Creates a {@link Feed} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;feed&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public Feed toObject() throws JAXBException {
+    public Feed toObject(JAXBContext context) throws JAXBException {
         this.upgradeToLatestVersion();
-        return (Feed) ImmobiliareItUtils.createUnmarshaller().unmarshal(this.getDocument());
+        return (Feed) ImmobiliareItUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

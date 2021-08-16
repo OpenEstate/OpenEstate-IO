@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class StellplatzMiete extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(StellplatzMiete.class);
 
@@ -111,7 +111,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getBreite() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -123,7 +123,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getFlaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -135,7 +135,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Calendar getFreiAb() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -147,7 +147,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Calendar getFreiBis() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -159,7 +159,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getHoehe() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -171,7 +171,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getLaenge() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -183,6 +183,7 @@ public class StellplatzMiete extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getMiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -233,46 +234,55 @@ public class StellplatzMiete extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 4));
     }
 
+    @SuppressWarnings("unused")
     public void setBreite(Number value) {
         this.set(FIELD_BREITE,
                 Is24CsvFormat.printNumber(value, 5, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setFlaeche(Number value) {
         this.set(FIELD_FLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiAb(Calendar value) {
         this.set(FIELD_FREI_AB,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiAb(Date value) {
         this.set(FIELD_FREI_AB,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiBis(Calendar value) {
         this.set(FIELD_FREI_BIS,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiBis(Date value) {
         this.set(FIELD_FREI_BIS,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setHoehe(Number value) {
         this.set(FIELD_HOEHE,
                 Is24CsvFormat.printNumber(value, 5, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setLaenge(Number value) {
         this.set(FIELD_LAENGE,
                 Is24CsvFormat.printNumber(value, 5, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setMiete(Number value) {
         this.set(FIELD_MIETE,
                 Is24CsvFormat.printNumber(value, 6, 2));

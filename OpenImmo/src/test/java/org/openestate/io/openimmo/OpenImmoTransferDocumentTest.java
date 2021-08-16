@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ public class OpenImmoTransferDocumentTest {
     private static Document buildExampleDocument(String version) throws Exception {
         String xmlns = ("1.2.0".equals(version) || "1.1".equals(version)) ?
                 " xmlns=\"" + OpenImmoUtils.OLD_NAMESPACE + "\"" : StringUtils.EMPTY;
+        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument(
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                         + "<openimmo" + xmlns + ">\n"

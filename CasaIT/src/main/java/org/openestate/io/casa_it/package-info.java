@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,7 @@
 
 /**
  * <strong>EXPERIMENTAL:</strong> Read and write XML data for
- * <a href="http://casa.it/">casa.it</a>.
- *
+ * <a href="https://www.casa.it/">casa.it</a>.
  *
  * <h3>Warning</h3>
  * This implementation is experimental and not used in productive environments

@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/land.json",
+  "title": "Land Object",
+  "type": "object",
+  "extends": {
+    "$ref": "../custom/abstractFeatures.json"
+  },
+  "javaType": "org.openestate.io.idealista.json.LandFeatures",
+  "additionalProperties": true,
+  "required": [
+    "featuresType",
+    "featuresAreaPlot"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "land",
+        "land_urban",
+        "land_countrybuildable",
+        "land_countrynonbuildable"
+      ],
+      "javaName": "type",
+      "javaEnums": [
+        {
+          "name": "LAND"
+        },
+        {
+          "name": "LAND_URBAN"
+        },
+        {
+          "name": "LAND_COUNTRY_BUILDABLE"
+        },
+        {
+          "name": "LAND_COUNTRY_NON_BUILDABLE"
+        }
+      ]
+    },
+    "featuresAreaPlot": {
+      "$ref": "features.json#/featuresAreaPlot",
+      "javaName": "areaPlot"
+    },
+    "featuresAreaBuildable": {
+      "$ref": "features.json#/featuresAreaBuildable",
+      "javaName": "areaBuildable"
+    },
+    "featuresAreaTradableMinimum": {
+      "$ref": "features.json#/featuresAreaTradableMinimum",
+      "javaName": "areaTradableMinimum"
+    },
+    "featuresClassificationBlocks": {
+      "$ref": "features.json#/featuresClassificationBlocks",
+      "javaName": "classificationBlocks"
+    },
+    "featuresClassificationChalet": {
+      "$ref": "features.json#/featuresClassificationChalet",
+      "javaName": "classificationChalet"
+    },
+    "featuresClassificationCommercial": {
+      "$ref": "features.json#/featuresClassificationCommercial",
+      "javaName": "classificationCommercial"
+    },
+    "featuresClassificationHotel": {
+      "$ref": "features.json#/featuresClassificationHotel",
+      "javaName": "classificationHotel"
+    },
+    "featuresClassificationIndustrial": {
+      "$ref": "features.json#/featuresClassificationIndustrial",
+      "javaName": "classificationIndustrial"
+    },
+    "featuresClassificationOffice": {
+      "$ref": "features.json#/featuresClassificationOffice",
+      "javaName": "classificationOffice"
+    },
+    "featuresClassificationOther": {
+      "$ref": "features.json#/featuresClassificationOther",
+      "javaName": "classificationOther"
+    },
+    "featuresClassificationPublic": {
+      "$ref": "features.json#/featuresClassificationPublic",
+      "javaName": "classificationPublic"
+    },
+    "featuresFloorsBuildable": {
+      "$ref": "features.json#/featuresFloorsBuildable",
+      "javaName": "floorsBuildable"
+    },
+    "featuresNearestLocationKm": {
+      "$ref": "features.json#/featuresNearestLocationKm",
+      "javaName": "nearestLocationKm"
+    },
+    "featuresUtilitiesElectricity": {
+      "$ref": "features.json#/featuresUtilitiesElectricity",
+      "javaName": "utilitiesElectricity"
+    },
+    "featuresUtilitiesNaturalGas": {
+      "$ref": "features.json#/featuresUtilitiesNaturalGas",
+      "javaName": "utilitiesNaturalGas"
+    },
+    "featuresUtilitiesRoadAccess": {
+      "$ref": "features.json#/featuresUtilitiesRoadAccess",
+      "javaName": "utilitiesRoadAccess"
+    },
+    "featuresUtilitiesSewerage": {
+      "$ref": "features.json#/featuresUtilitiesSewerage",
+      "javaName": "utilitiesSewerage"
+    },
+    "featuresUtilitiesSidewalk": {
+      "$ref": "features.json#/featuresUtilitiesSidewalk",
+      "javaName": "utilitiesSidewalk"
+    },
+    "featuresUtilitiesStreetLighting": {
+      "$ref": "features.json#/featuresUtilitiesStreetLighting",
+      "javaName": "utilitiesStreetLighting"
+    },
+    "featuresUtilitiesWater": {
+      "$ref": "features.json#/featuresUtilitiesWater",
+      "javaName": "utilitiesWater"
+    },
+    "featuresAccessType": {
+      "$ref": "features.json#/featuresAccessType",
+      "javaName": "accessType"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/description.json",
+  "title": "Description Object",
+  "type": "object",
+  "javaType": "org.openestate.io.idealista.json.Description",
+  "required": [
+    "descriptionLanguage"
+  ],
+  "additionalProperties": true,
+  "dependencies": {
+    "descriptionText": [
+      "descriptionLanguage"
+    ]
+  },
+  "properties": {
+    "descriptionLanguage": {
+      "enum": [
+        "spanish",
+        "italian",
+        "portuguese",
+        "english",
+        "german",
+        "french",
+        "russian",
+        "chinese",
+        "catalan",
+        "finnish",
+        "dutch",
+        "polish",
+        "romanian",
+        "swedish",
+        "danish"
+      ],
+      "javaName": "language"
+    },
+    "descriptionText": {
+      "title": "description text",
+      "$ref": "../rules.json#/stringTo4000",
+      "javaName": "text"
+    }
+  }
+}

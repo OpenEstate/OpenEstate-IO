@@ -786,8 +786,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "immoxml_anid")
     public JAXBElement<String> createImmoxmlAnid(String value) {
@@ -795,8 +799,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "strasse")
     public JAXBElement<String> createStrasse(String value) {
@@ -804,8 +812,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "hausnummer")
     public JAXBElement<String> createHausnummer(String value) {
@@ -813,8 +825,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "plz")
     public JAXBElement<String> createPlz(String value) {
@@ -822,8 +838,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "ort")
     public JAXBElement<String> createOrt(String value) {
@@ -831,8 +851,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bundesland")
     public JAXBElement<String> createBundesland(String value) {
@@ -840,8 +864,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gemeindecode")
     public JAXBElement<String> createGemeindecode(String value) {
@@ -849,8 +877,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "flur")
     public JAXBElement<String> createFlur(String value) {
@@ -858,8 +890,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "flurstueck")
     public JAXBElement<String> createFlurstueck(String value) {
@@ -867,8 +903,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gemarkung")
     public JAXBElement<String> createGemarkung(String value) {
@@ -876,8 +916,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "etage")
     @XmlJavaTypeAdapter(Adapter5 .class)
@@ -886,8 +930,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "wohnungsnr")
     public JAXBElement<String> createWohnungsnr(String value) {
@@ -895,8 +943,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "regionaler_zusatz")
     public JAXBElement<String> createRegionalerZusatz(String value) {
@@ -904,8 +956,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "vorname")
     public JAXBElement<String> createVorname(String value) {
@@ -913,8 +969,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "name")
     public JAXBElement<String> createName(String value) {
@@ -922,8 +982,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "titel")
     public JAXBElement<String> createTitel(String value) {
@@ -931,8 +995,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anrede")
     public JAXBElement<String> createAnrede(String value) {
@@ -940,8 +1008,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anrede_brief")
     public JAXBElement<String> createAnredeBrief(String value) {
@@ -949,8 +1021,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "firma")
     public JAXBElement<String> createFirma(String value) {
@@ -958,8 +1034,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "zusatzfeld")
     public JAXBElement<Object> createZusatzfeld(Object value) {
@@ -967,8 +1047,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "postfach")
     public JAXBElement<String> createPostfach(String value) {
@@ -976,8 +1060,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "postf_plz")
     public JAXBElement<String> createPostfPlz(String value) {
@@ -985,8 +1073,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "postf_ort")
     public JAXBElement<String> createPostfOrt(String value) {
@@ -994,8 +1086,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "email_direkt")
     public JAXBElement<String> createEmailDirekt(String value) {
@@ -1003,8 +1099,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "email_zentrale")
     public JAXBElement<String> createEmailZentrale(String value) {
@@ -1012,8 +1112,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "email_privat")
     public JAXBElement<String> createEmailPrivat(String value) {
@@ -1021,8 +1125,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "tel_zentrale")
     public JAXBElement<String> createTelZentrale(String value) {
@@ -1030,8 +1138,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "tel_durchw")
     public JAXBElement<String> createTelDurchw(String value) {
@@ -1039,8 +1151,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "tel_privat")
     public JAXBElement<String> createTelPrivat(String value) {
@@ -1048,8 +1164,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "tel_handy")
     public JAXBElement<String> createTelHandy(String value) {
@@ -1057,8 +1177,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "tel_fax")
     public JAXBElement<String> createTelFax(String value) {
@@ -1066,8 +1190,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "url")
     public JAXBElement<String> createUrl(String value) {
@@ -1075,8 +1203,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "adressfreigabe")
     public JAXBElement<Boolean> createAdressfreigabe(Boolean value) {
@@ -1084,8 +1216,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "personennummer")
     public JAXBElement<String> createPersonennummer(String value) {
@@ -1093,8 +1229,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "freitextfeld")
     public JAXBElement<String> createFreitextfeld(String value) {
@@ -1102,8 +1242,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaufpreis")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1112,8 +1256,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nettokaltmiete")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1122,8 +1270,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaltmiete")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1132,8 +1284,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nebenkosten")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1142,8 +1298,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "warmmiete")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1152,8 +1312,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "heizkosten")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1162,8 +1326,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "zzg_mehrwertsteuer")
     public JAXBElement<Boolean> createZzgMehrwertsteuer(Boolean value) {
@@ -1171,8 +1339,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mietzuschlaege")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1181,8 +1353,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "pacht")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1191,8 +1367,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "erbpacht")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1201,8 +1381,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "hausgeld")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1211,8 +1395,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "abstand")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1221,8 +1409,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "preis_zeitraum_von")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -1231,8 +1423,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "preis_zeitraum_bis")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -1241,8 +1437,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mietpreis_pro_qm")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1251,8 +1451,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaufpreis_pro_qm")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1261,8 +1465,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stp_freiplatz")
     public JAXBElement<Stellplatz> createStpFreiplatz(Stellplatz value) {
@@ -1270,8 +1478,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stp_tiefgarage")
     public JAXBElement<Stellplatz> createStpTiefgarage(Stellplatz value) {
@@ -1279,8 +1491,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stp_garage")
     public JAXBElement<Stellplatz> createStpGarage(Stellplatz value) {
@@ -1288,8 +1504,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stp_carport")
     public JAXBElement<Stellplatz> createStpCarport(Stellplatz value) {
@@ -1297,8 +1517,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stp_duplex")
     public JAXBElement<Stellplatz> createStpDuplex(Stellplatz value) {
@@ -1306,8 +1530,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Stellplatz }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stp_parkhaus")
     public JAXBElement<Stellplatz> createStpParkhaus(Stellplatz value) {
@@ -1315,8 +1543,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mwst_satz")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1325,8 +1557,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "freitext_preis")
     public JAXBElement<String> createFreitextPreis(String value) {
@@ -1334,8 +1570,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "x_fache")
     public JAXBElement<String> createXFache(String value) {
@@ -1343,8 +1583,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nettorendite")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1353,8 +1597,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mieteinnahmen_ist")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1363,8 +1611,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "mieteinnahmen_soll")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1373,8 +1625,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "erschliessungskosten")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1383,8 +1639,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kaution")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1393,8 +1653,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "geschaeftsguthaben")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1403,8 +1667,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "wohnflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1413,8 +1681,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nutzflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1423,8 +1695,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gesamtflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1433,8 +1709,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "ladenflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1443,8 +1723,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "lagerflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1453,8 +1737,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "verkaufsflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1463,8 +1751,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "freiflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1473,8 +1765,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bueroflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1483,8 +1779,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bueroteilflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1493,8 +1793,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "fensterfront")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1503,8 +1807,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "sonstflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1513,8 +1821,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "verwaltungsflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1523,8 +1835,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gastroflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1533,8 +1849,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "grz")
     public JAXBElement<String> createGrz(String value) {
@@ -1542,8 +1862,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gfz")
     public JAXBElement<String> createGfz(String value) {
@@ -1551,8 +1875,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bmz")
     public JAXBElement<String> createBmz(String value) {
@@ -1560,8 +1888,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bgf")
     public JAXBElement<String> createBgf(String value) {
@@ -1569,8 +1901,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "grundstuecksflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1579,8 +1915,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_zimmer")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1589,8 +1929,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_schlafzimmer")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1599,8 +1943,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_badezimmer")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1609,8 +1957,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_sep_wc")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1619,8 +1971,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "balkon_terrasse_flaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1629,8 +1985,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_wohn_schlafzimmer")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1639,8 +1999,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gartenflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1649,8 +2013,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_balkon_terrassen")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1659,8 +2027,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kellerflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1669,8 +2041,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "fensterfront_qm")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1679,8 +2055,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "grundstuecksfront")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1689,8 +2069,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "dachbodenflaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1699,8 +2083,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "teilbar_ab")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1709,8 +2097,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "beheizbare_flaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1719,8 +2111,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_stellplaetze")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1729,8 +2125,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "plaetze_gastraum")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1739,8 +2139,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_betten")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1749,8 +2153,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_tagungsraeume")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1759,8 +2167,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "vermietbare_flaeche")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1769,8 +2181,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_wohneinheiten")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1779,8 +2195,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anzahl_gewerbeeinheiten")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1789,8 +2209,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "einliegerwohnung")
     public JAXBElement<Boolean> createEinliegerwohnung(Boolean value) {
@@ -1798,8 +2222,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "wg_geeignet")
     public JAXBElement<Boolean> createWgGeeignet(Boolean value) {
@@ -1807,8 +2235,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "raeume_veraenderbar")
     public JAXBElement<Boolean> createRaeumeVeraenderbar(Boolean value) {
@@ -1816,8 +2248,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kamin")
     public JAXBElement<Boolean> createKamin(Boolean value) {
@@ -1825,8 +2261,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "klimatisiert")
     public JAXBElement<Boolean> createKlimatisiert(Boolean value) {
@@ -1834,8 +2274,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gartennutzung")
     public JAXBElement<Boolean> createGartennutzung(Boolean value) {
@@ -1843,8 +2287,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "rollstuhlgerecht")
     public JAXBElement<Boolean> createRollstuhlgerecht(Boolean value) {
@@ -1852,8 +2300,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kabel_sat_tv")
     public JAXBElement<Boolean> createKabelSatTv(Boolean value) {
@@ -1861,8 +2313,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "barrierefrei")
     public JAXBElement<Boolean> createBarrierefrei(Boolean value) {
@@ -1870,8 +2326,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "sauna")
     public JAXBElement<Boolean> createSauna(Boolean value) {
@@ -1879,8 +2339,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "swimmingpool")
     public JAXBElement<Boolean> createSwimmingpool(Boolean value) {
@@ -1888,8 +2352,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "wasch_trockenraum")
     public JAXBElement<Boolean> createWaschTrockenraum(Boolean value) {
@@ -1897,8 +2365,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "dv_verkabelung")
     public JAXBElement<Boolean> createDvVerkabelung(Boolean value) {
@@ -1906,8 +2378,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "rampe")
     public JAXBElement<Boolean> createRampe(Boolean value) {
@@ -1915,8 +2391,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "hebebuehne")
     public JAXBElement<Boolean> createHebebuehne(Boolean value) {
@@ -1924,8 +2404,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kran")
     public JAXBElement<Boolean> createKran(Boolean value) {
@@ -1933,8 +2417,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gastterrasse")
     public JAXBElement<Boolean> createGastterrasse(Boolean value) {
@@ -1942,8 +2430,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stromanschlusswert")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -1952,8 +2444,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kantine_cafeteria")
     public JAXBElement<Boolean> createKantineCafeteria(Boolean value) {
@@ -1961,8 +2457,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "teekueche")
     public JAXBElement<Boolean> createTeekueche(Boolean value) {
@@ -1970,8 +2470,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "hallenhoehe")
     @XmlJavaTypeAdapter(Adapter7 .class)
@@ -1980,8 +2484,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "brauereibindung")
     public JAXBElement<Boolean> createBrauereibindung(Boolean value) {
@@ -1989,8 +2497,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "sporteinrichtungen")
     public JAXBElement<Boolean> createSporteinrichtungen(Boolean value) {
@@ -1998,8 +2510,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "wellnessbereich")
     public JAXBElement<Boolean> createWellnessbereich(Boolean value) {
@@ -2007,8 +2523,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "telefon_ferienimmobilie")
     public JAXBElement<Boolean> createTelefonFerienimmobilie(Boolean value) {
@@ -2016,8 +2536,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "baujahr")
     public JAXBElement<String> createBaujahr(String value) {
@@ -2025,8 +2549,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "altlasten")
     public JAXBElement<String> createAltlasten(String value) {
@@ -2034,8 +2562,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "zulieferung")
     public JAXBElement<Boolean> createZulieferung(Boolean value) {
@@ -2043,8 +2575,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "objekttitel")
     public JAXBElement<String> createObjekttitel(String value) {
@@ -2052,8 +2588,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "dreizeiler")
     public JAXBElement<String> createDreizeiler(String value) {
@@ -2061,8 +2601,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "lage")
     public JAXBElement<String> createLage(String value) {
@@ -2070,8 +2614,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "ausstatt_beschr")
     public JAXBElement<String> createAusstattBeschr(String value) {
@@ -2079,8 +2627,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "objektbeschreibung")
     public JAXBElement<String> createObjektbeschreibung(String value) {
@@ -2088,8 +2640,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "sonstige_angaben")
     public JAXBElement<String> createSonstigeAngaben(String value) {
@@ -2097,8 +2653,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anhangtitel")
     public JAXBElement<String> createAnhangtitel(String value) {
@@ -2106,8 +2666,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "format")
     public JAXBElement<String> createFormat(String value) {
@@ -2115,8 +2679,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anhanginhalt")
     public JAXBElement<byte[]> createAnhanginhalt(byte[] value) {
@@ -2124,8 +2692,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "pfad")
     public JAXBElement<String> createPfad(String value) {
@@ -2133,8 +2705,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "objektadresse_freigeben")
     public JAXBElement<Boolean> createObjektadresseFreigeben(Boolean value) {
@@ -2142,8 +2718,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "verfuegbar_ab")
     public JAXBElement<String> createVerfuegbarAb(String value) {
@@ -2151,8 +2731,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "abdatum")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -2161,8 +2745,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "bisdatum")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -2171,8 +2759,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "versteigerungstermin")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -2181,8 +2773,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "wbs_sozialwohnung")
     public JAXBElement<Boolean> createWbsSozialwohnung(Boolean value) {
@@ -2190,8 +2786,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "vermietet")
     public JAXBElement<Boolean> createVermietet(Boolean value) {
@@ -2199,8 +2799,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "anbieternr")
     public JAXBElement<String> createAnbieternr(String value) {
@@ -2208,8 +2812,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "objektnr_intern")
     public JAXBElement<String> createObjektnrIntern(String value) {
@@ -2217,8 +2825,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "objektnr_extern")
     public JAXBElement<String> createObjektnrExtern(String value) {
@@ -2226,8 +2838,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gruppennummer")
     public JAXBElement<String> createGruppennummer(String value) {
@@ -2235,8 +2851,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "zugang")
     public JAXBElement<String> createZugang(String value) {
@@ -2244,8 +2864,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "aktiv_von")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -2254,8 +2878,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "aktiv_bis")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -2264,8 +2892,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "laufzeit")
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -2274,8 +2906,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "max_personen")
     @XmlJavaTypeAdapter(Adapter6 .class)
@@ -2284,8 +2920,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "nichtraucher")
     public JAXBElement<Boolean> createNichtraucher(Boolean value) {
@@ -2293,8 +2933,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "haustiere")
     public JAXBElement<Boolean> createHaustiere(Boolean value) {
@@ -2302,8 +2946,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "denkmalgeschuetzt")
     public JAXBElement<Boolean> createDenkmalgeschuetzt(Boolean value) {
@@ -2311,8 +2959,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Calendar }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "stand_vom")
     @XmlJavaTypeAdapter(Adapter4 .class)
@@ -2321,8 +2973,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "kennung_ursprung")
     public JAXBElement<String> createKennungUrsprung(String value) {
@@ -2330,8 +2986,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "immoxml_obid")
     public JAXBElement<String> createImmoxmlObid(String value) {
@@ -2339,8 +2999,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "weitergabe_generell")
     public JAXBElement<Boolean> createWeitergabeGenerell(Boolean value) {
@@ -2348,8 +3012,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "weitergabe_negativ")
     public JAXBElement<String> createWeitergabeNegativ(String value) {
@@ -2357,8 +3025,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "weitergabe_positiv")
     public JAXBElement<String> createWeitergabePositiv(String value) {
@@ -2366,8 +3038,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "als_ferien")
     public JAXBElement<Boolean> createAlsFerien(Boolean value) {
@@ -2375,8 +3051,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "gewerbliche_nutzung")
     public JAXBElement<Boolean> createGewerblicheNutzung(Boolean value) {
@@ -2384,8 +3064,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "branchen")
     public JAXBElement<String> createBranchen(String value) {
@@ -2393,8 +3077,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "hochhaus")
     public JAXBElement<Boolean> createHochhaus(Boolean value) {
@@ -2402,8 +3090,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immoxml.de", name = "impressum")
     public JAXBElement<String> createImpressum(String value) {

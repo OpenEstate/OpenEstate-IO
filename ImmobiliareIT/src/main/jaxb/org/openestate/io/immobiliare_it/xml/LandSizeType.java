@@ -22,7 +22,7 @@ import org.jvnet.jaxb2_commons.lang.ToString2;
 import org.jvnet.jaxb2_commons.lang.ToStringStrategy2;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
-import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
+import org.openestate.io.immobiliare_it.xml.types.LandSizeUnitType;
 
 
 /**
@@ -33,7 +33,7 @@ import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
  * <pre>
  * &lt;complexType name="landSizeType"&gt;
  *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;integer"&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;long"&gt;
  *       &lt;attribute name="unit"&gt;
  *         &lt;simpleType&gt;
  *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
@@ -52,19 +52,19 @@ import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
 @XmlType(name = "landSizeType", propOrder = {
     "value"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(Adapter2 .class)
-    @XmlSchemaType(name = "integer")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @XmlJavaTypeAdapter(Adapter4 .class)
+    @XmlSchemaType(name = "long")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     protected BigInteger value;
     @XmlAttribute(name = "unit")
-    @XmlJavaTypeAdapter(Adapter17 .class)
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    protected LandSizeUnit unit;
+    @XmlJavaTypeAdapter(Adapter23 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    protected LandSizeUnitType unit;
 
     /**
      * Gets the value of the value property.
@@ -74,7 +74,7 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public BigInteger getValue() {
         return value;
     }
@@ -87,7 +87,7 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public void setValue(BigInteger value) {
         this.value = value;
     }
@@ -100,8 +100,8 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public LandSizeUnit getUnit() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public LandSizeUnitType getUnit() {
         return unit;
     }
 
@@ -113,20 +113,20 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public void setUnit(LandSizeUnit value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public void setUnit(LandSizeUnitType value) {
         this.unit = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -134,7 +134,7 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             BigInteger theValue;
@@ -142,25 +142,25 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            LandSizeUnit theUnit;
+            LandSizeUnitType theUnit;
             theUnit = this.getUnit();
             strategy.appendField(locator, this, "unit", buffer, theUnit, (this.unit!= null));
         }
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof LandSizeType) {
@@ -181,9 +181,9 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
             {
                 Boolean unitShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.unit!= null));
                 if (unitShouldBeCopiedAndSet == Boolean.TRUE) {
-                    LandSizeUnit sourceUnit;
+                    LandSizeUnitType sourceUnit;
                     sourceUnit = this.getUnit();
-                    LandSizeUnit copyUnit = ((LandSizeUnit) strategy.copy(LocatorUtils.property(locator, "unit", sourceUnit), sourceUnit, (this.unit!= null)));
+                    LandSizeUnitType copyUnit = ((LandSizeUnitType) strategy.copy(LocatorUtils.property(locator, "unit", sourceUnit), sourceUnit, (this.unit!= null)));
                     copy.setUnit(copyUnit);
                 } else {
                     if (unitShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -195,12 +195,12 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new LandSizeType();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -219,9 +219,9 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
             }
         }
         {
-            LandSizeUnit lhsUnit;
+            LandSizeUnitType lhsUnit;
             lhsUnit = this.getUnit();
-            LandSizeUnit rhsUnit;
+            LandSizeUnitType rhsUnit;
             rhsUnit = that.getUnit();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "unit", lhsUnit), LocatorUtils.property(thatLocator, "unit", rhsUnit), lhsUnit, rhsUnit, (this.unit!= null), (that.unit!= null))) {
                 return false;
@@ -230,9 +230,9 @@ public class LandSizeType implements Serializable, Cloneable, CopyTo2, Equals2, 
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 

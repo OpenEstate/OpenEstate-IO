@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class GewerbeHalleProduktion extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(GewerbeHalleProduktion.class);
 
@@ -172,7 +172,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
     protected final static int FIELD_FAHRTWEG_FLUGHAFEN = 85;
 
     /**
-     * Frei ab/Verfügbar ab/Antrittstermin, Text 50
+     * frei ab / verfügbar ab / Antrittstermin, Text 50
      */
     protected final static int FIELD_VERFUEGBAR_AB = 87;
 
@@ -241,7 +241,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.GEWERBE_HALLE_PRODUKTION);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlParkflaechen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -270,11 +270,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 this.get(FIELD_BEFEUERUNG));
     }
 
+    @SuppressWarnings("unused")
     public Bodenbelag getBodenbelag() {
         return Bodenbelag.parse(
                 this.get(FIELD_BODENBELAG));
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getBodenbelastung() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -308,11 +310,12 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
 
+    @SuppressWarnings("unused")
     public String getEtagen() {
         return this.get(FIELD_ETAGEN);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFahrtwegAutobahn() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -324,7 +327,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFahrtwegFlughafen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -336,7 +339,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFahrtwegHauptbahnhof() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -348,7 +351,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFusswegNahverkehr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -360,7 +363,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getGesamtflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -372,7 +375,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getGewerbeflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -396,6 +399,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getHallenhoehe() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -407,6 +411,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getHebebuehne() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_HEBEBUEHNE));
@@ -417,7 +422,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getKaltmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -429,6 +434,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public KaltmietePro getKaltmietePro() {
         return KaltmietePro.parse(
                 this.get(FIELD_KALTMIETE_PRO));
@@ -450,11 +456,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         return this.get(FIELD_KAUTION);
     }
 
+    @SuppressWarnings("unused")
     public Boolean getKranbahn() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_KRANBAHN));
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getKranbahnTragkraft() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -466,12 +474,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getLastenaufzug() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_LASTENAUFZUG));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getLastenaufzugTragkraft() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -483,7 +492,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getNebenflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -517,12 +526,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 this.get(FIELD_OBJEKTZUSTAND));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getPersonenaufzug() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_PERSONENAUFZUG));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getPreisProParkflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -534,6 +544,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getRampe() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_RAMPE));
@@ -551,6 +562,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Integer getStromanschlusswert() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -562,7 +574,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getTeilbarAb() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -595,6 +607,7 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
         return super.print();
     }
 
+    @SuppressWarnings("unused")
     public void setAnzahlParkflaechen(Number value) {
         this.set(FIELD_ANZAHL_PARKFLAECHEN,
                 Is24CsvFormat.printNumber(value, 5));
@@ -615,11 +628,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 Befeuerungsart.printMultiple(values));
     }
 
+    @SuppressWarnings("unused")
     public void setBodenbelag(Bodenbelag value) {
         this.set(FIELD_BODENBELAG,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setBodenbelastung(Number value) {
         this.set(FIELD_BODENBELASTUNG,
                 Is24CsvFormat.printNumber(value, 7, 2));
@@ -645,31 +660,37 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setFahrtwegAutobahn(Number value) {
         this.set(FIELD_FAHRTWEG_AUTOBAHN,
                 Is24CsvFormat.printNumber(value, 3));
     }
 
+    @SuppressWarnings("unused")
     public void setFahrtwegFlughafen(Number value) {
         this.set(FIELD_FAHRTWEG_FLUGHAFEN,
                 Is24CsvFormat.printNumber(value, 3));
     }
 
+    @SuppressWarnings("unused")
     public void setFahrtwegHauptbahnhof(Number value) {
         this.set(FIELD_FAHRTWEG_HAUPTBAHNHOF,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setFusswegNahverkehr(Number value) {
         this.set(FIELD_FUSSWEG_NAHVERKEHR,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setGesamtflaeche(Number value) {
         this.set(FIELD_GESAMTFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setGewerbeflaeche(Number value) {
         this.set(FIELD_GEWERBEFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
@@ -680,11 +701,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setHallenhoehe(Number value) {
         this.set(FIELD_HALLENHOEHE,
                 Is24CsvFormat.printNumber(value, 5, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setHebebuehne(Boolean value) {
         this.set(FIELD_HEBEBUEHNE,
                 Is24CsvFormat.printBoolean(value));
@@ -695,11 +718,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setKaltmiete(Number value) {
         this.set(FIELD_KALTMIETE,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setKaltmietePro(KaltmietePro value) {
         this.set(FIELD_KALTMIETE_PRO,
                 (value != null) ? value.print() : null);
@@ -715,26 +740,31 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setKranbahn(Boolean value) {
         this.set(FIELD_KRANBAHN,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setKranbahnTragkraft(Number value) {
         this.set(FIELD_KRANBAHN_TRAGKRAFT,
                 Is24CsvFormat.printNumber(value, 7, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setLastenaufzug(Boolean value) {
         this.set(FIELD_LASTENAUFZUG,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setLastenaufzugTragkraft(Number value) {
         this.set(FIELD_LASTENAUFZUG_TRAGKRAFT,
                 Is24CsvFormat.printNumber(value, 7, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setNebenflaeche(Number value) {
         this.set(FIELD_NEBENFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
@@ -755,16 +785,19 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setPersonenaufzug(Boolean value) {
         this.set(FIELD_PERSONENAUFZUG,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setPreisProParkflaeche(Number value) {
         this.set(FIELD_PREIS_PRO_PARKFLAECHE,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setRampe(Boolean value) {
         this.set(FIELD_RAMPE,
                 Is24CsvFormat.printBoolean(value));
@@ -775,11 +808,13 @@ public class GewerbeHalleProduktion extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 4));
     }
 
+    @SuppressWarnings("unused")
     public void setStromanschlusswert(Number value) {
         this.set(FIELD_STROMANSCHLUSSWERT,
                 Is24CsvFormat.printNumber(value, 5));
     }
 
+    @SuppressWarnings("unused")
     public void setTeilbarAb(Number value) {
         this.set(FIELD_TEILBAR_AB,
                 Is24CsvFormat.printNumber(value, 10, 2));

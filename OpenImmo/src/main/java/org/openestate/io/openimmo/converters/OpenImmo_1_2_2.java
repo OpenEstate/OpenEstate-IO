@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package org.openestate.io.openimmo.converters;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import javax.xml.xpath.XPathExpressionException;
 import org.apache.commons.lang3.StringUtils;
-import org.jaxen.JaxenException;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlUtils;
 import org.openestate.io.openimmo.OpenImmoDocument;
 import org.openestate.io.openimmo.OpenImmoTransferDocument;
@@ -34,8 +34,8 @@ import org.w3c.dom.Element;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"SpellCheckingInspection", "WeakerAccess"})
-public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersion> {
+@SuppressWarnings("SpellCheckingInspection")
+public class OpenImmo_1_2_2 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenImmo_1_2_2.class);
 
@@ -45,12 +45,12 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
     }
 
     /**
-     * Downgrade an OpenImmo document from version 1.2.2 to 1.2.1.
+     * Downgrade an {@link OpenImmoDocument} from version 1.2.2 to 1.2.1.
      *
-     * @param doc OpenImmo document in version 1.2.2
+     * @param doc document in version 1.2.2
      */
     @Override
-    public void downgradeToPreviousVersion(OpenImmoDocument doc) {
+    public void downgradeToPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_1);
 
         if (doc instanceof OpenImmoTransferDocument) {
@@ -96,6 +96,7 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             }
 
+            //noinspection DuplicatedCode
             try {
                 this.downgradeBodenElements(doc.getDocument());
             } catch (Exception ex) {
@@ -110,6 +111,7 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             }
 
+            //noinspection DuplicatedCode
             try {
                 this.downgradeWohnungElements(doc.getDocument());
             } catch (Exception ex) {
@@ -176,13 +178,13 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
     }
 
     /**
-     * Upgrade an OpenImmo document from version 1.2.1 to 1.2.2.
+     * Upgrade an {@link OpenImmoDocument} from version 1.2.1 to 1.2.2.
      *
-     * @param doc OpenImmo document in version 1.2.1
+     * @param doc document in version 1.2.1
      */
     @Override
     @SuppressWarnings("Duplicates")
-    public void upgradeFromPreviousVersion(OpenImmoDocument doc) {
+    public void upgradeFromPreviousVersion(OpenImmoDocument<?> doc) {
         doc.setDocumentVersion(OpenImmoVersion.V1_2_2);
 
         if (doc instanceof OpenImmoTransferDocument) {
@@ -204,16 +206,13 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurences of these values are removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeBefeuerungElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@LUFTWP]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            node.removeAttribute("LUFTWP");
-        }
+    protected void downgradeBefeuerungElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:befeuerung[@LUFTWP]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.removeAttribute("LUFTWP"));
     }
 
     /**
@@ -225,18 +224,16 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurences of these values are removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeBodenElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:boden[@FERTIGPARKETT or @LAMINAT or @LINOLEUM]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            node.removeAttribute("FERTIGPARKETT");
-            node.removeAttribute("LAMINAT");
-            node.removeAttribute("LINOLEUM");
-        }
+    protected void downgradeBodenElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:boden[@FERTIGPARKETT or @LAMINAT or @LINOLEUM]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            element.removeAttribute("FERTIGPARKETT");
+            element.removeAttribute("LAMINAT");
+            element.removeAttribute("LINOLEUM");
+        });
     }
 
     /**
@@ -250,24 +247,23 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * value.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeBueroPraxenElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:buero_praxen[@buero_typ]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("buero_typ"));
+    protected void downgradeBueroPraxenElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:buero_praxen[@buero_typ]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("buero_typ"));
+
             if ("BUEROZENTRUM".equalsIgnoreCase(value))
-                node.setAttribute("buero_typ", "BUEROFLAECHE");
+                element.setAttribute("buero_typ", "BUEROFLAECHE");
             else if ("LOFT_ATELIER".equalsIgnoreCase(value))
-                node.setAttribute("buero_typ", "BUEROFLAECHE");
+                element.setAttribute("buero_typ", "BUEROFLAECHE");
             else if ("PRAXISFLAECHE".equalsIgnoreCase(value))
-                node.setAttribute("buero_typ", "BUEROFLAECHE");
+                element.setAttribute("buero_typ", "BUEROFLAECHE");
             else if ("PRAXISHAUS".equalsIgnoreCase(value))
-                node.setAttribute("buero_typ", "BUEROFLAECHE");
-        }
+                element.setAttribute("buero_typ", "BUEROFLAECHE");
+        });
     }
 
     /**
@@ -280,26 +276,25 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeEinzelhandelElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:einzelhandel[@handel_typ]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("handel_typ"));
+    protected void downgradeEinzelhandelElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:einzelhandel[@handel_typ]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("handel_typ"));
+
             if ("KAUFHAUS".equalsIgnoreCase(value))
-                node.removeAttribute("handel_typ");
+                element.removeAttribute("handel_typ");
             else if ("FACTORY_OUTLET".equalsIgnoreCase(value))
-                node.removeAttribute("handel_typ");
+                element.removeAttribute("handel_typ");
             else if ("KIOSK".equalsIgnoreCase(value))
-                node.removeAttribute("handel_typ");
+                element.removeAttribute("handel_typ");
             else if ("VERKAUFSFLAECHE".equalsIgnoreCase(value))
-                node.removeAttribute("handel_typ");
+                element.removeAttribute("handel_typ");
             else if ("AUSSTELLUNGSFLAECHE".equalsIgnoreCase(value))
-                node.removeAttribute("handel_typ");
-        }
+                element.removeAttribute("handel_typ");
+        });
     }
 
     /**
@@ -309,21 +304,18 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * renamed to &lt;art&gt; in version 1.2.1.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeEnergiepassElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:epart",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
+    protected void downgradeEnergiepassElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:epart";
 
-            Element newNode = doc.createElementNS(StringUtils.EMPTY, "art");
-            newNode.setTextContent(node.getTextContent());
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Element parent = (Element) element.getParentNode();
+            final Element newElement = doc.createElementNS(StringUtils.EMPTY, "art");
 
-            parentNode.replaceChild(newNode, node);
-        }
+            newElement.setTextContent(element.getTextContent());
+            parent.replaceChild(newElement, element);
+        });
     }
 
     /**
@@ -336,18 +328,17 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeFreizeitimmobilieGewerblichElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:freizeitimmobilie_gewerblich[@freizeit_typ]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("freizeit_typ"));
+    protected void downgradeFreizeitimmobilieGewerblichElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:freizeitimmobilie_gewerblich[@freizeit_typ]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("freizeit_typ"));
+
             if ("FREIZEITANLAGE".equalsIgnoreCase(value))
-                node.removeAttribute("freizeit_typ");
-        }
+                element.removeAttribute("freizeit_typ");
+        });
     }
 
     /**
@@ -360,28 +351,27 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeGastgewerbeElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:gastgewerbe[@gastgew_typ]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("gastgew_typ"));
+    protected void downgradeGastgewerbeElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:gastgewerbe[@gastgew_typ]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("gastgew_typ"));
+
             if ("BAR".equalsIgnoreCase(value))
-                node.removeAttribute("gastgew_typ");
+                element.removeAttribute("gastgew_typ");
             else if ("CAFE".equalsIgnoreCase(value))
-                node.removeAttribute("gastgew_typ");
+                element.removeAttribute("gastgew_typ");
             else if ("DISCOTHEK".equalsIgnoreCase(value))
-                node.removeAttribute("gastgew_typ");
+                element.removeAttribute("gastgew_typ");
             else if ("RESTAURANT".equalsIgnoreCase(value))
-                node.removeAttribute("gastgew_typ");
+                element.removeAttribute("gastgew_typ");
             else if ("RAUCHERLOKAL".equalsIgnoreCase(value))
-                node.removeAttribute("gastgew_typ");
+                element.removeAttribute("gastgew_typ");
             else if ("EINRAUMLOKAL".equalsIgnoreCase(value))
-                node.removeAttribute("gastgew_typ");
-        }
+                element.removeAttribute("gastgew_typ");
+        });
     }
 
     /**
@@ -393,18 +383,17 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeGrundstueckElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:grundstueck[@grundst_typ]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("grundst_typ"));
+    protected void downgradeGrundstueckElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:grundstueck[@grundst_typ]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("grundst_typ"));
+
             if ("GEWERBEPARK".equalsIgnoreCase(value))
-                node.removeAttribute("grundst_typ");
-        }
+                element.removeAttribute("grundst_typ");
+        });
     }
 
     /**
@@ -418,26 +407,25 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * replaced by "HALLE" or "LAGER".
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeHallenLagerProdElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:hallen_lager_prod[@hallen_typ]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("hallen_typ"));
+    protected void downgradeHallenLagerProdElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:hallen_lager_prod[@hallen_typ]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("hallen_typ"));
+
             if ("INDUSTRIEHALLE".equalsIgnoreCase(value))
-                node.setAttribute("hallen_typ", "HALLE");
+                element.setAttribute("hallen_typ", "HALLE");
             else if ("LAGERFLAECHEN".equalsIgnoreCase(value))
-                node.setAttribute("hallen_typ", "LAGER");
+                element.setAttribute("hallen_typ", "LAGER");
             else if ("LAGER_MIT_FREIFLAECHE".equalsIgnoreCase(value))
-                node.setAttribute("hallen_typ", "LAGER");
+                element.setAttribute("hallen_typ", "LAGER");
             else if ("SPEDITIONSLAGER".equalsIgnoreCase(value))
-                node.setAttribute("hallen_typ", "LAGER");
+                element.setAttribute("hallen_typ", "LAGER");
             else if ("KUEHLHAUS".equalsIgnoreCase(value))
-                node.removeAttribute("hallen_typ");
-        }
+                element.removeAttribute("hallen_typ");
+        });
     }
 
     /**
@@ -449,18 +437,17 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeHausElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("haustyp"));
+    protected void downgradeHausElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:haus[@haustyp]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("haustyp"));
+
             if ("KEINE_ANGABE".equalsIgnoreCase(value))
-                node.removeAttribute("haustyp");
-        }
+                element.removeAttribute("haustyp");
+        });
     }
 
     /**
@@ -474,18 +461,17 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * "SONSTIGE_LANDWIRTSCHAFTSIMMOBILIEN" value.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeLandUndForstwirtschaftElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:land_und_forstwirtschaft[@land_typ]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("land_typ"));
+    protected void downgradeLandUndForstwirtschaftElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:land_und_forstwirtschaft[@land_typ]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("land_typ"));
+
             if ("ANWESEN".equalsIgnoreCase(value))
-                node.setAttribute("land_typ", "SONSTIGE_LANDWIRTSCHAFTSIMMOBILIEN");
-        }
+                element.setAttribute("land_typ", "SONSTIGE_LANDWIRTSCHAFTSIMMOBILIEN");
+        });
     }
 
     /**
@@ -497,29 +483,25 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any child type, that differs from the first child type, is removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeObjektartElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element parentNode = (Element) item;
-            String type = null;
+    protected void downgradeObjektartElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart";
 
-            List childNodes = XmlUtils.newXPath(
-                    "*", doc).selectNodes(parentNode);
-            for (Object childItem : childNodes) {
-                Element node = (Element) childItem;
-                if (type == null) {
-                    //LOGGER.debug( "PRIMARY TYPE: " + node.getLocalName() );
-                    type = node.getLocalName();
-                } else if (!type.equalsIgnoreCase(node.getLocalName())) {
-                    //LOGGER.debug( "REMOVE SECONDARY TYPE: " + node.getLocalName() );
-                    parentNode.removeChild(node);
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Map<String, String> options = new HashMap<>();
+            options.put("type", null);
+
+            XmlUtils.xPathElementsProcess(XmlUtils.xPath("*", doc), element, (childElement) -> {
+                if (options.get("type") == null) {
+                    //LOGGER.debug( "PRIMARY TYPE: " + childElement.getLocalName() );
+                    options.put("type", childElement.getLocalName());
+                } else if (!options.get("type").equalsIgnoreCase(childElement.getLocalName())) {
+                    //LOGGER.debug( "REMOVE SECONDARY TYPE: " + childElement.getLocalName() );
+                    element.removeChild(childElement);
                 }
-            }
-        }
+            });
+        });
     }
 
     /**
@@ -531,16 +513,13 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurences of these values are removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeUebertragungElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:uebertragung[@timestamp]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            node.removeAttribute("timestamp");
-        }
+    protected void downgradeUebertragungElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:uebertragung[@timestamp]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.removeAttribute("timestamp"));
     }
 
     /**
@@ -552,18 +531,17 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * Any occurence of these values is removed.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void downgradeWohnungElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:wohnung[@wohnungtyp]",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            String value = StringUtils.trimToNull(node.getAttribute("wohnungtyp"));
+    protected void downgradeWohnungElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:objektkategorie/io:objektart/io:wohnung[@wohnungtyp]";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final String value = StringUtils.trimToNull(element.getAttribute("wohnungtyp"));
+
             if ("KEINE_ANGABE".equalsIgnoreCase(value))
-                node.removeAttribute("wohnungtyp");
-        }
+                element.removeAttribute("wohnungtyp");
+        });
     }
 
     /**
@@ -576,20 +554,16 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * These elements are removed by this function.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeAusstattungChildElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausstatt_kategorie | " +
-                        "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:dachform | " +
-                        "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:bauweise | " +
-                        "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausbaustufe",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeAusstattungChildElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausstatt_kategorie | " +
+                "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:dachform | " +
+                "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:bauweise | " +
+                "/io:openimmo/io:anbieter/io:immobilie/io:ausstattung/io:ausbaustufe";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -598,17 +572,13 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.1 does not support &lt;provisionspflichtig&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeProvisionspflichtigElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:provisionspflichtig",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeProvisionspflichtigElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:preise/io:provisionspflichtig";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -617,17 +587,13 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * OpenImmo 1.2.1 does not support &lt;versteigerung&gt; elements.
      *
      * @param doc OpenImmo document in version 1.2.2
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void removeVersteigerungElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:versteigerung",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
-            parentNode.removeChild(node);
-        }
+    protected void removeVersteigerungElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:versteigerung";
+
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc,
+                (element) -> element.getParentNode().removeChild(element));
     }
 
     /**
@@ -637,20 +603,17 @@ public class OpenImmo_1_2_2 extends XmlConverter<OpenImmoDocument, OpenImmoVersi
      * renamed to &lt;epart&gt; in version 1.2.2.
      *
      * @param doc OpenImmo document in version 1.2.1
-     * @throws JaxenException if xpath evaluation failed
+     * @throws XPathExpressionException if xpath evaluation failed
      */
-    protected void upgradeEnergiepassElements(Document doc) throws JaxenException {
-        List nodes = XmlUtils.newXPath(
-                "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:art",
-                doc).selectNodes(doc);
-        for (Object item : nodes) {
-            Element node = (Element) item;
-            Element parentNode = (Element) node.getParentNode();
+    protected void upgradeEnergiepassElements(Document doc) throws XPathExpressionException {
+        final String xpath = "/io:openimmo/io:anbieter/io:immobilie/io:zustand_angaben/io:energiepass/io:art";
 
-            Element newNode = doc.createElementNS(StringUtils.EMPTY, "epart");
-            newNode.setTextContent(node.getTextContent());
+        XmlUtils.xPathElementsProcess(XmlUtils.xPath(xpath, doc, "io"), doc, (element) -> {
+            final Element parent = (Element) element.getParentNode();
+            final Element newElement = doc.createElementNS(StringUtils.EMPTY, "epart");
 
-            parentNode.replaceChild(newNode, node);
-        }
+            newElement.setTextContent(element.getTextContent());
+            parent.replaceChild(newElement, element);
+        });
     }
 }

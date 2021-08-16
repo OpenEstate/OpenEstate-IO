@@ -7,11 +7,11 @@
     <parent>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO</artifactId>
-        <version>1.4</version>
+        <version>1.5</version>
     </parent>
 
     <artifactId>release</artifactId>
-    <version>1.4</version>
+    <version>1.5</version>
     <packaging>pom</packaging>
 
     <name>release</name>
@@ -27,7 +27,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
@@ -79,7 +79,15 @@
         </dependency>
         <dependency>
             <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-Idealista</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
             <artifactId>OpenEstate-IO-ImmoXML</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openestate.io</groupId>
+            <artifactId>OpenEstate-IO-ImmobarIT</artifactId>
         </dependency>
         <dependency>
             <groupId>org.openestate.io</groupId>
@@ -175,9 +183,9 @@
                                     <docencoding>${project.build.sourceEncoding}</docencoding>
                                     <keywords>true</keywords>
                                     <quiet>true</quiet>
-                                    <!--<doclint>none</doclint>-->
+                                    <doclint>none</doclint>
                                     <links>
-                                        <link>https://docs.oracle.com/javase/7/docs/api/</link>
+                                        <link>https://docs.oracle.com/javase/8/docs/api/</link>
                                     </links>
                                     <groups>
                                         <group>
@@ -193,12 +201,20 @@
                                             <packages>org.openestate.io.daft_ie:org.openestate.io.daft_ie.*</packages>
                                         </group>
                                         <group>
-                                            <title>Filemaker</title>
+                                            <title>Filemaker-XML</title>
                                             <packages>org.openestate.io.filemaker:org.openestate.io.filemaker.*</packages>
                                         </group>
                                         <group>
                                             <title>IDX</title>
                                             <packages>org.openestate.io.idx:org.openestate.io.idx.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>idealista.com</title>
+                                            <packages>org.openestate.io.idealista:org.openestate.io.idealista.*</packages>
+                                        </group>
+                                        <group>
+                                            <title>immobar.it</title>
+                                            <packages>org.openestate.io.immobar_it:org.openestate.io.immobar_it.*</packages>
                                         </group>
                                         <group>
                                             <title>immobiliare.it</title>
@@ -217,59 +233,34 @@
                                             <packages>org.openestate.io.is24_xml:org.openestate.io.is24_xml.*</packages>
                                         </group>
                                         <group>
-                                            <title>Kyero</title>
+                                            <title>Kyero-XML</title>
                                             <packages>org.openestate.io.kyero:org.openestate.io.kyero.*</packages>
                                         </group>
                                         <group>
-                                            <title>OpenImmo</title>
+                                            <title>OpenImmo-XML</title>
                                             <packages>org.openestate.io.openimmo:org.openestate.io.openimmo.*</packages>
                                         </group>
                                         <group>
-                                            <title>Trovit</title>
+                                            <title>Trovit-XML</title>
                                             <packages>org.openestate.io.trovit:org.openestate.io.trovit.*</packages>
                                         </group>
                                         <group>
                                             <title>wohnen-in-suedtirol.it</title>
                                             <packages>org.openestate.io.wis_it:org.openestate.io.wis_it.*</packages>
                                         </group>
-                                        <group>
-                                            <title>example classes</title>
-                                            <packages>org.openestate.io.examples:org.openestate.io.examples.*</packages>
-                                        </group>
                                     </groups>
-                                    <sourcepath>
-                                        ${project.parent.basedir}/CasaIT/src/main/java;
-                                        ${project.parent.basedir}/CasaIT/src/main/jaxb;
-                                        ${project.parent.basedir}/Core/src/main/java;
-                                        ${project.parent.basedir}/DaftIE/src/main/java;
-                                        ${project.parent.basedir}/DaftIE/src/main/jaxb;
-                                        ${project.parent.basedir}/Examples/src/main/java;
-                                        ${project.parent.basedir}/Filemaker/src/main/java;
-                                        ${project.parent.basedir}/Filemaker/src/main/jaxb;
-                                        ${project.parent.basedir}/IDX/src/main/java;
-                                        ${project.parent.basedir}/ImmobiliareIT/src/main/java;
-                                        ${project.parent.basedir}/ImmobiliareIT/src/main/jaxb;
-                                        ${project.parent.basedir}/ImmoXML/src/main/java;
-                                        ${project.parent.basedir}/ImmoXML/src/main/jaxb;
-                                        ${project.parent.basedir}/IS24-CSV/src/main/java;
-                                        ${project.parent.basedir}/IS24-XML/src/main/java;
-                                        ${project.parent.basedir}/IS24-XML/src/main/jaxb;
-                                        ${project.parent.basedir}/Kyero/src/main/java;
-                                        ${project.parent.basedir}/Kyero/src/main/jaxb;
-                                        ${project.parent.basedir}/OpenImmo/src/main/java;
-                                        ${project.parent.basedir}/OpenImmo/src/main/jaxb;
-                                        ${project.parent.basedir}/Trovit/src/main/java;
-                                        ${project.parent.basedir}/Trovit/src/main/jaxb;
-                                        ${project.parent.basedir}/WisIT/src/main/java;
-                                        ${project.parent.basedir}/WisIT/src/main/jaxb
-                                    </sourcepath>
-                                    <additionalDependencies>
-                                        <dependency>
-                                            <groupId>com.google.code.findbugs</groupId>
-                                            <artifactId>annotations</artifactId>
-                                            <version>3.0.1u2</version>
-                                        </dependency>
-                                    </additionalDependencies>
+                                    <detectOfflineLinks>false</detectOfflineLinks>
+                                    <includeDependencySources>true</includeDependencySources>
+                                    <dependencySourceIncludes>
+                                        <dependencySourceInclude>${project.groupId}:*</dependencySourceInclude>
+                                    </dependencySourceIncludes>
+                                    <dependencySourceExcludes>
+                                        <dependencySourceExclude>${project.groupId}:OpenEstate-IO-Build</dependencySourceExclude>
+                                        <dependencySourceExclude>${project.groupId}:OpenEstate-IO-Examples</dependencySourceExclude>
+                                    </dependencySourceExcludes>
+
+                                    <!-- seems necessary to avoid build errors regarding modules (don't know why, yet) -->
+                                    <release>8</release>
                                 </configuration>
                             </execution>
                         </executions>
@@ -293,7 +284,7 @@
                                     <overWriteSnapshots>false</overWriteSnapshots>
                                     <overWriteIfNewer>true</overWriteIfNewer>
                                     <includeScope>runtime</includeScope>
-                                    <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip,net.jcip</excludeGroupIds>
+                                    <excludeGroupIds>${project.groupId}</excludeGroupIds>
                                 </configuration>
                             </execution>
 
@@ -310,7 +301,7 @@
                                     <overWriteSnapshots>false</overWriteSnapshots>
                                     <overWriteIfNewer>true</overWriteIfNewer>
                                     <includeScope>runtime</includeScope>
-                                    <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip,net.jcip</excludeGroupIds>
+                                    <excludeGroupIds>${project.groupId}</excludeGroupIds>
                                     <classifier>sources</classifier>
                                 </configuration>
                             </execution>
@@ -328,7 +319,7 @@
                                     <overWriteSnapshots>false</overWriteSnapshots>
                                     <overWriteIfNewer>true</overWriteIfNewer>
                                     <includeScope>runtime</includeScope>
-                                    <excludeGroupIds>${project.groupId},com.google.code.findbugs,net.jcip,net.jcip</excludeGroupIds>
+                                    <excludeGroupIds>${project.groupId}</excludeGroupIds>
                                     <classifier>javadoc</classifier>
                                 </configuration>
                             </execution>

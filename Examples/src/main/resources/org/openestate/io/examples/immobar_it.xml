@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realestate>
+
+    <company>
+
+        <!-- Firmendaten deutsch -->
+        <company_name_de>Name Agentur/Firma deutsch</company_name_de>
+        <company_address_de>Adresse deutsch</company_address_de>
+        <company_location_de>Ort und Fraktion deutsch</company_location_de>
+
+        <!-- Dati ditta italiano -->
+        <company_name_it>Nome agenzia/ditta italiano</company_name_it>
+        <company_address_it>Indirizzo italiano</company_address_it>
+        <company_location_it>Localita e frazione italiano</company_location_it>
+
+        <company_postalcode>39100</company_postalcode>
+        <company_province>BZ,TN...</company_province>
+        <company_country>IT,AT,DE...</company_country>
+        <company_phone>+39 123 1234567</company_phone>
+        <company_fax>+39 123 1234567</company_fax>
+        <company_mobile>+39 123 1234567</company_mobile>
+        <company_email>office@domain.com</company_email>
+        <company_website>www.domain.com</company_website>
+        <company_ISTAT>037011</company_ISTAT>
+
+        <property>
+            <!-- Objekt 1 / oggetto 1 -->
+            <id>51248</id> <!-- unique! -->
+            <referencenumber>10M001</referencenumber>
+            <contactpersonname>Franz Mair</contactpersonname>
+            <ISTATcode>037006</ISTATcode>
+            <address_de>Hauptstr. 5</address_de>
+            <address_it>via Centale 5</address_it>
+            <location_de>Bruneck</location_de>
+            <location_it>Brunico</location_it>
+            <district_de>Dietenheim</district_de>
+            <district_it>Teodone</district_it>
+            <postalcode>39100</postalcode>
+            <province>BZ,TN...</province>
+            <country>IT,AT,DE...</country>
+            <latitude>99.999999</latitude>
+            <longitude>999.999999</longitude>
+            <title_de>Titel deutsch</title_de>
+            <title_it>Titolo italiano</title_it>
+            <immotype>2</immotype> <!-- see list below 1,2,3... -->
+            <revenuetype>1</revenuetype> <!-- see list below 1,2 -->
+            <sqm_sale>105.9</sqm_sale>
+            <sqm_net>88.5</sqm_net>
+            <sqm_gross>105.9</sqm_gross>
+            <floor>2</floor>
+            <flooristop>true/false</flooristop>
+            <floorisground>true/false</floorisground>
+            <duplex>true/false</duplex>
+            <countrooms>3</countrooms>
+            <countbathrooms>2</countbathrooms>
+            <kitchentype_de>Wohnküche, Kochnische...</kitchentype_de>
+            <kitchentype_it>Cucina abitabile, angolo cottura...</kitchentype_it>
+            <countterrace>2</countterrace>
+            <cellar>true/false</cellar>
+            <sqm_cellar>20.4</sqm_cellar>
+            <garden>true/false</garden>
+            <sqm_garden>80.4</sqm_garden>
+            <countgarage>1</countgarage>
+            <countparkinglot>2</countparkinglot>
+            <parkinglottype_de>Parkplatz/Stellplatz überdacht, nicht überdacht, im Freien...</parkinglottype_de>
+            <parkinglottype_it>Parcheggio al coperto, in casa, fuori...</parkinglottype_it>
+            <elevator>true/false</elevator>
+            <description_de>Beschreibung...</description_de>
+            <description_it>Descrizione...</description_it>
+            <used>true/false</used>
+            <furnished>true/false</furnished>
+            <energyclass>A,B,C,D...</energyclass>
+            <ipe>443.50</ipe>
+            <heating_de>Fernwärme...</heating_de>
+            <heating_it>Teleriscaldamento...</heating_it>
+            <convention>true/false</convention>
+            <price_on_request>true/false</price_on_request>
+            <price_net>300123.45</price_net>
+            <commission>true/false</commission>
+            <utilities>223.45</utilities>
+            <image>http://lorempixel.com/400/400/city/1.jpg</image>
+            <image>http://lorempixel.com/400/400/city/2.jpg</image>
+            <image>http://lorempixel.com/400/400/city/3.jpg</image> <!-- max. 8 image entries -->
+            <planimetry>http://lorempixel.com/400/400/planimetry/1.jpg</planimetry>
+            <planimetry>http://lorempixel.com/400/400/planimetry/2.jpg</planimetry> <!-- max. 2 planimetry entries -->
+            <creationdate>2013-05-12</creationdate>
+            <lastmoddate>2014-10-19</lastmoddate>
+        </property>
+    </company>
+
+</realestate>

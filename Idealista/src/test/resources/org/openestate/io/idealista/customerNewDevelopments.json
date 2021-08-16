@@ -1,0 +1,445 @@
+{
+  "customerCountry": "Spain",
+  "customerCode": "ilc1234567890123456789012345678901234567890",
+  "customerReference": "external software reference",
+  "customerSendDate": "2017/05/16 16:50:12",
+  "customerContact": {
+    "contactEmail": "contact@idealista.com",
+    "contactPrimaryPhonePrefix": "34",
+    "contactPrimaryPhoneNumber": "910000000",
+    "contactSecondaryPhonePrefix": "34",
+    "contactSecondaryPhoneNumber": "910000002"
+  },
+  "customerNewDevelopments": [
+    {
+      "propertyCode": "newDevCode001",
+      "propertyReference": "newDevReference001",
+      "propertyVisibility": "idealista",
+      "propertyAddress": {
+        "addressVisibility": "hidden",
+        "addressStreetName": "Plaza de las Cortes",
+        "addressStreetNumber": "2",
+        "addressUrbanization": "urbanización",
+        "addressPostalCode": "28000",
+        "addressNsiCode": "111111",
+        "addressTown": "Madrid",
+        "addressCountry": "Spain",
+        "addressCoordinatesPrecision": "moved",
+        "addressCoordinatesLatitude": 30.9,
+        "addressCoordinatesLongitude": 35.7
+      },
+      "propertyFeatures": {
+        "featuresType": "promo",
+        "featuresNewDevelopmentType": "new_building",
+        "featuresNewDevelopmentName": "newDevelopmentName",
+        "featuresFinished": true,
+        "featuresStartDate": "2017/05/16",
+        "featuresKeyDeliveryYear": 2018,
+        "featuresKeyDeliveryMonth": 12,
+        "featuresBuiltPhase": "pilot",
+        "featuresAvailabilityHour": "weekends",
+        "featuresAccessComments": [
+          {
+            "descriptionLanguage": "spanish",
+            "descriptionText": "spanish description"
+          },
+          {
+            "descriptionLanguage": "italian",
+            "descriptionText": "italian description"
+          }
+        ],
+        "featuresOnSite": false,
+        "featuresMortgageStateSubsidized": true,
+        "featuresMortgageBankName": "bankia",
+        "featuresMortgageEntryPercentage": 30.8,
+        "featuresMortgageLettersPercentage": 15.5,
+        "featuresMortgagePercentage": 20.3,
+        "featuresMortgageInterestRate": 8,
+        "featuresMortgageYears": 25
+      },
+      "propertyDescriptions": [
+        {
+          "descriptionLanguage": "spanish",
+          "descriptionText": "spanish description"
+        },
+        {
+          "descriptionLanguage": "italian",
+          "descriptionText": "italian description"
+        },
+        {
+          "descriptionLanguage": "portuguese",
+          "descriptionText": "english description"
+        },
+        {
+          "descriptionLanguage": "english",
+          "descriptionText": "italian description"
+        },
+        {
+          "descriptionLanguage": "german",
+          "descriptionText": "german description"
+        },
+        {
+          "descriptionLanguage": "french",
+          "descriptionText": "french description"
+        },
+        {
+          "descriptionLanguage": "russian",
+          "descriptionText": "russian description"
+        },
+        {
+          "descriptionLanguage": "chinese",
+          "descriptionText": "chinese description"
+        },
+        {
+          "descriptionLanguage": "catalan",
+          "descriptionText": "catalan description"
+        }
+      ],
+      "propertyImages": [
+        {
+          "imageOrder": 1,
+          "imageLabel": "bathroom",
+          "imageUrl": "https://www.idealista.com/photo1.jpg"
+        },
+        {
+          "imageOrder": 2,
+          "imageLabel": "bedroom",
+          "imageUrl": "https://www.idealista.com/photo2.jpg"
+        }
+      ],
+      "newDevelopmentTypologies": [
+        {
+          "propertyCode": "001",
+          "propertyReference": "piso-24",
+          "propertyOperation": {
+            "operationType": "sale",
+            "operationPrice": 60000,
+            "operationPriceCommunity": 200
+          },
+          "propertyAddress": {
+            "addressVisibility": "street",
+            "addressStreetName": "Plaza de las Cortes",
+            "addressStreetNumber": "2",
+            "addressBlock": "block",
+            "addressFloor": "6",
+            "addressStair": "stair",
+            "addressDoor": "door",
+            "addressUrbanization": "urbanization name",
+            "addressPostalCode": "28000",
+            "addressNsiCode": "111111",
+            "addressTown": "Madrid",
+            "addressCountry": "Spain",
+            "addressCoordinatesPrecision": "exact",
+            "addressCoordinatesLatitude": 30.9,
+            "addressCoordinatesLongitude": 35.7
+          },
+          "propertyFeatures": {
+            "featuresType": "flat",
+            "featuresAreaConstructed": 200,
+            "featuresAreaUsable": 180,
+            "featuresBathroomNumber": 3,
+            "featuresBedroomNumber": 6,
+            "featuresBuiltYear": 1986,
+            "featuresConditionedAir": true,
+            "featuresConservation": "toRestore",
+            "featuresDoorman": false,
+            "featuresEnergyCertificateRating": "A",
+            "featuresEnergyCertificatePerformance": 125.36,
+            "featuresGarden": true,
+            "featuresLiftAvailable": true,
+            "featuresOrientationEast": true,
+            "featuresOrientationWest": false,
+            "featuresOrientationNorth": true,
+            "featuresOrientationSouth": false,
+            "featuresPenthouse": true,
+            "featuresPool": true,
+            "featuresRooms": 7,
+            "featuresStorage": false,
+            "featuresStudio": true,
+            "featuresTerrace": true,
+            "featuresWardrobes": true
+          },
+          "propertyDescriptions": [
+            {
+              "descriptionLanguage": "spanish",
+              "descriptionText": "spanish description"
+            },
+            {
+              "descriptionLanguage": "italian",
+              "descriptionText": "italian description"
+            },
+            {
+              "descriptionLanguage": "portuguese",
+              "descriptionText": "english description"
+            },
+            {
+              "descriptionLanguage": "english",
+              "descriptionText": "italian description"
+            },
+            {
+              "descriptionLanguage": "german",
+              "descriptionText": "german description"
+            },
+            {
+              "descriptionLanguage": "french",
+              "descriptionText": "french description"
+            },
+            {
+              "descriptionLanguage": "russian",
+              "descriptionText": "russian description"
+            },
+            {
+              "descriptionLanguage": "chinese",
+              "descriptionText": "chinese description"
+            },
+            {
+              "descriptionLanguage": "catalan",
+              "descriptionText": "catalan description"
+            }
+          ],
+          "propertyImages": [
+            {
+              "imageOrder": 1,
+              "imageLabel": "bathroom",
+              "imageUrl": "https://www.idealista.com/photo1.jpg"
+            },
+            {
+              "imageOrder": 2,
+              "imageLabel": "bedroom",
+              "imageUrl": "https://www.idealista.com/photo2.jpg"
+            },
+            {
+              "imageOrder": 3,
+              "imageLabel": "communalareas",
+              "imageUrl": "https://www.idealista.com/photo3.jpg"
+            },
+            {
+              "imageOrder": 4,
+              "imageLabel": "corridor",
+              "imageUrl": "https://www.idealista.com/photo4.jpg"
+            },
+            {
+              "imageOrder": 5,
+              "imageLabel": "details",
+              "imageUrl": "https://www.idealista.com/photo5.jpg"
+            }
+          ]
+        },
+        {
+          "propertyCode": "002",
+          "propertyReference": "r111",
+          "propertyOperation": {
+            "operationType": "rent",
+            "operationPrice": 600,
+            "operationPriceCommunity": 200,
+            "operationDepositMonths": 1
+          },
+          "propertyAddress": {
+            "addressVisibility": "full",
+            "addressStreetName": "Plaza de las Cortes",
+            "addressStreetNumber": "2",
+            "addressBlock": "b",
+            "addressFloor": "bj",
+            "addressStair": "s",
+            "addressDoor": "d",
+            "addressUrbanization": "urb",
+            "addressPostalCode": "28000",
+            "addressNsiCode": "111111",
+            "addressTown": "Madrid",
+            "addressCountry": "Spain",
+            "addressCoordinatesPrecision": "moved",
+            "addressCoordinatesLatitude": 30.9,
+            "addressCoordinatesLongitude": 35.7
+          },
+          "propertyFeatures": {
+            "featuresType": "house",
+            "featuresAreaConstructed": 200,
+            "featuresAreaUsable": 180,
+            "featuresAreaPlot": 1000,
+            "featuresBathroomNumber": 3,
+            "featuresBedroomNumber": 6,
+            "featuresBuiltYear": 1990,
+            "featuresRooms": 7,
+            "featuresConditionedAir": true,
+            "featuresConservation": "good",
+            "featuresDoorman": false,
+            "featuresEquippedKitchen": true,
+            "featuresEquippedWithFurniture": false,
+            "featuresEnergyCertificateRating": "A",
+            "featuresEnergyCertificatePerformance": 125.36,
+            "featuresFloorsBuilding": 3,
+            "featuresGarden": true,
+            "featuresOrientationEast": true,
+            "featuresOrientationWest": false,
+            "featuresOrientationNorth": false,
+            "featuresOrientationSouth": false,
+            "featuresPool": true,
+            "featuresStorage": false,
+            "featuresTerrace": true,
+            "featuresWardrobes": true
+          },
+          "propertyDescriptions": [
+            {
+              "descriptionLanguage": "spanish",
+              "descriptionText": "spanish description"
+            },
+            {
+              "descriptionLanguage": "italian",
+              "descriptionText": "italian description"
+            },
+            {
+              "descriptionLanguage": "portuguese",
+              "descriptionText": "english description"
+            },
+            {
+              "descriptionLanguage": "english",
+              "descriptionText": "italian description"
+            },
+            {
+              "descriptionLanguage": "german",
+              "descriptionText": "german description"
+            },
+            {
+              "descriptionLanguage": "french",
+              "descriptionText": "french description"
+            },
+            {
+              "descriptionLanguage": "russian",
+              "descriptionText": "russian description"
+            },
+            {
+              "descriptionLanguage": "chinese",
+              "descriptionText": "chinese description"
+            },
+            {
+              "descriptionLanguage": "catalan",
+              "descriptionText": "catalan description"
+            }
+          ],
+          "propertyImages": [
+            {
+              "imageOrder": 1,
+              "imageLabel": "bathroom",
+              "imageUrl": "https://www.idealista.com/photo1.jpg"
+            },
+            {
+              "imageOrder": 2,
+              "imageLabel": "bedroom",
+              "imageUrl": "https://www.idealista.com/photo2.jpg"
+            },
+            {
+              "imageOrder": 3,
+              "imageLabel": "communalareas",
+              "imageUrl": "https://www.idealista.com/photo3.jpg"
+            },
+            {
+              "imageOrder": 4,
+              "imageLabel": "corridor",
+              "imageUrl": "https://www.idealista.com/photo4.jpg"
+            },
+            {
+              "imageOrder": 5,
+              "imageLabel": "details",
+              "imageUrl": "https://www.idealista.com/photo5.jpg"
+            },
+            {
+              "imageOrder": 6,
+              "imageLabel": "energycertificate",
+              "imageUrl": "https://www.idealista.com/photo6.jpg"
+            },
+            {
+              "imageOrder": 7,
+              "imageLabel": "facade",
+              "imageUrl": "https://www.idealista.com/photo7.jpg"
+            },
+            {
+              "imageOrder": 8,
+              "imageLabel": "garage",
+              "imageUrl": "https://www.idealista.com/photo8.jpg"
+            },
+            {
+              "imageOrder": 9,
+              "imageLabel": "garden",
+              "imageUrl": "https://www.idealista.com/photo9.jpg"
+            },
+            {
+              "imageOrder": 10,
+              "imageLabel": "gateway",
+              "imageUrl": "https://www.idealista.com/photo10.jpg"
+            },
+            {
+              "imageOrder": 11,
+              "imageLabel": "hall",
+              "imageUrl": "https://www.idealista.com/photo11.jpg"
+            },
+            {
+              "imageOrder": 12,
+              "imageLabel": "kitchen",
+              "imageUrl": "https://www.idealista.com/photo12.jpg"
+            },
+            {
+              "imageOrder": 13,
+              "imageLabel": "land",
+              "imageUrl": "https://www.idealista.com/photo13.jpg"
+            },
+            {
+              "imageOrder": 14,
+              "imageLabel": "living",
+              "imageUrl": "https://www.idealista.com/photo14.jpg"
+            },
+            {
+              "imageOrder": 15,
+              "imageLabel": "mates",
+              "imageUrl": "https://www.idealista.com/photo15.jpg"
+            },
+            {
+              "imageOrder": 16,
+              "imageLabel": "plan",
+              "imageUrl": "https://www.idealista.com/photo16.jpg"
+            },
+            {
+              "imageOrder": 17,
+              "imageLabel": "pool",
+              "imageUrl": "https://www.idealista.com/photo17.jpg"
+            },
+            {
+              "imageOrder": 18,
+              "imageLabel": "reception",
+              "imageUrl": "https://www.idealista.com/photo18.jpg"
+            },
+            {
+              "imageOrder": 19,
+              "imageLabel": "room",
+              "imageUrl": "https://www.idealista.com/photo19.jpg"
+            },
+            {
+              "imageOrder": 20,
+              "imageLabel": "storage",
+              "imageUrl": "https://www.idealista.com/photo20.jpg"
+            },
+            {
+              "imageOrder": 21,
+              "imageLabel": "terrace",
+              "imageUrl": "https://www.idealista.com/photo21.jpg"
+            },
+            {
+              "imageOrder": 22,
+              "imageLabel": "unknown",
+              "imageUrl": "https://www.idealista.com/photo22.jpg"
+            },
+            {
+              "imageOrder": 23,
+              "imageLabel": "views",
+              "imageUrl": "https://www.idealista.com/photo23.jpg"
+            },
+            {
+              "imageOrder": 24,
+              "imageLabel": "waitingroom",
+              "imageUrl": "https://www.idealista.com/photo24.jpg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

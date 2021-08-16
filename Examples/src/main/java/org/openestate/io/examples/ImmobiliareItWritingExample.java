@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -25,62 +27,49 @@ import java.util.Calendar;
 import java.util.Currency;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.immobiliare_it.ImmobiliareItDocument;
 import org.openestate.io.immobiliare_it.ImmobiliareItUtils;
-import org.openestate.io.immobiliare_it.xml.Box;
-import org.openestate.io.immobiliare_it.xml.BusinessElement;
-import org.openestate.io.immobiliare_it.xml.ClassEnergy;
-import org.openestate.io.immobiliare_it.xml.Clazz;
+import org.openestate.io.immobiliare_it.xml.ClassType;
+import org.openestate.io.immobiliare_it.xml.DescriptionType;
+import org.openestate.io.immobiliare_it.xml.Document;
+import org.openestate.io.immobiliare_it.xml.Extended;
 import org.openestate.io.immobiliare_it.xml.Feed;
-import org.openestate.io.immobiliare_it.xml.Feed.Properties.Property;
-import org.openestate.io.immobiliare_it.xml.Floor;
-import org.openestate.io.immobiliare_it.xml.Furniture;
-import org.openestate.io.immobiliare_it.xml.Garden;
-import org.openestate.io.immobiliare_it.xml.Heat;
-import org.openestate.io.immobiliare_it.xml.Kitchen;
-import org.openestate.io.immobiliare_it.xml.LocationStructure.Locality.Neighbourhood.LocationNeighbourhoodType;
+import org.openestate.io.immobiliare_it.xml.FurnitureType;
+import org.openestate.io.immobiliare_it.xml.GardenType;
+import org.openestate.io.immobiliare_it.xml.KitchenType;
+import org.openestate.io.immobiliare_it.xml.NationCodeType;
 import org.openestate.io.immobiliare_it.xml.ObjectFactory;
-import org.openestate.io.immobiliare_it.xml.Operation;
+import org.openestate.io.immobiliare_it.xml.OperationType;
 import org.openestate.io.immobiliare_it.xml.OwnershipType;
-import org.openestate.io.immobiliare_it.xml.PictureExtended;
-import org.openestate.io.immobiliare_it.xml.PictureProject;
-import org.openestate.io.immobiliare_it.xml.PropertyType;
-import org.openestate.io.immobiliare_it.xml.PropertyTypeBusiness;
-import org.openestate.io.immobiliare_it.xml.PropertyTypeSimple;
-import org.openestate.io.immobiliare_it.xml.Rental;
-import org.openestate.io.immobiliare_it.xml.Status;
+import org.openestate.io.immobiliare_it.xml.Picture;
+import org.openestate.io.immobiliare_it.xml.Property;
+import org.openestate.io.immobiliare_it.xml.RentalType;
+import org.openestate.io.immobiliare_it.xml.StatusType;
 import org.openestate.io.immobiliare_it.xml.TerrainType;
-import org.openestate.io.immobiliare_it.xml.VideoProject;
-import org.openestate.io.immobiliare_it.xml.VideoType;
-import org.openestate.io.immobiliare_it.xml.YesNoReady;
-import org.openestate.io.immobiliare_it.xml.types.Category;
-import org.openestate.io.immobiliare_it.xml.types.EnergyUnit;
-import org.openestate.io.immobiliare_it.xml.types.LandSizeUnit;
-import org.openestate.io.immobiliare_it.xml.types.SizeUnit;
+import org.openestate.io.immobiliare_it.xml.Transaction;
+import org.openestate.io.immobiliare_it.xml.Video;
+import org.openestate.io.immobiliare_it.xml.YesNoReadyType;
+import org.openestate.io.immobiliare_it.xml.types.SizeUnitType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML files for
- * <a href="http://immobiliare.it">immobiliare.it</a>.
+ * Example for writing XML files for <a href="https://www.immobiliare.it/">immobiliare.it</a>.
  * <p>
  * This example illustrates the programmatic creation of documents for
- * <a href="http://immobiliare.it">immobiliare.it</a> and how they are written
- * into XML.
+ * <a href="https://www.immobiliare.it/">immobiliare.it</a> and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class ImmobiliareItWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = ImmobiliareItUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
     private final static boolean PRETTY_PRINT = true;
 
     /**
@@ -90,20 +79,18 @@ public class ImmobiliareItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmobiliareItWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // create a Feed object with some example data
         // this object corresponds to the <feed> root element in XML
         Feed feed = FACTORY.createFeed();
 
         // append some example objects to the Feed object
-        feed.setProperties(FACTORY.createFeedProperties());
-        feed.getProperties().getProperty().add(createProperty());
-        feed.getProperties().getProperty().add(createProperty());
+        feed.setProperties(FACTORY.createProperties());
+        int propertyCount = RandomUtils.nextInt(3, 5);
+        for (int i = 0; i < propertyCount; i++) {
+            feed.getProperties().getProperty().add(createProperty());
+        }
 
-        // convert the Feed object into a XML document
+        // convert the Feed object into an XML document
         ImmobiliareItDocument doc = null;
         try {
             doc = ImmobiliareItDocument.newDocument(feed);
@@ -123,7 +110,7 @@ public class ImmobiliareItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -137,181 +124,183 @@ public class ImmobiliareItWritingExample {
      *
      * @return created example object
      */
-    protected static Property createProperty() {
+    private static Property createProperty() {
         // create an example real estate for rent
-        Property obj = FACTORY.createFeedPropertiesProperty();
-        obj.setBuildingStatus(Status.ABITABILE);
-        obj.setCategory(Category.COMMERCIALE);
-        obj.setDateExpiration(Calendar.getInstance());
+        Property obj = FACTORY.createProperty();
+        obj.setUniqueId(RandomStringUtils.randomAlphanumeric(5));
         obj.setDateUpdated(Calendar.getInstance());
-        obj.setOperation(Operation.WRITE);
-        obj.setUniqueId(RandomStringUtils.random(5));
+        obj.setDateExpiration(Calendar.getInstance());
+        obj.setOperation(randomValue(OperationType.values()));
 
-        obj.setAgent(FACTORY.createFeedPropertiesPropertyAgent());
-        obj.getAgent().setEmail("agency@test.org");
-        obj.getAgent().setOfficeName("agency name");
+        // add agent
+        obj.setAgent(FACTORY.createAgent());
+        obj.getAgent().setEmail(RANDOMIZER.getEmail());
+        obj.getAgent().setOfficeName(RANDOMIZER.getName());
 
-        obj.setBlueprints(FACTORY.createFeedPropertiesPropertyBlueprints());
-        obj.getBlueprints().getBlueprint().add(createPictureExtended());
-        obj.getBlueprints().getBlueprint().add(createPictureExtended());
-        obj.getBlueprints().getBlueprint().add(createPictureExtended());
+        // add a transaction
+        obj.setTransactions(FACTORY.createTransactions());
+        Transaction transaction = FACTORY.createTransaction();
+        transaction.setAuction(RandomUtils.nextBoolean());
+        transaction.setForRevenue(RandomUtils.nextBoolean());
+        transaction.setOwnership(randomValue(OwnershipType.values()));
+        transaction.setPrice(FACTORY.createPriceType());
+        transaction.getPrice().setCurrency(Currency.getInstance("EUR"));
+        transaction.getPrice().setReserved(RandomUtils.nextBoolean());
+        transaction.getPrice().setValue(BigInteger.valueOf(RandomUtils.nextLong(100, 10000)));
+        transaction.setType(RANDOMIZER.getWords(1, 3));
+        obj.getTransactions().getTransaction().add(transaction);
 
+        // add information about the building
         obj.setBuilding(FACTORY.createBuilding());
-        obj.getBuilding().setCategory(Category.COMMERCIALE);
-        obj.getBuilding().setClazz(Clazz.SIGNORILE);
-        obj.getBuilding().setDetail(PropertyTypeBusiness.ALBERGO);
-        obj.getBuilding().setStatus(Status.DISCRETO);
-        obj.getBuilding().setType(PropertyType.APPARTAMENTO);
+        obj.getBuilding().setClazz(randomValue(ClassType.values()));
+        obj.getBuilding().setStatus(randomValue(StatusType.values()));
 
-        obj.setExtraFeatures(FACTORY.createFeedPropertiesPropertyExtraFeatures());
-        obj.getExtraFeatures().setAirConditioning(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setBalcony(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setBathrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.getExtraFeatures().setBeamHeight(BigInteger.valueOf(RandomUtils.nextLong(1, 10)));
-        obj.getExtraFeatures().setBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.getExtraFeatures().setBuildYear(RandomUtils.nextInt(1900, 2000));
-        obj.getExtraFeatures().setDocDescription("some descriptions");
-        obj.getExtraFeatures().setDocSpecification("some specifications");
-        obj.getExtraFeatures().setElevator(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setFloorplannerUrl("http://floorplanner-url.it/");
-        obj.getExtraFeatures().setFreeConditions("free conditions");
-        obj.getExtraFeatures().setFurniture(Furniture.PARZIALMENTE_ARREDATO);
-        obj.getExtraFeatures().setGarden(Garden.NESSUNO);
-        obj.getExtraFeatures().setHeating(Heat.AUTONOMO);
-        obj.getExtraFeatures().setKitchen(Kitchen.SEMI_ABITABILE);
-        obj.getExtraFeatures().setNet(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setNumFloors(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.getExtraFeatures().setOverheadCrane(YesNoReady.READY);
-        obj.getExtraFeatures().setReception(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setRentContract(Rental.LIBERO);
-        obj.getExtraFeatures().setSecurityAlarm(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setTerrace(RandomUtils.nextInt(0, 2) == 1);
-        obj.getExtraFeatures().setVirtualTour("virtual tour");
+        // add some terrains to the building
+        obj.getBuilding().setTerrains(FACTORY.createTerrains());
+        int terrainCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < terrainCount; i++) {
+            obj.getBuilding().getTerrains().getTerrain().add(randomValue(TerrainType.values()));
+        }
 
+        // add some features
+        obj.setFeatures(FACTORY.createFeaturesProperty());
+        obj.getFeatures().setDescriptions(FACTORY.createDescriptions());
+        for (NationCodeType lang : NationCodeType.values()) {
+            obj.getFeatures().getDescriptions().getDescription().add(createDescription(lang));
+        }
+        obj.getFeatures().setSize(FACTORY.createSizeType());
+        obj.getFeatures().getSize().setUnit(randomValue(SizeUnitType.values()));
+        obj.getFeatures().getSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(100, 1000)));
+
+        // add some extra features
+        obj.setExtraFeatures(FACTORY.createExtraFeatures());
         obj.getExtraFeatures().setAdditionalCosts(FACTORY.createAdditionalCostsType());
         obj.getExtraFeatures().getAdditionalCosts().setCurrency(Currency.getInstance("EUR"));
-        obj.getExtraFeatures().getAdditionalCosts().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 5000)));
+        obj.getExtraFeatures().getAdditionalCosts().setValue(BigDecimal.valueOf(RandomUtils.nextDouble(50, 1000)));
+        obj.getExtraFeatures().setBalcony(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtraFeatures().setBuildYear(RandomUtils.nextInt(1990, 2020));
+        obj.getExtraFeatures().setElevator(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setFloorplannerUrl("https://floorplanner-url.it/" + RandomStringUtils.randomAlphanumeric(5));
+        obj.getExtraFeatures().setFreeConditions(RANDOMIZER.getWords(5, 10));
+        obj.getExtraFeatures().setFurniture(randomValue(FurnitureType.values()));
+        obj.getExtraFeatures().setGarden(randomValue(GardenType.values()));
+        obj.getExtraFeatures().setKitchen(randomValue(KitchenType.values()));
+        obj.getExtraFeatures().setNet(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setNumFloors(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtraFeatures().setOverheadCrane(randomValue(YesNoReadyType.values()));
+        obj.getExtraFeatures().setReception(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setRentContract(randomValue(RentalType.values()));
+        obj.getExtraFeatures().setSecurityAlarm(RandomUtils.nextBoolean());
+        obj.getExtraFeatures().setTerrace(RandomUtils.nextBoolean());
 
-        obj.getExtraFeatures().setExternalArea(FACTORY.createLandSizeType());
-        obj.getExtraFeatures().getExternalArea().setUnit(LandSizeUnit.M2);
-        obj.getExtraFeatures().getExternalArea().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
+        // add some extended attributes
+        obj.setExtended(FACTORY.createExtended());
+        obj.getExtended().setAmountBalcony(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountBedrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountOtherRooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountParking(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setAmountTerrace(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
+        obj.getExtended().setBasement(RandomUtils.nextBoolean());
+        obj.getExtended().setCloset(RandomUtils.nextBoolean());
+        obj.getExtended().setExternalFrames(randomValue(Extended.ExternalFrames.values()));
+        obj.getExtended().setFireplace(RandomUtils.nextBoolean());
+        obj.getExtended().setSwimmingPool(RandomUtils.nextBoolean());
+        obj.getExtended().setTv(randomValue(Extended.Tv.values()));
 
-        obj.getExtraFeatures().setFloor(FACTORY.createFloor());
-        obj.getExtraFeatures().getFloor().setType(Floor.FloorType.INTERMEDIO);
-        obj.getExtraFeatures().getFloor().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        // add some pictures
+        obj.setPictures(FACTORY.createPictures());
+        int pictureCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < pictureCount; i++) {
+            obj.getPictures().getPicture().add(createPicture(i));
+        }
 
-        obj.getExtraFeatures().setGarage(FACTORY.createBox());
-        obj.getExtraFeatures().getGarage().setType(Box.BoxType.POSTO_AUTO);
-        obj.getExtraFeatures().getGarage().setValue(BigInteger.valueOf(RandomUtils.nextLong(0, 10)));
+        // add some blueprints
+        obj.setBlueprints(FACTORY.createBlueprints());
+        int blueprintCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < blueprintCount; i++) {
+            obj.getBlueprints().getBlueprint().add(createPicture(i));
+        }
 
-        obj.getExtraFeatures().setOfficeSize(FACTORY.createSizeType());
-        obj.getExtraFeatures().getOfficeSize().setUnit(SizeUnit.M2);
-        obj.getExtraFeatures().getOfficeSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(5, 50)));
+        // add some videos
+        obj.setVideos(FACTORY.createVideos());
+        int videoCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < videoCount; i++) {
+            obj.getVideos().getVideo().add(createVideo(i));
+        }
 
-        obj.setFeatures(FACTORY.createFeedPropertiesPropertyFeatures());
-        obj.getFeatures().setEnergyClass(ClassEnergy.D);
-        obj.getFeatures().setRooms(RandomUtils.nextInt(1, 5));
-
-        obj.getFeatures().setEnergyPerformance(FACTORY.createClassEnergyPerformance());
-        obj.getFeatures().getEnergyPerformance().setCertified(RandomUtils.nextInt(0, 2) == 1);
-        obj.getFeatures().getEnergyPerformance().setUnit(EnergyUnit.KWH_M2ANNO);
-        obj.getFeatures().getEnergyPerformance().setValue("energy performance");
-
-        obj.getFeatures().setPrice(FACTORY.createPriceType());
-        obj.getFeatures().getPrice().setCurrency(Currency.getInstance("EUR"));
-        obj.getFeatures().getPrice().setReserved(RandomUtils.nextInt(0, 2) == 1);
-        obj.getFeatures().getPrice().setValue(BigInteger.valueOf(RandomUtils.nextLong(500, 5000000)));
-
-        obj.getFeatures().setSize(FACTORY.createSizeType());
-        obj.getFeatures().getSize().setUnit(SizeUnit.M2);
-        obj.getFeatures().getSize().setValue(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
-
-        obj.setLocation(FACTORY.createLocationStructure());
-        obj.getLocation().setAdministrativeArea("administrative area");
-        obj.getLocation().setCountryCode("DE");
-
-        obj.getLocation().setCity(FACTORY.createLocationStructureCity());
-        obj.getLocation().getCity().setCode(BigInteger.ZERO);
-        obj.getLocation().getCity().setValue("Berlin");
-
-        obj.getLocation().setLocality(FACTORY.createLocationStructureLocality());
-        obj.getLocation().getLocality().setLatitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 90)));
-        obj.getLocation().getLocality().setLongitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 90)));
-        obj.getLocation().getLocality().setPostalCode("13125");
-
-        obj.getLocation().getLocality().setNeighbourhood(FACTORY.createLocationStructureLocalityNeighbourhood());
-        obj.getLocation().getLocality().getNeighbourhood().setId(BigInteger.ZERO);
-        obj.getLocation().getLocality().getNeighbourhood().setType(LocationNeighbourhoodType.DISTRICT);
-        obj.getLocation().getLocality().getNeighbourhood().setValue("about the neighbourhood");
-
-        obj.getLocation().getLocality().setThoroughfare(FACTORY.createLocationStructureLocalityThoroughfare());
-        obj.getLocation().getLocality().getThoroughfare().setDisplay(RandomUtils.nextInt(0, 2) == 1);
-        obj.getLocation().getLocality().getThoroughfare().setValue("about thoroughfare");
-
-        obj.getLocation().setSubAdministrativeArea(FACTORY.createLocationStructureSubAdministrativeArea());
-        obj.getLocation().getSubAdministrativeArea().setCode(RandomStringUtils.random(5));
-        obj.getLocation().getSubAdministrativeArea().setValue("Berlin");
-
-        obj.setPictures(FACTORY.createFeedPropertiesPropertyPictures());
-        obj.getPictures().getPictureUrlAndPicture().add(createPicture());
-        obj.getPictures().getPictureUrlAndPicture().add(createPicture());
-        obj.getPictures().getPictureUrlAndPicture().add(createPicture());
-
-        obj.setPropertyType(FACTORY.createProptype());
-        obj.getPropertyType().setBusinessType(FACTORY.createBusinessElement());
-        obj.getPropertyType().getBusinessType().setCategory(BusinessElement.BusinessElementCategory.IMMOBILE);
-        obj.getPropertyType().getBusinessType().setValue(PropertyTypeBusiness.ALTRO);
-        obj.getPropertyType().setTerrains(FACTORY.createTerrains());
-        obj.getPropertyType().getTerrains().getTerrain().add(TerrainType.SEMINATIVO);
-        obj.getPropertyType().setType(PropertyTypeSimple.CASA_INDIPENDENTE);
-
-        obj.setTransactionType(FACTORY.createTransactionType());
-        obj.getTransactionType().setAuction(RandomUtils.nextInt(0, 2) == 1);
-        obj.getTransactionType().setOwnership(OwnershipType.PARZIALE);
-        obj.getTransactionType().setValue("notes about transaction");
-
-        obj.setVideos(FACTORY.createFeedPropertiesPropertyVideos());
-        obj.getVideos().getVideo().add(createVideo());
-        obj.getVideos().getVideo().add(createVideo());
+        // add some documents
+        obj.setDocuments(FACTORY.createDocuments());
+        int documentCount = RandomUtils.nextInt(2, 5);
+        for (int i = 0; i < documentCount; i++) {
+            obj.getDocuments().getDocument().add(createDocument(i));
+        }
 
         return obj;
     }
 
     /**
-     * Create a {@link PictureProject} with some example data.
+     * Create a {@link DescriptionType} with some example data.
      *
      * @return created example object
      */
-    protected static PictureProject createPicture() {
-        PictureProject pic = FACTORY.createPictureProject();
-        pic.setPosition(BigInteger.valueOf(RandomUtils.nextLong(0, 100)));
-        pic.setValue("image-" + RandomUtils.nextInt(0, 999) + ".jpg");
+    private static DescriptionType createDescription(NationCodeType lang) {
+        DescriptionType description = FACTORY.createDescriptionType();
+        description.setNative(RandomUtils.nextBoolean());
+        description.setLanguage(lang);
+        description.setContent(RANDOMIZER.getWords(10, 100));
+        description.setTitle(RANDOMIZER.getWords(2, 10));
+        return description;
+    }
+
+    /**
+     * Create a {@link Document} with some example data.
+     *
+     * @return created example object
+     */
+    private static Document createDocument(int position) {
+        Document doc = FACTORY.createDocument();
+        doc.setPosition(BigInteger.valueOf(position));
+        doc.setUrl("https://www.example.com/document-" + position + ".pdf");
+        doc.setMimetype("application/pdf");
+        return doc;
+    }
+
+    /**
+     * Create a {@link Picture} with some example data.
+     *
+     * @return created example object
+     */
+    private static Picture createPicture(int position) {
+        Picture pic = FACTORY.createPicture();
+        pic.setPosition(BigInteger.valueOf(position));
+        pic.setUrl("https://www.example.com/image-" + position + ".jpg");
         return pic;
     }
 
     /**
-     * Create a {@link PictureExtended} with some example data.
+     * Create a {@link Video} with some example data.
      *
      * @return created example object
      */
-    protected static PictureExtended createPictureExtended() {
-        PictureExtended pic = FACTORY.createPictureExtended();
-        pic.setPosition(BigInteger.valueOf(RandomUtils.nextLong(0, 100)));
-        pic.setValue("image-" + RandomUtils.nextInt(0, 999) + ".jpg");
-        pic.setUrl("http://mywebsite.org/" + pic.getValue());
-        return pic;
-    }
-
-    /**
-     * Create a {@link VideoProject} with some example data.
-     *
-     * @return created example object
-     */
-    protected static VideoProject createVideo() {
-        VideoProject video = FACTORY.createVideoProject();
-        video.setType(VideoType.LOCAL);
-        video.setValue("video-" + RandomUtils.nextInt(0, 999) + ".mp4");
+    private static Video createVideo(int position) {
+        Video video = FACTORY.createVideo();
+        video.setType(Video.Type.REMOTE);
+        video.setValue("https://www.example.com/video-" + position + ".mp4");
         return video;
+    }
+
+    /**
+     * Get a random value from an array.
+     *
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
+     */
+    private static <T> T randomValue(T[] values) {
+        return (values != null && values.length > 0) ?
+                values[RandomUtils.nextInt(0, values.length)] :
+                null;
     }
 
     /**
@@ -321,7 +310,7 @@ public class ImmobiliareItWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(ImmobiliareItDocument doc, File file) {
+    private static void write(ImmobiliareItDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -339,8 +328,8 @@ public class ImmobiliareItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
-    protected static void write(ImmobiliareItDocument doc, OutputStream output) {
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
+    private static void write(ImmobiliareItDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -359,13 +348,13 @@ public class ImmobiliareItWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(ImmobiliareItDocument doc, Writer output) {
+    private static void write(ImmobiliareItDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
             LOGGER.info("> written to a java.io.Writer");
         } catch (Exception ex) {
-            LOGGER.error("Can't write document into an OutputStream!");
+            LOGGER.error("Can't write document into a Writer!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             System.exit(1);
         }
@@ -378,7 +367,7 @@ public class ImmobiliareItWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(ImmobiliareItDocument doc) {
+    private static void writeToConsole(ImmobiliareItDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

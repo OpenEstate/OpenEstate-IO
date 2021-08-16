@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,32 +16,31 @@
 package org.openestate.io.immobiliare_it;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.openestate.io.core.XmlConverter;
 import org.openestate.io.core.XmlVersion;
-import org.openestate.io.immobiliare_it.converters.ImmobiliareIt_2_5;
+import org.openestate.io.immobiliare_it.converters.AbstractConverter;
+import org.openestate.io.immobiliare_it.converters.ImmobiliareIt_2_8;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Implemented versions of the XML format by
- * <a href="http://immobiliare.it/">immobiliare.it</a>.
+ * Implemented versions of the XML format by <a href="https://www.immobiliare.it/">immobiliare.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-public enum ImmobiliareItVersion implements XmlVersion {
+public enum ImmobiliareItVersion implements XmlVersion<ImmobiliareItDocument, ImmobiliareItVersion> {
     /**
-     * Version 2.5
+     * Version 2.8.
      */
-    V2_5(ImmobiliareIt_2_5.class, "2.5", "2.5.0");
+    V2_8(ImmobiliareIt_2_8.class, "2.8", "2.8.0");
 
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmobiliareItVersion.class);
-    private final Class converterClass;
+    private final Class<? extends AbstractConverter> converterClass;
     private final String readableVersion;
     private final String[] alias;
 
-    ImmobiliareItVersion(Class converterClass, String readableVersion, String... alias) {
+    ImmobiliareItVersion(Class<? extends AbstractConverter> converterClass, String readableVersion, String... alias) {
         this.converterClass = converterClass;
         this.readableVersion = readableVersion;
         this.alias = alias;
@@ -63,9 +62,9 @@ public enum ImmobiliareItVersion implements XmlVersion {
 
     @Override
     @SuppressWarnings("Duplicates")
-    public XmlConverter getConverter() {
+    public AbstractConverter getConverter() {
         try {
-            return (XmlConverter) this.converterClass.newInstance();
+            return this.converterClass.getConstructor().newInstance();
         } catch (Exception ex) {
             LOGGER.error("Can't create converter!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -95,13 +94,13 @@ public enum ImmobiliareItVersion implements XmlVersion {
     }
 
     @Override
-    public boolean isNewerThen(XmlVersion v) {
+    public boolean isNewerThen(ImmobiliareItVersion v) {
         ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
         return ArrayUtils.indexOf(versions, this) > ArrayUtils.indexOf(versions, v);
     }
 
     @Override
-    public boolean isOlderThen(XmlVersion v) {
+    public boolean isOlderThen(ImmobiliareItVersion v) {
         ImmobiliareItVersion[] versions = ImmobiliareItVersion.values();
         return ArrayUtils.indexOf(versions, this) < ArrayUtils.indexOf(versions, v);
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package org.openestate.io.examples;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_csv.Is24CsvParser;
 import org.openestate.io.is24_csv.Is24CsvRecord;
 import org.slf4j.Logger;
@@ -27,8 +26,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for reading IS24-CSV files.
  * <p>
- * This example illustrates the programmatic creation of IS24-CSV records and how
- * they are written into CSV.
+ * This example illustrates the programmatic creation of IS24-CSV records and how they are written into CSV.
  *
  * @author Andreas Rudolph
  * @since 1.0
@@ -36,7 +34,6 @@ import org.slf4j.LoggerFactory;
 public class Is24CsvReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -45,14 +42,10 @@ public class Is24CsvReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24CsvReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // read example file, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(Is24CsvReadingExample.class.getResourceAsStream(PACKAGE + "/is24.csv"));
+                read(Is24CsvReadingExample.class.getResourceAsStream("is24.csv"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -66,7 +59,7 @@ public class Is24CsvReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -82,7 +75,7 @@ public class Is24CsvReadingExample {
      * @throws IOException if the file is not readable
      */
     protected static void read(File csvFile) throws IOException {
-        LOGGER.info("process file: " + csvFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", csvFile.getAbsolutePath());
         if (!csvFile.isFile()) {
             LOGGER.warn("> The provided file is invalid!");
             return;
@@ -103,7 +96,7 @@ public class Is24CsvReadingExample {
      * @throws IOException if the file is not readable
      */
     protected static void read(InputStream csvInputStream) throws IOException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         try (Is24CsvParser parser = Is24CsvParser.create(csvInputStream)) {
             if (parser == null)
                 LOGGER.warn("> Can't create parser!");
@@ -124,15 +117,13 @@ public class Is24CsvReadingExample {
 
             // get object nr
             String objectNr = record.getAnbieterObjektId();
-            if (objectNr == null) objectNr = "???";
 
             // get object title
             String objectTitle = record.getUeberschrift();
-            if (objectTitle == null) objectTitle = "???";
 
             // print object information to console
-            LOGGER.info("> found object '" + objectNr + "' "
-                    + "with title '" + objectTitle + "'");
+            LOGGER.info("> found object '{}': {}",
+                    objectNr, objectTitle);
         }
     }
 }

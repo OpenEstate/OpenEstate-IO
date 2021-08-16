@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum NutzungGrundstueckGewerbe {
     ACKERLAND(1),
     BAUERWARTUNGSLAND(2),
@@ -50,10 +51,11 @@ public enum NutzungGrundstueckGewerbe {
     STELLPLAETZE(24),
     WALD(26);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(NutzungGrundstueckGewerbe.class);
     private final int value;
 
-    private NutzungGrundstueckGewerbe(int value) {
+    NutzungGrundstueckGewerbe(int value) {
         this.value = value;
     }
 
@@ -75,7 +77,7 @@ public enum NutzungGrundstueckGewerbe {
             if (nutzung != null && !nutzungen.contains(nutzung))
                 nutzungen.add(nutzung);
         }
-        return nutzungen.toArray(new NutzungGrundstueckGewerbe[nutzungen.size()]);
+        return nutzungen.toArray(new NutzungGrundstueckGewerbe[0]);
     }
 
     public String print() {

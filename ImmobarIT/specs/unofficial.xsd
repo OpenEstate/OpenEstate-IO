@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML schema of the XML feed for https://www.immobar.it/ according to the specifications at:
+            https://www.immobar.it/static/immo_xml
+
+            This unofficial XML schema was created by Andreas Rudolph and is licensed under the terms of Apache License
+            2.0 (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
+        </xsd:documentation>
+        <xsd:documentation xml:lang="de">
+            XML-Schema des XML-Feeds von https://www.immobar.it/ gemäß den Spezifikationen unter:
+            https://www.immobar.it/static/immo_xml
+
+            Dieses inoffizielle XML-Schema wurde von Andreas Rudolph erstellt und unter den Bedingungen der Apache
+            License 2.0 veröffentlicht (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="realestate">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Sorrunding tags.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Umschließende Tags.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="company" type="CompanyType" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            List of companies to transfer.
+                        </xsd:documentation>
+                        <xsd:documentation xml:lang="de">
+                            Liste von zu übertragenden Firmen.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="CompanyType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                A company to transfer.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Eine zu übertragende Firma.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="company_name_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german company name
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutscher Firmenname
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_address_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german company address (street, street nr)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Firmenanschrift (Straße, Haus-Nr)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_location_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german company location (city, region)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Firmenanschrift (Ort, Region)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_name_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian company name
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienischer Firmenname
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_address_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian company addresse (street, street nr)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Firmenanschrift (Straße, Haus-Nr)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_location_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian company location (city, region)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Firmenanschrift (Ort, Region)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_postalcode" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company postcode
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        PLZ der Firma
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_province" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company region (e.g. BZ, TN)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Region der Firma (z.B. BZ, TN)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_country" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company country (e.g. IT, AT, DE)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Land der Firma (z.B. IT, AT, DE)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_phone" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company phone nr
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Telefon-Nr der Firma
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_fax" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company fax nr
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Fax-Nr der Firma
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_mobile" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company mobile nr
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Mobil-Nr der Firma
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_email" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company email address
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        E-Mailadresse der Firma
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_website" type="xsd:anyURI" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company website
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Webseite der Firma
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="company_ISTAT" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        company ISTAT code (regional code)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ISTAT-Code der Firma (regionaler Code)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="property" type="PropertyType" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        List of properties to transfer.
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Liste von zu übertragenden Immobilien.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PropertyType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                A property to transfer.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Eine zu übertragende Immobilie.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        unique property ID
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        eindeutige Objekt-ID
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="referencenumber" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property reference number
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Referenz-Nummer des Objekts
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="contactpersonname" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        contact person name
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Name des Ansprechpartners
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ISTATcode" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property ISTAT code (regional code)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ISTAT-Code der Immobilie (regionaler Code)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="address_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german property address (street, street nr)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Immobilienanschrift (Straße, Haus-Nr)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="address_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian property address (street, street nr)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Immobilienanschrift (Straße, Haus-Nr)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="location_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german property location (city, region)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Immobilienanschrift (Ort, Region)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="location_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian property location (city, region)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Immobilienanschrift (Ort, Region)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="district_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german property district
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutscher Immobilienbezirk
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="district_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian property district
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienischer Immobilienbezirk
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="postalcode" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property postcode
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        PLZ der Immobilie
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="province" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property region (e.g. BZ, TN)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Region der Immobilie (z.B. BZ, TN)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="country" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property country (e.g. IT, AT, DE)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Land der Immobilie (z.B. IT, AT, DE)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="latitude" type="LatitudeValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property latitude
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Breitengrad der Immobilie
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="longitude" type="LongitudeValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property longitude
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Längengrad der Immobilie
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="title_de" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german property title
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutscher Immobilientitel
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="title_it" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian property title
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienischer Immobilientitel
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="immotype" type="ImmotypeValue" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property type
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Art der Immobilie
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="revenuetype" type="RevenuetypeValue" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property action
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Vermarktungsart der Immobilie
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sqm_sale" type="DecimalValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        sales area in square meters
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Verkaufsfläche in Quadratmeter
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sqm_net" type="DecimalValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        net area in square meters
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Nettofläche in Quadratmeter
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sqm_gross" type="DecimalValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        gross area in square meters
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Bruttofläche in Quadratmeter
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="floor" type="xsd:integer" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        floor number
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Etagenzahl
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="flooristop" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        floor is on top (attic)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        oberste Etage (Dachgeschoss)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="floorisground" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ground level
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Erdgeschoss
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="duplex" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        multiple floors
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        mehrere Etagen
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="countrooms" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        number of rooms
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Zimmerzahl
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="countbathrooms" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        number of bathrooms
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzahl der Badezimmer
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="kitchentype_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german notes about the kitchen
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Anmerkungen zur Küche
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="kitchentype_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian notes about the kitchen
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Anmerkungen zur Küche
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="countterrace" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        number of terraces / balconies
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzahl der Terrassen / Balkons
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="cellar" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        cellar
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Keller
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sqm_cellar" type="DecimalValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        cellar area in square meters
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Kellerfläche in Quadratmeter
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="garden" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        garden
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Garten
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sqm_garden" type="DecimalValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        garden area in square meters
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Gartenfläche in Quadratmeter
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="countgarage" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        number of garages
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzahl der Garagen
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="countparkinglot" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        number of parking lots
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzahl der Parkflächen
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="parkinglottype_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german notes about parking lots
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Anmerkungen zu Parkflächen
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="parkinglottype_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian notes about parking lots
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Anmerkungen zu Parkflächen
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="elevator" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        elevator
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Aufzug
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="description_de" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german description
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Beschreibung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="description_it" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian description
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Beschreibung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="used" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        used
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        gebraucht
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="furnished" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        furnished
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        möbliert
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="energyclass" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        energy class (e.g. A, B, C, D)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Energieklasse (e.g. A, B, C, D)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ipe" type="DecimalValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        Energy consumption level - Indice Prestazione Energetica (IPE) - e.g. 117.00 kwh/m2
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Energieeffizienzindex (IPE) - z.B. 117.00 kwh/m2
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="heating_de" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        german notes about heating
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        deutsche Beschreibung zur Heizung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="heating_it" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        italian notes about heating
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        italienische Beschreibung zur Heizung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="convention" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        conventioned
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        konventioniert
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="price_on_request" type="xsd:boolean" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        price on request
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Preis auf Anfrage
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="price_net" type="DecimalValue" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        net price
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Nettopreis
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="commission" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        commission
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Provision
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="utilities" type="DecimalValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        service charges / operational costs
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Nebenkosten / Betriebskosten
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="image" type="xsd:anyURI" minOccurs="0" maxOccurs="8">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        image URL
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        URL eines Bildes
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="planimetry" type="xsd:anyURI" minOccurs="0" maxOccurs="2">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ground plan URL
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        URL eines Grundrisses
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="creationdate" type="xsd:date" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        date of creation
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Datum der Erstellung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="lastmoddate" type="xsd:date" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        date of last modification
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Datum der letzten Bearbeitung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="DecimalValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                decimal value with maximal two fraction digits
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Zahlenwert mit maximal zwei Stellen hinter dem Komma
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LatitudeValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                latitude value (from -90.0 to 90.0)
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert des Breitengrads (von -90.0 bis 90.0)
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="-90"/>
+            <xsd:maxInclusive value="90"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LongitudeValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                longitude value (from -180.0 to 180.0)
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert des Längengrads (von -180.0 bis 180.0)
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="-180"/>
+            <xsd:maxInclusive value="180"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ImmotypeValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                The type of an object.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Die Art eines Objekts.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        apartment
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Wohnung
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        appartamento
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        detached house
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Einzelhaus, alleinstehendes Haus, Villa
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        casa singola, villa
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="3">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        row house
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Reihenhaus, Doppelhaushälfe, Reicheneckhaus
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        portione di casa
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="4">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        plot area
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Grundstück, Baugrund
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        terreno privato
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="5">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        agriculture / forestry
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Land- und Forstwirtschaft
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        agricoltura e silvicoltura
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="6">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        commercial plot area
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Gewerbegrundstück
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        terreno commerciale
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="7">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        gastronomy
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Gastronomie
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        gastronomia
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="8">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        store
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Geschäft
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        negozio
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="9">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        office / surgery
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Büro, Praxis
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        ufficio, studio
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="10">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        industrial property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Betriebsobjekt, Hallen für Handwerk und Industrie
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        artigianato, industria
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="11">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        parking space
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Garage, Stellplatz
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        garage, posto auto, box auto
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="12">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        holiday property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Ferienimmobilien
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        casa e appartamento di vacanza
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="13">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        investment property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anlage- &amp; Renditeobjekt
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        oggetto reddito
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="14">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        warehouse
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Magazin &amp; Lagerräume
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        magazzino
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="100">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        other
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Sonstiges
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        altro
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RevenuetypeValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                The action of an object.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Die Vermarktungsart eines Objekts.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        purchase / sale
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Kauf
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        Compravendita
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="2">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        rent
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Miete
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="it">
+                        Affitto
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/images.json",
+  "title": "Images Object",
+  "type": "object",
+  "required": [
+    "imageUrl"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "imageLabel": {
+      "title": "image label",
+      "enum": [
+        "appraisalplan",
+        "archive",
+        "atmosphere",
+        "balcony",
+        "basement",
+        "bathroom",
+        "bedroom",
+        "buildingwork",
+        "cellar",
+        "communalareas",
+        "corridor",
+        "details",
+        "dining_room",
+        "energycertificate",
+        "facade",
+        "garage",
+        "garden",
+        "gateway",
+        "hall",
+        "kitchen",
+        "land",
+        "lifts",
+        "living",
+        "loft",
+        "mates",
+        "meeting_room",
+        "office",
+        "open_plan",
+        "patio",
+        "penthouse",
+        "plan",
+        "pool",
+        "porch",
+        "pressphoto",
+        "reception",
+        "room",
+        "shop_window",
+        "staircase",
+        "storage",
+        "storage_space",
+        "studio",
+        "surroundings",
+        "terrace",
+        "unknown",
+        "views",
+        "waitingroom",
+        "walk_in_wardrobe"
+      ]
+    },
+    "imageOrder": {
+      "title": "image order",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "imageUrl": {
+      "title": "image url",
+      "$ref": "../rules.json#/urlFormat"
+    }
+  }
+}

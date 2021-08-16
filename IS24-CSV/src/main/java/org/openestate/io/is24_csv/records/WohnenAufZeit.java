@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class WohnenAufZeit extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(WohnenAufZeit.class);
 
@@ -137,7 +137,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
     protected final static int FIELD_ANZAHL_PERSONEN = 77;
 
     /**
-     * Frei ab/Verfügbar ab/Antrittstermin, Datum 10 (TT.MM.JJJJ)
+     * frei ab / verfügbar ab / Antrittstermin, Datum 10 (TT.MM.JJJJ)
      */
     protected final static int FIELD_FREI_AB = 78;
 
@@ -226,7 +226,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.WOHNEN_AUF_ZEIT);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlGarageStellplatz() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -238,6 +238,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Integer getAnzahlPersonen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -249,16 +250,19 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getAufzug() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_AUFZUG));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getBalkonTerrasse() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_BALKON_TERRASSE));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getBarrierefrei() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_BARRIEREFREI));
@@ -303,7 +307,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getEtagenzahl() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -315,7 +319,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Calendar getFreiAb() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -327,7 +331,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Calendar getFreiBis() {
         try {
             return Is24CsvFormat.parseDateAsCalendar(
@@ -339,21 +343,25 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getGaesteWc() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_GAESTE_WC));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getGartennutzung() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_GARTENNUTZUNG));
     }
 
+    @SuppressWarnings("unused")
     public Geschlecht getGeschlecht() {
         return Geschlecht.parse(
                 this.get(FIELD_GESCHLECHT));
     }
 
+    @SuppressWarnings("unused")
     public Auswahl getHaustiere() {
         return Auswahl.parse(
                 this.get(FIELD_HAUSTIERE));
@@ -364,7 +372,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getKaltmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -385,6 +393,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_KELLER));
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getMietdauerMaximum() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -396,6 +405,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getMietdauerMinimum() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -407,6 +417,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getMobiliar() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_MOBILIAR));
@@ -434,6 +445,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_OBJEKTZUSTAND));
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getPauschalmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -445,11 +457,13 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public PauschalmietePro getPauschalmietePro() {
         return PauschalmietePro.parse(
                 this.get(FIELD_PAUSCHALMIETE_PRO));
     }
 
+    @SuppressWarnings("unused")
     public Rauchen getRauchen() {
         return Rauchen.parse(
                 this.get(FIELD_RAUCHEN));
@@ -461,12 +475,13 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 this.get(FIELD_ROLLSTUHLGERECHT));
     }
 
+    @SuppressWarnings("unused")
     public Stellplatz getStellplatz() {
         return Stellplatz.parse(
                 this.get(FIELD_STELLPLATZ));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getStellplatzmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -478,7 +493,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -490,7 +505,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getZimmer() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -514,26 +529,31 @@ public class WohnenAufZeit extends Is24CsvRecord {
         return super.print();
     }
 
+    @SuppressWarnings("unused")
     public void setAnzahlGarageStellplatz(Number value) {
         this.set(FIELD_ANZAHL_GARAGE_STELLPLATZ,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setAnzahlPersonen(Number value) {
         this.set(FIELD_ANZAHL_PERSONEN,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setAufzug(Boolean value) {
         this.set(FIELD_AUFZUG,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setBalkonTerrasse(Boolean value) {
         this.set(FIELD_BALKON_TERRASSE,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setBarrierefrei(Boolean value) {
         this.set(FIELD_BARRIEREFREI,
                 Is24CsvFormat.printBoolean(value));
@@ -569,46 +589,55 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 3));
     }
 
+    @SuppressWarnings("unused")
     public void setEtagenzahl(Number value) {
         this.set(FIELD_ETAGENZAHL,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiAb(Calendar value) {
         this.set(FIELD_FREI_AB,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiAb(Date value) {
         this.set(FIELD_FREI_AB,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiBis(Calendar value) {
         this.set(FIELD_FREI_BIS,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setFreiBis(Date value) {
         this.set(FIELD_FREI_BIS,
                 Is24CsvFormat.printDate(value));
     }
 
+    @SuppressWarnings("unused")
     public void setGaesteWc(Boolean value) {
         this.set(FIELD_GAESTE_WC,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setGartennutzung(Boolean value) {
         this.set(FIELD_GARTENNUTZUNG,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setGeschlecht(Geschlecht value) {
         this.set(FIELD_GESCHLECHT,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setHaustiere(Auswahl value) {
         this.set(FIELD_HAUSTIERE,
                 (value != null) ? value.print() : null);
@@ -619,6 +648,7 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setKaltmiete(Number value) {
         this.set(FIELD_KALTMIETE,
                 Is24CsvFormat.printNumber(value, 15, 2));
@@ -634,16 +664,19 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setMietdauerMaximum(Number value) {
         this.set(FIELD_MIETDAUER_MAXIMUM,
                 Is24CsvFormat.printNumber(value, 5, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setMietdauerMinimum(Number value) {
         this.set(FIELD_MIETDAUER_MINIMUM,
                 Is24CsvFormat.printNumber(value, 5, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setMobiliar(Boolean value) {
         this.set(FIELD_MOBILIAR,
                 Is24CsvFormat.printBoolean(value));
@@ -664,16 +697,19 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setPauschalmiete(Number value) {
         this.set(FIELD_PAUSCHALMIETE,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setPauschalmietePro(PauschalmietePro value) {
         this.set(FIELD_PAUSCHALMIETE_PRO,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setRauchen(Rauchen value) {
         this.set(FIELD_RAUCHEN,
                 (value != null) ? value.print() : null);
@@ -685,21 +721,25 @@ public class WohnenAufZeit extends Is24CsvRecord {
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setStellplatz(Stellplatz value) {
         this.set(FIELD_STELLPLATZ,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setStellplatzmiete(Number value) {
         this.set(FIELD_STELLPLATZMIETE,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setWohnflaeche(Number value) {
         this.set(FIELD_WOHNFLAECHE,
                 Is24CsvFormat.printNumber(value, 7, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setZimmer(Number value) {
         this.set(FIELD_ZIMMER,
                 Is24CsvFormat.printNumber(value, 2, 1));

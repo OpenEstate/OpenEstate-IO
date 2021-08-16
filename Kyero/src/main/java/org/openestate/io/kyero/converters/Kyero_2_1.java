@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion> {
+public class Kyero_2_1 extends AbstractConverter {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Kyero_2_1.class);
 
@@ -38,12 +38,11 @@ public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion> {
     }
 
     /**
-     * Downgrade an ImmoXML document from version 1.1.
+     * Downgrade a {@link KyeroDocument} from version 2.1.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.1 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc ImmoXML document in version 1.1
+     * @param doc document in version 2.1
      */
     @Override
     public void downgradeToPreviousVersion(KyeroDocument doc) {
@@ -52,12 +51,11 @@ public class Kyero_2_1 extends XmlConverter<KyeroDocument, KyeroVersion> {
     }
 
     /**
-     * Downgrade an ImmoXML document to version 1.1.
+     * Upgrade a {@link KyeroDocument} to version 2.1.
      * <p>
-     * Versions before 1.1 are not supported. Therefore this method always throws
-     * a {@link NotImplementedException}.
+     * Versions before 2.1 are not supported. Therefore, this method always throws a {@link NotImplementedException}.
      *
-     * @param doc ImmoXML document
+     * @param doc document
      */
     @Override
     public void upgradeFromPreviousVersion(KyeroDocument doc) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import java.io.Writer;
 import java.math.BigInteger;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.filemaker.FilemakerResultDocument;
 import org.openestate.io.filemaker.FilemakerUtils;
 import org.openestate.io.filemaker.xml.result.DatabaseType;
@@ -39,17 +39,14 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing XML files for Filemaker PRO.
  * <p>
- * This example illustrates the programmatic creation of documents for
- * Filemaker PRO and how they are written into XML.
+ * This example illustrates the programmatic creation of documents for Filemaker PRO and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class FilemakerWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = FilemakerUtils.getFactoryForResult();
     private final static boolean PRETTY_PRINT = true;
 
@@ -60,10 +57,6 @@ public class FilemakerWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                FilemakerWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // create a FMPXMLRESULT object with some example data
         // this object corresponds to the <FMPXMLRESULT> root element in XML
         FMPXMLRESULT result = FACTORY.createFMPXMLRESULT();
@@ -73,7 +66,7 @@ public class FilemakerWritingExample {
         result.setMETADATA(createMetaData());
         result.setRESULTSET(createResultSet());
 
-        // convert the Openimmo object into a XML document
+        // convert the Openimmo object into an XML document
         FilemakerResultDocument doc = null;
         try {
             doc = FilemakerResultDocument.newDocument(result);
@@ -93,7 +86,7 @@ public class FilemakerWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -107,7 +100,7 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static DatabaseType createDatabase() {
+    private static DatabaseType createDatabase() {
         DatabaseType database = FACTORY.createDatabaseType();
         database.setNAME("example database");
         database.setLAYOUT("fmmedia2universal");
@@ -122,7 +115,7 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static MetaDataType createMetaData() {
+    private static MetaDataType createMetaData() {
         MetaDataType metadata = FACTORY.createMetaDataType();
         MetaDataType.FIELD field;
 
@@ -155,10 +148,10 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static ProductType createProduct() {
+    private static ProductType createProduct() {
         ProductType product = FACTORY.createProductType();
-        product.setNAME("OpenEstate-IO");
-        product.setVERSION("1.4");
+        product.setNAME("My application");
+        product.setVERSION(RandomStringUtils.randomNumeric(2));
         product.setBUILD("123");
         return product;
     }
@@ -168,7 +161,7 @@ public class FilemakerWritingExample {
      *
      * @return created example object
      */
-    protected static ResultSetType createResultSet() {
+    private static ResultSetType createResultSet() {
         ResultSetType result = FACTORY.createResultSetType();
         result.getROW().add(createResultSetRow(1, 3, 100, "a first example"));
         result.getROW().add(createResultSetRow(2, null, 200, "a second example"));
@@ -188,7 +181,7 @@ public class FilemakerWritingExample {
      * @return created example object
      */
     @SuppressWarnings("ConstantConditions")
-    protected static ResultSetType.ROW createResultSetRow(long id, Number numberOfRooms, Number price, String description) {
+    private static ResultSetType.ROW createResultSetRow(long id, Number numberOfRooms, Number price, String description) {
         ResultSetType.ROW.COL col;
 
         ResultSetType.ROW row = FACTORY.createResultSetTypeROW();
@@ -223,7 +216,7 @@ public class FilemakerWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(FilemakerResultDocument doc, File file) {
+    private static void write(FilemakerResultDocument doc, File file) {
         LOGGER.info("writing document");
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -241,8 +234,8 @@ public class FilemakerWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
-    protected static void write(FilemakerResultDocument doc, OutputStream output) {
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
+    private static void write(FilemakerResultDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -261,13 +254,13 @@ public class FilemakerWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(FilemakerResultDocument doc, Writer output) {
+    private static void write(FilemakerResultDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
             LOGGER.info("> written to a java.io.Writer");
         } catch (Exception ex) {
-            LOGGER.error("Can't write document into an OutputStream!");
+            LOGGER.error("Can't write document into a Writer!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             System.exit(1);
         }
@@ -280,7 +273,7 @@ public class FilemakerWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(FilemakerResultDocument doc) {
+    private static void writeToConsole(FilemakerResultDocument doc) {
         LOGGER.info("writing document");
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

@@ -2,6 +2,7 @@
 package org.openestate.io.immobiliare_it.xml;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import javax.annotation.Generated;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,6 +11,7 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.jvnet.jaxb2_commons.lang.CopyStrategy2;
 import org.jvnet.jaxb2_commons.lang.CopyTo2;
 import org.jvnet.jaxb2_commons.lang.Equals2;
@@ -52,16 +54,17 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlType(name = "boxProject", propOrder = {
     "value"
 })
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
 public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlValue
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    protected String value;
+    @XmlJavaTypeAdapter(Adapter9 .class)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    protected BigInteger value;
     @XmlAttribute(name = "type")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    protected BoxProject.BoxProjectType type;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    protected BoxProject.Type type;
 
     /**
      * Gets the value of the value property.
@@ -71,8 +74,8 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public String getValue() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public BigInteger getValue() {
         return value;
     }
 
@@ -84,8 +87,8 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public void setValue(String value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public void setValue(BigInteger value) {
         this.value = value;
     }
 
@@ -94,11 +97,11 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
      * 
      * @return
      *     possible object is
-     *     {@link BoxProject.BoxProjectType }
+     *     {@link BoxProject.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public BoxProject.BoxProjectType getType() {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public BoxProject.Type getType() {
         return type;
     }
 
@@ -107,23 +110,23 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
      * 
      * @param value
      *     allowed object is
-     *     {@link BoxProject.BoxProjectType }
+     *     {@link BoxProject.Type }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public void setType(BoxProject.BoxProjectType value) {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public void setType(BoxProject.Type value) {
         this.type = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -131,33 +134,33 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
-            String theValue;
+            BigInteger theValue;
             theValue = this.getValue();
             strategy.appendField(locator, this, "value", buffer, theValue, (this.value!= null));
         }
         {
-            BoxProject.BoxProjectType theType;
+            BoxProject.Type theType;
             theType = this.getType();
             strategy.appendField(locator, this, "type", buffer, theType, (this.type!= null));
         }
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof BoxProject) {
@@ -165,9 +168,9 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
             {
                 Boolean valueShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.value!= null));
                 if (valueShouldBeCopiedAndSet == Boolean.TRUE) {
-                    String sourceValue;
+                    BigInteger sourceValue;
                     sourceValue = this.getValue();
-                    String copyValue = ((String) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
+                    BigInteger copyValue = ((BigInteger) strategy.copy(LocatorUtils.property(locator, "value", sourceValue), sourceValue, (this.value!= null)));
                     copy.setValue(copyValue);
                 } else {
                     if (valueShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -178,9 +181,9 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
             {
                 Boolean typeShouldBeCopiedAndSet = strategy.shouldBeCopiedAndSet(locator, (this.type!= null));
                 if (typeShouldBeCopiedAndSet == Boolean.TRUE) {
-                    BoxProject.BoxProjectType sourceType;
+                    BoxProject.Type sourceType;
                     sourceType = this.getType();
-                    BoxProject.BoxProjectType copyType = ((BoxProject.BoxProjectType) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
+                    BoxProject.Type copyType = ((BoxProject.Type) strategy.copy(LocatorUtils.property(locator, "type", sourceType), sourceType, (this.type!= null)));
                     copy.setType(copyType);
                 } else {
                     if (typeShouldBeCopiedAndSet == Boolean.FALSE) {
@@ -192,12 +195,12 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new BoxProject();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -207,18 +210,18 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
         }
         final BoxProject that = ((BoxProject) object);
         {
-            String lhsValue;
+            BigInteger lhsValue;
             lhsValue = this.getValue();
-            String rhsValue;
+            BigInteger rhsValue;
             rhsValue = that.getValue();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "value", lhsValue), LocatorUtils.property(thatLocator, "value", rhsValue), lhsValue, rhsValue, (this.value!= null), (that.value!= null))) {
                 return false;
             }
         }
         {
-            BoxProject.BoxProjectType lhsType;
+            BoxProject.Type lhsType;
             lhsType = this.getType();
-            BoxProject.BoxProjectType rhsType;
+            BoxProject.Type rhsType;
             rhsType = that.getType();
             if (!strategy.equals(LocatorUtils.property(thisLocator, "type", lhsType), LocatorUtils.property(thatLocator, "type", rhsType), lhsType, rhsType, (this.type!= null), (that.type!= null))) {
                 return false;
@@ -227,9 +230,9 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 
@@ -252,8 +255,8 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
      */
     @XmlType(name = "")
     @XmlEnum
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:48:12+02:00", comments = "JAXB RI v2.2.11")
-    public enum BoxProjectType {
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-15T07:05:08+02:00", comments = "JAXB RI v2.3.0")
+    public enum Type {
 
         @XmlEnumValue("No")
         NO("No"),
@@ -263,7 +266,7 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
         POSTO_AUTO("PostoAuto");
         private final String value;
 
-        BoxProjectType(String v) {
+        Type(String v) {
             value = v;
         }
 
@@ -271,8 +274,8 @@ public class BoxProject implements Serializable, Cloneable, CopyTo2, Equals2, To
             return value;
         }
 
-        public static BoxProject.BoxProjectType fromValue(String v) {
-            for (BoxProject.BoxProjectType c: BoxProject.BoxProjectType.values()) {
+        public static BoxProject.Type fromValue(String v) {
+            for (BoxProject.Type c: BoxProject.Type.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

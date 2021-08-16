@@ -2,20 +2,44 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Build" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Build/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CasaIT" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CasaIT/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DaftIE" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DaftIE/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Examples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Examples/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Examples/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Filemaker" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Filemaker/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Filemaker/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IDX" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IDX/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IDX/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IS24-CSV" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IS24-CSV/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/IS24-XML" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IS24-XML/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Idealista" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Idealista/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImmoXML" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImmoXML/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImmobarIT" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImmobarIT/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImmobiliareIT" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ImmobiliareIT/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Kyero" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Kyero/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OpenImmo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OpenImmo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OpenImmo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Trovit" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Trovit/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WisIT" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WisIT/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/release" charset="UTF-8" />
   </component>
 </project>

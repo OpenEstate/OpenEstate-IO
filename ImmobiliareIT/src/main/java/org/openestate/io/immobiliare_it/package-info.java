@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,7 @@
  */
 
 /**
- * Read and write XML data for
- * <a href="http://immobiliare.it/">immobiliare.it</a>.
+ * Read and write XML data for <a href="https://www.immobiliare.it/">immobiliare.it</a>.
  *
  * @author Andreas Rudolph
  * @since 1.0

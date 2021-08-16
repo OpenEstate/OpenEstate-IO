@@ -30,51 +30,51 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "boden")
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
 public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlAttribute(name = "FLIESEN")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean fliesen;
     @XmlAttribute(name = "STEIN")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean stein;
     @XmlAttribute(name = "TEPPICH")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean teppich;
     @XmlAttribute(name = "PARKETT")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean parkett;
     @XmlAttribute(name = "FERTIGPARKETT")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean fertigparkett;
     @XmlAttribute(name = "LAMINAT")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean laminat;
     @XmlAttribute(name = "DIELEN")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean dielen;
     @XmlAttribute(name = "KUNSTSTOFF")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean kunststoff;
     @XmlAttribute(name = "ESTRICH")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean estrich;
     @XmlAttribute(name = "DOPPELBODEN")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean doppelboden;
     @XmlAttribute(name = "LINOLEUM")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean linoleum;
     @XmlAttribute(name = "MARMOR")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean marmor;
     @XmlAttribute(name = "TERRAKOTTA")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean terrakotta;
     @XmlAttribute(name = "GRANIT")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected Boolean granit;
 
     /**
@@ -85,7 +85,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getFLIESEN() {
         return fliesen;
     }
@@ -98,7 +98,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setFLIESEN(Boolean value) {
         this.fliesen = value;
     }
@@ -111,7 +111,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getSTEIN() {
         return stein;
     }
@@ -124,7 +124,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setSTEIN(Boolean value) {
         this.stein = value;
     }
@@ -137,7 +137,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getTEPPICH() {
         return teppich;
     }
@@ -150,7 +150,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setTEPPICH(Boolean value) {
         this.teppich = value;
     }
@@ -163,7 +163,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getPARKETT() {
         return parkett;
     }
@@ -176,7 +176,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setPARKETT(Boolean value) {
         this.parkett = value;
     }
@@ -189,7 +189,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getFERTIGPARKETT() {
         return fertigparkett;
     }
@@ -202,7 +202,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setFERTIGPARKETT(Boolean value) {
         this.fertigparkett = value;
     }
@@ -215,7 +215,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getLAMINAT() {
         return laminat;
     }
@@ -228,7 +228,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setLAMINAT(Boolean value) {
         this.laminat = value;
     }
@@ -241,7 +241,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getDIELEN() {
         return dielen;
     }
@@ -254,7 +254,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setDIELEN(Boolean value) {
         this.dielen = value;
     }
@@ -267,7 +267,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getKUNSTSTOFF() {
         return kunststoff;
     }
@@ -280,7 +280,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setKUNSTSTOFF(Boolean value) {
         this.kunststoff = value;
     }
@@ -293,7 +293,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getESTRICH() {
         return estrich;
     }
@@ -306,7 +306,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setESTRICH(Boolean value) {
         this.estrich = value;
     }
@@ -319,7 +319,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getDOPPELBODEN() {
         return doppelboden;
     }
@@ -332,7 +332,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setDOPPELBODEN(Boolean value) {
         this.doppelboden = value;
     }
@@ -345,7 +345,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getLINOLEUM() {
         return linoleum;
     }
@@ -358,7 +358,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setLINOLEUM(Boolean value) {
         this.linoleum = value;
     }
@@ -371,7 +371,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getMARMOR() {
         return marmor;
     }
@@ -384,7 +384,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setMARMOR(Boolean value) {
         this.marmor = value;
     }
@@ -397,7 +397,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getTERRAKOTTA() {
         return terrakotta;
     }
@@ -410,7 +410,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setTERRAKOTTA(Boolean value) {
         this.terrakotta = value;
     }
@@ -423,7 +423,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Boolean getGRANIT() {
         return granit;
     }
@@ -436,20 +436,20 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
      *     {@link Boolean }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public void setGRANIT(Boolean value) {
         this.granit = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -457,7 +457,7 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Boolean theFLIESEN;
@@ -532,18 +532,18 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Boden) {
@@ -734,12 +734,12 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new Boden();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -877,9 +877,9 @@ public class Boden implements Serializable, Cloneable, CopyTo2, Equals2, ToStrin
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 

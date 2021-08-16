@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/offices.json",
+  "title": "Offices Object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "office"
+      ]
+    },
+    "featuresAccessControl": {
+      "$ref": "features.json#/featuresAccessControl"
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed"
+    },
+    "featuresAreaUsable": {
+      "$ref": "features.json#/featuresAreaUsable"
+    },
+    "featuresBathroomInside": {
+      "$ref": "features.json#/featuresBathroomInside"
+    },
+    "featuresBathroomNumber": {
+      "$ref": "features.json#/featuresBathroomNumber"
+    },
+    "featuresBathroomType": {
+      "$ref": "features.json#/featuresBathroomType"
+    },
+    "featuresBuiltYear": {
+      "$ref": "features.json#/featuresBuiltYear"
+    },
+    "featuresBuildingAdapted": {
+      "$ref": "features.json#/featuresBuildingAdapted"
+    },
+    "featuresConditionedAir": {
+      "$ref": "features.json#/featuresConditionedAir"
+    },
+    "featuresConditionedAirType": {
+      "$ref": "features.json#/featuresConditionedAirType"
+    },
+    "featuresConservation": {
+      "$ref": "features.json#/featuresConservation"
+    },
+    "featuresDoorman": {
+      "$ref": "features.json#/featuresDoorman"
+    },
+    "featuresEmergencyExit": {
+      "$ref": "features.json#/featuresEmergencyExit"
+    },
+    "featuresEmergencyLights": {
+      "$ref": "features.json#/featuresEmergencyLights"
+    },
+    "featuresEnergyCertificateRating": {
+      "$ref": "features.json#/featuresEnergyCertificateRating"
+    },
+    "featuresEnergyCertificatePerformance": {
+      "$ref": "features.json#/featuresEnergyCertificatePerformance"
+    },
+    "featuresEnergyCertificateType": {
+      "$ref": "features.json#/featuresEnergyCertificateType"
+    },
+    "featuresEnergyCertificateLaw": {
+      "$ref": "features.json#/featuresEnergyCertificateLaw"
+    },
+    "featuresEquippedKitchen": {
+      "$ref": "features.json#/featuresEquippedKitchen"
+    },
+    "featuresExtinguishers": {
+      "$ref": "features.json#/featuresExtinguishers"
+    },
+    "featuresFireDetectors": {
+      "$ref": "features.json#/featuresFireDetectors"
+    },
+    "featuresFireDoors": {
+      "$ref": "features.json#/featuresFireDoors"
+    },
+    "featuresFloorsBuilding": {
+      "$ref": "features.json#/featuresFloorsBuilding"
+    },
+    "featuresFloorsProperty": {
+      "$ref": "features.json#/featuresFloorsProperty"
+    },
+    "featuresHeating": {
+      "$ref": "features.json#/featuresHeating"
+    },
+    "featuresHotWater": {
+      "$ref": "features.json#/featuresHotWater"
+    },
+    "featuresLiftNumber": {
+      "$ref": "features.json#/featuresLiftNumber"
+    },
+    "featuresOfficeBuilding": {
+      "$ref": "features.json#/featuresOfficeBuilding"
+    },
+    "featuresOrientationEast": {
+      "$ref": "features.json#/featuresOrientationEast"
+    },
+    "featuresOrientationNorth": {
+      "$ref": "features.json#/featuresOrientationNorth"
+    },
+    "featuresOrientationSouth": {
+      "$ref": "features.json#/featuresOrientationSouth"
+    },
+    "featuresOrientationWest": {
+      "$ref": "features.json#/featuresOrientationWest"
+    },
+    "featuresParkingSpacesNumber": {
+      "$ref": "features.json#/featuresParkingSpacesNumber"
+    },
+    "featuresRoomsSplitted": {
+      "$ref": "features.json#/featuresRoomsSplitted"
+    },
+    "featuresSecurityAlarm": {
+      "$ref": "features.json#/featuresSecurityAlarm"
+    },
+    "featuresSecurityDoor": {
+      "$ref": "features.json#/featuresSecurityDoor"
+    },
+    "featuresSecuritySystem": {
+      "$ref": "features.json#/featuresSecuritySystem"
+    },
+    "featuresSprinklers": {
+      "$ref": "features.json#/featuresSprinklers"
+    },
+    "featuresSuspendedCeiling": {
+      "$ref": "features.json#/featuresSuspendedCeiling"
+    },
+    "featuresSuspendedFloor": {
+      "$ref": "features.json#/featuresSuspendedFloor"
+    },
+    "featuresStorage": {
+      "$ref": "features.json#/featuresStorage"
+    },
+    "featuresWindowsDouble": {
+      "$ref": "features.json#/featuresWindowsDouble"
+    },
+    "featuresWindowsLocation": {
+      "$ref": "features.json#/featuresWindowsLocation"
+    }
+  }
+}

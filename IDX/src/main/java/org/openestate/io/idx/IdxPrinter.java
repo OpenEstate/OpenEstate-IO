@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class IdxPrinter extends CsvPrinter<IdxRecord> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(IdxPrinter.class);
@@ -39,8 +38,7 @@ public class IdxPrinter extends CsvPrinter<IdxRecord> {
     /**
      * Create with specifications of a {@link CSVPrinter}.
      *
-     * @param printer the CSV printer from
-     *                <a href="http://commons.apache.org/proper/commons-csv/">commons-csv</a>
+     * @param printer the CSV printer from <a href="https://commons.apache.org/proper/commons-csv/">commons-csv</a>
      */
     protected IdxPrinter(CSVPrinter printer) {
         super(printer);
@@ -109,7 +107,7 @@ public class IdxPrinter extends CsvPrinter<IdxRecord> {
         value = StringUtils.trimToNull(value);
 
         // We're not sure, if escaping of the separator is supported by IDX.
-        // Therefore the separator (#) is removed from the value before it is
+        // Therefore, the separator (#) is removed from the value before it is
         // written to CSV.
         value = StringUtils.replace(value, "#", StringUtils.EMPTY);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -23,34 +25,32 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.casa_it.CasaItDocument;
 import org.openestate.io.casa_it.CasaItUtils;
 import org.openestate.io.casa_it.xml.Container;
 import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate;
 import org.openestate.io.casa_it.xml.Container.Realestateitems.Realestate.Images.Advertismentimage;
 import org.openestate.io.casa_it.xml.ObjectFactory;
-import org.openestate.io.examples.utils.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example for writing XML files for <a href="http://casa.it">casa.it</a>.
+ * Example for writing XML files for <a href="https://www.casa.it/">casa.it</a>.
  * <p>
- * This example illustrates the programmatic creation of documents for
- * <a href="http://casa.it">casa.it</a> and how they are written into XML.
+ * This example illustrates the programmatic creation of documents for <a href="https://www.casa.it/">casa.it</a> and
+ * how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class CasaItWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(CasaItWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = CasaItUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
     private final static boolean PRETTY_PRINT = true;
 
     /**
@@ -60,21 +60,18 @@ public class CasaItWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                CasaItWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // create a Container object with some example data
         // this object corresponds to the <container> root element in XML
         Container container = FACTORY.createContainer();
         container.setRealestateitems(FACTORY.createContainerRealestateitems());
 
         // append some example objects to the Container object
-        container.getRealestateitems().getRealestate().add(createRealestate());
-        container.getRealestateitems().getRealestate().add(createRealestate());
-        container.getRealestateitems().getRealestate().add(createRealestate());
+        int propertyCount = RandomUtils.nextInt(5, 10);
+        for (int i = 0; i < propertyCount; i++) {
+            container.getRealestateitems().getRealestate().add(createRealEstate());
+        }
 
-        // convert the Container object into a XML document
+        // convert the Container object into an XML document
         CasaItDocument doc = null;
         try {
             doc = CasaItDocument.newDocument(container);
@@ -94,7 +91,7 @@ public class CasaItWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -108,32 +105,32 @@ public class CasaItWritingExample {
      *
      * @return created example object
      */
-    protected static Realestate createRealestate() {
+    private static Realestate createRealEstate() {
         // create an example real estate
         Realestate obj = FACTORY.createContainerRealestateitemsRealestate();
         obj.setAction(BigInteger.ONE);
-        obj.setAgencycode(0);
+        obj.setAgencycode(RandomUtils.nextInt(0, 100));
         obj.setBathrooms(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
         obj.setCondition(BigInteger.ONE);
         obj.setContracttype(BigInteger.ONE);
         obj.setFloor(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
-        obj.setHasbalcony(RandomUtils.nextInt(0, 2) == 1);
-        obj.setHasterrace(RandomUtils.nextInt(0, 2) == 1);
+        obj.setHasbalcony(RandomUtils.nextBoolean());
+        obj.setHasterrace(RandomUtils.nextBoolean());
         obj.setHeatingtype(BigInteger.ONE);
         obj.setHousetypology(BigInteger.ONE);
         obj.setOccupationstate(BigInteger.ONE);
         obj.setRealestatetype(BigInteger.ONE);
-        obj.setReference(RandomStringUtils.random(5));
+        obj.setReference(RandomStringUtils.randomAlphanumeric(1, 5));
         obj.setReferenceID(RandomUtils.nextInt(1, 1000));
         obj.setRooms(BigInteger.valueOf(RandomUtils.nextLong(1, 10)));
         obj.setSize(BigInteger.valueOf(RandomUtils.nextLong(50, 5000)));
 
         obj.setAddress(FACTORY.createContainerRealestateitemsRealestateAddress());
-        obj.getAddress().setCity("Berlin");
-        obj.getAddress().setNumber("123");
-        obj.getAddress().setStreet("example street");
-        obj.getAddress().setZip("12345");
-        obj.getAddress().setZone("Berlin");
+        obj.getAddress().setCity(RANDOMIZER.getCity());
+        obj.getAddress().setNumber(RandomStringUtils.randomNumeric(1, 3));
+        obj.getAddress().setStreet(RANDOMIZER.getWords(2, 3));
+        obj.getAddress().setZip(RANDOMIZER.getZipCode());
+        obj.getAddress().setZone(RANDOMIZER.getCity());
 
         obj.setBox(FACTORY.createContainerRealestateitemsRealestateBox());
         obj.getBox().setSize(BigInteger.valueOf(RandomUtils.nextLong(50, 1000)));
@@ -142,17 +139,17 @@ public class CasaItWritingExample {
         obj.setBuilding(FACTORY.createContainerRealestateitemsRealestateBuilding());
         obj.getBuilding().setAge(BigInteger.valueOf(RandomUtils.nextLong(5, 50)));
         obj.getBuilding().setExpenses(BigDecimal.valueOf(RandomUtils.nextDouble(1000, 1000000)));
-        obj.getBuilding().setHaslift(RandomUtils.nextInt(0, 2) == 1);
+        obj.getBuilding().setHaslift(RandomUtils.nextBoolean());
         obj.getBuilding().setTotalfloors(BigInteger.valueOf(RandomUtils.nextLong(1, 5)));
         obj.getBuilding().setUnits(BigInteger.ONE);
 
         obj.setConfiguration(FACTORY.createContainerRealestateitemsRealestateConfiguration());
-        obj.getConfiguration().setIsaddressvisibleonsite(RandomUtils.nextInt(0, 2) == 1);
-        obj.getConfiguration().setIsmapvisible(RandomUtils.nextInt(0, 2) == 1);
-        obj.getConfiguration().setIsrealestatevisibleonmap(RandomUtils.nextInt(0, 2) == 1);
+        obj.getConfiguration().setIsaddressvisibleonsite(RandomUtils.nextBoolean());
+        obj.getConfiguration().setIsmapvisible(RandomUtils.nextBoolean());
+        obj.getConfiguration().setIsrealestatevisibleonmap(RandomUtils.nextBoolean());
 
         obj.setDescription(FACTORY.createContainerRealestateitemsRealestateDescription());
-        obj.getDescription().setValue("a nice little description for the object");
+        obj.getDescription().setValue(RANDOMIZER.getWords(3, 15));
 
         obj.setGarden(FACTORY.createContainerRealestateitemsRealestateGarden());
         obj.getGarden().setSize(BigInteger.valueOf(RandomUtils.nextLong(10, 100)));
@@ -166,9 +163,10 @@ public class CasaItWritingExample {
         obj.getGooglemapcoordinate().setMapzoom(10);
 
         obj.setImages(FACTORY.createContainerRealestateitemsRealestateImages());
-        obj.getImages().getAdvertismentimage().add(createAdvertismentimage());
-        obj.getImages().getAdvertismentimage().add(createAdvertismentimage());
-        obj.getImages().getAdvertismentimage().add(createAdvertismentimage());
+        int imageCount = RandomUtils.nextInt(1, 10);
+        for (int i = 0; i < imageCount; i++) {
+            obj.getImages().getAdvertismentimage().add(createAdvertisementImage());
+        }
 
         obj.setPrice(FACTORY.createContainerRealestateitemsRealestatePrice());
         obj.getPrice().setMax(BigDecimal.valueOf(RandomUtils.nextDouble(1000, 1000000)));
@@ -183,7 +181,7 @@ public class CasaItWritingExample {
      *
      * @return created example object
      */
-    protected static Advertismentimage createAdvertismentimage() {
+    private static Advertismentimage createAdvertisementImage() {
         Advertismentimage img = FACTORY.createContainerRealestateitemsRealestateImagesAdvertismentimage();
         img.setImagetype("image/jpeg");
         img.setPath("image-" + RandomStringUtils.randomNumeric(3) + ".jpg");
@@ -197,7 +195,7 @@ public class CasaItWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(CasaItDocument doc, File file) {
+    private static void write(CasaItDocument doc, File file) {
         LOGGER.info("writing document");
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -215,8 +213,8 @@ public class CasaItWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
-    protected static void write(CasaItDocument doc, OutputStream output) {
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
+    private static void write(CasaItDocument doc, OutputStream output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -235,13 +233,13 @@ public class CasaItWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(CasaItDocument doc, Writer output) {
+    private static void write(CasaItDocument doc, Writer output) {
         LOGGER.info("writing document");
         try {
             doc.toXml(output, PRETTY_PRINT);
             LOGGER.info("> written to a java.io.Writer");
         } catch (Exception ex) {
-            LOGGER.error("Can't write document into an OutputStream!");
+            LOGGER.error("Can't write document into a Writer!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             System.exit(1);
         }
@@ -254,7 +252,7 @@ public class CasaItWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(CasaItDocument doc) {
+    private static void writeToConsole(CasaItDocument doc) {
         LOGGER.info("writing document");
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

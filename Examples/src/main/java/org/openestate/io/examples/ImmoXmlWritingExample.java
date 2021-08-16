@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -23,14 +25,14 @@ import java.math.BigDecimal;
 import java.util.Locale;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.immoxml.ImmoXmlDocument;
 import org.openestate.io.immoxml.ImmoXmlUtils;
 import org.openestate.io.immoxml.xml.Aktion;
 import org.openestate.io.immoxml.xml.Anbieter;
+import org.openestate.io.immoxml.xml.Anhang;
 import org.openestate.io.immoxml.xml.Haus;
 import org.openestate.io.immoxml.xml.Immobilie;
 import org.openestate.io.immoxml.xml.Immoxml;
@@ -42,17 +44,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing ImmoXML files.
  * <p>
- * This example illustrates the programmatic creation of ImmoXML documents and
- * how they are written into XML.
+ * This example illustrates the programmatic creation of ImmoXML documents and how they are written into XML.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class ImmoXmlWritingExample {
     private final static Logger LOGGER = LoggerFactory.getLogger(ImmoXmlWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = ImmoXmlUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
     private final static boolean PRETTY_PRINT = true;
 
     /**
@@ -62,17 +62,17 @@ public class ImmoXmlWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                ImmoXmlWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // create an Immoxml object with some example data
         // this object corresponds to the <immoxml> root element in XML
         Immoxml immoxml = FACTORY.createImmoxml();
         immoxml.setUebertragung(createUebertragung());
-        immoxml.getAnbieter().add(createAnbieter());
 
-        // convert the Immoxml object into a XML document
+        int anbieterCount = RandomUtils.nextInt(1, 5);
+        for (int i = 0; i < anbieterCount; i++) {
+            immoxml.getAnbieter().add(createAnbieter());
+        }
+
+        // convert the Immoxml object into an XML document
         ImmoXmlDocument doc = null;
         try {
             doc = ImmoXmlDocument.newDocument(immoxml);
@@ -92,7 +92,7 @@ public class ImmoXmlWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -106,16 +106,18 @@ public class ImmoXmlWritingExample {
      *
      * @return created example object
      */
-    protected static Anbieter createAnbieter() {
+    private static Anbieter createAnbieter() {
         // create an example agency
         Anbieter anbieter = FACTORY.createAnbieter();
-        anbieter.setAnbieternr("123456");
-        anbieter.setFirma("Agency Name");
-        anbieter.setImmoxmlAnid("123456");
+        anbieter.setAnbieternr(RandomStringUtils.randomAlphanumeric(5));
+        anbieter.setFirma(RANDOMIZER.getName());
+        anbieter.setImmoxmlAnid(RandomStringUtils.randomAlphanumeric(5));
 
         // add some real estates to the agency
-        anbieter.getImmobilie().add(createImmobilie());
-        anbieter.getImmobilie().add(createImmobilie());
+        int immobilieCount = RandomUtils.nextInt(1, 6);
+        for (int i = 0; i < immobilieCount; i++) {
+            anbieter.getImmobilie().add(createImmobilie());
+        }
 
         return anbieter;
     }
@@ -125,7 +127,8 @@ public class ImmoXmlWritingExample {
      *
      * @return created example object
      */
-    protected static Immobilie createImmobilie() {
+    @SuppressWarnings("Duplicates")
+    private static Immobilie createImmobilie() {
         // create an example real estate
         Immobilie immobilie = FACTORY.createImmobilie();
 
@@ -138,53 +141,78 @@ public class ImmoXmlWritingExample {
         // set categorization
         immobilie.setObjektkategorie(FACTORY.createObjektkategorie());
         immobilie.getObjektkategorie().setNutzungsart(FACTORY.createNutzungsart());
-        immobilie.getObjektkategorie().getNutzungsart().setANLAGE(RandomUtils.nextInt(0, 2) == 1);
-        immobilie.getObjektkategorie().getNutzungsart().setGEWERBE(RandomUtils.nextInt(0, 2) == 1);
-        immobilie.getObjektkategorie().getNutzungsart().setWAZ(RandomUtils.nextInt(0, 2) == 1);
-        immobilie.getObjektkategorie().getNutzungsart().setWOHNEN(RandomUtils.nextInt(0, 2) == 1);
+        immobilie.getObjektkategorie().getNutzungsart().setANLAGE(RandomUtils.nextBoolean());
+        immobilie.getObjektkategorie().getNutzungsart().setGEWERBE(RandomUtils.nextBoolean());
+        immobilie.getObjektkategorie().getNutzungsart().setWAZ(RandomUtils.nextBoolean());
+        immobilie.getObjektkategorie().getNutzungsart().setWOHNEN(RandomUtils.nextBoolean());
         immobilie.getObjektkategorie().setVermarktungsart(FACTORY.createVermarktungsart());
-        immobilie.getObjektkategorie().getVermarktungsart().setKAUF(true);
+        immobilie.getObjektkategorie().getVermarktungsart().setERBPACHT(RandomUtils.nextBoolean());
+        immobilie.getObjektkategorie().getVermarktungsart().setKAUF(RandomUtils.nextBoolean());
+        immobilie.getObjektkategorie().getVermarktungsart().setLEASING(RandomUtils.nextBoolean());
+        immobilie.getObjektkategorie().getVermarktungsart().setMIETEPACHT(RandomUtils.nextBoolean());
         immobilie.getObjektkategorie().setObjektart(FACTORY.createObjektart());
 
         Haus singleFamilyHouse = FACTORY.createHaus();
-        singleFamilyHouse.setHaustyp(Haus.Haustyp.EINFAMILIENHAUS);
+        singleFamilyHouse.setHaustyp(randomValue(Haus.Haustyp.values()));
         immobilie.getObjektkategorie().getObjektart().getHaus().add(singleFamilyHouse);
 
         // add some information about the location
         immobilie.setGeo(FACTORY.createGeo());
-        immobilie.getGeo().setPlz(RandomStringUtils.randomNumeric(5));
-        immobilie.getGeo().setOrt("Berlin");
+        immobilie.getGeo().setPlz(RANDOMIZER.getZipCode());
+        immobilie.getGeo().setOrt(RANDOMIZER.getCity());
         immobilie.getGeo().setLand(FACTORY.createLand());
         immobilie.getGeo().getLand().setIsoLand(Locale.GERMANY.getISO3Country());
 
         // add some information about prices
         immobilie.setPreise(FACTORY.createPreise());
-        immobilie.getPreise().setHeizkosten(new BigDecimal("456.0"));
-        immobilie.getPreise().setKaufpreis(new BigDecimal("123456.79"));
+        immobilie.getPreise().setHeizkosten(BigDecimal.valueOf(RandomUtils.nextDouble(100, 1000)));
+        immobilie.getPreise().setKaufpreis(BigDecimal.valueOf(RandomUtils.nextDouble(10000, 999999)));
 
         // add some information about features
         immobilie.setAusstattung(FACTORY.createAusstattung());
-        immobilie.getAusstattung().setGartennutzung(true);
+        immobilie.getAusstattung().setGartennutzung(RandomUtils.nextBoolean());
         immobilie.getAusstattung().setHeizungsart(FACTORY.createHeizungsart());
-        immobilie.getAusstattung().getHeizungsart().setZENTRAL(true);
-        immobilie.getAusstattung().getHeizungsart().setFUSSBODEN(true);
+        immobilie.getAusstattung().getHeizungsart().setZENTRAL(RandomUtils.nextBoolean());
+        immobilie.getAusstattung().getHeizungsart().setFUSSBODEN(RandomUtils.nextBoolean());
 
         // add some descriptions
         immobilie.setFreitexte(FACTORY.createFreitexte());
-        immobilie.getFreitexte().setObjekttitel("A title for the property.");
-        immobilie.getFreitexte().setObjektbeschreibung("Some longer descriptive text about the property.");
+        immobilie.getFreitexte().setObjekttitel(RANDOMIZER.getWords(1, 10));
+        immobilie.getFreitexte().setObjektbeschreibung(RANDOMIZER.getWords(10, 50));
 
         // set the contact person
         immobilie.setKontaktperson(FACTORY.createKontaktperson());
-        immobilie.getKontaktperson().setName("Max Mustermann");
-        immobilie.getKontaktperson().setEmailDirekt("max@mustermann.org");
-        immobilie.getKontaktperson().setTelDurchw("030/123456789");
-        immobilie.getKontaktperson().setPlz(RandomStringUtils.randomNumeric(5));
-        immobilie.getKontaktperson().setOrt("Berlin");
+        immobilie.getKontaktperson().setName(RANDOMIZER.getName());
+        immobilie.getKontaktperson().setEmailDirekt(RANDOMIZER.getEmail());
+        immobilie.getKontaktperson().setTelDurchw(RANDOMIZER.getPhone());
+        immobilie.getKontaktperson().setPlz(RANDOMIZER.getZipCode());
+        immobilie.getKontaktperson().setOrt(RANDOMIZER.getCity());
         immobilie.getKontaktperson().setLand(FACTORY.createLand());
         immobilie.getKontaktperson().getLand().setIsoLand(Locale.GERMANY.getISO3Country());
 
+        // add some attachments
+        immobilie.setAnhaenge(FACTORY.createAnhaenge());
+        int attachmentCount = RandomUtils.nextInt(3, 10);
+        for (int i = 0; i < attachmentCount; i++) {
+            immobilie.getAnhaenge().getAnhang().add(createAnhang());
+        }
+
         return immobilie;
+    }
+
+    /**
+     * Create an {@link Anhang} with some example data.
+     *
+     * @return created example object
+     */
+    private static Anhang createAnhang() {
+        // create an example transfer
+        Anhang anhang = FACTORY.createAnhang();
+        anhang.setAnhangtitel(RANDOMIZER.getWords(2, 5));
+        anhang.setLocation(Anhang.Location.EXTERN);
+        anhang.setDaten(FACTORY.createDaten());
+        anhang.getDaten().setPfad("image" + RandomStringUtils.randomAlphabetic(3) + ".jpg");
+        return anhang;
     }
 
     /**
@@ -192,14 +220,27 @@ public class ImmoXmlWritingExample {
      *
      * @return created example object
      */
-    protected static Uebertragung createUebertragung() {
+    private static Uebertragung createUebertragung() {
         // create an example transfer
         Uebertragung uebertragung = FACTORY.createUebertragung();
-        uebertragung.setArt(Uebertragung.Art.OFFLINE);
-        uebertragung.setSendersoftware("OpenEstate-IO");
-        uebertragung.setTechnEmail("test@test.org");
-        uebertragung.setUmfang(Uebertragung.Umfang.VOLL);
+        uebertragung.setArt(randomValue(Uebertragung.Art.values()));
+        uebertragung.setSendersoftware(RANDOMIZER.getName());
+        uebertragung.setTechnEmail(RANDOMIZER.getEmail());
+        uebertragung.setUmfang(randomValue(Uebertragung.Umfang.values()));
         return uebertragung;
+    }
+
+    /**
+     * Get a random value from an array.
+     *
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
+     */
+    private static <T> T randomValue(T[] values) {
+        return (values != null && values.length > 0) ?
+                values[RandomUtils.nextInt(0, values.length)] :
+                null;
     }
 
     /**
@@ -209,7 +250,7 @@ public class ImmoXmlWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(ImmoXmlDocument doc, File file) {
+    private static void write(ImmoXmlDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -227,8 +268,8 @@ public class ImmoXmlWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
-    protected static void write(ImmoXmlDocument doc, OutputStream output) {
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
+    private static void write(ImmoXmlDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -247,13 +288,13 @@ public class ImmoXmlWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(ImmoXmlDocument doc, Writer output) {
+    private static void write(ImmoXmlDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
             LOGGER.info("> written to a java.io.Writer");
         } catch (Exception ex) {
-            LOGGER.error("Can't write document into an OutputStream!");
+            LOGGER.error("Can't write document into a Writer!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             System.exit(1);
         }
@@ -266,7 +307,7 @@ public class ImmoXmlWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(ImmoXmlDocument doc) {
+    private static void writeToConsole(ImmoXmlDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

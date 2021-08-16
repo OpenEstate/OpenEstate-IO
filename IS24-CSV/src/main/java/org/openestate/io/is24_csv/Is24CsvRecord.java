@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public abstract class Is24CsvRecord extends CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvRecord.class);
     private final static Pattern LINEBREAK = Pattern.compile("<br\\s*/?>", Pattern.CASE_INSENSITIVE);
@@ -101,7 +101,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     protected final static int FIELD_OBJEKTDARSTELLUNG = 9;
 
     /**
-     * Gruppen-ID’s (Semikolon-Separierte Liste von Gruppen-, Verbands- & Börsen-ID’s.)
+     * Gruppen-IDs (Semikolon-Separierte Liste von Gruppen-, Verbands- & Börsen-IDs.)
      */
     protected final static int FIELD_OBJEKTDARSTELLUNG_GRUPPEN = 10;
 
@@ -256,7 +256,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
     protected final static int FIELD_OBJEKT_ORT = 53;
 
     /**
-     * Länderkennzeichen, Text 3 (Dreistellige ISO- Angabe)
+     * Länderkennzeichen, Text 3 (Dreistellige ISO-Angabe)
      */
     protected final static int FIELD_OBJEKT_LAND = 54;
 
@@ -563,30 +563,37 @@ public abstract class Is24CsvRecord extends CsvRecord {
         return this.get(FIELD_ANBIETER_OBJEKT_ID);
     }
 
+    @SuppressWarnings("unused")
     public String getApiSuchfeld1() {
         return this.get(FIELD_API_SUCHFELD1);
     }
 
+    @SuppressWarnings("unused")
     public String getApiSuchfeld2() {
         return this.get(FIELD_API_SUCHFELD2);
     }
 
+    @SuppressWarnings("unused")
     public String getApiSuchfeld3() {
         return this.get(FIELD_API_SUCHFELD3);
     }
 
+    @SuppressWarnings("unused")
     public String getBeschreibungAusstattung() {
         return this.get(FIELD_BESCHREIBUNG_AUSSTATTUNG);
     }
 
+    @SuppressWarnings("unused")
     public String getBeschreibungLage() {
         return this.get(FIELD_BESCHREIBUNG_LAGE);
     }
 
+    @SuppressWarnings("unused")
     public String getBeschreibungObjekt() {
         return this.get(FIELD_BESCHREIBUNG_OBJEKT);
     }
 
+    @SuppressWarnings("unused")
     public String getBeschreibungSonstiges() {
         return this.get(FIELD_BESCHREIBUNG_SONSTIGES);
     }
@@ -828,6 +835,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
         );
     }
 
+    @SuppressWarnings("unused")
     public Datei[] getDateien() {
         List<Datei> dateien = new ArrayList<>();
         for (int i = 1; i <= FILE_LIMIT; i++) {
@@ -837,6 +845,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
         return dateien.toArray(new Datei[0]);
     }
 
+    @SuppressWarnings("unused")
     public Integer getGruppierungId() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -858,103 +867,127 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 record.get(FIELD_IMMOBILIENART));
     }
 
+    @SuppressWarnings("unused")
     public Importmodus getImportmodus() {
         return Importmodus.parse(
                 this.get(FIELD_MODUS));
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktAnrede() {
         return this.get(FIELD_KONTAKT_ANREDE);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktEmail() {
         return this.get(FIELD_KONTAKT_EMAIL);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktHausNr() {
         return this.get(FIELD_KONTAKT_HAUSNR);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktLand() {
         String value = this.get(FIELD_KONTAKT_LAND);
         return (value != null) ? value : Locale.GERMANY.getISO3Country();
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktMobiltelefon() {
         return this.get(FIELD_KONTAKT_MOBILTELEFON);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktNachname() {
         return this.get(FIELD_KONTAKT_NACHNAME);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktOrt() {
         return this.get(FIELD_KONTAKT_ORT);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktPlz() {
         return this.get(FIELD_KONTAKT_PLZ);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktStrasse() {
         return this.get(FIELD_KONTAKT_STRASSE);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktTelefax() {
         return this.get(FIELD_KONTAKT_TELEFAX);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktTelefon() {
         return this.get(FIELD_KONTAKT_TELEFON);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktVorname() {
         return this.get(FIELD_KONTAKT_VORNAME);
     }
 
+    @SuppressWarnings("unused")
     public String getKontaktWebseite() {
         return this.get(FIELD_KONTAKT_WEBSEITE);
     }
 
+    @SuppressWarnings("unused")
     public Objektdarstellung getObjektdarstellung() {
         return Objektdarstellung.parse(
                 this.get(FIELD_OBJEKTDARSTELLUNG));
     }
 
+    @SuppressWarnings("unused")
     public String[] getObjektdarstellungGruppen() {
         String value = this.get(FIELD_OBJEKTDARSTELLUNG_GRUPPEN);
         return StringUtils.split(value, ";");
     }
 
+    @SuppressWarnings("unused")
     public String getObjektHausNr() {
         return this.get(FIELD_OBJEKT_HAUSNR);
     }
 
+    @SuppressWarnings("unused")
     public String getInternationaleRegion() {
         return this.get(FIELD_OBJEKT_INTERNATIONALE_REGION);
     }
 
+    @SuppressWarnings("unused")
     public String getObjektLand() {
         String value = this.get(FIELD_OBJEKT_LAND);
         return (value != null) ? value : Locale.GERMANY.getISO3Country();
     }
 
+    @SuppressWarnings("unused")
     public String getObjektOrt() {
         return this.get(FIELD_OBJEKT_ORT);
     }
 
+    @SuppressWarnings("unused")
     public String getObjektPlz() {
         return this.get(FIELD_OBJEKT_PLZ);
     }
 
+    @SuppressWarnings("unused")
     public String getObjektStrasse() {
         return this.get(FIELD_OBJEKT_STRASSE);
     }
 
+    @SuppressWarnings("unused")
     public String getProvision() {
         return this.get(FIELD_PROVISION);
     }
 
+    @SuppressWarnings("unused")
     public String getProvisionshinweis() {
         return this.get(FIELD_PROVISIONSHINWEIS);
     }
@@ -964,22 +997,27 @@ public abstract class Is24CsvRecord extends CsvRecord {
         return LENGTH;
     }
 
+    @SuppressWarnings("unused")
     public String getScoutKundenId() {
         return this.get(FIELD_SCOUT_KUNDEN_ID);
     }
 
+    @SuppressWarnings("unused")
     public String getScoutObjektId() {
         return this.get(FIELD_SCOUT_OBJEKT_ID);
     }
 
+    @SuppressWarnings("unused")
     public String getTermsRegion() {
         return this.get(FIELD_TERMS_REGION);
     }
 
+    @SuppressWarnings("unused")
     public String getTermsStadt() {
         return this.get(FIELD_TERMS_STADT);
     }
 
+    @SuppressWarnings("unused")
     public String getTermsStadtteil() {
         return this.get(FIELD_TERMS_STADTTEIL);
     }
@@ -988,6 +1026,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
         return this.get(FIELD_UEBERSCHRIFT);
     }
 
+    @SuppressWarnings("unused")
     public Currency getWaehrung() {
         String value = this.get(FIELD_WAEHRUNG);
         try {
@@ -1001,16 +1040,19 @@ public abstract class Is24CsvRecord extends CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public boolean isAdressdruck() {
         return Boolean.TRUE.equals(Is24CsvFormat.parseBoolean(
                 this.get(FIELD_ADRESSDRUCK)));
     }
 
+    @SuppressWarnings("unused")
     public boolean isAktiv() {
         String value = this.get(FIELD_STATUS);
         return !"0".equals(value);
     }
 
+    @SuppressWarnings("unused")
     public boolean isProvisionspflichtig() {
         return Boolean.TRUE.equals(Is24CsvFormat.parseBoolean(
                 this.get(FIELD_PROVISIONPFLICHTIG)));
@@ -1048,16 +1090,19 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setApiSuchfeld1(String value) {
         this.set(FIELD_API_SUCHFELD1,
                 Is24CsvFormat.printString(value, 10));
     }
 
+    @SuppressWarnings("unused")
     public void setApiSuchfeld2(String value) {
         this.set(FIELD_API_SUCHFELD2,
                 Is24CsvFormat.printString(value, 10));
     }
 
+    @SuppressWarnings("unused")
     public void setApiSuchfeld3(String value) {
         this.set(FIELD_API_SUCHFELD3,
                 Is24CsvFormat.printString(value, 10));
@@ -1260,6 +1305,7 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printNumber(value.getAbspieldauer(), 5) : null);
     }
 
+    @SuppressWarnings("unused")
     public void setDateien(Iterable<Datei> values) {
         int pos = 1;
         if (values != null) {
@@ -1354,11 +1400,13 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printString(value, 300));
     }
 
+    @SuppressWarnings("unused")
     public void setObjektdarstellung(Objektdarstellung value) {
         this.set(FIELD_OBJEKTDARSTELLUNG,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setObjektdarstellungGruppen(String[] value) {
         this.set(FIELD_OBJEKTDARSTELLUNG_GRUPPEN,
                 StringUtils.trimToNull(StringUtils.join(value, ";")));
@@ -1423,16 +1471,19 @@ public abstract class Is24CsvRecord extends CsvRecord {
                 Is24CsvFormat.printString(value, 20));
     }
 
+    @SuppressWarnings("unused")
     public void setTermsRegion(String value) {
         this.set(FIELD_TERMS_REGION,
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setTermsStadt(String value) {
         this.set(FIELD_TERMS_STADT,
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setTermsStadtteil(String value) {
         this.set(FIELD_TERMS_STADTTEIL,
                 Is24CsvFormat.printString(value, 50));

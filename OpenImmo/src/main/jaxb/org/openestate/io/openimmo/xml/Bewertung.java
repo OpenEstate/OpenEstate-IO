@@ -34,11 +34,11 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
     "feld"
 })
 @XmlRootElement(name = "bewertung")
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
 public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     protected List<Bewertung.Feld> feld;
 
     /**
@@ -63,7 +63,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
      * 
      * 
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public List<Bewertung.Feld> getFeld() {
         if (feld == null) {
             feld = new ArrayList<Bewertung.Feld>();
@@ -71,15 +71,15 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return this.feld;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -87,7 +87,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             List<Bewertung.Feld> theFeld;
@@ -97,18 +97,18 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Bewertung) {
@@ -135,12 +135,12 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new Bewertung();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -161,9 +161,9 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 
@@ -181,19 +181,19 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
         "typ",
         "modus"
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
     public static class Feld implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(required = true)
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         protected String name;
         @XmlElement(required = true)
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         protected String wert;
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         protected List<String> typ;
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         protected List<String> modus;
 
         /**
@@ -204,7 +204,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public String getName() {
             return name;
         }
@@ -217,7 +217,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public void setName(String value) {
             this.name = value;
         }
@@ -230,7 +230,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public String getWert() {
             return wert;
         }
@@ -243,7 +243,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          *     {@link String }
          *     
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public void setWert(String value) {
             this.wert = value;
         }
@@ -270,7 +270,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          * 
          * 
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public List<String> getTyp() {
             if (typ == null) {
                 typ = new ArrayList<String>();
@@ -300,7 +300,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
          * 
          * 
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public List<String> getModus() {
             if (modus == null) {
                 modus = new ArrayList<String>();
@@ -308,15 +308,15 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             return this.modus;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
-            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -324,7 +324,7 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 String theName;
@@ -349,18 +349,18 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
-            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Bewertung.Feld) {
@@ -431,12 +431,12 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new Bewertung.Feld();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -484,9 +484,9 @@ public class Bewertung implements Serializable, Cloneable, CopyTo2, Equals2, ToS
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:54:50+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:31:15+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
-            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
         }
 

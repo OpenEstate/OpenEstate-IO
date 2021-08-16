@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package org.openestate.io.core;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Locale;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -27,10 +26,8 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressFBWarnings(
-        value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS",
-        justification = "This behaviour is intended.")
 public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(LocaleUtils.class);
 
     private LocaleUtils() {
@@ -128,8 +125,7 @@ public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
         if (iso2Code == null) return null;
         if (iso2Code.length() == 2) {
             Locale countryLocale = new Locale(iso2Code, iso2Code);
-            String iso3Code = StringUtils.trimToNull(countryLocale.getISO3Country());
-            if (iso3Code != null) return iso3Code;
+            return StringUtils.trimToNull(countryLocale.getISO3Country());
         }
         return null;
     }
@@ -147,9 +143,8 @@ public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
 
         String iso2Code = LocaleUtils.getCountryISO2(country);
         if (iso2Code != null) {
-            String name = StringUtils.trimToNull(
+            return StringUtils.trimToNull(
                     new Locale(iso2Code, iso2Code).getDisplayCountry(language));
-            if (name != null) return name;
         }
         return null;
     }
@@ -161,6 +156,7 @@ public final class LocaleUtils extends org.apache.commons.lang3.LocaleUtils {
      * @param language language to translate
      * @return translated country name or null, if no translation was found
      */
+    @SuppressWarnings("unused")
     public static String translateCountryName(String country, Locale language) {
         country = StringUtils.trimToNull(country);
         if (country == null) return null;

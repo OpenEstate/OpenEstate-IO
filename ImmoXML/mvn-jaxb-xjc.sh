@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright 2015-2018 OpenEstate.org
+# Copyright 2015-2021 OpenEstate.org
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,5 +21,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 set -e
 export LANG=en
 cd "$DIR"
-"$MVN" org.jvnet.jaxb2.maven2:maven-jaxb22-plugin:generate
+"$MVN" org.jvnet.jaxb2.maven2:maven-jaxb23-plugin:generate
 ./mvn-jaxb-cleanup.py

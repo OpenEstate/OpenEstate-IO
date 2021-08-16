@@ -2,6 +2,24 @@ Changelog for OpenEstate-IO
 ===========================
 
 
+1.5 (16 Aug 2021)
+-----------------
+
+-   Compile for Java 8.
+-   Provide JAXB as dependency for easier use in Java 9 and beyond.
+-   Regenerated JAXB classes against with JAXB 2.3.
+-   Add support for the XML format of immobar.it.
+-   Add support for the JSON format of idealista.com.
+-   Updated the XML format of immobiliare.it to version 2.8.
+-   Replaced `jaxen` dependency with JDK's internal XPath engine.
+-   Updated `commons-codec` library to version 1.15.
+-   Updated `commons-csv` library to version 1.9.0.
+-   Updated `commons-io` library to version 2.11.0.
+-   Updated `commons-lang` library to version 3.12.0.  
+-   Updated `commons-text` library to version 1.9.
+-   Updated `slf4j` libraries to version 1.7.30.
+
+
 1.4 (09 Dec 2018)
 -----------------
 
@@ -40,8 +58,7 @@ Changelog for OpenEstate-IO
 -   Updated `commons-lang` library to version 3.6.
 -   Add dependency to `commons-text` library in version 1.1.
 -   Support **OpenImmo** format in version 1.2.7b.
--   Update XML format of
-    [wohnen-in-suedtirol.it](https://wohnen-in-suedtirol.it/) to version 2.2.
+-   Update XML format of [wohnen-in-suedtirol.it](https://www.wohnen-in-suedtirol.it/) to version 2.2.
 
 
 1.2 (14 May 2017)
@@ -51,8 +68,7 @@ Changelog for OpenEstate-IO
 
 -   Generated JAXB classes implement `java.io.Serializable`.
 -   Improved parsing of numeric values according to a certain locale.
--   Improved processing of certain simple types in **Kyero** / **Trovit** /
-    **daft.ie** / **IS24-XML** format.
+-   Improved processing of certain simple types in **Kyero** / **Trovit** / **daft.ie** / **IS24-XML** format.
 -   Dump CSV records into a human readable form.
 -   Updated `commons-csv` library to version 1.4.
 -   Updated `commons-io` library to version 2.5.
@@ -66,12 +82,9 @@ Changelog for OpenEstate-IO
 
 ### bugfixes
 
--   `xsd:positiveDecimal` / `xsd:positiveInteger` values are not printed
-    correctly in **ImmoXML** / **DaftIE** / **OpenImmo** format
--   fixed printing of `posdecimal` / `xsd:positiveInteger` values in
-    **ImmoXML** / **OpenImmo** format
--   numeric values are not strictly parsed in **IDX** / **ImmoXML** /
-    **IS24-CSV** / **OpenImmo** / **Trovit** format
+-   `xsd:positiveDecimal` / `xsd:positiveInteger` values are not printed correctly in **ImmoXML** / **DaftIE** / **OpenImmo** format
+-   fixed printing of `posdecimal` / `xsd:positiveInteger` values in **ImmoXML** / **OpenImmo** format
+-   numeric values are not strictly parsed in **IDX** / **ImmoXML** / **IS24-CSV** / **OpenImmo** / **Trovit** format
 
 ### updates
 
@@ -85,9 +98,7 @@ Changelog for OpenEstate-IO
 
 ### new features
 
--   The library is available through [Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io)
-    from this release on. See [documentation page about Maven](https://github.com/OpenEstate/OpenEstate-IO/wiki/Integration-with-Maven)
-    for more information.
+-   The library is available through [Maven Central Repository](http://search.maven.org/#search|ga|1|org.openestate.io) from this release on. See [documentation page about Maven](https://github.com/OpenEstate/OpenEstate-IO/wiki/Integration-with-Maven) for more information.
 -   implemented *FMPXMLLAYOUT* & *FMPXMLRESULT* format of *Filemaker* databases
 
 ### updates

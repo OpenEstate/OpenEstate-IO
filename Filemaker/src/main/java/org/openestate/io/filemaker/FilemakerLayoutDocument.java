@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.openestate.io.filemaker;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.openestate.io.core.XmlUtils;
@@ -25,13 +26,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML document from <a href="http://www.filemaker.com/">Filemaker</a> with a
- * &lt;FMPXMLLAYOUT&gt; root element.
+ * XML document from <a href="http://www.filemaker.com/">Filemaker</a> with a &lt;FMPXMLLAYOUT&gt; root element.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class FilemakerLayoutDocument extends FilemakerDocument<FMPXMLLAYOUT> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerLayoutDocument.class);
@@ -78,19 +77,33 @@ public class FilemakerLayoutDocument extends FilemakerDocument<FMPXMLLAYOUT> {
      * @throws JAXBException                if a problem with JAXB occurred
      */
     public static FilemakerLayoutDocument newDocument(FMPXMLLAYOUT xmlLayout) throws ParserConfigurationException, JAXBException {
+        return newDocument(xmlLayout, null);
+    }
+
+    /**
+     * Creates a {@link FilemakerLayoutDocument} from a {@link FMPXMLLAYOUT} object.
+     *
+     * @param xmlLayout Java object, that represents the &lt;FMPXMLLAYOUT&gt; root element
+     * @param context   JAXB context for marshalling
+     * @return created document
+     * @throws ParserConfigurationException if the parser is not properly configured
+     * @throws JAXBException                if a problem with JAXB occurred
+     */
+    public static FilemakerLayoutDocument newDocument(FMPXMLLAYOUT xmlLayout, JAXBContext context) throws ParserConfigurationException, JAXBException {
         Document document = XmlUtils.newDocument();
-        FilemakerUtils.createMarshaller("UTF-8", true).marshal(xmlLayout, document);
+        FilemakerUtils.createMarshaller("UTF-8", true, context).marshal(xmlLayout, document);
         return new FilemakerLayoutDocument(document);
     }
 
     /**
      * Creates a {@link FMPXMLLAYOUT} object from the contained {@link Document}.
      *
+     * @param context JAXB context for unmarshalling
      * @return created object, that represents the &lt;FMPXMLLAYOUT&gt; root element
      * @throws JAXBException if a problem with JAXB occurred
      */
     @Override
-    public FMPXMLLAYOUT toObject() throws JAXBException {
-        return (FMPXMLLAYOUT) FilemakerUtils.createUnmarshaller().unmarshal(this.getDocument());
+    public FMPXMLLAYOUT toObject(JAXBContext context) throws JAXBException {
+        return (FMPXMLLAYOUT) FilemakerUtils.createUnmarshaller(context).unmarshal(this.getDocument());
     }
 }

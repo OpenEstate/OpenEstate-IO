@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,13 +27,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This class provides high level read access to fields and values from a
- * {@link FMPXMLRESULT}.
+ * This class provides high level read access to fields and values from a {@link FMPXMLRESULT}.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class FilemakerResultMapping {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(FilemakerResultMapping.class);
@@ -85,6 +83,7 @@ public class FilemakerResultMapping {
      *
      * @return names of the fields
      */
+    @SuppressWarnings("unused")
     public String[] getFieldNames() {
         List<String> names = new ArrayList<>();
         for (MetaDataType.FIELD field : this.fields) {
@@ -175,6 +174,7 @@ public class FilemakerResultMapping {
     /**
      * This class contains the data of a certain row.
      */
+    @SuppressWarnings("SpellCheckingInspection")
     public final static class Row {
         private final long recordId;
         private final long modId;
@@ -264,6 +264,7 @@ public class FilemakerResultMapping {
          * @param name name of the field
          * @return all values for the provided field, or null if not found
          */
+        @SuppressWarnings("unused")
         public String[] getValues(String name) {
             Column col = this.columns.get(name);
             return (col != null) ? col.getValues() : null;

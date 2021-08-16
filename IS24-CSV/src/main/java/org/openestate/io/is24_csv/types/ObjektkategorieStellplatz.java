@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum ObjektkategorieStellplatz {
     KEINE_ANGABE(0),
     GARAGE(129),
@@ -34,10 +35,11 @@ public enum ObjektkategorieStellplatz {
     AUSSENSTELLPLATZ(133),
     DUPLEX(134);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(ObjektkategorieStellplatz.class);
     private final int value;
 
-    private ObjektkategorieStellplatz(int value) {
+    ObjektkategorieStellplatz(int value) {
         this.value = value;
     }
 

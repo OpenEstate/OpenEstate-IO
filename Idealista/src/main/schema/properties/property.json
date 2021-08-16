@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/property.json",
+  "title": "Property Object",
+  "type": "object",
+  "javaType": "org.openestate.io.idealista.json.Property",
+  "additionalProperties": true,
+  "required": [
+    "propertyCode"
+  ],
+  "properties": {
+    "propertyAddress": {
+      "title": "Property address",
+      "$ref": "address.json#",
+      "javaName": "address"
+    },
+    "propertyCode": {
+      "title": "Property identifier",
+      "description": "It must be unique for each property and unchanging over time. This code will be the internal id to match it with our id. Its not the same that the propertyReference value. If the code changes, the property that was associated with this code will be unset on our systems",
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "code"
+    },
+    "propertyReference": {
+      "title": "Property reference",
+      "description": "Internal reference of the property in the customer system. It's not necessary for this reference to be unique",
+      "$ref": "../rules.json#/stringTo50",
+      "javaName": "reference"
+    },
+    "propertyContact": {
+      "title": "Property contact",
+      "$ref": "contact.json#",
+      "javaName": "contact"
+    },
+    "propertyDescriptions": {
+      "title": "Property descriptions",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "description.json#"
+      },
+      "javaName": "descriptions"
+    },
+    "propertyFeatures": {
+      "title": "Property type",
+      "oneOf": [
+        {
+          "$ref": "land.json#"
+        },
+        {
+          "$ref": "storage.json#"
+        },
+        {
+          "$ref": "garage.json#"
+        },
+        {
+          "$ref": "building.json#"
+        },
+        {
+          "$ref": "premises.json#"
+        },
+        {
+          "$ref": "offices.json#"
+        },
+        {
+          "$ref": "homes.json#"
+        }
+      ],
+      "javaName": "features",
+      "existingJavaType" : "org.openestate.io.idealista.json.AbstractFeatures"
+    },
+    "propertyImages": {
+      "title": "Property images",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "images.json#"
+      },
+      "javaName": "images"
+    },
+    "propertyOperation": {
+      "title": "Property operation",
+      "$ref": "operation.json#",
+      "javaName": "operation"
+    },
+    "propertyUrl": {
+      "title": "Property URL",
+      "$ref": "../rules.json#/urlFormat",
+      "javaName": "url"
+    },
+    "propertyVisibility": {
+      "title": "Property visibility",
+      "$ref": "../rules.json#/enumPropertyVisibility",
+      "javaName": "visibility"
+    }
+  }
+}

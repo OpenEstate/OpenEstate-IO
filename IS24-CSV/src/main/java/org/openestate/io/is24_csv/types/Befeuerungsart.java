@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum Befeuerungsart {
     KEINE_ANGABE(1),
     ERDWAERME(2),
@@ -38,10 +39,11 @@ public enum Befeuerungsart {
     STROM(8),
     KOHLE(9);
 
+    @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Befeuerungsart.class);
     private final int value;
 
-    private Befeuerungsart(int value) {
+    Befeuerungsart(int value) {
         this.value = value;
     }
 
@@ -63,7 +65,7 @@ public enum Befeuerungsart {
             if (art != null && !Befeuerungsart.KEINE_ANGABE.equals(art) && !arten.contains(art))
                 arten.add(art);
         }
-        return arten.toArray(new Befeuerungsart[arten.size()]);
+        return arten.toArray(new Befeuerungsart[0]);
     }
 
     public String print() {

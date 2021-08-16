@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/building.json",
+  "title": "Building Object",
+  "type": "object",
+  "extends": {
+    "$ref": "../custom/abstractFeatures.json"
+  },
+  "javaType": "org.openestate.io.idealista.json.BuildingFeatures",
+  "additionalProperties": true,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "building"
+      ],
+      "javaName": "type"
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed",
+      "javaName": "areaConstructed"
+    },
+    "featuresAreaTradableMinimum": {
+      "$ref": "features.json#/featuresAreaTradableMinimum",
+      "javaName": "areaTradableMinimum"
+    },
+    "featuresBuiltProperties": {
+      "$ref": "features.json#/featuresBuiltProperties",
+      "javaName": "builtProperties"
+    },
+    "featuresBuiltYear": {
+      "$ref": "features.json#/featuresBuiltYear",
+      "javaName": "builtYear"
+    },
+    "featuresClassificationChalet": {
+      "$ref": "features.json#/featuresClassificationChalet",
+      "javaName": "classificationChalet"
+    },
+    "featuresClassificationCommercial": {
+      "$ref": "features.json#/featuresClassificationCommercial",
+      "javaName": "classificationCommercial"
+    },
+    "featuresClassificationHotel": {
+      "$ref": "features.json#/featuresClassificationHotel",
+      "javaName": "classificationHotel"
+    },
+    "featuresClassificationIndustrial": {
+      "$ref": "features.json#/featuresClassificationIndustrial",
+      "javaName": "classificationIndustrial"
+    },
+    "featuresClassificationOffice": {
+      "$ref": "features.json#/featuresClassificationOffice",
+      "javaName": "classificationOffice"
+    },
+    "featuresClassificationOther": {
+      "$ref": "features.json#/featuresClassificationOther",
+      "javaName": "classificationOther"
+    },
+    "featuresConservation": {
+      "$ref": "features.json#/featuresConservation",
+      "javaName": "conservation"
+    },
+    "featuresEnergyCertificateRating": {
+      "$ref": "features.json#/featuresEnergyCertificateRating",
+      "javaName": "energyCertificateRating"
+    },
+    "featuresEnergyCertificatePerformance": {
+      "$ref": "features.json#/featuresEnergyCertificatePerformance",
+      "javaName": "energyCertificatePerformance"
+    },
+    "featuresEnergyCertificateType": {
+      "$ref": "features.json#/featuresEnergyCertificateType",
+      "javaName": "energyCertificateType"
+    },
+    "featuresEnergyCertificateLaw": {
+      "$ref": "features.json#/featuresEnergyCertificateLaw",
+      "javaName": "energyCertificateLaw"
+    },
+    "featuresFloorsBuilding": {
+      "$ref": "features.json#/featuresFloorsBuilding",
+      "javaName": "floorsBuilding"
+    },
+    "featuresLiftNumber": {
+      "$ref": "features.json#/featuresLiftNumber",
+      "javaName": "liftNumber"
+    },
+    "featuresParkingSpacesNumber": {
+      "$ref": "features.json#/featuresParkingSpacesNumber",
+      "javaName": "parkingSpacesNumber"
+    },
+    "featuresPropertyTenants": {
+      "$ref": "features.json#/featuresPropertyTenants",
+      "javaName": "propertyTenants"
+    },
+    "featuresSecurityPersonnel": {
+      "$ref": "features.json#/featuresSecurityPersonnel",
+      "javaName": "securityPersonnel"
+    }
+  }
+}

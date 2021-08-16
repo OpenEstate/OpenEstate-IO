@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class WohnungMiete extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(WohnungMiete.class);
 
@@ -137,7 +137,7 @@ public class WohnungMiete extends Is24CsvRecord {
     protected final static int FIELD_STELLPLATZ = 78;
 
     /**
-     * Frei ab/Verfügbar ab/Antrittstermin, Text 50
+     * frei ab / verfügbar ab / Antrittstermin, Text 50
      */
     protected final static int FIELD_VERFUEGBAR_AB = 79;
 
@@ -236,7 +236,7 @@ public class WohnungMiete extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.WOHNUNG_MIETE);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlBadezimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -248,7 +248,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlGarageStellplatz() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -260,7 +260,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlSchlafzimmer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -352,7 +352,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getEtagenzahl() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -388,7 +388,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_HAUSTIERE));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getHeizkosten() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -405,7 +405,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_HEIZUNGSART));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getKaltmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -444,7 +444,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_NEBENKOSTEN_INKL_HEIZKOSTEN));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getNutzflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -496,7 +496,7 @@ public class WohnungMiete extends Is24CsvRecord {
                 this.get(FIELD_STELLPLATZ));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getStellplatzmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -512,7 +512,7 @@ public class WohnungMiete extends Is24CsvRecord {
         return this.get(FIELD_VERFUEGBAR_AB);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getWarmmiete() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -524,7 +524,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -536,7 +536,7 @@ public class WohnungMiete extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getZimmer() {
         try {
             return Is24CsvFormat.parseDecimal(

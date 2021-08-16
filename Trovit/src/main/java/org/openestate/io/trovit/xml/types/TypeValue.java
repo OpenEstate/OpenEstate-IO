@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.4
  */
+@SuppressWarnings("SpellCheckingInspection")
 public enum TypeValue {
     FOR_RENT(new String[]{"For Rent", "Alquiler"}),
     FOR_SALE(new String[]{"For Sale", "Venta"}),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,11 +67,11 @@ public class KyeroDocumentTest {
 
             doc = new KyeroDocument(buildExampleDocument("3"));
             Assert.assertEquals(
-                    "3", KyeroVersion.V3, doc.getDocumentVersion());
+                    "version 3", KyeroVersion.V3, doc.getDocumentVersion());
 
             doc = new KyeroDocument(buildExampleDocument("3.1"));
             Assert.assertEquals(
-                    "3", KyeroVersion.V3, doc.getDocumentVersion());
+                    "version 3.1", KyeroVersion.V3, doc.getDocumentVersion());
         } catch (Exception ex) {
             LOGGER.error("Test of KyeroDocument.getDocumentVersion failed!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);

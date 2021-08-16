@@ -2,31 +2,47 @@
   <dictionary name="global">
     <words>
       <w>anbieter</w>
+      <w>anhang</w>
       <w>bugfixes</w>
       <w>casa</w>
       <w>filemaker</w>
       <w>fmpxmllayout</w>
       <w>fmpxmlresult</w>
+      <w>gardenhouse</w>
       <w>groundplan</w>
       <w>haus</w>
+      <w>idealista</w>
       <w>immo</w>
+      <w>immobar</w>
       <w>immobiliare</w>
       <w>immobilie</w>
       <w>immobilien</w>
       <w>immobilienscout</w>
+      <w>immotype</w>
       <w>immoxml</w>
       <w>intelli</w>
+      <w>isdn</w>
       <w>kauf</w>
       <w>kyero</w>
       <w>miete</w>
       <w>mpeg</w>
+      <w>msvideo</w>
+      <w>msword</w>
       <w>mustermann</w>
       <w>nein</w>
       <w>openestate</w>
       <w>openimmo</w>
+      <w>planimetry</w>
+      <w>realestate</w>
+      <w>realvideo</w>
+      <w>revenuetype</w>
+      <w>simplefield</w>
+      <w>sparefield</w>
       <w>suedtirol</w>
+      <w>swimmingpool</w>
       <w>trovit</w>
       <w>uebertragung</w>
+      <w>unmarshaller</w>
       <w>wohnen</w>
       <w>wohnung</w>
       <w>zahl</w>

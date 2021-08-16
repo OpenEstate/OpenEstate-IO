@@ -70,18 +70,18 @@ import org.jvnet.jaxb2_commons.locator.util.LocatorUtils;
 
 })
 @XmlRootElement(name = "daft")
-@Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
 public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
 {
 
     @XmlElement(name = "overseas_sales")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     protected Daft.OverseasSales overseasSales;
     @XmlElement(name = "overseas_rental")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     protected Daft.OverseasRental overseasRental;
     @XmlAttribute(name = "version")
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     protected String version;
 
     /**
@@ -92,7 +92,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Daft.OverseasSales }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public Daft.OverseasSales getOverseasSales() {
         return overseasSales;
     }
@@ -105,7 +105,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Daft.OverseasSales }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public void setOverseasSales(Daft.OverseasSales value) {
         this.overseasSales = value;
     }
@@ -118,7 +118,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Daft.OverseasRental }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public Daft.OverseasRental getOverseasRental() {
         return overseasRental;
     }
@@ -131,7 +131,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link Daft.OverseasRental }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public void setOverseasRental(Daft.OverseasRental value) {
         this.overseasRental = value;
     }
@@ -144,7 +144,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public String getVersion() {
         return version;
     }
@@ -157,20 +157,20 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
      *     {@link String }
      *     
      */
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public void setVersion(String value) {
         this.version = value;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public String toString() {
-        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+        final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
         final StringBuilder buffer = new StringBuilder();
         append(null, buffer, strategy);
         return buffer.toString();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         strategy.appendStart(locator, this, buffer);
         appendFields(locator, buffer, strategy);
@@ -178,7 +178,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
         {
             Daft.OverseasSales theOverseasSales;
@@ -198,18 +198,18 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return buffer;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public Object clone() {
         return copyTo(createNewInstance());
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(Object target) {
-        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+        final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
         return copyTo(null, target, strategy);
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
         final Object draftCopy = ((target == null)?createNewInstance():target);
         if (draftCopy instanceof Daft) {
@@ -257,12 +257,12 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return draftCopy;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public Object createNewInstance() {
         return new Daft();
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
         if ((object == null)||(this.getClass()!= object.getClass())) {
             return false;
@@ -301,9 +301,9 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
         return true;
     }
 
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public boolean equals(Object object) {
-        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+        final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
         return equals(null, null, object, strategy);
     }
 
@@ -331,12 +331,12 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
     @XmlType(name = "", propOrder = {
         "overseasRentalAd"
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public static class OverseasRental implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "overseas_rental_ad")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         protected List<OverseasRentalAdType> overseasRentalAd;
 
         /**
@@ -361,7 +361,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
          * 
          * 
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public List<OverseasRentalAdType> getOverseasRentalAd() {
             if (overseasRentalAd == null) {
                 overseasRentalAd = new ArrayList<OverseasRentalAdType>();
@@ -369,15 +369,15 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return this.overseasRentalAd;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
-            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -385,7 +385,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 List<OverseasRentalAdType> theOverseasRentalAd;
@@ -395,18 +395,18 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
-            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Daft.OverseasRental) {
@@ -433,12 +433,12 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new Daft.OverseasRental();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -459,9 +459,9 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
-            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
         }
 
@@ -491,12 +491,12 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
     @XmlType(name = "", propOrder = {
         "overseasSaleAd"
     })
-    @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
     public static class OverseasSales implements Serializable, Cloneable, CopyTo2, Equals2, ToString2
     {
 
         @XmlElement(name = "overseas_sale_ad")
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         protected List<OverseasSaleAdType> overseasSaleAd;
 
         /**
@@ -521,7 +521,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
          * 
          * 
          */
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public List<OverseasSaleAdType> getOverseasSaleAd() {
             if (overseasSaleAd == null) {
                 overseasSaleAd = new ArrayList<OverseasSaleAdType>();
@@ -529,15 +529,15 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return this.overseasSaleAd;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public String toString() {
-            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE;
+            final ToStringStrategy2 strategy = JAXBToStringStrategy.INSTANCE2;
             final StringBuilder buffer = new StringBuilder();
             append(null, buffer, strategy);
             return buffer.toString();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder append(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             strategy.appendStart(locator, this, buffer);
             appendFields(locator, buffer, strategy);
@@ -545,7 +545,7 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public StringBuilder appendFields(ObjectLocator locator, StringBuilder buffer, ToStringStrategy2 strategy) {
             {
                 List<OverseasSaleAdType> theOverseasSaleAd;
@@ -555,18 +555,18 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return buffer;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object clone() {
             return copyTo(createNewInstance());
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(Object target) {
-            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE;
+            final CopyStrategy2 strategy = JAXBCopyStrategy.INSTANCE2;
             return copyTo(null, target, strategy);
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object copyTo(ObjectLocator locator, Object target, CopyStrategy2 strategy) {
             final Object draftCopy = ((target == null)?createNewInstance():target);
             if (draftCopy instanceof Daft.OverseasSales) {
@@ -593,12 +593,12 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return draftCopy;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public Object createNewInstance() {
             return new Daft.OverseasSales();
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(ObjectLocator thisLocator, ObjectLocator thatLocator, Object object, EqualsStrategy2 strategy) {
             if ((object == null)||(this.getClass()!= object.getClass())) {
                 return false;
@@ -619,9 +619,9 @@ public class Daft implements Serializable, Cloneable, CopyTo2, Equals2, ToString
             return true;
         }
 
-        @Generated(value = "com.sun.tools.xjc.Driver", date = "2018-10-12T02:41:42+02:00", comments = "JAXB RI v2.2.11")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2021-08-07T06:29:52+02:00", comments = "JAXB RI v2.3.0")
         public boolean equals(Object object) {
-            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE;
+            final EqualsStrategy2 strategy = JAXBEqualsStrategy.INSTANCE2;
             return equals(null, null, object, strategy);
         }
 

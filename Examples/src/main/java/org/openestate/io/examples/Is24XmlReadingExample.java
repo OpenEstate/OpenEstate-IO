@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,6 @@ import java.io.InputStream;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.openestate.io.is24_xml.Is24XmlDocument;
 import org.openestate.io.is24_xml.Is24XmlUtils;
 import org.openestate.io.is24_xml.xml.ImmobilieBaseTyp;
@@ -43,7 +41,6 @@ import org.xml.sax.SAXException;
 public class Is24XmlReadingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24XmlReadingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
 
     /**
      * Start the example application.
@@ -52,14 +49,10 @@ public class Is24XmlReadingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                Is24XmlReadingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // read example file, if no files were specified as command line arguments
         if (args.length < 1) {
             try {
-                read(Is24XmlReadingExample.class.getResourceAsStream(PACKAGE + "/is24.xml"));
+                read(Is24XmlReadingExample.class.getResourceAsStream("is24.xml"));
             } catch (Exception ex) {
                 LOGGER.error("Can't read example file!");
                 LOGGER.error("> " + ex.getLocalizedMessage(), ex);
@@ -73,7 +66,7 @@ public class Is24XmlReadingExample {
                 try {
                     read(new File(arg));
                 } catch (Exception ex) {
-                    LOGGER.error("Can't read file '" + arg + "'!");
+                    LOGGER.error("Can't read file '{}'!", arg);
                     LOGGER.error("> " + ex.getLocalizedMessage(), ex);
                     System.exit(2);
                 }
@@ -92,7 +85,7 @@ public class Is24XmlReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(File xmlFile) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process file: " + xmlFile.getAbsolutePath());
+        LOGGER.info("processing file '{}'", xmlFile.getAbsolutePath());
         if (!xmlFile.isFile()) {
             LOGGER.warn("> provided file is invalid");
             return;
@@ -116,7 +109,7 @@ public class Is24XmlReadingExample {
      * @throws JAXBException                if XML conversion into Java objects failed
      */
     protected static void read(InputStream xmlInputStream) throws SAXException, IOException, ParserConfigurationException, JAXBException {
-        LOGGER.info("process example file");
+        LOGGER.info("processing example file");
         Is24XmlDocument doc = Is24XmlUtils.createDocument(xmlInputStream);
         if (doc == null) {
             LOGGER.warn("> provided XML is not supported");
@@ -141,16 +134,14 @@ public class Is24XmlReadingExample {
                 ImmobilieBaseTyp obj = i.getValue();
 
                 // get object nr
-                String objectNr = (!StringUtils.isBlank(obj.getAnbieterObjektID())) ?
-                        obj.getAnbieterObjektID().trim() : "???";
+                String objectNr = obj.getAnbieterObjektID();
 
                 // get object title
-                String objectTitle = (!StringUtils.isBlank(obj.getUeberschrift())) ?
-                        obj.getUeberschrift().trim() : "???";
+                String objectTitle = obj.getUeberschrift();
 
                 // print object information to console
-                LOGGER.info("> found object '" + objectNr + "' "
-                        + "with title '" + objectTitle + "'");
+                LOGGER.info("> found object '{}': {}",
+                        objectNr, objectTitle);
             }
 
             // process virtual objects
@@ -158,16 +149,14 @@ public class Is24XmlReadingExample {
                 VirtuelleImmobilieBaseTyp obj = i.getValue();
 
                 // get object nr
-                String objectNr = (!StringUtils.isBlank(obj.getAnbieterObjektID())) ?
-                        obj.getAnbieterObjektID().trim() : "???";
+                String objectNr = obj.getAnbieterObjektID();
 
                 // get object title
-                String objectTitle = (!StringUtils.isBlank(obj.getUeberschrift())) ?
-                        obj.getUeberschrift().trim() : "???";
+                String objectTitle = obj.getUeberschrift();
 
                 // print object information to console
-                LOGGER.info("> found virtual object '" + objectNr + "' "
-                        + "with title '" + objectTitle + "'");
+                LOGGER.info("> found virtual object '{}': {}",
+                        objectNr, objectTitle);
             }
         }
     }

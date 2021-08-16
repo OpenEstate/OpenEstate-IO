@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ public class ImmoXmlDocumentNamespaceTest {
 
     @SuppressWarnings("unused")
     private static Document buildExampleDocument(String version) throws Exception {
+        //noinspection SpellCheckingInspection
         return XmlUtils.newDocument("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
                 + "<imo:immoxml xmlns:imo=\"" + ImmoXmlUtils.NAMESPACE + "\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openimmo.de openimmo.xsd\">\n"
                 + "  <imo:uebertragung version=\"" + ImmoXmlUtils.VERSION.toReadableVersion() + "\" "

@@ -1,1320 +1,1319 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0">
-  <xsd:annotation>
-    <xsd:documentation xml:lang="en">
-      XML schema of the XML feed for https://www.trovit.com/ according to the
-      specifications at:
 
-      https://corporate.trovit.com/feed-us-homes/
-      https://corporate.trovit.com/feed-de-immobilien/
-      https://corporate.trovit.com/specs-us-homes/
-
-      This unofficial XML schema was created by Andreas Rudolph and is licensed
-      under the terms of Apache License 2.0
-      (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
-    </xsd:documentation>
-    <xsd:documentation xml:lang="de">
-      XML-Schema des XML-Feeds von https://www.trovit.com/ gemäß den
-      Spezifikationen unter:
-
-      https://corporate.trovit.com/feed-us-homes/
-      https://corporate.trovit.com/feed-de-immobilien/
-      https://corporate.trovit.com/specs-us-homes/
-
-      Dieses inoffizielle XML-Schema wurde von Andreas Rudolph erstellt und
-      unter den Bedingungen der Apache License 2.0 veröffentlicht
-      (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
-    </xsd:documentation>
-  </xsd:annotation>
-
-  <xsd:element name="trovit">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Sorrunding tags.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Umschließende Tags.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="ad" type="AdType" minOccurs="0" maxOccurs="unbounded">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              List of objects to insert or update.
-            </xsd:documentation>
-            <xsd:documentation xml:lang="de">
-              Liste von einzufügenden oder zu aktualisierenden Objekten.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:complexType name="AdType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        An object to insert or update.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Ein einzufügendes oder zu aktualisierendes Objekt.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:all>
-      <xsd:element name="id" type="xsd:string" minOccurs="1" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            id of the ad on your website (numeric or alphanumeric, however it
-            must be unique because we use it to avoid duplicate entries)
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            id der Anzeige (numerisch oder alphanumerisch, muss "einmalig" sein)
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="url" type="xsd:anyURI" minOccurs="1" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            URL of the ad on your website
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            URL der Anzeige
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="mobile_url" type="xsd:anyURI" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            URL of the ad on your site when a user is browsing on a mobile
-            device. Useful when your website has a mobile version.
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            URL Ihrer Website für Handys (mobile version)
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="title" type="xsd:string" minOccurs="1" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            title of the ad (a concise summary of the listing which does not
-            contain your websites name or URL)
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Anzeigentitel (muss mit Anzeigeninhalt übereinstimmen; Name der
-            Website oder URL darf nicht genannt werden)
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="type" type="TypeValue" minOccurs="1" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            select the appropriate property type per ad
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Verkaufsart
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="content" type="ContentValue" minOccurs="1" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            description of the property (minimum of 30 characters). Please note
-            that the quality of the description has a strong effect on the
-            amount of visitors you will receive!
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Beschreibung der Immobilie (mind. 30 Zeichen)
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="price" type="PriceType" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            price of the property.
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Preis der Immobilie.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="property_type" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            only applicable if you filled out "for rent" or "for sale" in the
-            field "type"
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="foreclosure_type" type="ForeclosureTypeValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            current status of the foreclosure property. Only applicable with
-            "For Sale", "Parking For Sale", "Office For Sale", "For Sale Local",
-            "Warehouse For Sale" or "Unlisted Foreclosure" type.
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="address" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            street address
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Adresse/Strasse
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="floor_number" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            floor number/stories
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Stockwerk
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="neighborhood" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="city_area" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            city area or neighborhood where the property is located
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Stadtviertel
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="city" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            city name
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Stadt
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="region" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            state (state abbreviations are okay)
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Bundesland
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="country" type="CountryValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Only applicable with "Overseas" type.
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Land, in der sich Auslandsimmoblie befindet (nur für "Overseas"
-            anwendbar; bitte ISO-Code angeben)
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="postcode" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            zipcode
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Postleitzahl
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="latitude" type="LatitudeValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            latitude of the property
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Breitengrad
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="longitude" type="LongitudeValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            longitude of the property
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Längengrad
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="orientation" type="OrientationValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            orientation of the property
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Ausrichtung
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="agency" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            name of the listing agency
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Name der Immobilienagentur
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="mls_database" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            MLS ID#
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="floor_area" type="FloorAreaType" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            area of the property
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Wohnfläche
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="plot_area" type="PlotAreaType" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            plot area / area of the land on which the property is located
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Grundstücksfläche
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="rooms" type="RoomsValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            number of bedrooms
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Anzahl Zimmer
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="bathrooms" type="RoomsValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            number of bathrooms
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Anzahl Badezimmer
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="condition" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            condition of the home
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Instandhaltung
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="year" type="YearValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            year the property was built
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Baujahr
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="virtual_tour" type="xsd:anyURI" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            URL to the virtual tour of the property
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            URL der Virtual Tour
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="eco_score" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            information, in free-text format, about the property's energy
-            efficiency
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Energieeffizienzklasse (freier Text: A = sehr effiziente
-            Energienutzung; I = wenig effizient)
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="pictures" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            This tag includes the distinct images of the property.
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Bilder der Immobilie
-          </xsd:documentation>
-        </xsd:annotation>
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element name="picture" type="PictureType" minOccurs="0" maxOccurs="unbounded">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  This tag includes the fields to specify the URL and the title of
-                  the image (title is optional).
-                </xsd:documentation>
-                <xsd:documentation xml:lang="de">
-                  Url und Titel des Fotos (letzteres optional).
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:element>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="date" type="DateValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            date and time the ad was published
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Anzeigendatum
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="expiration_date" type="DateValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            date the ad will expire on
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Ablaufsdatum der Anzeige
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="by_owner" type="BooleanValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            whether or not the property is For Sale By Owner
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Makler / Privatperson
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="is_rent_to_own" type="BooleanValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            whether or not the property is rent to own
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Mietobjekt mit Kaufoption
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="parking" type="BooleanValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            whether or not the property has parking
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Stellplatz
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="foreclosure" type="BooleanValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            whether or not the property is in foreclosure
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Zwangsversteigerung
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="is_furnished" type="BooleanValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-             whether or not the property is furnished
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Möblierung
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="is_new" type="BooleanValue" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            whether or not the property is new
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Neubau/Altbau
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="contact_name" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            contact name
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="contact_email" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            contact's email address
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="contact_telephone" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            advertiser's phone number (numbers only, no punctuation must be
-            included)
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:all>
-  </xsd:complexType>
-
-  <xsd:complexType name="PictureType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A picture to insert or update.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Ein einzufügendes oder zu aktualisierendes Bild.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:all>
-      <xsd:element name="picture_url" type="xsd:anyURI" minOccurs="1" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Image URL
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Url des Fotos
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="picture_title" type="xsd:string" minOccurs="0" maxOccurs="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Image title
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Titel des Fotos
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:all>
-    <xsd:attribute name="featured" type="BooleanValue">
-      <xsd:annotation>
         <xsd:documentation xml:lang="en">
-          You are able to specify if the image is featured with the attribute
-          "featured".
+            XML schema of the XML feed for https://www.trovit.com/ according to the
+            specifications at:
+
+            https://corporate.trovit.com/feed-us-homes/
+            https://corporate.trovit.com/feed-de-immobilien/
+            https://corporate.trovit.com/specs-us-homes/
+
+            This unofficial XML schema was created by Andreas Rudolph and is licensed
+            under the terms of Apache License 2.0
+            (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
         </xsd:documentation>
         <xsd:documentation xml:lang="de">
-          Ein Foto kann durch den Zusatz "featured" markiert werden.
+            XML-Schema des XML-Feeds von https://www.trovit.com/ gemÃ¤ÃŸ den
+            Spezifikationen unter:
+
+            https://corporate.trovit.com/feed-us-homes/
+            https://corporate.trovit.com/feed-de-immobilien/
+            https://corporate.trovit.com/specs-us-homes/
+
+            Dieses inoffizielle XML-Schema wurde von Andreas Rudolph erstellt und
+            unter den Bedingungen der Apache License 2.0 verÃ¶ffentlicht
+            (https://github.com/OpenEstate/OpenEstate-IO/blob/master/LICENSE.txt).
         </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-  </xsd:complexType>
-
-  <xsd:simpleType name="TypeValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The type of an object.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Die Art eines Objekts.
-      </xsd:documentation>
     </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="For Rent">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            property for rent
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Immobilie zur Miete
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="For Sale">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            property for sale
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Immobilie zum Kauf
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Rentals">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            holiday apartments
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Ferienwohnungen
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Roommate">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            shared living / roommates
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            WGs
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Parking For Rent">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            parking space/ garage for rent
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Parkplatz zur Miete
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Parking For Sale">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            parking space/ garage for sale
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Parkplatz zum Kauf
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Office For Rent">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            office for rent
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Büro/Praxen zur Miete
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Office For Sale">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            office for sale
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Büro/Praxen zum Kauf
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Land For Sale">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            land for sale
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Grundstück
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="For Rent Local">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            retail property for rent
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Gastronomie/Hotel zur Miete
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="For Sale Local">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            retail property for sale
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Gastronomie/Hotel zum Kauf
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Transfer Local">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Country House Rentals">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Warehouse For Rent">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            warehouse/industrial unit for rent
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            (Lager-)Hallen/Produktion zur Miete
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Warehouse For Sale">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            warehouse/industrial unit for sale
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            (Lager-)Hallen/Produktion zum Kauf
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Overseas">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Auslandsimmobilie zum Kauf
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Short Term Rentals">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Unlisted Foreclosure">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Properties in the foreclosure process (pre-foreclosure, foreclosure
-            auction, or bank-owned) that are not actively listed for sale.
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
 
-  <xsd:simpleType name="ContentValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The description of an object with a minimum length of 30 characters.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Die Beschreibung eines Objekts mit mindestens 30 Zeichen.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:minLength value="30" />
-    </xsd:restriction>
-  </xsd:simpleType>
-
-  <xsd:complexType name="PriceType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The price of an object.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Der Preis eines Objekts.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="PriceValue">
-        <xsd:attribute name="period" type="PricePeriodValue">
-          <xsd:annotation>
+    <xsd:element name="trovit">
+        <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The default payment term is monthly but you can indicate
-              alternative payment terms (weekly or daily).
+                Sorrunding tags.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-              ???
+                UmschlieÃŸende Tags.
             </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="currency" type="PriceCurrencyValue">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              If the price is specified in a currency other than the official
-              currency (USD/$), please apply the appropriate syntax within the
-              "price" tag using ISO-4217.
-            </xsd:documentation>
-            <xsd:documentation xml:lang="de">
-              Ist der Preis der Immobilie nicht in EUR ausgegeben, verwenden Sie
-              bitte den Zusatz "currency". Die Währungsabkürzungen finden Sie
-              unter ISO-4217.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:simpleContent>
-  </xsd:complexType>
-
-  <xsd:simpleType name="PriceValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The allowed price value for an object depends on its type.
-        see https://corporate.trovit.com/specs-us-homes/
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Der Preis eines Objekts hängt von der gewählten Art ab.
-        siehe https://corporate.trovit.com/specs-us-homes/
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:decimal">
-      <xsd:minInclusive value="0" />
-      <xsd:maxInclusive value="1000000000" />
-      <xsd:fractionDigits value="2" />
-    </xsd:restriction>
-  </xsd:simpleType>
-
-  <xsd:simpleType name="PricePeriodValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The period of a price.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Der Zeitraum eines Preises.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="monthly">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            monthly
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            monatlich
-          </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="weekly">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            weekly
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            wöchentlich
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="daily">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            daily
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            täglich
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ad" type="AdType" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            List of objects to insert or update.
+                        </xsd:documentation>
+                        <xsd:documentation xml:lang="de">
+                            Liste von einzufÃ¼genden oder zu aktualisierenden Objekten.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
 
-  <xsd:simpleType name="PriceCurrencyValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The currency of a price according ISO-4217.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Die Währung eines Preises gemäß ISO-4217.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:pattern value="[A-Za-z]{3}"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-
-  <xsd:simpleType name="ForeclosureTypeValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        current status of the foreclosure property
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        ???
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="Pre Foreclosure">
+    <xsd:complexType name="AdType">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Auction">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Bank Owned">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ???
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            ???
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
-
-  <xsd:simpleType name="LatitudeValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        latitude value (from -90.0 to 90.0)
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Wert des Breitengrads (von -90.0 bis 90.0)
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:decimal">
-      <xsd:minInclusive value="-90" />
-      <xsd:maxInclusive value="90" />
-    </xsd:restriction>
-  </xsd:simpleType>
-
-  <xsd:simpleType name="LongitudeValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        longitude value (from -180.0 to 180.0)
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Wert des Längengrads (von -180.0 bis 180.0)
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:decimal">
-      <xsd:minInclusive value="-180" />
-      <xsd:maxInclusive value="180" />
-    </xsd:restriction>
-  </xsd:simpleType>
-
-  <xsd:complexType name="FloorAreaType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The floor area of an object.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Der Fläche eines Objekts.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="FloorAreaValue">
-        <xsd:attribute name="unit" type="AreaUnitValue">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The unit of the area.
+            <xsd:documentation>
+                An object to insert or update.
             </xsd:documentation>
             <xsd:documentation xml:lang="de">
-              Weist die Anzeige eine andere Maßeinheit als Quadratmeter auf,
-              kann Trovit diese mit folgendem Zusatz konvertieren.
+                Ein einzufÃ¼gendes oder zu aktualisierendes Objekt.
             </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:simpleContent>
-  </xsd:complexType>
+        </xsd:annotation>
+        <xsd:all>
+            <xsd:element name="id" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        id of the ad on your website (numeric or alphanumeric, however it
+                        must be unique because we use it to avoid duplicate entries)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        id der Anzeige (numerisch oder alphanumerisch, muss "einmalig" sein)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="url" type="xsd:anyURI" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        URL of the ad on your website
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        URL der Anzeige
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="mobile_url" type="xsd:anyURI" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        URL of the ad on your site when a user is browsing on a mobile
+                        device. Useful when your website has a mobile version.
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        URL Ihrer Website fÃ¼r Handys (mobile version)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="title" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        title of the ad (a concise summary of the listing which does not
+                        contain your websites name or URL)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzeigentitel (muss mit Anzeigeninhalt Ã¼bereinstimmen; Name der
+                        Website oder URL darf nicht genannt werden)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="type" type="TypeValue" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        select the appropriate property type per ad
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Verkaufsart
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="content" type="ContentValue" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        description of the property (minimum of 30 characters). Please note
+                        that the quality of the description has a strong effect on the
+                        amount of visitors you will receive!
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Beschreibung der Immobilie (mind. 30 Zeichen)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="price" type="PriceType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        price of the property.
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Preis der Immobilie.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="property_type" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        only applicable if you filled out "for rent" or "for sale" in the
+                        field "type"
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="foreclosure_type" type="ForeclosureTypeValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        current status of the foreclosure property. Only applicable with
+                        "For Sale", "Parking For Sale", "Office For Sale", "For Sale Local",
+                        "Warehouse For Sale" or "Unlisted Foreclosure" type.
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="address" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        street address
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Adresse/Strasse
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="floor_number" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        floor number/stories
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Stockwerk
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="neighborhood" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="city_area" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        city area or neighborhood where the property is located
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Stadtviertel
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="city" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        city name
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Stadt
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="region" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        state (state abbreviations are okay)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Bundesland
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="country" type="CountryValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        Only applicable with "Overseas" type.
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Land, in der sich Auslandsimmoblie befindet (nur fÃ¼r "Overseas"
+                        anwendbar; bitte ISO-Code angeben)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="postcode" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        zipcode
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Postleitzahl
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="latitude" type="LatitudeValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        latitude of the property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Breitengrad
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="longitude" type="LongitudeValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        longitude of the property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        LÃ¤ngengrad
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="orientation" type="OrientationValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        orientation of the property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Ausrichtung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="agency" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        name of the listing agency
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Name der Immobilienagentur
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="mls_database" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        MLS ID#
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="floor_area" type="FloorAreaType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        area of the property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        WohnflÃ¤che
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="plot_area" type="PlotAreaType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        plot area / area of the land on which the property is located
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        GrundstÃ¼cksflÃ¤che
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="rooms" type="RoomsValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        number of bedrooms
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzahl Zimmer
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="bathrooms" type="RoomsValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        number of bathrooms
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzahl Badezimmer
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="condition" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        condition of the home
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Instandhaltung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="year" type="YearValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        year the property was built
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Baujahr
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="virtual_tour" type="xsd:anyURI" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        URL to the virtual tour of the property
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        URL der Virtual Tour
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="eco_score" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        information, in free-text format, about the property's energy
+                        efficiency
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Energieeffizienzklasse (freier Text: A = sehr effiziente
+                        Energienutzung; I = wenig effizient)
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="pictures" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        This tag includes the distinct images of the property.
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Bilder der Immobilie
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="picture" type="PictureType" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:annotation>
+                                <xsd:documentation xml:lang="en">
+                                    This tag includes the fields to specify the URL and the title of
+                                    the image (title is optional).
+                                </xsd:documentation>
+                                <xsd:documentation xml:lang="de">
+                                    Url und Titel des Fotos (letzteres optional).
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="date" type="DateValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        date and time the ad was published
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Anzeigendatum
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="expiration_date" type="DateValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        date the ad will expire on
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Ablaufsdatum der Anzeige
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="by_owner" type="BooleanValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        whether or not the property is For Sale By Owner
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Makler / Privatperson
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="is_rent_to_own" type="BooleanValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        whether or not the property is rent to own
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Mietobjekt mit Kaufoption
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="parking" type="BooleanValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        whether or not the property has parking
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Stellplatz
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="foreclosure" type="BooleanValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        whether or not the property is in foreclosure
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Zwangsversteigerung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="is_furnished" type="BooleanValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        whether or not the property is furnished
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        MÃ¶blierung
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="is_new" type="BooleanValue" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        whether or not the property is new
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Neubau/Altbau
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="contact_name" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        contact name
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="contact_email" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        contact's email address
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="contact_telephone" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        advertiser's phone number (numbers only, no punctuation must be
+                        included)
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
 
-  <xsd:simpleType name="FloorAreaValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        floor area value (from 20 to 50000)
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Wert der Fläche (von 20 bis 50000)
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:integer">
-      <xsd:minInclusive value="20" />
-      <xsd:maxInclusive value="50000" />
-    </xsd:restriction>
-  </xsd:simpleType>
-
-  <xsd:complexType name="PlotAreaType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The plot area of an object.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Der Grundstücksfläche eines Objekts.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="PlotAreaValue">
-        <xsd:attribute name="unit" type="AreaUnitValue">
-          <xsd:annotation>
+    <xsd:complexType name="PictureType">
+        <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The unit of the area.
+                A picture to insert or update.
             </xsd:documentation>
-            <xsd:documentation xml:lang="en">
-              Die Einheit der Fläche.
+            <xsd:documentation xml:lang="de">
+                Ein einzufÃ¼gendes oder zu aktualisierendes Bild.
             </xsd:documentation>
-          </xsd:annotation>
+        </xsd:annotation>
+        <xsd:all>
+            <xsd:element name="picture_url" type="xsd:anyURI" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        Image URL
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Url des Fotos
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="picture_title" type="xsd:string" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        Image title
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Titel des Fotos
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:all>
+        <xsd:attribute name="featured" type="BooleanValue">
+            <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                    You are able to specify if the image is featured with the attribute
+                    "featured".
+                </xsd:documentation>
+                <xsd:documentation xml:lang="de">
+                    Ein Foto kann durch den Zusatz "featured" markiert werden.
+                </xsd:documentation>
+            </xsd:annotation>
         </xsd:attribute>
-      </xsd:extension>
-    </xsd:simpleContent>
-  </xsd:complexType>
+    </xsd:complexType>
 
-  <xsd:simpleType name="PlotAreaValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        plot area value (from 1 to 1000000000
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Wert der Grundstücksfläche (von 1 bis 1000000000
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:integer">
-      <xsd:minInclusive value="1" />
-      <xsd:maxInclusive value="1000000000" />
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="TypeValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                The type of an object.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Die Art eines Objekts.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="For Rent">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property for rent
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Immobilie zur Miete
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="For Sale">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        property for sale
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Immobilie zum Kauf
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Rentals">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        holiday apartments
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Ferienwohnungen
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Roommate">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        shared living / roommates
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        WGs
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Parking For Rent">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        parking space/ garage for rent
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Parkplatz zur Miete
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Parking For Sale">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        parking space/ garage for sale
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Parkplatz zum Kauf
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Office For Rent">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        office for rent
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        BÃ¼ro/Praxen zur Miete
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Office For Sale">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        office for sale
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        BÃ¼ro/Praxen zum Kauf
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Land For Sale">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        land for sale
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        GrundstÃ¼ck
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="For Rent Local">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        retail property for rent
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Gastronomie/Hotel zur Miete
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="For Sale Local">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        retail property for sale
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Gastronomie/Hotel zum Kauf
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Transfer Local">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Country House Rentals">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Warehouse For Rent">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        warehouse/industrial unit for rent
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        (Lager-)Hallen/Produktion zur Miete
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Warehouse For Sale">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        warehouse/industrial unit for sale
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        (Lager-)Hallen/Produktion zum Kauf
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Overseas">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Auslandsimmobilie zum Kauf
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Short Term Rentals">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Unlisted Foreclosure">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        Properties in the foreclosure process (pre-foreclosure, foreclosure
+                        auction, or bank-owned) that are not actively listed for sale.
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <xsd:simpleType name="AreaUnitValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The unit of an area.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Die Einheit einer Fläche.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="feet">
+    <xsd:simpleType name="ContentValue">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            square feet
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Quadratfuß
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                The description of an object with a minimum length of 30 characters.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Die Beschreibung eines Objekts mit mindestens 30 Zeichen.
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="acres">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            acres
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Acres
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="meters">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            square meters
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Quadratmeter
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="hectares">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            hectares
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Hektar
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <xsd:simpleType name="RoomsValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        room number value
-        It can be an Integer, a Decimal with 0 or 5 as the decimal part
-        (e.g. 3.0, 1.5), or two consecutive numbers with a dash (e.g. 1-2, 3-4).
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Wert der Zimmerzahl
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:pattern value="\d+(\.(0|5))?(\-\d+(\.(0|5))?)?"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:complexType name="PriceType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                The price of an object.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Der Preis eines Objekts.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="PriceValue">
+                <xsd:attribute name="period" type="PricePeriodValue">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            The default payment term is monthly but you can indicate
+                            alternative payment terms (weekly or daily).
+                        </xsd:documentation>
+                        <xsd:documentation xml:lang="de">
+                            ???
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="currency" type="PriceCurrencyValue">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            If the price is specified in a currency other than the official
+                            currency (USD/$), please apply the appropriate syntax within the
+                            "price" tag using ISO-4217.
+                        </xsd:documentation>
+                        <xsd:documentation xml:lang="de">
+                            Ist der Preis der Immobilie nicht in EUR ausgegeben, verwenden Sie
+                            bitte den Zusatz "currency". Die WÃ¤hrungsabkÃ¼rzungen finden Sie
+                            unter ISO-4217.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
 
-  <xsd:simpleType name="YearValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        year number value
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Wert der Jahreszahl
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:integer">
-      <xsd:minInclusive value="1700" />
-      <xsd:maxInclusive value="9999" />
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="PriceValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                The allowed price value for an object depends on its type.
+                see https://corporate.trovit.com/specs-us-homes/
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Der Preis eines Objekts hÃ¤ngt von der gewÃ¤hlten Art ab.
+                siehe https://corporate.trovit.com/specs-us-homes/
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="1000000000"/>
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <xsd:simpleType name="DateValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        date value
-        Formats accepted:
-        DD/MM/YYYY or DD/MM/YYYY HH:MM:SS
-        DD-MM-YYYY or DD-MM-YYYY HH:MM:SS
-        YYYY/MM/DD or YYYY/MM/DD HH:MM:SS
-        YYYY-MM-DD or YYYY-MM-DD HH:MM:SS
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Wert des Datums
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:pattern value="(\d{2}/\d{2}/\d{4}(\s\d{2}:\d{2}:\d{2})?|\d{2}\-\d{2}\-\d{4}(\s\d{2}:\d{2}:\d{2})?|\d{4}/\d{2}/\d{2}(\s\d{2}:\d{2}:\d{2})?|\d{4}\-\d{2}\-\d{2}(\s\d{2}:\d{2}:\d{2})?)"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="PricePeriodValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                The period of a price.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Der Zeitraum eines Preises.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="monthly">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        monthly
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        monatlich
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="weekly">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        weekly
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        wÃ¶chentlich
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="daily">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        daily
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        tÃ¤glich
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <xsd:simpleType name="BooleanValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Valid boolean values.
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Gültige Boolean-Werte.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="true">
+    <xsd:simpleType name="PriceCurrencyValue">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            true
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            wahr
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                The currency of a price according ISO-4217.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Die WÃ¤hrung eines Preises gemÃ¤ÃŸ ISO-4217.
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="yes">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            true
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            wahr
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="si">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            true
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            wahr
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="1">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            true
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            wahr
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="false">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            false
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            falsch
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="no">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            false
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            falsch
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            false
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            falsch
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Za-z]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <xsd:simpleType name="CountryValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        country ISO code
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        ISO code des Landes
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:pattern value="[a-zA-Z]{2,3}"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+    <xsd:simpleType name="ForeclosureTypeValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                current status of the foreclosure property
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                ???
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Pre Foreclosure">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Auction">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Bank Owned">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        ???
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        ???
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 
-  <xsd:simpleType name="OrientationValue">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        orientation value
-      </xsd:documentation>
-      <xsd:documentation xml:lang="de">
-        Werte für Ausrichtungen
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="North">
+    <xsd:simpleType name="LatitudeValue">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            North
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Norden
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                latitude value (from -90.0 to 90.0)
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert des Breitengrads (von -90.0 bis 90.0)
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Nord">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="-90"/>
+            <xsd:maxInclusive value="90"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="LongitudeValue">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            North
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Norden
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                longitude value (from -180.0 to 180.0)
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert des LÃ¤ngengrads (von -180.0 bis 180.0)
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="South">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="-180"/>
+            <xsd:maxInclusive value="180"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="FloorAreaType">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            South
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Süden
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                The floor area of an object.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Der FlÃ¤che eines Objekts.
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Süd">
+        <xsd:simpleContent>
+            <xsd:extension base="FloorAreaValue">
+                <xsd:attribute name="unit" type="AreaUnitValue">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            The unit of the area.
+                        </xsd:documentation>
+                        <xsd:documentation xml:lang="de">
+                            Weist die Anzeige eine andere MaÃŸeinheit als Quadratmeter auf,
+                            kann Trovit diese mit folgendem Zusatz konvertieren.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="FloorAreaValue">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            South
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Süden
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                floor area value (from 20 to 50000)
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert der FlÃ¤che (von 20 bis 50000)
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="East">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="20"/>
+            <xsd:maxInclusive value="50000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="PlotAreaType">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            East
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Osten
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                The plot area of an object.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Der GrundstÃ¼cksflÃ¤che eines Objekts.
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Ost">
+        <xsd:simpleContent>
+            <xsd:extension base="PlotAreaValue">
+                <xsd:attribute name="unit" type="AreaUnitValue">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                            The unit of the area.
+                        </xsd:documentation>
+                        <xsd:documentation xml:lang="en">
+                            Die Einheit der FlÃ¤che.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="PlotAreaValue">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            East
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Osten
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                plot area value (from 1 to 1000000000
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert der GrundstÃ¼cksflÃ¤che (von 1 bis 1000000000
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="West">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="1000000000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="AreaUnitValue">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            West
-          </xsd:documentation>
-          <xsd:documentation xml:lang="de">
-            Westen
-          </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+                The unit of an area.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Die Einheit einer FlÃ¤che.
+            </xsd:documentation>
         </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="feet">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        square feet
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        QuadratfuÃŸ
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="acres">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        acres
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Acres
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="meters">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        square meters
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Quadratmeter
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="hectares">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        hectares
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Hektar
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RoomsValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                room number value
+                It can be an Integer, a Decimal with 0 or 5 as the decimal part
+                (e.g. 3.0, 1.5), or two consecutive numbers with a dash (e.g. 1-2, 3-4).
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert der Zimmerzahl
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d+(\.(0|5))?(\-\d+(\.(0|5))?)?"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="YearValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                year number value
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert der Jahreszahl
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1700"/>
+            <xsd:maxInclusive value="9999"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DateValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                date value
+                Valid formats:
+                DD/MM/YYYY or DD/MM/YYYY HH:MM:SS and
+                YYYY/MM/DD or YYYY/MM/DD HH:MM:SS
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Wert des Datums
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(\d{1,2}/\d{1,2}/\d{4}(\s\d{1,2}:\d{1,2}(:\d{1,2})?)?)|(\d{4}/\d{1,2}/\d{1,2}(\s\d{1,2}:\d{1,2}(:\d{1,2})?)?)"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="BooleanValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Valid boolean values.
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                GÃ¼ltige Boolean-Werte.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="true">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        true
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        wahr
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="yes">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        true
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        wahr
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="si">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        true
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        wahr
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="1">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        true
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        wahr
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="false">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        false
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        falsch
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="no">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        false
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        falsch
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="0">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        false
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        falsch
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="CountryValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                country ISO code
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                ISO code des Landes
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-zA-Z]{2,3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="OrientationValue">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                orientation value
+            </xsd:documentation>
+            <xsd:documentation xml:lang="de">
+                Werte fÃ¼r Ausrichtungen
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="North">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        North
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Norden
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Nord">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        North
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Norden
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="South">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        South
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        SÃ¼den
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SÃ¼d">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        South
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        SÃ¼den
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="East">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        East
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Osten
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Ost">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        East
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Osten
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="West">
+                <xsd:annotation>
+                    <xsd:documentation xml:lang="en">
+                        West
+                    </xsd:documentation>
+                    <xsd:documentation xml:lang="de">
+                        Westen
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 
 </xsd:schema>

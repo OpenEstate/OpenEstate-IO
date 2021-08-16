@@ -705,8 +705,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VirtuelleImmobilieBaseTyp }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "VirtuelleImmobilie")
     public JAXBElement<VirtuelleImmobilieBaseTyp> createVirtuelleImmobilie(VirtuelleImmobilieBaseTyp value) {
@@ -714,8 +718,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ImmobilieBaseTyp }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Immobilie")
     public JAXBElement<ImmobilieBaseTyp> createImmobilie(ImmobilieBaseTyp value) {
@@ -723,8 +731,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WohnungKauf }}
+     * Create an instance of {@link WohnungKauf }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link WohnungKauf }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "WohnungKauf", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public WohnungKauf createWohnungKauf(WohnungKauf.Type value) {
@@ -732,8 +744,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WohnungMiete }}
+     * Create an instance of {@link WohnungMiete }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link WohnungMiete }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "WohnungMiete", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public WohnungMiete createWohnungMiete(WohnungMiete.Type value) {
@@ -741,8 +757,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HausKauf }}
+     * Create an instance of {@link HausKauf }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link HausKauf }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "HausKauf", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public HausKauf createHausKauf(HausKauf.Type value) {
@@ -750,8 +770,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HausMiete }}
+     * Create an instance of {@link HausMiete }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link HausMiete }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "HausMiete", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public HausMiete createHausMiete(HausMiete.Type value) {
@@ -759,8 +783,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WAZ }}
+     * Create an instance of {@link WAZ }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link WAZ }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "WAZ", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public WAZ createWAZ(WAZ.Type value) {
@@ -768,8 +796,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Grundstueck }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Grundstueck", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public JAXBElement<Grundstueck> createGrundstueck(Grundstueck value) {
@@ -777,8 +809,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GrundstueckWohnenKauf }}
+     * Create an instance of {@link GrundstueckWohnenKauf }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link GrundstueckWohnenKauf }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "GrundstueckWohnenKauf", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public GrundstueckWohnenKauf createGrundstueckWohnenKauf(GrundstueckWohnenKauf.Type value) {
@@ -786,8 +822,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GrundstueckWohnenMiete }}
+     * Create an instance of {@link GrundstueckWohnenMiete }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link GrundstueckWohnenMiete }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "GrundstueckWohnenMiete", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public GrundstueckWohnenMiete createGrundstueckWohnenMiete(GrundstueckWohnenMiete.Type value) {
@@ -795,8 +835,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GrundstueckGewerbe }}
+     * Create an instance of {@link GrundstueckGewerbe }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link GrundstueckGewerbe }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "GrundstueckGewerbe", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public GrundstueckGewerbe createGrundstueckGewerbe(GrundstueckGewerbe.Type value) {
@@ -804,8 +848,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link TypenHaus }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link TypenHaus }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TypenHaus }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "TypenHaus", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "VirtuelleImmobilie")
     public JAXBElement<TypenHaus> createTypenHaus(TypenHaus value) {
@@ -813,8 +861,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BueroPraxis }}
+     * Create an instance of {@link BueroPraxis }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link BueroPraxis }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "BueroPraxis", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public BueroPraxis createBueroPraxis(BueroPraxis.Type value) {
@@ -822,8 +874,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Einzelhandel }}
+     * Create an instance of {@link Einzelhandel }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link Einzelhandel }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Einzelhandel", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public Einzelhandel createEinzelhandel(Einzelhandel.Type value) {
@@ -831,8 +887,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Gastronomie }}
+     * Create an instance of {@link Gastronomie }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link Gastronomie }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Gastronomie", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public Gastronomie createGastronomie(Gastronomie.Type value) {
@@ -840,8 +900,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HalleProduktion }}
+     * Create an instance of {@link HalleProduktion }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link HalleProduktion }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "HalleProduktion", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public HalleProduktion createHalleProduktion(HalleProduktion.Type value) {
@@ -849,8 +913,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SonstigeGewerbe }}
+     * Create an instance of {@link SonstigeGewerbe }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link SonstigeGewerbe }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "SonstigeGewerbe", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public SonstigeGewerbe createSonstigeGewerbe(SonstigeGewerbe.Type value) {
@@ -858,8 +926,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Anlageobjekt }}
+     * Create an instance of {@link Anlageobjekt }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link Anlageobjekt }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Anlageobjekt", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public Anlageobjekt createAnlageobjekt(Anlageobjekt.Type value) {
@@ -867,8 +939,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GarageMiete }}
+     * Create an instance of {@link GarageMiete }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link GarageMiete }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "GarageMiete", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public GarageMiete createGarageMiete(GarageMiete.Type value) {
@@ -876,8 +952,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GarageKauf }}
+     * Create an instance of {@link GarageKauf }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link GarageKauf }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "GarageKauf", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public GarageKauf createGarageKauf(GarageKauf.Type value) {
@@ -885,8 +965,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Zwangsversteigerung }}
+     * Create an instance of {@link Zwangsversteigerung }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link Zwangsversteigerung }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Zwangsversteigerung", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public Zwangsversteigerung createZwangsversteigerung(Zwangsversteigerung.Type value) {
@@ -894,8 +978,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WGZimmer }}
+     * Create an instance of {@link WGZimmer }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link WGZimmer }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "WGZimmer", substitutionHeadNamespace = "http://www.immobilienscout24.de/immobilientransfer", substitutionHeadName = "Immobilie")
     public WGZimmer createWGZimmer(WGZimmer.Type value) {
@@ -903,8 +991,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link IS24ImmobilienTransfer }}
+     * Create an instance of {@link IS24ImmobilienTransfer }
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link IS24ImmobilienTransfer }
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "IS24ImmobilienTransfer")
     public IS24ImmobilienTransfer createIS24ImmobilienTransfer(ImmobilienTransferTyp value) {
@@ -912,8 +1004,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfelder", scope = ImmobilieBaseTyp.class)
     public JAXBElement<ApiSuchfelderTyp> createImmobilieBaseTypApiSuchfelder(ApiSuchfelderTyp value) {
@@ -921,8 +1017,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HebeanlageTyp }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link HebeanlageTyp }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link HebeanlageTyp }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Lastenaufzug", scope = EinzelhandelTyp.class)
     public JAXBElement<HebeanlageTyp> createEinzelhandelTypLastenaufzug(HebeanlageTyp value) {
@@ -930,8 +1030,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ApiSuchfelderTyp }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfelder", scope = VirtuelleImmobilieBaseTyp.class)
     public JAXBElement<ApiSuchfelderTyp> createVirtuelleImmobilieBaseTypApiSuchfelder(ApiSuchfelderTyp value) {
@@ -939,8 +1043,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Ackerland", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungAckerland(Object value) {
@@ -948,8 +1056,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Bauerwartungsland", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungBauerwartungsland(Object value) {
@@ -957,8 +1069,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Bootsstaende", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungBootsstaende(Object value) {
@@ -966,8 +1082,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Buero", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungBuero(Object value) {
@@ -975,8 +1095,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Camping", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungCamping(Object value) {
@@ -984,8 +1108,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Doppelhaus", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungDoppelhaus(Object value) {
@@ -993,8 +1121,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Einfamilienhaus", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungEinfamilienhaus(Object value) {
@@ -1002,8 +1134,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Einzelhandel-gross", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungEinzelhandelGross(Object value) {
@@ -1011,8 +1147,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Einzelhandel-klein", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungEinzelhandelKlein(Object value) {
@@ -1020,8 +1160,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Garagen", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungGaragen(Object value) {
@@ -1029,8 +1173,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Garten", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungGarten(Object value) {
@@ -1038,8 +1186,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Gastronomie", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungGastronomie(Object value) {
@@ -1047,8 +1199,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Gewerbe", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungGewerbe(Object value) {
@@ -1056,8 +1212,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Hotel", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungHotel(Object value) {
@@ -1065,8 +1225,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Industrie", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungIndustrie(Object value) {
@@ -1074,8 +1238,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "keineBebauung", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungKeineBebauung(Object value) {
@@ -1083,8 +1251,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kleingewerbe", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungKleingewerbe(Object value) {
@@ -1092,8 +1264,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Lager", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungLager(Object value) {
@@ -1101,8 +1277,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Mehrfamilienhaus", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungMehrfamilienhaus(Object value) {
@@ -1110,8 +1290,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Obstpflanzung", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungObstpflanzung(Object value) {
@@ -1119,8 +1303,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Parkhaus", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungParkhaus(Object value) {
@@ -1128,8 +1316,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Produktion", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungProduktion(Object value) {
@@ -1137,8 +1329,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Reihenhaus", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungReihenhaus(Object value) {
@@ -1146,8 +1342,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Stellplaetze", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungStellplaetze(Object value) {
@@ -1155,8 +1355,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Villa", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungVilla(Object value) {
@@ -1164,8 +1368,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Wald", scope = GrundstueckEmpfohleneNutzung.class)
     public JAXBElement<Object> createGrundstueckEmpfohleneNutzungWald(Object value) {
@@ -1173,8 +1381,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "KeineAngabe", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypKeineAngabe(Object value) {
@@ -1182,8 +1394,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erdwaerme", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypErdwaerme(Object value) {
@@ -1191,8 +1407,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Solarheizung", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypSolarheizung(Object value) {
@@ -1200,8 +1420,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pelletheizung", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypPelletheizung(Object value) {
@@ -1209,8 +1433,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Gas", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypGas(Object value) {
@@ -1218,8 +1446,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Oel", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypOel(Object value) {
@@ -1227,8 +1459,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Fernwaerme", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypFernwaerme(Object value) {
@@ -1236,8 +1472,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Strom", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypStrom(Object value) {
@@ -1245,8 +1485,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kohle", scope = BefeuerungsArtTyp.class)
     public JAXBElement<Object> createBefeuerungsArtTypKohle(Object value) {
@@ -1254,8 +1498,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGewerbeTyp2 .class)
     public JAXBElement<Object> createVermarktungGewerbeTyp2Kauf(Object value) {
@@ -1263,8 +1511,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Miete }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Miete }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Miete }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGewerbeTyp.class)
     public JAXBElement<VermarktungGewerbeTyp.Miete> createVermarktungGewerbeTypMiete(VermarktungGewerbeTyp.Miete value) {
@@ -1272,8 +1524,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Kauf }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Kauf }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGewerbeTyp.Kauf }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGewerbeTyp.class)
     public JAXBElement<VermarktungGewerbeTyp.Kauf> createVermarktungGewerbeTypKauf(VermarktungGewerbeTyp.Kauf value) {
@@ -1281,8 +1537,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Pacht }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Pacht }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Pacht }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckWohnenMieteTyp.class)
     public JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Pacht> createVermarktungGrundstueckWohnenMieteTypPacht(VermarktungGrundstueckWohnenMieteTyp.Pacht value) {
@@ -1290,8 +1550,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Miete }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Miete }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenMieteTyp.Miete }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGrundstueckWohnenMieteTyp.class)
     public JAXBElement<VermarktungGrundstueckWohnenMieteTyp.Miete> createVermarktungGrundstueckWohnenMieteTypMiete(VermarktungGrundstueckWohnenMieteTyp.Miete value) {
@@ -1299,8 +1563,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Kauf }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Kauf }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Kauf }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckWohnenKaufTyp.class)
     public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Kauf> createVermarktungGrundstueckWohnenKaufTypKauf(VermarktungGrundstueckWohnenKaufTyp.Kauf value) {
@@ -1308,8 +1576,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Erbpacht }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Erbpacht }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckWohnenKaufTyp.Erbpacht }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckWohnenKaufTyp.class)
     public JAXBElement<VermarktungGrundstueckWohnenKaufTyp.Erbpacht> createVermarktungGrundstueckWohnenKaufTypErbpacht(VermarktungGrundstueckWohnenKaufTyp.Erbpacht value) {
@@ -1317,8 +1589,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Kauf }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Kauf }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Kauf }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckTypAlt.class)
     public JAXBElement<VermarktungGrundstueckTypAlt.Kauf> createVermarktungGrundstueckTypAltKauf(VermarktungGrundstueckTypAlt.Kauf value) {
@@ -1326,8 +1602,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Pacht }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Pacht }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Pacht }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckTypAlt.class)
     public JAXBElement<VermarktungGrundstueckTypAlt.Pacht> createVermarktungGrundstueckTypAltPacht(VermarktungGrundstueckTypAlt.Pacht value) {
@@ -1335,8 +1615,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Erbpacht }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Erbpacht }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckTypAlt.Erbpacht }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckTypAlt.class)
     public JAXBElement<VermarktungGrundstueckTypAlt.Erbpacht> createVermarktungGrundstueckTypAltErbpacht(VermarktungGrundstueckTypAlt.Erbpacht value) {
@@ -1344,8 +1628,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Kauf }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Kauf }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Kauf }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Kauf", scope = VermarktungGrundstueckGewerbeTyp.class)
     public JAXBElement<VermarktungGrundstueckGewerbeTyp.Kauf> createVermarktungGrundstueckGewerbeTypKauf(VermarktungGrundstueckGewerbeTyp.Kauf value) {
@@ -1353,8 +1641,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Pacht }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Pacht }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Pacht }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Pacht", scope = VermarktungGrundstueckGewerbeTyp.class)
     public JAXBElement<VermarktungGrundstueckGewerbeTyp.Pacht> createVermarktungGrundstueckGewerbeTypPacht(VermarktungGrundstueckGewerbeTyp.Pacht value) {
@@ -1362,8 +1654,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Erbpacht }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Erbpacht }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Erbpacht }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Erbpacht", scope = VermarktungGrundstueckGewerbeTyp.class)
     public JAXBElement<VermarktungGrundstueckGewerbeTyp.Erbpacht> createVermarktungGrundstueckGewerbeTypErbpacht(VermarktungGrundstueckGewerbeTyp.Erbpacht value) {
@@ -1371,8 +1667,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Miete }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Miete }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link VermarktungGrundstueckGewerbeTyp.Miete }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "Miete", scope = VermarktungGrundstueckGewerbeTyp.class)
     public JAXBElement<VermarktungGrundstueckGewerbeTyp.Miete> createVermarktungGrundstueckGewerbeTypMiete(VermarktungGrundstueckGewerbeTyp.Miete value) {
@@ -1380,8 +1680,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld1", scope = ApiSuchfelderTyp.class)
     public JAXBElement<String> createApiSuchfelderTypApiSuchfeld1(String value) {
@@ -1389,8 +1693,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld2", scope = ApiSuchfelderTyp.class)
     public JAXBElement<String> createApiSuchfelderTypApiSuchfeld2(String value) {
@@ -1398,8 +1706,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "http://www.immobilienscout24.de/immobilientransfer", name = "ApiSuchfeld3", scope = ApiSuchfelderTyp.class)
     public JAXBElement<String> createApiSuchfelderTypApiSuchfeld3(String value) {

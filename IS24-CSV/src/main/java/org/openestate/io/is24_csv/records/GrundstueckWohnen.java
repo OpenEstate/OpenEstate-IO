@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class GrundstueckWohnen extends Grundstueck {
     private final static Logger LOGGER = LoggerFactory.getLogger(GrundstueckWohnen.class);
 
@@ -93,7 +93,7 @@ public class GrundstueckWohnen extends Grundstueck {
     protected final static int FIELD_KURZFRISTIG_BEBAUBAR = 72;
 
     /**
-     * Frei ab/Verfügbar ab/Antrittstermin, Text 50
+     * frei ab / verfügbar ab / Antrittstermin, Text 50
      */
     protected final static int FIELD_VERFUEGBAR_AB = 73;
 
@@ -108,27 +108,31 @@ public class GrundstueckWohnen extends Grundstueck {
         this.setObjektkategorie(ObjektkategorieGrundstueck.WOHNEN);
     }
 
+    @SuppressWarnings("unused")
     public Boolean getAbrissErforderlich() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_ABRISS_ERFORDERLICH));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getBaugenehmigungVorhanden() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_BAUGENEHMIGUNG_VORHANDEN));
     }
 
+    @SuppressWarnings("unused")
     public BebaubarNach getBebaubarNach() {
         return BebaubarNach.parse(
                 this.get(FIELD_BEBAUBAR_NACH));
     }
 
+    @SuppressWarnings("unused")
     public NutzungGrundstueckWohnen[] getEmpfohleneNutzung() {
         return NutzungGrundstueckWohnen.parseMultiple(
                 this.get(FIELD_EMPFOHLENE_NUTZUNG));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getErbpachtdauer() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -140,12 +144,13 @@ public class GrundstueckWohnen extends Grundstueck {
         }
     }
 
+    @SuppressWarnings("unused")
     public Erschliessung getErschliessung() {
         return Erschliessung.parse(
                 this.get(FIELD_ERSCHLIESSUNG));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Long getFlaecheTeilbarAb() {
         try {
             return Is24CsvFormat.parseLong(
@@ -157,7 +162,7 @@ public class GrundstueckWohnen extends Grundstueck {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getGeschossflaechenzahl() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -169,7 +174,7 @@ public class GrundstueckWohnen extends Grundstueck {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getGrundflaechenzahl() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -193,6 +198,7 @@ public class GrundstueckWohnen extends Grundstueck {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getKurzfristigBebaubar() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_KURZFRISTIG_BEBAUBAR));
@@ -231,26 +237,31 @@ public class GrundstueckWohnen extends Grundstueck {
         return super.print();
     }
 
+    @SuppressWarnings("unused")
     public void setAbrissErforderlich(Boolean value) {
         this.set(FIELD_ABRISS_ERFORDERLICH,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setBaugenehmigungVorhanden(Boolean value) {
         this.set(FIELD_BAUGENEHMIGUNG_VORHANDEN,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setBebaubarNach(BebaubarNach value) {
         this.set(FIELD_BEBAUBAR_NACH,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setEmpfohleneNutzung(NutzungGrundstueckWohnen value) {
         this.set(FIELD_EMPFOHLENE_NUTZUNG,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setEmpfohleneNutzung(Iterable<NutzungGrundstueckWohnen> values) {
         this.set(FIELD_EMPFOHLENE_NUTZUNG,
                 NutzungGrundstueckWohnen.printMultiple(values));
@@ -261,21 +272,25 @@ public class GrundstueckWohnen extends Grundstueck {
                 Is24CsvFormat.printNumber(value, 3));
     }
 
+    @SuppressWarnings("unused")
     public void setErschliessung(Erschliessung value) {
         this.set(FIELD_ERSCHLIESSUNG,
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setFlaecheTeilbarAb(Number value) {
         this.set(FIELD_FLAECHE_TEILBAR_AB,
                 Is24CsvFormat.printNumber(value, 8));
     }
 
+    @SuppressWarnings("unused")
     public void setGeschossflaechenzahl(Number value) {
         this.set(FIELD_GESCHOSSFLAECHENZAHL,
                 Is24CsvFormat.printNumber(value, 3, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setGrundflaechenzahl(Number value) {
         this.set(FIELD_GRUNDFLAECHENZAHL,
                 Is24CsvFormat.printNumber(value, 3, 2));
@@ -286,6 +301,7 @@ public class GrundstueckWohnen extends Grundstueck {
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setKurzfristigBebaubar(Boolean value) {
         this.set(FIELD_KURZFRISTIG_BEBAUBAR,
                 Is24CsvFormat.printBoolean(value));

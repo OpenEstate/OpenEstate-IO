@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://feeds.idealista.com/v6/schemas/properties/garage.json",
+  "title": "Garaje Object",
+  "type": "object",
+  "extends": {
+    "$ref": "../custom/abstractFeatures.json"
+  },
+  "javaType": "org.openestate.io.idealista.json.GarageFeatures",
+  "additionalProperties": true,
+  "required": [
+    "featuresType",
+    "featuresAreaConstructed"
+  ],
+  "properties": {
+    "featuresType": {
+      "title": "property types",
+      "enum": [
+        "garage"
+      ],
+      "javaName": "type"
+    },
+    "featuresAreaConstructed": {
+      "$ref": "features.json#/featuresAreaConstructed",
+      "javaName": "areaConstructed"
+    },
+    "featuresLiftAvailable": {
+      "$ref": "features.json#/featuresLiftAvailable",
+      "javaName": "liftAvailable"
+    },
+    "featuresParkingAutomaticDoor": {
+      "$ref": "features.json#/featuresParkingAutomaticDoor",
+      "javaName": "parkingAutomaticDoor"
+    },
+    "featuresParkingPlaceCovered": {
+      "$ref": "features.json#/featuresParkingPlaceCovered",
+      "javaName": "parkingPlaceCovered"
+    },
+    "featuresParkingType": {
+      "$ref": "features.json#/featuresParkingType",
+      "javaName": "parkingType"
+    },
+    "featuresSecurityAlarm": {
+      "$ref": "features.json#/featuresSecurityAlarm",
+      "javaName": "securityAlarm"
+    },
+    "featuresSecurityPersonnel": {
+      "$ref": "features.json#/featuresSecurityPersonnel",
+      "javaName": "securityPersonnel"
+    },
+    "featuresSecuritySystem": {
+      "$ref": "features.json#/featuresSecuritySystem",
+      "javaName": "securitySystem"
+    }
+  }
+}

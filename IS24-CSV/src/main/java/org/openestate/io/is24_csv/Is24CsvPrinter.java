@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class Is24CsvPrinter extends CsvPrinter<Is24CsvRecord> {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(Is24CsvPrinter.class);
@@ -109,7 +108,7 @@ public class Is24CsvPrinter extends CsvPrinter<Is24CsvRecord> {
     protected void print(String value) throws IOException {
         value = StringUtils.trimToNull(value);
 
-        // IS24-CSV does not support escaping of the field separator. Therefore the
+        // IS24-CSV does not support escaping of the field separator. Therefore, the
         // field separator '|' is replaced with '/' from the value before it is
         // written to CSV.
         value = StringUtils.replace(value, "|", "/");

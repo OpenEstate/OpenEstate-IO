@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings({"WeakerAccess", "unused", "SpellCheckingInspection"})
+@SuppressWarnings("SpellCheckingInspection")
 public class Anlageobjekt extends Is24CsvRecord {
     private final static Logger LOGGER = LoggerFactory.getLogger(Anlageobjekt.class);
 
@@ -205,7 +205,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         this.setImmobilienart(Immobilienart.ANLAGE);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getAnzahlParkflaechen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -239,6 +239,7 @@ public class Anlageobjekt extends Is24CsvRecord {
                 this.get(FIELD_BEFEUERUNG));
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getBetriebskostenUmgelegt() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -250,6 +251,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public Boolean getDenkmalschutz() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_DENKMALSCHUTZ));
@@ -277,11 +279,12 @@ public class Anlageobjekt extends Is24CsvRecord {
                 this.get(FIELD_ENERGIEAUSWEIS_TYP));
     }
 
+    @SuppressWarnings("unused")
     public String getEtagen() {
         return this.get(FIELD_ETAGEN);
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFahrtwegAutobahn() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -293,7 +296,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFahrtwegFlughafen() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -305,7 +308,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFahrtwegHauptbahnhof() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -317,7 +320,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public Integer getFusswegNahverkehr() {
         try {
             return Is24CsvFormat.parseInteger(
@@ -329,7 +332,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getGesamtflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -341,7 +344,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getGewerbeflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -382,6 +385,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getKaufpreisProQm() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -393,6 +397,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getMieteinnahmenIst() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -404,6 +409,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getMieteinnahmenSoll() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -415,6 +421,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getNichtUmgelegteKosten() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -436,12 +443,13 @@ public class Anlageobjekt extends Is24CsvRecord {
                 this.get(FIELD_OBJEKTZUSTAND));
     }
 
+    @SuppressWarnings("unused")
     public Boolean getPersonenaufzug() {
         return Is24CsvFormat.parseBoolean(
                 this.get(FIELD_PERSONENAUFZUG));
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getPreisProParkflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -465,6 +473,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getSonstigeFlaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -476,6 +485,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getVermietbareFlaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -487,7 +497,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
-    @SuppressWarnings("Duplicates")
+    @SuppressWarnings({"Duplicates", "unused"})
     public BigDecimal getWohnflaeche() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -499,6 +509,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         }
     }
 
+    @SuppressWarnings("unused")
     public BigDecimal getXFache() {
         try {
             return Is24CsvFormat.parseDecimal(
@@ -522,6 +533,7 @@ public class Anlageobjekt extends Is24CsvRecord {
         return super.print();
     }
 
+    @SuppressWarnings("unused")
     public void setAnzahlParkflaechen(Number value) {
         this.set(FIELD_ANZAHL_PARKFLAECHEN,
                 Is24CsvFormat.printNumber(value, 5));
@@ -547,11 +559,13 @@ public class Anlageobjekt extends Is24CsvRecord {
                 Befeuerungsart.printMultiple(values));
     }
 
+    @SuppressWarnings("unused")
     public void setBetriebskostenUmgelegt(Number value) {
         this.set(FIELD_BETRIEBSKOSTEN_UMGELEGT,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setDenkmalschutz(Boolean value) {
         this.set(FIELD_DENKMALSCHUTZ,
                 Is24CsvFormat.printBoolean(value));
@@ -577,31 +591,37 @@ public class Anlageobjekt extends Is24CsvRecord {
                 Is24CsvFormat.printString(value, 50));
     }
 
+    @SuppressWarnings("unused")
     public void setFahrtwegAutobahn(Number value) {
         this.set(FIELD_FAHRTWEG_AUTOBAHN,
                 Is24CsvFormat.printNumber(value, 3));
     }
 
+    @SuppressWarnings("unused")
     public void setFahrtwegFlughafen(Number value) {
         this.set(FIELD_FAHRTWEG_FLUGHAFEN,
                 Is24CsvFormat.printNumber(value, 3));
     }
 
+    @SuppressWarnings("unused")
     public void setFahrtwegHauptbahnhof(Number value) {
         this.set(FIELD_FAHRTWEG_HAUPTBAHNHOF,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setFusswegNahverkehr(Number value) {
         this.set(FIELD_FUSSWEG_NAHVERKEHR,
                 Is24CsvFormat.printNumber(value, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setGesamtflaeche(Number value) {
         this.set(FIELD_GESAMTFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setGewerbeflaeche(Number value) {
         this.set(FIELD_GEWERBEFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
@@ -622,21 +642,25 @@ public class Anlageobjekt extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setKaufpreisProQm(Number value) {
         this.set(FIELD_KAUFPREIS_PRO_QM,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setMieteinnahmenIst(Number value) {
         this.set(FIELD_MIETEINNAHMEN_IST,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setMieteinnahmenSoll(Number value) {
         this.set(FIELD_MIETEINNAHMEN_SOLL,
                 Is24CsvFormat.printNumber(value, 15, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setNichtUmgelegteKosten(Number value) {
         this.set(FIELD_NICHT_UMGELEGTE_KOSTEN,
                 Is24CsvFormat.printNumber(value, 15, 2));
@@ -652,11 +676,13 @@ public class Anlageobjekt extends Is24CsvRecord {
                 (value != null) ? value.print() : null);
     }
 
+    @SuppressWarnings("unused")
     public void setPersonenaufzug(Boolean value) {
         this.set(FIELD_PERSONENAUFZUG,
                 Is24CsvFormat.printBoolean(value));
     }
 
+    @SuppressWarnings("unused")
     public void setPreisProParkflaeche(Number value) {
         this.set(FIELD_PREIS_PRO_PARKFLAECHE,
                 Is24CsvFormat.printNumber(value, 15, 2));
@@ -667,21 +693,25 @@ public class Anlageobjekt extends Is24CsvRecord {
                 Is24CsvFormat.printNumber(value, 4));
     }
 
+    @SuppressWarnings("unused")
     public void setSonstigeFlaeche(Number value) {
         this.set(FIELD_SONSTIGE_FLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setVermietbareFlaeche(Number value) {
         this.set(FIELD_VERMIETBARE_FLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setWohnflaeche(Number value) {
         this.set(FIELD_WOHNFLAECHE,
                 Is24CsvFormat.printNumber(value, 10, 2));
     }
 
+    @SuppressWarnings("unused")
     public void setXFache(Number value) {
         this.set(FIELD_X_FACHE,
                 Is24CsvFormat.printNumber(value, 3, 1));

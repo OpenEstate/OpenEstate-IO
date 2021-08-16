@@ -1,5 +1,0 @@
-<FindBugsFilter>
-  <Match>
-    <Package name="~org.openestate.io.kyero.xml.*" />
-  </Match>
-</FindBugsFilter>

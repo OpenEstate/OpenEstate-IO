@@ -1,19 +1,20 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter16
-    extends XmlAdapter<String, Boolean>
+    extends XmlAdapter<String, BigDecimal>
 {
 
 
-    public Boolean unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesNo(value));
+    public BigDecimal unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseLatitude(value));
     }
 
-    public String marshal(Boolean value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesNo(value));
+    public String marshal(BigDecimal value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printLatitude(value));
     }
 
 }

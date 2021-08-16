@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2018 OpenEstate.org.
+ * Copyright 2015-2021 OpenEstate.org.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package org.openestate.io.examples;
 
+import com.thedeanda.lorem.Lorem;
+import com.thedeanda.lorem.LoremIpsum;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -26,10 +28,9 @@ import java.net.URISyntaxException;
 import java.util.Calendar;
 import org.apache.commons.io.output.NullOutputStream;
 import org.apache.commons.io.output.NullWriter;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.PropertyConfigurator;
-import org.openestate.io.examples.utils.RandomStringUtils;
 import org.openestate.io.kyero.KyeroDocument;
 import org.openestate.io.kyero.KyeroUtils;
 import org.openestate.io.kyero.KyeroVersion;
@@ -48,18 +49,17 @@ import org.slf4j.LoggerFactory;
 /**
  * Example for writing Kyero XML feeds.
  * <p>
- * This example illustrates the programmatic creation of Kyero documents, how
- * they are written into XML and how they are downgraded to earlier versions.
+ * This example illustrates the programmatic creation of Kyero documents, how they are written into XML and how they are
+ * downgraded to earlier versions.
  *
  * @author Andreas Rudolph
  * @since 1.0
  */
-@SuppressWarnings("WeakerAccess")
 public class KyeroWritingExample {
     @SuppressWarnings("unused")
     private final static Logger LOGGER = LoggerFactory.getLogger(KyeroWritingExample.class);
-    private final static String PACKAGE = "/org/openestate/io/examples";
     private final static ObjectFactory FACTORY = KyeroUtils.getFactory();
+    private final static Lorem RANDOMIZER = new LoremIpsum();
     private final static boolean PRETTY_PRINT = true;
 
     /**
@@ -69,20 +69,18 @@ public class KyeroWritingExample {
      */
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
-        // init logging
-        PropertyConfigurator.configure(
-                KyeroWritingExample.class.getResource(PACKAGE + "/log4j.properties"));
-
         // create a Root object with some example data
         // this object corresponds to the <root> element in XML
         Root root = FACTORY.createRoot();
         root.setKyero(createKyero());
         root.setAgent(createAgent());
-        root.getProperty().add(createProperty());
-        root.getProperty().add(createProperty());
-        root.getProperty().add(createProperty());
 
-        // convert the Root object into a XML document
+        int propertyCount = RandomUtils.nextInt(3, 10);
+        for (int i = 0; i < propertyCount; i++) {
+            root.getProperty().add(createProperty());
+        }
+
+        // convert the Root object into an XML document
         KyeroDocument doc = null;
         try {
             doc = KyeroDocument.newDocument(root);
@@ -102,7 +100,7 @@ public class KyeroWritingExample {
         }
 
         // write XML document into a java.io.OutputStream
-        write(doc, new NullOutputStream());
+        write(doc, NullOutputStream.NULL_OUTPUT_STREAM);
 
         // write XML document into a java.io.Writer
         write(doc, new NullWriter());
@@ -121,20 +119,20 @@ public class KyeroWritingExample {
      *
      * @return created example object
      */
-    protected static Agent createAgent() {
+    private static Agent createAgent() {
         Agent agent = FACTORY.createRootAgent();
-        agent.setAddr1("first address line");
-        agent.setAddr2("second address line");
-        agent.setCountry("Germany");
-        agent.setEmail("test@test.org");
-        agent.setFax("030/123456");
+        agent.setAddr1(RANDOMIZER.getWords(1, 5));
+        agent.setAddr2(RANDOMIZER.getWords(1, 5));
+        agent.setCountry(RANDOMIZER.getCountry());
+        agent.setEmail(RANDOMIZER.getEmail());
+        agent.setFax(RANDOMIZER.getPhone());
         agent.setId(BigInteger.valueOf(RandomUtils.nextLong(1, 10000)));
-        agent.setMob("030/123457");
-        agent.setName("name of the company");
-        agent.setPostcode("12345");
-        agent.setRegion("Berlin");
-        agent.setTel("030/123458");
-        agent.setTown("Berlin");
+        agent.setMob(RANDOMIZER.getPhone());
+        agent.setName(RANDOMIZER.getName());
+        agent.setPostcode(RANDOMIZER.getZipCode());
+        agent.setRegion(RANDOMIZER.getStateFull());
+        agent.setTel(RANDOMIZER.getPhone());
+        agent.setTown(RANDOMIZER.getCity());
         return agent;
     }
 
@@ -143,7 +141,7 @@ public class KyeroWritingExample {
      *
      * @return created example object
      */
-    protected static KyeroType createKyero() {
+    private static KyeroType createKyero() {
         KyeroType kyero = FACTORY.createKyeroType();
         kyero.setFeedGenerated(Calendar.getInstance());
         kyero.setFeedVersion(KyeroUtils.VERSION.toXmlVersion());
@@ -155,59 +153,58 @@ public class KyeroWritingExample {
      *
      * @return created example object
      */
-    @SuppressWarnings("CatchMayIgnoreException")
-    protected static PropertyType createProperty() {
-        final String id = RandomStringUtils.random(5);
-        int imageCount = 0;
-
+    private static PropertyType createProperty() {
         // create an example real estate
         PropertyType obj = FACTORY.createPropertyType();
         obj.setBaths(BigInteger.valueOf(RandomUtils.nextLong(0, 5)));
         obj.setBeds(BigInteger.valueOf(RandomUtils.nextLong(0, 5)));
-        obj.setCountry("Germany");
-        obj.setCurrency(CurrencyType.EUR);
+        obj.setCountry(RANDOMIZER.getCountry());
+        obj.setCurrency(randomValue(CurrencyType.values()));
         obj.setDate(Calendar.getInstance());
-        obj.setId(id);
-        obj.setLeasehold(RandomUtils.nextInt(0, 2) == 1);
-        obj.setLocationDetail("some details about the location");
-        obj.setNewBuild(RandomUtils.nextInt(0, 2) == 1);
-        obj.setNotes("some notes about the property");
-        obj.setPartOwnership(RandomUtils.nextInt(0, 2) == 1);
-        obj.setPool(RandomUtils.nextInt(0, 2) == 1);
+        obj.setId(RandomStringUtils.randomAlphanumeric(5));
+        obj.setLeasehold(RandomUtils.nextBoolean());
+        obj.setLocationDetail(RANDOMIZER.getWords(2, 10));
+        obj.setNewBuild(RandomUtils.nextBoolean());
+        obj.setNotes(RANDOMIZER.getWords(10, 50));
+        obj.setPartOwnership(RandomUtils.nextBoolean());
+        obj.setPool(RandomUtils.nextBoolean());
         obj.setPrice(RandomUtils.nextLong(10000, 9999999));
-        obj.setPriceFreq(PriceFreqType.SALE);
-        obj.setProvince("Berlin");
-        obj.setRef(RandomStringUtils.random(5));
-        obj.setTown("Berlin");
-        obj.setType("house");
+        obj.setPriceFreq(randomValue(PriceFreqType.values()));
+        obj.setProvince(RANDOMIZER.getStateFull());
+        obj.setRef(RandomStringUtils.randomAlphanumeric(5));
+        obj.setTown(RANDOMIZER.getCity());
+        obj.setType(RANDOMIZER.getWords(1));
 
         obj.setDesc(FACTORY.createLangType());
-        obj.getDesc().setCa("Catalan property description");
-        obj.getDesc().setDa("Danish property description");
-        obj.getDesc().setDe("German property description");
-        obj.getDesc().setEn("English property description");
-        obj.getDesc().setEs("Spanish property description");
-        obj.getDesc().setFi("Finnish property description");
-        obj.getDesc().setFr("French property description");
-        obj.getDesc().setIt("Italian property description");
-        obj.getDesc().setNl("Dutch property description");
-        obj.getDesc().setNo("Norwegian property description");
-        obj.getDesc().setPt("Portuguese property description");
-        obj.getDesc().setRu("Russian property description");
-        obj.getDesc().setSv("Swedish property description");
+        obj.getDesc().setCa(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setDa(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setDe(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setEn(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setEs(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setFi(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setFr(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setIt(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setNl(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setNo(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setPt(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setRu(RANDOMIZER.getWords(10, 50));
+        obj.getDesc().setSv(RANDOMIZER.getWords(10, 50));
 
         obj.setEnergyRating(FACTORY.createEnergyRatingType());
-        obj.getEnergyRating().setConsumption(EnergyRatingMarkType.C);
-        obj.getEnergyRating().setEmissions(EnergyRatingMarkType.E);
+        obj.getEnergyRating().setConsumption(randomValue(EnergyRatingMarkType.values()));
+        obj.getEnergyRating().setEmissions(randomValue(EnergyRatingMarkType.values()));
 
         obj.setFeatures(FACTORY.createFeaturesType());
-        obj.getFeatures().getFeature().add("name of a feature");
-        obj.getFeatures().getFeature().add("name of another feature");
+        int featureCount = RandomUtils.nextInt(1, 10);
+        for (int i = 0; i < featureCount; i++) {
+            obj.getFeatures().getFeature().add(RANDOMIZER.getWords(1, 5));
+        }
 
         obj.setImages(FACTORY.createImagesType());
-        obj.getImages().getImage().add(createPropertyImage(id, ++imageCount));
-        obj.getImages().getImage().add(createPropertyImage(id, ++imageCount));
-        obj.getImages().getImage().add(createPropertyImage(id, ++imageCount));
+        int imageCount = RandomUtils.nextInt(1, 10);
+        for (int i = 0; i < imageCount; i++) {
+            obj.getImages().getImage().add(createPropertyImage(i));
+        }
 
         obj.setLocation(FACTORY.createGpsLocationType());
         obj.getLocation().setLatitude(BigDecimal.valueOf(RandomUtils.nextDouble(0, 90)));
@@ -218,20 +215,21 @@ public class KyeroWritingExample {
         obj.getSurfaceArea().setPlot(BigInteger.valueOf(RandomUtils.nextLong(100, 1500)));
 
         obj.setUrl(FACTORY.createUrlType());
+        //noinspection CatchMayIgnoreException
         try {
-            obj.getUrl().setCa(new URI("http://catalan.website.com/property/" + id + ".htm"));
-            obj.getUrl().setDa(new URI("http://danish.website.com/property/" + id + ".htm"));
-            obj.getUrl().setDe(new URI("http://german.website.com/property/" + id + ".htm"));
-            obj.getUrl().setEn(new URI("http://english.website.com/property/" + id + ".htm"));
-            obj.getUrl().setEs(new URI("http://spanish.website.com/property/" + id + ".htm"));
-            obj.getUrl().setFi(new URI("http://finnish.website.com/property/" + id + ".htm"));
-            obj.getUrl().setFr(new URI("http://french.website.com/property/" + id + ".htm"));
-            obj.getUrl().setIt(new URI("http://italian.website.com/property/" + id + ".htm"));
-            obj.getUrl().setNl(new URI("http://dutch.website.com/property/" + id + ".htm"));
-            obj.getUrl().setNo(new URI("http://norwegian.website.com/property/" + id + ".htm"));
-            obj.getUrl().setPt(new URI("http://portuguese.website.com/property/" + id + ".htm"));
-            obj.getUrl().setRu(new URI("http://russian.website.com/property/" + id + ".htm"));
-            obj.getUrl().setSv(new URI("http://swedish.website.com/property/" + id + ".htm"));
+            obj.getUrl().setCa(new URI("https://www.example.com/catalan/" + obj.getId() + ".html"));
+            obj.getUrl().setDa(new URI("https://www.example.com/danish/" + obj.getId() + ".html"));
+            obj.getUrl().setDe(new URI("https://www.example.com/german/" + obj.getId() + ".html"));
+            obj.getUrl().setEn(new URI("https://www.example.com/english/" + obj.getId() + ".html"));
+            obj.getUrl().setEs(new URI("https://www.example.com/spanish/" + obj.getId() + ".html"));
+            obj.getUrl().setFi(new URI("https://www.example.com/finnish/" + obj.getId() + ".html"));
+            obj.getUrl().setFr(new URI("https://www.example.com/french/" + obj.getId() + ".html"));
+            obj.getUrl().setIt(new URI("https://www.example.com/italian/" + obj.getId() + ".html"));
+            obj.getUrl().setNl(new URI("https://www.example.com/dutch/" + obj.getId() + ".html"));
+            obj.getUrl().setNo(new URI("https://www.example.com/norwegian/" + obj.getId() + ".html"));
+            obj.getUrl().setPt(new URI("https://www.example.com/portuguese/" + obj.getId() + ".html"));
+            obj.getUrl().setRu(new URI("https://www.example.com/russian/" + obj.getId() + ".html"));
+            obj.getUrl().setSv(new URI("https://www.example.com/swedish/" + obj.getId() + ".html"));
         } catch (URISyntaxException ex) {
         }
 
@@ -241,21 +239,32 @@ public class KyeroWritingExample {
     /**
      * Create an {@link Image} object with some example data.
      *
-     * @param id  property id
      * @param pos index position within the property images
      * @return created example object
      */
-    @SuppressWarnings("CatchMayIgnoreException")
-    protected static Image createPropertyImage(String id, int pos) {
+    private static Image createPropertyImage(int pos) {
         // create an example image
         Image img = FACTORY.createImagesTypeImage();
         img.setId(pos);
+        //noinspection CatchMayIgnoreException
         try {
-            img.setUrl(new URI("http://website.com/property/" + id + "/image_" + pos + ".jpg"));
+            img.setUrl(new URI("https://www.example.com/image-" + pos + ".jpg"));
         } catch (URISyntaxException ex) {
         }
-
         return img;
+    }
+
+    /**
+     * Get a random value from an array.
+     *
+     * @param values array containing values to select from
+     * @param <T>    type of contained values
+     * @return randomly selected value
+     */
+    private static <T> T randomValue(T[] values) {
+        return (values != null && values.length > 0) ?
+                values[RandomUtils.nextInt(0, values.length)] :
+                null;
     }
 
     /**
@@ -265,7 +274,7 @@ public class KyeroWritingExample {
      * @param file the file, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(KyeroDocument doc, File file) {
+    private static void write(KyeroDocument doc, File file) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(file, PRETTY_PRINT);
@@ -283,8 +292,8 @@ public class KyeroWritingExample {
      * @param doc    the document to write
      * @param output the stream, where the document is written to
      */
-    @SuppressWarnings("Duplicates")
-    protected static void write(KyeroDocument doc, OutputStream output) {
+    @SuppressWarnings({"Duplicates", "SameParameterValue"})
+    private static void write(KyeroDocument doc, OutputStream output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
@@ -303,13 +312,13 @@ public class KyeroWritingExample {
      * @param output the writer, where the document is written to
      */
     @SuppressWarnings("Duplicates")
-    protected static void write(KyeroDocument doc, Writer output) {
+    private static void write(KyeroDocument doc, Writer output) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             doc.toXml(output, PRETTY_PRINT);
             LOGGER.info("> written to a java.io.Writer");
         } catch (Exception ex) {
-            LOGGER.error("Can't write document into an OutputStream!");
+            LOGGER.error("Can't write document into a Writer!");
             LOGGER.error("> " + ex.getLocalizedMessage(), ex);
             System.exit(1);
         }
@@ -322,7 +331,7 @@ public class KyeroWritingExample {
      * @param doc the document to write
      */
     @SuppressWarnings("Duplicates")
-    protected static void writeToConsole(KyeroDocument doc) {
+    private static void writeToConsole(KyeroDocument doc) {
         LOGGER.info("writing document with version " + doc.getDocumentVersion());
         try {
             String xml = doc.toXmlString(PRETTY_PRINT);

@@ -1,20 +1,19 @@
 
 package org.openestate.io.immobiliare_it.xml;
 
-import java.util.Currency;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter15
-    extends XmlAdapter<String, Currency>
+    extends XmlAdapter<String, Boolean>
 {
 
 
-    public Currency unmarshal(String value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseCurrency(value));
+    public Boolean unmarshal(String value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.parseYesOnly(value));
     }
 
-    public String marshal(Currency value) {
-        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printCurrency(value));
+    public String marshal(Boolean value) {
+        return (org.openestate.io.immobiliare_it.ImmobiliareItUtils.printYesOnly(value));
     }
 
 }
