@@ -7,11 +7,11 @@
     <parent>
         <groupId>org.openestate.io</groupId>
         <artifactId>OpenEstate-IO</artifactId>
-        <version>1.5-SNAPSHOT</version>
+        <version>1.5</version>
     </parent>
 
     <artifactId>OpenEstate-IO-Core</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.5</version>
     <packaging>jar</packaging>
 
     <name>OpenEstate-IO-Core</name>
@@ -90,14 +90,6 @@
             <artifactId>slf4j-api</artifactId>
             <scope>compile</scope>
         </dependency>
-        <!--
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        -->
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
